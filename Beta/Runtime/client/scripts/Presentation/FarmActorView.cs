@@ -23,6 +23,9 @@ internal partial class FarmActorView : Node2D
     private bool _ownActor;
     private SubunitPosition _observedFeet;
 
+    /// <summary>The canvas position this view was last told to show; interpolation only eases towards it.</summary>
+    internal Vector2 ProjectedTarget => _target;
+
     internal void Setup(FarmActorFrame actor, FarmVisualAssets assets)
     {
         TextureFilter = TextureFilterEnum.Nearest;
@@ -31,7 +34,7 @@ internal partial class FarmActorView : Node2D
         Position = _target;
         _sprite = new Sprite2D
         {
-            Texture = assets.ActorTexture(actor.SpriteKind), Hframes = 3, Vframes = 4, Frame = 1,
+            Texture = assets.ActorTexture(actor.SpriteKind, actor.AppearanceKey), Hframes = 3, Vframes = 4, Frame = 1,
             Offset = new Vector2(0, -10), Scale = new Vector2(2, 2), TextureFilter = TextureFilterEnum.Nearest
         };
         AddChild(_sprite);
@@ -86,7 +89,7 @@ internal partial class FarmActorView : Node2D
         }
         _observedFeet = actor.Feet;
         ZIndex = actor.IsMultilevel ? WorksiteCoordinates.DepthIndex(actor.Feet.Z, actor: true) : 0;
-        _sprite.Texture = assets.ActorTexture(actor.SpriteKind);
+        _sprite.Texture = assets.ActorTexture(actor.SpriteKind, actor.AppearanceKey);
         _nameplate.Text = actor.DisplayName + (actor.IsIncapacitated ? " · down" : "");
         _incapacitated = actor.IsIncapacitated;
         _health.Observe(actor.CurrentHp);
@@ -97,8 +100,15 @@ internal partial class FarmActorView : Node2D
         QueueRedraw();
     }
 
-    private static Vector2 Project(FarmActorFrame actor) => actor.IsMultilevel
-        ? WorksiteCoordinates.Position(actor.Feet) : FarmCanvasCoordinates.Position(actor.Feet);
+    private static Vector2 Project(FarmActorFrame actor)
+    {
+        if (actor.Regional is { } regional)
+        {
+            Cargo.CargoCanvasPoint point = regional.Project(actor.Feet);
+            return new Vector2((float)point.X, (float)point.Y);
+        }
+        return actor.IsMultilevel ? WorksiteCoordinates.Position(actor.Feet) : FarmCanvasCoordinates.Position(actor.Feet);
+    }
 
     public override void _Process(double delta)
     {

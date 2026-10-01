@@ -33,26 +33,34 @@ public partial class FarmGame
         _market.AskRequested += AskMerchant;
         _market.CancelRequested += CancelMarketRequest;
         _market.RecordRequested += InspectQuoteRecord;
+        _market.StallRequested += ChooseStall;
         _market.PresentLocal += () => { if (_session is not null) Present(_session.World.ReadView()); };
     }
 
-    /// <summary>A wheel stall choice opens the panel on its section; it asks, shows and spends nothing.</summary>
+    /// <summary>
+    /// A wheel stall choice opens the panel on its section; it asks, shows and spends nothing. An explicit choice stays
+    /// addressed. Otherwise the stall in reach, or a world's only stall, becomes the choice; with several stalls and none
+    /// in reach the panel only looks at one, so the player picks under Stall and nothing arbitrary is pinned.
+    /// </summary>
     private void OpenMarket(FarmSemanticAction choice)
     {
         if (_session is null || _session.World.ReadView() is not { } view
-            || MarketActionOffers.ContextStall(view) is not { } stall) return;
+            || MarketActionOffers.ContextStall(view, _marketDraft.ChosenMarketId) is not { } stall) return;
         LocalTradeDirection? direction = choice switch
         {
             FarmSemanticAction.TradeBuy => LocalTradeDirection.Buy,
             FarmSemanticAction.TradeSell => LocalTradeDirection.Sell,
             _ => null
         };
-        _marketDraft.Begin(view, stall.MarketId, direction);
+        if (MarketActionOffers.PinsOnOpening(view, stall, _marketDraft.ChosenMarketId)) _marketDraft.Begin(view, stall.MarketId, direction);
+        else _marketDraft.Look(view, stall.MarketId);
         _input.SetMarketOpen(true);
         _hud.SetCovered(true);
         try { _session.World.SetMovement(0, 0); }
         catch (InvalidOperationException error) { Fail("The world has stopped. " + error.GetBaseException().Message); return; }
         _market.Open(choice == FarmSemanticAction.TradeOffers);
+        if (!_marketDraft.IsExplicit)
+            _market.Notice("No stall is within reach and none is chosen. Choose one under Stall, or close this and walk to a merchant.");
         Present(_session.World.ReadView());
     }
 
@@ -60,6 +68,7 @@ public partial class FarmGame
     {
         _input.SetMarketOpen(false);
         _marketDraft.DiscardReview();
+        _marketDraft.ReleaseLook();
         _hud.SetCovered(false);
         _market.Close();
     }
@@ -67,7 +76,7 @@ public partial class FarmGame
     private void AskMerchant()
     {
         if (_session is null || !_input.MarketOpen || HasMarketRequestInFlight
-            || MarketActionOffers.ContextStall(_session.World.ReadView()) is not { } stall) return;
+            || MarketActionOffers.ContextStall(_session.World.ReadView(), _marketDraft.MarketId) is not { } stall) return;
         LocalWorldView view = _session.World.ReadView();
         FarmMarketRequest request = MarketActionOffers.PrepareRequest(view, stall, _marketDraft, _session.World.ReadTradeInquiry());
         if (request.Inquiry is not { } inquiry)
@@ -133,10 +142,24 @@ public partial class FarmGame
         }
     }
 
+    /// <summary>
+    /// The panel's stall selector: an explicit choice by stable market identity. It starts a fresh visit to that stall,
+    /// discarding every earlier choice and review, and never asks, shows or spends anything.
+    /// </summary>
+    private void ChooseStall(EntityId marketId)
+    {
+        if (_session is null || !_input.MarketOpen || _session.World.ReadView() is not { } view
+            || view.Markets?.Stalls.Any(stall => stall.MarketId == marketId) != true) return;
+        if (_marketDraft.ChosenMarketId == marketId) return;
+        _marketDraft.Begin(view, marketId, null);
+        _market.Notice("Now addressing " + _market.StallLabel(view, marketId) + ". Earlier choices were cleared.");
+        Present(_session.World.ReadView());
+    }
+
     private void PresentMarket(LocalWorldView view)
     {
         if (!_input.MarketOpen || _session is null) return;
-        if (MarketActionOffers.ContextStall(view) is null)
+        if (MarketActionOffers.ContextStall(view, _marketDraft.MarketId) is null)
         {
             CloseMarket();
             return;

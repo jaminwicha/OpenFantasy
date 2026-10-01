@@ -28,7 +28,10 @@ versioned overlay set; overlaid places contribute no meaning. Inherited wolf sce
 as side-zero bystanders, which changes their scenario versions. Owners that pin the counted admission,
 such as the water capacity domain, are re-prepared from their own retained definitions rather than
 re-authored, and only after the retained state is proven to be the fresh dry genesis. Dialogue, Kegga's quest and the other shop goods remain
-retained facts until a later binding gives them runtime meaning.
+retained facts until a later binding gives them runtime meaning. The merchants' retained `appearance`
+records are presentation inputs only: the [native cargo binding](cargo-presentation.md) reads them from the
+same digest-pinned packet, checks them against the authenticated appearance hash and composes the copied
+predecessor layers unchanged; they are not admitted world facts.
 
 ## Design contract: preservation and packages
 

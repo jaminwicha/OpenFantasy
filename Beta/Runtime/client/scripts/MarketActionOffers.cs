@@ -27,10 +27,19 @@ internal static class MarketActionOffers
     internal static LocalMarketStallView? ContextStall(LocalWorldView view) =>
         view.Markets?.Stalls.FirstOrDefault(stall => stall.IsAvailableInPerson) ?? view.Markets?.Stalls.FirstOrDefault();
 
+    /// <summary>
+    /// The stall the player addresses. An explicit choice is kept by its stable market identity: it is that stall
+    /// or nothing, even when it is out of reach or another stall is nearer, so no choice is ever retargeted. Without
+    /// a choice the stall available in person is offered, then the first stall in identity order; that fallback is
+    /// only addressed for display and is never pinned unless it is in reach (see <see cref="PinsOnOpening"/>).
+    /// </summary>
+    internal static LocalMarketStallView? ContextStall(LocalWorldView view, EntityId? chosenMarketId) =>
+        chosenMarketId is { } chosen ? view.Markets?.Stalls.FirstOrDefault(stall => stall.MarketId == chosen) : ContextStall(view);
+
     internal static void Add(LocalWorldView view, FarmActionScope scope, FarmMarketDraft? draft,
         IDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
-        if (ContextStall(view) is not { } stall) return;
+        if (ContextStall(view, draft?.MarketId) is not { } stall) return;
         string merchant = FarmMarketTerms.Merchant(view, stall);
         string goods = FarmMarketTerms.Goods(view, stall);
         string? context = ContextBlocker(view, stall, merchant);
@@ -59,7 +68,9 @@ internal static class MarketActionOffers
         string goods = FarmMarketTerms.Goods(view, stall);
         string? blocker = ContextBlocker(view, stall, merchant)
             ?? (draft.MarketId != stall.MarketId ? "Open this stall to choose a request."
-            : current?.State == LocalTradeInquiryState.Waiting ? $"Your request is waiting for {merchant}'s answer. Cancel it to change it."
+            : current?.State == LocalTradeInquiryState.Waiting
+                ? current.Inquiry.MarketId == stall.MarketId ? $"Your request is waiting for {merchant}'s answer. Cancel it to change it."
+                    : "Your request at another stall is still waiting. Cancel it to ask here."
             : OpenOffer(view, stall) is not null ? $"{merchant} keeps one standing offer for you. Accept it or let it close first."
             : draft.Quantity > stall.MaximumUnitsPerOffer ? $"{merchant} offers at most {stall.MaximumUnitsPerOffer} {goods} at once."
             : draft.Direction == LocalTradeDirection.Sell ? SellBlocker(stall, draft, merchant, goods) : null);
@@ -75,12 +86,13 @@ internal static class MarketActionOffers
         .OrderByDescending(quote => quote.IssuedAtStep).ThenBy(quote => quote.QuoteId).FirstOrDefault();
 
     /// <summary>
-    /// A quote the player received from this stall: issued by its merchant for its exact commodity. The merchant
-    /// alone is not enough, because one merchant may trade other goods elsewhere. Participant quote views carry no
-    /// market identity, so two stalls of one merchant selling the same commodity remain indistinguishable here.
+    /// A quote the player received from this stall: the canonical market quote record names this exact market, and
+    /// the quote's merchant and goods agree with it. Merchant and commodity alone cannot tell two same-goods stalls
+    /// of one merchant apart, and a quote issued outside any market belongs to no stall.
     /// </summary>
     internal static bool BelongsTo(LocalMarketStallView stall, PaidQuoteView quote) =>
-        !quote.ViewerIsIssuer && quote.IssuerActorId == stall.MerchantActorId && quote.Definition.Equals(stall.Commodity);
+        !quote.ViewerIsIssuer && quote.MarketId == stall.MarketId && quote.IssuerActorId == stall.MerchantActorId
+        && quote.Definition.Equals(stall.Commodity);
 
     private static string? SellBlocker(LocalMarketStallView stall, FarmMarketDraft draft, string merchant, string goods) =>
         draft.LotId is null ? $"Choose one exact lot of your own {goods}."
@@ -168,8 +180,30 @@ internal static class MarketActionOffers
         : view.EncounterLifecycle is { } lifecycle && lifecycle.Phase != EncounterLifecyclePhase.Exploration
             ? "Trading happens during ordinary exploration."
         : view.EncounterLifecycle is { PlayerCanAct: false } ? "You cannot act until your current recovery ends."
-        : !stall.IsAvailableInPerson ? $"{merchant} must be within reach and able to trade in person."
+        : !stall.IsAvailableInPerson ? OutOfReach(view, stall, merchant)
         : null;
+
+    /// <summary>
+    /// Why an addressed stall cannot trade here, without retargeting it: a stall that is in reach instead is named
+    /// with the explicit Offers → Stall route, and with several stalls the route to another choice is explained.
+    /// </summary>
+    private static string OutOfReach(LocalWorldView view, LocalMarketStallView stall, string merchant)
+    {
+        LocalMarketStallView[] stalls = view.Markets?.Stalls.ToArray() ?? [];
+        if (stalls.FirstOrDefault(other => other.MarketId != stall.MarketId && other.IsAvailableInPerson) is { } nearby)
+            return $"{merchant} is not within reach. {FarmMarketTerms.Merchant(view, nearby)}'s stall is here: "
+                + "open Offers and choose it under Stall.";
+        return stalls.Length > 1
+            ? $"{merchant} must be within reach and able to trade in person. Walk to her stall, or open Offers and choose another under Stall."
+            : $"{merchant} must be within reach and able to trade in person.";
+    }
+
+    /// <summary>
+    /// Whether opening a stall's panel makes it the explicit choice: an existing choice stays, the stall in reach is
+    /// chosen, and a world's only stall is chosen. With several stalls and none in reach nothing is pinned.
+    /// </summary>
+    internal static bool PinsOnOpening(LocalWorldView view, LocalMarketStallView stall, EntityId? chosenMarketId) =>
+        chosenMarketId == stall.MarketId || stall.IsAvailableInPerson || view.Markets?.Stalls.Count == 1;
 
     private static EntityId NewCommandId() => EntityId.FromBytes(RandomNumberGenerator.GetBytes(EntityId.ByteLength));
 }

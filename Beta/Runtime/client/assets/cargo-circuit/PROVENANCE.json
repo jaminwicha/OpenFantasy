@@ -1,0 +1,91 @@
+{
+  "status": "exact_predecessor_layer_import_not_final_art_acceptance",
+  "sourceHead": "e6a3230e60165990e6c1776a8b5ec137ddb633f1",
+  "copiedFiles": [
+    {
+      "source": "assets/layers/body.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/body.png",
+      "sha256": "17a3af88e92baa615c9bb3f4d21e095767639458c655348a6b93080e82fe40e7"
+    },
+    {
+      "source": "assets/layers/race_01.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/race_01.png",
+      "sha256": "74233374e094eca807f4a7d874a3496d69948d697bfdd86c4501806d25ec1713"
+    },
+    {
+      "source": "assets/layers/race_02.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/race_02.png",
+      "sha256": "c5ff78c1ac08d2ad70b9f8b3c4691b040d295e578f9cfb34af112984e491870e"
+    },
+    {
+      "source": "assets/layers/hair_00.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/hair_00.png",
+      "sha256": "73865f9a20075df7a633c6b979dad881bc846ce99e3837879adea8274bb82c63"
+    },
+    {
+      "source": "assets/layers/hair_08.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/hair_08.png",
+      "sha256": "841f53efdd3ee8ba7e91f43ca960cc2b3a320d22d6f66121fd6c9fb1d40bd549"
+    },
+    {
+      "source": "assets/layers/outfit_04_a.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/outfit_04_a.png",
+      "sha256": "3969aef17e4ead255563804f3945964b1908c338c306a224515604883f239cd7"
+    },
+    {
+      "source": "assets/layers/outfit_04_b.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/outfit_04_b.png",
+      "sha256": "8e6f0f7c93673fa01a64e9a525f042a776075aabb403206664ccbf3cba4deb52"
+    },
+    {
+      "source": "assets/layers/outfit_02_a.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/outfit_02_a.png",
+      "sha256": "669c5493487010555435be7d79d25fa5f92c702ad509a53a3b53ac8a421c7a43"
+    },
+    {
+      "source": "assets/layers/outfit_02_b.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/outfit_02_b.png",
+      "sha256": "b03268f8b0f8856b027f82ed21df5a6a5a4fd0010100a7684bec1c4ab3c3b8f1"
+    },
+    {
+      "source": "assets/layers/acc_02.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/acc_02.png",
+      "sha256": "4c4d2c29c732e98321c0b53013505c8edebb8d9842422fc0b863174b9f8b3757"
+    },
+    {
+      "source": "assets/layers/acc_03.png",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/layers/acc_03.png",
+      "sha256": "0907b9dd49e4553eae718bb47f4f84e30c53637483570536016ed59055eb3048"
+    },
+    {
+      "source": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/appearance.json",
+      "copy": "Beta/Runtime/client/assets/cargo-circuit/appearance.json",
+      "sha256": "3c9388eddd5a1343065f2e8d476f570a7cf0cf6c92998fedfdc0254df4761a9b"
+    }
+  ],
+  "sourceNpcFile": "Beta/Runtime/content/legacy/aldermere-first-loop/source-support/data/npcs.json",
+  "sourceNpcSha256": "a75e0f3e565e21cd751dc3697f948b773439935478053c29d5467e868d439746",
+  "appearances": {
+    "marla": {
+      "race": 1,
+      "skin": 4,
+      "hairStyle": 0,
+      "hairColor": 3,
+      "outfit": 4,
+      "outfitA": 10,
+      "outfitB": 0,
+      "acc": 2
+    },
+    "kegga": {
+      "race": 2,
+      "skin": 3,
+      "hairStyle": 8,
+      "hairColor": 12,
+      "outfit": 2,
+      "outfitA": 7,
+      "outfitB": 15,
+      "acc": 3
+    }
+  },
+  "scope": "Source-based merchant appearance binding. No new art generated; artist/user production-style acceptance remains separate."
+}

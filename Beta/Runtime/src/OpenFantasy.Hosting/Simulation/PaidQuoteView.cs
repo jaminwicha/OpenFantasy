@@ -19,13 +19,16 @@ public enum PaidQuoteStatus { Open = 1, Filled = 2, Superseded = 3, Withdrawn = 
 /// session, a market's stock basis or issuer fill counter, any acceptance or withdrawal delivery, the fill
 /// that superseded it, or a world root. The issuer's presence revision is present only for the counterparty
 /// of an open quote that can actually reach the issuer where both stand; a distant revision stays unknown.
+/// A quote issued under a market rule names that market, read from the canonical market quote record of the same
+/// root that holds the quote or its outcome; a bilateral paid quote names none. The record's stock basis stays private.
 /// </summary>
 public sealed class PaidQuoteView
 {
     internal PaidQuoteView(SpotQuote quote, EntityId viewerActorId, PaidQuoteStatus status, ulong? closedAtSequence,
-        SpotAcceptance? fill, ulong? observedIssuerRevision)
+        SpotAcceptance? fill, ulong? observedIssuerRevision, EntityId? marketId = null)
     {
         QuoteId = quote.QuoteId;
+        MarketId = marketId;
         IssuerActorId = quote.IssuerActorId;
         CounterpartyActorId = quote.CounterpartyActorId;
         ViewerIsIssuer = quote.IssuerActorId == viewerActorId;
@@ -57,6 +60,12 @@ public sealed class PaidQuoteView
     }
 
     public EntityId QuoteId { get; }
+
+    /// <summary>
+    /// The market whose rule priced this quote, from the canonical market quote record; null for a quote issued
+    /// outside any market. It identifies one stall even when one merchant keeps several stalls of the same goods.
+    /// </summary>
+    public EntityId? MarketId { get; }
     public EntityId IssuerActorId { get; }
     public EntityId CounterpartyActorId { get; }
     public bool ViewerIsIssuer { get; }
@@ -138,29 +147,37 @@ internal static class PaidQuoteProjection
             // A due quote is already unacceptable, before the next advancing boundary closes it.
             bool due = open.IsDue(state.AdvancingSteps);
             yield return new PaidQuoteView(open.Quote, viewerActorId, due ? PaidQuoteStatus.Expired : PaidQuoteStatus.Open,
-                null, null, due ? null : ObservableIssuerRevision(state, open.Quote, viewerActorId));
+                null, null, due ? null : ObservableIssuerRevision(state, open.Quote, viewerActorId),
+                MarketOf(state, open.QuoteId));
         }
         foreach (WorldPaidQuoteOutcome outcome in book.Outcomes.Where(value => value.Quote.HasParticipant(viewerActorId)))
         {
-            yield return Closed(outcome, viewerActorId);
+            yield return Closed(state, outcome, viewerActorId);
         }
     }
 
-    /// <summary>One quote by identity: the live owner first, then an archived outcome the actor took part in.</summary>
+    /// <summary>
+    /// One quote by identity: the live owner first, then an archived outcome the actor took part in. For an archived
+    /// outcome the caller supplies the recorded root that published it, so its market comes from that root's record.
+    /// </summary>
     internal static PaidQuoteView? ProjectRecorded(WorldSnapshot state, WorldPaidQuoteOutcome? archived, EntityId quoteId,
         EntityId viewerActorId) =>
         Project(state, viewerActorId).FirstOrDefault(view => view.QuoteId == quoteId)
         ?? (archived is not null && archived.Quote.QuoteId == quoteId && archived.Quote.HasParticipant(viewerActorId)
-            ? Closed(archived, viewerActorId) : null);
+            ? Closed(state, archived, viewerActorId) : null);
 
-    private static PaidQuoteView Closed(WorldPaidQuoteOutcome outcome, EntityId viewerActorId) =>
+    /// <summary>The market named by the canonical quote record in this root, or null for a bilateral quote.</summary>
+    internal static EntityId? MarketOf(WorldSnapshot state, EntityId quoteId) =>
+        state.Coordination?.Markets?.FindQuote(quoteId)?.MarketId;
+
+    private static PaidQuoteView Closed(WorldSnapshot state, WorldPaidQuoteOutcome outcome, EntityId viewerActorId) =>
         new(outcome.Quote.Quote, viewerActorId, outcome.Kind switch
         {
             WorldPaidQuoteOutcomeKind.Filled => PaidQuoteStatus.Filled,
             WorldPaidQuoteOutcomeKind.Superseded => PaidQuoteStatus.Superseded,
             WorldPaidQuoteOutcomeKind.Withdrawn => PaidQuoteStatus.Withdrawn,
             _ => PaidQuoteStatus.Expired
-        }, outcome.WorldSequence, outcome.Settlement?.Acceptance, null);
+        }, outcome.WorldSequence, outcome.Settlement?.Acceptance, null, MarketOf(state, outcome.Quote.QuoteId));
 
     /// <summary>
     /// The issuer's current presence revision only when the viewing counterparty and the issuer are both present

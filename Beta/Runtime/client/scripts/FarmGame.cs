@@ -114,6 +114,7 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (OpenCargo()) return;
         if (RetainedGiftGenesisPath is { } retainedGenesis)
         {
             // A retained world has no default location or fallback: only its explicit transitioned save opens.
@@ -238,8 +239,12 @@ public partial class FarmGame : Node2D
                 _session = opening.Result;
                 _targets = new FarmTargetSelection(_session.WrenActorId);
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
+                AttachCargo(_session);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    : _session.IsRegional
+                        ? "Speak with Wren first. Marla trades down-screen in Brasshollow, Kegga far up-screen in Gearford. "
+                            + "V opens actions; Q turns to Market; Offers → Stall chooses a stall."
                     : RetainedGiftGenesisPath is not null ? "I opens your pack and its gift offers; V opens actions; Q changes wheel pages."
                     : MarketsProfile || MarketFixtureGenesisPath is not null
                         ? "Wren trades berries in person. V opens actions; Q turns to the Market page. Her quest pays in gil."
@@ -291,7 +296,11 @@ public partial class FarmGame : Node2D
             return;
         }
         _targets.Refresh(view);
-        _canvas.Present(new FarmCanvasFrame(view.Calendar, view.Actors.Select(actor => new FarmActorFrame(
+        if (_session.IsRegional)
+        {
+            if (!PresentCargoCanvas(_session, view)) return;
+        }
+        else _canvas.Present(new FarmCanvasFrame(view.Calendar, view.Actors.Select(actor => new FarmActorFrame(
             actor.ActorId, actor.DisplayName, actor.Feet, actor.ActorId == view.PlayerActorId,
             actor.ActorId == _session.WrenActorId ? FarmSpriteKind.Wren
                 : view.EncounterLifecycle?.Entries.Any(entry => entry.TargetActorId == actor.ActorId) == true
@@ -308,9 +317,12 @@ public partial class FarmGame : Node2D
         if (view.Dialogue is { } conversation)
         {
             LocalActorView speaker = view.Actors.Single(value => value.ActorId == conversation.SpeakerActorId);
-            focus = (focus + _canvas.Project(speaker.Feet)) / 2;
+            // A regional frame frames only a speaker it actually presents; nothing is projected outside its observation.
+            if (_canvas.Regional?.Admits(speaker.Feet) != false) focus = (focus + _canvas.Project(speaker.Feet)) / 2;
         }
-        _camera.Position = focus + new Vector2(0, BreachProfile ? 96 : WatercourseProfile ? 72 : -26);
+        _camera.Position = focus + (_cargoCameraFraming is { } cargoFraming
+            ? new Vector2((float)cargoFraming.FollowOffset.X, (float)cargoFraming.FollowOffset.Y)
+            : new Vector2(0, BreachProfile ? 96 : WatercourseProfile ? 72 : -26));
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
         _presented = _session.CreateOffers(view, _targets.Selected, _gifts, _marketDraft);
         _canvas.PresentTarget(_targets.Selected);
@@ -320,7 +332,8 @@ public partial class FarmGame : Node2D
         _inventory.Present(view, _session.World.ReadRunState());
         if (_wheel.Model is { } wheel)
         {
-            wheel.Refresh(target => _session.CreateOffers(view, LocatePinnedTarget(view, target), _gifts));
+            // The same explicit stall choice as the presented offers, so a stall slot never reads as changed.
+            wheel.Refresh(target => _session.CreateOffers(view, LocatePinnedTarget(view, target), _gifts, _marketDraft));
             _wheel.Present(view, _session.World.ReadRunState(), _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel));
         }
         PresentMarket(view);
@@ -356,6 +369,11 @@ public partial class FarmGame : Node2D
 
     public override void _UnhandledInput(InputEvent input)
     {
+        if (PickCargoStall(input))
+        {
+            GetViewport().SetInputAsHandled();
+            return;
+        }
         FarmInputDecision decision = _input.Route(Situation(), Translate(input));
         if (decision.Action != FarmSemanticAction.None) Perform(decision.Action);
         if (decision.Consumed) GetViewport().SetInputAsHandled();

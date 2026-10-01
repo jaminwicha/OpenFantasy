@@ -55,13 +55,25 @@ Engine-free models hold the player's choices and are linked into the managed tes
 | [`MarketActionOffers`](../../client/scripts/MarketActionOffers.cs) | Wheel stall choices, the show and confirm offers, request preparation and their blockers |
 | [`FarmMarketTerms`](../../client/scripts/FarmMarketTerms.cs) | Readable price, units with agreeing goods names, dues, totals, purse and shortfall, remaining running time and outcome text from participant views; the step basis only as an optional diagnostic |
 
-`MarketActionOffers.BelongsTo` defines which quotes are this stall's: issued to the player by the stall's
-merchant **for the stall's commodity**. The open offer, the outcome list, saved-record text, review capture
-and confirmation all use it, so a merchant's quote for other goods is never listed, labelled or reviewed as
-this stall's. Participant quote views carry no market identity; two stalls of one merchant selling the same
-commodity remain indistinguishable, and `ContextStall` addresses the first stall available in person. Both
-are one-stall bindings that a multi-stall world must replace with an explicit stall identity on the quote
-view and an explicit stall choice.
+`MarketActionOffers.BelongsTo` defines which quotes are this stall's: the participant view's `MarketId`, read
+from the canonical market quote record, names **this stall's market**, and the quote's merchant and goods
+agree with it. The open offer, the outcome list, saved-record text, review capture and confirmation all use
+it, so two same-goods stalls of one merchant are told apart, a merchant's quote for other goods is never
+listed as this stall's, and a bilateral paid quote (no market record) belongs to no stall. Archived records
+carry the market of their own recorded root (see [participant quote view](scheduled-trading.md#participant-quote-view)).
+
+`ContextStall(view, chosen)` addresses the player's explicit choice by stable market identity: that stall or
+nothing, even when it is out of reach or another stall is nearer, so no choice is retargeted. Without a
+choice it offers the stall available in person, then the first stall in identity order; that fallback is
+addressed only for display. `FarmMarketDraft.ChosenMarketId` is the explicit choice: the selector, a field
+pick, or opening a stall's panel while it is in reach (or a world's only stall) records it. With several stalls
+and none in reach, opening Offers only looks at one (`Look`): the selector stays on its prompt, nothing can be
+asked there, and closing the panel forgets it. An explicit choice is never downgraded. When it is out of reach,
+the blocker names a stall that is in reach and the Offers → Stall route instead of retargeting. In a world with
+several stalls the panel's stall selector (hidden with one stall) lists every stall by identity with its
+merchant, place and availability. Choosing another stall starts a fresh visit and clears earlier units, lot and
+review; it asks, shows and spends nothing. The cargo world also lets a pointer pick a merchant's stall through
+the field projection ([cargo presentation](cargo-presentation.md)).
 
 Any change of direction, units or lot discards a review, and so do Back, focus loss and controller
 disconnection. A review requires an open offer belonging to the stall on the chosen side, covering the
@@ -122,9 +134,9 @@ submitted, so its reason is established from the recorded state at the attempt r
 
 ## Boundaries
 
-- One stall and one commodity in a fresh world. Lived-save migration, the legacy merchant import, the
-  two-market cargo circuit, demand simulation and merchant routes remain separate obligations.
-  Multi-stall worlds need quote views that name their stall and an explicit stall choice (see above).
+- This `--markets` world has one stall and one commodity; the two-stall cargo world is bound natively in
+  [cargo presentation](cargo-presentation.md). Lived-save migration, demand simulation and merchant routes
+  remain separate obligations.
 - The windows are authored values for human reading in a single-player local session. Multiplayer timing,
   shared Wait and network delivery need their own admitted contracts.
 - Injected native routes and background rendering do not qualify physical devices, OS focus, art, audio or

@@ -50,6 +50,17 @@ named collaborators. [FarmCanvas](../../client/scripts/FarmCanvas.cs) and its
 paperdoll actors, gathering nodes, structures, daylight and target markers. The scene graph and
 Godot physics do not own authoritative movement, inventory, production or time.
 
+Each canvas frame names exactly one geometry mode, and every actor, object, target cue and camera limit uses
+that mode's projection: the fixed farm grid (`FarmCanvasCoordinates`, one admitted region and floor), the
+worksite/watercourse cutaway (`WorksiteCoordinates`), or the cargo world's
+[bounded region projection](cargo-presentation.md), built per frame from the regional observation published
+with that same view (observed regions, floor, openings, blockers and water) with the farm's origin and scale. A
+position outside its mode is refused rather than clamped or drawn at a plausible place; an unsupported regional
+view keeps the last coherent frame with a HUD notice instead of failing the session. The cargo projection also
+maps pointer picks back to authority positions after the input router permits ordinary exploration selection;
+the fixed modes keep their guards and bounds unchanged. The sight-complete `LocalWorldView` still lists every
+resident; the cargo frame presents only those standing in its observation.
+
 ## Runtime binding: semantic input and captured offers
 
 [FarmInputMap](../../client/scripts/FarmInputMap.cs) defines semantic actions.

@@ -1,0 +1,115 @@
+{
+  "Kind": "native-cargo-v1",
+  "Mode": "keyboard",
+  "Route": "keyboard",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: farm-start: camera limits differ from the observed extent plus empty HUD padding.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 593\n   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe.CheckAgreement(String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 415\n   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe.Exercise() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 130\n   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 104",
+  "Stage": "farm",
+  "Genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/fixtures-20261001T120533Z-e716d/cargo/genesis.ofc",
+  "InitialHash": "4F905EC3E8EC333FD5F977C4FAF195AFDF52BDD4AB62F507DA579446229192C3",
+  "FinalHash": "4F905EC3E8EC333FD5F977C4FAF195AFDF52BDD4AB62F507DA579446229192C3",
+  "PlayerActorId": "3cd9435ed6f2a39179746086cf87166e",
+  "MarlaMarketId": "1746504cd2ec900cd93cd155dbe96385",
+  "KeggaMarketId": "c36c23f7d9e54a44b5612b60f6e71228",
+  "BuyQuoteId": null,
+  "SellQuoteId": null,
+  "CargoLotId": null,
+  "TradeUnits": 2,
+  "Purses": {
+    "start": 200
+  },
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "Walks": [],
+  "Agreement": [],
+  "Checks": [],
+  "Inputs": [],
+  "WalkInputs": [],
+  "Observations": [
+    {
+      "Label": "opened",
+      "Hash": "4F905EC3E8EC333FD5F977C4FAF195AFDF52BDD4AB62F507DA579446229192C3",
+      "Step": 1,
+      "Purse": 200,
+      "Actors": [
+        {
+          "Id": "13a79e792e0941781e69c9d0a09e6014",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "220ee5f839bd02ffd44b784fa107cd1b",
+          "DisplayName": "Marla",
+          "X": 24704,
+          "Y": 89728,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "374589d471ee5f8a45d5096f4e55753c",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "3cd9435ed6f2a39179746086cf87166e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "d8c0e019e4c3d996740ee650b5c063d8",
+          "DisplayName": "Kegga Toolwright",
+          "X": 88960,
+          "Y": 35968,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "ee3de2fd54621802ddc8344eac77802c",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": false,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    }
+  ],
+  "Images": [],
+  "Display": "macOS",
+  "Focus": {
+    "Unfocusable": true,
+    "NativeFocused": false,
+    "ObservedNativeFocus": false,
+    "ObservedFocusTransitions": 0,
+    "FramesObserved": 107,
+    "StartupNoFocus": true
+  },
+  "Rendered": [],
+  "HistoryRead": null,
+  "StallChoice": null,
+  "Unfocusable": true,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "StartupNoFocus": true,
+  "IsLocallyPaused": true,
+  "IsWindowFocused": true,
+  "DurationMilliseconds": 1434,
+  "Limit": "Walking holds injected arrow keys through the ordinary input map; read-only route advice only chooses which key. Stall choice, trades and history use the production wheel and panel with injected keyboard events. Focus is injected through the fixture hook. Physical devices, OS focus, controller/pointer cargo routes, art acceptance, streaming, threat/escort and production gates remain open."
+}

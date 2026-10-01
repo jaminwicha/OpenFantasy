@@ -1,0 +1,17 @@
+{
+  "commit": "cf5c1ece712af77754bdc079e4290514e6b44f67",
+  "milestone": "codex/milestone-foreground-delegation-20261001",
+  "tests": "36 offline subprocess-contract tests pass in13.561s; no provider request",
+  "syncDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-foreground-skill-sync-zef7tmis",
+  "installedTransitions": 12,
+  "scope": [
+    "skills/cross-agent-delegation/scripts/run_claude_task.py",
+    "skills/cross-agent-delegation/tests/test_run_claude_task.py",
+    "skills/cross-agent-delegation/references/claude-code.md",
+    "skills/cross-agent-delegation/SKILL.md",
+    "manifests/delegation-skill-alignment.json"
+  ],
+  "providerBehavior": "Awaiting actual bounded assignment; offline tests prove settings/grants, not runtime provider behavior",
+  "officialSource": "https://code.claude.com/docs/en/env-vars",
+  "setupFriction": "First sync plan correctly refused the omitted changed test-companion hash; manifest then included all four owned source files."
+}

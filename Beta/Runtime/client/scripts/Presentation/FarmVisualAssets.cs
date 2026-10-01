@@ -32,13 +32,31 @@ internal sealed class FarmVisualAssets : IDisposable
 
     internal Texture2D Atlas { get; }
     internal int GroundAt(int x, int y) => _groundIds[y * FarmCanvasCoordinates.RegionWidth + x];
-    internal Texture2D ActorTexture(FarmSpriteKind kind) => kind switch
+
+    /// <summary>The farm's retained source floor tile identity at one of its own cells, or null outside that region.</summary>
+    internal int? SourceGroundAt(long cellX, long cellY)
+    {
+        long x = cellX - FarmCanvasCoordinates.MinimumCellX;
+        long y = cellY - FarmCanvasCoordinates.MinimumCellY;
+        return x >= 0 && y >= 0 && x < FarmCanvasCoordinates.RegionWidth && y < FarmCanvasCoordinates.RegionDepth
+            ? GroundAt((int)x, (int)y) : null;
+    }
+
+    internal Texture2D ActorTexture(FarmSpriteKind kind, string? appearanceKey = null) => kind switch
     {
         FarmSpriteKind.Wren => _wren,
         FarmSpriteKind.Squire => _squire,
         FarmSpriteKind.Wolf => WolfTexture(),
+        FarmSpriteKind.Merchant => MerchantTexture(appearanceKey),
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
+
+    /// <summary>Retained merchant appearances, composed on first use from their own copied source layers.</summary>
+    internal Cargo.CargoMerchantAppearances? Merchants { get; set; }
+
+    private Texture2D MerchantTexture(string? appearanceKey) =>
+        Merchants?.Texture(appearanceKey ?? throw new InvalidDataException("A merchant sprite requires its source appearance."))
+        ?? throw new InvalidDataException("No retained merchant appearances are bound to this view.");
 
     private Texture2D WolfTexture()
     {
@@ -72,5 +90,9 @@ internal sealed class FarmVisualAssets : IDisposable
     internal static Texture2D Texture(Resource resource, StringName key) => resource.GetMeta(key).AsGodotObject() as Texture2D
         ?? throw new InvalidDataException("A retained farm texture reference is missing: " + key);
 
-    public void Dispose() => _wren.Dispose();
+    public void Dispose()
+    {
+        _wren.Dispose();
+        Merchants?.Dispose();
+    }
 }

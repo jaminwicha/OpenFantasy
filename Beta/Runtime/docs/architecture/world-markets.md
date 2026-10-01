@@ -308,8 +308,10 @@ separately authored rule and windows of
   serves one fresh world. The [cargo circuit](cargo-circuit.md) is a second fresh profile-33 world with two
   counters joined by a walked local corridor; no demand simulation, traveling trader, fixed-venue geometry
   or migration exists.
-- Participants look up their own live and archived quote outcomes through participant views; the market
-  record's stock basis is never part of such a view.
+- Participants look up their own live and archived quote outcomes through participant views. A view names
+  the quote's market from the market quote record of the root that holds it (an archived outcome uses the
+  recorded root that published it); the record's stock basis and rule version are never part of such a view.
+  [Native trading](native-trading.md) associates quotes with stalls only through that market identity.
 - A sell quote's posted price reveals what the merchant chooses to post and can permit stock inference.
   Actor projections expose no stock-count field, balances, other actors' memories or unshown inventory.
   A showing reveals its own pins; a failed issuance under those pins gives no distinct quantity or

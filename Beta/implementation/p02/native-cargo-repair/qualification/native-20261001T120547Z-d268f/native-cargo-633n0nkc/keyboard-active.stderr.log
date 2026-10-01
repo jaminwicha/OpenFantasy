@@ -1,0 +1,27 @@
+ERROR: Native cargo probe failed: System.InvalidOperationException: farm-start: camera limits differ from the observed extent plus empty HUD padding.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 593
+   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe.CheckAgreement(String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 415
+   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe.Exercise() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 130
+   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 104
+   at: void OpenFantasy.Client.Cargo.CargoRoutePlayProbe+<_Ready>d__47.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:104)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void OpenFantasy.Client.Cargo.CargoRoutePlayProbe+<_Ready>d__47.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:104)
+       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [3] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [4] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [5] void System.Threading.Tasks.Task.RunContinuations(object)
+       [6] bool System.Threading.Tasks.Task`1.TrySetResult(TResult)
+       [7] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(System.Threading.Tasks.Task`1[TResult], TResult)
+       [8] void OpenFantasy.Client.MarketProbeDriver+<Until>d__28.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:153)
+       [9] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [10] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [11] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [12] void System.Threading.Tasks.Task.RunContinuations(object)
+       [13] bool System.Threading.Tasks.Task`1.TrySetResult(TResult)
+       [14] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(System.Threading.Tasks.Task`1[TResult], TResult)
+       [15] void OpenFantasy.Client.MarketProbeDriver+<Frame>d__30.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:165)
+       [16] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [17] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext(System.Threading.Thread)
+       [18] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)

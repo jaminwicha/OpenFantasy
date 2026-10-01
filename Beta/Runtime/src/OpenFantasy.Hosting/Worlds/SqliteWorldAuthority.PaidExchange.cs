@@ -8,6 +8,12 @@ namespace OpenFantasy.Hosting.Worlds;
 public sealed partial class SqliteWorldAuthority
 {
     /// <summary>
+    /// Test seam, null in every host: invoked while one recorded quote read holds the writer gate, so a test can keep
+    /// a real inspection inside the gate and prove which readers wait for it and which never do.
+    /// </summary>
+    internal Action? RecordedQuoteReadHoldsGate { get; set; }
+
+    /// <summary>
     /// Accepts one paid spot-exchange submission with its own independently supplied delivery. Under one
     /// lock it authorizes that delivery against the current world, returns the original receipt of an exact
     /// retry without another transfer, and otherwise selects and publishes the single-command advancing step.
@@ -68,6 +74,11 @@ public sealed partial class SqliteWorldAuthority
     /// live head; it is the same archive replay that serves saved proposals. Only an outcome the actor takes
     /// part in reaches the projection. Synchronous non-frame work: it must not run on a client frame or a
     /// latency-sensitive simulation callback. Damaged storage refuses and requires reopening.
+    /// <para>
+    /// An archived outcome is projected against the recorded root that published it, reconstructed by a second
+    /// verified replay against the same pinned head. That root still holds the canonical market quote record, so the
+    /// quote's market comes from history rather than from the live book, which no longer names it.
+    /// </para>
     /// </summary>
     internal T ReadRecordedPaidQuoteForController<T>(EntityId quoteId, EntityId actorId,
         TrustedCommandDelivery delivery, Func<WorldSnapshot, WorldPaidQuoteOutcome?, T> project)
@@ -77,6 +88,7 @@ public sealed partial class SqliteWorldAuthority
         lock (_gate)
         {
             EnsureAvailable();
+            RecordedQuoteReadHoldsGate?.Invoke();
             if (!_state.Inventory.CanControl(delivery, actorId))
             {
                 throw new AuthorityDispatchException("The delivery cannot access this actor's quotes.");
@@ -94,7 +106,17 @@ public sealed partial class SqliteWorldAuthority
                     throw new InvalidDataException("Quote retrieval does not match the pinned live head.");
                 }
                 WorldPaidQuoteOutcome? archived = recorded.Outcome;
-                return project(_state, archived is not null && archived.Quote.HasParticipant(actorId) ? archived : null);
+                if (archived is null || !archived.Quote.HasParticipant(actorId))
+                {
+                    return project(_state, null);
+                }
+                RecordedWorldState publishing = new WorldJournalRecovery().ReadRecordedState(_database, archived.WorldSequence);
+                if (publishing.SourceHeadRevision != _state.Revision || publishing.SourceHeadHash != _stateHash
+                    || publishing.State.Coordination?.PaidExchange?.FindOutcome(quoteId) is null)
+                {
+                    throw new InvalidDataException("The archived quote's publishing root does not match the pinned live head.");
+                }
+                return project(publishing.State, archived);
             }
             catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
             {

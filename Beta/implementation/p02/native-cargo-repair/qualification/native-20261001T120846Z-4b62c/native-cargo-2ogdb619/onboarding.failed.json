@@ -1,0 +1,131 @@
+{
+  "Kind": "native-cargo-onboarding-v1",
+  "Mode": "onboarding",
+  "Route": "keyboard",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: farm-to-bank: no ground route to CellCoordinate { X = 116, Y = 328, Z = 0 } (ExpansionLimit).\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.Cargo.CargoOnboardingPlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoOnboardingPlayProbe.cs:line 297\n   at OpenFantasy.Client.Cargo.CargoOnboardingPlayProbe.Walk(String label, IReadOnlyList\u00601 waypoints) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoOnboardingPlayProbe.cs:line 219\n   at OpenFantasy.Client.Cargo.CargoOnboardingPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoOnboardingPlayProbe.cs:line 97",
+  "Stage": "walk-to-bank",
+  "Save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/native-20261001T120846Z-4b62c/native-cargo-2ogdb619/onboarding.sqlite",
+  "Entry": "--cargo",
+  "SeedText": "cargo-circuit-world",
+  "PlayerActorId": "2ea7b628531f80b26aa49dc693eb3c28",
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 84096,
+    "Z": 256
+  },
+  "FinalBalance": 200,
+  "Checks": [
+    "The ordinary --cargo selection created a fresh save at its disposable path: no reward, quest or quote.",
+    "E, G, G, E talked to Wren, accepted and delivered her quest and closed: the earned reward is 200."
+  ],
+  "Inputs": [
+    {
+      "Stage": "opening",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "wren-quest",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "wren-quest",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wren-quest",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wren-quest",
+      "Route": "keyboard",
+      "Key": "E"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "walk-to-bank",
+      "Route": "keyboard",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "walk-to-bank",
+      "Route": "keyboard",
+      "Release": "Down"
+    }
+  ],
+  "Observations": [
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256
+      },
+      "Replans": 0
+    },
+    {
+      "Label": "reward",
+      "Reward": 200
+    }
+  ],
+  "Rendered": [
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 176,
+        "Y": 176
+      },
+      "Projected": {
+        "X": 176,
+        "Y": 176
+      },
+      "Drawn": {
+        "Shape": "96,320,0@1|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1
+        ],
+        "Columns": 1024,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "106ED3B24567BE2CB9D8BE76DBF5D9AB2963D5662F6221C1546CE56FEE15E619",
+        "Frame": 108
+      },
+      "Pixels": {
+        "Ground": "4b8143",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": null,
+        "Padding": {
+          "X": -24,
+          "Y": 176
+        }
+      }
+    }
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/native-20261001T120846Z-4b62c/native-cargo-2ogdb619/onboarding.onboarding-start.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/native-20261001T120846Z-4b62c/native-cargo-2ogdb619/onboarding.farm-to-wren-sample.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/native-20261001T120846Z-4b62c/native-cargo-2ogdb619/onboarding.wren-reward.png"
+  ],
+  "Focus": {
+    "Unfocusable": true,
+    "NativeFocused": false,
+    "ObservedNativeFocus": false,
+    "ObservedFocusTransitions": 0,
+    "FramesObserved": 287,
+    "StartupNoFocus": true
+  },
+  "IsLocallyPaused": false,
+  "DurationMilliseconds": 2815
+}

@@ -1,0 +1,14 @@
+{
+  "repository": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem",
+  "ref": "codex/checkpoint-before-foreground-delegation-20261001T112853Z",
+  "sourceHead": "a557436b9854635389f2b997f0f8fd54546d575e",
+  "ownedFiles": [
+    "skills/cross-agent-delegation/scripts/run_claude_task.py",
+    "skills/cross-agent-delegation/tests/test_run_claude_task.py",
+    "skills/cross-agent-delegation/references/claude-code.md",
+    "skills/cross-agent-delegation/SKILL.md",
+    "manifests/delegation-skill-alignment.json"
+  ],
+  "state": "Owned paths clean before change; unrelated ecosystem files preserved",
+  "unrelatedIndexSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

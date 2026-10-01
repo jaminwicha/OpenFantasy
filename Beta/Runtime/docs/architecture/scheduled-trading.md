@@ -74,6 +74,13 @@ agreed quantity and totals. It never carries:
 - the market's stock basis or the issuer's fill counter;
 - another inventory, balance or the world root.
 
+A quote issued under a market rule names its market (`MarketId`), read from the canonical
+`MarketQuoteRecord` of the same root that holds the quote or its outcome; a bilateral paid quote names none.
+Live views use the current market book. An archived outcome no longer has a live record, so the explicit
+recorded inspection projects it against the recorded root that published the outcome (a second verified
+replay against the same pinned head), whose market book still holds the record. The record's stock basis
+and rule version stay private. No client table or issuer-and-commodity guess supplies market identity.
+
 The issuer's presence revision is present only for the counterparty of an open quote that can actually reach
 the issuer where both stand. A distant issuer's current revision stays unknown. `PrepareAcceptance` builds
 the counterparty's exact `AcceptSpotQuoteIntent` from the inspected terms and that observed revision.

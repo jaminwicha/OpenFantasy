@@ -38,6 +38,11 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     private Button _close = null!;
     private OptionButton _lots = null!;
     private OptionButton _history = null!;
+    private OptionButton _stalls = null!;
+    private Control _stallRow = null!;
+    private Label _stallPlace = null!;
+    private LocalMarketStallView[] _stallRows = [];
+    private string[] _shownStalls = [];
     private Control? _returnFocus;
     private LocalWorldView? _view;
     private LocalMarketStallView? _stall;
@@ -51,11 +56,26 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     private bool _updating;
 
     internal FarmMarketDraft? Draft { get; set; }
+
+    /// <summary>Readable place names of stalls by market identity; labels only, never quote association.</summary>
+    internal IReadOnlyDictionary<EntityId, string> StallPlaces { get; set; } = new Dictionary<EntityId, string>();
     internal bool IsOpen => _root.Visible;
     internal event Action<FarmSemanticAction>? ActionRequested;
     internal event Action? AskRequested;
     internal event Action? CancelRequested;
     internal event Action<EntityId>? RecordRequested;
+
+    /// <summary>The player chose another stall by its market identity in the stall selector.</summary>
+    internal event Action<EntityId>? StallRequested;
+
+    /// <summary>"Marla's stall · Brasshollow", or the merchant's stall alone where no place is named.</summary>
+    internal string StallLabel(LocalWorldView view, EntityId marketId)
+    {
+        LocalMarketStallView? stall = view.Markets?.Stalls.FirstOrDefault(value => value.MarketId == marketId);
+        if (stall is null) return "an unknown stall";
+        string merchant = FarmMarketTerms.Merchant(view, stall);
+        return StallPlaces.TryGetValue(marketId, out string? place) ? $"{merchant}'s stall · {place}" : $"{merchant}'s stall";
+    }
 
     public override void _Ready()
     {
@@ -86,6 +106,10 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         _close = GetNode<Button>("%CloseMarket");
         _lots = GetNode<OptionButton>("%MarketLot");
         _history = GetNode<OptionButton>("%MarketHistory");
+        _stalls = GetNode<OptionButton>("%MarketStall");
+        _stallRow = GetNode<Control>("%StallRow");
+        _stallPlace = GetNode<Label>("%StallPlace");
+        _stalls.ItemSelected += ChooseStall;
         _buyMode.Pressed += () => ChooseDirection(LocalTradeDirection.Buy);
         _sellMode.Pressed += () => ChooseDirection(LocalTradeDirection.Sell);
         _less.Pressed += () => ChangeQuantity(-1);
@@ -101,7 +125,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         _record.Pressed += () => { if (_selectedRecord is { } id) RecordRequested?.Invoke(id); };
         _pause.Pressed += () => ActionRequested?.Invoke(FarmSemanticAction.TogglePause);
         _close.Pressed += () => ActionRequested?.Invoke(FarmSemanticAction.CloseMarket);
-        foreach (OptionButton dropdown in new[] { _lots, _history }) CancelWithController(dropdown.GetPopup());
+        foreach (OptionButton dropdown in new[] { _lots, _history, _stalls }) CancelWithController(dropdown.GetPopup());
     }
 
     /// <summary>
@@ -155,7 +179,8 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         string merchant = FarmMarketTerms.Merchant(view, _stall);
         string goods = FarmMarketTerms.Goods(view, _stall);
         bool running = runState == LocalWorldRunState.Running;
-        _title.Text = $"{merchant}'s stall · {goods}";
+        _title.Text = $"{StallLabel(view, _stall.MarketId)} · {goods}";
+        PresentStalls(view);
         _time.Text = (runState switch
         {
             LocalWorldRunState.Running => "World continuing",
@@ -174,6 +199,35 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         PresentOffer(view, offers, canCommit, merchant, goods);
         PresentHistory(view, merchant, goods);
         WireFocus();
+    }
+
+    /// <summary>
+    /// Several stalls: every one is listed by its stable market identity with its merchant, place and availability,
+    /// and the addressed stall stays the chosen one even when it is out of reach. A single stall needs no selector.
+    /// </summary>
+    private void PresentStalls(LocalWorldView view)
+    {
+        LocalMarketStallView[] stalls = view.Markets?.Stalls.ToArray() ?? [];
+        _stallRow.Visible = stalls.Length > 1;
+        bool chosen = Draft?.IsExplicit != false;
+        _stallPlace.Text = !chosen ? "No stall chosen and none is within reach: choose one here to address it"
+            : _stall!.IsAvailableInPerson ? "Within reach and trading"
+            : $"{FarmMarketTerms.Merchant(view, _stall)} is not within reach here";
+        if (!_stallRow.Visible || _stalls.GetPopup().Visible) return;
+        _updating = true;
+        _stallRows = stalls;
+        Fill(_stalls, ["Choose a stall…", .. _stallRows.Select(stall => StallLabel(view, stall.MarketId) + " · "
+            + FarmMarketTerms.Goods(view, stall) + (stall.IsAvailableInPerson ? " · within reach" : " · not within reach"))],
+            ref _shownStalls);
+        // A stall only being looked at is not a choice: the selector stays on its prompt until the player picks.
+        _stalls.Select(chosen ? Array.FindIndex(_stallRows, stall => stall.MarketId == _stall!.MarketId) + 1 : 0);
+        _updating = false;
+    }
+
+    private void ChooseStall(long index)
+    {
+        if (_updating || index <= 0 || index > _stallRows.Length) return;
+        StallRequested?.Invoke(_stallRows[index - 1].MarketId);
     }
 
     private void PresentChoices(LocalWorldView view, string goods)
@@ -214,7 +268,11 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         _cancel.Disabled = inquiry?.State != LocalTradeInquiryState.Waiting;
         _cancel.TooltipText = "Withdraw the waiting request. An offer already made stays open for its own time.";
         PresentCommit(_show, offers.GetValueOrDefault(FarmSemanticAction.ShowTradeLot), canCommit);
-        string status = FarmMarketTerms.Request(inquiry, step, running, merchant, goods);
+        // The session keeps one inquiry; it is described here only at the stall it was asked of.
+        LocalTradeInquiryView? own = inquiry?.Inquiry.MarketId == _stall!.MarketId ? inquiry : null;
+        string status = FarmMarketTerms.Request(own, step, running, merchant, goods);
+        if (inquiry is not null && own is null && inquiry.State == LocalTradeInquiryState.Waiting)
+            status += "\nYour request at another stall is still waiting; cancel it to ask here.";
         if (_stall!.OwnShowing is { } shown)
         {
             status += shown.IsLive && shown.MatchesOwnLot
@@ -350,7 +408,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     /// <summary>Explicit cyclic focus over the visible controls, so arrows, D-pad and Tab never leave the panel.</summary>
     private void WireFocus()
     {
-        Control[] chain = new Control[] { _buyMode, _sellMode, _lots, _less, _more, _show, _ask, _cancel, _review, _confirm,
+        Control[] chain = new Control[] { _stalls, _buyMode, _sellMode, _lots, _less, _more, _show, _ask, _cancel, _review, _confirm,
             _back, _history, _record, _pause, _close }.Where(control => control.IsVisibleInTree()).ToArray();
         string shape = string.Join(",", chain.Select(control => control.Name.ToString()));
         if (shape == _focusShape) return;

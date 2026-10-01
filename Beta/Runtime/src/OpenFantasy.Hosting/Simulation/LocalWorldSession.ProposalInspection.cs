@@ -1,12 +1,38 @@
 using OpenFantasy.Core;
+using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Worlds;
 
 namespace OpenFantasy.Hosting.Simulation;
+
+/// <summary>The outcome of one explicit saved-history check: the verified head and whether replay reproduced it.</summary>
+public sealed record LocalHistoryVerification(ulong Revision, bool ReproducesHead);
 
 public sealed partial class LocalWorldSession
 {
     private readonly LocalInspectionSlot<MaterialProposalView?> _proposalInspection =
         new("One proposal inspection is already awaiting its result.");
+    private Task<LocalHistoryVerification>? _historyVerification;
+
+    /// <summary>
+    /// Explicit integrity check of the saved history: one complete verified replay of the recorded journal to the
+    /// current head, in the background history slot and under the authority's writer gate, exactly like an archived
+    /// inspection. Only whether the replay reproduced the pinned head is returned; no recorded state leaves the host.
+    /// No step is selected while it reads, and published views stay readable throughout. A running check is shared.
+    /// </summary>
+    public Task<LocalHistoryVerification> VerifyRecordedHistoryAsync()
+    {
+        lock (_inputs)
+        {
+            EnsureInputAvailable();
+            if (_historyVerification is { IsCompleted: false } running) return running;
+            return _historyVerification = ReadHistoryAsync(() =>
+            {
+                WorldSnapshot head = _authority.ReadStateForHost();
+                RecordedWorldState recorded = _authority.ReadRecordedStateForHost(head.Revision);
+                return new LocalHistoryVerification(head.Revision, recorded.State.ContentHash == head.ContentHash);
+            });
+        }
+    }
 
     /// <summary>
     /// Explicit participant inspection, including archived outcomes. Starts no simulation step and
@@ -53,7 +79,7 @@ public sealed partial class LocalWorldSession
         // Stop prevents new inspection admission before this method is called. Waiting here keeps
         // the durable owner alive until a selected replay completes or a queued query is cancelled.
         Task?[] inspections;
-        lock (_inputs) { inspections = [_proposalInspection.Latest, _quoteInspection.Latest]; }
+        lock (_inputs) { inspections = [_proposalInspection.Latest, _quoteInspection.Latest, _historyVerification]; }
         foreach (Task? inspection in inspections)
         {
             if (inspection is null) { continue; }

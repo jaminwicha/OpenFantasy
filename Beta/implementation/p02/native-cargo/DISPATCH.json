@@ -1,0 +1,58 @@
+{
+  "status": "terminal_partial_requires_integration",
+  "startedUtc": "2026-10-01T10:20:21.620762+00:00",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-cargo-tmh0luen",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "contextSha256": "f4ed271c6c0da75b50d343c35df7b85bd30e01320f9d4a7cebbcdd99f2cb15df",
+  "timeoutSeconds": 5400,
+  "maxBudgetUsd": 45,
+  "automaticRetry": false,
+  "sessionId": 72643,
+  "contextPreflight": "verified",
+  "scopedWriteAccess": "verified by owned in-progress RESULT.md",
+  "returnedModelVerification": "pending terminal response",
+  "integration": "pending: required checks unfinished; reopening wait widened without acceptance; no live owned process; no model retry",
+  "exitCode": 1,
+  "adapterStatus": "permission_denied",
+  "elapsedSeconds": 2775.947,
+  "clientEstimatedCostUsd": 37.71694540000002,
+  "returnedModels": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 540,
+      "outputTokens": 264919,
+      "cacheReadInputTokens": 134698107,
+      "cacheCreationInputTokens": 684598,
+      "webSearchRequests": 0,
+      "costUSD": 37.71694540000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 109442,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [
+    {
+      "tool_name": "Bash",
+      "tool_use_id": "toolu_01P3J1gCLs4jhQLizTubXeJB",
+      "tool_input": {
+        "command": "python3 -c \"\nimport json\nd=json.load(open('/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/PROTECTED_APPLICATION.json'))\nimport collections\nc=collections.Counter('/'.join(k.split('/')[:5]) for k in d)\nprint(len(d)); print(c)\nprint([k for k in d if 'client' in k])\n\"",
+        "description": "Summarize protected application pins"
+      }
+    },
+    {
+      "tool_name": "Grep",
+      "tool_use_id": "toolu_01U9nTNBB9SNnQwpCRvhwA7N",
+      "tool_input": {
+        "pattern": "(?s)zz9unlikely.*qq8unlikely.*xx7unlikely.*ww6unlikely.*vv5.*uu4.*tt3",
+        "path": "/Users/alucinor/Workspace/Projects",
+        "output_mode": "count",
+        "-i": true,
+        "multiline": true
+      }
+    }
+  ],
+  "contextPostflight": "verified"
+}

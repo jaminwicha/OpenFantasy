@@ -24,7 +24,18 @@ internal sealed class FarmMarketDraft
 {
     private (EntityId World, EntityId Branch, EntityId Actor)? _scope;
 
+    /// <summary>The stall the panel addresses: an explicit choice, or a stall only being looked at (see <see cref="IsExplicit"/>).</summary>
     internal EntityId? MarketId { get; private set; }
+
+    /// <summary>
+    /// Whether <see cref="MarketId"/> is the player's explicit choice: picked in the selector or on the field, or the
+    /// stall in reach when its panel opened. A stall merely looked at while none is in reach is not a choice and is
+    /// released when the panel closes, so it never pins the wheel to an arbitrary stall.
+    /// </summary>
+    internal bool IsExplicit { get; private set; }
+
+    /// <summary>The explicit stall choice only; null when nothing has been chosen.</summary>
+    internal EntityId? ChosenMarketId => IsExplicit ? MarketId : null;
     internal LocalTradeDirection Direction { get; private set; } = LocalTradeDirection.Buy;
     internal ulong Quantity { get; private set; } = 1;
     internal EntityId? LotId { get; private set; }
@@ -34,7 +45,28 @@ internal sealed class FarmMarketDraft
     /// Starts a visit to one stall. Earlier unit and lot choices survive only for the same stall, world and player;
     /// a null direction keeps the current one. A reviewed offer never survives reopening the panel.
     /// </summary>
-    internal void Begin(LocalWorldView view, EntityId marketId, LocalTradeDirection? direction)
+    internal void Begin(LocalWorldView view, EntityId marketId, LocalTradeDirection? direction) =>
+        Visit(view, marketId, direction, explicitChoice: true);
+
+    /// <summary>
+    /// Looks at one stall without choosing it, as when Offers opens while no stall is within reach. Nothing can be asked
+    /// or committed there, and <see cref="ReleaseLook"/> forgets it again; an explicit choice is never downgraded.
+    /// </summary>
+    internal void Look(LocalWorldView view, EntityId marketId)
+    {
+        if (IsExplicit) return;
+        Visit(view, marketId, null, explicitChoice: false);
+    }
+
+    /// <summary>Forgets a stall that was only looked at; an explicit choice stays.</summary>
+    internal void ReleaseLook()
+    {
+        if (IsExplicit) return;
+        MarketId = null;
+        Review = null;
+    }
+
+    private void Visit(LocalWorldView view, EntityId marketId, LocalTradeDirection? direction, bool explicitChoice)
     {
         ArgumentNullException.ThrowIfNull(view);
         var scope = (view.WorldId, view.BranchId, view.PlayerActorId);
@@ -46,6 +78,7 @@ internal sealed class FarmMarketDraft
             Quantity = 1;
             LotId = null;
         }
+        IsExplicit = explicitChoice;
         if (direction is { } chosen) ChangeDirection(chosen);
         Review = null;
     }

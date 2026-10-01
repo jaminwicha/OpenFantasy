@@ -40,6 +40,18 @@ internal sealed partial class FarmHud : CanvasLayer
     /// <summary>Every button names a semantic action; the game's input router decides whether the context accepts it.</summary>
     internal event Action<FarmSemanticAction>? ActionRequested;
 
+    /// <summary>The field between the laid-out status header and action footer, in viewport coordinates.</summary>
+    internal Rect2 FieldViewportBounds
+    {
+        get
+        {
+            Rect2 viewport = GetViewport().GetVisibleRect();
+            float top = GetNode<Control>("Root/Header").GetGlobalRect().End.Y;
+            float bottom = GetNode<Control>("Root/Footer").GetGlobalRect().Position.Y;
+            return new Rect2(viewport.Position.X, top, viewport.Size.X, Math.Max(1, bottom - top));
+        }
+    }
+
     public override void _Ready()
     {
         _identity = GetNode<Label>("%Identity");

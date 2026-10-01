@@ -1,0 +1,11 @@
+{
+  "commit": "f3c7f77e4779ddee9ceb3ce6ebf23a0f373c68af",
+  "milestone": "codex/milestone-terrain-encoding-cache-20261001",
+  "scope": [
+    "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Terrain/TerrainCanonicalCacheTests.cs",
+    "Beta/Runtime/docs/architecture/identity-and-determinism.md",
+    "Beta/implementation/p02/terrain-encoding-cache"
+  ],
+  "evidence": "1756 Core passes; exact same-save recovery36.0548802s\u219218.766909s; native cargo gate remains open."
+}

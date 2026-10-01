@@ -83,6 +83,13 @@ instead of scanning the parent temporary directory. The lead may complete unfini
 under the same limits without rerunning the model assignment. These rules are shared upstream in
 the maintained cross-agent-delegation skill; neither permits a longer deadline or broader permissions.
 
+For long checks in print-mode delegation, use the maintained adapter's bounded foreground-command
+setting, with transport time for the check's existing limit plus report/shutdown overhead. This disables
+automatic backgrounding only for the assignment. It does not extend test, opening, process or acceptance
+deadlines or authorize extra commands. Observe terminal results before returning; a final response does
+not promise a later model wake-up. Avoid repeated model polling and never simulate a wait through broad
+searches or ungranted shell commands. Record actual behavior and friction before claiming efficiency.
+
 ## Runtime application style
 
 Apply the [world composition contract](Runtime/docs/architecture/world-composition.md): preserve

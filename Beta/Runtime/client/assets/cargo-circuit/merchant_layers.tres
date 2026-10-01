@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=12 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/body.png" id="body"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/race_01.png" id="race_01"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/race_02.png" id="race_02"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/hair_00.png" id="hair_00"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/hair_08.png" id="hair_08"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/outfit_04_a.png" id="outfit_04_a"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/outfit_04_b.png" id="outfit_04_b"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/outfit_02_a.png" id="outfit_02_a"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/outfit_02_b.png" id="outfit_02_b"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/acc_02.png" id="acc_02"]
+[ext_resource type="Texture2D" path="res://assets/cargo-circuit/layers/acc_03.png" id="acc_03"]
+
+[resource]
+metadata/body = ExtResource("body")
+metadata/race_01 = ExtResource("race_01")
+metadata/race_02 = ExtResource("race_02")
+metadata/hair_00 = ExtResource("hair_00")
+metadata/hair_08 = ExtResource("hair_08")
+metadata/outfit_04_a = ExtResource("outfit_04_a")
+metadata/outfit_04_b = ExtResource("outfit_04_b")
+metadata/outfit_02_a = ExtResource("outfit_02_a")
+metadata/outfit_02_b = ExtResource("outfit_02_b")
+metadata/acc_02 = ExtResource("acc_02")
+metadata/acc_03 = ExtResource("acc_03")

@@ -1,0 +1,7678 @@
+{
+  "Kind": "native-cargo-v1",
+  "Mode": "keyboard",
+  "Route": "keyboard",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: The stall choice is unavailable.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeEvidence.OpenStall(MarketProbeDriver driver, FarmGame game, FarmQuickWheel wheel, FarmSemanticAction choice) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeEvidence.cs:line 67\n   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe.OpenStall(FarmSemanticAction choice) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 418\n   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe.Exercise() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 167\n   at OpenFantasy.Client.Cargo.CargoRoutePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoRoutePlayProbe.cs:line 98",
+  "Stage": "choose-kegga",
+  "Genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/fixtures-20261001T104817Z-5fa74/cargo/genesis.ofc",
+  "InitialHash": "4F905EC3E8EC333FD5F977C4FAF195AFDF52BDD4AB62F507DA579446229192C3",
+  "FinalHash": "3DB033D1CAE83AF0C1D3E9FF7CECCFDCD3B9CCA199554686C2FBE4A74B73FE11",
+  "PlayerActorId": "3cd9435ed6f2a39179746086cf87166e",
+  "MarlaMarketId": "1746504cd2ec900cd93cd155dbe96385",
+  "KeggaMarketId": "c36c23f7d9e54a44b5612b60f6e71228",
+  "BuyQuoteId": "2cbd1e60f9476f9c0b927c62a6b69164",
+  "SellQuoteId": null,
+  "CargoLotId": "c852b85552417955a5edd88f9fec370d",
+  "TradeUnits": 2,
+  "Purses": {
+    "start": 200,
+    "afterBuy": 156
+  },
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 36192,
+    "Z": 256
+  },
+  "Walks": [
+    {
+      "Label": "farm-to-brasshollow",
+      "Waypoints": 4,
+      "Regions": [
+        0
+      ],
+      "Transitions": 0,
+      "Replans": 0,
+      "AdvancingSteps": 224,
+      "Seconds": 11.626,
+      "End": {
+        "X": 24960,
+        "Y": 89472,
+        "Z": 256
+      }
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Waypoints": 58,
+      "Regions": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "Transitions": 13,
+      "Replans": 0,
+      "AdvancingSteps": 3658,
+      "Seconds": 184.219,
+      "End": {
+        "X": 88704,
+        "Y": 36224,
+        "Z": 256
+      }
+    }
+  ],
+  "Agreement": [
+    {
+      "Label": "farm-start",
+      "Step": 1,
+      "Feet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 176
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 150
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 25,
+      "Feet": {
+        "X": 25984,
+        "Y": 84064,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 268
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 242
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 49,
+      "Feet": {
+        "X": 25984,
+        "Y": 84832,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 364
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 338
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 73,
+      "Feet": {
+        "X": 25984,
+        "Y": 85600,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 460
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 434
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 97,
+      "Feet": {
+        "X": 25984,
+        "Y": 86368,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 556
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 530
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 121,
+      "Feet": {
+        "X": 25984,
+        "Y": 87136,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 652
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 626
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 145,
+      "Feet": {
+        "X": 25984,
+        "Y": 87904,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 748
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 722
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 169,
+      "Feet": {
+        "X": 25984,
+        "Y": 88672,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 844
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 818
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 193,
+      "Feet": {
+        "X": 25984,
+        "Y": 89440,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 176,
+        "Y": 940
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow",
+      "Step": 217,
+      "Feet": {
+        "X": 25248,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 84,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "farm-to-brasshollow-arrived",
+      "Step": 225,
+      "Feet": {
+        "X": 24992,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 52,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 256,
+      "Feet": {
+        "X": 25664,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 136,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 280,
+      "Feet": {
+        "X": 26432,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 232,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        }
+      ],
+      "Camera": {
+        "X": 240,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 304,
+      "Feet": {
+        "X": 27200,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 328,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 328,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 328,
+      "Feet": {
+        "X": 27968,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 424,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 424,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 352,
+      "Feet": {
+        "X": 28736,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 520,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 520,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 376,
+      "Feet": {
+        "X": 29504,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 616,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 616,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 400,
+      "Feet": {
+        "X": 30272,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 712,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 712,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 424,
+      "Feet": {
+        "X": 31040,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 808,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 808,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 448,
+      "Feet": {
+        "X": 31808,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 904,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 904,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 472,
+      "Feet": {
+        "X": 32576,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1000,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1000,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-1",
+      "Step": 477,
+      "Feet": {
+        "X": 32736,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1020,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1020,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 497,
+      "Feet": {
+        "X": 33376,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1100,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1100,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 521,
+      "Feet": {
+        "X": 34144,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1196,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1196,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 545,
+      "Feet": {
+        "X": 34912,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1292,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1292,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 569,
+      "Feet": {
+        "X": 35680,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1388,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1388,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 593,
+      "Feet": {
+        "X": 36448,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1484,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1484,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 617,
+      "Feet": {
+        "X": 37216,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1580,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1580,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 641,
+      "Feet": {
+        "X": 37984,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1676,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1676,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 665,
+      "Feet": {
+        "X": 38752,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1772,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 96,
+          "Y": 320,
+          "Revision": 1
+        },
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1772,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": true
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 689,
+      "Feet": {
+        "X": 39520,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1868,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1868,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 713,
+      "Feet": {
+        "X": 40288,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 1964,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 1964,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-2",
+      "Step": 733,
+      "Feet": {
+        "X": 40928,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2044,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2044,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 738,
+      "Feet": {
+        "X": 41088,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2064,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2064,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 762,
+      "Feet": {
+        "X": 41856,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2160,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2160,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 786,
+      "Feet": {
+        "X": 42624,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2256,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2256,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 810,
+      "Feet": {
+        "X": 43392,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2352,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2352,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 834,
+      "Feet": {
+        "X": 44160,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2448,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2448,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 858,
+      "Feet": {
+        "X": 44928,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2544,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2544,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 882,
+      "Feet": {
+        "X": 45696,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2640,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2640,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 906,
+      "Feet": {
+        "X": 46464,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2736,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 128,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2736,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 930,
+      "Feet": {
+        "X": 47232,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2832,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2832,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 954,
+      "Feet": {
+        "X": 48000,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 2928,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 2928,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 978,
+      "Feet": {
+        "X": 48768,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3024,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3024,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-3",
+      "Step": 989,
+      "Feet": {
+        "X": 49120,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3068,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3068,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1003,
+      "Feet": {
+        "X": 49568,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3124,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3124,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1027,
+      "Feet": {
+        "X": 50336,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3220,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3220,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1051,
+      "Feet": {
+        "X": 51104,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3316,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3316,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1075,
+      "Feet": {
+        "X": 51872,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3412,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3412,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1099,
+      "Feet": {
+        "X": 52640,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3508,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3508,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1123,
+      "Feet": {
+        "X": 53408,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3604,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3604,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1147,
+      "Feet": {
+        "X": 54176,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3700,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3700,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1171,
+      "Feet": {
+        "X": 54944,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3796,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 160,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3796,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1195,
+      "Feet": {
+        "X": 55712,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3892,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3892,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1219,
+      "Feet": {
+        "X": 56480,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 3988,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 3988,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1243,
+      "Feet": {
+        "X": 57248,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4084,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4084,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-4",
+      "Step": 1245,
+      "Feet": {
+        "X": 57312,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4092,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4092,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1268,
+      "Feet": {
+        "X": 58048,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4184,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4184,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1292,
+      "Feet": {
+        "X": 58816,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4280,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4280,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1316,
+      "Feet": {
+        "X": 59584,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4376,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4376,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1340,
+      "Feet": {
+        "X": 60352,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4472,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4472,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1364,
+      "Feet": {
+        "X": 61120,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4568,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4568,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1388,
+      "Feet": {
+        "X": 61888,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4664,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4664,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1412,
+      "Feet": {
+        "X": 62656,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4760,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4760,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1436,
+      "Feet": {
+        "X": 63424,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4856,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 192,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4856,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1460,
+      "Feet": {
+        "X": 64192,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 4952,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 4952,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1484,
+      "Feet": {
+        "X": 64960,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5048,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5048,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-5",
+      "Step": 1501,
+      "Feet": {
+        "X": 65504,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5116,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5116,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1509,
+      "Feet": {
+        "X": 65760,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5148,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5148,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1533,
+      "Feet": {
+        "X": 66528,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5244,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5244,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1557,
+      "Feet": {
+        "X": 67296,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5340,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5340,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1581,
+      "Feet": {
+        "X": 68064,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5436,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5436,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1605,
+      "Feet": {
+        "X": 68832,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5532,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5532,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1629,
+      "Feet": {
+        "X": 69600,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5628,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5628,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1653,
+      "Feet": {
+        "X": 70368,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5724,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5724,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1677,
+      "Feet": {
+        "X": 71136,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5820,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 224,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5820,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1701,
+      "Feet": {
+        "X": 71904,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 5916,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 5916,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1725,
+      "Feet": {
+        "X": 72672,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6012,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6012,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1749,
+      "Feet": {
+        "X": 73440,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6108,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6108,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-6",
+      "Step": 1757,
+      "Feet": {
+        "X": 73696,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6140,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6140,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1774,
+      "Feet": {
+        "X": 74240,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6208,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6208,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1798,
+      "Feet": {
+        "X": 75008,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6304,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6304,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1822,
+      "Feet": {
+        "X": 75776,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6400,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6400,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1846,
+      "Feet": {
+        "X": 76544,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6496,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6496,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1870,
+      "Feet": {
+        "X": 77312,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6592,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6592,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1894,
+      "Feet": {
+        "X": 78080,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6688,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6688,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1918,
+      "Feet": {
+        "X": 78848,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6784,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6784,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1942,
+      "Feet": {
+        "X": 79616,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6880,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 256,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6880,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1966,
+      "Feet": {
+        "X": 80384,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 6976,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 6976,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 1990,
+      "Feet": {
+        "X": 81152,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7072,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7072,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-7",
+      "Step": 2013,
+      "Feet": {
+        "X": 81888,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7164,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7164,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2015,
+      "Feet": {
+        "X": 81952,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7172,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7172,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2039,
+      "Feet": {
+        "X": 82720,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7268,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7268,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2063,
+      "Feet": {
+        "X": 83488,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7364,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7364,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2087,
+      "Feet": {
+        "X": 84256,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7460,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7460,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2111,
+      "Feet": {
+        "X": 85024,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7556,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7556,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2135,
+      "Feet": {
+        "X": 85792,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7652,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7652,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2159,
+      "Feet": {
+        "X": 86560,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7748,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7748,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2183,
+      "Feet": {
+        "X": 87328,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7844,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 288,
+          "Y": 320,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7844,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2207,
+      "Feet": {
+        "X": 88096,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 7940,
+        "Y": 944
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7940,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2231,
+      "Feet": {
+        "X": 88704,
+        "Y": 89312,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 924
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 889
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2255,
+      "Feet": {
+        "X": 88704,
+        "Y": 88544,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 828
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 802
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2279,
+      "Feet": {
+        "X": 88704,
+        "Y": 87776,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 732
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 706
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2303,
+      "Feet": {
+        "X": 88704,
+        "Y": 87008,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 636
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 610
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2327,
+      "Feet": {
+        "X": 88704,
+        "Y": 86240,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 540
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 514
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2351,
+      "Feet": {
+        "X": 88704,
+        "Y": 85472,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 444
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 418
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2375,
+      "Feet": {
+        "X": 88704,
+        "Y": 84704,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 348
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 322
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2399,
+      "Feet": {
+        "X": 88704,
+        "Y": 83936,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 252
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 226
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2423,
+      "Feet": {
+        "X": 88704,
+        "Y": 83168,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 156
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 130
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2447,
+      "Feet": {
+        "X": 88704,
+        "Y": 82400,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 60
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": 34
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-8",
+      "Step": 2462,
+      "Feet": {
+        "X": 88704,
+        "Y": 81920,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": 0
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -26
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2472,
+      "Feet": {
+        "X": 88704,
+        "Y": 81600,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -40
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -66
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2496,
+      "Feet": {
+        "X": 88704,
+        "Y": 80832,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -136
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -162
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2520,
+      "Feet": {
+        "X": 88704,
+        "Y": 80064,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -232
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -258
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2544,
+      "Feet": {
+        "X": 88704,
+        "Y": 79296,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -328
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -354
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2568,
+      "Feet": {
+        "X": 88704,
+        "Y": 78528,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -424
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -450
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2592,
+      "Feet": {
+        "X": 88704,
+        "Y": 77760,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -520
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -546
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2616,
+      "Feet": {
+        "X": 88704,
+        "Y": 76992,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -616
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -642
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2640,
+      "Feet": {
+        "X": 88704,
+        "Y": 76224,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -712
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 320,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -738
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2664,
+      "Feet": {
+        "X": 88704,
+        "Y": 75456,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -808
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -834
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2688,
+      "Feet": {
+        "X": 88704,
+        "Y": 74688,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -904
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -930
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2712,
+      "Feet": {
+        "X": 88704,
+        "Y": 73920,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1000
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1026
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-9",
+      "Step": 2718,
+      "Feet": {
+        "X": 88704,
+        "Y": 73728,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1024
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1050
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2737,
+      "Feet": {
+        "X": 88704,
+        "Y": 73120,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1100
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1126
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2761,
+      "Feet": {
+        "X": 88704,
+        "Y": 72352,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1196
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1222
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2785,
+      "Feet": {
+        "X": 88704,
+        "Y": 71584,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1292
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1318
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2809,
+      "Feet": {
+        "X": 88704,
+        "Y": 70816,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1388
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1414
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2833,
+      "Feet": {
+        "X": 88704,
+        "Y": 70048,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1484
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1510
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2857,
+      "Feet": {
+        "X": 88704,
+        "Y": 69280,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1580
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1606
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2881,
+      "Feet": {
+        "X": 88704,
+        "Y": 68512,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1676
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1702
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2905,
+      "Feet": {
+        "X": 88704,
+        "Y": 67744,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1772
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 288,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1798
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2929,
+      "Feet": {
+        "X": 88704,
+        "Y": 66976,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1868
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1894
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2953,
+      "Feet": {
+        "X": 88704,
+        "Y": 66208,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -1964
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -1990
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-10",
+      "Step": 2974,
+      "Feet": {
+        "X": 88704,
+        "Y": 65536,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2048
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2074
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 2978,
+      "Feet": {
+        "X": 88704,
+        "Y": 65408,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2064
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2090
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3002,
+      "Feet": {
+        "X": 88704,
+        "Y": 64640,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2160
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2186
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3026,
+      "Feet": {
+        "X": 88704,
+        "Y": 63872,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2256
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2282
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3050,
+      "Feet": {
+        "X": 88704,
+        "Y": 63104,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2352
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2378
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3074,
+      "Feet": {
+        "X": 88704,
+        "Y": 62336,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2448
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2474
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3098,
+      "Feet": {
+        "X": 88704,
+        "Y": 61568,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2544
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2570
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3122,
+      "Feet": {
+        "X": 88704,
+        "Y": 60800,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2640
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2666
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3146,
+      "Feet": {
+        "X": 88704,
+        "Y": 60032,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2736
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 256,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2762
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3170,
+      "Feet": {
+        "X": 88704,
+        "Y": 59264,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2832
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2858
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3194,
+      "Feet": {
+        "X": 88704,
+        "Y": 58496,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -2928
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -2954
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3218,
+      "Feet": {
+        "X": 88704,
+        "Y": 57728,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3024
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3050
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-11",
+      "Step": 3230,
+      "Feet": {
+        "X": 88704,
+        "Y": 57344,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3072
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3098
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3243,
+      "Feet": {
+        "X": 88704,
+        "Y": 56928,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3124
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3150
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3267,
+      "Feet": {
+        "X": 88704,
+        "Y": 56160,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3220
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3246
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3291,
+      "Feet": {
+        "X": 88704,
+        "Y": 55392,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3316
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3342
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3315,
+      "Feet": {
+        "X": 88704,
+        "Y": 54624,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3412
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3438
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3339,
+      "Feet": {
+        "X": 88704,
+        "Y": 53856,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3508
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3534
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3363,
+      "Feet": {
+        "X": 88704,
+        "Y": 53088,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3604
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3630
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3387,
+      "Feet": {
+        "X": 88704,
+        "Y": 52320,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3700
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3726
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3411,
+      "Feet": {
+        "X": 88704,
+        "Y": 51552,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3796
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 224,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3822
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3435,
+      "Feet": {
+        "X": 88704,
+        "Y": 50784,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3892
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -3918
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3459,
+      "Feet": {
+        "X": 88704,
+        "Y": 50016,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -3988
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4014
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3483,
+      "Feet": {
+        "X": 88704,
+        "Y": 49248,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4084
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4110
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-12",
+      "Step": 3486,
+      "Feet": {
+        "X": 88704,
+        "Y": 49152,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4096
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4122
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3508,
+      "Feet": {
+        "X": 88704,
+        "Y": 48448,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4184
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4210
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3532,
+      "Feet": {
+        "X": 88704,
+        "Y": 47680,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4280
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4306
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": false
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3556,
+      "Feet": {
+        "X": 88704,
+        "Y": 46912,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4376
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4402
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3580,
+      "Feet": {
+        "X": 88704,
+        "Y": 46144,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4472
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4498
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3604,
+      "Feet": {
+        "X": 88704,
+        "Y": 45376,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4568
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4594
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3628,
+      "Feet": {
+        "X": 88704,
+        "Y": 44608,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4664
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4690
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3652,
+      "Feet": {
+        "X": 88704,
+        "Y": 43840,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4760
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4786
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3676,
+      "Feet": {
+        "X": 88704,
+        "Y": 43072,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4856
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 192,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4882
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3700,
+      "Feet": {
+        "X": 88704,
+        "Y": 42304,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -4952
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -4978
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3724,
+      "Feet": {
+        "X": 88704,
+        "Y": 41536,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5048
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5074
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-region-13",
+      "Step": 3742,
+      "Feet": {
+        "X": 88704,
+        "Y": 40960,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5120
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5146
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3749,
+      "Feet": {
+        "X": 88704,
+        "Y": 40736,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5148
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5174
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3773,
+      "Feet": {
+        "X": 88704,
+        "Y": 39968,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5244
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5270
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3797,
+      "Feet": {
+        "X": 88704,
+        "Y": 39200,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5340
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5366
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3821,
+      "Feet": {
+        "X": 88704,
+        "Y": 38432,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5436
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5462
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3845,
+      "Feet": {
+        "X": 88704,
+        "Y": 37664,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5532
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5558
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford",
+      "Step": 3869,
+      "Feet": {
+        "X": 88704,
+        "Y": 36896,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5628
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5654
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    },
+    {
+      "Label": "brasshollow-to-gearford-arrived",
+      "Step": 3889,
+      "Feet": {
+        "X": 88704,
+        "Y": 36256,
+        "Z": 256
+      },
+      "Canvas": {
+        "X": 8016,
+        "Y": -5708
+      },
+      "Regions": [
+        {
+          "X": 320,
+          "Y": 128,
+          "Revision": 0
+        },
+        {
+          "X": 320,
+          "Y": 160,
+          "Revision": 0
+        }
+      ],
+      "Camera": {
+        "X": 7952,
+        "Y": -5734
+      },
+      "Merchants": [
+        {
+          "MerchantSourceId": "marla",
+          "Drawn": false
+        },
+        {
+          "MerchantSourceId": "kegga",
+          "Drawn": true
+        }
+      ]
+    }
+  ],
+  "Checks": [
+    "The target cue is drawn at the selected target\u0027s projected feet and clears without a command.",
+    "The exported fixture opens paused at the farm with earned funds; Escape resumes ordinary time.",
+    "farm-to-brasshollow: held arrow keys walked 0 region transitions with agreeing ground, actors and camera.",
+    "At Brasshollow the wheel opened Marla\u0027s stall by its market identity; two rations were asked, reviewed and bought at the exact quoted total.",
+    "brasshollow-to-gearford: held arrow keys walked 13 region transitions with agreeing ground, actors and camera."
+  ],
+  "Inputs": [
+    {
+      "Stage": "farm",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "farm",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "farm",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "MarketMore",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "MarketMore",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "MarketMore",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy-marla",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "choose-kegga",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "choose-kegga",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "choose-kegga",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "choose-kegga",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "choose-kegga",
+      "Route": "keyboard",
+      "Key": "Down"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "walk-to-brasshollow",
+      "Route": "keyboard",
+      "Hold": "Down",
+      "Step": 1
+    },
+    {
+      "Stage": "walk-to-brasshollow",
+      "Route": "keyboard",
+      "Release": "Down",
+      "Step": 193
+    },
+    {
+      "Stage": "walk-to-brasshollow",
+      "Route": "keyboard",
+      "Hold": "Left",
+      "Step": 193
+    },
+    {
+      "Stage": "walk-to-brasshollow",
+      "Route": "keyboard",
+      "Release": "Left",
+      "Step": 225
+    },
+    {
+      "Stage": "walk-outbound",
+      "Route": "keyboard",
+      "Hold": "Right",
+      "Step": 231
+    },
+    {
+      "Stage": "walk-outbound",
+      "Route": "keyboard",
+      "Release": "Right",
+      "Step": 2225
+    },
+    {
+      "Stage": "walk-outbound",
+      "Route": "keyboard",
+      "Hold": "Up",
+      "Step": 2225
+    },
+    {
+      "Stage": "walk-outbound",
+      "Route": "keyboard",
+      "Release": "Up",
+      "Step": 3889
+    }
+  ],
+  "Observations": [
+    {
+      "Label": "opened",
+      "Hash": "4F905EC3E8EC333FD5F977C4FAF195AFDF52BDD4AB62F507DA579446229192C3",
+      "Step": 1,
+      "Purse": 200,
+      "Actors": [
+        {
+          "Id": "13a79e792e0941781e69c9d0a09e6014",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "220ee5f839bd02ffd44b784fa107cd1b",
+          "DisplayName": "Marla",
+          "X": 24704,
+          "Y": 89728,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "374589d471ee5f8a45d5096f4e55753c",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "3cd9435ed6f2a39179746086cf87166e",
+          "DisplayName": "Traveler",
+          "X": 25984,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "d8c0e019e4c3d996740ee650b5c063d8",
+          "DisplayName": "Kegga Toolwright",
+          "X": 88960,
+          "Y": 35968,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "ee3de2fd54621802ddc8344eac77802c",
+          "DisplayName": "Wren",
+          "X": 25984,
+          "Y": 83072,
+          "PresenceRevision": 0
+        }
+      ],
+      "Quotes": [],
+      "Lots": [],
+      "Showing": null,
+      "InPerson": false,
+      "Request": null,
+      "Review": null,
+      "IsLocallyPaused": true,
+      "HasPendingAction": false,
+      "IsMarketOpen": false,
+      "IsWheelOpen": false,
+      "Focus": null
+    },
+    {
+      "Label": "target-cue",
+      "Target": "Wren",
+      "Cue": "(176, 144)"
+    },
+    {
+      "Label": "filled-2cbd1e60f9476f9c0b927c62a6b69164",
+      "Hash": "7DB9D980FDF0141A0C636132B4742C34D01120DA410901512FF34CF5E0255B60",
+      "Step": 231,
+      "Purse": 156,
+      "Actors": [
+        {
+          "Id": "13a79e792e0941781e69c9d0a09e6014",
+          "DisplayName": "Bramble Wolf",
+          "X": 25728,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "220ee5f839bd02ffd44b784fa107cd1b",
+          "DisplayName": "Marla",
+          "X": 24704,
+          "Y": 89728,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "374589d471ee5f8a45d5096f4e55753c",
+          "DisplayName": "Bramble Wolf",
+          "X": 26240,
+          "Y": 83328,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "3cd9435ed6f2a39179746086cf87166e",
+          "DisplayName": "Traveler",
+          "X": 24928,
+          "Y": 89472,
+          "PresenceRevision": 225
+        },
+        {
+          "Id": "d8c0e019e4c3d996740ee650b5c063d8",
+          "DisplayName": "Kegga Toolwright",
+          "X": 88960,
+          "Y": 35968,
+          "PresenceRevision": 0
+        },
+        {
+          "Id": "ee3de2fd54621802ddc8344eac77802c",
+          "DisplayName": "Wren",
+          "X": 27264,
+          "Y": 83328,
+          "PresenceRevision": 48
+        }
+      ],
+      "Quotes": [
+        {
+          "Id": "2cbd1e60f9476f9c0b927c62a6b69164",
+          "Side": "IssuerSells",
+          "Status": "Filled",
+          "UnitPrice": 22,
+          "QuantityAllowance": 2,
+          "IssuedAtStep": 229,
+          "ExpiresAtStep": 1429,
+          "ObservedIssuerRevision": null,
+          "FilledQuantity": 2
+        }
+      ],
+      "Lots": [
+        {
+          "Id": "c852b85552417955a5edd88f9fec370d",
+          "Revision": 0,
+          "Quantity": 2
+        }
+      ],
+      "Showing": null,
+      "InPerson": true,
+      "Request": {
+        "State": "Offered",
+        "Quantity": 2,
+        "Quote": "2cbd1e60f9476f9c0b927c62a6b69164"
+      },
+      "Review": {
+        "Quote": "2cbd1e60f9476f9c0b927c62a6b69164",
+        "Units": 2,
+        "ObservedIssuerRevision": 0
+      },
+      "IsLocallyPaused": false,
+      "HasPendingAction": false,
+      "IsMarketOpen": true,
+      "IsWheelOpen": false,
+      "Focus": "ConfirmTrade"
+    }
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/native-20261001T104835Z-2ea7d/native-cargo-kyura5oo/keyboard.farm-start.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/native-20261001T104835Z-2ea7d/native-cargo-kyura5oo/keyboard.brasshollow.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/native-20261001T104835Z-2ea7d/native-cargo-kyura5oo/keyboard.brasshollow-bought.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/native-20261001T104835Z-2ea7d/native-cargo-kyura5oo/keyboard.corridor-boundary.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/native-20261001T104835Z-2ea7d/native-cargo-kyura5oo/keyboard.gearford.png"
+  ],
+  "Display": "macOS",
+  "FocusRequests": 0,
+  "Unfocusable": true,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "StartupNoFocus": true,
+  "IsLocallyPaused": false,
+  "IsWindowFocused": true,
+  "DurationMilliseconds": 197973,
+  "Limit": "Walking holds injected arrow keys through the ordinary input map; read-only route advice only chooses which key. Stall choice, trades and history use the production wheel and panel with injected keyboard events. Focus is injected through the fixture hook. Physical devices, OS focus, controller/pointer cargo routes, art acceptance, streaming, threat/escort and production gates remain open."
+}

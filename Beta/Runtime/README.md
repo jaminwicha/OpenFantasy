@@ -676,12 +676,44 @@ the quest reward and re-review; re-review after Wren returns). `NativeTradingBou
 `OPENFANTASY_NATIVE_TRADING_BOUNDARY_RESULTS` and authenticates the refusal reason from the recorded
 state at the attempt, the single later acceptance and its exact deltas.
 
-## Cargo circuit (managed only)
+## Cargo circuit
 
 `CargoWorldAdmission.CreateEmbedded` composes a separate fresh cargo world: the same farm plus Marla in
 Brasshollow (eight rations, no purse) and Kegga Toolwright in Gearford (no rations, an 80-gil purse) at their
-retained tiles, joined by an authored fourteen-region corridor. It has no play entry or native scene yet; the
-fixed farm renderer cannot show it. `CargoCircuitJourneyTests` drives the whole loop through session cutoffs
+retained tiles, joined by an authored fourteen-region corridor.
+
+Play it natively through its own entry scene:
+`godot --path client res://scenes/NativeCargo.tscn -- --cargo [SAVE]` (default save
+`user://worlds/openfantasy-cargo.sqlite`). A new save is created fresh; an existing save opens only when it is
+this same cargo world, and no other save is upgraded or relabeled. Earn Wren's quest reward (walk to her, **E**
+to talk, **G** to accept, **G** to deliver, **E** to close), then walk down-screen (increasing Y) to Marla's stall
+in Brasshollow, and from there follow the road east and then a long way up-screen (decreasing Y) to Kegga in
+Gearford. The view draws only the regions near you, from their actual terrain: openings and channels by depth,
+banks above your floor as raised blockers, committed water with the watercourse surface, and your own work
+target outlined. The farm's breach divider can be mined (**Q** selects it, **V** opens its mining action) and the
+released water is drawn as it settles. Marla and Kegga appear in their own original appearances.
+
+**V** then **Q** reaches the Market page as in `--markets`. Opening **Offers** while no stall is within reach only
+looks at a stall; choose one under the panel's **Stall** selector (it lists both stalls with place and reach) or
+walk to a merchant, whose stall is chosen when you open it within reach. A chosen stall stays chosen while you
+travel: at Gearford with Marla chosen, the wheel says Kegga's stall is here and to choose it under Offers → Stall.
+A left click on a merchant also chooses that merchant's stall during ordinary unpaused exploration. Nothing is
+asked, shown or confirmed for you. A spot that cannot be shown on one supported floor keeps the last view with a
+notice; it never closes the game.
+
+`NativeCargoFixtureTests` earns the quest reward in a fresh cargo world; with `OPENFANTASY_NATIVE_CARGO_FIXTURES`
+naming a fresh directory it exports `save.sqlite`, `genesis.ofc`, `before.ofc` and `metadata.json`.
+`tools/check_native_cargo.py --dotnet <path> --godot <path> --fixtures <directory> --output <json> [--rendered]`
+walks the route with held arrow keys (farm → Brasshollow → Gearford → Brasshollow), opens Offers at the farm
+without pinning a stall, buys, runs a complete saved-history replay while frames keep rendering, shows, sells and
+reads saved records through the production wheel and panel, checks projection agreement plus settled actor
+transforms, last-drawn terrain and framebuffer pixels, then reopens the save copy in a separate paused process. A
+third process uses the production `--cargo` selection on a fresh disposable save (`--cargo-onboarding-probe SAVE
+REPORT`): Wren's quest by keys, three wheel mining actions and the released water, then the walk to Marla. Its
+manifest feeds `NativeCargoResultTests` through `OPENFANTASY_NATIVE_CARGO_RESULTS`. See
+[cargo presentation](docs/architecture/cargo-presentation.md).
+
+`CargoCircuitJourneyTests` drives the whole loop through session cutoffs
 (an inherited wolf fight to release, quest reward, purchase, 457-cell walk with a save/reopen at the corner,
 showing and sale, walk back) and, when `OPENFANTASY_CARGO_CIRCUIT_EVIDENCE` names a fresh absolute directory,
 exports snapshots, saves and `results.json` (including the declared corridor overlays and journal checkpoint

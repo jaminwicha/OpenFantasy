@@ -159,9 +159,10 @@ buyer and seller accounts.
 
 ## Presentation and remaining joins
 
-The fixed farm renderer is not used for this world. Native presentation must consume actual observed
-regions with camera-relative drawing, distinguish several stalls by identity and let the player choose one.
-The corridor threat join must admit an encounter whose entry geometry and aftermath lie on the
+The fixed farm grid does not present this world. [Cargo presentation](cargo-presentation.md) draws the
+player's bounded observation of actual regions through one projection, composes Marla and Kegga from their
+own source appearances, and lets the player choose either stall by its market identity; the `--cargo` entry
+opens the world natively. The corridor threat join must admit an encounter whose entry geometry and aftermath lie on the
 `bandit_camp` crossing cells (x=346, y∈[305,317)); escort and guard wages, traveling NPC traders, lived
 migration and multiplayer are separate joins, and no narration stands in for them. The sixteen-region local
 bound is fixed and fifteen are used, so a corridor encounter footprint, escort staging or town layout needs

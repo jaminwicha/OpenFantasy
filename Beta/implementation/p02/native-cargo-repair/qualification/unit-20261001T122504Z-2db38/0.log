@@ -1,0 +1,36 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.25]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.67]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.83]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoCameraFramingTests.Resizing_or_expanding_the_footer_changes_framing_without_moving_world_coordinates [11 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoCameraFramingTests.An_invalid_field_or_zoom_is_refused [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoCameraFramingTests.Observed_edges_frame_the_actor_between_the_real_hud_panels(x: 0, y: 0) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoCameraFramingTests.Observed_edges_frame_the_actor_between_the_real_hud_panels(x: 512, y: 512) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoCameraFramingTests.Observed_edges_frame_the_actor_between_the_real_hud_panels(x: 1023.99, y: 1023.99) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoStallChoiceTests.A_single_stall_world_still_chooses_its_only_stall_on_opening [722 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoViewProjectionTests.The_observation_is_local_and_unsupported_or_distant_positions_fail_closed [1 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoStallIdentityTests.A_pointer_pick_maps_back_through_the_projection_to_the_one_stall_drawn_there [1 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoViewProjectionTests.Observed_ground_carries_no_material_lineage_or_other_floor [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoStallChoiceTests.Opening_offers_at_the_farm_looks_without_pinning_and_explicit_choices_are_never_retargeted [317 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoStallIdentityTests.Merchants_compose_their_own_source_appearances_in_the_original_layer_order [21 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoViewProjectionTests.Moving_the_observed_window_never_moves_an_authority_position_on_the_canvas [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoViewProjectionTests.Farm_cells_keep_the_farm_embedding_and_pointer_mapping_is_the_exact_inverse [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoStallIdentityTests.An_explicit_stall_choice_is_kept_by_identity_and_never_retargeted [45 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoStallIdentityTests.A_quote_belongs_only_to_the_stall_its_canonical_market_record_names [47 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.RegionalFramePublicationTests.Frame_reads_stay_responsive_while_a_real_recorded_inspection_holds_the_writer_gate [1 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.CargoProductionSelectionTests.The_production_cargo_selection_creates_reopens_and_refuses_foreign_saves_unchanged [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.RegionalFramePublicationTests.Ordinary_earned_mining_and_released_water_reach_the_published_regional_view [3 s]
+[xUnit.net 00:00:07.04]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.RegionalFramePublicationTests.Legal_floors_stay_presentable_and_unsupported_stances_are_an_explicit_absence [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.RegionalFramePublicationTests.The_cargo_genesis_observation_presents_the_breach_channel_water_divider_and_work_target [15 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.MarketQuoteIdentityTests.Live_and_archived_quotes_name_their_market_from_the_canonical_record [6 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.MarketQuoteIdentityTests.The_participant_view_exposes_the_market_but_never_its_pricing_basis [< 1 ms]
+
+Test Run Successful.
+Total tests: 22
+     Passed: 22
+ Total time: 7.6337 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/unit-20261001T122504Z-2db38/unit.trx

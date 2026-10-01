@@ -1,0 +1,16 @@
+{
+  "sourceHead": "f3c7f77e4779ddee9ceb3ce6ebf23a0f373c68af",
+  "deliverySnapshot": "6061a440b1e4d242781e1caa9fb446aaa617da1e",
+  "leadCheckpoint": "281efa36d47f6aa8bd44bbd06ef8f4b982dd1926",
+  "additionalHostOwnership": [
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.ProposalInspection.cs",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.Trading.cs"
+  ],
+  "corePinnedFiles": 709,
+  "protectedExistingTests": 561,
+  "nativeOpeningSeconds": 30,
+  "nativeWrapperSeconds": 900,
+  "transportForegroundSeconds": 960
+}

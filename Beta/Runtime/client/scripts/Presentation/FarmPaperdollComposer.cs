@@ -3,6 +3,9 @@ using Godot;
 
 namespace OpenFantasy.Client.Presentation;
 
+/// <summary>One grayscale layer sheet and the source palette ramp (family and index) that tints it.</summary>
+internal sealed record FarmPaperdollLayer(Texture2D Sheet, string PaletteFamily, int PaletteIndex);
+
 /// <summary>Reuses the original grayscale-ramp composition and exact Wren layer order.</summary>
 internal sealed class FarmPaperdollComposer
 {
@@ -26,21 +29,33 @@ internal sealed class FarmPaperdollComposer
         }
     }
 
-    internal ImageTexture ComposeWren(Resource assets)
+    internal ImageTexture ComposeWren(Resource assets) => Compose([
+        new(FarmVisualAssets.Texture(assets, "body"), "skins", 5),
+        new(FarmVisualAssets.Texture(assets, "outfit_a"), "outfitColors", 10),
+        new(FarmVisualAssets.Texture(assets, "outfit_b"), "outfitColors", 10),
+        new(FarmVisualAssets.Texture(assets, "hair"), "hairColors", 13),
+        // Original race index zero adds no race layer; the accessory uses outfit B's palette.
+        new(FarmVisualAssets.Texture(assets, "accessory"), "outfitColors", 10)]);
+
+    /// <summary>Blends grayscale layer sheets bottom to top, each through one named four-colour source ramp.</summary>
+    internal ImageTexture Compose(IReadOnlyList<FarmPaperdollLayer> layers)
     {
         using Image canvas = Image.CreateEmpty(SheetWidth, SheetHeight, false, Image.Format.Rgba8);
-        Blend(canvas, FarmVisualAssets.Texture(assets, "body"), Ramp("skins", 5));
-        Blend(canvas, FarmVisualAssets.Texture(assets, "outfit_a"), Ramp("outfitColors", 10));
-        Blend(canvas, FarmVisualAssets.Texture(assets, "outfit_b"), Ramp("outfitColors", 10));
-        Blend(canvas, FarmVisualAssets.Texture(assets, "hair"), Ramp("hairColors", 13));
-        // Original race index zero adds no race layer; the accessory uses outfit B's palette.
-        Blend(canvas, FarmVisualAssets.Texture(assets, "accessory"), Ramp("outfitColors", 10));
+        foreach (FarmPaperdollLayer layer in layers)
+        {
+            Blend(canvas, layer.Sheet, Ramp(layer.PaletteFamily, layer.PaletteIndex));
+        }
         return ImageTexture.CreateFromImage(canvas);
     }
 
     private Color[] Ramp(string family, int index)
     {
-        JsonElement values = _palettes.GetProperty(family)[index];
+        JsonElement ramps = _palettes.GetProperty(family);
+        if (index < 0 || index >= ramps.GetArrayLength())
+        {
+            throw new InvalidDataException("A source appearance names a palette ramp the retained manifest lacks.");
+        }
+        JsonElement values = ramps[index];
         if (values.GetArrayLength() != 4)
         {
             throw new InvalidDataException("A retained paperdoll palette requires four colors.");

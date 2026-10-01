@@ -42,6 +42,38 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
+The [native cargo foundation](p02/native-cargo-repair/INTEGRATION_REVIEW.md) is accepted at
+`codex/milestone-native-cargo-foundation-20261001`. Production `--cargo` opening, original merchant
+appearances, explicit Marla/Kegga selection, native buying/carrying/selling/returning, paused reopening,
+and fresh UI-earned onboarding with mining and released water use the existing C# authority.
+Regional terrain and actors now share one lock-free published frame; a real historical read leaves
+rendering responsive. Captures remain prototype art, not human style acceptance.
+
+[Final checks](p02/native-cargo-repair/FINAL_CHECKS.json) pin 1,732 source files, 14 assemblies,
+22 import/UID files and 41 native artifacts: **505 distinct managed cases** and all eight required
+checks pass, including older three-mode trading/gift proofs. The complete native circuit took 385.888s,
+paused reopening 12.664s and fresh onboarding 32.336s; both opening gates remain 30s. All 561 old test
+files, frozen specs, original save and predecessor staging remain exact. Core is unchanged from the
+separately accepted cache commit below. General vertical/occlusion and physical construction bindings,
+long archived-read native response, cargo controller/pointer and physical-device acceptance, human UI/art,
+full cargo/frontier/production and phase gates remain open. The review names narrower proof gaps explicitly.
+
+The original [delivery](p02/native-cargo/RESULT.md) and [independent critique](p02/native-cargo/CRITIC_REVIEW.md)
+remain historical records. Opus 5.5 / 1M / requested Max completed the six-finding correction in 3,215.141s
+with $18.5586668 client estimate, no permission denials and verified input synchronization. Astra reviewed
+source, images and authenticated evidence; [dispatch](p02/native-cargo-repair/DISPATCH.json) is terminal.
+No external worker remains live. The dirty delivery is preserved at `d8cb122a`; database byte copies and
+restore instructions are linked in the packet. No net credit saving is asserted.
+
+Accepted commit `f3c7f77`, milestone `codex/milestone-terrain-encoding-cache-20261001`, separately
+records the [immutable terrain encoding cache](p02/terrain-encoding-cache/README.md): all 1,756
+Core cases pass and same-save complete recovery measures 36.05s before / 18.77s after. No canonical
+bytes, rules, schema or full-replay gate change. Its native opening proof now passes in the cargo packet.
+
+[Delegation tooling](p02/native-cargo/UPSTREAM.json) records ecosystem `cf5c1ec`, 36 offline tests
+and twelve synchronized skill files. The correction's terminal long-check reports qualify the bounded
+foreground transport for this observed run without changing any checker or acceptance deadline.
+
 The [native trading foundation](p02/native-trading/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-native-trading-foundation-20261001`, with its full native UI gate still open.
 Production `--markets` entry, source-backed stock/earned money, explicit inquiry/show/review/confirm,

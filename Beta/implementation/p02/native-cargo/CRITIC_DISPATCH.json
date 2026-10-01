@@ -1,0 +1,32 @@
+{
+  "status": "terminal_pending_integration",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-cargo-critic-6qmtquxx",
+  "snapshot": "6061a440b1e4d242781e1caa9fb446aaa617da1e",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 900,
+  "maxBudgetUsd": 10,
+  "scope": "independent readonly snapshot correctness review; report-only write",
+  "startedUtc": "2026-10-01T11:10:20.175112+00:00",
+  "sessionId": 50518,
+  "elapsedSeconds": 815.481,
+  "clientEstimatedCostUsd": 6.117640600000002,
+  "returnedModels": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 92,
+      "outputTokens": 78862,
+      "cacheReadInputTokens": 9421243,
+      "cacheCreationInputTokens": 331973,
+      "webSearchRequests": 0,
+      "costUSD": 6.117640600000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 60472,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [],
+  "contextPostflight": "verified"
+}

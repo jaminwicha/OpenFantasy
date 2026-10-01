@@ -5,7 +5,9 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Content;
+using OpenFantasy.Hosting.Content.NativeCargo;
 using OpenFantasy.Hosting.Simulation;
+using OpenFantasy.Hosting.Simulation.CargoPresentation;
 using OpenFantasy.Hosting.Worlds;
 
 namespace OpenFantasy.Client;
@@ -42,6 +44,18 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal EntityId WrenActorId { get; }
     internal EntityId WoodDefinitionId { get; }
     internal EntityId? BerryDefinitionId { get; }
+
+    /// <summary>
+    /// Whether this world is presented regionally. Its published views then carry the bounded terrain observation from
+    /// their own root; every other world keeps the fixed farm grid.
+    /// </summary>
+    internal bool IsRegional { get; private init; }
+
+    /// <summary>Read-only travel advice for disposable cargo probes; it never moves or submits anything.</summary>
+    internal LocalRouteAdvice? RouteAdvice { get; private init; }
+
+    /// <summary>The cargo world's stall labels and merchant appearances; empty elsewhere.</summary>
+    internal IReadOnlyList<NativeCargoStall> CargoStalls { get; private init; } = [];
 
     internal static Task<FarmClientSession> OpenAsync(string savePath, string seedText, string playerName,
         bool gatheringProfile, bool productionProfile = false, string? upgradeSourcePath = null,
@@ -122,6 +136,74 @@ internal sealed class FarmClientSession : IAsyncDisposable
         catch { authority.Dispose(); throw; }
         return Attach(authority, QuestCompanion, gifts: true, trading: true);
     });
+
+    /// <summary>
+    /// Explicit fresh selection of the two-market cargo world with both merchants' opt-in stall answers. An existing
+    /// save opens only when it is this same selected world (same world, branch and admission); nothing is upgraded,
+    /// reset or relabeled, and no other world's save is ever read as a cargo world.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenCargoAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+    {
+        WorldSnapshot genesis = NativeCargoWorld.CreateEmbedded(seedText, playerName);
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
+        SqliteWorldAuthority authority = File.Exists(savePath)
+            ? SqliteWorldAuthority.OpenExisting(savePath, WorldSnapshotCodec.Encode(genesis))
+            : SqliteWorldAuthority.CreateNew(savePath, genesis);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return AttachCargo(authority);
+    });
+
+    /// <summary>
+    /// Continues an exported cargo fixture from its existing save. The expected genesis must be a fresh cargo-world
+    /// admission at commit and step zero, and complete recovery must select the save; nothing is created or rewound.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenCargoFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
+    {
+        if (!File.Exists(savePath)) throw new FileNotFoundException("The cargo fixture requires its existing save.", savePath);
+        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != WorldMarketAdmission.ProfileVersion || genesis.Revision != 0 || genesis.AdvancingSteps != 0
+            || !NativeCargoWorld.IsCargoWorld(genesis))
+            throw new InvalidDataException("The cargo fixture requires its fresh cargo-world genesis.");
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return AttachCargo(authority);
+    });
+
+    /// <summary>The cargo session: the quest companion, the cargo trading advice and the bounded region observer.</summary>
+    private static FarmClientSession AttachCargo(SqliteWorldAuthority authority)
+    {
+        try
+        {
+            WorldSnapshot current = authority.InspectForHost().State;
+            if (!NativeCargoWorld.IsCargoWorld(current))
+                throw new InvalidDataException("This save is not the cargo world.");
+            WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
+            WorldResident wren = QuestCompanion(current, player);
+            ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == player.ActorId);
+            var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
+            EntityId wood = current.Gathering!.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Oak)
+                .Definition.YieldDefinition.DefinitionId;
+            EntityId? berries = current.Gathering.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
+                .Definition.YieldDefinition.DefinitionId;
+            // The session publishes the regional observation with each view; frames never read the authority.
+            var world = new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
+                NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId));
+            return new FarmClientSession(world, delivery, wren.ActorId, wood, berries)
+            {
+                IsRegional = true,
+                RouteAdvice = new LocalRouteAdvice(authority, player.ActorId),
+                CargoStalls = NativeCargoWorld.Stalls(current)
+            };
+        }
+        catch
+        {
+            authority.Dispose();
+            throw;
+        }
+    }
 
     internal static Task<FarmClientSession> OpenGiftFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
     {

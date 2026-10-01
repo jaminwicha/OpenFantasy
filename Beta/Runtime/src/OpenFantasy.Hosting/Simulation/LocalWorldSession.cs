@@ -36,6 +36,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private readonly LocalMaterialProposalSelection _materialProposals = new();
     private readonly LocalMaterialGiftController _materialGifts;
     private readonly LocalTradingController _trading;
+    private readonly CargoPresentation.LocalRegionObserver? _regions;
     private readonly Task _loop;
     private LocalWorldView _view;
     private ContentHash _projectedStateHash;
@@ -65,13 +66,24 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         IEnumerable<LocalMaterialGiftPolicy> giftPolicies, LocalTradingConfiguration trading)
         : this(authority, playerActorId, delivery, TimeProvider.System, giftPolicies, trading) { }
 
+    /// <summary>
+    /// A trading session presented regionally: every published view also carries the player's bounded terrain and water
+    /// observation from that view's own root, so frames read one coherent public value and never the authority.
+    /// </summary>
+    public LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId, TrustedCommandDelivery delivery,
+        IEnumerable<LocalMaterialGiftPolicy> giftPolicies, LocalTradingConfiguration trading,
+        CargoPresentation.LocalRegionObserver regions)
+        : this(authority, playerActorId, delivery, TimeProvider.System, giftPolicies, trading,
+            regions ?? throw new ArgumentNullException(nameof(regions))) { }
+
     internal LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId,
         TrustedCommandDelivery delivery, TimeProvider timeProvider, IEnumerable<LocalMaterialGiftPolicy>? giftPolicies = null,
-        LocalTradingConfiguration? trading = null)
+        LocalTradingConfiguration? trading = null, CargoPresentation.LocalRegionObserver? regions = null)
     {
         ArgumentNullException.ThrowIfNull(authority);
         ArgumentNullException.ThrowIfNull(delivery);
         ArgumentNullException.ThrowIfNull(timeProvider);
+        _regions = regions;
         WorldSnapshot state = authority.ReadStateForHost();
         if (!state.Inventory.CanControl(delivery, playerActorId)
             || state.GetResident(playerActorId).ControllerKind != ResidentControllerKind.Player)
@@ -528,8 +540,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         }
     }
 
+    /// <summary>Runs at publication on the serialized host owner, never in a frame; the regional cache is reused.</summary>
     private LocalWorldView ProjectView(WorldSnapshot state) => new(state, _playerActorId,
-        state.Care?.Pending is not null && _authority.IsIdentityOccupiedForHost(LocalCareController.SelectionId(state)));
+        state.Care?.Pending is not null && _authority.IsIdentityOccupiedForHost(LocalCareController.SelectionId(state)), _regions);
 
     private void ClearMovement()
     {

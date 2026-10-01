@@ -1,0 +1,32 @@
+{
+  "status": "completed_reviewed",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-cargo-repair-nj3qfqfx",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 5400,
+  "maxBudgetUsd": 40,
+  "foregroundCommandSeconds": 960,
+  "contextSha256": "5d5ee4ef41d6811d8d0653e5e899f4030db87602fe4c827e559f33549ccf7d3a",
+  "assignment": "Independent review F1-F6 corrections and final proofs; distinct from terminal delivery request",
+  "startedUtc": "2026-10-01T11:39:57.058647+00:00",
+  "sessionId": 49381,
+  "returnedModelVerification": {
+    "canonicalModel": "claude-opus-5-5",
+    "contextWindow": 1000000,
+    "provider": "firstParty",
+    "costBasis": "list"
+  },
+  "contextPreflight": "verified",
+  "foregroundSettings": {
+    "CLAUDE_CODE_DISABLE_BACKGROUND_TASKS": "1",
+    "BASH_DEFAULT_TIMEOUT_MS": "960000",
+    "BASH_MAX_TIMEOUT_MS": "960000"
+  },
+  "foregroundProviderBehavior": "All eight required terminal reports returned before model completion; no permission denial or unfinished background command reported. Exact provider tool transcript is not emitted by final-only transport.",
+  "processExitCode": 0,
+  "elapsedSeconds": 3215.141,
+  "clientCostEstimateUsd": 18.558666799999997,
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "integrationReview": "INTEGRATION_REVIEW.md"
+}

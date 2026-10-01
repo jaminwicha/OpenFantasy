@@ -44,8 +44,16 @@ public sealed class LocalInventoryView
 /// </summary>
 public sealed class LocalWorldView
 {
-    internal LocalWorldView(WorldSnapshot state, EntityId playerActorId, bool careHelperSelectionOccupied = false)
+    internal LocalWorldView(WorldSnapshot state, EntityId playerActorId, bool careHelperSelectionOccupied = false,
+        CargoPresentation.LocalRegionObserver? regions = null)
     {
+        if (regions is not null && regions.PlayerActorId != playerActorId)
+        {
+            throw new ArgumentException("A regional observation belongs to the view's own player.", nameof(regions));
+        }
+        // Projected from this same root, so a frame's terrain, water, actors and offers always agree.
+        Regional = regions?.Observe(state);
+        IsRegional = regions is not null;
         WorldId = state.WorldId;
         BranchId = state.BranchId;
         PlayerActorId = playerActorId;
@@ -139,6 +147,18 @@ public sealed class LocalWorldView
     public EntityId WorldId { get; }
     public EntityId BranchId { get; }
     public EntityId PlayerActorId { get; }
+
+    /// <summary>
+    /// The player's bounded regional terrain and water observation from this view's own root, in worlds presented
+    /// regionally; null elsewhere, or when the player stands on no supported cell floor (see <see cref="IsRegional"/>).
+    /// Presentation geometry, not an authority fact: public-state digests compare the authority fields only.
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    public CargoPresentation.LocalRegionObservation? Regional { get; }
+
+    /// <summary>Whether this session presents regionally, so a missing observation is an unsupported situation.</summary>
+    [System.Text.Json.Serialization.JsonIgnore]
+    public bool IsRegional { get; }
     public WorldInstant Calendar { get; }
     public bool HasReadingHold { get; }
     public bool IsResolvingConsequences { get; }

@@ -1,0 +1,16 @@
+{
+  "coreEdits": [
+    "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs"
+  ],
+  "originalSha256": {
+    "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs": "23482c3e66c867b99df3ef3e360c1e2195152b7b74cd3454a889347ff5e9debd"
+  },
+  "reason": "Measured full recovery36.0548802s exceeds retained30s opening deadline. Cache unchanged immutable region bytes by object identity; preserve exact canonical encodings, independent caller copies, complete replay and corruption detection.",
+  "additionalRequiredChecks": [
+    "full Core suite with independent canonical/malformed fixtures",
+    "concurrent export and equal-bounds/revision alias counterexamples",
+    "measured same-save full recovery",
+    "native reopening at unchanged30s",
+    "affected Host/client regressions"
+  ]
+}

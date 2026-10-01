@@ -97,6 +97,31 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "World continuing"
 
+[node name="StallRow" type="HBoxContainer" parent="MarketRoot/Panel/Column"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="StallLabel" type="Label" parent="MarketRoot/Panel/Column/StallRow"]
+layout_mode = 2
+text = "Stall"
+
+[node name="MarketStall" type="OptionButton" parent="MarketRoot/Panel/Column/StallRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+fit_to_longest_item = false
+text = "Choose a stall…"
+tooltip_text = "Each stall is one merchant's market at one place. Choosing a stall asks, shows and spends nothing, and clears earlier choices."
+
+[node name="StallPlace" type="Label" parent="MarketRoot/Panel/Column/StallRow"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+text = ""
+
 [node name="Body" type="HBoxContainer" parent="MarketRoot/Panel/Column"]
 layout_mode = 2
 size_flags_vertical = 3

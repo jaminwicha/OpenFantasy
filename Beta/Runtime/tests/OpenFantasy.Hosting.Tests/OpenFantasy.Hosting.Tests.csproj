@@ -35,6 +35,10 @@
     <Compile Include="../../client/scripts/MarketActionOffers.cs" Link="Client/MarketActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmMarketTerms.cs" Link="Client/FarmMarketTerms.cs" />
     <Compile Include="../../client/scripts/Presentation/FarmHealthFeedback.cs" Link="Client/FarmHealthFeedback.cs" />
+    <Compile Include="../../client/scripts/Cargo/CargoViewProjection.cs" Link="Client/Cargo/CargoViewProjection.cs" />
+    <Compile Include="../../client/scripts/Cargo/CargoStallPick.cs" Link="Client/Cargo/CargoStallPick.cs" />
+    <Compile Include="../../client/scripts/Cargo/CargoPaperdollPlan.cs" Link="Client/Cargo/CargoPaperdollPlan.cs" />
+    <Compile Include="../../client/scripts/Cargo/CargoCameraFraming.cs" Link="Client/Cargo/CargoCameraFraming.cs" />
     <None Include="../OpenFantasy.Core.Tests/Fixtures/consented-world-formats-v1.json" Link="Fixtures/consented-world-formats-v1.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

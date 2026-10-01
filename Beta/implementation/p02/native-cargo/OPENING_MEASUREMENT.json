@@ -1,0 +1,53 @@
+{
+  "status": "comparison_completed",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-opening-measure-bk0fprcb",
+  "sourceSave": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/native-20261001T105332Z-c7b5e/native-cargo-svrncdxn/keyboard.sqlite",
+  "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo/qualification/fixtures-20261001T105316Z-b7cc2/cargo/genesis.ofc",
+  "scope": "Isolated exact-genesis full recovery of disposable copy; no altered authority or acceptance threshold.",
+  "exitCode": 0,
+  "elapsedSeconds": 38.862,
+  "log": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-opening-measure-bk0fprcb/measurement.log",
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "run",
+    "--project",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-opening-measure-bk0fprcb/measure.csproj",
+    "--no-launch-profile",
+    "--",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-opening-measure-bk0fprcb/keyboard.sqlite",
+    "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-opening-measure-bk0fprcb/genesis.ofc"
+  ],
+  "setupFailure": {
+    "log": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-opening-measure-bk0fprcb/failed-build.log",
+    "reason": "Temporary ProjectReference graph resolved an invalid relative Core path; no recovery executed."
+  },
+  "beforeCache": {
+    "status": "completed",
+    "log": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-opening-measure-bk0fprcb/measurement.log",
+    "elapsedSeconds": 38.862,
+    "measurements": [
+      {
+        "OpenSeconds": 36.0548802
+      },
+      {
+        "IncludingDisposeSeconds": 36.1010671
+      }
+    ],
+    "coreAssemblySha256": "7949c45ba3586fd7ec1b22a37771098e48dcc8f9a1d8ac70c42425e21a01d792"
+  },
+  "afterCache": {
+    "status": "completed",
+    "exitCode": 0,
+    "elapsedSeconds": 23.282,
+    "log": "/private/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-cargo-opening-measure-bk0fprcb/cached-measurement.log",
+    "coreAssemblySha256": "4042e3de826ced918ba1615fa2063e195c985665ef3aa8397093d1d251a1f97f",
+    "measurements": [
+      {
+        "OpenSeconds": 18.766909
+      },
+      {
+        "IncludingDisposeSeconds": 18.7950336
+      }
+    ]
+  }
+}

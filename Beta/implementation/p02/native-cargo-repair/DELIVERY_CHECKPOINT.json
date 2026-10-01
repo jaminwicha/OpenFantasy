@@ -1,0 +1,13 @@
+{
+  "ref": "codex/checkpoint-native-cargo-repair-delivered-20261001T123427Z",
+  "snapshot": "d8cb122a8c37f10b627d95f98e11088cf8faf493",
+  "parent": "f3c7f77e4779ddee9ceb3ce6ebf23a0f373c68af",
+  "scope": [
+    "Beta/AGENTS.md",
+    "Beta/Runtime",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/p02/native-cargo",
+    "Beta/implementation/p02/native-cargo-repair"
+  ],
+  "verification": "Worker final checks pass; integration review pending. Backup is not acceptance. Ignored qualification databases remain in place; separate byte-copy backup follows."
+}
