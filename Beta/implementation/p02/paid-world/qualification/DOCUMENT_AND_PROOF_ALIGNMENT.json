@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "Affected architecture relative file links and process-proof executable match to accepted current build. Content review remains separate.",
+  "relativeLinks": 230,
+  "pages": {
+    "Beta/Runtime/docs/architecture/world-resource-history.md": "3f4b240a8e283ac71d056b46ec27184cdff5b134bc03df7f1a0c228f13f6a5e4",
+    "Beta/Runtime/docs/architecture/world-paid-exchange.md": "68c9b4dcfea36a06885bf810bc508b9d238f6fa7c1b6513d99648535f722b90d",
+    "Beta/Runtime/docs/architecture/material-proposals.md": "7a7729be1fc491bb1bb8448318a04799e594ac9a22a44228dc0973979fa2f747",
+    "Beta/Runtime/docs/architecture/README.md": "55a3629fa661042b5c73ab4306dc7317b5629fff90f27661623ce493330a1b63",
+    "Beta/Runtime/docs/architecture/materials-and-activities.md": "d281be3dc194601f6b5ed413dd0711c91af7ba32978a7efc9bbfeef56ecc9b29",
+    "Beta/Runtime/docs/architecture/coordinated-world-continuation.md": "8b758bcd44eeb57189b358692d368f9db3e8b3e0798f650a024f8fd74b74776d",
+    "Beta/Runtime/docs/architecture/persistence-and-history.md": "b4dceb515e34eea37c32eaf3926dc1908ad33e7fde14ffa2531f89457a6e22b8",
+    "Beta/Runtime/docs/architecture/spot-exchange.md": "36be64fe394e1ea48b67c87ca25aa7109db5079aa1f8625d7b6751f0ea63c2dd"
+  },
+  "processProofsMatchBuild": true
+}

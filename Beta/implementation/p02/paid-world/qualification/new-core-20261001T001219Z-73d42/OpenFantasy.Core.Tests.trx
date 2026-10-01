@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f016615e-9781-4a13-ad27-6b70225be8b7" name="@mac 2026-09-30 19:12:27" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-30T19:12:27.1725650-05:00" queuing="2026-09-30T19:12:27.1725650-05:00" start="2026-09-30T19:12:22.0283050-05:00" finish="2026-09-30T19:12:27.1988720-05:00" />
+  <TestSettings name="default" id="0abf2b45-491c-4e71-9e07-15224f7cc748">
+    <Deployment runDeploymentRoot="_mac_2026-09-30_19_12_27" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a0956114-1bb7-4d64-9cf0-222e0c5476c1" testId="ab2ae6c6-1cbe-2c71-528f-35b2a0fb32d4" testName="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Only_the_named_profile_selects_paid_actions_and_each_command_retains_exact_bytes(accept: False)" computerName="mac" duration="00:00:00.0465212" startTime="2026-09-30T19:12:26.8335320-05:00" endTime="2026-09-30T19:12:26.8802780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0956114-1bb7-4d64-9cf0-222e0c5476c1" />
+    <UnitTestResult executionId="c4d6f677-2961-4d01-8982-f3d1995b2065" testId="f36e1c08-bed9-b020-f69f-106021a30717" testName="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Single_fill_and_expiry_preserve_exact_terms_and_do_not_grant_another_fill" computerName="mac" duration="00:00:00.0921308" startTime="2026-09-30T19:12:26.8831270-05:00" endTime="2026-09-30T19:12:27.0236020-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c4d6f677-2961-4d01-8982-f3d1995b2065" />
+    <UnitTestResult executionId="b5600e9f-d436-4b37-8bf7-3b53f5de243b" testId="2886d04a-9ed2-5ef1-8ced-82a03ec749b4" testName="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Malformed_frames_and_noncanonical_or_excessive_quotes_are_refused" computerName="mac" duration="00:00:00.3446911" startTime="2026-09-30T19:12:26.2063660-05:00" endTime="2026-09-30T19:12:26.5614970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b5600e9f-d436-4b37-8bf7-3b53f5de243b" />
+    <UnitTestResult executionId="1e9597f6-137c-48dd-aa37-49cac1af1ff4" testId="a2e192e4-e365-0c79-a01a-92b760b646c3" testName="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Every_independent_rearrangement_of_same_step_outcomes_is_refused" computerName="mac" duration="00:00:00.1388598" startTime="2026-09-30T19:12:26.8829580-05:00" endTime="2026-09-30T19:12:27.0219200-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e9597f6-137c-48dd-aa37-49cac1af1ff4" />
+    <UnitTestResult executionId="c147ac6d-84b5-4ce6-8575-14cb70b296e5" testId="911d7a77-e42d-c760-bcac-4b58118cea0a" testName="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Only_the_named_profile_selects_paid_actions_and_each_command_retains_exact_bytes(accept: True)" computerName="mac" duration="00:00:00.0015754" startTime="2026-09-30T19:12:26.8810460-05:00" endTime="2026-09-30T19:12:26.8826690-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c147ac6d-84b5-4ce6-8575-14cb70b296e5" />
+    <UnitTestResult executionId="39f738ec-4b2a-42dd-b066-ab2ea2e84128" testId="7ca9fa8e-8996-2cc2-5750-cc6c47bc74d6" testName="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.A_fill_supersedes_every_sibling_with_exact_terms_and_one_revision" computerName="mac" duration="00:00:00.2989400" startTime="2026-09-30T19:12:26.5830840-05:00" endTime="2026-09-30T19:12:26.8821090-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="39f738ec-4b2a-42dd-b066-ab2ea2e84128" />
+    <UnitTestResult executionId="35c41669-d3cd-4a56-9fc2-469384917f61" testId="8ff9b279-c81f-349b-ae75-5dc9cc7700b3" testName="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Quote_book_has_an_independent_byte_vector_and_copies_its_inputs_and_outputs" computerName="mac" duration="00:00:00.2459711" startTime="2026-09-30T19:12:26.5830160-05:00" endTime="2026-09-30T19:12:26.8291130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35c41669-d3cd-4a56-9fc2-469384917f61" />
+    <UnitTestResult executionId="46e15a87-4bf7-4f2b-b488-1073ab5081e5" testId="174060ce-705a-d23e-5556-0563c62c12c5" testName="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Supersession_needs_an_actual_fill_and_no_stale_sibling_may_stay_open" computerName="mac" duration="00:00:00.3642459" startTime="2026-09-30T19:12:26.2063640-05:00" endTime="2026-09-30T19:12:26.5764520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="46e15a87-4bf7-4f2b-b488-1073ab5081e5" />
+    <UnitTestResult executionId="5c7e7bf2-68cf-4196-a32c-ac2cddc61460" testId="5ee9dd5f-18d1-2557-9b4a-a9386b6dfe4c" testName="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Never_pruned_issuer_revisions_stay_within_the_admitted_actor_roster" computerName="mac" duration="00:00:00.0137744" startTime="2026-09-30T19:12:27.1079380-05:00" endTime="2026-09-30T19:12:27.1221320-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5c7e7bf2-68cf-4196-a32c-ac2cddc61460" />
+    <UnitTestResult executionId="da5e5ebf-55a6-46c3-81cb-47efcd1dd1c6" testId="dfdf9220-3d89-c831-8e0a-900a66097918" testName="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Withdrawal_is_a_typed_issuer_command_cause_with_exact_bytes_only_in_the_paid_profile" computerName="mac" duration="00:00:00.0650990" startTime="2026-09-30T19:12:27.0228300-05:00" endTime="2026-09-30T19:12:27.0881320-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da5e5ebf-55a6-46c3-81cb-47efcd1dd1c6" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Single_fill_and_expiry_preserve_exact_terms_and_do_not_grant_another_fill" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="f36e1c08-bed9-b020-f69f-106021a30717">
+      <Execution id="c4d6f677-2961-4d01-8982-f3d1995b2065" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests" name="Single_fill_and_expiry_preserve_exact_terms_and_do_not_grant_another_fill" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Every_independent_rearrangement_of_same_step_outcomes_is_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="a2e192e4-e365-0c79-a01a-92b760b646c3">
+      <Execution id="1e9597f6-137c-48dd-aa37-49cac1af1ff4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests" name="Every_independent_rearrangement_of_same_step_outcomes_is_refused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Malformed_frames_and_noncanonical_or_excessive_quotes_are_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="2886d04a-9ed2-5ef1-8ced-82a03ec749b4">
+      <Execution id="b5600e9f-d436-4b37-8bf7-3b53f5de243b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests" name="Malformed_frames_and_noncanonical_or_excessive_quotes_are_refused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Only_the_named_profile_selects_paid_actions_and_each_command_retains_exact_bytes(accept: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="ab2ae6c6-1cbe-2c71-528f-35b2a0fb32d4">
+      <Execution id="a0956114-1bb7-4d64-9cf0-222e0c5476c1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests" name="Only_the_named_profile_selects_paid_actions_and_each_command_retains_exact_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Never_pruned_issuer_revisions_stay_within_the_admitted_actor_roster" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="5ee9dd5f-18d1-2557-9b4a-a9386b6dfe4c">
+      <Execution id="5c7e7bf2-68cf-4196-a32c-ac2cddc61460" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests" name="Never_pruned_issuer_revisions_stay_within_the_admitted_actor_roster" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Withdrawal_is_a_typed_issuer_command_cause_with_exact_bytes_only_in_the_paid_profile" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="dfdf9220-3d89-c831-8e0a-900a66097918">
+      <Execution id="da5e5ebf-55a6-46c3-81cb-47efcd1dd1c6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests" name="Withdrawal_is_a_typed_issuer_command_cause_with_exact_bytes_only_in_the_paid_profile" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Only_the_named_profile_selects_paid_actions_and_each_command_retains_exact_bytes(accept: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="911d7a77-e42d-c760-bcac-4b58118cea0a">
+      <Execution id="c147ac6d-84b5-4ce6-8575-14cb70b296e5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests" name="Only_the_named_profile_selects_paid_actions_and_each_command_retains_exact_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Quote_book_has_an_independent_byte_vector_and_copies_its_inputs_and_outputs" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="8ff9b279-c81f-349b-ae75-5dc9cc7700b3">
+      <Execution id="35c41669-d3cd-4a56-9fc2-469384917f61" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests" name="Quote_book_has_an_independent_byte_vector_and_copies_its_inputs_and_outputs" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.A_fill_supersedes_every_sibling_with_exact_terms_and_one_revision" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="7ca9fa8e-8996-2cc2-5750-cc6c47bc74d6">
+      <Execution id="39f738ec-4b2a-42dd-b066-ab2ea2e84128" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests" name="A_fill_supersedes_every_sibling_with_exact_terms_and_one_revision" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Supersession_needs_an_actual_fill_and_no_stale_sibling_may_stay_open" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="174060ce-705a-d23e-5556-0563c62c12c5">
+      <Execution id="46e15a87-4bf7-4f2b-b488-1073ab5081e5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests" name="Supersession_needs_an_actual_fill_and_no_stale_sibling_may_stay_open" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ab2ae6c6-1cbe-2c71-528f-35b2a0fb32d4" executionId="a0956114-1bb7-4d64-9cf0-222e0c5476c1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f36e1c08-bed9-b020-f69f-106021a30717" executionId="c4d6f677-2961-4d01-8982-f3d1995b2065" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2886d04a-9ed2-5ef1-8ced-82a03ec749b4" executionId="b5600e9f-d436-4b37-8bf7-3b53f5de243b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a2e192e4-e365-0c79-a01a-92b760b646c3" executionId="1e9597f6-137c-48dd-aa37-49cac1af1ff4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="911d7a77-e42d-c760-bcac-4b58118cea0a" executionId="c147ac6d-84b5-4ce6-8575-14cb70b296e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ca9fa8e-8996-2cc2-5750-cc6c47bc74d6" executionId="39f738ec-4b2a-42dd-b066-ab2ea2e84128" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8ff9b279-c81f-349b-ae75-5dc9cc7700b3" executionId="35c41669-d3cd-4a56-9fc2-469384917f61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="174060ce-705a-d23e-5556-0563c62c12c5" executionId="46e15a87-4bf7-4f2b-b488-1073ab5081e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5ee9dd5f-18d1-2557-9b4a-a9386b6dfe4c" executionId="5c7e7bf2-68cf-4196-a32c-ac2cddc61460" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="dfdf9220-3d89-c831-8e0a-900a66097918" executionId="da5e5ebf-55a6-46c3-81cb-47efcd1dd1c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="10" executed="10" passed="10" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:01.12]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.62]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:03.01]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:04.03]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

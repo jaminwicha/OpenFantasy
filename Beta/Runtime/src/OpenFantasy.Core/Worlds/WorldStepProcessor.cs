@@ -264,8 +264,31 @@ public sealed class WorldStepProcessor
             WorldConsentedTransferEvidence? materialTransfer = null;
             WorldActionRejection recipientRejection = WorldActionRejection.Unavailable;
             WorldMaterialProposalSettlement? proposalSettlement = null;
+            WorldCustodyWitness? paidWitness = null;
             EntityId? proposalCounterpart = null;
-            if (action.Intent is MaterialProposalIntent)
+            if (action.Intent is PaidExchangeIntent)
+            {
+                if (coordination?.PaidExchange is not { } quotes || production is null || progression is null)
+                {
+                    throw new InvalidOperationException("This world does not interpret paid spot exchange.");
+                }
+                WorldPaidExchangePlan plan = WorldPaidExchangeResolver.Resolve(state, batch, inventory, space, production,
+                    progression, quotes, dialogues.Count != 0, action, checked((uint)actionIndex), sequence, worked, Occupied);
+                resolution = new(plan.Inventory, dialogues, plan.Rejection, null);
+                if (plan.Rejection == WorldActionRejection.None)
+                {
+                    production = plan.Production;
+                    progression = plan.Progression;
+                    coordination = coordination.WithPaidExchange(plan.Book);
+                    createdIds = plan.CreatedIds;
+                    paidWitness = plan.Witness;
+                    proposalCounterpart = plan.CounterpartActorId;
+                    // Issuing and withdrawing declare terms; only a settled fill performs both participants'
+                    // work. A fill's supersessions are closed inside the same paid owner candidate.
+                    performedWork = plan.Witness is not null;
+                }
+            }
+            else if (action.Intent is MaterialProposalIntent)
             {
                 if (coordination?.Proposals is not { } book || production is null)
                 {
@@ -477,7 +500,7 @@ public sealed class WorldStepProcessor
             }
             if (!TryReconcilePhysical(physical, construction, space, createdIds, Occupied, out var reconciledPhysical, out var physicalIds)
                 || !WorldReservoirBinding.TryReconcile(reservoirs, resolution.Inventory, production, out var reconciled,
-                    materialTransfer, proposalSettlement?.Witness)
+                    materialTransfer, proposalSettlement?.Witness ?? paidWitness)
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
                 || !WorldLiquidCellBinding.TryReconcile(liquidCells, reconciled, out var reconciledLiquidCells, space, state.ReservoirSeals)
                 || !FitsCompleteCandidate(resolution.Inventory, resolution.Dialogues, reconciledPhysical,
@@ -529,7 +552,7 @@ public sealed class WorldStepProcessor
                 }
                 if (proposalCounterpart is { } counterpart)
                 {
-                    // The absent sender's opportunity of this step is spent by its settled offer.
+                    // The absent sender's or issuer's opportunity of this step is spent by its settlement.
                     worked.Add(counterpart);
                 }
                 foreach (ActorPresence actor in space.Actors)
@@ -576,6 +599,11 @@ public sealed class WorldStepProcessor
             {
                 // Every action of this step preceded the boundary; offers due at the new count close here.
                 coordination = coordination.WithProposals(pendingProposals.ExpireDue(advancingSteps, sequence));
+            }
+            if (coordination?.PaidExchange is { } pendingQuotes)
+            {
+                // Quotes follow the same fixed-world rule: a quote due at the new count closes here.
+                coordination = coordination.WithPaidExchange(pendingQuotes.ExpireDue(advancingSteps, sequence));
             }
             if (transport is not null)
             {

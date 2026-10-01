@@ -1,8 +1,9 @@
 # Atomic spot exchange
 
 A standalone portable domain contract in `OpenFantasy.Core.Markets`. It couples one fixed quote's goods
-and payment into one transaction over the existing owners. It is not bound to any world profile,
-host, network, persistence path, native interface or price model.
+and payment into one transaction over the existing owners. Its standalone authority and book are
+separate from the [paid world binding](world-paid-exchange.md), which reuses quote terms and transfer
+arithmetic under complete-world ownership, time, causality and durable publication.
 
 ## Ownership
 
@@ -107,12 +108,11 @@ this component performs no archive publication.
 
 - Continued owners without the explicit paid capability refuse both raw and produced trades with
   `UnsupportedHistory`. A gift approval is never narrowed or repurposed as paid consent.
-- No existing world profile admits the book or its candidates. World admission must still:
-  - persist the book;
-  - merge book fills with other ordered custody evidence;
-  - supply the authoritative current step and complete-history occupancy;
-  - bind host authentication;
-  - define cut/replay/resource-history treatment of fills.
+- No world profile admits this standalone book or its V12 candidates. Profile 32 instead owns a
+  `WorldPaidExchangeBook`, merges its fills with actor and custody history, supplies actual world
+  time and identity occupancy, and publishes complete owners through authenticated Host submission.
+  Its coordinated production continuation retains V11; selecting a standalone capability cannot
+  grant complete-world authority.
 - Prices are fixed per quote. Supply/demand pricing, stock-driven revisions, NPC quoting policy,
   transport and native UI belong to a later market binding.
 

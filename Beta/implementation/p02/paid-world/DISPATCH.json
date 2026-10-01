@@ -1,0 +1,37 @@
+{
+  "status": "completed_pending_review",
+  "private": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-opus-paid-world-8fp7o5wy",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "limitSeconds": 3000,
+  "clientEstimateLimitUsd": 35,
+  "checkpoint": "codex/checkpoint-before-paid-world-20260930T043701Z",
+  "contextHash": "0230633aa0cfc0b9e835865498a40e8e2123de6929f710d2ea73d0907aa71111",
+  "acceptance": "INCOMPLETE. Build passes;118/119 hosted cases pass,1 new fixture fails. No Core check or cut proof. No automatic model retry.",
+  "startedUtc": "2026-09-30T04:39:26Z",
+  "contextPreflight": "verified",
+  "ownedWriteObserved": true,
+  "adapterExitCode": 0,
+  "durationSeconds": 1565.479,
+  "clientCostEstimateUsd": 8.907646399999999,
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 144,
+      "outputTokens": 114171,
+      "cacheReadInputTokens": 17791852,
+      "cacheCreationInputTokens": 383160,
+      "webSearchRequests": 0,
+      "costUSD": 8.907646399999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 38821,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "providerSubtype": "success",
+  "workerTimeClaim": "Worker says time bound exceeded; adapter observed1565.479s under3000s and exited0, provider success. Not a timeout."
+}

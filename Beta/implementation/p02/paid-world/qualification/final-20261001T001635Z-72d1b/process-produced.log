@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/verify_process_recovery.py", line 210, in <module>
+    if __name__ == '__main__': main()
+                               ~~~~^^
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/verify_process_recovery.py", line 141, in main
+    execute(args)
+    ~~~~~~~^^^^^^
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/verify_process_recovery.py", line 196, in execute
+    refuse_sql_corruption(runner, report, output, before_path, reference_path, before, after, args.profile, acceptance_id)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/verify_process_recovery.py", line 62, in refuse_sql_corruption
+    require(reason in response, 'Corruption was not refused for the intended replay boundary: ' + response)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/durable-consented-world/qualification/verify_process_recovery.py", line 35, in require
+    raise AssertionError(message)
+AssertionError: Corruption was not refused for the intended replay boundary: Inspection failed: SQLite Error 5: 'database is locked'.
+

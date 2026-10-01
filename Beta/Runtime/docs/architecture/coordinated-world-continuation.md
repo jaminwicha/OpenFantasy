@@ -131,13 +131,13 @@ permanent identities remain separate facts. Snapshot/step decoding explicitly se
 
 Schema eight stores both interpretations in the same physical layout: its joint archive table holds
 bounded opaque closing roots with scope, ordinal, boundary and publication, none of which is specific
-to one profile. The layout never selects an interpretation. Fresh creation names profiles 27 and 28
-explicitly, and recovery requires a profile-27 or profile-28 genesis for this schema. Every replayed
+to one profile. The layout never selects an interpretation. Fresh creation and recovery explicitly
+name profiles 27, 28, 30 and 32. Every replayed
 step must carry the profile of the root it extends. A profile-28 world retains its genesis-selected
 interpretation; the closed [proposal transition](#explicit-proposal-transition) is the only admitted
 change, from profile 27 to profile 30. Archive publication checks the admitted genesis scope, and
 journal accounting admits joint archives and refuses the separate resource archive family under the
-three explicitly named profiles. No greater or intermediate profile is admitted by numeric range.
+four explicitly named profiles. No greater or intermediate profile is admitted by numeric range.
 Opening never converts interpretations, and a step encoded under another profile fails replay.
 
 The durable binding is the privileged host-selected batch. It publishes both participants' receipts,
@@ -165,9 +165,26 @@ The cut reservation adds one proposal outcome for every open and newly created o
 material, care, resource and transfer headroom. It changes no earlier window, budget or schedule.
 
 Schema eight stores this interpretation in the same physical layout. Fresh creation, archive
-publication, journal accounting and recovery name profiles 27, 28 and 30; every other number,
-including 29, is refused. A world keeps the interpretation of its stored genesis, except through the
+publication, journal accounting and recovery name profiles 27, 28, 30 and 32; every other number,
+including 29 and 31, is refused. A world keeps the interpretation of its stored genesis, except through the
 one explicit transition below.
+
+## Paid interpretation
+
+[Profile 32](world-paid-exchange.md) adds a paid quote owner beside the saved proposals. The anchor
+carries its exact open quotes and issuer market revisions. The successor preserves each carried
+quote, either open or terminal, and dates other quotes after the boundary. A fill must use the
+issuer revision at its own causal position; the issuer's final revision equals the carried basis
+plus successor fills. A fill closes its issuer's stale siblings as superseded in the same transaction;
+an issuer withdrawal records its own authenticated command without payment. Both terminal kinds
+remain exact across cuts, with their causes and identities retained. Closed outcomes remain in the
+actual closing root. The cut reservation counts
+every open and newly issued quote's potential outcome as well as the existing owners' headroom.
+
+The paid context hash joins the anchor only when that capability exists. Earlier anchor bytes are
+unchanged. Progression at the boundary already includes previous payments, so successor replay adds
+only its own fills. Receipts and quote/command/split identities remain durable across cuts. Profile 32
+has fresh admission and ordinary continuation; the explicit transition below does not target it.
 
 ## Explicit proposal transition
 

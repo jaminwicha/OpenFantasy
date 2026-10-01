@@ -216,9 +216,7 @@ public sealed class SpotExchangeAuthority
             IReadOnlyCollection<TransformedLot> movedLots, EntityId movedLotId)
         {
             SpotQuote quote = entry.Quote;
-            List<(EntityId, ulong)> payments = [(quote.SellerAccountId, acceptance.Payment)];
-            payments.AddRange(quote.Fees.Select(fee => (fee.PayeeAccountId, checked(fee.UnitAmount * acceptance.Quantity))));
-            CurrencyLedger paid = progression.Currency.Transfer(quote.BuyerAccountId, payments);
+            CurrencyLedger paid = progression.Currency.Transfer(quote.BuyerAccountId, quote.PaymentsFor(acceptance.Quantity));
             var fill = new SpotFill(checked(book.Revision + 1), acceptance.AcceptanceId, acceptance.ContentHash,
                 acceptance.Quantity, movedLotId, acceptance.Payment, acceptance.Fees);
             SpotQuoteBook filled = book.WithFill(new SpotQuoteEntry(quote, entry.IssuerDelivery, fill));

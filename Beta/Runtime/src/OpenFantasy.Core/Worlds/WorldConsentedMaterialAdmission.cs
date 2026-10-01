@@ -68,6 +68,13 @@ public static class WorldConsentedMaterialAdmission
         }
         // The saved-proposal interpretation admits settlements only; production replays those.
         WorldMaterialProposalAdmission.Validate(world, history, proposals, boundary);
-        world.Production.ValidateCustodyEvidence(proposals.ProducedMovements);
+        if (world.Coordination.PaidExchange is not { } paid)
+        {
+            world.Production.ValidateCustodyEvidence(proposals.ProducedMovements);
+            return;
+        }
+        // The paid interpretation replays gifts and paid fills together in their authoritative world order.
+        WorldPaidExchangeAdmission.Validate(world, paid, boundary);
+        world.Production.ValidateCustodyEvidence(WorldPaidExchangeAdmission.OrderedProducedMovements(proposals, paid));
     }
 }

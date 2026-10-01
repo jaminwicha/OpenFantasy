@@ -1,0 +1,462 @@
+{
+  "status": "Review navigation only; listed sites may correctly retain old-profile-specific refusals. No automatic mass widening is authorized.",
+  "sourceHead": "9867ecb42b8c50a7b43c45714564b18ac8e56efd",
+  "files": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs",
+      "sourceSha256": "b40ad33ca43d486d799649623673db9d669124ca96f1a7e1fe764c417570ed53",
+      "sites": [
+        {
+          "line": 48,
+          "text": "if (world.ProfileVersion is not 25 and not 26 and not 27 and not 28 and not 30 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveSegment.cs",
+      "sourceSha256": "909d4bcc33a00ce53a6a8ffb57600e08a24154959059718edcfd95c86a261db7",
+      "sites": [
+        {
+          "line": 38,
+          "text": "/// under the saved-proposal interpretation. The closing bytes stay the ordinary profile-27 root."
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldProposalTransition.cs",
+      "sourceSha256": "f930fd52c85490d1be0b12401e0e9edb0b5d6dfd982f6bd0ea11b3497647a6ca",
+      "sites": [
+        {
+          "line": 6,
+          "text": "/// Exact request to continue one lived coordinated world (profile 27) under the saved-proposal"
+        },
+        {
+          "line": 7,
+          "text": "/// interpretation (profile 30). It pins the complete source head and its latest joint anchor; it"
+        },
+        {
+          "line": 13,
+          "text": "public const ushort SourceProfileVersion = 27;"
+        },
+        {
+          "line": 16,
+          "text": "public const ushort TargetProfileVersion = 30;"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldProposalTransitionCodecV1.cs",
+      "sourceSha256": "a0b297aacadca91f64053de3b7043314e4d6c72602319d7cca1428d5c587c5ac",
+      "sites": [
+        {
+          "line": 6,
+          "text": "/// Closed canonical wire contract of the proposal transition. The frame names source profile 27 and"
+        },
+        {
+          "line": 7,
+          "text": "/// target profile 30 explicitly; every other pair, version, field count or non-canonical byte fails."
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs",
+      "sourceSha256": "e2d3ac555a096e774385975de2067a32974efa553d8a8d06159e98c0651acc31",
+      "sites": [
+        {
+          "line": 24,
+          "text": "if (world.ProfileVersion is not (25 or 26 or 27 or 28 or 30) || retained.AnchorAdmission != world.AdmissionVersion"
+        },
+        {
+          "line": 235,
+          "text": "if (world.ProfileVersion is not (26 or 27 or 28 or 30) || world.Care?.Ordinary is not { } ordinary)"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs",
+      "sourceSha256": "1b1078ec1e6bb7fd788715796457bc24374102c5b1233f12fb44fdfc18e570c2",
+      "sites": [
+        {
+          "line": 57,
+          "text": "if (basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 || care.Ordinary is not { } ordinary)"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs",
+      "sourceSha256": "0ed944541251e194491fdcb4559bda6b1b848c59f3402a3d35e377f5ed2e9513",
+      "sites": [
+        {
+          "line": 34,
+          "text": "if (world.ProfileVersion is not 26 and not 27 and not 28 and not 30) throw new ArgumentException(\"Ordinary care requires its explicit world interpretation.\");"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeResolver.cs",
+      "sourceSha256": "d58c4f25eb24559e30d7005c98cbe38ebf88acd60926d62c25831a135bc7fd71",
+      "sites": [
+        {
+          "line": 22,
+          "text": "if (kind != WorldBatchKind.AdvancingStep || basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 || care.Ordinary is not { } ordinary"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "sourceSha256": "b8b89e5954282cd7748b91dfdb5c67e5403ed1ce81853c2b75daf71892e52834",
+      "sites": [
+        {
+          "line": 309,
+          "text": "public ushort ProfileVersion => Coordination?.Proposals is not null ? (ushort)30 : Coordination?.ConsentedMaterial is not null ? (ushort)28 : Coordination is not null ? (ushort)27 : Care?.SupportsOrdinary == true ? (ushort)26 : Care is not null ? (ushort)25 : EncounterLifecycle is not null ? (ushort)24 : EncounterActions is not null ? (ushort)23 : Pacing is not null ? (ushort)22 : BaseProfileVersion;"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs",
+      "sourceSha256": "f937bb5f4fc33e51d4e5c42efa522547d416689fa84a7fec5d47f82fe438ca9a",
+      "sites": [
+        {
+          "line": 16,
+          "text": "30 => WorldSnapshotCodecV30.Encode(state),"
+        },
+        {
+          "line": 17,
+          "text": "28 => WorldSnapshotCodecV28.Encode(state),"
+        },
+        {
+          "line": 18,
+          "text": "27 => WorldSnapshotCodecV27.Encode(state),"
+        },
+        {
+          "line": 52,
+          "text": "30 => archiveAnchor is null ? WorldSnapshotCodecV30.Decode(bytes)"
+        },
+        {
+          "line": 54,
+          "text": "28 => archiveAnchor is null ? WorldSnapshotCodecV28.Decode(bytes)"
+        },
+        {
+          "line": 56,
+          "text": "27 => archiveAnchor is null ? WorldSnapshotCodecV27.Decode(bytes)"
+        },
+        {
+          "line": 91,
+          "text": "27 => WorldSnapshotCodecV27.Decode(bytes, coordinatedAnchor),"
+        },
+        {
+          "line": 92,
+          "text": "28 => WorldSnapshotCodecV28.Decode(bytes, coordinatedAnchor),"
+        },
+        {
+          "line": 93,
+          "text": "30 => WorldSnapshotCodecV30.Decode(bytes, coordinatedAnchor),"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV27.cs",
+      "sourceSha256": "e6b3ae923e36846bef6219071329ddcd5316794d6f8ad3c1cde3c3da78a8b778",
+      "sites": [
+        {
+          "line": 31,
+          "text": "if (world.ProfileVersion != 27 || world.Coordination is not { } coordination || world.Care is null"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV28.cs",
+      "sourceSha256": "adf8e2861649ca3f79454155ccde1ac42ab1dbc2bf8e7e13380476155b2aafad",
+      "sites": [
+        {
+          "line": 32,
+          "text": "if (world.ProfileVersion != 28 || world.Coordination is not { ConsentedMaterial: { } history } coordination || world.Care is null"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV30.cs",
+      "sourceSha256": "bb9c1e8a64b44ce9a3fbfd313d220f51ebd21b4909d4710f1a7739d271da8f32",
+      "sites": [
+        {
+          "line": 32,
+          "text": "if (world.ProfileVersion != 30"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs",
+      "sourceSha256": "73b84e9db979886366c65ce6d4aacff957fc0580cde960ee11fe42be0b3da1a1",
+      "sites": [
+        {
+          "line": 52,
+          "text": "if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)"
+        },
+        {
+          "line": 72,
+          "text": "&& (profileVersion != 28 || kind != WorldBatchKind.AdvancingStep))"
+        },
+        {
+          "line": 78,
+          "text": "&& (profileVersion != 30 || kind != WorldBatchKind.AdvancingStep))"
+        },
+        {
+          "line": 83,
+          "text": "&& (profileVersion is not 26 and not 27 and not 28 and not 30 || kind != WorldBatchKind.AdvancingStep))"
+        },
+        {
+          "line": 88,
+          "text": "&& (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 || kind != WorldBatchKind.Care))"
+        },
+        {
+          "line": 92,
+          "text": "if (command.Intent is QueueEncounterWaitIntent && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || kind != WorldBatchKind.EncounterDecision))"
+        },
+        {
+          "line": 96,
+          "text": "if (command.Intent is QueueEncounterAbilityIntent && (profileVersion is not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || kind != WorldBatchKind.EncounterDecision))"
+        },
+        {
+          "line": 101,
+          "text": "&& (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || kind != WorldBatchKind.EncounterLifecycle))"
+        },
+        {
+          "line": 109,
+          "text": "if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30)"
+        },
+        {
+          "line": 140,
+          "text": "if (kind == WorldBatchKind.Care && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 || moving.Count != 0 || acting.Count != 1"
+        },
+        {
+          "line": 145,
+          "text": "if (kind == WorldBatchKind.EncounterLifecycle && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || moving.Count != 0 || acting.Count > 1"
+        },
+        {
+          "line": 161,
+          "text": "if (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || moving.Count != 0"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs",
+      "sourceSha256": "b3bf0dae55bf316d3b2f77320e1b63f5aca2eb1a3f983054b784c507dafdce64",
+      "sites": [
+        {
+          "line": 15,
+          "text": "30 => WorldStepCodecV30.Encode(batch),"
+        },
+        {
+          "line": 16,
+          "text": "28 => WorldStepCodecV28.Encode(batch),"
+        },
+        {
+          "line": 17,
+          "text": "27 => WorldStepCodecV27.Encode(batch),"
+        },
+        {
+          "line": 51,
+          "text": "30 => WorldStepCodecV30.Decode(bytes),"
+        },
+        {
+          "line": 52,
+          "text": "28 => WorldStepCodecV28.Decode(bytes),"
+        },
+        {
+          "line": 53,
+          "text": "27 => WorldStepCodecV27.Decode(bytes),"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV27.cs",
+      "sourceSha256": "8fccaf8852be2d537a98bbed42cf4629e3dbe81ff9406d80e4c176652ae000fd",
+      "sites": [
+        {
+          "line": 7,
+          "text": "public static byte[] Encode(WorldStepBatch batch) => WorldStepFrameCodec.Encode(batch, 27);"
+        },
+        {
+          "line": 8,
+          "text": "public static WorldStepBatch Decode(ReadOnlySpan<byte> bytes) => WorldStepFrameCodec.Decode(bytes, 27);"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV28.cs",
+      "sourceSha256": "6d73c9380aecddf261b59f322347b58ceeb799d19ea056cc1680e63e2edd63f7",
+      "sites": [
+        {
+          "line": 7,
+          "text": "public static byte[] Encode(WorldStepBatch batch) => WorldStepFrameCodec.Encode(batch, 28);"
+        },
+        {
+          "line": 8,
+          "text": "public static WorldStepBatch Decode(ReadOnlySpan<byte> bytes) => WorldStepFrameCodec.Decode(bytes, 28);"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodecV30.cs",
+      "sourceSha256": "84e49fd2a1e7689fa12bd11391582cdd68309cce63a3df9dd0c534cb416b6cf3",
+      "sites": [
+        {
+          "line": 7,
+          "text": "public static byte[] Encode(WorldStepBatch batch) => WorldStepFrameCodec.Encode(batch, 30);"
+        },
+        {
+          "line": 8,
+          "text": "public static WorldStepBatch Decode(ReadOnlySpan<byte> bytes) => WorldStepFrameCodec.Decode(bytes, 30);"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepFrameCodec.cs",
+      "sourceSha256": "730c62f033dfe2ba1b7ff28fe57b48fb2931d1b28645215c701cebda5b440fea",
+      "sites": [
+        {
+          "line": 13,
+          "text": "if (batch.ProfileVersion != profileVersion || profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30)"
+        },
+        {
+          "line": 35,
+          "text": "if (profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || reader.Number() != profileVersion)"
+        },
+        {
+          "line": 47,
+          "text": "&& (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || rawKind is not 5 and not 6 and not 7)"
+        },
+        {
+          "line": 48,
+          "text": "&& (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 || rawKind != 8)"
+        },
+        {
+          "line": 49,
+          "text": "&& (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 || rawKind != 9))"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalMaterialGiftController.cs",
+      "sourceSha256": "b37987701ec59414ba3c32df1847a5ba92003662579b0da1f3b56d10cf404590",
+      "sites": [
+        {
+          "line": 31,
+          "text": "|| state.ProfileVersion != 30 || state.Care?.Ordinary is not { } ordinary"
+        },
+        {
+          "line": 67,
+          "text": "if (state.ProfileVersion != 30 || state.HasReadingHold || state.PendingExcavation is not null"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalMaterialProposalPreparation.cs",
+      "sourceSha256": "2c3b718c47eb74a18f4025e6f91e78be8037f41f424627117af88b831d0f3860",
+      "sites": [
+        {
+          "line": 94,
+          "text": "if (state.ProfileVersion != 30 || state.HasReadingHold || state.PendingExcavation is not null"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalMaterialProposalSelection.cs",
+      "sourceSha256": "313866a5ad144a8ffc3bc29b9d26dc9f46637c1a14e1e7026ea80302b92340e7",
+      "sites": [
+        {
+          "line": 17,
+          "text": "if (state.ProfileVersion != 30 || state.HasReadingHold || state.PendingExcavation is not null"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalRestorativeController.cs",
+      "sourceSha256": "a9a4d4437dff3ba3439d75966254fc4a3e5bfcebe5242161fddbf8d524277c5c",
+      "sites": [
+        {
+          "line": 24,
+          "text": "if (state.ProfileVersion is not (26 or 27 or 30) || state.Care?.Ordinary is not { } ordinary"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalRestorativeView.cs",
+      "sourceSha256": "bbd6f4a3cd3e89e8191969987444be794d12b030827fcfda2148aa6fce181b4b",
+      "sites": [
+        {
+          "line": 40,
+          "text": "if (world.ProfileVersion is not (26 or 27 or 30) || world.Care?.Ordinary is not { } ordinary"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs",
+      "sourceSha256": "ea368e3d4ad6cd33b952d05545f481ec58d296472dd1773c361d831509c4a0b3",
+      "sites": [
+        {
+          "line": 172,
+          "text": "&& state.ProfileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 30)"
+        },
+        {
+          "line": 230,
+          "text": "&& (state.ProfileVersion is not (26 or 27 or 30) || state.HasReadingHold || state.PendingExcavation is not null"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.MaterialProposals.cs",
+      "sourceSha256": "1752e84bf4bae1a6fa659439839c7748aadb0ed2071e410142348efbb1f05745",
+      "sites": [
+        {
+          "line": 28,
+          "text": "if (_state.ProfileVersion != 30 || command.Intent is not MaterialProposalIntent)"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+      "sourceSha256": "0f4509d0d858fd043d80e18b3b4c9c8dfa7ff1a21e3812cee0250ab44ecbae33",
+      "sites": [
+        {
+          "line": 44,
+          "text": "27 or 28 or 30 => WorldDatabaseSchemaEight.Version,"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.MaterialCareArchives.cs",
+      "sourceSha256": "ef9c4bb2bd3b185410fd18f0a9f63b5745f167d6adac3c4c6a23df996c214224",
+      "sites": [
+        {
+          "line": 62,
+          "text": "if (world.ProfileVersion is not (27 or 28 or 30) || world.WorldId != value.Reference.WorldId || world.BranchId != value.Reference.BranchId)"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs",
+      "sourceSha256": "c8dff0b1e46e3bba7190c5771195e3dad8d2b96e67686965a54cd3be1380f623",
+      "sites": [
+        {
+          "line": 32,
+          "text": "bool jointArchives = profileVersion is 27 or 28 or 30;"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+      "sourceSha256": "3f53e182171d68db57fd2404222cb8d858bbdb73e9180f1ee3d84ade60d32488",
+      "sites": [
+        {
+          "line": 95,
+          "text": "if ((genesis.ProfileVersion is 27 or 28 or 30) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))"
+        },
+        {
+          "line": 209,
+          "text": "if ((state.ProfileVersion is 27 or 28 or 30) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))"
+        }
+      ]
+    }
+  ]
+}

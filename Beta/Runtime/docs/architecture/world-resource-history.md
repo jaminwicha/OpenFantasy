@@ -11,8 +11,10 @@ material consumption and encounter lifecycle. Earlier profiles retain their own 
 The initial anchor contains the complete fresh progression basis, world/branch scope, sequence
 zero and world admission pin. A [continued segment](resource-archive-continuation.md) instead binds
 the exact retrieved closing progression and world sequence. The complete actor set replays from
-that basis. The profile requires one progression revision per recorded command batch above the
-basis revision, including rewards of zero XP. Comparing
+that basis. Actor effects require one progression revision per recorded command batch above the
+basis revision, including rewards of zero XP. The [paid world](world-paid-exchange.md) additionally
+requires one revision per fill; payment changes the currency ledger without inventing an actor
+resource batch, actor revision, HP, MP or XP. Comparing
 only final HP, or accepting an unexplained later revision, does not establish continuity.
 
 An embedded basis and matching admission label establish structural consistency, not provenance.
@@ -40,6 +42,12 @@ the expected complete effects from each cause. A component-valid edit that remov
 MP cost, substitutes a remedy rule for damage, changes a random draw or omits reward payment
 still fails world admission. It checks every completed quest, treatment and ordinary use has its resource
 batch, and compares the exact replayed currency ledger including account revisions.
+
+In the paid interpretation, admission merges book fills and actor batches by world sequence and
+command ordinal, refusing a tie. Each reward and payment consumes the ledger produced by the prior
+cause. The book owns the quote and settlement evidence; progression remains the sole balance owner.
+The replay checks exact account revisions and finite supply, not just net balances. After a joint
+cut the actual closing progression is the basis and only successor fills add to its revision.
 
 Encounter draws are replayed independently from each authority-derived episode's seed and
 identity. Episode order cannot run backwards, and each ordinal has one scenario-derived identity

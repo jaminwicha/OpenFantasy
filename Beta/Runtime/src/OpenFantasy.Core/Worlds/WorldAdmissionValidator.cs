@@ -50,6 +50,7 @@ public static class WorldAdmissionValidator
         admission.ReadResourceHistory();
         admission.ReadConsentedMaterial();
         admission.ReadMaterialProposals();
+        admission.ReadPaidExchange();
         return admission.Complete();
     }
 
@@ -185,6 +186,73 @@ public static class WorldAdmissionValidator
                 WorldIdentityRole lotRole = produced ? WorldIdentityRole.TransformedLot : WorldIdentityRole.Lot;
                 Add(terms.LotId, lotRole);
                 Add(settlement.MovedLotId, lotRole);
+                Require(settlement.RightsOwnerId, produced ? WorldIdentityRole.ProductionBatch : WorldIdentityRole.CountedSource);
+            }
+        }
+
+        internal void ReadPaidExchange()
+        {
+            if (world.Coordination?.PaidExchange is not { } book)
+            {
+                return;
+            }
+            void RegisterQuote(WorldPaidQuote issued)
+            {
+                var quote = issued.Quote;
+                Add(issued.QuoteId, WorldIdentityRole.PaidQuote, unique: true);
+                Add(issued.CreationCommandId, WorldIdentityRole.CauseReference, unique: true);
+                Require(quote.IssuerActorId, WorldIdentityRole.Actor);
+                Require(quote.CounterpartyActorId, WorldIdentityRole.Actor);
+                Require(quote.SellerCustodianId, WorldIdentityRole.Custodian);
+                Require(quote.BuyerCustodianId, WorldIdentityRole.Custodian);
+                Require(quote.SellerAccountId, WorldIdentityRole.CurrencyAccount);
+                Require(quote.BuyerAccountId, WorldIdentityRole.CurrencyAccount);
+                foreach (var fee in quote.Fees)
+                {
+                    Require(fee.PayeeAccountId, WorldIdentityRole.CurrencyAccount);
+                }
+                Definition(quote.CurrencyDefinitionId, WorldIdentityRole.CurrencyDefinition, quote.CurrencyVersion);
+                Definition(quote.Definition.DefinitionId, WorldIdentityRole.ItemDefinition, quote.Definition.Version);
+                // The quoted lot may have been spent or moved since issuance. Its historical role remains occupied.
+                Add(quote.LotId, quote.LotKind == Markets.SpotLotKind.Produced
+                    ? WorldIdentityRole.TransformedLot : WorldIdentityRole.Lot);
+            }
+            // The issuer roster is never pruned. Issuing requires the actor's current presence, and the immutable
+            // presence roster is bounded below WorldPaidExchangeBook.MaximumIssuers. A future roster transition
+            // that admits more actors must revisit that bound rather than reset any market revision.
+            HashSet<EntityId> present = world.Space.Actors.Select(value => value.ActorId).ToHashSet();
+            foreach (var issuer in book.IssuerRevisions)
+            {
+                Require(issuer.Key, WorldIdentityRole.Actor);
+                if (!present.Contains(issuer.Key))
+                {
+                    throw new ArgumentException("A quote issuer must be an actor with admitted presence.");
+                }
+            }
+            foreach (WorldPaidQuote quote in book.Open)
+            {
+                RegisterQuote(quote);
+            }
+            // Canonical order puts every fill before the supersessions it caused, so their cause resolves here.
+            foreach (WorldPaidQuoteOutcome outcome in book.Outcomes)
+            {
+                RegisterQuote(outcome.Quote);
+                if (outcome.Withdrawal is { } withdrawal)
+                {
+                    Add(withdrawal.CommandId, WorldIdentityRole.CauseReference, unique: true);
+                }
+                if (outcome.Supersession is { } supersession)
+                {
+                    Require(supersession.AcceptanceId, WorldIdentityRole.CauseReference);
+                    Require(supersession.FilledQuoteId, WorldIdentityRole.PaidQuote);
+                }
+                if (outcome.Settlement is not { } settlement)
+                {
+                    continue;
+                }
+                Add(settlement.Acceptance.AcceptanceId, WorldIdentityRole.CauseReference, unique: true);
+                bool produced = outcome.Quote.Quote.LotKind == Markets.SpotLotKind.Produced;
+                Add(settlement.MovedLotId, produced ? WorldIdentityRole.TransformedLot : WorldIdentityRole.Lot);
                 Require(settlement.RightsOwnerId, produced ? WorldIdentityRole.ProductionBatch : WorldIdentityRole.CountedSource);
             }
         }

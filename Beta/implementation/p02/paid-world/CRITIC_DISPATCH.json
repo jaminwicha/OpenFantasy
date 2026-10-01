@@ -1,0 +1,41 @@
+{
+  "status": "completed_pending_review",
+  "private": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-paid-world-critic-wzgd88o4",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "timeoutSeconds": 1200,
+  "clientEstimateLimitUsd": 15,
+  "sourceHead": "9867ecb42b8c50a7b43c45714564b18ac8e56efd",
+  "scope": "Independent read-only critique of integrated profile32 paid-world binding, not a retry of earlier standalone-component critic.",
+  "preparationFailures": [
+    {
+      "stage": "preview",
+      "error": "Output directory under home resolves within a Git checkout. Moved private output to native temporary directory. No model request executed."
+    }
+  ],
+  "contextHash": "99ad5021e1c6005b4cbc99007a0875011bf098a3109004f151ac01492072e684",
+  "sessionId": 84607,
+  "adapterExitCode": 0,
+  "durationSeconds": 564.942,
+  "clientCostEstimateUsd": 3.0958764000000003,
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 68,
+      "outputTokens": 48169,
+      "cacheReadInputTokens": 3640602,
+      "cacheCreationInputTokens": 175513,
+      "webSearchRequests": 0,
+      "costUSD": 3.0958764000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 37090,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextPostflight": "verified",
+  "contextPreflight": "verified; zero skill copies required",
+  "permissionDenials": [],
+  "acceptance": "Review found shared quote capacity and canonical ordering issues. Repair required; no accepted milestone yet."
+}

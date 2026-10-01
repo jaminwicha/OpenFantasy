@@ -1,0 +1,23 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.19]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.53]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.67]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile [495 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote [258 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen [184 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner [107 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True) [136 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False) [121 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles [136 ms]
+[xUnit.net 00:00:05.29]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world [1 s]
+
+Test Run Successful.
+Total tests: 9
+     Passed: 9
+ Total time: 5.7313 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/new-host-20260930T233716Z-20a60/OpenFantasy.Hosting.Tests.trx

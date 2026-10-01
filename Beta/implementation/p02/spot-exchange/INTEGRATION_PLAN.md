@@ -61,3 +61,19 @@ Asset production remains separate from engine work. Merchant cultural dress, car
 trade gestures use accepted native art and semantic action cues; this component does not license
 bulk art production or claim art/audio acceptance. Preserve quiet work ambience and meaningful
 feedback for transfer, refusal and changing circumstances without an alert for every price tick.
+
+
+## Paid-world critic follow-through
+
+The paid-world binding has a separate [integration packet](../paid-world/INTEGRATION_REVIEW.md).
+Its independent critique produced lifecycle/canonicality repairs qualified at the lifecycle milestone;
+original boundary-evidence completion remains open. The market/session stages must still supply authenticated participant lookup of live
+and archived quote outcomes, actor knowledge and private-stock disclosure checks, and a native menu
+pacing policy compatible with the world's unheld/readiness rule. The privileged complete-world
+journal reader is not a participant-facing history API.
+
+The bounded world's immutable64-resident roster keeps its persistent128-issuer index sufficient.
+Adding residents over a world lifetime, retiring them or changing control/storage/account ownership
+requires explicit historical authority and issuer-index continuation, without resetting market
+revisions or reviving stale quotes. This dependency belongs to roster/session/scale implementation;
+it does not narrow the full species, settlement, NPC-parity or1–4-player campaign requirements.

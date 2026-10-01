@@ -66,6 +66,9 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 25 | Aftermath care, consumption-enabled material owners and ordered causal resource history with explicit schema-seven archive publication |
 | 26 | Ordinary restorative use, patient-owned assistance permission and revocation over the complete care/resource world, retaining schema-seven publication |
 | 27 | The complete ordinary-care graph with coordinated material/care/resource closure, exact source issuance and schema-eight publication |
+| 28 | Coordinated world with explicit simultaneous bilateral material transfer evidence and Production V11 continuation |
+| 30 | Coordinated world with separately submitted saved material proposals, exact carried grants and permanent outcome identities |
+| 32 | Saved-proposal world with paid quotes, currency-only causal fills, issuer revisions and joint archive carry |
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
@@ -97,6 +100,15 @@ schema-eight table stores exact closing bytes; the world journal remains the sol
 Decoding after a cut requires the actual joint anchor, and Host recovery verifies every archive
 against complete replay. Neither opening a lived profile26 save nor supplying a component context
 selects this interpretation. The embedded ordinary-care factory retains its own profile26 admission.
+
+Profiles 28, 30 and 32 use the same schema-eight physical layout with explicitly selected world
+semantics. Profiles 29 and 31 remain unassigned and refused. The sole lived interpretation change is
+the privileged [27-to-30 proposal transition](coordinated-world-continuation.md#explicit-proposal-transition).
+[Paid profile 32](world-paid-exchange.md) has fresh admission; reopening another profile never enables
+trading. Its single-command Host boundary checks independently supplied delivery before receipt
+disclosure, and publishes goods, balances, quotes, journal, receipts, identities and any cut in one
+transaction. Exact retries return the retained receipt. A matching root hash alone does not establish
+payment history; recovery reconstructs it from the admitted genesis and complete journal.
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight

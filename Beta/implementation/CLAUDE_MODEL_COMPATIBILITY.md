@@ -94,3 +94,23 @@ implementation's verified route does not fill those missing observations. Its in
 remained open until an explicitly announced native critic completed a static review without
 actionable correctness findings; no silent substitution or
 additional Claude request occurred. This timeout adds review latency without accepted review value.
+
+
+## Paid-world observations (2026-09-30)
+
+Three distinct bounded requests used `claude-opus-5-5[1m] --effort max`. All returned canonical
+`claude-opus-5-5`, a 1,000,000-token context, verified pre/post context synchronization and no
+permission denials. The shared context hook required no skill copies. Max is the requested setting;
+the result metadata verifies the model and context.
+
+| Assignment | Duration | Client estimate | Useful result and limitation |
+|---|---:|---:|---|
+| [Implementation](p02/paid-world/DISPATCH.json) | 1,565.479s | $8.9076464 | Substantial world/Host code, but missing required tests and integration details. Astra completed profile selection, identity admission, causal revisions and gift coexistence. Its time-limit claim was incorrect: the request ended inside its 3,000s bound. |
+| [Independent critic](p02/paid-world/CRITIC_DISPATCH.json) | 564.942s | $3.0958764 | Found an actual shared-capacity defect and noncanonical outcome ordering, plus useful future authority/disclosure dependencies. |
+| [Lifecycle repair](p02/paid-world/LIFECYCLE_REPAIR_DISPATCH.json) | 1,170.458s | $7.6397666 | Implemented supersession, authenticated withdrawal, canonical ordering and meaningful full-book/cut/reopen tests. Its 10 Core and 15 Host cases passed; lead regression and required-evidence reconciliation are separate. |
+
+These were implementation, independent critique and a concrete repair, not automatic retries of
+failed requests. The critic's initial outside-Git preparation error occurred before any model call.
+The incomplete first implementation still imposed lead integration work. Estimates are neither
+billing nor demonstrated net credit savings. The [integration record](p02/paid-world/INTEGRATION_REVIEW.md)
+owns acceptance and residual coverage; model availability alone does not prove completion.

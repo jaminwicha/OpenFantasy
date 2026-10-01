@@ -13,6 +13,7 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Encode(state),
             2 => WorldSnapshotCodecV2.Encode(state),
             3 => WorldSnapshotCodecV3.Encode(state),
+            32 => WorldSnapshotCodecV32.Encode(state),
             30 => WorldSnapshotCodecV30.Encode(state),
             28 => WorldSnapshotCodecV28.Encode(state),
             27 => WorldSnapshotCodecV27.Encode(state),
@@ -49,6 +50,8 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
             3 => WorldSnapshotCodecV3.Decode(bytes),
+            32 => archiveAnchor is null ? WorldSnapshotCodecV32.Decode(bytes)
+                : throw new FormatException("The paid world requires its complete archive context."),
             30 => archiveAnchor is null ? WorldSnapshotCodecV30.Decode(bytes)
                 : throw new FormatException("The saved-proposal world requires its complete archive context."),
             28 => archiveAnchor is null ? WorldSnapshotCodecV28.Decode(bytes)
@@ -91,6 +94,7 @@ public static class WorldSnapshotCodec
             27 => WorldSnapshotCodecV27.Decode(bytes, coordinatedAnchor),
             28 => WorldSnapshotCodecV28.Decode(bytes, coordinatedAnchor),
             30 => WorldSnapshotCodecV30.Decode(bytes, coordinatedAnchor),
+            32 => WorldSnapshotCodecV32.Decode(bytes, coordinatedAnchor),
             _ => throw new FormatException("Only coordinated world profiles accept a joint decode context.")
         };
 }

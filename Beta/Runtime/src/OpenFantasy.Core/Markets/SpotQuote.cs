@@ -184,4 +184,15 @@ public sealed class SpotQuote
 
     public ulong PaymentFor(ulong quantity) => checked(UnitPrice * quantity);
     public ulong FeesFor(ulong quantity) => checked(UnitFees * quantity);
+
+    /// <summary>
+    /// The buyer's exact credits for one fill: the seller's payment and each named fee. This is the shared
+    /// payment arithmetic of every settlement and replay; the ledger aggregates credits per account.
+    /// </summary>
+    internal IReadOnlyList<(EntityId PayeeAccountId, ulong Amount)> PaymentsFor(ulong quantity)
+    {
+        List<(EntityId, ulong)> payments = [(SellerAccountId, PaymentFor(quantity))];
+        payments.AddRange(Fees.Select(fee => (fee.PayeeAccountId, checked(fee.UnitAmount * quantity))));
+        return payments;
+    }
 }

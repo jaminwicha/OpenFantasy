@@ -1,0 +1,50 @@
+{
+  "status": "integrated_lifecycle_checkpoint",
+  "private": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-quote-lifecycle-repair-skcr46sg",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "timeoutSeconds": 1800,
+  "clientEstimateLimitUsd": 20,
+  "sourceHead": "9867ecb42b8c50a7b43c45714564b18ac8e56efd",
+  "ownedPaths": [
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPaidExchangeAdmission.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPaidExchangeBook.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPaidExchangeCodec.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPaidExchangeIntents.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPaidExchangeResolver.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPaidQuote.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodecV17.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/WorldExchange/PaidQuoteLifecycleTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Lifecycle.cs",
+    "Beta/Runtime/docs/architecture/world-paid-exchange.md",
+    "Beta/implementation/p02/paid-world/LIFECYCLE_REPAIR_RESULT.md"
+  ],
+  "scope": "Implement critic-found quote lifecycle/canonicality repair; new assignment with checkpoint, not a failed request retry.",
+  "contextHash": "f239d118e33a60c1be2a5e67a64ab1a10d21b2f95d34ef5428663a29ca3f31c8",
+  "startedUtc": "2026-09-30T23:54:36.669095+00:00",
+  "adapterExitCode": 0,
+  "durationSeconds": 1170.458,
+  "clientCostEstimateUsd": 7.639766599999998,
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 108,
+      "outputTokens": 124427,
+      "cacheReadInputTokens": 11436453,
+      "cacheCreationInputTokens": 357938,
+      "webSearchRequests": 0,
+      "costUSD": 7.639766599999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 69564,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextPreflight": "verified; zero skill copies required",
+  "contextPostflight": "verified",
+  "permissionDenials": [],
+  "acceptance": "Lead source review,1868 managed cases and4 kills/6 SQL corruption refusals qualify the lifecycle repair. Original broader boundary evidence remains open; see INTEGRATION_REVIEW.md."
+}

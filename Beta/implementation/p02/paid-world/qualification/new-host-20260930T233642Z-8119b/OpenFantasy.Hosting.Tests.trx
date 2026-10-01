@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="0c9e1609-07db-45bd-8df2-f0c3eca153aa" name="@mac 2026-09-30 18:36:45" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-30T18:36:45.1504330-05:00" queuing="2026-09-30T18:36:45.1504330-05:00" start="2026-09-30T18:36:43.3102520-05:00" finish="2026-09-30T18:36:49.2142980-05:00" />
+  <TestSettings name="default" id="f26efe10-6014-4430-ab72-712e65b49709">
+    <Deployment runDeploymentRoot="_mac_2026-09-30_18_36_45" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="499c91fd-5f28-4b20-809b-5951a67f21c6" testId="b139301a-dfdd-9809-ea6e-c625351925f9" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities" computerName="mac" duration="00:00:01.9276766" startTime="2026-09-30T18:36:45.2553270-05:00" endTime="2026-09-30T18:36:47.1830700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="499c91fd-5f28-4b20-809b-5951a67f21c6" />
+    <UnitTestResult executionId="9e76a2ff-d0b8-4e64-a124-40154271ec3b" testId="08334298-1d7e-34e3-1fdf-00b1a4ec27b4" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner" computerName="mac" duration="00:00:00.1222654" startTime="2026-09-30T18:36:47.3781820-05:00" endTime="2026-09-30T18:36:47.5004970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9e76a2ff-d0b8-4e64-a124-40154271ec3b" />
+    <UnitTestResult executionId="467cabbc-3bf8-4870-8edb-08d925fb3217" testId="d7f43cf4-296b-0c48-1aaf-24ea77991610" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True)" computerName="mac" duration="00:00:00.1477588" startTime="2026-09-30T18:36:47.5016200-05:00" endTime="2026-09-30T18:36:47.6494290-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="467cabbc-3bf8-4870-8edb-08d925fb3217" />
+    <UnitTestResult executionId="0edb0648-4bbe-407b-b04e-de42260e97e6" testId="7ffbf561-005d-190e-868c-18d87e1acc19" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote" computerName="mac" duration="00:00:00.2661174" startTime="2026-09-30T18:36:44.9881680-05:00" endTime="2026-09-30T18:36:45.2543910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0edb0648-4bbe-407b-b04e-de42260e97e6" />
+    <UnitTestResult executionId="04116710-42d3-49a8-beee-559a063dc2bc" testId="68bc5038-8be0-af19-8357-911ed9adddb2" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False)" computerName="mac" duration="00:00:00.1402420" startTime="2026-09-30T18:36:47.6501070-05:00" endTime="2026-09-30T18:36:47.7904000-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04116710-42d3-49a8-beee-559a063dc2bc" />
+    <UnitTestResult executionId="825da229-f4ad-469e-98ed-e7e3d0e52ad2" testId="63ef3f21-5c69-486f-05d6-b1b693d01d5d" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles" computerName="mac" duration="00:00:00.1476187" startTime="2026-09-30T18:36:47.7911770-05:00" endTime="2026-09-30T18:36:47.9388380-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="825da229-f4ad-469e-98ed-e7e3d0e52ad2" />
+    <UnitTestResult executionId="366e9f58-66f3-4620-abc5-bf550917f1b5" testId="1924e966-235b-c38a-faa6-1cac9ee79195" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world" computerName="mac" duration="00:00:01.2367251" startTime="2026-09-30T18:36:47.9394590-05:00" endTime="2026-09-30T18:36:49.1762620-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="366e9f58-66f3-4620-abc5-bf550917f1b5" />
+    <UnitTestResult executionId="95def521-54f2-4633-9dc2-bdab9c1c7edf" testId="7f9e534d-39d6-28f5-ee68-6f83cf5516a5" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" computerName="mac" duration="00:00:00.1932398" startTime="2026-09-30T18:36:47.1840470-05:00" endTime="2026-09-30T18:36:47.3773390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="95def521-54f2-4633-9dc2-bdab9c1c7edf" />
+    <UnitTestResult executionId="12fdb2af-0f3c-4f82-93c1-e6969f6ea8c4" testId="64ce023f-394a-cdcd-4eb3-ee67ea4c1496" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile" computerName="mac" duration="00:00:00.4828270" startTime="2026-09-30T18:36:44.4975760-05:00" endTime="2026-09-30T18:36:44.9847270-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="12fdb2af-0f3c-4f82-93c1-e6969f6ea8c4" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1924e966-235b-c38a-faa6-1cac9ee79195">
+      <Execution id="366e9f58-66f3-4620-abc5-bf550917f1b5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="64ce023f-394a-cdcd-4eb3-ee67ea4c1496">
+      <Execution id="12fdb2af-0f3c-4f82-93c1-e6969f6ea8c4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Paid_intents_and_bytes_are_refused_outside_the_paid_profile" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d7f43cf4-296b-0c48-1aaf-24ea77991610">
+      <Execution id="467cabbc-3bf8-4870-8edb-08d925fb3217" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="08334298-1d7e-34e3-1fdf-00b1a4ec27b4">
+      <Execution id="9e76a2ff-d0b8-4e64-a124-40154271ec3b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Reachable_unfunded_and_expired_quotes_change_no_owner" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="63ef3f21-5c69-486f-05d6-b1b693d01d5d">
+      <Execution id="825da229-f4ad-469e-98ed-e7e3d0e52ad2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="68bc5038-8be0-af19-8357-911ed9adddb2">
+      <Execution id="04116710-42d3-49a8-beee-559a063dc2bc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7ffbf561-005d-190e-868c-18d87e1acc19">
+      <Execution id="0edb0648-4bbe-407b-b04e-de42260e97e6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b139301a-dfdd-9809-ea6e-c625351925f9">
+      <Execution id="499c91fd-5f28-4b20-809b-5951a67f21c6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7f9e534d-39d6-28f5-ee68-6f83cf5516a5">
+      <Execution id="95def521-54f2-4633-9dc2-bdab9c1c7edf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b139301a-dfdd-9809-ea6e-c625351925f9" executionId="499c91fd-5f28-4b20-809b-5951a67f21c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="08334298-1d7e-34e3-1fdf-00b1a4ec27b4" executionId="9e76a2ff-d0b8-4e64-a124-40154271ec3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d7f43cf4-296b-0c48-1aaf-24ea77991610" executionId="467cabbc-3bf8-4870-8edb-08d925fb3217" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ffbf561-005d-190e-868c-18d87e1acc19" executionId="0edb0648-4bbe-407b-b04e-de42260e97e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68bc5038-8be0-af19-8357-911ed9adddb2" executionId="04116710-42d3-49a8-beee-559a063dc2bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="63ef3f21-5c69-486f-05d6-b1b693d01d5d" executionId="825da229-f4ad-469e-98ed-e7e3d0e52ad2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1924e966-235b-c38a-faa6-1cac9ee79195" executionId="366e9f58-66f3-4620-abc5-bf550917f1b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f9e534d-39d6-28f5-ee68-6f83cf5516a5" executionId="95def521-54f2-4633-9dc2-bdab9c1c7edf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64ce023f-394a-cdcd-4eb3-ee67ea4c1496" executionId="12fdb2af-0f3c-4f82-93c1-e6969f6ea8c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.32]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.67]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.81]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:05.53]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

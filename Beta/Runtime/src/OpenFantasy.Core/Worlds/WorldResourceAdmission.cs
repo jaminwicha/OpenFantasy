@@ -21,10 +21,12 @@ internal static class WorldResourceAdmission
         var lifecycle = world.EncounterLifecycle!;
         var anchor = retained.ArchiveAnchor;
         var joint = retained.CoordinatedAnchor;
-        if (world.ProfileVersion is not (25 or 26 or 27 or 28 or 30) || retained.AnchorAdmission != world.AdmissionVersion
+        // Only the paid interpretation has currency-only causes; every other profile keeps its exact equation.
+        var paidCauses = WorldPaidExchangeAdmission.CurrencyCauses(world).ToList();
+        if (world.ProfileVersion is not (25 or 26 or 27 or 28 or 30 or 32) || retained.AnchorAdmission != world.AdmissionVersion
             || anchor is null && joint is null && (history.BasisWorldSequence != 0 || history.Basis.Revision != 0
                 || history.Basis.Actors.Any(actor => actor.Revision != 0))
-            || progression.Revision != checked(history.Basis.Revision + (ulong)history.Batches.Count)
+            || progression.Revision != checked(history.Basis.Revision + (ulong)history.Batches.Count + (ulong)paidCauses.Count)
             || history.Basis.Currency.Currency.DefinitionId != progression.Currency.Currency.DefinitionId
             || history.Basis.Currency.Currency.Version != progression.Currency.Currency.Version
             || world.Revision == 0 && history.Basis.ContentHash != progression.ContentHash)
@@ -79,8 +81,20 @@ internal static class WorldResourceAdmission
                     attacks.TryAdd(closing.DecisionCommandId, (closedActions.Scope.EncounterId, closing));
             }
         }
-        for (int index = 0; index < history.Batches.Count; index++)
+        // Actor batches and currency-only paid causes form one ordered causal sequence. Each advances the
+        // progression revision once; only paid causes and funded rewards move the finite ledger.
+        int paidIndex = 0;
+        ulong position = 0;
+        for (int index = 0; index <= history.Batches.Count; index++)
         {
+            while (paidIndex < paidCauses.Count
+                && (index == history.Batches.Count || Precedes(paidCauses[paidIndex], history.Batches[index])))
+            {
+                currency = ReplayPayment(paidCauses[paidIndex], history.BasisWorldSequence, currency);
+                paidIndex++;
+                position++;
+            }
+            if (index == history.Batches.Count) break;
             var batch = history.Batches[index];
             var evidence = retained.Evidence[index];
             IReadOnlyList<ActorResourceChange> expected;
@@ -92,7 +106,7 @@ internal static class WorldResourceAdmission
                     break;
                 case WorldRewardResourceEvidence reward:
                     if (!rewards.Add(reward.CommandId)) throw new ArgumentException("An archived quest cannot pay another reward.");
-                    expected = ValidateReward(world, batch, reward, heads, checked(history.Basis.Revision + (ulong)index), ref currency);
+                    expected = ValidateReward(world, batch, reward, heads, checked(history.Basis.Revision + position), ref currency);
                     break;
                 case WorldTreatmentResourceEvidence treatment:
                     expected = ValidateTreatment(world, batch, treatment, heads);
@@ -109,6 +123,7 @@ internal static class WorldResourceAdmission
                 !Same(change, batch.Changes[ordinal])).Any())
                 throw new ArgumentException("Resource effects must equal the complete ordered effects of their actual domain cause.");
             foreach (var change in expected) heads[change.After.ActorId] = change.After;
+            position++;
         }
         if (!rewards.SetEquals(world.Quests!.Participations.Where(value => value.Status == ActorQuestStatus.Completed)
                 .Select(value => value.CompletionCommandId!.Value))
@@ -232,7 +247,7 @@ internal static class WorldResourceAdmission
     private static IReadOnlyList<ActorResourceChange> ValidateRestorativeUse(WorldSnapshot world, ResourceChangeBatch batch,
         WorldRestorativeUseResourceEvidence evidence, Dictionary<EntityId, ActorProgressionState> heads)
     {
-        if (world.ProfileVersion is not (26 or 27 or 28 or 30) || world.Care?.Ordinary is not { } ordinary)
+        if (world.ProfileVersion is not (26 or 27 or 28 or 30 or 32) || world.Care?.Ordinary is not { } ordinary)
             throw new ArgumentException("Ordinary restoration evidence requires its explicit ordinary-care world profile.");
         var use = ordinary.Uses.SingleOrDefault(value => value.UseId == evidence.UseId)
             ?? throw new ArgumentException("Ordinary restoration requires its actual retained completed use.");
@@ -326,6 +341,25 @@ internal static class WorldResourceAdmission
             || !EncounterActionCodecV1.EncodeResolution(attack.Resolution).AsSpan()
                 .SequenceEqual(EncounterActionCodecV1.EncodeResolution(resolution)))
             throw new ArgumentException("The original attack boundary must remain exactly represented in causal history.");
+    }
+
+    // Causes are ordered by world revision and command position. One command causes at most one revision.
+    private static bool Precedes(WorldPaidCurrencyCause cause, ResourceChangeBatch batch)
+    {
+        if (cause.WorldSequence == batch.WorldSequence && cause.CommandOrdinal == batch.CommandOrdinal)
+            throw new ArgumentException("One world command position cannot cause both a paid and an actor resource revision.");
+        return cause.WorldSequence < batch.WorldSequence
+            || cause.WorldSequence == batch.WorldSequence && cause.CommandOrdinal < batch.CommandOrdinal;
+    }
+
+    // The shared spot arithmetic redistributes the buyer's existing balance; an unfunded fill fails here.
+    private static CurrencyLedger ReplayPayment(WorldPaidCurrencyCause cause, ulong basisWorldSequence, CurrencyLedger currency)
+    {
+        if (cause.WorldSequence <= basisWorldSequence || cause.CommandOrdinal >= WorldStepBatch.MaximumActorsPerBatch
+            || currency.Currency.DefinitionId != cause.Quote.CurrencyDefinitionId
+            || currency.Currency.Version != cause.Quote.CurrencyVersion)
+            throw new ArgumentException("A paid currency cause requires its segment position and exact currency pin.");
+        return currency.Transfer(cause.Quote.BuyerAccountId, cause.Quote.PaymentsFor(cause.Acceptance.Quantity));
     }
 
     private static bool Same(ActorResourceChange expected, ActorResourceChange actual) =>

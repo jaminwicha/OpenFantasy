@@ -220,6 +220,9 @@ owner and refuses unrepresented changes. Advancing to a time cannot overwrite ac
 [Atomic spot exchange](spot-exchange.md) is a standalone domain joining the existing inventory,
 production and progression owners with a quote book. Both participants approve exact goods,
 price and fees; settlement preserves finite money and material provenance as one candidate.
-Explicit V12 ordered material history records genuine paid movement evidence. The domain neither
-establishes a market price model nor admits a durable trade into a world profile. Those bindings
-must retain complete payment causes, spatial/time rules, historical identities and atomic publication.
+Explicit V12 ordered material history records genuine paid movement evidence for the standalone
+contract. The [paid world binding](world-paid-exchange.md) shares terms and transfer arithmetic while
+owning its own quotes and typed payment causes. It couples actual control, reach, readiness, both
+participants' work opportunity, progression and material history, joint cuts and SQL publication.
+Its production continuation uses V11. Neither binding supplies a stock/demand price model, NPC
+quoting policy or native trade interface.

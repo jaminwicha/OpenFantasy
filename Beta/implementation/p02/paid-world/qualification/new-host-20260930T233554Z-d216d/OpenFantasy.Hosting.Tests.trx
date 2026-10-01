@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="91cbf904-df15-4ab0-8ab8-c1ac9823651a" name="@mac 2026-09-30 18:35:58" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-30T18:35:58.6623210-05:00" queuing="2026-09-30T18:35:58.6623210-05:00" start="2026-09-30T18:35:55.2547830-05:00" finish="2026-09-30T18:36:01.4207390-05:00" />
+  <TestSettings name="default" id="42dfbe86-85a6-4e0b-bf1c-5a09fd93d9a9">
+    <Deployment runDeploymentRoot="_mac_2026-09-30_18_35_58" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="560cba78-705a-4eb1-91dd-9289b2c88763" testId="63ef3f21-5c69-486f-05d6-b1b693d01d5d" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles" computerName="mac" duration="00:00:00.1672394" startTime="2026-09-30T18:36:00.6221060-05:00" endTime="2026-09-30T18:36:00.7893960-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="560cba78-705a-4eb1-91dd-9289b2c88763" />
+    <UnitTestResult executionId="e9eb6d96-e0ef-4541-87fd-d24bdf17ed9f" testId="68bc5038-8be0-af19-8357-911ed9adddb2" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False)" computerName="mac" duration="00:00:00.1482586" startTime="2026-09-30T18:36:00.4729270-05:00" endTime="2026-09-30T18:36:00.6212370-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9eb6d96-e0ef-4541-87fd-d24bdf17ed9f" />
+    <UnitTestResult executionId="b3d2d3ba-9f55-4de3-beb1-39fc61c5e006" testId="7ffbf561-005d-190e-868c-18d87e1acc19" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote" computerName="mac" duration="00:00:00.3010127" startTime="2026-09-30T18:35:57.9160800-05:00" endTime="2026-09-30T18:35:58.2171790-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3d2d3ba-9f55-4de3-beb1-39fc61c5e006" />
+    <UnitTestResult executionId="dcb5c1d7-06ec-471a-a950-adc299c3b8e6" testId="64ce023f-394a-cdcd-4eb3-ee67ea4c1496" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile" computerName="mac" duration="00:00:00.9405270" startTime="2026-09-30T18:35:56.9659900-05:00" endTime="2026-09-30T18:35:57.9112740-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dcb5c1d7-06ec-471a-a950-adc299c3b8e6" />
+    <UnitTestResult executionId="05373a85-a9df-4bff-b5c5-d526c2d911a0" testId="b139301a-dfdd-9809-ea6e-c625351925f9" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities" computerName="mac" duration="00:00:01.7660546" startTime="2026-09-30T18:35:58.2180210-05:00" endTime="2026-09-30T18:35:59.9842270-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="05373a85-a9df-4bff-b5c5-d526c2d911a0" />
+    <UnitTestResult executionId="cdd2240a-9c0b-48a5-9793-0bf21bc86af6" testId="08334298-1d7e-34e3-1fdf-00b1a4ec27b4" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner" computerName="mac" duration="00:00:00.1284692" startTime="2026-09-30T18:36:00.1932810-05:00" endTime="2026-09-30T18:36:00.3218010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cdd2240a-9c0b-48a5-9793-0bf21bc86af6" />
+    <UnitTestResult executionId="7a383a68-0b51-4669-9ab0-c5de5c17e699" testId="1924e966-235b-c38a-faa6-1cac9ee79195" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world" computerName="mac" duration="00:00:00.5838038" startTime="2026-09-30T18:36:00.7900110-05:00" endTime="2026-09-30T18:36:01.3768610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a383a68-0b51-4669-9ab0-c5de5c17e699">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.InRange() Failure: Value not in range
+Range:  (1 - 77)
+Actual: 78</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Continuation.cs:line 33
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a7936ef6-ddc7-41ed-acad-f7794d647721" testId="7f9e534d-39d6-28f5-ee68-6f83cf5516a5" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" computerName="mac" duration="00:00:00.2071162" startTime="2026-09-30T18:35:59.9852600-05:00" endTime="2026-09-30T18:36:00.1924330-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7936ef6-ddc7-41ed-acad-f7794d647721" />
+    <UnitTestResult executionId="0b479c4b-e6ce-4d6c-9304-42b03c48e604" testId="d7f43cf4-296b-0c48-1aaf-24ea77991610" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True)" computerName="mac" duration="00:00:00.1487024" startTime="2026-09-30T18:36:00.3234740-05:00" endTime="2026-09-30T18:36:00.4722260-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b479c4b-e6ce-4d6c-9304-42b03c48e604" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1924e966-235b-c38a-faa6-1cac9ee79195">
+      <Execution id="7a383a68-0b51-4669-9ab0-c5de5c17e699" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="64ce023f-394a-cdcd-4eb3-ee67ea4c1496">
+      <Execution id="dcb5c1d7-06ec-471a-a950-adc299c3b8e6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Paid_intents_and_bytes_are_refused_outside_the_paid_profile" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d7f43cf4-296b-0c48-1aaf-24ea77991610">
+      <Execution id="0b479c4b-e6ce-4d6c-9304-42b03c48e604" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="08334298-1d7e-34e3-1fdf-00b1a4ec27b4">
+      <Execution id="cdd2240a-9c0b-48a5-9793-0bf21bc86af6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Reachable_unfunded_and_expired_quotes_change_no_owner" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="63ef3f21-5c69-486f-05d6-b1b693d01d5d">
+      <Execution id="560cba78-705a-4eb1-91dd-9289b2c88763" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="68bc5038-8be0-af19-8357-911ed9adddb2">
+      <Execution id="e9eb6d96-e0ef-4541-87fd-d24bdf17ed9f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7ffbf561-005d-190e-868c-18d87e1acc19">
+      <Execution id="b3d2d3ba-9f55-4de3-beb1-39fc61c5e006" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b139301a-dfdd-9809-ea6e-c625351925f9">
+      <Execution id="05373a85-a9df-4bff-b5c5-d526c2d911a0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7f9e534d-39d6-28f5-ee68-6f83cf5516a5">
+      <Execution id="a7936ef6-ddc7-41ed-acad-f7794d647721" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="63ef3f21-5c69-486f-05d6-b1b693d01d5d" executionId="560cba78-705a-4eb1-91dd-9289b2c88763" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="68bc5038-8be0-af19-8357-911ed9adddb2" executionId="e9eb6d96-e0ef-4541-87fd-d24bdf17ed9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7ffbf561-005d-190e-868c-18d87e1acc19" executionId="b3d2d3ba-9f55-4de3-beb1-39fc61c5e006" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64ce023f-394a-cdcd-4eb3-ee67ea4c1496" executionId="dcb5c1d7-06ec-471a-a950-adc299c3b8e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b139301a-dfdd-9809-ea6e-c625351925f9" executionId="05373a85-a9df-4bff-b5c5-d526c2d911a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="08334298-1d7e-34e3-1fdf-00b1a4ec27b4" executionId="cdd2240a-9c0b-48a5-9793-0bf21bc86af6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1924e966-235b-c38a-faa6-1cac9ee79195" executionId="7a383a68-0b51-4669-9ab0-c5de5c17e699" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f9e534d-39d6-28f5-ee68-6f83cf5516a5" executionId="a7936ef6-ddc7-41ed-acad-f7794d647721" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d7f43cf4-296b-0c48-1aaf-24ea77991610" executionId="0b479c4b-e6ce-4d6c-9304-42b03c48e604" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" passed="8" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.09]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.28]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:05.73]       Assert.InRange() Failure: Value not in range
+[xUnit.net 00:00:05.73]       Range:  (1 - 77)
+[xUnit.net 00:00:05.73]       Actual: 78
+[xUnit.net 00:00:05.73]       Stack Trace:
+[xUnit.net 00:00:05.73]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Continuation.cs(33,0): at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world()
+[xUnit.net 00:00:05.73]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:05.73]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:05.73]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-09-30T18:36:01.3800830-05:00">
+        <Text>[xUnit.net 00:00:05.73]     OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,27 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/legacy-proposal-host-20261001T002008Z-5f655
+{
+  "kind": "legacy-proposal-host",
+  "limitSeconds": 600,
+  "preservation": {
+    "existingTests": 513,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/build-20261001T001636Z-d9805/report.json",
+  "buildReportSha256": "d3d1ff6d9e6cc95c9726f8ed2151afc300c11b82801cf91dcab3e2587b0646e9",
+  "environmentInputs": {
+    "OPENFANTASY_RETAINED_PROPOSAL_SOURCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final"
+  },
+  "outcomes": {
+    "Passed": 42
+  },
+  "preservationAfter": {
+    "existingTests": 513,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "elapsedSeconds": 43.043,
+  "sourceUnchanged": true,
+  "accepted": true
+}
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/legacy-proposal-host-20261001T002008Z-5f655

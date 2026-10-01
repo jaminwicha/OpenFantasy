@@ -55,6 +55,7 @@ public sealed class WorldMaterialCareArchiveAnchor
         Proposals = coordination.Proposals is { } book ? WorldMaterialProposalContinuationContext.Capture(book)
             : transition is null ? null : WorldMaterialProposalContinuationContext.Capture(new WorldMaterialProposalBook([], []));
         TransitionHash = transition?.ContentHash;
+        PaidExchange = coordination.PaidExchange is { } paid ? WorldPaidExchangeContinuationContext.Capture(paid) : null;
         List<ReadOnlyMemory<byte>> fields =
         [
             reference.Encode(), AdmissionVersion.ToByteArray(), CanonicalEncodingV1.Unsigned64(LatestCareSequence),
@@ -66,6 +67,12 @@ public sealed class WorldMaterialCareArchiveAnchor
         {
             // Appended only with the capability, so every anchor without it keeps its exact bytes.
             fields.Add(Proposals.ContentHash.ToByteArray());
+        }
+        if (PaidExchange is not null)
+        {
+            // Appended only with the paid capability, so every other anchor keeps its exact bytes. A
+            // transition never selects it, so the two optional fields cannot both appear.
+            fields.Add(PaidExchange.ContentHash.ToByteArray());
         }
         if (TransitionHash is not null)
         {
@@ -100,6 +107,9 @@ public sealed class WorldMaterialCareArchiveAnchor
 
     /// <summary>Null when the closing world interprets no saved proposals; otherwise its exact open offers.</summary>
     public WorldMaterialProposalContinuationContext? Proposals { get; }
+
+    /// <summary>Null when the closing world interprets no paid quotes; otherwise its open quotes and market revisions.</summary>
+    public WorldPaidExchangeContinuationContext? PaidExchange { get; }
     public ContentHash ContentHash { get; }
     internal QuestSnapshot Quests { get; }
     internal EncounterLifecycleSnapshot Lifecycle { get; }
@@ -114,11 +124,13 @@ public sealed class WorldMaterialCareArchiveAnchor
             || world.AdmissionVersion != AdmissionVersion || world.Revision < Reference.BoundarySequence
             || Production.SupportsConsentedWorld != (world.Coordination?.ConsentedMaterial is not null)
             || (Proposals is not null) != (world.Coordination?.Proposals is not null)
+            || (PaidExchange is not null) != (world.Coordination?.PaidExchange is not null)
             || world.Quests is not { } quests || world.EncounterLifecycle is not { } lifecycle)
         {
             throw new ArgumentException("A coordinated successor must retain its sealed world's scope and admission.");
         }
         Proposals?.ValidateSuccessor(world.Coordination!.Proposals!, ClosingWorldSequence);
+        PaidExchange?.ValidateSuccessor(world.Coordination!.PaidExchange!, ClosingWorldSequence);
         ValidateQuests(quests);
         ValidateCareChronology(world.Care!);
         if (lifecycle.WorldId != Lifecycle.WorldId || lifecycle.BranchId != Lifecycle.BranchId

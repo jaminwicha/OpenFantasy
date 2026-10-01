@@ -1,0 +1,60 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.77]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.49]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.74]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Evidence_sequence_outside_its_segment_is_refused_after_a_decoded_cut [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_recomputed_reference_admits_unauthenticated_history_as_structure_and_refuses_self_refuting_evidence [401 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_raw_pair_publishes_two_outcomes_and_continues_from_decoded_history [477 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Archive_bytes_of_both_cuts_refuse_wrong_ordinal_anchor_and_flipped_bytes [868 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Evidence_cannot_describe_reversed_actor_order_or_two_actions_from_one_actor(repeatedActor: False) [273 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Evidence_cannot_describe_reversed_actor_order_or_two_actions_from_one_actor(repeatedActor: True) [313 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Paired_intents_follow_the_actual_encounter_care_and_recovery_owners [877 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_interpretation_and_two_decoded_cuts_keep_the_complete_owners [542 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_valid_pair_refused_by_physical_storage_rolls_back_both_owners_and_both_opportunities [378 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Full_transfer_window_cuts_before_the_next_pair_and_retains_closed_identities [3 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.A_third_actor_ordered_between_acceptance_and_offer_keeps_its_own_outcome_beside_the_applied_pair [168 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Two_valid_pairs_publish_together_with_independent_stock_receipts_and_opportunities [297 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 2) [233 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 1) [160 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Invalid_pair_keeps_all_material_owners_and_evidence_unchanged(variant: 0) [148 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Independent_framing_composes_the_actual_root_binding_anchor_and_continued_production [233 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Fresh_complete_world_admits_exactly_4096_raw_lots_without_permitting_an_extra_split [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Acceptance_addressed_to_an_offer_for_someone_else_moves_nothing(offerNamesThirdActor: True) [133 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Acceptance_addressed_to_an_offer_for_someone_else_moves_nothing(offerNamesThirdActor: False) [125 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Confrontation_and_staging_keep_exclusive_ownership_of_the_next_boundary [144 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Two_pairs_in_one_batch_are_decided_independently_with_four_receipts [106 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Both_participants_spend_movement_and_each_get_their_own_canonical_receipt [111 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Profile_and_production_capability_mixes_are_refused_and_the_precut_reframe_is_only_structure [257 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Combined_live_lot_bound_admits_a_split_one_below_then_refuses_splits_and_still_moves_whole_lots [2 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: True) [256 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Balanced_live_lot_mutation_is_refused_by_the_custody_partition(movedSuffix: False) [240 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Raw_evidence_cannot_claim_unissued_rights_from_an_admitted_gathering_source [250 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Crafted_split_gift_recraft_ordinary_care_and_onward_gift_survive_two_decoded_cuts [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.Actual_completed_construction_stays_reserved_before_and_after_a_decoded_cut [2 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "missing-command", reason: "The retained actor-command table is incomplete.") [12 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "missing-identity", reason: "The retained world-identity table is incomplete.") [10 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "missing-archive", reason: "The world is missing a required material and care "···) [10 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "archive-ordinal", reason: "A stored material and care archive differs from it"···) [10 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "archive-hash", reason: "Stored material and care archive bytes do not matc"···) [5 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "foreign-head", reason: "The stored world head does not match exact replay.") [10 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "archive-scope", reason: "A stored material and care archive differs from it"···) [10 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "substituted-genesis", reason: "The local world journal is discontinuous.") [92 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "altered-identity", reason: "A retained identity differs from its replayed comm"···) [10 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "altered-receipt", reason: "A stored actor command or receipt differs from its"···) [10 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "modified-archive", reason: "Stored material and care archive bytes do not matc"···) [6 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_corruption_blocks_recovery_and_historical_selection(corruption: "self-consistent-archive", reason: "A stored material and care archive differs from it"···) [10 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_mixed_step_profile_and_wrong_expected_genesis_are_refused_beside_valid_controls [7 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_paired_cut_commits_or_rolls_back_head_receipts_identities_and_archive_together(afterCommit: True) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_paired_cut_commits_or_rolls_back_head_receipts_identities_and_archive_together(afterCommit: False) [3 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_company_publishes_two_pairs_and_a_refused_pair_before_and_after_reopening [235 ms]
+[xUnit.net 00:02:40.43]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldDurableTests.Durable_crafted_gift_journey_reopens_its_exact_root_archives_receipts_and_identities [12 s]
+
+Test Run Successful.
+Total tests: 46
+     Passed: 46
+ Total time: 2.6904 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/legacy-consented-host-20260930T234644Z-325ed/OpenFantasy.Hosting.Tests.trx

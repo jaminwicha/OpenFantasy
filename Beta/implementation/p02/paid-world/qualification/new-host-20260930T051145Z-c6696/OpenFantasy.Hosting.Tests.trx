@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f1a2b293-524e-4845-b336-9db8a40f267d" name="@mac 2026-09-30 00:11:51" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-09-30T00:11:52.0032680-05:00" queuing="2026-09-30T00:11:52.0032680-05:00" start="2026-09-30T00:11:47.5461640-05:00" finish="2026-09-30T00:11:53.0599000-05:00" />
+  <TestSettings name="default" id="09dd2d0e-3771-4125-8bd9-852c1875df89">
+    <Deployment runDeploymentRoot="_mac_2026-09-30_00_11_51" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="8a3a7a47-4789-4216-8abb-1ab946e779ef" testId="08334298-1d7e-34e3-1fdf-00b1a4ec27b4" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner" computerName="mac" duration="00:00:00.3000498" startTime="2026-09-30T00:11:52.6903190-05:00" endTime="2026-09-30T00:11:52.9904460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a3a7a47-4789-4216-8abb-1ab946e779ef" />
+    <UnitTestResult executionId="ac3c88c1-6e01-437d-a71d-5cc939edf754" testId="64ce023f-394a-cdcd-4eb3-ee67ea4c1496" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile" computerName="mac" duration="00:00:01.0494152" startTime="2026-09-30T00:11:50.4200140-05:00" endTime="2026-09-30T00:11:51.4825110-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ac3c88c1-6e01-437d-a71d-5cc939edf754" />
+    <UnitTestResult executionId="924e75dc-c069-4728-8db9-e361915196ca" testId="7f9e534d-39d6-28f5-ee68-6f83cf5516a5" testName="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" computerName="mac" duration="00:00:01.1961948" startTime="2026-09-30T00:11:51.4916080-05:00" endTime="2026-09-30T00:11:52.6879640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="924e75dc-c069-4728-8db9-e361915196ca" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="64ce023f-394a-cdcd-4eb3-ee67ea4c1496">
+      <Execution id="ac3c88c1-6e01-437d-a71d-5cc939edf754" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Paid_intents_and_bytes_are_refused_outside_the_paid_profile" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="08334298-1d7e-34e3-1fdf-00b1a4ec27b4">
+      <Execution id="8a3a7a47-4789-4216-8abb-1ab946e779ef" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Reachable_unfunded_and_expired_quotes_change_no_owner" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7f9e534d-39d6-28f5-ee68-6f83cf5516a5">
+      <Execution id="924e75dc-c069-4728-8db9-e361915196ca" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests" name="Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="08334298-1d7e-34e3-1fdf-00b1a4ec27b4" executionId="8a3a7a47-4789-4216-8abb-1ab946e779ef" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="64ce023f-394a-cdcd-4eb3-ee67ea4c1496" executionId="ac3c88c1-6e01-437d-a71d-5cc939edf754" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f9e534d-39d6-28f5-ee68-6f83cf5516a5" executionId="924e75dc-c069-4728-8db9-e361915196ca" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.85]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.78]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.10]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.79]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

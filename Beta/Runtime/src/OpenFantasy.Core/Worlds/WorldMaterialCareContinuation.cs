@@ -81,10 +81,17 @@ internal static class WorldMaterialCareContinuation
         int retainedOutcomes = proposals?.Outcomes.Count ?? 0;
         int closable = (proposals?.Open.Count ?? 0)
             + batch.Actions.Count(command => command.Intent is ProposeMaterialIntent);
+        // Every open or newly issued quote may likewise close inside this segment.
+        WorldPaidExchangeBook? paid = world.Coordination!.PaidExchange;
+        int retainedQuoteOutcomes = paid?.Outcomes.Count ?? 0;
+        int closableQuotes = (paid?.Open.Count ?? 0) + batch.Actions.Count(command => command.Intent is IssueSpotQuoteIntent);
         bool progressed = production.Batches.Count + production.ConsumedItems.Count + history.Batches.Count
-            + care.Treatments.Count + completedAcknowledgments + retainedUses + retainedTransfers + retainedOutcomes != 0;
+            + care.Treatments.Count + completedAcknowledgments + retainedUses + retainedTransfers + retainedOutcomes
+            + retainedQuoteOutcomes != 0;
         return progressed && (
-            proposals is not null
+            paid is not null
+                && retainedQuoteOutcomes + closableQuotes + ReservedOperations > WorldPaidExchangeBook.MaximumOutcomes
+            || proposals is not null
                 && retainedOutcomes + closable + ReservedOperations > WorldMaterialProposalBook.MaximumOutcomes
             || retainedTransfers + transfers + ReservedOperations > WorldConsentedMaterialHistory.MaximumTransfers
             || history.Batches.Count + batches + ReservedOperations > ActorResourceHistory.MaximumBatches

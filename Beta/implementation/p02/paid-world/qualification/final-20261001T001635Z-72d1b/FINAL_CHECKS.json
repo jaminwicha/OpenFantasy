@@ -1,0 +1,61 @@
+{
+  "status": "failed",
+  "steps": [
+    {
+      "mode": "build",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/build-20261001T001636Z-d9805/report.json",
+      "sha256": "d3d1ff6d9e6cc95c9726f8ed2151afc300c11b82801cf91dcab3e2587b0646e9"
+    },
+    {
+      "mode": "new-host",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/new-host-20261001T001642Z-5a498/report.json",
+      "sha256": "781e3f5fbff9b81ef6d8b3eb825c75045fec10371b43788a56dd042870487b89"
+    },
+    {
+      "mode": "full-core",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/full-core-20261001T001706Z-e67cf/report.json",
+      "sha256": "b90ff024c59474f05dbfe1bc165b5a3cd14c01e8de1518e6d5ceb52ad3f26a14"
+    },
+    {
+      "mode": "legacy-proposal-host",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/legacy-proposal-host-20261001T002008Z-5f655/report.json",
+      "sha256": "af22f4994a0e1433d6bc5986b52b0554f468cf5dcfd81378dbc66d0b2bf8c382"
+    },
+    {
+      "mode": "legacy-care-host",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/legacy-care-host-20261001T002051Z-044e7/report.json",
+      "sha256": "4ce23fbe9de059e2df692df569d4164f70dd14a4fb6fc8293db0f783f00eab47"
+    },
+    {
+      "mode": "legacy-consented-host",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/legacy-consented-host-20261001T002104Z-85e0b/report.json",
+      "sha256": "0aa8672753cd47515f090ee2fc55e774298edaac27eb7ef6a76051ea0e6dc732"
+    }
+  ],
+  "scope": "Managed regression and actual process/storage evidence only",
+  "preservationBefore": {
+    "existingTests": 513,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "distinctManagedPasses": 1868,
+  "managedBySelection": {
+    "new-host": {
+      "Passed": 15
+    },
+    "full-core": {
+      "Passed": 1737
+    },
+    "legacy-proposal-host": {
+      "Passed": 42
+    },
+    "legacy-care-host": {
+      "Passed": 28
+    },
+    "legacy-consented-host": {
+      "Passed": 46
+    }
+  },
+  "processProofs": [],
+  "error": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/run_final_checks.py\", line 80, in main\n    assert result.returncode == 0 and proof['status'] == 'passed', 'Process proof failed: ' + str(evidence)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Process proof failed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/final-20261001T001635Z-72d1b/process-produced/result.json\n"
+}

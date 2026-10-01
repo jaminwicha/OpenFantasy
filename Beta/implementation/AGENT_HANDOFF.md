@@ -42,6 +42,47 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
+The owner-requested Opus 5.5 [paid-world assignment](p02/paid-world/ASSIGNMENT.md) now has a
+complete implementation and independently reviewed lifecycle repair, but acceptance remains open
+pending required-evidence reconciliation. Astra integrated explicit profile32, full paid identity
+admission, issuer-revision causality and saved-gift coexistence. The repair adds same-transaction
+supersession, authenticated issuer withdrawal and canonical terminal ordering. It proves a full
+16-quote book, real archive carry/reopen and exact retry. No paid native UI or lived-save migration.
+
+The [independent Opus critic](p02/paid-world/INDEPENDENT_REVIEW.md) found the real shared-capacity
+and ordering issues fixed by the [repair](p02/paid-world/LIFECYCLE_REPAIR_RESULT.md). Its128-issuer
+concern cannot occur under the admitted immutable64-resident roster; expansion/turnover requires
+explicit history/scale work, not revision pruning. Control transitions, private-lot visibility and
+participant archived-quote queries remain later bindings. All market/native/cargo and P00–P14
+obligations remain unchanged.
+
+The [lifecycle checkpoint](p02/paid-world/INTEGRATION_REVIEW.md) is preserved by
+`codex/milestone-paid-world-lifecycle-20261001`: build and1,868 distinct managed passes (Core1,737;
+Host131), including25 new cases. The initial corruption probe failed because its Python mutation
+connection stayed open; the repaired proof passed four real SIGKILLs and six SQL corruption refusals
+on exactly the same source and binaries. The original failed report remains retained. All513 old
+tests/fixtures,23 frozen specs, the immutable source and predecessor staging remain exact. Full
+assignment acceptance still awaits the boundary cases below.
+
+Implementation, critic and repair all returned verified Opus5.5/1M metadata with requested Max,
+verified context synchronization and no denials. Their client estimates are $8.91/$3.10/$7.64;
+these are neither billing nor demonstrated savings. The initial implementation was incomplete;
+Astra integrated it. Its claimed timeout was incorrect: it finished inside its3,000s bound.
+The repair is terminal. No external model request is currently running.
+
+A [bounded Opus boundary-test assignment](p02/paid-world/BOUNDARY_PROOF_ASSIGNMENT.md) is prepared
+but not dispatched. It addresses the original required evidence for unavailable actors, conflicting
+same-step transactions, capacity/protection and late rollback. It owns only two new test files and
+its result; runtime remains lead-owned. Do not close those gaps with source inspection alone.
+The earlier qualification is terminal and the WIP snapshot below preserves this source; the
+lifecycle checkpoint supplies a clean committed integration base.
+Use exact `claude-opus-5-5[1m]`, Max,1,500s/$18 limit and synchronized context; no automatic retry.
+
+[Lead notes](p02/paid-world/LEAD_REVIEW_NOTES.md) retain failures and review dispositions.
+Recoverable refs: clean start9867ecb; delivery WIP760ee87; integration WIP3cab884; pre-repair
+WIP3c7a45e; boundary-proof WIPdeeaac1. Exact refs/source/verification are recorded in the packet's preservation and checkpoint
+JSON files. None of these WIP references represents assignment or phase acceptance.
+
 The [atomic spot exchange component](p02/spot-exchange/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-atomic-spot-exchange-20260930`. It joins existing goods, provenance and finite
 currency under exact quoted terms. Astra completed the initial Opus delivery's missing continued
@@ -58,11 +99,10 @@ at 900s without a report or usage metadata; no paid retry occurred. The explicit
 No external job is active. WIP delivery and tested snapshots are retained in the packet. This outcome
 does not establish net credit savings.
 
-Next is the [complete paid world binding](p02/spot-exchange/INTEGRATION_PLAN.md): own quotes and
-payment causes in the actual world, couple both participants' spatial/time/work rules, journal all
-four owners, and qualify archives/replay/crash/retry before native market interaction. The existing
-world must continue rejecting unsupported paid candidates. Local price knowledge, source-backed
-merchant stock/funds, two-market cargo/escort and all remaining P02/P00–P14 gates remain open.
+The [complete paid-world sequence](p02/spot-exchange/INTEGRATION_PLAN.md) retains the current
+binding and its outstanding qualification above. Local price knowledge, source-backed merchant
+stock/funds, scheduled trading, two-market cargo/escort and all remaining P02/P00–P14 gates remain
+open. Unsupported older worlds still reject unrecorded paid candidates.
 
 Two bounded Opus 5.5 / 1M / requested Max assignments completed successfully: the
 [retained native gift route](p02/retained-gift-native/INTEGRATION_REVIEW.md) and

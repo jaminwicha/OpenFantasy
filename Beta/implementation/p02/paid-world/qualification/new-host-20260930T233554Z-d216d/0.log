@@ -1,0 +1,40 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.09]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.28]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile [940 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote [301 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities [1 s]
+[xUnit.net 00:00:05.73]     OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world [FAIL]
+[xUnit.net 00:00:05.73]       Assert.InRange() Failure: Value not in range
+[xUnit.net 00:00:05.73]       Range:  (1 - 77)
+[xUnit.net 00:00:05.73]       Actual: 78
+[xUnit.net 00:00:05.73]       Stack Trace:
+[xUnit.net 00:00:05.73]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Continuation.cs(33,0): at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world()
+[xUnit.net 00:00:05.73]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:05.73]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:05.73]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen [207 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner [128 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True) [148 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False) [148 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles [167 ms]
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world [583 ms]
+  Error Message:
+   Assert.InRange() Failure: Value not in range
+Range:  (1 - 77)
+Actual: 78
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.Continuation.cs:line 33
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Test Run Failed.
+Total tests: 9
+     Passed: 8
+     Failed: 1
+ Total time: 6.1582 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/new-host-20260930T233554Z-d216d/OpenFantasy.Hosting.Tests.trx

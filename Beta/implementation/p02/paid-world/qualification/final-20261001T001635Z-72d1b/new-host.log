@@ -1,0 +1,28 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/new-host-20261001T001642Z-5a498
+{
+  "kind": "new-host",
+  "limitSeconds": 600,
+  "preservation": {
+    "existingTests": 513,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/build-20261001T001636Z-d9805/report.json",
+  "buildReportSha256": "d3d1ff6d9e6cc95c9726f8ed2151afc300c11b82801cf91dcab3e2587b0646e9",
+  "environmentInputs": {
+    "OPENFANTASY_PAID_WORLD_FIXTURES": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/final-20261001T001635Z-72d1b/fixtures",
+    "OPENFANTASY_RETAINED_PROPOSAL_SOURCE": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final"
+  },
+  "outcomes": {
+    "Passed": 15
+  },
+  "preservationAfter": {
+    "existingTests": 513,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "elapsedSeconds": 23.072,
+  "sourceUnchanged": true,
+  "accepted": true
+}
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/paid-world/qualification/new-host-20261001T001642Z-5a498

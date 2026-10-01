@@ -1,0 +1,7 @@
+{
+  "status": "unverified-interrupted",
+  "observedUtc": "2026-09-30T23:26:51Z",
+  "session": 29802,
+  "evidence": "Tool reports unknown process id; no terminal report; empty0.log; process listing found no paid-world check runner or dotnet build/test descendant. A new build is permitted after this terminal/missing-handle audit.",
+  "acceptance": false
+}
