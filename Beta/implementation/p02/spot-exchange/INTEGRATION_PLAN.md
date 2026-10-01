@@ -13,11 +13,12 @@ exchange state may own quotes, allowance and receipts; it must not duplicate bal
 Actual Host delivery and current control remain separate from payload claims. Accepting medicine,
 agreeing to treatment, joining a party and accepting a quoted payment remain different acts.
 
-Current world resource admission authenticates currency changes by replaying supported causes,
-including funded quest rewards. A component-valid paid exchange therefore cannot simply replace
-the progression snapshot in an existing world. The next world binding must give the complete paid
-transaction its own typed cause and exact replay, alongside custody and quote allowance. Do not
-mislabel payment as a quest reward, health effect or gift, or cache an admission result to bypass it.
+World resource admission authenticates currency changes by replaying supported causes, including
+funded quest rewards. The explicit paid-world interpretation now supplies typed payment causes and
+exact replay alongside custody and quote allowance; the [integration packet](../paid-world/INTEGRATION_REVIEW.md)
+records its qualified scope and remaining boundary proofs. Earlier profiles still refuse unsupported
+paid changes. Do not replace their progression snapshots, mislabel payment as a quest reward, health
+effect or gift, or cache an admission result to bypass complete validation.
 
 ## Integration sequence and evidence
 
@@ -31,6 +32,10 @@ mislabel payment as a quest reward, health effect or gift, or cache an admission
 | Native trading | Contextual interaction shows goods/icon, quantity, total payment, fees, stock and expiry with rich inspection and a separate commit | Keyboard/controller/pointer; cancellation/focus/stale terms do nothing; no hidden auto-requote; persisted outcomes and native reopening; accessibility and human comprehension remain separate checks |
 | Cargo/escort loop | Buy in one inhabited place, travel with the actual owned lot, encounter a real threat, then sell against changed local terms and return to consequences | Retained spatial route and travel cost, exact cargo/funds, lawful loss/repair, NPC travelers, service-backed guard payment, save/restart and actual multiplayer join/reconnect; no teleported cargo or reset stock |
 
+The atomic component and paid-world lifecycle have retained implementation and recovery evidence.
+Complete the specifically listed world-boundary proofs before closing that assignment; then advance
+the market rules/local knowledge and scheduled-people bindings toward the actual cargo circuit.
+Do not substitute repeated reviews of unchanged settlement code for these missing gameplay bindings.
 These are acceptance dependencies, not a promise to deliver each row in a single assignment.
 Keep growth/scale, full character cognition, missing-cargo investigation, field puzzles, audio,
 onboarding and the other P02 obligations in the full plan. A generic shop panel does not satisfy them.
@@ -77,3 +82,9 @@ Adding residents over a world lifetime, retiring them or changing control/storag
 requires explicit historical authority and issuer-index continuation, without resetting market
 revisions or reviving stale quotes. This dependency belongs to roster/session/scale implementation;
 it does not narrow the full species, settlement, NPC-parity or1–4-player campaign requirements.
+
+The [eligible-buyer proof](../paid-world/STOCK_GENESIS_INTEGRATION.md) makes arbitration explicit:
+actions execute in canonical actor-ID order, so arrival order cannot change the winning acceptance.
+Scheduled trading must assess repeated access and starvation for players and NPCs. Any fair selection
+policy needs its own admitted, deterministic semantics; do not silently reorder old recorded batches
+or describe this bounded Host test as network fairness.

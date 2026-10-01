@@ -1,0 +1,34 @@
+{
+  "status": "integrated_after_lead_review",
+  "model": "claude-opus-5-5[1m]",
+  "effort": "max",
+  "timeoutSeconds": 1800,
+  "maxBudgetUsdClientEstimate": 20,
+  "privateTaskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-paid-stock-genesis-j8wcibpx",
+  "sourceHead": "9c192bd92c17a666356dceadbc77ef01a6f76fa1",
+  "contextManifestSha256": "670888a9ff8c92c13adad1fc68798f242fa32f2671b319dfeb7c320468629786",
+  "ownedPaths": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidTradeWorldFixture.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.StockConstraints.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.BuyerCompetition.cs",
+    "Beta/implementation/p02/paid-world/STOCK_GENESIS_RESULT.md"
+  ],
+  "checkpointRef": "codex/checkpoint-before-paid-stock-genesis-20261001",
+  "checkpointScope": "Clean committed successor, late liquid proof and prepared assignment; unrelated predecessor index excluded. Build and25 paid Host cases passed. New fixture proof unrun.",
+  "elapsedSeconds": 1334.069,
+  "clientEstimateUsd": 8.377624600000003,
+  "returnedModel": "claude-opus-5-5",
+  "returnedContextWindow": 1000000,
+  "requestedEffort": "max",
+  "preflight": "verified",
+  "postflight": "verified",
+  "permissionDenials": [],
+  "workerResult": "STOCK_GENESIS_RESULT.md",
+  "leadReview": "STOCK_GENESIS_INTEGRATION.md",
+  "qualification": [
+    "qualification/build-20261001T013323Z-a9ee0/report.json",
+    "qualification/new-host-20261001T013345Z-31513/report.json",
+    "qualification/new-host-20261001T013629Z-c63f4/report.json"
+  ],
+  "reviewNote": "All three bounded deliverables accepted. No model retry or substitution. Client estimate is not billing or demonstrated net credit savings."
+}

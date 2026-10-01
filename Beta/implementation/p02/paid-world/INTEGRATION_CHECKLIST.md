@@ -1,6 +1,6 @@
 # Lead integration checks
 
-This is a review plan, not acceptance evidence. Implementation belongs to the bounded Opus assignment; Astra reviews the exact delivery and runs independent integration checks after its terminal result. Preserve every failed check and the original limits.
+This retains the lead review questions for the paid-world binding. Accepted dispositions and exact evidence are linked below and in the integration reports; a question alone is not a passing gate. Preserve every failed check and the original limits.
 
 | Boundary | Independent acceptance question |
 | --- | --- |
@@ -20,28 +20,26 @@ This is a review plan, not acceptance evidence. Implementation belongs to the bo
 Read the most consequential changed methods and representative adversarial tests rather than replaying the external conversation. Use a single independent critic at the coherent checkpoint, targeting remaining uncertainty. Preserve the source database, all513 prior test/fixture files,23 frozen specs and the predecessor index against `PRESERVATION.json`. Check affected timeless architecture links and source claims in the same increment.
 
 
-## Required boundaries still open after the Opus follow-up
+<a id="required-boundaries-still-open-after-the-opus-follow-up"></a>
+## Required boundary proof dispositions
 
-The lifecycle milestone and new hosted tests do not close these original requirements:
+The original follow-up left three concrete gaps; each now has an actual world/Host proof:
 
-1. Two independently eligible, funded and manipulating counterparties accepting one issuer's quotes
-   in one batch. The existing two-human/two-wolf fixture only proves the invalid-wolf contrast.
-   Create a legitimate fresh three-person genesis or use a subsequently admitted third merchant;
-   a convenience fixture's roster is not the complete profile's actor-admission limit. Pin both
-   acceptances succeeding alone before testing both combined orders, exact single payment, sibling
-   closure, identities and reopen.
-2. Insufficient combined recipient capacity, protected stock and reserved stock through actual
-   profile32 admission. Establish a valid genesis or lawful in-world transition for each condition.
-   A wolf's small pack cannot prove capacity because manipulation fails first. Shared component
-   tests remain valuable but do not replace these world-boundary tests.
-3. **Qualified:** the [placed-liquid proof](LIQUID_ROLLBACK_PROOF.md) now demonstrates local paid
+1. **Qualified:** [eligible-buyer competition](STOCK_GENESIS_INTEGRATION.md) uses a legitimately
+   admitted third human with distinct current control and earned funds. Each acceptance succeeds
+   alone from the same complete root. Both canonical buyer orders and both submission orders prove
+   one payment, exact supersession, unoccupied losing split identity and durable retries.
+2. **Qualified:** [stock constraints](STOCK_GENESIS_INTEGRATION.md) prove combined raw-plus-produced
+   capacity in a small human pack, protected stock and a reserved source interval through actual
+   profile32 admission. A lawful resale frees capacity; equal ordinary stock supplies a positive
+   contrast. Metadata, withdrawal and exact refusal receipts survive reopen.
+3. **Qualified:** the [placed-liquid proof](LIQUID_ROLLBACK_PROOF.md) demonstrates local paid
    success, accepted reservoir capacity, the specific later liquid-placement rejection, all-owner
-   rollback and unoccupied split identity through real Host publication/reopen/retry. The stock is
-   actual admitted water in the helper's secondary owned reservoir. Normal passive time/liquid
-   progression is checked separately against an empty advancing step. No new runtime hook or
-   fabricated lived state is used.
+   rollback and unoccupied split identity through real Host publication/reopen/retry. Normal passive
+   time/liquid progression is checked against an empty advancing step.
 
 The dead issuer's eventual expiry remains an additional targeted lifecycle contrast. Ordinary expiry
 already has hosted evidence; a dead-specific run is not silently claimed from it. Participant history,
-knowledge/privacy, control/roster transitions and native pacing remain explicit later integration
-contracts in the full plan. Original assignment acceptance and all production/phase gates stay open.
+knowledge/privacy, control/roster transitions, repeated-opportunity fairness and native pacing remain
+later integration contracts in the full plan. Closing these original boundary proofs does not close
+any full phase or production gate. Proceed to the substantive remaining market/gameplay bindings.

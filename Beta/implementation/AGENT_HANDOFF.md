@@ -42,70 +42,45 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 
 ## Current work and routing
 
-The owner-requested Opus 5.5 [paid-world assignment](p02/paid-world/ASSIGNMENT.md) now has a
-complete implementation and independently reviewed lifecycle repair, but acceptance remains open
-pending required-evidence reconciliation. Astra integrated explicit profile32, full paid identity
-admission, issuer-revision causality and saved-gift coexistence. The repair adds same-transaction
-supersession, authenticated issuer withdrawal and canonical terminal ordering. It proves a full
-16-quote book, real archive carry/reopen and exact retry. No paid native UI or lived-save migration.
+The owner-requested [paid-world binding](p02/paid-world/INTEGRATION_REVIEW.md) implements explicit
+fresh profile32, atomic goods/payment, exact actor/currency causality and durable quote lifecycle.
+The independent Opus critic's shared-capacity and canonicality defects are repaired; issuer withdrawal
+and same-fill supersession have full-book, archive-cut, reopen and retry evidence. Earlier failed
+runs, reviewer dispositions and exact source preservation remain in that packet.
 
-The [independent Opus critic](p02/paid-world/INDEPENDENT_REVIEW.md) found the real shared-capacity
-and ordering issues fixed by the [repair](p02/paid-world/LIFECYCLE_REPAIR_RESULT.md). Its128-issuer
-concern cannot occur under the admitted immutable64-resident roster; expansion/turnover requires
-explicit history/scale work, not revision pruning. Control transitions, private-lot visibility and
-participant archived-quote queries remain later bindings. All market/native/cargo and P00–P14
-obligations remain unchanged.
+The [latest Opus5.5 fixture increment](p02/paid-world/STOCK_GENESIS_INTEGRATION.md) closes the remaining
+eligible-buyer and stock-constraint proofs. Seven new cases admit a third capable human with an empty
+wallet, fund it through real earned payment/fees, and prove both buyers independently eligible before
+competition. Canonical order decides one fill in all four order combinations. Real raw-plus-crafted
+capacity, protected stock and reserved stock have lawful positive contrasts and exact reopening.
+The [late-liquid proof](p02/paid-world/LIQUID_ROLLBACK_PROOF.md), committed as 9c192bd, separately proves
+all-owner rollback after local payment and reservoir capacity succeed but placed-water validation fails.
+The [original boundary gaps](p02/paid-world/INTEGRATION_CHECKLIST.md#required-boundary-proof-dispositions)
+are now closed; no test or acceptance threshold was weakened.
 
-The [lifecycle checkpoint](p02/paid-world/INTEGRATION_REVIEW.md) is preserved by
-`codex/milestone-paid-world-lifecycle-20261001`: build and1,868 distinct managed passes (Core1,737;
-Host131), including25 new cases. The initial corruption probe failed because its Python mutation
-connection stayed open; the repaired proof passed four real SIGKILLs and six SQL corruption refusals
-on exactly the same source and binaries. The original failed report remains retained. All513 old
-tests/fixtures,23 frozen specs, the immutable source and predecessor staging remain exact. Full
-assignment acceptance still awaits the boundary cases below.
+Build and all 32 paid Host cases pass, including an independent lead rerun on the same final source
+and binaries. Runtime/src, client, all prior tests, 23 frozen specs, the immutable source database and
+unrelated predecessor staging remain exact. Previous composite 1,877-case regression and four actual
+process kills/six SQL corruptions remain at the [boundary milestone](p02/paid-world/BOUNDARY_INTEGRATION_REVIEW.md).
+They were not rerun on these test-only additions or their rebuilt binaries; no broader new claim is made.
+The latest verified increment is preserved at `codex/milestone-paid-world-constraints-20261001`.
+The clean pre-change checkpoint is `codex/checkpoint-before-paid-stock-genesis-20261001` at 9c192bd;
+exact scope and verification are in the [dispatch record](p02/paid-world/STOCK_GENESIS_DISPATCH.json).
 
-Implementation, critic and repair all returned verified Opus5.5/1M metadata with requested Max,
-verified context synchronization and no denials. Their client estimates are $8.91/$3.10/$7.64;
-these are neither billing nor demonstrated savings. The initial implementation was incomplete;
-Astra integrated it. Its claimed timeout was incorrect: it finished inside its3,000s bound.
-The repair is terminal. No external model request is currently running.
+Opus returned verified 5.5/1M metadata, requested Max, verified pre/post context and no tool denials.
+The latest run took 1,334.069s under 1,800s and had a client estimate of $8.3776246 under $20; the first
+build/test passed. Astra reviewed the complete fixture/tests and reran the focused suite. No paid retry,
+model substitution or claim of net credit savings occurred. The external job is terminal; nothing
+awaits approval. Earlier WIP checkpoints and failure evidence remain linked in the integration packets.
 
-The [Opus boundary-test follow-up](p02/paid-world/BOUNDARY_INTEGRATION_REVIEW.md) is terminal and
-integrated at `codex/milestone-paid-world-boundaries-20261001`. It produced eight useful passing
-cases; Astra strengthened them to nine additions, with24 paid Host cases passing. VerifiedOpus5.5/1M,
-requestedMax, verified pre/post context, no denials; duration1,169.482s, client estimate$6.8949898.
-Its four invalid batch-fixture failures and the lead's recovery-delay sequencing failure are retained.
-There is no external job or approval waiting. Runtime and all pre-existing source/tests stay exact.
-
-The [final evidence](p02/paid-world/qualification/boundary-final-20261001T005350Z/FINAL_CHECKS.json)
-combines1,737 Core +140 selected Host =1,877 distinct managed passes, with24 paid cases on the final
-build. It retains broad regression on identical runtime source rather than repeating it for test-only
-additions. Four real process kills and six SQL corruption refusals pass on the exact rebuilt Host.
-This is composite qualification, not one uninterrupted full-suite run. All preservation pins hold.
-
-Next close the [remaining required boundaries](p02/paid-world/INTEGRATION_CHECKLIST.md#required-boundaries-still-open-after-the-opus-follow-up):
-two eligible human counterparties in one step and valid capacity/protected/reserved-stock refusals.
-The [placed-liquid proof](p02/paid-world/LIQUID_ROLLBACK_PROOF.md) now closes late all-owner rollback:
-local goods/payment and reservoir capacity succeed, detailed liquid placement rejects, and the real
-Host preserves owners/identities through reopen/retry while normal passive time advances. Build and
-all25 paid Host cases pass; runtime is unchanged. Its initial new-test compile failure is retained. A two-human convenience fixture
-does not establish that a larger admitted fresh genesis is impossible; that was within assignment
-scope. The Opus report is useful partial evidence, not full priority/assignment closure. Determine
-valid fixtures and exact admission constraints before another bounded implementation unit; do not
-automatically retry the broad external packet or relax any gate. Dead-issuer expiry is an additional
-unrun contrast. Pricing, scheduled/native markets and full campaign requirements remain unchanged.
-
-The next [Opus assignment](p02/paid-world/STOCK_GENESIS_ASSIGNMENT.md) is prepared, not executed.
-It owns three new test/fixture files and its result. The existing internal fresh-farm composition
-callback and Hosting friend assembly provide actual authoring seams before geography/care bind.
-A legitimate third human and explicit genesis constraints are allowed; lived-state injection and
-runtime hooks are not. Route exactlyOpus5.5/1M/requestedMax with1,800s/$20 limits and synchronized
-context after the lead proof is committed. No other external job is active.
-
-[Lead notes](p02/paid-world/LEAD_REVIEW_NOTES.md) retain failures and review dispositions.
-Recoverable refs: clean start9867ecb; delivery WIP760ee87; integration WIP3cab884; pre-repair
-WIP3c7a45e; boundary-proof WIPdeeaac1; worker delivery WIPdc4c8eb. Exact refs/source/verification are recorded in the packet's preservation and checkpoint
-JSON files. None of these WIP references represents assignment or phase acceptance.
+Continue [market rules/local knowledge and scheduled people](p02/spot-exchange/INTEGRATION_PLAN.md)
+toward the actual two-market cargo/escort circuit. Do not substitute repeated settlement reviews for
+these missing gameplay bindings. Participant archived-quote queries, private-stock disclosure, native
+pacing and repeated-opportunity fairness need actual application policy. Canonical actor-ID execution
+is deterministic, not an equitable-service guarantee. Dynamic roster/control transitions and scale
+must preserve historical delivery and issuer revisions; no revision pruning or silent profile migration.
+Dead-specific quote expiry remains additional unrun evidence. Native paid UI and retained-save migration
+are not implemented. All remaining campaign, art/audio, multiplayer, device and human gates stay open.
 
 The [atomic spot exchange component](p02/spot-exchange/INTEGRATION_REVIEW.md) is accepted at
 `codex/milestone-atomic-spot-exchange-20260930`. It joins existing goods, provenance and finite
@@ -124,7 +99,7 @@ No external job is active. WIP delivery and tested snapshots are retained in the
 does not establish net credit savings.
 
 The [complete paid-world sequence](p02/spot-exchange/INTEGRATION_PLAN.md) retains the current
-binding and its outstanding qualification above. Local price knowledge, source-backed merchant
+binding and its qualified boundaries above. Local price knowledge, source-backed merchant
 stock/funds, scheduled trading, two-market cargo/escort and all remaining P02/P00–P14 gates remain
 open. Unsupported older worlds still reject unrecorded paid candidates.
 

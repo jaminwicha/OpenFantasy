@@ -67,6 +67,12 @@ through `CurrencyLedger.Transfer` with `SpotQuote.PaymentsFor`. The production r
 because a custody movement is neither a craft nor a use. The standalone `SupportsSpotExchange`/V12
 capability is never selected. Settlement uses both participants' work opportunity.
 
+`WorldStepBatch` orders actions by actor identity before processing them. When two otherwise eligible
+counterparties accept one issuer's quotes in the same batch, the first in that canonical order fills;
+its sibling quote is superseded. Reversing submission order does not reverse this outcome. The ordering
+is a determinism contract, not an arrival-time or equitable-service policy. A scheduler that introduces
+fairness must preserve recorded execution order and distinguish selection policy from settlement.
+
 A quoted storage must belong to its actor under the admitted custody policy; it need not be that
 resident's primary pack. Ownership alone does not establish that a transfer fits every world owner.
 For example, an ordinary counted transfer cannot detach placed water from the source intervals
@@ -134,7 +140,7 @@ supersessions; after every published step, open quotes plus outcomes stay below 
 
 Issuer revisions are never reset or pruned, because a reset could make old quoted terms valid again. An
 issuer must be an actor with admitted presence, and a complete world admits at most 64 immutable
-residents and 64 present actors, so the issuer bound cannot be reached today. A future roster
+residents and 64 present actors, so that admitted roster cannot reach the issuer bound. A roster
 transition that admits more actors must revisit this bound explicitly.
 
 ## Currency-only causality
