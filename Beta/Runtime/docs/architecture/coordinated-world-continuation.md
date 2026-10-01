@@ -186,6 +186,22 @@ unchanged. Progression at the boundary already includes previous payments, so su
 only its own fills. Receipts and quote/command/split identities remain durable across cuts. Profile 32
 has fresh admission and ordinary continuation; the explicit transition below does not target it.
 
+## Market continuation
+
+The [market world](world-markets.md) adds `WorldMarketContinuationContext` to the same coordinated
+anchor. It carries immutable market bindings, the pricing records of still-open quotes, all actor
+price memories and selected-lot disclosures with their original causes. Inventory and progression
+remain the only stock and money owners; continuation does not recalculate prices or refresh knowledge.
+
+Carried price memories remain exact or are replaced by later recorded observations. A seller can
+withdraw or replace its own lot disclosure through an explicit command. Quote records follow the
+paid owner's lifecycle, so a carried live quote may settle after a cut while retaining its original
+creation. Closed records remain in their segment's archived root. Structural checks constrain the
+carried state; authenticated replay establishes the actual commands and their order.
+
+The market context hash is appended only for this capability. Earlier anchors retain their exact
+bytes, and reopening another profile cannot silently enable markets or disclosures.
+
 ## Explicit proposal transition
 
 A lived profile-27 world can continue under profile 30 only through an explicit, privileged upgrade

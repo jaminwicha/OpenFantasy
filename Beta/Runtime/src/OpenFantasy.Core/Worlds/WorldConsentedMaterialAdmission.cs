@@ -76,5 +76,10 @@ public static class WorldConsentedMaterialAdmission
         // The paid interpretation replays gifts and paid fills together in their authoritative world order.
         WorldPaidExchangeAdmission.Validate(world, paid, boundary);
         world.Production.ValidateCustodyEvidence(WorldPaidExchangeAdmission.OrderedProducedMovements(proposals, paid));
+        if (world.Coordination.Markets is { } markets)
+        {
+            // Market quotes are paid quotes; their records and knowledge are checked witnesses over them.
+            WorldMarketAdmission.Validate(world, markets, boundary);
+        }
     }
 }

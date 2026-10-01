@@ -24,9 +24,11 @@ refuse the four intents and the profile bytes; their own bytes and rules are unc
 does not interpret the simultaneous pair, so its consent evidence owner stays empty and exists only
 to keep the consented production capability. Complete admission refuses pair evidence in this profile.
 
-The [paid world](world-paid-exchange.md), profile 32, also carries this saved-proposal capability and
-accepts these four intents through the same Host submission boundary. It adds its own paid quote
-owner; a gift grant never authorizes payment. Produced gift and paid settlements share one ordered
+The [paid world](world-paid-exchange.md), profile 32, and the [market world](world-markets.md), profile33,
+also carry this saved-proposal capability and
+accept these four intents through the same Host submission boundary. Each also carries a paid quote
+owner; a gift grant never authorizes payment or substitutes for a market disclosure. Produced gift
+and paid settlements share one ordered
 custody replay, and both reserve the participants' actual work opportunity.
 
 Profile numbers name interpretations and carry no order. No interpretation is numbered 29, and every

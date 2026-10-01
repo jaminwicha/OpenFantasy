@@ -1,0 +1,28 @@
+[
+  {
+    "kind": "build",
+    "accepted": true,
+    "outcomes": null,
+    "elapsedSeconds": 16.375,
+    "error": null,
+    "report": "Beta/implementation/p02/local-markets/qualification/build-20261001T022231Z-d0dc5/report.json"
+  },
+  {
+    "kind": "new-core",
+    "accepted": true,
+    "outcomes": {
+      "Passed": 17
+    },
+    "elapsedSeconds": 2.853,
+    "error": null,
+    "report": "Beta/implementation/p02/local-markets/qualification/new-core-20261001T022618Z-3f2f1/report.json"
+  },
+  {
+    "kind": "new-host",
+    "accepted": false,
+    "outcomes": null,
+    "elapsedSeconds": 12.941,
+    "error": "AssertionError('Command failed; log retained')",
+    "report": "Beta/implementation/p02/local-markets/qualification/new-host-20261001T022640Z-69e72/report.json"
+  }
+]

@@ -92,7 +92,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
         }
-        if ((genesis.ProfileVersion is 27 or 28 or 30 or 32) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+        if ((genesis.ProfileVersion is 27 or 28 or 30 or 32 or 33) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("A coordinated genesis requires its exclusive material and care archive schema.");
         }
@@ -206,7 +206,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
         }
-        if ((state.ProfileVersion is 27 or 28 or 30 or 32) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+        if ((state.ProfileVersion is 27 or 28 or 30 or 32 or 33) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
         }

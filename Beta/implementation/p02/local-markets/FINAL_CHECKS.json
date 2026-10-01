@@ -1,0 +1,59 @@
+{
+  "status": "accepted_bounded_market_binding",
+  "checks": [
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/build-20261001T033447Z-62f50/report.json",
+      "sha256": "1d826785bf369970db591141307a5e0071d0292970342390a5d1e3247747d91b",
+      "kind": "build",
+      "outcomes": null,
+      "elapsedSeconds": 19.09
+    },
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/new-host-20261001T033522Z-66a88/report.json",
+      "sha256": "da206ca2f6b6d35e622d2f7a11b60937002c78b8ce41fb6b509512432e9539ae",
+      "kind": "new-host",
+      "outcomes": {
+        "Passed": 46
+      },
+      "elapsedSeconds": 15.5
+    },
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/full-core-20261001T033549Z-d3378/report.json",
+      "sha256": "fe615a25798f130c70aa38d1532c5264b1568f57f13461c22f206446c6fe70c3",
+      "kind": "full-core",
+      "outcomes": {
+        "Passed": 1753
+      },
+      "elapsedSeconds": 108.608
+    },
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/focused-host-20261001T033738Z-08faf/report.json",
+      "sha256": "b496049831fa814f1fd403044823458645630c8b7bf7d394680f5269a3791ee5",
+      "kind": "focused-host",
+      "outcomes": {
+        "Passed": 162
+      },
+      "elapsedSeconds": 237.052
+    }
+  ],
+  "distinctPassedTestIds": 1915,
+  "sourceFiles": 1451,
+  "assemblies": 11,
+  "preservation": {
+    "existingTests": 526,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "independentCritic": {
+    "report": "INDEPENDENT_REVIEW.md",
+    "sha256": "b0bc44e51aeb83ec9b5497cee1219d872c1bdf65fa61a43c2e048c5aad6589a8",
+    "disposition": "CRITIC_DISPOSITION.md",
+    "findings": "Both actionable defects repaired with observed failing-then-passing regressions; no waivers."
+  },
+  "newMarketCases": {
+    "Core": 16,
+    "Host": 14
+  },
+  "newMarketTotal": 30,
+  "evidenceScope": "Full Core and selected Host regression; no native rendering, physical devices, multiplayer, profile33 process kills or lived migration claim. Selected Host cases exercise real transactions rather than optional native-result manifests. All existing phase gates remain unchanged."
+}

@@ -1,0 +1,6 @@
+{
+  "checkpoint": "codex/checkpoint-before-local-markets-20261001T014422Z",
+  "snapshotCommit": "cf5556538e5c53ad5a2e3c69653c3adc3ba88c17",
+  "scope": "Clean successor before local market rules and learned-price implementation; unrelated predecessor staging excluded",
+  "verification": "Build and32 focused paid Host cases pass; prior composite regression/process proofs retained. New market rules/knowledge not implemented or tested."
+}

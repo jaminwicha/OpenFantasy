@@ -1,0 +1,62 @@
+{
+  "status": "regression_passed_independent_review_pending",
+  "checks": [
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/build-20261001T030512Z-ae505/report.json",
+      "sha256": "1018e88aec24afef86c2d5fc09bcb9dd81b4d567a6cf2b72abd350da8ebb37ae",
+      "kind": "build",
+      "outcomes": null,
+      "elapsedSeconds": 17.092
+    },
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/new-core-20261001T030638Z-c0412/report.json",
+      "sha256": "f5b638d8a219b05042b7a181371bc3f1779dd81326773b2654b542585d048827",
+      "kind": "new-core",
+      "outcomes": {
+        "Passed": 26
+      },
+      "elapsedSeconds": 2.584
+    },
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/new-host-20261001T030552Z-0972a/report.json",
+      "sha256": "bffc9cb481af3e0e2a43ec1f8ca980918b6dc5374ac4a28fe6b311186897b3f2",
+      "kind": "new-host",
+      "outcomes": {
+        "Passed": 40
+      },
+      "elapsedSeconds": 17.92
+    },
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/full-core-20261001T030906Z-a2e09/report.json",
+      "sha256": "c4fc59daa9ad29983724a05d3e52e87e626a63f93a45aac0b47efb7329b25328",
+      "kind": "full-core",
+      "outcomes": {
+        "Passed": 1753
+      },
+      "elapsedSeconds": 92.931
+    },
+    {
+      "report": "Beta/implementation/p02/local-markets/qualification/focused-host-20261001T031040Z-1212c/report.json",
+      "sha256": "ccbbdacc74d09b196f14cfb0d40d452de93bc94b4c442151599ccc192a3dfd54",
+      "kind": "focused-host",
+      "outcomes": {
+        "Passed": 156
+      },
+      "elapsedSeconds": 245.117
+    }
+  ],
+  "distinctPassedTestIds": 1909,
+  "sourceFiles": 1450,
+  "assemblies": 11,
+  "preservation": {
+    "existingTests": 526,
+    "frozenSpecs": 23,
+    "sourceAndIndexPreserved": true
+  },
+  "evidenceScope": "Full Core and selected Host regression; no native rendering, physical devices, multiplayer, profile33 process kills or migration claim. Environment-optional evidence exporters do not replace live native workloads. The selected Host classes contain real transactions, not native-result manifest-only checks.",
+  "newMarketCases": {
+    "Core": 16,
+    "Host": 8
+  },
+  "newMarketTotal": 24
+}

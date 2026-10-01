@@ -1,0 +1,92 @@
+// Integration-review draft. Not compiled or acceptance evidence until the worker is terminal.
+// Intended destination: Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/PaidWorldExchangeTests.MarketPrivacy.cs.
+using OpenFantasy.Core;
+using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Custody;
+using OpenFantasy.Core.Markets;
+using OpenFantasy.Core.Spatial;
+using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Content;
+using OpenFantasy.Hosting.Simulation;
+using OpenFantasy.Hosting.Tests.Care;
+using OpenFantasy.Hosting.Tests.WorldStorage;
+using OpenFantasy.Hosting.Worlds;
+
+namespace OpenFantasy.Hosting.Tests.WorldExchange;
+
+public sealed partial class PaidWorldExchangeTests
+{
+    [Fact]
+    public void Observation_preparation_discloses_no_remote_or_unknown_merchant_presence()
+    {
+        var fixture = new PaidTradeWorldFixture();
+        EntityId marketId = NextId();
+        CountedItemDefinition berries = fixture.Genesis.Inventory.Custody.GetLot(fixture.OrdinaryLot).Definition;
+        WorldSnapshot genesis = WorldMarketAdmission.CreateFresh(fixture.Genesis,
+            [MarketCircuitPolicies.BindResident(fixture.Genesis, marketId, fixture.Helper, berries,
+                MarketCircuitPolicies.BerryStall())]);
+        using var files = new StorageFiles();
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(files.Path, genesis);
+        var service = new MarketTradingService(authority);
+        var state = authority.ReadStateForHost();
+        var control = state.Inventory.Controls.Single(value => value.ActorId == fixture.Player);
+        var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
+        var local = service.PrepareObservation(delivery, fixture.Player, marketId, NextId());
+        Assert.NotNull(local);
+        Assert.Equal(state.ContentHash, authority.ReadStateForHost().ContentHash);
+        var receipt = service.Submit(local, delivery, NextId());
+        Assert.Equal(WorldActionRejection.None, receipt.Rejection);
+        Assert.Single(service.ReadKnowledge(fixture.Player, delivery));
+
+        // Use actual movement. The final direction/route must be checked against the admitted fixture.
+        for (int step = 0; step < 64; step++)
+        {
+            state = authority.ReadStateForHost();
+            if (state.Space.QueryInteraction(fixture.Player, fixture.Helper) != SpatialInteraction.Reachable) break;
+            var batch = new WorldStepBatch(NextId(), state.WorldId, state.BranchId, state.Revision,
+                state.AdvancingSteps, WorldBatchKind.AdvancingStep,
+                [new WorldMovementInput(delivery, fixture.Player, -WorldMovementInput.DisplacementPerStep, 0)],
+                [], state.ProfileVersion);
+            authority.Commit(batch);
+        }
+        state = authority.ReadStateForHost();
+        Assert.NotEqual(SpatialInteraction.Reachable, state.Space.QueryInteraction(fixture.Player, fixture.Helper));
+        var memory = service.ReadKnowledge(fixture.Player, delivery).Single();
+        Assert.Null(service.PrepareObservation(delivery, fixture.Player, marketId, NextId()));
+        Assert.Null(service.PrepareObservation(delivery, fixture.Player, NextId(), NextId()));
+        Assert.Equal(memory, service.ReadKnowledge(fixture.Player, delivery).Single());
+        Assert.Equal(state.ContentHash, authority.ReadStateForHost().ContentHash);
+    }
+
+    [Fact]
+    public void Merchant_offer_preparation_does_not_disclose_a_lot_outside_its_authorized_custodian()
+    {
+        var fixture = new PaidTradeWorldFixture();
+        EntityId marketId = NextId();
+        CountedItemDefinition berries = fixture.Genesis.Inventory.Custody.GetLot(fixture.OrdinaryLot).Definition;
+        WorldSnapshot genesis = WorldMarketAdmission.CreateFresh(fixture.Genesis,
+            [MarketCircuitPolicies.BindResident(fixture.Genesis, marketId, fixture.Helper, berries,
+                MarketCircuitPolicies.BerryStall())]);
+        var journey = new CareRewardJourney(false, genesis);
+        using var files = new StorageFiles();
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(files.Path, genesis);
+        var state = EarnReward(journey, new CareWorldSession(authority));
+        CountedSourceLot stock = state.Inventory.Custody.GetLot(fixture.OrdinaryLot);
+        var (issue, quote) = FeelessQuote(state, fixture.Helper, fixture.Player, stock, issuerBuys: false);
+        state = Submit(authority, issue, WorldActionRejection.None);
+        var accept = AcceptCommand(state, fixture.Player, quote, fixture.Helper, 1, 1);
+        state = Submit(authority, accept, WorldActionRejection.None);
+        EntityId privateLot = WorldPaidQuote.SplitChildOf(accept.CommandId);
+        Assert.Equal(state.GetResident(fixture.Player).InventoryCustodianId,
+            state.Inventory.Custody.GetLot(privateLot).CustodianId);
+        var control = state.Inventory.Controls.Single(value => value.ActorId == fixture.Helper);
+        var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
+        var service = new MarketTradingService(authority);
+        Assert.NotNull(service.PrepareOffer(delivery, marketId, fixture.Merchant, SpotQuoteSide.IssuerSells,
+            stock.LotId, 1, 8, NextId()));
+        // A later action refusal cannot undo metadata disclosed by this preparation call.
+        Assert.Null(service.PrepareOffer(delivery, marketId, fixture.Merchant, SpotQuoteSide.IssuerSells,
+            privateLot, 1, 8, NextId()));
+        Assert.Equal(state.ContentHash, authority.ReadStateForHost().ContentHash);
+    }
+}

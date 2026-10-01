@@ -1,0 +1,40 @@
+{
+  "runs": [
+    {
+      "assignment": "DISPATCH.json",
+      "status": "terminal_partial_unverified",
+      "model": "claude-opus-5-5",
+      "context": 1000000,
+      "requestedEffort": "max",
+      "seconds": 1937.003,
+      "clientEstimateUsd": 14.675600800000003,
+      "integrationStatus": "superseded_by_reviewed_repair"
+    },
+    {
+      "assignment": "REPAIR_DISPATCH.json",
+      "status": "completed_pending_review",
+      "model": "claude-opus-5-5",
+      "context": 1000000,
+      "requestedEffort": "max",
+      "seconds": 1915.477,
+      "clientEstimateUsd": 10.9833556,
+      "integrationStatus": "reviewed_and_integrated"
+    },
+    {
+      "assignment": "CRITIC_DISPATCH.json",
+      "status": "completed_pending_review",
+      "model": "claude-opus-5-5",
+      "context": 1000000,
+      "requestedEffort": "max",
+      "seconds": 1000.942,
+      "clientEstimateUsd": 6.249388400000001,
+      "integrationStatus": "reviewed_and_integrated"
+    }
+  ],
+  "totalClientEstimateUsd": 31.908344800000002,
+  "netCreditSavings": "Not established. These are client estimates, not billing or a controlled comparison. The first run suffered a lead wrapper initialization failure; separate repair and independent critique delivered useful code and findings. No automatic retry or silent model substitution occurred.",
+  "upstreamCommits": [
+    "cc2900d",
+    "19e8200"
+  ]
+}

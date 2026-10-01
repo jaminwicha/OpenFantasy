@@ -69,6 +69,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 28 | Coordinated world with explicit simultaneous bilateral material transfer evidence and Production V11 continuation |
 | 30 | Coordinated world with separately submitted saved material proposals, exact carried grants and permanent outcome identities |
 | 32 | Saved-proposal world with paid quotes, currency-only causal fills, issuer revisions and joint archive carry |
+| 33 | Paid world with immutable market bindings, rule-priced quotes, dated actor price knowledge and seller-authored selected-lot disclosures |
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
@@ -101,7 +102,7 @@ Decoding after a cut requires the actual joint anchor, and Host recovery verifie
 against complete replay. Neither opening a lived profile26 save nor supplying a component context
 selects this interpretation. The embedded ordinary-care factory retains its own profile26 admission.
 
-Profiles 28, 30 and 32 use the same schema-eight physical layout with explicitly selected world
+Profiles 28, 30, 32 and 33 use the same schema-eight physical layout with explicitly selected world
 semantics. Profiles 29 and 31 remain unassigned and refused. The sole lived interpretation change is
 the privileged [27-to-30 proposal transition](coordinated-world-continuation.md#explicit-proposal-transition).
 [Paid profile 32](world-paid-exchange.md) has fresh admission; reopening another profile never enables
@@ -109,6 +110,11 @@ trading. Its single-command Host boundary checks independently supplied delivery
 disclosure, and publishes goods, balances, quotes, journal, receipts, identities and any cut in one
 transaction. Exact retries return the retained receipt. A matching root hash alone does not establish
 payment history; recovery reconstructs it from the admitted genesis and complete journal.
+
+[Market profile33](world-markets.md) also requires fresh admission. Its snapshot frame adds the
+market owner and its action codec records quote issuance, observations and selected-lot disclosure
+commands. Goods and payments still use the paid transaction. The market owner and its continuation
+context preserve dated knowledge and disclosure causes without silently refreshing either on load.
 
 [Profile ten](excavation.md#persistence-and-boundaries) binds exact cell/source ownership and work to
 retained terrain edits and the existing custody/Production ledger. Its fresh admission and action eight

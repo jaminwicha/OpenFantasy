@@ -6,6 +6,9 @@ the [saved-proposal world](material-proposals.md) (profile 30). The
 arithmetic. The world supplies authentication and control, time, bodies, reach, work opportunity,
 causal history and durable publication. Earlier profiles keep their own bytes and rules.
 
+The [market world](world-markets.md), profile33, carries the same paid owner and settlement contract.
+It adds rule-priced quotes, local knowledge and explicit seller disclosure before buy-side issuance.
+
 ## Selection and ownership
 
 [`WorldPaidExchangeAdmission.CreateFresh`](../../src/OpenFantasy.Core/Worlds/WorldPaidExchangeAdmission.cs)
@@ -26,7 +29,7 @@ The book holds no balance and no stock.
 
 ## Commands
 
-Action codec 17 defines three intents, and only profile-32 advancing steps accept them:
+Action codec17 defines three intents, accepted by advancing steps of profiles32 and33:
 `IssueSpotQuoteIntent(SpotQuote)`, `AcceptSpotQuoteIntent(SpotAcceptance, expectedIssuerRevision)` and
 `WithdrawSpotQuoteIntent(quoteId)`. Each is a separate command with its own identity and receipt.
 [`WorldPaidExchangeResolver`](../../src/OpenFantasy.Core/Worlds/WorldPaidExchangeResolver.cs) checks the
@@ -46,6 +49,13 @@ revision, an advancing unheld step with a ready actor, and only then the quote.
 
 Issuance reserves nothing, moves no money and uses no work opportunity. It does not check lot
 protection or reservation; such a quote cannot settle and the issuer may withdraw it.
+
+Profile33 adds one condition before inspecting a counterparty's private lot: an issuer-buys quote
+requires that counterparty's live selected-lot disclosure to a market of the issuer. This also applies
+to ordinary bilateral issuance, so bypassing the market service does not bypass privacy. A failed
+lot pin under that disclosure gives one `Unavailable` result; comparing quantity and revision
+refusals cannot reveal later private stock changes. Actors with no market can buy by accepting a
+seller-issued sell quote. Profile32 retains its own interpretation.
 
 **Acceptance** uses the command identity as the acceptance identity. It checks the following in order:
 
@@ -145,7 +155,7 @@ transition that admits more actors must revisit this bound explicitly.
 
 ## Currency-only causality
 
-A paid fill adds no actor resource batch. For profile 32,
+A paid fill adds no actor resource batch. For profiles32 and33,
 [`WorldResourceAdmission`](../../src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs) requires:
 
     progression revision = basis revision + actor batches + fills
@@ -153,8 +163,8 @@ A paid fill adds no actor resource batch. For profile 32,
 It replays one merged sequence of actor batches and fills, ordered by world revision and then command
 ordinal. It refuses a tie. Rewards pay through `ActorRewardPlanner`, and fills pay through the shared
 ledger transfer. The resulting ledger must equal the live ledger byte for byte, including account
-revisions. Supersessions, withdrawals and expirations are not currency causes. Every other profile has
-no fills, so its equation is unchanged.
+revisions. Supersessions, withdrawals and expirations are not currency causes. Profiles without paid
+exchange have no fills, so their equation is unchanged.
 
 ## Custody evidence
 
@@ -191,7 +201,7 @@ keep their bytes. A successor must:
 
 Closed outcomes, including supersessions and withdrawals, remain in the closing root of the archive.
 Schema eight keeps its physical layout. Creation, recovery, journal accounting and archive publication
-name profile 32 explicitly.
+name profiles32 and33 explicitly.
 
 ## Host authority
 
@@ -210,6 +220,8 @@ at face value, as it does for proposals, and is not a player-facing authorizatio
 - No lived-world migration into profile 32 exists, and it does not combine with profile 28 pairs.
 - Participants cannot yet look up an archived quote outcome by identity, as they can for proposals;
   after a cut, receipts and the archive are the only history.
-- An issuer-buys quote pins a lot in the counterparty's storage, and its issuance receipt reveals whether
-  that lot still matches. Local visibility rules must validate that disclosure before this is exposed.
-- Local pricing, discovery, NPC trading policy and live control transitions are not part of this binding.
+- In profile32 an issuer-buys quote pins a lot in the counterparty's storage, and its issuance receipt
+  reveals whether that lot still matches. This limited interpretation is not a general private-inventory
+  interface. Profile33's disclosure contract supplies the stricter boundary described above.
+- Local pricing and discovery belong to the market interpretation. NPC trading policy and live control
+  transitions require their own application contracts.

@@ -306,7 +306,8 @@ public sealed class WorldSnapshot
     public EncounterActionSnapshot? EncounterActions => EncounterLifecycle is { } lifecycle
         ? lifecycle.HasEncounter ? lifecycle.Actions : null : _standaloneEncounterActions;
     public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
-    public ushort ProfileVersion => Coordination?.PaidExchange is not null ? WorldPaidExchangeAdmission.ProfileVersion
+    public ushort ProfileVersion => Coordination?.Markets is not null ? WorldMarketAdmission.ProfileVersion
+        : Coordination?.PaidExchange is not null ? WorldPaidExchangeAdmission.ProfileVersion
         : Coordination?.Proposals is not null ? (ushort)30 : Coordination?.ConsentedMaterial is not null ? (ushort)28 : Coordination is not null ? (ushort)27 : Care?.SupportsOrdinary == true ? (ushort)26 : Care is not null ? (ushort)25 : EncounterLifecycle is not null ? (ushort)24 : EncounterActions is not null ? (ushort)23 : Pacing is not null ? (ushort)22 : BaseProfileVersion;
     internal ushort BaseProfileVersion => LiquidCells?.Topology is not null ? (ushort)21 : LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
         : DescentMode == ConstructionDescentMode.EventOrdered ? (ushort)18

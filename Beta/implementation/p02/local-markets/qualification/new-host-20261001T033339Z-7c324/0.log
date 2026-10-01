@@ -1,0 +1,127 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.38]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.75]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.90]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.19]     OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(side: IssuerBuys) [FAIL]
+[xUnit.net 00:00:02.19]       Assert.Null() Failure: Value is not null
+[xUnit.net 00:00:02.19]       Expected: null
+[xUnit.net 00:00:02.19]       Actual:   WorldActionCommand { ActorId = 5d652f48a612a324027911ffd13cf5f9, BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandId = 4d4b7e7100000000000000000000010d, ContentHash = 78b19b5d6eac9fe4923a6de64951e177639afdecc591220476f4dc52808cbe38, ExpectedActorRevision = 0, ··· }
+[xUnit.net 00:00:02.19]       Stack Trace:
+[xUnit.net 00:00:02.19]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/MarketBoundaryRegressionTests.cs(79,0): at OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(SpotQuoteSide side)
+[xUnit.net 00:00:02.19]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.19]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.77]     OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(side: IssuerSells) [FAIL]
+[xUnit.net 00:00:02.78]       System.ArgumentException : Fees name bounded distinct payees other than the paying buyer. (Parameter 'fees')
+[xUnit.net 00:00:02.78]       Stack Trace:
+[xUnit.net 00:00:02.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Markets/SpotQuote.cs(98,0): at OpenFantasy.Core.Markets.SpotQuote..ctor(EntityId quoteId, EntityId worldId, EntityId branchId, EntityId issuerActorId, EntityId issuerPrincipalId, EntityId issuerSessionId, EntityId counterpartyActorId, SpotQuoteSide side, SpotLotKind lotKind, EntityId lotId, CountedItemDefinition definition, UInt64 expectedLotRevision, EntityId sellerCustodianId, EntityId buyerCustodianId, EntityId currencyDefinitionId, ContentHash currencyVersion, EntityId sellerAccountId, EntityId buyerAccountId, UInt64 unitPrice, IEnumerable`1 fees, UInt64 quantityAllowance, UInt64 marketRevision, UInt64 issuedAtStep, UInt64 expiresAtStep)
+[xUnit.net 00:00:02.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/MarketTradingService.cs(195,0): at OpenFantasy.Hosting.Simulation.MarketTradingService.Quote(WorldSnapshot state, MarketBinding market, TrustedCommandDelivery merchantDelivery, EntityId commandId, EntityId counterpartyActorId, SpotQuoteSide side, SpotLotKind kind, EntityId lotId, UInt64 lotRevision, EntityId sellerCustodian, EntityId buyerCustodian, EntityId sellerAccount, EntityId buyerAccount, UInt64 unitPrice, UInt64 allowance, UInt64 issuedAt, UInt64 expiresAt)
+[xUnit.net 00:00:02.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/MarketTradingService.cs(77,0): at OpenFantasy.Hosting.Simulation.MarketTradingService.PrepareOffer(TrustedCommandDelivery merchantDelivery, EntityId marketId, EntityId counterpartyActorId, SpotQuoteSide side, EntityId lotId, UInt64 allowance, UInt64 lifetimeSteps, EntityId commandId)
+[xUnit.net 00:00:02.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/MarketBoundaryRegressionTests.cs(79,0): at OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(SpotQuoteSide side)
+[xUnit.net 00:00:02.78]            at InvokeStub_MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(Object, Span`1)
+[xUnit.net 00:00:02.78]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketStockPoolTests.Fresh_admission_refuses_competing_rules_for_the_same_stock_pool_but_keeps_distinct_markets [1 s]
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(side: IssuerBuys) [1 s]
+  Error Message:
+   Assert.Null() Failure: Value is not null
+Expected: null
+Actual:   WorldActionCommand { ActorId = 5d652f48a612a324027911ffd13cf5f9, BranchId = 4bc2210fe97d62fb5b6558d9e263e0d0, CommandId = 4d4b7e7100000000000000000000010d, ContentHash = 78b19b5d6eac9fe4923a6de64951e177639afdecc591220476f4dc52808cbe38, ExpectedActorRevision = 0, ··· }
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(SpotQuoteSide side) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/MarketBoundaryRegressionTests.cs:line 79
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.A_real_arrival_makes_an_issued_market_quote_stale_until_it_is_withdrawn_and_requoted [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Protected_or_reserved_stock_cannot_settle_keeps_its_metadata_and_is_withdrawn_while_equal_stock_sells(reserved: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketDisclosureTests.Buy_quotes_need_the_sellers_own_lot_showing_and_a_due_cannot_fund_a_cooperating_resale [1 s]
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(side: IssuerSells) [579 ms]
+  Error Message:
+   System.ArgumentException : Fees name bounded distinct payees other than the paying buyer. (Parameter 'fees')
+  Stack Trace:
+     at OpenFantasy.Core.Markets.SpotQuote..ctor(EntityId quoteId, EntityId worldId, EntityId branchId, EntityId issuerActorId, EntityId issuerPrincipalId, EntityId issuerSessionId, EntityId counterpartyActorId, SpotQuoteSide side, SpotLotKind lotKind, EntityId lotId, CountedItemDefinition definition, UInt64 expectedLotRevision, EntityId sellerCustodianId, EntityId buyerCustodianId, EntityId currencyDefinitionId, ContentHash currencyVersion, EntityId sellerAccountId, EntityId buyerAccountId, UInt64 unitPrice, IEnumerable`1 fees, UInt64 quantityAllowance, UInt64 marketRevision, UInt64 issuedAtStep, UInt64 expiresAtStep) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Markets/SpotQuote.cs:line 98
+   at OpenFantasy.Hosting.Simulation.MarketTradingService.Quote(WorldSnapshot state, MarketBinding market, TrustedCommandDelivery merchantDelivery, EntityId commandId, EntityId counterpartyActorId, SpotQuoteSide side, SpotLotKind kind, EntityId lotId, UInt64 lotRevision, EntityId sellerCustodian, EntityId buyerCustodian, EntityId sellerAccount, EntityId buyerAccount, UInt64 unitPrice, UInt64 allowance, UInt64 issuedAt, UInt64 expiresAt) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/MarketTradingService.cs:line 195
+   at OpenFantasy.Hosting.Simulation.MarketTradingService.PrepareOffer(TrustedCommandDelivery merchantDelivery, EntityId marketId, EntityId counterpartyActorId, SpotQuoteSide side, EntityId lotId, UInt64 allowance, UInt64 lifetimeSteps, EntityId commandId) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/MarketTradingService.cs:line 77
+   at OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(SpotQuoteSide side) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/MarketBoundaryRegressionTests.cs:line 79
+   at InvokeStub_MarketBoundaryRegressionTests.Fee_payee_counterparty_is_unavailable_during_preparation(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.Market_submissions_refuse_unauthorized_forged_and_mispriced_terms_with_exact_scope [623 ms]
+[xUnit.net 00:00:03.33]     OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: False, bilateral: False) [FAIL]
+[xUnit.net 00:00:03.33]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:03.33]       Expected: Unavailable
+[xUnit.net 00:00:03.33]       Actual:   RevisionConflict
+[xUnit.net 00:00:03.33]       Stack Trace:
+[xUnit.net 00:00:03.33]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/MarketBoundaryRegressionTests.cs(44,0): at OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(Boolean moveAll, Boolean bilateral)
+[xUnit.net 00:00:03.33]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.33]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.80]     OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: False, bilateral: True) [FAIL]
+[xUnit.net 00:00:03.80]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:03.80]       Expected: Unavailable
+[xUnit.net 00:00:03.80]       Actual:   RevisionConflict
+[xUnit.net 00:00:03.80]       Stack Trace:
+[xUnit.net 00:00:03.80]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/MarketBoundaryRegressionTests.cs(44,0): at OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(Boolean moveAll, Boolean bilateral)
+[xUnit.net 00:00:03.80]            at InvokeStub_MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(Object, Span`1)
+[xUnit.net 00:00:03.80]            at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Protected_or_reserved_stock_cannot_settle_keeps_its_metadata_and_is_withdrawn_while_equal_stock_sells(reserved: True) [664 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_intents_and_bytes_are_refused_outside_the_paid_profile [252 ms]
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: False, bilateral: False) [550 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: Unavailable
+Actual:   RevisionConflict
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(Boolean moveAll, Boolean bilateral) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/MarketBoundaryRegressionTests.cs:line 44
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.Learned_prices_are_local_dated_private_and_never_refresh_from_a_distance [676 ms]
+  Failed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: False, bilateral: True) [465 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: Unavailable
+Actual:   RevisionConflict
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(Boolean moveAll, Boolean bilateral) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldExchange/Markets/MarketBoundaryRegressionTests.cs:line 44
+   at InvokeStub_MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithFewArgs(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: True, bilateral: True) [449 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.MarketBoundaryRegressionTests.Changed_shown_stock_has_one_refusal_regardless_of_remaining_quantity(moveAll: True, bilateral: False) [578 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Battle_defeat_and_pending_care_refuse_whole_steps_then_the_treated_issuer_settles_its_terms [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_held_quest_reward_cannot_share_a_batch_with_a_fill_but_funds_it_in_causal_order [188 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.Market_quotes_and_knowledge_cross_an_automatic_cut_then_settle_reopen_retry_and_refuse_tampering [2 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.Rule_priced_purchase_and_resale_move_real_goods_and_funds_and_survive_retry_and_reopen [300 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_real_cut_and_reopening_keep_superseded_withdrawn_and_carried_quotes_exact [976 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Markets.LocalMarketWorldTests.An_open_market_quote_settles_again_when_gifts_restore_its_stock_basis_but_a_filled_one_never_revives [264 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Funded_people_walk_apart_refuse_payment_then_return_to_the_same_quote [129 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_eligible_humans_accept_one_issuers_quotes_in_one_batch_and_only_the_first_fills(merchantSortsFirst: False, merchantSubmitsFirst: False) [242 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_eligible_humans_accept_one_issuers_quotes_in_one_batch_and_only_the_first_fills(merchantSortsFirst: True, merchantSubmitsFirst: True) [232 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_eligible_humans_accept_one_issuers_quotes_in_one_batch_and_only_the_first_fills(merchantSortsFirst: True, merchantSubmitsFirst: False) [227 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_eligible_humans_accept_one_issuers_quotes_in_one_batch_and_only_the_first_fills(merchantSortsFirst: False, merchantSubmitsFirst: True) [237 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Automatic_quote_cuts_carry_open_terms_then_archive_fills_without_reusing_identities [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.An_issuer_withdraws_a_stale_stock_quote_freeing_a_slot_with_exact_retry [136 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_funds_buy_a_partial_raw_lot_and_survive_retry_and_reopen [127 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Filling_one_of_sixteen_quotes_supersedes_the_rest_and_frees_the_shared_book [130 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_handless_then_slain_wolf_and_recovering_people_cannot_settle_until_ready(recoveringCaller: False) [304 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_handless_then_slain_wolf_and_recovering_people_cannot_settle_until_ready(recoveringCaller: True) [309 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Reachable_unfunded_and_expired_quotes_change_no_owner [69 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: True) [91 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Paid_world_keeps_real_saved_gift_ingress_and_refuses_issuer_work_conflicts(stalePayment: False) [93 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_on_one_lot_in_one_batch_block_each_other_without_effect(paidFirst: True) [155 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_and_a_paid_fill_on_one_lot_in_one_batch_block_each_other_without_effect(paidFirst: False) [147 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_at_most_once(wolfFirst: False) [144 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Two_acceptances_against_one_issuer_in_one_batch_fill_at_most_once(wolfFirst: True) [139 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Complete_admission_refuses_missing_payment_causes_and_repriced_historical_fills [98 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_small_human_pack_filled_by_raw_and_crafted_purchases_refuses_one_more_unit_until_a_sale_frees_space [264 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Independent_delivery_is_required_before_issuance_acceptance_and_retry_disclosure [88 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_seller_collecting_its_own_fee_is_credited_once_through_hosted_replay [130 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_locally_valid_paid_water_transfer_rolls_back_when_it_would_detach_live_liquid_placement [133 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Quote_and_payment_identities_are_known_to_the_root_and_cannot_alias_other_roles [87 ms]
+[xUnit.net 00:00:12.55]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.Earned_payment_crafted_split_recraft_healing_and_buyback_keep_one_causal_world [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.PaidWorldExchangeTests.A_saved_gift_can_spend_quoted_stock_but_cannot_authorize_a_stale_paid_transfer [76 ms]
+
+Test Run Failed.
+Total tests: 46
+     Passed: 42
+     Failed: 4
+ Total time: 13.0578 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/local-markets/qualification/new-host-20261001T033339Z-7c324/OpenFantasy.Hosting.Tests.trx

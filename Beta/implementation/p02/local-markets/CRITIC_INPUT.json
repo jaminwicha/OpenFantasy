@@ -1,0 +1,50 @@
+{
+  "status": "review_ready_not_accepted",
+  "sourceHead": "cf5556538e5c53ad5a2e3c69653c3adc3ba88c17",
+  "reports": [
+    {
+      "kind": "build",
+      "outcomes": null,
+      "elapsedSeconds": 17.092,
+      "preservationAfter": {
+        "existingTests": 526,
+        "frozenSpecs": 23,
+        "sourceAndIndexPreserved": true
+      },
+      "sourceUnchanged": true,
+      "path": "Beta/implementation/p02/local-markets/qualification/build-20261001T030512Z-ae505/report.json",
+      "sha256": "1018e88aec24afef86c2d5fc09bcb9dd81b4d567a6cf2b72abd350da8ebb37ae"
+    },
+    {
+      "kind": "new-host",
+      "outcomes": {
+        "Passed": 40
+      },
+      "elapsedSeconds": 17.92,
+      "preservationAfter": {
+        "existingTests": 526,
+        "frozenSpecs": 23,
+        "sourceAndIndexPreserved": true
+      },
+      "sourceUnchanged": true,
+      "path": "Beta/implementation/p02/local-markets/qualification/new-host-20261001T030552Z-0972a/report.json",
+      "sha256": "bffc9cb481af3e0e2a43ec1f8ca980918b6dc5374ac4a28fe6b311186897b3f2"
+    },
+    {
+      "kind": "new-core",
+      "outcomes": {
+        "Passed": 26
+      },
+      "elapsedSeconds": 2.584,
+      "preservationAfter": {
+        "existingTests": 526,
+        "frozenSpecs": 23,
+        "sourceAndIndexPreserved": true
+      },
+      "sourceUnchanged": true,
+      "path": "Beta/implementation/p02/local-markets/qualification/new-core-20261001T030638Z-c0412/report.json",
+      "sha256": "f5b638d8a219b05042b7a181371bc3f1779dd81326773b2654b542585d048827"
+    }
+  ],
+  "scope": "Fresh profile33 local markets and selected-lot disclosures. Runtime sources and tests match the accepted build. Broad final regression runs separately; prior failures remain preserved. Inspect compact metadata here, not every source hash in the large reports."
+}

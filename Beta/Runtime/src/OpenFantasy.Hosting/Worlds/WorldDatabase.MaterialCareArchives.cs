@@ -59,7 +59,7 @@ internal sealed partial class WorldDatabase
         {
             RequireRow(reader, "A material and care archive has no accepted world genesis.");
             WorldSnapshot world = WorldSnapshotCodec.Decode(WorldStorageBinary.ReadState(reader, 0, 1));
-            if (world.ProfileVersion is not (27 or 28 or 30 or 32) || world.WorldId != value.Reference.WorldId || world.BranchId != value.Reference.BranchId)
+            if (world.ProfileVersion is not (27 or 28 or 30 or 32 or 33) || world.WorldId != value.Reference.WorldId || world.BranchId != value.Reference.BranchId)
             {
                 throw new InvalidDataException("A material and care archive must retain the accepted world scope.");
             }

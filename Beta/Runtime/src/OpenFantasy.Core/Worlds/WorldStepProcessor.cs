@@ -5,6 +5,7 @@ using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Geography;
+using OpenFantasy.Core.Markets;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Progression;
 using OpenFantasy.Core.Progression.ResourceHistory;
@@ -266,14 +267,46 @@ public sealed class WorldStepProcessor
             WorldMaterialProposalSettlement? proposalSettlement = null;
             WorldCustodyWitness? paidWitness = null;
             EntityId? proposalCounterpart = null;
-            if (action.Intent is PaidExchangeIntent)
+            if (action.Intent is MarketIntent)
+            {
+                if (coordination?.PaidExchange is not { } quotes || coordination.Markets is not { } markets
+                    || production is null || progression is null)
+                {
+                    throw new InvalidOperationException("This world does not interpret local markets.");
+                }
+                (WorldPaidExchangePlan plan, WorldMarketBook learned) = WorldMarketResolver.Resolve(state, batch, inventory,
+                    space, production, progression, quotes, markets, dialogues.Count != 0, action, checked((uint)actionIndex),
+                    sequence, worked, Occupied);
+                resolution = new(plan.Inventory, dialogues, plan.Rejection, null);
+                if (plan.Rejection == WorldActionRejection.None)
+                {
+                    // Issuance records its market basis beside the paid quote; observation records knowledge.
+                    // Neither moves goods or money nor performs work.
+                    coordination = coordination.WithPaidExchange(plan.Book).WithMarkets(learned);
+                    createdIds = plan.CreatedIds;
+                }
+            }
+            else if (action.Intent is PaidExchangeIntent)
             {
                 if (coordination?.PaidExchange is not { } quotes || production is null || progression is null)
                 {
                     throw new InvalidOperationException("This world does not interpret paid spot exchange.");
                 }
+                // The local-market world keeps bilateral quotes, but a buy quote there may pin only a lot its
+                // counterparty explicitly showed to the issuer; the paid world keeps its own interpretation.
+                WorldMarketBook? shown = coordination.Markets;
+                Func<SpotQuote, bool>? disclosed = shown is null ? null
+                    : quote => shown.DisclosesTo(quote, null, state.AdvancingSteps);
                 WorldPaidExchangePlan plan = WorldPaidExchangeResolver.Resolve(state, batch, inventory, space, production,
-                    progression, quotes, dialogues.Count != 0, action, checked((uint)actionIndex), sequence, worked, Occupied);
+                    progression, quotes, dialogues.Count != 0, action, checked((uint)actionIndex), sequence, worked, Occupied,
+                    disclosed);
+                if (plan.Rejection == WorldActionRejection.None && action.Intent is AcceptSpotQuoteIntent accepted
+                    && coordination.Markets is { } pricing && pricing.FindQuote(accepted.Acceptance.QuoteId) is { } priced
+                    && !WorldMarketResolver.IsCurrent(priced, pricing, inventory, production, space))
+                {
+                    // A market quote settles only against the market state that priced it; nothing is requoted.
+                    plan = new(inventory, production, progression, quotes, WorldActionRejection.RevisionConflict, [], null, null);
+                }
                 resolution = new(plan.Inventory, dialogues, plan.Rejection, null);
                 if (plan.Rejection == WorldActionRejection.None)
                 {

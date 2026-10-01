@@ -18,6 +18,7 @@ public static class WorldActionCodec
         ArgumentNullException.ThrowIfNull(command);
         return command.Intent switch
         {
+            MarketIntent => WorldActionCodecV18.Encode(command),
             PaidExchangeIntent => WorldActionCodecV17.Encode(command),
             MaterialProposalIntent => WorldActionCodecV16.Encode(command),
             OfferMaterialIntent or AcceptMaterialIntent => WorldActionCodecV15.Encode(command),
@@ -41,6 +42,7 @@ public static class WorldActionCodec
     public static WorldActionCommand Decode(ReadOnlySpan<byte> bytes) =>
         WorldCodecVersion.Read(bytes, "world.actor-action"u8, MaximumCommandByteLength, 10) switch
         {
+            18 => WorldActionCodecV18.Decode(bytes),
             17 => WorldActionCodecV17.Decode(bytes),
             16 => WorldActionCodecV16.Decode(bytes),
             15 => WorldActionCodecV15.Decode(bytes),

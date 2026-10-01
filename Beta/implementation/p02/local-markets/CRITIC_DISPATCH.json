@@ -1,0 +1,22 @@
+{
+  "status": "completed_pending_review",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 1800,
+  "maxBudgetUsdClientEstimate": 16,
+  "sourceHead": "cf5556538e5c53ad5a2e3c69653c3adc3ba88c17",
+  "privateTaskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-market-critic-9ksewj0m",
+  "contextManifestSha256": "aab4488cbed8b994a775727a81c5211a051fb8b7bb17a747c531b32ca6a94dcd",
+  "benefit": "Independent review of the new market authority, privacy, policy and persistence boundaries after focused tests.",
+  "executionSessionId": 99962,
+  "contextPreflight": "verified",
+  "syncedFiles": 0,
+  "elapsedSeconds": 1000.942,
+  "clientEstimateUsd": 6.249388400000001,
+  "returnedModel": "claude-opus-5-5",
+  "returnedContextWindow": 1000000,
+  "permissionDenials": [],
+  "contextPostflight": "verified",
+  "integrationStatus": "reviewed_and_integrated",
+  "integrationRecord": "INTEGRATION_REVIEW.md"
+}

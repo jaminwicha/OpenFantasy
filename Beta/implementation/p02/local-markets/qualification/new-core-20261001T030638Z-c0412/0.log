@@ -1,0 +1,40 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.35]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.86]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.01]   Starting:    OpenFantasy.Core.Tests
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.Ask_and_bid_respect_stock_demand_lot_limits_and_the_declared_spread [13 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.Policy_construction_refuses_unbounded_or_inconsistent_rules [2 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.No_split_or_order_of_a_closed_cycle_profits_traders_together_with_the_payee(unitFee: 3, constant: False) [8 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.No_split_or_order_of_a_closed_cycle_profits_traders_together_with_the_payee(unitFee: 2, constant: False) [6 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.No_split_or_order_of_a_closed_cycle_profits_traders_together_with_the_payee(unitFee: 0, constant: False) [5 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.No_split_or_order_of_a_closed_cycle_profits_traders_together_with_the_payee(unitFee: 3, constant: True) [7 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.No_split_or_order_of_a_closed_cycle_profits_traders_together_with_the_payee(unitFee: 0, constant: True) [6 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.Disclosure_commands_have_exact_canonical_action_frames [6 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.Mid_price_equals_the_cited_source_at_the_stocking_target_and_never_rises_with_stock [< 1 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.Market_owner_bytes_are_canonical_and_refuse_permutation_and_trailing_data [5 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.Stock_beyond_the_rules_admitted_domain_posts_no_terms_instead_of_an_unrecordable_basis [< 1 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Supersession_needs_an_actual_fill_and_no_stale_sibling_may_stay_open [71 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.No_split_buy_and_resell_cycle_creates_money_at_unchanged_state(unitFee: 0) [1 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Malformed_frames_and_noncanonical_or_excessive_quotes_are_refused [74 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.No_split_buy_and_resell_cycle_creates_money_at_unchanged_state(unitFee: 2) [1 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Quote_book_has_an_independent_byte_vector_and_copies_its_inputs_and_outputs [2 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.Pricing_is_a_pure_function_of_its_rule_and_stock [8 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Only_the_named_profile_selects_paid_actions_and_each_command_retains_exact_bytes(accept: False) [7 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Only_the_named_profile_selects_paid_actions_and_each_command_retains_exact_bytes(accept: True) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.A_fill_supersedes_every_sibling_with_exact_terms_and_one_revision [12 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.A_lot_disclosure_authorizes_only_its_merchants_exact_bounded_buy_quote_and_has_canonical_bytes [4 ms]
+[xUnit.net 00:00:01.16]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidExchangeCodecTests.Single_fill_and_expiry_preserve_exact_terms_and_do_not_grant_another_fill [3 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.Markets.MarketPricePolicyTests.A_market_due_paid_to_a_third_actor_cannot_fund_a_cooperating_buy_and_resell [2 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Every_independent_rearrangement_of_same_step_outcomes_is_refused [14 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Withdrawal_is_a_typed_issuer_command_cause_with_exact_bytes_only_in_the_paid_profile [3 ms]
+  Passed OpenFantasy.Core.Tests.WorldExchange.PaidQuoteLifecycleTests.Never_pruned_issuer_revisions_stay_within_the_admitted_actor_roster [< 1 ms]
+
+Test Run Successful.
+Total tests: 26
+     Passed: 26
+ Total time: 1.6021 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/local-markets/qualification/new-core-20261001T030638Z-c0412/OpenFantasy.Core.Tests.trx

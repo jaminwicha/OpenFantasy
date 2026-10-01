@@ -24,10 +24,16 @@ internal sealed record WorldPaidExchangePlan(CountedAuthorityState Inventory, Pr
 /// </summary>
 internal static class WorldPaidExchangeResolver
 {
+    /// <param name="counterpartyDisclosed">
+    /// Null keeps the paid world's own interpretation, in which an issuer-buys quote may pin any lot of its
+    /// counterparty. The local-market world supplies its disclosure owner: a buy quote is then refused, before
+    /// the counterparty's lot is read, unless that counterparty explicitly showed the pinned lot to the issuer.
+    /// </param>
     internal static WorldPaidExchangePlan Resolve(WorldSnapshot state, WorldStepBatch batch,
         CountedAuthorityState inventory, LocalSpatialSnapshot space, ProductionSnapshot production,
         ProgressionSnapshot progression, WorldPaidExchangeBook book, bool held, WorldActionCommand action,
-        uint actionIndex, ulong sequence, IReadOnlySet<EntityId> worked, Func<EntityId, bool> occupied)
+        uint actionIndex, ulong sequence, IReadOnlySet<EntityId> worked, Func<EntityId, bool> occupied,
+        Func<SpotQuote, bool>? counterpartyDisclosed = null)
     {
         WorldPaidExchangePlan Refuse(WorldActionRejection reason) =>
             new(inventory, production, progression, book, reason, [], null, null);
@@ -53,8 +59,10 @@ internal static class WorldPaidExchangeResolver
         }
         return action.Intent switch
         {
+            IssueSpotQuoteIntent issue when issue.Quote.Side == SpotQuoteSide.IssuerBuys
+                && counterpartyDisclosed is not null && !counterpartyDisclosed(issue.Quote) => Refuse(WorldActionRejection.NotAuthorized),
             IssueSpotQuoteIntent issue => Issue(state, inventory, production, progression, book, action, issue.Quote,
-                sequence, occupied, Refuse),
+                sequence, occupied, counterpartyDisclosed is not null, Refuse),
             AcceptSpotQuoteIntent accept => Accept(state, batch, inventory, space, production, progression, book,
                 action, accept, actionIndex, sequence, worked, occupied, Refuse),
             WithdrawSpotQuoteIntent withdraw => Withdraw(state, inventory, production, progression, book, action,
@@ -85,7 +93,7 @@ internal static class WorldPaidExchangeResolver
     private static WorldPaidExchangePlan Issue(WorldSnapshot state, CountedAuthorityState inventory,
         ProductionSnapshot production, ProgressionSnapshot progression, WorldPaidExchangeBook book,
         WorldActionCommand action, SpotQuote quote, ulong sequence, Func<EntityId, bool> occupied,
-        Func<WorldActionRejection, WorldPaidExchangePlan> refuse)
+        bool requiresDisclosure, Func<WorldActionRejection, WorldPaidExchangePlan> refuse)
     {
         if (quote.WorldId != state.WorldId || quote.BranchId != state.BranchId || quote.IssuerActorId != action.ActorId
             || quote.IssuerPrincipalId != action.PrincipalId || quote.IssuerSessionId != action.OriginSessionId
@@ -111,7 +119,10 @@ internal static class WorldPaidExchangeResolver
         WorldActionRejection pin = CheckPinnedLot(inventory, production, quote);
         if (pin != WorldActionRejection.None)
         {
-            return refuse(pin);
+            // A showing reveals its recorded pins, not subsequent private changes. Different refusals
+            // for quantity and revision would let a merchant probe how much of the shown lot remains.
+            return refuse(requiresDisclosure && quote.Side == SpotQuoteSide.IssuerBuys
+                ? WorldActionRejection.Unavailable : pin);
         }
         var issued = new WorldPaidQuote(action.CommandId, quote, sequence);
         return new(inventory, production, progression, book.Issue(issued), WorldActionRejection.None,

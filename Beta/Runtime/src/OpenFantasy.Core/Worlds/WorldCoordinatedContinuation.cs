@@ -9,7 +9,7 @@ public sealed class WorldCoordinatedContinuation
 {
     internal WorldCoordinatedContinuation(WorldSourceIssuanceBaseline sources, WorldMaterialCareArchiveAnchor? anchor = null,
         WorldConsentedMaterialHistory? consentedMaterial = null, WorldMaterialProposalBook? proposals = null,
-        WorldPaidExchangeBook? paidExchange = null)
+        WorldPaidExchangeBook? paidExchange = null, WorldMarketBook? markets = null)
     {
         ArgumentNullException.ThrowIfNull(sources);
         if (anchor is not null && anchor.SourceBaselineHash != sources.ContentHash)
@@ -21,6 +21,15 @@ public sealed class WorldCoordinatedContinuation
         ConsentedMaterial = consentedMaterial;
         Proposals = proposals;
         PaidExchange = paidExchange;
+        Markets = markets;
+        if (markets is not null && paidExchange is null)
+        {
+            throw new ArgumentException("Local markets require the paid-exchange interpretation.", nameof(markets));
+        }
+        if (anchor is not null && (anchor.Markets is not null) != (markets is not null))
+        {
+            throw new ArgumentException("A coordinated successor retains its exact market interpretation.", nameof(anchor));
+        }
         if (anchor is not null && anchor.Production.SupportsConsentedWorld != (consentedMaterial is not null))
         {
             throw new ArgumentException("A coordinated successor retains its exact consent interpretation.", nameof(anchor));
@@ -44,6 +53,7 @@ public sealed class WorldCoordinatedContinuation
         // A successor can neither forget, change nor invent an offer or quote of its closing boundary.
         anchor?.Proposals?.ValidateSuccessor(proposals!, anchor.ClosingWorldSequence);
         anchor?.PaidExchange?.ValidateSuccessor(paidExchange!, anchor.ClosingWorldSequence);
+        anchor?.Markets?.ValidateSuccessor(markets!, anchor.ClosingWorldSequence);
     }
 
     public WorldSourceIssuanceBaseline Sources { get; }
@@ -57,10 +67,17 @@ public sealed class WorldCoordinatedContinuation
     /// <summary>Null selects an interpretation without paid quotes; an empty owner still selects profile 32.</summary>
     public WorldPaidExchangeBook? PaidExchange { get; }
 
-    // A cut archives closed outcomes and carries every open offer, open quote and market revision.
-    internal WorldCoordinatedContinuation WithAnchor(WorldMaterialCareArchiveAnchor anchor) =>
-        new(Sources, anchor, ConsentedMaterial is null ? null : new WorldConsentedMaterialHistory([]),
-            Proposals?.ContinueAcrossCut(), PaidExchange?.ContinueAcrossCut());
+    /// <summary>Null selects an interpretation without local markets; a market owner selects profile 33.</summary>
+    public WorldMarketBook? Markets { get; }
+
+    // A cut archives closed outcomes and carries every open offer, open quote, market revision, market
+    // binding, open market quote record and all price knowledge.
+    internal WorldCoordinatedContinuation WithAnchor(WorldMaterialCareArchiveAnchor anchor)
+    {
+        WorldPaidExchangeBook? paid = PaidExchange?.ContinueAcrossCut();
+        return new(Sources, anchor, ConsentedMaterial is null ? null : new WorldConsentedMaterialHistory([]),
+            Proposals?.ContinueAcrossCut(), paid, Markets?.ContinueAcrossCut(paid!));
+    }
 
     /// <summary>
     /// The successor of an explicit proposal transition: the lived owner had neither consent evidence nor
@@ -82,7 +99,7 @@ public sealed class WorldCoordinatedContinuation
         {
             throw new InvalidOperationException("A lived coordinated owner cannot opt into consent history.");
         }
-        return new(Sources, Anchor, history, Proposals, PaidExchange);
+        return new(Sources, Anchor, history, Proposals, PaidExchange, Markets);
     }
 
     internal WorldCoordinatedContinuation WithProposals(WorldMaterialProposalBook proposals)
@@ -92,7 +109,7 @@ public sealed class WorldCoordinatedContinuation
         {
             throw new InvalidOperationException("A lived coordinated owner cannot opt into saved proposals.");
         }
-        return ReferenceEquals(proposals, Proposals) ? this : new(Sources, Anchor, ConsentedMaterial, proposals, PaidExchange);
+        return ReferenceEquals(proposals, Proposals) ? this : new(Sources, Anchor, ConsentedMaterial, proposals, PaidExchange, Markets);
     }
 
     internal WorldCoordinatedContinuation WithPaidExchange(WorldPaidExchangeBook paidExchange)
@@ -102,6 +119,16 @@ public sealed class WorldCoordinatedContinuation
         {
             throw new InvalidOperationException("A lived coordinated owner cannot opt into paid quotes.");
         }
-        return ReferenceEquals(paidExchange, PaidExchange) ? this : new(Sources, Anchor, ConsentedMaterial, Proposals, paidExchange);
+        return ReferenceEquals(paidExchange, PaidExchange) ? this : new(Sources, Anchor, ConsentedMaterial, Proposals, paidExchange, Markets);
+    }
+
+    internal WorldCoordinatedContinuation WithMarkets(WorldMarketBook markets)
+    {
+        ArgumentNullException.ThrowIfNull(markets);
+        if (Markets is null)
+        {
+            throw new InvalidOperationException("A lived coordinated owner cannot opt into local markets.");
+        }
+        return ReferenceEquals(markets, Markets) ? this : new(Sources, Anchor, ConsentedMaterial, Proposals, PaidExchange, markets);
     }
 }

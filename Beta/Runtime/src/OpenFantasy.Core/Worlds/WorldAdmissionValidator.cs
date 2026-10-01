@@ -51,6 +51,7 @@ public static class WorldAdmissionValidator
         admission.ReadConsentedMaterial();
         admission.ReadMaterialProposals();
         admission.ReadPaidExchange();
+        admission.ReadMarkets();
         return admission.Complete();
     }
 
@@ -187,6 +188,43 @@ public static class WorldAdmissionValidator
                 Add(terms.LotId, lotRole);
                 Add(settlement.MovedLotId, lotRole);
                 Require(settlement.RightsOwnerId, produced ? WorldIdentityRole.ProductionBatch : WorldIdentityRole.CountedSource);
+            }
+        }
+
+        internal void ReadMarkets()
+        {
+            if (world.Coordination?.Markets is not { } book)
+            {
+                return;
+            }
+            // Market identities are permanent; every role they name is an admitted owner of this world.
+            foreach (var market in book.Markets)
+            {
+                Add(market.MarketId, WorldIdentityRole.Market, unique: true);
+                Require(market.MerchantActorId, WorldIdentityRole.Actor);
+                Require(market.CustodianId, WorldIdentityRole.Custodian);
+                Require(market.AccountId, WorldIdentityRole.CurrencyAccount);
+                Require(market.HomePlaceId, WorldIdentityRole.Place);
+                Definition(market.Commodity.DefinitionId, WorldIdentityRole.ItemDefinition, market.Commodity.Version);
+                if (market.Policy.FeePayeeAccountId is { } payee)
+                {
+                    Require(payee, WorldIdentityRole.CurrencyAccount);
+                }
+            }
+            foreach (var record in book.Quotes)
+            {
+                Require(record.QuoteId, WorldIdentityRole.PaidQuote);
+            }
+            foreach (var observation in book.Knowledge)
+            {
+                Require(observation.ObserverActorId, WorldIdentityRole.Actor);
+            }
+            // A shown lot may since have moved or been spent; its seller and payment ends remain admitted owners.
+            foreach (var disclosure in book.Disclosures)
+            {
+                Require(disclosure.SellerActorId, WorldIdentityRole.Actor);
+                Require(disclosure.SellerCustodianId, WorldIdentityRole.Custodian);
+                Require(disclosure.SellerAccountId, WorldIdentityRole.CurrencyAccount);
             }
         }
 

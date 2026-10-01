@@ -2,8 +2,8 @@
 
 This increment advances RQ-049 and RQ-137. RQ-146 supplies the connected merchant, visitor and
 settlement setting; SYN-01/SYN-03 connect supply routes, political consequences and goods/knowledge
-movement. The preserved P02/P03 plan remains authoritative. A quoted component transaction does
-not complete those requirements, and no price simulation or playable market is claimed here.
+movement. The preserved P02/P03 plan remains authoritative. Atomic payment and the bounded local
+price rule do not complete those requirements; a playable market remains a separate binding.
 
 ## Retained boundaries
 
@@ -16,7 +16,7 @@ agreeing to treatment, joining a party and accepting a quoted payment remain dif
 World resource admission authenticates currency changes by replaying supported causes, including
 funded quest rewards. The explicit paid-world interpretation now supplies typed payment causes and
 exact replay alongside custody and quote allowance; the [integration packet](../paid-world/INTEGRATION_REVIEW.md)
-records its qualified scope and remaining boundary proofs. Earlier profiles still refuse unsupported
+records its qualified scope and completed boundary proofs. Earlier profiles still refuse unsupported
 paid changes. Do not replace their progression snapshots, mislabel payment as a quest reward, health
 effect or gift, or cache an admission result to bypass complete validation.
 
@@ -32,9 +32,13 @@ effect or gift, or cache an admission result to bypass complete validation.
 | Native trading | Contextual interaction shows goods/icon, quantity, total payment, fees, stock and expiry with rich inspection and a separate commit | Keyboard/controller/pointer; cancellation/focus/stale terms do nothing; no hidden auto-requote; persisted outcomes and native reopening; accessibility and human comprehension remain separate checks |
 | Cargo/escort loop | Buy in one inhabited place, travel with the actual owned lot, encounter a real threat, then sell against changed local terms and return to consequences | Retained spatial route and travel cost, exact cargo/funds, lawful loss/repair, NPC travelers, service-backed guard payment, save/restart and actual multiplayer join/reconnect; no teleported cargo or reset stock |
 
-The atomic component and paid-world lifecycle have retained implementation and recovery evidence.
-Complete the specifically listed world-boundary proofs before closing that assignment; then advance
-the market rules/local knowledge and scheduled-people bindings toward the actual cargo circuit.
+The atomic component, paid-world lifecycle and its original boundary proofs have retained evidence.
+The [local-market packet](../local-markets/INTEGRATION_REVIEW.md) binds source-backed integer prices
+to real stock, dated local knowledge and seller-authored selected-lot disclosure. Its demand is an
+authored target and holding limit; event-driven consumption, rule changes and genuine-loss pricing
+remain further evidence. Its fresh-world history crosses ordinary cuts and recovery; it supplies no
+lived migration or profile-33 process-interruption result. Advance scheduled-people and participant
+interfaces toward the actual cargo circuit without treating that bounded rule as a full economy.
 Do not substitute repeated reviews of unchanged settlement code for these missing gameplay bindings.
 These are acceptance dependencies, not a promise to deliver each row in a single assignment.
 Keep growth/scale, full character cognition, missing-cargo investigation, field puzzles, audio,
@@ -72,8 +76,9 @@ feedback for transfer, refusal and changing circumstances without an alert for e
 
 The paid-world binding has a separate [integration packet](../paid-world/INTEGRATION_REVIEW.md).
 Its independent critique produced lifecycle/canonicality repairs qualified at the lifecycle milestone;
-original boundary-evidence completion remains open. The market/session stages must still supply authenticated participant lookup of live
-and archived quote outcomes, actor knowledge and private-stock disclosure checks, and a native menu
+its original boundary evidence is completed by the later paid-world constraint milestone. The local
+market binding adds actor knowledge and selected-lot privacy. The market/session stages must still
+supply authenticated participant lookup of live and archived quote outcomes, and a native menu
 pacing policy compatible with the world's unheld/readiness rule. The privileged complete-world
 journal reader is not a participant-facing history API.
 
