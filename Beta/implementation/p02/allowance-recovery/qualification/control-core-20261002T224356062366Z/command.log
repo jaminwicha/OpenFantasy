@@ -1,0 +1,38 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.33]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.96]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.14]   Starting:    OpenFantasy.Core.Tests
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Assignment_rejects_impossible_initial_modes_and_episode_pairing(revision: 1, mode: Human, episode: False) [10 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.Retreat.EncounterRetreatContractTests.The_pinned_law_charges_an_eighth_action_per_sample_rounded_up_and_keeps_a_full_cell_margin [19 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerCodecTests.Raw_state_rejects_reordered_duplicate_excess_empty_rows_bad_pin_and_unreachable_modes [26 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Assignment_rejects_impossible_initial_modes_and_episode_pairing(revision: 2, mode: Human, episode: True) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Assignment_rejects_impossible_initial_modes_and_episode_pairing(revision: 0, mode: Autonomous, episode: True) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Assignment_rejects_impossible_initial_modes_and_episode_pairing(revision: 0, mode: ReconnectAllowance, episode: True) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Assignment_rejects_impossible_initial_modes_and_episode_pairing(revision: 1, mode: Autonomous, episode: True) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Assignment_rejects_impossible_initial_modes_and_episode_pairing(revision: 2, mode: ReconnectAllowance, episode: False) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Assignment_rejects_impossible_initial_modes_and_episode_pairing(revision: 2, mode: 0, episode: False) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Event_payloads_reject_unknown_kinds_reasons_and_extraneous_fields [1 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Stale_duplicate_impossible_and_current_identity_alias_events_are_refused [2 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerCodecTests.State_encoding_is_deterministic_bounded_and_retains_every_assignment_field [10 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Independent_disconnects_do_not_relabel_each_others_control_or_episode [5 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.Retreat.EncounterRetreatContractTests.Retreat_requests_use_their_own_command_version_and_reject_malformed_routes [11 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerCodecTests.Every_event_kind_has_exact_canonical_roundtrip_including_maximum_numeric_values [2 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Thirty_second_allowance_and_exact_episode_reconnection_preserve_other_actors [3 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.Retreat.EncounterRetreatContractTests.Retreat_records_refuse_inconsistent_status_samples_origins_and_counts [3 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerCodecTests.Both_formats_reject_raw_truncation_trailing_bytes_wrong_headers_and_oversized_input [2 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Roster_is_bounded_sorted_copied_and_structural_checks_do_not_claim_history_authentication [3 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerCodecTests.Raw_event_rejects_bad_enums_threshold_pairing_lengths_and_extra_fields [3 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.Retreat.EncounterRetreatContractTests.Only_a_lone_combatant_against_exactly_one_other_side_may_retreat [3 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Controllers.WorldControllerStateTests.Revision_overflow_refuses_without_changing_the_original_assignment [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.Retreat.EncounterRetreatContractTests.A_route_names_one_to_thirty_two_known_cardinal_samples_and_derives_its_flat_endpoint [3 ms]
+[xUnit.net 00:00:01.26]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+  Passed OpenFantasy.Core.Tests.Encounters.Retreat.EncounterRetreatContractTests.The_retreat_owner_round_trips_canonically_with_its_continuation_and_terminal_record [11 ms]
+
+Test Run Successful.
+Total tests: 24
+     Passed: 24
+ Total time: 1.7625 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/allowance-recovery/qualification/control-core-20261002T224356062366Z/checks.trx

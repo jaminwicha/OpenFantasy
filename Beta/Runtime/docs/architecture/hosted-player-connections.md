@@ -122,3 +122,8 @@ limit is the first production player target, not an NPC population or world-resi
 
 The [durable control reference](controller-lifecycle.md) describes the separate character-control facet,
 external event journal and safe restoration boundary. Port disposal alone does not invoke that boundary.
+
+An explicitly recoverable save also binds [durable allowance measurement](controller-recovery.md) before
+the scheduler starts. A host cutoff observes one monotonic timestamp for the persisted subtotal and
+any ensuing expiry; stop caps measurement before cleanup. Opening/inspection, lost crash time and
+offline time cannot expire an allowance. The same authority owns progress and event transactions.

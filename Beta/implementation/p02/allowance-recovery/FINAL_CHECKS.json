@@ -1,0 +1,218 @@
+{
+  "status": "bounded explicit controller allowance recovery passed; full campaign gates remain open",
+  "checkpoint": "codex/checkpoint-before-allowance-recovery-20261002T220920Z",
+  "sourceHead": "2950c00c348bfa1061ae91bacb0132f59eee0845",
+  "milestone": "codex/milestone-allowance-recovery-20261002",
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261002T223604908921Z/report.json",
+      "sha256": "768622eeb84dcfce46cabed9929a0e838d3672ed5c3387ff30975abd6b0a7421",
+      "seconds": 7.129366166016553,
+      "outcomes": null,
+      "accepted": true
+    },
+    "recovery-storage": {
+      "path": "qualification/recovery-storage-20261002T223622884760Z/report.json",
+      "sha256": "4c21e8f413523e7e6abf4a0401bbf72bbe48ecdaf7dc3abc03d9ac394229d6a8",
+      "seconds": 41.102767541015055,
+      "outcomes": {
+        "Passed": 31
+      },
+      "accepted": true
+    },
+    "recovery-host": {
+      "path": "qualification/recovery-host-20261002T223612680446Z/report.json",
+      "sha256": "f0007022deca894d71e455a22fef416530010d909504c62162ede926fb82b1f8",
+      "seconds": 10.00614533398766,
+      "outcomes": {
+        "Passed": 5
+      },
+      "accepted": true
+    },
+    "recovery-process": {
+      "path": "qualification/recovery-process-20261002T223704257525Z/report.json",
+      "sha256": "7fbf7c4412fe3c8bafbd868657d91a3359461ebf7db82ba9c8099ab7d3c509d0",
+      "seconds": 13.853181624988792,
+      "outcomes": {
+        "Passed": 8
+      },
+      "accepted": true
+    },
+    "storage": {
+      "path": "qualification/storage-20261002T223718298868Z/report.json",
+      "sha256": "51db71d0f4a9c3d067112d72e0eedc9e422574c79f5e9861050280300450149c",
+      "seconds": 228.3388613339921,
+      "outcomes": {
+        "Passed": 457
+      },
+      "accepted": true
+    },
+    "controller": {
+      "path": "qualification/controller-20261002T224106814305Z/report.json",
+      "sha256": "464ac97704662ad320d3f0371f2fc82970075a3a406a6ae0d38734b6c23ddc11",
+      "seconds": 75.26051487500081,
+      "outcomes": {
+        "Passed": 81
+      },
+      "accepted": true
+    },
+    "network": {
+      "path": "qualification/network-20261002T224222335594Z/report.json",
+      "sha256": "5355fc24351e49448b9ff0c30f1989086bbca8233f8618f4ccff27209a9648af",
+      "seconds": 24.136584583000513,
+      "outcomes": {
+        "Passed": 272
+      },
+      "accepted": true
+    },
+    "shared": {
+      "path": "qualification/shared-20261002T224246690169Z/report.json",
+      "sha256": "a65c83056373dfeb8ddaf4add69596790700297fb583304b2b9f1111675ff497",
+      "seconds": 28.245674624980893,
+      "outcomes": {
+        "Passed": 26
+      },
+      "accepted": true
+    },
+    "server-compatibility": {
+      "path": "qualification/server-compatibility-20261002T224315150073Z/report.json",
+      "sha256": "6e94f1092c35b3010fd2432a24acd71c3c0327cec96ef0acfa5e9aaa17aeb4ff",
+      "seconds": 40.696945167001104,
+      "outcomes": {
+        "Passed": 76,
+        "NotExecuted": 1
+      },
+      "accepted": true
+    },
+    "control-core": {
+      "path": "qualification/control-core-20261002T224356062366Z/report.json",
+      "sha256": "2becd456b34ce619cf34e4eb8f6df604ab52bf64f104d92f9f44ebd71fffb60f",
+      "seconds": 2.9583059170108754,
+      "outcomes": {
+        "Passed": 24
+      },
+      "accepted": true
+    },
+    "control-native": {
+      "path": "qualification/control-native-20261002T224459572943Z/report.json",
+      "sha256": "10725ab4009a6017ed31ebb0f830baa4baa1cecd971d8d2de4a19618517db900",
+      "seconds": 14.899240166996606,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    }
+  },
+  "distinctPassingCases": 933,
+  "newPassingCases": 44,
+  "unrunCases": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "actualHostKills": 8,
+  "nativeProcesses": 1,
+  "renderedImages": [
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0002.png",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0010.png",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0015.png"
+  ],
+  "nativeBoundary": "Explicit copy activation of retained genuine autonomous retreat; actual TLS native pending/restored/Resume and original-genesis replay. Initial hostile approach/loss/allowance remains managed preparation.",
+  "protectedTestsAndFixtures": 726,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLinks": 1316,
+  "artifactPins": {
+    "Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-cancel.after.sqlite": "0a22a7ede2fd679f51aa3187512d50f9758a0ffa74996b3589b1534d83bf9aa3",
+    "Beta/implementation/p02/care-disposition-durability/crash-fixtures/pressure.genesis.ofc": "02dc0cf4f170c26d062a2230ef7bd6fdd34c1a6414b1f63c94f78fc73b1e7412",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-before/result.json": "f5ccfea58421af6dbd696bcdb7197f6c4b690328c91e3a6130662c1c34e0e94e",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-before/boundary.json": "64a1a1d8e30c640d50f5b5214a2c41b5660a9383ef5464a49ebbb8a2732f873a",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-before/world.sqlite": "58ec87407794c28853b8386d8c0a8d65b07127092705abf9ccc623502f06d0ac",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-before/genesis.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-before/before.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-before/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-before/event.ofc": "8d7133583ccf4353a767733b9599d7086be29736f76235a6ef23895731d3139e",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-after/result.json": "c1dd1ae03b69e9744d79a5b5054fcd2f30dfc2b791523f550616a73f6a07141f",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-after/boundary.json": "958190eab20a8153401d7610fc77aad19813bfff6fa0f1ec608dfd2953b49c97",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-after/world.sqlite": "86dfbd1636ada3b58ea6ab239a8a18af98659d45d5812f859e5a9468d840a56c",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-after/genesis.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-after/before.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-after/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/disconnect-after/event.ofc": "8d7133583ccf4353a767733b9599d7086be29736f76235a6ef23895731d3139e",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-before/result.json": "4150012a19f72a10d5506bd899be962fadf9b59ea659baaa742e3953e07fe000",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-before/boundary.json": "64a1a1d8e30c640d50f5b5214a2c41b5660a9383ef5464a49ebbb8a2732f873a",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-before/world.sqlite": "a33220a218e3dbccfcc373950977b3308364da98396e7a259e2b5de2b22bffbf",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-before/genesis.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-before/before.ofc": "1121931346e67646b8d0c0d718a8191617f38bcc05639307012987e0f181fba3",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-before/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-before/event.ofc": "c2e2c5ed8d9803cd8b4d1592085f4c75bb47b9d1547418c66683ac9d4537ed0d",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-after/result.json": "59bcf3f63caee509ecd0c97d04ede42b6c67dad140f2f9dd1a16ff3cbd65e94c",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-after/boundary.json": "958190eab20a8153401d7610fc77aad19813bfff6fa0f1ec608dfd2953b49c97",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-after/world.sqlite": "a686243b1569bac84c1a3f0a2d520689de53efc88b6ee938c4792bb4f19c72d6",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-after/genesis.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-after/before.ofc": "1121931346e67646b8d0c0d718a8191617f38bcc05639307012987e0f181fba3",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-after/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/expire-after/event.ofc": "c2e2c5ed8d9803cd8b4d1592085f4c75bb47b9d1547418c66683ac9d4537ed0d",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-before/result.json": "031c7f51a504ef74404c9a77ce95d3b327b8bca3be617926064437d92ebae282",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-before/boundary.json": "64a1a1d8e30c640d50f5b5214a2c41b5660a9383ef5464a49ebbb8a2732f873a",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-before/world.sqlite": "f20bfad3e85e51565a80be3d667ec4315832b6c335e8ac729b8f71e8581cd1b4",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-before/genesis.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-before/before.ofc": "1121931346e67646b8d0c0d718a8191617f38bcc05639307012987e0f181fba3",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-before/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-before/event.ofc": "d3a3e6f71314af764f023c0edd67283a53e4f31aae41662a612497c8db58326c",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-after/result.json": "22da99cf3cda03d176d1c7563a00425ae5dd356a3d0852f48c5cde5a779cda93",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-after/boundary.json": "958190eab20a8153401d7610fc77aad19813bfff6fa0f1ec608dfd2953b49c97",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-after/world.sqlite": "e9ea23d2e3e05647076ac10efba8f7458480a4c1a624c1f225f7b8d52855cebf",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-after/genesis.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-after/before.ofc": "1121931346e67646b8d0c0d718a8191617f38bcc05639307012987e0f181fba3",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-after/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/reconnect-after/event.ofc": "d3a3e6f71314af764f023c0edd67283a53e4f31aae41662a612497c8db58326c",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-before/result.json": "6d3412b536297b677465d1af5b90251804ffdf6ae3e15325033cd0c9c524ed7c",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-before/boundary.json": "be029bdfc4571c1c4675ca15e4043b774b818c6ccd1948e965e7e109f36259d4",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-before/world.sqlite": "598e22775e3ed6f309e98d5e83de125045f5412081b9ae63c9f5ada00ba5fc0e",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-before/genesis.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-before/before.ofc": "1121931346e67646b8d0c0d718a8191617f38bcc05639307012987e0f181fba3",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-before/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-after/result.json": "cacb31295b5e9f01711442fd2145495638414f82d6d32e9186db6ceb981bfa9b",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-after/boundary.json": "1954af13d580e9a15c45d494d26c2be77c22dfa211751858e408c46f8a5ddb8b",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-after/world.sqlite": "67bdd7cca6b2f0b38aac1d862566ac998e0ea98e9cbf835a20ab9b5606e292fe",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-after/genesis.ofc": "beaf6ff417e42ad1360d481533caf1b3534e23dc09b189ab07213e8e71a74803",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-after/before.ofc": "1121931346e67646b8d0c0d718a8191617f38bcc05639307012987e0f181fba3",
+    "Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/process-kills/checkpoint-after/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/migration.json": "0bfde4737f7aac2ef7e3e61cf227043293a780cdcc79b3b26ba607ec7967e9dc",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/source-wal-observation.bin": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/source-shm-observation.bin": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/retreat.command.ofc": "6bf2aeb506427f976864c6cb456f607e959f03650b1844969688b78edf6333df",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/pending-retreat.ofc": "db59294251dd3507445b75fa3605134c16cabc95041f1ce585fcf26a22233b62",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/pending-retreat.sqlite": "f072925c42d157db1a7839241f166a9c20c753b8525afe08bcc20d369caca573",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/activation.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/genesis.ofc": "6a3d1019df8ecb7c860324c8011327ce4a90a7c72f8601415e3c47b6d8878172",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/retreat.receipt.ofc": "e2e524580010c914d65d4082ce4d055cc6c49ed1b3c0fb15a4f4d93f426baa31",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/activation.stdout.json": "84a91ac0ec03576496af53b00e1d4d95c712c833ccf09052ee44189517ebb35e",
+    "Beta/implementation/p02/allowance-recovery/native-fixtures/original-manifest.json": "5fe340a4897c8e1e3e3216de0eb1c36fd9045026faf30b5000e619aeb1867157",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/journey.json": "7ebe4bfa79fa2196f00c8be95e64acee484c6bf0b04d43b90a179a10022852f0",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/native-return.sqlite": "1f65e57396f62b4b7c1c0a70d6ed7a0f830f88584ce8b8c888dcce867fa9de62",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/report.json": "8e289fcd7d71496d1109480eb551804b9a07fffda37b1a76c205fb4c58e0831a",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0002.response.json": "73dc05d1a397090a2bd352769258202f148e1a76b2ab4e6d25ad1c47c38986db",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0002.png": "da2ad909877407268f655e84902e03a608dfb7971d4089ac0ab4fb0b782e6625",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0010.response.json": "208df38fb2149d08b261d6db2e8abf4a7f17c9a774a96e5346bcebb261a92b31",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0010.png": "3e4ebcdc160e345012b9801645ccca6107a2ac43877cd20062af7258a1a3fb40",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0015.response.json": "67122488a004481e3f5d73943068f1c1969b3eae88cf80c3590dfd0be0c87a62",
+    "Beta/implementation/p02/allowance-recovery/qualification/control-native-20261002T224459572943Z/control-return/rendered/0015.png": "24704db9692b984bcf877af5776cf68f1a060712fbb3b1c8954d1d5b76f1eaf4"
+  },
+  "qualificationToolPins": {
+    "Beta/implementation/p02/allowance-recovery/check.py": "babb18f6a8130b6a5401e4ec233e64db4ea8f4868ab9b026d37b15dc4178517b",
+    "Beta/implementation/p02/allowance-recovery/prepare-native.py": "a397ba87aeabcf3856b15ff213f9777a4daa9a76970c432378d7fa58df50fb5d",
+    "Beta/implementation/p02/allowance-recovery/finalize.py": "3eefaf46738ba48fdf317abbafa8933548ef57fdf88ae2613eb6ab52d49cc34e",
+    "Beta/implementation/p02/shared-player-sessions/check.py": "cf10cae8d2918df4c5e4b4c7384a870ccf0cb41a0f3bc51d9920d07af6682f3b"
+  },
+  "failedReportsRetained": [
+    "qualification/build-20261002T222703562715Z/report.json",
+    "qualification/recovery-host-20261002T223328258277Z/report.json"
+  ],
+  "limits": [
+    "Only durably measured lower-bound elapsed time survives a crash; unknown tail/offline time are uncharged and repeated crashes may extend grace.",
+    "Explicit operator opt-in for schemas/profiles; no automatic production admission or general lived profile migration.",
+    "Consented co-player policy, general party retreat/pursuit/rescue and survival remain open.",
+    "Maximum composite/disposition capacity, production history latency, other platforms, physical devices, human/art and full campaign gates remain open.",
+    "No external provider request or measured external-credit savings."
+  ]
+}

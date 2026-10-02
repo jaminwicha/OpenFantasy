@@ -167,9 +167,11 @@ likewise states that care was requested rather than attributing it to the return
 ## Policy and presentation obligations
 
 Human assignment is not evidence of a connected socket. Loading a saved allowance does not recreate
-its process-local timestamp, infer offline elapsed time or automatically expire it. A restart policy
-must explicitly reconcile outstanding allowance before a production host can rely on automatic handoff.
-The default simulation still pauses when no gameplay-ready players are connected.
+its process-local timestamp, infer offline elapsed time or automatically expire it. The explicit
+[allowance recovery policy](controller-recovery.md) preserves durably measured lower bounds under
+storage schema ten and starts a new fenced monotonic segment only when a live host attaches.
+Schema nine retains its original behavior and requires explicit copy-and-activate migration to select
+that policy. The default simulation still pauses when no gameplay-ready players are connected.
 
 Autonomous assignment permits the conservative encounter selector above; expiry itself chooses none.
 Aftermath behavior follows the bounded policy above; general rescue and other survival behavior need

@@ -1,0 +1,22 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.33]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.51]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.66]   Starting:    OpenFantasy.Server.Tests
+  Passed OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: "disconnect", committed: True) [2 s]
+  Passed OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: "reconnect", committed: False) [1 s]
+  Passed OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: "checkpoint", committed: False) [1 s]
+  Passed OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: "disconnect", committed: False) [1 s]
+  Passed OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: "expire", committed: True) [1 s]
+  Passed OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: "expire", committed: False) [1 s]
+  Passed OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: "reconnect", committed: True) [1 s]
+[xUnit.net 00:00:12.08]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: "checkpoint", committed: True) [1 s]
+
+Test Run Successful.
+Total tests: 8
+     Passed: 8
+ Total time: 12.3918 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/allowance-recovery/qualification/recovery-process-20261002T223704257525Z/checks.trx

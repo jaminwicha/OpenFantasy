@@ -8,7 +8,7 @@ internal sealed partial class WorldDatabase
 {
     internal IEnumerable<StoredWorldMaterialCareArchive> ReadMaterialCareArchives()
     {
-        if (SchemaVersion is not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version)
+        if (SchemaVersion is not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version)
         {
             yield break;
         }
@@ -27,7 +27,7 @@ internal sealed partial class WorldDatabase
     {
         ArgumentNullException.ThrowIfNull(value);
         ArgumentNullException.ThrowIfNull(value.Reference);
-        if (SchemaVersion is not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version)
+        if (SchemaVersion is not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version)
         {
             throw new InvalidOperationException("Material and care archives require their explicit storage schema.");
         }

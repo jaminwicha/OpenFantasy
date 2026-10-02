@@ -17,6 +17,7 @@ different kind of person.
 | [Hosted player connections](hosted-player-connections.md) | How do up to four authenticated player ports share one clock, input cutoff, authority and NPC scheduler while retaining separate readiness, views and queries? |
 | [Host timing diagnostics](host-timing-diagnostics.md) | How are startup, input sampling, commit, observation and cleanup delays measured without changing authority or deadlines? |
 | [Durable character control](controller-lifecycle.md) | How do recorded disconnect, allowance expiry and safe return of control preserve character ownership, gameplay obligations and exact replay? |
+| [Controller allowance recovery](controller-recovery.md) | How do explicit recovery admission, durable measured lower bounds and fenced host segments preserve allowance across restart without offline time? |
 | [Fresh player rosters](player-rosters.md) | How does fresh cargo admission create one to four real human characters with owned facets, finite starter tools and a complete cooperative encounter catalog? |
 | [Player message transport](player-message-transport.md) | How do bounded local and WebSocket envelopes preserve ordering, ownership and complete-message boundaries? |
 | [Player connection admission](player-admission.md) | How do scoped host-issued credentials, compatibility pins and bounded handshakes select one actual player port? |

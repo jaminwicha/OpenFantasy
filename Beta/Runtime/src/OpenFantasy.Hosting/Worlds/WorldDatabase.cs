@@ -24,7 +24,7 @@ internal sealed partial class WorldDatabase : IDisposable
         if (schemaVersion is not WorldDatabaseSchema.Version and not WorldDatabaseSchemaThree.Version
             and not WorldDatabaseSchemaFour.Version and not WorldDatabaseSchemaFive.Version
             and not WorldDatabaseSchemaSix.Version and not WorldDatabaseSchemaSeven.Version
-            and not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version)
+            and not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version)
         {
             throw new ArgumentOutOfRangeException(nameof(schemaVersion));
         }
@@ -75,6 +75,8 @@ internal sealed partial class WorldDatabase : IDisposable
             ("$sequence", WorldStorageBinary.Number(0)), ("$steps", WorldStorageBinary.Number(0)),
             ("$state", genesis), ("$hash", hash));
         WriteCheckpoint(new(0, 0, genesis), transaction);
+        if (SchemaVersion == WorldDatabaseSchemaTen.Version)
+            InitializeControllerRecovery(OpenFantasy.Core.Worlds.WorldSnapshotCodec.Decode(genesis), false, transaction);
         transaction.Commit();
         _lease.ValidateMetadata();
         _lease.ValidateSchema(TablesFor(SchemaVersion), IndexesFor(SchemaVersion));
@@ -90,6 +92,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaSeven.Version => WorldDatabaseSchemaSeven.Tables,
         WorldDatabaseSchemaEight.Version => WorldDatabaseSchemaEight.Tables,
         WorldDatabaseSchemaNine.Version => WorldDatabaseSchemaNine.Tables,
+        WorldDatabaseSchemaTen.Version => WorldDatabaseSchemaTen.Tables,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 
@@ -103,6 +106,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaSeven.Version => WorldDatabaseSchemaSeven.Indexes,
         WorldDatabaseSchemaEight.Version => WorldDatabaseSchemaEight.Indexes,
         WorldDatabaseSchemaNine.Version => WorldDatabaseSchemaNine.Indexes,
+        WorldDatabaseSchemaTen.Version => WorldDatabaseSchemaTen.Indexes,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 

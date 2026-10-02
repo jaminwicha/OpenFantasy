@@ -1,0 +1,22 @@
+{
+  "Status": "passed",
+  "Operation": "reconnect",
+  "Committed": false,
+  "ExitCode": 137,
+  "StateHash": "1121931346e67646b8d0c0d718a8191617f38bcc05639307012987e0f181fba3",
+  "Rows": [
+    {
+      "ActorId": {
+        "High": 11548626517455032041,
+        "Low": 9756408628589628479
+      },
+      "ControlRevision": 1,
+      "DisconnectId": {
+        "High": 14560642262536028160,
+        "Low": 1
+      },
+      "ElapsedHostMilliseconds": 0
+    }
+  ],
+  "ElapsedSeconds": 1.0739978
+}

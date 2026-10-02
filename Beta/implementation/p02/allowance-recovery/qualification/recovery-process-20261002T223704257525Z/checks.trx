@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="b6489792-5063-49c0-97d2-a8e6750f71ec" name="@mac 2026-10-02 17:37:08" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T17:37:08.5061620-05:00" queuing="2026-10-02T17:37:08.5061620-05:00" start="2026-10-02T17:37:05.1970440-05:00" finish="2026-10-02T17:37:17.5796530-05:00" />
+  <TestSettings name="default" id="09093e87-438a-400f-a828-0fba6d4a62a2">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_17_37_08" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="36b3d64d-3c12-4298-a364-a1051f0be647" testId="4771cbea-1662-7f52-ad69-60acd6ca1c53" testName="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;reconnect&quot;, committed: True)" computerName="mac" duration="00:00:01.2240905" startTime="2026-10-02T17:37:14.9024300-05:00" endTime="2026-10-02T17:37:16.1243390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36b3d64d-3c12-4298-a364-a1051f0be647" />
+    <UnitTestResult executionId="cbc1eb8b-8781-4069-af62-7c1c4acbb689" testId="a8ca8295-e6fb-7933-fa0d-9552cc6cee7a" testName="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;disconnect&quot;, committed: False)" computerName="mac" duration="00:00:01.2861347" startTime="2026-10-02T17:37:11.3814580-05:00" endTime="2026-10-02T17:37:12.6646930-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cbc1eb8b-8781-4069-af62-7c1c4acbb689" />
+    <UnitTestResult executionId="f511117d-a44f-494f-aa3f-76da054c8e10" testId="0342e81b-518c-127f-b8d7-30a65642afca" testName="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;reconnect&quot;, committed: False)" computerName="mac" duration="00:00:01.4497155" startTime="2026-10-02T17:37:08.4754490-05:00" endTime="2026-10-02T17:37:09.9248920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f511117d-a44f-494f-aa3f-76da054c8e10" />
+    <UnitTestResult executionId="1718c8ce-b06d-4d68-b3ad-38d6569ebb4f" testId="6c3ecf58-65bb-a41a-ae56-3b0d03578c84" testName="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;expire&quot;, committed: False)" computerName="mac" duration="00:00:01.0887502" startTime="2026-10-02T17:37:13.8147770-05:00" endTime="2026-10-02T17:37:14.9014690-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1718c8ce-b06d-4d68-b3ad-38d6569ebb4f" />
+    <UnitTestResult executionId="f9610945-04b1-423f-bc2f-4c4aa134b221" testId="b3074d4e-50d9-3085-2edc-cdded257a7d3" testName="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;expire&quot;, committed: True)" computerName="mac" duration="00:00:01.1512084" startTime="2026-10-02T17:37:12.6654750-05:00" endTime="2026-10-02T17:37:13.8142850-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f9610945-04b1-423f-bc2f-4c4aa134b221" />
+    <UnitTestResult executionId="d86857bf-89c1-4bf0-bcd2-7c54c51d3773" testId="099e4d70-6680-504f-64f4-0eca6a68fec1" testName="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;checkpoint&quot;, committed: True)" computerName="mac" duration="00:00:01.4067800" startTime="2026-10-02T17:37:16.1249640-05:00" endTime="2026-10-02T17:37:17.5294420-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d86857bf-89c1-4bf0-bcd2-7c54c51d3773" />
+    <UnitTestResult executionId="e909a5a1-e6f9-4ae3-9cfb-e31d03f8d0b9" testId="0ebb1fe2-ef44-0fcb-8310-15df971183da" testName="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;checkpoint&quot;, committed: False)" computerName="mac" duration="00:00:01.4585873" startTime="2026-10-02T17:37:09.9257590-05:00" endTime="2026-10-02T17:37:11.3807620-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e909a5a1-e6f9-4ae3-9cfb-e31d03f8d0b9" />
+    <UnitTestResult executionId="5797e78c-a534-40ae-b86b-7f359c3883ee" testId="6fc2ae1b-72e8-f26e-3af7-7756a875a317" testName="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;disconnect&quot;, committed: True)" computerName="mac" duration="00:00:02.3042960" startTime="2026-10-02T17:37:06.1623560-05:00" endTime="2026-10-02T17:37:08.4715700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5797e78c-a534-40ae-b86b-7f359c3883ee" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;checkpoint&quot;, committed: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="099e4d70-6680-504f-64f4-0eca6a68fec1">
+      <Execution id="d86857bf-89c1-4bf0-bcd2-7c54c51d3773" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests" name="A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;reconnect&quot;, committed: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="4771cbea-1662-7f52-ad69-60acd6ca1c53">
+      <Execution id="36b3d64d-3c12-4298-a364-a1051f0be647" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests" name="A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;checkpoint&quot;, committed: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="0ebb1fe2-ef44-0fcb-8310-15df971183da">
+      <Execution id="e909a5a1-e6f9-4ae3-9cfb-e31d03f8d0b9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests" name="A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;expire&quot;, committed: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="b3074d4e-50d9-3085-2edc-cdded257a7d3">
+      <Execution id="f9610945-04b1-423f-bc2f-4c4aa134b221" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests" name="A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;expire&quot;, committed: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="6c3ecf58-65bb-a41a-ae56-3b0d03578c84">
+      <Execution id="1718c8ce-b06d-4d68-b3ad-38d6569ebb4f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests" name="A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;disconnect&quot;, committed: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="6fc2ae1b-72e8-f26e-3af7-7756a875a317">
+      <Execution id="5797e78c-a534-40ae-b86b-7f359c3883ee" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests" name="A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;disconnect&quot;, committed: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="a8ca8295-e6fb-7933-fa0d-9552cc6cee7a">
+      <Execution id="cbc1eb8b-8781-4069-af62-7c1c4acbb689" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests" name="A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests.A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints(operation: &quot;reconnect&quot;, committed: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="0342e81b-518c-127f-b8d7-30a65642afca">
+      <Execution id="f511117d-a44f-494f-aa3f-76da054c8e10" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ControllerRecoveryProcessTests" name="A_killed_host_preserves_atomic_controller_rows_and_measured_checkpoints" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="4771cbea-1662-7f52-ad69-60acd6ca1c53" executionId="36b3d64d-3c12-4298-a364-a1051f0be647" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8ca8295-e6fb-7933-fa0d-9552cc6cee7a" executionId="cbc1eb8b-8781-4069-af62-7c1c4acbb689" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0342e81b-518c-127f-b8d7-30a65642afca" executionId="f511117d-a44f-494f-aa3f-76da054c8e10" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c3ecf58-65bb-a41a-ae56-3b0d03578c84" executionId="1718c8ce-b06d-4d68-b3ad-38d6569ebb4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b3074d4e-50d9-3085-2edc-cdded257a7d3" executionId="f9610945-04b1-423f-bc2f-4c4aa134b221" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="099e4d70-6680-504f-64f4-0eca6a68fec1" executionId="d86857bf-89c1-4bf0-bcd2-7c54c51d3773" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0ebb1fe2-ef44-0fcb-8310-15df971183da" executionId="e909a5a1-e6f9-4ae3-9cfb-e31d03f8d0b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6fc2ae1b-72e8-f26e-3af7-7756a875a317" executionId="5797e78c-a534-40ae-b86b-7f359c3883ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.33]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.51]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.66]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:12.08]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

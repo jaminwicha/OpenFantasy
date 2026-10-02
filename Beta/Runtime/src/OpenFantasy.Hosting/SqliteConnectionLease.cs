@@ -29,7 +29,7 @@ internal sealed class SqliteConnectionLease : IDisposable
     }
 
     internal static SqliteConnectionLease OpenSupportedWorld(string path)
-        => Open(path, false, WorldApplicationId, 0, [2, 3, 4, 5, 6, 7, 8, 9]);
+        => Open(path, false, WorldApplicationId, 0, [2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
     private static SqliteConnectionLease Open(string path, bool create, int applicationId, int schemaVersion,
         IReadOnlyList<int> supportedVersions)
@@ -170,6 +170,21 @@ internal sealed class SqliteConnectionLease : IDisposable
         {
             throw new IOException("The staged world could not checkpoint its committed WAL before publication.");
         }
+    }
+
+    internal void StageControllerRecoverySchema(SqliteTransaction transaction)
+    {
+        if (_applicationId != WorldApplicationId || _schemaVersion != 9)
+            throw new InvalidOperationException("Only schema nine can explicitly activate controller recovery.");
+        using var command = CreateCommand("PRAGMA user_version=10", transaction);
+        command.ExecuteNonQuery();
+    }
+
+    internal void AcceptControllerRecoverySchema()
+    {
+        if (_applicationId != WorldApplicationId || _schemaVersion != 9 || Convert.ToInt64(Scalar("PRAGMA user_version")) != 10)
+            throw new InvalidDataException("Controller recovery activation did not commit.");
+        _schemaVersion = 10;
     }
 
     internal void InitializeMetadata(SqliteTransaction transaction)

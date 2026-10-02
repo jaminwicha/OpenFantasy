@@ -54,6 +54,28 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [allowance-recovery checkpoint](p02/allowance-recovery/RESULT.md) explicitly selects storage schema
+10 for profiles 36–38 without changing canonical world bytes. A live host resumes durably measured
+elapsed time on a fresh monotonic segment; offline time and unpublished crash time are uncharged.
+Repeated crashes can extend grace. Exact episode rows, fencing, atomic lifecycle transitions,
+stop-request capture and original-history activation/replay are enforced. Schema-nine sources remain
+unchanged by create-only copy activation. The timeless architecture and operator guide are current.
+
+[Final checks](p02/allowance-recovery/FINAL_CHECKS.json): warning-free build, 933 distinct selected passes
+including 44 new, eight actual Host kills, inherited/later care archive publication and one rendered
+Godot/TLS handback on a copied schema-ten save with three inspected captures. Windows credential
+permissions remain unrun. All 726 older tests/fixtures, 23 frozen specs and exact predecessor staging
+are preserved; 1,316 architecture links resolve. Independent critique repaired post-activation expiry
+replay parity; both failed attempts remain retained. Pre-change ref preserves `2950c00c` at
+`codex/checkpoint-before-allowance-recovery-20261002T220920Z`; verified milestone is
+`codex/milestone-allowance-recovery-20261002`. No external provider request or credit-offload claim.
+
+Next: consented co-player policy. General party retreat/pursuit/rescue, automatic production admission,
+broader lived-save migration, maximum composite/disposition capacity, history latency and full
+platform/device/art/human/campaign gates remain open. Native hostile approach/loss/allowance preparation
+is not claimed by the rendered continuation. The lower-bound recovery policy does not promise exact
+crash-tail reconstruction or general world-profile migration.
+
 The [observed control-return checkpoint](p02/control-return/RESULT.md) repairs lost deliberate Resume
 after an early readiness request. Pending/restored port state is bound to its applied observation;
 stale or unbound requests, held input and focus return cannot grant consent. Godot presents pending
@@ -68,8 +90,8 @@ tests/fixtures, 23 frozen specs and exact predecessor staging remain unchanged; 
 resolve. Independent critique and all five failed attempts remain recorded, including two editor-import
 failures before the bounded initialization adjustment. No external provider request or credit offload.
 
-Next: explicit host-restart reconciliation of outstanding disconnect allowance, then consented
-co-player policy. Saved offline time must not silently expire an allowance. General party retreat,
+That checkpoint left explicit restart reconciliation, now addressed by the opt-in policy above,
+and consented co-player policy. Saved offline time must not silently expire an allowance. General party retreat,
 pursuit/rescue, maximum composite/disposition capacity, lived-save migration, production history
 latency and full platform/device/art/human/campaign gates remain open. Native hostile approach,
 initial loss and allowance expiry are not proved by the prepared native continuation.

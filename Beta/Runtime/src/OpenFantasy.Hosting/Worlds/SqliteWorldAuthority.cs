@@ -29,6 +29,11 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         _state = recovered.State;
         _stateHash = recovered.StateHash;
         _usage = recovered.Usage;
+        if (database.SchemaVersion == WorldDatabaseSchemaTen.Version)
+        {
+            _controllerRecovery = database.ReadControllerRecovery();
+            _controllerRecovery.ValidateHead(_state);
+        }
     }
 
     public static SqliteWorldAuthority CreateNew(string path, WorldSnapshot genesis)
@@ -188,6 +193,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
                 _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null,
                 _state.ProfileVersion, (ulong)(prepared.ResourceArchive?.State.Length ?? 0),
                 (ulong)(prepared.MaterialCareArchive?.State.Length ?? 0));
+            _controllerRecovery?.AfterCommit(prepared.Decision.Candidate, batch);
             return prepared.Decision;
         }
     }
@@ -237,8 +243,11 @@ public sealed partial class SqliteWorldAuthority : IDisposable
                 _state.PendingExcavation is null ? prepared.Decision.Candidate.PendingExcavation : null,
                 _state.ProfileVersion, (ulong)(prepared.ResourceArchive?.State.Length ?? 0),
                 (ulong)(prepared.MaterialCareArchive?.State.Length ?? 0));
+            ControllerRecoveryState? controllerRecovery = _controllerRecovery?.AfterCommit(prepared.Decision.Candidate, batch);
             try
             {
+                if (controllerRecovery is not null && !ReferenceEquals(controllerRecovery, _controllerRecovery))
+                    _database.WriteControllerRecovery(controllerRecovery, transaction);
                 _database.WriteCommit(prepared.Stored, transaction);
                 if (prepared.ResourceArchive is { } archive)
                 {
@@ -269,6 +278,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
                 _state = prepared.Decision.Candidate;
                 _stateHash = prepared.Stored.AfterHash;
                 _usage = advance.Usage;
+                _controllerRecovery = controllerRecovery;
                 return prepared.Decision;
             }
             catch

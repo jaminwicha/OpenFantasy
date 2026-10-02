@@ -27,6 +27,7 @@ internal sealed class HostApplication
     private readonly ConstructionDescentOperator _constructionDescent = new();
     private readonly ComposedWorldOperator _composed = new();
     private readonly EncounterTimingOperator _encounters = new();
+    private readonly ControllerRecoveryOperator _controllerRecovery = new();
 
     public HostApplication(TextWriter output)
     {
@@ -42,6 +43,13 @@ internal sealed class HostApplication
             string? report = arguments switch
             {
                 ["--inspect-foundation"] => CreateFoundationReport(),
+                ["--create-recoverable-world", var database, var genesis] =>
+                    _controllerRecovery.Create(database, genesis),
+                ["--enable-controller-recovery", var source, var destination] =>
+                    _controllerRecovery.Upgrade(source, destination),
+                ["--inspect-controller-recovery", var database] => _controllerRecovery.Inspect(database),
+                ["--probe-controller-checkpoint-crash", var database, var boundary] =>
+                    _controllerRecovery.ProbeCheckpointCrash(database, boundary),
                 ["--create-encounter-journey", var database, var seed, var name] =>
                     _composed.CreateEncounterJourney(database, seed, name),
                 ["--create-encounter-world", var database, var seed, var name] =>
@@ -118,6 +126,9 @@ internal sealed class HostApplication
     {
         _output.WriteLine("OpenFantasy host\nUsage: OpenFantasy.Host --inspect-foundation");
         _output.WriteLine("       OpenFantasy.Host --inspect-command <command.bin>");
+        _output.WriteLine("       OpenFantasy.Host --create-recoverable-world <new-world.sqlite> <controller-genesis.bin>");
+        _output.WriteLine("       OpenFantasy.Host --enable-controller-recovery <source-world.sqlite> <new-copy.sqlite>");
+        _output.WriteLine("       OpenFantasy.Host --inspect-controller-recovery <world.sqlite>");
         _output.WriteLine("       OpenFantasy.Host --inspect-encounter-timing <timing.bin> <world-id> <branch-id> <encounter-id>");
         _output.WriteLine("       OpenFantasy.Host --inspect-custody <snapshot.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-package <manifest.json> <payload-file>");

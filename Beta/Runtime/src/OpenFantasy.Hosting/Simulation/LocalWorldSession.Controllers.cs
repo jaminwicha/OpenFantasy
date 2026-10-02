@@ -70,6 +70,8 @@ public sealed partial class LocalWorldSession
             if (player.NetworkEstablished && !player.ControlAvailable)
                 state = RestorePlayerControlIfSafe(state, player);
         }
+        long observedAt = ControllerObservationTimestamp();
+        CheckpointControllerRecovery(state, observedAt);
         foreach ((EntityId actor, DisconnectAllowance allowance) in _disconnectAllowances.OrderBy(pair => pair.Key).ToArray())
         {
             WorldControllerAssignment assignment = state.Controllers!.Get(actor);
@@ -78,10 +80,10 @@ public sealed partial class LocalWorldSession
                 _disconnectAllowances.Remove(actor);
                 continue;
             }
-            TimeSpan elapsed = _time.GetElapsedTime(allowance.ConfirmedAt, _time.GetTimestamp());
-            if (elapsed < TimeSpan.FromMilliseconds(WorldControllerState.ReconnectAllowanceMilliseconds)) continue;
+            ulong elapsed = ObserveAllowanceMilliseconds(allowance, observedAt);
+            if (elapsed < WorldControllerState.ReconnectAllowanceMilliseconds) continue;
             state = CommitControllerEvent(state, new WorldControllerEvent(actor, WorldControllerEventKind.AllowanceExpired,
-                assignment.Revision, allowance.EpisodeId, checked((ulong)(elapsed.Ticks / TimeSpan.TicksPerMillisecond))));
+                assignment.Revision, allowance.EpisodeId, elapsed));
             _disconnectAllowances.Remove(actor);
         }
         return state;
@@ -181,5 +183,5 @@ public sealed partial class LocalWorldSession
             throw new AuthorityDispatchException("This character is awaiting a safe return of player control.");
     }
 
-    private sealed record DisconnectAllowance(EntityId EpisodeId, long ConfirmedAt);
+    private sealed record DisconnectAllowance(EntityId EpisodeId, long ConfirmedAt, ulong BaseElapsedMilliseconds = 0);
 }

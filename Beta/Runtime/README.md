@@ -848,3 +848,22 @@ and participant-inspection methods. Dispose a port to leave without closing the 
 close the authority. All ports share one clock and NPC scheduler. See the
 [connection contract](docs/architecture/hosted-player-connections.md) for scheduling, privacy and recovery.
 This API does not authenticate network transports or implement the planned recorded disconnect handoff.
+
+### Durable controller allowance
+
+Controller profiles 36–38 can explicitly use storage schema 10 to retain measured reconnect allowance
+across host restarts. The operator requires exclusive access to each save:
+
+```sh
+OpenFantasy.Host --create-recoverable-world new-world.sqlite controller-genesis.ofc
+OpenFantasy.Host --enable-controller-recovery existing-schema-nine.sqlite new-recoverable.sqlite
+OpenFantasy.Host --inspect-controller-recovery new-recoverable.sqlite
+```
+
+Creation requires an admitted fresh controller genesis. Enabling recovery copies into a new destination
+and retains original canonical history; it does not modify the source. Existing outstanding allowances
+begin with explicit unknown-prior-duration provenance and a zero measured lower bound. Subsequent live
+hosts retain durably observed time, capped at 30 seconds. Inspection and ordinary opening start no timer.
+Offline duration and uncommitted crash time are uncharged; repeated crashes can extend effective grace.
+Graceful shutdown checkpoints at the stop request. See the
+[recovery contract](docs/architecture/controller-recovery.md) for transactions, fencing and limitations.

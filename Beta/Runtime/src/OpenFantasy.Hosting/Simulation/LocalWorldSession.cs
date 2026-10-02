@@ -110,6 +110,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             state.Controllers is not null);
         _players.Add(playerActorId, _localPlayer);
         _projectedStateHash = state.ContentHash;
+        StartControllerRecovery();
         _loop = Task.Run(RunAsync);
     }
 
@@ -912,6 +913,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
 
     private async Task StopCoreAsync()
     {
+        _controllerStopTimestamp = _time.GetTimestamp();
         _stopRequested = true;
         foreach (LocalPlayerConnection player in _players.Values)
         {
@@ -922,7 +924,20 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         try { await _loop.ConfigureAwait(false); }
         finally
         {
-            try { await FinishInspectionsAsync().ConfigureAwait(false); }
+            try
+            {
+                try
+                {
+                    await _serialization.WaitAsync().ConfigureAwait(false);
+                    try
+                    {
+                        // Capture only the admitted host lifetime, before potentially lengthy query cleanup.
+                        if (_failure is null) CheckpointControllerRecovery(_authority.ReadStateForHost());
+                    }
+                    finally { _serialization.Release(); }
+                }
+                finally { await FinishInspectionsAsync().ConfigureAwait(false); }
+            }
             finally
             {
                 await _serialization.WaitAsync().ConfigureAwait(false);

@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8883fd4a-f83f-4b29-ac0f-7f54db3455d5" name="@mac 2026-10-02 17:33:34" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T17:33:34.0270670-05:00" queuing="2026-10-02T17:33:34.0270670-05:00" start="2026-10-02T17:33:29.4386100-05:00" finish="2026-10-02T17:33:37.7637530-05:00" />
+  <TestSettings name="default" id="8bc0c601-4e85-4e75-9734-8f0635a38c76">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_17_33_34" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="135ed004-512a-4ba4-ba7c-28cca76d62e1" testId="3ee5157c-cb75-0841-7f16-c2a2f802688a" testName="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail" computerName="mac" duration="00:00:03.3101775" startTime="2026-10-02T17:33:34.4021490-05:00" endTime="2026-10-02T17:33:37.7135160-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="135ed004-512a-4ba4-ba7c-28cca76d62e1">
+      <Output>
+        <ErrorInfo>
+          <Message>Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteScalar()
+   at OpenFantasy.Hosting.SqliteConnectionLease.Open(String path, Boolean create, Int32 applicationId, Int32 schemaVersion, IReadOnlyList`1 supportedVersions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 68
+   at OpenFantasy.Hosting.SqliteConnectionLease.OpenSupportedWorld(String path) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 32
+   at OpenFantasy.Hosting.Worlds.WorldDatabase.Open(String path, Boolean create, Int32 schemaVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs:line 31
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceEpisodeTests.cs:line 109
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceEpisodeTests.cs:line 112
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="904ae915-233d-4a10-b223-9bf347cede0c" testId="727dd9b0-49fc-2c2b-42b2-b4c67eedd719" testName="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart" computerName="mac" duration="00:00:02.7882409" startTime="2026-10-02T17:33:30.7503490-05:00" endTime="2026-10-02T17:33:33.9813570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="904ae915-233d-4a10-b223-9bf347cede0c">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 27
+Actual:   29</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.AssertGameplayUnchanged(WorldSnapshot before, WorldSnapshot after) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/Controllers/ControllerJournalTests.cs:line 163
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceRestartTests.cs:line 48
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceRestartTests.cs:line 98
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="49f89bf2-8465-41e7-9392-420e3e50d6fe" testId="809fc335-beee-58fa-b732-3883049124aa" testName="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Human_without_a_socket_stays_human_and_an_already_autonomous_reopen_cannot_expire_twice" computerName="mac" duration="00:00:01.0927791" startTime="2026-10-02T17:33:36.3654170-05:00" endTime="2026-10-02T17:33:37.4582780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49f89bf2-8465-41e7-9392-420e3e50d6fe" />
+    <UnitTestResult executionId="63425222-ad10-4e0c-a9f1-151f6b19e7d1" testId="76f197fb-15e0-8dbd-0d44-58fdd7031935" testName="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime" computerName="mac" duration="00:00:02.3699619" startTime="2026-10-02T17:33:33.9937890-05:00" endTime="2026-10-02T17:33:36.3644360-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63425222-ad10-4e0c-a9f1-151f6b19e7d1">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 27
+Actual:   28</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.AssertGameplayUnchanged(WorldSnapshot before, WorldSnapshot after) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/Controllers/ControllerJournalTests.cs:line 163
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceRestartTests.cs:line 136
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceRestartTests.cs:line 139
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e8bc4dc8-56b5-4401-ba0c-73616546d736" testId="d5f5ac7d-5108-f5df-c72d-ab1c0cc67bca" testName="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.Safe_return_clears_the_old_row_and_a_later_disconnect_earns_its_own_full_allowance_across_restart" computerName="mac" duration="00:00:03.6469980" startTime="2026-10-02T17:33:30.7503460-05:00" endTime="2026-10-02T17:33:34.4014350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e8bc4dc8-56b5-4401-ba0c-73616546d736" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="727dd9b0-49fc-2c2b-42b2-b4c67eedd719">
+      <Execution id="904ae915-233d-4a10-b223-9bf347cede0c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests" name="A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="76f197fb-15e0-8dbd-0d44-58fdd7031935">
+      <Execution id="63425222-ad10-4e0c-a9f1-151f6b19e7d1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests" name="Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Human_without_a_socket_stays_human_and_an_already_autonomous_reopen_cannot_expire_twice" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="809fc335-beee-58fa-b732-3883049124aa">
+      <Execution id="49f89bf2-8465-41e7-9392-420e3e50d6fe" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests" name="Human_without_a_socket_stays_human_and_an_already_autonomous_reopen_cannot_expire_twice" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.Safe_return_clears_the_old_row_and_a_later_disconnect_earns_its_own_full_allowance_across_restart" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d5f5ac7d-5108-f5df-c72d-ab1c0cc67bca">
+      <Execution id="e8bc4dc8-56b5-4401-ba0c-73616546d736" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests" name="Safe_return_clears_the_old_row_and_a_later_disconnect_earns_its_own_full_allowance_across_restart" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3ee5157c-cb75-0841-7f16-c2a2f802688a">
+      <Execution id="135ed004-512a-4ba4-ba7c-28cca76d62e1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests" name="A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="3ee5157c-cb75-0841-7f16-c2a2f802688a" executionId="135ed004-512a-4ba4-ba7c-28cca76d62e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="727dd9b0-49fc-2c2b-42b2-b4c67eedd719" executionId="904ae915-233d-4a10-b223-9bf347cede0c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="809fc335-beee-58fa-b732-3883049124aa" executionId="49f89bf2-8465-41e7-9392-420e3e50d6fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="76f197fb-15e0-8dbd-0d44-58fdd7031935" executionId="63425222-ad10-4e0c-a9f1-151f6b19e7d1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d5f5ac7d-5108-f5df-c72d-ab1c0cc67bca" executionId="e8bc4dc8-56b5-4401-ba0c-73616546d736" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="5" executed="5" passed="2" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.23]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.72]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.88]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.15]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:04.15]       Expected: 27
+[xUnit.net 00:00:04.15]       Actual:   29
+[xUnit.net 00:00:04.15]       Stack Trace:
+[xUnit.net 00:00:04.15]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/Controllers/ControllerJournalTests.cs(163,0): at OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.AssertGameplayUnchanged(WorldSnapshot before, WorldSnapshot after)
+[xUnit.net 00:00:04.15]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceRestartTests.cs(48,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart()
+[xUnit.net 00:00:04.15]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceRestartTests.cs(98,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart()
+[xUnit.net 00:00:04.15]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:06.53]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:06.53]       Expected: 27
+[xUnit.net 00:00:06.53]       Actual:   28
+[xUnit.net 00:00:06.53]       Stack Trace:
+[xUnit.net 00:00:06.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/Controllers/ControllerJournalTests.cs(163,0): at OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.AssertGameplayUnchanged(WorldSnapshot before, WorldSnapshot after)
+[xUnit.net 00:00:06.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceRestartTests.cs(136,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime()
+[xUnit.net 00:00:06.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceRestartTests.cs(139,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime()
+[xUnit.net 00:00:06.53]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:07.87]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:00:07.87]       Stack Trace:
+[xUnit.net 00:00:07.87]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:00:07.87]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:00:07.87]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:00:07.87]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteScalar()
+[xUnit.net 00:00:07.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs(68,0): at OpenFantasy.Hosting.SqliteConnectionLease.Open(String path, Boolean create, Int32 applicationId, Int32 schemaVersion, IReadOnlyList`1 supportedVersions)
+[xUnit.net 00:00:07.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs(32,0): at OpenFantasy.Hosting.SqliteConnectionLease.OpenSupportedWorld(String path)
+[xUnit.net 00:00:07.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs(31,0): at OpenFantasy.Hosting.Worlds.WorldDatabase.Open(String path, Boolean create, Int32 schemaVersion)
+[xUnit.net 00:00:07.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceEpisodeTests.cs(109,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail()
+[xUnit.net 00:00:07.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Recovery/ControllerAllowanceEpisodeTests.cs(112,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail()
+[xUnit.net 00:00:07.87]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:07.88]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T17:33:33.9939280-05:00">
+        <Text>[xUnit.net 00:00:04.15]     OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T17:33:36.3675920-05:00">
+        <Text>[xUnit.net 00:00:06.53]     OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T17:33:37.7143460-05:00">
+        <Text>[xUnit.net 00:00:07.87]     OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

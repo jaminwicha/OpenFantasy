@@ -1,0 +1,32 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "daa6f506d91ea827c9ac1c997c06ab6e",
+  "Actor": "e05658731cf001d600e503ae8ce3b80f",
+  "Inputs": [
+    {
+      "Stage": "try-pending-resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "close",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    }
+  ],
+  "Submissions": [],
+  "ElapsedMilliseconds": 2847,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": true,
+  "Display": "macOS"
+}

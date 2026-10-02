@@ -104,12 +104,15 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
         }
-        if ((genesis.ProfileVersion is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaNine.Version))
+        if ((genesis.ProfileVersion is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion) != (database.SchemaVersion is WorldDatabaseSchemaNine.Version or WorldDatabaseSchemaTen.Version))
             throw new InvalidDataException("The controller world and its exclusive session-event schema disagree.");
         if ((genesis.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("A coordinated genesis requires its exclusive material and care archive schema.");
         }
+        ControllerRecoveryReplay? controllerRecovery = database.SchemaVersion == WorldDatabaseSchemaTen.Version
+            ? new ControllerRecoveryReplay(database) : null;
+        controllerRecovery?.Observe(genesis);
         WorldSnapshot state = genesis;
         WorldSnapshot? selected = selectedRevision == 0 ? genesis : null;
         WorldPaidQuoteReplaySelection? quoteSelection = selectedQuoteId is { } quoteId
@@ -153,6 +156,7 @@ internal sealed class WorldJournalRecovery
                 state.ProfileVersion, (ulong)(expected.ResourceArchive?.Encode().Length ?? 0),
                 (ulong)(expected.MaterialCareArchive?.Encode().Length ?? 0));
             VerifyCommit(stored, expected.Stored);
+            controllerRecovery?.ValidateEvent(stored);
             if (stored.Sequence == selectedMaterialSequence)
             {
                 selectedMaterial = new(stored.BeforeHash, stored.AfterHash,
@@ -188,6 +192,7 @@ internal sealed class WorldJournalRecovery
                 throw new InvalidDataException("The world contains an unscheduled checkpoint.");
             }
             state = expected.Candidate;
+            controllerRecovery?.Observe(state);
             quoteSelection?.Observe(state);
             if (state.Revision == selectedRevision)
             {
@@ -223,7 +228,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
         }
-        if ((state.ProfileVersion is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaNine.Version))
+        if ((state.ProfileVersion is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion) != (database.SchemaVersion is WorldDatabaseSchemaNine.Version or WorldDatabaseSchemaTen.Version))
             throw new InvalidDataException("The controller world and its exclusive session-event schema disagree.");
         if ((state.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
@@ -234,7 +239,7 @@ internal sealed class WorldJournalRecovery
         // one replayed explicit proposal transition; that commit's processor admits only 27 to 30.
         bool transitioned = genesis.ProfileVersion == WorldProposalTransition.SourceProfileVersion
             && state.ProfileVersion == WorldProposalTransition.TargetProfileVersion && transitionCount == 1;
-        if (database.SchemaVersion is WorldDatabaseSchemaEight.Version or WorldDatabaseSchemaNine.Version
+        if (database.SchemaVersion is WorldDatabaseSchemaEight.Version or WorldDatabaseSchemaNine.Version or WorldDatabaseSchemaTen.Version
             && (state.ProfileVersion != genesis.ProfileVersion || transitionCount != 0) && !transitioned)
         {
             throw new InvalidDataException("The coordinated world departed from its genesis-selected interpretation.");
@@ -247,6 +252,7 @@ internal sealed class WorldJournalRecovery
         }
         VerifyCommandTable(database, commands);
         VerifyIdentityTable(database, identities);
+        controllerRecovery?.Complete(state);
         return new ReplayedWorld(new RecoveredWorld(genesis, state, stateHash, usage), selected,
             archives.Selected, archives.SelectedPublicationSequence, selectedMaterial,
             materialCareArchives.Selected, materialCareArchives.SelectedPublicationSequence,

@@ -19,6 +19,9 @@ The [world schema](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs) 
 | `world_checkpoints` | Canonical state at declared recovery boundaries |
 | `world_resource_segments` (schema7) | Exact closing roots, immutable scope/ordinal and atomic successor publication sequence |
 | `world_material_care_segments` (schema8) | Exact joint material/care/resource closing roots and atomic successor publication sequence |
+| `controller_recovery_activation` (schema10) | Immutable recovery policy and original activation provenance |
+| `controller_recovery_segment` (schema10) | Fenced host generation and checksum of the complete operational allowance set |
+| `controller_allowances` (schema10) | Episode-bound, durably measured host milliseconds for each outstanding disconnect allowance |
 
 [Schema three](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs) extends accepted
 commit/identity kinds for profile transitions. Schema version and snapshot profile version are
@@ -31,6 +34,13 @@ head and any checkpoint together. Schema seven and eight use distinct archive fa
 Only a successful commit publishes the candidate in memory. An uncertain storage outcome requires
 recovery before more writes. Restart checks exact persisted bytes and relationships, not just an
 apparently valid head hash.
+
+[Controller recovery](controller-recovery.md) explicitly selects schema ten for controller profiles
+36–38. Its canonical world encodings and inherited archive definitions remain unchanged. Lifecycle
+events and their operational row insertion/removal share the same transaction. Independent measured
+progress checkpoints change no world revision or gameplay time. Copy-and-activate admission retains
+original history and validates activation against its actual replayed source root; ordinary opening
+does not upgrade a save or start a clock.
 
 ## Runtime bindings: snapshot profiles
 
