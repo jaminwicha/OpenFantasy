@@ -444,3 +444,11 @@ The [durable consequence contract](consequence-continuation.md) retains eligible
 work across explicit continuation commits, each under its own geometric interpreter and finite work bound. The authoritative scene and game clocks remain unchanged until
 terminal publication charges the reserved advancing interval once, including on refusal. Active sessions
 resume before client readiness; read-only opening and recorded history do not advance pending work.
+
+## External controller decisions
+
+[Durable character control](controller-lifecycle.md) uses explicit world profile36 and storage schema9.
+Its external events enter the same journal and transaction as gameplay. They retain the world/lifecycle
+boundary revision relationship while earning no simulation time, spending no resources and preserving
+accepted choices. Recovery consumes recorded evidence without a clock; ordinary save restoration
+changes no control assignment. Previous profiles and schema checks remain explicit and unchanged.

@@ -24,7 +24,7 @@ internal sealed partial class WorldDatabase : IDisposable
         if (schemaVersion is not WorldDatabaseSchema.Version and not WorldDatabaseSchemaThree.Version
             and not WorldDatabaseSchemaFour.Version and not WorldDatabaseSchemaFive.Version
             and not WorldDatabaseSchemaSix.Version and not WorldDatabaseSchemaSeven.Version
-            and not WorldDatabaseSchemaEight.Version)
+            and not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version)
         {
             throw new ArgumentOutOfRangeException(nameof(schemaVersion));
         }
@@ -89,6 +89,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaSix.Version => WorldDatabaseSchemaSix.Tables,
         WorldDatabaseSchemaSeven.Version => WorldDatabaseSchemaSeven.Tables,
         WorldDatabaseSchemaEight.Version => WorldDatabaseSchemaEight.Tables,
+        WorldDatabaseSchemaNine.Version => WorldDatabaseSchemaNine.Tables,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 
@@ -101,6 +102,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaSix.Version => WorldDatabaseSchemaSix.Indexes,
         WorldDatabaseSchemaSeven.Version => WorldDatabaseSchemaSeven.Indexes,
         WorldDatabaseSchemaEight.Version => WorldDatabaseSchemaEight.Indexes,
+        WorldDatabaseSchemaNine.Version => WorldDatabaseSchemaNine.Indexes,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 

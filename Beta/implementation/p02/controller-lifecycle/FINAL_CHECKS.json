@@ -1,0 +1,51 @@
+{
+  "accepted": true,
+  "scope": "Durable controller domain and same-authority replay foundation; full live disconnect policy remains open",
+  "sourceCheckpoint": "codex/checkpoint-before-controller-lifecycle-20261002T134420Z",
+  "sourceHead": "5e4a0e47a64ba0adae1bff768f98f4b09e1879f5",
+  "buildReport": "qualification/build-20261002T140705508369Z/report.json",
+  "checks": {
+    "core": {
+      "passed": 1807,
+      "seconds": 101.08438766701147,
+      "report": "qualification/core-20261002T140845150617Z/report.json"
+    },
+    "controller": {
+      "passed": 9,
+      "seconds": 11.903120375005528,
+      "report": "qualification/controller-20261002T140811711041Z/report.json"
+    },
+    "compatibility": {
+      "passed": 475,
+      "seconds": 440.35563358300715,
+      "report": "qualification/compatibility-20261002T141059582797Z/report.json"
+    },
+    "network": {
+      "passed": 185,
+      "seconds": 10.797563540982082,
+      "report": "qualification/network-20261002T141937347068Z/report.json"
+    }
+  },
+  "distinctCases": 2476,
+  "executions": 2476,
+  "newControllerCases": 27,
+  "retainedNativeReport": "qualification/retained-native-20261002T142206828243Z/report.json",
+  "retainedNativeProfile": 35,
+  "retainedNativeRevision": 180,
+  "protectedTestFiles": 662,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLinks": 1249,
+  "sourceAndBinariesMatchQualifiedBuild": true,
+  "providerRequests": 0,
+  "open": [
+    "transport confirmation and shutdown classification",
+    "live host 30-second measurement including zero ready ports",
+    "safe provisional network rejoin and stale port races",
+    "conservative survival and permitted co-player policy",
+    "explicit restart policy",
+    "fresh production selector and lived-save transition",
+    "native timing/reconnection proof",
+    "other platforms, devices, art/human and complete campaign gates"
+  ]
+}

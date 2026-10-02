@@ -19,7 +19,7 @@ internal sealed class WorldRestorativeResolver
         if (!inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId))
             return Reject(WorldActionRejection.NotAuthorized);
         if (space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision) return Reject(WorldActionRejection.RevisionConflict);
-        if (kind != WorldBatchKind.AdvancingStep || basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || care.Ordinary is not { } ordinary
+        if (kind != WorldBatchKind.AdvancingStep || basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 || care.Ordinary is not { } ordinary
             || basis.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration || care.Pending is not null
             || basis.PendingExcavation is not null || readingHold || progression.GetActor(command.ActorId).CurrentHp <= 0
             || basis.EncounterLifecycle.GetDebt(command.ActorId).RemainingDelay != 0)

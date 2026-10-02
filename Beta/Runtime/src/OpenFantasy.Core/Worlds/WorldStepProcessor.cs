@@ -60,7 +60,8 @@ public sealed class WorldStepProcessor
         ArgumentNullException.ThrowIfNull(batch);
         if (batch.ProfileVersion != state.ProfileVersion || batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
-            || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold)
+            || batch.Kind != WorldBatchKind.ControllerLifecycle
+                && (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold)
         {
             throw new InvalidOperationException("The selected batch does not match the current world, revision or hold.");
         }
@@ -69,6 +70,10 @@ public sealed class WorldStepProcessor
 
         if (state.Coordination?.Anchor is not null && historicallyOccupied is null)
             throw new InvalidOperationException("Coordinated continuation requires the complete historical identity lookup.");
+
+        // External session facts preserve all gameplay owners and do not trigger a representation cut.
+        if (batch.Kind == WorldBatchKind.ControllerLifecycle)
+            return WorldControllerProcessor.Decide(state, batch, historicallyOccupied);
 
         var prepared = WorldResourceContinuation.Prepare(state, batch);
         if (prepared.Sealed is not null && historicallyOccupied is null)

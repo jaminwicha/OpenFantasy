@@ -46,6 +46,27 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [durable controller foundation](p02/controller-lifecycle/RESULT.md) is qualified at
+`codex/milestone-controller-journal-20261002`, based on native roster milestone 5e4a0e47. Explicit
+profile 36/schema 9 records disconnect, allowance expiry and safe restoration through the same world
+authority, preserving character ownership, accepted actions and simulation time. Lifecycle bookkeeping
+keeps its existing exact world-revision invariant. Old profiles retain their bytes and admission.
+
+[Final checks](p02/controller-lifecycle/FINAL_CHECKS.json): solution build and 2,476 distinct passing
+cases, including 27new controller cases, actual archive/reopen, queued paid combat and pending finite
+care. The exact previous four-native-player profile 35 save replays through the new assemblies to
+revision 180 and its original hash. All 662 older tests/fixtures, 23 frozen specs and unrelated predecessor
+staging remain exact. The affected timeless architecture reference and 1,249 links are checked.
+The [review](p02/controller-lifecycle/REVIEW.md) records the critic's coverage suggestions and missed
+revision dependency; real execution exposed it and no old invariant or deadline was weakened.
+
+Next: implement the [live host/transport integration](p02/controller-lifecycle/PLAN.md): confirmed
+disconnect versus shutdown/disposal, a real episode-bound 30-second timer even with zero ready ports,
+safe provisional rejoin, conservative survival, restart/co-player policy and production selection.
+The Core event API is host-only; it does not yet bind network input or enable automatic control.
+Human mode is not proof of a connected socket. No fresh native proof, lived-save transition or complete
+disconnect gate is claimed. No provider request occurred; native workers consume Astra capacity.
+
 The [native four-player journey](p02/native-player-roster/RESULT.md) is qualified at
 `codex/milestone-native-player-roster-20261002`, based on roster milestone `25a28d8`. Four actual
 Godot clients physically assemble, enter combat, hold for a missing required human, reconnect that
@@ -62,8 +83,8 @@ for the specific prior choice/phase before new input. No authority rule, gate or
 The native frames were inspected; overlapping nameplates and prototype art/UI have no human acceptance.
 The timeless player-client reference is current. No Claude request or credit offload occurred.
 
-Next: journaled 30-second disconnect allowance, permitted controller handoff and safe reconnection.
-This short close/rejoin proof does not implement that policy. Other platforms, physical devices,
+The controller foundation above supplies the durable dependency for the 30-second disconnect policy.
+This short close/rejoin proof alone does not implement that policy. Other platforms, physical devices,
 production scale, human presentation and the full campaign remain open.
 
 The [fresh player roster](p02/player-roster/RESULT.md) is qualified at

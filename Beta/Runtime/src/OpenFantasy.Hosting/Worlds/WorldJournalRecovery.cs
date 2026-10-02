@@ -102,6 +102,8 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
         }
+        if ((genesis.ProfileVersion == WorldControllerAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaNine.Version))
+            throw new InvalidDataException("The controller world and its exclusive session-event schema disagree.");
         if ((genesis.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("A coordinated genesis requires its exclusive material and care archive schema.");
@@ -216,6 +218,8 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
         }
+        if ((state.ProfileVersion == WorldControllerAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaNine.Version))
+            throw new InvalidDataException("The controller world and its exclusive session-event schema disagree.");
         if ((state.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
@@ -225,7 +229,7 @@ internal sealed class WorldJournalRecovery
         // one replayed explicit proposal transition; that commit's processor admits only 27 to 30.
         bool transitioned = genesis.ProfileVersion == WorldProposalTransition.SourceProfileVersion
             && state.ProfileVersion == WorldProposalTransition.TargetProfileVersion && transitionCount == 1;
-        if (database.SchemaVersion == WorldDatabaseSchemaEight.Version
+        if (database.SchemaVersion is WorldDatabaseSchemaEight.Version or WorldDatabaseSchemaNine.Version
             && (state.ProfileVersion != genesis.ProfileVersion || transitionCount != 0) && !transitioned)
         {
             throw new InvalidDataException("The coordinated world departed from its genesis-selected interpretation.");

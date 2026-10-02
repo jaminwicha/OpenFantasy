@@ -26,7 +26,7 @@ public sealed partial class SqliteWorldAuthority
         {
             EnsureAvailable();
             if (_state.ProfileVersion is not (30 or WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
-                    or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion)
+                    or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion)
                 || command.Intent is not MaterialProposalIntent)
             {
                 throw new AuthorityDispatchException("This boundary accepts saved proposal submissions of their own world profile.");

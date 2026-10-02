@@ -12,6 +12,7 @@ public static class WorldStepCodec
             1 => WorldStepCodecV1.Encode(batch),
             2 => WorldStepCodecV2.Encode(batch),
             3 => WorldStepCodecV3.Encode(batch),
+            36 => WorldStepCodecV36.Encode(batch),
             35 => WorldStepCodecV35.Encode(batch),
             34 => WorldStepCodecV34.Encode(batch),
             33 => WorldStepCodecV33.Encode(batch),
@@ -47,11 +48,12 @@ public static class WorldStepCodec
     }
 
     public static WorldStepBatch Decode(ReadOnlySpan<byte> bytes) =>
-        WorldCodecVersion.Read(bytes, "world.step-batch"u8, MaximumBatchByteLength, 10) switch
+        WorldCodecVersion.Read(bytes, "world.step-batch"u8, MaximumBatchByteLength, 11) switch
         {
             1 => WorldStepCodecV1.Decode(bytes),
             2 => WorldStepCodecV2.Decode(bytes),
             3 => WorldStepCodecV3.Decode(bytes),
+            36 => WorldStepCodecV36.Decode(bytes),
             35 => WorldStepCodecV35.Decode(bytes),
             34 => WorldStepCodecV34.Decode(bytes),
             33 => WorldStepCodecV33.Decode(bytes),

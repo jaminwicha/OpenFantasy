@@ -73,9 +73,9 @@ internal sealed class WorldCommitPreparation
     {
         if (batch.ProfileVersion != state.ProfileVersion || batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
-            || (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold
-            || (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null)
-            || batch.Kind is not WorldBatchKind.EncounterLifecycle and not WorldBatchKind.Care
+            || batch.Kind != WorldBatchKind.ControllerLifecycle && (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold
+            || batch.Kind != WorldBatchKind.ControllerLifecycle && (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null)
+            || batch.Kind is not WorldBatchKind.EncounterLifecycle and not WorldBatchKind.Care and not WorldBatchKind.ControllerLifecycle
                 && (batch.Kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterDecision or WorldBatchKind.EncounterResolution)
                     != (state.Pacing?.Encounter is not null))
         {
@@ -101,6 +101,12 @@ internal sealed class WorldCommitPreparation
     private static void AccountForPendingCommand(WorldSnapshot state, WorldStepBatch batch, WorldSnapshot candidate,
         Dictionary<EntityId, WorldActionCommand> actions)
     {
+        if (batch.Kind == WorldBatchKind.ControllerLifecycle)
+        {
+            if (!ReferenceEquals(state.PendingExcavation, candidate.PendingExcavation))
+                throw new InvalidDataException("A session event must preserve any pending gameplay consequence exactly.");
+            return;
+        }
         if (state.PendingExcavation is { } previous)
         {
             if (batch.Kind != WorldBatchKind.ConsequenceContinuation || batch.Actions.Count != 0 || batch.Movement.Count != 0)
@@ -148,6 +154,7 @@ internal sealed class WorldCommitPreparation
         WorldBatchKind.EncounterResolution => WorldCommitKind.EncounterResolution,
         WorldBatchKind.EncounterLifecycle => WorldCommitKind.EncounterLifecycle,
         WorldBatchKind.Care => WorldCommitKind.Care,
+        WorldBatchKind.ControllerLifecycle => WorldCommitKind.ControllerLifecycle,
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
 

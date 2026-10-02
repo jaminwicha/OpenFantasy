@@ -13,7 +13,8 @@ internal enum WorldCommitKind
     EncounterDecision = 6,
     EncounterResolution = 7,
     EncounterLifecycle = 8,
-    Care = 9
+    Care = 9,
+    ControllerLifecycle = 10
 }
 
 internal enum WorldIdentityKind

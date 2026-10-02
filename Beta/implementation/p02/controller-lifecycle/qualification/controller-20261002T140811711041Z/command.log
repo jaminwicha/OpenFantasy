@@ -1,0 +1,23 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.62]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.11]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.26]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Explicit_profile_roundtrips_without_reinterpreting_the_old_genesis_or_batch [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.An_acknowledged_finite_treatment_survives_disconnect_and_blocks_rejoin_until_the_helper_finishes [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Every_actor_disconnect_expiry_and_rejoin_replays_without_time_or_ownership_changes [903 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: True) [525 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: False) [498 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Duplicate_stale_and_aliased_events_are_refused_without_publishing_a_new_root [169 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Actual_archive_rollover_retains_disconnected_actor_and_its_exact_episode_on_reopen [2 s]
+[xUnit.net 00:00:09.25]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Disconnect_and_rejoin_do_not_release_a_reading_hold_or_change_its_dialogue [177 ms]
+
+Test Run Successful.
+Total tests: 9
+     Passed: 9
+ Total time: 9.8655 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/controller-lifecycle/qualification/controller-20261002T140811711041Z/checks.trx

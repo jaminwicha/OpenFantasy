@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="336ac2a1-41cf-4f74-916d-a905b0429fc5" name="@Xanadu 2026-10-02 09:02:12" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T09:02:12.9187750-05:00" queuing="2026-10-02T09:02:12.9187750-05:00" start="2026-10-02T09:02:08.9450970-05:00" finish="2026-10-02T09:02:17.6102240-05:00" />
+  <TestSettings name="default" id="3f1b2f1b-0431-42bc-9e8a-ae9e3f03528d">
+    <Deployment runDeploymentRoot="_Xanadu_2026-10-02_09_02_12" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2e1098de-8228-4e98-bbe9-1779a92140ad" testId="24cf0faf-54a1-7feb-6eb1-c98a7e8203e1" testName="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: False)" computerName="Xanadu" duration="00:00:00.4645850" startTime="2026-10-02T09:02:13.9491670-05:00" endTime="2026-10-02T09:02:14.4138430-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2e1098de-8228-4e98-bbe9-1779a92140ad" />
+    <UnitTestResult executionId="68189a73-3ab8-4771-8461-76e9b27689ac" testId="e4d03d48-6a5a-52e1-61d0-6068327639bd" testName="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Explicit_profile_roundtrips_without_reinterpreting_the_old_genesis_or_batch" computerName="Xanadu" duration="00:00:01.2356105" startTime="2026-10-02T09:02:11.2303190-05:00" endTime="2026-10-02T09:02:12.4704850-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="68189a73-3ab8-4771-8461-76e9b27689ac" />
+    <UnitTestResult executionId="e17ad1a2-10bf-4fc3-a1e0-7116c3b220b9" testId="0e979895-7319-dbae-72fe-528d91382776" testName="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Disconnect_and_rejoin_do_not_release_a_reading_hold_or_change_its_dialogue" computerName="Xanadu" duration="00:00:00.1655821" startTime="2026-10-02T09:02:17.3856300-05:00" endTime="2026-10-02T09:02:17.5512910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e17ad1a2-10bf-4fc3-a1e0-7116c3b220b9" />
+    <UnitTestResult executionId="fc99bf36-f4cb-46e1-8bbd-755f12845b3b" testId="8d6c65c5-f9b1-25af-d3a7-0bcbae7ff632" testName="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Actual_archive_rollover_retains_disconnected_actor_and_its_exact_episode_on_reopen" computerName="Xanadu" duration="00:00:02.1695878" startTime="2026-10-02T09:02:14.5751910-05:00" endTime="2026-10-02T09:02:16.7449210-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc99bf36-f4cb-46e1-8bbd-755f12845b3b" />
+    <UnitTestResult executionId="ecf7b411-dca2-469a-8806-2d1d232a34e1" testId="9777dfa4-6773-6516-0687-cf7b53229efe" testName="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: True)" computerName="Xanadu" duration="00:00:00.5082159" startTime="2026-10-02T09:02:13.4398140-05:00" endTime="2026-10-02T09:02:13.9482040-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ecf7b411-dca2-469a-8806-2d1d232a34e1" />
+    <UnitTestResult executionId="2704eddc-a051-48e3-9263-c3eabea4eb22" testId="11f91204-2de6-1c2e-4e01-45233e0c7288" testName="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns" computerName="Xanadu" duration="00:00:00.6235716" startTime="2026-10-02T09:02:16.7457030-05:00" endTime="2026-10-02T09:02:17.3844990-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2704eddc-a051-48e3-9263-c3eabea4eb22">
+      <Output>
+        <ErrorInfo>
+          <Message>OpenFantasy.Hosting.AuthorityDispatchException : The selected batch cannot be committed in the current world.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Worlds.WorldCommitPreparation.Prepare(WorldSnapshot state, WorldIdentityIndex genesisIdentities, ContentHash beforeHash, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean captureMaterialEvidence) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs:line 28
+   at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.Commit(WorldStepBatch batch, Action`1 fault) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs:line 232
+   at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.Commit(WorldStepBatch batch) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs:line 174
+   at OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/Controllers/ControllerJournalContinuations.cs:line 69
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f376272c-2add-4ed9-86c8-e91bd475da58" testId="a4762053-77f9-9eb9-1cb5-1953b4a540b7" testName="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Every_actor_disconnect_expiry_and_rejoin_replays_without_time_or_ownership_changes" computerName="Xanadu" duration="00:00:00.9598112" startTime="2026-10-02T09:02:12.4742220-05:00" endTime="2026-10-02T09:02:13.4341970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f376272c-2add-4ed9-86c8-e91bd475da58" />
+    <UnitTestResult executionId="63710376-aefb-4f9a-8114-a13d104b4979" testId="d214bffa-9155-d7f6-13df-34f2947b91b3" testName="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Duplicate_stale_and_aliased_events_are_refused_without_publishing_a_new_root" computerName="Xanadu" duration="00:00:00.1596783" startTime="2026-10-02T09:02:14.4146970-05:00" endTime="2026-10-02T09:02:14.5744420-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="63710376-aefb-4f9a-8114-a13d104b4979" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9777dfa4-6773-6516-0687-cf7b53229efe">
+      <Execution id="ecf7b411-dca2-469a-8806-2d1d232a34e1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests" name="A_transaction_fault_recovers_exactly_before_or_after_the_control_event" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="11f91204-2de6-1c2e-4e01-45233e0c7288">
+      <Execution id="2704eddc-a051-48e3-9263-c3eabea4eb22" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests" name="Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="24cf0faf-54a1-7feb-6eb1-c98a7e8203e1">
+      <Execution id="2e1098de-8228-4e98-bbe9-1779a92140ad" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests" name="A_transaction_fault_recovers_exactly_before_or_after_the_control_event" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Disconnect_and_rejoin_do_not_release_a_reading_hold_or_change_its_dialogue" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0e979895-7319-dbae-72fe-528d91382776">
+      <Execution id="e17ad1a2-10bf-4fc3-a1e0-7116c3b220b9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests" name="Disconnect_and_rejoin_do_not_release_a_reading_hold_or_change_its_dialogue" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Explicit_profile_roundtrips_without_reinterpreting_the_old_genesis_or_batch" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e4d03d48-6a5a-52e1-61d0-6068327639bd">
+      <Execution id="68189a73-3ab8-4771-8461-76e9b27689ac" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests" name="Explicit_profile_roundtrips_without_reinterpreting_the_old_genesis_or_batch" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Duplicate_stale_and_aliased_events_are_refused_without_publishing_a_new_root" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d214bffa-9155-d7f6-13df-34f2947b91b3">
+      <Execution id="63710376-aefb-4f9a-8114-a13d104b4979" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests" name="Duplicate_stale_and_aliased_events_are_refused_without_publishing_a_new_root" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Actual_archive_rollover_retains_disconnected_actor_and_its_exact_episode_on_reopen" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8d6c65c5-f9b1-25af-d3a7-0bcbae7ff632">
+      <Execution id="fc99bf36-f4cb-46e1-8bbd-755f12845b3b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests" name="Actual_archive_rollover_retains_disconnected_actor_and_its_exact_episode_on_reopen" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Every_actor_disconnect_expiry_and_rejoin_replays_without_time_or_ownership_changes" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="a4762053-77f9-9eb9-1cb5-1953b4a540b7">
+      <Execution id="f376272c-2add-4ed9-86c8-e91bd475da58" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests" name="Every_actor_disconnect_expiry_and_rejoin_replays_without_time_or_ownership_changes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="24cf0faf-54a1-7feb-6eb1-c98a7e8203e1" executionId="2e1098de-8228-4e98-bbe9-1779a92140ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e4d03d48-6a5a-52e1-61d0-6068327639bd" executionId="68189a73-3ab8-4771-8461-76e9b27689ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0e979895-7319-dbae-72fe-528d91382776" executionId="e17ad1a2-10bf-4fc3-a1e0-7116c3b220b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8d6c65c5-f9b1-25af-d3a7-0bcbae7ff632" executionId="fc99bf36-f4cb-46e1-8bbd-755f12845b3b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9777dfa4-6773-6516-0687-cf7b53229efe" executionId="ecf7b411-dca2-469a-8806-2d1d232a34e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11f91204-2de6-1c2e-4e01-45233e0c7288" executionId="2704eddc-a051-48e3-9263-c3eabea4eb22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a4762053-77f9-9eb9-1cb5-1953b4a540b7" executionId="f376272c-2add-4ed9-86c8-e91bd475da58" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d214bffa-9155-d7f6-13df-34f2947b91b3" executionId="63710376-aefb-4f9a-8114-a13d104b4979" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="7" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.64]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.14]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.28]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:07.47]       OpenFantasy.Hosting.AuthorityDispatchException : The selected batch cannot be committed in the current world.
+[xUnit.net 00:00:07.47]       Stack Trace:
+[xUnit.net 00:00:07.47]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs(28,0): at OpenFantasy.Hosting.Worlds.WorldCommitPreparation.Prepare(WorldSnapshot state, WorldIdentityIndex genesisIdentities, ContentHash beforeHash, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean captureMaterialEvidence)
+[xUnit.net 00:00:07.47]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs(232,0): at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.Commit(WorldStepBatch batch, Action`1 fault)
+[xUnit.net 00:00:07.47]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs(174,0): at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.Commit(WorldStepBatch batch)
+[xUnit.net 00:00:07.47]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/Controllers/ControllerJournalContinuations.cs(69,0): at OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns()
+[xUnit.net 00:00:07.47]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:07.47]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:07.64]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="Xanadu" outcome="Error" timestamp="2026-10-02T09:02:17.3889090-05:00">
+        <Text>[xUnit.net 00:00:07.47]     OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

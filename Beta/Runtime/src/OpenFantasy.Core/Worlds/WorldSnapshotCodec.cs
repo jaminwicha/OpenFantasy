@@ -13,6 +13,7 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Encode(state),
             2 => WorldSnapshotCodecV2.Encode(state),
             3 => WorldSnapshotCodecV3.Encode(state),
+            36 => WorldSnapshotCodecV36.Encode(state),
             35 => WorldSnapshotCodecV35.Encode(state),
             34 => WorldSnapshotCodecV34.Encode(state),
             33 => WorldSnapshotCodecV33.Encode(state),
@@ -47,8 +48,8 @@ public static class WorldSnapshotCodec
         };
     }
 
-    // The pre-screen admits the widest retained root (profile 35's 26 fields); each codec enforces its own exact bound.
-    private const int MaximumRootFields = 26;
+    // The pre-screen admits the widest retained root (profile 36's 27 fields); each codec enforces its own exact bound.
+    private const int MaximumRootFields = 27;
 
     public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes, WorldResourceArchiveAnchor? archiveAnchor = null) =>
         WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, MaximumRootFields) switch
@@ -56,6 +57,8 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
             3 => WorldSnapshotCodecV3.Decode(bytes),
+            36 => archiveAnchor is null ? WorldSnapshotCodecV36.Decode(bytes)
+                : throw new FormatException("A controller world requires its joint archive context."),
             35 => archiveAnchor is null ? WorldSnapshotCodecV35.Decode(bytes)
                 : throw new FormatException("The outcome-continuation world requires its complete archive context."),
             34 => archiveAnchor is null ? WorldSnapshotCodecV34.Decode(bytes)
@@ -109,6 +112,7 @@ public static class WorldSnapshotCodec
             32 => WorldSnapshotCodecV32.Decode(bytes, coordinatedAnchor),
             33 => WorldSnapshotCodecV33.Decode(bytes, coordinatedAnchor),
             34 => WorldSnapshotCodecV34.Decode(bytes, coordinatedAnchor),
+            36 => WorldSnapshotCodecV36.Decode(bytes, coordinatedAnchor),
             35 => WorldSnapshotCodecV35.Decode(bytes, coordinatedAnchor),
             _ => throw new FormatException("Only coordinated world profiles accept a joint decode context.")
         };

@@ -1,0 +1,49 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.74]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.81]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.07]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Explicit_profile_roundtrips_without_reinterpreting_the_old_genesis_or_batch [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Every_actor_disconnect_expiry_and_rejoin_replays_without_time_or_ownership_changes [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: True) [864 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: False) [912 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Duplicate_stale_and_aliased_events_are_refused_without_publishing_a_new_root [277 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Actual_archive_rollover_retains_disconnected_actor_and_its_exact_episode_on_reopen [3 s]
+[xUnit.net 00:00:12.63]     OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns [FAIL]
+[xUnit.net 00:00:12.63]       System.ArgumentException : The selected action archive must retain this lifecycle's exact scope, seed, definitions and scenario.
+[xUnit.net 00:00:12.63]       Stack Trace:
+[xUnit.net 00:00:12.63]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs(81,0): at OpenFantasy.Core.Encounters.EncounterLifecycleSnapshot..ctor(EntityId worldId, EntityId branchId, EntityId seed, UInt64 revision, UInt64 explorationSteps, UInt64 tacticalTicks, UInt64 entryTacticalTicks, UInt64 encounterCount, EncounterLifecyclePhase phase, IEnumerable`1 abilities, IEnumerable`1 scenarios, IEnumerable`1 debts, Nullable`1 scenarioId, EncounterActionSnapshot actions, Int32 catalogVersion)
+[xUnit.net 00:00:12.63]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs(241,0): at OpenFantasy.Core.Encounters.EncounterLifecycleSnapshot.Next(UInt64 explorationSteps, UInt64 tacticalTicks, UInt64 entryTacticalTicks, UInt64 encounterCount, EncounterLifecyclePhase phase, IEnumerable`1 debts, Nullable`1 scenarioId, EncounterActionSnapshot actions)
+[xUnit.net 00:00:12.63]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs(183,0): at OpenFantasy.Core.Encounters.EncounterLifecycleSnapshot.ObserveActive(EncounterTimingSnapshot timing, EncounterActionSnapshot actions, Boolean tacticalTick, Boolean isOutcome)
+[xUnit.net 00:00:12.63]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs(100,0): at OpenFantasy.Core.Worlds.WorldEncounterActionProcessor.Decide(WorldSnapshot world, WorldStepBatch batch, Func`2 historicallyOccupied)
+[xUnit.net 00:00:12.63]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(114,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, WorldMaterialEvidenceCollector materialEvidence)
+[xUnit.net 00:00:12.63]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(87,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideSelected(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean observeMaterial)
+[xUnit.net 00:00:12.63]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(38,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied)
+[xUnit.net 00:00:12.63]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/Controllers/ControllerJournalContinuations.cs(70,0): at OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns()
+[xUnit.net 00:00:12.63]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:12.63]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:12.92]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns [1 s]
+  Error Message:
+   System.ArgumentException : The selected action archive must retain this lifecycle's exact scope, seed, definitions and scenario.
+  Stack Trace:
+     at OpenFantasy.Core.Encounters.EncounterLifecycleSnapshot..ctor(EntityId worldId, EntityId branchId, EntityId seed, UInt64 revision, UInt64 explorationSteps, UInt64 tacticalTicks, UInt64 entryTacticalTicks, UInt64 encounterCount, EncounterLifecyclePhase phase, IEnumerable`1 abilities, IEnumerable`1 scenarios, IEnumerable`1 debts, Nullable`1 scenarioId, EncounterActionSnapshot actions, Int32 catalogVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs:line 81
+   at OpenFantasy.Core.Encounters.EncounterLifecycleSnapshot.Next(UInt64 explorationSteps, UInt64 tacticalTicks, UInt64 entryTacticalTicks, UInt64 encounterCount, EncounterLifecyclePhase phase, IEnumerable`1 debts, Nullable`1 scenarioId, EncounterActionSnapshot actions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs:line 241
+   at OpenFantasy.Core.Encounters.EncounterLifecycleSnapshot.ObserveActive(EncounterTimingSnapshot timing, EncounterActionSnapshot actions, Boolean tacticalTick, Boolean isOutcome) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs:line 183
+   at OpenFantasy.Core.Worlds.WorldEncounterActionProcessor.Decide(WorldSnapshot world, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs:line 100
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, WorldMaterialEvidenceCollector materialEvidence) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 114
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideSelected(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean observeMaterial) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 87
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 38
+   at OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/Controllers/ControllerJournalContinuations.cs:line 70
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Disconnect_and_rejoin_do_not_release_a_reading_hold_or_change_its_dialogue [285 ms]
+
+Test Run Failed.
+Total tests: 8
+     Passed: 7
+     Failed: 1
+ Total time: 13.8381 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/controller-lifecycle/qualification/controller-20261002T140341005251Z/checks.trx

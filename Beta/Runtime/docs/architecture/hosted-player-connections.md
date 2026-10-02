@@ -103,3 +103,6 @@ reconnection. Those require the network/control adapter and are not inferred fro
 port. This shared host supports coordinated branch Wait; independent encounter pockets, network
 transport and native multi-client delivery are separate bindings of the full design. The connection
 limit is the first production player target, not an NPC population or world-resident limit.
+
+The [durable control reference](controller-lifecycle.md) describes the separate character-control facet,
+external event journal and safe restoration boundary. Port disposal alone does not invoke that boundary.
