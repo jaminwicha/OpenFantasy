@@ -1,0 +1,40 @@
+{
+  "decisions": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmGame.cs",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/CareDispositionContinuationJournalTests.cs",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/DispositionContinuationFixture.cs",
+      "Beta/Runtime/tools/check_native_care_dispositions.py"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll"
+    ],
+    "reason": "Only two excluded continuation types and native-only files changed. Selected test/fixture sources, linked client files, discovery configuration, Core/Hosting and all dependency DLLs are exact. The new continuation types have no shared discovery hooks and are referenced only by their three selected cases; those were rerun. Native source was separately requalified."
+  },
+  "native-fixtures": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmGame.cs",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/CareDispositionContinuationJournalTests.cs",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/DispositionContinuationFixture.cs",
+      "Beta/Runtime/tools/check_native_care_dispositions.py"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll"
+    ],
+    "reason": "Only two excluded continuation types and native-only files changed. Selected test/fixture sources, linked client files, discovery configuration, Core/Hosting and all dependency DLLs are exact. The new continuation types have no shared discovery hooks and are referenced only by their three selected cases; those were rerun. Native source was separately requalified."
+  },
+  "native": {
+    "sourceDifferences": [
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/CareDispositionContinuationJournalTests.cs",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/DispositionContinuationFixture.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll"
+    ],
+    "reason": "Only the excluded continuation test classes and Hosting test DLL changed. Native client/Core/Hosting binaries, launch/probe/checker source and prepared fixture bytes remain exact. Result authentication is rerun on current test DLL."
+  }
+}

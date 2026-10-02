@@ -71,6 +71,8 @@ starts the port unready and requires fresh readiness before execution.
 cancellation and gives the helper its own treatment/decline choices. Only the helper sees its captured
 dose terms. Other actors receive no private decision. Closure views distinguish treatment, cancellation
 and decline, including retained closed-defeat evidence after a cut.
+The helper's spectator HUD includes an observed closure and explains that encounter acceptance remains
+separate. It does not infer closure from a receipt notice or describe a refusal as healing.
 
 Observation body version 4 explicitly carries `SupportsCareDispositions` even without an active request.
 Legacy false/null additions are omitted. Strict canonical decoding checks participant ownership,
@@ -81,3 +83,19 @@ The Actions wheel exposes relevant care choices with icons and explanatory detai
 nothing. Each choice captures its actor, request, episode, revisions and terms; a changed observation
 invalidates the captured choice rather than silently substituting another. Cancellation wording states
 that no treatment was given and that encounter acceptance remains separate.
+
+## Explicit native fixture binding
+
+[FarmClientSession.OpenCareDispositionFixtureAsync](../../client/scripts/FarmClientSession.cs)
+opens an existing saved journal against its exact fresh disposition-capable genesis. The named patient
+and helper must share an admitted care agreement and both already have human control. Selection may
+bind either participant's own delivery; it never promotes an NPC, changes a controller, migrates a
+save or admits a new world. The local session opens unready and publishes regional observations.
+
+[NativeCareDispositionEntry](../../client/scripts/CareDispositions/NativeCareDispositionEntry.cs)
+is an explicit disposable entry. Its [input probe](../../client/scripts/CareDispositions/CareDispositionPlayProbe.cs)
+uses the ordinary wheel and passive submission observation. Inspection, closing the wheel and focus
+loss cannot commit a request decision. The selected offer's exact command and returned receipt are
+available for separate authentication against the journal. Reopening starts paused with the retained
+closure, without replaying a prior input or health cue. Background rendering requires startup
+`no_focus` and observed absence of native focus; it does not qualify physical devices or OS focus.

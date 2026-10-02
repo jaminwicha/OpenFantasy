@@ -106,7 +106,8 @@ public partial class FarmGame : Node2D
         _input = new FarmInputRouter(StartPaused);
         AddChild(_canvas);
         Rect2 bounds = _canvas.LocalBounds;
-        if (WatercourseProfile || BreachProfile || FramesCargoThreat || PlayerInvitationPath is not null || NetworkFixtureOpening is not null)
+        if (WatercourseProfile || BreachProfile || FramesCargoThreat || CareDispositionFixture is not null
+            || PlayerInvitationPath is not null || NetworkFixtureOpening is not null)
         {
             // Leave room for the channel or a nearby road threat between the ordinary HUD panels.
             // A stable integer zoom preserves pixels without changing interaction distances.

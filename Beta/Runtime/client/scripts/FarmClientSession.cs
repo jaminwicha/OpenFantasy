@@ -337,6 +337,55 @@ internal sealed class FarmClientSession : IAsyncDisposable
         return AttachCargo(authority, retreat: true, outcomes: true);
     });
 
+    /// <summary>
+    /// Opens only an explicitly exported disposition fixture and one of its already admitted human participants.
+    /// Complete journal recovery selects the existing save; this path never changes controllers or advances admission.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenCareDispositionFixtureAsync(string savePath, string expectedGenesisPath,
+        EntityId patientActorId, EntityId helperActorId, EntityId controlledActorId) => Task.Run(() =>
+    {
+        if (!File.Exists(savePath)) throw new FileNotFoundException("The care disposition fixture requires its existing save.", savePath);
+        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != WorldCareDispositionAdmission.ProfileVersion || genesis.Revision != 0
+            || genesis.AdvancingSteps != 0 || genesis.Care is not { SupportsDispositions: true, Revision: 0 }
+            || patientActorId == helperActorId || controlledActorId != patientActorId && controlledActorId != helperActorId)
+            throw new InvalidDataException("The fixture requires a fresh profile 38 genesis and one named care participant.");
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try
+        {
+            WorldSnapshot current = authority.InspectForHost().State;
+            FarmSaveOpener.ValidateSelection(current, genesis);
+            foreach (WorldSnapshot state in new[] { genesis, current })
+            {
+                if (state.ProfileVersion != WorldCareDispositionAdmission.ProfileVersion
+                    || !state.Care!.Agreements.Any(agreement => agreement.PatientActorId == patientActorId
+                        && agreement.HelperActorId == helperActorId))
+                    throw new InvalidDataException("The named participants do not share this fixture's care agreement.");
+                foreach (EntityId actor in new[] { patientActorId, helperActorId })
+                {
+                    if (state.GetResident(actor).ControllerKind != ResidentControllerKind.Player
+                        || state.Controllers?.Get(actor).Mode != WorldControllerMode.Human)
+                        throw new InvalidDataException("Both care participants must already have admitted human control.");
+                }
+            }
+            ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == controlledActorId);
+            var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
+            EntityId wood = current.Gathering!.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Oak)
+                .Definition.YieldDefinition.DefinitionId;
+            EntityId berries = current.Gathering.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
+                .Definition.YieldDefinition.DefinitionId;
+            var world = new LocalWorldSession(authority, controlledActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
+                LocalTradingConfiguration.None, new LocalRegionObserver(controlledActorId), LocalRetreatConfiguration.None);
+            return new FarmClientSession(world, delivery, helperActorId, wood, berries) { IsRegional = true };
+        }
+        catch
+        {
+            authority.Dispose();
+            throw;
+        }
+    });
+
     /// <summary>The cargo session: the quest companion, the cargo trading advice and the bounded region observer.</summary>
     private static FarmClientSession AttachCargo(SqliteWorldAuthority authority, bool retreat = false, bool outcomes = false)
     {

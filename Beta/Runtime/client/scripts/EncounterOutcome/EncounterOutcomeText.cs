@@ -326,7 +326,12 @@ internal static class ControllerOutcomeText
                 && outcome.Restriction == LocalOutcomeRestriction.Incapacitated
             ? $"{title} · Encounter complete · Incapacitated · Permitted aid can restore HP"
             : $"{title} · Encounter complete";
-        if (!outcome.ObserverIsParticipant) return $"{title} · This fight is between others · World waiting for acceptance";
+        if (!outcome.ObserverIsParticipant)
+        {
+            string closure = care?.Closure is not null ? " · " + EncounterOutcomeText.CareReason(care)
+                + " · Encounter acceptance remains separate" : "";
+            return $"{title} · This fight is between others{closure} · World waiting for acceptance";
+        }
         if (outcome.Stage == LocalOutcomeStage.CarePending)
         {
             string requested = care?.HelperName is { } named ? "Care requested from " + named : "Care requested";

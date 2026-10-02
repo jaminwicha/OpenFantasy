@@ -1,0 +1,37 @@
+{
+  "results": [
+    {
+      "mode": "cancel-keyboard",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/cancel-keyboard.sqlite",
+      "sourceSave": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/cancel-keyboard.json",
+      "finalDatabaseSha256": "85bd34ba68871bc1b2b51e61b993d0c37d5f2ba08c0c78444080728588789877",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/reopen-cancel-keyboard.json"
+    },
+    {
+      "mode": "cancel-pointer",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/cancel-pointer.sqlite",
+      "sourceSave": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/cancel-pointer.json",
+      "finalDatabaseSha256": "10683fba880b81a9a464acae3c6c7e418d95152602ac89063c32c22856c2b0f4",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/reopen-cancel-pointer.json"
+    },
+    {
+      "mode": "decline-controller",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/decline-controller.sqlite",
+      "sourceSave": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/fixtures/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/decline-controller.json",
+      "finalDatabaseSha256": "57e80770ccf6e6be44443b775700db9d60baaef03d8f3f286217de8ccf513eef",
+      "reopenReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/native-20261002T201951356909Z/native-care-dispositions-bctb33k6/reopen-decline-controller.json"
+    }
+  ]
+}

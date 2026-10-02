@@ -1,0 +1,85 @@
+{
+  "status": "bounded managed, rendered native and journal authentication passed; full campaign and remaining gates open",
+  "checkpoint": "codex/checkpoint-before-care-disposition-qualification-20261002T195738Z",
+  "sourceHead": "66977a0771d99592205e457f354b9e5a23c62812",
+  "milestone": "codex/milestone-care-disposition-qualification-20261002",
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261002T202438806966Z/report.json",
+      "sha256": "dab349b64af299182ab8b8a07f1d24025ee13ebadf5a47f4a341dec0589df832",
+      "outcomes": null,
+      "accepted": true
+    },
+    "decisions": {
+      "path": "qualification/decisions-20261002T201356907369Z/report.json",
+      "sha256": "91a7c0c3bb118c047d059ee04655e17922b2c711cf63e0e05ca8306a3080d50c",
+      "outcomes": {
+        "Passed": 35
+      },
+      "accepted": true
+    },
+    "native-fixtures": {
+      "path": "qualification/native-fixtures-20261002T201447996737Z/report.json",
+      "sha256": "10f69a3e62e5fcf47e8a639a1ef2a32259f4f3827720734cde38661f2cbee918",
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "native": {
+      "path": "qualification/native-20261002T201951356909Z/report.json",
+      "sha256": "2e4a9c4d333fb559f5d6deca5fc47317b6933799a12196a7bea58d45708924d4",
+      "outcomes": null,
+      "accepted": true
+    },
+    "continuation": {
+      "path": "qualification/continuation-20261002T202548110764Z/report.json",
+      "sha256": "163fedf5bd1d38d916c01ce0491ff7f04c7059cefc870b9e18f56cec1e1d395c",
+      "outcomes": {
+        "Passed": 3
+      },
+      "accepted": true
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261002T202631450951Z/report.json",
+      "sha256": "03aa28196a664709ba24c84a5e84099a1e241f4286febebae96bec623232c726",
+      "outcomes": {
+        "Passed": 184
+      },
+      "accepted": true
+    },
+    "native-auth": {
+      "path": "qualification/native-auth-20261002T202655005056Z/report.json",
+      "sha256": "7a51561bc383fda13693a4aaccddc0ad686dd4bb57b048688276ec59d44b4914",
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    }
+  },
+  "distinctPassingCases": 219,
+  "newPassingCases": 10,
+  "renderedProcesses": 6,
+  "nativeRoutes": 3,
+  "renderedImages": 15,
+  "allSelectedAggregatesPassed": true,
+  "protectedOldTestFiles": 707,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLinks": 1292,
+  "dependencyReuse": "EVIDENCE_REUSE.json",
+  "failedReportsRetained": [
+    "qualification/build-20261002T201114136405Z/report.json",
+    "qualification/continuation-20261002T202048179677Z/report.json",
+    "qualification/native-20261002T201519686542Z/report.json",
+    "qualification/native-20261002T201804970131Z/report.json"
+  ],
+  "limits": [
+    "native begins at genuinely prepared pending care; no native combat/approach or network/multiplayer qualification",
+    "background injected controls do not qualify physical devices or OS focus",
+    "actual pending-cut/dispose/re-cut and separate treatment frontier; no disposition-only maximum pressure or maximum composite-frame proof",
+    "crash injection, native pending-after-cut, hostile survival/restart/co-player policy, lived-save migration and production selection remain open",
+    "no production history latency, full-platform, art/human playtest or full campaign acceptance",
+    "no external Claude request or credit offload"
+  ]
+}

@@ -1,0 +1,42 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.22]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.79]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.94]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly(decline: True) [11 s]
+  Passed OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly(decline: False) [11 s]
+[xUnit.net 00:00:31.42]     OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Later_disposition_archives_the_latest_closure_without_replacing_the_earlier_real_treatment [FAIL]
+[xUnit.net 00:00:31.42]       Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[xUnit.net 00:00:31.42]       [0]: Item:  WorldActionReceipt { BranchId = 942787427b264d29fa206535e7bc8f37, CommandHash = 9d8ca8f80dfd7e312a4335164e56449be76a1818ca360edbb423d92b167a1409, CommandId = ee12400000000000000000000000304b, CommitSequence = 1244, PrincipalId = 76b9e6abef8231bdeff68286754b2dae, ··· }
+[xUnit.net 00:00:31.42]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:31.42]                   Expected: None
+[xUnit.net 00:00:31.42]                   Actual:   Unavailable
+[xUnit.net 00:00:31.42]       Stack Trace:
+[xUnit.net 00:00:31.42]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Recovery/RecoveryJournalFixture.cs(81,0): at OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalFixture.Commit(SqliteWorldAuthority authority, WorldBatchKind kind, IEnumerable`1 actions)
+[xUnit.net 00:00:31.42]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/DispositionContinuationFixture.cs(76,0): at OpenFantasy.Hosting.Tests.Care.DispositionContinuation.DispositionContinuationFixture.Acknowledge(SqliteWorldAuthority authority)
+[xUnit.net 00:00:31.42]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/CareDispositionContinuationJournalTests.cs(105,0): at OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Later_disposition_archives_the_latest_closure_without_replacing_the_earlier_real_treatment()
+[xUnit.net 00:00:31.42]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:31.42]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:31.43]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Later_disposition_archives_the_latest_closure_without_replacing_the_earlier_real_treatment [2 s]
+  Error Message:
+   Assert.All() Failure: 1 out of 1 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = 942787427b264d29fa206535e7bc8f37, CommandHash = 9d8ca8f80dfd7e312a4335164e56449be76a1818ca360edbb423d92b167a1409, CommandId = ee12400000000000000000000000304b, CommitSequence = 1244, PrincipalId = 76b9e6abef8231bdeff68286754b2dae, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: None
+            Actual:   Unavailable
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalFixture.Commit(SqliteWorldAuthority authority, WorldBatchKind kind, IEnumerable`1 actions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Recovery/RecoveryJournalFixture.cs:line 81
+   at OpenFantasy.Hosting.Tests.Care.DispositionContinuation.DispositionContinuationFixture.Acknowledge(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/DispositionContinuationFixture.cs:line 76
+   at OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Later_disposition_archives_the_latest_closure_without_replacing_the_earlier_real_treatment() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/CareDispositionContinuationJournalTests.cs:line 105
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Test Run Failed.
+Total tests: 3
+     Passed: 2
+     Failed: 1
+ Total time: 31.8418 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-qualification/qualification/continuation-20261002T202048179677Z/checks.trx

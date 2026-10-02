@@ -54,6 +54,26 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [care disposition qualification](p02/care-disposition-qualification/RESULT.md) proves actual native
+patient cancellation (keyboard/pointer), human-helper decline (controller) and three separate paused
+reopens. Exact captured commands/receipts authenticate against the original prepared history; no
+healing, medicine use or encounter acceptance is fabricated. Helper closure wording and regional
+fixture framing are corrected. Three complete-world cases prove pending/cut/cancel-or-decline/re-cut,
+full recovery and the distinction between an earlier real treatment and later closure witnesses.
+Milestone: `codex/milestone-care-disposition-qualification-20261002`.
+[Final checks](p02/care-disposition-qualification/FINAL_CHECKS.json): warning-free build,219distinct
+managed passes including10new,6rendered processes/15images and exact native journal authentication.
+Dependency reuse is explicit;707older tests/fixtures,23specs and predecessor staging remain exact;
+1,292architecture links resolve. [Independent review and failures](p02/care-disposition-qualification/REVIEW.md)
+retain corrected new-test assertions, two native fixture/probe issues and an unfunded fixture request.
+No old gate/rule/timeout changed; no provider call or external credit offload occurred.
+
+Next: disposition-only capacity pressure, maximum composite frames and transaction/process crash
+boundaries, plus native pending-after-cut; then retained hostile survival/restart/co-player policy.
+Physical device/OS-focus, lived-save migration, production selection/history latency and the complete
+campaign remain open. These native controls begin at genuinely prepared pending care and do not
+qualify a native approach/combat journey or production art. Crowded world-space labels still need polish.
+
 The [archived quote replay checkpoint](p02/archived-quote-replay/RESULT.md) removes a duplicate complete
 replay from participant inspection. The same pass captures the exact publishing root, independently
 authenticates the retrieved archive and all later history/tables, then pairs complete terminal bytes.
@@ -67,9 +87,9 @@ test files, 23 specs and predecessor staging remain exact; 1,289 architecture li
 or credit offload occurred. Earlier archived-query timeouts remain unexplained; long-history latency
 is still open. No new native, multi-cut query, full Core, migration or production acceptance is claimed.
 
-Next: qualify native profile 38 decisions and actual pending/cut/disposition/re-cut plus capacity/crash
-boundaries, then retained survival/restart/co-player dependencies. Continue investigating history-query
-load where evidence warrants; this allocation reduction is not a production latency gate pass.
+The later care qualification above supplies the native decision and complete pending/cut/disposition/
+re-cut proof. Capacity/crash and survival/restart/co-player dependencies remain open. Continue investigating
+history-query load where evidence warrants; this allocation reduction is not a production latency gate pass.
 
 The [terrain projection reuse checkpoint](p02/multiplayer-service-latency/RESULT.md) captures the
 actual third-player failure: receipt during serialized projection, first sampling at 163.3869 ms,
@@ -105,10 +125,9 @@ The [critic](p02/pending-care-disposition/REVIEW.md) exposed real closure-projec
 both repaired. Legacy constructor compatibility and bounded test synchronization are also corrected.
 No native/full-suite/production acceptance or Claude credit offload is claimed.
 
-Remaining care qualification: native profile 38 care decisions and complete-world pending/cut/closure/
-re-cut and capacity/crash boundaries. The projection checkpoint above addresses the captured roster
-expiry. Domain continuation proofs and
-real proposal-pressure archive/reopen are distinct from those unrun gates. Hostile survival, restart/
+The later care qualification above proves native profile38 decisions and complete-world pending/cut/
+closure/re-cut. Remaining care qualification includes disposition-only pressure, maximum composite frames,
+crash boundaries and native pending-after-cut. The projection checkpoint addresses the captured roster expiry. Hostile survival, restart/
 co-player policy, authenticated lived-save migration and full production/campaign gates remain open.
 The before-change checkpoint preserves `6358c9b7`; exact scope and failures are retained in the packet.
 

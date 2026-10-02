@@ -65,12 +65,23 @@ public partial class FarmGame
     /// <summary>Expected fresh genesis of an exported outcome-completion fixture; requires its explicit existing save.</summary>
     internal string? CargoOutcomesFixtureGenesisPath { get; init; }
 
+    /// <summary>Explicit profile 38 fixture selection; its requested participant is already human in the saved world.</summary>
+    internal CareDispositionFixtureSelection? CareDispositionFixture { get; init; }
+
     private bool FramesCargoThreat => CargoThreatProfile || CargoThreatFixtureGenesisPath is not null
         || CargoOutcomesProfile || CargoOutcomesFixtureGenesisPath is not null;
 
     /// <summary>Starts opening the cargo world when this game selects it; false for every other selection.</summary>
     private bool OpenCargo()
     {
+        if (CareDispositionFixture is { } care)
+        {
+            _opening = SavePathOverride is { } careSave
+                ? FarmClientSession.OpenCareDispositionFixtureAsync(careSave, care.GenesisPath,
+                    care.PatientActorId, care.HelperActorId, care.ControlledActorId)
+                : Task.FromException<FarmClientSession>(new InvalidOperationException("The care disposition fixture requires its existing save."));
+            return true;
+        }
         if (CargoOutcomesFixtureGenesisPath is { } outcomesGenesis)
         {
             _opening = SavePathOverride is { } outcomesSave
