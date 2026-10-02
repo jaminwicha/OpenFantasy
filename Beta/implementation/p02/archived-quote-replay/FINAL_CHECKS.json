@@ -1,0 +1,74 @@
+{
+  "status": "selected managed regression passed; production and historical query timing gates remain open",
+  "sourceHead": "7f9ffb435a8e694be169a7f6f76373dbe51d1464",
+  "checkpoint": "codex/checkpoint-before-quote-replay-20261002T194030Z",
+  "optimizationCheckpoint": {
+    "checkpoint": "codex/checkpoint-before-single-quote-replay-20261002T194303Z",
+    "snapshot": "61b19d277eb93c4e6c262c473c0aaa061034190a",
+    "sourceHead": "7f9ffb435a8e694be169a7f6f76373dbe51d1464",
+    "scope": "New cost fixture and full baseline reports; predecessor changes excluded",
+    "verification": "Warning-free build; one baseline synchronous query cost/parity check passed. No runtime changes."
+  },
+  "milestone": "codex/milestone-archived-quote-replay-20261002",
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261002T194922331971Z/report.json",
+      "sha256": "fcc5d16f39c1ab427875719ec35f913f00dac7d7fb972ad761f4b39e7a075450",
+      "outcomes": null,
+      "accepted": true
+    },
+    "quote-replay": {
+      "path": "qualification/quote-replay-20261002T195008656654Z/report.json",
+      "sha256": "e9f7728c928fd6f72a87b29b27eedde6310bb1619f11e80a0e208831b6d373ba",
+      "outcomes": {
+        "Passed": 20
+      },
+      "accepted": true
+    },
+    "history-regression": {
+      "path": "qualification/history-regression-20261002T195045797917Z/report.json",
+      "sha256": "30ae4cc1196d235f48903fec1823e943c56025a0ada6f8efc4c08427f0d957a1",
+      "outcomes": {
+        "Passed": 95
+      },
+      "accepted": true
+    },
+    "network": {
+      "path": "qualification/network-20261002T195102855441Z/report.json",
+      "sha256": "61305be4d6179770935166e5d9bbb449e3b8e0718f4f038835ad881fa1d7b64a",
+      "outcomes": {
+        "Passed": 265
+      },
+      "accepted": true
+    },
+    "server-managed": {
+      "path": "qualification/server-managed-20261002T195129613019Z/report.json",
+      "sha256": "80ba751d4f22674d8abe463d09524cf6c718e1d42bc9124c56d40c6e7cc9c2b3",
+      "outcomes": {
+        "Passed": 77,
+        "NotExecuted": 1
+      },
+      "accepted": true
+    }
+  },
+  "distinctPassingCases": 416,
+  "newPassingCases": 20,
+  "expectedUnrunCases": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "allSelectedAggregatesPassed": true,
+  "protectedOldTestFiles": 703,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "finalSourceAndBinariesVerified": true,
+  "unchangedCostProbeSha256": "7af6166aaf3671802340ca537aa595e0a9d1947ae11a3a0ddb03e5320dc354d4",
+  "checkerSha256": "9cca6f9e135671cf4a9cb1e1a2a1a5fcf41652bcde899c00d331380f60aa3c20",
+  "architectureLinks": 1289,
+  "failedReportsRetained": [],
+  "scopeLimits": [
+    "fixed two-query allocation measurement, not peak memory or production latency guarantee",
+    "historical archived-query timeout causes remain unexplained; complete replay is still linear in history",
+    "no new multi-cut open-carry quote-query proof",
+    "no new native, platform, Core full-suite, production scale, care capacity/crash, migration or full campaign acceptance"
+  ]
+}

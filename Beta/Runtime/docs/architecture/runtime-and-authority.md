@@ -107,9 +107,11 @@ the standalone counted-custody profile. It is not a concurrent inventory writer 
    same serialization boundary, authenticates the fixed player, and never selects a step. It shares
    duplicate pending lookups and refuses a second identity; stopping finishes selected inspection
    before disposing storage. A full archived replay can delay the simulation without synthesizing
-   catch-up time. It is never part of a frame or tick projection. An archived paid-quote inspection runs
-   a second verified replay, pinned to the same head, to project the outcome against the recorded root
-   that published it (for its canonical market record). `VerifyRecordedHistoryAsync` is the same kind of
+   catch-up time. It is never part of a frame or tick projection. An archived paid-quote inspection retains
+   its exact publishing root during the same complete replay that authenticates the retrieved archived
+   outcome. The full terminal bytes and revision must agree before projection can use that root's canonical
+   market record. No selected result escapes before the entire journal, archives, head, command table and
+   identity table validate against the pinned head. `VerifyRecordedHistoryAsync` is the same kind of
    explicit background read: one complete verified replay to the head, returning only whether it reproduced
    the head. The cargo world's regional terrain observation is projected at view publication from the same
    immutable root as that view, on the serialized host owner; frames read the published view only and never

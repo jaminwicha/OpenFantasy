@@ -76,8 +76,8 @@ public sealed partial class SqliteWorldAuthority
     /// part in reaches the projection. Synchronous non-frame work: it must not run on a client frame or a
     /// latency-sensitive simulation callback. Damaged storage refuses and requires reopening.
     /// <para>
-    /// An archived outcome is projected against the recorded root that published it, reconstructed by a second
-    /// verified replay against the same pinned head. That root still holds the canonical market quote record, so the
+    /// The same replay retains the outcome's exact publishing root, then binds it to the retrieved archived outcome
+    /// after all history validates. That root still holds the canonical market quote record, so the
     /// quote's market comes from history rather than from the live book, which no longer names it.
     /// </para>
     /// </summary>
@@ -111,13 +111,13 @@ public sealed partial class SqliteWorldAuthority
                 {
                     return project(_state, null);
                 }
-                RecordedWorldState publishing = new WorldJournalRecovery().ReadRecordedState(_database, archived.WorldSequence);
-                if (publishing.SourceHeadRevision != _state.Revision || publishing.SourceHeadHash != _stateHash
-                    || publishing.State.Coordination?.PaidExchange?.FindOutcome(quoteId) is null)
+                if (recorded.PublishingState is not { } publishing || publishing.Revision != archived.WorldSequence
+                    || publishing.Coordination?.PaidExchange?.FindOutcome(quoteId) is not { } published
+                    || published.ContentHash != archived.ContentHash)
                 {
                     throw new InvalidDataException("The archived quote's publishing root does not match the pinned live head.");
                 }
-                return project(publishing.State, archived);
+                return project(publishing, archived);
             }
             catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
             {

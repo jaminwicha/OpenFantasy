@@ -57,12 +57,14 @@ internal sealed class WorldJournalRecovery
 
     /// <summary>
     /// The same complete verified replay, selecting the terminal outcome of one exact paid quote identity
-    /// from the retrieved closing roots. The result is unfiltered; the caller authorizes.
+    /// from the retrieved closing roots and its original publishing root from the same pass.
+    /// Neither is returned until complete replay verifies the head. The caller authorizes.
     /// </summary>
     internal RecordedWorldPaidQuoteOutcome ReadPaidQuoteOutcome(WorldDatabase database, EntityId quoteId)
     {
         ReplayedWorld trace = VerifyAndReplay(database, null, selectedQuoteId: quoteId);
-        return new(trace.SelectedQuoteOutcome, trace.Head.State.Revision, trace.Head.StateHash);
+        return new(trace.SelectedQuoteOutcome, trace.Head.State.Revision, trace.Head.StateHash,
+            trace.SelectedQuotePublishingState);
     }
 
     private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal = null, ulong? selectedMaterialSequence = null, ulong? selectedMaterialCareOrdinal = null, EntityId? selectedProposalId = null, EntityId? selectedQuoteId = null)
@@ -110,6 +112,8 @@ internal sealed class WorldJournalRecovery
         }
         WorldSnapshot state = genesis;
         WorldSnapshot? selected = selectedRevision == 0 ? genesis : null;
+        WorldPaidQuoteReplaySelection? quoteSelection = selectedQuoteId is { } quoteId
+            ? new WorldPaidQuoteReplaySelection(quoteId) : null;
         SelectedMaterialObservation? selectedMaterial = null;
         byte[] stateBytes = genesisBytes;
         ContentHash stateHash = ContentHash.Compute(stateBytes);
@@ -184,6 +188,7 @@ internal sealed class WorldJournalRecovery
                 throw new InvalidDataException("The world contains an unscheduled checkpoint.");
             }
             state = expected.Candidate;
+            quoteSelection?.Observe(state);
             if (state.Revision == selectedRevision)
             {
                 selected = state;
@@ -245,7 +250,8 @@ internal sealed class WorldJournalRecovery
         return new ReplayedWorld(new RecoveredWorld(genesis, state, stateHash, usage), selected,
             archives.Selected, archives.SelectedPublicationSequence, selectedMaterial,
             materialCareArchives.Selected, materialCareArchives.SelectedPublicationSequence,
-            materialCareArchives.SelectedProposalOutcome, materialCareArchives.SelectedQuoteOutcome);
+            materialCareArchives.SelectedProposalOutcome, materialCareArchives.SelectedQuoteOutcome,
+            quoteSelection?.ResolveArchived(materialCareArchives.SelectedQuoteOutcome));
     }
 
     private static ExpectedJournalEntry PrepareEntry(int schemaVersion, StoredWorldCommit stored,
@@ -334,7 +340,8 @@ internal sealed class WorldJournalRecovery
     private sealed record ReplayedWorld(RecoveredWorld Head, WorldSnapshot? Selected,
         WorldResourceArchiveSegment? SelectedArchive, ulong ArchivePublicationSequence, SelectedMaterialObservation? SelectedMaterial,
         WorldMaterialCareArchiveSegment? SelectedMaterialCareArchive, ulong MaterialCarePublicationSequence,
-        WorldMaterialProposalOutcome? SelectedProposalOutcome, WorldPaidQuoteOutcome? SelectedQuoteOutcome);
+        WorldMaterialProposalOutcome? SelectedProposalOutcome, WorldPaidQuoteOutcome? SelectedQuoteOutcome,
+        WorldSnapshot? SelectedQuotePublishingState);
 
     private sealed record SelectedMaterialObservation(ContentHash BeforeHash, ContentHash AfterHash,
         IReadOnlyList<WorldMaterialActionEvidence> Evidence);
@@ -351,6 +358,6 @@ internal sealed record RecoveredWorld(WorldSnapshot Genesis, WorldSnapshot State
 internal sealed record RecordedWorldMaterialProposalOutcome(WorldMaterialProposalOutcome? Outcome,
     ulong SourceHeadRevision, ContentHash SourceHeadHash);
 
-/// <summary>An archived terminal paid-quote outcome, or none, bound to the source head its replay verified.</summary>
+/// <summary>An archived outcome and its exact publishing root, or neither, bound to the fully verified head.</summary>
 internal sealed record RecordedWorldPaidQuoteOutcome(WorldPaidQuoteOutcome? Outcome,
-    ulong SourceHeadRevision, ContentHash SourceHeadHash);
+    ulong SourceHeadRevision, ContentHash SourceHeadHash, WorldSnapshot? PublishingState);

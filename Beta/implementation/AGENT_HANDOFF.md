@@ -54,6 +54,23 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [archived quote replay checkpoint](p02/archived-quote-replay/RESULT.md) removes a duplicate complete
+replay from participant inspection. The same pass captures the exact publishing root, independently
+authenticates the retrieved archive and all later history/tables, then pairs complete terminal bytes.
+Current control, participant privacy, pinned-head and recovery-required boundaries remain intact.
+The identical two-query, 132-revision workload allocates 536,331,088 bytes versus 1,071,986,376 before
+(about 49.97% less). Milestone: `codex/milestone-archived-quote-replay-20261002`.
+[Final checks](p02/archived-quote-replay/FINAL_CHECKS.json): warning-free build; 416 distinct passes,
+including 20 new cases, history95/network265/managedServer77 with the Windows ACL skip. All 703 older
+test files, 23 specs and predecessor staging remain exact; 1,289 architecture links resolve. The
+[independent review](p02/archived-quote-replay/REVIEW.md) found no actionable defect. No provider call
+or credit offload occurred. Earlier archived-query timeouts remain unexplained; long-history latency
+is still open. No new native, multi-cut query, full Core, migration or production acceptance is claimed.
+
+Next: qualify native profile 38 decisions and actual pending/cut/disposition/re-cut plus capacity/crash
+boundaries, then retained survival/restart/co-player dependencies. Continue investigating history-query
+load where evidence warrants; this allocation reduction is not a production latency gate pass.
+
 The [terrain projection reuse checkpoint](p02/multiplayer-service-latency/RESULT.md) captures the
 actual third-player failure: receipt during serialized projection, first sampling at 163.3869 ms,
 after the unchanged 150 ms lease. Exact immutable-region occupancy reuse removes repeated worksite/liquid
@@ -70,10 +87,9 @@ The captured expiry is explained and its redundant projection work repaired; thi
 the cause of every historical timeout or close production scale/latency. Earlier archived-query failures
 remain open. No new native, full Core, migration or full-campaign acceptance is claimed.
 
-Next: measure/authenticate archived-query service, qualify native profile 38 decisions and actual
-pending/cut/disposition/re-cut plus capacity/crash boundaries, then continue the retained survival/
-restart/co-player policy dependencies. The full campaign remains authoritative. No provider retry or
-Claude credit offload occurred.
+The archived-query checkpoint above measures/removes duplicate replay while preserving full
+authentication; prior timeouts remain unexplained. Native care, capacity/crash and survival dependencies
+remain open. The full campaign remains authoritative. No provider retry or Claude credit offload occurred.
 
 The [pending-care decisions checkpoint](p02/pending-care-disposition/RESULT.md) adds explicit profile38/
 CareV5 patient cancellation and helper decline, separate terminal history/frontiers, exact archive/replay,

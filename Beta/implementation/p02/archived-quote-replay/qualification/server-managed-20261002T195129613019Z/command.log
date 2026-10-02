@@ -1,0 +1,98 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.34]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.50]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.62]   Starting:    OpenFantasy.Server.Tests
+  Passed OpenFantasy.Server.Tests.PlayerRosterHostTests.Operator_refuses_invalid_roster_count_without_creating_a_save(count: 5) [21 ms]
+  Passed OpenFantasy.Server.Tests.Diagnostics.HostTimingEventsTests.Stage_and_binding_preserve_diagnostic_identity_and_capture_monotonic_timestamps [22 ms]
+  Passed OpenFantasy.Server.Tests.PlayerRosterHostTests.Operator_refuses_invalid_roster_count_without_creating_a_save(count: 0) [< 1 ms]
+  Passed OpenFantasy.Server.Tests.DedicatedHostTests.Settings_resolve_local_paths_and_reject_ambiguous_or_unknown_fields [43 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "version") [55 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "duplicate") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "credential") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "unknown") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "missing") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/elsewhere") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/player#secret") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://secret@localhost/player") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "ws://localhost/player") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/player?credential=secret") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Private_invitation_round_trips_copies_secret_and_omits_it_from_diagnostic_strings [6 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Private_file_is_bounded_create_only_and_owner_readable_on_unix [26 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Old_result_shape_and_diagnostic_fields_remain_exact_while_new_kind_requires_version_two [116 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "run-state") [2 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "missing") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "foreign-kind") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "extra") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadPresentationBootstrap) [2 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadParticipantStatus) [< 1 ms]
+  Passed OpenFantasy.Server.Tests.ServerStartupTests.Listener_requires_explicit_private_key_and_real_advertised_identity [260 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Production_connector_refuses_an_untrusted_certificate [3 s]
+[xUnit.net 00:00:04.22]     OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access [SKIP]
+[xUnit.net 00:00:04.22]       Windows DACL inheritance requires a Windows filesystem.
+  Passed OpenFantasy.Server.Tests.PlayerResponseTimeoutTests.A_generic_backend_timeout_remains_a_listener_failure [3 s]
+  Passed OpenFantasy.Server.Tests.ServerStartupTests.Failed_bind_cleans_partial_listener_and_leaves_authority_available [3 s]
+  Skipped OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access [1 ms]
+  Error Message:
+   Windows DACL inheritance requires a Windows filesystem.
+
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: False) [3 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Production_host_supplies_real_metadata_and_queries_preserve_paused_world_and_inquiry_identity [4 s]
+  Passed OpenFantasy.Server.Tests.DedicatedHostTests.Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement [4 s]
+  Passed OpenFantasy.Server.Tests.DedicatedHostTests.Missing_or_incompatible_world_is_never_created_or_reinterpreted [173 ms]
+  Passed OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world [5 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Actual_tls_client_validates_initial_view_and_startup_cancellation_does_not_own_connected_lifetime [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerResponseTimeoutTests.A_successful_send_at_its_deadline_closes_only_its_player_and_the_listener_still_serves_tls [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: True) [2 s]
+  Passed OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop [2 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Host_without_presentation_is_refused_before_native_readiness [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerRosterHostTests.Four_production_players_connect_move_and_reconnect_over_real_tls_without_converting_npcs [8 s]
+  Passed OpenFantasy.Server.Tests.ServerShutdownTests.Cancelled_shutdown_wait_does_not_abandon_an_admitted_authority_read [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Query_replies_must_match_the_actual_pending_request_and_authenticated_scope(variant: "scope") [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Normal_certificate_validation_rejects_untrusted_server_and_pin_does_not_ignore_wrong_identity [2 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "cancel") [4 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Foreground_inspection_waits_once_behind_refresh_and_a_second_request_is_busy [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Query_replies_must_match_the_actual_pending_request_and_authenticated_scope(variant: "request") [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "query") [2 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "proposal") [3 s]
+  Passed OpenFantasy.Server.Tests.PlayerRosterHostTests.Operator_creates_four_real_players_and_refuses_to_overwrite_their_save [4 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Disposal_joins_refresh_and_releases_a_queued_user_query_without_closing_host [3 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Query_replies_must_match_the_actual_pending_request_and_authenticated_scope(variant: "kind") [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "path") [2 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Automatic_status_refresh_observes_real_scheduled_merchant_answer_without_an_explicit_inquiry_read [784 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "origin") [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Backpressured_output_is_bounded_and_disposal_cancels_a_blocked_transport [2 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "submit") [3 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "subprotocol") [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_refuses_welcome_substitution_before_exposing_a_playable_client(variant: "world") [1 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Invalid_and_closed_queries_return_faulted_tasks_without_throwing_from_the_facade [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_refuses_welcome_substitution_before_exposing_a_playable_client(variant: "actor") [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Ordinary_http_get_cannot_upgrade_and_websocket_compression_is_not_negotiated [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Host_termination_propagates_to_listener_even_without_clients [939 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_refuses_welcome_substitution_before_exposing_a_playable_client(variant: "packages") [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Stopping_listener_closes_active_and_pending_peers_without_disposing_the_world [981 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_refuses_welcome_substitution_before_exposing_a_playable_client(variant: "request") [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Actual_tls_upgrade_delivers_authenticated_regional_observation_queries_and_controls [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.In_memory_client_keeps_preflight_refusal_separate_from_committed_receipts_and_exact_retry [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Concurrent_exact_action_shares_its_pending_task_and_sends_one_envelope [807 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Durable_receipt_substitution_is_rejected_even_when_the_transport_request_matches(variant: "command") [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Durable_receipt_substitution_is_rejected_even_when_the_transport_request_matches(variant: "world") [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Durable_receipt_substitution_is_rejected_even_when_the_transport_request_matches(variant: "principal") [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Durable_receipt_substitution_is_rejected_even_when_the_transport_request_matches(variant: "hash") [988 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Unchanged_input_is_bounded_and_stop_remains_ordered_before_ping [976 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Established_send_returning_successfully_at_its_deadline_still_closes_the_client [936 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Missing_delta_basis_requests_full_recovery_before_startup_publishes_a_view [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Established_blocked_send_expires_and_releases_a_queued_query_without_queue_overflow [5 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Cancellation_during_startup_closes_owned_transport_without_waiting_for_a_silent_peer [9 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_that_returns_a_full_view_after_its_deadline_is_not_reported_as_success [681 ms]
+[xUnit.net 00:00:38.46]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Pending_history_keeps_control_and_ping_live_and_disposal_releases_client_waiters [1 s]
+
+Test Run Successful.
+Total tests: 78
+     Passed: 77
+    Skipped: 1
+ Total time: 38.8353 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/archived-quote-replay/qualification/server-managed-20261002T195129613019Z/checks.trx

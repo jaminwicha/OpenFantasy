@@ -20,6 +20,16 @@ return an absent value. Inspection preserves archived terms and closure informat
 history; it does not recreate a live offer or revive its acceptance permission. Responses contain no
 private delivery credentials, market pricing basis, world roots or private state hashes.
 
+[Archived quote retrieval](../../src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs) uses one
+complete replay. [WorldPaidQuoteReplaySelection](../../src/OpenFantasy.Hosting/Worlds/WorldPaidQuoteReplaySelection.cs)
+retains at most one speculative root: the candidate whose revision actually publishes the selected
+terminal outcome. The archive verifier separately authenticates the retrieved closing root. After
+the whole history, head and retained tables validate, retrieval pairs the complete archived terminal
+bytes with the captured publication. A later root carrying that outcome cannot replace its publishing
+root. The original market record therefore remains available without another replay or a result cache.
+Current control is checked before retrieval and participant disclosure afterward; unknown and foreign
+subjects reveal no publishing root. Corruption after the requested event still refuses the entire read.
+
 ## Wire values and correlation
 
 [PlayerQuery](../../src/OpenFantasy.Hosting/Networking/PlayerQuery.cs) is a closed set of typed

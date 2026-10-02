@@ -1,0 +1,38 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.47]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.97]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.12]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.WorldPaidQuoteReplaySelectionTests.Same_quote_terms_cannot_substitute_a_different_terminal_cause_or_sequence [1 s]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.WorldPaidQuoteReplaySelectionTests.A_later_root_carrying_the_same_outcome_cannot_replace_its_original_publication [655 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Captured_outcome_cannot_escape_later_corruption_or_repair_the_saved_evidence(mutation: "UPDATE world_commits SET outcomes=x'01' WHERE sequ"···) [530 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Captured_outcome_cannot_escape_later_corruption_or_repair_the_saved_evidence(mutation: "UPDATE world_head SET advancing_steps=x'0000000000"···) [419 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Captured_outcome_cannot_escape_later_corruption_or_repair_the_saved_evidence(mutation: "UPDATE world_material_care_segments SET state=x'01"···) [25 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Captured_outcome_cannot_escape_later_corruption_or_repair_the_saved_evidence(mutation: "INSERT INTO world_checkpoints SELECT sequence,adva"···) [361 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayCostTests.Participant_query_retains_real_archived_market_terms_and_reports_synchronous_cost [3 s]
+  Standard Output Messages:
+ archive-query; queries:2; journal-revision:132; archives:1; milliseconds:698.087; bytes:536331088
+
+
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Captured_outcome_cannot_escape_later_corruption_or_repair_the_saved_evidence(mutation: "DELETE FROM world_material_care_segments") [304 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Captured_outcome_cannot_escape_later_corruption_or_repair_the_saved_evidence(mutation: "DELETE FROM world_occupied_identity WHERE sequence"···) [251 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Captured_outcome_cannot_escape_later_corruption_or_repair_the_saved_evidence(mutation: "UPDATE world_command_outcomes SET receipt=x'01' WH"···) [249 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Unknown_live_outcome_and_open_quote_return_no_archived_outcome_or_publishing_root(subject: 2) [235 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Unknown_live_outcome_and_open_quote_return_no_archived_outcome_or_publishing_root(subject: 1) [225 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Unknown_live_outcome_and_open_quote_return_no_archived_outcome_or_publishing_root(subject: 0) [225 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Archived_market_provenance_and_participant_projection_use_the_actual_fill_root [683 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Authenticated_outsider_and_unknown_identity_disclose_only_the_current_root_and_no_outcome [614 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Wrong_delivery_is_refused_before_projection_for_both_known_and_unknown_quotes [205 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Archived_outcome_retains_its_actual_publishing_root_and_verified_later_head(kind: Filled) [239 ms]
+[xUnit.net 00:00:08.17]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Archived_outcome_retains_its_actual_publishing_root_and_verified_later_head(kind: Withdrawn) [227 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Archived_outcome_retains_its_actual_publishing_root_and_verified_later_head(kind: Expired) [215 ms]
+  Passed OpenFantasy.Hosting.Tests.HistoryQueries.ArchivedQuoteReplayTests.Archived_outcome_retains_its_actual_publishing_root_and_verified_later_head(kind: Superseded) [219 ms]
+
+Test Run Successful.
+Total tests: 20
+     Passed: 20
+ Total time: 8.6479 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/archived-quote-replay/qualification/quote-replay-20261002T195008656654Z/checks.trx
