@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Text.Json.Serialization;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
@@ -138,9 +139,11 @@ internal sealed record EncounterOutcomeViewData(
     bool ObserverHasRead,
     LocalOutcomeRestriction Restriction,
     ulong ObserverRecoveryDelay,
-    ulong? CompletedAtSequence)
+    ulong? CompletedAtSequence,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    LocalOutcomeAcknowledgmentMode AcknowledgmentMode = LocalOutcomeAcknowledgmentMode.HumanReading)
 {
-    internal LocalEncounterOutcomeView ToView() => new(Stage, EncounterId, Result, StandingSide, Standing, Participants, Acknowledgment, RequiredReaders, ReadersRemaining, ObserverHasRead, Restriction, ObserverRecoveryDelay, CompletedAtSequence);
+    internal LocalEncounterOutcomeView ToView() => new(Stage, EncounterId, Result, StandingSide, Standing, Participants, Acknowledgment, RequiredReaders, ReadersRemaining, ObserverHasRead, Restriction, ObserverRecoveryDelay, CompletedAtSequence, AcknowledgmentMode);
 
     internal static EncounterOutcomeViewData From(LocalEncounterOutcomeView value) => new(
         value.Stage,
@@ -155,5 +158,6 @@ internal sealed record EncounterOutcomeViewData(
         value.ObserverHasRead,
         value.Restriction,
         value.ObserverRecoveryDelay,
-        value.CompletedAtSequence);
+        value.CompletedAtSequence,
+        value.AcknowledgmentMode);
 }

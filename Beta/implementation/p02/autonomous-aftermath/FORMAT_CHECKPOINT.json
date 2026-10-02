@@ -1,0 +1,12 @@
+{
+  "ref": "codex/checkpoint-aftermath-before-observation-v2-20261002T160818Z",
+  "snapshot": "f8ec3e994b414d6ed63831878461a0370a4ea070",
+  "sourceHead": "b8c1854eba07dbfac722f7846407236785054ca2",
+  "scope": "All current successor changes and evidence; unrelated predecessor staging excluded",
+  "verification": "WIP: corrected build passed; first focused run 32 passed, 2 fixture failures. Not accepted.",
+  "restore": "Inspect git diff b8c1854eba07dbfac722f7846407236785054ca2 codex/checkpoint-aftermath-before-observation-v2-20261002T160818Z -- Beta; restore desired Beta paths from this ref without touching predecessor staging.",
+  "originalSnapshotCaveat": "Backup command yielded while live; lead edited before observing completion. Production source remained preformat, but three new test files captured their later corrections. Original snapshot retained, never claimed as exact preformat evidence.",
+  "recoveredRef": "codex/checkpoint-aftermath-recovered-preformat-20261002T161030Z",
+  "recoveredSnapshot": "ef02626beb283d70ba439ce92ce1cb258dc1b29b",
+  "recoveryVerification": "All three recovered test contents equal their exact pinned preformat-build SHA256; unchanged production snapshot retains preformat codec."
+}

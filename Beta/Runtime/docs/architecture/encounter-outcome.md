@@ -97,6 +97,25 @@ authenticated transition that first resolves any in-flight Outcome under its rec
 
 ## Session and presentation
 
+### Controller-world acknowledgment
+
+The canonical acknowledgment is a controller fact. Worlds with the controller facet use
+`LocalOutcomeAcknowledgmentMode.ControllerAcceptance` in their outcome view; ordinary profile-35
+views retain `HumanReading`. Compatibility field names such as `ObserverHasRead` and `RequiredReaders`
+describe character acknowledgments in controller mode, not evidence that a person read anything.
+Both pending and completed projections derive the mode from the world's interpretation, never the
+actor's current Human or Autonomous assignment. A human rejoin therefore cannot change historical
+meaning. UI text consistently describes acceptance and neutrally attributed care requests.
+
+The [autonomous aftermath policy](controller-lifecycle.md#autonomous-aftermath) can request currently
+legal pre-agreed care for an incapacitated character, or acknowledge an outcome for a living character.
+These are ordinary commands with ordinary authority checks. It never automatically accepts a terminal
+incapacitated outcome, creates consent or replaces an unavailable pending helper. The unchanged care
+and completion laws still determine all effects and holds; unavailable recovery remains an explicit
+domain boundary.
+
+### Player choices and completion
+
 [LocalWorldSession](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) routes a pending reading to the
 lifecycle cutoff and selects the actionless completion boundary at a ready cutoff when
 `WorldEncounterOutcomes.IsReadyToFinalize` holds; care cutoffs (a pending care acknowledgment or obligation) are routed

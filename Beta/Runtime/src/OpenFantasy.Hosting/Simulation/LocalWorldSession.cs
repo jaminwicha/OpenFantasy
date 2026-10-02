@@ -30,6 +30,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private readonly TimeProvider _time;
     private readonly LocalNpcController _npcs = new();
     private readonly LocalAutonomousEncounterController _autonomousEncounter = new();
+    private readonly LocalAutonomousAftermathController _autonomousAftermath = new();
     private readonly LocalCareController _care = new();
     private readonly LocalRestorativeController _restorative = new();
     private readonly LocalMaterialProposalSelection _materialProposals = new();
@@ -388,6 +389,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 state = _authority.ReadStateForHost();
                 pending = null;
             }
+            // Existing patient requests/obligations retain priority. A host choice has its own
+            // receipt and must leave any other player's queued request untouched.
+            if (TickAutonomousAftermath(state)) return;
             // Profile 35: a reading is the player's own lifecycle command; completion is the world's own boundary once
             // every required human has read the outcome and no care is pending. Neither earns time.
             if (pending?.Command.Intent is EnterEncounterIntent or ReleaseEncounterIntent or AcknowledgeEncounterOutcomeIntent

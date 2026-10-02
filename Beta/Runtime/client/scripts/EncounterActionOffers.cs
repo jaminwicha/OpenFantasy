@@ -151,7 +151,9 @@ internal static class EncounterActionOffers
     /// </summary>
     private static FarmActionOffer ReadOutcome(LocalEncounterOutcomeView outcome, LocalCareView? care, FarmActionScope scope) =>
         new(FarmSemanticAction.ReleaseEncounter, scope, EncounterOutcomeText.ReadLabel(outcome), EncounterOutcomeText.Title(outcome),
-            null, FarmActionOffers.NoCost, "Outcome accepted; completion waits for every required reader and no pending care.",
+            null, FarmActionOffers.NoCost, outcome.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance
+                ? "Outcome accepted; completion waits for every required character's acknowledgment and no pending care."
+                : "Outcome accepted; completion waits for every required reader and no pending care.",
             outcome.Acknowledgment, EncounterOutcomeText.ReadBlocker(outcome, care),
             detailText: EncounterOutcomeText.ChoiceDetail(outcome, care));
 

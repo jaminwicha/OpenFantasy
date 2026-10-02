@@ -1,0 +1,91 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.58]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.06]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.20]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Pending_care_reports_the_request_without_claiming_personal_input_or_helper_commitment(status: Pending, expected: "if that treatment happens it resumes this same fig"···) [13 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Pending_care_reports_the_request_without_claiming_personal_input_or_helper_commitment(status: NeedsAttention, expected: "the treatment needs attention") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Pending_care_reports_the_request_without_claiming_personal_input_or_helper_commitment(status: Unavailable, expected: "The fight stays open, unfinished") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Acceptance_keeps_the_complete_condition_and_declined_care_explicit(standing: YourSideStands) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Acceptance_keeps_the_complete_condition_and_declined_care_explicit(standing: NoSideStands) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Acceptance_keeps_the_complete_condition_and_declined_care_explicit(standing: OpponentStands) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Outside_observer_is_never_told_its_character_acknowledged [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: AwaitingOthers) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: Completed) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: AwaitingYourReading) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: Completing) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: CarePending) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Captured_action_completion_notice_uses_character_acknowledgment [61 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Recorded_acceptance_is_attributed_to_the_character_without_identifying_its_submitter [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: "string") [165 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: "unknown-positive") [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: "null") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: "duplicate") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: "negative") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Constructor_refuses_unknown_modes_before_publication [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: Completing) [55 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: Completed) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: AwaitingOthers) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: AwaitingYourReading) [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: CarePending) [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Legacy_default_stays_omitted_and_explicit_default_is_noncanonical [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_saved_autonomous_request_reopens_exactly_and_the_helper_spends_only_one_dose [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_player_controlled_helper_is_not_conscripted_and_incapacity_is_not_automatically_terminalized [698 ms]
+[xUnit.net 00:00:05.11]     OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Autonomous_care_preserves_another_humans_queued_outcome_request_and_never_returns_the_wrong_receipt [FAIL]
+[xUnit.net 00:00:05.11]       Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[xUnit.net 00:00:05.11]       [0]: Item:  WorldActionReceipt { BranchId = fa5188eb9c6ee131d47a48d5c542513c, CommandHash = 6342ffc901fab9ab30f36f7723efc20829957eaeb7df768a24c8a01502d79bb7, CommandId = ee124000000000000000000000002714, CommitSequence = 4, PrincipalId = 17cb9b4f5acff232f117f14b4cb3ddd8, ··· }
+[xUnit.net 00:00:05.11]            Error: Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:05.11]                   Expected: None
+[xUnit.net 00:00:05.11]                   Actual:   Unavailable
+[xUnit.net 00:00:05.11]       Stack Trace:
+[xUnit.net 00:00:05.11]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathFixture.cs(145,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathFixture.Commit(WorldBatchKind kind, IEnumerable`1 commands)
+[xUnit.net 00:00:05.11]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathFixture.cs(131,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathFixture.PrepareOutcome(EncounterScenarioDefinition scenario, Boolean defeated)
+[xUnit.net 00:00:05.11]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathFixture.cs(42,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathFixture..ctor(Boolean defeated, Boolean humanHelper, Boolean humanOpponent)
+[xUnit.net 00:00:05.11]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathFixture.cs(64,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathFixture.Open(Boolean defeated, Boolean humanHelper, Boolean humanOpponent)
+[xUnit.net 00:00:05.11]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathTests.cs(165,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Autonomous_care_preserves_another_humans_queued_outcome_request_and_never_returns_the_wrong_receipt()
+[xUnit.net 00:00:05.11]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.64]     OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Legal_autonomous_care_has_separate_patient_and_helper_receipts_and_one_real_paid_dose [FAIL]
+[xUnit.net 00:00:05.64]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:05.64]       Expected: 51aec168629bdbb763d2431160823dc9
+[xUnit.net 00:00:05.64]       Actual:   57f30c76900ed750682462795c802818
+[xUnit.net 00:00:05.64]       Stack Trace:
+[xUnit.net 00:00:05.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathTests.cs(57,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Legal_autonomous_care_has_separate_patient_and_helper_receipts_and_one_real_paid_dose()
+[xUnit.net 00:00:05.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathTests.cs(82,0): at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Legal_autonomous_care_has_separate_patient_and_helper_receipts_and_one_real_paid_dose()
+[xUnit.net 00:00:05.64]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Living_acceptance_and_world_completion_are_separate_and_neutral_after_rejoin [861 ms]
+  Failed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Autonomous_care_preserves_another_humans_queued_outcome_request_and_never_returns_the_wrong_receipt [452 ms]
+  Error Message:
+   Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[0]: Item:  WorldActionReceipt { BranchId = fa5188eb9c6ee131d47a48d5c542513c, CommandHash = 6342ffc901fab9ab30f36f7723efc20829957eaeb7df768a24c8a01502d79bb7, CommandId = ee124000000000000000000000002714, CommitSequence = 4, PrincipalId = 17cb9b4f5acff232f117f14b4cb3ddd8, ··· }
+     Error: Assert.Equal() Failure: Values differ
+            Expected: None
+            Actual:   Unavailable
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathFixture.Commit(WorldBatchKind kind, IEnumerable`1 commands) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathFixture.cs:line 145
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathFixture.PrepareOutcome(EncounterScenarioDefinition scenario, Boolean defeated) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathFixture.cs:line 131
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathFixture..ctor(Boolean defeated, Boolean humanHelper, Boolean humanOpponent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathFixture.cs:line 42
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathFixture.Open(Boolean defeated, Boolean humanHelper, Boolean humanOpponent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathFixture.cs:line 64
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Autonomous_care_preserves_another_humans_queued_outcome_request_and_never_returns_the_wrong_receipt() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathTests.cs:line 165
+--- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Legal_autonomous_care_has_separate_patient_and_helper_receipts_and_one_real_paid_dose [535 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 51aec168629bdbb763d2431160823dc9
+Actual:   57f30c76900ed750682462795c802818
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Legal_autonomous_care_has_separate_patient_and_helper_receipts_and_one_real_paid_dose() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathTests.cs:line 57
+   at OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Legal_autonomous_care_has_separate_patient_and_helper_receipts_and_one_real_paid_dose() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Controllers/Aftermath/AutonomousAftermathTests.cs:line 82
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:07.16]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_living_autonomous_acceptance_does_not_satisfy_the_other_required_human [547 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Human_and_grace_preserve_the_exact_outcome_and_care_choice(lost: True) [486 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Human_and_grace_preserve_the_exact_outcome_and_care_choice(lost: False) [479 ms]
+
+Test Run Failed.
+Total tests: 34
+     Passed: 32
+     Failed: 2
+ Total time: 8.0650 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/autonomous-aftermath/qualification/aftermath-20261002T160524031925Z/checks.trx

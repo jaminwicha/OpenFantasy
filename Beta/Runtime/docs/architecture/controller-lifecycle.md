@@ -107,10 +107,48 @@ The captured-choice projection treats pending autonomous choices like other pend
 it withholds executable offers until those publications settle, because they change the shared timing
 revision. No other actor's command or escape route is disclosed. Human choices still hold indefinitely.
 
-This policy selects neither attacks nor care/outcome acknowledgments. Prior care permission, acceptance
-of a particular treatment episode, treatment itself and acceptance of an encounter outcome remain
-distinct facts. In particular, an autonomous command must not be presented as evidence that a human
-read an outcome. These separate policy obligations can hold completion after the selector has acted.
+The encounter selector submits neither attacks nor aftermath commands. Its companion aftermath policy
+below retains distinct permission, acceptance, treatment and completion facts.
+
+## Autonomous aftermath
+
+[LocalAutonomousAftermathController](../../src/OpenFantasy.Hosting/Simulation/LocalAutonomousAftermathController.cs)
+operates only at an outcome for unacknowledged Autonomous required participants, without reading,
+excavation or care obligations already holding the boundary. Safe human restoration precedes selection.
+[LocalWorldSession.Aftermath](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.Aftermath.cs)
+requires a gameplay-ready port; the returning-player accepted-work exception grants no new choice.
+Queued human patient-care requests and pending helper treatment retain their earlier priority.
+
+An incapacitated character can request a currently legal treatment under an existing care agreement.
+The helper must be host controlled. Exact-defeat admission checks the patient's captured episode and
+archive, prior permission, capable neutral helper, reach, readiness and an actual owned dose. Selection
+creates no agreement or supplies. The patient's acknowledgment and the helper's revalidated, finite
+treatment occupy separate cutoffs and receipts. A pending obligation cannot be discarded or reassigned
+by this policy. Treatment resumes the same episode and clears its obsolete outcome acknowledgments.
+
+Care candidates are ordered by actor and agreement identity. Stable selection identities bind the
+world, branch, patient, agreement and exact incapacitating command. Occupied selection identities are
+checked across that patient's agreements before present eligibility, so a later unavailable helper
+cannot silently trigger a retry or a switch to another agreement. A different actual defeat permits a
+new selection. A previously accepted outcome declines automatic care; a human can still explicitly
+request care under the unchanged authority law before finalization.
+
+Living Autonomous participants may acknowledge the exact outcome using their original entitlement.
+Those stable command identities bind the world, branch, actor, episode and action-archive hash.
+Remaining Human or ReconnectAllowance participants still hold. The existing actionless completion
+boundary remains separate and grants no time, health, reward or movement. Another player's queued
+request keeps its own command and waiter; an automatic command never supplies that player's receipt.
+
+An incapacitated character without eligible automatic care remains at the outcome for human disposition.
+Accepting would close aftermath care permanently under this interpretation; that is not a conservative
+survival choice. Held outcomes also prohibit ordinary helper movement, replenishment and tactical
+recovery time. A general rescue/recovery law is a separate domain requirement, not permission for this
+selector to invent supplies, expire obligations or automatically choose a terminal defeat.
+
+Controller-world outcome presentation reports recorded character acceptance, never proof of personal
+reading or who submitted a historical request. Its presentation mode depends on the controller facet's
+presence, so reconnecting to Human does not rewrite the meaning of prior acknowledgments. Care wording
+likewise states that care was requested rather than attributing it to the returning person.
 
 ## Policy and presentation obligations
 
@@ -120,7 +158,8 @@ must explicitly reconcile outstanding allowance before a production host can rel
 The default simulation still pauses when no gameplay-ready players are connected.
 
 Autonomous assignment permits the conservative encounter selector above; expiry itself chooses none.
-Care, outcome completion and other survival behavior require their own explicit policies. A co-player requires explicit
+Aftermath behavior follows the bounded policy above; general rescue and other survival behavior need
+their own domain laws. A co-player requires explicit
 policy and authorization, not mere presence in the world. Client presentation must distinguish a
 pending control request from ordinary pause and bind its fresh readiness acknowledgement to the
 restored observation. The boolean readiness wire contract alone does not prove that acknowledgement.

@@ -37,6 +37,21 @@ rejection and optional exact intent. It validates their shape; it performs no ad
 no use of medicine. Available advice requires an intent and no rejection; blocked advice requires
 no intent and a nonempty rejection. The authority reevaluates every submitted intent normally.
 
+## Outcome interpretation
+
+An outcome view with `AcknowledgmentMode.ControllerAcceptance` uses observation-body version 2.
+The required nondefault marker means the compatibility reader fields contain character acknowledgments,
+not proof of human reading. Its presence depends on the world's controller interpretation and survives
+human rejoin. All other views retain body version 1, and the default HumanReading marker is omitted from
+both transport and diagnostic JSON. Thus legacy profile-35 frames keep their exact spelling.
+
+The decoder checks the version against the reconstructed interpretation before canonical re-encoding.
+Version 2 without the controller marker, version 1 with it, unknown modes and explicit default spellings
+are refused. A client supporting only body version 1 cannot consume a controller-acceptance outcome;
+there is no downgrade that silently presents autonomous acceptance as a person's reading. This is a
+presentation format distinction, not a new world codec, permission or historical submitter record.
+The surrounding authenticated session must use clients supporting the host's emitted interpretation.
+
 ## Geometry and privacy
 
 Regional data contains the observer identity and exact feet, each observed region's full bounds

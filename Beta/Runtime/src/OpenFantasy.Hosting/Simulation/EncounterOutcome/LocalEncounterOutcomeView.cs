@@ -1,4 +1,5 @@
 using System.Collections.ObjectModel;
+using System.Text.Json.Serialization;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Encounters;
@@ -7,7 +8,10 @@ using OpenFantasy.Hosting.Simulation.RoadThreat;
 
 namespace OpenFantasy.Hosting.Simulation.EncounterOutcome;
 
-/// <summary>Where the observer's current or last outcome stands in the profile-35 completion law.</summary>
+/// <summary>
+/// Where the observer's current or last outcome stands. Reading names remain for compatibility; controller worlds
+/// interpret them as recorded character acknowledgment through <see cref="LocalOutcomeAcknowledgmentMode"/>.
+/// </summary>
 public enum LocalOutcomeStage
 {
     /// <summary>The observer is a required reader who has not yet acknowledged this exact outcome.</summary>
@@ -30,6 +34,9 @@ public enum LocalOutcomeStanding { YourSideStands = 1, OpponentStands = 2, NoSid
 
 /// <summary>Why the observer cannot take an ordinary bodily action now, if so.</summary>
 public enum LocalOutcomeRestriction { None = 0, AwaitingCompletion = 1, Incapacitated = 2, Recovering = 3 }
+
+/// <summary>How recorded character acknowledgments are described, independently of the current controller assignment.</summary>
+public enum LocalOutcomeAcknowledgmentMode { HumanReading = 0, ControllerAcceptance = 1 }
 
 /// <summary>A participant's present bodily condition, disclosed only to the actor itself or to a current observer.</summary>
 public sealed record LocalOutcomeCondition(int CurrentHp, int MaxHp)
@@ -59,7 +66,19 @@ public sealed class LocalEncounterOutcomeView
         int standingSide, LocalOutcomeStanding standing, IEnumerable<LocalOutcomeParticipantView> participants,
         AcknowledgeEncounterOutcomeIntent? acknowledgment, int requiredReaders, int readersRemaining, bool observerHasRead,
         LocalOutcomeRestriction restriction, ulong observerRecoveryDelay, ulong? completedAtSequence)
+        : this(stage, encounterId, result, standingSide, standing, participants, acknowledgment, requiredReaders,
+            readersRemaining, observerHasRead, restriction, observerRecoveryDelay, completedAtSequence,
+            LocalOutcomeAcknowledgmentMode.HumanReading)
     {
+    }
+
+    internal LocalEncounterOutcomeView(LocalOutcomeStage stage, EntityId encounterId, EncounterOutcomeResult result,
+        int standingSide, LocalOutcomeStanding standing, IEnumerable<LocalOutcomeParticipantView> participants,
+        AcknowledgeEncounterOutcomeIntent? acknowledgment, int requiredReaders, int readersRemaining, bool observerHasRead,
+        LocalOutcomeRestriction restriction, ulong observerRecoveryDelay, ulong? completedAtSequence,
+        LocalOutcomeAcknowledgmentMode acknowledgmentMode = LocalOutcomeAcknowledgmentMode.HumanReading)
+    {
+        if (!Enum.IsDefined(acknowledgmentMode)) throw new ArgumentOutOfRangeException(nameof(acknowledgmentMode));
         Stage = stage;
         EncounterId = encounterId;
         Result = result;
@@ -73,6 +92,7 @@ public sealed class LocalEncounterOutcomeView
         Restriction = restriction;
         ObserverRecoveryDelay = observerRecoveryDelay;
         CompletedAtSequence = completedAtSequence;
+        AcknowledgmentMode = acknowledgmentMode;
     }
 
     public LocalOutcomeStage Stage { get; }
@@ -89,6 +109,12 @@ public sealed class LocalEncounterOutcomeView
     public LocalOutcomeRestriction Restriction { get; }
     public ulong ObserverRecoveryDelay { get; }
     public ulong? CompletedAtSequence { get; }
+    /// <summary>
+    /// In controller worlds the compatibility reader fields describe recorded character acknowledgments, not evidence
+    /// that the currently connected person read the outcome. The mode persists through completion and human rejoin.
+    /// </summary>
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public LocalOutcomeAcknowledgmentMode AcknowledgmentMode { get; }
     /// <summary>Whether the observer fought on a positive side; an observer outside the fight owes no reading.</summary>
     public bool ObserverIsParticipant => Standing != LocalOutcomeStanding.Observer;
     /// <summary>
@@ -102,6 +128,8 @@ public sealed class LocalEncounterOutcomeView
     {
         ArgumentNullException.ThrowIfNull(world);
         if (world.EncounterOutcome is not { } outcome || world.EncounterLifecycle is not { } lifecycle) return null;
+        LocalOutcomeAcknowledgmentMode acknowledgmentMode = world.Controllers is null
+            ? LocalOutcomeAcknowledgmentMode.HumanReading : LocalOutcomeAcknowledgmentMode.ControllerAcceptance;
         bool incapacitated = world.Progression!.GetActor(observerId).CurrentHp == 0;
         ulong debt = lifecycle.GetDebt(observerId).RemainingDelay;
         if (WorldEncounterOutcomes.Determine(world) is { } current)
@@ -118,7 +146,8 @@ public sealed class LocalEncounterOutcomeView
                 ProjectParticipants(world, actions, observerId, current.StandingSide),
                 stage == LocalOutcomeStage.AwaitingYourReading ? new AcknowledgeEncounterOutcomeIntent(current.EncounterId, current.ActionHash) : null,
                 current.RequiredHumans.Count, remaining, read,
-                incapacitated ? LocalOutcomeRestriction.Incapacitated : LocalOutcomeRestriction.AwaitingCompletion, debt, null);
+                incapacitated ? LocalOutcomeRestriction.Incapacitated : LocalOutcomeRestriction.AwaitingCompletion, debt, null,
+                acknowledgmentMode);
         }
         if (outcome.Last is not { } last || lifecycle.Phase != EncounterLifecyclePhase.Exploration
             || lifecycle.Actions is not { } archive || archive.Scope.EncounterId != last.EncounterId)
@@ -131,7 +160,7 @@ public sealed class LocalEncounterOutcomeView
         return new LocalEncounterOutcomeView(LocalOutcomeStage.Completed, last.EncounterId, last.Result, last.StandingSide,
             StandingOf(archive, observerId, last.StandingSide), ProjectParticipants(world, archive, observerId, last.StandingSide),
             null, last.AcknowledgedActorIds.Count, 0, last.AcknowledgedActorIds.Contains(observerId), restriction, debt,
-            last.WorldSequence);
+            last.WorldSequence, acknowledgmentMode);
     }
 
     private static LocalOutcomeStanding StandingOf(EncounterActionSnapshot actions, EntityId observerId, int standingSide)

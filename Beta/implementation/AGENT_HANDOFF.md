@@ -54,6 +54,20 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [autonomous aftermath checkpoint](p02/autonomous-aftermath/RESULT.md) is qualified at
+`codex/milestone-autonomous-aftermath-20261002`. Disconnected Autonomous characters can request
+currently lawful prior-agreement care through their own binding; a separate host-helper transaction
+pays the actual dose/readiness. Living characters can acknowledge outcomes, with completion at a later
+cutoff. No player helper is conscripted and no incapacitated character is automatically terminalized.
+Neutral controller wording and strict observation body version 2 preserve legacy version-1 defaults.
+[Final checks](p02/autonomous-aftermath/FINAL_CHECKS.json): warning-free build, 484 distinct passes
+(36 new), exact 674 older tests/fixtures, 23 specs and predecessor staging; 1,257 architecture links.
+Actual loss/expiry, separate care, pending-human refusal, rejoin, save/replay and delta transitions pass.
+The failed broad Client selection remains retained; its missing native manifests are not native passes.
+Independent critique and the [recovery dependency](p02/autonomous-aftermath/RECOVERY_GAP.md) explain
+why incapacitated rescue cannot be replaced by automatic acknowledgment. Profile 36 production stays
+closed. No native/full-suite/platform gate or Claude offload is claimed by this checkpoint.
+
 The [conservative encounter controller](p02/conservative-controller/RESULT.md) is qualified at
 `codex/milestone-conservative-controller-20261002`. Autonomous human actors choose ordinary legal
 retreat or paid Wait, preserving identity, required-human timing, committed choices and standing routes.
@@ -82,7 +96,8 @@ The [review](p02/live-controller-host/REVIEW.md) retains critic findings, fixes 
 667 old tests/fixtures, 23 frozen specs, predecessor staging and Core source remain unchanged;
 1,252 architecture links resolve. Native originals are recoverable from the hashed committed archive.
 
-Next: complete conservative survival/outcome/care and authorized co-player policy, explicit saved-allowance/restart
+Next: qualify general incapacity/recovery and unavailable pending-helper disposition, complete autonomous
+retreat under hostile pressure and authorized co-player policy, explicit saved-allowance/restart
 reconciliation, pending-control presentation and fresh-observation readiness acknowledgement, then
 profile 36 native journeys and production selection. The full disconnect gate remains open. No
 production operator enables profile 36; autonomous mode alone is not survival implementation.

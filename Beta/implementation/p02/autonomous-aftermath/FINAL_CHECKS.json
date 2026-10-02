@@ -1,0 +1,135 @@
+{
+  "acceptedScope": "Bounded autonomous prior-agreement aftermath care and living outcome acceptance; neutral controller presentation and versioned observation interpretation. Not full disconnect/survival or production qualification.",
+  "checkpoint": "codex/checkpoint-before-autonomous-aftermath-20261002T154915Z",
+  "sourceHead": "b8c1854eba07dbfac722f7846407236785054ca2",
+  "milestone": "codex/milestone-autonomous-aftermath-20261002",
+  "checks": {
+    "build": {
+      "report": "Beta/implementation/p02/autonomous-aftermath/qualification/build-20261002T161458575326Z/report.json",
+      "seconds": 7.464330250018975,
+      "outcomes": {},
+      "accepted": true
+    },
+    "aftermath": {
+      "report": "Beta/implementation/p02/autonomous-aftermath/qualification/aftermath-20261002T161559903282Z/report.json",
+      "seconds": 9.856591792020481,
+      "outcomes": {
+        "Passed": 36
+      },
+      "accepted": true
+    },
+    "controller": {
+      "report": "Beta/implementation/p02/autonomous-aftermath/qualification/controller-20261002T161713214012Z/report.json",
+      "seconds": 34.84316045799642,
+      "outcomes": {
+        "Passed": 73
+      },
+      "accepted": true
+    },
+    "network": {
+      "report": "Beta/implementation/p02/autonomous-aftermath/qualification/network-20261002T161900663755Z/report.json",
+      "seconds": 18.65151483300724,
+      "outcomes": {
+        "Passed": 233
+      },
+      "accepted": true
+    },
+    "client-managed": {
+      "report": "Beta/implementation/p02/autonomous-aftermath/qualification/client-managed-20261002T162130137065Z/report.json",
+      "seconds": 19.852427707985044,
+      "outcomes": {
+        "Passed": 179
+      },
+      "accepted": true
+    },
+    "care": {
+      "report": "Beta/implementation/p02/autonomous-aftermath/qualification/care-20261002T162150637346Z/report.json",
+      "seconds": 7.684063041990157,
+      "outcomes": {
+        "Passed": 9
+      },
+      "accepted": true
+    },
+    "shared": {
+      "report": "Beta/implementation/p02/autonomous-aftermath/qualification/shared-20261002T162158602130Z/report.json",
+      "seconds": 40.525907625007676,
+      "outcomes": {
+        "Passed": 26
+      },
+      "accepted": true
+    }
+  },
+  "distinctPassingCases": 484,
+  "selectedCaseExecutions": 556,
+  "newPassingCases": [
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Acceptance_keeps_the_complete_condition_and_declined_care_explicit(standing: NoSideStands)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Acceptance_keeps_the_complete_condition_and_declined_care_explicit(standing: OpponentStands)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Acceptance_keeps_the_complete_condition_and_declined_care_explicit(standing: YourSideStands)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Captured_action_completion_notice_uses_character_acknowledgment",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: AwaitingOthers)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: AwaitingYourReading)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: CarePending)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: Completed)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Every_presented_surface_avoids_claiming_the_human_read_or_requested_care(stage: Completing)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Outside_observer_is_never_told_its_character_acknowledged",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Pending_care_reports_the_request_without_claiming_personal_input_or_helper_commitment(status: NeedsAttention, expected: \"the treatment needs attention\")",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Pending_care_reports_the_request_without_claiming_personal_input_or_helper_commitment(status: Pending, expected: \"if that treatment happens it resumes this same fig\"\u00b7\u00b7\u00b7)",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Pending_care_reports_the_request_without_claiming_personal_input_or_helper_commitment(status: Unavailable, expected: \"The fight stays open, unfinished\")",
+    "OpenFantasy.Hosting.Tests.Client.EncounterOutcome.ControllerOutcomeTextTests.Recorded_acceptance_is_attributed_to_the_character_without_identifying_its_submitter",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Acceptance_interpretation_cannot_be_downgraded_or_silently_defaulted_inside_its_version",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Constructor_refuses_unknown_modes_before_publication",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: AwaitingOthers)",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: AwaitingYourReading)",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: CarePending)",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: Completed)",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Controller_acceptance_survives_the_actual_observation_codec_at_every_stage(stage: Completing)",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: \"duplicate\")",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: \"negative\")",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: \"null\")",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: \"string\")",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Invalid_controller_mode_never_falls_back_to_human_reading(mutation: \"unknown-positive\")",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Legacy_default_stays_omitted_and_explicit_default_is_noncanonical",
+    "OpenFantasy.Hosting.Tests.Networking.ControllerOutcome.ControllerOutcomeViewCodecTests.Observation_deltas_enter_and_leave_controller_acceptance_without_losing_the_interpretation",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_living_autonomous_acceptance_does_not_satisfy_the_other_required_human",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_player_controlled_helper_is_not_conscripted_and_incapacity_is_not_automatically_terminalized",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_saved_autonomous_request_reopens_exactly_and_the_helper_spends_only_one_dose",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Autonomous_care_preserves_another_humans_queued_outcome_request_and_never_returns_the_wrong_receipt",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Human_and_grace_preserve_the_exact_outcome_and_care_choice(lost: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Human_and_grace_preserve_the_exact_outcome_and_care_choice(lost: True)",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Legal_autonomous_care_has_separate_patient_and_helper_receipts_and_one_real_paid_dose",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Living_acceptance_and_world_completion_are_separate_and_neutral_after_rejoin"
+  ],
+  "currentSourceAndBinariesMatchEveryAcceptedReport": true,
+  "finalCheckerSha256": "8d2f96db4feeebdba18bf740828098d21a6612b5afd86cabba6e294b664c3e5d",
+  "protectedFiles": {
+    "tests": 674,
+    "specs": 23
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLinks": {
+    "checked": 1257,
+    "broken": []
+  },
+  "formatCheckpointRecord": "FORMAT_CHECKPOINT.json",
+  "failedAggregate": {
+    "report": "Beta/implementation/p02/autonomous-aftermath/qualification/client-20261002T161919822140Z/report.json",
+    "accepted": false,
+    "outcomes": {
+      "Passed": 189,
+      "NotExecuted": 4,
+      "Failed": 2
+    },
+    "disposition": "Client selection included native result tests without required manifests. Corrected explicit managed selection passes; native acceptance is unrun, not waived."
+  },
+  "unrun": [
+    "General incapacitated recovery/rescue and unavailable pending-care resolution",
+    "Complete autonomous retreat under hostile pressure",
+    "Saved allowance/restart reconciliation and authorized co-player policy",
+    "Fresh-observation readiness/control-return client presentation",
+    "Profile 36 native 1\u20134-player journeys, retained-save migration and production enabling",
+    "Full Core/Server suites, new native renders/process kills and platform/device/human/production acceptance"
+  ],
+  "priorUnresolvedFailure": "Earlier live-controller-host concurrent native/managed server aggregate retains its five-second TLS observation timeout; isolated/separate passes did not establish cause or production load reliability.",
+  "providerRequests": 0,
+  "claudeCreditSavingsClaimed": false
+}

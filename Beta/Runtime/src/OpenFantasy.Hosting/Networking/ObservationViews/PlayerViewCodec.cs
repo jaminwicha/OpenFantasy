@@ -2,6 +2,7 @@ using System.Text.Json;
 using System.Text.Json.Serialization;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
+using OpenFantasy.Hosting.Simulation.EncounterOutcome;
 
 namespace OpenFantasy.Hosting.Networking.ObservationViews;
 
@@ -12,6 +13,7 @@ namespace OpenFantasy.Hosting.Networking.ObservationViews;
 public static class PlayerViewCodec
 {
     public const int Version = 1;
+    public const int ControllerAcceptanceVersion = 2;
     public const int MaximumBodyBytes = 900 * 1024;
     public const int MaximumExpandedJsonBytes = 16 * 1024 * 1024;
     public const int MaximumDepth = 48;
@@ -40,7 +42,7 @@ public static class PlayerViewCodec
             Preflight(json);
             ObservationBody body = JsonSerializer.Deserialize<ObservationBody>(json, Options)
                 ?? throw new FormatException("Missing observation body.");
-            if (body.Version != Version || body.View is null)
+            if (body.View is null || body.Version != VersionFor(body.View))
             {
                 throw new FormatException("Unsupported or incomplete observation body.");
             }
@@ -68,7 +70,7 @@ public static class PlayerViewCodec
         {
             using (var writer = new Utf8JsonWriter(buffer))
             {
-                JsonSerializer.Serialize(writer, new ObservationBody(Version, view), Options);
+                JsonSerializer.Serialize(writer, new ObservationBody(VersionFor(view), view), Options);
                 writer.Flush();
             }
             Preflight(buffer.WrittenSpan);
@@ -80,6 +82,10 @@ public static class PlayerViewCodec
             throw;
         }
     }
+
+    private static int VersionFor(LocalWorldView view) =>
+        view.EncounterOutcome?.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance
+            ? ControllerAcceptanceVersion : Version;
 
     internal static JsonSerializerOptions CreateOptions()
     {

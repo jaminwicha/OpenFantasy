@@ -61,6 +61,7 @@ internal static class ObservationValidation
         }
         if (view.EncounterOutcome is { } outcome)
         {
+            Require(Enum.IsDefined(outcome.AcknowledgmentMode), "Unknown outcome acknowledgment mode.");
             Unique(outcome.Participants.Select(value => value.ActorId), "outcome participant");
             Require(outcome.Participants.All(value => actors.Contains(value.ActorId))
                 && outcome.Participants.All(value => value.IsObserver == (value.ActorId == view.PlayerActorId)),

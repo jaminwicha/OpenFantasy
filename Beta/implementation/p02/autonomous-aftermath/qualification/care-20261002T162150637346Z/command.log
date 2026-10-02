@@ -1,0 +1,23 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.20]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.73]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.92]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.OrdinaryCareSessionTests.Real_self_use_requires_readiness_and_one_tick_then_reuses_its_receipt_while_paused [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.OrdinaryCareSessionTests.Reading_hold_refuses_ordinary_selection_without_faulting_then_allows_explicit_patient_revocation [583 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Patient_acknowledgment_precedes_a_distinct_ready_helper_tick_and_pending_reopen(crafted: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Occupied_helper_selection_or_rejected_real_attempt_never_retries_with_new_identities(collideConsumption: False) [753 ms]
+[xUnit.net 00:00:05.91]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Occupied_helper_selection_or_rejected_real_attempt_never_retries_with_new_identities(collideConsumption: True) [653 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Care_enabled_exploration_preserves_its_real_excavation_action_route [219 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Stale_acknowledgment_receives_a_durable_rejection_without_healing_or_replacing_player_control [276 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CareSessionTests.Human_controlled_helper_is_not_impersonated_by_the_local_host_even_with_core_care_permission [274 ms]
+
+Test Run Successful.
+Total tests: 9
+     Passed: 9
+ Total time: 6.3477 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/autonomous-aftermath/qualification/care-20261002T162150637346Z/checks.trx

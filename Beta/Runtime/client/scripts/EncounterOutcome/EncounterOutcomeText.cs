@@ -48,6 +48,8 @@ internal static class EncounterOutcomeText
 
     internal static string? ReadBlocker(LocalEncounterOutcomeView outcome, LocalCareView? care = null)
     {
+        if (outcome.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance)
+            return ControllerOutcomeText.Blocker(outcome, care);
         if (outcome.Acknowledgment is not null) return null;
         if (!outcome.ObserverIsParticipant)
         {
@@ -69,6 +71,8 @@ internal static class EncounterOutcomeText
     /// <summary>The concise acceptance consequence for the wheel; the outcome card carries the full explanation.</summary>
     internal static string ChoiceDetail(LocalEncounterOutcomeView outcome, LocalCareView? care)
     {
+        if (outcome.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance)
+            return ControllerOutcomeText.ChoiceDetail(outcome, care);
         string consequence = outcome.Restriction == LocalOutcomeRestriction.Incapacitated
             ? "Ends this fight after all required readings, with no pending care. You stay incapacitated; your save is kept."
             : "Returns to exploration after all required readings, with no pending care. Injuries and recovery remain; no rewards or loot.";
@@ -80,6 +84,8 @@ internal static class EncounterOutcomeText
     /// <summary>The full explanation of accepting, shown on the outcome card.</summary>
     internal static string ReadDetail(LocalEncounterOutcomeView outcome, LocalCareView? care = null)
     {
+        if (outcome.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance)
+            return ControllerOutcomeText.Detail(outcome, care);
         string detail = outcome.Standing switch
         {
             LocalOutcomeStanding.Observer => "This fight is between others; you have no reading to give. The world completes it "
@@ -104,6 +110,8 @@ internal static class EncounterOutcomeText
     /// <summary>The compact encounter status line at an unfinalized outcome (HUD and card).</summary>
     internal static string Status(LocalEncounterOutcomeView outcome, LocalCareView? care)
     {
+        if (outcome.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance)
+            return ControllerOutcomeText.Status(outcome, care);
         string title = Title(outcome);
         if (!outcome.ObserverIsParticipant) return $"{title} · This fight is between others · World waiting for its players";
         if (outcome.Stage == LocalOutcomeStage.CarePending)
@@ -203,6 +211,8 @@ internal static class EncounterOutcomeText
 
     private static string CompactBlocker(LocalEncounterOutcomeView outcome)
     {
+        if (outcome.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance)
+            return ControllerOutcomeText.CompactBlocker(outcome);
         if (!outcome.ObserverIsParticipant) return "Between others · nothing to read";
         return outcome.Stage switch
         {
@@ -220,6 +230,121 @@ internal static class EncounterOutcomeText
     private static string PendingCare(LocalCareView? care)
     {
         string requested = care?.HelperName is { } named ? "You requested care from " + named : "You requested care";
+        return care?.Status switch
+        {
+            LocalCareStatus.Unavailable => $"{requested}; the requested care is unavailable now. The fight stays open, unfinished, "
+                + "while that request is pending.",
+            LocalCareStatus.NeedsAttention => $"{requested}; the treatment needs attention before it can proceed.",
+            _ => $"{requested}: if that treatment happens it resumes this same fight, so the fight is not over."
+        };
+    }
+}
+
+/// <summary>
+/// Controller-world wording describes the character's recorded acceptance, never the current person's reading or
+/// authorship of a care request. A current human assignment cannot establish who submitted a historical acknowledgment.
+/// </summary>
+internal static class ControllerOutcomeText
+{
+    private const string CompletionCondition = "once every required character has acknowledged it and no care is pending";
+
+    internal static string? Blocker(LocalEncounterOutcomeView outcome, LocalCareView? care)
+    {
+        if (outcome.Acknowledgment is not null) return null;
+        if (!outcome.ObserverIsParticipant)
+        {
+            return outcome.Stage == LocalOutcomeStage.Completed ? "This encounter between others is complete."
+                : "This fight is between others: your character has no acknowledgment to give. "
+                    + "The world waits for the required characters' acceptance.";
+        }
+        return outcome.Stage switch
+        {
+            LocalOutcomeStage.AwaitingOthers => (outcome.ObserverHasRead
+                ? "Your character's acknowledgment is recorded. " : "The outcome is awaiting acceptance. ")
+                + (outcome.ReadersRemaining == 1 ? "Waiting for one remaining character's acknowledgment."
+                    : $"Waiting for {outcome.ReadersRemaining} remaining characters' acknowledgments."),
+            LocalOutcomeStage.CarePending => PendingCare(care),
+            LocalOutcomeStage.Completing => "Every required character's acknowledgment is recorded. The world is completing the encounter.",
+            LocalOutcomeStage.Completed => outcome.ObserverHasRead
+                ? "This encounter is complete. Your character's acknowledgment is recorded."
+                : "This encounter is complete.",
+            _ => "This outcome is not awaiting your character's acknowledgment."
+        };
+    }
+
+    internal static string ChoiceDetail(LocalEncounterOutcomeView outcome, LocalCareView? care)
+    {
+        string consequence = outcome.Restriction == LocalOutcomeRestriction.Incapacitated
+            ? "Ends this fight after all required acknowledgments, with no pending care. Your character stays incapacitated; your save is kept."
+            : "Returns to exploration after all required acknowledgments, with no pending care. Injuries and recovery remain; no rewards or loot.";
+        return AvailableHelper(care) is { } helper
+            ? consequence + $" {helper} can help now; accepting declines that care." : consequence;
+    }
+
+    internal static string Detail(LocalEncounterOutcomeView outcome, LocalCareView? care)
+    {
+        string detail = outcome.Standing switch
+        {
+            LocalOutcomeStanding.Observer => "This fight is between others; your character has no acknowledgment to give. "
+                + $"The world completes it {CompletionCondition}.",
+            LocalOutcomeStanding.YourSideStands when outcome.Restriction == LocalOutcomeRestriction.Incapacitated =>
+                "Your side won, but your character is incapacitated (0 HP). Accepting lets the world end this fight "
+                + CompletionCondition + "; your character stays unable to move or act and nothing heals, revives or rewards them. Your save is kept.",
+            LocalOutcomeStanding.YourSideStands => "Your side is still standing. Accepting returns your character to exploration "
+                + CompletionCondition + ". Injuries and recovery remain; nothing is rewarded or looted.",
+            LocalOutcomeStanding.OpponentStands => "Your character is incapacitated (0 HP) and cannot move or act. Accepting the defeat lets "
+                + "the world end this fight " + CompletionCondition + "; your character stays incapacitated afterwards. Your save is kept.",
+            _ => "Every combatant is incapacitated. Accepting lets the world end the fight " + CompletionCondition
+                + "; nobody is revived or rewarded."
+        };
+        return AvailableHelper(care) is { } helper && outcome.ObserverIsParticipant
+            ? detail + $" {helper} can help now: ask for care first. Accepting declines that care; the world completes the "
+                + $"encounter at its next ready boundary {CompletionCondition}." : detail;
+    }
+
+    internal static string Status(LocalEncounterOutcomeView outcome, LocalCareView? care)
+    {
+        string title = EncounterOutcomeText.Title(outcome);
+        if (outcome.Stage == LocalOutcomeStage.Completed) return $"{title} · Encounter complete";
+        if (!outcome.ObserverIsParticipant) return $"{title} · This fight is between others · World waiting for acceptance";
+        if (outcome.Stage == LocalOutcomeStage.CarePending)
+        {
+            string requested = care?.HelperName is { } named ? "Care requested from " + named : "Care requested";
+            return care?.Status switch
+            {
+                LocalCareStatus.Unavailable => $"{title} · {requested} · The requested care is unavailable now · The fight stays open",
+                LocalCareStatus.NeedsAttention => $"{title} · {requested} · Treatment needs attention · World waiting",
+                _ => $"{title} · {requested} · Treatment pending · World waiting"
+            };
+        }
+        if (outcome.Stage == LocalOutcomeStage.Completing) return $"{title} · Acknowledgments recorded · Completing encounter";
+        string reason = outcome.Restriction == LocalOutcomeRestriction.Incapacitated
+            ? "Your character is incapacitated (0 HP) and cannot move or act"
+            : outcome.ObserverHasRead ? "Your character's acknowledgment is recorded" : "World waiting for your character's acceptance";
+        string aid = outcome.Restriction == LocalOutcomeRestriction.Incapacitated ? " · " + EncounterOutcomeText.CareReason(care) : "";
+        string waiting = outcome.Stage == LocalOutcomeStage.AwaitingOthers ? " · Waiting for remaining acknowledgments" : "";
+        return $"{title} · {reason}{aid}{waiting}";
+    }
+
+    internal static string CompactBlocker(LocalEncounterOutcomeView outcome)
+    {
+        if (!outcome.ObserverIsParticipant) return "Between others · no acknowledgment needed";
+        return outcome.Stage switch
+        {
+            LocalOutcomeStage.AwaitingOthers => "Waiting for remaining acknowledgments",
+            LocalOutcomeStage.CarePending => "Care requested",
+            LocalOutcomeStage.Completing => "Completing",
+            LocalOutcomeStage.Completed => "Complete",
+            _ => "No acknowledgment available now"
+        };
+    }
+
+    private static string? AvailableHelper(LocalCareView? care) =>
+        care?.Offers.FirstOrDefault(offer => offer.CanAcknowledge)?.HelperName;
+
+    private static string PendingCare(LocalCareView? care)
+    {
+        string requested = care?.HelperName is { } named ? "Care was requested from " + named : "Care was requested";
         return care?.Status switch
         {
             LocalCareStatus.Unavailable => $"{requested}; the requested care is unavailable now. The fight stays open, unfinished, "
