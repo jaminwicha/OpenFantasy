@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--nologo",
+    "--filter",
+    "FullyQualifiedName~PlayerRosterContinuationTests",
+    "--logger",
+    "console;verbosity=detailed",
+    "--logger",
+    "trx;LogFileName=checks.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-roster/qualification/continuation-diagnostic-20261002T131137Z"
+  ],
+  "exitCode": 0,
+  "seconds": 26.717084167001303,
+  "limitSeconds": 240,
+  "scope": "Development diagnostic only; full current-source qualification follows worker delivery."
+}

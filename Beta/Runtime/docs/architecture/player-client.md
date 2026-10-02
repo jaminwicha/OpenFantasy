@@ -82,9 +82,25 @@ adapter, retaining per-session offer registration and exact command retry identi
 stop and captures the latest published view; it adds no remote barrier or promise that terms cannot become
 stale. Saved-history verification and route advice remain local privileged facilities, outside IPlayerSession.
 
+Receipt delivery and observation publication are independent. One player's accepted choice does not
+mean another player's cached view already contains it. A displayed combat offer retains its captured
+timing revision; another participant's commit can make it stale, and the authority rejects that action
+without silently replacing its terms. A coordinated native test waits for the specific prior choice or
+phase to be observed before preparing its next deliberate input; a frame, Pong or fixed delay alone is
+not an observation barrier.
+
 [NativePlayerEntry](../../client/scripts/Networking/NativePlayerEntry.cs) opens the explicit `--join`
 invitation through platform TLS validation. [FarmGame](../../client/scripts/FarmGame.cs) enables readiness
 only after first view and binding. Ordinary window focus, input cancellation, wheels and inventory use the
 same controls. Remote pause labels describe participant input and warn that other players may continue;
 they never promise frozen prices or deadlines. The disposable loopback probe's exact test-certificate pin
 does not alter production trust, accepts no arbitrary host and retains certificate-name checks.
+
+The explicit disposable roster probe coordinates independent native processes through bounded local
+mailboxes. Each process owns one authenticated player connection. Mailbox instructions inject ordinary
+keyboard/controller events and capture that player's immutable view and exact submitted command/receipt;
+they cannot write world state, grant resources or choose for another actor. Source-based route planning
+belongs to the test coordinator and does not expose privileged route advice through the player session.
+Background capture sets no-focus before window creation in a disposable project configuration and
+records any native focus acquisition. This fixture uses controlled input/focus; normal `--join` keeps
+the production window-focus and readiness policy.

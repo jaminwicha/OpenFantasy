@@ -1,0 +1,24 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.24]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.71]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.86]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Roster_preserves_prior_escape_capability_and_exact_authored_construction_access [856 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Invalid_names_counts_and_mutable_input_are_handled_before_admission [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.All_humans_have_cooperative_wolf_entries_and_chief_targets_without_changing_npc_grants [26 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterEncounterTests.New_human_enters_real_shared_encounter_and_all_four_submit_their_own_required_choices [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Extension_refuses_a_lived_root_without_resetting_its_history [510 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.One_name_preserves_exact_solo_bytes_and_multi_rosters_bind_order_names_and_count [3 s]
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Additional_players_own_complete_facets_and_only_two_explicit_finite_tool_units_each [17 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Every_old_source_lot_currency_reserve_and_npc_remains_with_its_owner [11 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterContinuationTests.Real_saved_proposals_trigger_automatic_archive_preserving_v2_roster_and_pending_offer_across_reopen [5 s]
+[xUnit.net 00:00:08.50]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterContinuationTests.Four_residents_preserve_actual_funded_npc_construction_and_completed_save_recovery [2 s]
+
+Test Run Successful.
+Total tests: 10
+     Passed: 10
+ Total time: 9.7991 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-roster/qualification/roster-20261002T132902077776Z/checks.trx

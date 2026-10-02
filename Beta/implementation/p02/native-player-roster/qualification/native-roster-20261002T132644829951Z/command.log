@@ -1,0 +1,15 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.79]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.93]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:01:31.20]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.NativeRosterJourneyTests.Four_native_players_assemble_choose_wait_and_reconnect_the_missing_required_human [1 m 30 s]
+
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 1.5276 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-roster/qualification/native-roster-20261002T132644829951Z/checks.trx

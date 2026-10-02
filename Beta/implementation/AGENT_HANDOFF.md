@@ -46,6 +46,26 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [native four-player journey](p02/native-player-roster/RESULT.md) is qualified at
+`codex/milestone-native-player-roster-20261002`, based on roster milestone `25a28d8`. Four actual
+Godot clients physically assemble, enter combat, hold for a missing required human, reconnect that
+same actor unready, make its own Wait choice, defeat the wolf, read all four outcomes and return to
+exploration. Saved history authenticates all 21 native commands/receipts, paid Wait costs, NPC
+resolution, the time hold and exact resident/control/body ownership. Separate managed journeys prove
+real funded NPC construction with four residents and automatic catalog-v2 archive/reopen with a carried offer.
+
+[Final checks](p02/native-player-roster/FINAL_CHECKS.json): build and 440 distinct selected cases pass,
+including seven successful native processes. All 658 older tests/fixtures, 23 frozen specs and the
+exact unrelated predecessor staging remain intact. Windows ACL remains unrun on macOS. Independent
+critique and a real failed native run exposed cross-client observation lag; the repaired fixture waits
+for the specific prior choice/phase before new input. No authority rule, gate or deadline changed.
+The native frames were inspected; overlapping nameplates and prototype art/UI have no human acceptance.
+The timeless player-client reference is current. No Claude request or credit offload occurred.
+
+Next: journaled 30-second disconnect allowance, permitted controller handoff and safe reconnection.
+This short close/rejoin proof does not implement that policy. Other platforms, physical devices,
+production scale, human presentation and the full campaign remain open.
+
 The [fresh player roster](p02/player-roster/RESULT.md) is qualified at
 `codex/milestone-player-roster-20261002`, based on native-player-session milestone `4a9a2ad2`.
 One-to-four production humans have separate controls/facets and finite starter tools; existing NPCs,
@@ -61,10 +81,9 @@ tests/fixtures, 23 frozen specs and exact unrelated predecessor staging remain i
 docs are current. The broad exploratory Hosting run timed out; its archived-query failure passed
 unchanged in isolation and Networking, but the cause and production latency remain unproven.
 
-Next: four concurrent native combat/reconnect, construction completion with the larger roster and
-actual v2 archive rollover/reopen. Recorded disconnect/controller handoff and all full campaign,
-platform, production, art and human gates remain open. No provider request occurred. The test-family
-selection lesson is recorded here and in ecosystem commit `542c46d`, with three skill copies synced.
+The native roster checkpoint above supplies its subsequent native/continuation proofs; all broader
+gates remain open. No provider request occurred. The test-family selection lesson is recorded here
+and in ecosystem commit `542c46d`, with three skill copies synced.
 
 The [native accepted-care increment](p02/native-accepted-care/RESULT.md) is qualified as
 `codex/milestone-native-accepted-care-20261002`. From an unplayed full-health production world,

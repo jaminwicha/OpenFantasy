@@ -20,6 +20,18 @@ public partial class NativePlayerEntry : Node
             AddChild(new FarmGame { PlayerInvitationPath = invitation });
             return;
         }
+        if (args is ["--roster-probe", var rosterInvitation, var rosterCertificate, var mailbox])
+        {
+            GetWindow().Unfocusable = true;
+            var rosterGame = new FarmGame
+            {
+                NetworkFixtureOpening = OpenFixture(rosterInvitation, rosterCertificate),
+                StartPaused = true, BindWindowFocus = false
+            };
+            AddChild(rosterGame);
+            AddChild(new NativeRosterPlayProbe(rosterGame, mailbox));
+            return;
+        }
         bool background = args is ["--player-probe", _, _, _, "--background-render"];
         if (background)
         {
