@@ -87,6 +87,10 @@ Durably reserved work remains world-owned and completes under its normal rule ev
 leaves. A new authenticated port for the actor starts unready and gets a fresh projection. Published
 receipts remain retrievable after reopening; connection closure grants no item, heal or lost time.
 
+[Player admission](player-admission.md) attaches credential-authenticated transports through the same
+connection gate, additionally checking actual world/profile/admission pins there. It creates no new
+control assignment and does not replace an occupied local port.
+
 In-process closure is distinct from a confirmed transport disconnect. The full design requires a
 journaled disconnect decision, the stated reconnect allowance, permitted controller handoff and safe
 reconnection. Those require the network/control adapter and are not inferred from disposing this

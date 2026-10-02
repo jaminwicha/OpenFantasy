@@ -29,8 +29,9 @@ engine-free domain contracts. Algorithms, data layout, allocation and scheduling
 boundaries. A custom native kernel or IPC worker is outside this architecture.
 
 The standalone [player message transports](player-message-transport.md) provide bounded local and
-WebSocket I/O. They grant no authority; authenticated connection admission and participant-safe
-projection must bind transport to the shared host.
+WebSocket I/O. [Player admission](player-admission.md) binds host-issued credentials and compatibility
+pins to actual player ports. Gameplay routing and participant-safe observations remain separate
+responsibilities; transport or serialized identity alone grants no authority.
 
 ## Runtime bindings: state ownership
 

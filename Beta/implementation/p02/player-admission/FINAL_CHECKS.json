@@ -1,0 +1,50 @@
+{
+  "status": "qualified bounded player admission; full multiplayer remains open",
+  "beforeChange": {
+    "ref": "codex/checkpoint-before-player-admission-20261002T074032Z",
+    "sourceHead": "6f3a89120f7287607de51ace3e3e0c7ea169f1ac",
+    "scope": "Clean successor transport/test/docs increment; existing predecessor index excluded",
+    "verification": "Solution build and 18 transport tests passed; auth and native multiplayer not claimed"
+  },
+  "checks": {
+    "build": {
+      "report": "qualification/build-20261002T075337726158Z/report.json",
+      "seconds": 4.174700749994372,
+      "outcomes": null
+    },
+    "network": {
+      "report": "qualification/network-20261002T075416270804Z/report.json",
+      "seconds": 8.568721959003597,
+      "outcomes": {
+        "Passed": 39
+      }
+    },
+    "shared": {
+      "report": "qualification/shared-20261002T075450626324Z/report.json",
+      "seconds": 40.70717149999109,
+      "outcomes": {
+        "Passed": 9
+      }
+    }
+  },
+  "distinctCases": 48,
+  "previousTransportCasesPreserved": 18,
+  "previousSharedPlayerCasesPreserved": 9,
+  "newAdmissionCases": 21,
+  "protectedFileCounts": {
+    "Beta/Runtime/tests": 617,
+    "Beta/spec-v1_1": 23,
+    "transportTests": 3
+  },
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "sourceAndBinariesUnchangedAfterChecks": true,
+  "critic": "CRITIC_REVIEW.md",
+  "architectureLocalLinksChecked": 120,
+  "limitations": [
+    "No HTTP Upgrade or TLS test",
+    "No gameplay wire dispatch or native network client",
+    "No journaled controller disconnect/reconnect policy",
+    "No full-game or release qualification inferred from these 48 cases",
+    "No Claude request or measured credit savings"
+  ]
+}

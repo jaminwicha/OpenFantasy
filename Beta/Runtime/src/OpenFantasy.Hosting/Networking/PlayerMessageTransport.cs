@@ -61,9 +61,12 @@ public abstract class PlayerMessageTransport : IAsyncDisposable
     {
         if (Interlocked.Exchange(ref _disposed, 1) == 0)
         {
-            _lifetime.Cancel();
-            CloseTransport();
-            _lifetime.Dispose();
+            try { _lifetime.Cancel(); }
+            finally
+            {
+                try { CloseTransport(); }
+                finally { _lifetime.Dispose(); }
+            }
         }
         return ValueTask.CompletedTask;
     }

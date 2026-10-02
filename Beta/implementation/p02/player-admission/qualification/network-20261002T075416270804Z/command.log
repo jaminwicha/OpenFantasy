@@ -1,0 +1,53 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.22]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.73]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.88]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerMessageTests.Truncation_trailing_data_and_oversize_are_refused_before_payload_admission [18 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.InMemoryPlayerTransportTests.Disposal_cancels_a_blocked_send_without_needing_the_peer_to_drain [19 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerMessageTests.Unsupported_or_inconsistent_headers_are_refused(offset: 7, value: 0) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerMessageTests.Unsupported_or_inconsistent_headers_are_refused(offset: 16, value: 255) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerMessageTests.Unsupported_or_inconsistent_headers_are_refused(offset: 19, value: 1) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerMessageTests.Unsupported_or_inconsistent_headers_are_refused(offset: 0, value: 0) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerMessageTests.Unsupported_or_inconsistent_headers_are_refused(offset: 5, value: 2) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.InMemoryPlayerTransportTests.Receive_cancellation_releases_its_slot_and_peer_closure_is_observable [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.WebSocketPlayerTransportTests.Empty_continuations_cannot_consume_unlimited_receive_work [37 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerMessageTests.Envelope_has_an_independent_byte_vector_and_owns_its_payload [14 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.InMemoryPlayerTransportTests.Bounded_ordered_delivery_copies_bytes_and_releases_backpressure_after_a_read [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Actual_loopback_websocket_handshake_reaches_the_same_host_selected_actor [245 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 34) [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 16) [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 0) [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 66) [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 98) [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 33) [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Expiry_revocation_and_rotation_refuse_old_credentials_without_preventing_fresh_admission [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Concurrent_reuse_has_one_winner_and_reconnect_requires_release_of_the_original_port [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Invalid_handshake_framing_is_terminal_without_reserving_an_actor(corruption: "version") [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Invalid_handshake_framing_is_terminal_without_reserving_an_actor(corruption: "request") [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Invalid_handshake_framing_is_terminal_without_reserving_an_actor(corruption: "length") [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Invalid_handshake_framing_is_terminal_without_reserving_an_actor(corruption: "kind") [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Two_credentials_select_actual_private_player_ports_and_never_steal_the_original_port [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.A_blocked_welcome_cannot_extend_admission_and_failed_send_releases_the_real_player_port [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Package_fingerprint_binds_dependencies_and_is_independent_of_enumeration_order [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Issuance_requires_existing_human_control_and_does_not_reveal_secrets_in_diagnostics [10 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Pending_handshakes_are_bounded_and_initial_silence_has_an_absolute_deadline [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Handshake_has_exact_independent_field_layout_and_does_not_accept_missing_or_extra_bytes [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.WebSocketPlayerTransportTests.A_partial_message_has_an_absolute_deadline_and_cannot_resume_after_cancellation [5 s]
+[xUnit.net 00:00:06.00]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Networking.WebSocketPlayerTransportTests.Close_inside_an_unfinished_message_is_not_a_complete_empty_message(fragmentLength: 0) [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.WebSocketPlayerTransportTests.Close_inside_an_unfinished_message_is_not_a_complete_empty_message(fragmentLength: 1) [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.WebSocketPlayerTransportTests.Actual_loopback_sockets_reassemble_binary_fragments_and_return_identical_envelopes [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.WebSocketPlayerTransportTests.Peer_close_returns_eof_and_disposal_terminates_an_outstanding_receive [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.WebSocketPlayerTransportTests.Oversized_fragmented_and_text_messages_abort_the_connection(text: True) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.WebSocketPlayerTransportTests.Oversized_fragmented_and_text_messages_abort_the_connection(text: False) [< 1 ms]
+
+Test Run Successful.
+Total tests: 39
+     Passed: 39
+ Total time: 6.5742 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-admission/qualification/network-20261002T075416270804Z/checks.trx

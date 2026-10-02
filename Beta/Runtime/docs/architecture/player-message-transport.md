@@ -10,9 +10,9 @@ kind, eight-byte request ID and four-byte payload length. Integers are big-endia
 is 1 MiB. Unknown versions/kinds, truncation and trailing bytes are refused. Semantic payload codecs
 enforce their own smaller bounds and authority rules. Envelope validity authenticates nobody.
 
-These types are standalone I/O components. Their definition does not bind network messages to a world,
-encode a complete client view, authenticate a player or establish TLS. The connection owner performs
-those operations and routes only authenticated work through the [shared player host](hosted-player-connections.md).
+These types are standalone I/O components. [Player admission](player-admission.md) binds a compatible credential-bearing handshake to one
+existing world port. Transport alone does not encode a complete client view, authenticate a player or
+establish TLS; the connection owner routes admitted work through the shared host.
 
 ## Bounded full-duplex I/O
 

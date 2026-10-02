@@ -17,15 +17,20 @@ public sealed partial class LocalWorldSession
     /// trusted binding; it does not authenticate a network socket or invent/reassign a resident's control.
     /// At most one live port owns an actor, and at most four ports share the sole scheduler.
     /// </summary>
-    public async Task<LocalPlayerConnection> ConnectPlayerAsync(EntityId actorId, TrustedCommandDelivery delivery,
-        CargoPresentation.LocalRegionObserver? regions = null)
+    public Task<LocalPlayerConnection> ConnectPlayerAsync(EntityId actorId, TrustedCommandDelivery delivery,
+        CargoPresentation.LocalRegionObserver? regions = null) => ConnectPlayerCoreAsync(actorId, delivery, regions, null, default);
+
+    private async Task<LocalPlayerConnection> ConnectPlayerCoreAsync(EntityId actorId, TrustedCommandDelivery delivery,
+        CargoPresentation.LocalRegionObserver? regions, Networking.PlayerWorldCompatibility? compatibility,
+        CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(delivery);
-        await _serialization.WaitAsync().ConfigureAwait(false);
+        await _serialization.WaitAsync(cancellationToken).ConfigureAwait(false);
         try
         {
             lock (_inputs) { EnsureInputAvailable(); }
             WorldSnapshot state = _authority.ReadStateForHost();
+            if (compatibility is not null && !compatibility.Matches(state)) throw new Networking.PlayerAdmissionException();
             if (!state.Inventory.CanControl(delivery, actorId)
                 || state.GetResident(actorId).ControllerKind != ResidentControllerKind.Player)
             {

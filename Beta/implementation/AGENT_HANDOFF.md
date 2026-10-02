@@ -123,12 +123,25 @@ No provider request was made while the account spending-limit failure holds.
 
 ## Player networking work
 
-The [transport increment](p02/player-networking/RESULT.md) adds versioned bounded envelopes, in-memory
-backpressure and binary WebSocket reassembly. Build and 18 focused cases pass, including actual loopback
-TCP traffic, fragmentation limits and terminal cancellation. Independent critique found and corrected
-unbounded empty continuations. These are standalone I/O proofs, not authenticated/native multiplayer.
-Connection admission, game routing, safe observations, TLS and durable disconnect remain required;
-[the design](p02/player-networking/DESIGN.md) retains their implementation order and full scope.
+The [transport checkpoint](p02/player-networking/RESULT.md), commit `6f3a891`, supplies versioned
+bounded local/WebSocket envelopes. The [player admission checkpoint](p02/player-admission/RESULT.md)
+adds host-issued credentials and exact world/branch/profile/admission/package handshake pins, bound to
+actual human player ports. Clients cannot create control by supplying identity claims. Expiry, rotation,
+revocation, duplicate joins, bounded pending handshakes and cleanup are covered; new ports remain unready.
+
+[Final checks](p02/player-admission/FINAL_CHECKS.json): solution build, 39 network cases (18 retained
+transport + 21 admission) and all 9 prior shared-player cases pass on exact current source/binaries.
+Real loopback TCP/WebSocket admission is exercised; HTTP Upgrade/TLS is not. Two independent critic
+findings have retained red-before-green tests: transport-close failure must still close the actor port;
+a host stopped during backpressured Welcome cannot report successful admission. The affected timeless
+architecture references are current; original tests/specs and predecessor staging remain exact.
+
+Qualified scope is preserved at `codex/milestone-player-admission-20261002`. This is a bounded connection
+checkpoint, not native multiplayer or a repetition of the earlier whole-game qualification. Next:
+responsive bounded command/readiness/movement routing with original durable receipts; participant-safe
+regional observations; HTTP/TLS hosting; native 1–4 clients and solo envelope parity; journaled disconnect
+and reconnect/controller handoff. The full design and all earlier open gates remain authoritative.
+No provider call was made while the account spending-limit failure holds.
 
 ## Next dependency and remaining scope
 

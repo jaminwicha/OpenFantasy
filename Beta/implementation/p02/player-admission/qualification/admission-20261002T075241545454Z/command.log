@@ -1,0 +1,72 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.59]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.09]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.24]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Actual_loopback_websocket_handshake_reaches_the_same_host_selected_actor [174 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 34) [10 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 16) [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 0) [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 66) [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 98) [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Altered_hello_pins_or_credential_cannot_create_a_port_or_change_the_world(offset: 33) [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Expiry_revocation_and_rotation_refuse_old_credentials_without_preventing_fresh_admission [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Concurrent_reuse_has_one_winner_and_reconnect_requires_release_of_the_original_port [7 ms]
+[xUnit.net 00:00:01.84]     OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port [FAIL]
+[xUnit.net 00:00:01.84]       Assert.Throws() Failure: No exception was thrown
+[xUnit.net 00:00:01.84]       Expected: typeof(OpenFantasy.Hosting.Networking.PlayerAdmissionException)
+[xUnit.net 00:00:01.84]       Stack Trace:
+[xUnit.net 00:00:01.84]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs(260,0): at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port()
+[xUnit.net 00:00:01.84]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs(260,0): at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port()
+[xUnit.net 00:00:01.84]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs(260,0): at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port()
+[xUnit.net 00:00:01.84]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.85]     OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation [FAIL]
+[xUnit.net 00:00:01.85]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:01.85]       Expected: Unavailable
+[xUnit.net 00:00:01.85]       Actual:   Paused
+[xUnit.net 00:00:01.85]       Stack Trace:
+[xUnit.net 00:00:01.85]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs(240,0): at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation()
+[xUnit.net 00:00:01.85]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs(242,0): at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation()
+[xUnit.net 00:00:01.85]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs(242,0): at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation()
+[xUnit.net 00:00:01.85]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs(242,0): at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation()
+[xUnit.net 00:00:01.85]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Invalid_handshake_framing_is_terminal_without_reserving_an_actor(corruption: "version") [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Invalid_handshake_framing_is_terminal_without_reserving_an_actor(corruption: "request") [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Invalid_handshake_framing_is_terminal_without_reserving_an_actor(corruption: "length") [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Invalid_handshake_framing_is_terminal_without_reserving_an_actor(corruption: "kind") [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Two_credentials_select_actual_private_player_ports_and_never_steal_the_original_port [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.A_blocked_welcome_cannot_extend_admission_and_failed_send_releases_the_real_player_port [5 ms]
+  Failed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port [4 ms]
+  Error Message:
+   Assert.Throws() Failure: No exception was thrown
+Expected: typeof(OpenFantasy.Hosting.Networking.PlayerAdmissionException)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs:line 260
+   at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs:line 260
+   at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Host_shutdown_during_welcome_cannot_return_a_successfully_admitted_dead_port() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs:line 260
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Package_fingerprint_binds_dependencies_and_is_independent_of_enumeration_order [3 ms]
+  Failed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation [5 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: Unavailable
+Actual:   Paused
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs:line 240
+   at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs:line 242
+   at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs:line 242
+   at OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Transport_disposal_failure_still_closes_the_actor_port_before_releasing_its_reservation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerAdmission/PlayerAdmissionTests.cs:line 242
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:01.88]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Issuance_requires_existing_human_control_and_does_not_reveal_secrets_in_diagnostics [11 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Pending_handshakes_are_bounded_and_initial_silence_has_an_absolute_deadline [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerAdmission.PlayerAdmissionTests.Handshake_has_exact_independent_field_layout_and_does_not_accept_missing_or_extra_bytes [2 ms]
+
+Test Run Failed.
+Total tests: 21
+     Passed: 19
+     Failed: 2
+ Total time: 2.3776 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-admission/qualification/admission-20261002T075241545454Z/checks.trx
