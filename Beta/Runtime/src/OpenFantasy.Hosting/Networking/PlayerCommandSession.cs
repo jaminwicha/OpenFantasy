@@ -3,6 +3,7 @@ using System.Net.WebSockets;
 using System.Threading.Channels;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Diagnostics;
 
 namespace OpenFantasy.Hosting.Networking;
 
@@ -61,6 +62,7 @@ public sealed class PlayerCommandSession
         catch (Exception error) { failure = error; }
         finally
         {
+            HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "session.cleanup.begin", value: (long)_channel.Transport.Termination);
             if (transportAborted.IsCancellationRequested) MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
             stop.Cancel();
             try
@@ -75,7 +77,11 @@ public sealed class PlayerCommandSession
                     };
                 if (!cancellationToken.IsCancellationRequested
                     && _channel.Transport.Termination != PlayerTransportTermination.LocalDisposal && reason != 0)
+                {
+                    HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "disconnect.begin", value: reason);
                     await _channel.ConfirmTransportDisconnectedAsync((WorldControllerDisconnectReason)reason).ConfigureAwait(false);
+                    HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "disconnect.end", value: reason);
+                }
                 else await _channel.DisposeAsync().ConfigureAwait(false);
             }
             catch (Exception error) { failure ??= error; }
@@ -90,6 +96,7 @@ public sealed class PlayerCommandSession
             await _action.ConfigureAwait(false);
             await _query.ConfigureAwait(false);
             if (_requestFailure.Task.IsCompletedSuccessfully) failure ??= await _requestFailure.Task.ConfigureAwait(false);
+            HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "session.cleanup.end");
         }
         if (failure is not null) ExceptionDispatchInfo.Capture(failure).Throw();
     }
@@ -119,6 +126,7 @@ public sealed class PlayerCommandSession
                 throw;
             }
             PlayerMessage message = input.Message;
+            HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "server.input", unchecked((long)message.RequestId), (long)message.Kind);
             lastRequest = message.RequestId;
             switch (message.Kind)
             {
@@ -221,6 +229,7 @@ public sealed class PlayerCommandSession
     {
         await foreach (PlayerMessage message in _responses.Reader.ReadAllAsync(cancellationToken).ConfigureAwait(false))
         {
+            HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "server.send.begin", unchecked((long)message.RequestId), (long)message.Kind);
             long started = _time.GetTimestamp();
             using var deadline = new CancellationTokenSource(SendLimit, _time);
             using var linked = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, deadline.Token);
@@ -248,6 +257,7 @@ public sealed class PlayerCommandSession
                 throw new PlayerResponseTimeoutException();
             }
             if (message.Kind == PlayerMessageKind.Observation) Volatile.Write(ref _observationPending, 0);
+            HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "server.send.end", unchecked((long)message.RequestId), (long)message.Kind);
         }
     }
 
@@ -262,13 +272,16 @@ public sealed class PlayerCommandSession
                 || lastPublication is { } previous && _time.GetElapsedTime(previous, _time.GetTimestamp()) < ObservationInterval
                 || Interlocked.CompareExchange(ref _observationPending, 1, 0) != 0) continue;
             bool full = Interlocked.Exchange(ref _forceFullObservation, 0) != 0;
+            HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "observation.begin", value: full ? 1 : 0);
             PlayerObservationFrame? frame = stream.Capture(_channel.Player.ReadView(), full);
+            HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "observation.captured", value: frame is null ? 0 : 1);
             if (frame is null)
             {
                 Volatile.Write(ref _observationPending, 0);
                 continue;
             }
             Enqueue(new PlayerMessage(PlayerMessageKind.Observation, 0, PlayerObservationFrameCodec.Encode(frame)));
+            HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "observation.queued");
             lastPublication = _time.GetTimestamp();
         }
     }

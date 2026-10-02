@@ -13,14 +13,14 @@ public sealed class LocalLiquidTerrainView
     {
         Bounds = bounds;
         Revision = revision;
-        Occupancy = Array.AsReadOnly(occupancy.ToArray());
+        Occupancy = new LocalTerrainOccupancy(occupancy);
     }
 
     internal LocalLiquidTerrainView(TerrainRegionSnapshot region)
     {
         Bounds = region.Bounds;
         Revision = region.Revision;
-        Occupancy = Array.AsReadOnly(region.Cells.Select(cell => cell.IsSolid).ToArray());
+        Occupancy = new LocalTerrainOccupancy(region.Cells.Select(cell => cell.IsSolid));
     }
 
     public TerrainRegionBounds Bounds { get; }

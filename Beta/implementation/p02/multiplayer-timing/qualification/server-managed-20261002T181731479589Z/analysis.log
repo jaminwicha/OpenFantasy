@@ -1,0 +1,118 @@
+{
+  "capture": "Beta/implementation/p02/multiplayer-timing/qualification/server-managed-20261002T181731479589Z/host-timing-81711-4afb517dbe2e4f05bfee50b67f61165e.json",
+  "writtenEvents": 4265,
+  "droppedEvents": 0,
+  "incompleteEvents": 0,
+  "invalidEvents": 0,
+  "durationSeconds": 29.542369416,
+  "unmatchedStages": {},
+  "unfinished": [
+    {
+      "owner": "8f6db0f2be1642bd9f79e3123c35b267",
+      "stage": "server.send",
+      "timestamp": 157581154163041
+    },
+    {
+      "owner": "2808e590e8f24da89ad364dca40451c1",
+      "stage": "client.send",
+      "timestamp": 157589117829291
+    },
+    {
+      "owner": "fb8e401f212d4f9f8cb298f71b5d1daf",
+      "stage": "client.send",
+      "timestamp": 157597372666083
+    },
+    {
+      "owner": "2dacc63d5ea04e108a32e4de6c6e1d41",
+      "stage": "client.send",
+      "timestamp": 157598873605833
+    }
+  ]
+}
+{
+  "projection": {
+    "count": 148,
+    "totalMilliseconds": 3743.195082,
+    "medianMilliseconds": 17.864103999999998,
+    "p95Milliseconds": 61.676333,
+    "maximumMilliseconds": 317.020041
+  },
+  "publication.hash": {
+    "count": 376,
+    "totalMilliseconds": 114.516829,
+    "medianMilliseconds": 0.001084,
+    "p95Milliseconds": 0.283542,
+    "maximumMilliseconds": 18.562708
+  },
+  "tick": {
+    "count": 356,
+    "totalMilliseconds": 2049.385381,
+    "medianMilliseconds": 0.014374999999999999,
+    "p95Milliseconds": 11.085041,
+    "maximumMilliseconds": 375.067375
+  },
+  "attach": {
+    "count": 47,
+    "totalMilliseconds": 1180.58013,
+    "medianMilliseconds": 13.645208,
+    "p95Milliseconds": 56.259709,
+    "maximumMilliseconds": 317.065208
+  },
+  "session.cleanup": {
+    "count": 47,
+    "totalMilliseconds": 163.209297,
+    "medianMilliseconds": 0.601541,
+    "p95Milliseconds": 14.3995,
+    "maximumMilliseconds": 52.945292
+  },
+  "client.send": {
+    "count": 131,
+    "totalMilliseconds": 28.966084000000002,
+    "medianMilliseconds": 0.035375,
+    "p95Milliseconds": 0.274667,
+    "maximumMilliseconds": 9.307
+  },
+  "server.send": {
+    "count": 146,
+    "totalMilliseconds": 161.674341,
+    "medianMilliseconds": 0.0748955,
+    "p95Milliseconds": 4.565584,
+    "maximumMilliseconds": 76.45775
+  },
+  "observation": {
+    "count": 179,
+    "totalMilliseconds": 1825.128998,
+    "medianMilliseconds": 0.020375,
+    "p95Milliseconds": 29.64625,
+    "maximumMilliseconds": 278.874042
+  },
+  "replica": {
+    "count": 73,
+    "totalMilliseconds": 2036.688333,
+    "medianMilliseconds": 25.803,
+    "p95Milliseconds": 72.723458,
+    "maximumMilliseconds": 87.27575
+  },
+  "client.startup": {
+    "count": 36,
+    "totalMilliseconds": 6065.249,
+    "medianMilliseconds": 158.612917,
+    "p95Milliseconds": 462.450458,
+    "maximumMilliseconds": 462.483708
+  },
+  "commit": {
+    "count": 21,
+    "totalMilliseconds": 270.405084,
+    "medianMilliseconds": 5.206208,
+    "p95Milliseconds": 32.42625,
+    "maximumMilliseconds": 105.968625
+  },
+  "disconnect": {
+    "count": 28,
+    "totalMilliseconds": 23.151540999999998,
+    "medianMilliseconds": 0.0461045,
+    "p95Milliseconds": 5.003583,
+    "maximumMilliseconds": 12.840625
+  }
+}
+analysis: Beta/implementation/p02/multiplayer-timing/qualification/server-managed-20261002T181731479589Z/host-timing-81711-4afb517dbe2e4f05bfee50b67f61165e.analysis.json

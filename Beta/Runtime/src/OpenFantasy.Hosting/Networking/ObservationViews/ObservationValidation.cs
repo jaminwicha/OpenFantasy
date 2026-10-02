@@ -225,6 +225,20 @@ internal static class ObservationValidation
             Require(text.Length <= PlayerViewCodec.MaximumStringBytes, "Observation text is too long.");
             return;
         }
+        if (value is LocalTerrainOccupancy occupancy)
+        {
+            // This sealed collection owns its boolean array: cells cannot be null or invalid enum values.
+            // Its owner was counted above; preserve per-cell depth/count checks and their failure order.
+            int cells = occupancy.Count;
+            if (cells == 0) return;
+            Require(depth < PlayerViewCodec.MaximumDepth
+                && Math.Min(cells, PlayerViewCodec.MaximumCollectionItems) <= PlayerViewCodec.MaximumBodyBytes - count,
+                "Observation values exceed their traversal bound.");
+            Require(cells <= PlayerViewCodec.MaximumCollectionItems,
+                "An observation collection is oversized or contains null.");
+            count += cells;
+            return;
+        }
         if (value is IEnumerable sequence)
         {
             int items = 0;

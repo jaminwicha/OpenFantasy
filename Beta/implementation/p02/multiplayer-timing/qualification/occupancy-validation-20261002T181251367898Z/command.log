@@ -1,0 +1,46 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.84]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.07]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.40]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Bulk_occupancy_validation_does_not_skip_invalid_siblings(invalid: "collection-null") [30 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Bulk_occupancy_validation_does_not_skip_invalid_siblings(invalid: "required-null") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Bulk_occupancy_validation_does_not_skip_invalid_siblings(invalid: "enum") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Collection_limits_match_generic_boolean_traversal(cells: 65536, accepted: False) [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Collection_limits_match_generic_boolean_traversal(cells: 16384, accepted: True) [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Collection_limits_match_generic_boolean_traversal(cells: 0, accepted: True) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Collection_limits_match_generic_boolean_traversal(cells: 1, accepted: True) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Collection_limits_match_generic_boolean_traversal(cells: 16385, accepted: False) [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.All_boolean_cells_and_collection_owners_consume_the_shared_value_budget(values: 921600, accepted: True) [229 ms]
+[xUnit.net 00:00:03.60]     OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Readonly_boolean_validation_eliminates_per_cell_boxing_after_warmup [FAIL]
+[xUnit.net 00:00:03.60]       Typed readonly occupancy allocated 3145984 bytes versus generic traversal's 3145984 bytes.
+[xUnit.net 00:00:03.60]       Stack Trace:
+[xUnit.net 00:00:03.60]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerObservationViews/ObservationOccupancyValidationTests.cs(80,0): at OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Readonly_boolean_validation_eliminates_per_cell_boxing_after_warmup()
+[xUnit.net 00:00:03.60]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.60]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.All_boolean_cells_and_collection_owners_consume_the_shared_value_budget(values: 921601, accepted: False) [229 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.All_boolean_cells_and_collection_owners_consume_the_shared_value_budget(values: 921599, accepted: True) [334 ms]
+  Failed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Readonly_boolean_validation_eliminates_per_cell_boxing_after_warmup [66 ms]
+  Error Message:
+   Typed readonly occupancy allocated 3145984 bytes versus generic traversal's 3145984 bytes.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Readonly_boolean_validation_eliminates_per_cell_boxing_after_warmup() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerObservationViews/ObservationOccupancyValidationTests.cs:line 80
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Child_depth_and_empty_collection_depth_match_generic_traversal(collectionDepth: 47, cells: 1, accepted: True) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Child_depth_and_empty_collection_depth_match_generic_traversal(collectionDepth: 48, cells: 1, accepted: False) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Child_depth_and_empty_collection_depth_match_generic_traversal(collectionDepth: 48, cells: 0, accepted: True) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Child_depth_and_empty_collection_depth_match_generic_traversal(collectionDepth: 48, cells: 16385, accepted: False) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Child_depth_and_empty_collection_depth_match_generic_traversal(collectionDepth: 49, cells: 0, accepted: False) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Terrain_occupancy_defensively_copies_cells_and_retains_declared_property_and_wire_types [78 ms]
+[xUnit.net 00:00:03.71]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservationViews.ObservationOccupancyValidationTests.Arbitrary_readonly_boolean_wrappers_still_validate_their_actual_enumeration [11 ms]
+
+Test Run Failed.
+Total tests: 19
+     Passed: 18
+     Failed: 1
+ Total time: 5.2742 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/multiplayer-timing/qualification/occupancy-validation-20261002T181251367898Z/checks.trx

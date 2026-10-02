@@ -9,6 +9,7 @@ using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Terrain;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Worlds;
+using OpenFantasy.Hosting.Diagnostics;
 
 namespace OpenFantasy.Hosting.Simulation;
 
@@ -21,6 +22,7 @@ public enum LocalWorldRunState { Unavailable, Paused, Waiting, Running, Resolvin
 /// </summary>
 public sealed partial class LocalWorldSession : IAsyncDisposable
 {
+    internal string TimingOwner { get; } = Guid.NewGuid().ToString("N");
     public static readonly TimeSpan StepInterval = TimeSpan.FromMilliseconds(50);
     public static readonly TimeSpan MovementLease = TimeSpan.FromMilliseconds(150);
     private readonly object _inputs = new();
@@ -93,6 +95,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         ArgumentNullException.ThrowIfNull(timeProvider);
         _retreat = retreat ?? Retreat.LocalRetreatConfiguration.None;
         WorldSnapshot state = authority.ReadStateForHost();
+        if (HostTimingEvents.Log.IsEnabled()) HostTimingEvents.Log.Bind(TimingOwner, state.WorldId.ToString());
         if (!state.Inventory.CanControl(delivery, playerActorId)
             || state.GetResident(playerActorId).ControllerKind != ResidentControllerKind.Player)
         {
@@ -348,7 +351,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
 
     private async Task TickAsync()
     {
+        HostTimingEvents.Log.Stage(TimingOwner, "tick.wait");
         await _serialization.WaitAsync(_stop.Token).ConfigureAwait(false);
+        HostTimingEvents.Log.Stage(TimingOwner, "tick.begin");
         try
         {
             lock (_inputs)
@@ -443,7 +448,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             }
             CommitSelectedBatch(batch, pending);
         }
-        finally { _serialization.Release(); }
+        finally
+        {
+            HostTimingEvents.Log.Stage(TimingOwner, "tick.end");
+            _serialization.Release();
+        }
     }
 
     private static bool IsCurrentCareChoice(WorldSnapshot state, WorldActionCommand command) =>
@@ -631,7 +640,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
 
     private void CommitSelectedBatch(WorldStepBatch batch, IReadOnlyList<PendingLocalAction> awaiting)
     {
+        HostTimingEvents.Log.Stage(TimingOwner, "commit.begin");
         WorldStepDecision decision = _authority.Commit(batch);
+        HostTimingEvents.Log.Stage(TimingOwner, "commit.end", unchecked((long)decision.Candidate.Revision));
         _trading.Observe(decision);
         PublishViewIfChanged(decision.Candidate);
         if (decision.Candidate.PendingExcavation is { } pending)
@@ -653,8 +664,16 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
 
     /// <summary>Runs at publication on the serialized host owner, never in a frame; the regional cache is reused.</summary>
     private LocalWorldView ProjectView(WorldSnapshot state, EntityId actorId,
-        CargoPresentation.LocalRegionObserver? regions) => new(state, actorId,
-        state.Care?.Pending is not null && _authority.IsIdentityOccupiedForHost(LocalCareController.SelectionId(state)), regions);
+        CargoPresentation.LocalRegionObserver? regions)
+    {
+        HostTimingEvents.Log.Stage(TimingOwner, "projection.begin", unchecked((long)state.Revision));
+        try
+        {
+            return new(state, actorId,
+                state.Care?.Pending is not null && _authority.IsIdentityOccupiedForHost(LocalCareController.SelectionId(state)), regions);
+        }
+        finally { HostTimingEvents.Log.Stage(TimingOwner, "projection.end", unchecked((long)state.Revision)); }
+    }
 
     private void ClearMovement()
     {
@@ -814,7 +833,10 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     /// </summary>
     private void PublishViewIfChanged(WorldSnapshot state)
     {
-        if (_projectedStateHash == state.ContentHash)
+        HostTimingEvents.Log.Stage(TimingOwner, "publication.hash.begin", unchecked((long)state.Revision));
+        ContentHash hash = state.ContentHash;
+        HostTimingEvents.Log.Stage(TimingOwner, "publication.hash.end", unchecked((long)state.Revision));
+        if (_projectedStateHash == hash)
         {
             return;
         }
@@ -822,7 +844,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             player.Publish(ProjectView(state, player.ActorId, player.Regions));
         }
-        _projectedStateHash = state.ContentHash;
+        _projectedStateHash = hash;
     }
 
     private void CompletePending(PendingLocalAction pending, WorldActionReceipt? receipt, Exception? error)

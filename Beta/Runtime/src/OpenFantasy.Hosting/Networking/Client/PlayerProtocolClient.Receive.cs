@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Diagnostics;
 
 namespace OpenFantasy.Hosting.Networking.Client;
 
@@ -19,9 +20,11 @@ public sealed partial class PlayerProtocolClient
     {
         if (message.Kind == PlayerMessageKind.Observation)
         {
+            HostTimingEvents.Log.Stage(_timingOwner, "replica.begin", value: message.Payload.Length);
             if (message.RequestId != 0) throw new FormatException("Observations require request identity zero.");
             PlayerObservationFrame frame = PlayerObservationFrameCodec.Decode(message.Payload);
             PlayerObservationApplyResult result = _replica.Apply(frame);
+            HostTimingEvents.Log.Stage(_timingOwner, "replica.end", value: frame.IsFull ? 1 : 0);
             lock (_gate)
             {
                 if (_closed) return;

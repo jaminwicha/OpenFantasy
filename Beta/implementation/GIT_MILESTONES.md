@@ -442,3 +442,17 @@ The11.2% cumulative-allocation improvement is not a production latency/peak-memo
 Ecosystem`ad0c2e2` preserves shared verification serialization and measured-source pinning.
 Work stays on`codex/runtime-foundation`; this backup pointer closes no full phase, campaign,
 physical-device, art or human acceptance gate and entails no branch switch, push or merge.
+
+
+The `codex/milestone-observation-validation-20261002` marker preserves opt-in host timing and
+owned occupancy validation without per-cell boxing. The fixed validation workload allocates zero
+bytes versus 3,145,984 before, preserving all count/depth/error-order and wire/diagnostic contracts.
+Warning-free build and 584 distinct cases have passing evidence, including 22 new; the normal
+Server aggregate still has one unchanged five-second four-player movement failure and a Windows
+skip. Its traced repeat passes, without explaining the failure. This is bounded optimization
+qualification, not all-green aggregate, production latency or phase acceptance. All 688 old tests/
+fixtures, 23 frozen specs and unrelated staging remain exact. The pre-change ref preserves d9e6ec57;
+the WIP checkpoint before optimization preserves 68eac65e. Exact refs, scope, failures, independent
+critique and source/binary pins are in [the result](p02/multiplayer-timing/RESULT.md). Work stays on
+`codex/runtime-foundation`; no branch switch, push or merge. The pending-care disposition proposal
+is preserved separately and claims no implemented rule or reserved profile version.

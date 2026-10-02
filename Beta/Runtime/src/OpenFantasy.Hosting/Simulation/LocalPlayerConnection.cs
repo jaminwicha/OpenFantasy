@@ -1,6 +1,7 @@
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Diagnostics;
 
 namespace OpenFantasy.Hosting.Simulation;
 
@@ -11,6 +12,7 @@ namespace OpenFantasy.Hosting.Simulation;
 /// </summary>
 public sealed class LocalPlayerConnection : IAsyncDisposable
 {
+    internal string TimingOwner { get; } = Guid.NewGuid().ToString("N");
     private readonly LocalWorldSession _host;
     private LocalWorldView _view;
 
@@ -23,6 +25,8 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
         _view = view;
         Regions = regions;
         ControlAvailable = controlAvailable;
+        HostTimingEvents.Log.Bind(TimingOwner, host.TimingOwner);
+        if (HostTimingEvents.Log.IsEnabled()) HostTimingEvents.Log.Bind(TimingOwner, actorId.ToString());
     }
 
     public EntityId ActorId { get; }

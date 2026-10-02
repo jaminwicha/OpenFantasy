@@ -2,6 +2,7 @@ using System.Runtime.ExceptionServices;
 using System.Security.Cryptography;
 using System.Threading.Channels;
 using OpenFantasy.Hosting.Simulation;
+using OpenFantasy.Hosting.Diagnostics;
 
 namespace OpenFantasy.Hosting.Networking.Client;
 
@@ -11,6 +12,7 @@ namespace OpenFantasy.Hosting.Networking.Client;
 /// </summary>
 public sealed partial class PlayerProtocolClient : IAsyncDisposable
 {
+    private readonly string _timingOwner;
     public static readonly TimeSpan StartupLimit = TimeSpan.FromSeconds(10);
     public static readonly TimeSpan SendLimit = TimeSpan.FromSeconds(5);
     public static readonly TimeSpan MovementRenewalInterval = TimeSpan.FromMilliseconds(50);
@@ -36,8 +38,9 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
     private long _controlWindow;
     private int _controlCount;
 
-    private PlayerProtocolClient(PlayerMessageTransport transport, PlayerWelcome welcome, TimeProvider time)
+    private PlayerProtocolClient(PlayerMessageTransport transport, PlayerWelcome welcome, TimeProvider time, string timingOwner)
     {
+        _timingOwner = timingOwner;
         _transport = transport;
         Welcome = welcome;
         _time = time;
@@ -63,6 +66,9 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
         ArgumentNullException.ThrowIfNull(transport);
         ArgumentNullException.ThrowIfNull(invitation);
         time ??= TimeProvider.System;
+        string timingOwner = Guid.NewGuid().ToString("N");
+        if (HostTimingEvents.Log.IsEnabled()) HostTimingEvents.Log.Bind(timingOwner, invitation.ActorId.ToString());
+        HostTimingEvents.Log.Stage(timingOwner, "client.startup.begin");
         long started = time.GetTimestamp();
         using var deadline = new CancellationTokenSource(StartupLimit, time);
         using var attempt = CancellationTokenSource.CreateLinkedTokenSource(token, deadline.Token);
@@ -74,8 +80,10 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
             try { hello = PlayerHandshakeCodec.Hello(1, invitation.Compatibility, credential); }
             finally { CryptographicOperations.ZeroMemory(credential); }
             await SendBoundedAsync(transport, hello, time, attempt.Token).ConfigureAwait(false);
+            HostTimingEvents.Log.Stage(timingOwner, "client.hello.sent");
             CheckStartup();
             byte[]? bytes = await transport.ReceiveAsync(attempt.Token).ConfigureAwait(false);
+            HostTimingEvents.Log.Stage(timingOwner, "client.welcome.received");
             CheckStartup();
             if (bytes is null) throw new EndOfStreamException("The peer closed before admission.");
             PlayerMessage message = PlayerMessageCodec.Decode(bytes);
@@ -84,14 +92,16 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
             PlayerWelcome welcome = PlayerHandshakeCodec.ReadWelcome(message);
             if (welcome.Compatibility != invitation.Compatibility || welcome.ActorId != invitation.ActorId)
                 throw new FormatException("The welcome does not match the invitation.");
-            client = new PlayerProtocolClient(transport, welcome, time);
+            client = new PlayerProtocolClient(transport, welcome, time, timingOwner);
             await client._firstFull.Task.WaitAsync(attempt.Token).ConfigureAwait(false);
             CheckStartup();
             lock (client._gate) client.ThrowIfClosedLocked();
+            HostTimingEvents.Log.Stage(timingOwner, "client.startup.complete");
             return client;
         }
         catch (Exception error)
         {
+            HostTimingEvents.Log.Stage(timingOwner, "client.startup.failed");
             if (client is not null) await client.DisposeAsync().ConfigureAwait(false);
             else await transport.DisposeAsync().ConfigureAwait(false);
             if (!token.IsCancellationRequested && (deadline.IsCancellationRequested || time.GetElapsedTime(started) >= StartupLimit))
@@ -131,6 +141,7 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
             if (x == _movementX && y == _movementY
                 && (x == 0 && y == 0 || _time.GetElapsedTime(_lastMovement, now) < MovementRenewalInterval)) return;
             EnqueueLocked(id => PlayerGameplayCodec.Movement(id, x, y));
+            HostTimingEvents.Log.Stage(_timingOwner, "client.movement.queued", x, y);
             _movementX = x;
             _movementY = y;
             _lastMovement = now;
@@ -237,7 +248,11 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
     private async Task SendLoopAsync()
     {
         await foreach (PlayerMessage message in _output.Reader.ReadAllAsync(_lifetime.Token).ConfigureAwait(false))
+        {
+            HostTimingEvents.Log.Stage(_timingOwner, "client.send.begin", unchecked((long)message.RequestId), (long)message.Kind);
             await SendBoundedAsync(_transport, message, _time, _lifetime.Token).ConfigureAwait(false);
+            HostTimingEvents.Log.Stage(_timingOwner, "client.send.end", unchecked((long)message.RequestId), (long)message.Kind);
+        }
     }
 
     private static async Task SendBoundedAsync(PlayerMessageTransport transport, PlayerMessage message,

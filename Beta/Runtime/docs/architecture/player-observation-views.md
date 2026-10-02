@@ -135,6 +135,18 @@ by decoded views are read-only copies. These transport/resource bounds do not ch
 rules. Maximum inventory, proposal/quote and composite-geometry size coverage remains a separate
 qualification obligation.
 
+Worksite and liquid occupancy use the sealed internal
+[LocalTerrainOccupancy](../../src/OpenFantasy.Hosting/Simulation/LocalTerrainOccupancy.cs), which
+defensively copies its boolean cells and exposes the same declared `ReadOnlyCollection<bool>`
+property. Packed wire JSON and default diagnostic arrays therefore retain their existing spelling.
+The value validator counts these owned primitive cells in bulk: the collection owner and every
+cell still consume the shared 921,600-value traversal budget, and nonempty cells still require
+their child depth. Collection limits and the first applicable failure are unchanged. Boolean
+values need no null or enum inspection, so this path avoids per-cell boxing. Arbitrary collections,
+including read-only wrappers over custom lists, retain ordinary element traversal; a read-only
+interface by itself is not proof of immutable ownership. Canonical re-encoding, geometry dimensions
+and all cross-field checks still run for the complete view.
+
 ## Extension contract
 
 A new presented or action-relevant field must be added to the affected typed transport record and

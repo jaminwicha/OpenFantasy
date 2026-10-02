@@ -1,0 +1,7 @@
+{
+  "checkpoint": "codex/checkpoint-before-observation-validation-20261002T180505Z",
+  "snapshot": "68eac65e7f3cfcd971f87ac50bf9ed04f26aa519",
+  "sourceHead": "d9e6ec577cb8abe70c14fdc1895840ffd1a619c7",
+  "scope": "Successor diagnostic source, new diagnostics tests, docs, checker and traced aggregate reports. Unrelated predecessor staging excluded.",
+  "verification": "Warning-free build and traced Server managed aggregate 77 pass, 1 Windows-only skip. Earlier startup/disconnect/movement causes remain unresolved; new presentation allocation investigation is not yet implemented."
+}

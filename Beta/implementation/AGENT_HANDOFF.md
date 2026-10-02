@@ -54,6 +54,28 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [observation validation checkpoint](p02/multiplayer-timing/RESULT.md), preserved at
+`codex/milestone-observation-validation-20261002`, removes per-cell boxing only for sealed owned
+terrain occupancy. The fixed 131,072-cell validation allocates zero bytes versus 3,145,984 before;
+all depth/count/error-order limits, wire bytes and generic collection checks remain unchanged.
+Opt-in bounded host timing traces separate input sampling, projection, observation and cleanup.
+
+[Final checks](p02/multiplayer-timing/FINAL_CHECKS.json): warning-free build; 584 distinct cases with
+passing evidence, including 22 new. Networking 265, client 179, shared 26 and controller 73 pass.
+**Normal managed Server remains failed**: 76 pass, one five-second four-player movement failure,
+one Windows-only skip. The same selection with tracing passes 77 plus that skip; it does not explain
+the failure. No timing gate, old test or parallelization policy changed. All 688 old test/fixture
+files, 23 specs and unrelated staging remain exact; 1,273 architecture/design links resolve.
+The [independent review](p02/multiplayer-timing/REVIEW.md) found no actionable defect and records
+diagnostic limits. No new Core/native/full-suite/production acceptance or Claude offload is claimed.
+
+Next: capture the actual movement failure with receipt/selection/lease evidence without assuming
+contention or treating a traced pass as resolution. The [pending-care design review](p02/pending-care-disposition/DESIGN_REVIEW.md)
+preserves the next gameplay dependency: explicit patient cancellation/helper decline, authenticated
+closure history and safe restoration of control. Its proposed profile 38/Care V5 are not reserved.
+The initial timing checkpoint preserves `d9e6ec57`; the before-optimization WIP checkpoint preserves
+`68eac65e`. Their exact refs and verification state are in the result. Full campaign gates remain open.
+
 The [general recovery checkpoint](p02/general-recovery/RESULT.md) is preserved at
 `codex/milestone-general-recovery-20261002`. Fresh profile 37/Care V4 permit separately authorized,
 finite helper treatment after encounter completion, without depending on the latest encounter archive.

@@ -2,6 +2,7 @@ using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Care;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Diagnostics;
 
 namespace OpenFantasy.Hosting.Simulation;
 
@@ -25,7 +26,9 @@ public sealed partial class LocalWorldSession
         CancellationToken cancellationToken)
     {
         ArgumentNullException.ThrowIfNull(delivery);
+        HostTimingEvents.Log.Stage(TimingOwner, "attach.wait");
         await _serialization.WaitAsync(cancellationToken).ConfigureAwait(false);
+        HostTimingEvents.Log.Stage(TimingOwner, "attach.begin");
         try
         {
             lock (_inputs) { EnsureInputAvailable(); }
@@ -47,7 +50,11 @@ public sealed partial class LocalWorldSession
                 return player;
             }
         }
-        finally { _serialization.Release(); }
+        finally
+        {
+            HostTimingEvents.Log.Stage(TimingOwner, "attach.end");
+            _serialization.Release();
+        }
     }
 
     internal LocalWorldRunState ReadRunState(LocalPlayerConnection player)
@@ -88,6 +95,7 @@ public sealed partial class LocalWorldSession
         {
             EnsurePlayerAvailable(player);
             player.Ready = ready && player.ControlAvailable;
+            HostTimingEvents.Log.Stage(player.TimingOwner, "ready", value: player.Ready ? 1 : 0);
             if (!player.Ready) player.ClearMovement();
         }
     }
@@ -105,6 +113,7 @@ public sealed partial class LocalWorldSession
             player.MovementX = acceptsMovement ? dx : 0;
             player.MovementY = acceptsMovement ? dy : 0;
             player.MovementAt = _time.GetTimestamp();
+            HostTimingEvents.Log.Stage(player.TimingOwner, acceptsMovement ? "movement.accepted" : "movement.rejected", dx, dy);
         }
     }
 
@@ -150,8 +159,11 @@ public sealed partial class LocalWorldSession
         long now = _time.GetTimestamp();
         foreach (LocalPlayerConnection player in _players.Values)
         {
+            if (HostTimingEvents.Log.IsEnabled() && (player.MovementX != 0 || player.MovementY != 0))
+                HostTimingEvents.Log.Stage(player.TimingOwner, "movement.age", value: _time.GetElapsedTime(player.MovementAt, now).Ticks);
             if (!player.Ready || _time.GetElapsedTime(player.MovementAt, now) > MovementLease
                 || player.MovementX == 0 && player.MovementY == 0) continue;
+            HostTimingEvents.Log.Stage(player.TimingOwner, "movement.selected", player.MovementX, player.MovementY);
             movement.Add(new WorldMovementInput(player.Delivery, player.ActorId, player.MovementX, player.MovementY));
         }
         return movement;
