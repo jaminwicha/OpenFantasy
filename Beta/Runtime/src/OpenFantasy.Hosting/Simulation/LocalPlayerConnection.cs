@@ -39,6 +39,7 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     public ValueTask DisposeAsync() => new(_host.ClosePlayerAsync(this));
 
     internal TrustedCommandDelivery Delivery { get; }
+    internal Task HostCompletion => _host.Completion;
     internal CargoPresentation.LocalRegionObserver? Regions { get; }
     internal bool Connected { get; set; } = true;
     internal bool Ready { get; set; }

@@ -1,0 +1,51 @@
+{
+  "status": "qualified gameplay routing boundary; complete multiplayer remains open",
+  "checkpoint": {
+    "ref": "codex/checkpoint-before-player-command-routing-20261002T080342Z",
+    "sourceHead": "3a94ee3d4f52eb21fab2965c3a3c32b995c05c26",
+    "scope": "Clean successor; unrelated predecessor staging excluded",
+    "verification": "Prior build + 48 focused cases accepted; no native/full multiplayer claim"
+  },
+  "checks": {
+    "build": {
+      "report": "qualification/build-20261002T081300444215Z/report.json",
+      "seconds": 14.035634042011225,
+      "outcomes": null
+    },
+    "network": {
+      "report": "qualification/network-20261002T081348022546Z/report.json",
+      "seconds": 10.66788758301118,
+      "outcomes": {
+        "Passed": 60
+      }
+    },
+    "shared": {
+      "report": "qualification/shared-20261002T081428330098Z/report.json",
+      "seconds": 42.46633333299542,
+      "outcomes": {
+        "Passed": 9
+      }
+    }
+  },
+  "distinctCases": 69,
+  "newRoutingCases": 21,
+  "previousNetworkCasesRetained": 39,
+  "previousSharedPlayerCasesRetained": 9,
+  "exactSourceAndBinariesVerifiedAfterChecks": true,
+  "protectedFileCounts": {
+    "Beta/Runtime/tests": 617,
+    "Beta/spec-v1_1": 23,
+    "transportTests": 3,
+    "acceptedNetworkTests": 4
+  },
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "architectureLocalLinksChecked": 115,
+  "independentReview": "CRITIC_REVIEW.md",
+  "scopeLimits": [
+    "No HTTP Upgrade/TLS claim",
+    "No native network clients or observation/query wire codec",
+    "No recorded disconnect grace/control handoff",
+    "No whole-game or phase qualification inferred",
+    "No provider request or savings claim"
+  ]
+}

@@ -137,11 +137,29 @@ a host stopped during backpressured Welcome cannot report successful admission. 
 architecture references are current; original tests/specs and predecessor staging remain exact.
 
 Qualified scope is preserved at `codex/milestone-player-admission-20261002`. This is a bounded connection
-checkpoint, not native multiplayer or a repetition of the earlier whole-game qualification. Next:
-responsive bounded command/readiness/movement routing with original durable receipts; participant-safe
-regional observations; HTTP/TLS hosting; native 1–4 clients and solo envelope parity; journaled disconnect
-and reconnect/controller handoff. The full design and all earlier open gates remain authoritative.
+checkpoint, not native multiplayer or a repetition of the earlier whole-game qualification. The
+subsequent routing checkpoint below carries the next active dependency; full network delivery remains open. The full design and all earlier open gates remain authoritative.
 No provider call was made while the account spending-limit failure holds.
+
+## Gameplay message routing
+
+[Player command routing](p02/player-command-routing/RESULT.md) binds authenticated channels to real
+readiness, leased movement and world actions. Pending actions leave the receiver responsive; original
+canonical receipts are sent after commit, with separate bounded Busy/preflight refusal. Slow clients
+have bounded output/work and cannot hold the host commit path. Actual response loss followed by real
+host reopening returns the same receipt without double spending; a loopback WebSocket action is proved.
+
+[Final checks](p02/player-command-routing/FINAL_CHECKS.json): solution build and 69 affected passes,
+including all 39 previous network cases, 21 new routing cases and all 9 shared-player cases. Independent
+review led to paused-action closure, response-capacity and input-rate tests. The original fixture-cleanup
+failure and lead shutdown-ordering correction remain recorded. Current source/binaries, protected tests/
+specs, unchanged predecessor staging and architecture links are verified. Qualified scope is preserved
+at `codex/milestone-player-command-routing-20261002`; no broader/native/release acceptance is inferred.
+
+Next: participant-safe regional observations/recovery; separate authenticated trade inquiries and
+quote/proposal inspection; HTTP/TLS listener; actual Godot clients and solo envelope parity; native
+1–4-client validation and recorded disconnect/reconnect/controller handoff. The full campaign and all
+unclosed gates remain in force. No provider request was made while its spend-limit failure holds.
 
 ## Next dependency and remaining scope
 

@@ -63,7 +63,7 @@ Player cleanup still runs if transport disposal fails; a close error cannot stra
 It leaves other players and the world owner alive. Closing this channel invokes in-process port closure;
 it is not the full design's journaled disconnect, reconnect allowance or controller handoff.
 
-This admission boundary is independent of the HTTP/TLS listener, gameplay message dispatcher and native
-view adapter. It grants those components access to one authenticated port; they still preserve command
-bytes, committed receipts, bounded output and participant-safe projections. Network observations must
+[Player command routing](player-command-routing.md) consumes the admitted channel for readiness,
+movement and exact action/receipt exchange. The HTTP/TLS listener and native view adapter remain
+separate responsibilities, preserving bounded output and participant-safe projections. Network observations must
 encode regional data explicitly and never expose hidden world counters as synchronization shortcuts.

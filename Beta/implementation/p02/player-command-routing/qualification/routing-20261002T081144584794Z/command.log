@@ -1,0 +1,54 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.69]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.17]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.38]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Malformed_or_repeated_input_closes_only_its_own_port_without_a_world_receipt(fault: "readiness") [381 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Malformed_or_repeated_input_closes_only_its_own_port_without_a_world_receipt(fault: "request") [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Malformed_or_repeated_input_closes_only_its_own_port_without_a_world_receipt(fault: "oversized-command") [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Malformed_or_repeated_input_closes_only_its_own_port_without_a_world_receipt(fault: "movement") [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Malformed_or_repeated_input_closes_only_its_own_port_without_a_world_receipt(fault: "kind") [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Pending_duplicate_is_bounded_and_preflight_refusal_is_distinct_from_durable_rejection [59 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Forged_command_claims_cannot_replace_the_credential_selected_binding(field: "branch") [14 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Forged_command_claims_cannot_replace_the_credential_selected_binding(field: "actor") [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Forged_command_claims_cannot_replace_the_credential_selected_binding(field: "principal") [5 ms]
+[xUnit.net 00:00:02.41]     OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.No_response_inputs_also_have_a_bounded_work_rate [FAIL]
+[xUnit.net 00:00:02.41]       System.IO.InvalidDataException : The player exceeded its input-rate limit.
+[xUnit.net 00:00:02.41]       Stack Trace:
+[xUnit.net 00:00:02.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs(81,0): at OpenFantasy.Hosting.Networking.PlayerCommandSession.ReceiveAsync(CancellationToken cancellationToken)
+[xUnit.net 00:00:02.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs(58,0): at OpenFantasy.Hosting.Networking.PlayerCommandSession.RunAsync(CancellationToken cancellationToken)
+[xUnit.net 00:00:02.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs(66,0): at OpenFantasy.Hosting.Networking.PlayerCommandSession.RunAsync(CancellationToken cancellationToken)
+[xUnit.net 00:00:02.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerCommandRouting/PlayerCommandRoutingTests.cs(375,0): at OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.RoutingFixture.DisposeAsync()
+[xUnit.net 00:00:02.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerCommandRouting/PlayerCommandRoutingTests.cs(283,0): at OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.No_response_inputs_also_have_a_bounded_work_rate()
+[xUnit.net 00:00:02.41]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Forged_command_claims_cannot_replace_the_credential_selected_binding(field: "session") [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Forged_command_claims_cannot_replace_the_credential_selected_binding(field: "world") [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Movement_uses_the_existing_lease_and_closing_one_channel_does_not_stop_its_peer [12 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Closing_with_a_paused_pending_action_joins_its_waiter_without_committing_it(stopHost: True) [13 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Closing_with_a_paused_pending_action_joins_its_waiter_without_committing_it(stopHost: False) [18 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.A_slow_response_cannot_block_other_players_and_has_an_absolute_send_deadline [12 ms]
+  Failed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.No_response_inputs_also_have_a_bounded_work_rate [14 ms]
+  Error Message:
+   System.IO.InvalidDataException : The player exceeded its input-rate limit.
+  Stack Trace:
+     at OpenFantasy.Hosting.Networking.PlayerCommandSession.ReceiveAsync(CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs:line 81
+   at OpenFantasy.Hosting.Networking.PlayerCommandSession.RunAsync(CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs:line 58
+   at OpenFantasy.Hosting.Networking.PlayerCommandSession.RunAsync(CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs:line 66
+   at OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.RoutingFixture.DisposeAsync() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerCommandRouting/PlayerCommandRoutingTests.cs:line 375
+   at OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.No_response_inputs_also_have_a_bounded_work_rate() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/PlayerCommandRouting/PlayerCommandRoutingTests.cs:line 283
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Host_shutdown_releases_an_idle_receiver_and_does_not_leave_a_background_task [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Pending_action_keeps_readiness_responsive_and_returns_only_the_exact_durable_receipt [17 ms]
+[xUnit.net 00:00:02.49]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Actual_loopback_websocket_action_returns_the_database_receipt_and_shuts_down_cleanly [20 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Lost_committed_response_is_recovered_once_after_actual_host_reopening [16 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerCommandRouting.PlayerCommandRoutingTests.Exhausted_response_capacity_closes_the_connection_instead_of_creating_waiting_producers [11 ms]
+
+Test Run Failed.
+Total tests: 21
+     Passed: 20
+     Failed: 1
+ Total time: 3.1557 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-command-routing/qualification/routing-20261002T081144584794Z/checks.trx

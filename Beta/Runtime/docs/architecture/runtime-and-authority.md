@@ -30,8 +30,9 @@ boundaries. A custom native kernel or IPC worker is outside this architecture.
 
 The standalone [player message transports](player-message-transport.md) provide bounded local and
 WebSocket I/O. [Player admission](player-admission.md) binds host-issued credentials and compatibility
-pins to actual player ports. Gameplay routing and participant-safe observations remain separate
-responsibilities; transport or serialized identity alone grants no authority.
+pins to actual player ports. [Gameplay message routing](player-command-routing.md) carries readiness,
+movement and exact commands/receipts through those ports with bounded asynchronous I/O. Participant-safe
+observation encoding remains separate; transport or serialized identity alone grants no authority.
 
 ## Runtime bindings: state ownership
 

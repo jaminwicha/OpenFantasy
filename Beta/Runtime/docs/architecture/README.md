@@ -17,6 +17,7 @@ different kind of person.
 | [Hosted player connections](hosted-player-connections.md) | How do up to four authenticated player ports share one clock, input cutoff, authority and NPC scheduler while retaining separate readiness, views and queries? |
 | [Player message transport](player-message-transport.md) | How do bounded local and WebSocket envelopes preserve ordering, ownership and complete-message boundaries? |
 | [Player connection admission](player-admission.md) | How do scoped host-issued credentials, compatibility pins and bounded handshakes select one actual player port? |
+| [Player gameplay routing](player-command-routing.md) | How do readiness, leased movement, canonical actions and durable receipts cross authenticated channels without blocking the host? |
 | [Time and encounters](time-and-encounters.md) | How do calendar, exposure, Wait, rest and host readiness interact? |
 | [Encounter timing](encounter-timing.md) | How do portable readiness, required choices, retained debt and exposure carry preserve exact tactical time? |
 | [World pacing](world-pacing.md) | How do authenticated Wait choices, tactical time and earned process intervals commit with the complete world? |
