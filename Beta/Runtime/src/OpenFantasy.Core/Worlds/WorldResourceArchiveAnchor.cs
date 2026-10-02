@@ -135,7 +135,8 @@ public sealed class WorldResourceArchiveAnchor
     private void ValidateLifecycle(EncounterLifecycleSnapshot successor)
     {
         if (successor.WorldId != Lifecycle.WorldId || successor.BranchId != Lifecycle.BranchId
-            || successor.Seed != Lifecycle.Seed || successor.Revision < Lifecycle.Revision
+            || successor.Seed != Lifecycle.Seed || successor.CatalogVersion != Lifecycle.CatalogVersion
+            || successor.Revision < Lifecycle.Revision
             || successor.EncounterCount < Lifecycle.EncounterCount
             || successor.ExplorationSteps < Lifecycle.ExplorationSteps || successor.TacticalTicks < Lifecycle.TacticalTicks
             || !Lifecycle.Abilities.Select(value => (value.DefinitionId, value.Version))

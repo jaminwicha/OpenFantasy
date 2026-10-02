@@ -1,0 +1,15 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.54]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.84]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.11]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:10.68]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerQueries.PlayerTradeQueryTests.Archived_paid_quote_is_exact_for_participant_and_absent_for_authenticated_outsider_over_sockets [8 s]
+
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 11.6863 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-roster/qualification/query-diagnostic-20261002T124428962296Z/checks.trx

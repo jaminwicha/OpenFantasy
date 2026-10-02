@@ -150,6 +150,7 @@ public sealed class WorldMaterialCareArchiveAnchor
             || lifecycle.Seed != Lifecycle.Seed || lifecycle.Revision < Lifecycle.Revision
             || lifecycle.EncounterCount < Lifecycle.EncounterCount
             || lifecycle.ExplorationSteps < Lifecycle.ExplorationSteps || lifecycle.TacticalTicks < Lifecycle.TacticalTicks
+            || lifecycle.CatalogVersion != Lifecycle.CatalogVersion
             || !Lifecycle.Abilities.Select(value => (value.DefinitionId, value.Version))
                 .SequenceEqual(lifecycle.Abilities.Select(value => (value.DefinitionId, value.Version)))
             || !Lifecycle.Scenarios.Select(value => (value.DefinitionId, value.Version))

@@ -48,6 +48,8 @@ internal sealed class HostApplication
                     _composed.CreateEncounterWorld(database, seed, name),
                 ["--create-cargo-outcomes", var database, var seed, var name] =>
                     _composed.CreateCargoOutcomes(database, seed, name),
+                ["--create-cargo-roster", var database, var seed, .. var names] =>
+                    _composed.CreateCargoRoster(database, seed, names),
                 ["--inspect-encounter-timing", var path, var world, var branch, var encounter] =>
                     _encounters.Inspect(path, world, branch, encounter),
                 ["--inspect-command", var path] => _contracts.InspectCommand(path),
@@ -142,6 +144,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --create-liquid-cell-world <world.sqlite> <profile19-genesis.bin> <liquid-cells.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-encounter-journey <world.sqlite> <seed> <player-name>");
         _output.WriteLine("       OpenFantasy.Host --create-cargo-outcomes <world.sqlite> <seed> <player-name>");
+        _output.WriteLine("       OpenFantasy.Host --create-cargo-roster <world.sqlite> <seed> <player-name> [name2] [name3] [name4]");
         _output.WriteLine("       OpenFantasy.Host --serve-cargo-world <private-host-settings.json>");
         _output.WriteLine("       OpenFantasy.Host --create-paced-world <world.sqlite> <profile21-genesis.bin> <encounter-id|none>");
         _output.WriteLine("       OpenFantasy.Host --create-reservoir-transport-world <world.sqlite> <construction-genesis.bin> <reservoir-transport.bin>");

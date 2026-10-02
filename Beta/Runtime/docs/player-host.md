@@ -12,6 +12,17 @@ The Server library targets .NET 8 to preserve the reusable adapter boundary. Cli
 ASP.NET Core merely to connect. Use a TLS server certificate whose identity matches the advertised
 hostname and whose issuer the intended clients trust; never disable certificate validation to connect.
 
+Create a fresh one-to-four-human cargo world before serving it, for example:
+
+```sh
+dotnet src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll --create-cargo-roster saves/cargo-world.sqlite3 world-seed "Amber" "Birch" "Cedar" "Dawn"
+```
+
+Supply one through four ordered names. One name preserves the solo composition. Each additional
+player receives an independently owned axe and sickle; existing NPCs, funds, quest rewards and care
+supplies remain intact. Creation refuses an existing database. This operation does not add players
+to a lived save. See [fresh roster architecture](architecture/player-rosters.md).
+
 Create a local JSON settings file, for example:
 
 ```json

@@ -1,0 +1,260 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.50]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.97]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.12]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Invalid_names_counts_and_mutable_input_are_handled_before_admission [19 ms]
+[xUnit.net 00:00:01.86]     OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.All_humans_have_cooperative_wolf_entries_and_chief_targets_without_changing_npc_grants [FAIL]
+[xUnit.net 00:00:01.86]       System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+[xUnit.net 00:00:01.86]       Stack Trace:
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(106,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(46,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build()
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(49,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs(56,0): at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(46,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(32,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs(25,0): at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs(10,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(21,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1()
+[xUnit.net 00:00:01.86]            at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+[xUnit.net 00:00:01.86]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.86]            at System.Lazy`1.CreateValue()
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(23,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four()
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(134,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.All_humans_have_cooperative_wolf_entries_and_chief_targets_without_changing_npc_grants()
+[xUnit.net 00:00:01.86]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.86]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.86]     OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterEncounterTests.New_human_enters_real_shared_encounter_and_all_four_submit_their_own_required_choices [FAIL]
+[xUnit.net 00:00:01.86]       System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+[xUnit.net 00:00:01.86]       Stack Trace:
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(106,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(46,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build()
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(49,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs(56,0): at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(46,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(32,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs(25,0): at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs(10,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(21,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1()
+[xUnit.net 00:00:01.86]            at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+[xUnit.net 00:00:01.86]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.86]            at System.Lazy`1.CreateValue()
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(23,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four()
+[xUnit.net 00:00:01.86]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(134,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.All_humans_have_cooperative_wolf_entries_and_chief_targets_without_changing_npc_grants()
+[xUnit.net 00:00:01.86]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.86]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.13]     OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Extension_refuses_a_lived_root_without_resetting_its_history [FAIL]
+[xUnit.net 00:00:02.13]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:02.13]       Expected: typeof(System.ArgumentException)
+[xUnit.net 00:00:02.13]       Actual:   typeof(System.IO.InvalidDataException)
+[xUnit.net 00:00:02.13]       ---- System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+[xUnit.net 00:00:02.13]       Stack Trace:
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(175,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Extension_refuses_a_lived_root_without_resetting_its_history()
+[xUnit.net 00:00:02.13]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.13]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.13]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(106,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form)
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(46,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build()
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(49,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended)
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs(56,0): at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis)
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(46,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster)
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(32,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs(25,0): at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs(10,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(21,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1()
+[xUnit.net 00:00:02.13]            at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+[xUnit.net 00:00:02.13]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:02.13]            at System.Lazy`1.CreateValue()
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(23,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four()
+[xUnit.net 00:00:02.13]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(175,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<Extension_refuses_a_lived_root_without_resetting_its_history>b__13_1()
+[xUnit.net 00:00:02.89]     OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.One_name_preserves_exact_solo_bytes_and_multi_rosters_bind_order_names_and_count [FAIL]
+[xUnit.net 00:00:02.89]       System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+[xUnit.net 00:00:02.89]       Stack Trace:
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(106,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(46,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build()
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(49,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs(56,0): at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(46,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(32,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs(25,0): at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs(10,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(21,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1()
+[xUnit.net 00:00:02.89]            at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+[xUnit.net 00:00:02.89]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:02.89]            at System.Lazy`1.CreateValue()
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(23,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four()
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(29,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.One_name_preserves_exact_solo_bytes_and_multi_rosters_bind_order_names_and_count()
+[xUnit.net 00:00:02.89]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.89]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.90]     OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Additional_players_own_complete_facets_and_only_two_explicit_finite_tool_units_each [FAIL]
+[xUnit.net 00:00:02.90]       System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+[xUnit.net 00:00:02.90]       Stack Trace:
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(106,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(46,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build()
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(49,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs(56,0): at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(46,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(32,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs(25,0): at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs(10,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(21,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1()
+[xUnit.net 00:00:02.90]            at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+[xUnit.net 00:00:02.90]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:02.90]            at System.Lazy`1.CreateValue()
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(23,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four()
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(90,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Additional_players_own_complete_facets_and_only_two_explicit_finite_tool_units_each()
+[xUnit.net 00:00:02.90]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.90]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.90]     OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Every_old_source_lot_currency_reserve_and_npc_remains_with_its_owner [FAIL]
+[xUnit.net 00:00:02.90]       System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+[xUnit.net 00:00:02.90]       Stack Trace:
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(106,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs(46,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build()
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(49,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs(56,0): at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(46,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs(32,0): at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs(25,0): at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs(10,0): at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames)
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(21,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1()
+[xUnit.net 00:00:02.90]            at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+[xUnit.net 00:00:02.90]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:02.90]            at System.Lazy`1.CreateValue()
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(23,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four()
+[xUnit.net 00:00:02.90]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs(57,0): at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Every_old_source_lot_currency_reserve_and_npc_remains_with_its_owner()
+[xUnit.net 00:00:02.90]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.90]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.90]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.All_humans_have_cooperative_wolf_entries_and_chief_targets_without_changing_npc_grants [656 ms]
+  Error Message:
+   System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+  Stack Trace:
+     at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 106
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 49
+   at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs:line 56
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 32
+   at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs:line 25
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs:line 10
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 21
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 23
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.All_humans_have_cooperative_wolf_entries_and_chief_targets_without_changing_npc_grants() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 134
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterEncounterTests.New_human_enters_real_shared_encounter_and_all_four_submit_their_own_required_choices [684 ms]
+  Error Message:
+   System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+  Stack Trace:
+     at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 106
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 49
+   at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs:line 56
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 32
+   at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs:line 25
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs:line 10
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 21
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 23
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.All_humans_have_cooperative_wolf_entries_and_chief_targets_without_changing_npc_grants() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 134
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Extension_refuses_a_lived_root_without_resetting_its_history [271 ms]
+  Error Message:
+   Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(System.ArgumentException)
+Actual:   typeof(System.IO.InvalidDataException)
+---- System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Extension_refuses_a_lived_root_without_resetting_its_history() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 175
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 106
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 49
+   at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs:line 56
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 32
+   at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs:line 25
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs:line 10
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 21
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 23
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<Extension_refuses_a_lived_root_without_resetting_its_history>b__13_1() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 175
+  Failed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.One_name_preserves_exact_solo_bytes_and_multi_rosters_bind_order_names_and_count [762 ms]
+  Error Message:
+   System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+  Stack Trace:
+     at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 106
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 49
+   at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs:line 56
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 32
+   at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs:line 25
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs:line 10
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 21
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 23
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.One_name_preserves_exact_solo_bytes_and_multi_rosters_bind_order_names_and_count() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 29
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Additional_players_own_complete_facets_and_only_two_explicit_finite_tool_units_each [1 ms]
+  Error Message:
+   System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+  Stack Trace:
+     at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 106
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 49
+   at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs:line 56
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 32
+   at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs:line 25
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs:line 10
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 21
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 23
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Additional_players_own_complete_facets_and_only_two_explicit_finite_tool_units_each() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 90
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Every_old_source_lot_currency_reserve_and_npc_remains_with_its_owner [< 1 ms]
+  Error Message:
+   System.IO.InvalidDataException : The admitted farm has no bounded valid grounded roster spawn.
+  Stack Trace:
+     at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.FindSpawn(LocalSpatialSnapshot space, ActorPresence first, ActorFormBinding form) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 106
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterGenesisExtension.Build() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.<>c__DisplayClass4_0.<ComposeCore>b__0(WorldSnapshot extended) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 49
+   at OpenFantasy.Hosting.Content.Cargo.CargoWorldAdmission.Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources sources, Func`2 extendGenesis) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoWorldAdmission.cs:line 56
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat, PlayerRosterDefinition roster) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 46
+   at OpenFantasy.Hosting.Content.RoadThreat.RoadThreatWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs:line 32
+   at OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/EncounterOutcome/CargoOutcomeWorldAdmission.cs:line 25
+   at OpenFantasy.Hosting.Content.PlayerRoster.PlayerRosterAdmission.CreateEmbedded(String seedText, IReadOnlyList`1 playerNames) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterAdmission.cs:line 10
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.<>c.<.cctor>b__16_1() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 21
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+--- End of stack trace from previous location ---
+   at System.Lazy`1.CreateValue()
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.get_Four() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 23
+   at OpenFantasy.Hosting.Tests.Content.PlayerRoster.PlayerRosterAdmissionTests.Every_old_source_lot_currency_reserve_and_npc_remains_with_its_owner() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/PlayerRoster/PlayerRosterAdmissionTests.cs:line 57
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+
+Test Run Failed.
+Total tests: 7
+     Passed: 1
+     Failed: 6
+ Total time: 3.6002 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-roster/qualification/roster-20261002T122233110550Z/checks.trx

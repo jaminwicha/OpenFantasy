@@ -71,7 +71,19 @@ public static class NativeCargoWorld
     public static CargoCorridor Corridor(WorldSnapshot genesis)
     {
         ArgumentNullException.ThrowIfNull(genesis);
-        EntityId player = genesis.Residents.Single(value => value.ControllerKind == ResidentControllerKind.Player).ActorId;
+        EntityId[] players = genesis.Residents.Where(value => value.ControllerKind == ResidentControllerKind.Player)
+            .Select(value => value.ActorId).ToArray();
+        EntityId player = players.Length == 1 ? players[0]
+            : genesis.EncounterLifecycle!.Scenarios.Single(value => value.Key == EncounterJourneyAdmission.FirstScenarioKey).InitiatingActorId;
+        return Corridor(genesis, player);
+    }
+
+    /// <summary>Route advice anchored in an explicitly admitted human's starting region.</summary>
+    public static CargoCorridor Corridor(WorldSnapshot genesis, EntityId player)
+    {
+        ArgumentNullException.ThrowIfNull(genesis);
+        if (genesis.GetResident(player).ControllerKind != ResidentControllerKind.Player)
+            throw new ArgumentException("Cargo route advice requires an admitted human anchor.", nameof(player));
         CellCoordinate standing = genesis.Space.GetActor(player).Feet.Cell;
         TerrainRegionBounds basis = genesis.Space.Regions.Single(region => region.Bounds.Contains(standing)).Bounds;
         return CargoCorridor.CreateCircuit(basis, Sources);

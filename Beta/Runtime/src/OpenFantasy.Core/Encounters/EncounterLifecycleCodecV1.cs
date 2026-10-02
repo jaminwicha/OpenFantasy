@@ -3,7 +3,10 @@ using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Core.Encounters;
 
-/// <summary>Complete canonical lifecycle archive; accepted transition history belongs to the world journal.</summary>
+/// <summary>
+/// Complete canonical lifecycle archive. Preserves version-one bytes and explicitly dispatches the
+/// version-two catalog envelope; accepted transition history belongs to the world journal.
+/// </summary>
 public static class EncounterLifecycleCodecV1
 {
     public const int MaximumEncodedByteLength = 512 * 1_024;
@@ -15,7 +18,8 @@ public static class EncounterLifecycleCodecV1
     public static byte[] Encode(EncounterLifecycleSnapshot snapshot)
     {
         ArgumentNullException.ThrowIfNull(snapshot);
-        byte[] encoded = Frame("encounter.lifecycle.v1", Number(1), snapshot.WorldId.ToByteArray(), snapshot.BranchId.ToByteArray(),
+        string tag = snapshot.CatalogVersion == 1 ? "encounter.lifecycle.v1" : "encounter.lifecycle.v2";
+        byte[] encoded = Frame(tag, Number((ulong)snapshot.CatalogVersion), snapshot.WorldId.ToByteArray(), snapshot.BranchId.ToByteArray(),
             snapshot.Seed.ToByteArray(), Number(snapshot.Revision), Number(snapshot.ExplorationSteps), Number(snapshot.TacticalTicks),
             Number(snapshot.EntryTacticalTicks), Number(snapshot.EncounterCount), Number((ulong)snapshot.Phase),
             Frame("encounter.lifecycle-abilities.v1", snapshot.Abilities.Select(ability =>
@@ -36,8 +40,12 @@ public static class EncounterLifecycleCodecV1
         try
         {
             var reader = new WorldFrameReader(bytes, MaximumEncodedByteLength, 17);
-            reader.Tag("encounter.lifecycle.v1"u8);
-            reader.Version();
+            ReadOnlySpan<byte> tag = reader.Field("encounter.lifecycle.v1"u8.Length);
+            int catalogVersion = tag.SequenceEqual("encounter.lifecycle.v1"u8) ? 1
+                : tag.SequenceEqual("encounter.lifecycle.v2"u8) ? 2
+                : throw new FormatException("The lifecycle archive has an unsupported catalog tag.");
+            if (reader.Number() != (ulong)catalogVersion)
+                throw new FormatException("The lifecycle catalog tag and version disagree.");
             EntityId world = reader.Identity();
             EntityId branch = reader.Identity();
             if (world != expectedWorldId || branch != expectedBranchId)
@@ -53,7 +61,7 @@ public static class EncounterLifecycleCodecV1
                 EncounterLifecycleSnapshot.MaximumAbilities, MaximumAbilityByteLength,
                 value => EncounterActionCodecV1.DecodeAbility(value), cancellationToken);
             var scenarios = Entries(reader.Field(MaximumEncodedByteLength), "encounter.scenarios.v1"u8,
-                EncounterLifecycleSnapshot.MaximumScenarios, MaximumScenarioByteLength,
+                EncounterLifecycleSnapshot.ScenarioLimit(catalogVersion), MaximumScenarioByteLength,
                 value => DecodeScenario(value, cancellationToken), cancellationToken);
             var debts = Entries(reader.Field(MaximumEncodedByteLength), "encounter.readiness-debts.v1"u8,
                 EncounterLifecycleSnapshot.MaximumActors, MaximumDebtByteLength, value => DecodeDebt(value), cancellationToken);
@@ -66,7 +74,7 @@ public static class EncounterLifecycleCodecV1
                 ? EncounterActionCodecV1.Decode(actionBytes, new(world, branch, encounter), cancellationToken) : null;
             reader.Complete();
             var result = new EncounterLifecycleSnapshot(world, branch, seed, revision, exploration, tactical, entry,
-                count, phase, abilities, scenarios, debts, scenarioId, actions);
+                count, phase, abilities, scenarios, debts, scenarioId, actions, catalogVersion);
             cancellationToken.ThrowIfCancellationRequested();
             if (!Encode(result).AsSpan().SequenceEqual(bytes))
                 throw new FormatException("The lifecycle archive is not canonical.");

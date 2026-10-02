@@ -16,7 +16,8 @@ retain an earlier outcome without routing ordinary work back into that encounter
 
 An [EncounterScenarioDefinition](../../src/OpenFantasy.Core/Encounters/EncounterScenarioDefinition.cs)
 names the initiating actor, target, entry range and every resident's encounter-specific side and
-ability grants. Bounds are eight scenarios, thirty-two abilities and sixty-four actors. Positive
+ability grants. Catalog version one admits eight scenarios; explicit version two admits sixteen.
+Both retain thirty-two abilities and sixty-four actors. Positive
 opposing sides are participants; side zero is a coupled bystander with no ability grants. These are
 explicit opportunities, not species-wide hostility or permission to omit other residents from time,
 space or material ownership.
@@ -170,7 +171,17 @@ scope, not a general perception or remote knowledge model.
 
 [EncounterLifecycleCodecV1](../../src/OpenFantasy.Core/Encounters/EncounterLifecycleCodecV1.cs) retains
 the complete bounded catalog, counters, phase, debts and optional current/last action archive in a
-canonical `encounter.lifecycle.v1` frame, at most 512 KiB.
+canonical `encounter.lifecycle.v1` or explicit `encounter.lifecycle.v2` frame, each at most 512 KiB.
+The tag and numeric catalog version must agree. Default constructors retain version one and its exact
+bytes; the version-two selection changes only the catalog capacity and its envelope. Nested scenario,
+ability, debt and action formats retain their own versions. Lifecycle transitions preserve the selected
+catalog version, as do resource and material-care archive ancestry checks. A lived world cannot silently
+switch interpretation through an archive continuation. [Fresh player rosters](player-rosters.md) select
+version two for their complete cooperative opportunity catalog.
+Version two also admits at most 320 KiB of combined encoded scenario rows and their field lengths.
+Count maxima are independent bounds, not a guarantee that all maxima fit simultaneously. The joint
+budget reserves space for a full 128 KiB action owner, all ability/debt rows and outer framing within
+the unchanged 512 KiB complete archive. Admission rejects an oversized catalog before gameplay.
 [WorldSnapshotCodecV24](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV24.cs) uses a direct
 22-field root with permanent pacing at index twenty and lifecycle at index twenty-one. The action
 archive is owned inside the lifecycle rather than duplicated as a separately writable component.

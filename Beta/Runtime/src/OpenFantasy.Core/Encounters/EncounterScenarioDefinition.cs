@@ -52,7 +52,9 @@ public sealed class EncounterScenarioDefinition
         TargetActorId = targetActorId;
         EntryRangeSubunits = entryRangeSubunits;
         Combatants = Array.AsReadOnly(actors.Values.ToArray());
-        Version = ContentHash.Compute(EncounterLifecycleCodecV1.EncodeScenario(this));
+        byte[] encoded = EncounterLifecycleCodecV1.EncodeScenario(this);
+        EncodedByteLength = encoded.Length;
+        Version = ContentHash.Compute(encoded);
     }
 
     public EntityId DefinitionId { get; }
@@ -63,4 +65,5 @@ public sealed class EncounterScenarioDefinition
     public long EntryRangeSubunits { get; }
     public ReadOnlyCollection<EncounterCombatant> Combatants { get; }
     public ContentHash Version { get; }
+    internal int EncodedByteLength { get; }
 }

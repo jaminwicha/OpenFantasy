@@ -129,6 +129,10 @@ remain required. Preserve the original reports. Before a long delegated unit, id
 affected and unrun gates explicitly. Compare the actual dependency family: changes confined to Host
 fixtures do not invalidate identical Core source and Core test assemblies. Do not repeat an unrelated
 full suite solely to obtain a "final build" label; reserve time for still-unrun required behaviors.
+Before a broad sweep, select explicit affected families and check their workload against the retained
+budget. Whole-assembly negative filters can silently include unrelated long scenarios. Preserve failed
+or interrupted aggregates; selected later passes prove only their named coverage and do not explain
+an earlier timeout. Keep required full gates and every per-case assertion/deadline unchanged.
 A changed test assembly requires inspecting changed types/discovery dependencies before reusing that
 assembly's earlier evidence; "test-only" by itself is not a proof of independence. For visibility, inspect the captured image and actual
 post-draw sprite/control bounds against occluding UI; a projected point or draw call is insufficient.

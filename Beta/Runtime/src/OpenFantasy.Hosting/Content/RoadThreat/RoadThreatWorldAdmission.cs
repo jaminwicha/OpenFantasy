@@ -2,6 +2,7 @@ using OpenFantasy.Core;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Content.Cargo;
+using OpenFantasy.Hosting.Content.PlayerRoster;
 
 namespace OpenFantasy.Hosting.Content.RoadThreat;
 
@@ -23,14 +24,30 @@ public static class RoadThreatWorldAdmission
         Compose(RestorativeJourneyAdmission.CreateEmbedded(seedText, playerName), CargoCircuitSources.LoadEmbedded(),
             RoadThreatSources.LoadEmbedded());
 
+    /// <summary>Fresh fixed cooperative roster, preserving the exact existing solo path for one name.</summary>
+    public static WorldSnapshot CreateEmbedded(string seedText, IReadOnlyList<string> playerNames)
+    {
+        var roster = new PlayerRosterDefinition(playerNames);
+        if (roster.PlayerNames.Count == 1) return CreateEmbedded(seedText, roster.PlayerNames[0]);
+        return ComposeCore(RestorativeJourneyAdmission.CreateEmbedded(seedText, roster.PlayerNames[0]),
+            CargoCircuitSources.LoadEmbedded(), RoadThreatSources.LoadEmbedded(), roster);
+    }
+
     /// <summary>Admits the circuit, the chief and the retreat law into an unplayed ordinary-care root.</summary>
     public static WorldSnapshot Compose(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo, RoadThreatSources threat)
+        => ComposeCore(ordinaryCareGenesis, cargo, threat, null);
+
+    private static WorldSnapshot ComposeCore(WorldSnapshot ordinaryCareGenesis, CargoCircuitSources cargo,
+        RoadThreatSources threat, PlayerRosterDefinition? roster)
     {
         ArgumentNullException.ThrowIfNull(ordinaryCareGenesis);
         ArgumentNullException.ThrowIfNull(cargo);
         ArgumentNullException.ThrowIfNull(threat);
-        WorldSnapshot circuit = CargoWorldAdmission.Compose(ordinaryCareGenesis, cargo,
-            extended => new RoadThreatGenesisExtension(extended, threat).Build());
+        WorldSnapshot circuit = CargoWorldAdmission.Compose(ordinaryCareGenesis, cargo, extended =>
+        {
+            WorldSnapshot threatened = new RoadThreatGenesisExtension(extended, threat).Build();
+            return roster is null ? threatened : new PlayerRosterGenesisExtension(threatened, roster).Build();
+        });
         return WorldEncounterRetreatAdmission.CreateFresh(circuit);
     }
 

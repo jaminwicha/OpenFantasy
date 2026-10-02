@@ -1,0 +1,19 @@
+{
+  "sourceHead": "9b8bcc36a4453f0bb7ec7020d8c5c1ac6b9851b3",
+  "checkpoint": "codex/checkpoint-before-verification-scope-20261002T124844Z",
+  "changedTargets": 3,
+  "sourceSkillSha256": "6a44e1679932843a12f3d10881714b4d31e1d7d70a01092c026e519fcbf3381b",
+  "manifest": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/manifests/2026-10-02-verification-scope-20261002T124844Z.json",
+  "backupReceipt": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/verification-scope-sync-j7hwxt0g/backups/receipt.json",
+  "restore": "Use tools/sync_portable_skills.py rollback --receipt with the backup receipt; do not overwrite later target edits.",
+  "files": [
+    "skills/game-verification-loop/SKILL.md",
+    "skills/README.md",
+    "manifests/delegation-skill-alignment.json",
+    "manifests/2026-10-02-verification-scope-20261002T124844Z.json"
+  ],
+  "frontmatter": "unchanged; focused body-prose edit",
+  "commit": "542c46d7e61a77f1809c91fe12e0f850b2893087",
+  "milestone": "codex/milestone-verification-scope-20261002T124844Z",
+  "validatorLimitation": "quick_validate.py cannot import PyYAML in default Python. No dependency installed. Frontmatter unchanged, focused diff and all three installed hashes verified."
+}

@@ -75,6 +75,10 @@ other players keep the world active. NPC decision rules remain subject to all wo
 
 ## Queries, closure and recovery
 
+Connections attach saved human residents. [Fresh roster admission](player-rosters.md) authors those
+residents and their ownership before the save is created; joining a port never converts an NPC or
+mints a character, item, wallet balance or care dose.
+
 One shared [trading controller](../../src/OpenFantasy.Hosting/Simulation/LocalTradingController.cs)
 keeps merchant/shopping scheduling single-owned. Inquiry publication is indexed by shopper identity;
 ports can read/cancel only their own inquiry. Merchant answers keep their existing FIFO policy and

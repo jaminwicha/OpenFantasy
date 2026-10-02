@@ -46,6 +46,26 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [fresh player roster](p02/player-roster/RESULT.md) is qualified at
+`codex/milestone-player-roster-20261002`, based on native-player-session milestone `4a9a2ad2`.
+One-to-four production humans have separate controls/facets and finite starter tools; existing NPCs,
+resources and solo bytes remain intact. Explicit lifecycle catalog v2 admits the twelve four-human
+opportunities within joint byte/count limits. The create-only operator refuses save replacement.
+Managed combat requires physical party assembly and each human's own Wait choice. Four actual TLS
+clients move, pause, receive fresh observations, reconnect and reopen authenticated history.
+
+[Final checks](p02/player-roster/FINAL_CHECKS.json): build and 2,768 distinct selected cases pass,
+including two fresh single-client Godot process cases; Windows ACL is unrun on macOS. Independent
+native critique led to joint capacity protection and a real paused-observation barrier. All 653 old
+tests/fixtures, 23 frozen specs and exact unrelated predecessor staging remain intact. Architecture
+docs are current. The broad exploratory Hosting run timed out; its archived-query failure passed
+unchanged in isolation and Networking, but the cause and production latency remain unproven.
+
+Next: four concurrent native combat/reconnect, construction completion with the larger roster and
+actual v2 archive rollover/reopen. Recorded disconnect/controller handoff and all full campaign,
+platform, production, art and human gates remain open. No provider request occurred. The test-family
+selection lesson is recorded here and in ecosystem commit `542c46d`, with three skill copies synced.
+
 The [native accepted-care increment](p02/native-accepted-care/RESULT.md) is qualified as
 `codex/milestone-native-accepted-care-20261002`. From an unplayed full-health production world,
 the native player walks, enters combat, incurs real defeat, acknowledges Wren's care, receives a

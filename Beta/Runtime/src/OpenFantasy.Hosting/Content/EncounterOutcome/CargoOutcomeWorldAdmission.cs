@@ -20,6 +20,10 @@ public static class CargoOutcomeWorldAdmission
     public static WorldSnapshot CreateEmbedded(string seedText, string playerName) =>
         WorldEncounterOutcomeAdmission.CreateFresh(RoadThreatWorldAdmission.CreateEmbedded(seedText, playerName));
 
+    /// <summary>Fresh production cooperative roster; no lived save or existing NPC control is changed.</summary>
+    public static WorldSnapshot CreateEmbedded(string seedText, IReadOnlyList<string> playerNames) =>
+        WorldEncounterOutcomeAdmission.CreateFresh(RoadThreatWorldAdmission.CreateEmbedded(seedText, playerNames));
+
     /// <summary>
     /// A declared fresh calibration of the same composition for qualification only: the chief starts wounded at the
     /// given HP. Its admission identity differs from the production selection; it is not balance or lived history.

@@ -13,6 +13,8 @@ public sealed class EncounterLifecycleSnapshot
 {
     public const int MaximumAbilities = 32;
     public const int MaximumScenarios = 8;
+    public const int MaximumExtendedScenarios = 16;
+    public const int MaximumExtendedCatalogByteLength = 320 * 1_024;
     public const int MaximumActors = 64;
     public const ulong ExplorationRecoveryUnits = 180;
     private readonly Dictionary<EntityId, EncounterScenarioDefinition> _scenarios;
@@ -22,7 +24,7 @@ public sealed class EncounterLifecycleSnapshot
         ulong explorationSteps, ulong tacticalTicks, ulong entryTacticalTicks, ulong encounterCount,
         EncounterLifecyclePhase phase, IEnumerable<EncounterAbilityDefinition> abilities,
         IEnumerable<EncounterScenarioDefinition> scenarios, IEnumerable<EncounterReadinessDebt> debts,
-        EntityId? scenarioId = null, EncounterActionSnapshot? actions = null)
+        EntityId? scenarioId = null, EncounterActionSnapshot? actions = null, int catalogVersion = 1)
     {
         if (worldId == branchId || !Enum.IsDefined(phase) || entryTacticalTicks > tacticalTicks
             || (UInt128)explorationSteps + tacticalTicks + encounterCount > revision
@@ -31,7 +33,11 @@ public sealed class EncounterLifecycleSnapshot
             throw new ArgumentException("Lifecycle scope, phase and cumulative clocks must be internally reachable.");
         }
         Abilities = Copy(abilities, ability => ability.DefinitionId, MaximumAbilities, nameof(abilities));
-        Scenarios = Copy(scenarios, scenario => scenario.DefinitionId, MaximumScenarios, nameof(scenarios));
+        Scenarios = Copy(scenarios, scenario => scenario.DefinitionId, ScenarioLimit(catalogVersion), nameof(scenarios));
+        // Version two trades the Cartesian product of count maxima for a bounded complete archive.
+        // Reserve room for the full 128 KiB action owner, abilities, debts and outer framing.
+        if (catalogVersion == 2 && Scenarios.Sum(scenario => scenario.EncodedByteLength + 4) > MaximumExtendedCatalogByteLength)
+            throw new ArgumentException("The version-two scenario catalog exceeds its combined encoded byte budget.", nameof(scenarios));
         Debts = Copy(debts, debt => debt.ActorId, MaximumActors, nameof(debts));
         if (Scenarios.Count == 0 || Debts.Count == 0
             || Abilities.Select(ability => ability.Key).Distinct(StringComparer.Ordinal).Count() != Abilities.Count
@@ -96,11 +102,13 @@ public sealed class EncounterLifecycleSnapshot
         Phase = phase;
         ScenarioId = scenarioId;
         Actions = actions;
+        CatalogVersion = catalogVersion;
     }
 
     public EntityId WorldId { get; }
     public EntityId BranchId { get; }
     public EntityId Seed { get; }
+    public int CatalogVersion { get; }
     public ulong Revision { get; }
     public ulong ExplorationSteps { get; }
     public ulong TacticalTicks { get; }
@@ -117,12 +125,19 @@ public sealed class EncounterLifecycleSnapshot
 
     public static EncounterLifecycleSnapshot BeginFresh(EntityId worldId, EntityId branchId, EntityId seed,
         IEnumerable<EncounterAbilityDefinition> abilities, IEnumerable<EncounterScenarioDefinition> scenarios,
-        IEnumerable<EntityId> actors)
+        IEnumerable<EntityId> actors, int catalogVersion = 1)
     {
         ArgumentNullException.ThrowIfNull(actors);
         return new(worldId, branchId, seed, 0, 0, 0, 0, 0, EncounterLifecyclePhase.Exploration,
-            abilities, scenarios, actors.Select(actor => new EncounterReadinessDebt(actor, 0)));
+            abilities, scenarios, actors.Select(actor => new EncounterReadinessDebt(actor, 0)), catalogVersion: catalogVersion);
     }
+
+    public static int ScenarioLimit(int catalogVersion) => catalogVersion switch
+    {
+        1 => MaximumScenarios,
+        2 => MaximumExtendedScenarios,
+        _ => throw new ArgumentOutOfRangeException(nameof(catalogVersion), "Only lifecycle catalog versions one and two are supported.")
+    };
 
     public EncounterScenarioDefinition GetScenario(EntityId scenarioId) => _scenarios.TryGetValue(scenarioId, out var scenario)
         ? scenario : throw new ArgumentException("The scenario is not admitted in this lifecycle.", nameof(scenarioId));
@@ -224,7 +239,8 @@ public sealed class EncounterLifecycleSnapshot
     private EncounterLifecycleSnapshot Next(ulong explorationSteps, ulong tacticalTicks, ulong entryTacticalTicks,
         ulong encounterCount, EncounterLifecyclePhase phase, IEnumerable<EncounterReadinessDebt> debts,
         EntityId? scenarioId, EncounterActionSnapshot? actions) => new(WorldId, BranchId, Seed, checked(Revision + 1),
-            explorationSteps, tacticalTicks, entryTacticalTicks, encounterCount, phase, Abilities, Scenarios, debts, scenarioId, actions);
+            explorationSteps, tacticalTicks, entryTacticalTicks, encounterCount, phase, Abilities, Scenarios, debts, scenarioId, actions,
+            CatalogVersion);
 
     private void RequirePhase(EncounterLifecyclePhase expected)
     {

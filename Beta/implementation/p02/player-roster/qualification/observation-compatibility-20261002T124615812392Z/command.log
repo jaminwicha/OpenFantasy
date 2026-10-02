@@ -1,0 +1,21 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.30]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.07]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.32]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.PlayerObservation_delivers_the_complete_admitted_maximum_inventory_to_its_authenticated_player(sockets: True) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.PlayerObservation_delivers_the_complete_admitted_maximum_inventory_to_its_authenticated_player(sockets: False) [1 s]
+[xUnit.net 00:00:05.94]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Care.ConsentedWorldPublicationTests.PlayerObservation_preserves_every_lot_and_proposal_term_at_the_admitted_world_lot_bound [893 ms]
+  Standard Output Messages:
+ MaximumLotObservationBytes=15440
+
+
+
+Test Run Successful.
+Total tests: 3
+     Passed: 3
+ Total time: 6.6140 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-roster/qualification/observation-compatibility-20261002T124615812392Z/checks.trx
