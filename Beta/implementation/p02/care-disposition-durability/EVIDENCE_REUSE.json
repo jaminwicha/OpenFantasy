@@ -1,0 +1,89 @@
+{
+  "capacity": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scenes/FarmHud.tscn",
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmHud.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ],
+    "reason": "Only the Godot HUD scene/script, native visibility probe and client assembly changed. Core, Hosting, Host, selected tests, fixtures, checker and dependency assemblies remain exact. These managed/storage selections neither link FarmHud nor load its scene. Both rendered native aggregates and current native authentication are rerun."
+  },
+  "crash-fixtures": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scenes/FarmHud.tscn",
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmHud.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ],
+    "reason": "Only the Godot HUD scene/script, native visibility probe and client assembly changed. Core, Hosting, Host, selected tests, fixtures, checker and dependency assemblies remain exact. These managed/storage selections neither link FarmHud nor load its scene. Both rendered native aggregates and current native authentication are rerun."
+  },
+  "native-archived-fixtures": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scenes/FarmHud.tscn",
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmHud.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ],
+    "reason": "Only the Godot HUD scene/script, native visibility probe and client assembly changed. Core, Hosting, Host, selected tests, fixtures, checker and dependency assemblies remain exact. These managed/storage selections neither link FarmHud nor load its scene. Both rendered native aggregates and current native authentication are rerun."
+  },
+  "continuation": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scenes/FarmHud.tscn",
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmHud.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ],
+    "reason": "Only the Godot HUD scene/script, native visibility probe and client assembly changed. Core, Hosting, Host, selected tests, fixtures, checker and dependency assemblies remain exact. These managed/storage selections neither link FarmHud nor load its scene. Both rendered native aggregates and current native authentication are rerun."
+  },
+  "dispositions-core": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scenes/FarmHud.tscn",
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmHud.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ],
+    "reason": "Only the Godot HUD scene/script, native visibility probe and client assembly changed. Core, Hosting, Host, selected tests, fixtures, checker and dependency assemblies remain exact. These managed/storage selections neither link FarmHud nor load its scene. Both rendered native aggregates and current native authentication are rerun."
+  },
+  "crash": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scenes/FarmHud.tscn",
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmHud.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ],
+    "reason": "Only the Godot HUD scene/script, native visibility probe and client assembly changed. Core, Hosting, Host, selected tests, fixtures, checker and dependency assemblies remain exact. These managed/storage selections neither link FarmHud nor load its scene. Both rendered native aggregates and current native authentication are rerun."
+  },
+  "crash-auth": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scenes/FarmHud.tscn",
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmHud.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ],
+    "reason": "Only the Godot HUD scene/script, native visibility probe and client assembly changed. Core, Hosting, Host, selected tests, fixtures, checker and dependency assemblies remain exact. These managed/storage selections neither link FarmHud nor load its scene. Both rendered native aggregates and current native authentication are rerun."
+  },
+  "client-managed": {
+    "sourceDifferences": [
+      "Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs",
+      "Beta/Runtime/client/scripts/FarmHud.cs"
+    ],
+    "binaryDifferences": [
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+    ],
+    "reason": "Only the Godot HUD scene/script, native visibility probe and client assembly changed. Core, Hosting, Host, selected tests, fixtures, checker and dependency assemblies remain exact. These managed/storage selections neither link FarmHud nor load its scene. Both rendered native aggregates and current native authentication are rerun."
+  }
+}

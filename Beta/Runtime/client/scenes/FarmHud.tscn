@@ -65,14 +65,19 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Wren's farm"
+autowrap_mode = 3
 
 [node name="Clock" type="Label" parent="Root/Header/Row"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
 
 [node name="Inventory" type="Label" parent="Root/Header/Row"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
 
 [node name="Pause" type="Button" parent="Root/Header/Row"]
 unique_name_in_owner = true

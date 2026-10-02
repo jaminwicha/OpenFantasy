@@ -21,22 +21,22 @@ public sealed class NativeCareDispositionResultTests
         JsonElement[] results = manifest.RootElement.GetProperty("results").EnumerateArray().ToArray();
         Assert.Equal(new[] { "cancel-keyboard", "cancel-pointer", "decline-controller" },
             results.Select(row => row.GetProperty("mode").GetString()).Order().ToArray());
-        foreach (JsonElement row in results) Authenticate(row);
+        foreach (JsonElement row in results)
+        {
+            var fixture = new CareDispositionJournalFixture(humanHelper: true);
+            Authenticate(row, fixture.Genesis, fixture.Journey.Patient, fixture.Journey.Helper);
+        }
     }
 
-    private static void Authenticate(JsonElement row)
+    /// <summary>The same complete native proof, selected by an independently reconstructed expected genesis and actors.</summary>
+    internal static (WorldSnapshot Before, WorldSnapshot Final) Authenticate(JsonElement row, WorldSnapshot expectedGenesis,
+        EntityId patient, EntityId helper)
     {
         string mode = Text(row, "mode");
         bool decline = mode == "decline-controller";
-        var fixture = new CareDispositionJournalFixture(humanHelper: true);
         byte[] genesis = File.ReadAllBytes(Text(row, "genesis"));
-        Assert.Equal(WorldSnapshotCodec.Encode(fixture.Genesis), genesis);
+        Assert.Equal(WorldSnapshotCodec.Encode(expectedGenesis), genesis);
         byte[] beforeBytes = File.ReadAllBytes(Text(row, "before"));
-        WorldSnapshot before = WorldSnapshotCodec.Decode(beforeBytes);
-        var request = before.Care!.Pending!;
-        Assert.NotNull(request);
-        EntityId actor = decline ? fixture.Journey.Helper : fixture.Journey.Patient;
-        var control = before.Inventory.Controls.Single(value => value.ActorId == actor);
         string source = Text(row, "sourceSave");
         string save = Text(row, "save");
         foreach (string path in new[] { source, save })
@@ -45,9 +45,18 @@ public sealed class NativeCareDispositionResultTests
         string finalHash = Hash(save);
         Assert.Equal(Text(row, "finalDatabaseSha256"), finalHash);
 
-        WorldSnapshot final;
+        WorldSnapshot before, final;
         using (var authority = SqliteWorldAuthority.OpenExisting(source, genesis))
-            Assert.Equal(beforeBytes, WorldSnapshotCodec.Encode(authority.ReadStateForHost()));
+        {
+            // A continued root requires its authenticated archive context. The original-genesis replay already
+            // performed here supplies that context; exported bytes alone do not select or authenticate it.
+            before = authority.ReadStateForHost();
+            Assert.Equal(beforeBytes, WorldSnapshotCodec.Encode(before));
+        }
+        var request = before.Care!.Pending!;
+        Assert.NotNull(request);
+        EntityId actor = decline ? helper : patient;
+        var control = before.Inventory.Controls.Single(value => value.ActorId == actor);
         using (var authority = SqliteWorldAuthority.OpenExisting(save, genesis))
         {
             final = authority.ReadStateForHost();
@@ -114,7 +123,7 @@ public sealed class NativeCareDispositionResultTests
         Assert.Equal(before.EncounterActions!.ContentHash, final.EncounterActions!.ContentHash);
         Assert.Equal(before.EncounterLifecycle!.RetainBoundary().ContentHash, final.EncounterLifecycle!.ContentHash);
         Assert.Equivalent(before.Care.Ordinary!, final.Care.Ordinary!, strict: true);
-        Assert.Equal(0, final.Progression.GetActor(fixture.Journey.Patient).CurrentHp);
+        Assert.Equal(0, final.Progression.GetActor(patient).CurrentHp);
 
         using var observed = JsonDocument.Parse(File.ReadAllText(Text(row, "report")));
         JsonElement report = observed.RootElement;
@@ -134,6 +143,7 @@ public sealed class NativeCareDispositionResultTests
         Assert.Empty(reopenedReport.GetProperty("Submissions").EnumerateArray());
         Assert.Equal(Text(report, "FinalViewHash"), Text(reopenedReport, "InitialViewHash"));
         Assert.Equal(Text(report, "FinalViewHash"), Text(reopenedReport, "FinalViewHash"));
+        return (before, final);
     }
 
     private static void Compare(StoredWorldCommit expected, StoredWorldCommit actual)

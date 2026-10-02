@@ -11,6 +11,10 @@ internal sealed partial class FarmHud : CanvasLayer
 {
     private const string InspectHint = "Hover or focus an action to see its target and cost.";
 
+    private Control _header = null!;
+    private Control _targetBar = null!;
+    private float _targetBarGap;
+    private float _targetBarAuthoredHeight;
     private Label _identity = null!;
     private Label _clock = null!;
     private Label _wood = null!;
@@ -49,7 +53,7 @@ internal sealed partial class FarmHud : CanvasLayer
         get
         {
             Rect2 viewport = GetViewport().GetVisibleRect();
-            float top = GetNode<Control>("Root/Header").GetGlobalRect().End.Y;
+            float top = _header.GetGlobalRect().End.Y;
             float bottom = GetNode<Control>("Root/Footer").GetGlobalRect().Position.Y;
             return new Rect2(viewport.Position.X, top, viewport.Size.X, Math.Max(1, bottom - top));
         }
@@ -58,13 +62,20 @@ internal sealed partial class FarmHud : CanvasLayer
     /// <summary>Whether a whole field sprite clears both the main panels and the overlaid target controls.</summary>
     internal bool ShowsFieldSprite(Rect2 sprite)
     {
-        Control targetBar = GetNode<Control>("Root/TargetBar");
         return FieldViewportBounds.Encloses(sprite)
-            && (!targetBar.IsVisibleInTree() || !targetBar.GetGlobalRect().Intersects(sprite));
+            && (!_targetBar.IsVisibleInTree() || !_targetBar.GetGlobalRect().Intersects(sprite));
     }
 
     public override void _Ready()
     {
+        _header = GetNode<Control>("Root/Header");
+        _targetBar = GetNode<Control>("Root/TargetBar");
+        // Both top anchors share Root's origin. Capture the authored gap and offset span, not the transient
+        // actual size: initial wrapping can temporarily raise a container's minimum height before its width settles.
+        _targetBarGap = _targetBar.OffsetTop - _header.OffsetBottom;
+        _targetBarAuthoredHeight = _targetBar.OffsetBottom - _targetBar.OffsetTop;
+        _header.Resized += PlaceTargetBarBelowHeader;
+        PlaceTargetBarBelowHeader();
         _identity = GetNode<Label>("%Identity");
         _clock = GetNode<Label>("%Clock");
         _wood = GetNode<Label>("%Inventory");
@@ -102,6 +113,17 @@ internal sealed partial class FarmHud : CanvasLayer
         BindOfferButton(FarmSemanticAction.UseRestorative, GetNode<Button>("%UseRestorative"));
         _pause.Pressed += () => Request(FarmSemanticAction.TogglePause);
         _preview.Text = InspectHint;
+    }
+
+    /// <summary>Follows container layout changes without allowing growing status text to cover the target controls.</summary>
+    private void PlaceTargetBarBelowHeader()
+    {
+        float top = _header.Position.Y + _header.Size.Y + _targetBarGap;
+        // Position would preserve the current size by baking it into both offsets, including a temporary
+        // oversized minimum. Keep the scene's requested span; Godot can still grow to the current text minimum
+        // and shrink back when wrapping settles. Neither the text nor the natural minimum is clamped.
+        _targetBar.OffsetTop = top;
+        _targetBar.OffsetBottom = top + _targetBarAuthoredHeight;
     }
 
     /// <summary>Pressing requests execution; hover and focus only select which offer the card explains.</summary>

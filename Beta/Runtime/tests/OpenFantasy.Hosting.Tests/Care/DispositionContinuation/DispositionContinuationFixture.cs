@@ -17,10 +17,13 @@ public sealed class DispositionContinuationFixture : IDisposable
 {
     private readonly StorageFiles _pending = new();
 
-    public DispositionContinuationFixture()
+    public DispositionContinuationFixture() : this(humanHelper: false) { }
+
+    /// <summary>Human control is admitted only in the original fresh calibration, before any earned history.</summary>
+    internal DispositionContinuationFixture(bool humanHelper)
     {
         Journey = new RecoveryJournalFixture();
-        Genesis = CreateGenesis();
+        Genesis = CreateGenesis(Journey, humanHelper);
         using var authority = SqliteWorldAuthority.CreateNew(_pending.Path, Genesis);
         // The ordinary-care genesis splits its two source doses between patient and helper. Earn a
         // second helper dose now so a later request can lawfully be acknowledged after the first use.
@@ -147,13 +150,14 @@ public sealed class DispositionContinuationFixture : IDisposable
         return state;
     }
 
-    private WorldSnapshot CreateGenesis()
+    /// <summary>Pure admission builder, also used to authenticate exported native fixtures without replaying their preparation.</summary>
+    internal static WorldSnapshot CreateGenesis(RecoveryJournalFixture journey, bool humanHelper)
     {
-        WorldSnapshot basis = Journey.Legacy;
+        WorldSnapshot basis = journey.Legacy;
         var profiles = basis.Progression!.Actors.Select((actor, index) => new ActorStatProfileDefinition(
             new EntityId(0xcade380000000000, (ulong)(100 + index)), "disposition_archive_actor_" + index,
             "Disposition archive actor " + index, ActorStatProfileKind.Class,
-            new ActorStatValues(actor.ActorId == Journey.Patient ? 255 : 100_000, 4096, 1, 1, 100, 10_000),
+            new ActorStatValues(actor.ActorId == journey.Patient ? 255 : 100_000, 4096, 1, 1, 100, 10_000),
             ActorStatModifiers.Zero, ActorStatModifiers.Zero)).ToArray();
         var actors = basis.Progression.Actors.Select((actor, index) => new ActorProgressionState(actor.ActorId, 0,
             profiles[index], actor.Curve, 1, 0, profiles[index].BaseStats.MaxHp, profiles[index].BaseStats.MaxMp));
@@ -167,10 +171,14 @@ public sealed class DispositionContinuationFixture : IDisposable
             excavation: basis.Excavation, pacing: basis.Pacing, encounterLifecycle: basis.EncounterLifecycle,
             care: basis.Care, resourceHistory: new WorldResourceHistory(admission, new ActorResourceHistory(progression, 0, []), []),
             coordination: basis.Coordination, retreat: basis.Retreat);
-        var controllers = WorldControllerAdmission.CreateFresh(WorldEncounterOutcomeAdmission.CreateFresh(retreat));
-        var definitions = Journey.Genesis.Care!.Ordinary!.Definitions
+        var outcome = humanHelper
+            ? WorldEncounterOutcomeAdmission.CreateCalibratedFresh(retreat,
+                new EncounterOutcomeCalibration(new Dictionary<EntityId, int>(), [journey.Helper]))
+            : WorldEncounterOutcomeAdmission.CreateFresh(retreat);
+        var controllers = WorldControllerAdmission.CreateFresh(outcome);
+        var definitions = journey.Genesis.Care!.Ordinary!.Definitions
             .Where(value => value.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance).ToArray();
-        var permissions = Journey.Genesis.Care.Ordinary.Permissions
+        var permissions = journey.Genesis.Care.Ordinary.Permissions
             .Where(value => definitions.Any(definition => definition.DefinitionId == value.UseDefinitionId));
         return WorldCareDispositionAdmission.CreateFresh(WorldRecoveryAdmission.CreateFresh(controllers, definitions, permissions));
     }

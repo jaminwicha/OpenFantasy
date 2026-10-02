@@ -1,0 +1,14 @@
+[
+  {
+    "report": "qualification/native-20261002T210642276433Z/report.json",
+    "reportedAutomaticPass": true,
+    "acceptedAsVisualEvidence": false,
+    "reason": "Image review shows TargetBar stretched behind the footer after the first HUD repair. The probe did not inspect TargetBar bounds; its green status is insufficient. Original reports are retained unchanged."
+  },
+  {
+    "report": "qualification/native-original-20261002T210802942296Z/report.json",
+    "reportedAutomaticPass": true,
+    "acceptedAsVisualEvidence": false,
+    "reason": "Image review shows TargetBar stretched behind the footer after the first HUD repair. The probe did not inspect TargetBar bounds; its green status is insufficient. Original reports are retained unchanged."
+  }
+]

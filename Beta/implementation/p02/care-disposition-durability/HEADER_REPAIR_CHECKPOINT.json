@@ -1,0 +1,8 @@
+{
+  "checkpoint": "codex/checkpoint-before-care-header-layout-20261002T210111Z",
+  "snapshot": "a0d4b5cca25cc02e71579b26d7324a88c082d151",
+  "sourceHead": "5f770bc2cdc7cd737ac297ee961000c0e224865f",
+  "scope": "New care durability tests, fixtures, tooling and reports including the failed archived native aggregate; isolated index excludes unrelated staged predecessor files.",
+  "verification": "Capacity, injected transaction faults, external kills and authentication, original continuation and native auth, Core disposition tests pass. Archived native aggregate failed on helper HUD bounds; final archived authentication unrun. This is a WIP backup, not acceptance.",
+  "restore": "Read individual preserved files with git show codex/checkpoint-before-care-header-layout-20261002T210111Z:<path>; do not reset the shared checkout."
+}

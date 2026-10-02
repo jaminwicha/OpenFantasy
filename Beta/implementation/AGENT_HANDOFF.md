@@ -54,6 +54,29 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [care durability checkpoint](p02/care-disposition-durability/RESULT.md) proves 128 actual alternating
+cancellations/declines with finite paid recoveries, coordinated history compaction, ten injected
+transaction failures and ten actual Host process kills. Both original and archived pending-care
+fixtures pass their complete native decisions and separate reopens. Larger admitted status values
+exposed header clipping; wrapped columns and a target panel that follows the header now preserve
+complete controls. Direct inspection rejected an intermediate panel-sizing repair despite green
+automated reports; the stronger probe and final rendered runs pass. All failures remain recorded.
+Milestone: `codex/milestone-care-disposition-durability-20261002`.
+[Final checks](p02/care-disposition-durability/FINAL_CHECKS.json): warning-free build, 232 distinct
+managed passes including five new, 12 rendered processes/30 captures and exact original-history
+authentication. Dependency reuse is explicit; 710 of 712 old test/fixture files remain byte-identical,
+with two additive shared-test extractions retaining their originals and assertions. All 23 frozen
+spec files, predecessor staging and 1,294 architecture links are verified. The independent review
+and timeless architecture updates are retained; no external provider call or credit offload occurred.
+
+Next: observable control return and deliberate Resume, proved through a complete paid autonomous
+escape from an attacking NPC. Reproduce the source-reviewed readiness mismatch before fixing it;
+[review notes](p02/care-disposition-durability/REVIEW.md#next-gameplay-dependency) bind the scope.
+Maximum disposition-only/composite-world capacity remains open: resource headroom triggers this
+journey's cut first. Restart/co-player policy, physical devices/OS focus, lived-save migration,
+production selection/history latency and the complete campaign remain open. These native journeys
+begin at prepared pending care and do not qualify native approach/combat or production art.
+
 The [care disposition qualification](p02/care-disposition-qualification/RESULT.md) proves actual native
 patient cancellation (keyboard/pointer), human-helper decline (controller) and three separate paused
 reopens. Exact captured commands/receipts authenticate against the original prepared history; no
@@ -68,11 +91,9 @@ Dependency reuse is explicit;707older tests/fixtures,23specs and predecessor sta
 retain corrected new-test assertions, two native fixture/probe issues and an unfunded fixture request.
 No old gate/rule/timeout changed; no provider call or external credit offload occurred.
 
-Next: disposition-only capacity pressure, maximum composite frames and transaction/process crash
-boundaries, plus native pending-after-cut; then retained hostile survival/restart/co-player policy.
-Physical device/OS-focus, lived-save migration, production selection/history latency and the complete
-campaign remain open. These native controls begin at genuinely prepared pending care and do not
-qualify a native approach/combat journey or production art. Crowded world-space labels still need polish.
+The later durability checkpoint above adds repeated gameplay pressure, transaction/process boundaries
+and native pending-after-cut. Its bounded scope does not prove maximum disposition-only or composite
+capacity. Crowded world-space labels still need polish; the remaining campaign gates stay open.
 
 The [archived quote replay checkpoint](p02/archived-quote-replay/RESULT.md) removes a duplicate complete
 replay from participant inspection. The same pass captures the exact publishing root, independently
@@ -87,8 +108,8 @@ test files, 23 specs and predecessor staging remain exact; 1,289 architecture li
 or credit offload occurred. Earlier archived-query timeouts remain unexplained; long-history latency
 is still open. No new native, multi-cut query, full Core, migration or production acceptance is claimed.
 
-The later care qualification above supplies the native decision and complete pending/cut/disposition/
-re-cut proof. Capacity/crash and survival/restart/co-player dependencies remain open. Continue investigating
+The later care checkpoints above supply native decisions, pending/cut/disposition/re-cut, bounded
+pressure and crash proof. Maximum capacity and survival/restart/co-player dependencies remain open. Continue investigating
 history-query load where evidence warrants; this allocation reduction is not a production latency gate pass.
 
 The [terrain projection reuse checkpoint](p02/multiplayer-service-latency/RESULT.md) captures the
@@ -108,8 +129,9 @@ the cause of every historical timeout or close production scale/latency. Earlier
 remain open. No new native, full Core, migration or full-campaign acceptance is claimed.
 
 The archived-query checkpoint above measures/removes duplicate replay while preserving full
-authentication; prior timeouts remain unexplained. Native care, capacity/crash and survival dependencies
-remain open. The full campaign remains authoritative. No provider retry or Claude credit offload occurred.
+authentication; prior timeouts remain unexplained. Later care checkpoints supply bounded native and
+crash proofs; maximum capacity and survival dependencies remain open. The full campaign remains
+authoritative. No provider retry or Claude credit offload occurred.
 
 The [pending-care decisions checkpoint](p02/pending-care-disposition/RESULT.md) adds explicit profile38/
 CareV5 patient cancellation and helper decline, separate terminal history/frontiers, exact archive/replay,
@@ -125,9 +147,9 @@ The [critic](p02/pending-care-disposition/REVIEW.md) exposed real closure-projec
 both repaired. Legacy constructor compatibility and bounded test synchronization are also corrected.
 No native/full-suite/production acceptance or Claude credit offload is claimed.
 
-The later care qualification above proves native profile38 decisions and complete-world pending/cut/
-closure/re-cut. Remaining care qualification includes disposition-only pressure, maximum composite frames,
-crash boundaries and native pending-after-cut. The projection checkpoint addresses the captured roster expiry. Hostile survival, restart/
+The later care checkpoints above prove native profile38 decisions, complete-world pending/cut/
+closure/re-cut, repeated gameplay pressure, crash boundaries and native pending-after-cut. Maximum
+disposition-only capacity and composite frames remain open. The projection checkpoint addresses the captured roster expiry. Hostile survival, restart/
 co-player policy, authenticated lived-save migration and full production/campaign gates remain open.
 The before-change checkpoint preserves `6358c9b7`; exact scope and failures are retained in the packet.
 

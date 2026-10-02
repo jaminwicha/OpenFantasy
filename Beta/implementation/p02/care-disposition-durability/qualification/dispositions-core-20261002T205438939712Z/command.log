@@ -1,0 +1,53 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.48]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.07]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.29]   Starting:    OpenFantasy.Core.Tests
+  Passed OpenFantasy.Core.Tests.Worlds.Dispositions.CareDispositionActionCodecTests.Exact_disposition_terms_roundtrip_only_in_the_new_action_and_world_profile(decline: True) [34 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Exact_patient_or_helper_closes_request_without_treatment(kind: PatientCancelled) [39 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_forged_disposition_marker_identity_request_actor_kind_or_sequence(field: 1) [36 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Exact_patient_or_helper_closes_request_without_treatment(kind: HelperDeclined) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_forged_disposition_marker_identity_request_actor_kind_or_sequence(field: 6) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_forged_disposition_marker_identity_request_actor_kind_or_sequence(field: 0) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_forged_disposition_marker_identity_request_actor_kind_or_sequence(field: 4) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_forged_disposition_marker_identity_request_actor_kind_or_sequence(field: 3) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_forged_disposition_marker_identity_request_actor_kind_or_sequence(field: 5) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionContinuationTests.Later_cancellation_keeps_latest_real_treatment_and_its_resource_revision_guard [50 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.Dispositions.CareDispositionActionCodecTests.Exact_disposition_terms_roundtrip_only_in_the_new_action_and_world_profile(decline: False) [4 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionContinuationTests.Same_defeat_cannot_be_reacknowledged_after_cut_or_via_another_agreement(otherAgreement: False) [2 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionBoundsTests.Maximum_composite_frontier_retains_eight_exact_defeats_treatments_and_a_pending_request [52 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_roundtrips_explicit_inline_and_continued_owners_including_empty_capability(continued: False, withClosure: True) [5 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionContinuationTests.Same_defeat_cannot_be_reacknowledged_after_cut_or_via_another_agreement(otherAgreement: True) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionContinuationTests.Pending_request_survives_cut_then_closure_and_recut_with_exact_original_identities [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_roundtrips_explicit_inline_and_continued_owners_including_empty_capability(continued: False, withClosure: False) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Revision_commands_and_world_boundaries_include_dispositions [8 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_roundtrips_explicit_inline_and_continued_owners_including_empty_capability(continued: True, withClosure: True) [2 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_roundtrips_explicit_inline_and_continued_owners_including_empty_capability(continued: True, withClosure: False) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_foreign_version_policy_revision_or_totals(field: 1) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Ordinary_interval_ends_at_either_terminal_and_new_operations_append(treat: True) [4 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_foreign_version_policy_revision_or_totals(field: 5) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Ordinary_interval_ends_at_either_terminal_and_new_operations_append(treat: False) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_foreign_version_policy_revision_or_totals(field: 7) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_foreign_version_policy_revision_or_totals(field: 6) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_foreign_version_policy_revision_or_totals(field: 8) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_refuses_foreign_version_policy_revision_or_totals(field: 4) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Treatment_and_disposition_are_exclusive_in_both_commit_orders [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Wrong_actor_unknown_request_and_nonpositive_sequence_are_refused(kind: PatientCancelled) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionContinuationTests.Recovery_use_and_revocation_follow_disposition_across_repeated_boundaries [8 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Wrong_actor_unknown_request_and_nonpositive_sequence_are_refused(kind: HelperDeclined) [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.Accepted_disposition_cannot_be_rewritten_or_removed_by_a_successor [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_preserves_ordinary_or_recovery_interpretation_with_and_without_continuation(recovery: True) [2 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionModelTests.A_disposition_must_close_the_sole_active_request_in_chronological_order [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_preserves_ordinary_or_recovery_interpretation_with_and_without_continuation(recovery: False) [< 1 ms]
+[xUnit.net 00:00:01.44]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.V5_requires_exact_context_and_refuses_malformed_context_counters_markers_and_trailing_data [6 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionCodecTests.Legacy_constructor_and_bytes_keep_the_old_interpretation [4 ms]
+  Passed OpenFantasy.Core.Tests.Care.Dispositions.CareDispositionBoundsTests.Full_disposition_window_cuts_without_losing_cumulative_counts_or_terminal_headroom [26 ms]
+
+Test Run Successful.
+Total tests: 39
+     Passed: 39
+ Total time: 1.8300 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/dispositions-core-20261002T205438939712Z/checks.trx

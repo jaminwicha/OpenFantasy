@@ -1,0 +1,231 @@
+{
+  "Kind": "native-care-disposition-v1",
+  "Mode": "decline-controller",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: HUD readability: Header outside viewport; Identity clipped; OpenPack clipped\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.CareDispositionPlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs:line 425\n   at OpenFantasy.Client.CareDispositionPlayProbe.CaptureHud(String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs:line 327\n   at OpenFantasy.Client.CareDispositionPlayProbe.Decide() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs:line 142\n   at OpenFantasy.Client.CareDispositionPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/CareDispositions/CareDispositionPlayProbe.cs:line 103",
+  "OpeningSeconds": 3.7742889,
+  "ProbeMilliseconds": 4014,
+  "Paused": true,
+  "PatientActorId": "9f46afc13f5325f0e033d55cb90484e3",
+  "HelperActorId": "2e7ae37f8e6ad487369f02772ee4e8e6",
+  "RequestId": "c8c7a7972423f8272332566f20c5c555",
+  "ControlledActorId": "2e7ae37f8e6ad487369f02772ee4e8e6",
+  "FinalCareStatus": "Pending",
+  "InitialViewHash": "179C4ED93F83FE84E85270DC3B8BBEB3C0BFEC717AD1F265AABCEB1798C0EBE4",
+  "FinalViewHash": "179C4ED93F83FE84E85270DC3B8BBEB3C0BFEC717AD1F265AABCEB1798C0EBE4",
+  "SelectedCommandBytes": null,
+  "Submissions": [],
+  "Inputs": [
+    {
+      "Stage": "opening",
+      "LogicalFixtureFocus": true
+    }
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/native-20261002T205814770350Z/native-care-dispositions-bh4v6nwm/decline-controller.pending.png"
+  ],
+  "Checks": [],
+  "HudBounds": [
+    {
+      "Label": "pending",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": -3.5,
+            "Y": 10,
+            "Width": 296,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 100000/100000 \u00B7 MP 4096/4096",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": 296,
+          "Inside": false,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 310.5,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:01 \u00B7 Height 1 m",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 546.5,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 0 \u00B7 Berries: 3\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 747.5,
+            "Y": 10,
+            "Width": 127,
+            "Height": 56
+          },
+          "Text": "Resume  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 892.5,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": false,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 318,
+            "Width": 896,
+            "Height": 55
+          },
+          "Text": "Speak with Wren first. Marla trades down-screen in Brasshollow, Kegga far up-screen in Gearford. V opens actions; Q turns to Market; Offers \u2192 Stall chooses a stall.",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 377,
+            "Width": 896,
+            "Height": 49
+          },
+          "Text": "Paused \u00B7 Encounter decided \u00B7 This fight is between others \u00B7 World waiting for acceptance\nTraveler \u00B7 incapacitated \u00B7 Bramble Wolf \u00B7 HP 100000/100000",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 792,
+            "Height": 55
+          },
+          "Text": "Encounter decided\nV: care choices",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": 163,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 828,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "PatientSprite": {
+        "X": 432,
+        "Y": 148,
+        "Width": 32,
+        "Height": 48
+      },
+      "HelperSprite": {
+        "X": 464,
+        "Y": 148,
+        "Width": 32,
+        "Height": 48
+      },
+      "Failures": [
+        "Header outside viewport",
+        "Identity clipped",
+        "OpenPack clipped"
+      ]
+    }
+  ],
+  "WheelBounds": [],
+  "FocusRequests": 0,
+  "ObservedNativeFocus": false,
+  "NativeFocused": false,
+  "Unfocusable": true,
+  "StartupNoFocus": true,
+  "Display": "macOS",
+  "LogicalFocus": true,
+  "ObservedHealthCue": false,
+  "SubmissionOverflow": false,
+  "FinalPatientHp": 0,
+  "FinalEncounterPhase": "Outcome",
+  "Stage": "pending-inspection"
+}

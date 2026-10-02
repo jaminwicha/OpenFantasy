@@ -1,0 +1,161 @@
+{
+  "status": "bounded care durability, pressure and archived native qualification passed; remaining campaign gates open",
+  "checkpoint": "codex/checkpoint-before-care-disposition-durability-20261002T203735Z",
+  "sourceHead": "5f770bc2cdc7cd737ac297ee961000c0e224865f",
+  "milestone": "codex/milestone-care-disposition-durability-20261002",
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261002T211326299909Z/report.json",
+      "sha256": "bd63c098f675b8932ba04beaab2a4e24fefe01063c806586d9c668bdf80bcab4",
+      "seconds": 7.384918291994836,
+      "outcomes": null,
+      "accepted": true
+    },
+    "capacity": {
+      "path": "qualification/capacity-20261002T205017584091Z/report.json",
+      "sha256": "1732e834fab600485a977b0f9838478ece56a1939aa46ae6f9b911635a46a0d1",
+      "seconds": 119.33009583299281,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "crash-fixtures": {
+      "path": "qualification/crash-fixtures-20261002T205217703306Z/report.json",
+      "sha256": "d94b835b5f37610e86b44fbb62d214a7da276f495b720ef0c6c627f09c385074",
+      "seconds": 79.40347687501344,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "native-archived-fixtures": {
+      "path": "qualification/native-archived-fixtures-20261002T205337428080Z/report.json",
+      "sha256": "c818d7f481a63b967ff3f65cb2a47569f03b62065c5d7e96a69a38915265c252",
+      "seconds": 13.899161707988242,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "continuation": {
+      "path": "qualification/continuation-20261002T205351545512Z/report.json",
+      "sha256": "21f7274686501016469ecdf4b5ba039d09cb35497287e9617a548ee4755ad4c1",
+      "seconds": 38.346122832997935,
+      "outcomes": {
+        "Passed": 3
+      },
+      "accepted": true
+    },
+    "native-auth": {
+      "path": "qualification/native-auth-20261002T211849314271Z/report.json",
+      "sha256": "66e0f3b4430e152ef899d4047f893ce280c78d41c57f4121a8112bf24ac59ade",
+      "seconds": 19.546425416017883,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "dispositions-core": {
+      "path": "qualification/dispositions-core-20261002T205438939712Z/report.json",
+      "sha256": "44eb5573a4b457d508bcd56f614956bc30d754f5f6c71937be41be09f3ff76d0",
+      "seconds": 3.010918624990154,
+      "outcomes": {
+        "Passed": 39
+      },
+      "accepted": true
+    },
+    "crash": {
+      "path": "qualification/crash-20261002T205536482438Z/report.json",
+      "sha256": "ad35b87398a1da905db5fe0c2fcf13d94c69d60228ee436d202f750ad8571537",
+      "seconds": 99.90010250001797,
+      "outcomes": null,
+      "accepted": true
+    },
+    "crash-auth": {
+      "path": "qualification/crash-auth-20261002T205717577787Z/report.json",
+      "sha256": "96dc02543748c7e2fadc6c3eb80cf40839c4859fb5e2c535e69f96aef9ed132c",
+      "seconds": 56.39215254201554,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "native": {
+      "path": "qualification/native-20261002T211418989090Z/report.json",
+      "sha256": "433927a0e12d9ec4b6525e0b6b540a201ee9f5ae641cc7ea9111ecf43196a047",
+      "seconds": 131.48441325000022,
+      "outcomes": null,
+      "accepted": true
+    },
+    "native-archived-auth": {
+      "path": "qualification/native-archived-auth-20261002T211631660124Z/report.json",
+      "sha256": "0402a39add05d068b43efdd4afc50649000912541214541dcd6a838930592517",
+      "seconds": 72.05500129100983,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "native-original": {
+      "path": "qualification/native-original-20261002T211744561535Z/report.json",
+      "sha256": "01cd62cd54167f696e76f23286284975ea50e449025e5a8b5d9bd66bb0338e32",
+      "seconds": 64.15882474998944,
+      "outcomes": null,
+      "accepted": true
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261002T210855049422Z/report.json",
+      "sha256": "42c0a082e5b889298a4f56c9d31e16d4d7e84c67feae6d8fd01d1aaf821f6d83",
+      "seconds": 35.180920790997334,
+      "outcomes": {
+        "Passed": 184
+      },
+      "accepted": true
+    }
+  },
+  "distinctPassingManagedCases": 232,
+  "newPassingManagedCases": 5,
+  "transactionFaults": 10,
+  "externalProcessKills": 10,
+  "renderedProcesses": 12,
+  "renderedImages": 30,
+  "actualAlternatingDispositions": 128,
+  "actualClosingResourceBatches": 255,
+  "closingFrameBytes": 687591,
+  "continuedFrameBytes": 74944,
+  "careContinuationBytes": 1183,
+  "protectedTestsAndFixtures": 712,
+  "byteIdenticalOldTestsAndFixtures": 710,
+  "explicitAdditiveTestRefactors": {
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/DispositionContinuation/DispositionContinuationFixture.cs": {
+      "original": "Beta/implementation/p02/care-disposition-durability/originals/DispositionContinuationFixture.cs",
+      "sha256": "8b04628e08751c385ab23cc3f987218332f6e499a121782727dcff10df9be83f",
+      "reason": "Additive shared fixture/authentication extraction for archived native proof; retain existing entrypoints and assertions; rerun affected old cases.",
+      "finalSha256": "4c3dc728f2470047937f5ec45fc533ed95689cf294cc8336c22945d8cda4c728"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/NativeCareDispositions/NativeCareDispositionResultTests.cs": {
+      "original": "Beta/implementation/p02/care-disposition-durability/originals/NativeCareDispositionResultTests.cs",
+      "sha256": "5cffe2f8e7d289b022b3dcfabe3b944d998f0b18e2739ac279ccfd44f05d4a43",
+      "reason": "Additive shared fixture/authentication extraction for archived native proof; retain existing entrypoints and assertions; rerun affected old cases.",
+      "finalSha256": "70dd777ae63f12591037cab29cb96d0e18ef30ab9380fb66c95cc2640c756c91"
+    }
+  },
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLinks": 1294,
+  "dependencyReuse": "EVIDENCE_REUSE.json",
+  "visuallyRejectedReports": "VISUAL_REJECTIONS.json",
+  "failedReportsRetained": [
+    "qualification/capacity-20261002T204741672025Z/report.json",
+    "qualification/native-20261002T205814770350Z/report.json"
+  ],
+  "limits": [
+    "resource pressure cuts before the disposition limit; not maximum disposition-only world capacity or maximum composite-world frame",
+    "SIGKILL at reported transaction boundaries; not power-loss/partial-page storage proof",
+    "rendered native starts after managed preparation and one real cut; physical devices, OS focus, platforms and human/art acceptance remain open",
+    "hostile survival, restart/co-player policy, authenticated lived-save migration and production selection remain open",
+    "history-query production latency and prior unexplained failures remain separate",
+    "no full-suite, full-phase or full-campaign acceptance; no external provider call or credit offload"
+  ]
+}

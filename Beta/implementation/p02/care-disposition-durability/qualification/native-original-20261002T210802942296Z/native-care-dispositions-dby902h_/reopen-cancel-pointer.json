@@ -1,0 +1,253 @@
+{
+  "Kind": "native-care-disposition-v1",
+  "Mode": "reopen-cancel-pointer",
+  "Status": "passed",
+  "Failure": null,
+  "OpeningSeconds": 1.5887136,
+  "ProbeMilliseconds": 2654,
+  "Paused": true,
+  "PatientActorId": "9f46afc13f5325f0e033d55cb90484e3",
+  "HelperActorId": "2e7ae37f8e6ad487369f02772ee4e8e6",
+  "RequestId": "899591e693b315aaeefea0e7fc17feae",
+  "ControlledActorId": "9f46afc13f5325f0e033d55cb90484e3",
+  "FinalCareStatus": "Cancelled",
+  "InitialViewHash": "111335C7D78977ABAD0110F11EA8710304DCABBC821AEAC48C037C4DAC308C36",
+  "FinalViewHash": "111335C7D78977ABAD0110F11EA8710304DCABBC821AEAC48C037C4DAC308C36",
+  "SelectedCommandBytes": null,
+  "Submissions": [],
+  "Inputs": [
+    {
+      "Stage": "opening",
+      "LogicalFixtureFocus": true
+    },
+    {
+      "Stage": "reopen",
+      "LogicalFixtureFocus": false
+    },
+    {
+      "Stage": "reopen",
+      "LogicalFixtureFocus": true
+    }
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/native-original-20261002T210802942296Z/native-care-dispositions-dby902h_/reopen-cancel-pointer.reopen.png"
+  ],
+  "Checks": [
+    "Paused reopening preserves the observed closure and sends no command, including through logical focus loss/return."
+  ],
+  "HudBounds": [
+    {
+      "Label": "reopen",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 218,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 0/60 \u00B7 MP 10/10",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 254,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:01 \u00B7 Height 1 m",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 490,
+            "Y": 10,
+            "Width": 218,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 726,
+            "Y": 10,
+            "Width": 127,
+            "Height": 56
+          },
+          "Text": "Resume  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 292,
+            "Width": 896,
+            "Height": 55
+          },
+          "Text": "Speak with Wren first. Marla trades down-screen in Brasshollow, Kegga far up-screen in Gearford. V opens actions; Q turns to Market; Offers \u2192 Stall chooses a stall.",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 351,
+            "Width": 896,
+            "Height": 75
+          },
+          "Text": "Paused \u00B7 Defeated \u00B7 Your character is incapacitated (0 HP) and cannot move or act \u00B7 Care request cancelled; no treatment was given\nBramble Wolf \u00B7 HP 62/62",
+          "Lines": 3,
+          "VisibleLines": 3,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 712,
+            "Height": 55
+          },
+          "Text": "Defeated\nE / A: accept defeat",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": 166,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 748,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ReleaseEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "PatientSprite": {
+        "X": 464,
+        "Y": 135,
+        "Width": 32,
+        "Height": 48
+      },
+      "HelperSprite": {
+        "X": 496,
+        "Y": 135,
+        "Width": 32,
+        "Height": 48
+      },
+      "Failures": []
+    }
+  ],
+  "WheelBounds": [],
+  "FocusRequests": 0,
+  "ObservedNativeFocus": false,
+  "NativeFocused": false,
+  "Unfocusable": true,
+  "StartupNoFocus": true,
+  "Display": "macOS",
+  "LogicalFocus": true,
+  "ObservedHealthCue": false,
+  "SubmissionOverflow": false,
+  "FinalPatientHp": 0,
+  "FinalEncounterPhase": "Outcome",
+  "Stage": "reopen"
+}

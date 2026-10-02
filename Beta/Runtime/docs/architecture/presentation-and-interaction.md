@@ -50,6 +50,13 @@ named collaborators. [FarmCanvas](../../client/scripts/FarmCanvas.cs) and its
 paperdoll actors, gathering nodes, structures, daylight and target markers. The scene graph and
 Godot physics do not own authoritative movement, inventory, production or time.
 
+[FarmHud](../../client/scripts/FarmHud.cs) keeps identity, clock and inventory text in flexible,
+word-wrapped columns defined by its [scene](../../client/scenes/FarmHud.tscn). Pause and Pack retain
+their intrinsic control widths; larger observed values increase the header's height instead of
+pushing controls off screen. The target bar follows header resize events with the scene-authored
+vertical gap. Field visibility and camera framing use the actual laid-out header and footer bounds,
+so wrapped status text remains part of the occlusion calculation.
+
 Each canvas frame names exactly one geometry mode, and every actor, object, target cue and camera limit uses
 that mode's projection: the fixed farm grid (`FarmCanvasCoordinates`, one admitted region and floor), the
 worksite/watercourse cutaway (`WorksiteCoordinates`), or the cargo world's

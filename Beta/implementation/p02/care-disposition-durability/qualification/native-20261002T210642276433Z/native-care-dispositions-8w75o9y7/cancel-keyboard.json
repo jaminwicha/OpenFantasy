@@ -1,0 +1,826 @@
+{
+  "Kind": "native-care-disposition-v1",
+  "Mode": "cancel-keyboard",
+  "Status": "passed",
+  "Failure": null,
+  "OpeningSeconds": 3.4344315,
+  "ProbeMilliseconds": 5414,
+  "Paused": true,
+  "PatientActorId": "9f46afc13f5325f0e033d55cb90484e3",
+  "HelperActorId": "2e7ae37f8e6ad487369f02772ee4e8e6",
+  "RequestId": "c8c7a7972423f8272332566f20c5c555",
+  "ControlledActorId": "9f46afc13f5325f0e033d55cb90484e3",
+  "FinalCareStatus": "Cancelled",
+  "InitialViewHash": "2F7F61FDE5D3D8D2D7E4D42FF6408746958FA0AED12FB8C0BB8FCBB3995BE30C",
+  "FinalViewHash": "BEBD520A683F74832BBCAB1D7034235594D4AD8832044D1657140D3925AC55A1",
+  "SelectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001500000010376E15956313A6C5D1FD3A7D6C71B1930000001076B9E6ABEF8231BDEFF68286754B2DAE0000001067853610CB631CF2256397FDBA3FEB6D000000109F46AFC13F5325F0E033D55CB90484E3000000104D4DF8A3D6A56B603FB913CD4230648800000010942787427B264D29FA206535E7BC8F3700000008000000000000001A000000684F464300000000010000000500000018776F726C642E616374696F6E2E63616E63656C2D6361726500000008000000000000000100000010C8C7A7972423F8272332566F20C5C555000000104881066574E66C40774856119C40132D000000080000000000000001",
+  "Submissions": [
+    {
+      "CommandId": "376e15956313a6c5d1fd3a7d6c71b193",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001500000010376E15956313A6C5D1FD3A7D6C71B1930000001076B9E6ABEF8231BDEFF68286754B2DAE0000001067853610CB631CF2256397FDBA3FEB6D000000109F46AFC13F5325F0E033D55CB90484E3000000104D4DF8A3D6A56B603FB913CD4230648800000010942787427B264D29FA206535E7BC8F3700000008000000000000001A000000684F464300000000010000000500000018776F726C642E616374696F6E2E63616E63656C2D6361726500000008000000000000000100000010C8C7A7972423F8272332566F20C5C555000000104881066574E66C40774856119C40132D000000080000000000000001",
+      "ReceiptBytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010376E15956313A6C5D1FD3A7D6C71B1930000001076B9E6ABEF8231BDEFF68286754B2DAE000000104D4DF8A3D6A56B603FB913CD4230648800000010942787427B264D29FA206535E7BC8F3700000020B18100C6E4E31B1D5C60FE1E8BA002EA9F9A0CF621584433664C96DFC90AE89B00000008000000000000043C000000080000000000000001000000080000000000000000",
+      "IsRetry": false,
+      "IntentType": "CancelPendingCareIntent"
+    }
+  ],
+  "Inputs": [
+    {
+      "Stage": "opening",
+      "LogicalFixtureFocus": true
+    },
+    {
+      "Stage": "pending-inspection",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "pending-inspection",
+      "Route": "keyboard",
+      "Key": "Left"
+    },
+    {
+      "Stage": "pending-inspection",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "pending-inspection",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "pending-inspection",
+      "Route": "keyboard",
+      "Key": "Left"
+    },
+    {
+      "Stage": "pending-inspection",
+      "LogicalFixtureFocus": false
+    },
+    {
+      "Stage": "pending-inspection",
+      "LogicalFixtureFocus": true
+    },
+    {
+      "Stage": "running-inspection",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "running-inspection",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "running-inspection",
+      "Route": "keyboard",
+      "Key": "Left"
+    },
+    {
+      "Stage": "running-inspection",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "running-inspection",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "running-inspection",
+      "Route": "keyboard",
+      "Key": "Left"
+    },
+    {
+      "Stage": "confirm",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "closure",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/native-20261002T210642276433Z/native-care-dispositions-8w75o9y7/cancel-keyboard.pending.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/native-20261002T210642276433Z/native-care-dispositions-8w75o9y7/cancel-keyboard.paused-inspection.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/native-20261002T210642276433Z/native-care-dispositions-8w75o9y7/cancel-keyboard.selected.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/native-20261002T210642276433Z/native-care-dispositions-8w75o9y7/cancel-keyboard.closed.png"
+  ],
+  "Checks": [
+    "Paused wheel inspection, explicit close and logical focus loss/return send no command and preserve pending care.",
+    "The exact ready care choice survives a rendered frame and a 0.6-second read without submitting.",
+    "One exact canonical disposition command received an applied receipt; 0 HP and the unread encounter remain unchanged."
+  ],
+  "HudBounds": [
+    {
+      "Label": "pending",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 218,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 0/255 \u00B7 MP 4096/4096",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 254,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:01 \u00B7 Height 1 m",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 490,
+            "Y": 10,
+            "Width": 218,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 726,
+            "Y": 10,
+            "Width": 127,
+            "Height": 56
+          },
+          "Text": "Resume  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 318,
+            "Width": 896,
+            "Height": 55
+          },
+          "Text": "Speak with Wren first. Marla trades down-screen in Brasshollow, Kegga far up-screen in Gearford. V opens actions; Q turns to Market; Offers \u2192 Stall chooses a stall.",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 377,
+            "Width": 896,
+            "Height": 49
+          },
+          "Text": "Paused \u00B7 Defeated \u00B7 Care requested from Wren \u00B7 Treatment pending \u00B7 World waiting\nBramble Wolf \u00B7 HP 100000/100000",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 712,
+            "Height": 55
+          },
+          "Text": "Defeated\nV: care choices",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": 128,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 748,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ReleaseEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "PatientSprite": {
+        "X": 464,
+        "Y": 148,
+        "Width": 32,
+        "Height": 48
+      },
+      "HelperSprite": {
+        "X": 496,
+        "Y": 148,
+        "Width": 32,
+        "Height": 48
+      },
+      "Failures": []
+    },
+    {
+      "Label": "closed",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 218,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 0/255 \u00B7 MP 4096/4096",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 254,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:01 \u00B7 Height 1 m",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 490,
+            "Y": 10,
+            "Width": 218,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 726,
+            "Y": 10,
+            "Width": 127,
+            "Height": 56
+          },
+          "Text": "Resume  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 321,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Paused. Press Esc to continue.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 351,
+            "Width": 896,
+            "Height": 75
+          },
+          "Text": "Paused \u00B7 Defeated \u00B7 Your character is incapacitated (0 HP) and cannot move or act \u00B7 Care request cancelled; no treatment was given\nBramble Wolf \u00B7 HP 100000/100000",
+          "Lines": 3,
+          "VisibleLines": 3,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 712,
+            "Height": 55
+          },
+          "Text": "Defeated\nE / A: accept defeat",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": 166,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 748,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ReleaseEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "PatientSprite": {
+        "X": 464,
+        "Y": 149.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "HelperSprite": {
+        "X": 496,
+        "Y": 149.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Failures": []
+    }
+  ],
+  "WheelBounds": [
+    {
+      "Label": "paused-inspection",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Panel": {
+        "X": 72,
+        "Y": 35,
+        "Width": 816,
+        "Height": 470
+      },
+      "SelectedAction": "CancelCare",
+      "Controls": [
+        {
+          "Name": "Title",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 92,
+            "Y": 53,
+            "Width": 561,
+            "Height": 35
+          },
+          "Text": "Quick actions",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": 163,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "CloseWheel",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 657,
+            "Y": 53,
+            "Width": 127,
+            "Height": 35
+          },
+          "Text": "Close [V / Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "NextWheelPage",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 788,
+            "Y": 53,
+            "Width": 80,
+            "Height": 35
+          },
+          "Text": "Gifts [Q]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "WheelTime",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 92,
+            "Y": 98,
+            "Width": 776,
+            "Height": 26
+          },
+          "Text": "World paused \u00B7 Inspection only \u00B7 09:01",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": 328,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ChoiceName",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 452,
+            "Y": 134,
+            "Width": 416,
+            "Height": 34
+          },
+          "Text": "Cancel care request",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ChoiceDetails",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 452,
+            "Y": 180,
+            "Width": 416,
+            "Height": 200
+          },
+          "Text": "Target: Wren\nCost: No cost\n\nEnds only this care request. Health, medicine, the care agreement and separate recovery permissions remain unchanged. Accepting the encounter outcome is a separate choice.",
+          "Lines": 7,
+          "VisibleLines": 7,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ConfirmChoice",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 452,
+            "Y": 392,
+            "Width": 416,
+            "Height": 34
+          },
+          "Text": "Confirm [Enter / A]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Hint",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 452,
+            "Y": 438,
+            "Width": 416,
+            "Height": 49
+          },
+          "Text": "Choose: point, arrows / D-pad / stick\nTab: move between controls",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    },
+    {
+      "Label": "selected",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Panel": {
+        "X": 72,
+        "Y": 35,
+        "Width": 816,
+        "Height": 470
+      },
+      "SelectedAction": "CancelCare",
+      "Controls": [
+        {
+          "Name": "Title",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 92,
+            "Y": 53,
+            "Width": 561,
+            "Height": 35
+          },
+          "Text": "Quick actions",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": 163,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "CloseWheel",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 657,
+            "Y": 53,
+            "Width": 127,
+            "Height": 35
+          },
+          "Text": "Close [V / Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "NextWheelPage",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 788,
+            "Y": 53,
+            "Width": 80,
+            "Height": 35
+          },
+          "Text": "Gifts [Q]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "WheelTime",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 92,
+            "Y": 98,
+            "Width": 776,
+            "Height": 26
+          },
+          "Text": "World waiting \u00B7 09:01",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": 181,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ChoiceName",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 452,
+            "Y": 134,
+            "Width": 416,
+            "Height": 34
+          },
+          "Text": "Cancel care request",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ChoiceDetails",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 452,
+            "Y": 180,
+            "Width": 416,
+            "Height": 200
+          },
+          "Text": "Target: Wren\nCost: No cost\n\nEnds only this care request. Health, medicine, the care agreement and separate recovery permissions remain unchanged. Accepting the encounter outcome is a separate choice.",
+          "Lines": 7,
+          "VisibleLines": 7,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ConfirmChoice",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 452,
+            "Y": 392,
+            "Width": 416,
+            "Height": 34
+          },
+          "Text": "Confirm [Enter / A]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Hint",
+          "Panel": "Panel",
+          "Rect": {
+            "X": 452,
+            "Y": 438,
+            "Width": 416,
+            "Height": 49
+          },
+          "Text": "Choose: point, arrows / D-pad / stick\nTab: move between controls",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    }
+  ],
+  "FocusRequests": 0,
+  "ObservedNativeFocus": false,
+  "NativeFocused": false,
+  "Unfocusable": true,
+  "StartupNoFocus": true,
+  "Display": "macOS",
+  "LogicalFocus": true,
+  "ObservedHealthCue": false,
+  "SubmissionOverflow": false,
+  "FinalPatientHp": 0,
+  "FinalEncounterPhase": "Outcome",
+  "Stage": "closure"
+}

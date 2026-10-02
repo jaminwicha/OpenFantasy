@@ -318,11 +318,40 @@ internal sealed partial class CareDispositionPlayProbe : Node
             Control panel = Hud.GetNode<Control>("Root/" + name);
             Measure(panel, viewport, controls, failures);
         }
+        Rect2 header = Hud.GetNode<Control>("Root/Header").GetGlobalRect();
+        Rect2 footer = Hud.GetNode<Control>("Root/Footer").GetGlobalRect();
+        Control targetBar = Hud.GetNode<Control>("Root/TargetBar");
+        Rect2 targetBounds = targetBar.GetGlobalRect();
+        List<object> targetButtons = [];
+        if (targetBar.IsVisibleInTree())
+        {
+            Measure(targetBar, viewport, controls, failures);
+            if (!Hud.FieldViewportBounds.Encloses(targetBounds)) failures.Add("TargetBar outside the visible field");
+            if (targetBounds.Intersects(header)) failures.Add("TargetBar overlaps Header");
+            if (targetBounds.Intersects(footer)) failures.Add("TargetBar overlaps Footer");
+            foreach (Button button in TextControls(targetBar).OfType<Button>())
+            {
+                StyleBox style = button.GetThemeStylebox("normal");
+                Vector2 available = button.Size - new Vector2(style.GetContentMargin(Side.Left) + style.GetContentMargin(Side.Right),
+                    style.GetContentMargin(Side.Top) + style.GetContentMargin(Side.Bottom));
+                Font font = button.GetThemeFont("font");
+                int fontSize = button.GetThemeFontSize("font_size");
+                string[] lines = button.Text.Split('\n');
+                float width = lines.Max(line => font.GetStringSize(line, HorizontalAlignment.Left, -1, fontSize).X);
+                float height = font.GetHeight(fontSize) * lines.Length;
+                bool complete = width <= available.X + 0.5f && height <= available.Y + 0.5f;
+                if (!complete) failures.Add(button.Name + " target control text clipped");
+                targetButtons.Add(new { Name = button.Name.ToString(), button.Text, TextWidth = width, TextHeight = height,
+                    AvailableWidth = available.X, AvailableHeight = available.Y, Complete = complete });
+            }
+        }
         Rect2? patient = _game.Canvas.ActorSpriteViewportBounds(_patient);
         Rect2? helper = _game.Canvas.ActorSpriteViewportBounds(_helper);
         if (patient is not { } p || !Hud.ShowsFieldSprite(p)) failures.Add("Patient sprite is not visible in the field");
         if (helper is not { } h || !Hud.ShowsFieldSprite(h)) failures.Add("Helper sprite is not visible in the field");
-        _hudBounds.Add(new { Label = label, Viewport = Rect(viewport), Controls = controls,
+        _hudBounds.Add(new { Label = label, Viewport = Rect(viewport), Header = Rect(header), Footer = Rect(footer),
+            Field = Rect(Hud.FieldViewportBounds), TargetBar = targetBar.IsVisibleInTree() ? Rect(targetBounds) : null,
+            TargetButtons = targetButtons, Controls = controls,
             PatientSprite = patient is { } a ? Rect(a) : null, HelperSprite = helper is { } b ? Rect(b) : null, Failures = failures });
         Require(failures.Count == 0, "HUD readability: " + string.Join("; ", failures));
     }

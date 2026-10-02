@@ -43,6 +43,11 @@ progress. Cuts carry an outstanding request once, preserve cumulative totals, an
 records to follow the complete closing world boundary. The compact frontier is not a substitute for
 historical authentication or an unlimited archive.
 
+The coordinated cut reserves capacity across resource, production, care and exchange owners together.
+Whichever owner needs headroom first closes the complete world boundary, including disposition history.
+Repeated injury and recovery therefore can rotate the care window before its own disposition limit is
+reached. A representation cut neither heals an actor nor replaces the next operation's material costs.
+
 [WorldCareDispositionAdmission](../../src/OpenFantasy.Core/Worlds/WorldCareDispositionAdmission.cs)
 selects profile 38 over an unplayed recovery world, pinning the fixed disposition law even with an
 empty history. [CareCodecV5](../../src/OpenFantasy.Core/Care/CareCodecV5.cs) owns the corresponding

@@ -1,0 +1,765 @@
+{
+  "status": "passed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409",
+  "fixtures": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures",
+  "limits": {
+    "runSeconds": 30,
+    "signalSeconds": 30,
+    "killSeconds": 10,
+    "aggregateSeconds": 600
+  },
+  "runs": [
+    {
+      "label": "cancel-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/00-cancel-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/00-cancel-normal.stderr.log",
+      "seconds": 0.821,
+      "exitCode": 0
+    },
+    {
+      "label": "cancel-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/01-cancel-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/01-cancel-normal-duplicate.stderr.log",
+      "seconds": 0.661,
+      "exitCode": 1
+    },
+    {
+      "label": "cancel-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-before.sqlite",
+        "65"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/03-cancel-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/03-cancel-recover-before.stderr.log",
+      "seconds": 0.68,
+      "exitCode": 0
+    },
+    {
+      "label": "cancel-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/04-cancel-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/04-cancel-retry.stderr.log",
+      "seconds": 0.733,
+      "exitCode": 0
+    },
+    {
+      "label": "cancel-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/05-cancel-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/05-cancel-before-duplicate.stderr.log",
+      "seconds": 0.622,
+      "exitCode": 1
+    },
+    {
+      "label": "cancel-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-after.sqlite",
+        "66"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/07-cancel-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/07-cancel-recover-after.stderr.log",
+      "seconds": 0.655,
+      "exitCode": 0
+    },
+    {
+      "label": "cancel-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/08-cancel-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/08-cancel-after-duplicate.stderr.log",
+      "seconds": 0.662,
+      "exitCode": 1
+    },
+    {
+      "label": "decline-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/09-decline-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/09-decline-normal.stderr.log",
+      "seconds": 0.722,
+      "exitCode": 0
+    },
+    {
+      "label": "decline-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/10-decline-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/10-decline-normal-duplicate.stderr.log",
+      "seconds": 0.622,
+      "exitCode": 1
+    },
+    {
+      "label": "decline-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-before.sqlite",
+        "65"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/12-decline-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/12-decline-recover-before.stderr.log",
+      "seconds": 0.675,
+      "exitCode": 0
+    },
+    {
+      "label": "decline-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/13-decline-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/13-decline-retry.stderr.log",
+      "seconds": 0.658,
+      "exitCode": 0
+    },
+    {
+      "label": "decline-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/14-decline-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/14-decline-before-duplicate.stderr.log",
+      "seconds": 0.616,
+      "exitCode": 1
+    },
+    {
+      "label": "decline-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-after.sqlite",
+        "66"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/16-decline-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/16-decline-recover-after.stderr.log",
+      "seconds": 0.721,
+      "exitCode": 0
+    },
+    {
+      "label": "decline-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/17-decline-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/17-decline-after-duplicate.stderr.log",
+      "seconds": 0.603,
+      "exitCode": 1
+    },
+    {
+      "label": "cut-pending-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cut-pending.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/18-cut-pending-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/18-cut-pending-normal.stderr.log",
+      "seconds": 2.715,
+      "exitCode": 0
+    },
+    {
+      "label": "cut-pending-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cut-pending.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/19-cut-pending-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/19-cut-pending-normal-duplicate.stderr.log",
+      "seconds": 2.678,
+      "exitCode": 1
+    },
+    {
+      "label": "cut-pending-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-before.sqlite",
+        "1082"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/21-cut-pending-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/21-cut-pending-recover-before.stderr.log",
+      "seconds": 2.759,
+      "exitCode": 0
+    },
+    {
+      "label": "cut-pending-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cut-pending.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/22-cut-pending-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/22-cut-pending-retry.stderr.log",
+      "seconds": 2.909,
+      "exitCode": 0
+    },
+    {
+      "label": "cut-pending-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cut-pending.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/23-cut-pending-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/23-cut-pending-before-duplicate.stderr.log",
+      "seconds": 3.227,
+      "exitCode": 1
+    },
+    {
+      "label": "cut-pending-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-after.sqlite",
+        "1083"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/25-cut-pending-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/25-cut-pending-recover-after.stderr.log",
+      "seconds": 2.943,
+      "exitCode": 0
+    },
+    {
+      "label": "cut-pending-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cut-pending.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/26-cut-pending-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/26-cut-pending-after-duplicate.stderr.log",
+      "seconds": 2.707,
+      "exitCode": 1
+    },
+    {
+      "label": "archived-cancel-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/27-archived-cancel-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/27-archived-cancel-normal.stderr.log",
+      "seconds": 2.802,
+      "exitCode": 0
+    },
+    {
+      "label": "archived-cancel-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/28-archived-cancel-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/28-archived-cancel-normal-duplicate.stderr.log",
+      "seconds": 3.031,
+      "exitCode": 1
+    },
+    {
+      "label": "archived-cancel-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-before.sqlite",
+        "1083"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/30-archived-cancel-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/30-archived-cancel-recover-before.stderr.log",
+      "seconds": 3.038,
+      "exitCode": 0
+    },
+    {
+      "label": "archived-cancel-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/31-archived-cancel-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/31-archived-cancel-retry.stderr.log",
+      "seconds": 3.092,
+      "exitCode": 0
+    },
+    {
+      "label": "archived-cancel-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/32-archived-cancel-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/32-archived-cancel-before-duplicate.stderr.log",
+      "seconds": 3.411,
+      "exitCode": 1
+    },
+    {
+      "label": "archived-cancel-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-after.sqlite",
+        "1084"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/34-archived-cancel-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/34-archived-cancel-recover-after.stderr.log",
+      "seconds": 3.325,
+      "exitCode": 0
+    },
+    {
+      "label": "archived-cancel-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-cancel.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/35-archived-cancel-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/35-archived-cancel-after-duplicate.stderr.log",
+      "seconds": 3.526,
+      "exitCode": 1
+    },
+    {
+      "label": "archived-decline-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/36-archived-decline-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/36-archived-decline-normal.stderr.log",
+      "seconds": 3.751,
+      "exitCode": 0
+    },
+    {
+      "label": "archived-decline-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/37-archived-decline-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/37-archived-decline-normal-duplicate.stderr.log",
+      "seconds": 3.669,
+      "exitCode": 1
+    },
+    {
+      "label": "archived-decline-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-before.sqlite",
+        "1083"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/39-archived-decline-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/39-archived-decline-recover-before.stderr.log",
+      "seconds": 3.709,
+      "exitCode": 0
+    },
+    {
+      "label": "archived-decline-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/40-archived-decline-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/40-archived-decline-retry.stderr.log",
+      "seconds": 3.642,
+      "exitCode": 0
+    },
+    {
+      "label": "archived-decline-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/41-archived-decline-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/41-archived-decline-before-duplicate.stderr.log",
+      "seconds": 3.435,
+      "exitCode": 1
+    },
+    {
+      "label": "archived-decline-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-after.sqlite",
+        "1084"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/43-archived-decline-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/43-archived-decline-recover-after.stderr.log",
+      "seconds": 3.374,
+      "exitCode": 0
+    },
+    {
+      "label": "archived-decline-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-decline.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/44-archived-decline-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/44-archived-decline-after-duplicate.stderr.log",
+      "seconds": 3.282,
+      "exitCode": 1
+    }
+  ],
+  "processKills": [
+    {
+      "case": "cancel-before",
+      "boundary": "before",
+      "pid": 38775,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/02-cancel-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/02-cancel-before.stderr.log",
+      "signalSeconds": 0.626,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "cancel-after",
+      "boundary": "after",
+      "pid": 38791,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/06-cancel-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/06-cancel-after.stderr.log",
+      "signalSeconds": 0.606,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "decline-before",
+      "boundary": "before",
+      "pid": 38810,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/11-decline-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/11-decline-before.stderr.log",
+      "signalSeconds": 0.615,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "decline-after",
+      "boundary": "after",
+      "pid": 38819,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/15-decline-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/15-decline-after.stderr.log",
+      "signalSeconds": 0.613,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "cut-pending-before",
+      "boundary": "before",
+      "pid": 38853,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/20-cut-pending-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/20-cut-pending-before.stderr.log",
+      "signalSeconds": 2.649,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.011,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "cut-pending-after",
+      "boundary": "after",
+      "pid": 38941,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/24-cut-pending-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/24-cut-pending-after.stderr.log",
+      "signalSeconds": 3.982,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "archived-cancel-before",
+      "boundary": "before",
+      "pid": 38990,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/29-archived-cancel-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/29-archived-cancel-before.stderr.log",
+      "signalSeconds": 2.689,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "archived-cancel-after",
+      "boundary": "after",
+      "pid": 39009,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/33-archived-cancel-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/33-archived-cancel-after.stderr.log",
+      "signalSeconds": 3.359,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "archived-decline-before",
+      "boundary": "before",
+      "pid": 39060,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/38-archived-decline-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/38-archived-decline-before.stderr.log",
+      "signalSeconds": 3.458,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "archived-decline-after",
+      "boundary": "after",
+      "pid": 39096,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/42-archived-decline-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/42-archived-decline-after.stderr.log",
+      "signalSeconds": 3.347,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    }
+  ],
+  "cases": [
+    {
+      "label": "cancel",
+      "sequence": 66,
+      "kind": "Care",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cancel.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cancel.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cancel-after.sqlite"
+    },
+    {
+      "label": "decline",
+      "sequence": 66,
+      "kind": "Care",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/decline.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/decline.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/decline-after.sqlite"
+    },
+    {
+      "label": "cut-pending",
+      "sequence": 1083,
+      "kind": "Care",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cut-pending.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/cut-pending.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/cut-pending-after.sqlite"
+    },
+    {
+      "label": "archived-cancel",
+      "sequence": 1084,
+      "kind": "Care",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-cancel.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-cancel.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-cancel-after.sqlite"
+    },
+    {
+      "label": "archived-decline",
+      "sequence": 1084,
+      "kind": "Care",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-decline.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/archived-decline.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/qualification/crash-20261002T205536482438Z/care-disposition-durability-205537698409/archived-decline-after.sqlite"
+    }
+  ],
+  "startedUtc": "2026-10-02T20:55:37.698804+00:00",
+  "execution": {
+    "dotnet": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "host": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "hostSha256": "cdd3117c10f95386650c5e6cbecf79fd801e282c440141568dfeaee4b1af31d3"
+  },
+  "executionPins": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "d82199e3433ff822af0ef1c5af600a0674004caf1739b4aea098f4c746bcf71f",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/SQLitePCLRaw.batteries_v2.dll": "1ee3c6ff4d39171690d6ff6f84b4d876ed038ca28e39bb6e74995f52d2aacf8b",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/SQLitePCLRaw.provider.e_sqlite3.dll": "1d4cb69b3aaf6a9cf40dfe179cc16dd678f12bc024b212d4297654e0a29e220d",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "4f76dfde20ca7cf3a112cba84d34862c8c9b6ed2cd366416c587610eb5510230",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "cdd3117c10f95386650c5e6cbecf79fd801e282c440141568dfeaee4b1af31d3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/SQLitePCLRaw.core.dll": "b72c9dfe1479a568d6b84e249eaf949e76c757888f8056fb6ddb9c0480e0dd25",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Server.dll": "a4dd02424c788a7016877b1a7fe4d0f35fda5e2c25e933b8917cf3b9c072b67f",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/Microsoft.Data.Sqlite.dll": "b98d957462be432895b00dccca012d3c127e118d3d4262418014b92c7bbd66cf",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_care_disposition_durability.py": "a77121ded191f2ae2735dd8f5c91d00d0b0c72ae9155163b816afdfd8573ab30"
+  },
+  "successfulWaitChecks": {
+    "signals": 10,
+    "kills": 10,
+    "operations": 35
+  },
+  "aggregateSeconds": 98.734,
+  "manifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/care-disposition-durability/crash-fixtures/manifest.json",
+  "limitations": [
+    "Kills the Host child at the authority transaction boundaries it reports; it does not interrupt SQLite inside a page write or model power loss.",
+    "Fresh profile-38 human-helper and finite 255-bite archive calibrations; no network, device, lived-save migration or native presentation is implied."
+  ],
+  "executionUnchanged": true,
+  "sourceFixturesUnchanged": true,
+  "artifactSha256": {
+    "31-archived-cancel-retry.stdout.log": "83cf994a08272f931a38867160678093dc883686183e23bc0bd50ece93a76814",
+    "44-archived-decline-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "cancel-normal.sqlite": "bc0d517d5a8ae75de33387e1bee12657384a4410af890e1c4d9c1dbb63800779",
+    "12-decline-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "decline-after.sqlite": "fa1c715382e9cef7fcefb72439ef17e8ccc8ecc7b0113d48c4cf09c43f9cfa78",
+    "28-archived-cancel-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "35-archived-cancel-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "22-cut-pending-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "32-archived-cancel-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "10-decline-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "archived-decline-before-recovered.sqlite": "96c2c97ce7203b31dcea7843ed0e768916e450d5c22d78244c8fe72b77975d60",
+    "archived-decline-before.sqlite": "8a7e2759809f3fc89e859292f1943e623f1f9ee15e32272c35851d3d64ab20ea",
+    "05-cancel-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archived-cancel-after.sqlite": "fd4d2c2528a619240304718a2534067c1964ec7350059d55ab8162c1dc742ba0",
+    "06-cancel-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "26-cut-pending-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "archived-cancel-before.sqlite": "fd4d2c2528a619240304718a2534067c1964ec7350059d55ab8162c1dc742ba0",
+    "14-decline-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "23-cut-pending-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "17-decline-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "25-cut-pending-recover-after.stdout.log": "b7a186632948ff1d9ee25e3fe9fd9b970b5cbe22d061752c1f97dd71244eff44",
+    "13-decline-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "03-cancel-recover-before.stdout.log": "5b3f06617fe45b9d17a87472e5c567eb06949ba7b6e366913e41c9e94552a2e4",
+    "43-archived-decline-recover-after.stdout.log": "3cbfb1300eed802f3bb7921972556129583c1493a699894905674fe1addfc73e",
+    "21-cut-pending-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "11-decline-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "cut-pending-before.sqlite": "bf19d57d35fa53b4154f0536c0e196a89b8455b1ac13f3c978159d4d37db733d",
+    "16-decline-recover-after.stdout.log": "0a93c171e1c62657a35993b218f6d607c2703c67878456a7e6d2d553a411e4b0",
+    "42-archived-decline-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cancel-after.sqlite": "bc0d517d5a8ae75de33387e1bee12657384a4410af890e1c4d9c1dbb63800779",
+    "08-cancel-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "37-archived-decline-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "00-cancel-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "09-decline-normal.stdout.log": "f25b8aa73932dac8fddc01062eb2033e43ae1b5c252e5670de67cd9832e9e217",
+    "15-decline-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "24-cut-pending-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "18-cut-pending-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "07-cancel-recover-after.stdout.log": "6707a81da5d12277a66d97966398b6b08d2521c80fdba4d46f1e83bdab6f67c9",
+    "20-cut-pending-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "40-archived-decline-retry.stdout.log": "f402208e8db61db41e9c7c7959475ee55e482bc5bfa5efca4767621820187342",
+    "41-archived-decline-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "34-archived-cancel-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "27-archived-cancel-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archived-cancel-before-recovered.sqlite": "25f2b3085cb97ed4278887db73ceb0198d4724e40f4b036075bd59de0f78360d",
+    "33-archived-cancel-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "04-cancel-retry.stdout.log": "7978ef397e1686561f640f187b1d09337b58ab491beef5ee8c717f8a6298521d",
+    "02-cancel-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "39-archived-decline-recover-before.stdout.log": "b7a186632948ff1d9ee25e3fe9fd9b970b5cbe22d061752c1f97dd71244eff44",
+    "38-archived-decline-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "19-cut-pending-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "36-archived-decline-normal.stdout.log": "f402208e8db61db41e9c7c7959475ee55e482bc5bfa5efca4767621820187342",
+    "decline-before-recovered.sqlite": "a875fb3ed19b34401b1a6e1a3aca03d6004933f279648d558e80a4ecf48316f3",
+    "29-archived-cancel-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "30-archived-cancel-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "01-cancel-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "decline-before.sqlite": "fa1c715382e9cef7fcefb72439ef17e8ccc8ecc7b0113d48c4cf09c43f9cfa78",
+    "cut-pending-before-recovered.sqlite": "de4cac2a2c3b0f2b0e5b7429592858e43385e9ab97c780b6a15385b7d3f20773",
+    "10-decline-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "28-archived-cancel-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "32-archived-cancel-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "35-archived-cancel-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "22-cut-pending-retry.stdout.log": "c966f5f07471307e64b7a3233831ca491b3ef8e922333bf416feca1445f23703",
+    "06-cancel-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "05-cancel-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "decline-normal.sqlite": "fa1c715382e9cef7fcefb72439ef17e8ccc8ecc7b0113d48c4cf09c43f9cfa78",
+    "31-archived-cancel-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "12-decline-recover-before.stdout.log": "5b3f06617fe45b9d17a87472e5c567eb06949ba7b6e366913e41c9e94552a2e4",
+    "44-archived-decline-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cut-pending-normal.sqlite": "bf19d57d35fa53b4154f0536c0e196a89b8455b1ac13f3c978159d4d37db733d",
+    "25-cut-pending-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "17-decline-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "23-cut-pending-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "03-cancel-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "13-decline-retry.stdout.log": "f25b8aa73932dac8fddc01062eb2033e43ae1b5c252e5670de67cd9832e9e217",
+    "26-cut-pending-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "14-decline-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "24-cut-pending-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "18-cut-pending-normal.stdout.log": "c966f5f07471307e64b7a3233831ca491b3ef8e922333bf416feca1445f23703",
+    "09-decline-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "00-cancel-normal.stdout.log": "7978ef397e1686561f640f187b1d09337b58ab491beef5ee8c717f8a6298521d",
+    "15-decline-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "41-archived-decline-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "34-archived-cancel-recover-after.stdout.log": "d64320d810ee31d0ade9854a6f0156d8a27a13ec1f6ae720e3604fbe17724445",
+    "archived-cancel-normal.sqlite": "fd4d2c2528a619240304718a2534067c1964ec7350059d55ab8162c1dc742ba0",
+    "40-archived-decline-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "20-cut-pending-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "07-cancel-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archived-decline-after.sqlite": "8a7e2759809f3fc89e859292f1943e623f1f9ee15e32272c35851d3d64ab20ea",
+    "42-archived-decline-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "16-decline-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "37-archived-decline-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "08-cancel-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "43-archived-decline-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "11-decline-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "21-cut-pending-recover-before.stdout.log": "47521a0c1226b32d31d9b2bfb026d766c64c20ba0f2de2e9bd581be2e52327f8",
+    "cancel-before.sqlite": "bc0d517d5a8ae75de33387e1bee12657384a4410af890e1c4d9c1dbb63800779",
+    "01-cancel-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "30-archived-cancel-recover-before.stdout.log": "b7a186632948ff1d9ee25e3fe9fd9b970b5cbe22d061752c1f97dd71244eff44",
+    "29-archived-cancel-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "36-archived-decline-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cancel-before-recovered.sqlite": "a875fb3ed19b34401b1a6e1a3aca03d6004933f279648d558e80a4ecf48316f3",
+    "archived-decline-normal.sqlite": "8a7e2759809f3fc89e859292f1943e623f1f9ee15e32272c35851d3d64ab20ea",
+    "27-archived-cancel-normal.stdout.log": "83cf994a08272f931a38867160678093dc883686183e23bc0bd50ece93a76814",
+    "cut-pending-after.sqlite": "bf19d57d35fa53b4154f0536c0e196a89b8455b1ac13f3c978159d4d37db733d",
+    "02-cancel-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "04-cancel-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "19-cut-pending-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "38-archived-decline-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "39-archived-decline-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "33-archived-cancel-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "finishedUtc": "2026-10-02T20:57:16.488097+00:00"
+}

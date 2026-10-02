@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="9f7d877f-baf6-4ff0-8e86-c427eebe7e76" name="@mac 2026-10-02 15:54:10" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T15:54:10.5945920-05:00" queuing="2026-10-02T15:54:10.5945920-05:00" start="2026-10-02T15:53:52.4837040-05:00" finish="2026-10-02T15:54:29.1589330-05:00" />
+  <TestSettings name="default" id="1935f1f1-2417-4524-baee-5f8f1c7d1c1a">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_15_54_10" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="98f5fcf0-c7c6-4500-97b8-1edb2f813fb4" testId="3abeb225-06ea-e770-8db0-5a398fb8e083" testName="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Later_disposition_archives_the_latest_closure_without_replacing_the_earlier_real_treatment" computerName="mac" duration="00:00:06.4965035" startTime="2026-10-02T15:54:22.5682900-05:00" endTime="2026-10-02T15:54:29.0649790-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98f5fcf0-c7c6-4500-97b8-1edb2f813fb4" />
+    <UnitTestResult executionId="f723955a-8f06-4acc-8007-bbbd844be8fd" testId="188b9466-d3d2-3706-68c2-50261594e8c8" testName="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly(decline: False)" computerName="mac" duration="00:00:12.0032858" startTime="2026-10-02T15:54:10.5616300-05:00" endTime="2026-10-02T15:54:22.5652120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f723955a-8f06-4acc-8007-bbbd844be8fd" />
+    <UnitTestResult executionId="b9167480-be32-42b6-9e67-db7f81c161d4" testId="4877661a-5978-528f-f5a1-bceec3836eb1" testName="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly(decline: True)" computerName="mac" duration="00:00:12.0064787" startTime="2026-10-02T15:53:58.5452620-05:00" endTime="2026-10-02T15:54:10.5577970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b9167480-be32-42b6-9e67-db7f81c161d4" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly(decline: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="188b9466-d3d2-3706-68c2-50261594e8c8">
+      <Execution id="f723955a-8f06-4acc-8007-bbbd844be8fd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests" name="Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Later_disposition_archives_the_latest_closure_without_replacing_the_earlier_real_treatment" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3abeb225-06ea-e770-8db0-5a398fb8e083">
+      <Execution id="98f5fcf0-c7c6-4500-97b8-1edb2f813fb4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests" name="Later_disposition_archives_the_latest_closure_without_replacing_the_earlier_real_treatment" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly(decline: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4877661a-5978-528f-f5a1-bceec3836eb1">
+      <Execution id="b9167480-be32-42b6-9e67-db7f81c161d4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests" name="Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="3abeb225-06ea-e770-8db0-5a398fb8e083" executionId="98f5fcf0-c7c6-4500-97b8-1edb2f813fb4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="188b9466-d3d2-3706-68c2-50261594e8c8" executionId="f723955a-8f06-4acc-8007-bbbd844be8fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4877661a-5978-528f-f5a1-bceec3836eb1" executionId="b9167480-be32-42b6-9e67-db7f81c161d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.26]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.83]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.99]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:36.24]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
