@@ -206,6 +206,28 @@ unchanged. Timeless architecture references are updated. Checkpoint before edits
 Next: HTTP/TLS/provisioning, actual Godot network clients and solo envelope parity, native 1–4-player
 proof, and journaled disconnect/reconnect/controller handoff. Full design and unclosed gates remain.
 
+## HTTP/TLS player hosting checkpoint
+
+[HTTP/TLS hosting](p02/player-http-host/RESULT.md) is qualified on macOS as
+`codex/milestone-player-http-host-20261002`: reusable net8 Server adapter, existing net10 dedicated
+composition, exact saved cargo admission, real package fingerprint and protected create-only player
+invitations. Actual TLS requests own their complete admitted session; joined shutdown preserves the
+world owner. Application-owned signals avoid competing ASP.NET process handlers. The operator guide
+and timeless architecture references are current; Core/Hosting/Godot remain independent of ASP.NET.
+
+[Final checks](p02/player-http-host/FINAL_CHECKS.json): build and387 distinct passes (server33,
+network188, content156 plus saved-journey audit1, shared9), with exact current source/binaries. The
+original broad content invocation stays incomplete; its one missing fixture case passed separately
+against pinned original exports. All633 earlier tests/fixtures,23 specs and exact predecessor staging
+remain unchanged. Windows inherited-permission regression is explicitly unrun on this Mac.
+Independent critique found/followed up response-timeout isolation and Windows credential protection;
+all failures and fixes remain recorded. No external provider request occurred.
+
+Pre-change ref preserves6a0d36f; review-fix WIP ref preserves7b3a105 with partial verification. The
+accepted milestone preserves this bounded scope only. Actual Godot clients/solo envelope parity,
+native1–4-player validation, recorded disconnect/reconnect/controller handoff, Godot listening-host
+export/runtime qualification, Windows/Linux and all full phase/production/human gates remain open.
+
 ## Next dependency and remaining scope
 
 Native accepted treatment and approach/entry are now proved by the bounded journey above. Native

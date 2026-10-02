@@ -142,6 +142,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --create-liquid-cell-world <world.sqlite> <profile19-genesis.bin> <liquid-cells.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-encounter-journey <world.sqlite> <seed> <player-name>");
         _output.WriteLine("       OpenFantasy.Host --create-cargo-outcomes <world.sqlite> <seed> <player-name>");
+        _output.WriteLine("       OpenFantasy.Host --serve-cargo-world <private-host-settings.json>");
         _output.WriteLine("       OpenFantasy.Host --create-paced-world <world.sqlite> <profile21-genesis.bin> <encounter-id|none>");
         _output.WriteLine("       OpenFantasy.Host --create-reservoir-transport-world <world.sqlite> <construction-genesis.bin> <reservoir-transport.bin>");
         _output.WriteLine("       OpenFantasy.Host --execute-world-step <world.sqlite> <host-selected-step.bin>");

@@ -5,6 +5,8 @@
 ```mermaid
 flowchart TD
     Client[Godot client: input and presentation] --> Session[Hosting: local session and public projections]
+    Operator --> Server[Server: HTTP/TLS player listener]
+    Server --> Session
     Operator[Headless host: privileged operations] --> Authority[Hosting: durable world authority]
     Session --> Authority
     Admission[Hosting: content admission] --> Core[Core: immutable state and pure rules]
@@ -33,6 +35,8 @@ WebSocket I/O. [Player admission](player-admission.md) binds host-issued credent
 pins to actual player ports. [Gameplay message routing](player-command-routing.md) carries readiness,
 movement and exact commands/receipts through those ports with bounded asynchronous I/O. Participant-safe
 observation encoding remains separate; transport or serialized identity alone grants no authority.
+The [HTTP/TLS Server adapter](player-http-host.md) references Hosting and ASP.NET Core; the headless
+Host composes it with a saved world. Core, Hosting and the Godot client remain independent of ASP.NET.
 
 ## Runtime bindings: state ownership
 

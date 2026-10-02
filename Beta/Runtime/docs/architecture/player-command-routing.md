@@ -42,7 +42,8 @@ an action was selected before a readiness change. No render or network timing gr
 
 One sender drains at most eight queued responses. Response producers never wait for queue capacity;
 exhaustion closes that connection. Each send has a five-second absolute deadline and checks elapsed
-time after success. Up to 128 inputs are processed per one-second monotonic connection window. These
+time after success. Its specific `PlayerResponseTimeoutException` identifies a connection-local
+deadline failure without hiding unrelated backend timeouts. Up to 128 inputs are processed per one-second monotonic connection window. These
 bounds limit transient work and memory; they are not simulated time or a timeout on an idle human's
 Wait. A slow or flooding receiver cannot hold the host's serialization gate through socket output.
 
@@ -56,6 +57,6 @@ host-owned autonomous work retain their own lifetimes. The command session runs 
 An empty observation input subscribes to [bounded view publication](player-observation-streams.md)
 and requests full recovery. Its asynchronous output uses a separate canonical typed view and visible
 revision, sharing the bounded sender without blocking input processing. The channel does not itself
-make a Godot scene into a network client. HTTP Upgrade/TLS, provisioning, native clients and solo envelope parity bind around these
-components. Transient closure is separate from the full design's journaled disconnect, reconnect grace
+make a Godot scene into a network client. [HTTP Upgrade/TLS and provisioning](player-http-host.md) bind around these components; native clients
+and solo envelope parity have separate adapter contracts. Transient closure is separate from the full design's journaled disconnect, reconnect grace
 and controller-handoff rules; a socket error alone cannot grant a human decision or rewrite saved control.

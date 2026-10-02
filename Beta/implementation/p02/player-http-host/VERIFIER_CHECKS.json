@@ -1,0 +1,31 @@
+{
+  "source": "Beta/Runtime/tools/verify.py",
+  "actualServerCounts": {
+    "total": 34,
+    "executed": 33,
+    "passed": 33,
+    "failed": 0,
+    "error": 0,
+    "timeout": 0,
+    "aborted": 0,
+    "inconclusive": 0,
+    "passedButRunAborted": 0,
+    "notRunnable": 0,
+    "notExecuted": 0,
+    "disconnected": 0,
+    "warning": 0,
+    "completed": 0,
+    "inProgress": 0,
+    "pending": 0
+  },
+  "unrunPlatformCases": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "counterfactualRefusals": [
+    "unexpected-skip",
+    "failed-case",
+    "missing-case",
+    "wrong-suite"
+  ],
+  "scope": "TRX acceptance helper exercised against actual server report and four changed reports; full Godot verifier not rerun"
+}

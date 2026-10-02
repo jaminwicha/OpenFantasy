@@ -69,7 +69,7 @@ It leaves other players and the world owner alive. Closing this channel invokes 
 it is not the full design's journaled disconnect, reconnect allowance or controller handoff.
 
 [Player command routing](player-command-routing.md) consumes the admitted channel for readiness,
-movement and exact action/receipt exchange. The HTTP/TLS listener and native view adapter remain
+movement and exact action/receipt exchange. The [HTTP/TLS listener](player-http-host.md) and native view adapter have
 separate responsibilities, preserving bounded output and participant-safe projections.
 [Observation streams](player-observation-streams.md) encode regional data explicitly and use visible
 connection-local revisions without exposing hidden world counters as synchronization shortcuts.

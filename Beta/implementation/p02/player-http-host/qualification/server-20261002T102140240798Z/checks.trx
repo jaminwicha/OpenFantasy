@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="5b4928a1-b88b-47ff-8edb-67696d7feffd" name="@Xanadu 2026-10-02 05:21:42" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T05:21:42.3953360-05:00" queuing="2026-10-02T05:21:42.3953360-05:00" start="2026-10-02T05:21:41.1717810-05:00" finish="2026-10-02T05:21:52.8541470-05:00" />
+  <TestSettings name="default" id="b93401ad-9a35-42f2-ad17-feb9e468d568">
+    <Deployment runDeploymentRoot="_Xanadu_2026-10-02_05_21_42" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="53f06494-6b27-4d1d-932c-eb426bf4b371" testId="086c7605-6914-31e4-e97c-e3395c8e2ab7" testName="OpenFantasy.Server.Tests.PlayerResponseTimeoutTests.A_successful_send_at_its_deadline_closes_only_its_player_and_the_listener_still_serves_tls" computerName="Xanadu" duration="00:00:01.4000383" startTime="2026-10-02T05:21:44.9481590-05:00" endTime="2026-10-02T05:21:46.3482310-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="53f06494-6b27-4d1d-932c-eb426bf4b371" />
+    <UnitTestResult executionId="7d6b1f54-62fc-49b2-ba69-c06283f642a1" testId="142cb8ef-cc89-3a89-0876-a0ba9f52f018" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Normal_certificate_validation_rejects_untrusted_server_and_pin_does_not_ignore_wrong_identity" computerName="Xanadu" duration="00:00:00.8082021" startTime="2026-10-02T05:21:46.7404920-05:00" endTime="2026-10-02T05:21:47.5487500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d6b1f54-62fc-49b2-ba69-c06283f642a1" />
+    <UnitTestResult executionId="d7d3096a-b1ff-406c-9031-13980f6b0d45" testId="af50c215-3d8e-162e-0f6c-7ddabb08558e" testName="OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world" computerName="Xanadu" duration="00:00:04.0032863" startTime="2026-10-02T05:21:42.2662820-05:00" endTime="2026-10-02T05:21:46.2793910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d7d3096a-b1ff-406c-9031-13980f6b0d45">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 0
+Actual:   1</Message>
+          <StackTrace>   at OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostProcessTests.cs:line 56
+   at OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostProcessTests.cs:line 66
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="db416436-19e8-41e5-9fa4-4b4ad42aa4e7" testId="6c89214e-a304-1034-3f70-74da1eaa5791" testName="OpenFantasy.Server.Tests.DedicatedHostTests.Settings_resolve_local_paths_and_reject_ambiguous_or_unknown_fields" computerName="Xanadu" duration="00:00:00.0536426" startTime="2026-10-02T05:21:42.2662830-05:00" endTime="2026-10-02T05:21:42.3240770-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db416436-19e8-41e5-9fa4-4b4ad42aa4e7" />
+    <UnitTestResult executionId="d1af573f-5fac-48b2-a348-4b6bcdd3031c" testId="709c361b-1f87-e9a6-7c12-6f8c0cd95cb5" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: &quot;path&quot;)" computerName="Xanadu" duration="00:00:00.6171712" startTime="2026-10-02T05:21:48.2540250-05:00" endTime="2026-10-02T05:21:48.8712490-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d1af573f-5fac-48b2-a348-4b6bcdd3031c" />
+    <UnitTestResult executionId="e9b5ffd3-3669-44bf-aeb3-ff6928fd972e" testId="ece8f715-83e0-21ce-2759-4eebc79e9aab" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;wss://localhost/player?credential=secret&quot;)" computerName="Xanadu" duration="00:00:00.0000167" startTime="2026-10-02T05:21:42.3308500-05:00" endTime="2026-10-02T05:21:42.3308740-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9b5ffd3-3669-44bf-aeb3-ff6928fd972e" />
+    <UnitTestResult executionId="6c8b4730-d1a9-4dfa-a41b-8e0c328aac07" testId="7c9d0aff-9450-f0e4-6cd5-9c56019a4b43" testName="OpenFantasy.Server.Tests.ServerShutdownTests.Cancelled_shutdown_wait_does_not_abandon_an_admitted_authority_read" computerName="Xanadu" duration="00:00:01.6872222" startTime="2026-10-02T05:21:45.1005860-05:00" endTime="2026-10-02T05:21:46.7878570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6c8b4730-d1a9-4dfa-a41b-8e0c328aac07" />
+    <UnitTestResult executionId="4f07b12a-7f3a-4056-a5c6-dbccac65060b" testId="0a1854d6-b51a-4a84-2f37-08c0f849f809" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Actual_tls_upgrade_delivers_authenticated_regional_observation_queries_and_controls" computerName="Xanadu" duration="00:00:00.9370270" startTime="2026-10-02T05:21:51.8643350-05:00" endTime="2026-10-02T05:21:52.8013950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f07b12a-7f3a-4056-a5c6-dbccac65060b" />
+    <UnitTestResult executionId="45feae96-4602-4e50-bd4f-9981829137ea" testId="f3aa2123-291d-7545-b430-efa188210d5e" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;wss://secret@localhost/player&quot;)" computerName="Xanadu" duration="00:00:00.0000216" startTime="2026-10-02T05:21:42.3306500-05:00" endTime="2026-10-02T05:21:42.3306810-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="45feae96-4602-4e50-bd4f-9981829137ea" />
+    <UnitTestResult executionId="d59d09be-40ea-4873-8bca-d3f039d65657" testId="7220670f-fab4-74cf-c975-ec657d2c8f77" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: False)" computerName="Xanadu" duration="00:00:02.7595134" startTime="2026-10-02T05:21:42.2662800-05:00" endTime="2026-10-02T05:21:45.0294410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d59d09be-40ea-4873-8bca-d3f039d65657" />
+    <UnitTestResult executionId="fc44fffd-0765-4506-89d1-56274b85a39b" testId="5bcea2f9-dedb-1841-24ea-ef3803f35fb1" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: &quot;subprotocol&quot;)" computerName="Xanadu" duration="00:00:00.5224922" startTime="2026-10-02T05:21:49.5476060-05:00" endTime="2026-10-02T05:21:50.0701390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc44fffd-0765-4506-89d1-56274b85a39b" />
+    <UnitTestResult executionId="ebbfeaa7-ae45-40e1-bbe4-923a797c0557" testId="0af00837-5af5-46b5-a864-3e66b45ce688" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Stopping_listener_closes_active_and_pending_peers_without_disposing_the_world" computerName="Xanadu" duration="00:00:00.6899646" startTime="2026-10-02T05:21:51.1735130-05:00" endTime="2026-10-02T05:21:51.8635130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ebbfeaa7-ae45-40e1-bbe4-923a797c0557" />
+    <UnitTestResult executionId="f863cd46-bfc1-4ff7-94c4-f238d8a778af" testId="aa58d8c3-6ead-e9b3-e854-9fd11dfdb4a9" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;wss://localhost/elsewhere&quot;)" computerName="Xanadu" duration="00:00:00.0002708" startTime="2026-10-02T05:21:42.3300430-05:00" endTime="2026-10-02T05:21:42.3303250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f863cd46-bfc1-4ff7-94c4-f238d8a778af" />
+    <UnitTestResult executionId="4caf51fb-af81-4b52-b34a-c1e44e59d4b2" testId="8536d138-2699-a598-ada6-feba459a85c1" testName="OpenFantasy.Server.Tests.DedicatedHostTests.Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement" computerName="Xanadu" duration="00:00:03.5906947" startTime="2026-10-02T05:21:42.3291010-05:00" endTime="2026-10-02T05:21:45.9198340-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4caf51fb-af81-4b52-b34a-c1e44e59d4b2" />
+    <UnitTestResult executionId="c215e22d-dfd9-4b9b-9577-e73addc26ce6" testId="78b06d01-2cc9-523e-70de-93e96cacf0f9" testName="OpenFantasy.Server.Tests.ServerStartupTests.Failed_bind_cleans_partial_listener_and_leaves_authority_available" computerName="Xanadu" duration="00:00:02.3003571" startTime="2026-10-02T05:21:42.6256110-05:00" endTime="2026-10-02T05:21:44.9431150-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c215e22d-dfd9-4b9b-9577-e73addc26ce6" />
+    <UnitTestResult executionId="f57e3eea-c38e-4300-ac43-dae26c60d321" testId="f24ebfef-e1f3-3709-1e9c-31ecae28114a" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;unknown&quot;)" computerName="Xanadu" duration="00:00:00.0000926" startTime="2026-10-02T05:21:42.3296780-05:00" endTime="2026-10-02T05:21:42.3297820-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f57e3eea-c38e-4300-ac43-dae26c60d321" />
+    <UnitTestResult executionId="2c3bd5b1-f7c5-4309-a3d5-bdeebe4877bc" testId="1b7c1298-f922-df4b-a54c-6b10fe9c257e" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: &quot;origin&quot;)" computerName="Xanadu" duration="00:00:00.6745625" startTime="2026-10-02T05:21:48.8723070-05:00" endTime="2026-10-02T05:21:49.5469170-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2c3bd5b1-f7c5-4309-a3d5-bdeebe4877bc" />
+    <UnitTestResult executionId="aad1b55b-0201-4c5c-9e3e-40866433c47c" testId="9306d554-a6b9-4e60-e473-d59a3b2dc1d9" testName="OpenFantasy.Server.Tests.ServerStartupTests.Listener_requires_explicit_private_key_and_real_advertised_identity" computerName="Xanadu" duration="00:00:00.3546126" startTime="2026-10-02T05:21:42.2662720-05:00" endTime="2026-10-02T05:21:42.6247460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aad1b55b-0201-4c5c-9e3e-40866433c47c" />
+    <UnitTestResult executionId="ad525005-7e5a-4841-ab95-9d9b257db4fc" testId="184abb33-8699-52a2-f07e-ee39cfe263bb" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;ws://localhost/player&quot;)" computerName="Xanadu" duration="00:00:00.0000198" startTime="2026-10-02T05:21:42.3307530-05:00" endTime="2026-10-02T05:21:42.3307810-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ad525005-7e5a-4841-ab95-9d9b257db4fc" />
+    <UnitTestResult executionId="a6d8efca-8221-4992-aff9-ffc44499f5bb" testId="13f674e9-0704-f219-1d38-c4a2aeb02c8c" testName="OpenFantasy.Server.Tests.DedicatedHostTests.Missing_or_incompatible_world_is_never_created_or_reinterpreted" computerName="Xanadu" duration="00:00:00.0935209" startTime="2026-10-02T05:21:45.9207780-05:00" endTime="2026-10-02T05:21:46.0144020-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a6d8efca-8221-4992-aff9-ffc44499f5bb" />
+    <UnitTestResult executionId="7823a13f-f297-43c9-b66f-295f7c493a9c" testId="98b8e75b-9739-98c9-f902-e64d1cbeeeed" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Host_termination_propagates_to_listener_even_without_clients" computerName="Xanadu" duration="00:00:00.5540548" startTime="2026-10-02T05:21:50.6187830-05:00" endTime="2026-10-02T05:21:51.1728740-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7823a13f-f297-43c9-b66f-295f7c493a9c" />
+    <UnitTestResult executionId="7cb2007f-947e-4350-9912-3dc47b122c16" testId="697d905f-8e81-fcdc-52b5-3362ad88eb9c" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;credential&quot;)" computerName="Xanadu" duration="00:00:00.0000551" startTime="2026-10-02T05:21:42.3295130-05:00" endTime="2026-10-02T05:21:42.3295810-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7cb2007f-947e-4350-9912-3dc47b122c16" />
+    <UnitTestResult executionId="c3bf679a-3480-43c1-be3c-3fc0b65df4c2" testId="94282032-2945-0ab5-53e0-474dcb126d53" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: True)" computerName="Xanadu" duration="00:00:01.7082628" startTime="2026-10-02T05:21:45.0307940-05:00" endTime="2026-10-02T05:21:46.7391250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c3bf679a-3480-43c1-be3c-3fc0b65df4c2" />
+    <UnitTestResult executionId="13746a14-aa02-4eb1-a962-cc8753b4d029" testId="88a417c4-1f3c-749d-7723-2be56b59587b" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;version&quot;)" computerName="Xanadu" duration="00:00:00.0537418" startTime="2026-10-02T05:21:42.2662740-05:00" endTime="2026-10-02T05:21:42.3240940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="13746a14-aa02-4eb1-a962-cc8753b4d029" />
+    <UnitTestResult executionId="799905b8-cf59-412e-93b8-a1be1e51b8c6" testId="85df1652-707d-d1b1-01b3-8e24be3af1b0" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Ordinary_http_get_cannot_upgrade_and_websocket_compression_is_not_negotiated" computerName="Xanadu" duration="00:00:00.5472508" startTime="2026-10-02T05:21:50.0708220-05:00" endTime="2026-10-02T05:21:50.6181080-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="799905b8-cf59-412e-93b8-a1be1e51b8c6" />
+    <UnitTestResult executionId="5747ff59-594d-49ef-91a3-c517e09d6e4c" testId="a640fcc6-4c96-62c0-b004-39d6f18cd65f" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;wss://localhost/player#secret&quot;)" computerName="Xanadu" duration="00:00:00.0000907" startTime="2026-10-02T05:21:42.3304610-05:00" endTime="2026-10-02T05:21:42.3305650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5747ff59-594d-49ef-91a3-c517e09d6e4c" />
+    <UnitTestResult executionId="315d88e5-513e-453b-abf1-274f35c5fc98" testId="55cb31aa-23e4-ea16-6703-dbb9c4e4419b" testName="OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop" computerName="Xanadu" duration="00:00:02.8119341" startTime="2026-10-02T05:21:42.2662780-05:00" endTime="2026-10-02T05:21:45.0987020-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="315d88e5-513e-453b-abf1-274f35c5fc98">
+      <Output>
+        <ErrorInfo>
+          <Message>System.Net.WebSockets.WebSocketException : Unable to connect to the remote server
+---- System.Net.Http.HttpRequestException : An error occurred while sending the request.
+-------- System.IO.IOException : Unable to read data from the transport connection: Connection reset by peer.
+------------ System.Net.Sockets.SocketException : Connection reset by peer</Message>
+          <StackTrace>   at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken, ClientWebSocketOptions options)
+   at System.Net.WebSockets.ClientWebSocket.ConnectAsyncCore(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken)
+   at OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ServerShutdownTests.cs:line 58
+   at OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ServerShutdownTests.cs:line 66
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.&lt;SendAsync&gt;g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken, ClientWebSocketOptions options)
+----- Inner Stack Trace -----
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource&lt;TResult&gt;.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource&lt;TResult&gt;.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+----- Inner Stack Trace -----
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ReceiveAsync(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.ReceiveAsync(Memory`1 buffer, SocketFlags socketFlags, Boolean fromNetworkStream, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.MoveNext()
+   at System.Net.Sockets.SocketAsyncEventArgs.TransferCompletionCallbackCore(Int32 bytesTransferred, Memory`1 socketAddress, SocketFlags receivedFlags, SocketError socketError)
+   at System.Net.Sockets.SocketAsyncEngine.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+--- End of stack trace from previous location ---
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="22ef5ca9-1dcb-44d0-aea7-b29a959fcb42" testId="f28b0b2d-ee4f-0472-8a8d-9b6cdfc3f220" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;missing&quot;)" computerName="Xanadu" duration="00:00:00.0000365" startTime="2026-10-02T05:21:42.3298610-05:00" endTime="2026-10-02T05:21:42.3299060-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="22ef5ca9-1dcb-44d0-aea7-b29a959fcb42" />
+    <UnitTestResult executionId="ba1384db-cb66-4cd1-8672-88ab98b2ecaf" testId="cb376be0-c14b-b00c-a794-b6e38d13379a" testName="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: &quot;query&quot;)" computerName="Xanadu" duration="00:00:00.7029971" startTime="2026-10-02T05:21:47.5501790-05:00" endTime="2026-10-02T05:21:48.2532230-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba1384db-cb66-4cd1-8672-88ab98b2ecaf" />
+    <UnitTestResult executionId="10af5dde-c687-4afc-9dbb-56dc69633bbf" testId="97840e03-d7cb-9bf3-4156-3c387645ed28" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Private_invitation_round_trips_copies_secret_and_omits_it_from_diagnostic_strings" computerName="Xanadu" duration="00:00:00.0089082" startTime="2026-10-02T05:21:42.3309800-05:00" endTime="2026-10-02T05:21:42.3399100-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10af5dde-c687-4afc-9dbb-56dc69633bbf" />
+    <UnitTestResult executionId="80dae7d0-e7d7-4f07-b74c-3f67d94fbc6e" testId="ccce66a1-dee8-b549-19d4-1d5b7e677cda" testName="OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access" computerName="Xanadu" duration="00:00:00.0010000" startTime="2026-10-02T05:21:42.2662720-05:00" endTime="2026-10-02T05:21:42.2686310-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="NotExecuted" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="80dae7d0-e7d7-4f07-b74c-3f67d94fbc6e">
+      <Output>
+        <ErrorInfo>
+          <Message>Windows DACL inheritance requires a Windows filesystem.</Message>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cdd347bb-c57c-40a3-93d9-f2e2c235972d" testId="e44726a4-c785-c8e9-2866-e2c4c82554b7" testName="OpenFantasy.Server.Tests.PlayerResponseTimeoutTests.A_generic_backend_timeout_remains_a_listener_failure" computerName="Xanadu" duration="00:00:02.6764946" startTime="2026-10-02T05:21:42.2662760-05:00" endTime="2026-10-02T05:21:44.9462610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cdd347bb-c57c-40a3-93d9-f2e2c235972d" />
+    <UnitTestResult executionId="7d8d0ebc-4313-44be-8054-dbd95f10e4c3" testId="cd6f12be-bea0-3591-e7eb-877ae9010b13" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;duplicate&quot;)" computerName="Xanadu" duration="00:00:00.0002618" startTime="2026-10-02T05:21:42.3290410-05:00" endTime="2026-10-02T05:21:42.3294010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7d8d0ebc-4313-44be-8054-dbd95f10e4c3" />
+    <UnitTestResult executionId="87df3af2-a342-40fc-a224-90ab8c5822ea" testId="c2fef863-d631-d1c9-d598-0422345d5a15" testName="OpenFantasy.Server.Tests.PlayerInvitationTests.Private_file_is_bounded_create_only_and_owner_readable_on_unix" computerName="Xanadu" duration="00:00:00.0345054" startTime="2026-10-02T05:21:42.3400950-05:00" endTime="2026-10-02T05:21:42.3746480-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87df3af2-a342-40fc-a224-90ab8c5822ea" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Host_termination_propagates_to_listener_even_without_clients" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="98b8e75b-9739-98c9-f902-e64d1cbeeeed">
+      <Execution id="7823a13f-f297-43c9-b66f-295f7c493a9c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Host_termination_propagates_to_listener_even_without_clients" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="ccce66a1-dee8-b549-19d4-1d5b7e677cda">
+      <Execution id="80dae7d0-e7d7-4f07-b74c-3f67d94fbc6e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.WindowsInvitationTests" name="Invitation_created_under_readable_parent_has_only_protected_owner_access" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;duplicate&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="cd6f12be-bea0-3591-e7eb-877ae9010b13">
+      <Execution id="7d8d0ebc-4313-44be-8054-dbd95f10e4c3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_rejects_ambiguous_or_incomplete_files" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerResponseTimeoutTests.A_generic_backend_timeout_remains_a_listener_failure" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="e44726a4-c785-c8e9-2866-e2c4c82554b7">
+      <Execution id="cdd347bb-c57c-40a3-93d9-f2e2c235972d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerResponseTimeoutTests" name="A_generic_backend_timeout_remains_a_listener_failure" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;wss://secret@localhost/player&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="f3aa2123-291d-7545-b430-efa188210d5e">
+      <Execution id="45feae96-4602-4e50-bd4f-9981829137ea" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_refuses_non_tls_or_embedded_secret_locations" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;ws://localhost/player&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="184abb33-8699-52a2-f07e-ee39cfe263bb">
+      <Execution id="ad525005-7e5a-4841-ab95-9d9b257db4fc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_refuses_non_tls_or_embedded_secret_locations" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ServerStartupTests.Listener_requires_explicit_private_key_and_real_advertised_identity" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="9306d554-a6b9-4e60-e473-d59a3b2dc1d9">
+      <Execution id="aad1b55b-0201-4c5c-9e3e-40866433c47c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ServerStartupTests" name="Listener_requires_explicit_private_key_and_real_advertised_identity" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Stopping_listener_closes_active_and_pending_peers_without_disposing_the_world" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="0af00837-5af5-46b5-a864-3e66b45ce688">
+      <Execution id="ebbfeaa7-ae45-40e1-bbe4-923a797c0557" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Stopping_listener_closes_active_and_pending_peers_without_disposing_the_world" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: &quot;path&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="709c361b-1f87-e9a6-7c12-6f8c0cd95cb5">
+      <Execution id="d1af573f-5fac-48b2-a348-4b6bcdd3031c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Http_admission_refuses_unintended_shapes_before_gameplay" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerResponseTimeoutTests.A_successful_send_at_its_deadline_closes_only_its_player_and_the_listener_still_serves_tls" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="086c7605-6914-31e4-e97c-e3395c8e2ab7">
+      <Execution id="53f06494-6b27-4d1d-932c-eb426bf4b371" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerResponseTimeoutTests" name="A_successful_send_at_its_deadline_closes_only_its_player_and_the_listener_still_serves_tls" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="7220670f-fab4-74cf-c975-ec657d2c8f77">
+      <Execution id="d59d09be-40ea-4873-8bca-d3f039d65657" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Wrong_secret_or_package_fingerprint_never_attaches_a_player" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Normal_certificate_validation_rejects_untrusted_server_and_pin_does_not_ignore_wrong_identity" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="142cb8ef-cc89-3a89-0876-a0ba9f52f018">
+      <Execution id="7d6b1f54-62fc-49b2-ba69-c06283f642a1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Normal_certificate_validation_rejects_untrusted_server_and_pin_does_not_ignore_wrong_identity" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="94282032-2945-0ab5-53e0-474dcb126d53">
+      <Execution id="c3bf679a-3480-43c1-be3c-3fc0b65df4c2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Wrong_secret_or_package_fingerprint_never_attaches_a_player" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: &quot;subprotocol&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="5bcea2f9-dedb-1841-24ea-ef3803f35fb1">
+      <Execution id="fc44fffd-0765-4506-89d1-56274b85a39b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Http_admission_refuses_unintended_shapes_before_gameplay" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Private_file_is_bounded_create_only_and_owner_readable_on_unix" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="c2fef863-d631-d1c9-d598-0422345d5a15">
+      <Execution id="87df3af2-a342-40fc-a224-90ab8c5822ea" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Private_file_is_bounded_create_only_and_owner_readable_on_unix" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;credential&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="697d905f-8e81-fcdc-52b5-3362ad88eb9c">
+      <Execution id="7cb2007f-947e-4350-9912-3dc47b122c16" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_rejects_ambiguous_or_incomplete_files" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: &quot;origin&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="1b7c1298-f922-df4b-a54c-6b10fe9c257e">
+      <Execution id="2c3bd5b1-f7c5-4309-a3d5-bdeebe4877bc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Http_admission_refuses_unintended_shapes_before_gameplay" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DedicatedHostTests.Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="8536d138-2699-a598-ada6-feba459a85c1">
+      <Execution id="4caf51fb-af81-4b52-b34a-c1e44e59d4b2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DedicatedHostTests" name="Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;wss://localhost/player?credential=secret&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="ece8f715-83e0-21ce-2759-4eebc79e9aab">
+      <Execution id="e9b5ffd3-3669-44bf-aeb3-ff6928fd972e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_refuses_non_tls_or_embedded_secret_locations" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;version&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="88a417c4-1f3c-749d-7723-2be56b59587b">
+      <Execution id="13746a14-aa02-4eb1-a962-cc8753b4d029" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_rejects_ambiguous_or_incomplete_files" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;unknown&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="f24ebfef-e1f3-3709-1e9c-31ecae28114a">
+      <Execution id="f57e3eea-c38e-4300-ac43-dae26c60d321" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_rejects_ambiguous_or_incomplete_files" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;wss://localhost/elsewhere&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="aa58d8c3-6ead-e9b3-e854-9fd11dfdb4a9">
+      <Execution id="f863cd46-bfc1-4ff7-94c4-f238d8a778af" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_refuses_non_tls_or_embedded_secret_locations" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DedicatedHostTests.Settings_resolve_local_paths_and_reject_ambiguous_or_unknown_fields" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="6c89214e-a304-1034-3f70-74da1eaa5791">
+      <Execution id="db416436-19e8-41e5-9fa4-4b4ad42aa4e7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DedicatedHostTests" name="Settings_resolve_local_paths_and_reject_ambiguous_or_unknown_fields" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: &quot;missing&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="f28b0b2d-ee4f-0472-8a8d-9b6cdfc3f220">
+      <Execution id="22ef5ca9-1dcb-44d0-aea7-b29a959fcb42" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_rejects_ambiguous_or_incomplete_files" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Actual_tls_upgrade_delivers_authenticated_regional_observation_queries_and_controls" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="0a1854d6-b51a-4a84-2f37-08c0f849f809">
+      <Execution id="4f07b12a-7f3a-4056-a5c6-dbccac65060b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Actual_tls_upgrade_delivers_authenticated_regional_observation_queries_and_controls" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: &quot;wss://localhost/player#secret&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="a640fcc6-4c96-62c0-b004-39d6f18cd65f">
+      <Execution id="5747ff59-594d-49ef-91a3-c517e09d6e4c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Invitation_refuses_non_tls_or_embedded_secret_locations" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ServerShutdownTests.Cancelled_shutdown_wait_does_not_abandon_an_admitted_authority_read" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="7c9d0aff-9450-f0e4-6cd5-9c56019a4b43">
+      <Execution id="6c8b4730-d1a9-4dfa-a41b-8e0c328aac07" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ServerShutdownTests" name="Cancelled_shutdown_wait_does_not_abandon_an_admitted_authority_read" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Ordinary_http_get_cannot_upgrade_and_websocket_compression_is_not_negotiated" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="85df1652-707d-d1b1-01b3-8e24be3af1b0">
+      <Execution id="799905b8-cf59-412e-93b8-a1be1e51b8c6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Ordinary_http_get_cannot_upgrade_and_websocket_compression_is_not_negotiated" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerInvitationTests.Private_invitation_round_trips_copies_secret_and_omits_it_from_diagnostic_strings" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="97840e03-d7cb-9bf3-4156-3c387645ed28">
+      <Execution id="10af5dde-c687-4afc-9dbb-56dc69633bbf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerInvitationTests" name="Private_invitation_round_trips_copies_secret_and_omits_it_from_diagnostic_strings" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: &quot;query&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="cb376be0-c14b-b00c-a794-b6e38d13379a">
+      <Execution id="ba1384db-cb66-4cd1-8672-88ab98b2ecaf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerWebSocketServerTests" name="Http_admission_refuses_unintended_shapes_before_gameplay" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DedicatedHostTests.Missing_or_incompatible_world_is_never_created_or_reinterpreted" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="13f674e9-0704-f219-1d38-c4a2aeb02c8c">
+      <Execution id="a6d8efca-8221-4992-aff9-ffc44499f5bb" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DedicatedHostTests" name="Missing_or_incompatible_world_is_never_created_or_reinterpreted" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ServerStartupTests.Failed_bind_cleans_partial_listener_and_leaves_authority_available" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="78b06d01-2cc9-523e-70de-93e96cacf0f9">
+      <Execution id="c215e22d-dfd9-4b9b-9577-e73addc26ce6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ServerStartupTests" name="Failed_bind_cleans_partial_listener_and_leaves_authority_available" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="af50c215-3d8e-162e-0f6c-7ddabb08558e">
+      <Execution id="d7d3096a-b1ff-406c-9031-13980f6b0d45" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DedicatedHostProcessTests" name="Actual_host_process_handles_sigterm_and_releases_its_saved_world" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="55cb31aa-23e4-ea16-6703-dbb9c4e4419b">
+      <Execution id="315d88e5-513e-453b-abf1-274f35c5fc98" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ServerShutdownTests" name="Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="086c7605-6914-31e4-e97c-e3395c8e2ab7" executionId="53f06494-6b27-4d1d-932c-eb426bf4b371" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="142cb8ef-cc89-3a89-0876-a0ba9f52f018" executionId="7d6b1f54-62fc-49b2-ba69-c06283f642a1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="af50c215-3d8e-162e-0f6c-7ddabb08558e" executionId="d7d3096a-b1ff-406c-9031-13980f6b0d45" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6c89214e-a304-1034-3f70-74da1eaa5791" executionId="db416436-19e8-41e5-9fa4-4b4ad42aa4e7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="709c361b-1f87-e9a6-7c12-6f8c0cd95cb5" executionId="d1af573f-5fac-48b2-a348-4b6bcdd3031c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ece8f715-83e0-21ce-2759-4eebc79e9aab" executionId="e9b5ffd3-3669-44bf-aeb3-ff6928fd972e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7c9d0aff-9450-f0e4-6cd5-9c56019a4b43" executionId="6c8b4730-d1a9-4dfa-a41b-8e0c328aac07" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0a1854d6-b51a-4a84-2f37-08c0f849f809" executionId="4f07b12a-7f3a-4056-a5c6-dbccac65060b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f3aa2123-291d-7545-b430-efa188210d5e" executionId="45feae96-4602-4e50-bd4f-9981829137ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7220670f-fab4-74cf-c975-ec657d2c8f77" executionId="d59d09be-40ea-4873-8bca-d3f039d65657" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5bcea2f9-dedb-1841-24ea-ef3803f35fb1" executionId="fc44fffd-0765-4506-89d1-56274b85a39b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0af00837-5af5-46b5-a864-3e66b45ce688" executionId="ebbfeaa7-ae45-40e1-bbe4-923a797c0557" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="aa58d8c3-6ead-e9b3-e854-9fd11dfdb4a9" executionId="f863cd46-bfc1-4ff7-94c4-f238d8a778af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8536d138-2699-a598-ada6-feba459a85c1" executionId="4caf51fb-af81-4b52-b34a-c1e44e59d4b2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78b06d01-2cc9-523e-70de-93e96cacf0f9" executionId="c215e22d-dfd9-4b9b-9577-e73addc26ce6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f24ebfef-e1f3-3709-1e9c-31ecae28114a" executionId="f57e3eea-c38e-4300-ac43-dae26c60d321" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b7c1298-f922-df4b-a54c-6b10fe9c257e" executionId="2c3bd5b1-f7c5-4309-a3d5-bdeebe4877bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9306d554-a6b9-4e60-e473-d59a3b2dc1d9" executionId="aad1b55b-0201-4c5c-9e3e-40866433c47c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="184abb33-8699-52a2-f07e-ee39cfe263bb" executionId="ad525005-7e5a-4841-ab95-9d9b257db4fc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="13f674e9-0704-f219-1d38-c4a2aeb02c8c" executionId="a6d8efca-8221-4992-aff9-ffc44499f5bb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="98b8e75b-9739-98c9-f902-e64d1cbeeeed" executionId="7823a13f-f297-43c9-b66f-295f7c493a9c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="697d905f-8e81-fcdc-52b5-3362ad88eb9c" executionId="7cb2007f-947e-4350-9912-3dc47b122c16" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="94282032-2945-0ab5-53e0-474dcb126d53" executionId="c3bf679a-3480-43c1-be3c-3fc0b65df4c2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="88a417c4-1f3c-749d-7723-2be56b59587b" executionId="13746a14-aa02-4eb1-a962-cc8753b4d029" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="85df1652-707d-d1b1-01b3-8e24be3af1b0" executionId="799905b8-cf59-412e-93b8-a1be1e51b8c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a640fcc6-4c96-62c0-b004-39d6f18cd65f" executionId="5747ff59-594d-49ef-91a3-c517e09d6e4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="55cb31aa-23e4-ea16-6703-dbb9c4e4419b" executionId="315d88e5-513e-453b-abf1-274f35c5fc98" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f28b0b2d-ee4f-0472-8a8d-9b6cdfc3f220" executionId="22ef5ca9-1dcb-44d0-aea7-b29a959fcb42" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cb376be0-c14b-b00c-a794-b6e38d13379a" executionId="ba1384db-cb66-4cd1-8672-88ab98b2ecaf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="97840e03-d7cb-9bf3-4156-3c387645ed28" executionId="10af5dde-c687-4afc-9dbb-56dc69633bbf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ccce66a1-dee8-b549-19d4-1d5b7e677cda" executionId="80dae7d0-e7d7-4f07-b74c-3f67d94fbc6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e44726a4-c785-c8e9-2866-e2c4c82554b7" executionId="cdd347bb-c57c-40a3-93d9-f2e2c235972d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cd6f12be-bea0-3591-e7eb-877ae9010b13" executionId="7d8d0ebc-4313-44be-8054-dbd95f10e4c3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c2fef863-d631-d1c9-d598-0422345d5a15" executionId="87df3af2-a342-40fc-a224-90ab8c5822ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="34" executed="33" passed="31" failed="2" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.42]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.59]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.73]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.76]       Windows DACL inheritance requires a Windows filesystem.
+Test 'OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access' was skipped in the test run.
+[xUnit.net 00:00:03.61]       System.Net.WebSockets.WebSocketException : Unable to connect to the remote server
+[xUnit.net 00:00:03.61]       ---- System.Net.Http.HttpRequestException : An error occurred while sending the request.
+[xUnit.net 00:00:03.61]       -------- System.IO.IOException : Unable to read data from the transport connection: Connection reset by peer.
+[xUnit.net 00:00:03.61]       ------------ System.Net.Sockets.SocketException : Connection reset by peer
+[xUnit.net 00:00:03.61]       Stack Trace:
+[xUnit.net 00:00:03.61]            at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken, ClientWebSocketOptions options)
+[xUnit.net 00:00:03.61]            at System.Net.WebSockets.ClientWebSocket.ConnectAsyncCore(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ServerShutdownTests.cs(58,0): at OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop()
+[xUnit.net 00:00:03.61]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ServerShutdownTests.cs(66,0): at OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop()
+[xUnit.net 00:00:03.61]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.61]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:03.61]            at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.Http.SocketsHttpHandler.&lt;SendAsync&gt;g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken, ClientWebSocketOptions options)
+[xUnit.net 00:00:03.61]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:03.61]            at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+[xUnit.net 00:00:03.61]            at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource&lt;TResult&gt;.GetResult(Int16 token)
+[xUnit.net 00:00:03.61]            at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource&lt;TResult&gt;.GetResult(Int16 token)
+[xUnit.net 00:00:03.61]            at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+[xUnit.net 00:00:03.61]            at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:03.61]            at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+[xUnit.net 00:00:03.61]            at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ReceiveAsync(Socket socket, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.Sockets.Socket.ReceiveAsync(Memory`1 buffer, SocketFlags socketFlags, Boolean fromNetworkStream, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.62]            at System.Net.Sockets.NetworkStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.62]            at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+[xUnit.net 00:00:03.62]            at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.ExecutionContextCallback(Object s)
+[xUnit.net 00:00:03.62]            at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+[xUnit.net 00:00:03.62]            at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.MoveNext()
+[xUnit.net 00:00:03.62]            at System.Net.Sockets.SocketAsyncEventArgs.TransferCompletionCallbackCore(Int32 bytesTransferred, Memory`1 socketAddress, SocketFlags receivedFlags, SocketError socketError)
+[xUnit.net 00:00:03.62]            at System.Net.Sockets.SocketAsyncEngine.System.Threading.IThreadPoolWorkItem.Execute()
+[xUnit.net 00:00:03.62]            at System.Threading.ThreadPoolWorkQueue.Dispatch()
+[xUnit.net 00:00:03.62]            at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+[xUnit.net 00:00:03.62]            at System.Threading.Thread.StartCallback()
+[xUnit.net 00:00:03.62]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.62]         
+[xUnit.net 00:00:04.77]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:04.77]       Expected: 0
+[xUnit.net 00:00:04.77]       Actual:   1
+[xUnit.net 00:00:04.77]       Stack Trace:
+[xUnit.net 00:00:04.77]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostProcessTests.cs(56,0): at OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world()
+[xUnit.net 00:00:04.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostProcessTests.cs(66,0): at OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world()
+[xUnit.net 00:00:04.78]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:11.30]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="Xanadu" outcome="Warning" timestamp="2026-10-02T05:21:42.2704170-05:00">
+        <Text>[xUnit.net 00:00:00.76]     OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access [SKIP]</Text>
+      </RunInfo>
+      <RunInfo computerName="Xanadu" outcome="Error" timestamp="2026-10-02T05:21:45.1199560-05:00">
+        <Text>[xUnit.net 00:00:03.61]     OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="Xanadu" outcome="Error" timestamp="2026-10-02T05:21:46.2818200-05:00">
+        <Text>[xUnit.net 00:00:04.77]     OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

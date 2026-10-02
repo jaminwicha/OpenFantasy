@@ -33,6 +33,9 @@ public sealed class PlayerAdmissionService
 
     public PlayerWorldCompatibility Compatibility { get; }
 
+    /// <summary>Observes the owning world's lifetime without granting access to its authority or disposal.</summary>
+    public Task HostCompletion => _host.Completion;
+
     /// <summary>Privileged operator operation. Reissuing invalidates an inactive actor's earlier credential.</summary>
     public PlayerJoinCredential Issue(EntityId actorId, TrustedCommandDelivery delivery, TimeSpan lifetime,
         Simulation.CargoPresentation.LocalRegionObserver? regions = null)

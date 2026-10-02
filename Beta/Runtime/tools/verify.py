@@ -12,6 +12,27 @@ import uuid
 import xml.etree.ElementTree as ET
 
 
+def read_test_counts(path, label):
+    tree = ET.parse(path)
+    counters = tree.find(".//{*}Counters")
+    if counters is None:
+        raise RuntimeError("The test report has no result counters: " + label)
+    counts = {key: int(value) for key, value in counters.attrib.items()}
+    expected_skips = set()
+    if label == "server":
+        method = ("DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world"
+                  if os.name == "nt" else
+                  "WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access")
+        expected_skips.add("OpenFantasy.Server.Tests." + method)
+    skipped = [row.get("testName") for row in tree.findall(".//{*}UnitTestResult") if row.get("outcome") == "NotExecuted"]
+    if (len(skipped) != len(expected_skips) or set(skipped) != expected_skips
+            or counts.get("executed", 0) <= 0 or counts.get("total") != counts["executed"] + len(expected_skips)
+            or counts.get("passed") != counts["executed"]
+            or any(counts.get(key, 0) for key in ("failed", "error", "timeout", "aborted"))):
+        raise RuntimeError("The test report contains missing, failed or unexpected unexecuted cases: " + label)
+    return counts, sorted(expected_skips)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dotnet", default=shutil.which("dotnet"))
@@ -32,6 +53,7 @@ def main():
     env = dict(os.environ, DOTNET_ROOT=str(dotnet.parent),
                DOTNET_CLI_TELEMETRY_OPTOUT="1", DOTNET_NOLOGO="1")
     env["PATH"] = str(dotnet.parent) + os.pathsep + env.get("PATH", "")
+    env["OPENFANTASY_DOTNET"] = str(dotnet)
     env["OPENFANTASY_WATERSHED_EVIDENCE"] = str(test_results / "watershed-fixture")
     env["OPENFANTASY_WATERSHED_NETWORK_EVIDENCE"] = str(test_results / "watershed-network-fixture")
     env["OPENFANTASY_WATERSHED_NETWORK_WORLD_EVIDENCE"] = str(test_results / "watershed-network-world-fixture")
@@ -134,19 +156,15 @@ def main():
                 raise RuntimeError("Independent vectors differ from frozen fixture: " + fixture)
         run("locked-restore", [dotnet, "restore", "OpenFantasy.sln", "--locked-mode"])
         run("debug-build", [dotnet, "build", "OpenFantasy.sln", "--no-restore", "-c", "Debug"])
-        for project, label in (("OpenFantasy.Core.Tests", "core"), ("OpenFantasy.Hosting.Tests", "hosting")):
+        for project, label in (("OpenFantasy.Core.Tests", "core"), ("OpenFantasy.Hosting.Tests", "hosting"),
+                               ("OpenFantasy.Server.Tests", "server")):
             run(label + "-tests", [dotnet, "test", "tests/" + project + "/" + project + ".csproj",
                                   "--no-build", "--no-restore", "-c", "Debug", "--logger",
                                   "trx;LogFileName=" + label + ".trx", "--results-directory", test_results])
-            counters = ET.parse(test_results / (label + ".trx")).find(".//{*}Counters")
-            if counters is None:
-                raise RuntimeError("The test report has no result counters: " + label)
-            counts = {key: int(value) for key, value in counters.attrib.items()}
-            if (counts.get("executed", 0) <= 0 or counts.get("total") != counts["executed"]
-                    or counts.get("passed") != counts["executed"]
-                    or any(counts.get(key, 0) for key in ("failed", "error", "timeout", "aborted"))):
-                raise RuntimeError("The test report contains missing, failed or unexecuted cases: " + label)
-            report["testCounts" if label == "core" else "hostingTestCounts"] = counts
+            counts, unrun = read_test_counts(test_results / (label + ".trx"), label)
+            report["testCounts" if label == "core" else label + "TestCounts"] = counts
+            if unrun:
+                report["unrunPlatformCases"] = unrun
         host = run("host-foundation", [dotnet, "run", "--project", "src/OpenFantasy.Host",
                     "--no-build", "--no-restore", "--", "--inspect-foundation"])
         run("watershed-world-persistence", [sys.executable, root / "tools/check_watershed_world.py",

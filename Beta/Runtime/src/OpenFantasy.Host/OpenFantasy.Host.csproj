@@ -7,5 +7,6 @@
   <ItemGroup>
     <ProjectReference Include="../OpenFantasy.Core/OpenFantasy.Core.csproj" />
     <ProjectReference Include="../OpenFantasy.Hosting/OpenFantasy.Hosting.csproj" />
+    <ProjectReference Include="../OpenFantasy.Server/OpenFantasy.Server.csproj" />
   </ItemGroup>
 </Project>

@@ -56,6 +56,12 @@
           "SQLite": "[3.53.4, )",
           "SQLitePCLRaw.bundle_e_sqlite3": "[3.0.5, )"
         }
+      },
+      "openfantasy.server": {
+        "type": "Project",
+        "dependencies": {
+          "OpenFantasy.Hosting": "[1.0.0, )"
+        }
       }
     }
   }

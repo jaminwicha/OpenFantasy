@@ -1,0 +1,768 @@
+{
+  "checkedLocalLinks": 187,
+  "affectedDocuments": [
+    "Beta/Runtime/README.md",
+    "Beta/Runtime/docs/player-host.md",
+    "Beta/Runtime/docs/architecture/README.md",
+    "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+    "Beta/Runtime/docs/architecture/player-admission.md",
+    "Beta/Runtime/docs/architecture/player-command-routing.md",
+    "Beta/Runtime/docs/architecture/player-http-host.md"
+  ],
+  "links": [
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/README.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/README.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/event-descent.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/event-descent.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "../implementation/p01/native-loop/WORLD_CONTRACT.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "../implementation/p00/README.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/player-host.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/player-http-host.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "../implementation/p02/retained-proposal-transition/qualification/run_checks.py"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "src/OpenFantasy.Core/CONTRACTS.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/reservoir-transport.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/reservoir-boundaries.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/liquid-cell-flow.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/world-pacing.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/encounter-actions.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/encounter-lifecycle.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/encounter-timing.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/structural-loads.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/construction-physical.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/consequence-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/local-worksite.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "../implementation/p02/playable-worksite/README.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/local-watercourse.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "../implementation/p02/native-watercourse/README.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/terrain-liquid-breach.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "../implementation/p02/native-terrain-breach/README.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/native-encounters.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/ordinary-care.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "../implementation/p02/restorative-interface/README.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/coordinated-world-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/cargo-presentation.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/cargo-circuit.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/encounter-retreat.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/road-threat.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/encounter-outcome.md"
+    },
+    {
+      "source": "Beta/Runtime/README.md",
+      "target": "docs/architecture/hosted-player-connections.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/player-host.md",
+      "target": "architecture/player-http-host.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "runtime-and-authority.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-composition.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "identity-and-determinism.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "hosted-player-connections.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "player-message-transport.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "player-admission.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "player-command-routing.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "player-http-host.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "player-queries.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "player-observation-views.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "player-observation-streams.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-timing.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-pacing.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-actions.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-lifecycle.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "native-encounters.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-retreat.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "encounter-outcome.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "road-threat.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-and-geography.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "local-worksite.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "local-watercourse.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "excavation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "excavation-material-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "constructed-footing.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "stair-navigation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-loads.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-contact-assessment.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-policy-and-motion.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "structural-settlement.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "event-descent.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "construction-physical.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-boundaries.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "reservoir-containment.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "terrain-liquid-breach.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "liquid-material-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "transport-material-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "terrain-material-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actors-and-society.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "actor-resources.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-resource-history.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "resource-archive-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "care-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "coordinated-world-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "aftermath-care.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "materials-and-activities.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "spot-exchange.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-paid-exchange.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "world-markets.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "scheduled-trading.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "native-trading.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "cargo-presentation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "cargo-circuit.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "consented-custody.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "consented-production.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "consented-world.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "material-proposals.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "item-consumption.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "material-continuation-basis.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "live-material-evidence.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "production-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "construction-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "presentation-and-interaction.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "content-and-composition.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/README.md",
+      "target": "../../../implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/OpenFantasy.Core.csproj"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Host/OpenFantasy.Host.csproj"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../client/OpenFantasy.Client.csproj"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../global.json"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../toolchain.json"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "player-message-transport.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "player-admission.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "player-command-routing.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "player-http-host.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "coupled-settlement.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "consequence-continuation.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "reservoir-containment.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "liquid-cell-flow.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldAdmissionValidator.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/SqliteCountedAuthority.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "ordinary-care.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "material-proposals.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "material-proposals.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "scheduled-trading.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "native-trading.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "cargo-circuit.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Core/Worlds/WorldReservoirBinding.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "reservoir-transport.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "persistence-and-history.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "time-and-encounters.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/runtime-and-authority.md",
+      "target": "content-and-composition.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/PlayerAdmissionService.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "hosted-player-connections.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/PlayerWorldCompatibility.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "player-observation-views.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/PlayerJoinCredential.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "player-message-transport.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/PlayerHandshakeCodec.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/AuthenticatedPlayerChannel.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "player-command-routing.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "player-http-host.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-admission.md",
+      "target": "player-observation-streams.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-command-routing.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-command-routing.md",
+      "target": "player-admission.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-command-routing.md",
+      "target": "player-queries.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-command-routing.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/PlayerGameplayCodec.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-command-routing.md",
+      "target": "player-observation-streams.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-command-routing.md",
+      "target": "player-http-host.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Server/OpenFantasy.Server.csproj"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "player-admission.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "player-command-routing.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "player-observation-streams.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "player-queries.md"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Server/PlayerWebSocketServerOptions.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Server/PlayerWebSocketApplication.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Server/PlayerWebSocketServer.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/CargoPlayerHost.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Hosting/Content/FarmPackageCatalog.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Hosting/Networking/PlayerConnectionInvitation.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Host/PlayerInvitationFile.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../../src/OpenFantasy.Host/ServeCargoWorldCommand.cs"
+    },
+    {
+      "source": "Beta/Runtime/docs/architecture/player-http-host.md",
+      "target": "../player-host.md"
+    }
+  ],
+  "unchangedRootBuildMetadataComparedToSourceHead": {
+    "Beta/Runtime/Directory.Build.props": "745a005e017d4849ed4d4a0f247adc057ed5593e50d9b0d6254f8dc32bfed680",
+    "Beta/Runtime/.gitignore": "262698995996ecef07ccdb022fb54c6f4df750404e623d64e642b61dfeecfa34",
+    "Beta/Runtime/global.json": "4e7d5022b2a5a8d02bb951bb264a4c8613eabc332572a0af5f9743d23f23d84e",
+    "Beta/Runtime/toolchain.json": "1bdc42ca35759ef8ce2f474cbed9eb2c8105c717dfb2a7a75a7cb0dc5ee76fae"
+  }
+}

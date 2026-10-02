@@ -1,0 +1,61 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:01.05]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.21]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.36]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.42]     OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world [FAIL]
+[xUnit.net 00:00:01.42]       You must set 'Skip' when you set 'SkipUnless' or 'SkipWhen' on test method 'OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world' to set the message for conditional skips
+  Failed OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world [1 ms]
+  Error Message:
+   You must set 'Skip' when you set 'SkipUnless' or 'SkipWhen' on test method 'OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world' to set the message for conditional skips
+
+  Passed OpenFantasy.Server.Tests.DedicatedHostTests.Settings_resolve_local_paths_and_reject_ambiguous_or_unknown_fields [43 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "version") [65 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "duplicate") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "credential") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "unknown") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "missing") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/elsewhere") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/player#secret") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://secret@localhost/player") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "ws://localhost/player") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/player?credential=secret") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Private_invitation_round_trips_copies_secret_and_omits_it_from_diagnostic_strings [6 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Private_file_is_bounded_create_only_and_owner_readable_on_unix [19 ms]
+  Passed OpenFantasy.Server.Tests.ServerStartupTests.Listener_requires_explicit_private_key_and_real_advertised_identity [532 ms]
+  Passed OpenFantasy.Server.Tests.ServerStartupTests.Failed_bind_cleans_partial_listener_and_leaves_authority_available [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: False) [2 s]
+  Passed OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: True) [1 s]
+  Passed OpenFantasy.Server.Tests.ServerShutdownTests.Cancelled_shutdown_wait_does_not_abandon_an_admitted_authority_read [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Normal_certificate_validation_rejects_untrusted_server_and_pin_does_not_ignore_wrong_identity [713 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "query") [551 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "path") [526 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "origin") [658 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "subprotocol") [555 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Ordinary_http_get_cannot_upgrade_and_websocket_compression_is_not_negotiated [494 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Host_termination_propagates_to_listener_even_without_clients [547 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Stopping_listener_closes_active_and_pending_peers_without_disposing_the_world [599 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Actual_tls_upgrade_delivers_authenticated_regional_observation_queries_and_controls [851 ms]
+[xUnit.net 00:00:13.59]     OpenFantasy.Server.Tests.DedicatedHostTests.Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement [FAIL]
+[xUnit.net 00:00:13.59]       System.TimeoutException : The operation has timed out.
+[xUnit.net 00:00:13.59]       Stack Trace:
+[xUnit.net 00:00:13.59]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostTests.cs(35,0): at OpenFantasy.Server.Tests.DedicatedHostTests.Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement()
+[xUnit.net 00:00:13.60]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Server.Tests.DedicatedHostTests.Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement [12 s]
+  Error Message:
+   System.TimeoutException : The operation has timed out.
+  Stack Trace:
+     at OpenFantasy.Server.Tests.DedicatedHostTests.Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostTests.cs:line 35
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:13.67]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.DedicatedHostTests.Missing_or_incompatible_world_is_never_created_or_reinterpreted [61 ms]
+
+Test Run Failed.
+Total tests: 31
+     Passed: 29
+     Failed: 2
+ Total time: 14.3094 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-http-host/qualification/server-20261002T100741150125Z/checks.trx

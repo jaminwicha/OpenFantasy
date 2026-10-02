@@ -181,7 +181,7 @@ public sealed class PlayerCommandSession
             using var linked = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, deadline.Token);
             await _channel.Transport.SendAsync(PlayerMessageCodec.Encode(message), linked.Token).ConfigureAwait(false);
             if (_time.GetElapsedTime(started, _time.GetTimestamp()) >= SendLimit)
-                throw new TimeoutException("The player response exceeded its send deadline.");
+                throw new PlayerResponseTimeoutException();
             if (message.Kind == PlayerMessageKind.Observation) Volatile.Write(ref _observationPending, 0);
         }
     }

@@ -13,7 +13,13 @@ internal sealed class FarmSourcePacket
     private const int MaximumPacketBytes = 1_048_576;
     private readonly Dictionary<string, JsonElement> _selected;
 
-    private FarmSourcePacket(Dictionary<string, JsonElement> selected) => _selected = selected;
+    private FarmSourcePacket(Dictionary<string, JsonElement> selected, PackageManifest manifest)
+    {
+        _selected = selected;
+        Manifest = manifest;
+    }
+
+    internal PackageManifest Manifest { get; }
 
     internal JsonElement Wren => _selected["openfantasy.aldermere:npcs/farmer_wren"];
     internal JsonElement Farm => _selected["openfantasy.aldermere:regions/farm_verdance_small"];
@@ -68,7 +74,7 @@ internal sealed class FarmSourcePacket
         {
             throw new InvalidDataException("This admission requires exactly four selected source records.");
         }
-        return new FarmSourcePacket(selected);
+        return new FarmSourcePacket(selected, manifest);
     }
 
     private static Dictionary<string, byte[]> ReadWitnesses(FarmContentFiles files, JsonElement entries)

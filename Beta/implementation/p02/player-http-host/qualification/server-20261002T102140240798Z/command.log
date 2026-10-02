@@ -1,0 +1,151 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.42]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.59]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.73]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.76]     OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access [SKIP]
+[xUnit.net 00:00:00.76]       Windows DACL inheritance requires a Windows filesystem.
+  Skipped OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access [1 ms]
+  Error Message:
+   Windows DACL inheritance requires a Windows filesystem.
+
+  Passed OpenFantasy.Server.Tests.DedicatedHostTests.Settings_resolve_local_paths_and_reject_ambiguous_or_unknown_fields [53 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "version") [53 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "duplicate") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "credential") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "unknown") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_rejects_ambiguous_or_incomplete_files(mutation: "missing") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/elsewhere") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/player#secret") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://secret@localhost/player") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "ws://localhost/player") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Invitation_refuses_non_tls_or_embedded_secret_locations(uri: "wss://localhost/player?credential=secret") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Private_invitation_round_trips_copies_secret_and_omits_it_from_diagnostic_strings [8 ms]
+  Passed OpenFantasy.Server.Tests.PlayerInvitationTests.Private_file_is_bounded_create_only_and_owner_readable_on_unix [34 ms]
+  Passed OpenFantasy.Server.Tests.ServerStartupTests.Listener_requires_explicit_private_key_and_real_advertised_identity [354 ms]
+[xUnit.net 00:00:03.61]     OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop [FAIL]
+[xUnit.net 00:00:03.61]       System.Net.WebSockets.WebSocketException : Unable to connect to the remote server
+[xUnit.net 00:00:03.61]       ---- System.Net.Http.HttpRequestException : An error occurred while sending the request.
+[xUnit.net 00:00:03.61]       -------- System.IO.IOException : Unable to read data from the transport connection: Connection reset by peer.
+[xUnit.net 00:00:03.61]       ------------ System.Net.Sockets.SocketException : Connection reset by peer
+[xUnit.net 00:00:03.61]       Stack Trace:
+[xUnit.net 00:00:03.61]            at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken, ClientWebSocketOptions options)
+[xUnit.net 00:00:03.61]            at System.Net.WebSockets.ClientWebSocket.ConnectAsyncCore(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ServerShutdownTests.cs(58,0): at OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop()
+[xUnit.net 00:00:03.61]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ServerShutdownTests.cs(66,0): at OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop()
+[xUnit.net 00:00:03.61]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.61]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:03.61]            at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken, ClientWebSocketOptions options)
+[xUnit.net 00:00:03.61]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:03.61]            at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+[xUnit.net 00:00:03.61]            at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+[xUnit.net 00:00:03.61]            at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+[xUnit.net 00:00:03.61]            at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+[xUnit.net 00:00:03.61]            at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:03.61]            at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+[xUnit.net 00:00:03.61]            at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ReceiveAsync(Socket socket, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.61]            at System.Net.Sockets.Socket.ReceiveAsync(Memory`1 buffer, SocketFlags socketFlags, Boolean fromNetworkStream, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.62]            at System.Net.Sockets.NetworkStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+[xUnit.net 00:00:03.62]            at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+[xUnit.net 00:00:03.62]            at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.ExecutionContextCallback(Object s)
+[xUnit.net 00:00:03.62]            at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+[xUnit.net 00:00:03.62]            at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.MoveNext()
+[xUnit.net 00:00:03.62]            at System.Net.Sockets.SocketAsyncEventArgs.TransferCompletionCallbackCore(Int32 bytesTransferred, Memory`1 socketAddress, SocketFlags receivedFlags, SocketError socketError)
+[xUnit.net 00:00:03.62]            at System.Net.Sockets.SocketAsyncEngine.System.Threading.IThreadPoolWorkItem.Execute()
+[xUnit.net 00:00:03.62]            at System.Threading.ThreadPoolWorkQueue.Dispatch()
+[xUnit.net 00:00:03.62]            at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+[xUnit.net 00:00:03.62]            at System.Threading.Thread.StartCallback()
+[xUnit.net 00:00:03.62]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.62]         
+  Passed OpenFantasy.Server.Tests.ServerStartupTests.Failed_bind_cleans_partial_listener_and_leaves_authority_available [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerResponseTimeoutTests.A_generic_backend_timeout_remains_a_listener_failure [2 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: False) [2 s]
+  Failed OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop [2 s]
+  Error Message:
+   System.Net.WebSockets.WebSocketException : Unable to connect to the remote server
+---- System.Net.Http.HttpRequestException : An error occurred while sending the request.
+-------- System.IO.IOException : Unable to read data from the transport connection: Connection reset by peer.
+------------ System.Net.Sockets.SocketException : Connection reset by peer
+  Stack Trace:
+     at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken, ClientWebSocketOptions options)
+   at System.Net.WebSockets.ClientWebSocket.ConnectAsyncCore(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken)
+   at OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ServerShutdownTests.cs:line 58
+   at OpenFantasy.Server.Tests.ServerShutdownTests.Pending_handshake_limit_refuses_extra_peer_and_releases_capacity_on_stop() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ServerShutdownTests.cs:line 66
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionPool.SendWithVersionDetectionAndRetryAsync(HttpRequestMessage request, Boolean async, Boolean doRequestAuth, CancellationToken cancellationToken)
+   at System.Net.Http.RedirectHandler.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+   at System.Net.Http.SocketsHttpHandler.<SendAsync>g__CreateHandlerAndSendAsync|115_0(HttpRequestMessage request, CancellationToken cancellationToken)
+   at System.Net.WebSockets.WebSocketHandle.ConnectAsync(Uri uri, HttpMessageInvoker invoker, CancellationToken cancellationToken, ClientWebSocketOptions options)
+----- Inner Stack Trace -----
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Net.Http.HttpConnection.InitialFillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.SendAsync(HttpRequestMessage request, Boolean async, CancellationToken cancellationToken)
+----- Inner Stack Trace -----
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.CreateException(SocketError error, Boolean forAsyncThrow)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ReceiveAsync(Socket socket, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.ReceiveAsync(Memory`1 buffer, SocketFlags socketFlags, Boolean fromNetworkStream, CancellationToken cancellationToken)
+   at System.Net.Sockets.NetworkStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.EnsureFullTlsFrameAsync[TIOAdapter](CancellationToken cancellationToken, Int32 estimatedSize)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.ExecutionContextCallback(Object s)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.MoveNext()
+   at System.Net.Sockets.SocketAsyncEventArgs.TransferCompletionCallbackCore(Int32 bytesTransferred, Memory`1 socketAddress, SocketFlags receivedFlags, SocketError socketError)
+   at System.Net.Sockets.SocketAsyncEngine.System.Threading.IThreadPoolWorkItem.Execute()
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+--- End of stack trace from previous location ---
+
+[xUnit.net 00:00:04.77]     OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world [FAIL]
+[xUnit.net 00:00:04.77]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:04.77]       Expected: 0
+[xUnit.net 00:00:04.77]       Actual:   1
+[xUnit.net 00:00:04.77]       Stack Trace:
+[xUnit.net 00:00:04.77]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostProcessTests.cs(56,0): at OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world()
+[xUnit.net 00:00:04.78]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostProcessTests.cs(66,0): at OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world()
+[xUnit.net 00:00:04.78]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Server.Tests.DedicatedHostTests.Dedicated_command_opens_production_world_provisions_actual_package_and_shuts_down_without_advancement [3 s]
+  Passed OpenFantasy.Server.Tests.DedicatedHostTests.Missing_or_incompatible_world_is_never_created_or_reinterpreted [93 ms]
+  Failed OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world [4 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 0
+Actual:   1
+  Stack Trace:
+     at OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostProcessTests.cs:line 56
+   at OpenFantasy.Server.Tests.DedicatedHostProcessTests.Actual_host_process_handles_sigterm_and_releases_its_saved_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/DedicatedHostProcessTests.cs:line 66
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Server.Tests.PlayerResponseTimeoutTests.A_successful_send_at_its_deadline_closes_only_its_player_and_the_listener_still_serves_tls [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Wrong_secret_or_package_fingerprint_never_attaches_a_player(wrongPackages: True) [1 s]
+  Passed OpenFantasy.Server.Tests.ServerShutdownTests.Cancelled_shutdown_wait_does_not_abandon_an_admitted_authority_read [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Normal_certificate_validation_rejects_untrusted_server_and_pin_does_not_ignore_wrong_identity [808 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "query") [702 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "path") [617 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "origin") [674 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Http_admission_refuses_unintended_shapes_before_gameplay(variation: "subprotocol") [522 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Ordinary_http_get_cannot_upgrade_and_websocket_compression_is_not_negotiated [547 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Host_termination_propagates_to_listener_even_without_clients [554 ms]
+[xUnit.net 00:00:11.30]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Stopping_listener_closes_active_and_pending_peers_without_disposing_the_world [689 ms]
+  Passed OpenFantasy.Server.Tests.PlayerWebSocketServerTests.Actual_tls_upgrade_delivers_authenticated_regional_observation_queries_and_controls [937 ms]
+
+Test Run Failed.
+Total tests: 34
+     Passed: 31
+     Failed: 2
+    Skipped: 1
+ Total time: 11.6765 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-http-host/qualification/server-20261002T102140240798Z/checks.trx
