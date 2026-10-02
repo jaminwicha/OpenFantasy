@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="4e37ec97-fa56-488e-ba50-6a2e62f314a6" name="@Xanadu 2026-10-02 06:43:53" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T06:43:53.1940860-05:00" queuing="2026-10-02T06:43:53.1940860-05:00" start="2026-10-02T06:43:47.0956010-05:00" finish="2026-10-02T06:46:12.8752720-05:00" />
+  <TestSettings name="default" id="89ead41c-4581-4d09-a0a8-421b85ba48c7">
+    <Deployment runDeploymentRoot="_Xanadu_2026-10-02_06_43_53" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="442c066e-58a7-4325-aecc-78329ba45980" testId="39d4adba-2746-e29e-3631-a5c751171eed" testName="OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales" computerName="Xanadu" duration="00:02:09.5143428" startTime="2026-10-02T06:43:50.1347060-05:00" endTime="2026-10-02T06:45:59.5852910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="442c066e-58a7-4325-aecc-78329ba45980" />
+    <UnitTestResult executionId="df184f9e-8478-4a52-bec6-e808d4f11d98" testId="4e242939-68f8-65a7-85be-f059aebb1cbc" testName="OpenFantasy.Hosting.Tests.Client.Retreat.NativeRetreatResultTests.Every_native_route_saved_one_disengaged_retreat_walked_as_ordinary_samples" computerName="Xanadu" duration="00:00:50.8571409" startTime="2026-10-02T06:43:50.1347400-05:00" endTime="2026-10-02T06:44:41.0027890-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df184f9e-8478-4a52-bec6-e808d4f11d98" />
+    <UnitTestResult executionId="a49080a5-1956-42dc-bd84-0a3d1250741f" testId="f5871f1e-9f4c-14af-2237-0f3259ed21bb" testName="OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody" computerName="Xanadu" duration="00:01:14.7986463" startTime="2026-10-02T06:43:50.1346940-05:00" endTime="2026-10-02T06:45:04.9392160-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a49080a5-1956-42dc-bd84-0a3d1250741f" />
+    <UnitTestResult executionId="93c44f73-28e4-4233-9669-c8a5a2414077" testId="f4365370-150f-92f7-7742-eb9d54fa8bc1" testName="OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery" computerName="Xanadu" duration="00:00:02.1085964" startTime="2026-10-02T06:43:50.1347690-05:00" endTime="2026-10-02T06:43:52.4217360-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93c44f73-28e4-4233-9669-c8a5a2414077">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "DB46BA11272FE061AEF734F15009CF423D011BF2890CDF96E3"···
+Actual:   "1DC8305118BD9DC22CD1C6F3AC9BAE07542E235ADC4D43AD23"···
+           ↑ (pos 0)</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Verify(JsonElement result) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/Refinement/NativeTradingBoundaryResultTests.cs:line 63
+   at OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/Refinement/NativeTradingBoundaryResultTests.cs:line 32
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="51e79337-81a1-4347-aaa3-0e9f27108688" testId="5e61a5e4-a4ae-e811-9938-4ebdde39c2d4" testName="OpenFantasy.Hosting.Tests.Client.Cargo.NativeCargoResultTests.Opt_in_native_cargo_results_authenticate_the_exact_route_trades_and_reopening" computerName="Xanadu" duration="00:02:22.5521487" startTime="2026-10-02T06:43:50.1347200-05:00" endTime="2026-10-02T06:46:12.6292060-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="51e79337-81a1-4347-aaa3-0e9f27108688" />
+    <UnitTestResult executionId="847936ff-85c5-4f40-b181-fc513e2ca371" testId="f8685027-6ccf-e2a7-2650-7f41f689e945" testName="OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatResultTests.Every_native_route_met_the_chief_on_the_road_and_escaped_by_a_saved_retreat" computerName="Xanadu" duration="00:01:44.3327579" startTime="2026-10-02T06:43:50.1347230-05:00" endTime="2026-10-02T06:45:34.4736280-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="847936ff-85c5-4f40-b181-fc513e2ca371" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="39d4adba-2746-e29e-3631-a5c751171eed">
+      <Execution id="442c066e-58a7-4325-aecc-78329ba45980" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests" name="Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f5871f1e-9f4c-14af-2237-0f3259ed21bb">
+      <Execution id="a49080a5-1956-42dc-bd84-0a3d1250741f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests" name="Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.Retreat.NativeRetreatResultTests.Every_native_route_saved_one_disengaged_retreat_walked_as_ordinary_samples" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4e242939-68f8-65a7-85be-f059aebb1cbc">
+      <Execution id="df184f9e-8478-4a52-bec6-e808d4f11d98" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.Retreat.NativeRetreatResultTests" name="Every_native_route_saved_one_disengaged_retreat_walked_as_ordinary_samples" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatResultTests.Every_native_route_met_the_chief_on_the_road_and_escaped_by_a_saved_retreat" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f8685027-6ccf-e2a7-2650-7f41f689e945">
+      <Execution id="847936ff-85c5-4f40-b181-fc513e2ca371" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatResultTests" name="Every_native_route_met_the_chief_on_the_road_and_escaped_by_a_saved_retreat" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f4365370-150f-92f7-7742-eb9d54fa8bc1">
+      <Execution id="93c44f73-28e4-4233-9669-c8a5a2414077" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests" name="Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.Cargo.NativeCargoResultTests.Opt_in_native_cargo_results_authenticate_the_exact_route_trades_and_reopening" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5e61a5e4-a4ae-e811-9938-4ebdde39c2d4">
+      <Execution id="51e79337-81a1-4347-aaa3-0e9f27108688" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.Cargo.NativeCargoResultTests" name="Opt_in_native_cargo_results_authenticate_the_exact_route_trades_and_reopening" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="39d4adba-2746-e29e-3631-a5c751171eed" executionId="442c066e-58a7-4325-aecc-78329ba45980" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e242939-68f8-65a7-85be-f059aebb1cbc" executionId="df184f9e-8478-4a52-bec6-e808d4f11d98" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f5871f1e-9f4c-14af-2237-0f3259ed21bb" executionId="a49080a5-1956-42dc-bd84-0a3d1250741f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f4365370-150f-92f7-7742-eb9d54fa8bc1" executionId="93c44f73-28e4-4233-9669-c8a5a2414077" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5e61a5e4-a4ae-e811-9938-4ebdde39c2d4" executionId="51e79337-81a1-4347-aaa3-0e9f27108688" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f8685027-6ccf-e2a7-2650-7f41f689e945" executionId="847936ff-85c5-4f40-b181-fc513e2ca371" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="6" executed="6" passed="5" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.52]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.72]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.04]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.39]       Assert.Equal() Failure: Strings differ
+[xUnit.net 00:00:04.39]                  ↓ (pos 0)
+[xUnit.net 00:00:04.39]       Expected: "DB46BA11272FE061AEF734F15009CF423D011BF2890CDF96E3"···
+[xUnit.net 00:00:04.39]       Actual:   "1DC8305118BD9DC22CD1C6F3AC9BAE07542E235ADC4D43AD23"···
+[xUnit.net 00:00:04.39]                  ↑ (pos 0)
+[xUnit.net 00:00:04.39]       Stack Trace:
+[xUnit.net 00:00:04.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/Refinement/NativeTradingBoundaryResultTests.cs(63,0): at OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Verify(JsonElement result)
+[xUnit.net 00:00:04.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/Refinement/NativeTradingBoundaryResultTests.cs(32,0): at OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery()
+[xUnit.net 00:00:04.39]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:04.39]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:02:24.70]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="Xanadu" outcome="Error" timestamp="2026-10-02T06:43:52.4366080-05:00">
+        <Text>[xUnit.net 00:00:04.38]     OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

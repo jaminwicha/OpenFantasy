@@ -153,7 +153,7 @@ public sealed class PlayerCommandSession
     {
         try
         {
-            PlayerQueryResult result = await PlayerPortQueries.ExecuteAsync(_channel.Player, query).ConfigureAwait(false);
+            PlayerQueryResult result = await PlayerPortQueries.ExecuteAsync(_channel, query).ConfigureAwait(false);
             if (!cancellationToken.IsCancellationRequested)
                 Enqueue(new PlayerMessage(PlayerMessageKind.QueryResult, requestId, PlayerQueryResultCodec.Encode(result)));
         }

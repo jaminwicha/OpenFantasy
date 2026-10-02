@@ -1,0 +1,46 @@
+{
+  "results": [
+    {
+      "scenario": "expired",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/presentation-evidence-20261002T114344424950Z/boundary/cc66d2831f80.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/expired/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/expired/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/expired/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/expired.json",
+      "finalDatabaseSha256": "4fb5e00b14cefaec2bbff65f79c4d3fd8083840157bc0b14beeaaf34a782a496",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/expired.recovered.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/expired.refused.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/expired.review.png"
+      ]
+    },
+    {
+      "scenario": "unfunded",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/presentation-evidence-20261002T114344424950Z/boundary/81700fa6ebaf.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/unfunded/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/unfunded/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/unfunded/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/unfunded.json",
+      "finalDatabaseSha256": "097c75c7e4dd6eb677ab376ea0266207bb20b2666d08971cfe07ef771c9342a8",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/unfunded.recovered.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/unfunded.refused.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/unfunded.review.png"
+      ]
+    },
+    {
+      "scenario": "moved",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/presentation-evidence-20261002T114344424950Z/boundary/faeee84bf821.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/moved/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/moved/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/fixtures-20261001T074618Z-bf51e/boundaries/moved/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/moved.json",
+      "finalDatabaseSha256": "84a199dad010537a01d603fe722da078b32756658252b5b079c720b6f064b220",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/moved.recovered.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/moved.refused.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-trading-refinement/qualification/boundary-native-20261001T074732Z-9f7cf/native-trading-boundaries-zc2gd7z6/moved.review.png"
+      ]
+    }
+  ]
+}

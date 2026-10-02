@@ -14,10 +14,12 @@ using OpenFantasy.Hosting.Simulation;
 using OpenFantasy.Hosting.Simulation.CargoPresentation;
 using OpenFantasy.Hosting.Simulation.Retreat;
 using OpenFantasy.Hosting.Worlds;
+using OpenFantasy.Hosting.Networking;
+using OpenFantasy.Hosting.Networking.Client;
 
 namespace OpenFantasy.Client;
 
-/// <summary>Local authentication and content selection at startup; gameplay UI receives projections only.</summary>
+/// <summary>Authentication and content binding at startup; gameplay UI receives participant projections only.</summary>
 internal sealed class FarmClientSession : IAsyncDisposable
 {
     private const ushort CoordinatedProfileVersion = 27;
@@ -25,6 +27,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
     internal const ushort RetainedGiftTargetProfileVersion = 30;
     private readonly TrustedCommandDelivery _delivery;
     private readonly FarmActionOffers _offers;
+    private readonly LocalWorldSession? _ownedLocalWorld;
     private readonly ConditionalWeakTable<FarmActionOffer, OfferedAction> _issuedOffers = new();
 
     private sealed class OfferedAction
@@ -49,6 +52,13 @@ internal sealed class FarmClientSession : IAsyncDisposable
 
     internal FarmClientSession(LocalWorldSession world, TrustedCommandDelivery delivery,
         EntityId wrenActorId, EntityId woodDefinitionId, EntityId? berryDefinitionId)
+        : this(new OwnedLocalPlayerSession(world), delivery, wrenActorId, woodDefinitionId, berryDefinitionId)
+    {
+        _ownedLocalWorld = world;
+    }
+
+    private FarmClientSession(IPlayerSession world, TrustedCommandDelivery delivery,
+        EntityId wrenActorId, EntityId woodDefinitionId, EntityId? berryDefinitionId)
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(delivery);
@@ -60,7 +70,8 @@ internal sealed class FarmClientSession : IAsyncDisposable
         _offers = new FarmActionOffers(delivery, wrenActorId, woodDefinitionId, berryDefinitionId);
     }
 
-    internal LocalWorldSession World { get; }
+    internal IPlayerSession World { get; }
+    internal bool IsRemote { get; private init; }
     internal EntityId WrenActorId { get; }
     internal EntityId WoodDefinitionId { get; }
     internal EntityId? BerryDefinitionId { get; }
@@ -76,6 +87,40 @@ internal sealed class FarmClientSession : IAsyncDisposable
 
     /// <summary>The cargo world's stall labels and merchant appearances; empty elsewhere.</summary>
     internal IReadOnlyList<NativeCargoStall> CargoStalls { get; private init; } = [];
+
+    internal static async Task<FarmClientSession> OpenNetworkAsync(string invitationPath, CancellationToken token = default)
+    {
+        await using var input = File.OpenRead(invitationPath);
+        if (input.Length is <= 0 or > PlayerInvitationCodec.MaximumBytes)
+            throw new InvalidDataException("The player invitation has an invalid size.");
+        byte[] bytes = new byte[checked((int)input.Length)];
+        await input.ReadExactlyAsync(bytes, token).ConfigureAwait(false);
+        if (input.ReadByte() != -1) throw new InvalidDataException("The invitation changed while being read.");
+        PlayerConnectionInvitation invitation = PlayerInvitationCodec.Decode(bytes);
+        PlayerProtocolClient client = await PlayerWebSocketConnector.ConnectAsync(invitation, token).ConfigureAwait(false);
+        return await AttachNetworkAsync(client, token).ConfigureAwait(false);
+    }
+
+    /// <summary>Accepts an already protected protocol connection; used by the normal connector and bounded native fixtures.</summary>
+    internal static async Task<FarmClientSession> AttachNetworkAsync(PlayerProtocolClient client, CancellationToken token = default)
+    {
+        RemotePlayerSession session = await RemotePlayerSession.OpenAsync(client, token).ConfigureAwait(false);
+        try
+        {
+            PlayerPresentationBootstrap binding = session.Presentation;
+            return new FarmClientSession(session, session.Welcome.Delivery, binding.WrenActorId,
+                binding.WoodDefinitionId, binding.BerryDefinitionId)
+            {
+                IsRemote = true,
+                IsRegional = binding.IsRegional,
+                CargoStalls = binding.CargoStalls
+            };
+        }
+        catch { await session.DisposeAsync().ConfigureAwait(false); throw; }
+    }
+
+    internal Task<LocalHistoryVerification> VerifyRecordedHistoryAsync() => _ownedLocalWorld?.VerifyRecordedHistoryAsync()
+        ?? throw new InvalidOperationException("Saved-world verification belongs to the host, not this remote player.");
 
     internal static Task<FarmClientSession> OpenAsync(string savePath, string seedText, string playerName,
         bool gatheringProfile, bool productionProfile = false, string? upgradeSourcePath = null,
@@ -502,8 +547,8 @@ internal sealed class FarmClientSession : IAsyncDisposable
     }
 
     /// <summary>
-    /// The view a wheel opening captures: walking stops, then the world is read as it is now. Its offers, not an
-    /// earlier frame's, become the wheel's slots, so a boundary reached since the last frame never reads as changed.
+    /// Queues walking stop and captures the latest published view. Remote transport adds no synchronization barrier;
+    /// the captured offers retain their actual revisions and may be rejected normally if the world has moved on.
     /// </summary>
     internal LocalWorldView CaptureWheelView()
     {

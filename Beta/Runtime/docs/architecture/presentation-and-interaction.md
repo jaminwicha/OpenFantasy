@@ -71,7 +71,8 @@ Held routed presses remember whether the router or a focused pack/wheel Control 
 Bookkeeping runs before GUI delivery, but a Control-owned accept release propagates so native buttons
 can complete activation. Layer commands retain router ownership; a press held across focus recovery
 cannot be reclaimed by a panel until released. Missing panel releases cannot turn the next world
-press into an action. A rendering fixture that injects focus does not redefine ordinary gameplay focus policy.
+press into an action. Startup reads the window's current focus before publishing readiness; it does
+not assume a future focus event will arrive. A rendering fixture that injects focus does not redefine ordinary gameplay focus policy.
 
 [FarmTargetSelection](../../client/scripts/FarmTargetSelection.cs) holds an explicit transient target.
 A selected plant remains selected when another becomes nearer. Its unavailable Talk/Give action

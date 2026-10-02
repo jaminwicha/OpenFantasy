@@ -248,6 +248,27 @@ Pre-change checkpoint preservesf2ec8674; work remains on `codex/runtime-foundati
 
 ## Next dependency and remaining scope
 
+The [native participant binding](p02/native-player-session/RESULT.md) is preserved as
+`codex/milestone-native-player-session-20261002`. The ordinary Godot game joins the actual TLS host,
+receives admitted presentation/status and submits its unchanged immutable offers. Local and remote
+session owners are distinct; client closure preserves the host. Startup now reads initial window focus.
+The remote adapter refreshes inquiries with a bounded foreground priority, and pause labels state that
+other players may continue. Architecture and launch instructions are current.
+
+[Final checks](p02/native-player-session/FINAL_CHECKS.json) record 446 distinct passes, all prior 56 server,
+188 networking and 167 client cases, and five fresh Godot processes. Two prove real network walk/talk/
+close and saved receipts; the rendered route also proves unfocused startup. Three freshly prove the
+unchanged trade-boundary refusal/recovery gates. Original stale-offer/timeouts, missing-manifest runs
+and obsolete retained boundary projection-hash failure remain preserved. All 649 older test/fixture
+files, 23 specs and predecessor staging are unchanged. Windows ACL remains unrun on Mac. One native
+critic's focus finding and inquiry coverage recommendation are addressed. No external provider call.
+The pre-change checkpoint preserves ed0e590b; working branch remains `codex/runtime-foundation`.
+
+Next: concurrent native 1–4-player interaction and waiting/combat semantics, solo envelope parity,
+recorded disconnect/reconnect/controller handoff and adverse transport qualification. Single native
+connection and managed shared-player evidence do not substitute for those gates. Status and view
+remain independent publications; there is no atomic pause barrier or implicit action retry.
+
 Native accepted treatment and approach/entry are now proved by the bounded journey above. Native
 multiple-client readiness, no-survivor resolver reachability, lived profile34 migration and full
 phase/production gates remain open. Managed two-human/repeated-episode journeys do not substitute for

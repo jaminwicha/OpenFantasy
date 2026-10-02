@@ -62,6 +62,25 @@ public sealed partial class LocalWorldSession
         }
     }
 
+    /// <summary>
+    /// Reads one participant's run state and inquiry without advancing. The existing host serialization
+    /// gate makes the published view and trading read coherent; input readiness is captured under its lock.
+    /// History work may delay this asynchronous query, so callers must not block their frame thread on it.
+    /// </summary>
+    internal async Task<Networking.PlayerParticipantStatus> ReadParticipantStatusAsync(LocalPlayerConnection player)
+    {
+        await _serialization.WaitAsync().ConfigureAwait(false);
+        try
+        {
+            lock (_inputs)
+            {
+                EnsurePlayerAvailable(player);
+                return new Networking.PlayerParticipantStatus(ReadRunState(player), _trading.ReadInquiry(player.ActorId));
+            }
+        }
+        finally { _serialization.Release(); }
+    }
+
     internal void SetReady(LocalPlayerConnection player, bool ready)
     {
         lock (_inputs)

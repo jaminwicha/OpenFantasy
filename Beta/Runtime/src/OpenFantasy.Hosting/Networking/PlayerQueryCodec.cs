@@ -49,11 +49,18 @@ public static class PlayerQueryCodec
     {
         try
         {
-            if (bytes.Length < HeaderBytes || bytes.Length > MaximumBodyBytes || bytes[0] != Version)
+            if (bytes.Length < HeaderBytes || bytes.Length > MaximumBodyBytes)
             {
                 throw new FormatException("Invalid query header or byte length.");
             }
             PlayerQueryKind kind = (PlayerQueryKind)bytes[1];
+            if (IsPresentation(kind))
+            {
+                if (bytes[0] != Version || bytes.Length != HeaderBytes)
+                    throw new FormatException("Presentation queries require their exact two-byte version 1 shape.");
+                return new PlayerQuery(kind);
+            }
+            if (bytes[0] != Version) throw new FormatException("Existing query kinds require version 1.");
             if (kind == PlayerQueryKind.SubmitTradeInquiry)
             {
                 if (bytes.Length is not (BuyInquiryBytes or SellInquiryBytes))
@@ -81,4 +88,7 @@ public static class PlayerQueryCodec
             throw new FormatException("Invalid query values.", exception);
         }
     }
+
+    internal static bool IsPresentation(PlayerQueryKind kind) =>
+        kind is PlayerQueryKind.ReadPresentationBootstrap or PlayerQueryKind.ReadParticipantStatus;
 }

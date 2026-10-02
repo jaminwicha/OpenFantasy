@@ -1,0 +1,33 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.31]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.18]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.40]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmQuestClientTests.ExistingGatheringSourceWithoutIntermediateDestinationCannotBecomeFreshQuestGenesis [288 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PlayerObservations.PlayerObservationSessionTests.Client_cannot_supply_an_observation_body_or_choose_another_actors_regional_observer [369 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmConstructionClientTests.Orphaned_source_recovery_files_are_not_replaced_by_a_fresh_world(suffix: "-shm") [518 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmQuestClientTests.IncompleteRetainedSourceIsNotSilentlyReplacedWithNewGenesis(suffix: "-shm") [228 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmQuestClientTests.IncompleteRetainedSourceIsNotSilentlyReplacedWithNewGenesis(suffix: "-wal") [289 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmConstructionClientTests.Orphaned_source_recovery_files_are_not_replaced_by_a_fresh_world(suffix: "-journal") [339 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmQuestClientTests.IncompleteRetainedSourceIsNotSilentlyReplacedWithNewGenesis(suffix: "-journal") [168 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalEncounterActionViewTests.Actual_range_mana_and_anatomy_rules_block_known_abilities_without_client_rule_guesses(range: 768, mana: 1000000, function: Manipulation, reason: Unavailable, rejection: Unavailable) [990 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmConstructionClientTests.Orphaned_source_recovery_files_are_not_replaced_by_a_fresh_world(suffix: "-wal") [213 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmQuestClientTests.ClientAcceptsExplicitlyThenSelectsExactlySixAvailableRawUnits [97 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalEncounterActionViewTests.Actual_range_mana_and_anatomy_rules_block_known_abilities_without_client_rule_guesses(range: 768, mana: 0, function: NaturalWeapon, reason: Unavailable, rejection: Unavailable) [501 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmConstructionClientTests.Existing_construction_destination_wins_over_unused_incomplete_predecessors [586 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalEncounterActionViewTests.Actual_range_mana_and_anatomy_rules_block_known_abilities_without_client_rule_guesses(range: 1, mana: 0, function: Manipulation, reason: OutOfReach, rejection: OutOfReach) [323 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedNativeSelectionTests.The_client_fixture_route_requires_the_coordinated_profile [1 s]
+[xUnit.net 00:00:04.57]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmConstructionClientTests.Missing_intermediate_destination_cannot_discard_existing_earlier_progress [196 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmQuestClientTests.ActualProductionProgressIsCopiedAndExistingQuestDestinationTakesPrecedence [837 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmConstructionClientTests.Fresh_construction_save_starts_before_quest_or_work_with_one_explicit_tool [136 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmConstructionClientTests.Actual_completed_quest_source_is_retained_by_the_client_upgrade [487 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.FarmConstructionClientTests.Existing_gathering_source_gets_each_preserved_intermediate_before_construction [620 ms]
+
+Test Run Successful.
+Total tests: 19
+     Passed: 19
+ Total time: 5.2877 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/presentation-extra-20261002T114226891962Z/checks.trx

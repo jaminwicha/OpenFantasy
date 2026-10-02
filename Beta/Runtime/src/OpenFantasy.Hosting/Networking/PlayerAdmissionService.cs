@@ -38,11 +38,13 @@ public sealed class PlayerAdmissionService
 
     /// <summary>Privileged operator operation. Reissuing invalidates an inactive actor's earlier credential.</summary>
     public PlayerJoinCredential Issue(EntityId actorId, TrustedCommandDelivery delivery, TimeSpan lifetime,
-        Simulation.CargoPresentation.LocalRegionObserver? regions = null)
+        Simulation.CargoPresentation.LocalRegionObserver? regions = null, PlayerPresentationBootstrap? presentation = null)
     {
         ArgumentNullException.ThrowIfNull(delivery);
         if (lifetime <= TimeSpan.Zero || lifetime > MaximumCredentialLifetime) throw new ArgumentOutOfRangeException(nameof(lifetime));
         if (regions is not null && regions.PlayerActorId != actorId) throw new ArgumentException("A regional observer must belong to the credential's actor.", nameof(regions));
+        if (presentation is not null && presentation.IsRegional != (regions is not null))
+            throw new ArgumentException("Presentation geography must match its admitted regional observer.", nameof(presentation));
         _host.ValidatePlayerCredentialBinding(actorId, delivery, Compatibility);
         lock (_gate)
         {
@@ -53,7 +55,7 @@ public sealed class PlayerAdmissionService
             if (_credentials.Count == LocalWorldSession.MaximumPlayerConnections) throw new PlayerAdmissionException();
             byte[] secret = RandomNumberGenerator.GetBytes(PlayerJoinCredential.ByteLength);
             var credential = new PlayerJoinCredential(secret);
-            _credentials.Add(new CredentialBinding(actorId, delivery, SHA256.HashData(secret), _time.GetTimestamp(), lifetime, regions));
+            _credentials.Add(new CredentialBinding(actorId, delivery, SHA256.HashData(secret), _time.GetTimestamp(), lifetime, regions, presentation));
             CryptographicOperations.ZeroMemory(secret);
             return credential;
         }
@@ -114,7 +116,7 @@ public sealed class PlayerAdmissionService
             if (player.ReadRunState() == LocalWorldRunState.Unavailable) throw new PlayerAdmissionException();
             lock (_gate) { if (!IsValid(binding)) throw new PlayerAdmissionException(); }
             CredentialBinding accepted = binding;
-            return new AuthenticatedPlayerChannel(player, transport, () => Release(accepted));
+            return new AuthenticatedPlayerChannel(player, transport, () => Release(accepted), binding.Presentation);
         }
         catch
         {
@@ -145,7 +147,7 @@ public sealed class PlayerAdmissionService
     }
 
     private sealed class CredentialBinding(EntityId actorId, TrustedCommandDelivery delivery, byte[] hash, long issuedAt, TimeSpan lifetime,
-        Simulation.CargoPresentation.LocalRegionObserver? regions)
+        Simulation.CargoPresentation.LocalRegionObserver? regions, PlayerPresentationBootstrap? presentation)
     {
         internal EntityId ActorId { get; } = actorId;
         internal TrustedCommandDelivery Delivery { get; } = delivery;
@@ -153,6 +155,7 @@ public sealed class PlayerAdmissionService
         internal long IssuedAt { get; } = issuedAt;
         internal TimeSpan Lifetime { get; } = lifetime;
         internal Simulation.CargoPresentation.LocalRegionObserver? Regions { get; } = regions;
+        internal PlayerPresentationBootstrap? Presentation { get; } = presentation;
         internal bool Revoked { get; set; }
         internal bool Active { get; set; }
     }

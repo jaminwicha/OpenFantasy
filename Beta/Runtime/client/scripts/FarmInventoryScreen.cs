@@ -81,7 +81,7 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
         }
     }
 
-    internal void Present(LocalWorldView view, LocalWorldRunState runState)
+    internal void Present(LocalWorldView view, LocalWorldRunState runState, bool shared = false)
     {
         if (!IsOpen || _model is null) return;
         _model.Refresh(view);
@@ -95,10 +95,10 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
         _gifts.Present(view, _model);
         _time.Text = runState switch
         {
-            LocalWorldRunState.Running => "World continuing",
+            LocalWorldRunState.Running => shared ? "Ready · shared world" : "World continuing",
             LocalWorldRunState.Resolving => "Resolving world changes",
-            LocalWorldRunState.Waiting => "World waiting",
-            LocalWorldRunState.Paused => "World paused",
+            LocalWorldRunState.Waiting => shared ? "Your character is waiting" : "World waiting",
+            LocalWorldRunState.Paused => shared ? "Your input paused · others may continue" : "World paused",
             _ => "World unavailable"
         };
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;

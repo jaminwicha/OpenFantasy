@@ -1,0 +1,29 @@
+{
+  "kind": "native-trading-boundary-fixtures-v1",
+  "units": 2,
+  "nearExpirySteps": 40,
+  "offerWindowSteps": 1200,
+  "scenarios": {
+    "expired": {
+      "directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/expired",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/expired/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/expired/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/expired/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/expired/metadata.json"
+    },
+    "unfunded": {
+      "directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/unfunded",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/unfunded/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/unfunded/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/unfunded/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/unfunded/metadata.json"
+    },
+    "moved": {
+      "directory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/moved",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/moved/save.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/moved/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/moved/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/boundary-fixtures-20261002T114752131101Z/fixtures/moved/metadata.json"
+    }
+  }
+}

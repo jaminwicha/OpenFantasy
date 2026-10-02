@@ -1,0 +1,386 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.15]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.31]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.44]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:16.14]     OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: False) [FAIL]
+[xUnit.net 00:00:16.15]       {
+[xUnit.net 00:00:16.15]         "Kind": "native-player-connection-v1",
+[xUnit.net 00:00:16.15]         "Status": "failed",
+[xUnit.net 00:00:16.15]         "Failure": "System.InvalidOperationException: Close did not return its committed result.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.Networking.NativePlayerPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativePlayerPlayProbe.cs:line 96",
+[xUnit.net 00:00:16.15]         "Stage": "close-conversation",
+[xUnit.net 00:00:16.15]         "World": "00b0d467071e98cf60f8bf7708515da1",
+[xUnit.net 00:00:16.15]         "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+[xUnit.net 00:00:16.15]         "Origin": [
+[xUnit.net 00:00:16.15]           25984,
+[xUnit.net 00:00:16.15]           83328,
+[xUnit.net 00:00:16.15]           256
+[xUnit.net 00:00:16.15]         ],
+[xUnit.net 00:00:16.15]         "Walked": [
+[xUnit.net 00:00:16.15]           25920,
+[xUnit.net 00:00:16.15]           83328,
+[xUnit.net 00:00:16.15]           256
+[xUnit.net 00:00:16.15]         ],
+[xUnit.net 00:00:16.15]         "FinalFeet": [
+[xUnit.net 00:00:16.15]           25920,
+[xUnit.net 00:00:16.15]           83328,
+[xUnit.net 00:00:16.15]           256
+[xUnit.net 00:00:16.15]         ],
+[xUnit.net 00:00:16.15]         "Inputs": [
+[xUnit.net 00:00:16.15]           {
+[xUnit.net 00:00:16.15]             "Stage": "walk",
+[xUnit.net 00:00:16.17]             "Route": "keyboard",
+[xUnit.net 00:00:16.17]             "Key": "Escape"
+[xUnit.net 00:00:16.17]           },
+[xUnit.net 00:00:16.17]           {
+[xUnit.net 00:00:16.17]             "Stage": "walk",
+[xUnit.net 00:00:16.17]             "Route": "keyboard",
+[xUnit.net 00:00:16.17]             "Key": "Escape"
+[xUnit.net 00:00:16.17]           },
+[xUnit.net 00:00:16.17]           {
+[xUnit.net 00:00:16.17]             "Stage": "talk",
+[xUnit.net 00:00:16.17]             "Route": "keyboard",
+[xUnit.net 00:00:16.17]             "Key": "Escape"
+[xUnit.net 00:00:16.17]           },
+[xUnit.net 00:00:16.17]           {
+[xUnit.net 00:00:16.17]             "Stage": "talk",
+[xUnit.net 00:00:16.17]             "Route": "keyboard",
+[xUnit.net 00:00:16.17]             "Key": "E"
+[xUnit.net 00:00:16.17]           },
+[xUnit.net 00:00:16.17]           {
+[xUnit.net 00:00:16.17]             "Stage": "close-conversation",
+[xUnit.net 00:00:16.17]             "Route": "keyboard",
+[xUnit.net 00:00:16.17]             "Key": "E"
+[xUnit.net 00:00:16.17]           }
+[xUnit.net 00:00:16.17]         ],
+[xUnit.net 00:00:16.17]         "ElapsedMilliseconds": 11680,
+[xUnit.net 00:00:16.17]         "Boundaries": [
+[xUnit.net 00:00:16.17]           {
+[xUnit.net 00:00:16.17]             "Stage": "walk",
+[xUnit.net 00:00:16.17]             "State": "Paused",
+[xUnit.net 00:00:16.17]             "ActorRevision": 2,
+[xUnit.net 00:00:16.17]             "OfferRevision": 2,
+[xUnit.net 00:00:16.17]             "UnsupportedRegion": false
+[xUnit.net 00:00:16.17]           },
+[xUnit.net 00:00:16.17]           {
+[xUnit.net 00:00:16.17]             "Stage": "talk",
+[xUnit.net 00:00:16.17]             "State": "Running",
+[xUnit.net 00:00:16.17]             "ActorRevision": 2,
+[xUnit.net 00:00:16.17]             "OfferRevision": 2,
+[xUnit.net 00:00:16.17]             "UnsupportedRegion": false
+[xUnit.net 00:00:16.17]           }
+[xUnit.net 00:00:16.17]         ],
+[xUnit.net 00:00:16.17]         "FinalBoundary": {
+[xUnit.net 00:00:16.17]           "Stage": "close-conversation",
+[xUnit.net 00:00:16.17]           "State": "Waiting",
+[xUnit.net 00:00:16.17]           "ActorRevision": 2,
+[xUnit.net 00:00:16.17]           "OfferRevision": 2,
+[xUnit.net 00:00:16.17]           "UnsupportedRegion": false
+[xUnit.net 00:00:16.17]         },
+[xUnit.net 00:00:16.17]         "Submissions": [
+[xUnit.net 00:00:16.17]           {
+[xUnit.net 00:00:16.17]             "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000100000010B7857F1053D60C4E87488BBF6739ECD3000000104BFA85ADA9AB0FB0D377F011F0025D88000000106F085FB1A0B16DFB75517BBE725BDAAA000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000000800000000000000020000004E4F464300000000010000000400000012776F726C642E616374696F6E2E737065616B000000080000000000000001000000102D8E5E0319D821395E44FC387B13B8BE000000080000000000000000",
+[xUnit.net 00:00:16.17]             "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010B7857F1053D60C4E87488BBF6739ECD3000000104BFA85ADA9AB0FB0D377F011F0025D880000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020F0872D9C5A7071A94EDA7F96AB0F5826F766394DF010C83FB99E35385401994000000008000000000000000C000000080000000000000001000000080000000000000000"
+[xUnit.net 00:00:16.17]           }
+[xUnit.net 00:00:16.17]         ],
+[xUnit.net 00:00:16.17]         "NativeFocused": true,
+[xUnit.net 00:00:16.17]         "Unfocusable": false,
+[xUnit.net 00:00:16.17]         "InitialFocusGuard": false,
+[xUnit.net 00:00:16.17]         "ObservedNativeFocus": false,
+[xUnit.net 00:00:16.17]         "Display": "headless"
+[xUnit.net 00:00:16.17]       }
+[xUnit.net 00:00:16.17]       Stack Trace:
+[xUnit.net 00:00:16.17]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativePlayerProcessTests.cs(58,0): at OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(Boolean rendered)
+[xUnit.net 00:00:16.17]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativePlayerProcessTests.cs(89,0): at OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(Boolean rendered)
+[xUnit.net 00:00:16.17]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: False) [15 s]
+  Error Message:
+   {
+  "Kind": "native-player-connection-v1",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Close did not return its committed result.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.Networking.NativePlayerPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativePlayerPlayProbe.cs:line 96",
+  "Stage": "close-conversation",
+  "World": "00b0d467071e98cf60f8bf7708515da1",
+  "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+  "Origin": [
+    25984,
+    83328,
+    256
+  ],
+  "Walked": [
+    25920,
+    83328,
+    256
+  ],
+  "FinalFeet": [
+    25920,
+    83328,
+    256
+  ],
+  "Inputs": [
+    {
+      "Stage": "walk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "talk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "talk",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "close-conversation",
+      "Route": "keyboard",
+      "Key": "E"
+    }
+  ],
+  "ElapsedMilliseconds": 11680,
+  "Boundaries": [
+    {
+      "Stage": "walk",
+      "State": "Paused",
+      "ActorRevision": 2,
+      "OfferRevision": 2,
+      "UnsupportedRegion": false
+    },
+    {
+      "Stage": "talk",
+      "State": "Running",
+      "ActorRevision": 2,
+      "OfferRevision": 2,
+      "UnsupportedRegion": false
+    }
+  ],
+  "FinalBoundary": {
+    "Stage": "close-conversation",
+    "State": "Waiting",
+    "ActorRevision": 2,
+    "OfferRevision": 2,
+    "UnsupportedRegion": false
+  },
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000100000010B7857F1053D60C4E87488BBF6739ECD3000000104BFA85ADA9AB0FB0D377F011F0025D88000000106F085FB1A0B16DFB75517BBE725BDAAA000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000000800000000000000020000004E4F464300000000010000000400000012776F726C642E616374696F6E2E737065616B000000080000000000000001000000102D8E5E0319D821395E44FC387B13B8BE000000080000000000000000",
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010B7857F1053D60C4E87488BBF6739ECD3000000104BFA85ADA9AB0FB0D377F011F0025D880000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020F0872D9C5A7071A94EDA7F96AB0F5826F766394DF010C83FB99E35385401994000000008000000000000000C000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "NativeFocused": true,
+  "Unfocusable": false,
+  "InitialFocusGuard": false,
+  "ObservedNativeFocus": false,
+  "Display": "headless"
+}
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(Boolean rendered) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativePlayerProcessTests.cs:line 58
+   at OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(Boolean rendered) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativePlayerProcessTests.cs:line 89
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:38.79]     OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: True) [FAIL]
+[xUnit.net 00:00:38.79]       {
+[xUnit.net 00:00:38.79]         "Kind": "native-player-connection-v1",
+[xUnit.net 00:00:38.79]         "Status": "failed",
+[xUnit.net 00:00:38.79]         "Failure": "System.InvalidOperationException: Close did not return its committed result.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.Networking.NativePlayerPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativePlayerPlayProbe.cs:line 96",
+[xUnit.net 00:00:38.79]         "Stage": "close-conversation",
+[xUnit.net 00:00:38.79]         "World": "00b0d467071e98cf60f8bf7708515da1",
+[xUnit.net 00:00:38.79]         "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+[xUnit.net 00:00:38.79]         "Origin": [
+[xUnit.net 00:00:38.79]           25984,
+[xUnit.net 00:00:38.79]           83328,
+[xUnit.net 00:00:38.79]           256
+[xUnit.net 00:00:38.79]         ],
+[xUnit.net 00:00:38.79]         "Walked": [
+[xUnit.net 00:00:38.79]           25920,
+[xUnit.net 00:00:38.79]           83328,
+[xUnit.net 00:00:38.79]           256
+[xUnit.net 00:00:38.79]         ],
+[xUnit.net 00:00:38.79]         "FinalFeet": [
+[xUnit.net 00:00:38.79]           25920,
+[xUnit.net 00:00:38.79]           83328,
+[xUnit.net 00:00:38.79]           256
+[xUnit.net 00:00:38.79]         ],
+[xUnit.net 00:00:38.79]         "Inputs": [
+[xUnit.net 00:00:38.79]           {
+[xUnit.net 00:00:38.79]             "Stage": "initial-focus",
+[xUnit.net 00:00:38.79]             "Route": "keyboard",
+[xUnit.net 00:00:38.79]             "Key": "Escape"
+[xUnit.net 00:00:38.79]           },
+[xUnit.net 00:00:38.79]           {
+[xUnit.net 00:00:38.79]             "Stage": "walk",
+[xUnit.net 00:00:38.79]             "Route": "keyboard",
+[xUnit.net 00:00:38.79]             "Key": "Escape"
+[xUnit.net 00:00:38.79]           },
+[xUnit.net 00:00:38.79]           {
+[xUnit.net 00:00:38.79]             "Stage": "walk",
+[xUnit.net 00:00:38.79]             "Route": "keyboard",
+[xUnit.net 00:00:38.79]             "Key": "Escape"
+[xUnit.net 00:00:38.79]           },
+[xUnit.net 00:00:38.79]           {
+[xUnit.net 00:00:38.79]             "Stage": "talk",
+[xUnit.net 00:00:38.79]             "Route": "keyboard",
+[xUnit.net 00:00:38.79]             "Key": "Escape"
+[xUnit.net 00:00:38.79]           },
+[xUnit.net 00:00:38.79]           {
+[xUnit.net 00:00:38.79]             "Stage": "talk",
+[xUnit.net 00:00:38.79]             "Route": "keyboard",
+[xUnit.net 00:00:38.80]             "Key": "E"
+[xUnit.net 00:00:38.80]           },
+[xUnit.net 00:00:38.80]           {
+[xUnit.net 00:00:38.80]             "Stage": "close-conversation",
+[xUnit.net 00:00:38.80]             "Route": "keyboard",
+[xUnit.net 00:00:38.80]             "Key": "E"
+[xUnit.net 00:00:38.80]           }
+[xUnit.net 00:00:38.80]         ],
+[xUnit.net 00:00:38.80]         "ElapsedMilliseconds": 11862,
+[xUnit.net 00:00:38.80]         "Boundaries": [
+[xUnit.net 00:00:38.80]           {
+[xUnit.net 00:00:38.80]             "Stage": "walk",
+[xUnit.net 00:00:38.80]             "State": "Paused",
+[xUnit.net 00:00:38.80]             "ActorRevision": 2,
+[xUnit.net 00:00:38.80]             "OfferRevision": 2,
+[xUnit.net 00:00:38.80]             "UnsupportedRegion": false
+[xUnit.net 00:00:38.80]           },
+[xUnit.net 00:00:38.80]           {
+[xUnit.net 00:00:38.80]             "Stage": "talk",
+[xUnit.net 00:00:38.80]             "State": "Running",
+[xUnit.net 00:00:38.80]             "ActorRevision": 2,
+[xUnit.net 00:00:38.80]             "OfferRevision": 2,
+[xUnit.net 00:00:38.80]             "UnsupportedRegion": false
+[xUnit.net 00:00:38.80]           }
+[xUnit.net 00:00:38.80]         ],
+[xUnit.net 00:00:38.80]         "FinalBoundary": {
+[xUnit.net 00:00:38.80]           "Stage": "close-conversation",
+[xUnit.net 00:00:38.80]           "State": "Waiting",
+[xUnit.net 00:00:38.80]           "ActorRevision": 2,
+[xUnit.net 00:00:38.80]           "OfferRevision": 2,
+[xUnit.net 00:00:38.80]           "UnsupportedRegion": false
+[xUnit.net 00:00:38.80]         },
+[xUnit.net 00:00:38.80]         "Submissions": [
+[xUnit.net 00:00:38.80]           {
+[xUnit.net 00:00:38.80]             "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000100000010702ECA674DD3CCEBAFDFD49644A5268D000000104BFA85ADA9AB0FB0D377F011F0025D88000000106F085FB1A0B16DFB75517BBE725BDAAA000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000000800000000000000020000004E4F464300000000010000000400000012776F726C642E616374696F6E2E737065616B000000080000000000000001000000102D8E5E0319D821395E44FC387B13B8BE000000080000000000000000",
+[xUnit.net 00:00:38.80]             "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010702ECA674DD3CCEBAFDFD49644A5268D000000104BFA85ADA9AB0FB0D377F011F0025D880000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020100328C38186B14E62E031804EC16BA4625D7810BA76FA2CD9003D01C5FF8E5600000008000000000000000C000000080000000000000001000000080000000000000000"
+[xUnit.net 00:00:38.80]           }
+[xUnit.net 00:00:38.80]         ],
+[xUnit.net 00:00:38.80]         "NativeFocused": false,
+[xUnit.net 00:00:38.80]         "Unfocusable": true,
+[xUnit.net 00:00:38.80]         "InitialFocusGuard": true,
+[xUnit.net 00:00:38.80]         "ObservedNativeFocus": false,
+[xUnit.net 00:00:38.80]         "Display": "macOS"
+[xUnit.net 00:00:38.80]       }
+[xUnit.net 00:00:38.80]       Stack Trace:
+[xUnit.net 00:00:38.80]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativePlayerProcessTests.cs(58,0): at OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(Boolean rendered)
+[xUnit.net 00:00:38.80]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativePlayerProcessTests.cs(89,0): at OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(Boolean rendered)
+[xUnit.net 00:00:38.80]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:38.82]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: True) [22 s]
+  Error Message:
+   {
+  "Kind": "native-player-connection-v1",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Close did not return its committed result.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.Networking.NativePlayerPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativePlayerPlayProbe.cs:line 96",
+  "Stage": "close-conversation",
+  "World": "00b0d467071e98cf60f8bf7708515da1",
+  "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+  "Origin": [
+    25984,
+    83328,
+    256
+  ],
+  "Walked": [
+    25920,
+    83328,
+    256
+  ],
+  "FinalFeet": [
+    25920,
+    83328,
+    256
+  ],
+  "Inputs": [
+    {
+      "Stage": "initial-focus",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "talk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "talk",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "close-conversation",
+      "Route": "keyboard",
+      "Key": "E"
+    }
+  ],
+  "ElapsedMilliseconds": 11862,
+  "Boundaries": [
+    {
+      "Stage": "walk",
+      "State": "Paused",
+      "ActorRevision": 2,
+      "OfferRevision": 2,
+      "UnsupportedRegion": false
+    },
+    {
+      "Stage": "talk",
+      "State": "Running",
+      "ActorRevision": 2,
+      "OfferRevision": 2,
+      "UnsupportedRegion": false
+    }
+  ],
+  "FinalBoundary": {
+    "Stage": "close-conversation",
+    "State": "Waiting",
+    "ActorRevision": 2,
+    "OfferRevision": 2,
+    "UnsupportedRegion": false
+  },
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000100000010702ECA674DD3CCEBAFDFD49644A5268D000000104BFA85ADA9AB0FB0D377F011F0025D88000000106F085FB1A0B16DFB75517BBE725BDAAA000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000000800000000000000020000004E4F464300000000010000000400000012776F726C642E616374696F6E2E737065616B000000080000000000000001000000102D8E5E0319D821395E44FC387B13B8BE000000080000000000000000",
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010702ECA674DD3CCEBAFDFD49644A5268D000000104BFA85ADA9AB0FB0D377F011F0025D880000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020100328C38186B14E62E031804EC16BA4625D7810BA76FA2CD9003D01C5FF8E5600000008000000000000000C000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "NativeFocused": false,
+  "Unfocusable": true,
+  "InitialFocusGuard": true,
+  "ObservedNativeFocus": false,
+  "Display": "macOS"
+}
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(Boolean rendered) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativePlayerProcessTests.cs:line 58
+   at OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(Boolean rendered) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativePlayerProcessTests.cs:line 89
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 2
+     Failed: 2
+ Total time: 39.2459 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/native-20261002T113421942631Z/checks.trx

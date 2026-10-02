@@ -1,0 +1,43 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.52]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.72]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.04]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:04.38]     OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery [FAIL]
+[xUnit.net 00:00:04.39]       Assert.Equal() Failure: Strings differ
+[xUnit.net 00:00:04.39]                  ↓ (pos 0)
+[xUnit.net 00:00:04.39]       Expected: "DB46BA11272FE061AEF734F15009CF423D011BF2890CDF96E3"···
+[xUnit.net 00:00:04.39]       Actual:   "1DC8305118BD9DC22CD1C6F3AC9BAE07542E235ADC4D43AD23"···
+[xUnit.net 00:00:04.39]                  ↑ (pos 0)
+[xUnit.net 00:00:04.39]       Stack Trace:
+[xUnit.net 00:00:04.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/Refinement/NativeTradingBoundaryResultTests.cs(63,0): at OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Verify(JsonElement result)
+[xUnit.net 00:00:04.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/Refinement/NativeTradingBoundaryResultTests.cs(32,0): at OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery()
+[xUnit.net 00:00:04.39]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:04.39]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery [2 s]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+           ↓ (pos 0)
+Expected: "DB46BA11272FE061AEF734F15009CF423D011BF2890CDF96E3"···
+Actual:   "1DC8305118BD9DC22CD1C6F3AC9BAE07542E235ADC4D43AD23"···
+           ↑ (pos 0)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Verify(JsonElement result) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/Refinement/NativeTradingBoundaryResultTests.cs:line 63
+   at OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Trading/Refinement/NativeTradingBoundaryResultTests.cs:line 32
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Client.Retreat.NativeRetreatResultTests.Every_native_route_saved_one_disengaged_retreat_walked_as_ordinary_samples [50 s]
+  Passed OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody [1 m 14 s]
+  Passed OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatResultTests.Every_native_route_met_the_chief_on_the_road_and_escaped_by_a_saved_retreat [1 m 44 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales [2 m 9 s]
+[xUnit.net 00:02:24.70]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.NativeCargoResultTests.Opt_in_native_cargo_results_authenticate_the_exact_route_trades_and_reopening [2 m 22 s]
+
+Test Run Failed.
+Total tests: 6
+     Passed: 5
+     Failed: 1
+ Total time: 2.4305 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/presentation-evidence-20261002T114344424950Z/checks.trx

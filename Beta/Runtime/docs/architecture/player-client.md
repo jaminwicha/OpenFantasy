@@ -61,3 +61,30 @@ further requests until a valid full frame arrives. Initial subscription is disti
 missing initial basis can still request a complete frame. Reading the cache does not imply a new server
 barrier, global readiness, or any access to private world state. Application presentation and host run
 status require explicit contracts above this protocol owner.
+
+## Application session and native binding
+
+[IPlayerSession](../../src/OpenFantasy.Hosting/Simulation/IPlayerSession.cs) exposes participant input,
+views, run status and permitted queries to the game. [OwnedLocalPlayerSession](../../src/OpenFantasy.Hosting/Simulation/OwnedLocalPlayerSession.cs)
+preserves the solo composition's host ownership. [RemotePlayerSession](../../src/OpenFantasy.Hosting/Networking/Client/RemotePlayerSession.cs)
+owns only its connection. Its additional ten-second startup obtains the supported presentation binding
+and first participant status while the connection remains unready. Startup failure disposes the connection.
+
+The remote adapter caches immutable status for synchronous frame reads. Every 250 ms it may issue one
+status refresh; at most one foreground query waits behind an active refresh. A pending foreground request
+takes priority over starting another refresh, while another foreground request receives Busy. Submit and
+cancel replies immediately replace cached inquiry; subsequent status refreshes carry merchant outcomes.
+An admitted history read can delay status, but never blocks the render thread. Shutdown cancels refresh,
+releases pending callers and joins both refresh and foreground work before disposing their coordination.
+
+[FarmClientSession](../../client/scripts/FarmClientSession.cs) builds the same immutable offers for either
+adapter, retaining per-session offer registration and exact command retry identity. Wheel opening queues
+stop and captures the latest published view; it adds no remote barrier or promise that terms cannot become
+stale. Saved-history verification and route advice remain local privileged facilities, outside IPlayerSession.
+
+[NativePlayerEntry](../../client/scripts/Networking/NativePlayerEntry.cs) opens the explicit `--join`
+invitation through platform TLS validation. [FarmGame](../../client/scripts/FarmGame.cs) enables readiness
+only after first view and binding. Ordinary window focus, input cancellation, wheels and inventory use the
+same controls. Remote pause labels describe participant input and warn that other players may continue;
+they never promise frozen prices or deadlines. The disposable loopback probe's exact test-certificate pin
+does not alter production trust, accepts no arbitrary host and retains certificate-name checks.

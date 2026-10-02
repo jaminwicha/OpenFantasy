@@ -165,7 +165,7 @@ public partial class FarmGame
             return;
         }
         _market.Present(view, _session.World.ReadRunState(), _session.World.ReadTradeInquiry(), _presented,
-            _input.Permits(Situation(), FarmSemanticAction.ConfirmTrade));
+            _input.Permits(Situation(), FarmSemanticAction.ConfirmTrade), _session.IsRemote);
     }
 
     /// <summary>Focus loss or controller disconnection discards a reviewed offer: confirming needs a fresh review.</summary>

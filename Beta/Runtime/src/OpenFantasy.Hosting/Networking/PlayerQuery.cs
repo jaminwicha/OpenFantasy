@@ -9,7 +9,9 @@ public enum PlayerQueryKind : byte
     CancelTradeInquiry = 2,
     ReadTradeInquiry = 3,
     InspectPaidQuote = 4,
-    InspectMaterialProposal = 5
+    InspectMaterialProposal = 5,
+    ReadPresentationBootstrap = 16,
+    ReadParticipantStatus = 17
 }
 
 /// <summary>One non-authoritative request. Controller identity and delivery come only from its authenticated port.</summary>

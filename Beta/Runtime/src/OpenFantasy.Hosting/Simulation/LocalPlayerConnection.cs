@@ -27,6 +27,7 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     public EntityId ActorId { get; }
     public LocalWorldView ReadView() => Volatile.Read(ref _view);
     public LocalWorldRunState ReadRunState() => _host.ReadRunState(this);
+    public Task<Networking.PlayerParticipantStatus> ReadParticipantStatusAsync() => _host.ReadParticipantStatusAsync(this);
     /// <summary>Acknowledge gameplay readiness after applying the playable view; false clears held movement.</summary>
     public void SetReady(bool ready) => _host.SetReady(this, ready);
     public void SetMovement(long dx, long dy) => _host.SetMovement(this, dx, dy);

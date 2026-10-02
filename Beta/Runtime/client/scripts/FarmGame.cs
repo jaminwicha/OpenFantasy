@@ -34,6 +34,9 @@ public partial class FarmGame : Node2D
     private Action<FarmSubmission>? _submissionObserver;
 
     internal string? SavePathOverride { get; init; }
+    internal string? PlayerInvitationPath { get; init; }
+    /// <summary>Explicit fixture injection of a protected connection, never a local save or production trust override.</summary>
+    internal Task<FarmClientSession>? NetworkFixtureOpening { get; init; }
     internal bool StartPaused { get; init; }
     /// <summary>Normal gameplay follows its OS window. Disposable background rendering controls fixture focus explicitly.</summary>
     internal bool BindWindowFocus { get; init; } = true;
@@ -59,6 +62,7 @@ public partial class FarmGame : Node2D
     internal string? RetainedGiftGenesisPath { get; init; }
     internal string? UpgradeSourcePathOverride { get; init; }
     internal LocalWorldView? CurrentView => _session?.World.ReadView();
+    internal LocalWorldRunState ParticipantRunState => _session?.World.ReadRunState() ?? LocalWorldRunState.Unavailable;
     /// <summary>The offers presented this frame; HUD buttons and keys execute exactly these.</summary>
     internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CurrentOffers => _presented;
     internal FarmTarget? CurrentTarget => _targets?.Selected;
@@ -78,7 +82,8 @@ public partial class FarmGame : Node2D
     internal void ObserveSubmissions(Action<FarmSubmission> observer)
     {
         ArgumentNullException.ThrowIfNull(observer);
-        if (SavePathOverride is null) throw new InvalidOperationException("Submission observation requires an explicit disposable save.");
+        if (SavePathOverride is null && NetworkFixtureOpening is null)
+            throw new InvalidOperationException("Submission observation requires an explicit disposable fixture.");
         _submissionObserver += observer;
         if (_session is not null) _session.Submitted += observer;
     }
@@ -88,7 +93,8 @@ public partial class FarmGame : Node2D
 
     internal void InjectFixtureFocus(bool focused)
     {
-        if (SavePathOverride is null) throw new InvalidOperationException("Fixture focus requires an explicit disposable save.");
+        if (SavePathOverride is null && NetworkFixtureOpening is null)
+            throw new InvalidOperationException("Fixture focus requires an explicit disposable fixture.");
         if (BindWindowFocus)
             GetWindow().EmitSignal(focused ? Window.SignalName.FocusEntered : Window.SignalName.FocusExited);
         else if (focused) OnFocusEntered();
@@ -100,7 +106,7 @@ public partial class FarmGame : Node2D
         _input = new FarmInputRouter(StartPaused);
         AddChild(_canvas);
         Rect2 bounds = _canvas.LocalBounds;
-        if (WatercourseProfile || BreachProfile || FramesCargoThreat)
+        if (WatercourseProfile || BreachProfile || FramesCargoThreat || PlayerInvitationPath is not null || NetworkFixtureOpening is not null)
         {
             // Leave room for the channel or a nearby road threat between the ordinary HUD panels.
             // A stable integer zoom preserves pixels without changing interaction distances.
@@ -130,8 +136,15 @@ public partial class FarmGame : Node2D
         {
             GetWindow().FocusEntered += OnFocusEntered;
             GetWindow().FocusExited += OnFocusExited;
+            _input.SetFocused(GetWindow().HasFocus());
         }
         _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        if (PlayerInvitationPath is not null || NetworkFixtureOpening is not null)
+        {
+            _opening = NetworkFixtureOpening ?? FarmClientSession.OpenNetworkAsync(PlayerInvitationPath!);
+            _hud.Message("Connecting to the world…");
+            return;
+        }
         if (OpenCargo()) return;
         if (RetainedGiftGenesisPath is { } retainedGenesis)
         {
@@ -285,7 +298,8 @@ public partial class FarmGame : Node2D
         }
         if (_session.World.Completion.IsFaulted)
         {
-            Fail("The world has stopped. Your save has been retained. " + _session.World.Completion.Exception!.GetBaseException().Message);
+            Fail((_session.IsRemote ? "The player connection has stopped. " : "The world has stopped. Your save has been retained. ")
+                + _session.World.Completion.Exception!.GetBaseException().Message);
             return;
         }
         if (_action is { IsCompleted: true })
@@ -351,12 +365,12 @@ public partial class FarmGame : Node2D
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view),
             _action is not null || view.IsResolvingConsequences,
             _input.Paused || !_input.Focused, _presented, _targets);
-        _inventory.Present(view, _session.World.ReadRunState());
+        _inventory.Present(view, _session.World.ReadRunState(), _session.IsRemote);
         if (_wheel.Model is { } wheel)
         {
             // The same explicit stall choice as the presented offers, so a stall slot never reads as changed.
             wheel.Refresh(target => _session.CreateOffers(view, LocatePinnedTarget(view, target), _gifts, _marketDraft));
-            _wheel.Present(view, _session.World.ReadRunState(), _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel));
+            _wheel.Present(view, _session.World.ReadRunState(), _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel), _session.IsRemote);
         }
         PresentMarket(view);
     }
@@ -537,7 +551,9 @@ public partial class FarmGame : Node2D
     {
         if (!_input.TogglePause()) return;
         if (ChangeReadiness(_input.WorldShouldRun))
-            _hud.Message(_input.Paused ? "Paused. Press Esc to continue." : "Explore the farm and speak with Wren.");
+            _hud.Message(_input.Paused
+                ? _session?.IsRemote == true ? "Your input is paused; other players may continue. Press Esc to resume." : "Paused. Press Esc to continue."
+                : "Explore the farm and speak with Wren.");
     }
 
     private void ChangeInventory(bool open)

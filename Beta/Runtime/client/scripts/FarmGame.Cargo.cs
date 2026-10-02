@@ -35,7 +35,7 @@ public partial class FarmGame
 
     /// <summary>Starts one explicit saved-history check in the session's background history slot; never in a frame.</summary>
     internal Task<LocalHistoryVerification> VerifyRecordedHistory() =>
-        _session?.World.VerifyRecordedHistoryAsync() ?? throw new InvalidOperationException("No open world to verify.");
+        _session?.VerifyRecordedHistoryAsync() ?? throw new InvalidOperationException("No open world to verify.");
 
     /// <summary>The stalls of the open cargo world, labels and appearances only.</summary>
     internal IReadOnlyList<NativeCargoStall> CargoStalls => _session?.CargoStalls ?? [];

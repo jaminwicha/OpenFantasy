@@ -58,10 +58,19 @@ This is the retained development runtime: a portable C# core, shared durable hos
 TLS/WebSocket with scoped player invitations. The [operator guide](docs/player-host.md) covers
 certificate trust, private provisioning, runtime requirements and joined shutdown; the
 [architecture reference](docs/architecture/player-http-host.md) defines ownership and protocol limits.
-Native Godot network clients and multiplayer acceptance remain separate work.
 The reusable [player protocol client](docs/architecture/player-client.md) owns TLS connection,
-validated first view, bounded input, exact receipt/query correlation and joined shutdown. Godot's
-gameplay session binding still needs explicit run-status and presentation contracts above this layer.
+validated first view, bounded input, exact receipt/query correlation and joined shutdown. The native
+session obtains source-bound presentation and participant status from that host, then uses the ordinary
+Godot controls and immutable action offers. Join with the .NET Godot executable:
+
+```sh
+godot --path client res://scenes/NativePlayer.tscn -- --join /absolute/path/player.invitation.json
+```
+
+Keep the invitation private and trust the listener's certificate through the platform trust store.
+Closing this client closes its connection; the listener owns the saved world. Pause stops this player's
+input, while other ready players may continue. Native 1–4-player, reconnect and production acceptance
+remain distinct gates; a single native connection does not establish them.
 
 ## Build and verify
 

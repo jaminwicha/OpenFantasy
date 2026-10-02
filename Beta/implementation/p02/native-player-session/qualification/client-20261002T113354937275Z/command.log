@@ -1,0 +1,26 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.49]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.66]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.81]   Starting:    OpenFantasy.Server.Tests
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Old_result_shape_and_diagnostic_fields_remain_exact_while_new_kind_requires_version_two [107 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "run-state") [2 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "missing") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "foreign-kind") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "extra") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadPresentationBootstrap) [4 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadParticipantStatus) [< 1 ms]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Production_host_supplies_real_metadata_and_queries_preserve_paused_world_and_inquiry_identity [3 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Host_without_presentation_is_refused_before_native_readiness [901 ms]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Foreground_inspection_waits_once_behind_refresh_and_a_second_request_is_busy [1 s]
+[xUnit.net 00:00:08.39]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Disposal_joins_refresh_and_releases_a_queued_user_query_without_closing_host [1 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Automatic_status_refresh_observes_real_scheduled_merchant_answer_without_an_explicit_inquiry_read [479 ms]
+
+Test Run Successful.
+Total tests: 12
+     Passed: 12
+ Total time: 8.9661 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-player-session/qualification/client-20261002T113354937275Z/checks.trx

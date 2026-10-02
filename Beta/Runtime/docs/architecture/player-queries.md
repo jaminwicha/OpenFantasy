@@ -22,14 +22,15 @@ private delivery credentials, market pricing basis, world roots or private state
 
 ## Wire values and correlation
 
-[PlayerQuery](../../src/OpenFantasy.Hosting/Networking/PlayerQuery.cs) is a closed set of five typed
+[PlayerQuery](../../src/OpenFantasy.Hosting/Networking/PlayerQuery.cs) is a closed set of typed
 operations. The [request codec](../../src/OpenFantasy.Hosting/Networking/PlayerQueryCodec.cs) uses
 versioned, bounded binary fields and rejects unknown operations, truncated/trailing data and invalid
 inquiry shapes. A request occupies a `Query` player envelope with its strictly increasing connection
 request ID. These IDs correlate messages and confer no durable idempotency.
 
 The first byte is payload version 1; the second is the operation (submit 1, cancel 2, read 3,
-quote inspection 4, proposal inspection 5). Cancel/read are exactly two bytes. An inspection appends
+quote inspection 4, proposal inspection 5, presentation bootstrap 16, participant status 17).
+Cancel/read/bootstrap/status are exactly two bytes. An inspection appends
 one canonical 16-byte entity ID, totaling 18 bytes. Submission appends market ID, commodity ID,
 32-byte commodity content hash, one-byte direction and unsigned big-endian 64-bit quantity.
 A buy is 75 bytes. A sell appends its own shown lot's 16-byte ID, totaling the maximum 91 bytes.
@@ -41,12 +42,36 @@ actor, operation and inspected subject, with only the relevant inquiry/quote/pro
 before presentation. Clients also match the outer response request ID. A null inspection is an ordinary
 typed result, not a transport refusal or a claim that the identifier does not exist elsewhere.
 
-The [result codec](../../src/OpenFantasy.Hosting/Networking/PlayerQueryResultCodec.cs) encodes version 1
-as canonical typed JSON within 16 KiB. It reuses the explicit observation converters, including complete
+The [result codec](../../src/OpenFantasy.Hosting/Networking/PlayerQueryResultCodec.cs) encodes the original
+five operations as version 1, with their exact eight-field result shape. Bootstrap and participant status
+use only version 2, containing scope, kind, Presentation and ParticipantStatus; precisely the relevant
+payload is present. Each version rejects the other version's operations. Both use canonical typed JSON
+within 16 KiB. The codec reuses the explicit observation converters, including complete
 hashes and immutable collections. Decode checks the byte bound before parsing, rejects unknown/missing/
 duplicate fields through validation and exact canonical re-encoding, and enforces participant/subject
 consistency. This is a presentation contract; constructing or decoding a result grants no authority.
-There is no automatic query retry, repricing, refresh or background history polling.
+The protocol performs no automatic retry, repricing or background history polling. The application
+session may refresh participant status under the bounded ownership below.
+
+## Presentation and participant status
+
+`ReadPresentationBootstrap` returns an immutable binding captured by the trusted host composition from
+the actual admitted world: companion/item identities, regional presentation choice and bounded source
+labels/appearances for cargo stalls. The [bootstrap value](../../src/OpenFantasy.Hosting/Networking/PlayerPresentationBootstrap.cs)
+copies its sorted collection and validates distinct roles, text and appearance bounds. It contains no
+positions, stock, hidden schedules, prices or permission. Current visibility still comes from observations.
+Admission attaches this binding to the actor's credential; a host without a supported binding refuses
+the request. A native client never reconstructs the server's genesis to invent presentation metadata.
+
+`ReadParticipantStatus` asynchronously enters the existing host serialization boundary and captures
+the calling port's run state and its current/last inquiry under the input lock. It selects no step and
+may wait behind admitted history work. Paused describes this port's readiness: other ready players may
+continue. Waiting and resolving retain the host's actual hold interpretation. Status and world views
+are separate publications and do not assert one shared observation revision.
+
+The [remote application session](player-client.md#application-session-and-native-binding) caches status
+for frame reads. Its bounded refresh carries null, Waiting, Offered and terminal inquiry values without
+polling quote history or changing the merchant's decision. Explicit queries share that same query slot.
 
 ## Concurrency, pressure and lifetime
 

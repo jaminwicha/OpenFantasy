@@ -9,15 +9,18 @@ public sealed class AuthenticatedPlayerChannel : IAsyncDisposable
     private readonly Action _release;
     private Task? _closing;
 
-    internal AuthenticatedPlayerChannel(LocalPlayerConnection player, PlayerMessageTransport transport, Action release)
+    internal AuthenticatedPlayerChannel(LocalPlayerConnection player, PlayerMessageTransport transport, Action release,
+        PlayerPresentationBootstrap? presentation = null)
     {
         Player = player;
         Transport = transport;
         _release = release;
+        Presentation = presentation;
     }
 
     public LocalPlayerConnection Player { get; }
     public PlayerMessageTransport Transport { get; }
+    public PlayerPresentationBootstrap? Presentation { get; }
 
     public ValueTask DisposeAsync()
     {

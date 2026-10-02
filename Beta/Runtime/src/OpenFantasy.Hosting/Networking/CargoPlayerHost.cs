@@ -1,6 +1,7 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Content;
 using OpenFantasy.Hosting.Content.EncounterOutcome;
@@ -17,6 +18,7 @@ namespace OpenFantasy.Hosting.Networking;
 public sealed class CargoPlayerHost : IAsyncDisposable
 {
     private readonly Dictionary<EntityId, TrustedCommandDelivery> _players;
+    private readonly Dictionary<EntityId, PlayerPresentationBootstrap> _presentation;
 
     private CargoPlayerHost(LocalWorldSession session, WorldSnapshot state)
     {
@@ -24,6 +26,7 @@ public sealed class CargoPlayerHost : IAsyncDisposable
         _players = state.Residents.Where(actor => actor.ControllerKind == ResidentControllerKind.Player)
             .ToDictionary(actor => actor.ActorId, actor => DeliveryOf(state, actor.ActorId));
         Players = Array.AsReadOnly(_players.Keys.Order().ToArray());
+        _presentation = Players.ToDictionary(actor => actor, actor => PreparePresentation(state, actor));
         Admission = new PlayerAdmissionService(session, FarmPackageCatalog.LoadEmbedded());
     }
 
@@ -66,7 +69,23 @@ public sealed class CargoPlayerHost : IAsyncDisposable
     public PlayerJoinCredential Issue(EntityId actor, TimeSpan lifetime)
     {
         if (!_players.TryGetValue(actor, out TrustedCommandDelivery? delivery)) throw new PlayerAdmissionException();
-        return Admission.Issue(actor, delivery, lifetime, new LocalRegionObserver(actor));
+        return Admission.Issue(actor, delivery, lifetime, new LocalRegionObserver(actor), _presentation[actor]);
+    }
+
+    private static PlayerPresentationBootstrap PreparePresentation(WorldSnapshot state, EntityId actor)
+    {
+        // Resolve retained admitted roles from this actual save; never synthesize a reference genesis.
+        if (state.GetResident(actor).ControllerKind != ResidentControllerKind.Player
+            || state.Quests is null || state.Gathering is null)
+            throw new InvalidDataException("The saved player lacks the supported cargo presentation binding.");
+        EntityId[] givers = state.Quests.Definitions.Select(quest => quest.GiverActorId).Distinct().ToArray();
+        var wood = state.Gathering.Nodes.Where(node => node.Definition.Kind == GatherNodeKind.Oak).ToArray();
+        var berries = state.Gathering.Nodes.Where(node => node.Definition.Kind == GatherNodeKind.Berry).ToArray();
+        IReadOnlyList<NativeCargoStall> stalls = NativeCargoWorld.Stalls(state);
+        if (givers.Length != 1 || wood.Length != 1 || berries.Length != 1 || stalls.Count != 2)
+            throw new InvalidDataException("The saved cargo composition has no unambiguous presentation bootstrap.");
+        return new PlayerPresentationBootstrap(givers[0], wood[0].Definition.YieldDefinition.DefinitionId,
+            berries[0].Definition.YieldDefinition.DefinitionId, true, stalls);
     }
 
     private static TrustedCommandDelivery DeliveryOf(WorldSnapshot state, EntityId actor)

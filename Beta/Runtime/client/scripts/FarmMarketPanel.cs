@@ -171,7 +171,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     }
 
     internal void Present(LocalWorldView view, LocalWorldRunState runState, LocalTradeInquiryView? inquiry,
-        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, bool canCommit)
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, bool canCommit, bool shared = false)
     {
         _view = view;
         _stall = Draft?.MarketId is { } market ? view.Markets?.Stalls.FirstOrDefault(value => value.MarketId == market) : null;
@@ -183,16 +183,18 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         PresentStalls(view);
         _time.Text = (runState switch
         {
-            LocalWorldRunState.Running => "World continuing",
-            LocalWorldRunState.Paused => "World paused · nothing counts down",
-            LocalWorldRunState.Waiting => "World waiting",
+            LocalWorldRunState.Running => shared ? "Ready · shared world" : "World continuing",
+            LocalWorldRunState.Paused => shared ? "Your input paused · others may continue" : "World paused · nothing counts down",
+            LocalWorldRunState.Waiting => shared ? "Your character is waiting" : "World waiting",
             LocalWorldRunState.Resolving => "Resolving world changes",
             _ => "World unavailable"
         }) + $" · purse {view.Progression?.CurrencyBalance} {view.Progression?.CurrencyUnit}"
             + (_stall.IsAvailableInPerson ? "" : $" · {merchant} is not within reach");
         _time.TooltipText = FarmMarketTerms.Diagnostics(view.Markets?.AdvancingStep ?? 0);
-        _pause.Text = runState == LocalWorldRunState.Paused ? "Resume time" : "Pause to read";
-        _pause.TooltipText = $"Pausing stops this world: offers and your request stop counting down, and {merchant} "
+        _pause.Text = shared ? runState == LocalWorldRunState.Paused ? "Resume my input" : "Pause my input"
+            : runState == LocalWorldRunState.Paused ? "Resume time" : "Pause to read";
+        _pause.TooltipText = shared ? "Pausing stops your input. Other players may continue and offers may expire."
+            : $"Pausing stops this world: offers and your request stop counting down, and {merchant} "
             + "cannot answer until you resume. Showing goods and confirming need time running.";
         PresentChoices(view, goods);
         PresentRequest(view, inquiry, offers, running, canCommit, merchant, goods);

@@ -1,0 +1,90 @@
+{
+  "Kind": "native-player-connection-v1",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Close did not return its committed result.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.Networking.NativePlayerPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativePlayerPlayProbe.cs:line 96",
+  "Stage": "close-conversation",
+  "World": "00b0d467071e98cf60f8bf7708515da1",
+  "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+  "Origin": [
+    25984,
+    83328,
+    256
+  ],
+  "Walked": [
+    25920,
+    83328,
+    256
+  ],
+  "FinalFeet": [
+    25920,
+    83328,
+    256
+  ],
+  "Inputs": [
+    {
+      "Stage": "initial-focus",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "talk",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "talk",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "close-conversation",
+      "Route": "keyboard",
+      "Key": "E"
+    }
+  ],
+  "ElapsedMilliseconds": 11862,
+  "Boundaries": [
+    {
+      "Stage": "walk",
+      "State": "Paused",
+      "ActorRevision": 2,
+      "OfferRevision": 2,
+      "UnsupportedRegion": false
+    },
+    {
+      "Stage": "talk",
+      "State": "Running",
+      "ActorRevision": 2,
+      "OfferRevision": 2,
+      "UnsupportedRegion": false
+    }
+  ],
+  "FinalBoundary": {
+    "Stage": "close-conversation",
+    "State": "Waiting",
+    "ActorRevision": 2,
+    "OfferRevision": 2,
+    "UnsupportedRegion": false
+  },
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000100000010702ECA674DD3CCEBAFDFD49644A5268D000000104BFA85ADA9AB0FB0D377F011F0025D88000000106F085FB1A0B16DFB75517BBE725BDAAA000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000000800000000000000020000004E4F464300000000010000000400000012776F726C642E616374696F6E2E737065616B000000080000000000000001000000102D8E5E0319D821395E44FC387B13B8BE000000080000000000000000",
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010702ECA674DD3CCEBAFDFD49644A5268D000000104BFA85ADA9AB0FB0D377F011F0025D880000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020100328C38186B14E62E031804EC16BA4625D7810BA76FA2CD9003D01C5FF8E5600000008000000000000000C000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "NativeFocused": false,
+  "Unfocusable": true,
+  "InitialFocusGuard": true,
+  "ObservedNativeFocus": false,
+  "Display": "macOS"
+}

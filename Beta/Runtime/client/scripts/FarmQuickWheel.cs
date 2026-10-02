@@ -82,16 +82,16 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
         _returnFocus = null;
     }
 
-    internal void Present(LocalWorldView view, LocalWorldRunState runState, bool canConfirm)
+    internal void Present(LocalWorldView view, LocalWorldRunState runState, bool canConfirm, bool shared = false)
     {
         if (Model is null) return;
         _canConfirm = canConfirm;
         _time.Text = runState switch
         {
-            LocalWorldRunState.Running => "World continuing",
+            LocalWorldRunState.Running => shared ? "Ready · shared world" : "World continuing",
             LocalWorldRunState.Resolving => "Resolving world changes",
-            LocalWorldRunState.Waiting => "World waiting",
-            LocalWorldRunState.Paused => "World paused · Inspection only",
+            LocalWorldRunState.Waiting => shared ? "Your character is waiting" : "World waiting",
+            LocalWorldRunState.Paused => shared ? "Your input paused · others may continue" : "World paused · Inspection only",
             _ => "World unavailable"
         };
         _time.Text += $" · {view.Calendar.MillisecondsWithinDay / 3_600_000:D2}:{view.Calendar.MillisecondsWithinDay / 60_000 % 60:D2}";
