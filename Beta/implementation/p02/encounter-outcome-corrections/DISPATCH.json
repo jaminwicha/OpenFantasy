@@ -1,0 +1,23 @@
+{
+  "status": "terminal_returned_for_integration",
+  "taskDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-outcome-corrections-a7k6v_zb",
+  "sourceHead": "cdeb919081ee8fe0ad9533f0ce2cd85fab4e2a43",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "effortRequested": "max",
+  "timeoutSeconds": 7200,
+  "maxBudgetUsd": 35,
+  "foregroundCommandSeconds": 960,
+  "contextSha256": "935953185f4bc8d4646a2c429fd3c9faefdb5cd393a35af62670bb63cd3a9261",
+  "previewSha256": "d34815acefda8f874dca95ba56bd40d0cce4258e8ba114c58ca646a8d70090e8",
+  "expectedBenefit": "Implement critic corrections and missing rendered outcome proof as one cohesive unit, with explicit evidence reuse. No savings claim.",
+  "providerRetry": false,
+  "startedUtc": "2026-10-02T00:30:16.422018+00:00",
+  "leadProcessSession": 69307,
+  "contextPreflight": "verified",
+  "elapsedSeconds": 5401.539,
+  "clientEstimatedUsd": 18.976225000000003,
+  "returnedModel": "claude-opus-5-5",
+  "contextWindow": 1000000,
+  "contextPostflight": "verified",
+  "permissionDenials": []
+}

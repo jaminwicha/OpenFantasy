@@ -22,9 +22,13 @@ internal sealed class FarmQuickWheelModel
     {
         // Entry exists only before an encounter and Retreat only during one, so they share the upper slot.
         FarmSemanticAction[] order = offers.Keys.Any(IsEncounterAction)
-            ? [offers.ContainsKey(FarmSemanticAction.Retreat) ? FarmSemanticAction.Retreat : FarmSemanticAction.EnterEncounter,
-                FarmSemanticAction.Strike, FarmSemanticAction.Wait,
-                offers.ContainsKey(FarmSemanticAction.AcknowledgeCare) ? FarmSemanticAction.AcknowledgeCare : FarmSemanticAction.ReleaseEncounter]
+            ? EncounterOutcomeText.ReadingBesideCare(offers)
+                // An outcome-completion reading beside admitted care: care keeps its left slot and the reading takes the
+                // right slot, which no outcome otherwise uses (Strike exists only in an active fight).
+                ? [FarmSemanticAction.None, FarmSemanticAction.ReleaseEncounter, FarmSemanticAction.None, FarmSemanticAction.AcknowledgeCare]
+                : [offers.ContainsKey(FarmSemanticAction.Retreat) ? FarmSemanticAction.Retreat : FarmSemanticAction.EnterEncounter,
+                    FarmSemanticAction.Strike, FarmSemanticAction.Wait,
+                    offers.ContainsKey(FarmSemanticAction.AcknowledgeCare) ? FarmSemanticAction.AcknowledgeCare : FarmSemanticAction.ReleaseEncounter]
             : offers.ContainsKey(FarmSemanticAction.Excavate)
             ? [FarmSemanticAction.Speak, FarmSemanticAction.Excavate, FarmSemanticAction.Traverse, FarmSemanticAction.Give]
             : Order;
@@ -68,6 +72,26 @@ internal sealed class FarmQuickWheelModel
     internal static bool IsEncounterAction(FarmSemanticAction action) => action is FarmSemanticAction.EnterEncounter
         or FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter
         or FarmSemanticAction.AcknowledgeCare or FarmSemanticAction.Retreat;
+
+    /// <summary>
+    /// The short sector name. The outcome sector names its captured reading (Accept defeat, Accept outcome or Continue,
+    /// as the earlier release offer always reads Continue); every other sector keeps its fixed verb.
+    /// </summary>
+    internal static string SectorLabel(FarmWheelSlot slot) => slot.Action switch
+    {
+        FarmSemanticAction.Speak => "Talk", FarmSemanticAction.Gather => "Gather",
+        FarmSemanticAction.Craft => "Craft", FarmSemanticAction.Give => "Give",
+        FarmSemanticAction.Excavate => "Mine", FarmSemanticAction.Traverse => "Climb",
+        FarmSemanticAction.EnterEncounter => "Engage", FarmSemanticAction.Strike => "Strike",
+        FarmSemanticAction.Wait => "Wait", FarmSemanticAction.ReleaseEncounter => slot.Offer.Label,
+        FarmSemanticAction.AcknowledgeCare => "Care", FarmSemanticAction.UseRestorative => "Potion",
+        FarmSemanticAction.RevokeCarePermission => "Withdraw",
+        FarmSemanticAction.ProposeMaterial => "Offer", FarmSemanticAction.AcceptMaterial => "Accept",
+        FarmSemanticAction.DeclineMaterial => "Decline", FarmSemanticAction.WithdrawMaterial => "Withdraw",
+        FarmSemanticAction.TradeBuy => "Buy", FarmSemanticAction.TradeSell => "Sell",
+        FarmSemanticAction.TradeOffers => "Offers", FarmSemanticAction.Retreat => "Retreat",
+        _ => "Action"
+    };
 
     internal void Select(int index)
     {

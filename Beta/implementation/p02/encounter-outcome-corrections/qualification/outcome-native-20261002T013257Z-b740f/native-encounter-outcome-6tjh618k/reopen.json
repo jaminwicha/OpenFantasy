@@ -1,0 +1,104 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "reopen",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 3.651,
+  "ProbeMilliseconds": 3709,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [],
+  "WalkInputs": [],
+  "Strikes": 0,
+  "Waits": 0,
+  "Engagement": null,
+  "Outcome": null,
+  "Completed": null,
+  "Decline": null,
+  "Trade": null,
+  "Panels": [
+    {
+      "Label": "reopen",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 204
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 253
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 196.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 160.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 117
+      },
+      "Lines": 6,
+      "VisibleLines": 6,
+      "Leave": {
+        "X": 22,
+        "Y": 249,
+        "Width": 396,
+        "Height": 31
+      },
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "Checks": [
+    "The saved terminal defeat reopens paused in a separate process with the same completed record."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T013257Z-b740f/native-encounter-outcome-6tjh618k/reopen.reopen.png"
+  ],
+  "SaveAndLeave": false,
+  "FinalStage": "Completed",
+  "FinalTerminal": true,
+  "CompletedAtSequence": 2600,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 2,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 80032,
+    "Z": 256
+  },
+  "FinalHp": 0,
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

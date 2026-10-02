@@ -1,0 +1,77 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.67]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.52]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.85]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld [4 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission [3 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded [6 s]
+[xUnit.net 00:01:01.92]     OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues [FAIL]
+[xUnit.net 00:01:01.92]       System.IO.InvalidDataException : The corridor must cover both retained merchant tiles and every authored waypoint.
+[xUnit.net 00:01:01.92]       Stack Trace:
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs(163,0): at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.Validate(CargoCircuitSources sources)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs(95,0): at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.CreateCircuit(TerrainRegionBounds basis, CargoCircuitSources sources, IReadOnlyList`1 declaredOverlays)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs(66,0): at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.CreateCircuit(TerrainRegionBounds basis, CargoCircuitSources sources)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs(32,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourney.Corridor(WorldSnapshot state, EntityId player)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs(96,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourney.Outbound(RetreatJourneyWorld world)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(99,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues()
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(110,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues()
+[xUnit.net 00:01:01.92]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues [59 s]
+  Error Message:
+   System.IO.InvalidDataException : The corridor must cover both retained merchant tiles and every authored waypoint.
+  Stack Trace:
+     at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.Validate(CargoCircuitSources sources) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs:line 163
+   at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.CreateCircuit(TerrainRegionBounds basis, CargoCircuitSources sources, IReadOnlyList`1 declaredOverlays) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs:line 95
+   at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.CreateCircuit(TerrainRegionBounds basis, CargoCircuitSources sources) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs:line 66
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourney.Corridor(WorldSnapshot state, EntityId player) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs:line 32
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourney.Outbound(RetreatJourneyWorld world) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs:line 96
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 99
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 110
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening [1 m]
+[xUnit.net 00:02:03.87]     OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem [FAIL]
+[xUnit.net 00:02:03.87]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:02:03.87]       Expected: None
+[xUnit.net 00:02:03.87]       Actual:   Unavailable
+[xUnit.net 00:02:03.87]       Stack Trace:
+[xUnit.net 00:02:03.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(215,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem()
+[xUnit.net 00:02:03.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(280,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem()
+[xUnit.net 00:02:03.87]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem [1 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: None
+Actual:   Unavailable
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 215
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 280
+--- End of stack trace from previous location ---
+[xUnit.net 00:02:05.50]     OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [FAIL]
+[xUnit.net 00:02:05.50]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:02:05.50]       Expected: None
+[xUnit.net 00:02:05.50]       Actual:   RevisionConflict
+[xUnit.net 00:02:05.50]       Stack Trace:
+[xUnit.net 00:02:05.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(309,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:02:05.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(342,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:02:05.50]         --- End of stack trace from previous location ---
+[xUnit.net 00:02:05.53]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [1 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: None
+Actual:   RevisionConflict
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 309
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 342
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 8
+     Passed: 5
+     Failed: 3
+ Total time: 2.1039 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-continuation/qualification/outcome-unit-20261001T225005Z-72897/outcome-host.trx

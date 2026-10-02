@@ -1,0 +1,13 @@
+{
+  "status": "retained_first_host_failure",
+  "report": "qualification/outcome-unit-20261001T225005Z-72897/report.json",
+  "failedCases": [
+    "OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem",
+    "OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings",
+    "OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues"
+  ],
+  "source": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs",
+  "reportedSourceSha256": "5f725c479a4ccd5618a2f378e41bba2414fad497fb16c515f4fd090a36367ef3",
+  "currentSourceMatchesFailure": false,
+  "interpretation": "Worker-owned implementation remains in progress; these are not final defects or acceptance claims."
+}

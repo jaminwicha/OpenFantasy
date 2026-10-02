@@ -137,16 +137,20 @@ internal static class WorldCareProcessor
             restoration.ActorTransition);
         var history = world.ResourceHistory!.Append(new(sequence, 0, command.CommandId, [change]),
             new WorldTreatmentResourceEvidence(command.CommandId, treatment.TreatmentId));
+        // Treatment resumes the same unfinalized episode; in profile 35 earlier outcome readings described an outcome
+        // that no longer exists, so they end here and cannot complete a later outcome.
         return (Copy(world, sequence, care.Treat(treatment), restoration.CandidateInventory, restoration.CandidateProduction,
-            restoration.CandidateProgression, world.EncounterLifecycle!.ResumeAfterCare(timing), world.Pacing.ObserveEncounter(timing), reservoirs!, liquids!, history),
+            restoration.CandidateProgression, world.EncounterLifecycle!.ResumeAfterCare(timing), world.Pacing.ObserveEncounter(timing), reservoirs!, liquids!, history,
+            world.EncounterOutcome?.ClearAcknowledgments()),
             WorldActionRejection.None);
     }
 
     private static WorldSnapshot Copy(WorldSnapshot world, ulong sequence, CareSnapshot care, CountedAuthorityState inventory,
         ProductionSnapshot production, ProgressionSnapshot progression, EncounterLifecycleSnapshot lifecycle,
         WorldPacingState pacing, Geography.LiquidReservoirState reservoirs, Geography.LiquidCellState liquids,
-        WorldResourceHistory? history = null) =>
+        WorldResourceHistory? history = null, EncounterOutcomeState? outcome = null) =>
         world.WithState(inventory, world.Space, world.Residents, world.Calendar, sequence, world.AdvancingSteps,
             world.Dialogues, world.Gathering, production, progression, world.Quests, world.Construction, reservoirs, world.Transport,
-            world.Excavation, world.ConstructionPhysical, liquids, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: history);
+            world.Excavation, world.ConstructionPhysical, liquids, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: history,
+            encounterOutcome: outcome);
 }

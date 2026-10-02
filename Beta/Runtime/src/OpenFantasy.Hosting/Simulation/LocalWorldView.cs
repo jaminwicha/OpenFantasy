@@ -62,6 +62,7 @@ public sealed class LocalWorldView
         EncounterLifecycle = LocalEncounterLifecycleView.Project(state, playerActorId);
         EncounterActions = LocalEncounterActionView.Project(state, playerActorId);
         Retreat = Simulation.Retreat.LocalRetreatView.Project(state, playerActorId);
+        EncounterOutcome = Simulation.EncounterOutcome.LocalEncounterOutcomeView.Project(state, playerActorId);
         RoadThreats = Simulation.RoadThreat.LocalRoadThreatView.Project(state, playerActorId);
         Care = LocalCareView.Project(state, playerActorId, careHelperSelectionOccupied);
         Restorative = LocalRestorativeView.Project(state, playerActorId);
@@ -176,6 +177,13 @@ public sealed class LocalWorldView
     /// </summary>
     [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
     public Simulation.Retreat.LocalRetreatView? Retreat { get; }
+
+    /// <summary>
+    /// The outcome-completion interpretation's current reading or last completion record from the player's side; null,
+    /// and omitted from the public encoding, in every other world so earlier interpretations keep their public bytes.
+    /// </summary>
+    [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    public Simulation.EncounterOutcome.LocalEncounterOutcomeView? EncounterOutcome { get; }
 
     /// <summary>
     /// Hostile opportunities against the player that the player currently observes (same floor, clear sightline,

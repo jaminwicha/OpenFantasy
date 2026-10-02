@@ -27,7 +27,8 @@ public sealed record LocalEncounterLifecycleView(EncounterLifecyclePhase Phase, 
                     WorldActorAvailability.CanCooperate(world, actor.ActorId)
                     && (actor.ActorId == playerId || world.Space.QueryInteraction(playerId, actor.ActorId,
                         scenario.EntryRangeSubunits) == SpatialInteraction.Reachable)))).ToArray();
-        bool mayRelease = lifecycle.Phase == EncounterLifecyclePhase.Outcome
+        // The outcome-completion world has no initiator release; its reading is offered by the outcome view instead.
+        bool mayRelease = lifecycle.Phase == EncounterLifecyclePhase.Outcome && world.EncounterOutcome is null
             && lifecycle.GetScenario(lifecycle.ScenarioId!.Value).InitiatingActorId == playerId
             && WorldActorAvailability.CanCooperate(world, playerId);
         return new(lifecycle.Phase, lifecycle.EncounterCount, lifecycle.GetDebt(playerId).RemainingDelay,

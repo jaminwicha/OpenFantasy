@@ -297,7 +297,16 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             if (state.EncounterLifecycle is null || state.HasReadingHold)
                 throw new AuthorityDispatchException("A lifecycle choice requires its admitted world without a reading hold.");
+            if (command.Intent is ReleaseEncounterIntent && LocalProfileBindings.AdmitsOutcomeCompletion(state))
+                throw new AuthorityDispatchException("This world completes an outcome after it is read; it has no initiator release.");
             // Exact phase, target, identity and captured revisions receive normal durable receipts.
+            return;
+        }
+        if (command.Intent is AcknowledgeEncounterOutcomeIntent)
+        {
+            if (!LocalProfileBindings.AdmitsOutcomeCompletion(state) || state.HasReadingHold)
+                throw new AuthorityDispatchException("An outcome acknowledgment requires the outcome-completion world without a reading hold.");
+            // Exact phase, episode, archive and controller receive normal durable receipts.
             return;
         }
         if (state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
@@ -399,8 +408,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 TickCare(state, pending);
                 return;
             }
-            if (pending?.Command.Intent is EnterEncounterIntent or ReleaseEncounterIntent
-                || state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging)
+            // Profile 35: a reading is the player's own lifecycle command; completion is the world's own boundary once
+            // every required human has read the outcome and no care is pending. Neither earns time.
+            if (pending?.Command.Intent is EnterEncounterIntent or ReleaseEncounterIntent or AcknowledgeEncounterOutcomeIntent
+                || state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
+                || WorldEncounterOutcomes.IsReadyToFinalize(state))
             {
                 TickLifecycle(state, pending);
                 return;
@@ -465,7 +477,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     {
         ClearMovement();
         if (RefuseUnrepresentable(state, WorldBatchKind.EncounterLifecycle, ref pending)
-            && state.EncounterLifecycle?.Phase is not (EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging))
+            && state.EncounterLifecycle?.Phase is not (EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging)
+            && !WorldEncounterOutcomes.IsReadyToFinalize(state))
         {
             return;
         }

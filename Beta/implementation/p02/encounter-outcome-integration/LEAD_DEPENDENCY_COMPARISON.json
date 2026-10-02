@@ -1,0 +1,206 @@
+{
+  "build": "Beta/implementation/p02/encounter-outcome-integration/qualification/build-20261002T032618Z-bc887/report.json",
+  "buildSha256": "e803078d22ad7c73ecd94b90ff5d906795350e288e6fa852db42e0c0e7156673",
+  "scope": "Evidence-family comparison. Current native and affected managed gates remain required.",
+  "comparisons": [
+    {
+      "kind": "core",
+      "report": "Beta/implementation/p02/encounter-outcome-corrections/qualification/core-20261002T013523Z-bf7d8/report.json",
+      "reportSha256": "69e4e46e53ed8713d23edcdabffab6f3233f579e73f7251c64b889d95e241726",
+      "outcomes": {
+        "Passed": 1773
+      },
+      "identicalAuthorityContentCoreTestSources": 1273,
+      "identicalAuthorityAndCoreAssemblies": {
+        "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "0a3ea43ab8dc5b0cec90ae9454d06b620beceed1864523f8f418d9da7b4115be",
+        "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "0f171cc249fccb0ec00660f2683e1234da71108c083a39050d0530e5e027d801"
+      },
+      "changedDependencies": [
+        "Beta/Runtime/client/scripts/EncounterActionOffers.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeOverlay.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeText.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/NativeEncounterOutcomeEntry.cs",
+        "Beta/Runtime/client/scripts/FarmClientSession.cs",
+        "Beta/Runtime/client/scripts/FarmEncounterStatus.cs",
+        "Beta/Runtime/client/scripts/FarmGame.cs",
+        "Beta/Runtime/client/scripts/FarmHud.cs",
+        "Beta/Runtime/client/scripts/FarmQuickWheelModel.cs",
+        "Beta/Runtime/client/scripts/FarmSubmission.cs",
+        "Beta/Runtime/client/scripts/FarmWheelDisc.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/EncounterOutcomeInputTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/EncounterOutcomeTextTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/FarmSubmissionSeamTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeFixtureTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeResultTests.cs",
+        "Beta/Runtime/tools/check_native_encounter_outcome.py"
+      ],
+      "disposition": "Inherited: all Core source and Core test source/binaries are identical."
+    },
+    {
+      "kind": "regression",
+      "report": "Beta/implementation/p02/encounter-outcome-corrections/qualification/regression-20261002T013735Z-e54eb/report.json",
+      "reportSha256": "78170b175938dca105283bfd306cac36af4ead29356ead0b188dbc894916f5ae",
+      "outcomes": {
+        "Passed": 552
+      },
+      "identicalAuthorityContentCoreTestSources": 1273,
+      "identicalAuthorityAndCoreAssemblies": {
+        "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "0a3ea43ab8dc5b0cec90ae9454d06b620beceed1864523f8f418d9da7b4115be",
+        "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "0f171cc249fccb0ec00660f2683e1234da71108c083a39050d0530e5e027d801"
+      },
+      "changedDependencies": [
+        "Beta/Runtime/client/scripts/EncounterActionOffers.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeOverlay.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeText.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/NativeEncounterOutcomeEntry.cs",
+        "Beta/Runtime/client/scripts/FarmClientSession.cs",
+        "Beta/Runtime/client/scripts/FarmEncounterStatus.cs",
+        "Beta/Runtime/client/scripts/FarmGame.cs",
+        "Beta/Runtime/client/scripts/FarmHud.cs",
+        "Beta/Runtime/client/scripts/FarmQuickWheelModel.cs",
+        "Beta/Runtime/client/scripts/FarmSubmission.cs",
+        "Beta/Runtime/client/scripts/FarmWheelDisc.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/EncounterOutcomeInputTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/EncounterOutcomeTextTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/FarmSubmissionSeamTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeFixtureTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeResultTests.cs",
+        "Beta/Runtime/tools/check_native_encounter_outcome.py"
+      ],
+      "disposition": "Inherit unchanged cases only. Changed pure-client bindings, new client tests and strengthened outcome tests are superseded by current 165-client and 34-outcome passes. Other existing test/support source and authority binaries are unchanged; new tests introduce no assembly/collection initialization. No whole Host test assembly identity is claimed."
+    },
+    {
+      "kind": "retained-auth",
+      "report": "Beta/implementation/p02/encounter-outcome-corrections/qualification/retained-auth-20261002T014615Z-d21ee/report.json",
+      "reportSha256": "b686fc62275936fbb5e6635316e04f34827d0e7c8dcb8b3551aed24573a7da3d",
+      "outcomes": {
+        "Passed": 6
+      },
+      "identicalAuthorityContentCoreTestSources": 1273,
+      "identicalAuthorityAndCoreAssemblies": {
+        "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "0a3ea43ab8dc5b0cec90ae9454d06b620beceed1864523f8f418d9da7b4115be",
+        "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "0f171cc249fccb0ec00660f2683e1234da71108c083a39050d0530e5e027d801"
+      },
+      "changedDependencies": [
+        "Beta/Runtime/client/scripts/EncounterActionOffers.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeOverlay.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeText.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/NativeEncounterOutcomeEntry.cs",
+        "Beta/Runtime/client/scripts/FarmClientSession.cs",
+        "Beta/Runtime/client/scripts/FarmEncounterStatus.cs",
+        "Beta/Runtime/client/scripts/FarmGame.cs",
+        "Beta/Runtime/client/scripts/FarmHud.cs",
+        "Beta/Runtime/client/scripts/FarmQuickWheelModel.cs",
+        "Beta/Runtime/client/scripts/FarmSubmission.cs",
+        "Beta/Runtime/client/scripts/FarmWheelDisc.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/EncounterOutcomeInputTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/EncounterOutcomeTextTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/FarmSubmissionSeamTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeFixtureTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeResultTests.cs",
+        "Beta/Runtime/tools/check_native_encounter_outcome.py"
+      ],
+      "disposition": "Inherited six retained-journal authentication cases: their existing test/support source, authority/content code and authority binaries are unchanged. Fresh road/retreat authentication additionally executes on the final client. New outcome result authentication is separately executed on fresh evidence."
+    },
+    {
+      "kind": "outcome-durability",
+      "report": "Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-durability-20261002T015001Z-b93cb/report.json",
+      "reportSha256": "74a6299b9f0a9acc76318ccbae11c607e3ebf13a1ce47260a1fdf5ba1206d307",
+      "outcomes": {
+        "Passed": 2
+      },
+      "identicalAuthorityContentCoreTestSources": 1273,
+      "identicalAuthorityAndCoreAssemblies": {
+        "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+        "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "0a3ea43ab8dc5b0cec90ae9454d06b620beceed1864523f8f418d9da7b4115be",
+        "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "0f171cc249fccb0ec00660f2683e1234da71108c083a39050d0530e5e027d801"
+      },
+      "changedDependencies": [
+        "Beta/Runtime/client/scripts/EncounterActionOffers.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeOverlay.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeText.cs",
+        "Beta/Runtime/client/scripts/EncounterOutcome/NativeEncounterOutcomeEntry.cs",
+        "Beta/Runtime/client/scripts/FarmClientSession.cs",
+        "Beta/Runtime/client/scripts/FarmEncounterStatus.cs",
+        "Beta/Runtime/client/scripts/FarmGame.cs",
+        "Beta/Runtime/client/scripts/FarmHud.cs",
+        "Beta/Runtime/client/scripts/FarmQuickWheelModel.cs",
+        "Beta/Runtime/client/scripts/FarmSubmission.cs",
+        "Beta/Runtime/client/scripts/FarmWheelDisc.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/EncounterOutcomeInputTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/EncounterOutcomeTextTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/EncounterOutcome/FarmSubmissionSeamTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeFixtureTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeResultTests.cs",
+        "Beta/Runtime/tools/check_native_encounter_outcome.py"
+      ],
+      "disposition": "Inherited six actual process kills and two aggregate cases. Host/Core binaries, durability checker, durability fixture/result tests and their support are unchanged. They construct CargoOutcomeWorldAdmission directly; changed native presentation/fixture descriptions are not inputs."
+    }
+  ],
+  "currentManagedReuse": [
+    {
+      "report": "Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-unit-20261002T031607Z-9a899/report.json",
+      "reportSha256": "3a39ce8870d17fc63e9478f764b0f59deb980934ab0a091ec7a622aac6802c08",
+      "outcomes": {
+        "Passed": 34
+      },
+      "changedSource": [
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs"
+      ],
+      "identicalNonGodotAssemblies": 11,
+      "claim": "Managed test binaries and all managed source dependencies identical; only the native probe diagnostic changed."
+    },
+    {
+      "report": "Beta/implementation/p02/encounter-outcome-integration/qualification/client-regression-20261002T031722Z-783c2/report.json",
+      "reportSha256": "940f5171f2488f42d3373bb420efd8483e4eb4495269ae64e92a909e17144cce",
+      "outcomes": {
+        "Passed": 165
+      },
+      "changedSource": [
+        "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs"
+      ],
+      "identicalNonGodotAssemblies": 11,
+      "claim": "Managed test binaries and all managed source dependencies identical; only the native probe diagnostic changed."
+    }
+  ],
+  "reviewStatus": "Reviewed for bounded integration; no phase, production or historical timeout-resolution claim."
+}

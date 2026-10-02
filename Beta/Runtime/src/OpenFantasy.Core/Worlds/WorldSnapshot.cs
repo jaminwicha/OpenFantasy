@@ -39,9 +39,10 @@ public sealed class WorldSnapshot
         ConstructionDescentMode descentMode = ConstructionDescentMode.CommonTrajectory,
         ReservoirSealPolicy? reservoirSeals = null, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null,
         EncounterLifecycleSnapshot? encounterLifecycle = null, CareSnapshot? care = null, WorldResourceHistory? resourceHistory = null,
-        WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null)
+        WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null,
+        EncounterOutcomeState? encounterOutcome = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination, retreat, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination, retreat, encounterOutcome, null)
     {
     }
 
@@ -55,7 +56,7 @@ public sealed class WorldSnapshot
         StructuralSettlementPolicy? structuralSettlementPolicy, ConsequenceExecutionPolicy? consequencePolicy,
         PendingExcavation? pendingExcavation, CoupledSettlementPolicy? coupledSettlementPolicy,
         ConstructionDescentMode descentMode, ReservoirSealPolicy? reservoirSeals, LiquidCellState? liquidCells,
-        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, EncounterLifecycleSnapshot? encounterLifecycle, CareSnapshot? care, WorldResourceHistory? resourceHistory, WorldCoordinatedContinuation? coordination, EncounterRetreatState? retreat, WorldIdentityIndex? previous)
+        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, EncounterLifecycleSnapshot? encounterLifecycle, CareSnapshot? care, WorldResourceHistory? resourceHistory, WorldCoordinatedContinuation? coordination, EncounterRetreatState? retreat, EncounterOutcomeState? encounterOutcome, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -185,6 +186,7 @@ public sealed class WorldSnapshot
         ResourceHistory = resourceHistory;
         Coordination = coordination;
         Retreat = retreat;
+        EncounterOutcome = encounterOutcome;
         if (liquidCells is not null && reservoirSeals is null)
         {
             throw new ArgumentException("Detailed liquid placement requires the complete contained reservoir owner.");
@@ -250,6 +252,7 @@ public sealed class WorldSnapshot
         WorldEncounterActionAdmission.Validate(this);
         WorldEncounterLifecycleAdmission.Validate(this);
         WorldEncounterRetreatAdmission.Validate(this);
+        WorldEncounterOutcomeAdmission.Validate(this);
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
         if (structuralPolicy is not null)
         {
@@ -307,11 +310,15 @@ public sealed class WorldSnapshot
     public EncounterLifecycleSnapshot? EncounterLifecycle { get; }
     /// <summary>Non-null selects the explicit retreat interpretation (profile 34) over the local-market world.</summary>
     public EncounterRetreatState? Retreat { get; }
+    /// <summary>Non-null selects the explicit outcome-completion interpretation (profile 35) over the retreat world.</summary>
+    public EncounterOutcomeState? EncounterOutcome { get; }
     public EncounterActionSnapshot? EncounterActions => EncounterLifecycle is { } lifecycle
         ? lifecycle.HasEncounter ? lifecycle.Actions : null : _standaloneEncounterActions;
     public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
     public ushort ProfileVersion => Coordination?.Markets is not null
-        ? Retreat is not null ? WorldEncounterRetreatAdmission.ProfileVersion : WorldMarketAdmission.ProfileVersion
+        ? Retreat is not null
+            ? EncounterOutcome is not null ? WorldEncounterOutcomeAdmission.ProfileVersion : WorldEncounterRetreatAdmission.ProfileVersion
+            : WorldMarketAdmission.ProfileVersion
         : Coordination?.PaidExchange is not null ? WorldPaidExchangeAdmission.ProfileVersion
         : Coordination?.Proposals is not null ? (ushort)30 : Coordination?.ConsentedMaterial is not null ? (ushort)28 : Coordination is not null ? (ushort)27 : Care?.SupportsOrdinary == true ? (ushort)26 : Care is not null ? (ushort)25 : EncounterLifecycle is not null ? (ushort)24 : EncounterActions is not null ? (ushort)23 : Pacing is not null ? (ushort)22 : BaseProfileVersion;
     internal ushort BaseProfileVersion => LiquidCells?.Topology is not null ? (ushort)21 : LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
@@ -347,7 +354,8 @@ public sealed class WorldSnapshot
         LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation,
         ConstructionPhysicalSnapshot? constructionPhysical, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null,
         EncounterLifecycleSnapshot? encounterLifecycle = null, CareSnapshot? care = null, WorldResourceHistory? resourceHistory = null,
-        WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null)
+        WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null,
+        EncounterOutcomeState? encounterOutcome = null)
     {
         if (PendingExcavation is not null)
         {
@@ -410,15 +418,19 @@ public sealed class WorldSnapshot
         retreat ??= Retreat;
         if ((retreat is null) != (Retreat is null) || retreat is not null && retreat.RulesPin != Retreat!.RulesPin)
             throw new ArgumentException("A successor must retain its exact retreat interpretation.");
+        encounterOutcome ??= EncounterOutcome;
+        if ((encounterOutcome is null) != (EncounterOutcome is null)
+            || encounterOutcome is not null && encounterOutcome.RulesPin != EncounterOutcome!.RulesPin)
+            throw new ArgumentException("A successor must retain its exact outcome-completion interpretation.");
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination ?? Coordination, retreat, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination ?? Coordination, retreat, encounterOutcome, IdentityIndex);
     }
     internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
         Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
         Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
-        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, Coordination, Retreat, IdentityIndex);
+        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, Coordination, Retreat, EncounterOutcome, IdentityIndex);
 
     /// <summary>
     /// Explicit coordinated closure at the same revision. Only representations change; time, work,
@@ -431,5 +443,5 @@ public sealed class WorldSnapshot
         Dialogues, Gathering, production, Progression, Quests, Construction, Watershed, null, reservoirs,
         null, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
         ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells,
-        Pacing, _standaloneEncounterActions, EncounterLifecycle, care, resourceHistory, coordination, Retreat, null);
+        Pacing, _standaloneEncounterActions, EncounterLifecycle, care, resourceHistory, coordination, Retreat, EncounterOutcome, null);
 }

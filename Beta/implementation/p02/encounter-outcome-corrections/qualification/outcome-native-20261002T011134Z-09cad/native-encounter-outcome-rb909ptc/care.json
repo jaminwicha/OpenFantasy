@@ -1,0 +1,136 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "care",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Declining care by accepting the defeat did not complete the encounter.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.EncounterOutcomePlayProbe.DeclineCare(EntityId wolf) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 238\n   at OpenFantasy.Client.EncounterOutcomePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 115",
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 1.071,
+  "ProbeMilliseconds": 12131,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "wait",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "decline",
+      "Route": "keyboard",
+      "PointerHover": "ReleaseEncounter",
+      "X": 810,
+      "Y": 484.5
+    },
+    {
+      "Stage": "decline",
+      "Route": "keyboard",
+      "PointerControl": "ReleaseEncounter",
+      "X": 810,
+      "Y": 484.5
+    }
+  ],
+  "WalkInputs": [],
+  "Strikes": 0,
+  "Waits": 1,
+  "Engagement": {
+    "EncounterCount": 1,
+    "HelperDistance": 256,
+    "Seconds": 1.0736507
+  },
+  "Outcome": {
+    "Title": "Defeated",
+    "Body": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren can help (care)\nBramble Wolf \u00B7 standing side \u00B7 HP 62/62\nYou \u00B7 defeated side \u00B7 incapacitated (0 HP)\nYou are incapacitated (0 HP) and cannot move or act. Accepting the defeat ends this fight and you stay incapacitated afterwards. Your save is kept. Wren can help now: ask for care first. Accepting declines that care, and the world completes the encounter at its next boundary.",
+    "Status": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren can help (care)\nBramble Wolf \u00B7 HP 62/62",
+    "Result": "Victory",
+    "Standing": "OpponentStands",
+    "Hp": 0,
+    "Seconds": 1.8335637
+  },
+  "Completed": null,
+  "Decline": null,
+  "Trade": null,
+  "Panels": [
+    {
+      "Label": "care-outcome",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 227
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 177
+      },
+      "Lines": 9,
+      "VisibleLines": 9,
+      "Leave": null,
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "Checks": [
+    "The care-outcome panel stated the result and reason while the world held, clear of the HUD and combatants."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T011134Z-09cad/native-encounter-outcome-rb909ptc/care.care-outcome.png"
+  ],
+  "SaveAndLeave": false,
+  "FinalStage": "AwaitingYourReading",
+  "FinalTerminal": false,
+  "CompletedAtSequence": null,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 2,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalHp": 0,
+  "FinalBalance": 0,
+  "CarriedRations": 0
+}

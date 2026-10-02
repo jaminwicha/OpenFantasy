@@ -1,0 +1,121 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "victory",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: The victory-outcome panel is clipped or occludes the HUD or a combatant.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.EncounterOutcomePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 553\n   at OpenFantasy.Client.EncounterOutcomePlayProbe.CheckPanel(String label, EntityId opponent, Boolean terminal) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 379\n   at OpenFantasy.Client.EncounterOutcomePlayProbe.ReadPanel(String label, EntityId opponent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 333\n   at OpenFantasy.Client.EncounterOutcomePlayProbe.Victory(EntityId chief) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 148\n   at OpenFantasy.Client.EncounterOutcomePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 109",
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 3.476,
+  "ProbeMilliseconds": 6814,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    }
+  ],
+  "Strikes": 1,
+  "Waits": 0,
+  "Engagement": {
+    "EncounterCount": 1,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 5.8841245
+  },
+  "Outcome": null,
+  "Completed": null,
+  "Decline": null,
+  "Trade": null,
+  "Panels": [
+    {
+      "Label": "victory-outcome",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 300,
+        "Height": 298
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 200.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 164.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 280,
+        "Height": 157
+      },
+      "Lines": 8,
+      "VisibleLines": 8,
+      "Leave": null,
+      "InViewport": true,
+      "InField": false,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "Checks": [],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T005621Z-5a904/native-encounter-outcome-45s4nlhq/victory.victory-engaged.png"
+  ],
+  "SaveAndLeave": false,
+  "FinalStage": "AwaitingYourReading",
+  "FinalTerminal": false,
+  "CompletedAtSequence": null,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 1,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 80032,
+    "Z": 256
+  },
+  "FinalHp": 44,
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

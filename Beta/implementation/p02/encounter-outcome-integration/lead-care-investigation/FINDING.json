@@ -1,0 +1,32 @@
+{
+  "nativeBeforeRevision": 0,
+  "finalRevision": 132,
+  "firstCommit": {
+    "sequence": 1,
+    "actor": "Wren",
+    "recipient": "Traveler",
+    "commandId": "a16fa790a2cb141ff0989868cbd2a3cf",
+    "commandSha256": "1d6c3679ca5c96ee599c7f0a6ddcc4d12a3c0b99696cdbdec8403c8107682f5e",
+    "intent": "world.action.restorative-use",
+    "sourceLotId": "9b1a39e2fea3fa0a4deead93338e00f1",
+    "sourceQuantity": 1,
+    "receiptRejection": 0
+  },
+  "careAgreementId": "a72f1a98ac3737cf0a51d1e3600d2e83",
+  "remedyDefinitionId": "e90956e74f2b8be9b38006c025bf1106",
+  "medicineItemId": "bf937ccc8defe9ef5c1d602575b2f725",
+  "medicineItemVersion": "3b7a5fdd562795e58d68a11007763b88cd25d40841c739c4fef9495161c097aa",
+  "restoredHp": 40,
+  "matchingOwnedMedicineUnitsAtGenesis": 1,
+  "matchingOwnedMedicineLotsAtDefeat": 0,
+  "craftedLotCountAtDefeat": 0,
+  "wrenRecoveryDelayAtDefeat": 0,
+  "sourceGenesis": "Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-fixtures-20261002T010600Z-4a104/fixtures/care/genesis.ofc",
+  "sourceGenesisSha256": "1f8d7dce1d721ea8bcc72db708833f256f9eda57f5e5f6f45d2383797fe158cf",
+  "finding": "Ordinary assistance consumes the one exact source medicine unit admitted for this care agreement before combat. At defeat no eligible source dose and no crafted lots remain. SelectDose cannot find a remedy. Wren is in range and has zero readiness debt.",
+  "limits": "This diagnoses the retained 010653 failure. Other earlier failures and native accepted-care reachability remain open. No authority or fixture rule changed. The host replay authenticated the copied root; this diagnostic reads canonical fields.",
+  "exploratoryCorrections": [
+    "Initial total-stock assertion expected1 but total Wren inventory is8 then7: other goods remain.",
+    "The first policy owned by Wren is a separate water storage; this diagnostic instead identifies the exact consumed lot and its custodian, then confirms Wren owns that storage."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "observedUtc": "2026-10-02T00:03:06.221463+00:00",
+  "status": "intermediate_delivery_comparison_implementer_still_live",
+  "changedFromFrozen": [],
+  "missingFromFrozen": [],
+  "addedSinceFrozen": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeDurabilityFixtureTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeDurabilityResultTests.cs",
+    "Beta/Runtime/tools/check_encounter_outcome_durability.py"
+  ],
+  "applicationCodeChanged": [],
+  "recheckRequiredAtTerminal": true
+}

@@ -1,0 +1,49 @@
+{
+  "status": "source_review_pending_terminal_delivery_and_reproduction",
+  "observedUtc": "2026-10-01T23:24:12.410135+00:00",
+  "sources": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/EncounterOutcome/LocalEncounterOutcomeView.cs",
+      "sha256": "e672113d9895f64a0f780c147cb0bfee3d77ef133368d768da84464c1fcf7595"
+    },
+    {
+      "path": "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeText.cs",
+      "sha256": "3e1eb2e1133f04a751ec1bd7a0e4d1f033b97bf219431f39e55d788dab034dc9"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterOutcomeState.cs",
+      "sha256": "ae9f13bece5232255e055eed8fb4ea9b55e487902f6b00d22945c6530b154c31"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterActionProcessor.cs",
+      "sha256": "c93f601d89dc50d810bb0c61be566289a1c51392f213dbd0221ed543d0ad3347"
+    }
+  ],
+  "findings": [
+    {
+      "id": "L1",
+      "priority": "P1 candidate",
+      "location": "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/EncounterOutcome/LocalEncounterOutcomeView.cs:99-124",
+      "finding": "The completed historical outcome view projects current HP/MaxHp of every archived positive-side combatant without proximity, floor or visibility checks. It persists throughout Exploration while the latest archive matches. This can disclose current remote condition after the observer walks away. Historical outcome facts must be distinguished from bounded current observations. Reproduce against actual completed profile35 state and a remote surviving participant; source inspection alone is not a demonstrated live leak."
+    },
+    {
+      "id": "L2",
+      "priority": "P2 candidate",
+      "location": "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeText.cs:57-60,75-78",
+      "finding": "No admitted care can reach you conflates out-of-range with depleted stock, incapacity, unavailable permission and deliberately accepting defeat while a capable supplied helper is nearby. The finalized policy forbids aftermath care irrespective of physical reach. Present the actual blocker/policy and prove a capable-nearby-helper deliberate decline plus save-and-leave/reopen."
+    },
+    {
+      "id": "L3",
+      "priority": "P1 candidate",
+      "location": "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterOutcomeState.cs:68-89",
+      "finding": "EncounterOutcomeState accepts any non-null RulesPin. No matching pin check was found in outcome complete-world validation or processor dispatch; WorldSnapshot.Next only preserves the supplied pin. The adjacent retained EncounterRetreatState explicitly rejects unsupported pins. Reproduce that altered outcome-law bytes can be structurally admitted/interpreted, then enforce the supported-law boundary without claiming structural admission authenticates history."
+    }
+  ],
+  "ownership": "Read-only lead review; implementation remains exclusively with the live Opus assignment. These notes are not passed-off independent critique or final acceptance.",
+  "coverageQuestions": [
+    "Current tests contain a NoSurvivors owner round-trip, but no actual committed all-positive-sides-incapacitated journey was found yet. Worker is still active; reassess final delivery.",
+    "The two-human test drives second-controller submissions through the authority and only tests the primary local session SetReady(false). It does not yet demonstrate another ready session respecting an acknowledged participant losing readiness. Clarify exact supported scope and required hold contract.",
+    "The retained WorldEncounterActionProcessor.Resolve selects one capable due attacker, damages one target, then cancels other decisions when at most one side stands. It does not appear to produce simultaneous all-combatant incapacity from the admitted positive-HP fresh calibrations. Assess the actual lawful reachability of the required no-survivor journey, distinguish an explicitly admitted fresh fixture from forged lived history, and do not present an owner codec round-trip as actual gameplay proof."
+  ],
+  "updatedUtc": "2026-10-01T23:33:30.858372+00:00"
+}

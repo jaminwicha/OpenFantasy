@@ -1,0 +1,28 @@
+{
+  "status": "recorded_dependency_comparison_before_corrections",
+  "builds": [
+    "build-20261001T232553Z-04cf3",
+    "build-20261001T235121Z-74283"
+  ],
+  "sourceChanges": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeDurabilityFixtureTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeDurabilityResultTests.cs",
+    "Beta/Runtime/tools/check_encounter_outcome_durability.py"
+  ],
+  "productionAssemblyHashesEqual": {
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": true,
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": true,
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": true,
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": true,
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": true,
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": true,
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": true,
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": true,
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": true
+  },
+  "differentAssemblyHashes": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll"
+  ],
+  "scope": "Existing production/native code and binaries are identical. The source delta consists of added durability tests/tool; the regression filter explicitly excludes the new fixture/result classes. Existing selected test and fixture sources are unchanged. Thus the earlier completed 545-case regression and completed existing native journeys remain applicable to this delivered production state; the interrupted redundant rerun is retained as incomplete, not counted as a pass. Reassess after integration changes.",
+  "notClaimed": "No cause for timing variation, production latency, new outcome native proof, complete assignment or phase acceptance."
+}

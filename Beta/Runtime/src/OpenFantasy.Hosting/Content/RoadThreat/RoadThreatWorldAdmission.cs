@@ -38,12 +38,21 @@ public static class RoadThreatWorldAdmission
     /// The world's road threat when it is a retreat-capable cargo world of these sources whose catalog holds the
     /// chief's scenario with the source attack, otherwise null. The identities are derived from the world itself.
     /// </summary>
-    public static RoadThreatBinding? Find(WorldSnapshot world, CargoCircuitSources cargo, RoadThreatSources threat)
+    public static RoadThreatBinding? Find(WorldSnapshot world, CargoCircuitSources cargo, RoadThreatSources threat) =>
+        FindInProfile(world, cargo, threat, WorldEncounterRetreatAdmission.ProfileVersion);
+
+    /// <summary>
+    /// The same derived-identity binding in one explicitly named interpretation: the threatened selection (profile 34)
+    /// or the outcome-completion selection built on it unchanged (profile 35). A root of any other profile is refused.
+    /// </summary>
+    internal static RoadThreatBinding? FindInProfile(WorldSnapshot world, CargoCircuitSources cargo, RoadThreatSources threat,
+        ushort profileVersion)
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(cargo);
         ArgumentNullException.ThrowIfNull(threat);
-        if (world.ProfileVersion != WorldEncounterRetreatAdmission.ProfileVersion || CargoWorldAdmission.Find(world, cargo) is null
+        if (profileVersion is not (WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion)
+            || world.ProfileVersion != profileVersion || CargoWorldAdmission.Find(world, cargo) is null
             || world.EncounterLifecycle is not { } lifecycle)
         {
             return null;

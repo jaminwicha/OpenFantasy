@@ -1,0 +1,25 @@
+{
+  "status": "design_review_questions_pending_implementation",
+  "utc": "2026-10-01T22:31:41.565429+00:00",
+  "designSha256": "5163721c0efe1c940bdb3eab8db3a6250548a32e6509d22850c6c50efbb71660",
+  "selectedDirection": "Profile35; human-controller acknowledgment separate from zero-duration system finalization; no live-save reinterpretation.",
+  "questions": [
+    {
+      "id": "Q1",
+      "question": "Two-human readiness must distinguish missing acknowledgment from readiness lost after acknowledging. Demonstrate the actual shared authority/session cutoff behavior; an unready session alone does not show whether another ready session can advance for it. Do not claim network/cohort support from a single-session hold."
+    },
+    {
+      "id": "Q2",
+      "question": "Accepting defeat can finalize while a capable supplied helper remains nearby if care was deliberately declined. Native copy must state the actual policy/choice; do not falsely say nobody can reach the patient. Confirm deliberately terminating preserves the save and exact reopen."
+    },
+    {
+      "id": "Q3",
+      "question": "Define the new owner historical/bounded continuation semantics. Finalization may retain a last witness, but repeated encounters must not become a lifetime cap or lose identity/receipt/history authentication. Exercise repeated episodes or the relevant real cut if a bounded append owner is introduced."
+    },
+    {
+      "id": "Q4",
+      "question": "When one human has acknowledged and another requests care, treatment resumes the unfinalized episode and clears old acknowledgments atomically. Old exact receipts must remain retrievable but cannot satisfy a later result. Test this contrast with actual resource and timing state."
+    }
+  ],
+  "scope": "Questions based on published design, not proven defects. Integration and independent critic resolve them against the delivered implementation."
+}

@@ -4,13 +4,17 @@ using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Core.Worlds;
 
-/// <summary>Claims, stages and releases supported encounters without elapsed-time or resource grants.</summary>
+/// <summary>
+/// Claims, stages, releases and (profile 35) records outcome readings and completes resolved encounters, without
+/// elapsed-time or resource grants.
+/// </summary>
 internal static class WorldEncounterLifecycleProcessor
 {
     internal static WorldStepDecision Decide(WorldSnapshot world, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied)
     {
         var lifecycle = world.EncounterLifecycle ?? throw new InvalidOperationException("Lifecycle ownership is required.");
         var pacing = world.Pacing!;
+        EncounterOutcomeState? outcome = world.EncounterOutcome;
         ulong revision = checked(world.Revision + 1);
         HashSet<EntityId> reserved = [];
         List<WorldCommittedIdentity> identities = [];
@@ -26,7 +30,15 @@ internal static class WorldEncounterLifecycleProcessor
             identities.Add(new(identity, kind));
         }
         Reserve(batch.CauseId, WorldCommittedIdentityKind.CommitCause);
-        if (batch.Actions.Count == 0)
+        if (batch.Actions.Count == 0 && outcome is not null && lifecycle.Phase == EncounterLifecyclePhase.Outcome)
+        {
+            // World-owned completion: no actor, initiator or survivor is required, and nothing but the phase, the
+            // timing binding and the completion record changes. Missing readers or pending care refuse the boundary.
+            outcome = outcome.Finalize(WorldEncounterOutcomes.Record(world, revision));
+            lifecycle = lifecycle.Release();
+            pacing = pacing.EndEncounter();
+        }
+        else if (batch.Actions.Count == 0)
         {
             lifecycle = lifecycle.AdvanceStaging();
         }
@@ -41,11 +53,19 @@ internal static class WorldEncounterLifecycleProcessor
                 {
                     EnterEncounterIntent enter => EvaluateEntry(world, command.ActorId, enter, OccupiedEpisode),
                     ReleaseEncounterIntent release => EvaluateRelease(world, command.ActorId, release),
+                    AcknowledgeEncounterOutcomeIntent read => WorldEncounterOutcomes.EvaluateAcknowledgment(world, command.ActorId, read),
                     _ => throw new InvalidOperationException("Unsupported lifecycle command.")
                 };
             }
             if (rejection != WorldActionRejection.None)
             {
+                lifecycle = lifecycle.RetainBoundary();
+            }
+            else if (command.Intent is AcknowledgeEncounterOutcomeIntent read)
+            {
+                // A reading is recorded at its own boundary; completion is a separate world boundary.
+                outcome = outcome!.Acknowledge(new EncounterOutcomeAcknowledgment(command.ActorId, command.CommandId,
+                    read.EncounterId, read.ExpectedActionHash, revision));
                 lifecycle = lifecycle.RetainBoundary();
             }
             else if (command.Intent is EnterEncounterIntent enter)
@@ -78,7 +98,8 @@ internal static class WorldEncounterLifecycleProcessor
         var candidate = world.WithState(world.Inventory, world.Space, world.Residents, world.Calendar,
             revision, world.AdvancingSteps, world.Dialogues, world.Gathering, world.Production,
             world.Progression, world.Quests, world.Construction, world.Reservoirs, world.Transport,
-            world.Excavation, world.ConstructionPhysical, world.LiquidCells, pacing, encounterLifecycle: lifecycle);
+            world.Excavation, world.ConstructionPhysical, world.LiquidCells, pacing, encounterLifecycle: lifecycle,
+            encounterOutcome: outcome);
         WorldCanonicalFrame candidateFrame = WorldCanonicalFrame.Capture(candidate);
         return new(candidate, receipts, identities, candidateFrame: candidateFrame);
     }
@@ -89,6 +110,8 @@ internal static class WorldEncounterLifecycleProcessor
             return WorldActionRejection.NotAuthorized;
         if (world.Space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision)
             return WorldActionRejection.RevisionConflict;
+        // Reading an outcome is a controller fact, not a bodily act: an incapacitated actor's controller may read.
+        if (command.Intent is AcknowledgeEncounterOutcomeIntent) return WorldActionRejection.None;
         return WorldActorAvailability.CanCooperate(world, command.ActorId)
             ? WorldActionRejection.None : WorldActionRejection.Unavailable;
     }

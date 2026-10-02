@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/EncounterOutcome/EncounterOutcomeOverlay.cs" id="1"]
+
+[node name="EncounterOutcomeOverlay" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1")
+
+[node name="Panel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+offset_left = 12.0
+offset_top = 84.0
+offset_right = 428.0
+offset_bottom = 204.0
+mouse_filter = 1
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="Column" type="VBoxContainer" parent="Panel/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="Panel/Margin/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+horizontal_alignment = 1
+
+[node name="Body" type="Label" parent="Panel/Margin/Column"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(396, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+autowrap_mode = 3
+
+[node name="SaveAndLeave" type="Button" parent="Panel/Margin/Column"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+tooltip_text = "Closes this world normally. Nothing is reset or erased; reopening shows the same state."
+text = "Save and leave"

@@ -1,0 +1,15 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.26]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.77]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.96]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.83]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Client.Cargo.NativeCargoFixtureTests.An_earned_quest_reward_funds_a_fresh_cargo_world_before_any_travel_or_trade [1 s]
+
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 3.3874 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/fixtures-20261002T033029Z-2270a/cargo.trx

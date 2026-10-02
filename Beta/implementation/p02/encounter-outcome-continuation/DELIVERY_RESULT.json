@@ -1,0 +1,26 @@
+{
+  "status": "partial_delivery_returned_not_accepted",
+  "observedUtc": "2026-10-02T00:14:41.679893+00:00",
+  "actualModel": "claude-opus-5-5",
+  "contextWindow": 1000000,
+  "effortRequested": "max",
+  "elapsedSeconds": 6356.575,
+  "clientCostEstimateUsd": 19.190382800000005,
+  "contextPreflight": "verified",
+  "contextPostflight": "verified",
+  "permissionDenials": [],
+  "resultSha256": "0719425a8d6a7242f9694f095fd8d91e7e79592a3da04f58913f12a96b21bf57",
+  "unimplementedRequiredModes": [
+    "outcome-fixtures",
+    "outcome-native",
+    "outcome-auth"
+  ],
+  "independentReview": "../encounter-outcome-review/REVIEW.md",
+  "lastRegression": {
+    "directory": "qualification/regression-20261002T000216Z-a028f",
+    "status": "interrupted_or_incomplete_no_terminal_report",
+    "providerClaim": "The worker reported a 960-second command timeout and possible surviving child. That transport attribution was not independently verified.",
+    "leadObservation": "After the provider process returned, scoped process inspection found neither its regression wrapper nor an OpenFantasy Runtime dotnet/testhost descendant. No terminal report exists. Partial output is not a pass. No process was killed by the lead."
+  },
+  "limits": "Implementation and critic are terminal. Do not poll81491 or76816. No automatic paid retry, full increment/phase acceptance or net credit savings claimed."
+}

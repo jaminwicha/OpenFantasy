@@ -1,0 +1,103 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "care",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Wren\u0027s admitted care was not offered.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.EncounterOutcomePlayProbe.DeclineCare(EntityId wolf) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 226\n   at OpenFantasy.Client.EncounterOutcomePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 115",
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 0.942,
+  "ProbeMilliseconds": 17704,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "entry",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "entry",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "entry",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "entry",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "entry",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "entry",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "wait",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait",
+      "Route": "keyboard",
+      "Key": "G"
+    }
+  ],
+  "WalkInputs": [],
+  "Strikes": 0,
+  "Waits": 5,
+  "Engagement": {
+    "EncounterCount": 1,
+    "Seconds": 1.1507027
+  },
+  "Outcome": null,
+  "Completed": null,
+  "Decline": null,
+  "Trade": null,
+  "Panels": [],
+  "Checks": [],
+  "Images": [],
+  "SaveAndLeave": false,
+  "FinalStage": "AwaitingYourReading",
+  "FinalTerminal": false,
+  "CompletedAtSequence": null,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 2,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalHp": 0,
+  "FinalBalance": 0,
+  "CarriedRations": 0
+}

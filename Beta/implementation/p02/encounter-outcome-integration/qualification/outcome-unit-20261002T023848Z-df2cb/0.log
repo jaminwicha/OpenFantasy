@@ -1,0 +1,23 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.34]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.80]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.96]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.07]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.RecordRefusesInconsistentResultStandingSideOrReaders [22 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.FreshOwnerPinsTheLawAndIsCanonical [14 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.AcknowledgmentIsOnlyAProfile35LifecycleCommandAndReleaseIsNotProfile35 [8 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.ForeignRulesPinIsRefusedByTheOwnerAndItsCodec [4 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.OwnerRefusesUnorderedDuplicateMixedOrFinalizedReadings [1 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.MalformedOwnerBytesAreRefused [< 1 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.AcknowledgmentCommandRoundTripsInItsOwnVersionOnly [3 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.ProfileThirtyFiveStepFrameCarriesReadingsAndCompletionBoundaries [3 ms]
+  Passed OpenFantasy.Core.Tests.Encounters.EncounterOutcome.EncounterOutcomeOwnerTests.ReadingsAndCompletionRecordRoundTripExactly [5 ms]
+
+Test Run Successful.
+Total tests: 9
+     Passed: 9
+ Total time: 2.4610 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-unit-20261002T023848Z-df2cb/outcome-core.trx

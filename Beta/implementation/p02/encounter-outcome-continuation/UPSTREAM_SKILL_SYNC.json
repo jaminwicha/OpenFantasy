@@ -1,0 +1,19 @@
+{
+  "directory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/evidence-family-skill-sync-uleczfx8",
+  "plan": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/evidence-family-skill-sync-uleczfx8/plan.json",
+  "status": "applied_and_verified",
+  "changedTargets": [
+    "/Users/alucinor/.codex/skills/cross-agent-delegation/references/task-packet.md",
+    "/Users/alucinor/.agents/skills/cross-agent-delegation/references/task-packet.md",
+    "/Users/alucinor/.claude/skills/cross-agent-delegation/references/task-packet.md",
+    "/Users/alucinor/.agents/skills/game-verification-loop/SKILL.md",
+    "/Users/alucinor/.codex/skills/game-verification-loop/SKILL.md",
+    "/Users/alucinor/.claude/skills/game-verification-loop/SKILL.md"
+  ],
+  "backupDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/evidence-family-skill-sync-uleczfx8/backups",
+  "verificationFile": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/evidence-family-skill-sync-uleczfx8/verification.json",
+  "validation": "Existing frontmatter preserved, six intended targets match maintained source; diff whitespace check passed. Prose-only change; no runtime tests required.",
+  "ecosystemRevision": "2e4b558643a9cd7f2c8ce81e5ee98816b929a32c",
+  "milestone": "codex/milestone-evidence-family-reuse-20261002",
+  "checkpoint": "codex/checkpoint-before-evidence-family-reuse-20261002T001913Z"
+}

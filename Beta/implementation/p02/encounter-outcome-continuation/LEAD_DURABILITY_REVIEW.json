@@ -1,0 +1,110 @@
+{
+  "status": "lead_review_of_late_durability_evidence",
+  "observedUtc": "2026-10-01T23:54:50.692025+00:00",
+  "report": "Beta/implementation/p02/encounter-outcome-continuation/qualification/outcome-durability-20261001T235129Z-ea663/durability.json",
+  "sha256": "021b4a4997e5ba32a26cb2c7a4565d94cd8e986265c4c76b6c29340ade36f151",
+  "actualProcessKills": [
+    {
+      "case": "read-player-before",
+      "boundary": "before",
+      "pid": 53510,
+      "exitCode": -9,
+      "signalSeconds": 0.502,
+      "killSeconds": 0.005
+    },
+    {
+      "case": "read-player-after",
+      "boundary": "after",
+      "pid": 53532,
+      "exitCode": -9,
+      "signalSeconds": 0.503,
+      "killSeconds": 0.004
+    },
+    {
+      "case": "read-human-before",
+      "boundary": "before",
+      "pid": 53553,
+      "exitCode": -9,
+      "signalSeconds": 0.547,
+      "killSeconds": 0.005
+    },
+    {
+      "case": "read-human-after",
+      "boundary": "after",
+      "pid": 53578,
+      "exitCode": -9,
+      "signalSeconds": 0.502,
+      "killSeconds": 0.005
+    },
+    {
+      "case": "complete-before",
+      "boundary": "before",
+      "pid": 53605,
+      "exitCode": -9,
+      "signalSeconds": 0.522,
+      "killSeconds": 0.005
+    },
+    {
+      "case": "complete-after",
+      "boundary": "after",
+      "pid": 53627,
+      "exitCode": -9,
+      "signalSeconds": 0.505,
+      "killSeconds": 0.005
+    }
+  ],
+  "actualTrx": [
+    {
+      "file": "Beta/implementation/p02/encounter-outcome-continuation/qualification/outcome-durability-20261001T235129Z-ea663/outcome-durability-auth.trx",
+      "counters": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "sha256": "aa83c377334e0115dab1d0d5f9a0f2c08ee074da4373294849bab3cbc01a983a"
+    },
+    {
+      "file": "Beta/implementation/p02/encounter-outcome-continuation/qualification/outcome-durability-20261001T235129Z-ea663/outcome-durability-fixtures.trx",
+      "counters": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "sha256": "b2b773929de2f1eeba7b76a497e7d95fae8b319528478cc45e3c48ee374b9f84"
+    }
+  ],
+  "sourceFiles": {
+    "Beta/Runtime/tools/check_encounter_outcome_durability.py": "c501c9f9a078c33c459b8ce818856da07035814c0aa49deb1996eaa0f3d3aae1",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeDurabilityFixtureTests.cs": "64a7138a0a8ebaaa72516cdbf17ef916fb15ebf9a6770b385ecfd8c6b635ad37",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeDurabilityResultTests.cs": "17c999cfcd92190680d478eae8053e726fcd317a814598445126f11dd7a29289"
+  },
+  "sourceReview": "Fixtures select three actual committed publications from an ordinary two-human encounter journal, replay into a fresh normal authority and export closed before/after saves. The checker invokes the retained actual Host transaction-boundary seam and SIGKILLs its own live child at before/after for each. Result tests compare recovered/retried journals against the unbroken originals, reject duplicate steps and retrieve the original reading receipt. This is transaction-boundary interruption, not power loss or SQLite mid-page interruption.",
+  "followUp": "The new checker records successful signal/kill wait durations but does not explicitly assert both against their limits afterward. All six observed rows are within those limits. Add explicit success-path checks before accepting the maintained harness; preserve this result.",
+  "scope": "Late addition after the independent critic frozen source; lead must review this delta and final dependencies separately. No native outcome, no-survivor, multi-session/network, migration, full phase or production claim."
+}

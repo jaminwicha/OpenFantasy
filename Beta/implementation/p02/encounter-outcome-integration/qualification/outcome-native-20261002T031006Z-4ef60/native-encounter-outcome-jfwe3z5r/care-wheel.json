@@ -1,0 +1,850 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "care-wheel",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 0.91,
+  "ProbeMilliseconds": 1932,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "wait",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wheel-decline",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "wheel-decline",
+      "Route": "keyboard",
+      "Key": "Right"
+    },
+    {
+      "Stage": "wheel-decline",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [],
+  "Strikes": 0,
+  "Waits": 1,
+  "Engagement": {
+    "EncounterCount": 1,
+    "HelperDistance": 256,
+    "Seconds": 0.913266
+  },
+  "Outcome": {
+    "Title": "Defeated",
+    "Body": "Bramble Wolf \u00B7 standing side \u00B7 HP 62/62\nYou \u00B7 defeated side \u00B7 incapacitated (0 HP)\nYou are incapacitated (0 HP) and cannot move or act. Accepting the defeat lets the world end this fight once every required player has read it; you stay incapacitated afterwards. Your save is kept. Wren can help now: ask for care first. Accepting declines that care; the world completes the encounter at its next ready boundary once every required player has read it and no care is pending.",
+    "Status": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren can help (care)\nBramble Wolf \u00B7 HP 62/62",
+    "StatusTooltip": "You are incapacitated (0 HP) and cannot move or act. Accepting the defeat lets the world end this fight once every required player has read it; you stay incapacitated afterwards. Your save is kept. Wren can help now: ask for care first. Accepting declines that care; the world completes the encounter at its next ready boundary once every required player has read it and no care is pending.\nRemaining recovery: 0 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+    "Result": "Victory",
+    "Standing": "OpponentStands",
+    "Hp": 0,
+    "Seconds": 1.6384643
+  },
+  "Completed": {
+    "CompletedAtSequence": 8,
+    "Stage": "Completed",
+    "EncounterCount": 1,
+    "Hp": 0,
+    "Body": "Defeated \u00B7 You are incapacitated (0 HP): no movement or action is possible \u00B7 This encounter is complete: aftermath care applies only before its outcome is accepted, and ordinary care cannot treat an incapacitated (0 HP) character \u00B7 Save and leave keeps this world\nBramble Wolf \u00B7 standing side \u00B7 HP 62/62\nYou \u00B7 defeated side \u00B7 incapacitated (0 HP)",
+    "Status": "Defeated \u00B7 Incapacitated (0 HP) \u00B7 Encounter complete",
+    "Seconds": 1.8739682
+  },
+  "Decline": {
+    "Helper": "Wren",
+    "Route": "wheel-keyboard",
+    "Sector": "Accept defeat",
+    "Button": "Accept defeat",
+    "Terminal": true,
+    "Seconds": 1.8609466
+  },
+  "Trade": null,
+  "Panels": [
+    {
+      "Label": "care-wheel-outcome",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 207
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 157
+      },
+      "Lines": 8,
+      "VisibleLines": 8,
+      "Leave": null,
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    },
+    {
+      "Label": "care-wheel-declined",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 204
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 282
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 193,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 193,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 117
+      },
+      "Lines": 6,
+      "VisibleLines": 6,
+      "Leave": {
+        "X": 22,
+        "Y": 249,
+        "Width": 396,
+        "Height": 31
+      },
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "HudBounds": [
+    {
+      "Label": "care-wheel-outcome",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 337,
+        "Width": 924,
+        "Height": 185
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 0/60 \u00B7 MP 10/10",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 162,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:00 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 347,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Your wait was queued.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 377,
+            "Width": 896,
+            "Height": 49
+          },
+          "Text": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren can help (care)\nBramble Wolf \u00B7 HP 62/62",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 580,
+            "Height": 55
+          },
+          "Text": "Defeated\nE / A: care \u00B7 V: choices",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 185,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 616,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ReleaseEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 720,
+            "Y": 457,
+            "Width": 128,
+            "Height": 55
+          },
+          "Text": "Accept defeat",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "AcknowledgeCare",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    },
+    {
+      "Label": "care-wheel-declined",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 358,
+        "Width": 924,
+        "Height": 164
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 282
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 193,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 193,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 0/60 \u00B7 MP 10/10",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 162,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:00 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 368,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Outcome accepted; completion waits for every required reader and no pending care.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 398,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Defeated \u00B7 Incapacitated (0 HP) \u00B7 Encounter complete",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 425,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 454,
+            "Width": 190,
+            "Height": 55
+          },
+          "Text": "Incapacitated\nEsc: pause",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 119,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 226,
+            "Y": 452,
+            "Width": 100,
+            "Height": 60
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Talk",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 330,
+            "Y": 452,
+            "Width": 76,
+            "Height": 60
+          },
+          "Text": "Talk  [E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Give",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 410,
+            "Y": 452,
+            "Width": 180,
+            "Height": 60
+          },
+          "Text": "Ask about tasks  [G]\nNot yet known",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Gather",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 594,
+            "Y": 452,
+            "Width": 121,
+            "Height": 60
+          },
+          "Text": "Chop oak  [F]\n400 effort",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Craft",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 719,
+            "Y": 452,
+            "Width": 157,
+            "Height": 60
+          },
+          "Text": "Pack rations  [C]\n1 wood, 2 berries",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "UseRestorative",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 880,
+            "Y": 452,
+            "Width": 48,
+            "Height": 60
+          },
+          "Text": "",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    }
+  ],
+  "Selections": [
+    {
+      "Ready": {
+        "Stage": "wait",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 883,
+        "MillisecondsWithinDay": 32400000,
+        "ActorRevision": 0,
+        "Timing": 1
+      },
+      "CommandId": "09958758966d574787912096f1ec0b6c",
+      "SubmittedFrame": 883,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A0000001009958758966D574787912096F1EC0B6C000000107E4DAC7436838C562A105083B359BBAE000000102FB54FA25BF1C8F45D3244415C480A8A00000010C9622C927741434F5217A2765AAD3F9C000000102A091821DC2415A12F6CF166ECB8CC8600000010281AE5E4B8B4CB21DB565FA654FD9419000000080000000000000000000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010E3EDEC247A1EC556E25F8213465BFBFF000000080000000000000001",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wheel-decline",
+        "Route": "wheel-keyboard",
+        "Action": "ReleaseEncounter",
+        "Frame": 1338,
+        "MillisecondsWithinDay": 32400000,
+        "ActorRevision": 0,
+        "Timing": 3
+      },
+      "CommandId": "89d549cc0cf75ba98f5d9ae6b16ed7c9",
+      "SubmittedFrame": 1339,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000140000001089D549CC0CF75BA98F5D9AE6B16ED7C9000000107E4DAC7436838C562A105083B359BBAE000000102FB54FA25BF1C8F45D3244415C480A8A00000010C9622C927741434F5217A2765AAD3F9C000000102A091821DC2415A12F6CF166ECB8CC8600000010281AE5E4B8B4CB21DB565FA654FD9419000000080000000000000000000000744F464300000000010000000400000020776F726C642E616374696F6E2E61636B6E6F776C656467652D6F7574636F6D6500000008000000000000000100000010E3EDEC247A1EC556E25F8213465BFBFF000000200D698A5F22AE9690BAE2208851533D19756757DA9AC6EE12BD68CBA143B8351F",
+      "SameOfferObject": false
+    }
+  ],
+  "Submissions": [
+    {
+      "Stage": "wait",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "7e4dac7436838c562a105083b359bbae",
+        "SessionId": "2fb54fa25bf1c8f45d3244415c480a8a",
+        "ActorId": "c9622c927741434f5217a2765aad3f9c",
+        "WorldId": "2a091821dc2415a12f6cf166ecb8cc86",
+        "BranchId": "281ae5e4b8b4cb21db565fa654fd9419",
+        "ExpectedActorRevision": 0
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = e3edec247a1ec556e25f8213465bfbff, ExpectedTimingRevision = 1 }",
+      "OfferCommandId": null,
+      "CommandId": "09958758966d574787912096f1ec0b6c",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A0000001009958758966D574787912096F1EC0B6C000000107E4DAC7436838C562A105083B359BBAE000000102FB54FA25BF1C8F45D3244415C480A8A00000010C9622C927741434F5217A2765AAD3F9C000000102A091821DC2415A12F6CF166ECB8CC8600000010281AE5E4B8B4CB21DB565FA654FD9419000000080000000000000000000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010E3EDEC247A1EC556E25F8213465BFBFF000000080000000000000001",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001009958758966D574787912096F1EC0B6C000000107E4DAC7436838C562A105083B359BBAE000000102A091821DC2415A12F6CF166ECB8CC8600000010281AE5E4B8B4CB21DB565FA654FD941900000020CA9B5BAEA0C961AD055A3EF7ABA3ABC053457277C528A3EEA5F7553C4CFD2C16000000080000000000000005000000080000000000000001000000080000000000000000",
+        "CommandId": "09958758966d574787912096f1ec0b6c",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 5,
+        "ResultId": "6ed1a05a58a9e0fc86d600340c9371a1"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wheel-decline",
+      "Action": "ReleaseEncounter",
+      "Label": "Accept defeat",
+      "TargetName": "Defeated",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "7e4dac7436838c562a105083b359bbae",
+        "SessionId": "2fb54fa25bf1c8f45d3244415c480a8a",
+        "ActorId": "c9622c927741434f5217a2765aad3f9c",
+        "WorldId": "2a091821dc2415a12f6cf166ecb8cc86",
+        "BranchId": "281ae5e4b8b4cb21db565fa654fd9419",
+        "ExpectedActorRevision": 0
+      },
+      "IntentType": "AcknowledgeEncounterOutcomeIntent",
+      "IntentText": "AcknowledgeEncounterOutcomeIntent { EncounterId = e3edec247a1ec556e25f8213465bfbff, ExpectedActionHash = 0d698a5f22ae9690bae2208851533d19756757da9ac6ee12bd68cba143b8351f }",
+      "OfferCommandId": null,
+      "CommandId": "89d549cc0cf75ba98f5d9ae6b16ed7c9",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000140000001089D549CC0CF75BA98F5D9AE6B16ED7C9000000107E4DAC7436838C562A105083B359BBAE000000102FB54FA25BF1C8F45D3244415C480A8A00000010C9622C927741434F5217A2765AAD3F9C000000102A091821DC2415A12F6CF166ECB8CC8600000010281AE5E4B8B4CB21DB565FA654FD9419000000080000000000000000000000744F464300000000010000000400000020776F726C642E616374696F6E2E61636B6E6F776C656467652D6F7574636F6D6500000008000000000000000100000010E3EDEC247A1EC556E25F8213465BFBFF000000200D698A5F22AE9690BAE2208851533D19756757DA9AC6EE12BD68CBA143B8351F",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001089D549CC0CF75BA98F5D9AE6B16ED7C9000000107E4DAC7436838C562A105083B359BBAE000000102A091821DC2415A12F6CF166ECB8CC8600000010281AE5E4B8B4CB21DB565FA654FD941900000020D6015A0052C7E4573F8352A3854CC60ED2D53F92F3B9CF5701E0241F1FB594DE000000080000000000000007000000080000000000000001000000080000000000000000",
+        "CommandId": "89d549cc0cf75ba98f5d9ae6b16ed7c9",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 7,
+        "ResultId": "38167b4b6eb458e61ce9eabdfd8177f2"
+      },
+      "Answer": "receipt"
+    }
+  ],
+  "SubmissionLimit": 128,
+  "SubmissionOverflow": false,
+  "Checks": [
+    "The care-wheel-outcome panel stated the result and reason while the world held, clear of the HUD and combatants.",
+    "Wren\u0027s admitted care was offered; the Actions wheel\u0027s Accept defeat sector declined it and the world completed the encounter.",
+    "The terminal panel explains incapacity and the completion policy and offers Save and leave."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T031006Z-4ef60/native-encounter-outcome-jfwe3z5r/care-wheel.care-wheel-outcome.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T031006Z-4ef60/native-encounter-outcome-jfwe3z5r/care-wheel.wheel.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T031006Z-4ef60/native-encounter-outcome-jfwe3z5r/care-wheel.wheel-accept.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T031006Z-4ef60/native-encounter-outcome-jfwe3z5r/care-wheel.care-wheel-declined.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T031006Z-4ef60/native-encounter-outcome-jfwe3z5r/care-wheel.final.png"
+  ],
+  "SaveAndLeave": false,
+  "FinalStage": "Completed",
+  "FinalTerminal": true,
+  "CompletedAtSequence": 8,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 2,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalHp": 0,
+  "FinalBalance": 0,
+  "CarriedRations": 0
+}

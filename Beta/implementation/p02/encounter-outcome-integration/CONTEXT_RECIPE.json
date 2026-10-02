@@ -1,0 +1,390 @@
+{
+  "schema_version": 1,
+  "roots": {
+    "project": "/Users/alucinor/Workspace/Projects/OpenFantasy",
+    "ecosystem": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem",
+    "codex_skills": "/Users/alucinor/.codex/skills",
+    "shared_skills": "/Users/alucinor/.agents/skills",
+    "claude": "/Users/alucinor/.claude",
+    "codex": "/Users/alucinor/.codex",
+    "owner_home": "/Users/alucinor"
+  },
+  "inputs": [
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "AGENTS.md"
+    },
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "CLAUDE.md"
+    },
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "Beta/AGENTS.md"
+    },
+    {
+      "role": "handoff",
+      "root": "project",
+      "path": "Beta/implementation/README.md"
+    },
+    {
+      "role": "steering",
+      "root": "project",
+      "path": "Beta/implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/ui-management/COVERAGE.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/ARCHIVE_CONTINUITY_AUDIT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/COVERAGE.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/CRITIC_REVIEW.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/CROSS_SYSTEM_SYNERGIES.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/DECISIONS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/ECOLOGY_AND_FLUIDS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/GDD.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/GENERATION_VALIDATION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/GEOLOGICAL_WORLD_DESIGN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/IMPLEMENTATION_HANDOFF.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/INTEGRATION_CRITIC.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/LANGUAGE_AND_AFTERLIFE.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/LOCAL_REUSE_DECISIONS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/PAIN_POINTS_AND_RESOLUTIONS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/PRESENTATION_CONTRACTS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/README.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/REQUIREMENTS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/SPEC_VALIDATION.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/VALIDATION.md"
+    },
+    {
+      "role": "instructions",
+      "root": "owner_home",
+      "path": "AGENTS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/lead-integration/INTEGRATION_REVIEW.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/road-threat-corrections/lead-integration/DEPENDENCY_REVIEW.json"
+    },
+    {
+      "role": "skill",
+      "root": "codex_skills",
+      "path": "godot-csharp-standards/SKILL.md"
+    },
+    {
+      "role": "skill",
+      "root": "codex_skills",
+      "path": "game-technical-design/SKILL.md"
+    },
+    {
+      "role": "skill",
+      "root": "codex_skills",
+      "path": "game-verification-loop/SKILL.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-continuation/ASSIGNMENT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-continuation/RESULT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-continuation/DESIGN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-continuation/INTEGRATION_DECISIONS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-continuation/LEAD_DURABILITY_REVIEW.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-continuation/DELIVERY_DEPENDENCY_COMPARISON.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-continuation/UPSTREAM_SKILL_SYNC.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-review/REVIEW.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/ASSIGNMENT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/CHECKPOINT.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/PRESERVATION.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/PROTECTED_APPLICATION.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/PROTECTED_REGRESSIONS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/CLIENT_BASELINE_PATHS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/Hosting.Tests.csproj.original"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/RETAINED_NATIVE.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/run_checks.py"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/INPUT_SNAPSHOTS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/INHERITED_EVIDENCE.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/README.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/README.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/encounter-outcome.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/world-composition.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/world-pacing.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/encounter-lifecycle.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/aftermath-care.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/encounter-retreat.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/native-encounters.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/road-threat.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/coordinated-world-continuation.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/inputs/docs/architecture/world-resource-history.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/RESULT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/DESIGN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/LEAD_REVIEW_NOTES.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/DELIVERY_REVIEW.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/DELIVERY_CHECKPOINT.json"
+    }
+  ],
+  "skill_sync": {
+    "tool": {
+      "root": "ecosystem",
+      "path": "tools/sync_portable_skills.py"
+    },
+    "manifests": [
+      {
+        "root": "ecosystem",
+        "path": "manifests/portable-skill-bundles.json"
+      },
+      {
+        "root": "ecosystem",
+        "path": "manifests/delegation-skill-alignment.json"
+      }
+    ]
+  }
+}

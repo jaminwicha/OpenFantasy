@@ -1,0 +1,24 @@
+Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2
+
+Outcome probe care [opening] 0.004s: Waiting for the world to open.
+Outcome probe care [opening] 0.994s: World opened.
+Outcome probe care [resume] 0.997s: Stage entered.
+Outcome probe care [wait] 1.002s: Stage entered.
+Outcome probe care [wait] 1.004s: Injecting Wait.
+Outcome probe care [wait] 1.061s: Applied Wait.
+Outcome probe care [read] 1.134s: Stage entered.
+Outcome probe care [read] 1.746s: Waiting for draw: care-outcome; drawable=True.
+Outcome probe care [read] 1.794s: Captured care-outcome.
+Outcome probe care [decline] 1.808s: Stage entered.
+Outcome probe care [decline] 1.808s: Injecting ReleaseEncounter.
+Outcome probe care [decline] 2.028s: Waiting for draw: care-hover; drawable=True.
+Outcome probe care [decline] 2.058s: Captured care-hover.
+Outcome probe care [decline] 2.111s: Applied ReleaseEncounter.
+Outcome probe care [decline] 2.111s: Waiting for terminal completion.
+Outcome probe care [decline] 2.161s: Terminal completion observed.
+Outcome probe care [decline] 2.175s: Waiting for draw: care-declined; drawable=True.
+Outcome probe care [decline] 2.204s: Captured care-declined.
+Outcome probe care [pause] 2.206s: Stage entered.
+Outcome probe care [pause] 2.207s: Waiting for draw: final; drawable=True.
+Outcome probe care [pause] 2.235s: Captured final.

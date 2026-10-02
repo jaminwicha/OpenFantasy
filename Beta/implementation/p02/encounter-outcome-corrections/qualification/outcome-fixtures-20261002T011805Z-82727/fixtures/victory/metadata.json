@@ -1,0 +1,29 @@
+{
+  "Kind": "native-encounter-outcome-fixture-v1",
+  "Route": "victory",
+  "ProfileVersion": 35,
+  "SeedText": "native-encounter-outcome-victory",
+  "PlayerName": "Traveler",
+  "Calibration": {
+    "WoundedHp": {
+      "898e73d806b443ce220af60a96831737": 1
+    },
+    "HumanControlled": []
+  },
+  "CalibrationText": "Declared fresh calibration: the Bandit Chief starts at 1 HP (CreateWoundedChief); qualification only, not balance.",
+  "Setup": "Wren\u0027s quest reward earned, one ration bought from Marla in person and carried along the authored lane to road cell (346,318) at ordinary session cutoffs, outside the chief\u0027s reach; paused in exploration.",
+  "Boundary": "Fixture preparation ends here; the native journey owns the encounter, its resolution, the outcome reading, the world\u0027s completion, care or its decline, any continuation and leaving.",
+  "WorldId": "a6218d4ec45dbc2fef54e9ba0da6554a",
+  "BranchId": "858f1c9129202ee6e12b46b7258313bf",
+  "GenesisHash": "41d2acf80cd356a87c6a4068177cb1ea9fe16fe7a3c2ab99d25627377ffbb508",
+  "BeforeHash": "9c721c85dd08205ace2d0a3d61b434acf1b408d6483b2aa565d075c7a60c001b",
+  "BeforeRevision": 2470,
+  "PlayerActorId": "be37d46829e3bba09ef0c689945477f0",
+  "OpponentActorId": "898e73d806b443ce220af60a96831737",
+  "WrenActorId": "a0e589e808425c01580ac31c673bded5",
+  "CarriedLotId": "3bc9e1ead037a42c3cfce614ec0880e2",
+  "RewardCurrency": 200,
+  "PaidCurrency": 20,
+  "PlayerBalance": 180,
+  "Limits": "Fresh profile-35 cargo world only: no retained-save migration, multiplayer, network, physical device, balance or human acceptance claim."
+}

@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-10-01. This is the current-state index; evidence and failure dispositions remain in
+Updated: 2026-10-02 UTC. This is the current-state index; evidence and failure dispositions remain in
 linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
 
 ## Start here
@@ -45,6 +45,44 @@ All 123 reference links resolve; the bounded factual review corrections are reta
 Owner steering, 2026-10-01: **delegate to Opus 5.5**. Use exact `claude-opus-5-5[1m]`, requested
 Max, finite limits and the maintained direct synchronization adapter; Astra retains integration.
 
+The [encounter-outcome increment](p02/encounter-outcome-integration/INTEGRATION_REVIEW.md) is qualified
+as the bounded milestone `codex/milestone-encounter-outcomes-20261002`. Fresh profile35 separates
+human reading from world completion; pending care holds completion, treatment resumes the same
+unfinalized episode, and injuries/resources/history persist. E/A preserves the care choice; HUD and
+wheel acceptance remain separate. The readable card/HUD/wheel and exact pre-input selection → command
+→ receipt → journal chain are qualified, including altered nested market terms and stale refusal.
+
+[Final checks](p02/encounter-outcome-integration/FINAL_CHECKS.json) record2348 distinct managed cases
+(1773 Core,575 Hosting), with fresh34 outcome and165 client passes and explicit inheritance by actual
+dependencies. Thirteen fresh native processes cover outcome, road and retreat routes/reopening; all
+three journal authentication families pass. Unchanged authority evidence retains six actual process
+kills. All597 older tests,23 frozen specs, protected artifacts and unrelated19-file predecessor staging
+remain intact. Timeless architecture/README are updated; affected57 document links resolve.
+
+Opus implementation, independent critique and corrections are terminal. Latest delivery82047 returned
+verified Opus5.5/1M/requested-Max and verified pre/post context, elapsed3234.422seconds, client estimate
+$22.827642 (not billing or savings). Two out-of-allowlist inspection commands were denied. Astra completed
+unfinished docs/verification and repaired observation cost, report timing and visible wheel clipping.
+The [delivery record](p02/encounter-outcome-integration/DELIVERY_RESULT.json) preserves friction honestly;
+do not poll/restart sessions81491/76816/69307/82047 or completed verification handles. No paid retry or
+model fallback occurred. Recoverable WIP refs remain in the packets; the accepted marker is distinct.
+
+Earlier silent care/care-wheel330-second timeouts remain unexplained. The sampled care-wheel process
+had an active main loop. Bounded post-draw observation and stage traces improve diagnosis; subsequent
+passes do not establish a cause or production latency/reliability. All failures remain retained.
+
+Next meaningful dependency: [full native care reachability and acceptance](p02/encounter-outcome-integration/lead-care-investigation/NEXT_NATIVE_CARE_PROOF.md).
+The prepared care fixture proves native resolution/decline/completion, not native approach/entry or
+accepted treatment. The earlier010653 failure was separately diagnosed: ordinary precombat assistance
+consumed the sole matching dose. A normal full-health starting world is the proposed next proof;
+no rule suppression, resource grant or forced damage is authorized to fake reachability. Actual two-session
+readiness, no-survivor resolver reachability, lived profile34 migration and full phase/production gates
+remain open. The managed two-human and repeated-episode journeys do not substitute for those proofs.
+
+The [upstream dependency-family lesson](p02/encounter-outcome-continuation/UPSTREAM_SKILL_SYNC.json)
+remains synchronized at ecosystem2e4b558. Preserve requirements and compare real dependencies rather
+than repeating unrelated suites. The full custody/world-composition and campaign scope is unchanged.
+
 The [integrated road threat](p02/road-threat-corrections/lead-integration/INTEGRATION_REVIEW.md)
 is accepted as a bounded milestone, `codex/milestone-road-threat-20261001`: a source-bound camp chief
 initiates combat on the cargo road; the player gets a visible pre-contact warning, can inspect/cancel/
@@ -68,7 +106,7 @@ The next combat dependency is [terminal encounter continuation](p02/encounter-ou
 The existing initiator-only release law blocks both terminal results; tests now demonstrate the opposite
 winner with an explicitly admitted wounded-chief calibration, not a production-balance claim. Before
 shipping combat, separate completion, reading/acknowledgment and genuinely available rescue/care.
-That rule change is not implemented or accepted by this milestone. Pursuit, cheap geometric bypass,
+The road milestone itself predates that rule; the separate outcome milestone above supplies its qualified profile35 binding. Pursuit, cheap geometric bypass,
 rewards/respawn, escorts, migration, physical controls, human UI/art, multiplayer and full P02/production
 remain open. The world-composition and campaign requirements are unchanged.
 

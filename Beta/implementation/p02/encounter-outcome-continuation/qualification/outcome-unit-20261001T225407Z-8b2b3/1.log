@@ -1,0 +1,39 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.89]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.98]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.40]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld [5 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission [3 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded [7 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues [1 m 35 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening [1 m 40 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem [2 s]
+[xUnit.net 00:03:22.50]     OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [FAIL]
+[xUnit.net 00:03:22.50]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:03:22.50]       Expected: None
+[xUnit.net 00:03:22.50]       Actual:   RevisionConflict
+[xUnit.net 00:03:22.50]       Stack Trace:
+[xUnit.net 00:03:22.51]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(312,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:03:22.51]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(345,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:03:22.51]         --- End of stack trace from previous location ---
+[xUnit.net 00:03:22.52]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Failed OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [1 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: None
+Actual:   RevisionConflict
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 312
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 345
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 8
+     Passed: 7
+     Failed: 1
+ Total time: 3.3927 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-continuation/qualification/outcome-unit-20261001T225407Z-8b2b3/outcome-host.trx

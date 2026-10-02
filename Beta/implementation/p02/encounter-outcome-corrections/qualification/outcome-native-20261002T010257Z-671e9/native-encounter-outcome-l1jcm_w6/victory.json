@@ -1,0 +1,602 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "victory",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 3.427,
+  "ProbeMilliseconds": 78698,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "continue",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "PauseToRead",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CloseMarket",
+      "To": "MarketStall"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "RowReached": 2,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 within reach",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "Selected": 2,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 within reach"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketStall",
+      "To": "BuyMode"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLot"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketLot",
+      "RowReached": 1,
+      "Text": "Lot 1: 1 ration",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketLot",
+      "Selected": 1,
+      "Text": "Lot 1: 1 ration"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLot",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "ShowLot"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "ShowLot",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "to-gearford",
+      "Hold": "Up"
+    }
+  ],
+  "Strikes": 1,
+  "Waits": 0,
+  "Engagement": {
+    "EncounterCount": 1,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 5.8502426
+  },
+  "Outcome": {
+    "Title": "Victory",
+    "Body": "Victory \u00B7 World waiting while you read the result\nBandit Chief \u00B7 defeated side \u00B7 incapacitated (0 HP)\nYou \u00B7 standing side \u00B7 HP 44/78\nYour side is still standing. Continuing returns you to exploration once every player in the fight has read it. Injuries and recovery remain; nothing is rewarded or looted.",
+    "Status": "Victory \u00B7 World waiting while you read the result\nBandit Chief \u00B7 incapacitated",
+    "Result": "Victory",
+    "Standing": "YourSideStands",
+    "Hp": 44,
+    "Seconds": 6.7435083
+  },
+  "Completed": {
+    "CompletedAtSequence": 2526,
+    "Stage": "Completed",
+    "EncounterCount": 1,
+    "Hp": 44,
+    "Seconds": 6.8812425
+  },
+  "Decline": null,
+  "Trade": {
+    "QuoteId": "598e3998b8ae866a6d9094347b9325e2",
+    "LotId": "eb37d92fb2d69177d93829c497900721",
+    "Total": 38,
+    "BalanceBefore": 180,
+    "BalanceAfter": 218,
+    "RationsBefore": 1,
+    "RationsAfter": 0
+  },
+  "Panels": [
+    {
+      "Label": "victory-outcome",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 167
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 200.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 164.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 117
+      },
+      "Lines": 6,
+      "VisibleLines": 6,
+      "Leave": null,
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "Checks": [
+    "The victory-outcome panel stated the result and reason while the world held, clear of the HUD and combatants.",
+    "Continue (E) read the victory; the world completed the encounter and returned the player to exploration.",
+    "After the completed victory, held keys walked the detour to Gearford and the carried ration was sold at Kegga."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T010257Z-671e9/native-encounter-outcome-l1jcm_w6/victory.victory-engaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T010257Z-671e9/native-encounter-outcome-l1jcm_w6/victory.victory-outcome.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T010257Z-671e9/native-encounter-outcome-l1jcm_w6/victory.victory-completed.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T010257Z-671e9/native-encounter-outcome-l1jcm_w6/victory.gearford.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T010257Z-671e9/native-encounter-outcome-l1jcm_w6/victory.sold.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T010257Z-671e9/native-encounter-outcome-l1jcm_w6/victory.final.png"
+  ],
+  "SaveAndLeave": false,
+  "FinalStage": "Completed",
+  "FinalTerminal": false,
+  "CompletedAtSequence": 2526,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 1,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 36224,
+    "Z": 256
+  },
+  "FinalHp": 44,
+  "FinalBalance": 218,
+  "CarriedRations": 0
+}

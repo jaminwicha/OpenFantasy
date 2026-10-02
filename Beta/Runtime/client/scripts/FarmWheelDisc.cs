@@ -127,21 +127,7 @@ internal sealed partial class FarmWheelDisc : Control
             DrawPolyline([.. polygon, polygon[0]], selected ? new Color(1, 0.91f, 0.58f) : new Color(0.51f, 0.56f, 0.51f), selected ? 3 : 1, true);
             Vector2 at = center + Vector2.FromAngle(angle) * 116;
             DrawTextureRect(_icons[slot.Action], new Rect2(at - new Vector2(21, 31), new Vector2(42, 42)), false);
-            string label = slot.Action switch
-            {
-                FarmSemanticAction.Speak => "Talk", FarmSemanticAction.Gather => "Gather",
-                FarmSemanticAction.Craft => "Craft", FarmSemanticAction.Give => "Give",
-                FarmSemanticAction.Excavate => "Mine", FarmSemanticAction.Traverse => "Climb",
-                FarmSemanticAction.EnterEncounter => "Engage", FarmSemanticAction.Strike => "Strike",
-                FarmSemanticAction.Wait => "Wait", FarmSemanticAction.ReleaseEncounter => "Continue",
-                FarmSemanticAction.AcknowledgeCare => "Care", FarmSemanticAction.UseRestorative => "Potion",
-                FarmSemanticAction.RevokeCarePermission => "Withdraw",
-                FarmSemanticAction.ProposeMaterial => "Offer", FarmSemanticAction.AcceptMaterial => "Accept",
-                FarmSemanticAction.DeclineMaterial => "Decline", FarmSemanticAction.WithdrawMaterial => "Withdraw",
-                FarmSemanticAction.TradeBuy => "Buy", FarmSemanticAction.TradeSell => "Sell",
-                FarmSemanticAction.TradeOffers => "Offers", FarmSemanticAction.Retreat => "Retreat",
-                _ => "Action"
-            };
+            string label = FarmQuickWheelModel.SectorLabel(slot);
             float width = font.GetStringSize(label, fontSize: 16).X;
             DrawString(font, at + new Vector2(-width / 2, 31), label, fontSize: 16, modulate: new Color(0.94f, 0.91f, 0.81f));
             if (!slot.Offer.CanExecute)

@@ -6,6 +6,7 @@ using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Content;
 using OpenFantasy.Hosting.Content.Cargo;
+using OpenFantasy.Hosting.Content.EncounterOutcome;
 using OpenFantasy.Hosting.Content.NativeCargo;
 using OpenFantasy.Hosting.Content.Retreat;
 using OpenFantasy.Hosting.Content.RoadThreat;
@@ -28,8 +29,23 @@ internal sealed class FarmClientSession : IAsyncDisposable
 
     private sealed class OfferedAction
     {
+        internal WorldActionCommand? Command { get; set; }
         internal Task<WorldActionReceipt>? Submission { get; set; }
     }
+
+    /// <summary>
+    /// Passive observation of this client's only world-command boundary, for disposable probes and tests. Raised once per
+    /// <see cref="SubmitOffer(FarmActionOffer)"/> call that reached the world session, after the command was handed over,
+    /// with the exact offer, command and receipt task. Observers cannot change, retry or reselect anything, and the session
+    /// keeps no submission history beyond its existing per-offer registration; normal play attaches no observer.
+    /// </summary>
+    internal event Action<FarmSubmission>? Submitted;
+
+    /// <summary>
+    /// The first exception an observer threw. Observation stays passive: the command was already handed to the world,
+    /// so its receipt task is still returned to the caller, and the failure stays visible here instead of rejecting it.
+    /// </summary>
+    internal Exception? ObservationFailure { get; private set; }
 
     internal FarmClientSession(LocalWorldSession world, TrustedCommandDelivery delivery,
         EntityId wrenActorId, EntityId woodDefinitionId, EntityId? berryDefinitionId)
@@ -240,14 +256,51 @@ internal sealed class FarmClientSession : IAsyncDisposable
         return AttachCargo(authority, retreat: true);
     });
 
+    /// <summary>
+    /// Explicit fresh selection of the outcome-completion cargo world (profile 35): the threatened cargo world with the
+    /// world-owned completion law. An existing save opens only when it is this same selected world; a threatened,
+    /// retreat or plain cargo save is never upgraded or read as this one, and this save is never read as theirs.
+    /// </summary>
+    internal static Task<FarmClientSession> OpenCargoOutcomesAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
+    {
+        WorldSnapshot genesis = CargoOutcomeWorldAdmission.CreateEmbedded(seedText, playerName);
+        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
+        SqliteWorldAuthority authority = File.Exists(savePath)
+            ? SqliteWorldAuthority.OpenExisting(savePath, WorldSnapshotCodec.Encode(genesis))
+            : SqliteWorldAuthority.CreateNew(savePath, genesis);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return AttachCargo(authority, retreat: true, outcomes: true);
+    });
+
+    /// <summary>
+    /// Continues an exported outcome-completion fixture; the genesis must be a fresh profile-35 admission of the
+    /// threatened cargo world (a declared calibration keeps its own admission identity and is reported by the fixture).
+    /// </summary>
+    internal static Task<FarmClientSession> OpenCargoOutcomesFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
+    {
+        if (!File.Exists(savePath)) throw new FileNotFoundException("The outcome fixture requires its existing save.", savePath);
+        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
+        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
+        if (genesis.ProfileVersion != WorldEncounterOutcomeAdmission.ProfileVersion || genesis.Revision != 0
+            || genesis.AdvancingSteps != 0 || CargoOutcomeWorldAdmission.Find(genesis, CargoCircuitSources.LoadEmbedded(),
+                RoadThreatSources.LoadEmbedded()) is null)
+            throw new InvalidDataException("The outcome fixture requires its fresh outcome-completion cargo genesis.");
+        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
+        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
+        catch { authority.Dispose(); throw; }
+        return AttachCargo(authority, retreat: true, outcomes: true);
+    });
+
     /// <summary>The cargo session: the quest companion, the cargo trading advice and the bounded region observer.</summary>
-    private static FarmClientSession AttachCargo(SqliteWorldAuthority authority, bool retreat = false)
+    private static FarmClientSession AttachCargo(SqliteWorldAuthority authority, bool retreat = false, bool outcomes = false)
     {
         try
         {
             WorldSnapshot current = authority.InspectForHost().State;
             if (!NativeCargoWorld.IsCargoWorld(current)
-                || (current.ProfileVersion == WorldEncounterRetreatAdmission.ProfileVersion) != retreat)
+                || (current.ProfileVersion == WorldEncounterRetreatAdmission.ProfileVersion) != (retreat && !outcomes)
+                || (current.ProfileVersion == WorldEncounterOutcomeAdmission.ProfileVersion) != outcomes)
                 throw new InvalidDataException("This save is not the selected cargo world.");
             WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
             WorldResident wren = QuestCompanion(current, player);
@@ -259,7 +312,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
                 .Definition.YieldDefinition.DefinitionId;
             // The session publishes the regional observation with each view; frames never read the authority.
             // The retreat world configures no NPC retreat: its wolves keep fighting exactly as in the cargo world.
-            var world = retreat
+            var world = retreat || outcomes
                 ? new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
                     NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId), LocalRetreatConfiguration.None)
                 : new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
@@ -491,22 +544,44 @@ internal sealed class FarmClientSession : IAsyncDisposable
         {
             throw new InvalidOperationException("That action belongs to another client session.");
         }
+        WorldActionCommand command;
+        Task<WorldActionReceipt> submission;
+        bool retry;
         lock (issued)
         {
             // Retrying the same presentation returns the same command outcome, even after its
             // first effect changed the world. A fresh choice requires a newly presented offer.
-            if (issued.Submission is not null) return issued.Submission;
-            LocalWorldView current = World.ReadView();
-            if (!offer.Scope.BelongsTo(_delivery, current))
+            retry = issued.Submission is not null;
+            if (!retry)
             {
-                throw new InvalidOperationException("That action belongs to another session, world or branch.");
+                LocalWorldView current = World.ReadView();
+                if (!offer.Scope.BelongsTo(_delivery, current))
+                {
+                    throw new InvalidOperationException("That action belongs to another session, world or branch.");
+                }
+                if (offer.DialogueId is { } conversation && current.Dialogue?.DialogueId != conversation)
+                {
+                    throw new InvalidOperationException("That conversation has ended; the action no longer applies.");
+                }
+                issued.Command = offer.ToCommand(offer.CommandId ?? NewCommandId());
+                issued.Submission = World.SubmitAction(issued.Command);
             }
-            if (offer.DialogueId is { } conversation && current.Dialogue?.DialogueId != conversation)
-            {
-                throw new InvalidOperationException("That conversation has ended; the action no longer applies.");
-            }
-            issued.Submission = World.SubmitAction(offer.ToCommand(offer.CommandId ?? NewCommandId()));
-            return issued.Submission;
+            command = issued.Command!;
+            submission = issued.Submission!;
+        }
+        if (Submitted is { } observers)
+        {
+            Observe(observers, new FarmSubmission(offer, command, submission, retry));
+        }
+        return submission;
+    }
+
+    private void Observe(Action<FarmSubmission> observers, FarmSubmission submission)
+    {
+        foreach (Action<FarmSubmission> observer in observers.GetInvocationList().Cast<Action<FarmSubmission>>())
+        {
+            try { observer(submission); }
+            catch (Exception error) { ObservationFailure ??= error; }
         }
     }
 

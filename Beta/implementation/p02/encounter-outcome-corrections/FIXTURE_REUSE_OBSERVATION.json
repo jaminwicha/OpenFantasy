@@ -1,0 +1,27 @@
+{
+  "status": "observation_for_future_wrapper_refinement_not_waiver",
+  "builds": [
+    "build-20261002T005514Z-fc49c",
+    "build-20261002T005739Z-6aa4f"
+  ],
+  "sourceChanges": [
+    "Beta/Runtime/client/scenes/EncounterOutcomeOverlay.tscn",
+    "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomeOverlay.cs",
+    "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs"
+  ],
+  "fixtureExports": [
+    "outcome-fixtures-20261002T005528Z-d00d0",
+    "outcome-fixtures-20261002T005753Z-59b1c"
+  ],
+  "canonicalFixtureBytesEqual": {
+    "care/before.ofc": true,
+    "care/genesis.ofc": true,
+    "defeat/before.ofc": false,
+    "defeat/genesis.ofc": true,
+    "victory/before.ofc": false,
+    "victory/genesis.ofc": true
+  },
+  "secondsRepeated": 49.117,
+  "scope": "The wrapper pins complete source mappings and therefore requires a fixture export after client-only changes. Existing limits and required native/auth gates remain unchanged. Review explicit fixture dependencies before allowing reuse in a future packet; no current wrapper/input changes and no token/billing savings claim.",
+  "interpretation": "The managed fixture harness issues random command identities (RetreatJourneyWorld.NewId), so identical seeds can have different lawful prepared roots despite identical fresh genesis. This comparison is not a same-input determinism test. Reuse requires validating the old prepared journey against unchanged generator/authority dependencies, not assuming each re-export is byte-identical."
+}

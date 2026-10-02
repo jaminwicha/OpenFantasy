@@ -30,6 +30,7 @@ public partial class FarmGame : Node2D
     private readonly FarmGiftSelection _gifts = new();
     private Task<MaterialProposalView?>? _giftInspection;
     private EntityId? _inspectingGiftId;
+    private Action<FarmSubmission>? _submissionObserver;
 
     internal string? SavePathOverride { get; init; }
     internal bool StartPaused { get; init; }
@@ -68,6 +69,21 @@ public partial class FarmGame : Node2D
     internal bool IsWheelOpen => _input.WheelOpen;
     internal FarmDaylight Daylight => _canvas.Daylight;
     internal void RequestClose() => BeginClose();
+
+    /// <summary>
+    /// Passive observation of the session's world-command boundary for a disposable fixture probe: each submission's exact
+    /// offer, command and receipt task. It never changes input, selection, submission or retries.
+    /// </summary>
+    internal void ObserveSubmissions(Action<FarmSubmission> observer)
+    {
+        ArgumentNullException.ThrowIfNull(observer);
+        if (SavePathOverride is null) throw new InvalidOperationException("Submission observation requires an explicit disposable save.");
+        _submissionObserver += observer;
+        if (_session is not null) _session.Submitted += observer;
+    }
+
+    /// <summary>The first failure of a submission observer; the observed submission itself was kept and answered.</summary>
+    internal Exception? SubmissionObservationFailure => _session?.ObservationFailure;
 
     internal void InjectFixtureFocus(bool focused)
     {
@@ -238,6 +254,7 @@ public partial class FarmGame : Node2D
             if (opening.IsCompletedSuccessfully)
             {
                 _session = opening.Result;
+                if (_submissionObserver is not null) _session.Submitted += _submissionObserver;
                 _targets = new FarmTargetSelection(_session.WrenActorId);
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 AttachCargo(_session);
@@ -389,6 +406,8 @@ public partial class FarmGame : Node2D
     { IsInEncounter = _session?.World.ReadView().IsInEncounter ?? false,
         IsEncounterOutcome = _session?.World.ReadView().Encounter?.IsOutcome ?? false,
         HasCareAcknowledgment = _presented.ContainsKey(FarmSemanticAction.AcknowledgeCare),
+        HasOutcomeReadingBesideCare = _presented.TryGetValue(FarmSemanticAction.ReleaseEncounter, out FarmActionOffer? reading)
+            && reading.Intent is OpenFantasy.Core.Encounters.AcknowledgeEncounterOutcomeIntent,
         HasWheelPages = _wheel.Model?.PageCount > 1,
         WheelChoiceOpensPanel = _wheel.Model?.Selected?.Offer.OpensPanel == true,
         HasEncounterEntry = _presented.ContainsKey(FarmSemanticAction.EnterEncounter) };

@@ -1,0 +1,124 @@
+{
+  "baselineReview": "Beta/implementation/p02/encounter-outcome-corrections/DELIVERY_REVIEW.json",
+  "reports": {
+    "build": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/build-20261002T012919Z-c88cf/report.json",
+      "sha256": "d61983a59f03d67a003bef850dfaa32f8101dff0c46951ed96cf4a51ce51477f",
+      "accepted": true,
+      "elapsedSeconds": 21.201,
+      "outcomes": null
+    },
+    "outcome-unit": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-unit-20261002T012955Z-3aa41/report.json",
+      "sha256": "250bcede97969733d9b804ad89768bd8d93fce94c17826082280019efb04bac2",
+      "accepted": true,
+      "elapsedSeconds": 96.537,
+      "outcomes": {
+        "Passed": 27
+      }
+    },
+    "core": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/core-20261002T013523Z-bf7d8/report.json",
+      "sha256": "69e4e46e53ed8713d23edcdabffab6f3233f579e73f7251c64b889d95e241726",
+      "accepted": true,
+      "elapsedSeconds": 127.516,
+      "outcomes": {
+        "Passed": 1773
+      }
+    },
+    "regression": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/regression-20261002T013735Z-e54eb/report.json",
+      "sha256": "78170b175938dca105283bfd306cac36af4ead29356ead0b188dbc894916f5ae",
+      "accepted": true,
+      "elapsedSeconds": 505.505,
+      "outcomes": {
+        "Passed": 552
+      }
+    },
+    "retained-auth": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/retained-auth-20261002T014615Z-d21ee/report.json",
+      "sha256": "b686fc62275936fbb5e6635316e04f34827d0e7c8dcb8b3551aed24573a7da3d",
+      "accepted": true,
+      "elapsedSeconds": 220.224,
+      "outcomes": {
+        "Passed": 6
+      }
+    },
+    "outcome-durability": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-durability-20261002T015001Z-b93cb/report.json",
+      "sha256": "74a6299b9f0a9acc76318ccbae11c607e3ebf13a1ce47260a1fdf5ba1206d307",
+      "accepted": true,
+      "elapsedSeconds": 27.595,
+      "outcomes": {
+        "Passed": 2
+      }
+    },
+    "outcome-fixtures": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-fixtures-20261002T013138Z-6b41d/report.json",
+      "sha256": "bc5ec4a9f7f1e7a03feee57d5a33d30677dd71dd25b3f12640c37bfb762f3c29",
+      "accepted": true,
+      "elapsedSeconds": 75.88,
+      "outcomes": {
+        "Passed": 1
+      }
+    },
+    "outcome-native": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T013257Z-b740f/report.json",
+      "sha256": "2247ccd3b34b6542f5f3442f686bd9dac0a28fdd14308dd41c9a288616fc4fb2",
+      "accepted": true,
+      "elapsedSeconds": 112.331,
+      "outcomes": null
+    },
+    "outcome-auth": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-auth-20261002T013454Z-ce88d/report.json",
+      "sha256": "380e396bea2673eaa7040a83a38cebcfe19d617e2a1d79651522dbc34bbed94d",
+      "accepted": true,
+      "elapsedSeconds": 25.029,
+      "outcomes": {
+        "Passed": 1
+      }
+    },
+    "fixtures": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/fixtures-20261002T015032Z-b752f/report.json",
+      "sha256": "b694e6073c0379ada553dc4ac194c61d8ea0e40351d6dd2352f329067993786c",
+      "accepted": true,
+      "elapsedSeconds": 53.057,
+      "outcomes": {
+        "Passed": 5
+      }
+    },
+    "road-native": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/road-native-20261002T015128Z-9a2c8/report.json",
+      "sha256": "25d8ce502e95c2dbb2a6ae7423049918355154cd8b6925802e8fb79b0af9c7b6",
+      "accepted": true,
+      "elapsedSeconds": 273.028,
+      "outcomes": null
+    },
+    "road-auth": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/road-auth-20261002T015606Z-dbd43/report.json",
+      "sha256": "a74a2ab7680c11f7f331c74580b195b37cc65b98de52fe889d20a2710a70c13a",
+      "accepted": true,
+      "elapsedSeconds": 40.234,
+      "outcomes": {
+        "Passed": 1
+      }
+    },
+    "native": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/native-20261002T015650Z-081ab/report.json",
+      "sha256": "dc686e38f6ec6a5f851f862d304a655fc1e8296c9dd7e3887678e101771e6a7e",
+      "accepted": true,
+      "elapsedSeconds": 75.781,
+      "outcomes": null
+    },
+    "native-auth": {
+      "path": "Beta/implementation/p02/encounter-outcome-corrections/qualification/native-auth-20261002T015810Z-7a3a0/report.json",
+      "sha256": "2d1b160a9c6c079fdc632af93676c279430fc46ff863b32136012bb4fd0f8174",
+      "accepted": true,
+      "elapsedSeconds": 14.758,
+      "outcomes": {
+        "Passed": 1
+      }
+    }
+  },
+  "claim": "Baseline only until exact affected-family comparison. Core/Hosting production source is frozen by PROTECTED_APPLICATION.json; new client/test changes still require their affected evidence."
+}

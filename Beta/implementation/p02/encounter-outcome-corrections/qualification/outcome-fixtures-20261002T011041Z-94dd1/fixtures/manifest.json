@@ -1,0 +1,18 @@
+{
+  "Kind": "native-encounter-outcome-fixtures-v1",
+  "Routes": [
+    {
+      "Route": "victory",
+      "Directory": "victory"
+    },
+    {
+      "Route": "defeat",
+      "Directory": "defeat"
+    },
+    {
+      "Route": "care",
+      "Directory": "care"
+    }
+  ],
+  "Boundary": "Managed preparation only: ordinary session cutoffs earn, buy and walk; nothing encounters, resolves, reads, completes or cares before the native journey."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "independent_review_complete_integration_required",
+  "reviewSha256": "34c52b160c4f7529355178f564f2514b9b10e49d91ada34fa826ead3d3ddcc49",
+  "modelRequested": "claude-opus-5-5[1m]",
+  "actualModel": "claude-opus-5-5",
+  "contextWindow": 1000000,
+  "effortRequested": "max",
+  "elapsedSeconds": 695.861,
+  "clientCostEstimateUsd": 3.6393156,
+  "permissionDenials": [],
+  "contextPreflight": "verified",
+  "contextPostflight": "verified",
+  "findings": [
+    "F1 unsupported rule pin",
+    "F2 historical/live remote condition",
+    "F3 inaccurate care/defeat reasons",
+    "F4 live cutoff versus care-after-reading promise",
+    "F5 false observer reading claim",
+    "F6 missing complete-root negative admission tests"
+  ],
+  "lateEvidence": "Outcome durability was added after the frozen source; see ../encounter-outcome-continuation/LEAD_DURABILITY_REVIEW.json. The critic missing-gate list describes its frozen input, not later work.",
+  "limits": "Source review, no experiments. No final implementation acceptance, no net-credit-savings claim. Do not poll terminal session76816."
+}

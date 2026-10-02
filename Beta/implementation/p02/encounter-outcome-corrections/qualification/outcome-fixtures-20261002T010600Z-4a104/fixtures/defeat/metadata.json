@@ -1,0 +1,27 @@
+{
+  "Kind": "native-encounter-outcome-fixture-v1",
+  "Route": "defeat",
+  "ProfileVersion": 35,
+  "SeedText": "native-encounter-outcome-defeat",
+  "PlayerName": "Traveler",
+  "Calibration": {
+    "WoundedHp": {},
+    "HumanControlled": []
+  },
+  "CalibrationText": "Uncalibrated production selection (CargoOutcomeWorldAdmission.CreateEmbedded).",
+  "Setup": "Wren\u0027s quest reward earned, one ration bought from Marla in person and carried along the authored lane to road cell (346,318) at ordinary session cutoffs, outside the chief\u0027s reach; paused in exploration.",
+  "Boundary": "Fixture preparation ends here; the native journey owns the encounter, its resolution, the outcome reading, the world\u0027s completion, care or its decline, any continuation and leaving.",
+  "WorldId": "3a04c92f957199e29bd87c0c94e5416c",
+  "BranchId": "8833ce1e2c8957d7957f70c674d13d75",
+  "GenesisHash": "ebab0826e0948410cb9f6dc76ac669a6205c25364fa4517bcf1c08243135420e",
+  "BeforeHash": "a009a877342fe31be69dfdee12f039beb094af899bb3a826a45ec9b648c2e3bf",
+  "BeforeRevision": 2470,
+  "PlayerActorId": "32a23112ed61be5afb3b512e9c38bdf8",
+  "OpponentActorId": "3d44e6d5229119fc928c22cacabebaf9",
+  "WrenActorId": "7f0ca9bb4fd5b0bfb45282e053fd4b43",
+  "CarriedLotId": "5c5c120e99483ed8d26086b72e4ee6ab",
+  "RewardCurrency": 200,
+  "PaidCurrency": 20,
+  "PlayerBalance": 180,
+  "Limits": "Fresh profile-35 cargo world only: no retained-save migration, multiplayer, network, physical device, balance or human acceptance claim."
+}

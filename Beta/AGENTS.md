@@ -125,7 +125,12 @@ automatic command retries, relaxed deadlines or changes to game rules merely to 
 Reuse evidence only after comparing its actual source, binary, checker and fixture dependencies.
 Record unchanged dependencies and the precise inherited claim; rerun affected or uncertain checks.
 A test-only edit need not invalidate an unrelated rendered journey, but required full acceptance gates
-remain required. Preserve the original reports. For visibility, inspect the captured image and actual
+remain required. Preserve the original reports. Before a long delegated unit, identify inherited,
+affected and unrun gates explicitly. Compare the actual dependency family: changes confined to Host
+fixtures do not invalidate identical Core source and Core test assemblies. Do not repeat an unrelated
+full suite solely to obtain a "final build" label; reserve time for still-unrun required behaviors.
+A changed test assembly requires inspecting changed types/discovery dependencies before reusing that
+assembly's earlier evidence; "test-only" by itself is not a proof of independence. For visibility, inspect the captured image and actual
 post-draw sprite/control bounds against occluding UI; a projected point or draw call is insufficient.
 
 The owner's 2026-09-10 direction makes incremental commits and milestone branches project

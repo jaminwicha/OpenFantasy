@@ -1,0 +1,32 @@
+ERROR: Native outcome probe failed: System.InvalidOperationException: A care choice survived the completed encounter.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.EncounterOutcomePlayProbe.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 555
+   at OpenFantasy.Client.EncounterOutcomePlayProbe.DeclineCare(EntityId wolf) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 241
+   at OpenFantasy.Client.EncounterOutcomePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 115
+   at: void OpenFantasy.Client.EncounterOutcomePlayProbe+<_Ready>d__49.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:115)
+   C# backtrace (most recent call first):
+       [0] void Godot.GD.PushError(string) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/GD.cs:366)
+       [1] void OpenFantasy.Client.EncounterOutcomePlayProbe+<_Ready>d__49.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:115)
+       [2] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [3] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [4] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [5] void System.Threading.Tasks.Task.RunContinuations(object)
+       [6] void System.Threading.Tasks.Task.FinishSlow(bool)
+       [7] bool System.Threading.Tasks.Task.TrySetException(object)
+       [8] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetException(System.Exception, System.Threading.Tasks.Task`1[TResult]&)
+       [9] void OpenFantasy.Client.EncounterOutcomePlayProbe+<DeclineCare>d__52.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:241)
+       [10] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [11] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [12] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [13] void System.Threading.Tasks.Task.RunContinuations(object)
+       [14] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(System.Threading.Tasks.Task`1[TResult], TResult)
+       [15] void OpenFantasy.Client.MarketProbeDriver+<Until>d__28.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:153)
+       [16] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [17] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [18] void System.Threading.Tasks.AwaitTaskContinuation.RunCallback(System.Threading.ContextCallback, object, System.Threading.Tasks.Task&)
+       [19] void System.Threading.Tasks.Task.RunContinuations(object)
+       [20] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1.SetExistingTaskResult(System.Threading.Tasks.Task`1[TResult], TResult)
+       [21] void OpenFantasy.Client.MarketProbeDriver+<Frame>d__30.MoveNext() (/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:165)
+       [22] void System.Threading.ExecutionContext.RunInternal(System.Threading.ExecutionContext, System.Threading.ContextCallback, object)
+       [23] void System.Runtime.CompilerServices.AsyncTaskMethodBuilder`1+AsyncStateMachineBox`1.MoveNext()
+       [24] void Godot.SignalAwaiter.SignalCallback(nint, Godot.NativeInterop.godot_variant**, int, Godot.NativeInterop.godot_bool*) (/root/godot/modules/mono/glue/GodotSharp/GodotSharp/Core/SignalAwaiter.cs:65)

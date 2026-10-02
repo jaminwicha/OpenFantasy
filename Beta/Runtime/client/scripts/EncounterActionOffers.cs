@@ -3,6 +3,7 @@ using OpenFantasy.Core;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
+using OpenFantasy.Hosting.Simulation.EncounterOutcome;
 
 namespace OpenFantasy.Client;
 
@@ -14,7 +15,21 @@ internal static class EncounterActionOffers
         FarmActionScope scope, FarmTarget? selected)
     {
         Dictionary<FarmSemanticAction, FarmActionOffer> offers = [];
-        if (view.Care is { } care)
+        if (view.IsInEncounter && view.EncounterOutcome is { Stage: not LocalOutcomeStage.Completed } outcome)
+        {
+            // Outcome-completion world: reading the result and admitted care are separate deliberate choices. Care is
+            // offered only when the care view admits it (or is already pending); the reading always states its reason.
+            if (view.Care is { } admitted && (admitted.PendingAcknowledgmentId is not null || admitted.Offers.Any(offer => offer.CanAcknowledge)))
+            {
+                offers[FarmSemanticAction.AcknowledgeCare] = AcknowledgeCare(admitted, scope, selected);
+            }
+            // An observer outside the fight owes no reading, so it is offered no (disabled) reading choice at all.
+            if (outcome.ObserverIsParticipant)
+            {
+                offers[FarmSemanticAction.ReleaseEncounter] = ReadOutcome(outcome, view.Care, scope);
+            }
+        }
+        else if (view.Care is { } care)
         {
             offers[FarmSemanticAction.AcknowledgeCare] = AcknowledgeCare(care, scope, selected);
         }
@@ -128,6 +143,17 @@ internal static class EncounterActionOffers
             "You returned to exploration; remaining recovery is retained.",
             token is null ? null : new ReleaseEncounterIntent(view.Encounter!.EncounterId, token), blocker);
     }
+
+    /// <summary>
+    /// The acceptance of a profile-35 outcome; it grants no bodily action and never heals, rewards or moves anyone. It asks
+    /// the world to continue: the next ready boundary after every required reading, with no care pending, completes the
+    /// encounter and closes the aftermath-care opportunity.
+    /// </summary>
+    private static FarmActionOffer ReadOutcome(LocalEncounterOutcomeView outcome, LocalCareView? care, FarmActionScope scope) =>
+        new(FarmSemanticAction.ReleaseEncounter, scope, EncounterOutcomeText.ReadLabel(outcome), EncounterOutcomeText.Title(outcome),
+            null, FarmActionOffers.NoCost, "Outcome accepted; completion waits for every required reader and no pending care.",
+            outcome.Acknowledgment, EncounterOutcomeText.ReadBlocker(outcome, care),
+            detailText: EncounterOutcomeText.ChoiceDetail(outcome, care));
 
     private static string? Blocker(LocalEncounterActionBlockedReason reason) => reason switch
     {

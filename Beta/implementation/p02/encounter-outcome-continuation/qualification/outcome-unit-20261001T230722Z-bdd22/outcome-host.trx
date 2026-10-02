@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="593ea04f-2433-42d8-ac28-0aa6023f9891" name="@mac 2026-10-01 18:07:31" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T18:07:31.4568930-05:00" queuing="2026-10-01T18:07:31.4568930-05:00" start="2026-10-01T18:07:27.2218830-05:00" finish="2026-10-01T18:09:04.1658560-05:00" />
+  <TestSettings name="default" id="402c8cc0-5e90-4531-91e5-395352971f0a">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_18_07_31" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="55bcdcd3-95b4-4cb1-8c3a-e993175b5d70" testId="b80748b1-2a3d-ffce-777f-b584a9195d61" testName="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis" computerName="mac" duration="00:00:00.7555449" startTime="2026-10-01T18:07:34.1166630-05:00" endTime="2026-10-01T18:07:34.8723160-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55bcdcd3-95b4-4cb1-8c3a-e993175b5d70" />
+    <UnitTestResult executionId="ae5c9eb2-f342-4f21-8d98-ca5ad4260f9a" testId="553ec613-15f9-8557-516d-ac7e5f1f54db" testName="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld" computerName="mac" duration="00:00:02.6659814" startTime="2026-10-01T18:07:28.7315520-05:00" endTime="2026-10-01T18:07:31.4055640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae5c9eb2-f342-4f21-8d98-ca5ad4260f9a" />
+    <UnitTestResult executionId="0e55ca13-ee01-449e-a1f7-318352a521d4" testId="ef185fc4-9642-bad1-5bc3-8499f6ae850d" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues" computerName="mac" duration="00:00:53.8872057" startTime="2026-10-01T18:07:28.7315830-05:00" endTime="2026-10-01T18:08:22.5377970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0e55ca13-ee01-449e-a1f7-318352a521d4" />
+    <UnitTestResult executionId="6c75f571-1859-4077-9018-62e15dd5bf36" testId="b83266a0-4765-6d46-5a47-77a1874985d3" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings" computerName="mac" duration="00:00:02.0908763" startTime="2026-10-01T18:09:01.9727310-05:00" endTime="2026-10-01T18:09:04.0636440-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6c75f571-1859-4077-9018-62e15dd5bf36" />
+    <UnitTestResult executionId="07adace2-935b-42ce-8960-9bbba38cc6bc" testId="45f25489-359a-86f9-214e-50e3661bc221" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem" computerName="mac" duration="00:00:00.7823437" startTime="2026-10-01T18:09:01.1894410-05:00" endTime="2026-10-01T18:09:01.9718350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="07adace2-935b-42ce-8960-9bbba38cc6bc" />
+    <UnitTestResult executionId="4d1a83fb-d156-4c88-9bda-afbe34367bfc" testId="499c8efd-8198-b515-9bf5-e724177f4f39" testName="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded" computerName="mac" duration="00:00:03.3191899" startTime="2026-10-01T18:07:34.8742920-05:00" endTime="2026-10-01T18:07:38.1936480-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d1a83fb-d156-4c88-9bda-afbe34367bfc" />
+    <UnitTestResult executionId="35cf5cd6-89f2-4d8a-bc71-173d6b5d694a" testId="565c93b1-9bff-546d-319f-1de3008ccfdb" testName="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission" computerName="mac" duration="00:00:02.7021656" startTime="2026-10-01T18:07:31.4122710-05:00" endTime="2026-10-01T18:07:34.1146630-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35cf5cd6-89f2-4d8a-bc71-173d6b5d694a" />
+    <UnitTestResult executionId="8468c9bc-3612-4ab3-bafd-8887c0dd3496" testId="e48eae38-3284-d5f7-09f9-fb821b02e489" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening" computerName="mac" duration="00:00:38.6364489" startTime="2026-10-01T18:08:22.5440990-05:00" endTime="2026-10-01T18:09:01.1800110-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8468c9bc-3612-4ab3-bafd-8887c0dd3496" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="553ec613-15f9-8557-516d-ac7e5f1f54db">
+      <Execution id="ae5c9eb2-f342-4f21-8d98-ca5ad4260f9a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests" name="ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="565c93b1-9bff-546d-319f-1de3008ccfdb">
+      <Execution id="35cf5cd6-89f2-4d8a-bc71-173d6b5d694a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests" name="CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="499c8efd-8198-b515-9bf5-e724177f4f39">
+      <Execution id="4d1a83fb-d156-4c88-9bda-afbe34367bfc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests" name="SavesOfOtherSelectionsAreRefusedAndNeverUpgraded" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="45f25489-359a-86f9-214e-50e3661bc221">
+      <Execution id="07adace2-935b-42ce-8960-9bbba38cc6bc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests" name="TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b83266a0-4765-6d46-5a47-77a1874985d3">
+      <Execution id="6c75f571-1859-4077-9018-62e15dd5bf36" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests" name="CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ef185fc4-9642-bad1-5bc3-8499f6ae850d">
+      <Execution id="0e55ca13-ee01-449e-a1f7-318352a521d4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests" name="WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b80748b1-2a3d-ffce-777f-b584a9195d61">
+      <Execution id="55bcdcd3-95b4-4cb1-8c3a-e993175b5d70" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests" name="AdmissionRefusesAnythingButAnUnplayedRetreatGenesis" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e48eae38-3284-d5f7-09f9-fb821b02e489">
+      <Execution id="8468c9bc-3612-4ab3-bafd-8887c0dd3496" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests" name="ChiefDefeatIsReadableThenTerminalAcrossReopening" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b80748b1-2a3d-ffce-777f-b584a9195d61" executionId="55bcdcd3-95b4-4cb1-8c3a-e993175b5d70" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="553ec613-15f9-8557-516d-ac7e5f1f54db" executionId="ae5c9eb2-f342-4f21-8d98-ca5ad4260f9a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef185fc4-9642-bad1-5bc3-8499f6ae850d" executionId="0e55ca13-ee01-449e-a1f7-318352a521d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b83266a0-4765-6d46-5a47-77a1874985d3" executionId="6c75f571-1859-4077-9018-62e15dd5bf36" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="45f25489-359a-86f9-214e-50e3661bc221" executionId="07adace2-935b-42ce-8960-9bbba38cc6bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="499c8efd-8198-b515-9bf5-e724177f4f39" executionId="4d1a83fb-d156-4c88-9bda-afbe34367bfc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="565c93b1-9bff-546d-319f-1de3008ccfdb" executionId="35cf5cd6-89f2-4d8a-bc71-173d6b5d694a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e48eae38-3284-d5f7-09f9-fb821b02e489" executionId="8468c9bc-3612-4ab3-bafd-8887c0dd3496" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.44]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.93]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.14]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:01:36.64]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

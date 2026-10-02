@@ -110,6 +110,11 @@ internal readonly record struct FarmInputSituation(bool SessionOpen, bool Readin
     internal bool HasEncounterEntry { get; init; }
     internal bool IsEncounterOutcome { get; init; }
     internal bool HasCareAcknowledgment { get; init; }
+    /// <summary>
+    /// The presented outcome choice is an outcome-completion reading (profile 35): accepting stays a deliberate choice
+    /// beside admitted care, because it declines that care. Under earlier laws care is the only choice at a defeat.
+    /// </summary>
+    internal bool HasOutcomeReadingBesideCare { get; init; }
     internal bool HasWheelPages { get; init; }
     /// <summary>The wheel's selected choice only opens an inspection panel; it submits nothing.</summary>
     internal bool WheelChoiceOpensPanel { get; init; }
@@ -286,6 +291,8 @@ internal sealed class FarmInputRouter
             FarmSemanticAction.TradeBuy or FarmSemanticAction.TradeSell or FarmSemanticAction.TradeOffers => false,
             FarmSemanticAction.AcknowledgeCare => layer == FarmInputLayer.Encounter
                 && situation.HasCareAcknowledgment && !situation.ActionPending,
+            FarmSemanticAction.ReleaseEncounter when situation.HasCareAcknowledgment && situation.HasOutcomeReadingBesideCare =>
+                layer == FarmInputLayer.Encounter && !situation.ActionPending,
             FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter
                 when situation.HasCareAcknowledgment => false,
             _ => !situation.ActionPending && LayerAccepts(layer, action),

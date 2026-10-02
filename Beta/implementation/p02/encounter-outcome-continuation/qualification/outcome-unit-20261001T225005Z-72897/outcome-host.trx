@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ee0d2ee2-f6cc-433c-81d8-aa03376d2805" name="@mac 2026-10-01 17:50:19" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-01T17:50:19.4058090-05:00" queuing="2026-10-01T17:50:19.4058090-05:00" start="2026-10-01T17:50:11.9533000-05:00" finish="2026-10-01T17:52:18.2107650-05:00" />
+  <TestSettings name="default" id="b5fa071a-e810-4839-aa0f-ea31b94cfec2">
+    <Deployment runDeploymentRoot="_mac_2026-10-01_17_50_19" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="9543d0cc-27db-4bff-b40b-83197ed7fae8" testId="45f25489-359a-86f9-214e-50e3661bc221" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem" computerName="mac" duration="00:00:01.5694587" startTime="2026-10-01T17:52:14.7819140-05:00" endTime="2026-10-01T17:52:16.3628270-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9543d0cc-27db-4bff-b40b-83197ed7fae8">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: None
+Actual:   Unavailable</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 215
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 280
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="2ec48c06-0e3d-4196-9481-cca96d1f4c61" testId="553ec613-15f9-8557-516d-ac7e5f1f54db" testName="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld" computerName="mac" duration="00:00:04.8548299" startTime="2026-10-01T17:50:14.4553740-05:00" endTime="2026-10-01T17:50:19.3255170-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2ec48c06-0e3d-4196-9481-cca96d1f4c61" />
+    <UnitTestResult executionId="6866078b-4c6d-4e5b-a6fe-43661cac13e8" testId="e48eae38-3284-d5f7-09f9-fb821b02e489" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening" computerName="mac" duration="00:01:00.3496013" startTime="2026-10-01T17:51:14.4166010-05:00" endTime="2026-10-01T17:52:14.7671950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6866078b-4c6d-4e5b-a6fe-43661cac13e8" />
+    <UnitTestResult executionId="606c6c9e-4694-4cca-a872-169a6c99b3a4" testId="b83266a0-4765-6d46-5a47-77a1874985d3" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings" computerName="mac" duration="00:00:01.6274524" startTime="2026-10-01T17:52:16.3650720-05:00" endTime="2026-10-01T17:52:17.9943170-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="606c6c9e-4694-4cca-a872-169a6c99b3a4">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: None
+Actual:   RevisionConflict</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 309
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 342
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b1bc7298-1849-4286-af43-38fb26de42c8" testId="565c93b1-9bff-546d-319f-1de3008ccfdb" testName="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission" computerName="mac" duration="00:00:03.6058182" startTime="2026-10-01T17:50:19.3403520-05:00" endTime="2026-10-01T17:50:22.9465840-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1bc7298-1849-4286-af43-38fb26de42c8" />
+    <UnitTestResult executionId="38ae5ecb-99fc-4898-94b4-51f70d19e71d" testId="ef185fc4-9642-bad1-5bc3-8499f6ae850d" testName="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues" computerName="mac" duration="00:00:59.6653105" startTime="2026-10-01T17:50:14.4553060-05:00" endTime="2026-10-01T17:51:14.4094920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="38ae5ecb-99fc-4898-94b4-51f70d19e71d">
+      <Output>
+        <ErrorInfo>
+          <Message>System.IO.InvalidDataException : The corridor must cover both retained merchant tiles and every authored waypoint.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.Validate(CargoCircuitSources sources) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs:line 163
+   at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.CreateCircuit(TerrainRegionBounds basis, CargoCircuitSources sources, IReadOnlyList`1 declaredOverlays) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs:line 95
+   at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.CreateCircuit(TerrainRegionBounds basis, CargoCircuitSources sources) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs:line 66
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourney.Corridor(WorldSnapshot state, EntityId player) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs:line 32
+   at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourney.Outbound(RetreatJourneyWorld world) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs:line 96
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 99
+   at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 110
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e056e204-d5c7-472e-8cbb-4569358c8d22" testId="499c8efd-8198-b515-9bf5-e724177f4f39" testName="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded" computerName="mac" duration="00:00:06.7156630" startTime="2026-10-01T17:50:24.2281810-05:00" endTime="2026-10-01T17:50:30.9442130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e056e204-d5c7-472e-8cbb-4569358c8d22" />
+    <UnitTestResult executionId="64bea140-bf1f-4f76-a540-c277c5b6a4af" testId="b80748b1-2a3d-ffce-777f-b584a9195d61" testName="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis" computerName="mac" duration="00:00:01.2735563" startTime="2026-10-01T17:50:22.9529910-05:00" endTime="2026-10-01T17:50:24.2267520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="64bea140-bf1f-4f76-a540-c277c5b6a4af" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="553ec613-15f9-8557-516d-ac7e5f1f54db">
+      <Execution id="2ec48c06-0e3d-4196-9481-cca96d1f4c61" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests" name="ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="565c93b1-9bff-546d-319f-1de3008ccfdb">
+      <Execution id="b1bc7298-1849-4286-af43-38fb26de42c8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests" name="CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="499c8efd-8198-b515-9bf5-e724177f4f39">
+      <Execution id="e056e204-d5c7-472e-8cbb-4569358c8d22" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests" name="SavesOfOtherSelectionsAreRefusedAndNeverUpgraded" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="45f25489-359a-86f9-214e-50e3661bc221">
+      <Execution id="9543d0cc-27db-4bff-b40b-83197ed7fae8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests" name="TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b83266a0-4765-6d46-5a47-77a1874985d3">
+      <Execution id="606c6c9e-4694-4cca-a872-169a6c99b3a4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests" name="CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ef185fc4-9642-bad1-5bc3-8499f6ae850d">
+      <Execution id="38ae5ecb-99fc-4898-94b4-51f70d19e71d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests" name="WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b80748b1-2a3d-ffce-777f-b584a9195d61">
+      <Execution id="64bea140-bf1f-4f76-a540-c277c5b6a4af" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests" name="AdmissionRefusesAnythingButAnUnplayedRetreatGenesis" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e48eae38-3284-d5f7-09f9-fb821b02e489">
+      <Execution id="6866078b-4c6d-4e5b-a6fe-43661cac13e8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests" name="ChiefDefeatIsReadableThenTerminalAcrossReopening" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="45f25489-359a-86f9-214e-50e3661bc221" executionId="9543d0cc-27db-4bff-b40b-83197ed7fae8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="553ec613-15f9-8557-516d-ac7e5f1f54db" executionId="2ec48c06-0e3d-4196-9481-cca96d1f4c61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e48eae38-3284-d5f7-09f9-fb821b02e489" executionId="6866078b-4c6d-4e5b-a6fe-43661cac13e8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b83266a0-4765-6d46-5a47-77a1874985d3" executionId="606c6c9e-4694-4cca-a872-169a6c99b3a4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="565c93b1-9bff-546d-319f-1de3008ccfdb" executionId="b1bc7298-1849-4286-af43-38fb26de42c8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ef185fc4-9642-bad1-5bc3-8499f6ae850d" executionId="38ae5ecb-99fc-4898-94b4-51f70d19e71d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="499c8efd-8198-b515-9bf5-e724177f4f39" executionId="e056e204-d5c7-472e-8cbb-4569358c8d22" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b80748b1-2a3d-ffce-777f-b584a9195d61" executionId="64bea140-bf1f-4f76-a540-c277c5b6a4af" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="8" executed="8" passed="5" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.67]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.52]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.85]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:01:01.92]       System.IO.InvalidDataException : The corridor must cover both retained merchant tiles and every authored waypoint.
+[xUnit.net 00:01:01.92]       Stack Trace:
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs(163,0): at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.Validate(CargoCircuitSources sources)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs(95,0): at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.CreateCircuit(TerrainRegionBounds basis, CargoCircuitSources sources, IReadOnlyList`1 declaredOverlays)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Content/Cargo/CargoCorridor.cs(66,0): at OpenFantasy.Hosting.Content.Cargo.CargoCorridor.CreateCircuit(TerrainRegionBounds basis, CargoCircuitSources sources)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs(32,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourney.Corridor(WorldSnapshot state, EntityId player)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/RoadThreat/RoadThreatJourney.cs(96,0): at OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourney.Outbound(RetreatJourneyWorld world)
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(99,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues()
+[xUnit.net 00:01:01.92]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(110,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues()
+[xUnit.net 00:01:01.92]         --- End of stack trace from previous location ---
+[xUnit.net 00:02:03.87]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:02:03.87]       Expected: None
+[xUnit.net 00:02:03.87]       Actual:   Unavailable
+[xUnit.net 00:02:03.87]       Stack Trace:
+[xUnit.net 00:02:03.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(215,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem()
+[xUnit.net 00:02:03.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(280,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem()
+[xUnit.net 00:02:03.87]         --- End of stack trace from previous location ---
+[xUnit.net 00:02:05.50]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:02:05.50]       Expected: None
+[xUnit.net 00:02:05.50]       Actual:   RevisionConflict
+[xUnit.net 00:02:05.50]       Stack Trace:
+[xUnit.net 00:02:05.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(309,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:02:05.50]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(342,0): at OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:02:05.50]         --- End of stack trace from previous location ---
+[xUnit.net 00:02:05.53]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T17:51:14.4283980-05:00">
+        <Text>[xUnit.net 00:01:01.92]     OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T17:52:16.3799580-05:00">
+        <Text>[xUnit.net 00:02:03.87]     OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-01T17:52:18.0113650-05:00">
+        <Text>[xUnit.net 00:02:05.50]     OpenFantasy.Hosting.Tests.Simulation.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

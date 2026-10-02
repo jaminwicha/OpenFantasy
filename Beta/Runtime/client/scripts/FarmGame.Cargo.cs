@@ -59,11 +59,32 @@ public partial class FarmGame
     /// <summary>Expected fresh genesis of an exported threatened cargo fixture; requires its explicit existing save.</summary>
     internal string? CargoThreatFixtureGenesisPath { get; init; }
 
-    private bool FramesCargoThreat => CargoThreatProfile || CargoThreatFixtureGenesisPath is not null;
+    /// <summary>Explicit fresh outcome-completion cargo-world selection (profile 35) with its own save; never an upgrade.</summary>
+    internal bool CargoOutcomesProfile { get; init; }
+
+    /// <summary>Expected fresh genesis of an exported outcome-completion fixture; requires its explicit existing save.</summary>
+    internal string? CargoOutcomesFixtureGenesisPath { get; init; }
+
+    private bool FramesCargoThreat => CargoThreatProfile || CargoThreatFixtureGenesisPath is not null
+        || CargoOutcomesProfile || CargoOutcomesFixtureGenesisPath is not null;
 
     /// <summary>Starts opening the cargo world when this game selects it; false for every other selection.</summary>
     private bool OpenCargo()
     {
+        if (CargoOutcomesFixtureGenesisPath is { } outcomesGenesis)
+        {
+            _opening = SavePathOverride is { } outcomesSave
+                ? FarmClientSession.OpenCargoOutcomesFixtureAsync(outcomesSave, outcomesGenesis)
+                : Task.FromException<FarmClientSession>(new InvalidOperationException("The outcome fixture requires its existing save."));
+            return true;
+        }
+        if (CargoOutcomesProfile)
+        {
+            string outcomesPath = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/openfantasy-cargo-outcomes.sqlite");
+            _opening = FarmClientSession.OpenCargoOutcomesAsync(outcomesPath,
+                OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.SeedText, "Traveler");
+            return true;
+        }
         if (CargoThreatFixtureGenesisPath is { } threatGenesis)
         {
             _opening = SavePathOverride is { } threatSave

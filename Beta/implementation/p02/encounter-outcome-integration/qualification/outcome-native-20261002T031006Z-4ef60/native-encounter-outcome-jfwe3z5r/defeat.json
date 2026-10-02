@@ -1,0 +1,968 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "defeat",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 3.666,
+  "ProbeMilliseconds": 10921,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "accept",
+      "Route": "keyboard",
+      "Key": "E"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    }
+  ],
+  "Strikes": 4,
+  "Waits": 0,
+  "Engagement": {
+    "EncounterCount": 1,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 6.0812594
+  },
+  "Outcome": {
+    "Title": "Defeated",
+    "Body": "You \u00B7 defeated side \u00B7 incapacitated (0 HP)\nBandit Chief \u00B7 standing side \u00B7 HP 759/800\nYou are incapacitated (0 HP) and cannot move or act. Accepting the defeat lets the world end this fight once every required player has read it; you stay incapacitated afterwards. Your save is kept.\nCare: Wren is out of reach.",
+    "Status": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren is out of reach\nBandit Chief \u00B7 HP 759/800",
+    "StatusTooltip": "You are incapacitated (0 HP) and cannot move or act. Accepting the defeat lets the world end this fight once every required player has read it; you stay incapacitated afterwards. Your save is kept.\nRemaining recovery: 0.8 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+    "Result": "Victory",
+    "Standing": "OpponentStands",
+    "Hp": 0,
+    "Seconds": 10.7516093
+  },
+  "Completed": {
+    "CompletedAtSequence": 2600,
+    "Stage": "Completed",
+    "EncounterCount": 1,
+    "Hp": 0,
+    "Body": "Defeated \u00B7 You are incapacitated (0 HP): no movement or action is possible \u00B7 This encounter is complete: aftermath care applies only before its outcome is accepted, and ordinary care cannot treat an incapacitated (0 HP) character \u00B7 Save and leave keeps this world\nYou \u00B7 defeated side \u00B7 incapacitated (0 HP)\nBandit Chief \u00B7 standing side \u00B7 HP 759/800",
+    "Status": "Defeated \u00B7 Incapacitated (0 HP) \u00B7 Encounter complete",
+    "Seconds": 10.8917661
+  },
+  "Decline": null,
+  "Trade": null,
+  "Panels": [
+    {
+      "Label": "defeat-outcome",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 167
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 200.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 164.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 117
+      },
+      "Lines": 6,
+      "VisibleLines": 6,
+      "Leave": null,
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    },
+    {
+      "Label": "terminal",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 204
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 282
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 211,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 175,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 117
+      },
+      "Lines": 6,
+      "VisibleLines": 6,
+      "Leave": {
+        "X": 22,
+        "Y": 249,
+        "Width": 396,
+        "Height": 31
+      },
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "HudBounds": [
+    {
+      "Label": "defeat-outcome",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 337,
+        "Width": 924,
+        "Height": 185
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 200.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 164.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 3 \u00B7 180 gil\nHP 0/78 \u00B7 MP 14/14",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 162,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 10:15 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 2 \u00B7 Berries: 0\nRations: 1 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 347,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Your attack was queued.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 377,
+            "Width": 896,
+            "Height": 49
+          },
+          "Text": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren is out of reach\nBandit Chief \u00B7 HP 759/800",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 712,
+            "Height": 55
+          },
+          "Text": "Defeated\nE / A: accept defeat",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 166,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 748,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ReleaseEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    },
+    {
+      "Label": "terminal",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 358,
+        "Width": 924,
+        "Height": 164
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 282
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 211,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 175,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 3 \u00B7 180 gil\nHP 0/78 \u00B7 MP 14/14",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 162,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 10:15 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 2 \u00B7 Berries: 0\nRations: 1 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 368,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Outcome accepted; completion waits for every required reader and no pending care.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 398,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Defeated \u00B7 Incapacitated (0 HP) \u00B7 Encounter complete",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 425,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 454,
+            "Width": 170,
+            "Height": 55
+          },
+          "Text": "Incapacitated\nEsc: pause",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 119,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 206,
+            "Y": 452,
+            "Width": 100,
+            "Height": 60
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Talk",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 310,
+            "Y": 452,
+            "Width": 76,
+            "Height": 60
+          },
+          "Text": "Talk  [E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Give",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 390,
+            "Y": 452,
+            "Width": 180,
+            "Height": 60
+          },
+          "Text": "Ask about tasks  [G]\nNot yet known",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Gather",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 574,
+            "Y": 452,
+            "Width": 141,
+            "Height": 60
+          },
+          "Text": "Pick berries  [F]\n400 effort",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Craft",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 719,
+            "Y": 452,
+            "Width": 157,
+            "Height": 60
+          },
+          "Text": "Pack rations  [C]\n1 wood, 2 berries",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "UseRestorative",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 880,
+            "Y": 452,
+            "Width": 48,
+            "Height": 60
+          },
+          "Text": "",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    }
+  ],
+  "Selections": [
+    {
+      "Ready": {
+        "Stage": "strike",
+        "Route": "key-E",
+        "Action": "Strike",
+        "Frame": 6079,
+        "MillisecondsWithinDay": 36925200,
+        "ActorRevision": 2511,
+        "Timing": 1
+      },
+      "CommandId": "aa74594813ecc7e54bcd64e043dbc8f2",
+      "SubmittedFrame": 6079,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B00000010AA74594813ECC7E54BCD64E043DBC8F2000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C697479000000080000000000000001000000103AB43766297419A7217E6B7AD68999C2000000080000000000000001000000101C9BDDC8F4804246D25387187E8B5071000000103D44E6D5229119FC928C22CACABEBAF9",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "strike",
+        "Route": "key-E",
+        "Action": "Strike",
+        "Frame": 6945,
+        "MillisecondsWithinDay": 36926200,
+        "ActorRevision": 2511,
+        "Timing": 24
+      },
+      "CommandId": "a35344b73ebd80286ce5e0d66f0030b5",
+      "SubmittedFrame": 6945,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B00000010A35344B73EBD80286CE5E0D66F0030B5000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C697479000000080000000000000001000000103AB43766297419A7217E6B7AD68999C2000000080000000000000018000000101C9BDDC8F4804246D25387187E8B5071000000103D44E6D5229119FC928C22CACABEBAF9",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "strike",
+        "Route": "key-E",
+        "Action": "Strike",
+        "Frame": 7887,
+        "MillisecondsWithinDay": 36927200,
+        "ActorRevision": 2511,
+        "Timing": 48
+      },
+      "CommandId": "1e32dd365e28d460a9baa220c00a83f5",
+      "SubmittedFrame": 7887,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B000000101E32DD365E28D460A9BAA220C00A83F5000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C697479000000080000000000000001000000103AB43766297419A7217E6B7AD68999C2000000080000000000000030000000101C9BDDC8F4804246D25387187E8B5071000000103D44E6D5229119FC928C22CACABEBAF9",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "strike",
+        "Route": "key-E",
+        "Action": "Strike",
+        "Frame": 8701,
+        "MillisecondsWithinDay": 36928200,
+        "ActorRevision": 2511,
+        "Timing": 70
+      },
+      "CommandId": "7742f64cd3cd24be25a708fd4ddd2b53",
+      "SubmittedFrame": 8701,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B000000107742F64CD3CD24BE25A708FD4DDD2B53000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C697479000000080000000000000001000000103AB43766297419A7217E6B7AD68999C2000000080000000000000046000000101C9BDDC8F4804246D25387187E8B5071000000103D44E6D5229119FC928C22CACABEBAF9",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "accept",
+        "Route": "key-E",
+        "Action": "ReleaseEncounter",
+        "Frame": 9470,
+        "MillisecondsWithinDay": 36928400,
+        "ActorRevision": 2511,
+        "Timing": 78
+      },
+      "CommandId": "c40278d9e217f6dbecc762c753ba620e",
+      "SubmittedFrame": 9470,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001400000010C40278D9E217F6DBECC762C753BA620E000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF000000744F464300000000010000000400000020776F726C642E616374696F6E2E61636B6E6F776C656467652D6F7574636F6D65000000080000000000000001000000103AB43766297419A7217E6B7AD68999C200000020A195A4D653B398ABC64F1F855737673D5FABD43B7BA5B0468D0842131591292B",
+      "SameOfferObject": true
+    }
+  ],
+  "Submissions": [
+    {
+      "Stage": "strike",
+      "Action": "Strike",
+      "Label": "Strike",
+      "TargetName": "Bandit Chief",
+      "TargetId": "3d44e6d5229119fc928c22cacabebaf9",
+      "Scope": {
+        "PrincipalId": "4eedec13944b84435eaa673463675d5b",
+        "SessionId": "e8dd16b79d8561fae9ce52d4763c8c89",
+        "ActorId": "32a23112ed61be5afb3b512e9c38bdf8",
+        "WorldId": "3a04c92f957199e29bd87c0c94e5416c",
+        "BranchId": "8833ce1e2c8957d7957f70c674d13d75",
+        "ExpectedActorRevision": 2511
+      },
+      "IntentType": "QueueEncounterAbilityIntent",
+      "IntentText": "QueueEncounterAbilityIntent { EncounterId = 3ab43766297419a7217e6b7ad68999c2, ExpectedTimingRevision = 1, AbilityDefinitionId = 1c9bddc8f4804246d25387187e8b5071, TargetActorId = 3d44e6d5229119fc928c22cacabebaf9 }",
+      "OfferCommandId": null,
+      "CommandId": "aa74594813ecc7e54bcd64e043dbc8f2",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B00000010AA74594813ECC7E54BCD64E043DBC8F2000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C697479000000080000000000000001000000103AB43766297419A7217E6B7AD68999C2000000080000000000000001000000101C9BDDC8F4804246D25387187E8B5071000000103D44E6D5229119FC928C22CACABEBAF9",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010AA74594813ECC7E54BCD64E043DBC8F2000000104EEDEC13944B84435EAA673463675D5B000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D7500000020745A216A59854844A988C50982B1C012642B993882F52436E95F92861D43B9590000000800000000000009DA000000080000000000000001000000080000000000000000",
+        "CommandId": "aa74594813ecc7e54bcd64e043dbc8f2",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 2522,
+        "ResultId": "64c1e46a115866247f51ebd63449c467"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "strike",
+      "Action": "Strike",
+      "Label": "Strike",
+      "TargetName": "Bandit Chief",
+      "TargetId": "3d44e6d5229119fc928c22cacabebaf9",
+      "Scope": {
+        "PrincipalId": "4eedec13944b84435eaa673463675d5b",
+        "SessionId": "e8dd16b79d8561fae9ce52d4763c8c89",
+        "ActorId": "32a23112ed61be5afb3b512e9c38bdf8",
+        "WorldId": "3a04c92f957199e29bd87c0c94e5416c",
+        "BranchId": "8833ce1e2c8957d7957f70c674d13d75",
+        "ExpectedActorRevision": 2511
+      },
+      "IntentType": "QueueEncounterAbilityIntent",
+      "IntentText": "QueueEncounterAbilityIntent { EncounterId = 3ab43766297419a7217e6b7ad68999c2, ExpectedTimingRevision = 24, AbilityDefinitionId = 1c9bddc8f4804246d25387187e8b5071, TargetActorId = 3d44e6d5229119fc928c22cacabebaf9 }",
+      "OfferCommandId": null,
+      "CommandId": "a35344b73ebd80286ce5e0d66f0030b5",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B00000010A35344B73EBD80286CE5E0D66F0030B5000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C697479000000080000000000000001000000103AB43766297419A7217E6B7AD68999C2000000080000000000000018000000101C9BDDC8F4804246D25387187E8B5071000000103D44E6D5229119FC928C22CACABEBAF9",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010A35344B73EBD80286CE5E0D66F0030B5000000104EEDEC13944B84435EAA673463675D5B000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D7500000020F511CBC2D9064B7F3AB977DD0064E9E93B587781FF1423824DCA399CD2EC51290000000800000000000009F1000000080000000000000001000000080000000000000000",
+        "CommandId": "a35344b73ebd80286ce5e0d66f0030b5",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 2545,
+        "ResultId": "9eeb5267e22d9c84789785c99eba9a8a"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "strike",
+      "Action": "Strike",
+      "Label": "Strike",
+      "TargetName": "Bandit Chief",
+      "TargetId": "3d44e6d5229119fc928c22cacabebaf9",
+      "Scope": {
+        "PrincipalId": "4eedec13944b84435eaa673463675d5b",
+        "SessionId": "e8dd16b79d8561fae9ce52d4763c8c89",
+        "ActorId": "32a23112ed61be5afb3b512e9c38bdf8",
+        "WorldId": "3a04c92f957199e29bd87c0c94e5416c",
+        "BranchId": "8833ce1e2c8957d7957f70c674d13d75",
+        "ExpectedActorRevision": 2511
+      },
+      "IntentType": "QueueEncounterAbilityIntent",
+      "IntentText": "QueueEncounterAbilityIntent { EncounterId = 3ab43766297419a7217e6b7ad68999c2, ExpectedTimingRevision = 48, AbilityDefinitionId = 1c9bddc8f4804246d25387187e8b5071, TargetActorId = 3d44e6d5229119fc928c22cacabebaf9 }",
+      "OfferCommandId": null,
+      "CommandId": "1e32dd365e28d460a9baa220c00a83f5",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B000000101E32DD365E28D460A9BAA220C00A83F5000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C697479000000080000000000000001000000103AB43766297419A7217E6B7AD68999C2000000080000000000000030000000101C9BDDC8F4804246D25387187E8B5071000000103D44E6D5229119FC928C22CACABEBAF9",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000101E32DD365E28D460A9BAA220C00A83F5000000104EEDEC13944B84435EAA673463675D5B000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D7500000020C41D32A40734642A7E53703AA2FD29E30F736B82F2AE9780CD4218904042803F000000080000000000000A09000000080000000000000001000000080000000000000000",
+        "CommandId": "1e32dd365e28d460a9baa220c00a83f5",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 2569,
+        "ResultId": "bd77e8a941ec695e377ecf85d2787d16"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "strike",
+      "Action": "Strike",
+      "Label": "Strike",
+      "TargetName": "Bandit Chief",
+      "TargetId": "3d44e6d5229119fc928c22cacabebaf9",
+      "Scope": {
+        "PrincipalId": "4eedec13944b84435eaa673463675d5b",
+        "SessionId": "e8dd16b79d8561fae9ce52d4763c8c89",
+        "ActorId": "32a23112ed61be5afb3b512e9c38bdf8",
+        "WorldId": "3a04c92f957199e29bd87c0c94e5416c",
+        "BranchId": "8833ce1e2c8957d7957f70c674d13d75",
+        "ExpectedActorRevision": 2511
+      },
+      "IntentType": "QueueEncounterAbilityIntent",
+      "IntentText": "QueueEncounterAbilityIntent { EncounterId = 3ab43766297419a7217e6b7ad68999c2, ExpectedTimingRevision = 70, AbilityDefinitionId = 1c9bddc8f4804246d25387187e8b5071, TargetActorId = 3d44e6d5229119fc928c22cacabebaf9 }",
+      "OfferCommandId": null,
+      "CommandId": "7742f64cd3cd24be25a708fd4ddd2b53",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B000000107742F64CD3CD24BE25A708FD4DDD2B53000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C697479000000080000000000000001000000103AB43766297419A7217E6B7AD68999C2000000080000000000000046000000101C9BDDC8F4804246D25387187E8B5071000000103D44E6D5229119FC928C22CACABEBAF9",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000107742F64CD3CD24BE25A708FD4DDD2B53000000104EEDEC13944B84435EAA673463675D5B000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000002066F8724F1E5D2D26C0B1308C690C4A260F942D253F686E48809C268D2A3A5379000000080000000000000A1F000000080000000000000001000000080000000000000000",
+        "CommandId": "7742f64cd3cd24be25a708fd4ddd2b53",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 2591,
+        "ResultId": "b8db41ff1199b0f75bf39ff764fcfc6e"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "accept",
+      "Action": "ReleaseEncounter",
+      "Label": "Accept defeat",
+      "TargetName": "Defeated",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "4eedec13944b84435eaa673463675d5b",
+        "SessionId": "e8dd16b79d8561fae9ce52d4763c8c89",
+        "ActorId": "32a23112ed61be5afb3b512e9c38bdf8",
+        "WorldId": "3a04c92f957199e29bd87c0c94e5416c",
+        "BranchId": "8833ce1e2c8957d7957f70c674d13d75",
+        "ExpectedActorRevision": 2511
+      },
+      "IntentType": "AcknowledgeEncounterOutcomeIntent",
+      "IntentText": "AcknowledgeEncounterOutcomeIntent { EncounterId = 3ab43766297419a7217e6b7ad68999c2, ExpectedActionHash = a195a4d653b398abc64f1f855737673d5fabd43b7ba5b0468d0842131591292b }",
+      "OfferCommandId": null,
+      "CommandId": "c40278d9e217f6dbecc762c753ba620e",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001400000010C40278D9E217F6DBECC762C753BA620E000000104EEDEC13944B84435EAA673463675D5B00000010E8DD16B79D8561FAE9CE52D4763C8C890000001032A23112ED61BE5AFB3B512E9C38BDF8000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D750000000800000000000009CF000000744F464300000000010000000400000020776F726C642E616374696F6E2E61636B6E6F776C656467652D6F7574636F6D65000000080000000000000001000000103AB43766297419A7217E6B7AD68999C200000020A195A4D653B398ABC64F1F855737673D5FABD43B7BA5B0468D0842131591292B",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010C40278D9E217F6DBECC762C753BA620E000000104EEDEC13944B84435EAA673463675D5B000000103A04C92F957199E29BD87C0C94E5416C000000108833CE1E2C8957D7957F70C674D13D7500000020DEB90370F20D31D94FB6F5E3F725F11F3E5EAC5ADDB9A921D844ADEB6EF95AD0000000080000000000000A27000000080000000000000001000000080000000000000000",
+        "CommandId": "c40278d9e217f6dbecc762c753ba620e",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 2599,
+        "ResultId": "3668c9df54fb0c48ce8bcbc0c504a9ee"
+      },
+      "Answer": "receipt"
+    }
+  ],
+  "SubmissionLimit": 128,
+  "SubmissionOverflow": false,
+  "Checks": [
+    "The defeat-outcome panel stated the result and reason while the world held, clear of the HUD and combatants.",
+    "The terminal panel explains incapacity and the completion policy and offers Save and leave."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T031006Z-4ef60/native-encounter-outcome-jfwe3z5r/defeat.defeat-engaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T031006Z-4ef60/native-encounter-outcome-jfwe3z5r/defeat.defeat-outcome.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T031006Z-4ef60/native-encounter-outcome-jfwe3z5r/defeat.terminal.png"
+  ],
+  "SaveAndLeave": true,
+  "FinalStage": "Completed",
+  "FinalTerminal": true,
+  "CompletedAtSequence": 2600,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 2,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 80032,
+    "Z": 256
+  },
+  "FinalHp": 0,
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

@@ -1,0 +1,38 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.36]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.78]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.92]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.IncapacitatedWinnerIsNotPromisedExploration [12 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeInputTests.InteractKeepsChoosingCareWhileTheProfile35ReadingStaysASeparatePermittedChoice [16 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.CareReasonComesFromTheCareViewNotFromAReachAssumption [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.PendingButUnavailableHelperIsNotDescribedAsPreparingCare [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.HudFormsStayCompactWhileTheCardKeepsTheFullExplanation [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.DefeatWithAvailableCareSaysThatAcceptingDeclinesIt [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeInputTests.EarlierWheelLayoutsAndWordingAreUnchanged [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.TerminalTextStatesTheCompletionPolicy [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.ObserverOwesNoReadingAndSeesOnlyObservedCondition [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeInputTests.TheWheelExposesTheReadingBesideCareInTheUnusedRightSectorWithItsOwnWording [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeInputTests.LegacyCareStillRefusesTheReleaseThatTheProfile35ReadingIsDistinguishedFrom [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.FarmSubmissionSeamTests.TheSeamReportsTheExactSelectionKeepsRetryIdentityAndRecordsTheStaleRejection [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode [3 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis [700 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoCompletedEpisodesInOneWorldReplaceTheLatestRecordAndRetainIdentities [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.CompleteRootDecodeRefusesForeignPinsAndImpossibleOwnerContents [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening [34 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues [36 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem [512 ms]
+[xUnit.net 00:01:14.22]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [1 s]
+
+Test Run Successful.
+Total tests: 24
+     Passed: 24
+ Total time: 1.2425 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-unit-20261002T023848Z-df2cb/outcome-host.trx

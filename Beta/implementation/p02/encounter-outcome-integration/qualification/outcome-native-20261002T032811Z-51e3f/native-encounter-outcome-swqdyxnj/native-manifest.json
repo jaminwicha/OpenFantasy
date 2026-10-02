@@ -1,0 +1,77 @@
+{
+  "results": [
+    {
+      "mode": "victory",
+      "fixture": "victory",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/victory.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/victory/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/victory/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/victory/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/victory.json",
+      "finalDatabaseSha256": "e712c6a13fc2053b9129ad22ee49ac471d6e44b8c5cfa9b40ad8b66ce0391624",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/victory.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/victory.gearford.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/victory.sold.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/victory.victory-completed.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/victory.victory-engaged.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/victory.victory-outcome.png"
+      ]
+    },
+    {
+      "mode": "defeat",
+      "fixture": "defeat",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/defeat.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/defeat/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/defeat/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/defeat/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/defeat.json",
+      "finalDatabaseSha256": "f6c1e55e6e0b3aae94880a5c85de70d8b36f0cc38ff3e626fff4a8ba6fd966af",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/defeat.defeat-engaged.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/defeat.defeat-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/defeat.terminal.png"
+      ]
+    },
+    {
+      "mode": "care",
+      "fixture": "care",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/care/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/care/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/care/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care.json",
+      "finalDatabaseSha256": "c67beacf0973e9120e85df9ce4dc2cabe63f207d3e6f7b5d489091fc30739880",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care.care-declined.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care.care-hover.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care.care-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care.final.png"
+      ]
+    },
+    {
+      "mode": "care-wheel",
+      "fixture": "care",
+      "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care-wheel.sqlite",
+      "genesis": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/care/genesis.ofc",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/care/before.ofc",
+      "metadata": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-fixtures-20261002T024809Z-a4f42/fixtures/care/metadata.json",
+      "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care-wheel.json",
+      "finalDatabaseSha256": "44e0d09578060c7a3db91eb4633ff4e8d60527416ae465a55bf047b0e76ae854",
+      "images": [
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care-wheel.care-wheel-declined.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care-wheel.care-wheel-outcome.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care-wheel.final.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care-wheel.wheel-accept.png",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/care-wheel.wheel.png"
+      ]
+    }
+  ],
+  "reopen": {
+    "save": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/defeat.sqlite",
+    "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/reopen.json",
+    "images": [
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-integration/qualification/outcome-native-20261002T032811Z-51e3f/native-encounter-outcome-swqdyxnj/reopen.reopen.png"
+    ]
+  }
+}

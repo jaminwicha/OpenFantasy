@@ -20,7 +20,8 @@ public sealed partial class SqliteWorldAuthority
         lock (_gate)
         {
             EnsureAvailable();
-            if (_state.ProfileVersion is not (WorldMarketAdmission.ProfileVersion or WorldEncounterRetreatAdmission.ProfileVersion)
+            if (_state.ProfileVersion is not (WorldMarketAdmission.ProfileVersion or WorldEncounterRetreatAdmission.ProfileVersion
+                    or WorldEncounterOutcomeAdmission.ProfileVersion)
                 || command.Intent is not MarketIntent)
             {
                 throw new AuthorityDispatchException("This boundary accepts market submissions of their own world profile.");

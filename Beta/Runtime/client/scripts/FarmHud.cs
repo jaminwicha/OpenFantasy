@@ -2,6 +2,7 @@ using Godot;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Hosting.Simulation;
+using OpenFantasy.Hosting.Simulation.EncounterOutcome;
 
 namespace OpenFantasy.Client;
 
@@ -36,6 +37,8 @@ internal sealed partial class FarmHud : CanvasLayer
     private FarmSemanticAction _hovered;
     private FarmSemanticAction _focused;
     private bool _wasSpeaking;
+    /// <summary>An unfinalized profile-35 outcome: its choices preview in one line; the card and tooltips explain fully.</summary>
+    private bool _outcomeChoices;
 
     /// <summary>Every button names a semantic action; the game's input router decides whether the context accepts it.</summary>
     internal event Action<FarmSemanticAction>? ActionRequested;
@@ -118,6 +121,7 @@ internal sealed partial class FarmHud : CanvasLayer
         IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, FarmTargetSelection targets)
     {
         _offers = offers;
+        _outcomeChoices = view.EncounterOutcome is { Stage: not LocalOutcomeStage.Completed };
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;
         int minute = view.Calendar.MillisecondsWithinDay / 60_000 % 60;
         _clock.Text = $"Day {view.Calendar.Days + 1} · {hour:D2}:{minute:D2}";
@@ -152,10 +156,12 @@ internal sealed partial class FarmHud : CanvasLayer
             PresentOffer(action, action == FarmSemanticAction.Wait ? "G" : "E", pending || paused || speaking);
         _encounter.Present(view, paused);
         GetNode<Label>("Root/Footer/Column/Actions/Movement").Text = view.Encounter?.IsOutcome == true
-            ? view.Care is { } care ? CareHint(care.Status)
+            ? view.EncounterOutcome is { } outcome ? EncounterOutcomeText.Hint(outcome, view.Care)
+                : view.Care is { } care ? CareHint(care.Status)
                 : view.EncounterLifecycle?.ReleaseActionHash is not null ? "Encounter complete\nE / A: continue"
                 : "Incapacitated\nAid unavailable"
-            : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait" : "Move\nWASD / arrows";
+            : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait"
+            : view.EncounterOutcome is { IsTerminal: true } ? EncounterOutcomeText.TerminalHint : "Move\nWASD / arrows";
         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
         LocalConstructionView? project = view.Construction.FirstOrDefault(value => !value.IsCompleted)
             ?? view.Construction.FirstOrDefault();
@@ -204,19 +210,27 @@ internal sealed partial class FarmHud : CanvasLayer
             return;
         }
         button.Visible = true;
-        button.Text = action == FarmSemanticAction.UseRestorative ? "" : action is FarmSemanticAction.EnterEncounter or FarmSemanticAction.Strike
+        // Beside offered care, E / A asks for care; the separate reading names its choice and no key it does not have.
+        bool readingBesideCare = action == FarmSemanticAction.ReleaseEncounter && EncounterOutcomeText.ReadingBesideCare(_offers);
+        button.Text = action == FarmSemanticAction.UseRestorative ? "" : readingBesideCare ? offer.Label
+            : action is FarmSemanticAction.EnterEncounter or FarmSemanticAction.Strike
             or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter or FarmSemanticAction.AcknowledgeCare ? $"[{key}]"
             : offer.SpendsSomething ? $"{offer.Label}  [{key}]\n{offer.CostText}" : $"{offer.Label}  [{key}]";
         button.Disabled = blockedByLayer || !offer.CanExecute;
-        button.TooltipText = Explain(offer);
+        button.TooltipText = readingBesideCare ? Explain(offer) + "\n" + EncounterOutcomeText.ReadingBesideCareRoutes : Explain(offer);
     }
 
-    /// <summary>Keyboard/controller focus and pointer hover explain the same presented offer.</summary>
+    /// <summary>
+    /// Keyboard/controller focus and pointer hover explain the same presented offer. Outcome choices preview in one line,
+    /// so the footer never outgrows the field; their tooltips, the wheel inspector and the outcome card explain fully.
+    /// </summary>
     private void PresentPreview()
     {
         FarmSemanticAction inspected = _hovered != FarmSemanticAction.None ? _hovered : _focused;
         _preview.Text = inspected != FarmSemanticAction.None && _offers.TryGetValue(inspected, out FarmActionOffer? offer)
-            ? Explain(offer) : InspectHint;
+            ? _outcomeChoices && inspected is FarmSemanticAction.ReleaseEncounter or FarmSemanticAction.AcknowledgeCare
+                ? EncounterOutcomeText.InlinePreview(offer) : Explain(offer)
+            : InspectHint;
     }
 
     private static string Explain(FarmActionOffer offer)

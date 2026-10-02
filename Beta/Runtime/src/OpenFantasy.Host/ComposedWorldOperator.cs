@@ -16,6 +16,17 @@ internal sealed class ComposedWorldOperator
         return Report(authority);
     }
 
+    /// <summary>
+    /// Creates the separate fresh outcome-completion cargo world (profile 35). It never opens or upgrades an existing
+    /// save: creation refuses an existing database through the ordinary fresh-authority path.
+    /// </summary>
+    internal string CreateCargoOutcomes(string database, string seed, string playerName)
+    {
+        var genesis = OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(seed, playerName);
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(database, genesis);
+        return Report(authority);
+    }
+
     internal string CreateEncounterWorld(string database, string seed, string playerName)
     {
         var genesis = OpenFantasy.Hosting.Content.EncounterFarmAdmission.CreateEmbedded(seed, playerName);

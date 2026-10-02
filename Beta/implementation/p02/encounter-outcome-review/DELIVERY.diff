@@ -1,0 +1,1038 @@
+diff --git a/Beta/Runtime/README.md b/Beta/Runtime/README.md
+index b8a5648..862f1d0 100644
+--- a/Beta/Runtime/README.md
++++ b/Beta/Runtime/README.md
+@@ -773,3 +773,11 @@ lane, the observed warning, the chief's entry, a strike and its real hit, Retrea
+ detour, Kegga sale) and shorter controller and pointer Retreat routes from the road, then a separate paused reopen; its
+ manifest feeds `NativeRoadThreatResultTests` through `OPENFANTASY_NATIVE_ROAD_THREAT_RESULTS`. See
+ [road threat](docs/architecture/road-threat.md).
++
++The separate outcome-completion world (profile 35) removes that dead end without changing any earlier profile:
++`OpenFantasy.Host --create-cargo-outcomes <world.sqlite> <seed> <player-name>` creates it, and
++`NativeEncounterOutcome.tscn` (`--cargo-outcomes [SAVE]`) opens only it. A resolved encounter is completed by the world
++once every player in the fight has read the result; the winner reads **Continue** and keeps exploring with recovery
++retained, a defeated player reads **Accept defeat** (or asks admitted care first when it can reach them) and then sees a
++terminal explanation with **Save and leave**. Nothing is rewarded, revived or removed. See
++[encounter outcome](docs/architecture/encounter-outcome.md).
+diff --git a/Beta/Runtime/client/scripts/EncounterActionOffers.cs b/Beta/Runtime/client/scripts/EncounterActionOffers.cs
+index 180a65a..c5b3f2a 100644
+--- a/Beta/Runtime/client/scripts/EncounterActionOffers.cs
++++ b/Beta/Runtime/client/scripts/EncounterActionOffers.cs
+@@ -3,6 +3,7 @@ using OpenFantasy.Core;
+ using OpenFantasy.Core.Encounters;
+ using OpenFantasy.Core.Worlds;
+ using OpenFantasy.Hosting.Simulation;
++using OpenFantasy.Hosting.Simulation.EncounterOutcome;
+ 
+ namespace OpenFantasy.Client;
+ 
+@@ -14,7 +15,17 @@ internal static class EncounterActionOffers
+         FarmActionScope scope, FarmTarget? selected)
+     {
+         Dictionary<FarmSemanticAction, FarmActionOffer> offers = [];
+-        if (view.Care is { } care)
++        if (view.IsInEncounter && view.EncounterOutcome is { Stage: not LocalOutcomeStage.Completed } outcome)
++        {
++            // Outcome-completion world: reading the result and admitted care are separate deliberate choices. Care is
++            // offered only when the care view admits it (or is already pending); the reading always states its reason.
++            if (view.Care is { } admitted && (admitted.PendingAcknowledgmentId is not null || admitted.Offers.Any(offer => offer.CanAcknowledge)))
++            {
++                offers[FarmSemanticAction.AcknowledgeCare] = AcknowledgeCare(admitted, scope, selected);
++            }
++            offers[FarmSemanticAction.ReleaseEncounter] = ReadOutcome(outcome, scope);
++        }
++        else if (view.Care is { } care)
+         {
+             offers[FarmSemanticAction.AcknowledgeCare] = AcknowledgeCare(care, scope, selected);
+         }
+@@ -129,6 +140,12 @@ internal static class EncounterActionOffers
+             token is null ? null : new ReleaseEncounterIntent(view.Encounter!.EncounterId, token), blocker);
+     }
+ 
++    /// <summary>The reading of a profile-35 outcome; it grants no bodily action and never heals, rewards or moves anyone.</summary>
++    private static FarmActionOffer ReadOutcome(LocalEncounterOutcomeView outcome, FarmActionScope scope) =>
++        new(FarmSemanticAction.ReleaseEncounter, scope, EncounterOutcomeText.ReadLabel(outcome), EncounterOutcomeText.Title(outcome),
++            null, FarmActionOffers.NoCost, "Outcome read; the world completes the encounter once every player has read it.",
++            outcome.Acknowledgment, EncounterOutcomeText.ReadBlocker(outcome), detailText: EncounterOutcomeText.ReadDetail(outcome));
++
+     private static string? Blocker(LocalEncounterActionBlockedReason reason) => reason switch
+     {
+         LocalEncounterActionBlockedReason.None => null,
+diff --git a/Beta/Runtime/client/scripts/FarmClientSession.cs b/Beta/Runtime/client/scripts/FarmClientSession.cs
+index d264d85..e4fc8c7 100644
+--- a/Beta/Runtime/client/scripts/FarmClientSession.cs
++++ b/Beta/Runtime/client/scripts/FarmClientSession.cs
+@@ -6,6 +6,7 @@ using OpenFantasy.Core.Gathering;
+ using OpenFantasy.Core.Worlds;
+ using OpenFantasy.Hosting.Content;
+ using OpenFantasy.Hosting.Content.Cargo;
++using OpenFantasy.Hosting.Content.EncounterOutcome;
+ using OpenFantasy.Hosting.Content.NativeCargo;
+ using OpenFantasy.Hosting.Content.Retreat;
+ using OpenFantasy.Hosting.Content.RoadThreat;
+@@ -240,14 +241,51 @@ internal sealed class FarmClientSession : IAsyncDisposable
+         return AttachCargo(authority, retreat: true);
+     });
+ 
++    /// <summary>
++    /// Explicit fresh selection of the outcome-completion cargo world (profile 35): the threatened cargo world with the
++    /// world-owned completion law. An existing save opens only when it is this same selected world; a threatened,
++    /// retreat or plain cargo save is never upgraded or read as this one, and this save is never read as theirs.
++    /// </summary>
++    internal static Task<FarmClientSession> OpenCargoOutcomesAsync(string savePath, string seedText, string playerName) => Task.Run(() =>
++    {
++        WorldSnapshot genesis = CargoOutcomeWorldAdmission.CreateEmbedded(seedText, playerName);
++        Directory.CreateDirectory(Path.GetDirectoryName(Path.GetFullPath(savePath))!);
++        SqliteWorldAuthority authority = File.Exists(savePath)
++            ? SqliteWorldAuthority.OpenExisting(savePath, WorldSnapshotCodec.Encode(genesis))
++            : SqliteWorldAuthority.CreateNew(savePath, genesis);
++        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
++        catch { authority.Dispose(); throw; }
++        return AttachCargo(authority, retreat: true, outcomes: true);
++    });
++
++    /// <summary>
++    /// Continues an exported outcome-completion fixture; the genesis must be a fresh profile-35 admission of the
++    /// threatened cargo world (a declared calibration keeps its own admission identity and is reported by the fixture).
++    /// </summary>
++    internal static Task<FarmClientSession> OpenCargoOutcomesFixtureAsync(string savePath, string expectedGenesisPath) => Task.Run(() =>
++    {
++        if (!File.Exists(savePath)) throw new FileNotFoundException("The outcome fixture requires its existing save.", savePath);
++        byte[] expected = File.ReadAllBytes(expectedGenesisPath);
++        WorldSnapshot genesis = WorldSnapshotCodec.Decode(expected);
++        if (genesis.ProfileVersion != WorldEncounterOutcomeAdmission.ProfileVersion || genesis.Revision != 0
++            || genesis.AdvancingSteps != 0 || CargoOutcomeWorldAdmission.Find(genesis, CargoCircuitSources.LoadEmbedded(),
++                RoadThreatSources.LoadEmbedded()) is null)
++            throw new InvalidDataException("The outcome fixture requires its fresh outcome-completion cargo genesis.");
++        SqliteWorldAuthority authority = SqliteWorldAuthority.OpenExisting(savePath, expected);
++        try { FarmSaveOpener.ValidateSelection(authority.InspectForHost().State, genesis); }
++        catch { authority.Dispose(); throw; }
++        return AttachCargo(authority, retreat: true, outcomes: true);
++    });
++
+     /// <summary>The cargo session: the quest companion, the cargo trading advice and the bounded region observer.</summary>
+-    private static FarmClientSession AttachCargo(SqliteWorldAuthority authority, bool retreat = false)
++    private static FarmClientSession AttachCargo(SqliteWorldAuthority authority, bool retreat = false, bool outcomes = false)
+     {
+         try
+         {
+             WorldSnapshot current = authority.InspectForHost().State;
+             if (!NativeCargoWorld.IsCargoWorld(current)
+-                || (current.ProfileVersion == WorldEncounterRetreatAdmission.ProfileVersion) != retreat)
++                || (current.ProfileVersion == WorldEncounterRetreatAdmission.ProfileVersion) != (retreat && !outcomes)
++                || (current.ProfileVersion == WorldEncounterOutcomeAdmission.ProfileVersion) != outcomes)
+                 throw new InvalidDataException("This save is not the selected cargo world.");
+             WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
+             WorldResident wren = QuestCompanion(current, player);
+@@ -259,7 +297,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
+                 .Definition.YieldDefinition.DefinitionId;
+             // The session publishes the regional observation with each view; frames never read the authority.
+             // The retreat world configures no NPC retreat: its wolves keep fighting exactly as in the cargo world.
+-            var world = retreat
++            var world = retreat || outcomes
+                 ? new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
+                     NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId), LocalRetreatConfiguration.None)
+                 : new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
+diff --git a/Beta/Runtime/client/scripts/FarmEncounterStatus.cs b/Beta/Runtime/client/scripts/FarmEncounterStatus.cs
+index cbcc1e1..cd9e94e 100644
+--- a/Beta/Runtime/client/scripts/FarmEncounterStatus.cs
++++ b/Beta/Runtime/client/scripts/FarmEncounterStatus.cs
+@@ -15,12 +15,15 @@ internal sealed class FarmEncounterStatus(Label label)
+         if (view.EncounterLifecycle is not { } lifecycle) return;
+         string status = lifecycle.Phase switch
+         {
+-            EncounterLifecyclePhase.Exploration => lifecycle.PlayerCanAct
++            EncounterLifecyclePhase.Exploration => view.EncounterOutcome is { IsTerminal: true } terminal
++                ? EncounterOutcomeText.Terminal(terminal)
++                : lifecycle.PlayerCanAct
+                 ? "Explore freely · Select a wolf to inspect an encounter."
+                 : "Recovering · Exploration time restores readiness; injuries remain.",
+             EncounterLifecyclePhase.Confrontation => "Encounter · Taking notice",
+             EncounterLifecyclePhase.Staging => "Encounter · Holding positions",
+-            EncounterLifecyclePhase.Outcome => view.Care is { } care ? DescribeCare(care)
++            EncounterLifecyclePhase.Outcome => view.EncounterOutcome is { } outcome ? EncounterOutcomeText.Status(outcome, view.Care)
++                : view.Care is { } care ? DescribeCare(care)
+                 : lifecycle.ReleaseActionHash is not null
+                 ? "Encounter over · Continue exploring when ready."
+                 : "Incapacitated · No aid is available in this encounter.",
+diff --git a/Beta/Runtime/client/scripts/FarmGame.Cargo.cs b/Beta/Runtime/client/scripts/FarmGame.Cargo.cs
+index b5b6b34..9b36cf5 100644
+--- a/Beta/Runtime/client/scripts/FarmGame.Cargo.cs
++++ b/Beta/Runtime/client/scripts/FarmGame.Cargo.cs
+@@ -59,11 +59,32 @@ public partial class FarmGame
+     /// <summary>Expected fresh genesis of an exported threatened cargo fixture; requires its explicit existing save.</summary>
+     internal string? CargoThreatFixtureGenesisPath { get; init; }
+ 
+-    private bool FramesCargoThreat => CargoThreatProfile || CargoThreatFixtureGenesisPath is not null;
++    /// <summary>Explicit fresh outcome-completion cargo-world selection (profile 35) with its own save; never an upgrade.</summary>
++    internal bool CargoOutcomesProfile { get; init; }
++
++    /// <summary>Expected fresh genesis of an exported outcome-completion fixture; requires its explicit existing save.</summary>
++    internal string? CargoOutcomesFixtureGenesisPath { get; init; }
++
++    private bool FramesCargoThreat => CargoThreatProfile || CargoThreatFixtureGenesisPath is not null
++        || CargoOutcomesProfile || CargoOutcomesFixtureGenesisPath is not null;
+ 
+     /// <summary>Starts opening the cargo world when this game selects it; false for every other selection.</summary>
+     private bool OpenCargo()
+     {
++        if (CargoOutcomesFixtureGenesisPath is { } outcomesGenesis)
++        {
++            _opening = SavePathOverride is { } outcomesSave
++                ? FarmClientSession.OpenCargoOutcomesFixtureAsync(outcomesSave, outcomesGenesis)
++                : Task.FromException<FarmClientSession>(new InvalidOperationException("The outcome fixture requires its existing save."));
++            return true;
++        }
++        if (CargoOutcomesProfile)
++        {
++            string outcomesPath = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/openfantasy-cargo-outcomes.sqlite");
++            _opening = FarmClientSession.OpenCargoOutcomesAsync(outcomesPath,
++                OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.SeedText, "Traveler");
++            return true;
++        }
+         if (CargoThreatFixtureGenesisPath is { } threatGenesis)
+         {
+             _opening = SavePathOverride is { } threatSave
+diff --git a/Beta/Runtime/client/scripts/FarmHud.cs b/Beta/Runtime/client/scripts/FarmHud.cs
+index 217ae56..91d8b9c 100644
+--- a/Beta/Runtime/client/scripts/FarmHud.cs
++++ b/Beta/Runtime/client/scripts/FarmHud.cs
+@@ -152,10 +152,12 @@ internal sealed partial class FarmHud : CanvasLayer
+             PresentOffer(action, action == FarmSemanticAction.Wait ? "G" : "E", pending || paused || speaking);
+         _encounter.Present(view, paused);
+         GetNode<Label>("Root/Footer/Column/Actions/Movement").Text = view.Encounter?.IsOutcome == true
+-            ? view.Care is { } care ? CareHint(care.Status)
++            ? view.EncounterOutcome is { } outcome ? EncounterOutcomeText.Hint(outcome, view.Care)
++                : view.Care is { } care ? CareHint(care.Status)
+                 : view.EncounterLifecycle?.ReleaseActionHash is not null ? "Encounter complete\nE / A: continue"
+                 : "Incapacitated\nAid unavailable"
+-            : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait" : "Move\nWASD / arrows";
++            : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait"
++            : view.EncounterOutcome is { IsTerminal: true } ? EncounterOutcomeText.TerminalHint : "Move\nWASD / arrows";
+         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
+         LocalConstructionView? project = view.Construction.FirstOrDefault(value => !value.IsCompleted)
+             ?? view.Construction.FirstOrDefault();
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodec.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodec.cs
+index c7dd0de..188a5b5 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodec.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActionCodec.cs
+@@ -18,6 +18,7 @@ public static class WorldActionCodec
+         ArgumentNullException.ThrowIfNull(command);
+         return command.Intent switch
+         {
++            AcknowledgeEncounterOutcomeIntent => WorldActionCodecV20.Encode(command),
+             QueueEncounterRetreatIntent => WorldActionCodecV19.Encode(command),
+             MarketIntent => WorldActionCodecV18.Encode(command),
+             PaidExchangeIntent => WorldActionCodecV17.Encode(command),
+@@ -43,6 +44,7 @@ public static class WorldActionCodec
+     public static WorldActionCommand Decode(ReadOnlySpan<byte> bytes) =>
+         WorldCodecVersion.Read(bytes, "world.actor-action"u8, MaximumCommandByteLength, 10) switch
+         {
++            20 => WorldActionCodecV20.Decode(bytes),
+             19 => WorldActionCodecV19.Decode(bytes),
+             18 => WorldActionCodecV18.Decode(bytes),
+             17 => WorldActionCodecV17.Decode(bytes),
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs
+index 1b73280..eff67a1 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs
+@@ -45,7 +45,7 @@ public static class WorldCareAdmission
+     internal static void Validate(WorldSnapshot world)
+     {
+         if (world.Care is not { } care) return;
+-        if (world.ProfileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle
++        if (world.ProfileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle
+             || world.Production is not { SupportsConsumption: true } production || care.WorldId != world.WorldId
+             || care.BranchId != world.BranchId || !care.SupportsOrdinary && care.Revision > world.Revision
+             || care.Treatments.Count + (care.Ordinary?.Uses.Count ?? 0) != production.ConsumedItems.Count)
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs
+index 138edfa..85661ab 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareProcessor.cs
+@@ -137,16 +137,20 @@ internal static class WorldCareProcessor
+             restoration.ActorTransition);
+         var history = world.ResourceHistory!.Append(new(sequence, 0, command.CommandId, [change]),
+             new WorldTreatmentResourceEvidence(command.CommandId, treatment.TreatmentId));
++        // Treatment resumes the same unfinalized episode; in profile 35 earlier outcome readings described an outcome
++        // that no longer exists, so they end here and cannot complete a later outcome.
+         return (Copy(world, sequence, care.Treat(treatment), restoration.CandidateInventory, restoration.CandidateProduction,
+-            restoration.CandidateProgression, world.EncounterLifecycle!.ResumeAfterCare(timing), world.Pacing.ObserveEncounter(timing), reservoirs!, liquids!, history),
++            restoration.CandidateProgression, world.EncounterLifecycle!.ResumeAfterCare(timing), world.Pacing.ObserveEncounter(timing), reservoirs!, liquids!, history,
++            world.EncounterOutcome?.ClearAcknowledgments()),
+             WorldActionRejection.None);
+     }
+ 
+     private static WorldSnapshot Copy(WorldSnapshot world, ulong sequence, CareSnapshot care, CountedAuthorityState inventory,
+         ProductionSnapshot production, ProgressionSnapshot progression, EncounterLifecycleSnapshot lifecycle,
+         WorldPacingState pacing, Geography.LiquidReservoirState reservoirs, Geography.LiquidCellState liquids,
+-        WorldResourceHistory? history = null) =>
++        WorldResourceHistory? history = null, EncounterOutcomeState? outcome = null) =>
+         world.WithState(inventory, world.Space, world.Residents, world.Calendar, sequence, world.AdvancingSteps,
+             world.Dialogues, world.Gathering, production, progression, world.Quests, world.Construction, reservoirs, world.Transport,
+-            world.Excavation, world.ConstructionPhysical, liquids, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: history);
++            world.Excavation, world.ConstructionPhysical, liquids, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: history,
++            encounterOutcome: outcome);
+ }
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleProcessor.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleProcessor.cs
+index 9da7412..d49e3ac 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleProcessor.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterLifecycleProcessor.cs
+@@ -4,13 +4,17 @@ using OpenFantasy.Core.Spatial;
+ 
+ namespace OpenFantasy.Core.Worlds;
+ 
+-/// <summary>Claims, stages and releases supported encounters without elapsed-time or resource grants.</summary>
++/// <summary>
++/// Claims, stages, releases and (profile 35) records outcome readings and completes resolved encounters, without
++/// elapsed-time or resource grants.
++/// </summary>
+ internal static class WorldEncounterLifecycleProcessor
+ {
+     internal static WorldStepDecision Decide(WorldSnapshot world, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied)
+     {
+         var lifecycle = world.EncounterLifecycle ?? throw new InvalidOperationException("Lifecycle ownership is required.");
+         var pacing = world.Pacing!;
++        EncounterOutcomeState? outcome = world.EncounterOutcome;
+         ulong revision = checked(world.Revision + 1);
+         HashSet<EntityId> reserved = [];
+         List<WorldCommittedIdentity> identities = [];
+@@ -26,7 +30,15 @@ internal static class WorldEncounterLifecycleProcessor
+             identities.Add(new(identity, kind));
+         }
+         Reserve(batch.CauseId, WorldCommittedIdentityKind.CommitCause);
+-        if (batch.Actions.Count == 0)
++        if (batch.Actions.Count == 0 && outcome is not null && lifecycle.Phase == EncounterLifecyclePhase.Outcome)
++        {
++            // World-owned completion: no actor, initiator or survivor is required, and nothing but the phase, the
++            // timing binding and the completion record changes. Missing readers or pending care refuse the boundary.
++            outcome = outcome.Finalize(WorldEncounterOutcomes.Record(world, revision));
++            lifecycle = lifecycle.Release();
++            pacing = pacing.EndEncounter();
++        }
++        else if (batch.Actions.Count == 0)
+         {
+             lifecycle = lifecycle.AdvanceStaging();
+         }
+@@ -41,6 +53,7 @@ internal static class WorldEncounterLifecycleProcessor
+                 {
+                     EnterEncounterIntent enter => EvaluateEntry(world, command.ActorId, enter, OccupiedEpisode),
+                     ReleaseEncounterIntent release => EvaluateRelease(world, command.ActorId, release),
++                    AcknowledgeEncounterOutcomeIntent read => WorldEncounterOutcomes.EvaluateAcknowledgment(world, command.ActorId, read),
+                     _ => throw new InvalidOperationException("Unsupported lifecycle command.")
+                 };
+             }
+@@ -48,6 +61,13 @@ internal static class WorldEncounterLifecycleProcessor
+             {
+                 lifecycle = lifecycle.RetainBoundary();
+             }
++            else if (command.Intent is AcknowledgeEncounterOutcomeIntent read)
++            {
++                // A reading is recorded at its own boundary; completion is a separate world boundary.
++                outcome = outcome!.Acknowledge(new EncounterOutcomeAcknowledgment(command.ActorId, command.CommandId,
++                    read.EncounterId, read.ExpectedActionHash, revision));
++                lifecycle = lifecycle.RetainBoundary();
++            }
+             else if (command.Intent is EnterEncounterIntent enter)
+             {
+                 // Only this accepted entry claims its exact reserved episode identity. Generic
+@@ -78,7 +98,8 @@ internal static class WorldEncounterLifecycleProcessor
+         var candidate = world.WithState(world.Inventory, world.Space, world.Residents, world.Calendar,
+             revision, world.AdvancingSteps, world.Dialogues, world.Gathering, world.Production,
+             world.Progression, world.Quests, world.Construction, world.Reservoirs, world.Transport,
+-            world.Excavation, world.ConstructionPhysical, world.LiquidCells, pacing, encounterLifecycle: lifecycle);
++            world.Excavation, world.ConstructionPhysical, world.LiquidCells, pacing, encounterLifecycle: lifecycle,
++            encounterOutcome: outcome);
+         WorldCanonicalFrame candidateFrame = WorldCanonicalFrame.Capture(candidate);
+         return new(candidate, receipts, identities, candidateFrame: candidateFrame);
+     }
+@@ -89,6 +110,8 @@ internal static class WorldEncounterLifecycleProcessor
+             return WorldActionRejection.NotAuthorized;
+         if (world.Space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision)
+             return WorldActionRejection.RevisionConflict;
++        // Reading an outcome is a controller fact, not a bodily act: an incapacitated actor's controller may read.
++        if (command.Intent is AcknowledgeEncounterOutcomeIntent) return WorldActionRejection.None;
+         return WorldActorAvailability.CanCooperate(world, command.ActorId)
+             ? WorldActionRejection.None : WorldActionRejection.Unavailable;
+     }
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs
+index 4b684cd..a4fff2b 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs
+@@ -23,7 +23,7 @@ internal static class WorldResourceAdmission
+         var joint = retained.CoordinatedAnchor;
+         // Only the paid interpretation has currency-only causes; every other profile keeps its exact equation.
+         var paidCauses = WorldPaidExchangeAdmission.CurrencyCauses(world).ToList();
+-        if (world.ProfileVersion is not (25 or 26 or 27 or 28 or 30 or 32 or 33 or 34) || retained.AnchorAdmission != world.AdmissionVersion
++        if (world.ProfileVersion is not (25 or 26 or 27 or 28 or 30 or 32 or 33 or 34 or 35) || retained.AnchorAdmission != world.AdmissionVersion
+             || anchor is null && joint is null && (history.BasisWorldSequence != 0 || history.Basis.Revision != 0
+                 || history.Basis.Actors.Any(actor => actor.Revision != 0))
+             || progression.Revision != checked(history.Basis.Revision + (ulong)history.Batches.Count + (ulong)paidCauses.Count)
+@@ -247,7 +247,7 @@ internal static class WorldResourceAdmission
+     private static IReadOnlyList<ActorResourceChange> ValidateRestorativeUse(WorldSnapshot world, ResourceChangeBatch batch,
+         WorldRestorativeUseResourceEvidence evidence, Dictionary<EntityId, ActorProgressionState> heads)
+     {
+-        if (world.ProfileVersion is not (26 or 27 or 28 or 30 or 32 or 33 or 34) || world.Care?.Ordinary is not { } ordinary)
++        if (world.ProfileVersion is not (26 or 27 or 28 or 30 or 32 or 33 or 34 or 35) || world.Care?.Ordinary is not { } ordinary)
+             throw new ArgumentException("Ordinary restoration evidence requires its explicit ordinary-care world profile.");
+         var use = ordinary.Uses.SingleOrDefault(value => value.UseId == evidence.UseId)
+             ?? throw new ArgumentException("Ordinary restoration requires its actual retained completed use.");
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs
+index 89385aa..f72246a 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeActions.cs
+@@ -54,7 +54,7 @@ public static class WorldRestorativeActions
+         EntityId actorId, EntityId recipientActorId, EntityId definitionId, EntityId? permissionId,
+         UseRestorativeItemIntent? captured, bool readingHold)
+     {
+-        if (basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || care.Ordinary is not { } ordinary)
++        if (basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || care.Ordinary is not { } ordinary)
+             return Blocked(RestorativeAvailabilityReason.UnsupportedProfile);
+         if (care.Pending is not null) return Blocked(RestorativeAvailabilityReason.PendingAftermathCare);
+         if (basis.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration)
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs
+index 83a1098..b1283ab 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeAdmission.cs
+@@ -31,7 +31,7 @@ public static class WorldRestorativeAdmission
+     internal static void Validate(WorldSnapshot world)
+     {
+         if (world.Care?.Ordinary is not { } ordinary) return;
+-        if (world.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34) throw new ArgumentException("Ordinary care requires its explicit world interpretation.");
++        if (world.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35) throw new ArgumentException("Ordinary care requires its explicit world interpretation.");
+         foreach (var definition in ordinary.Definitions)
+         {
+             foreach (var form in definition.SupportedForms)
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeResolver.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeResolver.cs
+index d9ed013..1f7b183 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeResolver.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldRestorativeResolver.cs
+@@ -19,7 +19,7 @@ internal sealed class WorldRestorativeResolver
+         if (!inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId))
+             return Reject(WorldActionRejection.NotAuthorized);
+         if (space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision) return Reject(WorldActionRejection.RevisionConflict);
+-        if (kind != WorldBatchKind.AdvancingStep || basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || care.Ordinary is not { } ordinary
++        if (kind != WorldBatchKind.AdvancingStep || basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || care.Ordinary is not { } ordinary
+             || basis.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration || care.Pending is not null
+             || basis.PendingExcavation is not null || readingHold || progression.GetActor(command.ActorId).CurrentHp <= 0
+             || basis.EncounterLifecycle.GetDebt(command.ActorId).RemainingDelay != 0)
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs
+index 2adb500..e186bf8 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs
+@@ -39,9 +39,10 @@ public sealed class WorldSnapshot
+         ConstructionDescentMode descentMode = ConstructionDescentMode.CommonTrajectory,
+         ReservoirSealPolicy? reservoirSeals = null, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null,
+         EncounterLifecycleSnapshot? encounterLifecycle = null, CareSnapshot? care = null, WorldResourceHistory? resourceHistory = null,
+-        WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null)
++        WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null,
++        EncounterOutcomeState? encounterOutcome = null)
+         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
+-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination, retreat, null)
++            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination, retreat, encounterOutcome, null)
+     {
+     }
+ 
+@@ -55,7 +56,7 @@ public sealed class WorldSnapshot
+         StructuralSettlementPolicy? structuralSettlementPolicy, ConsequenceExecutionPolicy? consequencePolicy,
+         PendingExcavation? pendingExcavation, CoupledSettlementPolicy? coupledSettlementPolicy,
+         ConstructionDescentMode descentMode, ReservoirSealPolicy? reservoirSeals, LiquidCellState? liquidCells,
+-        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, EncounterLifecycleSnapshot? encounterLifecycle, CareSnapshot? care, WorldResourceHistory? resourceHistory, WorldCoordinatedContinuation? coordination, EncounterRetreatState? retreat, WorldIdentityIndex? previous)
++        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, EncounterLifecycleSnapshot? encounterLifecycle, CareSnapshot? care, WorldResourceHistory? resourceHistory, WorldCoordinatedContinuation? coordination, EncounterRetreatState? retreat, EncounterOutcomeState? encounterOutcome, WorldIdentityIndex? previous)
+     {
+         ArgumentNullException.ThrowIfNull(inventory);
+         ArgumentNullException.ThrowIfNull(space);
+@@ -185,6 +186,7 @@ public sealed class WorldSnapshot
+         ResourceHistory = resourceHistory;
+         Coordination = coordination;
+         Retreat = retreat;
++        EncounterOutcome = encounterOutcome;
+         if (liquidCells is not null && reservoirSeals is null)
+         {
+             throw new ArgumentException("Detailed liquid placement requires the complete contained reservoir owner.");
+@@ -250,6 +252,7 @@ public sealed class WorldSnapshot
+         WorldEncounterActionAdmission.Validate(this);
+         WorldEncounterLifecycleAdmission.Validate(this);
+         WorldEncounterRetreatAdmission.Validate(this);
++        WorldEncounterOutcomeAdmission.Validate(this);
+         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
+         if (structuralPolicy is not null)
+         {
+@@ -307,11 +310,15 @@ public sealed class WorldSnapshot
+     public EncounterLifecycleSnapshot? EncounterLifecycle { get; }
+     /// <summary>Non-null selects the explicit retreat interpretation (profile 34) over the local-market world.</summary>
+     public EncounterRetreatState? Retreat { get; }
++    /// <summary>Non-null selects the explicit outcome-completion interpretation (profile 35) over the retreat world.</summary>
++    public EncounterOutcomeState? EncounterOutcome { get; }
+     public EncounterActionSnapshot? EncounterActions => EncounterLifecycle is { } lifecycle
+         ? lifecycle.HasEncounter ? lifecycle.Actions : null : _standaloneEncounterActions;
+     public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
+     public ushort ProfileVersion => Coordination?.Markets is not null
+-        ? Retreat is not null ? WorldEncounterRetreatAdmission.ProfileVersion : WorldMarketAdmission.ProfileVersion
++        ? Retreat is not null
++            ? EncounterOutcome is not null ? WorldEncounterOutcomeAdmission.ProfileVersion : WorldEncounterRetreatAdmission.ProfileVersion
++            : WorldMarketAdmission.ProfileVersion
+         : Coordination?.PaidExchange is not null ? WorldPaidExchangeAdmission.ProfileVersion
+         : Coordination?.Proposals is not null ? (ushort)30 : Coordination?.ConsentedMaterial is not null ? (ushort)28 : Coordination is not null ? (ushort)27 : Care?.SupportsOrdinary == true ? (ushort)26 : Care is not null ? (ushort)25 : EncounterLifecycle is not null ? (ushort)24 : EncounterActions is not null ? (ushort)23 : Pacing is not null ? (ushort)22 : BaseProfileVersion;
+     internal ushort BaseProfileVersion => LiquidCells?.Topology is not null ? (ushort)21 : LiquidCells is not null ? (ushort)20 : ReservoirSeals is not null ? (ushort)19
+@@ -347,7 +354,8 @@ public sealed class WorldSnapshot
+         LiquidReservoirState? reservoirs, ReservoirTransportState? transport, ExcavationSnapshot? excavation,
+         ConstructionPhysicalSnapshot? constructionPhysical, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null,
+         EncounterLifecycleSnapshot? encounterLifecycle = null, CareSnapshot? care = null, WorldResourceHistory? resourceHistory = null,
+-        WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null)
++        WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null,
++        EncounterOutcomeState? encounterOutcome = null)
+     {
+         if (PendingExcavation is not null)
+         {
+@@ -410,15 +418,19 @@ public sealed class WorldSnapshot
+         retreat ??= Retreat;
+         if ((retreat is null) != (Retreat is null) || retreat is not null && retreat.RulesPin != Retreat!.RulesPin)
+             throw new ArgumentException("A successor must retain its exact retreat interpretation.");
++        encounterOutcome ??= EncounterOutcome;
++        if ((encounterOutcome is null) != (EncounterOutcome is null)
++            || encounterOutcome is not null && encounterOutcome.RulesPin != EncounterOutcome!.RulesPin)
++            throw new ArgumentException("A successor must retain its exact outcome-completion interpretation.");
+         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
+-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination ?? Coordination, retreat, IdentityIndex);
++            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination ?? Coordination, retreat, encounterOutcome, IdentityIndex);
+     }
+     internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
+         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
+         Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
+         Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
+         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
+-        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, Coordination, Retreat, IdentityIndex);
++        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, Coordination, Retreat, EncounterOutcome, IdentityIndex);
+ 
+     /// <summary>
+     /// Explicit coordinated closure at the same revision. Only representations change; time, work,
+@@ -431,5 +443,5 @@ public sealed class WorldSnapshot
+         Dialogues, Gathering, production, Progression, Quests, Construction, Watershed, null, reservoirs,
+         null, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
+         ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells,
+-        Pacing, _standaloneEncounterActions, EncounterLifecycle, care, resourceHistory, coordination, Retreat, null);
++        Pacing, _standaloneEncounterActions, EncounterLifecycle, care, resourceHistory, coordination, Retreat, EncounterOutcome, null);
+ }
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs
+index df68a9a..7789034 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodec.cs
+@@ -13,6 +13,7 @@ public static class WorldSnapshotCodec
+             1 => WorldSnapshotCodecV1.Encode(state),
+             2 => WorldSnapshotCodecV2.Encode(state),
+             3 => WorldSnapshotCodecV3.Encode(state),
++            35 => WorldSnapshotCodecV35.Encode(state),
+             34 => WorldSnapshotCodecV34.Encode(state),
+             33 => WorldSnapshotCodecV33.Encode(state),
+             32 => WorldSnapshotCodecV32.Encode(state),
+@@ -46,8 +47,8 @@ public static class WorldSnapshotCodec
+         };
+     }
+ 
+-    // The pre-screen admits the widest retained root (profile 34's 25 fields); each codec enforces its own exact bound.
+-    private const int MaximumRootFields = 25;
++    // The pre-screen admits the widest retained root (profile 35's 26 fields); each codec enforces its own exact bound.
++    private const int MaximumRootFields = 26;
+ 
+     public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes, WorldResourceArchiveAnchor? archiveAnchor = null) =>
+         WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, MaximumRootFields) switch
+@@ -55,6 +56,8 @@ public static class WorldSnapshotCodec
+             1 => WorldSnapshotCodecV1.Decode(bytes),
+             2 => WorldSnapshotCodecV2.Decode(bytes),
+             3 => WorldSnapshotCodecV3.Decode(bytes),
++            35 => archiveAnchor is null ? WorldSnapshotCodecV35.Decode(bytes)
++                : throw new FormatException("The outcome-continuation world requires its complete archive context."),
+             34 => archiveAnchor is null ? WorldSnapshotCodecV34.Decode(bytes)
+                 : throw new FormatException("The retreat-capable world requires its complete archive context."),
+             33 => archiveAnchor is null ? WorldSnapshotCodecV33.Decode(bytes)
+@@ -106,6 +109,7 @@ public static class WorldSnapshotCodec
+             32 => WorldSnapshotCodecV32.Decode(bytes, coordinatedAnchor),
+             33 => WorldSnapshotCodecV33.Decode(bytes, coordinatedAnchor),
+             34 => WorldSnapshotCodecV34.Decode(bytes, coordinatedAnchor),
++            35 => WorldSnapshotCodecV35.Decode(bytes, coordinatedAnchor),
+             _ => throw new FormatException("Only coordinated world profiles accept a joint decode context.")
+         };
+ }
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs
+index eb39acc..94663e4 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepBatch.cs
+@@ -49,7 +49,7 @@ public sealed class WorldStepBatch
+     {
+         ArgumentNullException.ThrowIfNull(movement);
+         ArgumentNullException.ThrowIfNull(actions);
+-        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
++        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
+         {
+             throw new ArgumentException("The world batch kind or cause identity is invalid.");
+         }
+@@ -75,56 +75,66 @@ public sealed class WorldStepBatch
+             }
+             // Saved proposals are a separate interpretation; no earlier profile reads them.
+             if (command.Intent is MaterialProposalIntent
+-                && (profileVersion is not 30 and not 32 and not 33 and not 34 || kind != WorldBatchKind.AdvancingStep))
++                && (profileVersion is not 30 and not 32 and not 33 and not 34 and not 35 || kind != WorldBatchKind.AdvancingStep))
+             {
+                 throw new ArgumentException("Saved material proposals require their explicit complete-world profile.");
+             }
+             // Paid quotes are interpreted only by the explicit paid world; no other profile reads them.
+             if (command.Intent is PaidExchangeIntent
+-                && (profileVersion is not 32 and not 33 and not 34 || kind != WorldBatchKind.AdvancingStep))
++                && (profileVersion is not 32 and not 33 and not 34 and not 35 || kind != WorldBatchKind.AdvancingStep))
+             {
+                 throw new ArgumentException("Paid spot exchange requires its explicit complete-world profile.");
+             }
+             // Market rules and price knowledge are interpreted only by the explicit local-market world.
+             if (command.Intent is MarketIntent
+-                && (profileVersion is not 33 and not 34 || kind != WorldBatchKind.AdvancingStep))
++                && (profileVersion is not 33 and not 34 and not 35 || kind != WorldBatchKind.AdvancingStep))
+             {
+                 throw new ArgumentException("Local markets require their explicit complete-world profile.");
+             }
+             // A committed retreat is interpreted only by the explicit retreat world, at an encounter decision boundary.
+             if (command.Intent is QueueEncounterRetreatIntent
+-                && (profileVersion != 34 || kind != WorldBatchKind.EncounterDecision))
++                && (profileVersion is not 34 and not 35 || kind != WorldBatchKind.EncounterDecision))
+             {
+                 throw new ArgumentException("A committed retreat requires its explicit profile and decision boundary.");
+             }
+             if (command.Intent is UseRestorativeItemIntent or RevokeCarePermissionIntent
+-                && (profileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || kind != WorldBatchKind.AdvancingStep))
++                && (profileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || kind != WorldBatchKind.AdvancingStep))
+             {
+                 throw new ArgumentException("Ordinary care requires its explicit advancing exploration profile.");
+             }
+             if (command.Intent is AcknowledgeCareIntent or AdministerRemedyIntent
+-                && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || kind != WorldBatchKind.Care))
++                && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || kind != WorldBatchKind.Care))
+             {
+                 throw new ArgumentException("Care choices require their explicit profile and care boundary.");
+             }
+-            if (command.Intent is QueueEncounterWaitIntent && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || kind != WorldBatchKind.EncounterDecision))
++            if (command.Intent is QueueEncounterWaitIntent && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || kind != WorldBatchKind.EncounterDecision))
+             {
+                 throw new ArgumentException("Encounter choices require their explicit decision boundary.");
+             }
+-            if (command.Intent is QueueEncounterAbilityIntent && (profileVersion is not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || kind != WorldBatchKind.EncounterDecision))
++            if (command.Intent is QueueEncounterAbilityIntent && (profileVersion is not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || kind != WorldBatchKind.EncounterDecision))
+             {
+                 throw new ArgumentException("An ability choice requires its admitted combat decision boundary.");
+             }
+             if (command.Intent is EnterEncounterIntent or ReleaseEncounterIntent
+-                && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || kind != WorldBatchKind.EncounterLifecycle))
++                && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || kind != WorldBatchKind.EncounterLifecycle))
+             {
+                 throw new ArgumentException("Lifecycle choices require the explicit lifecycle boundary.");
+             }
++            // Profile 35 completes outcomes through the world, never through the initiator-only release.
++            if (command.Intent is ReleaseEncounterIntent && profileVersion == 35)
++            {
++                throw new ArgumentException("The outcome-completion interpretation has no initiator release.");
++            }
++            if (command.Intent is AcknowledgeEncounterOutcomeIntent
++                && (profileVersion != 35 || kind != WorldBatchKind.EncounterLifecycle))
++            {
++                throw new ArgumentException("An outcome acknowledgment requires its explicit profile and lifecycle boundary.");
++            }
+             if (command.Intent is ClimbIntent && profileVersion is not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18)
+             {
+                 throw new ArgumentException("Assisted climbing requires its explicit world profile.");
+             }
+-            if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34)
++            if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35)
+             {
+                 throw new ArgumentException("Excavation requires its explicit world profile.");
+             }
+@@ -155,13 +165,14 @@ public sealed class WorldStepBatch
+                 throw new ArgumentException("A batch needs unique commands, one action per actor, in its own world/branch.");
+             }
+         }
+-        if (kind == WorldBatchKind.Care && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || moving.Count != 0 || acting.Count != 1
++        if (kind == WorldBatchKind.Care && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || moving.Count != 0 || acting.Count != 1
+             || acting.Values.Any(command => command.Intent is not AcknowledgeCareIntent and not AdministerRemedyIntent)))
+         {
+             throw new ArgumentException("A care boundary requires exactly one care command and no movement.");
+         }
+-        if (kind == WorldBatchKind.EncounterLifecycle && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || moving.Count != 0 || acting.Count > 1
+-            || acting.Values.Any(command => command.Intent is not EnterEncounterIntent and not ReleaseEncounterIntent)))
++        if (kind == WorldBatchKind.EncounterLifecycle && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || moving.Count != 0 || acting.Count > 1
++            || acting.Values.Any(command => command.Intent is not EnterEncounterIntent and not ReleaseEncounterIntent
++                and not AcknowledgeEncounterOutcomeIntent)))
+         {
+             throw new ArgumentException("A lifecycle boundary has one explicit command or one system staging transition.");
+         }
+@@ -176,7 +187,7 @@ public sealed class WorldStepBatch
+         }
+         if (kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterResolution or WorldBatchKind.EncounterDecision)
+         {
+-            if (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || moving.Count != 0
++            if (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || moving.Count != 0
+                 || kind == WorldBatchKind.EncounterDecision && (acting.Count == 0 || acting.Values.Any(command => command.Intent is not QueueEncounterWaitIntent
+                     and not QueueEncounterAbilityIntent and not QueueEncounterRetreatIntent))
+                 || kind != WorldBatchKind.EncounterDecision && acting.Count != 0)
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs
+index debee17..4cf7d18 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs
+@@ -12,6 +12,7 @@ public static class WorldStepCodec
+             1 => WorldStepCodecV1.Encode(batch),
+             2 => WorldStepCodecV2.Encode(batch),
+             3 => WorldStepCodecV3.Encode(batch),
++            35 => WorldStepCodecV35.Encode(batch),
+             34 => WorldStepCodecV34.Encode(batch),
+             33 => WorldStepCodecV33.Encode(batch),
+             32 => WorldStepCodecV32.Encode(batch),
+@@ -51,6 +52,7 @@ public static class WorldStepCodec
+             1 => WorldStepCodecV1.Decode(bytes),
+             2 => WorldStepCodecV2.Decode(bytes),
+             3 => WorldStepCodecV3.Decode(bytes),
++            35 => WorldStepCodecV35.Decode(bytes),
+             34 => WorldStepCodecV34.Decode(bytes),
+             33 => WorldStepCodecV33.Decode(bytes),
+             32 => WorldStepCodecV32.Decode(bytes),
+diff --git a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepFrameCodec.cs b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepFrameCodec.cs
+index efd7e71..38e1cb1 100644
+--- a/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepFrameCodec.cs
++++ b/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepFrameCodec.cs
+@@ -10,7 +10,7 @@ internal static class WorldStepFrameCodec
+     internal static byte[] Encode(WorldStepBatch batch, ushort profileVersion)
+     {
+         ArgumentNullException.ThrowIfNull(batch);
+-        if (batch.ProfileVersion != profileVersion || profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34)
++        if (batch.ProfileVersion != profileVersion || profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35)
+         {
+             throw new ArgumentException("A newer rules profile requires its own step codec.", nameof(batch));
+         }
+@@ -32,7 +32,7 @@ internal static class WorldStepFrameCodec
+     {
+         var reader = new WorldFrameReader(bytes, MaximumBatchByteLength, 10);
+         reader.Tag("world.step-batch"u8);
+-        if (profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || reader.Number() != profileVersion)
++        if (profileVersion is not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || reader.Number() != profileVersion)
+         {
+             throw new FormatException("Unsupported world step version.");
+         }
+@@ -44,9 +44,9 @@ internal static class WorldStepFrameCodec
+         ulong rawKind = reader.Number();
+         if (rawKind is not 1 and not 2
+             && (rawKind != 4 || profileVersion is not 16 and not 17 and not 18)
+-            && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || rawKind is not 5 and not 6 and not 7)
+-            && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || rawKind != 8)
+-            && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 || rawKind != 9))
++            && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || rawKind is not 5 and not 6 and not 7)
++            && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || rawKind != 8)
++            && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 || rawKind != 9))
+         {
+             throw new FormatException("Unsupported world batch kind.");
+         }
+diff --git a/Beta/Runtime/src/OpenFantasy.Host/ComposedWorldOperator.cs b/Beta/Runtime/src/OpenFantasy.Host/ComposedWorldOperator.cs
+index afd8716..3c055d3 100644
+--- a/Beta/Runtime/src/OpenFantasy.Host/ComposedWorldOperator.cs
++++ b/Beta/Runtime/src/OpenFantasy.Host/ComposedWorldOperator.cs
+@@ -16,6 +16,17 @@ internal sealed class ComposedWorldOperator
+         return Report(authority);
+     }
+ 
++    /// <summary>
++    /// Creates the separate fresh outcome-completion cargo world (profile 35). It never opens or upgrades an existing
++    /// save: creation refuses an existing database through the ordinary fresh-authority path.
++    /// </summary>
++    internal string CreateCargoOutcomes(string database, string seed, string playerName)
++    {
++        var genesis = OpenFantasy.Hosting.Content.EncounterOutcome.CargoOutcomeWorldAdmission.CreateEmbedded(seed, playerName);
++        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(database, genesis);
++        return Report(authority);
++    }
++
+     internal string CreateEncounterWorld(string database, string seed, string playerName)
+     {
+         var genesis = OpenFantasy.Hosting.Content.EncounterFarmAdmission.CreateEmbedded(seed, playerName);
+diff --git a/Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs b/Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs
+index c45ebd9..bf5bf2d 100644
+--- a/Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs
++++ b/Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs
+@@ -46,6 +46,8 @@ internal sealed class HostApplication
+                     _composed.CreateEncounterJourney(database, seed, name),
+                 ["--create-encounter-world", var database, var seed, var name] =>
+                     _composed.CreateEncounterWorld(database, seed, name),
++                ["--create-cargo-outcomes", var database, var seed, var name] =>
++                    _composed.CreateCargoOutcomes(database, seed, name),
+                 ["--inspect-encounter-timing", var path, var world, var branch, var encounter] =>
+                     _encounters.Inspect(path, world, branch, encounter),
+                 ["--inspect-command", var path] => _contracts.InspectCommand(path),
+@@ -139,6 +141,7 @@ internal sealed class HostApplication
+         _output.WriteLine("       OpenFantasy.Host --create-contained-reservoir-world <world.sqlite> <profile8-genesis.bin> <seal-policy.bin>");
+         _output.WriteLine("       OpenFantasy.Host --create-liquid-cell-world <world.sqlite> <profile19-genesis.bin> <liquid-cells.bin>");
+         _output.WriteLine("       OpenFantasy.Host --create-encounter-journey <world.sqlite> <seed> <player-name>");
++        _output.WriteLine("       OpenFantasy.Host --create-cargo-outcomes <world.sqlite> <seed> <player-name>");
+         _output.WriteLine("       OpenFantasy.Host --create-paced-world <world.sqlite> <profile21-genesis.bin> <encounter-id|none>");
+         _output.WriteLine("       OpenFantasy.Host --create-reservoir-transport-world <world.sqlite> <construction-genesis.bin> <reservoir-transport.bin>");
+         _output.WriteLine("       OpenFantasy.Host --execute-world-step <world.sqlite> <host-selected-step.bin>");
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs
+index 2252d2e..4150558 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Content/RoadThreat/RoadThreatWorldAdmission.cs
+@@ -38,12 +38,21 @@ public static class RoadThreatWorldAdmission
+     /// The world's road threat when it is a retreat-capable cargo world of these sources whose catalog holds the
+     /// chief's scenario with the source attack, otherwise null. The identities are derived from the world itself.
+     /// </summary>
+-    public static RoadThreatBinding? Find(WorldSnapshot world, CargoCircuitSources cargo, RoadThreatSources threat)
++    public static RoadThreatBinding? Find(WorldSnapshot world, CargoCircuitSources cargo, RoadThreatSources threat) =>
++        FindInProfile(world, cargo, threat, WorldEncounterRetreatAdmission.ProfileVersion);
++
++    /// <summary>
++    /// The same derived-identity binding in one explicitly named interpretation: the threatened selection (profile 34)
++    /// or the outcome-completion selection built on it unchanged (profile 35). A root of any other profile is refused.
++    /// </summary>
++    internal static RoadThreatBinding? FindInProfile(WorldSnapshot world, CargoCircuitSources cargo, RoadThreatSources threat,
++        ushort profileVersion)
+     {
+         ArgumentNullException.ThrowIfNull(world);
+         ArgumentNullException.ThrowIfNull(cargo);
+         ArgumentNullException.ThrowIfNull(threat);
+-        if (world.ProfileVersion != WorldEncounterRetreatAdmission.ProfileVersion || CargoWorldAdmission.Find(world, cargo) is null
++        if (profileVersion is not (WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion)
++            || world.ProfileVersion != profileVersion || CargoWorldAdmission.Find(world, cargo) is null
+             || world.EncounterLifecycle is not { } lifecycle)
+         {
+             return null;
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalEncounterLifecycleView.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalEncounterLifecycleView.cs
+index 9fa53c1..4ddc103 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalEncounterLifecycleView.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalEncounterLifecycleView.cs
+@@ -27,7 +27,8 @@ public sealed record LocalEncounterLifecycleView(EncounterLifecyclePhase Phase,
+                     WorldActorAvailability.CanCooperate(world, actor.ActorId)
+                     && (actor.ActorId == playerId || world.Space.QueryInteraction(playerId, actor.ActorId,
+                         scenario.EntryRangeSubunits) == SpatialInteraction.Reachable)))).ToArray();
+-        bool mayRelease = lifecycle.Phase == EncounterLifecyclePhase.Outcome
++        // The outcome-completion world has no initiator release; its reading is offered by the outcome view instead.
++        bool mayRelease = lifecycle.Phase == EncounterLifecyclePhase.Outcome && world.EncounterOutcome is null
+             && lifecycle.GetScenario(lifecycle.ScenarioId!.Value).InitiatingActorId == playerId
+             && WorldActorAvailability.CanCooperate(world, playerId);
+         return new(lifecycle.Phase, lifecycle.EncounterCount, lifecycle.GetDebt(playerId).RemainingDelay,
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalProfileBindings.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalProfileBindings.cs
+index 3961cf0..4aea32b 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalProfileBindings.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalProfileBindings.cs
+@@ -12,22 +12,30 @@ internal static class LocalProfileBindings
+     /// <summary>Saved bilateral material proposals and the NPC gift choices built on them.</summary>
+     internal static bool AdmitsSavedProposals(WorldSnapshot state) =>
+         state.ProfileVersion is 30 or WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
+-            or WorldEncounterRetreatAdmission.ProfileVersion;
++            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion;
+ 
+     /// <summary>Ordinary self-use, patient-owned permission withdrawal and permitted helper aid.</summary>
+     internal static bool AdmitsOrdinaryCare(WorldSnapshot state) =>
+         state.ProfileVersion is 26 or 27 or 30 or WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
+-            or WorldEncounterRetreatAdmission.ProfileVersion;
++            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion;
+ 
+     /// <summary>Existing ordinary and deferred excavation bindings, excluding the separate privileged paired route.</summary>
+     internal static bool AdmitsExcavation(WorldSnapshot state) =>
+         state.ProfileVersion is 10 or 11 or 12 or 13 or 14 or 15 or 16 or 17 or 18
+             or 21 or 22 or 23 or 24 or 25 or 26 or 27 or 30
+             or WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
+-            or WorldEncounterRetreatAdmission.ProfileVersion;
++            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion;
+ 
+-    /// <summary>The explicit committed-retreat interpretation; no older profile reads a retreat request.</summary>
+-    internal static bool AdmitsRetreat(WorldSnapshot state) => state.ProfileVersion == WorldEncounterRetreatAdmission.ProfileVersion;
++    /// <summary>
++    /// The explicit committed-retreat interpretation and the outcome interpretation built on it unchanged; no older
++    /// profile reads a retreat request.
++    /// </summary>
++    internal static bool AdmitsRetreat(WorldSnapshot state) =>
++        state.ProfileVersion is WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion;
++
++    /// <summary>The explicit outcome-completion interpretation: world-owned completion after required readings.</summary>
++    internal static bool AdmitsOutcomeCompletion(WorldSnapshot state) =>
++        state.ProfileVersion == WorldEncounterOutcomeAdmission.ProfileVersion;
+ 
+     /// <summary>An advancing exploration cutoff with no reading hold, retained consequence, care obligation or encounter.</summary>
+     internal static bool IsUnheldExploration(WorldSnapshot state) =>
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs
+index 8ae6434..def4681 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs
+@@ -297,9 +297,18 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
+         {
+             if (state.EncounterLifecycle is null || state.HasReadingHold)
+                 throw new AuthorityDispatchException("A lifecycle choice requires its admitted world without a reading hold.");
++            if (command.Intent is ReleaseEncounterIntent && LocalProfileBindings.AdmitsOutcomeCompletion(state))
++                throw new AuthorityDispatchException("This world completes an outcome after it is read; it has no initiator release.");
+             // Exact phase, target, identity and captured revisions receive normal durable receipts.
+             return;
+         }
++        if (command.Intent is AcknowledgeEncounterOutcomeIntent)
++        {
++            if (!LocalProfileBindings.AdmitsOutcomeCompletion(state) || state.HasReadingHold)
++                throw new AuthorityDispatchException("An outcome acknowledgment requires the outcome-completion world without a reading hold.");
++            // Exact phase, episode, archive and controller receive normal durable receipts.
++            return;
++        }
+         if (state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
+             or EncounterLifecyclePhase.Outcome)
+             throw new AuthorityDispatchException("This lifecycle boundary accepts only entry or release requests.");
+@@ -399,8 +408,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
+                 TickCare(state, pending);
+                 return;
+             }
+-            if (pending?.Command.Intent is EnterEncounterIntent or ReleaseEncounterIntent
+-                || state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging)
++            // Profile 35: a reading is the player's own lifecycle command; completion is the world's own boundary once
++            // every required human has read the outcome and no care is pending. Neither earns time.
++            if (pending?.Command.Intent is EnterEncounterIntent or ReleaseEncounterIntent or AcknowledgeEncounterOutcomeIntent
++                || state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
++                || WorldEncounterOutcomes.IsReadyToFinalize(state))
+             {
+                 TickLifecycle(state, pending);
+                 return;
+@@ -465,7 +477,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
+     {
+         ClearMovement();
+         if (RefuseUnrepresentable(state, WorldBatchKind.EncounterLifecycle, ref pending)
+-            && state.EncounterLifecycle?.Phase is not (EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging))
++            && state.EncounterLifecycle?.Phase is not (EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging)
++            && !WorldEncounterOutcomes.IsReadyToFinalize(state))
+         {
+             return;
+         }
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs
+index b65552a..1a91e31 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldView.cs
+@@ -62,6 +62,7 @@ public sealed class LocalWorldView
+         EncounterLifecycle = LocalEncounterLifecycleView.Project(state, playerActorId);
+         EncounterActions = LocalEncounterActionView.Project(state, playerActorId);
+         Retreat = Simulation.Retreat.LocalRetreatView.Project(state, playerActorId);
++        EncounterOutcome = Simulation.EncounterOutcome.LocalEncounterOutcomeView.Project(state, playerActorId);
+         RoadThreats = Simulation.RoadThreat.LocalRoadThreatView.Project(state, playerActorId);
+         Care = LocalCareView.Project(state, playerActorId, careHelperSelectionOccupied);
+         Restorative = LocalRestorativeView.Project(state, playerActorId);
+@@ -177,6 +178,13 @@ public sealed class LocalWorldView
+     [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+     public Simulation.Retreat.LocalRetreatView? Retreat { get; }
+ 
++    /// <summary>
++    /// The outcome-completion interpretation's current reading or last completion record from the player's side; null,
++    /// and omitted from the public encoding, in every other world so earlier interpretations keep their public bytes.
++    /// </summary>
++    [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
++    public Simulation.EncounterOutcome.LocalEncounterOutcomeView? EncounterOutcome { get; }
++
+     /// <summary>
+     /// Hostile opportunities against the player that the player currently observes (same floor, clear sightline,
+     /// within the three-cell interaction bound), or null when the world admits none; like Retreat it is omitted from
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.Markets.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.Markets.cs
+index ebe1fcc..504b106 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.Markets.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.Markets.cs
+@@ -20,7 +20,8 @@ public sealed partial class SqliteWorldAuthority
+         lock (_gate)
+         {
+             EnsureAvailable();
+-            if (_state.ProfileVersion is not (WorldMarketAdmission.ProfileVersion or WorldEncounterRetreatAdmission.ProfileVersion)
++            if (_state.ProfileVersion is not (WorldMarketAdmission.ProfileVersion or WorldEncounterRetreatAdmission.ProfileVersion
++                    or WorldEncounterOutcomeAdmission.ProfileVersion)
+                 || command.Intent is not MarketIntent)
+             {
+                 throw new AuthorityDispatchException("This boundary accepts market submissions of their own world profile.");
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.MaterialProposals.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.MaterialProposals.cs
+index 9a9507b..2d6fb90 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.MaterialProposals.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.MaterialProposals.cs
+@@ -26,7 +26,7 @@ public sealed partial class SqliteWorldAuthority
+         {
+             EnsureAvailable();
+             if (_state.ProfileVersion is not (30 or WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
+-                    or WorldEncounterRetreatAdmission.ProfileVersion)
++                    or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion)
+                 || command.Intent is not MaterialProposalIntent)
+             {
+                 throw new AuthorityDispatchException("This boundary accepts saved proposal submissions of their own world profile.");
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.PaidExchange.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.PaidExchange.cs
+index 01f9b6c..ee4dde4 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.PaidExchange.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.PaidExchange.cs
+@@ -31,7 +31,7 @@ public sealed partial class SqliteWorldAuthority
+         {
+             EnsureAvailable();
+             if (_state.ProfileVersion is not (WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
+-                    or WorldEncounterRetreatAdmission.ProfileVersion)
++                    or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion)
+                 || command.Intent is not PaidExchangeIntent)
+             {
+                 throw new AuthorityDispatchException("This boundary accepts paid exchange submissions of their own world profile.");
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs
+index 635e255..c96ccc6 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs
+@@ -41,7 +41,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
+         // layout; its genesis, never the schema number, selects how the stored roots are read.
+         int schemaVersion = accepted.ProfileVersion switch
+         {
+-            27 or 28 or 30 or 32 or 33 or 34 => WorldDatabaseSchemaEight.Version,
++            27 or 28 or 30 or 32 or 33 or 34 or 35 => WorldDatabaseSchemaEight.Version,
+             25 or 26 => WorldDatabaseSchemaSeven.Version,
+             24 => WorldDatabaseSchemaSix.Version,
+             22 or 23 => WorldDatabaseSchemaFive.Version,
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.MaterialCareArchives.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.MaterialCareArchives.cs
+index c075c14..350cc9f 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.MaterialCareArchives.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.MaterialCareArchives.cs
+@@ -59,7 +59,7 @@ internal sealed partial class WorldDatabase
+         {
+             RequireRow(reader, "A material and care archive has no accepted world genesis.");
+             WorldSnapshot world = WorldSnapshotCodec.Decode(WorldStorageBinary.ReadState(reader, 0, 1));
+-            if (world.ProfileVersion is not (27 or 28 or 30 or 32 or 33 or 34) || world.WorldId != value.Reference.WorldId || world.BranchId != value.Reference.BranchId)
++            if (world.ProfileVersion is not (27 or 28 or 30 or 32 or 33 or 34 or 35) || world.WorldId != value.Reference.WorldId || world.BranchId != value.Reference.BranchId)
+             {
+                 throw new InvalidDataException("A material and care archive must retain the accepted world scope.");
+             }
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs
+index 49a30e8..f40afa2 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalPolicy.cs
+@@ -29,7 +29,7 @@ internal static class WorldJournalPolicy
+         ushort profileVersion = 16, ulong resourceArchiveBytes = 0, ulong materialCareArchiveBytes = 0)
+     {
+         // Only the named coordinated, consented and saved-proposal interpretations close joint history.
+-        bool jointArchives = profileVersion is 27 or 28 or 30 or 32 or 33 or 34;
++        bool jointArchives = profileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35;
+         if (!jointArchives && (materialCareArchiveBytes != 0
+                 || current.MaterialCareArchiveCount != 0 || current.MaterialCareArchiveBytes != 0)
+             || jointArchives && (resourceArchiveBytes != 0
+diff --git a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs
+index 6016c57..617d080 100644
+--- a/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs
++++ b/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs
+@@ -102,7 +102,7 @@ internal sealed class WorldJournalRecovery
+         {
+             throw new InvalidDataException("A care genesis requires its exclusive resource archive schema.");
+         }
+-        if ((genesis.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
++        if ((genesis.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+         {
+             throw new InvalidDataException("A coordinated genesis requires its exclusive material and care archive schema.");
+         }
+@@ -216,7 +216,7 @@ internal sealed class WorldJournalRecovery
+         {
+             throw new InvalidDataException("The care world and its exclusive resource archive schema disagree.");
+         }
+-        if ((state.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
++        if ((state.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
+         {
+             throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
+         }
+diff --git a/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj b/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj
+index d3e59a2..2a379dc 100644
+--- a/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj
++++ b/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj
+@@ -26,6 +26,7 @@
+     <Compile Include="../../client/scripts/FarmQuickWheelModel.cs" Link="Client/FarmQuickWheelModel.cs" />
+     <Compile Include="../../client/scripts/WorksiteActionOffers.cs" Link="Client/WorksiteActionOffers.cs" />
+     <Compile Include="../../client/scripts/EncounterActionOffers.cs" Link="Client/EncounterActionOffers.cs" />
++    <Compile Include="../../client/scripts/EncounterOutcome/EncounterOutcomeText.cs" Link="Client/EncounterOutcome/EncounterOutcomeText.cs" />
+     <Compile Include="../../client/scripts/RestorativeActionOffers.cs" Link="Client/RestorativeActionOffers.cs" />
+     <Compile Include="../../client/scripts/FarmActionOffers.cs" Link="Client/FarmActionOffers.cs" />
+     <Compile Include="../../client/scripts/FarmGiftSelection.cs" Link="Client/FarmGiftSelection.cs" />

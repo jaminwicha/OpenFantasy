@@ -13,14 +13,22 @@ internal sealed class FarmEncounterStatus(Label label)
     {
         label.Visible = view.EncounterLifecycle is not null;
         if (view.EncounterLifecycle is not { } lifecycle) return;
+        // An outcome's status line stays compact; its tooltip (and the outcome card) carries the full explanation.
+        string? explanation = view.EncounterOutcome is not { } read ? null
+            : lifecycle.Phase == EncounterLifecyclePhase.Exploration ? read.IsTerminal ? EncounterOutcomeText.Terminal(read) : null
+            : lifecycle.Phase == EncounterLifecyclePhase.Outcome
+                ? EncounterOutcomeText.ReadBlocker(read, view.Care) ?? EncounterOutcomeText.ReadDetail(read, view.Care) : null;
         string status = lifecycle.Phase switch
         {
-            EncounterLifecyclePhase.Exploration => lifecycle.PlayerCanAct
+            EncounterLifecyclePhase.Exploration => view.EncounterOutcome is { IsTerminal: true } terminal
+                ? EncounterOutcomeText.TerminalStatus(terminal)
+                : lifecycle.PlayerCanAct
                 ? "Explore freely · Select a wolf to inspect an encounter."
                 : "Recovering · Exploration time restores readiness; injuries remain.",
             EncounterLifecyclePhase.Confrontation => "Encounter · Taking notice",
             EncounterLifecyclePhase.Staging => "Encounter · Holding positions",
-            EncounterLifecyclePhase.Outcome => view.Care is { } care ? DescribeCare(care)
+            EncounterLifecyclePhase.Outcome => view.EncounterOutcome is { } outcome ? EncounterOutcomeText.Status(outcome, view.Care)
+                : view.Care is { } care ? DescribeCare(care)
                 : lifecycle.ReleaseActionHash is not null
                 ? "Encounter over · Continue exploring when ready."
                 : "Incapacitated · No aid is available in this encounter.",
@@ -41,7 +49,7 @@ internal sealed class FarmEncounterStatus(Label label)
         LocalRoadThreatViewLine? danger = lifecycle.Phase == EncounterLifecyclePhase.Exploration
             && RoadThreatWarning.Urgent(view) is { } threat ? new(RoadThreatWarning.Line(threat), RoadThreatWarning.Detail(threat)) : null;
         label.Text = (danger is null ? "" : danger.Line + "\n") + status + (opponents.Length == 0 ? "" : "\n" + opponents);
-        label.TooltipText = (danger is null ? "" : danger.Detail + "\n")
+        label.TooltipText = (explanation is null ? "" : explanation + "\n") + (danger is null ? "" : danger.Detail + "\n")
             + $"Remaining recovery: {lifecycle.PlayerRecoveryDelay / 100.0:0.##} seconds of advancing world time. "
             + "Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.";
     }

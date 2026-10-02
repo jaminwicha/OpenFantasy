@@ -1,0 +1,13 @@
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterOutcomeAdmission.cs(133,21): error CS0128: A local variable or function named 'archive' is already defined in this scope [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterOutcomeAdmission.cs(134,96): error CS0019: Operator '!=' cannot be applied to operands of type 'ContentHash' and 'EncounterActionSnapshot' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterOutcomeAdmission.cs(134,114): error CS0165: Use of unassigned local variable 'archive' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterOutcomeAdmission.cs(133,21): error CS0128: A local variable or function named 'archive' is already defined in this scope [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterOutcomeAdmission.cs(134,96): error CS0019: Operator '!=' cannot be applied to operands of type 'ContentHash' and 'EncounterActionSnapshot' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterOutcomeAdmission.cs(134,114): error CS0165: Use of unassigned local variable 'archive' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+    0 Warning(s)
+    3 Error(s)
+
+Time Elapsed 00:00:03.30

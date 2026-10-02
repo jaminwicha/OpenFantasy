@@ -1,0 +1,52 @@
+{
+  "observedUtc": "2026-10-02T00:00:36.351346+00:00",
+  "status": "bounded_efficiency_observation_not_a_gate_waiver",
+  "coreSourcesIdentical": true,
+  "coreAssembliesIdentical": true,
+  "runs": [
+    {
+      "report": "Beta/implementation/p02/encounter-outcome-continuation/qualification/core-20261001T230920Z-d9b9e/report.json",
+      "sha256": "b71b8fab984ce128aa3c9f2360b5fbe4742995b461884cc23bfd873f2cc942df",
+      "accepted": true,
+      "elapsedSeconds": 136.143,
+      "outcomes": {
+        "Passed": 1772
+      },
+      "coreAssemblies": {
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "781c6a1f4a1b5f64f18d302d90ff9b695486c732df10b0d693273cf1d7706ba7",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "87b32b693a4e2c9dbcefb4fcde73b29621a28bc235480e5ebaa3fbc06854c7ad"
+      },
+      "coreSourceCount": 1012
+    },
+    {
+      "report": "Beta/implementation/p02/encounter-outcome-continuation/qualification/core-20261001T233522Z-5448e/report.json",
+      "sha256": "5139b9b4d726d1cfcf00ed5d3979ce651975c6d24ed5f32dbd8007857ca3245d",
+      "accepted": true,
+      "elapsedSeconds": 119.69,
+      "outcomes": {
+        "Passed": 1772
+      },
+      "coreAssemblies": {
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "781c6a1f4a1b5f64f18d302d90ff9b695486c732df10b0d693273cf1d7706ba7",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "87b32b693a4e2c9dbcefb4fcde73b29621a28bc235480e5ebaa3fbc06854c7ad"
+      },
+      "coreSourceCount": 1012
+    },
+    {
+      "report": "Beta/implementation/p02/encounter-outcome-continuation/qualification/core-20261001T235329Z-02a91/report.json",
+      "sha256": "7635ea0678f6b6a5533978fd78132401b14ec9e677682f3bdd024ba1b103f6c5",
+      "accepted": true,
+      "elapsedSeconds": 229.41,
+      "outcomes": {
+        "Passed": 1772
+      },
+      "coreAssemblies": {
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "781c6a1f4a1b5f64f18d302d90ff9b695486c732df10b0d693273cf1d7706ba7",
+        "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "87b32b693a4e2c9dbcefb4fcde73b29621a28bc235480e5ebaa3fbc06854c7ad"
+      },
+      "coreSourceCount": 1012
+    }
+  ],
+  "interpretation": "These three accepted Core runs exercise the same recorded Core source and Core test assemblies. The later Host-test additions do not broaden this Core evidence. The two later runs consumed 349.1 seconds in aggregate. No assertion about billing, credit savings or the cause of timing variation is made.",
+  "nextPacket": "Name inherited passes and compare actual source/binary/fixture/checker/toolchain dependencies explicitly. Keep required unrun native outcome, no-survivor and integration gates; do not rerun identical unrelated Core binaries just because a Host fixture/helper or documentation changed. Recheck actual changed or uncertain dependencies."
+}

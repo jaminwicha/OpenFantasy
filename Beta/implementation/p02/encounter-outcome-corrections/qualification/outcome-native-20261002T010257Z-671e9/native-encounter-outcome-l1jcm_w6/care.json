@@ -1,0 +1,45 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "care",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Wren never came beside the player before the fight.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.EncounterOutcomePlayProbe.DeclineCare(EntityId wolf) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 201\n   at OpenFantasy.Client.EncounterOutcomePlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs:line 115",
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 0.957,
+  "ProbeMilliseconds": 31016,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [],
+  "Strikes": 0,
+  "Waits": 0,
+  "Engagement": null,
+  "Outcome": null,
+  "Completed": null,
+  "Decline": null,
+  "Trade": null,
+  "Panels": [],
+  "Checks": [],
+  "Images": [],
+  "SaveAndLeave": false,
+  "FinalStage": null,
+  "FinalTerminal": null,
+  "CompletedAtSequence": null,
+  "FinalResult": null,
+  "FinalStandingSide": null,
+  "EncounterCount": 0,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalHp": 41,
+  "FinalBalance": 0,
+  "CarriedRations": 0
+}

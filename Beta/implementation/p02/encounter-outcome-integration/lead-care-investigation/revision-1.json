@@ -1,0 +1,523 @@
+{
+  "Contract": "recorded-world-state-v1",
+  "WorldId": "2a091821dc2415a12f6cf166ecb8cc86",
+  "BranchId": "281ae5e4b8b4cb21db565fa654fd9419",
+  "SourceHeadRevision": 132,
+  "SourceHeadHash": "9df3bc75fddcaa3151539da4e1b1b21c40783f1791ac42a80bd4a8cacb9a9df5",
+  "RecordedRevision": 1,
+  "StateHash": "115f6f91b2ab7e032057fabfdaa04fb4640604be615a5fb09dc837259243f6ae",
+  "ProfileVersion": 35,
+  "Calendar": {
+    "Days": 0,
+    "MillisecondsWithinDay": 32401800
+  },
+  "AdvancingSteps": 1,
+  "HasReadingHold": false,
+  "Pacing": {
+    "Hash": "eb0b788b8a31e936f0745f2e83e3cc786c5710aa833295c85b96234282243e21",
+    "Calendar": {
+      "Days": 0,
+      "MillisecondsWithinDay": 32401800
+    },
+    "ProcessBoundary": {
+      "Days": 0,
+      "MillisecondsWithinDay": 32401800
+    },
+    "ProcessIntervals": 1,
+    "RemainderMilliseconds": 0,
+    "Encounter": null
+  },
+  "EncounterLifecycle": {
+    "Hash": "f4e495175910595a934cbd019f069cc1fb3a8f2fab6c89b87d957ca33754b6ca",
+    "Phase": "Exploration",
+    "Revision": 1,
+    "ExplorationSteps": 1,
+    "TacticalTicks": 0,
+    "EntryTacticalTicks": 0,
+    "EncounterCount": 0,
+    "ScenarioId": null,
+    "EncounterId": null,
+    "RetainedActionHash": null,
+    "Debts": [
+      {
+        "ActorId": "3a39201662c01d63edc79a65d0cfa143",
+        "RemainingDelay": 0
+      },
+      {
+        "ActorId": "457b0db65be2dbf50348e7242108ec5a",
+        "RemainingDelay": 0
+      },
+      {
+        "ActorId": "5201f2057d1bd67a6749d6af913c8a61",
+        "RemainingDelay": 0
+      },
+      {
+        "ActorId": "5bae51ef546726b697fa93ee401303f0",
+        "RemainingDelay": 0
+      },
+      {
+        "ActorId": "9e5f5739cd09534e02f0bf71d3d1b722",
+        "RemainingDelay": 0
+      },
+      {
+        "ActorId": "9f03e043c03ab76d6e7936d0714b2e51",
+        "RemainingDelay": 0
+      },
+      {
+        "ActorId": "c9622c927741434f5217a2765aad3f9c",
+        "RemainingDelay": 0
+      }
+    ],
+    "Scenarios": [
+      {
+        "Id": "3c7bfa4ec2c069e2b6fb3718b76b4add",
+        "Key": "bramble_wolf_second",
+        "DisplayName": "West Bramble Wolf confrontation",
+        "Initiator": "c9622c927741434f5217a2765aad3f9c",
+        "Target": "5201f2057d1bd67a6749d6af913c8a61",
+        "EntryRangeSubunits": 448,
+        "Hash": "e1e5d5cbe62fb6b72ca12984415bd979c48ceff788a01d8e0f36dc362ff86d27"
+      },
+      {
+        "Id": "6c5c93fbdaff3aa53b2137a7ce54aaae",
+        "Key": "bramble_wolf_first",
+        "DisplayName": "East Bramble Wolf confrontation",
+        "Initiator": "c9622c927741434f5217a2765aad3f9c",
+        "Target": "3a39201662c01d63edc79a65d0cfa143",
+        "EntryRangeSubunits": 448,
+        "Hash": "12a7019c8719175699c112a3576b01e1d8e014cd5a68918be9f478fdad6eeb5d"
+      },
+      {
+        "Id": "fa55b67148201fba0c2499223b00b113",
+        "Key": "bandit_chief_road",
+        "DisplayName": "Bandit Chief at the camp crossing",
+        "Initiator": "5bae51ef546726b697fa93ee401303f0",
+        "Target": "c9622c927741434f5217a2765aad3f9c",
+        "EntryRangeSubunits": 400,
+        "Hash": "de099b8f4d4a6f1ee8e73dbdc05b55d981e3bffaaf81e323f5781adf914569a5"
+      }
+    ]
+  },
+  "EncounterActions": null,
+  "ConstructionPhysical": null,
+  "StructuralPolicy": null,
+  "StructuralSettlementPolicy": null,
+  "Watershed": null,
+  "WatershedNetwork": {
+    "ContentHash": "a9cf5069c95bd29f2ccf7a386a6dc1e764de8d47c87bdb1b7ae4d3c7861be315",
+    "ProvinceId": "603c22c1c0ee0fff37122f86d9ce874b",
+    "BasinCount": 1,
+    "ColumnCount": 1,
+    "SharedFaceCount": 0
+  },
+  "Reservoirs": null,
+  "LiquidCells": {
+    "PlacementInterpretation": "retained-terrain-liquid-cells-v2",
+    "TopologyHash": "af54492b3215134182ad1a94cf0f8a73fdf566b1d38c73f807742ff34573702c",
+    "OpenCapacityMicrolitres": 18000000000,
+    "ContentHash": "7901812574114db2d83c608484c98a0a6633f799c4e075e64e06cac1af87c15e",
+    "ReservoirHash": "f7b0d48d3a2f376eba4bfa0bc5f08313a01c04910514011cd9fa13684a833c00",
+    "ProfileHash": "ab3db47a27f7ae769e14f203e29c1b253880c3767a62d38171224a2f2215b073",
+    "Boundary": {
+      "Days": 0,
+      "MillisecondsWithinDay": 32401800
+    },
+    "Revision": 1,
+    "DownwardUnitsPerFace": 25,
+    "LateralUnitsPerFace": 4,
+    "UnitsPerCell": 1000,
+    "MicrolitresPerUnit": 1000000,
+    "DomainCellCount": 18,
+    "PortionCount": 6,
+    "ActualUnits": 6000,
+    "ActualMicrolitres": 6000000000,
+    "Contents": [
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "DomainCellCount": 18,
+        "ActualUnits": 6000,
+        "ActualMicrolitres": 6000000000
+      }
+    ],
+    "Cells": [
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 117,
+        "Y": 329,
+        "Z": -1,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 118,
+        "Y": 329,
+        "Z": -1,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 119,
+        "Y": 329,
+        "Z": -1,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 117,
+        "Y": 330,
+        "Z": -1,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 118,
+        "Y": 330,
+        "Z": -1,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 119,
+        "Y": 330,
+        "Z": -1,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 110,
+        "Y": 329,
+        "Z": 0,
+        "Units": 1000,
+        "Microlitres": 1000000000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 111,
+        "Y": 329,
+        "Z": 0,
+        "Units": 1000,
+        "Microlitres": 1000000000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 112,
+        "Y": 329,
+        "Z": 0,
+        "Units": 1000,
+        "Microlitres": 1000000000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 113,
+        "Y": 329,
+        "Z": 0,
+        "Units": 1000,
+        "Microlitres": 1000000000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 114,
+        "Y": 329,
+        "Z": 0,
+        "Units": 1000,
+        "Microlitres": 1000000000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 115,
+        "Y": 329,
+        "Z": 0,
+        "Units": 1000,
+        "Microlitres": 1000000000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 117,
+        "Y": 329,
+        "Z": 0,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 118,
+        "Y": 329,
+        "Z": 0,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 119,
+        "Y": 329,
+        "Z": 0,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 117,
+        "Y": 330,
+        "Z": 0,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 118,
+        "Y": 330,
+        "Z": 0,
+        "Units": 0,
+        "Microlitres": 0
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 119,
+        "Y": 330,
+        "Z": 0,
+        "Units": 0,
+        "Microlitres": 0
+      }
+    ],
+    "Portions": [
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 110,
+        "Y": 329,
+        "Z": 0,
+        "Origin": "RawSource",
+        "OriginId": "720f29ae6846cd6b4f3015ec87894108",
+        "Start": 0,
+        "End": 1000,
+        "Quantity": 1000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 111,
+        "Y": 329,
+        "Z": 0,
+        "Origin": "RawSource",
+        "OriginId": "720f29ae6846cd6b4f3015ec87894108",
+        "Start": 1000,
+        "End": 2000,
+        "Quantity": 1000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 112,
+        "Y": 329,
+        "Z": 0,
+        "Origin": "RawSource",
+        "OriginId": "720f29ae6846cd6b4f3015ec87894108",
+        "Start": 2000,
+        "End": 3000,
+        "Quantity": 1000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 113,
+        "Y": 329,
+        "Z": 0,
+        "Origin": "RawSource",
+        "OriginId": "720f29ae6846cd6b4f3015ec87894108",
+        "Start": 3000,
+        "End": 4000,
+        "Quantity": 1000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 114,
+        "Y": 329,
+        "Z": 0,
+        "Origin": "RawSource",
+        "OriginId": "720f29ae6846cd6b4f3015ec87894108",
+        "Start": 4000,
+        "End": 5000,
+        "Quantity": 1000
+      },
+      {
+        "ReservoirId": "868ac91e0691c60b2caf14b6eaffc762",
+        "X": 115,
+        "Y": 329,
+        "Z": 0,
+        "Origin": "RawSource",
+        "OriginId": "720f29ae6846cd6b4f3015ec87894108",
+        "Start": 5000,
+        "End": 6000,
+        "Quantity": 1000
+      }
+    ]
+  },
+  "ReservoirSeals": {
+    "ContentHash": "3641c1b0a60a608a582dd488facfc09639ac4fb0861f454d1705e211622bf511",
+    "LiquidDefinitionId": "04af2dd89cf31918958cfc4dccec4191",
+    "LiquidVersion": "8fc97b6a21f3270a8646155a1b6ee74c11d021990cdb560895dd0f9a89854a79",
+    "RuleCount": 3
+  },
+  "Transport": null,
+  "Actors": [
+    {
+      "ActorId": "3a39201662c01d63edc79a65d0cfa143",
+      "DisplayName": "Bramble Wolf",
+      "ExperiencedTime": {
+        "Days": 0,
+        "MillisecondsWithinDay": 1800,
+        "TotalMilliseconds": 1800
+      },
+      "Effort": 10,
+      "Position": {
+        "X": 26240,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "PresenceRevision": 0,
+      "SourceItemQuantity": 0
+    },
+    {
+      "ActorId": "457b0db65be2dbf50348e7242108ec5a",
+      "DisplayName": "Kegga Toolwright",
+      "ExperiencedTime": {
+        "Days": 0,
+        "MillisecondsWithinDay": 1800,
+        "TotalMilliseconds": 1800
+      },
+      "Effort": 10,
+      "Position": {
+        "X": 88960,
+        "Y": 35968,
+        "Z": 256,
+        "Cell": {
+          "X": 347,
+          "Y": 140,
+          "Z": 1
+        }
+      },
+      "PresenceRevision": 0,
+      "SourceItemQuantity": 0
+    },
+    {
+      "ActorId": "5201f2057d1bd67a6749d6af913c8a61",
+      "DisplayName": "Bramble Wolf",
+      "ExperiencedTime": {
+        "Days": 0,
+        "MillisecondsWithinDay": 1800,
+        "TotalMilliseconds": 1800
+      },
+      "Effort": 10,
+      "Position": {
+        "X": 25728,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "PresenceRevision": 0,
+      "SourceItemQuantity": 0
+    },
+    {
+      "ActorId": "5bae51ef546726b697fa93ee401303f0",
+      "DisplayName": "Bandit Chief",
+      "ExperiencedTime": {
+        "Days": 0,
+        "MillisecondsWithinDay": 1800,
+        "TotalMilliseconds": 1800
+      },
+      "Effort": 10,
+      "Position": {
+        "X": 88960,
+        "Y": 79744,
+        "Z": 256,
+        "Cell": {
+          "X": 347,
+          "Y": 311,
+          "Z": 1
+        }
+      },
+      "PresenceRevision": 0,
+      "SourceItemQuantity": 0
+    },
+    {
+      "ActorId": "9e5f5739cd09534e02f0bf71d3d1b722",
+      "DisplayName": "Wren",
+      "ExperiencedTime": {
+        "Days": 0,
+        "MillisecondsWithinDay": 1800,
+        "TotalMilliseconds": 1800
+      },
+      "Effort": 10,
+      "Position": {
+        "X": 25984,
+        "Y": 83072,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 324,
+          "Z": 1
+        }
+      },
+      "PresenceRevision": 0,
+      "SourceItemQuantity": 7
+    },
+    {
+      "ActorId": "9f03e043c03ab76d6e7936d0714b2e51",
+      "DisplayName": "Marla",
+      "ExperiencedTime": {
+        "Days": 0,
+        "MillisecondsWithinDay": 1800,
+        "TotalMilliseconds": 1800
+      },
+      "Effort": 10,
+      "Position": {
+        "X": 24704,
+        "Y": 89728,
+        "Z": 256,
+        "Cell": {
+          "X": 96,
+          "Y": 350,
+          "Z": 1
+        }
+      },
+      "PresenceRevision": 0,
+      "SourceItemQuantity": 8
+    },
+    {
+      "ActorId": "c9622c927741434f5217a2765aad3f9c",
+      "DisplayName": "Traveler",
+      "ExperiencedTime": {
+        "Days": 0,
+        "MillisecondsWithinDay": 1800,
+        "TotalMilliseconds": 1800
+      },
+      "Effort": 10,
+      "Position": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "PresenceRevision": 0,
+      "SourceItemQuantity": 11
+    }
+  ],
+  "SourceLotCount": 8,
+  "CraftedLotCount": 0,
+  "StructureCount": 0
+}

@@ -1,0 +1,13 @@
+{
+  "status": "work_in_progress_backup_not_acceptance",
+  "ref": "codex/checkpoint-before-outcome-corrections-20261002T002745Z",
+  "revision": "99402a49023695ae5c0a7a72474ba5d1927b8c3e",
+  "sourceHead": "cdeb919081ee8fe0ad9533f0ce2cd85fab4e2a43",
+  "includedScope": "Current successor code, tests, docs, prior review and qualification including incomplete evidence. Unrelated predecessor staging excluded; real index unchanged.",
+  "unrunGates": [
+    "outcome-fixtures",
+    "outcome-native",
+    "outcome-auth"
+  ],
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737"
+}

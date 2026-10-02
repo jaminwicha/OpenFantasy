@@ -1,0 +1,39 @@
+{
+  "observedUtc": "2026-10-01T23:35:53.986822+00:00",
+  "status": "host_regression_passed_not_full_acceptance",
+  "report": "Beta/implementation/p02/encounter-outcome-continuation/qualification/regression-20261001T232753Z-73570/report.json",
+  "reportSha256": "c991214d2a8866aa614c03dc5e30a39e31d1872070b4bb0bef6e6b63ff6a1014",
+  "accepted": true,
+  "elapsedSeconds": 440.214,
+  "limitSeconds": 600,
+  "sourceUnchanged": true,
+  "actualTrx": [
+    {
+      "path": "Beta/implementation/p02/encounter-outcome-continuation/qualification/regression-20261001T232753Z-73570/regression.trx",
+      "sha256": "8ebd19066f5b1db0fb90f2edaf0ef217ba696053a1ab31a537501cf178c2125f",
+      "outcome": {
+        "outcome": "Completed"
+      },
+      "counters": {
+        "total": "545",
+        "executed": "545",
+        "passed": "545",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  ],
+  "priorFailure": "LEAD_REGRESSION_TIMEOUT.json",
+  "limits": "The later pass does not establish the cause of the earlier timeout or close native, crash-recovery, independent-review or full game gates."
+}

@@ -1,0 +1,221 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "defeat",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 4.205,
+  "ProbeMilliseconds": 11482,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "accept",
+      "Route": "keyboard",
+      "Key": "E"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    }
+  ],
+  "Strikes": 4,
+  "Waits": 0,
+  "Engagement": {
+    "EncounterCount": 1,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 6.6360157
+  },
+  "Outcome": {
+    "Title": "Defeated",
+    "Body": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren is out of reach\nYou \u00B7 defeated side \u00B7 incapacitated (0 HP)\nBandit Chief \u00B7 standing side \u00B7 HP 759/800\nYou are incapacitated (0 HP) and cannot move or act. Accepting the defeat ends this fight and you stay incapacitated afterwards. Your save is kept.",
+    "Status": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren is out of reach\nBandit Chief \u00B7 HP 759/800",
+    "Result": "Victory",
+    "Standing": "OpponentStands",
+    "Hp": 0,
+    "Seconds": 11.3046113
+  },
+  "Completed": {
+    "CompletedAtSequence": 2600,
+    "Stage": "Completed",
+    "EncounterCount": 1,
+    "Hp": 0,
+    "Body": "Defeated \u00B7 You are incapacitated (0 HP): no movement or action is possible \u00B7 This encounter is complete: aftermath care applies only before its outcome is accepted, and ordinary care cannot treat an incapacitated (0 HP) character \u00B7 Save and leave keeps this world\nYou \u00B7 defeated side \u00B7 incapacitated (0 HP)\nBandit Chief \u00B7 standing side \u00B7 HP 759/800",
+    "Seconds": 11.441671
+  },
+  "Decline": null,
+  "Trade": null,
+  "Panels": [
+    {
+      "Label": "defeat-outcome",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 187
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 200.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 164.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 137
+      },
+      "Lines": 7,
+      "VisibleLines": 7,
+      "Leave": null,
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    },
+    {
+      "Label": "terminal",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 204
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 256
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 198,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 162,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 117
+      },
+      "Lines": 6,
+      "VisibleLines": 6,
+      "Leave": {
+        "X": 22,
+        "Y": 249,
+        "Width": 396,
+        "Height": 31
+      },
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "Checks": [
+    "The defeat-outcome panel stated the result and reason while the world held, clear of the HUD and combatants.",
+    "The terminal panel explains incapacity and the completion policy and offers Save and leave."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T011546Z-658c1/native-encounter-outcome-sep8qbft/defeat.defeat-engaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T011546Z-658c1/native-encounter-outcome-sep8qbft/defeat.defeat-outcome.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-native-20261002T011546Z-658c1/native-encounter-outcome-sep8qbft/defeat.terminal.png"
+  ],
+  "SaveAndLeave": true,
+  "FinalStage": "Completed",
+  "FinalTerminal": true,
+  "CompletedAtSequence": 2600,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 2,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 80032,
+    "Z": 256
+  },
+  "FinalHp": 0,
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

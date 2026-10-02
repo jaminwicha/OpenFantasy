@@ -1,0 +1,51 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.48]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.93]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.07]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.IncapacitatedWinnerIsNotPromisedExploration [11 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.CareReasonComesFromTheCareViewNotFromAReachAssumption [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.PendingButUnavailableHelperIsNotDescribedAsPreparingCare [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.DefeatWithAvailableCareSaysThatAcceptingDeclinesIt [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.TerminalTextStatesTheCompletionPolicy [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.ObserverOwesNoReadingAndSeesOnlyObservedCondition [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode [2 s]
+[xUnit.net 00:00:04.91]     OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading [FAIL]
+[xUnit.net 00:00:04.91]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:04.91]       Expected: None
+[xUnit.net 00:00:04.91]       Actual:   Unavailable
+[xUnit.net 00:00:04.91]       Stack Trace:
+[xUnit.net 00:00:04.91]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs(400,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.FightFirstWolf(TwoHumanOutcomeWorld world, Boolean wolfStrikes, Boolean enter)
+[xUnit.net 00:00:04.91]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs(125,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading()
+[xUnit.net 00:00:04.91]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs(190,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading()
+[xUnit.net 00:00:04.91]         --- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld [2 s]
+  Failed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading [992 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: None
+Actual:   Unavailable
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.FightFirstWolf(TwoHumanOutcomeWorld world, Boolean wolfStrikes, Boolean enter) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs:line 400
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs:line 125
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs:line 190
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoCompletedEpisodesInOneWorldReplaceTheLatestRecordAndRetainIdentities [1 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis [978 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.CompleteRootDecodeRefusesForeignPinsAndImpossibleOwnerContents [5 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening [35 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues [39 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem [543 ms]
+[xUnit.net 00:01:19.07]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [1 s]
+
+Test Run Failed.
+Total tests: 18
+     Passed: 17
+     Failed: 1
+ Total time: 1.3236 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-corrections/qualification/outcome-unit-20261002T004542Z-8423c/outcome-host.trx

@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "kind": "regression",
+  "report": "Beta/implementation/p02/encounter-outcome-continuation/qualification/regression-20261001T231502Z-ed5fb/report.json",
+  "sha256": "ed4be5e0256daf1d79b3e2b8b0a1e06b14a64009bf960c0fdb40c8e74e6251c9",
+  "elapsedSeconds": 600.021,
+  "limitSeconds": 600,
+  "sourceUnchanged": true,
+  "error": "TimeoutExpired(['/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet', 'test', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj', '--no-build', '--no-restore', '--filter', '(FullyQualifiedName~Simulation|FullyQualifiedName~Client|FullyQualifiedName~WorldExchange|FullyQualifiedName~MaterialProposal|FullyQualifiedName~Content)&FullyQualifiedName!~NativeTradingResultTests&FullyQualifiedName!~NativeGiftResultTests&FullyQualifiedName!~RetainedGiftResultTests&FullyQualifiedName!~NativeTradingBoundaryResultTests&FullyQualifiedName!~NativeCargoResultTests&FullyQualifiedName!~CargoCircuitJourneyTests&FullyQualifiedName!~CargoCircuitEvidenceTests&FullyQualifiedName!~NativeRetreatResultTests&FullyQualifiedName!~RetreatDurabilityResultTests&FullyQualifiedName!~RetreatDurabilityFixtureTests&FullyQualifiedName!~NativeRoadThreatResultTests&FullyQualifiedName!~NativeEncounterOutcomeResultTests&FullyQualifiedName!~NativeEncounterOutcomeFixtureTests&FullyQualifiedName!~EncounterOutcomeDurabilityResultTests&FullyQualifiedName!~EncounterOutcomeDurabilityFixtureTests', '--logger', 'console;verbosity=detailed', '--logger', 'trx;LogFileName=regression.trx', '--results-directory', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-continuation/qualification/regression-20261001T231502Z-ed5fb'], 599.113830125003)",
+  "interpretation": "The existing 600-second deadline expired. No terminal TRX was produced. Partial passing lines are not a regression pass. Cause has not been established; no deadline change or automatic model retry is authorized."
+}

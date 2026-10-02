@@ -1,0 +1,13 @@
+{
+  "status": "verified_focused_checkpoint_not_full_acceptance",
+  "report": "qualification/outcome-unit-20261001T225947Z-cd719/report.json",
+  "sha256": "05bb68319a117b7a2f40fbede5494c9e5d579105629b9bb4548aedf4eb6db2ae",
+  "counts": {
+    "outcome-core.trx": 8,
+    "outcome-host.trx": 8
+  },
+  "elapsedSeconds": 222.553,
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/encounter-outcome-continuation/qualification/build-20261001T225838Z-23c16/report.json",
+  "buildReportSha256": "5d2d92e65b5a1f44c6325ae94dd55b582c9007e4e0cc0393674a774326801903",
+  "remaining": "Complete required compatibility, native and crash evidence; independent critic; actual diff integration; no new rule/phase acceptance yet."
+}

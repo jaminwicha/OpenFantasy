@@ -773,3 +773,30 @@ lane, the observed warning, the chief's entry, a strike and its real hit, Retrea
 detour, Kegga sale) and shorter controller and pointer Retreat routes from the road, then a separate paused reopen; its
 manifest feeds `NativeRoadThreatResultTests` through `OPENFANTASY_NATIVE_ROAD_THREAT_RESULTS`. See
 [road threat](docs/architecture/road-threat.md).
+
+The separate outcome-completion world (profile 35) removes that dead end without changing any earlier profile:
+`OpenFantasy.Host --create-cargo-outcomes <world.sqlite> <seed> <player-name>` creates it, and
+`NativeEncounterOutcome.tscn` (`--cargo-outcomes [SAVE]`) opens only it. A resolved encounter is completed by the world
+once every required player in the fight has read the result and no care obligation is pending; the winner reads **Continue** and keeps exploring with recovery
+retained, a defeated player reads **Accept defeat** and then sees a terminal explanation with **Save and leave**.
+Accepting asks the world to continue: the next ready boundary completes the encounter and closes aftermath care, so
+admitted care (E / A while it is offered) must be chosen first. The separate HUD accept button has no E hint; the wheel
+offers acceptance on the right and care on the left. V opens the wheel without committing. Accepting declines available care.
+The outcome panel (`scenes/EncounterOutcomeOverlay.tscn`) shows only your own or currently observed condition and
+states projected care reasons without treating a missing view as a missing agreement or a patient request as helper
+commitment. Compact HUD text links to full card/tooltip explanations. Nothing is rewarded, revived or removed. See
+[encounter outcome](docs/architecture/encounter-outcome.md).
+
+`NativeEncounterOutcomeFixtureTests` exports declared fresh outcome fixtures when
+`OPENFANTASY_NATIVE_ENCOUNTER_OUTCOME_FIXTURES` names an empty directory: `victory/` (chief declared at 1 HP) and
+`defeat/` (production chief) carry an earned, bought ration to road cell (346,318); `care/` (player declared at 1 HP)
+uses genuine managed approach and entry, stopping at the player's first decision boundary of the first wolf encounter
+beside Wren. It does not prove native care-specific approach or entry. `tools/check_native_encounter_outcome.py
+--dotnet <path> --godot <path> --fixtures <directory> --output <json> [--rendered]` then runs the native victory
+(strike, read, Continue, detour, Kegga sale), defeat (Accept defeat, terminal Save and leave) and HUD/wheel care-decline routes
+and a separate paused reopen of the defeat save, checking post-draw card, HUD and text bounds against the viewport and both
+combatants; its manifest feeds `NativeEncounterOutcomeResultTests` through `OPENFANTASY_NATIVE_ENCOUNTER_OUTCOME_RESULTS`,
+which re-derives each declared genesis and replays the complete journals. A bounded passive submission observer also
+records each pre-input selection's full canonical command, actual submitted command and receipt. Authentication compares
+them with journaled commands and rejects altered nested terms, receipts, identities or missing rows. These are the
+verifier's contracts; execution results and unresolved routes remain in the implementation packet.
