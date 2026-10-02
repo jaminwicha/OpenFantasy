@@ -34,7 +34,7 @@ public partial class FarmGame
         _market.CancelRequested += CancelMarketRequest;
         _market.RecordRequested += InspectQuoteRecord;
         _market.StallRequested += ChooseStall;
-        _market.PresentLocal += () => { if (_session is not null) Present(_session.World.ReadView()); };
+        _market.PresentLocal += () => { if (_session is not null) Present(); };
     }
 
     /// <summary>
@@ -61,7 +61,7 @@ public partial class FarmGame
         _market.Open(choice == FarmSemanticAction.TradeOffers);
         if (!_marketDraft.IsExplicit)
             _market.Notice("No stall is within reach and none is chosen. Choose one under Stall, or close this and walk to a merchant.");
-        Present(_session.World.ReadView());
+        Present();
     }
 
     private void CloseMarket()
@@ -153,7 +153,7 @@ public partial class FarmGame
         if (_marketDraft.ChosenMarketId == marketId) return;
         _marketDraft.Begin(view, marketId, null);
         _market.Notice("Now addressing " + _market.StallLabel(view, marketId) + ". Earlier choices were cleared.");
-        Present(_session.World.ReadView());
+        Present();
     }
 
     private void PresentMarket(LocalWorldView view)

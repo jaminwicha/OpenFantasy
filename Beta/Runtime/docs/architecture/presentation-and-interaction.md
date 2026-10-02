@@ -81,6 +81,14 @@ cannot be reclaimed by a panel until released. Missing panel releases cannot tur
 press into an action. Startup reads the window's current focus before publishing readiness; it does
 not assume a future focus event will arrive. A rendering fixture that injects focus does not redefine ordinary gameplay focus policy.
 
+The [control-return adapter](../../client/scripts/FarmGame.ControlReturn.cs) closes action drafts and
+adds a pending-control input layer while committed autonomous work finishes. It disables Resume and
+explains the wait. Restoration keeps the local pause, presents the safe view and enables deliberate
+Resume using the marker captured for that presentation. Held directions/actions require release;
+regained focus and an earlier Resume press cannot supply consent. Control is captured before the view
+so a newer permission cannot appear beside an older frame. See the
+[participant protocol](player-client.md) for the ordered observation and port-binding contract.
+
 [FarmTargetSelection](../../client/scripts/FarmTargetSelection.cs) holds an explicit transient target.
 A selected plant remains selected when another becomes nearer. Its unavailable Talk/Give action
 cannot redirect to a person. Restart discards client selection, not world state.

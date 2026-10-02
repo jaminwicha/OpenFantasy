@@ -118,10 +118,49 @@ public sealed partial class LocalWorldSession
         lock (_inputs)
         {
             player.ControlAvailable = true;
+            if (player.ControlStatus.State == PlayerControlState.Pending)
+                player.ControlStatus = player.ControlStatus with { State = PlayerControlState.Restored, Generation = 1 };
             player.Ready = false;
             player.ClearMovement();
         }
         return state;
+    }
+
+    internal PlayerControlStatus ReadControlStatus(LocalPlayerConnection player)
+    {
+        lock (_inputs) { EnsurePlayerAvailable(player); return player.ControlStatus; }
+    }
+
+    internal (LocalWorldView View, PlayerControlStatus Control) ReadObservation(LocalPlayerConnection player)
+    {
+        lock (_inputs) { EnsurePlayerAvailable(player); return (player.ReadView(), player.ControlStatus); }
+    }
+
+    internal void Resume(LocalPlayerConnection player, PlayerControlStatus observed)
+    {
+        ArgumentNullException.ThrowIfNull(observed);
+        lock (_inputs)
+        {
+            EnsurePlayerAvailable(player);
+            PlayerControlStatus current = player.ControlStatus;
+            if (!player.ControlAvailable || observed.State is not (PlayerControlState.Available or PlayerControlState.Restored)
+                || observed.PortId != current.PortId || observed.ActorId != current.ActorId
+                || observed.Generation != current.Generation)
+                throw new InvalidOperationException("Player control has changed; read its restored status before choosing Resume.");
+            player.ControlStatus = current with { State = PlayerControlState.Available };
+            SetReady(player, true);
+        }
+    }
+
+    internal void SetLegacyNetworkReady(LocalPlayerConnection player, bool ready)
+    {
+        lock (_inputs)
+        {
+            EnsurePlayerAvailable(player);
+            // A returning port never regains the old unbound wire contract, even after one valid Resume.
+            if (ready && (player.ControlStatus.Generation != 0 || player.ControlStatus.State != PlayerControlState.Available)) return;
+            SetReady(player, ready);
+        }
     }
 
     private WorldSnapshot CommitControllerEvent(WorldSnapshot state, WorldControllerEvent controllerEvent)

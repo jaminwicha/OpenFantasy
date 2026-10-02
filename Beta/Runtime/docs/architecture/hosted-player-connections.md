@@ -29,7 +29,10 @@ offers and participation. Shared occupancy neither shares permissions nor retain
 ## Readiness and scheduling
 
 A new connection starts unready. Its client acknowledges readiness only after applying a playable
-view. Any ready port permits the single host cutoff; zero ready ports pause ordinary world selection.
+view and observing that its port has control. A returning controller additionally requires deliberate
+Resume against its displayed restoration marker, as defined by the
+[participant client](player-client.md). Pending control, restored control and readiness are distinct.
+Any ready port permits the single host cutoff; zero ready ports pause ordinary world selection.
 The controller-event binding checks confirmed disconnect allowances and safe restoration independently
 of gameplay readiness; these external decisions earn no simulation time.
 Already accepted physical consequence work keeps its existing completion policy. An established
@@ -111,7 +114,9 @@ In-process closure is distinct from a confirmed transport disconnect. For profil
 network/control adapter journals established transport loss, observes the 30-second allowance and
 restores control at a safe boundary. These events are never inferred from ordinary port disposal.
 An attached port awaiting restoration cannot become ready or submit a new choice; it can recover an
-exact committed receipt. Restoration publishes its view and requires a new readiness acknowledgement. This shared host supports coordinated branch Wait; independent encounter pockets, network
+exact committed receipt. Restoration publishes its view and requires a fresh, observation-bound
+Resume for that port and generation. Raw network readiness cannot acknowledge that return.
+This shared host supports coordinated branch Wait; independent encounter pockets, network
 transport and native multi-client delivery are separate bindings of the full design. The connection
 limit is the first production player target, not an NPC population or world-resident limit.
 

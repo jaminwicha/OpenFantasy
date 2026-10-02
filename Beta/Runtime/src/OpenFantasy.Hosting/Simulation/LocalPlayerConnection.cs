@@ -2,6 +2,7 @@ using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Diagnostics;
+using System.Security.Cryptography;
 
 namespace OpenFantasy.Hosting.Simulation;
 
@@ -15,9 +16,11 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     internal string TimingOwner { get; } = Guid.NewGuid().ToString("N");
     private readonly LocalWorldSession _host;
     private LocalWorldView _view;
+    internal PlayerControlStatus ControlStatus { get; set; }
 
     internal LocalPlayerConnection(LocalWorldSession host, EntityId actorId, TrustedCommandDelivery delivery,
-        LocalWorldView view, CargoPresentation.LocalRegionObserver? regions, bool controlAvailable = true)
+        LocalWorldView view, CargoPresentation.LocalRegionObserver? regions, bool controlAvailable = true,
+        bool publishesControlStatus = false)
     {
         _host = host;
         ActorId = actorId;
@@ -25,6 +28,9 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
         _view = view;
         Regions = regions;
         ControlAvailable = controlAvailable;
+        ControlStatus = !publishesControlStatus ? PlayerControlStatus.Available : new(
+            controlAvailable ? PlayerControlState.Available : PlayerControlState.Pending,
+            EntityId.FromBytes(RandomNumberGenerator.GetBytes(EntityId.ByteLength)), actorId, 0);
         HostTimingEvents.Log.Bind(TimingOwner, host.TimingOwner);
         if (HostTimingEvents.Log.IsEnabled()) HostTimingEvents.Log.Bind(TimingOwner, actorId.ToString());
     }
@@ -32,6 +38,8 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     public EntityId ActorId { get; }
     public LocalWorldView ReadView() => Volatile.Read(ref _view);
     public LocalWorldRunState ReadRunState() => _host.ReadRunState(this);
+    public PlayerControlStatus ReadControlStatus() => _host.ReadControlStatus(this);
+    public void Resume(PlayerControlStatus observed) => _host.Resume(this, observed);
     public Task<Networking.PlayerParticipantStatus> ReadParticipantStatusAsync() => _host.ReadParticipantStatusAsync(this);
     /// <summary>Acknowledge gameplay readiness after applying the playable view; false clears held movement.</summary>
     public void SetReady(bool ready) => _host.SetReady(this, ready);
@@ -51,6 +59,8 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     internal bool Ready { get; set; }
     internal bool ControlAvailable { get; set; }
     internal bool NetworkEstablished { get; set; }
+    internal (LocalWorldView View, PlayerControlStatus Control) ReadObservation() => _host.ReadObservation(this);
+    internal void SetLegacyNetworkReady(bool ready) => _host.SetLegacyNetworkReady(this, ready);
     internal Task CompleteNetworkAdmissionAsync(CancellationToken cancellationToken, Action validateAdmission) =>
         _host.CompleteNetworkAdmissionAsync(this, cancellationToken, validateAdmission);
     internal Task ConfirmTransportDisconnectedAsync(WorldControllerDisconnectReason reason) =>

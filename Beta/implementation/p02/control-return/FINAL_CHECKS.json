@@ -1,0 +1,230 @@
+{
+  "status": "bounded observed-control-return integration passed; full campaign gates remain open",
+  "checkpoint": "codex/checkpoint-before-control-return-20261002T212527Z",
+  "sourceHead": "68fa9fc575dca6f59a67d254bc71c2dcb58a7a4c",
+  "milestone": "codex/milestone-control-return-20261002",
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261002T214543804480Z/report.json",
+      "sha256": "6fe7a89e29ebb79a511b53167405dacebc8ba369383161e404274c860bcd7a9a",
+      "seconds": 8.40054208401125,
+      "outcomes": null,
+      "accepted": true
+    },
+    "control-network": {
+      "path": "qualification/control-network-20261002T214552991058Z/report.json",
+      "sha256": "4534d627bf692480c0393927544d42425dfa221393f6f5c337362798541495ba",
+      "seconds": 8.96261625000625,
+      "outcomes": {
+        "Passed": 7
+      },
+      "accepted": true
+    },
+    "control-client": {
+      "path": "qualification/control-client-20261002T214602253685Z/report.json",
+      "sha256": "a314ed30af0fa9141ae40e648c7dc0d38dd138fe7ff236c27109ee9bf7cc7def",
+      "seconds": 3.0132532909919973,
+      "outcomes": {
+        "Passed": 3
+      },
+      "accepted": true
+    },
+    "survival": {
+      "path": "qualification/survival-20261002T214605481525Z/report.json",
+      "sha256": "ccff3388345b0f692afe2813476f6fe6e8addb8a25a8767cc4c0a5ed72a18621",
+      "seconds": 7.971478374995058,
+      "outcomes": {
+        "Passed": 3
+      },
+      "accepted": true
+    },
+    "control-native": {
+      "path": "qualification/control-native-20261002T214653170749Z/report.json",
+      "sha256": "113f942b1d3eb74c1a3b68af719ce2ad51a5922ced061485a7c521411a35452b",
+      "seconds": 14.5887222920137,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "network": {
+      "path": "qualification/network-20261002T215235859592Z/report.json",
+      "sha256": "314437ceef552f0dd62e5381ed5a503ac3807a13687929a9bc27f9c6554774ca",
+      "seconds": 25.79080987497582,
+      "outcomes": {
+        "Passed": 272
+      },
+      "accepted": true
+    },
+    "controller": {
+      "path": "qualification/controller-20261002T215302206785Z/report.json",
+      "sha256": "baa536fc6fbcdcea77cabe341ab3e2942b7fc3b1ce438902b67403f7ebe9bcc5",
+      "seconds": 48.21495154200238,
+      "outcomes": {
+        "Passed": 76
+      },
+      "accepted": true
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261002T215350633398Z/report.json",
+      "sha256": "a4d655f88516b29c09165abccd1fd94427edffeb1d20b7be582c9aa1f11d5670",
+      "seconds": 19.711917167005595,
+      "outcomes": {
+        "Passed": 187
+      },
+      "accepted": true
+    },
+    "server-managed": {
+      "path": "qualification/server-managed-20261002T215410537964Z/report.json",
+      "sha256": "f382c4ebef5177a385b54674df0098be545cd4a714d8fa8aba4d87b04f208ccb",
+      "seconds": 30.29102687499835,
+      "outcomes": {
+        "Passed": 76,
+        "NotExecuted": 1
+      },
+      "accepted": true
+    },
+    "retreat": {
+      "path": "qualification/retreat-20261002T215441019728Z/report.json",
+      "sha256": "c162f271c6e0f6b87663bf49bada37f551846dc89833883cbaabddc18298722e",
+      "seconds": 35.16154299999471,
+      "outcomes": {
+        "Passed": 16
+      },
+      "accepted": true
+    },
+    "shared": {
+      "path": "qualification/shared-20261002T215516378681Z/report.json",
+      "sha256": "04162ba1005ffb6251ce74df9dc76e6cb4054aa492e0cb944ec7ff2070ef82c7",
+      "seconds": 23.06267320900224,
+      "outcomes": {
+        "Passed": 26
+      },
+      "accepted": true
+    },
+    "control-core": {
+      "path": "qualification/control-core-20261002T215539781592Z/report.json",
+      "sha256": "41e71d79f5f587f364023653ebf5d156d18cca0db28b01cb6388c6b383be8d5e",
+      "seconds": 2.6351693329925183,
+      "outcomes": {
+        "Passed": 24
+      },
+      "accepted": true
+    },
+    "roster-native": {
+      "path": "qualification/roster-native-20261002T215554710912Z/report.json",
+      "sha256": "7022e7ce15b2755e87eb9ddac20901c616867b066fd75df5c59e38fe528f99d8",
+      "seconds": 87.02507204198628,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "native-auth": {
+      "path": "qualification/native-auth-20261002T220057929104Z/report.json",
+      "sha256": "4cae196dfb2c47361344d13d92225963427cc25edcaac64e565cd5ab4f82f6d1",
+      "seconds": 7.215880832984112,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "native-original": {
+      "path": "qualification/native-original-20261002T220028483862Z/report.json",
+      "sha256": "ef953eca3fb83113dc7815d29ebf937ef40982536ce0f08060127c4939505b6a",
+      "seconds": 28.7150940829888,
+      "outcomes": null,
+      "accepted": true
+    }
+  },
+  "distinctPassingCases": 644,
+  "newPassingCases": 14,
+  "unrunCases": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "nativeProcesses": 12,
+  "renderedProcesses": 8,
+  "renderedImages": 21,
+  "nativeBoundary": "Managed hostile approach, damage, actual transport loss, recorded 30-second allowance and first paid retreat sample; native TLS continuation through remaining accepted route, observed restoration, deliberate Resume and exact original-genesis reopen.",
+  "protectedTestsAndFixtures": 718,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLinks": 1304,
+  "dependencyReuse": "None for selected qualification: all reports match the exact current source and binaries.",
+  "artifactPins": {
+    "Beta/implementation/p02/control-return/native-fixtures/retreat.command.ofc": "6bf2aeb506427f976864c6cb456f607e959f03650b1844969688b78edf6333df",
+    "Beta/implementation/p02/control-return/native-fixtures/pending-retreat.ofc": "db59294251dd3507445b75fa3605134c16cabc95041f1ce585fcf26a22233b62",
+    "Beta/implementation/p02/control-return/native-fixtures/pending-retreat.sqlite": "05f4f6208ede66a015648ee497c85765a7d87b4637c4755c07ab7d9b78109854",
+    "Beta/implementation/p02/control-return/native-fixtures/manifest.json": "5fe340a4897c8e1e3e3216de0eb1c36fd9045026faf30b5000e619aeb1867157",
+    "Beta/implementation/p02/control-return/native-fixtures/genesis.ofc": "6a3d1019df8ecb7c860324c8011327ce4a90a7c72f8601415e3c47b6d8878172",
+    "Beta/implementation/p02/control-return/native-fixtures/retreat.receipt.ofc": "e2e524580010c914d65d4082ce4d055cc6c49ed1b3c0fb15a4f4d93f426baa31",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/journey.json": "4bcfd4e9190b4e0d7c60fc529a6e786297f3aa2b79a8f2c8b3c8d033969ff77d",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/native-return.sqlite": "d30dcf677c5e11f4b327f7fe3a1a199143a87bd4ba59242391157850fc5b7c85",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/rendered/0002.response.json": "0ab3de907ae4e154b1e81e3117ddfdf59354e03050b49ed6bb28ec56acd7e0f8",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/rendered/0002.png": "da2ad909877407268f655e84902e03a608dfb7971d4089ac0ab4fb0b782e6625",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/rendered/0011.response.json": "e310243527a695ac309547a60782515938f86b37b4cd2be85f675b4399c9802d",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/rendered/0011.png": "5de69bcf24602dfdf1f2d27e249725b448075bb1dfbd6bb52f6ea30e6975a1c1",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/rendered/0015.response.json": "07740b6ed9e8b3f4bc855c0e9dd8f7b1829ed67a589bd9ccce83c09bbbc85d2d",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/rendered/0015.png": "04e4b1062786402fbd14f9552c9685a35c1d3455efa946b2e371d9aa6b95dd00",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/journey.json": "ca56e2e7c238a9b9f3aaad36655265d673d2502ca73bbdf72828f843e6ad2236",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/genesis.ofc": "3117cf06eb6477325424682447a26b6955e84d789c60368c634522d068189c83",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/native-roster.sqlite3": "8f1b89a25f1a7ba99710cfbed8a6907b72c9084d1cb106dfa911197e58850996",
+    "Beta/implementation/p02/control-return/qualification/control-native-20261002T214653170749Z/control-return/rendered/report.json": "4f8cbabf0f36656de06954a806dd782cda1e5c02b1035544b0e3639b57adfa48",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/e1d57b89bcce6b6237bd754d53734e55-first/report.json": "c41b7d89953241e66d51cf5c4560ef6e2af70f301b9ca4e60b9f24509927a188",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/e1d57b89bcce6b6237bd754d53734e55-rejoin/report.json": "29d2eb4d7056edc145e3320be0051e1fc6c1f8db35c3f001268ec66a57566564",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/79dddd9ea31bf745606a5473ea76ed14-first/report.json": "1bc49f7f2bf47ab182b4c11941aebdaaad6583ef0d2484666670f6a3814d5fd3",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/5795dc4890da7573cfc5b3948d0296df-first/report.json": "c49b550fc916458a9f0ebe0810dc64d2ffa274cd33cfbc5c0f8d3b7eb7ece5f1",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/4073c2e750cd349c3ee91b2f7c70fb49-first/report.json": "6f28b59be50a27e26941f85d8f9a1e786d580c258411f40ccd84284a25839f38",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/5795dc4890da7573cfc5b3948d0296df-first/0029.png": "8753239aaf8b4f914e67c956e06fef0c818956215cf94923786c767d8f3be0e0",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/5795dc4890da7573cfc5b3948d0296df-first/0153.png": "3948ca103e19798350fcf8e380566c9386559a37e466283ac694cbec13a4955b",
+    "Beta/implementation/p02/control-return/qualification/roster-native-20261002T215554710912Z/roster/5795dc4890da7573cfc5b3948d0296df-first/0041.png": "9224d10963c6a088677c9b2a220e2a934bc9269c1d93aec7597babceb07613b0",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native.json": "13a258c47ea5dc409864a62c627d0c519c25847b2e992f8dc18c64a386faf846",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-keyboard.sqlite": "3a1e97fbb7f981813c98c99646793735dcf5784c9d35343c52dafffbb11eefcd",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-keyboard.json": "5a4f622f7f4cefda50fadddad049b35137743b671202fa24789bdd483243605e",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-keyboard.pending.png": "71ec3ba578970fdfa669207dc76b3b219d0d781611270e66c7dc97faa5831b75",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-keyboard.paused-inspection.png": "609f637eb74e8d71d24542cd20ca3ad3ebca9595551d0662ee52aefa62f1543c",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-keyboard.selected.png": "78b6ca24084f3ae62d9b296de3a682a7fec3769b33e9acb46f47799816e4c367",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-keyboard.closed.png": "f45fc244dfd0aad49e22fcc05a57906a0174d3edc415ef5e1098ce0d69f2a9e7",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/reopen-cancel-keyboard.json": "15666e449a8aa0750e8b266b0138067191250f99315f480131bef8b2fe7f4b1b",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/reopen-cancel-keyboard.reopen.png": "2cb3fcc2bcf24d393fc81a761478fcb4de1077face6b691142829257d8a37a15",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-pointer.sqlite": "5f87e68e13c340d9a62f47d292ab09c0471a7af69dcc0ad9a9b47050cb80558d",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-pointer.json": "0085a31e145c5817e801959d645101ea19640d0587a326ac1b2e3a159261b0d3",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-pointer.pending.png": "71ec3ba578970fdfa669207dc76b3b219d0d781611270e66c7dc97faa5831b75",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-pointer.paused-inspection.png": "609f637eb74e8d71d24542cd20ca3ad3ebca9595551d0662ee52aefa62f1543c",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-pointer.selected.png": "78b6ca24084f3ae62d9b296de3a682a7fec3769b33e9acb46f47799816e4c367",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/cancel-pointer.closed.png": "52107146c816454c41878f918c7d303b9760e1d82653ea03339713cad564e472",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/reopen-cancel-pointer.json": "81c5e0c58d2f1994c71b9140d6773c157d8f7635f0b46a1c302e7d782a057787",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/reopen-cancel-pointer.reopen.png": "2cb3fcc2bcf24d393fc81a761478fcb4de1077face6b691142829257d8a37a15",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/decline-controller.sqlite": "941d8387df915e82f61ca0dc821ccbb21db09ec41101145c205d6450d20000da",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/decline-controller.json": "ea0683f12abe999782750ccf9d4e44dec58220b3442eb7ebaa4329c1a8e58c59",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/decline-controller.pending.png": "2c36da40d6b4cf7c81a29f2bea4b453ccecc277ac698a5c64a2b801587604d55",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/decline-controller.paused-inspection.png": "f12580288968a4118135adfb9c18982e90e20ba637f832653284f19bd36aa5fe",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/decline-controller.selected.png": "a2a8e3142d9357e45a195ce9c5405cfb201efc044095d414e052dd1159b425f7",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/decline-controller.closed.png": "d14c27e561e00bdd34b8600af99b1c8f702e6f96a80e042eae70533a92547a24",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/reopen-decline-controller.json": "300a6d390528cdd0e2c4c386d71a57413ac74586f40ad51e71a4cb296bbed8e8",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/reopen-decline-controller.reopen.png": "33b44c88feb56ad95dab486a3de3fbf26f39f5d7adccc835af3f807e0938c706",
+    "Beta/implementation/p02/control-return/qualification/native-original-20261002T220028483862Z/native-care-dispositions-t4llb32p/native-manifest.json": "ee546b2bf4a2b45bebdcd3f6c5fe07f37c7f64cfbde9ad7e6ee91394171a5ac4"
+  },
+  "qualificationToolPins": {
+    "Beta/implementation/p02/control-return/check.py": "e0ba4ac9f221d7ed058c8b8fd0590b0e12c1ac582951c04dae5ca4a0129b1b16",
+    "Beta/implementation/p02/control-return/native.py": "e2835a67f5638c08b3c195ffe595c1b369dca95888d4da232984f4e9773e969d",
+    "Beta/implementation/p02/control-return/finalize.py": "fd410ea644aa2272fa1a035bd7186803fad3088c80624cb33093d44a19c24c75",
+    "Beta/implementation/p02/shared-player-sessions/check.py": "cf10cae8d2918df4c5e4b4c7384a870ccf0cb41a0f3bc51d9920d07af6682f3b"
+  },
+  "failedReportsRetained": [
+    "qualification/build-20261002T214014599993Z/report.json",
+    "qualification/control-network-20261002T214249816210Z/report.json",
+    "qualification/control-red-20261002T212954519604Z/report.json",
+    "qualification/native-original-20261002T215722236154Z/report.json",
+    "qualification/native-original-20261002T215842927952Z/report.json"
+  ],
+  "limits": [
+    "not a full Core/Hosting suite or full phase/campaign acceptance",
+    "restart allowance reconciliation and co-player policy remain open",
+    "general party retreat, pursuit, rescue and survival policies remain open",
+    "maximum composite/disposition-only capacity and production history latency remain open",
+    "Windows/Linux/mobile, physical devices, OS-focus behavior, human usability and art acceptance remain open",
+    "native hostile approach/loss/allowance preparation is not claimed by the native continuation test",
+    "no external provider request or external-credit savings claim"
+  ]
+}

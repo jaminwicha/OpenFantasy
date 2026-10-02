@@ -14,6 +14,22 @@ request 1, and checks the intended actor and all compatibility fields. The host-
 comes from that validated Welcome. Startup subscribes to observations and requires the first complete
 valid view within ten seconds. The returned player remains unready.
 
+Controller-capable profiles also require their coherent control marker within that same startup bound.
+The client validates its actor, port and applied observation stream/revision before publishing
+[PlayerControlStatus](../../src/OpenFantasy.Hosting/Simulation/PlayerControlStatus.cs). Pending and newly
+restored markers clear remembered readiness and movement. Neither marker automatically sends true.
+`Resume(observed)` requires the captured restored proof and an already-applied view at or beyond its
+minimum revision. The host's Available marker confirms acceptance; later ordinary pause/focus input
+keeps that bound proof rather than reverting to legacy readiness. The marker is transient port state,
+not part of canonical world or observation-body bytes.
+
+[FarmGame.ControlReturn](../../client/scripts/FarmGame.ControlReturn.cs) forces local pause at a new
+control boundary, clears input drafts and suppresses directions/actions held through that boundary.
+It explains pending accepted work and enables deliberate Resume only when control is restored. Focus
+return does not acknowledge it. Each presentation pass captures control before its view and carries
+that same value to the controls; a newer permission marker cannot be paired with an older displayed
+body. Resume consumes the presented value, while the protocol independently validates its applicability.
+
 [PlayerWebSocketConnector](../../src/OpenFantasy.Hosting/Networking/Client/PlayerWebSocketConnector.cs)
 creates the production socket with platform certificate-chain and hostname validation and requires
 the `openfantasy.v1` subprotocol. It applies one ten-second deadline across TLS connection, admission

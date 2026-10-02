@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Threading.Channels;
 using OpenFantasy.Hosting.Simulation;
 using OpenFantasy.Hosting.Diagnostics;
+using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Hosting.Networking.Client;
 
@@ -26,6 +27,9 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
         new BoundedChannelOptions(OutputCapacity) { SingleReader = true, FullMode = BoundedChannelFullMode.Wait });
     private readonly PlayerObservationReplica _replica;
     private readonly TaskCompletionSource<bool> _firstFull = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    private readonly TaskCompletionSource<bool> _firstControl = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    private PlayerControlStatus _controlStatus = PlayerControlStatus.Available;
+    private PlayerControlStatus? _resumeBinding;
     private readonly Task _completion;
     private Exception? _failure;
     private bool _closed;
@@ -55,6 +59,7 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
     public Task Completion => _completion;
     public LocalWorldView ReadView() => _replica.ReadView()
         ?? throw new InvalidOperationException("The first full observation has not arrived.");
+    public PlayerControlStatus ReadControlStatus() { lock (_gate) return _controlStatus; }
 
     /// <summary>
     /// Takes ownership of the transport, including failed admission. The token bounds this attempt
@@ -94,6 +99,9 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
                 throw new FormatException("The welcome does not match the invitation.");
             client = new PlayerProtocolClient(transport, welcome, time, timingOwner);
             await client._firstFull.Task.WaitAsync(attempt.Token).ConfigureAwait(false);
+            if (welcome.Compatibility.ProfileVersion is WorldControllerAdmission.ProfileVersion
+                or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion)
+                await client._firstControl.Task.WaitAsync(attempt.Token).ConfigureAwait(false);
             CheckStartup();
             lock (client._gate) client.ThrowIfClosedLocked();
             HostTimingEvents.Log.Stage(timingOwner, "client.startup.complete");
@@ -122,12 +130,37 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
         lock (_gate)
         {
             ThrowIfClosedLocked();
+            if (ready && _controlStatus.State != PlayerControlState.Available) return;
             if (_ready == ready) return;
-            EnqueueLocked(id => PlayerGameplayCodec.Readiness(id, ready));
+            EnqueueLocked(id => ready && _resumeBinding is { } binding
+                ? PlayerGameplayCodec.Readiness(id, true, binding) : PlayerGameplayCodec.Readiness(id, ready));
             _ready = ready;
             if (!ready) { _movementX = 0; _movementY = 0; }
         }
     }
+
+    /// <summary>Only a fresh explicit choice may use an applied restored observation. Invalid status throws; nothing is retried.</summary>
+    public void Resume(PlayerControlStatus observed)
+    {
+        ArgumentNullException.ThrowIfNull(observed);
+        lock (_gate)
+        {
+            ThrowIfClosedLocked();
+            if (_controlStatus.State == PlayerControlState.Available && observed == _controlStatus)
+            {
+                SetReady(true);
+                return;
+            }
+            if (observed.State != PlayerControlState.Restored || observed != _resumeBinding
+                || !HasAppliedControlObservation(observed))
+                throw new InvalidOperationException("Read the restored observation before explicitly choosing Resume.");
+            EnqueueLocked(id => PlayerGameplayCodec.Readiness(id, true, observed));
+            _ready = true;
+        }
+    }
+
+    private bool HasAppliedControlObservation(PlayerControlStatus status) => _replica.ReadSnapshot() is { } snapshot
+        && snapshot.StreamId == status.ObservationStreamId && snapshot.Revision >= status.ObservationRevision;
 
     /// <summary>Each call is a fresh input sample; held movement is never renewed autonomously.</summary>
     public void SetMovement(int x, int y)
@@ -207,6 +240,7 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
         _failure = failure;
         Exception ended = failure ?? new ObjectDisposedException(nameof(PlayerProtocolClient));
         _firstFull.TrySetException(ended);
+        _firstControl.TrySetException(ended);
         _action?.Source.TrySetException(ended);
         _query?.Source.TrySetException(ended);
         _ping?.Source.TrySetException(ended);

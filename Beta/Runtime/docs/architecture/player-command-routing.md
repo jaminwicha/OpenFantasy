@@ -20,6 +20,20 @@ Receiving a sample does not prove movement committed. Readiness and movement car
 acknowledgment. An empty Ping receives an empty Pong after preceding control messages were processed;
 it does not imply that a pending action committed or the world advanced.
 
+A returning controller uses the codec's explicit bound-readiness form: a true marker followed by a
+versioned [PlayerControlCodec](../../src/OpenFantasy.Hosting/Networking/PlayerControlCodec.cs) value.
+The 66-byte control value names state, actor, port, return generation, observation stream and minimum
+playable revision. `ControlStatus` output follows the corresponding full observation through the same
+ordered sender. A change in port control forces publication even if canonical world/view bytes are
+unchanged. The server retains the first restored proof; later observations do not replace that minimum
+and cannot starve Resume while other players continue.
+
+The receiving session accepts only its exact retained restored proof. Pending, foreign-port, foreign
+stream or altered-generation proofs grant no readiness. Unbound true remains supported on ports that
+have never awaited control; returning ports permanently require their bound form, including after an
+ordinary later pause. False always clears current-port readiness and movement. These transient messages
+create no durable receipt, command identity or world revision.
+
 Commands carry the original `WorldActionCodec` payload with its 16 KiB bound. Decode must reproduce
 exactly those canonical bytes on encode, preventing silent reinterpretation of a retry. The admitted
 port authenticates submitted actor/principal/session/scope claims and routes lawful requests to the
@@ -73,5 +87,5 @@ revision, sharing the bounded sender without blocking input processing. The chan
 make a Godot scene into a network client. [HTTP Upgrade/TLS and provisioning](player-http-host.md) bind around these components; native clients
 and solo envelope parity have separate adapter contracts. The [controller binding](controller-lifecycle.md) journals confirmed loss for its explicit profile and
 measures allowance independently of simulation time. Survival selection, restart reconciliation and
-client return-to-control presentation remain separate contracts; a socket error cannot grant a human
-decision or bypass the authority.
+[client return-to-control presentation](player-client.md) have distinct owners; a socket error cannot
+grant a human decision or bypass the authority.

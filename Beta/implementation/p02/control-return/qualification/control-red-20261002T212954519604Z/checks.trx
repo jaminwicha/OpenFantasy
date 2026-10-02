@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="0f46826a-d92a-460d-b8bf-47c88a734594" name="@mac 2026-10-02 16:30:00" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T16:30:00.6049370-05:00" queuing="2026-10-02T16:30:00.6049370-05:00" start="2026-10-02T16:29:55.9179340-05:00" finish="2026-10-02T16:30:00.6106710-05:00" />
+  <TestSettings name="default" id="c0cd4e55-2625-4a7e-bcb5-db5a60af2c29">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_16_30_00" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="b7353e70-c617-4932-b3d2-0754a1fa3004" testId="ed4871cc-8fbe-b949-231f-51ec4fc37224" testName="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host" computerName="mac" duration="00:00:01.9995156" startTime="2026-10-02T16:29:58.3865150-05:00" endTime="2026-10-02T16:30:00.5214650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b7353e70-c617-4932-b3d2-0754a1fa3004">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.True() Failure
+Expected: True
+Actual:   False</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs:line 35
+   at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs:line 35
+   at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs:line 35
+   at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs:line 35
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ed4871cc-8fbe-b949-231f-51ec4fc37224">
+      <Execution id="b7353e70-c617-4932-b3d2-0754a1fa3004" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests" name="Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ed4871cc-8fbe-b949-231f-51ec4fc37224" executionId="b7353e70-c617-4932-b3d2-0754a1fa3004" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.60]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.23]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.47]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.67]       Assert.True() Failure
+[xUnit.net 00:00:03.67]       Expected: True
+[xUnit.net 00:00:03.67]       Actual:   False
+[xUnit.net 00:00:03.67]       Stack Trace:
+[xUnit.net 00:00:03.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs(35,0): at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host()
+[xUnit.net 00:00:03.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs(35,0): at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host()
+[xUnit.net 00:00:03.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs(35,0): at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host()
+[xUnit.net 00:00:03.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs(35,0): at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host()
+[xUnit.net 00:00:03.67]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:03.69]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T16:30:00.5383580-05:00">
+        <Text>[xUnit.net 00:00:03.67]     OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

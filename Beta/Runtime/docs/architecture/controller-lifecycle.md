@@ -76,8 +76,17 @@ care, staging, the actor's committed combat choice or retreat while that port aw
 exception cannot choose a new human action or start ordinary exploration; other required human
 decisions still hold the world. At a safe boundary it journals restoration and publishes the resulting
 view before permitting new input. Early readiness requests are discarded. Restoration leaves the port unready, with no movement;
-the client must acknowledge readiness again after applying the playable view. Reconnecting does not
+the client must explicitly Resume after applying the playable view. Reconnecting does not
 supply consent for care, acknowledge reading or assign a co-player.
+
+[PlayerControlStatus](../../src/OpenFantasy.Hosting/Simulation/PlayerControlStatus.cs) describes the
+transient port boundary separately from durable assignment: Available, Pending or Restored. The port
+has its own identity and return generation, while resident identity and canonical world bytes stay
+with their existing owners. A pending return becomes Restored only after the world publishes its
+safe boundary. A coherent port read captures the status beside its published view. Local direct Resume
+checks the captured actor, port and generation under the input lock; network Resume additionally binds
+the applied observation stream and restoration revision. An old pending request never becomes consent.
+Accepted-work continuation depends on authority availability, not whether a restored player has resumed.
 
 The durable event API is host-only. No player wire request supplies an external event or elapsed time.
 Older profiles have no controller facet and retain ordinary connection closure without new journal rows.
@@ -165,10 +174,11 @@ The default simulation still pauses when no gameplay-ready players are connected
 Autonomous assignment permits the conservative encounter selector above; expiry itself chooses none.
 Aftermath behavior follows the bounded policy above; general rescue and other survival behavior need
 their own domain laws. A co-player requires explicit
-policy and authorization, not mere presence in the world. Client presentation must distinguish a
-pending control request from ordinary pause and bind its fresh readiness acknowledgement to the
-restored observation. The boolean readiness wire contract alone does not prove that acknowledgement.
-These policy and client contracts are distinct from the live external-event binding and encounter selection.
+policy and authorization, not mere presence in the world. The [player client](player-client.md)
+distinguishes pending control from ordinary pause and binds explicit Resume to the restored observation.
+Returning network ports reject unbound readiness even after their first accepted Resume; subsequent
+pause/focus changes retain the same connection proof. This input contract is distinct from restart,
+co-player policy, external-event recording and encounter selection.
 
 Under the explicit [care-disposition law](care-dispositions.md), pending care alone permits restoration
 for its patient or named helper. All other accepted-work restrictions remain. Control return leaves

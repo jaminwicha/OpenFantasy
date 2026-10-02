@@ -9,6 +9,14 @@ public interface IPlayerSession : IAsyncDisposable
     Task Completion { get; }
     LocalWorldView ReadView();
     LocalWorldRunState ReadRunState();
+    PlayerControlStatus ReadControlStatus() => PlayerControlStatus.Available;
+    /// <summary>Explicit consent after reading restored control. Stale or pending status throws without retry.</summary>
+    void Resume(PlayerControlStatus observed)
+    {
+        if (observed != PlayerControlStatus.Available)
+            throw new InvalidOperationException("This session does not support a control-return binding.");
+        SetReady(true);
+    }
     void SetReady(bool ready);
     void SetMovement(long dx, long dy);
     Task<WorldActionReceipt> SubmitAction(WorldActionCommand command);

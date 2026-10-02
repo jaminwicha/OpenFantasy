@@ -104,6 +104,8 @@ internal enum FarmInputLayer
     Encounter,
     /// <summary>The stall panel owns navigation and its explicit commitments; opening it changes no host timing.</summary>
     Market,
+    /// <summary>Accepted work is finishing before this player can explicitly resume control.</summary>
+    ControlReturn,
 }
 
 /// <summary>World facts the router does not own, read from the current projection at each decision.</summary>
@@ -223,17 +225,19 @@ internal sealed class FarmInputRouter
     internal bool InventoryOpen { get; private set; }
     internal bool WheelOpen { get; private set; }
     internal bool MarketOpen { get; private set; }
+    internal bool ControlPending { get; private set; }
 
     /// <summary>
     /// Local readiness request; inspection panels, including the stall, do not change the host's clock policy.
     /// A stall request is therefore answered while the panel stays open unless the player pauses explicitly.
     /// </summary>
-    internal bool WorldShouldRun => !_unavailable && Focused && !Paused;
+    internal bool WorldShouldRun => !_unavailable && Focused && !Paused && !ControlPending;
 
     internal FarmInputLayer Layer(FarmInputSituation situation)
     {
         if (_unavailable) return FarmInputLayer.Unavailable;
         if (!Focused) return FarmInputLayer.Unfocused;
+        if (ControlPending) return FarmInputLayer.ControlReturn;
         if (InventoryOpen) return FarmInputLayer.Inventory;
         if (WheelOpen) return FarmInputLayer.Wheel;
         if (MarketOpen) return FarmInputLayer.Market;
@@ -254,9 +258,16 @@ internal sealed class FarmInputRouter
     /// <summary>Flips local pause; returns false when the farm can no longer react to it.</summary>
     internal bool TogglePause()
     {
-        if (_unavailable) return false;
+        if (_unavailable || ControlPending) return false;
         Paused = !Paused;
         return true;
+    }
+
+    /// <summary>A new control boundary requires a deliberate fresh Resume; focus alone cannot accept it.</summary>
+    internal void RequireControlResume(bool pending)
+    {
+        ControlPending = pending;
+        Paused = true;
     }
 
     /// <summary>A failed or closing farm accepts no further input.</summary>
@@ -276,7 +287,8 @@ internal sealed class FarmInputRouter
         return action switch
         {
             FarmSemanticAction.None => false,
-            FarmSemanticAction.TogglePause => layer is not (FarmInputLayer.Unavailable or FarmInputLayer.Unfocused or FarmInputLayer.Inventory or FarmInputLayer.Wheel),
+            FarmSemanticAction.TogglePause => layer is not (FarmInputLayer.Unavailable or FarmInputLayer.Unfocused
+                or FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.ControlReturn),
             FarmSemanticAction.OpenInventory => situation.SessionOpen && !situation.ReadingHold && !situation.ActionPending
                 && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused,
             FarmSemanticAction.CloseInventory => layer == FarmInputLayer.Inventory,

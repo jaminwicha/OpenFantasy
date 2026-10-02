@@ -28,6 +28,9 @@ internal sealed partial class NativeRosterPlayProbe
             Sequence = _sequence, Status = status, Failure = failure, Stage = _stage,
             View = _game.CurrentView is { } view ? Convert.ToBase64String(PlayerViewCodec.Encode(view)) : null,
             LocallyPaused = _game.IsLocallyPaused, RunState = _game.ParticipantRunState.ToString(),
+            ControlState = _game.ParticipantControl.State.ToString(),
+            ControlPort = _game.ParticipantControl.PortId.ToString(),
+            ControlGeneration = _game.ParticipantControl.Generation,
             NativeFocused = GetWindow().HasFocus(), ObservedNativeFocus = _nativeFocus,
             InitialFocusGuard = _initialFocusGuard, Submissions = Submissions()
         });

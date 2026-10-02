@@ -1,5 +1,6 @@
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Diagnostics;
+using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Hosting.Networking.Client;
 
@@ -18,6 +19,33 @@ public sealed partial class PlayerProtocolClient
 
     private void ProcessMessage(PlayerMessage message)
     {
+        if (message.Kind == PlayerMessageKind.ControlStatus)
+        {
+            if (message.RequestId != 0) throw new FormatException("Control status requires request identity zero.");
+            PlayerControlStatus status = PlayerControlCodec.Decode(message.Payload);
+            lock (_gate)
+            {
+                if (_closed) return;
+                if (status.ActorId != Welcome.ActorId || !HasAppliedControlObservation(status)
+                    || _controlStatus != PlayerControlStatus.Available &&
+                        (status.PortId != _controlStatus.PortId || status.Generation < _controlStatus.Generation))
+                    throw new FormatException("Control status does not match the applied player observation and port.");
+                if (status.State == PlayerControlState.Restored)
+                {
+                    _resumeBinding = status;
+                    _ready = false;
+                    _movementX = 0; _movementY = 0;
+                }
+                else if (status.State == PlayerControlState.Pending)
+                {
+                    _ready = false;
+                    _movementX = 0; _movementY = 0;
+                }
+                _controlStatus = status;
+                _firstControl.TrySetResult(true);
+            }
+            return;
+        }
         if (message.Kind == PlayerMessageKind.Observation)
         {
             HostTimingEvents.Log.Stage(_timingOwner, "replica.begin", value: message.Payload.Length);

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="7f4fa713-177e-4466-8b21-9cfebb73f44c" name="@mac 2026-10-02 16:42:56" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T16:42:56.3968380-05:00" queuing="2026-10-02T16:42:56.3968380-05:00" start="2026-10-02T16:42:51.8783660-05:00" finish="2026-10-02T16:42:58.2204580-05:00" />
+  <TestSettings name="default" id="ff9c4eb5-e558-43ab-8ae1-6c7df2f7d9cc">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_16_42_56" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="553e4285-0af7-48e6-b92e-d52c35969a8c" testId="ed4871cc-8fbe-b949-231f-51ec4fc37224" testName="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host" computerName="mac" duration="00:00:01.3631433" startTime="2026-10-02T16:42:56.7969420-05:00" endTime="2026-10-02T16:42:58.1603610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="553e4285-0af7-48e6-b92e-d52c35969a8c" />
+    <UnitTestResult executionId="f2ea6152-b2ce-48bf-b300-1c99c07c1879" testId="33d103ab-e753-5ee2-f1fa-669d5faaab98" testName="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Pending, generation: 0)" computerName="mac" duration="00:00:00.0002557" startTime="2026-10-02T16:42:54.8933920-05:00" endTime="2026-10-02T16:42:54.8936880-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2ea6152-b2ce-48bf-b300-1c99c07c1879" />
+    <UnitTestResult executionId="325c11c4-8a2d-40d6-ba2b-0a6bdb4e07eb" testId="72390394-23dc-4af5-6514-8770e61c549c" testName="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Delayed_unbound_true_cannot_become_ready_after_safe_restoration" computerName="mac" duration="00:00:01.8359583" startTime="2026-10-02T16:42:54.8576470-05:00" endTime="2026-10-02T16:42:56.7946480-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="325c11c4-8a2d-40d6-ba2b-0a6bdb4e07eb">
+      <Output>
+        <ErrorInfo>
+          <Message>System.OperationCanceledException : The operation was canceled.</Message>
+          <StackTrace>   at System.Threading.Channels.AsyncOperation`1.GetResult(Int16 token)
+   at System.Threading.Channels.ChannelReader`1.ReadAllAsync(CancellationToken cancellationToken)+MoveNext()
+   at OpenFantasy.Hosting.Networking.PlayerCommandSession.SendAsync(CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs:line 232
+   at OpenFantasy.Hosting.Networking.PlayerCommandSession.SendAsync(CancellationToken cancellationToken) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs:line 232
+   at OpenFantasy.Hosting.Networking.PlayerCommandSession.RunAsync(CancellationToken cancellationToken, CancellationToken transportAborted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs:line 93
+   at OpenFantasy.Hosting.Networking.PlayerCommandSession.RunAsync(CancellationToken cancellationToken, CancellationToken transportAborted) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs:line 103
+   at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Delayed_unbound_true_cannot_become_ready_after_safe_restoration() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs:line 111
+   at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Delayed_unbound_true_cannot_become_ready_after_safe_restoration() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs:line 112
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="aa7e501a-7901-46c2-8f60-7e3651ed1583" testId="1dd84fa9-cc10-b284-353d-4ee59f73f433" testName="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Available, generation: 0)" computerName="mac" duration="00:00:00.0000148" startTime="2026-10-02T16:42:54.8942390-05:00" endTime="2026-10-02T16:42:54.8942640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aa7e501a-7901-46c2-8f60-7e3651ed1583" />
+    <UnitTestResult executionId="c695f3f6-9be3-4c65-a224-096de5ce6d89" testId="161385d8-3245-6bcd-fb52-a7e2151999db" testName="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Restored, generation: 1)" computerName="mac" duration="00:00:00.0228469" startTime="2026-10-02T16:42:54.8595430-05:00" endTime="2026-10-02T16:42:54.8875250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c695f3f6-9be3-4c65-a224-096de5ce6d89" />
+    <UnitTestResult executionId="853279e5-f127-4766-b027-cb7f4231f5bc" testId="c30fb57e-3865-be8c-0206-be915c6cecbc" testName="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Legacy_boolean_bytes_are_exact_and_malformed_control_is_refused" computerName="mac" duration="00:00:00.0013809" startTime="2026-10-02T16:42:54.8951180-05:00" endTime="2026-10-02T16:42:54.8965130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="853279e5-f127-4766-b027-cb7f4231f5bc" />
+    <UnitTestResult executionId="a3560e44-40a7-4e20-9715-b044729943e3" testId="6dac8fbc-778e-ce53-365f-4d843eb68746" testName="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Available, generation: 1)" computerName="mac" duration="00:00:00.0000160" startTime="2026-10-02T16:42:54.8938340-05:00" endTime="2026-10-02T16:42:54.8938630-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a3560e44-40a7-4e20-9715-b044729943e3" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Delayed_unbound_true_cannot_become_ready_after_safe_restoration" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="72390394-23dc-4af5-6514-8770e61c549c">
+      <Execution id="325c11c4-8a2d-40d6-ba2b-0a6bdb4e07eb" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests" name="Delayed_unbound_true_cannot_become_ready_after_safe_restoration" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Available, generation: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="6dac8fbc-778e-ce53-365f-4d843eb68746">
+      <Execution id="a3560e44-40a7-4e20-9715-b044729943e3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests" name="Status_and_bound_readiness_preserve_exact_identity" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ed4871cc-8fbe-b949-231f-51ec4fc37224">
+      <Execution id="553e4285-0af7-48e6-b92e-d52c35969a8c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests" name="Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Available, generation: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1dd84fa9-cc10-b284-353d-4ee59f73f433">
+      <Execution id="aa7e501a-7901-46c2-8f60-7e3651ed1583" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests" name="Status_and_bound_readiness_preserve_exact_identity" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Restored, generation: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="161385d8-3245-6bcd-fb52-a7e2151999db">
+      <Execution id="c695f3f6-9be3-4c65-a224-096de5ce6d89" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests" name="Status_and_bound_readiness_preserve_exact_identity" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Legacy_boolean_bytes_are_exact_and_malformed_control_is_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c30fb57e-3865-be8c-0206-be915c6cecbc">
+      <Execution id="853279e5-f127-4766-b027-cb7f4231f5bc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests" name="Legacy_boolean_bytes_are_exact_and_malformed_control_is_refused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Pending, generation: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="33d103ab-e753-5ee2-f1fa-669d5faaab98">
+      <Execution id="f2ea6152-b2ce-48bf-b300-1c99c07c1879" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests" name="Status_and_bound_readiness_preserve_exact_identity" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ed4871cc-8fbe-b949-231f-51ec4fc37224" executionId="553e4285-0af7-48e6-b92e-d52c35969a8c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33d103ab-e753-5ee2-f1fa-669d5faaab98" executionId="f2ea6152-b2ce-48bf-b300-1c99c07c1879" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="72390394-23dc-4af5-6514-8770e61c549c" executionId="325c11c4-8a2d-40d6-ba2b-0a6bdb4e07eb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1dd84fa9-cc10-b284-353d-4ee59f73f433" executionId="aa7e501a-7901-46c2-8f60-7e3651ed1583" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="161385d8-3245-6bcd-fb52-a7e2151999db" executionId="c695f3f6-9be3-4c65-a224-096de5ce6d89" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c30fb57e-3865-be8c-0206-be915c6cecbc" executionId="853279e5-f127-4766-b027-cb7f4231f5bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6dac8fbc-778e-ce53-365f-4d843eb68746" executionId="a3560e44-40a7-4e20-9715-b044729943e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="6" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.63]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.32]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.48]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.46]       System.OperationCanceledException : The operation was canceled.
+[xUnit.net 00:00:03.46]       Stack Trace:
+[xUnit.net 00:00:03.46]            at System.Threading.Channels.AsyncOperation`1.GetResult(Int16 token)
+[xUnit.net 00:00:03.46]            at System.Threading.Channels.ChannelReader`1.ReadAllAsync(CancellationToken cancellationToken)+MoveNext()
+[xUnit.net 00:00:03.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs(232,0): at OpenFantasy.Hosting.Networking.PlayerCommandSession.SendAsync(CancellationToken cancellationToken)
+[xUnit.net 00:00:03.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs(232,0): at OpenFantasy.Hosting.Networking.PlayerCommandSession.SendAsync(CancellationToken cancellationToken)
+[xUnit.net 00:00:03.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs(93,0): at OpenFantasy.Hosting.Networking.PlayerCommandSession.RunAsync(CancellationToken cancellationToken, CancellationToken transportAborted)
+[xUnit.net 00:00:03.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs(103,0): at OpenFantasy.Hosting.Networking.PlayerCommandSession.RunAsync(CancellationToken cancellationToken, CancellationToken transportAborted)
+[xUnit.net 00:00:03.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs(111,0): at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Delayed_unbound_true_cannot_become_ready_after_safe_restoration()
+[xUnit.net 00:00:03.46]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs(112,0): at OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Delayed_unbound_true_cannot_become_ready_after_safe_restoration()
+[xUnit.net 00:00:03.46]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:04.83]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T16:42:56.7982750-05:00">
+        <Text>[xUnit.net 00:00:03.46]     OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Delayed_unbound_true_cannot_become_ready_after_safe_restoration [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

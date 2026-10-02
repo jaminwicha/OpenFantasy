@@ -54,6 +54,26 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [observed control-return checkpoint](p02/control-return/RESULT.md) repairs lost deliberate Resume
+after an early readiness request. Pending/restored port state is bound to its applied observation;
+stale or unbound requests, held input and focus return cannot grant consent. Godot presents pending
+work and deliberately resumed control. A complete managed hostile journey proves actual damage,
+transport loss, recorded allowance, paid autonomous retreat, safe unready restoration and exact replay.
+The native TLS continuation proves remaining accepted retreat, visible handback and explicit Resume.
+Milestone: `codex/milestone-control-return-20261002`.
+[Final checks](p02/control-return/FINAL_CHECKS.json): warning-free build, 644 distinct passing cases
+including 14 new, 12 native processes/eight rendered/21 captures, original-history authentication and
+fresh four-player/care regressions. Windows credential permissions remain unrun here. All 718 older
+tests/fixtures, 23 frozen specs and exact predecessor staging remain unchanged; 1,304 architecture links
+resolve. Independent critique and all five failed attempts remain recorded, including two editor-import
+failures before the bounded initialization adjustment. No external provider request or credit offload.
+
+Next: explicit host-restart reconciliation of outstanding disconnect allowance, then consented
+co-player policy. Saved offline time must not silently expire an allowance. General party retreat,
+pursuit/rescue, maximum composite/disposition capacity, lived-save migration, production history
+latency and full platform/device/art/human/campaign gates remain open. Native hostile approach,
+initial loss and allowance expiry are not proved by the prepared native continuation.
+
 The [care durability checkpoint](p02/care-disposition-durability/RESULT.md) proves 128 actual alternating
 cancellations/declines with finite paid recoveries, coordinated history compaction, ten injected
 transaction failures and ten actual Host process kills. Both original and archived pending-care
@@ -69,9 +89,8 @@ with two additive shared-test extractions retaining their originals and assertio
 spec files, predecessor staging and 1,294 architecture links are verified. The independent review
 and timeless architecture updates are retained; no external provider call or credit offload occurred.
 
-Next: observable control return and deliberate Resume, proved through a complete paid autonomous
-escape from an attacking NPC. Reproduce the source-reviewed readiness mismatch before fixing it;
-[review notes](p02/care-disposition-durability/REVIEW.md#next-gameplay-dependency) bind the scope.
+The control-return checkpoint above completes the bounded dependency identified by the
+[review notes](p02/care-disposition-durability/REVIEW.md#next-gameplay-dependency).
 Maximum disposition-only/composite-world capacity remains open: resource headroom triggers this
 journey's cut first. Restart/co-player policy, physical devices/OS focus, lived-save migration,
 production selection/history latency and the complete campaign remain open. These native journeys

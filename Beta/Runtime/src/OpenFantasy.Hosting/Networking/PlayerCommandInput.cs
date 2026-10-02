@@ -1,10 +1,11 @@
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Hosting.Networking;
 
 /// <summary>Fully parsed client input. No authority, observation or host callback runs inside this boundary.</summary>
 internal sealed record PlayerCommandInput(PlayerMessage Message, bool Ready = false, int X = 0, int Y = 0,
-    WorldActionCommand? Command = null, PlayerQuery? Query = null)
+    WorldActionCommand? Command = null, PlayerQuery? Query = null, PlayerControlStatus? Control = null)
 {
     internal static PlayerCommandInput Decode(byte[] bytes, ulong lastRequest)
     {
@@ -14,7 +15,8 @@ internal sealed record PlayerCommandInput(PlayerMessage Message, bool Ready = fa
         switch (message.Kind)
         {
             case PlayerMessageKind.Readiness:
-                return new(message, Ready: PlayerGameplayCodec.ReadReadiness(message));
+                return new(message, Ready: PlayerGameplayCodec.ReadReadiness(message),
+                    Control: message.Payload.Length == 1 ? null : PlayerControlCodec.Decode(message.Payload[1..]));
             case PlayerMessageKind.Movement:
                 (int x, int y) = PlayerGameplayCodec.ReadMovement(message);
                 return new(message, X: x, Y: y);

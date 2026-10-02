@@ -126,6 +126,13 @@ internal sealed partial class FarmHud : CanvasLayer
         _targetBar.OffsetBottom = top + _targetBarAuthoredHeight;
     }
 
+    internal void SetControlPending(bool pending)
+    {
+        _pause.Disabled = pending;
+        if (pending) _pause.Text = "Awaiting control";
+        if (pending) { _openPack.Disabled = true; _openWheel.Disabled = true; }
+    }
+
     /// <summary>Pressing requests execution; hover and focus only select which offer the card explains.</summary>
     private void BindOfferButton(FarmSemanticAction action, Button button)
     {

@@ -1,0 +1,21 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.60]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.41]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.63]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Restored, generation: 1) [26 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Pending, generation: 0) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Available, generation: 1) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Status_and_bound_readiness_preserve_exact_identity(state: Available, generation: 0) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControlReturn.PlayerControlCodecTests.Legacy_boolean_bytes_are_exact_and_malformed_control_is_refused [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Delayed_unbound_true_cannot_become_ready_after_safe_restoration [2 s]
+[xUnit.net 00:00:05.77]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Networking.ControlReturn.ControlReturnProtocolTests.Explicit_readiness_after_dropped_early_readiness_reaches_the_restored_host [1 s]
+
+Test Run Successful.
+Total tests: 7
+     Passed: 7
+ Total time: 7.0385 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/control-return/qualification/control-network-20261002T214552991058Z/checks.trx

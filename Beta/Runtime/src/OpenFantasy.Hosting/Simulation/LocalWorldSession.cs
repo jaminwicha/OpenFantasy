@@ -106,7 +106,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         _materialGifts = new LocalMaterialGiftController(state, giftPolicies ?? []);
         _trading = new LocalTradingController(state, playerActorId, trading ?? LocalTradingConfiguration.None);
         _localPlayer = new LocalPlayerConnection(this, playerActorId, delivery, ProjectView(state, playerActorId, regions), regions,
-            state.Controllers is null || state.Controllers.Get(playerActorId).Mode == WorldControllerMode.Human);
+            state.Controllers is null || state.Controllers.Get(playerActorId).Mode == WorldControllerMode.Human,
+            state.Controllers is not null);
         _players.Add(playerActorId, _localPlayer);
         _projectedStateHash = state.ContentHash;
         _loop = Task.Run(RunAsync);

@@ -1,0 +1,8 @@
+{
+  "source": "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/ControlReturn/ControlReturnProtocolTests.cs",
+  "preservedSource": "Beta/implementation/p02/control-return/originals/ControlReturnProtocolTests.cs",
+  "sha256": "dc71e9e00ba550b53bff6725288f26ed4db604f15c2bd367c4a4257d5121a489",
+  "report": "qualification/control-red-20261002T212954519604Z/report.json",
+  "failure": "Second deliberate true request suppressed after first true was discarded while control unavailable. Assert.True(Port.Ready) failed at line35. Runtime unchanged.",
+  "repairContract": "New explicit observed Resume replaces unbound true for returning network ports; preserve the real scenario and all prior state/cost assertions."
+}

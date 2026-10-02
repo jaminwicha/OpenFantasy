@@ -45,7 +45,8 @@ public sealed partial class LocalWorldSession
                 if (_players.ContainsKey(actorId) || _players.Count >= MaximumPlayerConnections)
                     throw new AuthorityDispatchException("The actor is already connected or all four player slots are occupied.");
                 var player = new LocalPlayerConnection(this, actorId, delivery, ProjectView(state, actorId, regions), regions,
-                    state.Controllers is null || state.Controllers.Get(actorId).Mode == WorldControllerMode.Human);
+                    state.Controllers is null || state.Controllers.Get(actorId).Mode == WorldControllerMode.Human,
+                    state.Controllers is not null);
                 _players.Add(actorId, player);
                 return player;
             }
@@ -95,6 +96,9 @@ public sealed partial class LocalWorldSession
         {
             EnsurePlayerAvailable(player);
             player.Ready = ready && player.ControlAvailable;
+            // Direct in-process calls are synchronous with the port boundary and retain their admitted API.
+            if (player.Ready && player.ControlStatus.State == PlayerControlState.Restored)
+                player.ControlStatus = player.ControlStatus with { State = PlayerControlState.Available };
             HostTimingEvents.Log.Stage(player.TimingOwner, "ready", value: player.Ready ? 1 : 0);
             if (!player.Ready) player.ClearMovement();
         }

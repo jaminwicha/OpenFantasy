@@ -30,6 +30,8 @@ public sealed class RemotePlayerSession : IPlayerSession
     public Task Completion => _completion;
     public LocalWorldView ReadView() => _client.ReadView();
     public LocalWorldRunState ReadRunState() => Volatile.Read(ref _status).RunState;
+    public PlayerControlStatus ReadControlStatus() => _client.ReadControlStatus();
+    public void Resume(PlayerControlStatus observed) => SendControl(() => _client.Resume(observed));
     public LocalTradeInquiryView? ReadTradeInquiry() => Volatile.Read(ref _status).Inquiry;
 
     /// <summary>Takes ownership; unsupported presentation or failed startup closes the supplied connection.</summary>

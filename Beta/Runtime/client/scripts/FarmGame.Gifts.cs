@@ -10,7 +10,7 @@ public partial class FarmGame
             || !_input.Permits(Situation(), FarmSemanticAction.CloseInventory)) return;
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
         ChangeInventory(false);
-        Present(_session.World.ReadView());
+        Present();
         if (!_input.Permits(Situation(), FarmSemanticAction.OpenWheel)) return;
         ChangeWheel(true);
         for (int page = 0; page < _wheel.Model!.PageCount && _wheel.Model.PageName != "Gifts"; page++)

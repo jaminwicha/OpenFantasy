@@ -273,6 +273,7 @@ public partial class FarmGame : Node2D
                 _targets = new FarmTargetSelection(_session.WrenActorId);
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 AttachCargo(_session);
+                ObserveControlReturn(ParticipantControl);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
                     : _session.IsRegional
@@ -320,15 +321,19 @@ public partial class FarmGame : Node2D
                 inspection.IsCompletedSuccessfully ? inspection.Result : null,
                 inspection.IsCompletedSuccessfully ? null : "History inspection failed; the save was retained.");
         }
-        Present(_session.World.ReadView());
+        Present();
     }
 
-    private void Present(LocalWorldView view)
+    private void Present()
     {
         if (_session is null || _targets is null)
         {
             return;
         }
+        // Capture permission before its view: a later view is safe, a later control marker beside an older view is not.
+        PlayerControlStatus control = ParticipantControl;
+        LocalWorldView view = _session.World.ReadView();
+        ObserveControlReturn(control);
         _targets.Refresh(view);
         if (_session.IsRegional)
         {
@@ -366,6 +371,7 @@ public partial class FarmGame : Node2D
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view),
             _action is not null || view.IsResolvingConsequences,
             _input.Paused || !_input.Focused, _presented, _targets);
+        PresentControlReturn(control);
         _inventory.Present(view, _session.World.ReadRunState(), _session.IsRemote);
         if (_wheel.Model is { } wheel)
         {
@@ -511,7 +517,7 @@ public partial class FarmGame : Node2D
                     _targets.Clear();
                 }
                 // Refresh the displayed choice and its offers together, including inputs in one frame.
-                Present(_session.World.ReadView());
+                Present();
             }
             return;
         }
@@ -550,6 +556,7 @@ public partial class FarmGame : Node2D
 
     private void TogglePause()
     {
+        if (_input.Paused && ResumeReturnedControl()) return;
         if (!_input.TogglePause()) return;
         if (ChangeReadiness(_input.WorldShouldRun))
             _hud.Message(_input.Paused
@@ -571,7 +578,7 @@ public partial class FarmGame : Node2D
                 Fail("The world has stopped. " + error.GetBaseException().Message);
                 return;
             }
-            Present(_session.World.ReadView());
+            Present();
             _inventory.FocusSelection();
         }
         else
@@ -606,14 +613,13 @@ public partial class FarmGame : Node2D
         if (open)
         {
             _hud.SetCovered(true);
-            LocalWorldView view;
-            try { view = _session.CaptureWheelView(); }
+            try { _session.CaptureWheelView(); }
             catch (InvalidOperationException error) { Fail(error.GetBaseException().Message); return; }
             // The wheel opens on the offers of the world as it is now, never on an earlier frame's presentation;
             // presenting the same view again then refreshes the open wheel without anything reading as changed.
-            Present(view);
+            Present();
             _wheel.Open(_presented);
-            Present(view);
+            Present();
         }
         else
         {

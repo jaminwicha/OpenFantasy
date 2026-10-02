@@ -1,5 +1,6 @@
 using System.Buffers.Binary;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Hosting.Networking;
 
@@ -8,6 +9,14 @@ public static class PlayerGameplayCodec
 {
     public static PlayerMessage Readiness(ulong requestId, bool ready) =>
         new(PlayerMessageKind.Readiness, requestId, new byte[] { ready ? (byte)1 : (byte)0 });
+
+    public static PlayerMessage Readiness(ulong requestId, bool ready, PlayerControlStatus observed)
+    {
+        byte[] bytes = new byte[1 + PlayerControlCodec.ByteLength];
+        bytes[0] = ready ? (byte)1 : (byte)0;
+        PlayerControlCodec.Encode(observed).CopyTo(bytes, 1);
+        return new(PlayerMessageKind.Readiness, requestId, bytes);
+    }
 
     public static PlayerMessage Movement(ulong requestId, int x, int y)
     {
@@ -30,7 +39,9 @@ public static class PlayerGameplayCodec
 
     internal static bool ReadReadiness(PlayerMessage message)
     {
-        if (message.Payload.Length != 1 || message.Payload[0] > 1) throw new FormatException("Invalid readiness input.");
+        if (message.Payload.Length is not (1 or 1 + PlayerControlCodec.ByteLength) || message.Payload[0] > 1)
+            throw new FormatException("Invalid readiness input.");
+        if (message.Payload.Length != 1) PlayerControlCodec.Decode(message.Payload[1..]);
         return message.Payload[0] == 1;
     }
 

@@ -24,6 +24,14 @@ responses on its own ordered connection, but cannot block host commits, another 
 receiver's processing of readiness and cancellation. The existing five-second send deadline closes
 the connection on stalled output. Teardown cancels and joins the publisher along with the other loops.
 
+The publisher captures the port's transient control state beside its view under the input lock.
+A control transition forces a full observation through that same bounded publisher, even when the
+canonical view bytes are unchanged. Its `ControlStatus` marker follows that full frame on the ordered
+sender and names the stream and minimum applied revision. The first restored marker remains stable
+while later views advance: Resume proves observation of the safe return, not observation of every
+subsequent action. These markers do not alter the canonical view body or durable history. The
+[readiness contract](player-command-routing.md) validates them before permitting input.
+
 ## Visible history and delta format
 
 [PlayerObservationStream](../../src/OpenFantasy.Hosting/Networking/PlayerObservationStream.cs) owns

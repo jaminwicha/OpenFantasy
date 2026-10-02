@@ -4,6 +4,7 @@ using System.Threading.Channels;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Diagnostics;
+using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Hosting.Networking;
 
@@ -33,6 +34,7 @@ public sealed class PlayerCommandSession
     private int _forceFullObservation;
     private int _observationPending;
     private int _disconnectReason;
+    private PlayerControlStatus? _restoredObservation;
 
     public PlayerCommandSession(AuthenticatedPlayerChannel channel, TimeProvider? time = null)
     {
@@ -131,7 +133,7 @@ public sealed class PlayerCommandSession
             switch (message.Kind)
             {
                 case PlayerMessageKind.Readiness:
-                    _channel.Player.SetReady(input.Ready);
+                    ApplyReadiness(input);
                     break;
                 case PlayerMessageKind.Movement:
                     _channel.Player.SetMovement(input.X, input.Y);
@@ -266,14 +268,18 @@ public sealed class PlayerCommandSession
         var stream = new PlayerObservationStream();
         using var timer = new PeriodicTimer(ObservationInterval, _time);
         long? lastPublication = null;
+        PlayerControlStatus? announced = null;
         while (await timer.WaitForNextTickAsync(cancellationToken).ConfigureAwait(false))
         {
             if (Volatile.Read(ref _observationRequested) == 0
                 || lastPublication is { } previous && _time.GetElapsedTime(previous, _time.GetTimestamp()) < ObservationInterval
                 || Interlocked.CompareExchange(ref _observationPending, 1, 0) != 0) continue;
             bool full = Interlocked.Exchange(ref _forceFullObservation, 0) != 0;
+            var observation = _channel.Player.ReadObservation();
+            bool controlChanged = observation.Control != PlayerControlStatus.Available && observation.Control != announced;
+            full |= controlChanged;
             HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "observation.begin", value: full ? 1 : 0);
-            PlayerObservationFrame? frame = stream.Capture(_channel.Player.ReadView(), full);
+            PlayerObservationFrame? frame = stream.Capture(observation.View, full);
             HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "observation.captured", value: frame is null ? 0 : 1);
             if (frame is null)
             {
@@ -281,9 +287,31 @@ public sealed class PlayerCommandSession
                 continue;
             }
             Enqueue(new PlayerMessage(PlayerMessageKind.Observation, 0, PlayerObservationFrameCodec.Encode(frame)));
+            if (controlChanged)
+            {
+                PlayerControlStatus status = observation.Control with
+                {
+                    ObservationStreamId = frame.StreamId, ObservationRevision = frame.Revision
+                };
+                if (status.State == PlayerControlState.Restored)
+                    Volatile.Write(ref _restoredObservation, status);
+                else if (status.State == PlayerControlState.Available && Volatile.Read(ref _restoredObservation) is { } proof)
+                    status = proof with { State = PlayerControlState.Available };
+                Enqueue(new PlayerMessage(PlayerMessageKind.ControlStatus, 0, PlayerControlCodec.Encode(status)));
+                announced = observation.Control;
+            }
             HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "observation.queued");
             lastPublication = _time.GetTimestamp();
         }
+    }
+
+    private void ApplyReadiness(PlayerCommandInput input)
+    {
+        if (!input.Ready) { _channel.Player.SetLegacyNetworkReady(false); return; }
+        if (input.Control is null) { _channel.Player.SetLegacyNetworkReady(true); return; }
+        PlayerControlStatus? proof = Volatile.Read(ref _restoredObservation);
+        if (proof is not null && input.Control == proof)
+            _channel.Player.Resume(proof);
     }
 
     private void Enqueue(PlayerMessage message)

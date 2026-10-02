@@ -94,6 +94,11 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "strike": await ChooseWheel(FarmSemanticAction.Strike); break;
             case "read-outcome": await ChooseWheel(FarmSemanticAction.ReleaseEncounter); break;
             case "capture": await Capture(); break;
+            case "capture-control": await CaptureControl(); break;
+            case "try-pending-resume": await TryPendingResume(); break;
+            case "focus-return": await FocusReturn(); break;
+            case "hold-right": SetRight(true); await _driver.Delay(0.15); break;
+            case "release-right": SetRight(false); await _driver.Delay(0.15); break;
             case "close": await Pause(true); return true;
             default: throw new InvalidDataException("Unsupported roster mailbox verb.");
         }

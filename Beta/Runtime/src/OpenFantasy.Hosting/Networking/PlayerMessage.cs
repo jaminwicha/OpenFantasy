@@ -14,7 +14,8 @@ public enum PlayerMessageKind : ushort
     Ping = 10,
     Pong = 11,
     Query = 12,
-    QueryResult = 13
+    QueryResult = 13,
+    ControlStatus = 14
 }
 
 /// <summary>A transport envelope, not authentication, a world command or a durable receipt.</summary>

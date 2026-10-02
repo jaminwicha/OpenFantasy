@@ -10,6 +10,8 @@ public sealed class OwnedLocalPlayerSession(LocalWorldSession world) : IPlayerSe
     public Task Completion => _world.Completion;
     public LocalWorldView ReadView() => _world.ReadView();
     public LocalWorldRunState ReadRunState() => _world.ReadRunState();
+    public PlayerControlStatus ReadControlStatus() => _world.Player.ReadControlStatus();
+    public void Resume(PlayerControlStatus observed) => _world.Player.Resume(observed);
     public void SetReady(bool ready) => _world.SetReady(ready);
     public void SetMovement(long dx, long dy) => _world.SetMovement(dx, dy);
     public Task<WorldActionReceipt> SubmitAction(WorldActionCommand command) => _world.SubmitAction(command);
