@@ -141,9 +141,11 @@ internal sealed record EncounterOutcomeViewData(
     ulong ObserverRecoveryDelay,
     ulong? CompletedAtSequence,
     [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
-    LocalOutcomeAcknowledgmentMode AcknowledgmentMode = LocalOutcomeAcknowledgmentMode.HumanReading)
+    LocalOutcomeAcknowledgmentMode AcknowledgmentMode = LocalOutcomeAcknowledgmentMode.HumanReading,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    bool AllowsAssistedRecovery = false)
 {
-    internal LocalEncounterOutcomeView ToView() => new(Stage, EncounterId, Result, StandingSide, Standing, Participants, Acknowledgment, RequiredReaders, ReadersRemaining, ObserverHasRead, Restriction, ObserverRecoveryDelay, CompletedAtSequence, AcknowledgmentMode);
+    internal LocalEncounterOutcomeView ToView() => new(Stage, EncounterId, Result, StandingSide, Standing, Participants, Acknowledgment, RequiredReaders, ReadersRemaining, ObserverHasRead, Restriction, ObserverRecoveryDelay, CompletedAtSequence, AcknowledgmentMode, AllowsAssistedRecovery);
 
     internal static EncounterOutcomeViewData From(LocalEncounterOutcomeView value) => new(
         value.Stage,
@@ -159,5 +161,6 @@ internal sealed record EncounterOutcomeViewData(
         value.Restriction,
         value.ObserverRecoveryDelay,
         value.CompletedAtSequence,
-        value.AcknowledgmentMode);
+        value.AcknowledgmentMode,
+        value.AllowsAssistedRecovery);
 }

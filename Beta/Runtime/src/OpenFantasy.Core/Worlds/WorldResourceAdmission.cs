@@ -23,7 +23,7 @@ internal static class WorldResourceAdmission
         var joint = retained.CoordinatedAnchor;
         // Only the paid interpretation has currency-only causes; every other profile keeps its exact equation.
         var paidCauses = WorldPaidExchangeAdmission.CurrencyCauses(world).ToList();
-        if (world.ProfileVersion is not (25 or 26 or 27 or 28 or 30 or 32 or 33 or 34 or 35 or 36) || retained.AnchorAdmission != world.AdmissionVersion
+        if (world.ProfileVersion is not (25 or 26 or 27 or 28 or 30 or 32 or 33 or 34 or 35 or 36 or 37) || retained.AnchorAdmission != world.AdmissionVersion
             || anchor is null && joint is null && (history.BasisWorldSequence != 0 || history.Basis.Revision != 0
                 || history.Basis.Actors.Any(actor => actor.Revision != 0))
             || progression.Revision != checked(history.Basis.Revision + (ulong)history.Batches.Count + (ulong)paidCauses.Count)
@@ -247,7 +247,7 @@ internal static class WorldResourceAdmission
     private static IReadOnlyList<ActorResourceChange> ValidateRestorativeUse(WorldSnapshot world, ResourceChangeBatch batch,
         WorldRestorativeUseResourceEvidence evidence, Dictionary<EntityId, ActorProgressionState> heads)
     {
-        if (world.ProfileVersion is not (26 or 27 or 28 or 30 or 32 or 33 or 34 or 35 or 36) || world.Care?.Ordinary is not { } ordinary)
+        if (world.ProfileVersion is not (26 or 27 or 28 or 30 or 32 or 33 or 34 or 35 or 36 or 37) || world.Care?.Ordinary is not { } ordinary)
             throw new ArgumentException("Ordinary restoration evidence requires its explicit ordinary-care world profile.");
         var use = ordinary.Uses.SingleOrDefault(value => value.UseId == evidence.UseId)
             ?? throw new ArgumentException("Ordinary restoration requires its actual retained completed use.");
@@ -267,11 +267,12 @@ internal static class WorldResourceAdmission
             || definition.RemedyVersion != remedy.Version || use.ExplorationMilliseconds != definition.ExplorationMilliseconds
             || request.ExpectedActorRevision > world.Space.GetActor(request.ActorId).Revision
             || intent.ExpectedPatientPresenceRevision > world.Space.GetActor(use.RecipientActorId).Revision
-            || source.CurrentHp <= 0 || patient.CurrentHp <= 0 || patient.CurrentHp >= patient.Stats.MaxHp
+            || source.CurrentHp <= 0 || !WorldRecoveryAdmission.SupportsRecipient(world, definition, patient.CurrentHp)
+            || patient.CurrentHp >= patient.Stats.MaxHp
             || use.PatientRevisionBefore != patient.Revision || intent.ExpectedPatientProgressionRevision != patient.Revision
             || use.MaximumHp != patient.Stats.MaxHp || use.HpBefore != patient.CurrentHp)
         {
-            throw new ArgumentException("Ordinary use requires its exact selected request, ordered command and historical living resource boundary.");
+            throw new ArgumentException("Ordinary use requires its exact selected request, ordered command and admitted historical resource boundary.");
         }
         ValidateOrdinaryPermission(ordinary, definition, use, intent);
         ValidateOrdinaryDose(world, use, intent, remedy);
@@ -294,8 +295,9 @@ internal static class WorldResourceAdmission
                 throw new ArgumentException("Self-use requires its self-delivery policy without an invented assistance permission.");
             return;
         }
-        if (definition.DeliveryMode != RestorativeDeliveryMode.LivingAssistance || use.PermissionId is not { } permissionId)
-            throw new ArgumentException("Living assistance requires its own exact permission and delivery policy.");
+        if (definition.DeliveryMode is not RestorativeDeliveryMode.LivingAssistance and not RestorativeDeliveryMode.IncapacitatedAssistance
+            || use.PermissionId is not { } permissionId)
+            throw new ArgumentException("Assistance requires its own exact permission and delivery policy.");
         var permission = ordinary.GetPermission(permissionId);
         if (permission.PatientActorId != use.RecipientActorId || permission.HelperActorId != use.ActorId
             || permission.UseDefinitionId != definition.DefinitionId || permission.UseDefinitionVersion != definition.Version

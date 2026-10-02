@@ -115,7 +115,7 @@ public sealed class CareContinuationContext
         IReadOnlyList<CarePermission> permissions, IReadOnlyList<RestorativeUse> uses)
     {
         if (Definitions is null || Permissions is null
-            || !Exact(Definitions, definitions, CareCodecV2.EncodeUseDefinition)
+            || !Exact(Definitions, definitions, CareCodec.EncodeUseDefinition)
             || !Exact(Permissions, permissions, CareCodecV2.EncodePermissionGrant))
             throw new ArgumentException("Continued ordinary care retains the exact definitions and grants of its closed boundary.");
         for (int index = 0; index < Permissions.Count; index++)

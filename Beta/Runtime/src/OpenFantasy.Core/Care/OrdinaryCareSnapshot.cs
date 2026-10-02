@@ -37,7 +37,7 @@ public sealed class OrdinaryCareSnapshot
         {
             var definition = GetDefinition(permission.UseDefinitionId);
             if (definition.Version != permission.UseDefinitionVersion
-                || definition.DeliveryMode != RestorativeDeliveryMode.LivingAssistance)
+                || definition.DeliveryMode is not (RestorativeDeliveryMode.LivingAssistance or RestorativeDeliveryMode.IncapacitatedAssistance))
                 throw new ArgumentException("Permission must name the exact ordinary assistance definition.");
         }
         HashSet<EntityId> commands = [];
@@ -50,7 +50,8 @@ public sealed class OrdinaryCareSnapshot
             var definition = GetDefinition(use.UseDefinitionId);
             bool self = use.ActorId == use.RecipientActorId;
             if (definition.Version != use.UseDefinitionVersion || definition.ExplorationMilliseconds != use.ExplorationMilliseconds
-                || self != (definition.DeliveryMode == RestorativeDeliveryMode.SelfUse))
+                || self != (definition.DeliveryMode == RestorativeDeliveryMode.SelfUse)
+                || (definition.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance ? use.HpBefore != 0 : use.HpBefore <= 0))
                 throw new ArgumentException("Ordinary use must preserve its admitted definition, delivery and time rule.");
             if (use.PermissionId is { } permissionId)
             {
@@ -75,6 +76,8 @@ public sealed class OrdinaryCareSnapshot
     public ReadOnlyCollection<CarePermission> Permissions { get; }
     public ReadOnlyCollection<RestorativeUse> Uses { get; }
     public ulong Revision { get; }
+    /// <summary>Explicit catalog interpretation; a recovery permission never broadens an ordinary living-care grant.</summary>
+    public bool SupportsIncapacitatedAssistance => Definitions.Any(value => value.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance);
 
     public RestorativeUseDefinition GetDefinition(EntityId id) => Definitions.SingleOrDefault(value => value.DefinitionId == id)
         ?? throw new ArgumentException("The use definition is outside this ordinary care owner.");
@@ -122,7 +125,7 @@ public sealed class OrdinaryCareSnapshot
         foreach (var previous in Uses)
         {
             var current = successor.GetUse(previous.UseId);
-            if (!CareCodecV2.EncodeUse(previous).AsSpan().SequenceEqual(CareCodecV2.EncodeUse(current)))
+            if (!CareCodec.EncodeUse(previous).AsSpan().SequenceEqual(CareCodec.EncodeUse(current)))
                 throw new ArgumentException("An ordinary care successor cannot rewrite a completed use.");
         }
         var oldUseIds = Uses.Select(value => value.UseId).ToHashSet();

@@ -1,0 +1,35 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.56]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.62]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.94]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.Standalone_production_contracts_refuse_the_coordinated_owner [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_second_cut_keeps_one_bounded_anchor_and_decodes_with_its_predecessor [940 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.Pending_aftermath_care_survives_a_cut_and_the_actual_remedy_executes_once [3 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_lived_ordinary_world_is_never_upgraded [516 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareAdversarialTests.Same_step_patient_revoke_and_helper_use_follow_actual_actor_order_without_rewriting_prior_permission(revokeFirst: True) [3 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.New_revocations_follow_the_world_closure_even_when_the_care_frontier_is_older(claimedSequence: 10) [733 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_cut_changes_representation_only_and_requires_its_exact_joint_context [769 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.New_revocations_follow_the_world_closure_even_when_the_care_frontier_is_older(claimedSequence: 1) [662 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.Fresh_opt_in_selects_the_coordinated_profile_without_changing_the_ordinary_genesis [461 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.A_joint_context_preserves_the_encounter_ability_catalog [375 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareAdversarialTests.Same_step_patient_revoke_and_helper_use_follow_actual_actor_order_without_rewriting_prior_permission(revokeFirst: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.Actual_crafting_after_two_cuts_keeps_its_imported_producer_and_permanent_command_checks [478 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareAdversarialTests.Conserved_ordinary_resource_history_cannot_substitute_control_permission_kind_or_command_position [709 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareWorldTests.Source_stat_injury_then_raw_self_or_real_crafted_aid_commit_one_dose_time_and_durable_history(self: False) [6 s]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareAdversarialTests.Actual_helper_movement_out_of_reach_refuses_the_same_eligible_dose_and_return_restores_eligibility [733 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareAdversarialTests.Full_health_self_use_keeps_the_actual_dose_and_resources_but_advances_normal_world_time [184 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareAdversarialTests.Simultaneous_self_and_assisted_requests_restore_once_and_keep_the_losing_exact_dose [886 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareAdversarialTests.Only_patient_can_revoke_and_neither_patient_impersonation_nor_stale_or_current_revoked_aid_spends_a_dose [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareAdversarialTests.Ordinary_self_use_cannot_bypass_actual_lethal_outcome_or_pending_aftermath [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareWorldTests.Source_stat_injury_then_raw_self_or_real_crafted_aid_commit_one_dose_time_and_durable_history(self: True) [5 s]
+[xUnit.net 00:00:14.87]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Care.OrdinaryCareWorldTests.Profile25_and_earlier_do_not_admit_ordinary_commands_or_reinterpret_their_bytes [505 ms]
+
+Test Run Successful.
+Total tests: 21
+     Passed: 21
+ Total time: 16.4446 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/general-recovery/qualification/care-compatibility-20261002T172455030857Z/checks.trx

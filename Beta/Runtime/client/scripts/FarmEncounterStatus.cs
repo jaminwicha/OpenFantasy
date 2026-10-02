@@ -1,6 +1,7 @@
 using Godot;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Hosting.Simulation;
+using OpenFantasy.Hosting.Simulation.EncounterOutcome;
 
 namespace OpenFantasy.Client;
 
@@ -15,13 +16,17 @@ internal sealed class FarmEncounterStatus(Label label)
         if (view.EncounterLifecycle is not { } lifecycle) return;
         // An outcome's status line stays compact; its tooltip (and the outcome card) carries the full explanation.
         string? explanation = view.EncounterOutcome is not { } read ? null
-            : lifecycle.Phase == EncounterLifecyclePhase.Exploration ? read.IsTerminal ? EncounterOutcomeText.Terminal(read) : null
+            : lifecycle.Phase == EncounterLifecyclePhase.Exploration ? read.IsTerminal ? EncounterOutcomeText.Terminal(read)
+                : read.Restriction == LocalOutcomeRestriction.Incapacitated ? EncounterOutcomeText.ReadDetail(read) : null
             : lifecycle.Phase == EncounterLifecyclePhase.Outcome
                 ? EncounterOutcomeText.ReadBlocker(read, view.Care) ?? EncounterOutcomeText.ReadDetail(read, view.Care) : null;
         string status = lifecycle.Phase switch
         {
             EncounterLifecyclePhase.Exploration => view.EncounterOutcome is { IsTerminal: true } terminal
                 ? EncounterOutcomeText.TerminalStatus(terminal)
+                : view.Progression is { Hp: 0 }
+                ? view.EncounterOutcome is { AllowsAssistedRecovery: true } recovery
+                    ? EncounterOutcomeText.Status(recovery, view.Care) : "Incapacitated · A recovery treatment is needed; elapsed time alone does not restore HP."
                 : lifecycle.PlayerCanAct
                 ? "Explore freely · Select a wolf to inspect an encounter."
                 : "Recovering · Exploration time restores readiness; injuries remain.",
@@ -32,7 +37,9 @@ internal sealed class FarmEncounterStatus(Label label)
                 : lifecycle.ReleaseActionHash is not null
                 ? "Encounter over · Continue exploring when ready."
                 : "Incapacitated · No aid is available in this encounter.",
-            _ => view.Retreat?.Progress is { } retreat
+            _ => view.Progression is { Hp: 0 }
+                ? "Incapacitated · This encounter continues around you; elapsed time alone does not restore HP."
+                : view.Retreat?.Progress is { } retreat
                 ? FormattableString.Invariant($"Retreating · step {retreat.SamplesTaken} of {retreat.RouteSamples}")
                 : view.Encounter?.PlayerDecisionQueued == true ? "Choice queued · Waiting for resolution"
                 : view.Encounter?.PlayerIsDue == true ? "Choose your action · World waiting"
@@ -50,6 +57,7 @@ internal sealed class FarmEncounterStatus(Label label)
             && RoadThreatWarning.Urgent(view) is { } threat ? new(RoadThreatWarning.Line(threat), RoadThreatWarning.Detail(threat)) : null;
         label.Text = (danger is null ? "" : danger.Line + "\n") + status + (opponents.Length == 0 ? "" : "\n" + opponents);
         label.TooltipText = (explanation is null ? "" : explanation + "\n") + (danger is null ? "" : danger.Detail + "\n")
+            + (view.Progression is { Hp: 0 } ? "At 0 HP, readiness alone cannot restore the ability to act. " : "")
             + $"Remaining recovery: {lifecycle.PlayerRecoveryDelay / 100.0:0.##} seconds of advancing world time. "
             + "Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.";
     }

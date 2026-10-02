@@ -26,7 +26,8 @@ public enum RestorativeAvailabilityReason
     OutOfReach,
     NoOwnedDose,
     MaterialHistoryCapacity,
-    OrdinaryHistoryCapacity
+    OrdinaryHistoryCapacity,
+    RecoveryNotRequired
 }
 
 /// <summary>

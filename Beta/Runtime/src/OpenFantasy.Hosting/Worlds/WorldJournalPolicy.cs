@@ -29,7 +29,7 @@ internal static class WorldJournalPolicy
         ushort profileVersion = 16, ulong resourceArchiveBytes = 0, ulong materialCareArchiveBytes = 0)
     {
         // Only the named coordinated, consented and saved-proposal interpretations close joint history.
-        bool jointArchives = profileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35 or 36;
+        bool jointArchives = profileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35 or 36 or 37;
         if (!jointArchives && (materialCareArchiveBytes != 0
                 || current.MaterialCareArchiveCount != 0 || current.MaterialCareArchiveBytes != 0)
             || jointArchives && (resourceArchiveBytes != 0

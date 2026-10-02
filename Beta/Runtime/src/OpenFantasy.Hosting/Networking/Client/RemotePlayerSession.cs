@@ -15,7 +15,6 @@ public sealed class RemotePlayerSession : IPlayerSession
     private readonly Task _completion;
     private PlayerParticipantStatus _status;
     private Task? _foreground;
-    private bool _foregroundPending;
     private bool _closed;
 
     private RemotePlayerSession(PlayerProtocolClient client, PlayerPresentationBootstrap presentation, PlayerParticipantStatus status)
@@ -63,44 +62,45 @@ public sealed class RemotePlayerSession : IPlayerSession
     public void SetMovement(long dx, long dy) => SendControl(() => _client.SetMovement(checked((int)dx), checked((int)dy)));
     public Task<WorldActionReceipt> SubmitAction(WorldActionCommand command) => _client.SubmitActionAsync(command);
 
-    public async Task<LocalTradeInquiryView> SubmitTradeInquiryAsync(LocalTradeInquiry inquiry) =>
-        (await QueryForeground(new(PlayerQueryKind.SubmitTradeInquiry, inquiry)).ConfigureAwait(false)).Inquiry!;
-    public async Task<LocalTradeInquiryView?> CancelTradeInquiryAsync() =>
-        (await QueryForeground(new(PlayerQueryKind.CancelTradeInquiry)).ConfigureAwait(false)).Inquiry;
-    public async Task<PaidQuoteView?> InspectPaidQuoteAsync(EntityId quoteId) =>
-        (await QueryForeground(new(PlayerQueryKind.InspectPaidQuote, subjectId: quoteId)).ConfigureAwait(false)).PaidQuote;
-    public async Task<MaterialProposalView?> InspectMaterialProposalAsync(EntityId proposalId) =>
-        (await QueryForeground(new(PlayerQueryKind.InspectMaterialProposal, subjectId: proposalId)).ConfigureAwait(false)).MaterialProposal;
+    public Task<LocalTradeInquiryView> SubmitTradeInquiryAsync(LocalTradeInquiry inquiry) =>
+        QueryForeground(() => new(PlayerQueryKind.SubmitTradeInquiry, inquiry), result => result.Inquiry!);
+    public Task<LocalTradeInquiryView?> CancelTradeInquiryAsync() =>
+        QueryForeground(() => new(PlayerQueryKind.CancelTradeInquiry), result => result.Inquiry);
+    public Task<PaidQuoteView?> InspectPaidQuoteAsync(EntityId quoteId) =>
+        QueryForeground(() => new(PlayerQueryKind.InspectPaidQuote, subjectId: quoteId), result => result.PaidQuote);
+    public Task<MaterialProposalView?> InspectMaterialProposalAsync(EntityId proposalId) =>
+        QueryForeground(() => new(PlayerQueryKind.InspectMaterialProposal, subjectId: proposalId), result => result.MaterialProposal);
 
-    private Task<PlayerQueryResult> QueryForeground(PlayerQuery query)
-    {
-        lock (_gate)
-        {
-            ObjectDisposedException.ThrowIf(_closed, this);
-            if (_foregroundPending)
-                return Task.FromException<PlayerQueryResult>(new PlayerRequestRefusedException(PlayerRequestRefusal.Busy));
-            _foregroundPending = true;
-            Task<PlayerQueryResult> task = ExecuteForegroundAsync(query);
-            _foreground = task;
-            return task;
-        }
-    }
-
-    private async Task<PlayerQueryResult> ExecuteForegroundAsync(PlayerQuery query)
+    private Task<TResult> QueryForeground<TResult>(Func<PlayerQuery> createQuery, Func<PlayerQueryResult, TResult> project)
     {
         try
         {
-            await _querySlot.WaitAsync(_stop.Token).ConfigureAwait(false);
-            try
+            PlayerQuery query = createQuery();
+            lock (_gate)
             {
-                PlayerQueryResult result = await _client.QueryAsync(query).ConfigureAwait(false);
-                if (query.Kind is PlayerQueryKind.SubmitTradeInquiry or PlayerQueryKind.CancelTradeInquiry)
-                    Volatile.Write(ref _status, new PlayerParticipantStatus(ReadRunState(), result.Inquiry));
-                return result;
+                ObjectDisposedException.ThrowIf(_closed, this);
+                if (_foreground is { IsCompleted: false })
+                    return Task.FromException<TResult>(new PlayerRequestRefusedException(PlayerRequestRefusal.Busy));
+                // Track the exact caller task, including its typed result projection, so disposal joins it completely.
+                Task<TResult> task = ExecuteForegroundAsync(query, project);
+                _foreground = task;
+                return task;
             }
-            finally { _querySlot.Release(); }
         }
-        finally { lock (_gate) _foregroundPending = false; }
+        catch (Exception error) { return Task.FromException<TResult>(error); }
+    }
+
+    private async Task<TResult> ExecuteForegroundAsync<TResult>(PlayerQuery query, Func<PlayerQueryResult, TResult> project)
+    {
+        await _querySlot.WaitAsync(_stop.Token).ConfigureAwait(false);
+        try
+        {
+            PlayerQueryResult result = await _client.QueryAsync(query).ConfigureAwait(false);
+            if (query.Kind is PlayerQueryKind.SubmitTradeInquiry or PlayerQueryKind.CancelTradeInquiry)
+                Volatile.Write(ref _status, new PlayerParticipantStatus(ReadRunState(), result.Inquiry));
+            return project(result);
+        }
+        finally { _querySlot.Release(); }
     }
 
     private async Task RefreshAsync()
@@ -110,7 +110,7 @@ public sealed class RemotePlayerSession : IPlayerSession
         {
             lock (_gate)
             {
-                if (_foregroundPending || !_querySlot.Wait(0)) continue;
+                if (_foreground is { IsCompleted: false } || !_querySlot.Wait(0)) continue;
             }
             try
             {

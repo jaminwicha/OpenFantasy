@@ -20,27 +20,35 @@ public static class CareCodecV3
     private const int MaximumPermissionBytes = 1_024;
     private const int MaximumUseBytes = 1_024;
 
-    public static byte[] Encode(CareSnapshot state)
+    public static byte[] Encode(CareSnapshot state) => EncodeVersion(state, 3);
+
+    internal static byte[] EncodeVersion(CareSnapshot state, int version)
     {
+        if (version is not (3 or 4)) throw new ArgumentOutOfRangeException(nameof(version));
         ArgumentNullException.ThrowIfNull(state);
         if (state.Continuation is not { } continuation) throw new ArgumentException("Care V3 requires a continued owner.");
-        byte[] bytes = Frame("care.snapshot", Number(3), state.WorldId.ToByteArray(), state.BranchId.ToByteArray(),
+        if ((state.Ordinary?.SupportsIncapacitatedAssistance == true) != (version == 4))
+            throw new ArgumentException("Care format must select the exact recovery catalog interpretation.");
+        byte[] bytes = Frame("care.snapshot", Number((ulong)version), state.WorldId.ToByteArray(), state.BranchId.ToByteArray(),
             Number(state.Revision), continuation.Commitment,
             Collection("care.remedies", state.Remedies.Select(CareCodecV1.EncodeRemedy)),
             Collection("care.agreements", state.Agreements.Select(CareCodecV1.EncodeAgreement)),
-            EncodeAftermath(state), state.Ordinary is { } ordinary ? EncodeOrdinary(ordinary) : []);
+            EncodeAftermath(state), state.Ordinary is { } ordinary ? EncodeOrdinary(ordinary, version == 4) : []);
         if (bytes.Length > MaximumEncodedByteLength) throw new ArgumentException("Continued care exceeds its archive bound.");
         return bytes;
     }
 
-    public static CareSnapshot Decode(ReadOnlySpan<byte> bytes, CareContinuationContext context)
+    public static CareSnapshot Decode(ReadOnlySpan<byte> bytes, CareContinuationContext context) => DecodeVersion(bytes, context, 3);
+
+    internal static CareSnapshot DecodeVersion(ReadOnlySpan<byte> bytes, CareContinuationContext context, int version)
     {
+        if (version is not (3 or 4)) throw new ArgumentOutOfRangeException(nameof(version));
         ArgumentNullException.ThrowIfNull(context);
         try
         {
             var reader = new WorldFrameReader(bytes, MaximumEncodedByteLength, 10);
             reader.Tag("care.snapshot"u8);
-            if (reader.Number() != 3) throw new FormatException("Unsupported continued care version.");
+            if (reader.Number() != (ulong)version) throw new FormatException("Unsupported continued care version.");
             EntityId world = reader.Identity(), branch = reader.Identity();
             ulong revision = reader.Number();
             if (!reader.Field(MaximumContinuationByteLength).SequenceEqual(context.Commitment.Span)
@@ -61,11 +69,11 @@ public static class CareCodecV3
             var treatments = ReadEntries(aftermath.Field(MaximumAftermathBytes), "care.treatments"u8,
                 CareSnapshot.MaximumTreatments, MaximumTreatmentBytes, CareCodecV1.DecodeTreatment);
             aftermath.Complete();
-            var ordinary = ordinaryBytes.IsEmpty ? null : DecodeOrdinary(ordinaryBytes, context);
+            var ordinary = ordinaryBytes.IsEmpty ? null : DecodeOrdinary(ordinaryBytes, context, version == 4);
             var state = new CareSnapshot(context, revision, remedies, agreements, acknowledgments, treatments, ordinary);
             if (state.TotalAcknowledgments != totalAcknowledgments || state.TotalTreatments != totalTreatments)
                 throw new FormatException("Continued totals must equal their closed base and retained operations.");
-            if (!Encode(state).AsSpan().SequenceEqual(bytes)) throw new FormatException("Continued care archive is not canonical.");
+            if (!EncodeVersion(state, version).AsSpan().SequenceEqual(bytes)) throw new FormatException("Continued care archive is not canonical.");
             return state;
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
@@ -78,12 +86,15 @@ public static class CareCodecV3
     public static byte[] EncodeContinuation(CareContinuationContext context)
     {
         ArgumentNullException.ThrowIfNull(context);
+        if (context.Definitions?.Any(value => value.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance) == true)
+            throw new ArgumentException("Care V3 cannot encode a recovery continuation.");
         return context.ToCommitment();
     }
 
     internal static byte[] ComputeContinuation(CareContinuationContext context)
     {
-        byte[] bytes = Frame("care.continuation.v1", context.WorldId.ToByteArray(), context.BranchId.ToByteArray(),
+        bool recovery = context.Definitions?.Any(value => value.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance) == true;
+        byte[] bytes = Frame(recovery ? "care.continuation.v2" : "care.continuation.v1", context.WorldId.ToByteArray(), context.BranchId.ToByteArray(),
             Number(context.Ordinal), context.ClosingCareHash.ToByteArray(), Number(context.ClosingRevision),
             Number(context.ArchivedAcknowledgments), Number(context.ArchivedTreatments),
             Number(context.ArchivedOrdinaryUses), Number(context.Frontier.WorldSequence),
@@ -91,7 +102,7 @@ public static class CareCodecV3
             Pin(Collection("care.agreements", context.Agreements.Select(CareCodecV1.EncodeAgreement))),
             context.Definitions is { } definitions && context.Permissions is { } permissions
                 ? Frame("care.continuation-ordinary.v1",
-                    Pin(Collection("care.use-definitions", definitions.Select(CareCodecV2.EncodeUseDefinition))),
+                    Pin(Collection("care.use-definitions", definitions.Select(CareCodec.EncodeUseDefinition))),
                     Pin(Collection("care.permissions", permissions.Select(CareCodecV2.EncodePermission))))
                 : [],
             context.Pending is { } pending ? Pin(CareCodecV1.EncodeAcknowledgment(pending)) : [],
@@ -108,28 +119,28 @@ public static class CareCodecV3
         Collection("care.acknowledgments", state.Acknowledgments.Select(CareCodecV1.EncodeAcknowledgment)),
         Collection("care.treatments", state.Treatments.Select(CareCodecV1.EncodeTreatment)));
 
-    private static byte[] EncodeOrdinary(OrdinaryCareSnapshot state)
+    private static byte[] EncodeOrdinary(OrdinaryCareSnapshot state, bool recovery)
     {
-        byte[] bytes = Frame("care.ordinary", Number(2), Number(state.Revision), Number(state.TotalUses),
-            Collection("care.use-definitions", state.Definitions.Select(CareCodecV2.EncodeUseDefinition)),
+        byte[] bytes = Frame("care.ordinary", Number(recovery ? 4UL : 2UL), Number(state.Revision), Number(state.TotalUses),
+            Collection("care.use-definitions", state.Definitions.Select(value => CareCodecV2.EncodeUseDefinition(value, recovery))),
             Collection("care.permissions", state.Permissions.Select(CareCodecV2.EncodePermission)),
-            Collection("care.ordinary-uses", state.Uses.Select(CareCodecV2.EncodeUse)));
+            Collection("care.ordinary-uses", state.Uses.Select(value => CareCodecV2.EncodeUse(value, recovery))));
         if (bytes.Length > MaximumOrdinaryBytes) throw new ArgumentException("Continued ordinary history exceeds its bounded archive.");
         return bytes;
     }
 
-    private static OrdinaryCareSnapshot DecodeOrdinary(ReadOnlySpan<byte> bytes, CareContinuationContext context)
+    private static OrdinaryCareSnapshot DecodeOrdinary(ReadOnlySpan<byte> bytes, CareContinuationContext context, bool recovery)
     {
         var reader = new WorldFrameReader(bytes, MaximumOrdinaryBytes, 7);
         reader.Tag("care.ordinary"u8);
-        if (reader.Number() != 2) throw new FormatException("Unsupported continued ordinary care version.");
+        if (reader.Number() != (recovery ? 4UL : 2UL)) throw new FormatException("Unsupported continued ordinary care version.");
         ulong revision = reader.Number(), totalUses = reader.Number();
         var definitions = ReadEntries(reader.Field(MaximumOrdinaryBytes), "care.use-definitions"u8,
-            OrdinaryCareSnapshot.MaximumDefinitions, MaximumUseDefinitionBytes, CareCodecV2.DecodeUseDefinition);
+            OrdinaryCareSnapshot.MaximumDefinitions, MaximumUseDefinitionBytes, entry => CareCodecV2.DecodeUseDefinition(entry, recovery));
         var permissions = ReadEntries(reader.Field(MaximumOrdinaryBytes), "care.permissions"u8,
             OrdinaryCareSnapshot.MaximumPermissions, MaximumPermissionBytes, CareCodecV2.DecodePermission);
         var uses = ReadEntries(reader.Field(MaximumOrdinaryBytes), "care.ordinary-uses"u8,
-            OrdinaryCareSnapshot.MaximumUses, MaximumUseBytes, CareCodecV2.DecodeUse);
+            OrdinaryCareSnapshot.MaximumUses, MaximumUseBytes, entry => CareCodecV2.DecodeUse(entry, recovery));
         reader.Complete();
         var value = new OrdinaryCareSnapshot(definitions, permissions, uses, context);
         if (value.Revision != revision || value.TotalUses != totalUses)

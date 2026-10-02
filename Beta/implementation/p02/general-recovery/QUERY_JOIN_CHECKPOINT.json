@@ -1,0 +1,9 @@
+{
+  "ref": "codex/checkpoint-recovery-before-query-join-20261002T173041Z",
+  "commit": "af3bfcd1da11b315a5f1550da0d3f36ad3391368",
+  "sourceHead": "6274e3c58fb20f663f28d2da4d576afcfde42fee",
+  "tree": "54fd0d6324562ad80bb10b6e36eec0bf4260acef",
+  "scope": "Successor Runtime, general-recovery packet and current handoff; predecessor working/index changes excluded",
+  "verification": "WIP: Core1831 and focused recovery/network/client/care/shared/care-compatibility pass. Controller aggregate and server-managed aggregate retain failures; production/native unqualified.",
+  "restore": "Recover selected successor files from the preserved branch; do not reset the shared checkout or predecessor staging."
+}

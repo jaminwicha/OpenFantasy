@@ -134,16 +134,21 @@ new selection. A previously accepted outcome declines automatic care; a human ca
 request care under the unchanged authority law before finalization.
 
 Living Autonomous participants may acknowledge the exact outcome using their original entitlement.
+Under the explicit [general recovery law](general-recovery.md), incapacitated participants can also
+acknowledge: completion preserves their separate ordinary treatment eligibility, without promising
+rescue or changing body state. Without that law the selector retains zero-HP outcomes for human disposition.
 Those stable command identities bind the world, branch, actor, episode and action-archive hash.
 Remaining Human or ReconnectAllowance participants still hold. The existing actionless completion
 boundary remains separate and grants no time, health, reward or movement. Another player's queued
 request keeps its own command and waiter; an automatic command never supplies that player's receipt.
 
-An incapacitated character without eligible automatic care remains at the outcome for human disposition.
+In the legacy controller interpretation an incapacitated character without eligible automatic care
+remains at the outcome for human disposition.
 Accepting would close aftermath care permanently under this interpretation; that is not a conservative
 survival choice. Held outcomes also prohibit ordinary helper movement, replenishment and tactical
 recovery time. A general rescue/recovery law is a separate domain requirement, not permission for this
-selector to invent supplies, expire obligations or automatically choose a terminal defeat.
+selector to invent supplies, expire obligations or automatically choose a terminal defeat. The explicit
+recovery law permits later ordinary assistance; unmatched aftermath obligations still hold completion.
 
 Controller-world outcome presentation reports recorded character acceptance, never proof of personal
 reading or who submitted a historical request. Its presentation mode depends on the controller facet's

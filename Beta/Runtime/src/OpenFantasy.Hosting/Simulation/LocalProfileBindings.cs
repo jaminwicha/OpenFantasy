@@ -12,30 +12,30 @@ internal static class LocalProfileBindings
     /// <summary>Saved bilateral material proposals and the NPC gift choices built on them.</summary>
     internal static bool AdmitsSavedProposals(WorldSnapshot state) =>
         state.ProfileVersion is 30 or WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
-            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion;
+            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion;
 
     /// <summary>Ordinary self-use, patient-owned permission withdrawal and permitted helper aid.</summary>
     internal static bool AdmitsOrdinaryCare(WorldSnapshot state) =>
         state.ProfileVersion is 26 or 27 or 30 or WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
-            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion;
+            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion;
 
     /// <summary>Existing ordinary and deferred excavation bindings, excluding the separate privileged paired route.</summary>
     internal static bool AdmitsExcavation(WorldSnapshot state) =>
         state.ProfileVersion is 10 or 11 or 12 or 13 or 14 or 15 or 16 or 17 or 18
             or 21 or 22 or 23 or 24 or 25 or 26 or 27 or 30
             or WorldPaidExchangeAdmission.ProfileVersion or WorldMarketAdmission.ProfileVersion
-            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion;
+            or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion;
 
     /// <summary>
     /// The explicit committed-retreat interpretation and the outcome interpretation built on it unchanged; no older
     /// profile reads a retreat request.
     /// </summary>
     internal static bool AdmitsRetreat(WorldSnapshot state) =>
-        state.ProfileVersion is WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion;
+        state.ProfileVersion is WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion;
 
     /// <summary>The explicit outcome-completion interpretation: world-owned completion after required readings.</summary>
     internal static bool AdmitsOutcomeCompletion(WorldSnapshot state) =>
-        state.ProfileVersion is WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion;
+        state.ProfileVersion is WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion;
 
     /// <summary>An advancing exploration cutoff with no reading hold, retained consequence, care obligation or encounter.</summary>
     internal static bool IsUnheldExploration(WorldSnapshot state) =>

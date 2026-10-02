@@ -39,10 +39,11 @@ no intent and a nonempty rejection. The authority reevaluates every submitted in
 
 ## Outcome interpretation
 
-An outcome view with `AcknowledgmentMode.ControllerAcceptance` uses observation-body version 2.
+An outcome view with `AcknowledgmentMode.ControllerAcceptance` uses observation-body version 2,
+unless it also declares the separately admitted recovery interpretation below.
 The required nondefault marker means the compatibility reader fields contain character acknowledgments,
 not proof of human reading. Its presence depends on the world's controller interpretation and survives
-human rejoin. All other views retain body version 1, and the default HumanReading marker is omitted from
+human rejoin. Views without either nondefault interpretation retain body version 1, and the default HumanReading marker is omitted from
 both transport and diagnostic JSON. Thus legacy profile-35 frames keep their exact spelling.
 
 The decoder checks the version against the reconstructed interpretation before canonical re-encoding.
@@ -51,6 +52,13 @@ are refused. A client supporting only body version 1 cannot consume a controller
 there is no downgrade that silently presents autonomous acceptance as a person's reading. This is a
 presentation format distinction, not a new world codec, permission or historical submitter record.
 The surrounding authenticated session must use clients supporting the host's emitted interpretation.
+
+`AllowsAssistedRecovery` selects body version 3 and requires the controller-acceptance mode. It means
+the world's law allows separately permitted aid after completion, not that this patient has a willing
+helper, supplies or a granted recovery permission. Completed zero HP is therefore not presented as
+terminal. The property is omitted when false, preserving older transport and diagnostic bytes. Version
+3 without the marker and older versions carrying it are refused; delta reconstruction retains the
+same interpretation checks. Current HP remains visible independently of any retained outcome record.
 
 ## Geometry and privacy
 

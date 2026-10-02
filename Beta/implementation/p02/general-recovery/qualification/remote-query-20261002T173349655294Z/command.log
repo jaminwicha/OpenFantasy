@@ -1,0 +1,23 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.66]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.07]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.37]   Starting:    OpenFantasy.Server.Tests
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "cancel") [5 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Production_host_supplies_real_metadata_and_queries_preserve_paused_world_and_inquiry_identity [5 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Host_without_presentation_is_refused_before_native_readiness [2 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "proposal") [3 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Foreground_inspection_waits_once_behind_refresh_and_a_second_request_is_busy [3 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "submit") [3 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Invalid_and_closed_queries_return_faulted_tasks_without_throwing_from_the_facade [2 s]
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Disposal_joins_refresh_and_releases_a_queued_user_query_without_closing_host [3 s]
+[xUnit.net 00:00:16.99]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.RemotePlayerSessionTests.Automatic_status_refresh_observes_real_scheduled_merchant_answer_without_an_explicit_inquiry_read [558 ms]
+
+Test Run Successful.
+Total tests: 9
+     Passed: 9
+ Total time: 17.7692 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/general-recovery/qualification/remote-query-20261002T173349655294Z/checks.trx

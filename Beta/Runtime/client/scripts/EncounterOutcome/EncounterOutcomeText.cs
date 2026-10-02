@@ -246,10 +246,14 @@ internal static class EncounterOutcomeText
 /// </summary>
 internal static class ControllerOutcomeText
 {
+    private const string RecoveryExplanation = "Your character remains incapacitated (0 HP). A capable helper with your prior recovery permission can treat them after this fight, using medicine and actual work. Rescue is not guaranteed; accepting does not heal or move anyone.";
     private const string CompletionCondition = "once every required character has acknowledged it and no care is pending";
 
     internal static string? Blocker(LocalEncounterOutcomeView outcome, LocalCareView? care)
     {
+        if (outcome.Stage == LocalOutcomeStage.Completed && outcome.AllowsAssistedRecovery
+            && outcome.ObserverIsParticipant && outcome.Restriction == LocalOutcomeRestriction.Incapacitated)
+            return RecoveryExplanation;
         if (outcome.Acknowledgment is not null) return null;
         if (!outcome.ObserverIsParticipant)
         {
@@ -274,7 +278,9 @@ internal static class ControllerOutcomeText
 
     internal static string ChoiceDetail(LocalEncounterOutcomeView outcome, LocalCareView? care)
     {
-        string consequence = outcome.Restriction == LocalOutcomeRestriction.Incapacitated
+        string consequence = outcome.AllowsAssistedRecovery && outcome.Restriction == LocalOutcomeRestriction.Incapacitated
+            ? "Ends this fight after all required acknowledgments, with no pending care. You stay incapacitated; separately permitted aid can still restore HP later."
+            : outcome.Restriction == LocalOutcomeRestriction.Incapacitated
             ? "Ends this fight after all required acknowledgments, with no pending care. Your character stays incapacitated; your save is kept."
             : "Returns to exploration after all required acknowledgments, with no pending care. Injuries and recovery remain; no rewards or loot.";
         return AvailableHelper(care) is { } helper
@@ -283,7 +289,10 @@ internal static class ControllerOutcomeText
 
     internal static string Detail(LocalEncounterOutcomeView outcome, LocalCareView? care)
     {
-        string detail = outcome.Standing switch
+        string detail = outcome.AllowsAssistedRecovery && outcome.ObserverIsParticipant
+            && outcome.Restriction == LocalOutcomeRestriction.Incapacitated
+            ? RecoveryExplanation + $" The encounter ends {CompletionCondition}."
+            : outcome.Standing switch
         {
             LocalOutcomeStanding.Observer => "This fight is between others; your character has no acknowledgment to give. "
                 + $"The world completes it {CompletionCondition}.",
@@ -305,7 +314,10 @@ internal static class ControllerOutcomeText
     internal static string Status(LocalEncounterOutcomeView outcome, LocalCareView? care)
     {
         string title = EncounterOutcomeText.Title(outcome);
-        if (outcome.Stage == LocalOutcomeStage.Completed) return $"{title} · Encounter complete";
+        if (outcome.Stage == LocalOutcomeStage.Completed) return outcome.AllowsAssistedRecovery
+                && outcome.Restriction == LocalOutcomeRestriction.Incapacitated
+            ? $"{title} · Encounter complete · Incapacitated · Permitted aid can restore HP"
+            : $"{title} · Encounter complete";
         if (!outcome.ObserverIsParticipant) return $"{title} · This fight is between others · World waiting for acceptance";
         if (outcome.Stage == LocalOutcomeStage.CarePending)
         {

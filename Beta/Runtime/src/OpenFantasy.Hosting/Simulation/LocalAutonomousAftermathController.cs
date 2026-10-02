@@ -52,9 +52,9 @@ internal sealed class LocalAutonomousAftermathController
 
         foreach (EntityId actor in actors)
         {
-            // Completing a zero-HP outcome forecloses aftermath aid in this interpretation.
-            // Only a human may deliberately accept that terminal disposition.
-            if (state.Progression!.GetActor(actor).CurrentHp == 0) continue;
+            // Only the explicit recovery law preserves treatment eligibility after completion.
+            // Legacy zero-HP outcomes still require a human's terminal disposition.
+            if (state.Progression!.GetActor(actor).CurrentHp == 0 && state.Recovery is null) continue;
             EntityId commandId = SelectionId(OutcomeDomain, state, [actor, outcome.EncounterId], outcome.ActionHash);
             if (isOccupied(commandId)) return null;
             return Command(state, actor, commandId, new AcknowledgeEncounterOutcomeIntent(outcome.EncounterId, outcome.ActionHash));

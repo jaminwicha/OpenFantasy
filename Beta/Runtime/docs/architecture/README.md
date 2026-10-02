@@ -62,6 +62,7 @@ different kind of person.
 | [World resource history](world-resource-history.md) | How do actual attacks, quest rewards and treatments prove ordered resource continuity and roll back with complete world transactions? |
 | [Resource archive continuation](resource-archive-continuation.md) | How does a complete world cross resource-history segment bounds while retaining retrievable evidence and exact boundaries? |
 | [Ordinary restorative use](ordinary-care.md) | How do actual self/companion doses, patient-owned permission, normal exploration time and causal history compose? |
+| [General assisted recovery](general-recovery.md) | How does explicit recovery permission restore an incapacitated actor after combat without depending on the latest encounter or duplicating health, injury or custody? |
 | [Care continuation](care-continuation.md) | How do cumulative care, pending aid, revoked permissions and patient chronology survive bounded history cuts? |
 | [Coordinated world continuation](coordinated-world-continuation.md) | How do full-world material, care and resource windows close together while preserving exact issuance, live work and durable evidence? |
 | [Aftermath care](aftermath-care.md) | How are prior permission, recovery acknowledgment, helper commitment and finite treatment composed without equating them? |

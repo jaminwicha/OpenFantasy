@@ -14,6 +14,7 @@ public static class PlayerViewCodec
 {
     public const int Version = 1;
     public const int ControllerAcceptanceVersion = 2;
+    public const int AssistedRecoveryVersion = 3;
     public const int MaximumBodyBytes = 900 * 1024;
     public const int MaximumExpandedJsonBytes = 16 * 1024 * 1024;
     public const int MaximumDepth = 48;
@@ -84,7 +85,8 @@ public static class PlayerViewCodec
     }
 
     private static int VersionFor(LocalWorldView view) =>
-        view.EncounterOutcome?.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance
+        view.EncounterOutcome?.AllowsAssistedRecovery == true ? AssistedRecoveryVersion
+            : view.EncounterOutcome?.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance
             ? ControllerAcceptanceVersion : Version;
 
     internal static JsonSerializerOptions CreateOptions()

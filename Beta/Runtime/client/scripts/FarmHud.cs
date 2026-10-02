@@ -160,8 +160,8 @@ internal sealed partial class FarmHud : CanvasLayer
                 : view.Care is { } care ? CareHint(care.Status)
                 : view.EncounterLifecycle?.ReleaseActionHash is not null ? "Encounter complete\nE / A: continue"
                 : "Incapacitated\nAid unavailable"
-            : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait"
-            : view.EncounterOutcome is { IsTerminal: true } ? EncounterOutcomeText.TerminalHint : "Move\nWASD / arrows";
+            : view.Progression is { Hp: 0 } ? EncounterOutcomeText.TerminalHint
+            : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait" : "Move\nWASD / arrows";
         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
         LocalConstructionView? project = view.Construction.FirstOrDefault(value => !value.IsCompleted)
             ?? view.Construction.FirstOrDefault();

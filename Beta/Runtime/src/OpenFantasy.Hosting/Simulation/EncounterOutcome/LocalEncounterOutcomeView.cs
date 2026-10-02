@@ -77,7 +77,20 @@ public sealed class LocalEncounterOutcomeView
         AcknowledgeEncounterOutcomeIntent? acknowledgment, int requiredReaders, int readersRemaining, bool observerHasRead,
         LocalOutcomeRestriction restriction, ulong observerRecoveryDelay, ulong? completedAtSequence,
         LocalOutcomeAcknowledgmentMode acknowledgmentMode = LocalOutcomeAcknowledgmentMode.HumanReading)
+        : this(stage, encounterId, result, standingSide, standing, participants, acknowledgment, requiredReaders,
+            readersRemaining, observerHasRead, restriction, observerRecoveryDelay, completedAtSequence, acknowledgmentMode, false)
     {
+    }
+
+    internal LocalEncounterOutcomeView(LocalOutcomeStage stage, EntityId encounterId, EncounterOutcomeResult result,
+        int standingSide, LocalOutcomeStanding standing, IEnumerable<LocalOutcomeParticipantView> participants,
+        AcknowledgeEncounterOutcomeIntent? acknowledgment, int requiredReaders, int readersRemaining, bool observerHasRead,
+        LocalOutcomeRestriction restriction, ulong observerRecoveryDelay, ulong? completedAtSequence,
+        LocalOutcomeAcknowledgmentMode acknowledgmentMode, bool allowsAssistedRecovery)
+    {
+        if (allowsAssistedRecovery && acknowledgmentMode != LocalOutcomeAcknowledgmentMode.ControllerAcceptance)
+            throw new ArgumentException("Assisted recovery requires the controller-aware outcome interpretation.");
+        AllowsAssistedRecovery = allowsAssistedRecovery;
         if (!Enum.IsDefined(acknowledgmentMode)) throw new ArgumentOutOfRangeException(nameof(acknowledgmentMode));
         Stage = stage;
         EncounterId = encounterId;
@@ -115,13 +128,16 @@ public sealed class LocalEncounterOutcomeView
     /// </summary>
     [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
     public LocalOutcomeAcknowledgmentMode AcknowledgmentMode { get; }
+    /// <summary>Whether bodily incapacity remains eligible for separately authorized assistance after completion.</summary>
+    [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingDefault)]
+    public bool AllowsAssistedRecovery { get; }
     /// <summary>Whether the observer fought on a positive side; an observer outside the fight owes no reading.</summary>
     public bool ObserverIsParticipant => Standing != LocalOutcomeStanding.Observer;
     /// <summary>
     /// The observer took part, is incapacitated and the episode is complete: no ordinary action, and the aftermath-care
     /// opportunity closed when the outcome was accepted.
     /// </summary>
-    public bool IsTerminal => Stage == LocalOutcomeStage.Completed && ObserverIsParticipant
+    public bool IsTerminal => !AllowsAssistedRecovery && Stage == LocalOutcomeStage.Completed && ObserverIsParticipant
         && Restriction == LocalOutcomeRestriction.Incapacitated;
 
     public static LocalEncounterOutcomeView? Project(WorldSnapshot world, EntityId observerId)
@@ -147,7 +163,7 @@ public sealed class LocalEncounterOutcomeView
                 stage == LocalOutcomeStage.AwaitingYourReading ? new AcknowledgeEncounterOutcomeIntent(current.EncounterId, current.ActionHash) : null,
                 current.RequiredHumans.Count, remaining, read,
                 incapacitated ? LocalOutcomeRestriction.Incapacitated : LocalOutcomeRestriction.AwaitingCompletion, debt, null,
-                acknowledgmentMode);
+                acknowledgmentMode, world.Recovery is not null);
         }
         if (outcome.Last is not { } last || lifecycle.Phase != EncounterLifecyclePhase.Exploration
             || lifecycle.Actions is not { } archive || archive.Scope.EncounterId != last.EncounterId)
@@ -160,7 +176,7 @@ public sealed class LocalEncounterOutcomeView
         return new LocalEncounterOutcomeView(LocalOutcomeStage.Completed, last.EncounterId, last.Result, last.StandingSide,
             StandingOf(archive, observerId, last.StandingSide), ProjectParticipants(world, archive, observerId, last.StandingSide),
             null, last.AcknowledgedActorIds.Count, 0, last.AcknowledgedActorIds.Contains(observerId), restriction, debt,
-            last.WorldSequence, acknowledgmentMode);
+            last.WorldSequence, acknowledgmentMode, world.Recovery is not null);
     }
 
     private static LocalOutcomeStanding StandingOf(EncounterActionSnapshot actions, EntityId observerId, int standingSide)

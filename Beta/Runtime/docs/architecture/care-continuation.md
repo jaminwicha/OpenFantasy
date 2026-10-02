@@ -1,5 +1,9 @@
 # Care continuation
 
+[General recovery](general-recovery.md) uses the same bounded chronology through Care V4, with
+distinct definition/use and continuation markers. Recovery permissions and zero-before treatment
+witnesses survive cuts; legacy Care V1–V3 refuse that interpretation.
+
 ## Bounded domain frontier
 
 [CareContinuationContext](../../src/OpenFantasy.Core/Care/CareContinuationContext.cs) captures an

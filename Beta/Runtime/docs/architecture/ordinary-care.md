@@ -14,6 +14,11 @@ The remedy retains the item and capped restoration amount. The ordinary policy d
 items or anatomy. Positive HP represents participation eligibility in this admitted corporeal scenario;
 it does not establish a universal life, consciousness or swallowing model.
 
+The separately admitted [general assisted recovery](general-recovery.md) policy uses the same ordinary
+transaction with a distinct zero-HP delivery definition and exact permission. It broadens neither a
+living-assistance definition nor an aftermath agreement. Profile 37 and Care V4 explicitly select that
+interpretation; positive-HP statements below describe legacy self/living delivery.
+
 Self-use requires the controlled recipient's own actual dose, manipulation and readiness. Assisted
 use requires the supplier's control, manipulation and actual stock, plus a living supported recipient
 within the remedy's real spatial reach. Receiving assistance does not require the recipient's own

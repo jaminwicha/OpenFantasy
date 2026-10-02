@@ -1,0 +1,12 @@
+{
+  "inheritedReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/general-recovery/qualification/core-20261002T171044872764Z/report.json",
+  "currentBuild": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/general-recovery/qualification/build-20261002T171450745582Z/report.json",
+  "sourceDifferences": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Recovery/RecoveryHelperSelectionTests.cs"
+  ],
+  "binaryDifferences": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll"
+  ],
+  "claim": "Full Core 1831 passes apply to unchanged Core implementation, dependencies and test assembly; the sole later addition is a Hosting-only selector test. Hosting evidence is rerun against its new assembly.",
+  "coreDependenciesExact": true
+}

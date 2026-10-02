@@ -13,27 +13,35 @@ public static partial class CareCodecV2
     private const int MaximumRevocationBytes = 512;
     private const int MaximumUseBytes = 1_024;
 
-    public static byte[] Encode(CareSnapshot state)
+    public static byte[] Encode(CareSnapshot state) => EncodeVersion(state, 2);
+
+    internal static byte[] EncodeVersion(CareSnapshot state, int version)
     {
+        if (version is not (2 or 4)) throw new ArgumentOutOfRangeException(nameof(version));
         ArgumentNullException.ThrowIfNull(state);
         if (state.Ordinary is not { } ordinary) throw new ArgumentException("Care V2 requires an explicit ordinary owner.");
+        if (ordinary.SupportsIncapacitatedAssistance != (version == 4))
+            throw new ArgumentException("Care format must select the exact recovery catalog interpretation.");
         if (state.Continuation is not null) throw new ArgumentException("Care V2 cannot discard a continuation frontier.");
-        byte[] bytes = Frame("care.snapshot", Number(2), state.WorldId.ToByteArray(), state.BranchId.ToByteArray(),
+        byte[] bytes = Frame("care.snapshot", Number((ulong)version), state.WorldId.ToByteArray(), state.BranchId.ToByteArray(),
             Number(state.Revision), Collection("care.remedies", state.Remedies.Select(CareCodecV1.EncodeRemedy)),
             Collection("care.agreements", state.Agreements.Select(CareCodecV1.EncodeAgreement)),
             Collection("care.acknowledgments", state.Acknowledgments.Select(CareCodecV1.EncodeAcknowledgment)),
-            Collection("care.treatments", state.Treatments.Select(CareCodecV1.EncodeTreatment)), EncodeOrdinary(ordinary));
+            Collection("care.treatments", state.Treatments.Select(CareCodecV1.EncodeTreatment)), EncodeOrdinary(ordinary, version == 4));
         if (bytes.Length > MaximumEncodedByteLength) throw new ArgumentException("Care history exceeds its ordinary archive bound.");
         return bytes;
     }
 
-    public static CareSnapshot Decode(ReadOnlySpan<byte> bytes)
+    public static CareSnapshot Decode(ReadOnlySpan<byte> bytes) => DecodeVersion(bytes, 2);
+
+    internal static CareSnapshot DecodeVersion(ReadOnlySpan<byte> bytes, int version)
     {
+        if (version is not (2 or 4)) throw new ArgumentOutOfRangeException(nameof(version));
         try
         {
             var reader = new WorldFrameReader(bytes, MaximumEncodedByteLength, 10);
             reader.Tag("care.snapshot"u8);
-            if (reader.Number() != 2) throw new FormatException("Unsupported ordinary care version.");
+            if (reader.Number() != (ulong)version) throw new FormatException("Unsupported ordinary care version.");
             EntityId world = reader.Identity(), branch = reader.Identity();
             ulong revision = reader.Number();
             var remedies = ReadEntries(reader.Field(CareCodecV1.MaximumEncodedByteLength), "care.remedies"u8,
@@ -44,10 +52,10 @@ public static partial class CareCodecV2
                 CareSnapshot.MaximumAcknowledgments, 2_560, CareCodecV1.DecodeAcknowledgment);
             var treatments = ReadEntries(reader.Field(CareCodecV1.MaximumEncodedByteLength), "care.treatments"u8,
                 CareSnapshot.MaximumTreatments, 512, CareCodecV1.DecodeTreatment);
-            var ordinary = DecodeOrdinary(reader.Field(MaximumOrdinaryBytes));
+            var ordinary = DecodeOrdinary(reader.Field(MaximumOrdinaryBytes), version == 4);
             reader.Complete();
             var state = new CareSnapshot(world, branch, revision, remedies, agreements, acknowledgments, treatments, ordinary);
-            if (!Encode(state).AsSpan().SequenceEqual(bytes)) throw new FormatException("Ordinary care archive is not canonical.");
+            if (!EncodeVersion(state, version).AsSpan().SequenceEqual(bytes)) throw new FormatException("Ordinary care archive is not canonical.");
             return state;
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
@@ -56,28 +64,28 @@ public static partial class CareCodecV2
         }
     }
 
-    private static byte[] EncodeOrdinary(OrdinaryCareSnapshot state)
+    private static byte[] EncodeOrdinary(OrdinaryCareSnapshot state, bool recovery)
     {
-        byte[] bytes = Frame("care.ordinary", Number(1), Number(state.Revision),
-            Collection("care.use-definitions", state.Definitions.Select(EncodeUseDefinition)),
+        byte[] bytes = Frame("care.ordinary", Number(recovery ? 3UL : 1UL), Number(state.Revision),
+            Collection("care.use-definitions", state.Definitions.Select(value => EncodeUseDefinition(value, recovery))),
             Collection("care.permissions", state.Permissions.Select(EncodePermission)),
-            Collection("care.ordinary-uses", state.Uses.Select(EncodeUse)));
+            Collection("care.ordinary-uses", state.Uses.Select(value => EncodeUse(value, recovery))));
         if (bytes.Length > MaximumOrdinaryBytes) throw new ArgumentException("Ordinary history exceeds its bounded archive.");
         return bytes;
     }
 
-    private static OrdinaryCareSnapshot DecodeOrdinary(ReadOnlySpan<byte> bytes)
+    private static OrdinaryCareSnapshot DecodeOrdinary(ReadOnlySpan<byte> bytes, bool recovery)
     {
         var reader = new WorldFrameReader(bytes, MaximumOrdinaryBytes, 6);
         reader.Tag("care.ordinary"u8);
-        reader.Version();
+        if (reader.Number() != (recovery ? 3UL : 1UL)) throw new FormatException("Unsupported inline ordinary interpretation.");
         ulong revision = reader.Number();
         var definitions = ReadEntries(reader.Field(MaximumOrdinaryBytes), "care.use-definitions"u8,
-            OrdinaryCareSnapshot.MaximumDefinitions, MaximumUseDefinitionBytes, DecodeUseDefinition);
+            OrdinaryCareSnapshot.MaximumDefinitions, MaximumUseDefinitionBytes, entry => DecodeUseDefinition(entry, recovery));
         var permissions = ReadEntries(reader.Field(MaximumOrdinaryBytes), "care.permissions"u8,
             OrdinaryCareSnapshot.MaximumPermissions, MaximumPermissionBytes, DecodePermission);
         var uses = ReadEntries(reader.Field(MaximumOrdinaryBytes), "care.ordinary-uses"u8,
-            OrdinaryCareSnapshot.MaximumUses, MaximumUseBytes, DecodeUse);
+            OrdinaryCareSnapshot.MaximumUses, MaximumUseBytes, entry => DecodeUse(entry, recovery));
         reader.Complete();
         var value = new OrdinaryCareSnapshot(definitions, permissions, uses);
         if (value.Revision != revision) throw new FormatException("Ordinary revision must equal its retained operation count.");

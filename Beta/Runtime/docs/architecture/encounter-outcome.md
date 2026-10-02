@@ -1,5 +1,10 @@
 # Encounter outcome completion (profile 35)
 
+[General assisted recovery](general-recovery.md) explicitly extends the controller-aware world in
+profile 37. Completion still closes encounter-specific aftermath care, but preserves separately
+authorized ordinary recovery. Zero HP after completion is therefore not terminal in that interpretation;
+the world continues without silently healing, moving or promising rescue to the character.
+
 Under profiles 24–34 an Outcome leaves only through `ReleaseEncounterIntent` from the *living initiator*. When a
 host-initiated episode ends with the initiator incapacitated (the Bandit Chief beaten), or with the player
 incapacitated, nobody can release it. Profile 35 separates three facts that the old law fused, so no outcome depends on

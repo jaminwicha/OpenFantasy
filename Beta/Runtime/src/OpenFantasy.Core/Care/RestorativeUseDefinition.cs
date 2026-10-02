@@ -3,7 +3,7 @@ using OpenFantasy.Core.Content;
 
 namespace OpenFantasy.Core.Care;
 
-public enum RestorativeDeliveryMode { SelfUse = 1, LivingAssistance = 2 }
+public enum RestorativeDeliveryMode { SelfUse = 1, LivingAssistance = 2, IncapacitatedAssistance = 3 }
 
 /// <summary>An exact admitted form, not a species-name or inferred anatomical capability.</summary>
 public sealed record RestorativeFormBinding
@@ -20,8 +20,8 @@ public sealed record RestorativeFormBinding
 }
 
 /// <summary>
-/// Pinned ordinary delivery of an existing remedy to supported living forms. Positive HP and actual
-/// manipulation/readiness remain world eligibility checks; this declares no swallowing anatomy.
+/// Pinned delivery of an existing remedy to exact supported forms. Living and incapacitated assistance have distinct
+/// definitions and permission pins. Actual health, manipulation and readiness remain world eligibility checks.
 /// </summary>
 public sealed class RestorativeUseDefinition
 {
@@ -34,10 +34,25 @@ public sealed class RestorativeUseDefinition
     public RestorativeUseDefinition(EntityId definitionId, EntityId remedyDefinitionId, ContentHash remedyVersion,
         RestorativeDeliveryMode deliveryMode, IEnumerable<RestorativeFormBinding> supportedForms,
         ulong explorationMilliseconds = ExplorationDurationMilliseconds)
+        : this(definitionId, remedyDefinitionId, remedyVersion, deliveryMode, supportedForms, explorationMilliseconds, false)
+    {
+    }
+
+    /// <summary>An explicitly versioned recovery definition; it cannot be admitted through the legacy constructor.</summary>
+    public static RestorativeUseDefinition CreateIncapacitatedAssistance(EntityId definitionId, EntityId remedyDefinitionId,
+        ContentHash remedyVersion, IEnumerable<RestorativeFormBinding> supportedForms,
+        ulong explorationMilliseconds = ExplorationDurationMilliseconds) =>
+        new(definitionId, remedyDefinitionId, remedyVersion, RestorativeDeliveryMode.IncapacitatedAssistance,
+            supportedForms, explorationMilliseconds, true);
+
+    private RestorativeUseDefinition(EntityId definitionId, EntityId remedyDefinitionId, ContentHash remedyVersion,
+        RestorativeDeliveryMode deliveryMode, IEnumerable<RestorativeFormBinding> supportedForms,
+        ulong explorationMilliseconds, bool incapacitatedAssistance)
     {
         ArgumentNullException.ThrowIfNull(remedyVersion);
         ArgumentNullException.ThrowIfNull(supportedForms);
         if (definitionId == remedyDefinitionId || !Enum.IsDefined(deliveryMode)
+            || (deliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance) != incapacitatedAssistance
             || explorationMilliseconds != ExplorationDurationMilliseconds)
             throw new ArgumentException("Ordinary restorative use requires a distinct remedy and its explicit exploration delivery policy.");
         SortedDictionary<EntityId, RestorativeFormBinding> forms = [];
@@ -74,7 +89,7 @@ public sealed class RestorativeUseDefinition
                 return published;
             }
 
-            ContentHash computed = ContentHash.Compute(CareCodecV2.EncodeUseDefinition(this));
+            ContentHash computed = ContentHash.Compute(CareCodec.EncodeUseDefinition(this));
             // Concurrent first readers may compute independently; publish one complete immutable digest.
             return Interlocked.CompareExchange(ref _version, computed, null) ?? computed;
         }

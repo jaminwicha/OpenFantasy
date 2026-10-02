@@ -76,6 +76,10 @@ takes priority over starting another refresh, while another foreground request r
 cancel replies immediately replace cached inquiry; subsequent status refreshes carry merchant outcomes.
 An admitted history read can delay status, but never blocks the render thread. Shutdown cancels refresh,
 releases pending callers and joins both refresh and foreground work before disposing their coordination.
+The foreground owner tracks the exact typed task returned to the caller, including result projection;
+completion of a lower protocol task does not establish completion of that caller task. Foreground
+admission and refresh priority use the tracked task's completion under the session gate. Invalid,
+closed and busy query calls return faulted tasks while preserving the asynchronous interface contract.
 
 [FarmClientSession](../../client/scripts/FarmClientSession.cs) builds the same immutable offers for either
 adapter, retaining per-session offer registration and exact command retry identity. Wheel opening queues

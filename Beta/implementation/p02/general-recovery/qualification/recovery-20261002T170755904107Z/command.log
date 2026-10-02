@@ -1,0 +1,72 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.51]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.03]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.19]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.RecoveryRejectsAnIncompleteIdentityRegistryWithoutChangingTheStoredWorld [124 ms]
+  Passed OpenFantasy.Hosting.Tests.Review.DurableAuthorityAdversarialTests.RecoveryRejectsChangedCommandBytesEvenWhenStoredSnapshotChecksumsStillMatch [17 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: AwaitingOthers) [265 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: Completed) [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: Completing) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: CarePending) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: AwaitingYourReading) [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_cannot_be_silently_downgraded_or_invented_in_legacy_interpretation(mutation: "omitted") [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_cannot_be_silently_downgraded_or_invented_in_legacy_interpretation(mutation: "version") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_cannot_be_silently_downgraded_or_invented_in_legacy_interpretation(mutation: "human") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_cannot_be_silently_downgraded_or_invented_in_legacy_interpretation(mutation: "false") [1 ms]
+[xUnit.net 00:00:01.54]     OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recoverable_defeat_keeps_the_consequence_of_declining_current_aftermath_care_visible [FAIL]
+[xUnit.net 00:00:01.54]       Assert.Contains() Failure: Sub-string not found
+[xUnit.net 00:00:01.54]       String:    "Ends this fight after all required acknowledgments"···
+[xUnit.net 00:00:01.54]       Not found: "accepting declines that care"
+[xUnit.net 00:00:01.54]       Stack Trace:
+[xUnit.net 00:00:01.54]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/RecoveryOutcome/RecoveryOutcomeViewTests.cs(24,0): at OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recoverable_defeat_keeps_the_consequence_of_declining_current_aftermath_care_visible()
+[xUnit.net 00:00:01.54]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.54]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recoverable_defeat_keeps_the_consequence_of_declining_current_aftermath_care_visible [6 ms]
+  Error Message:
+   Assert.Contains() Failure: Sub-string not found
+String:    "Ends this fight after all required acknowledgments"···
+Not found: "accepting declines that care"
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recoverable_defeat_keeps_the_consequence_of_declining_current_aftermath_care_visible() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Networking/RecoveryOutcome/RecoveryOutcomeViewTests.cs:line 24
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Replica_delta_enters_and_leaves_recovery_interpretation_without_retaining_a_stale_permission_claim [21 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.CoupledSettlementStoragePolicyTests.Recovery_refuses_a_valid_root_in_an_incompatible_exact_schema(profile: 15, schema: 4) [496 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialCareSchemaAdmissionTests.Recovery_rejects_a_genesis_stored_under_the_other_archive_interpretation(coordinated: True) [654 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.CoupledSettlementStoragePolicyTests.Recovery_refuses_a_valid_root_in_an_incompatible_exact_schema(profile: 17, schema: 2) [529 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialCareSchemaAdmissionTests.Recovery_rejects_a_genesis_stored_under_the_other_archive_interpretation(coordinated: False) [391 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.CoupledSettlementStoragePolicyTests.Recovery_refuses_a_valid_root_in_an_incompatible_exact_schema(profile: 16, schema: 2) [370 ms]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryRootCodecTests.Recovery_interpretation_requires_the_complete_exact_policy_pin(mutation: "trailing") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryRootCodecTests.Recovery_interpretation_requires_the_complete_exact_policy_pin(mutation: "truncated") [422 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.CoupledSettlementStoragePolicyTests.Recovery_refuses_a_valid_root_in_an_incompatible_exact_schema(profile: 17, schema: 3) [515 ms]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryRootCodecTests.Recovery_interpretation_requires_the_complete_exact_policy_pin(mutation: "policy-pin") [245 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.CoupledSettlementStoragePolicyTests.Recovery_refuses_a_valid_root_in_an_incompatible_exact_schema(profile: 16, schema: 3) [345 ms]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.CoupledSettlementStoragePolicyTests.Recovery_refuses_a_valid_root_in_an_incompatible_exact_schema(profile: 1, schema: 4) [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: "stale-resource", expected: RevisionConflict) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryRootCodecTests.Fresh_recovery_root_roundtrips_without_an_archive_context [445 ms]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryHostTests.Actual_transport_loss_expires_without_healing_and_ready_coplayer_releases_recoverable_outcome [3 s]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: "wrong-permission", expected: NotAuthorized) [871 ms]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: "revoked-permission", expected: NotAuthorized) [633 ms]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: "stale-dose", expected: Unavailable) [532 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "missing-creation-receipt", reason: "The retained actor-command table is incomplete.") [2 s]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: "out-of-reach", expected: OutOfReach) [362 ms]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: "unsupported-form", expected: Unavailable) [447 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "head-without-offer", reason: "The stored world head does not match exact replay.") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "foreign-genesis", reason: "The local world journal is discontinuous.") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "altered-proposal-identity", reason: "A retained identity differs from its replayed comm"···) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Another_encounter_and_real_archive_can_precede_a_finite_helper_recovery_and_exact_reopen [4 s]
+  Passed OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Legacy_world_is_not_reinterpreted_as_recovery_and_a_lived_world_cannot_be_freshly_admitted [560 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "changed-journal-terms", reason: "A stored world batch or outcome differs from deter"···) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "missing-proposal-identity", reason: "The retained world-identity table is incomplete.") [1 s]
+[xUnit.net 00:00:13.90]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "altered-creation-receipt", reason: "A stored actor command or receipt differs from its"···) [1 s]
+
+Test Run Failed.
+Total tests: 41
+     Passed: 40
+     Failed: 1
+ Total time: 14.5313 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/general-recovery/qualification/recovery-20261002T170755904107Z/checks.trx

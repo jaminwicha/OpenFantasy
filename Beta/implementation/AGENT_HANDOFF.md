@@ -54,6 +54,27 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [general recovery checkpoint](p02/general-recovery/RESULT.md) is preserved at
+`codex/milestone-general-recovery-20261002`. Fresh profile 37/Care V4 permit separately authorized,
+finite helper treatment after encounter completion, without depending on the latest encounter archive.
+Real later battle/cut/travel/crafting/treatment/reopen, host helper selection, transport expiry/completion
+and unready return pass. Presentation preserves current incapacity and offered-care consequences.
+Regression found and repaired a real remote query join race; exact caller tasks are now joined.
+
+[Final checks](p02/general-recovery/FINAL_CHECKS.json): warning-free build, 2,454 distinct cases with
+passing evidence, including all 53 new cases and full Core 1,831. Dependency reuse is explicit; affected
+remote/client/recovery checks are rerun. **The managed Server aggregate remains failed**: 75 pass,
+one Windows skip, one five-second four-player movement-observation failure. That unchanged journey
+passes separately; controller 73 passes on repeat. Earlier startup/disconnect/TLS timing failures remain
+unexplained, and aggregate/concurrent-load gates stay open. Old tests/specs and predecessor staging
+remain exact; 1,268 architecture links resolve. No native, full-suite, production or Claude offload claim.
+
+The pre-change checkpoint preserves `6274e3c`; the before-query-repair WIP checkpoint preserves
+`af3bfcd1` with partial verification. Next: investigate aggregate timing failures and implement pending
+care cancellation/decline with retained disposition/identity history, then hostile retreat, restart/
+co-player and fresh-observation control-return policy. Profile 37 production stays closed. The complete
+campaign remains authoritative; this bounded law is not a complete rescue or autonomous survival policy.
+
 The [autonomous aftermath checkpoint](p02/autonomous-aftermath/RESULT.md) is qualified at
 `codex/milestone-autonomous-aftermath-20261002`. Disconnected Autonomous characters can request
 currently lawful prior-agreement care through their own binding; a separate host-helper transaction

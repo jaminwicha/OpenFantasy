@@ -1,0 +1,287 @@
+{
+  "acceptedScope": "Bounded fresh-world general assisted recovery, explicit formats and exact remote query joining. NOT a passing managed Server aggregate, full disconnect/survival, native or production qualification.",
+  "allSelectedAggregatesPassed": false,
+  "checkpoint": "codex/checkpoint-before-general-recovery-20261002T163635Z",
+  "sourceHead": "6274e3c58fb20f663f28d2da4d576afcfde42fee",
+  "milestone": "codex/milestone-general-recovery-20261002",
+  "checks": {
+    "build": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/build-20261002T173305170970Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 37.42582733402378,
+      "outcomes": {},
+      "dependencyReused": false
+    },
+    "core": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/core-20261002T171044872764Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 140.54857795900898,
+      "outcomes": {
+        "Passed": 1831
+      },
+      "dependencyReused": true
+    },
+    "recovery": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/recovery-20261002T173944374662Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 34.82186595900566,
+      "outcomes": {
+        "Passed": 42
+      },
+      "dependencyReused": false
+    },
+    "controller": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/controller-20261002T173722795629Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 101.45367283400265,
+      "outcomes": {
+        "Passed": 73
+      },
+      "dependencyReused": false
+    },
+    "network": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/network-20261002T172010721025Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 48.32435958398855,
+      "outcomes": {
+        "Passed": 244
+      },
+      "dependencyReused": true
+    },
+    "client-managed": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/client-managed-20261002T173904448787Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 39.570292792021064,
+      "outcomes": {
+        "Passed": 179
+      },
+      "dependencyReused": false
+    },
+    "care": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/care-20261002T172234095282Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 13.743174875009572,
+      "outcomes": {
+        "Passed": 9
+      },
+      "dependencyReused": true
+    },
+    "shared": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/shared-20261002T172249776247Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 124.9274325829756,
+      "outcomes": {
+        "Passed": 26
+      },
+      "dependencyReused": true
+    },
+    "care-compatibility": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/care-compatibility-20261002T172455030857Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 24.692396708996966,
+      "outcomes": {
+        "Passed": 21
+      },
+      "dependencyReused": true
+    },
+    "remote-query": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/remote-query-20261002T173349655294Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 21.016858459013747,
+      "outcomes": {
+        "Passed": 9
+      },
+      "dependencyReused": false
+    },
+    "server-managed": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/server-managed-20261002T173446790368Z/report.json",
+      "acceptedAggregate": false,
+      "seconds": 55.31556620800984,
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 75,
+        "NotExecuted": 1
+      },
+      "dependencyReused": false
+    },
+    "server-roster": {
+      "report": "Beta/implementation/p02/general-recovery/qualification/server-roster-20261002T173712163432Z/report.json",
+      "acceptedAggregate": true,
+      "seconds": 9.862091666000197,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyReused": false
+    }
+  },
+  "distinctCasesWithPassingEvidence": 2454,
+  "passingExecutionsInSelectedReports": 2510,
+  "newPassingCases": [
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.Continued_recovery_refuses_changed_commitment_truncation_trailing_data_and_wrong_totals",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.Legacy_catalog_bytes_and_digest_remain_exact_and_are_not_promoted_to_V4",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.Mixed_recovery_and_living_uses_keep_their_separate_record_markers",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_markers_and_catalog_health_interpretation_cannot_be_downgraded(corruption: \"definition-marker\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_markers_and_catalog_health_interpretation_cannot_be_downgraded(corruption: \"delivery\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_markers_and_catalog_health_interpretation_cannot_be_downgraded(corruption: \"hp-before\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_markers_and_catalog_health_interpretation_cannot_be_downgraded(corruption: \"ordinary-version\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_markers_and_catalog_health_interpretation_cannot_be_downgraded(corruption: \"permission\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_markers_and_catalog_health_interpretation_cannot_be_downgraded(corruption: \"root-version\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_markers_and_catalog_health_interpretation_cannot_be_downgraded(corruption: \"use-marker\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_roundtrips_only_its_explicit_inline_or_context_bound_recovery_owner(continued: False)",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareCodecTests.V4_roundtrips_only_its_explicit_inline_or_context_bound_recovery_owner(continued: True)",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Living_constructor_and_catalog_cannot_be_reinterpreted_as_recovery",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_does_not_bypass_an_existing_aftermath_obligation",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_effect_is_exactly_the_remedy_cap_and_not_an_arbitrary_positive_hp_grant",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_factory_requires_zero_hp_separate_supplier_full_permission_and_positive_capped_effect(invalid: \"above-cap\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_factory_requires_zero_hp_separate_supplier_full_permission_and_positive_capped_effect(invalid: \"duration\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_factory_requires_zero_hp_separate_supplier_full_permission_and_positive_capped_effect(invalid: \"negative-before\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_factory_requires_zero_hp_separate_supplier_full_permission_and_positive_capped_effect(invalid: \"permission\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_factory_requires_zero_hp_separate_supplier_full_permission_and_positive_capped_effect(invalid: \"positive-before\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_factory_requires_zero_hp_separate_supplier_full_permission_and_positive_capped_effect(invalid: \"self\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_factory_requires_zero_hp_separate_supplier_full_permission_and_positive_capped_effect(invalid: \"zero-after\")",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Recovery_has_an_exact_distinct_catalog_and_permission_without_aftermath_history",
+    "OpenFantasy.Core.Tests.Care.Recovery.RecoveryCareModelTests.Repeated_real_cuts_preserve_recovery_totals_revocation_and_closed_chronology",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recoverable_defeat_keeps_the_consequence_of_declining_current_aftermath_care_visible",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_cannot_be_silently_downgraded_or_invented_in_legacy_interpretation(mutation: \"false\")",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_cannot_be_silently_downgraded_or_invented_in_legacy_interpretation(mutation: \"human\")",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_cannot_be_silently_downgraded_or_invented_in_legacy_interpretation(mutation: \"omitted\")",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_cannot_be_silently_downgraded_or_invented_in_legacy_interpretation(mutation: \"version\")",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: AwaitingOthers)",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: AwaitingYourReading)",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: CarePending)",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: Completed)",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Recovery_interpretation_survives_wire_roundtrip_without_promising_a_rescue(stage: Completing)",
+    "OpenFantasy.Hosting.Tests.Networking.RecoveryOutcome.RecoveryOutcomeViewTests.Replica_delta_enters_and_leaves_recovery_interpretation_without_retaining_a_stale_permission_claim",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryHelperSelectionTests.Host_helper_selects_and_pays_separately_permitted_recovery_without_consuming_reserved_choices",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryHostTests.Actual_transport_loss_expires_without_healing_and_ready_coplayer_releases_recoverable_outcome",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Another_encounter_and_real_archive_can_precede_a_finite_helper_recovery_and_exact_reopen",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Legacy_world_is_not_reinterpreted_as_recovery_and_a_lived_world_cannot_be_freshly_admitted",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: \"out-of-reach\", expected: OutOfReach)",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: \"revoked-permission\", expected: NotAuthorized)",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: \"stale-dose\", expected: Unavailable)",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: \"stale-resource\", expected: RevisionConflict)",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: \"unsupported-form\", expected: Unavailable)",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryJournalTests.Refused_recovery_keeps_the_incapacitated_patient_and_finite_dose(contrast: \"wrong-permission\", expected: NotAuthorized)",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryRootCodecTests.Fresh_recovery_root_roundtrips_without_an_archive_context",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryRootCodecTests.Recovery_interpretation_requires_the_complete_exact_policy_pin(mutation: \"policy-pin\")",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryRootCodecTests.Recovery_interpretation_requires_the_complete_exact_policy_pin(mutation: \"trailing\")",
+    "OpenFantasy.Hosting.Tests.Recovery.RecoveryRootCodecTests.Recovery_interpretation_requires_the_complete_exact_policy_pin(mutation: \"truncated\")",
+    "OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: \"cancel\")",
+    "OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: \"proposal\")",
+    "OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: \"submit\")",
+    "OpenFantasy.Server.Tests.RemoteQueryJoinTests.Invalid_and_closed_queries_return_faulted_tasks_without_throwing_from_the_facade"
+  ],
+  "dependencyReuse": {
+    "core": {
+      "changedSource": [
+        "Beta/Runtime/src/OpenFantasy.Hosting/Networking/Client/RemotePlayerSession.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Recovery/RecoveryHelperSelectionTests.cs",
+        "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RemoteQueryJoinTests.cs"
+      ],
+      "reason": "Core implementation, its only project dependency and Core test assembly are exact. Later changes are the Hosting selector test, isolated RemotePlayerSession query ownership and Server tests.",
+      "originalBinariesRetainedInReport": true
+    },
+    "network": {
+      "changedSource": [
+        "Beta/Runtime/src/OpenFantasy.Hosting/Networking/Client/RemotePlayerSession.cs",
+        "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RemoteQueryJoinTests.cs"
+      ],
+      "reason": "Only RemotePlayerSession and its Server-only tests changed. These retained selectors exercise unchanged codecs/authorities/local sessions, without constructing the remote application session. Its actual caller path and disposal are rerun in remote-query, server-managed and client-managed. No aggregate timing acceptance is inherited.",
+      "originalBinariesRetainedInReport": true
+    },
+    "care": {
+      "changedSource": [
+        "Beta/Runtime/src/OpenFantasy.Hosting/Networking/Client/RemotePlayerSession.cs",
+        "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RemoteQueryJoinTests.cs"
+      ],
+      "reason": "Only RemotePlayerSession and its Server-only tests changed. These retained selectors exercise unchanged codecs/authorities/local sessions, without constructing the remote application session. Its actual caller path and disposal are rerun in remote-query, server-managed and client-managed. No aggregate timing acceptance is inherited.",
+      "originalBinariesRetainedInReport": true
+    },
+    "shared": {
+      "changedSource": [
+        "Beta/Runtime/src/OpenFantasy.Hosting/Networking/Client/RemotePlayerSession.cs",
+        "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RemoteQueryJoinTests.cs"
+      ],
+      "reason": "Only RemotePlayerSession and its Server-only tests changed. These retained selectors exercise unchanged codecs/authorities/local sessions, without constructing the remote application session. Its actual caller path and disposal are rerun in remote-query, server-managed and client-managed. No aggregate timing acceptance is inherited.",
+      "originalBinariesRetainedInReport": true
+    },
+    "care-compatibility": {
+      "changedSource": [
+        "Beta/Runtime/src/OpenFantasy.Hosting/Networking/Client/RemotePlayerSession.cs",
+        "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RemoteQueryJoinTests.cs"
+      ],
+      "reason": "Only RemotePlayerSession and its Server-only tests changed. These retained selectors exercise unchanged codecs/authorities/local sessions, without constructing the remote application session. Its actual caller path and disposal are rerun in remote-query, server-managed and client-managed. No aggregate timing acceptance is inherited.",
+      "originalBinariesRetainedInReport": true
+    }
+  },
+  "currentSourceSha256": "7a09913e7e19c67a8b154e144b6103e31d95b31fa588392f2b9d03ea6c442bd8",
+  "currentBinariesSha256": "8354778f6cf2bd263f415cdf9fe045e13e8be04177bed60317404489484c4c76",
+  "protectedTestsAndFixtures": 678,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLinks": 1268,
+  "retainedFailedReports": [
+    {
+      "report": "Beta/implementation/p02/general-recovery/qualification/build-20261002T165759622729Z/report.json",
+      "mode": "build",
+      "outcomes": {},
+      "exitCode": 1
+    },
+    {
+      "report": "Beta/implementation/p02/general-recovery/qualification/build-20261002T171422854463Z/report.json",
+      "mode": "build",
+      "outcomes": {},
+      "exitCode": 1
+    },
+    {
+      "report": "Beta/implementation/p02/general-recovery/qualification/controller-20261002T171604804432Z/report.json",
+      "mode": "controller",
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 72
+      },
+      "exitCode": 1
+    },
+    {
+      "report": "Beta/implementation/p02/general-recovery/qualification/recovery-20261002T170755904107Z/report.json",
+      "mode": "recovery",
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 40
+      },
+      "exitCode": 1
+    },
+    {
+      "report": "Beta/implementation/p02/general-recovery/qualification/server-managed-20261002T172522361025Z/report.json",
+      "mode": "server-managed",
+      "outcomes": {
+        "Failed": 3,
+        "NotExecuted": 1,
+        "Passed": 69
+      },
+      "exitCode": 1
+    },
+    {
+      "report": "Beta/implementation/p02/general-recovery/qualification/server-managed-20261002T173446790368Z/report.json",
+      "mode": "server-managed",
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 75,
+        "NotExecuted": 1
+      },
+      "exitCode": 1
+    }
+  ],
+  "unrun": [
+    "Windows ACL on macOS",
+    "Native profile37 recovery/control-return and rendering",
+    "Full suite and production concurrent-load/latency",
+    "Lived migration and full campaign/platform/art/human acceptance"
+  ],
+  "unresolved": [
+    "Managed Server aggregate: four-player five-second movement observation missed; isolated same test passed.",
+    "Earlier controller end-to-end timeout; unchanged repeated controller suite passed, cause unproved.",
+    "Earlier concurrent TLS observation timeout remains unexplained.",
+    "Pending aftermath cancellation/decline, rescue policy/pathfinding, restart/co-player and fresh-observation control-return remain open."
+  ]
+}

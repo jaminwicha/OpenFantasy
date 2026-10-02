@@ -54,7 +54,7 @@ public static class WorldRestorativeActions
         EntityId actorId, EntityId recipientActorId, EntityId definitionId, EntityId? permissionId,
         UseRestorativeItemIntent? captured, bool readingHold)
     {
-        if (basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 || care.Ordinary is not { } ordinary)
+        if (basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || care.Ordinary is not { } ordinary)
             return Blocked(RestorativeAvailabilityReason.UnsupportedProfile);
         if (care.Pending is not null) return Blocked(RestorativeAvailabilityReason.PendingAftermathCare);
         if (basis.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration)
@@ -75,7 +75,9 @@ public static class WorldRestorativeActions
             || recipient.Revision != captured.ExpectedPatientProgressionRevision
             || storage.Revision != captured.ExpectedStorageRevision || production.Revision != captured.ExpectedProductionRevision))
             return Blocked(RestorativeAvailabilityReason.StaleSelection, WorldActionRejection.RevisionConflict);
-        if (recipient.CurrentHp <= 0) return Blocked(RestorativeAvailabilityReason.RecipientIncapacitated);
+        if (!WorldRecoveryAdmission.SupportsRecipient(basis, definition, recipient.CurrentHp))
+            return Blocked(definition.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance
+                ? RestorativeAvailabilityReason.RecoveryNotRequired : RestorativeAvailabilityReason.RecipientIncapacitated);
         if (supplier.CurrentHp <= 0) return Blocked(RestorativeAvailabilityReason.SupplierIncapacitated);
         if (recipient.CurrentHp == recipient.Stats.MaxHp) return Blocked(RestorativeAvailabilityReason.FullHealth);
         if (basis.EncounterLifecycle.GetDebt(actorId).RemainingDelay != 0)

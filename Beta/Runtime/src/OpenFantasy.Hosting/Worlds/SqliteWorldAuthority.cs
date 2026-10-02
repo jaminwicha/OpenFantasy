@@ -42,7 +42,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         int schemaVersion = accepted.ProfileVersion switch
         {
             27 or 28 or 30 or 32 or 33 or 34 or 35 => WorldDatabaseSchemaEight.Version,
-            36 => WorldDatabaseSchemaNine.Version,
+            36 or 37 => WorldDatabaseSchemaNine.Version,
             25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,

@@ -42,10 +42,13 @@ internal sealed class LocalRestorativeController
                 continue;
             }
             var definition = ordinary.GetDefinition(permission.UseDefinitionId);
-            if (definition.DeliveryMode != RestorativeDeliveryMode.LivingAssistance) continue;
+            if (definition.DeliveryMode is not RestorativeDeliveryMode.LivingAssistance and not RestorativeDeliveryMode.IncapacitatedAssistance) continue;
             var resources = state.Progression!.GetActor(patient);
             var remedy = state.Care.GetRemedy(definition.RemedyDefinitionId);
-            if (!FitsFullDose(resources.CurrentHp, resources.Stats.MaxHp, remedy.RestoredHp)
+            bool wantsAid = definition.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance
+                ? state.Recovery is not null && resources.CurrentHp == 0
+                : FitsFullDose(resources.CurrentHp, resources.Stats.MaxHp, remedy.RestoredHp);
+            if (!wantsAid
                 || WorldRestorativeActions.Prepare(state, helper, patient, definition.DefinitionId,
                     permission.PermissionId) is not { } intent)
             {
