@@ -32,6 +32,8 @@ serializing internal exception text. It has no commit sequence or durable side e
 in for a gameplay rejection. One outstanding action includes its asynchronous host wait. A duplicate
 while it is pending gets Busy rather than adding receipt waiters; a retry after commit returns the
 original durable result. The client retains its exact command whenever delivery remains uncertain.
+The [protocol client](player-client.md) coalesces identical locally pending submissions into one task
+and one envelope; the server's Busy response remains the boundary for actual duplicate wire requests.
 
 ## Scheduling and resource ownership
 

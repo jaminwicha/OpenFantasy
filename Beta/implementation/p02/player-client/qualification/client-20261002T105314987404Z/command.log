@@ -1,0 +1,37 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.82]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.98]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.14]   Starting:    OpenFantasy.Server.Tests
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Production_connector_refuses_an_untrusted_certificate [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Actual_tls_client_validates_initial_view_and_startup_cancellation_does_not_own_connected_lifetime [1 s]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Query_replies_must_match_the_actual_pending_request_and_authenticated_scope(variant: "scope") [692 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Query_replies_must_match_the_actual_pending_request_and_authenticated_scope(variant: "request") [726 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Query_replies_must_match_the_actual_pending_request_and_authenticated_scope(variant: "kind") [753 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Backpressured_output_is_bounded_and_disposal_cancels_a_blocked_transport [694 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_refuses_welcome_substitution_before_exposing_a_playable_client(variant: "world") [463 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_refuses_welcome_substitution_before_exposing_a_playable_client(variant: "actor") [694 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_refuses_welcome_substitution_before_exposing_a_playable_client(variant: "packages") [557 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_refuses_welcome_substitution_before_exposing_a_playable_client(variant: "request") [538 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.In_memory_client_keeps_preflight_refusal_separate_from_committed_receipts_and_exact_retry [788 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Concurrent_exact_action_shares_its_pending_task_and_sends_one_envelope [706 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Durable_receipt_substitution_is_rejected_even_when_the_transport_request_matches(variant: "command") [824 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Durable_receipt_substitution_is_rejected_even_when_the_transport_request_matches(variant: "world") [660 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Durable_receipt_substitution_is_rejected_even_when_the_transport_request_matches(variant: "principal") [738 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Durable_receipt_substitution_is_rejected_even_when_the_transport_request_matches(variant: "hash") [739 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Unchanged_input_is_bounded_and_stop_remains_ordered_before_ping [702 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Established_send_returning_successfully_at_its_deadline_still_closes_the_client [712 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Missing_delta_basis_requests_full_recovery_before_startup_publishes_a_view [889 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Established_blocked_send_expires_and_releases_a_queued_query_without_queue_overflow [5 s]
+[xUnit.net 00:00:22.68]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Cancellation_during_startup_closes_owned_transport_without_waiting_for_a_silent_peer [25 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Startup_that_returns_a_full_view_after_its_deadline_is_not_reported_as_success [653 ms]
+  Passed OpenFantasy.Server.Tests.PlayerProtocolClientTests.Pending_history_keeps_control_and_ping_live_and_disposal_releases_client_waiters [649 ms]
+
+Test Run Successful.
+Total tests: 23
+     Passed: 23
+ Total time: 23.0244 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-client/qualification/client-20261002T105314987404Z/checks.trx

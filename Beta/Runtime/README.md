@@ -59,6 +59,9 @@ TLS/WebSocket with scoped player invitations. The [operator guide](docs/player-h
 certificate trust, private provisioning, runtime requirements and joined shutdown; the
 [architecture reference](docs/architecture/player-http-host.md) defines ownership and protocol limits.
 Native Godot network clients and multiplayer acceptance remain separate work.
+The reusable [player protocol client](docs/architecture/player-client.md) owns TLS connection,
+validated first view, bounded input, exact receipt/query correlation and joined shutdown. Godot's
+gameplay session binding still needs explicit run-status and presentation contracts above this layer.
 
 ## Build and verify
 

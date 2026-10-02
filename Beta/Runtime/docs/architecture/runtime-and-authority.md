@@ -37,6 +37,8 @@ movement and exact commands/receipts through those ports with bounded asynchrono
 observation encoding remains separate; transport or serialized identity alone grants no authority.
 The [HTTP/TLS Server adapter](player-http-host.md) references Hosting and ASP.NET Core; the headless
 Host composes it with a saved world. Core, Hosting and the Godot client remain independent of ASP.NET.
+The [player protocol client](player-client.md) owns participant-side transport and visible replication
+without owning an authority or clock. Application input and presentation compose above that boundary.
 
 ## Runtime bindings: state ownership
 

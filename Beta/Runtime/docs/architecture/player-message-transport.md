@@ -41,3 +41,7 @@ belong to connection admission and hosting. A WebSocket object alone proves none
 sessions require TLS; compression is disabled for credential-bearing messages. The HTTP request must
 remain alive for the entire upgraded socket lifetime. Clients receive only permitted projections,
 never privileged world roots or hashes as a shortcut to observation synchronization.
+
+The [player protocol client](player-client.md) supplies participant-side startup, bounded output,
+reply correlation and replica ownership. Its production connector validates TLS before credentials
+enter the transport; an already-open socket supplied directly retains the caller's protection obligation.

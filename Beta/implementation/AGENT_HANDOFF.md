@@ -87,6 +87,7 @@ still required substantial Astra completion and repair. Net Astra credit savings
 the latest request did not offload implementation. The [result's economics assessment](p02/native-accepted-care/RESULT.md#delegation-economics)
 records the owner's question and the evidence. When access is available, prefer self-contained complete
 deliverables and compact results; avoid repeated handoff loops and do not weaken acceptance gates.
+Native Codex workers and critics also consume Astra capacity; do not report them as Claude offloading.
 
 [Upstream render-wait sync](p02/native-accepted-care/UPSTREAM_SKILL_SYNC.json) preserves bounded actual
 post-draw observation. [Upstream efficiency sync](p02/native-accepted-care/UPSTREAM_EFFICIENCY_SYNC.json)
@@ -227,6 +228,23 @@ Pre-change ref preserves6a0d36f; review-fix WIP ref preserves7b3a105 with partia
 accepted milestone preserves this bounded scope only. Actual Godot clients/solo envelope parity,
 native1–4-player validation, recorded disconnect/reconnect/controller handoff, Godot listening-host
 export/runtime qualification, Windows/Linux and all full phase/production/human gates remain open.
+
+## Player client checkpoint
+
+[Player client](p02/player-client/RESULT.md), preserved as
+`codex/milestone-player-client-20261002`, owns validated startup/first view, default-trust TLS,
+bounded ordered input, pending-action deduplication, exact reply correlation, recovery and joined shutdown.
+Build and244 distinct affected cases pass (server56 including23 new; network188), retaining every prior
+case. Windows DACL execution remains explicitly unrun on Mac. [Final checks](p02/player-client/FINAL_CHECKS.json)
+pin source/binaries and644 old tests/fixtures,23 specs and exact predecessor staging. One native critic
+found no concrete defect; both coverage recommendations are proved. Initial compile failures remain.
+No provider call occurred. Native agents consume Astra capacity, not Claude credits.
+
+This is protocol ownership, not Godot network play. [Design](p02/player-client/DESIGN.md) records the
+next prerequisites: authoritative run status, content-bound presentation bootstrap and bounded Waiting
+inquiry refresh. Preserve captured offers and exact retry identity; no private-state or regenerated-genesis
+shortcut. Native1–4-player proof, solo envelope parity, recorded disconnect and all wider gates remain.
+Pre-change checkpoint preservesf2ec8674; work remains on `codex/runtime-foundation`.
 
 ## Next dependency and remaining scope
 

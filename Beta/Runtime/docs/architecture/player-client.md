@@ -1,0 +1,63 @@
+# Player protocol client
+
+[PlayerProtocolClient](../../src/OpenFantasy.Hosting/Networking/Client/PlayerProtocolClient.cs)
+owns one authenticated participant connection, its ordered sender, reply correlation and immutable
+[observation replica](player-observation-streams.md). It uses the same bounded message transport for
+local channels and WebSockets. It owns neither a world authority nor a simulation clock. Its cached
+`LocalWorldView` contains participant-visible state; it is not a mutable world or a prediction.
+
+## Connection and ownership
+
+`ConnectAsync` takes ownership of an already-protected transport, including failed admission. It
+sends Hello with the invitation's compatibility pins and secret, requires the matching Welcome for
+request 1, and checks the intended actor and all compatibility fields. The host-issued delivery binding
+comes from that validated Welcome. Startup subscribes to observations and requires the first complete
+valid view within ten seconds. The returned player remains unready.
+
+[PlayerWebSocketConnector](../../src/OpenFantasy.Hosting/Networking/Client/PlayerWebSocketConnector.cs)
+creates the production socket with platform certificate-chain and hostname validation and requires
+the `openfantasy.v1` subprotocol. It applies one ten-second deadline across TLS connection, admission
+and first view. It installs no permissive certificate callback and requests no compression. A trusted
+invitation does not authorize bypassing TLS validation. Tests may supply separately protected transports;
+that transport injection is not a production trust override.
+
+The startup token owns the connection attempt only. Canceling it after successful return does not
+disconnect the player. The returned client has its own lifetime. `Completion` exposes terminal peer,
+format, capacity and deadline failures. Explicit disposal cancels I/O, releases pending callers and
+joins sender and receiver; it does not rethrow an already exposed terminal failure. Neither disposal
+nor socket loss records a controller transfer or cancels an already committed effect.
+
+## Input and pending work
+
+One lock allocates strictly increasing gameplay request IDs and publishes ordered output. At most 32
+messages wait behind the active send; at most 128 inputs are queued per monotonic one-second window.
+Capacity exhaustion closes the connection instead of discarding a stop or accumulating waiters. Every
+send has a five-second absolute deadline, checked again after successful completion.
+
+Unchanged readiness is suppressed. Movement accepts the protocol's cardinal 32-unit samples or stop.
+Repeated held input is limited to one fresh sample per 50 ms; changes and stop are queued immediately.
+The client never renews movement without another caller sample. Readiness and movement do not create
+durable receipts or establish that the world advanced. A Pong confirms processing of preceding control
+messages, not completion of an outstanding world action.
+
+The client keeps one action, one query and one Ping independently pending. An exact repeated canonical
+command shares the existing action task and sends no duplicate envelope. Another simultaneous action,
+query or Ping receives transient Busy feedback for its occupied slot. World actions retain the caller's
+command identity, revisions and intent. There is no automatic retry, reconnect, revision repair or
+synthetic receipt. Pending human/world decisions have no gameplay timeout.
+
+## Reply validation and recovery
+
+[Reply routing](../../src/OpenFantasy.Hosting/Networking/Client/PlayerProtocolClient.Receive.cs)
+requires a matching pending request and reply kind. Receipts additionally match command identity,
+principal, world, branch and the hash of the exact submitted canonical bytes. Query results validate
+their kind, subject and authenticated actor/world scope against the original request. A transient
+`PlayerRequestRefusedException` remains distinct from a committed rejection receipt. Unknown, duplicate
+or mismatched responses terminate the connection.
+
+Unsolicited observations use request ID zero. The replica validates before publishing; malformed input
+cannot replace its last good view. A missing delta basis queues one full-recovery request, coalescing
+further requests until a valid full frame arrives. Initial subscription is distinct from recovery so a
+missing initial basis can still request a complete frame. Reading the cache does not imply a new server
+barrier, global readiness, or any access to private world state. Application presentation and host run
+status require explicit contracts above this protocol owner.
