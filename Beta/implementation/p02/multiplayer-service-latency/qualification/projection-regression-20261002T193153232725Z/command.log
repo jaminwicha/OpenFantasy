@@ -1,0 +1,28 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.25]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.81]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.99]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalWorksiteViewTests.Tool_projection_matches_excavation_reservation_rules(protection: None, reserved: True, visible: False) [369 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Public_projection_contains_only_actual_occupied_geometry_and_known_terrain [431 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalWorksiteViewTests.Tool_projection_matches_excavation_reservation_rules(protection: None, reserved: False, visible: True) [110 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalLiquidViewTests.Original_farm_and_equilibrium_only_worlds_do_not_claim_detailed_liquid_placement [178 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalWorksiteViewTests.Tool_projection_matches_excavation_reservation_rules(protection: Equipped | Favorite, reserved: False, visible: True) [129 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalWorksiteViewTests.Tool_projection_matches_excavation_reservation_rules(protection: UserReserved, reserved: False, visible: False) [97 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalWorksiteViewTests.Owned_work_targets_and_actual_tools_have_exact_revisions_without_private_material_or_NPC_custody [338 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.RegionalFramePublicationTests.Frame_reads_stay_responsive_while_a_real_recorded_inspection_holds_the_writer_gate [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.RegionalFramePublicationTests.Ordinary_earned_mining_and_released_water_reach_the_published_regional_view [912 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.RegionalFramePublicationTests.Legal_floors_stay_presentable_and_unsupported_stances_are_an_explicit_absence [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.RegionalFramePublicationTests.The_cargo_genesis_observation_presents_the_breach_channel_water_divider_and_work_target [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalWorksiteViewTests.Funded_installed_geometry_stays_committed_through_pending_work_and_changes_only_at_publication [5 s]
+[xUnit.net 00:00:07.47]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalWorksiteViewTests.Manipulation_availability_comes_from_the_retained_body_condition [88 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.LocalWorksiteViewTests.Excavation_views_report_traversal_and_physical_ownership_as_separate_admitted_capabilities [104 ms]
+
+Test Run Successful.
+Total tests: 14
+     Passed: 14
+ Total time: 8.0382 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/multiplayer-service-latency/qualification/projection-regression-20261002T193153232725Z/checks.trx

@@ -1,0 +1,92 @@
+{
+  "status": "selected managed regression passed; production and historical query timing gates remain open",
+  "sourceHead": "272140ea1f42bed4319488dfc949806b35d0bfab",
+  "checkpoint": "codex/checkpoint-before-service-latency-20261002T192024Z",
+  "optimizationCheckpoint": {
+    "checkpoint": "codex/checkpoint-before-occupancy-reuse-20261002T192629Z",
+    "snapshot": "5fa698d874a70e1e530351a9740aba99f630ce64",
+    "sourceHead": "272140ea1f42bed4319488dfc949806b35d0bfab",
+    "scope": "Current successor diagnostics, new projection cost test and all baseline reports; predecessor staging excluded",
+    "verification": "Warning-free build; fixed projection case passes; Server 76pass/1failure/1Windows skip; no optimization applied"
+  },
+  "milestone": "codex/milestone-terrain-projection-reuse-20261002",
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261002T192819030469Z/report.json",
+      "sha256": "9879030e617982f6355de7390aeffb4fb85aac5b9083a9b764687ea00cec740b",
+      "outcomes": null,
+      "accepted": true
+    },
+    "projection": {
+      "path": "qualification/projection-20261002T192907713525Z/report.json",
+      "sha256": "8491cda8390e86d832800004c5dba86ebdc528148e11b46dcf8d1f47836a112f",
+      "outcomes": {
+        "Passed": 8
+      },
+      "accepted": true
+    },
+    "projection-regression": {
+      "path": "qualification/projection-regression-20261002T193153232725Z/report.json",
+      "sha256": "dc4ef1f6e8c6145c5b7a78a18e235361317faa4e5663a2cd5f9802962e519df5",
+      "outcomes": {
+        "Passed": 14
+      },
+      "accepted": true
+    },
+    "server-managed": {
+      "path": "qualification/server-managed-20261002T192936910998Z/report.json",
+      "sha256": "8b8ace879851b3e1f421ce6c509bcce3db08c8f21d74b0ae1bc621119e04f305",
+      "outcomes": {
+        "NotExecuted": 1,
+        "Passed": 77
+      },
+      "accepted": true
+    },
+    "network": {
+      "path": "qualification/network-20261002T193203577364Z/report.json",
+      "sha256": "551f719c2b9af8fcf68c48188a76aeeae262d76d89f706965aaf58f6493c3f49",
+      "outcomes": {
+        "Passed": 265
+      },
+      "accepted": true
+    },
+    "shared": {
+      "path": "qualification/shared-20261002T193223365930Z/report.json",
+      "sha256": "ee7e7c2caa98ca099b295d667effb3743b0fa36c0f4f618cd8b4718527c81642",
+      "outcomes": {
+        "Passed": 26
+      },
+      "accepted": true
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261002T193246501701Z/report.json",
+      "sha256": "54f60ab514afe73c1942cb546e726c4a0343710f0926be6a10e98ad2f78a1867",
+      "outcomes": {
+        "Passed": 179
+      },
+      "accepted": true
+    }
+  },
+  "distinctPassingCases": 567,
+  "newPassingCases": 8,
+  "expectedUnrunCases": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "allSelectedAggregatesPassed": true,
+  "protectedOldTestFiles": 701,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "finalSourceAndBinariesVerified": true,
+  "unchangedCostProbeSha256": "bad1516c5109a8868a9db02aeea2ac5c4807170c24399e1ef8c7d8066eff8aa8",
+  "checkerSha256": "e48c916863d992d1850b1cb544d7fe6ebc07d85c00c11cd574824191cc6dee14",
+  "architectureLinks": 1287,
+  "failedReportsRetained": [
+    "qualification/server-managed-20261002T192025015869Z/report.json"
+  ],
+  "scopeLimits": [
+    "warmed projection cost, not whole-game frame rate or production latency guarantee",
+    "captured third-player lease expiry explained; earlier independent timeout causes not inferred",
+    "historical archived-query failures remain unexplained",
+    "no new native, platform, Core full-suite, production scale, care capacity/crash, migration or full campaign acceptance"
+  ]
+}

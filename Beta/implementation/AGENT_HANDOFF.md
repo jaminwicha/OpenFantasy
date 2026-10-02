@@ -54,6 +54,27 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [terrain projection reuse checkpoint](p02/multiplayer-service-latency/RESULT.md) captures the
+actual third-player failure: receipt during serialized projection, first sampling at 163.3869 ms,
+after the unchanged 150 ms lease. Exact immutable-region occupancy reuse removes repeated worksite/liquid
+cell-array construction across players and publications, preserving all bytes, copying and permissions.
+The same warmed 32-view workload allocates 1,217,344 bytes versus 16,003,392 before. Its milestone is
+`codex/milestone-terrain-projection-reuse-20261002`.
+
+[Final checks](p02/multiplayer-service-latency/FINAL_CHECKS.json): warning-free build and 567 distinct
+managed passes, including 8 new. **Normal managed Server now passes 77**, with the Windows-only ACL skip;
+Networking 265, client 179, shared 26 and terrain/publication 14 also pass. All 701 old test files, 23 specs and
+unrelated predecessor staging remain exact. The [independent review](p02/multiplayer-service-latency/REVIEW.md)
+found no actionable defect. Architecture references describe weak identity-based reuse.
+The captured expiry is explained and its redundant projection work repaired; this does not identify
+the cause of every historical timeout or close production scale/latency. Earlier archived-query failures
+remain open. No new native, full Core, migration or full-campaign acceptance is claimed.
+
+Next: measure/authenticate archived-query service, qualify native profile 38 decisions and actual
+pending/cut/disposition/re-cut plus capacity/crash boundaries, then continue the retained survival/
+restart/co-player policy dependencies. The full campaign remains authoritative. No provider retry or
+Claude credit offload occurred.
+
 The [pending-care decisions checkpoint](p02/pending-care-disposition/RESULT.md) adds explicit profile38/
 CareV5 patient cancellation and helper decline, separate terminal history/frontiers, exact archive/replay,
 safe unready control return, scoped human-helper choices and captured wheel controls. Its preserved
@@ -61,15 +82,16 @@ milestone is `codex/milestone-care-dispositions-20261002`; production selection 
 [Final checks](p02/pending-care-disposition/FINAL_CHECKS.json): warning-free build, 2,544 distinct cases
 with passing evidence including all69new and fullCore1,870. NewHost30, client179, care9, compatibility21,
 controller73, shared26, recovery42 and Networking265 pass; dependency-based reuse is explicit.
-**Managed Server still fails:**76pass, one unchanged five-second four-player movement observation
+**At that checkpoint, managed Server failed:** 76 pass, one unchanged five-second four-player movement observation
 failure, one Windows ACL skip. Two earlier archived-query timeouts remain unexplained despite the final
 network pass. Every old test/spec/staging pin remains exact (691tests,23specs);1,286architecture links resolve.
 The [critic](p02/pending-care-disposition/REVIEW.md) exposed real closure-projection/queue-priority defects,
 both repaired. Legacy constructor compatibility and bounded test synchronization are also corrected.
 No native/full-suite/production acceptance or Claude credit offload is claimed.
 
-Next: diagnose actual multiplayer/query timing failures; qualify native profile38 care decisions,
-complete-world pending/cut/closure/re-cut and capacity/crash boundaries. Domain continuation proofs and
+Remaining care qualification: native profile 38 care decisions and complete-world pending/cut/closure/
+re-cut and capacity/crash boundaries. The projection checkpoint above addresses the captured roster
+expiry. Domain continuation proofs and
 real proposal-pressure archive/reopen are distinct from those unrun gates. Hostile survival, restart/
 co-player policy, authenticated lived-save migration and full production/campaign gates remain open.
 The before-change checkpoint preserves `6358c9b7`; exact scope and failures are retained in the packet.
@@ -82,15 +104,15 @@ Opt-in bounded host timing traces separate input sampling, projection, observati
 
 [Final checks](p02/multiplayer-timing/FINAL_CHECKS.json): warning-free build; 584 distinct cases with
 passing evidence, including 22 new. Networking 265, client 179, shared 26 and controller 73 pass.
-**Normal managed Server remains failed**: 76 pass, one five-second four-player movement failure,
+**At that checkpoint, normal managed Server failed**: 76 pass, one five-second four-player movement failure,
 one Windows-only skip. The same selection with tracing passes 77 plus that skip; it does not explain
 the failure. No timing gate, old test or parallelization policy changed. All 688 old test/fixture
 files, 23 specs and unrelated staging remain exact; 1,273 architecture/design links resolve.
 The [independent review](p02/multiplayer-timing/REVIEW.md) found no actionable defect and records
 diagnostic limits. No new Core/native/full-suite/production acceptance or Claude offload is claimed.
 
-The actual movement failure still needs receipt/selection/lease evidence without assuming contention
-or treating a traced pass as resolution. The [pending-care design review](p02/pending-care-disposition/DESIGN_REVIEW.md)
+The later projection checkpoint above supplies actual receipt/lease evidence for the captured movement
+failure; other historical timeouts and full load/latency acceptance remain separate. The [pending-care design review](p02/pending-care-disposition/DESIGN_REVIEW.md)
 is preserved as the proposal underlying the managed implementation above; its profile38/CareV5 are now
 explicitly selected by fresh admission.
 The initial timing checkpoint preserves `d9e6ec57`; the before-optimization WIP checkpoint preserves

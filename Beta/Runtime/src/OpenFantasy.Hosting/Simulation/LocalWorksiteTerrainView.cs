@@ -20,7 +20,7 @@ public sealed class LocalWorksiteTerrainView
     {
         Bounds = region.Bounds;
         Revision = region.Revision;
-        Occupancy = new LocalTerrainOccupancy(region.Cells.Select(cell => cell.IsSolid));
+        Occupancy = LocalTerrainOccupancy.Project(region);
     }
 
     public TerrainRegionBounds Bounds { get; }

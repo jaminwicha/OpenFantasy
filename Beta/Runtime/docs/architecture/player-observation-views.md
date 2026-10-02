@@ -145,6 +145,14 @@ Worksite and liquid occupancy use the sealed internal
 [LocalTerrainOccupancy](../../src/OpenFantasy.Hosting/Simulation/LocalTerrainOccupancy.cs), which
 defensively copies its boolean cells and exposes the same declared `ReadOnlyCollection<bool>`
 property. Packed wire JSON and default diagnostic arrays therefore retain their existing spelling.
+Host projections share that owned occupancy across worksite, liquid and player views only when
+they refer to the exact same immutable `TerrainRegionSnapshot` object. A conditional weak table
+holds the association without retaining discarded regions or world roots. Bounds and revisions
+alone never identify a cached value: distinct branches, excavations or decoded snapshots may share
+those numbers. Each terrain successor receives its own projection, and previously published views
+remain unchanged. Wire rehydration always copies its input and does not enter this cache; private
+inventories, offers, liquids and participant fields continue to project from the selected root.
+
 The value validator counts these owned primitive cells in bulk: the collection owner and every
 cell still consume the shared 921,600-value traversal budget, and nonempty cells still require
 their child depth. Collection limits and the first applicable failure are unchanged. Boolean

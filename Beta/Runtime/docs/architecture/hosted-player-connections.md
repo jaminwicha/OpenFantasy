@@ -21,6 +21,11 @@ serialization gate. Views publish from the same committed root and are frame-saf
 by a closed port is its last observation; the port cannot submit or inspect through a later connection
 for the same actor. The host owns authority disposal, independently of any player's lifetime.
 
+Worksite and liquid views share [owned terrain occupancy](player-observation-views.md) across
+ports and publications for the exact immutable region instance. This avoids rebuilding unchanged
+cell arrays during serialized publication. Each actor still receives its own current inventory,
+offers and participation. Shared occupancy neither shares permissions nor retains old world roots.
+
 ## Readiness and scheduling
 
 A new connection starts unready. Its client acknowledges readiness only after applying a playable

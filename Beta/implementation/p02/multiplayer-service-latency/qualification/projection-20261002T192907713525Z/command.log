@@ -1,0 +1,33 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.45]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.63]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.81]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.Projection.ProjectionCostTests.Four_player_projection_preserves_exact_bytes_and_reports_component_cost [1 s]
+  Standard Output Messages:
+ projection:regional; calls:32; milliseconds:0.356; bytes:219648
+ projection:worksite; calls:32; milliseconds:0.142; bytes:117952
+ projection:liquids; calls:32; milliseconds:0.181; bytes:80384
+ projection:restorative; calls:32; milliseconds:0.117; bytes:55040
+ projection:proposals; calls:32; milliseconds:0.472; bytes:170752
+ projection:markets; calls:32; milliseconds:0.333; bytes:130048
+ projection:road-threats; calls:32; milliseconds:0.056; bytes:15872
+ projection:full; calls:32; milliseconds:3.385; bytes:1217344
+
+
+  Passed OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Four_player_views_share_terrain_while_preserving_actor_inventory_and_wire_scope [1 s]
+[xUnit.net 00:00:03.46]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Concurrent_observers_receive_one_owned_projection [309 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Retained_public_occupancy_does_not_keep_its_source_region_alive [14 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Rehydration_defensively_copies_input_even_when_bounds_and_revision_match_a_cached_region [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Equal_bounds_and_revisions_do_not_alias_different_excavations_or_decoded_region_instances [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Worksite_and_liquid_views_share_exact_immutable_occupancy_and_match_independent_projection [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Warm_occupancy_lookup_allocates_no_cell_arrays [1 ms]
+
+Test Run Successful.
+Total tests: 8
+     Passed: 8
+ Total time: 3.9824 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/multiplayer-service-latency/qualification/projection-20261002T192907713525Z/checks.trx

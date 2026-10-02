@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="05a11237-3a47-49c6-85db-f3a9f27c4440" name="@mac 2026-10-02 14:29:13" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T14:29:13.5108480-05:00" queuing="2026-10-02T14:29:13.5108480-05:00" start="2026-10-02T14:29:09.6311440-05:00" finish="2026-10-02T14:29:13.6196930-05:00" />
+  <TestSettings name="default" id="b90f2887-9394-468c-b32d-f3bacaecae39">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_14_29_13" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f8a877e2-6047-4936-afde-00db391dad86" testId="0dfba7a7-7dbf-1cd2-3b7d-d102a894473e" testName="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Concurrent_observers_receive_one_owned_projection" computerName="mac" duration="00:00:00.3092889" startTime="2026-10-02T14:29:13.2377710-05:00" endTime="2026-10-02T14:29:13.5479510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8a877e2-6047-4936-afde-00db391dad86" />
+    <UnitTestResult executionId="f560ca28-96ac-4574-a214-3258275bc3ca" testId="951cabf2-a363-90f4-e0e5-a3ac1ce05b91" testName="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Four_player_views_share_terrain_while_preserving_actor_inventory_and_wire_scope" computerName="mac" duration="00:00:01.2605690" startTime="2026-10-02T14:29:11.9725480-05:00" endTime="2026-10-02T14:29:13.2367570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f560ca28-96ac-4574-a214-3258275bc3ca" />
+    <UnitTestResult executionId="d8c047db-9e5e-479f-9572-529fc613d85c" testId="081c2c3c-b79d-695c-ef81-92e68e28d413" testName="OpenFantasy.Hosting.Tests.Simulation.Projection.ProjectionCostTests.Four_player_projection_preserves_exact_bytes_and_reports_component_cost" computerName="mac" duration="00:00:01.2184880" startTime="2026-10-02T14:29:11.9725520-05:00" endTime="2026-10-02T14:29:13.1957720-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d8c047db-9e5e-479f-9572-529fc613d85c">
+      <Output>
+        <StdOut>projection:regional; calls:32; milliseconds:0.356; bytes:219648
+projection:worksite; calls:32; milliseconds:0.142; bytes:117952
+projection:liquids; calls:32; milliseconds:0.181; bytes:80384
+projection:restorative; calls:32; milliseconds:0.117; bytes:55040
+projection:proposals; calls:32; milliseconds:0.472; bytes:170752
+projection:markets; calls:32; milliseconds:0.333; bytes:130048
+projection:road-threats; calls:32; milliseconds:0.056; bytes:15872
+projection:full; calls:32; milliseconds:3.385; bytes:1217344</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1ac0c1a1-35cd-49e1-86db-1845a917579d" testId="5455adee-3467-fb59-4117-6b30ac0f1e90" testName="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Warm_occupancy_lookup_allocates_no_cell_arrays" computerName="mac" duration="00:00:00.0013427" startTime="2026-10-02T14:29:13.5764380-05:00" endTime="2026-10-02T14:29:13.5778020-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ac0c1a1-35cd-49e1-86db-1845a917579d" />
+    <UnitTestResult executionId="353964dd-2c75-4991-8aa9-dc252fde5fdc" testId="f74731ea-7fa3-0185-7702-1a4379af980f" testName="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Retained_public_occupancy_does_not_keep_its_source_region_alive" computerName="mac" duration="00:00:00.0148975" startTime="2026-10-02T14:29:13.5500050-05:00" endTime="2026-10-02T14:29:13.5649640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="353964dd-2c75-4991-8aa9-dc252fde5fdc" />
+    <UnitTestResult executionId="99710463-a6bf-4a1b-9ac6-44cf2309d878" testId="54651909-7a97-3f90-6c24-89da02a10476" testName="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Worksite_and_liquid_views_share_exact_immutable_occupancy_and_match_independent_projection" computerName="mac" duration="00:00:00.0043101" startTime="2026-10-02T14:29:13.5718590-05:00" endTime="2026-10-02T14:29:13.5761910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="99710463-a6bf-4a1b-9ac6-44cf2309d878" />
+    <UnitTestResult executionId="ce5b3815-ccb5-4b94-bb3e-636494fa89e2" testId="35c52ace-2f03-8f77-577c-d809517a6234" testName="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Equal_bounds_and_revisions_do_not_alias_different_excavations_or_decoded_region_instances" computerName="mac" duration="00:00:00.0040175" startTime="2026-10-02T14:29:13.5675540-05:00" endTime="2026-10-02T14:29:13.5715970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce5b3815-ccb5-4b94-bb3e-636494fa89e2" />
+    <UnitTestResult executionId="021b3995-2abb-4855-a40c-bfb6c8d98911" testId="3ca98525-2698-f8df-f7d1-d2dc4a9e7c69" testName="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Rehydration_defensively_copies_input_even_when_bounds_and_revision_match_a_cached_region" computerName="mac" duration="00:00:00.0014235" startTime="2026-10-02T14:29:13.5658620-05:00" endTime="2026-10-02T14:29:13.5673160-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="021b3995-2abb-4855-a40c-bfb6c8d98911" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Concurrent_observers_receive_one_owned_projection" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0dfba7a7-7dbf-1cd2-3b7d-d102a894473e">
+      <Execution id="f8a877e2-6047-4936-afde-00db391dad86" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests" name="Concurrent_observers_receive_one_owned_projection" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Retained_public_occupancy_does_not_keep_its_source_region_alive" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f74731ea-7fa3-0185-7702-1a4379af980f">
+      <Execution id="353964dd-2c75-4991-8aa9-dc252fde5fdc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests" name="Retained_public_occupancy_does_not_keep_its_source_region_alive" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Projection.ProjectionCostTests.Four_player_projection_preserves_exact_bytes_and_reports_component_cost" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="081c2c3c-b79d-695c-ef81-92e68e28d413">
+      <Execution id="d8c047db-9e5e-479f-9572-529fc613d85c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Projection.ProjectionCostTests" name="Four_player_projection_preserves_exact_bytes_and_reports_component_cost" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Equal_bounds_and_revisions_do_not_alias_different_excavations_or_decoded_region_instances" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="35c52ace-2f03-8f77-577c-d809517a6234">
+      <Execution id="ce5b3815-ccb5-4b94-bb3e-636494fa89e2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests" name="Equal_bounds_and_revisions_do_not_alias_different_excavations_or_decoded_region_instances" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Warm_occupancy_lookup_allocates_no_cell_arrays" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5455adee-3467-fb59-4117-6b30ac0f1e90">
+      <Execution id="1ac0c1a1-35cd-49e1-86db-1845a917579d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests" name="Warm_occupancy_lookup_allocates_no_cell_arrays" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Worksite_and_liquid_views_share_exact_immutable_occupancy_and_match_independent_projection" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="54651909-7a97-3f90-6c24-89da02a10476">
+      <Execution id="99710463-a6bf-4a1b-9ac6-44cf2309d878" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests" name="Worksite_and_liquid_views_share_exact_immutable_occupancy_and_match_independent_projection" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Four_player_views_share_terrain_while_preserving_actor_inventory_and_wire_scope" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="951cabf2-a363-90f4-e0e5-a3ac1ce05b91">
+      <Execution id="f560ca28-96ac-4574-a214-3258275bc3ca" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests" name="Four_player_views_share_terrain_while_preserving_actor_inventory_and_wire_scope" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests.Rehydration_defensively_copies_input_even_when_bounds_and_revision_match_a_cached_region" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3ca98525-2698-f8df-f7d1-d2dc4a9e7c69">
+      <Execution id="021b3995-2abb-4855-a40c-bfb6c8d98911" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.Projection.TerrainOccupancyReuseTests" name="Rehydration_defensively_copies_input_even_when_bounds_and_revision_match_a_cached_region" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0dfba7a7-7dbf-1cd2-3b7d-d102a894473e" executionId="f8a877e2-6047-4936-afde-00db391dad86" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="951cabf2-a363-90f4-e0e5-a3ac1ce05b91" executionId="f560ca28-96ac-4574-a214-3258275bc3ca" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="081c2c3c-b79d-695c-ef81-92e68e28d413" executionId="d8c047db-9e5e-479f-9572-529fc613d85c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5455adee-3467-fb59-4117-6b30ac0f1e90" executionId="1ac0c1a1-35cd-49e1-86db-1845a917579d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f74731ea-7fa3-0185-7702-1a4379af980f" executionId="353964dd-2c75-4991-8aa9-dc252fde5fdc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="54651909-7a97-3f90-6c24-89da02a10476" executionId="99710463-a6bf-4a1b-9ac6-44cf2309d878" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="35c52ace-2f03-8f77-577c-d809517a6234" executionId="ce5b3815-ccb5-4b94-bb3e-636494fa89e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ca98525-2698-f8df-f7d1-d2dc4a9e7c69" executionId="021b3995-2abb-4855-a40c-bfb6c8d98911" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.45]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.63]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.81]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.46]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
