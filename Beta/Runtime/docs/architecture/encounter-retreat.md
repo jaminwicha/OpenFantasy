@@ -109,7 +109,8 @@ charge and any blocker; selecting never acts, cancelling sends nothing and confi
 once. The wheel captures the offers of the view read when it opens
 (`FarmClientSession.CaptureWheelView`). In the retreat world,
 [LocalEncounterChoiceBoundary](../../src/OpenFantasy.Hosting/Simulation/Retreat/LocalEncounterChoiceBoundary.cs)
-withholds executable Retreat, Wait and ability offers until due automatic choices have been published at the
+withholds executable Retreat, Wait and ability offers until due host choices (including required-human
+actors under [autonomous control](controller-lifecycle.md#conservative-encounter-selection)) have been published at the
 current tactical instant. Those publications change the shared timing revision even though time does not advance.
 The projection communicates only that choices are being prepared, never another actor's selected command or route.
 Once these choices settle, Full Wait holds for the undecided human, providing a stable inspection interval. This

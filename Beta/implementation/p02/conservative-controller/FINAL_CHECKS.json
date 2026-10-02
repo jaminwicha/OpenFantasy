@@ -1,0 +1,84 @@
+{
+  "acceptedScope": "Managed conservative encounter selection only; full disconnect/production gate remains open",
+  "checkpoint": "codex/checkpoint-before-conservative-controller-20261002T152145Z",
+  "sourceHead": "c4f3838de10df29da96b4b36b90c3451d80fc80e",
+  "milestone": "codex/milestone-conservative-controller-20261002",
+  "checks": {
+    "build": {
+      "report": "qualification/build-20261002T153725731565Z/report.json",
+      "seconds": 24.877958874974865,
+      "outcomes": null,
+      "accepted": true
+    },
+    "controller": {
+      "report": "qualification/controller-20261002T153801794061Z/report.json",
+      "seconds": 34.332086165988585,
+      "outcomes": {
+        "Passed": 65
+      },
+      "accepted": true
+    },
+    "shared": {
+      "report": "qualification/shared-20261002T153902479801Z/report.json",
+      "seconds": 40.6009897920012,
+      "outcomes": {
+        "Passed": 26
+      },
+      "accepted": true
+    },
+    "retreat": {
+      "report": "qualification/retreat-20261002T153957538654Z/report.json",
+      "seconds": 64.43606791700586,
+      "outcomes": {
+        "Passed": 16
+      },
+      "accepted": true
+    },
+    "network": {
+      "report": "qualification/network-20261002T154124229776Z/report.json",
+      "seconds": 16.613488875009352,
+      "outcomes": {
+        "Passed": 219
+      },
+      "accepted": true
+    }
+  },
+  "distinctPassingCases": 292,
+  "selectedCaseExecutions": 326,
+  "newPassingCases": [
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.A_party_blocked_retreat_falls_back_to_paid_wait_and_preserves_every_human_hold",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.A_zero_ready_return_finishes_no_new_choice_for_another_autonomous_human",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.An_accepted_human_wait_survives_expiry_and_rejoin_without_replacement_or_automatic_readiness",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Autonomous_retreat_uses_the_ordinary_legal_route_and_charges_its_first_physical_sample",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Expiry_with_zero_ready_ports_changes_control_only_until_a_human_bystander_is_ready",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Human_and_unexpired_allowance_never_choose_even_with_a_ready_bystander(disconnected: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Human_and_unexpired_allowance_never_choose_even_with_a_ready_bystander(disconnected: True)",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Ordinary_autonomous_choice_and_controller_events_replay_to_the_identical_saved_root",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Rejoin_at_a_safe_autonomous_boundary_restores_before_any_fresh_choice",
+    "OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Selector_reserves_a_proposed_retreat_and_does_not_replace_a_selected_choice_for_the_same_actor"
+  ],
+  "currentSourceAndBinariesMatchEveryReport": true,
+  "protectedFiles": {
+    "tests": 672,
+    "specs": 23
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLinks": 1254,
+  "coreSourceComparison": {
+    "files": 1025,
+    "unchanged": true,
+    "exactBinariesUnchanged": false,
+    "interpretation": "Core implementation/test sources unchanged; earlier full-Core evidence is historical, not a current-binary full-suite claim. Focused host checks execute against this build."
+  },
+  "unrun": [
+    "Full autonomous route completion under hostile NPC pressure",
+    "Autonomous outcome/care policy",
+    "Saved allowance/restart reconciliation",
+    "Co-player authorization",
+    "Fresh-observation client readiness",
+    "Profile 36 native journeys and production enablement",
+    "Whole Core/server/native/platform suites in this increment"
+  ],
+  "priorUnresolvedFailure": "live-controller-host concurrent native+managed server aggregate: five-second TLS observation timeout; unchanged and not resolved by these selected passes",
+  "providerRequests": 0
+}

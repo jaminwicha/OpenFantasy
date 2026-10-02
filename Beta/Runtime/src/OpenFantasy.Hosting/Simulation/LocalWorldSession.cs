@@ -29,6 +29,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private readonly SqliteWorldAuthority _authority;
     private readonly TimeProvider _time;
     private readonly LocalNpcController _npcs = new();
+    private readonly LocalAutonomousEncounterController _autonomousEncounter = new();
     private readonly LocalCareController _care = new();
     private readonly LocalRestorativeController _restorative = new();
     private readonly LocalMaterialProposalSelection _materialProposals = new();
@@ -543,8 +544,12 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     {
         ClearMovement();
         List<PendingLocalAction> awaiting = [];
+        bool maySelectAutonomousChoices;
         lock (_inputs)
         {
+            // The zero-ready exception completes accepted returning-player work only. It does
+            // not authorize fresh autonomous choices for other disconnected characters.
+            maySelectAutonomousChoices = _players.Values.Any(player => player.Ready);
             awaiting.AddRange(_players.Values.Where(player => player.Ready && player.Pending is not null)
                 .Select(player => player.Pending!));
         }
@@ -567,6 +572,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         List<WorldActionCommand> actions = awaiting.Select(request => request.Command).ToList();
         selected.UnionWith(actions.Select(command => command.CommandId));
         actions.AddRange(_npcs.SelectEncounterChoices(state, () => AllocateSelectedIdentity(selected), _retreat));
+        if (maySelectAutonomousChoices)
+            actions.AddRange(_autonomousEncounter.SelectChoices(state, actions, () => AllocateSelectedIdentity(selected)));
         WorldBatchKind kind;
         if (actions.Count != 0)
         {

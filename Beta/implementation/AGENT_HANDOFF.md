@@ -54,6 +54,17 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
+The [conservative encounter controller](p02/conservative-controller/RESULT.md) is qualified at
+`codex/milestone-conservative-controller-20261002`. Autonomous human actors choose ordinary legal
+retreat or paid Wait, preserving identity, required-human timing, committed choices and standing routes.
+Restoration runs first; no fresh autonomous choice occurs without a gameplay-ready port. Captured-choice
+projection waits for autonomous publications to settle. Core and production profile selection are unchanged.
+[Final checks](p02/conservative-controller/FINAL_CHECKS.json): warning-free build and 292 distinct passes
+(ten new), exact 672 older tests/fixtures, 23 specs and predecessor staging; 1,254 architecture links resolve.
+One independent source critic's zero-ready return contrast passes. New proofs cover a paid retreat sample,
+paid Wait, actual transport loss/expiry, rejoin and journal reopening; full autonomous escape under hostile
+NPC pressure and native behavior remain open. No provider request or Claude credit offload occurred.
+
 The [live controller host binding](p02/live-controller-host/RESULT.md) is qualified at
 `codex/milestone-live-controller-host-20261002`, on the durable controller foundation `7aef4971`.
 Confirmed established transport termination journals profile 36 events, a monotonic episode-bound
@@ -71,7 +82,7 @@ The [review](p02/live-controller-host/REVIEW.md) retains critic findings, fixes 
 667 old tests/fixtures, 23 frozen specs, predecessor staging and Core source remain unchanged;
 1,252 architecture links resolve. Native originals are recoverable from the hashed committed archive.
 
-Next: conservative survival and authorized co-player policy, explicit saved-allowance/restart
+Next: complete conservative survival/outcome/care and authorized co-player policy, explicit saved-allowance/restart
 reconciliation, pending-control presentation and fresh-observation readiness acknowledgement, then
 profile 36 native journeys and production selection. The full disconnect gate remains open. No
 production operator enables profile 36; autonomous mode alone is not survival implementation.

@@ -82,6 +82,36 @@ supply consent for care, acknowledge reading or assign a co-player.
 The durable event API is host-only. No player wire request supplies an external event or elapsed time.
 Older profiles have no controller facet and retain ordinary connection closure without new journal rows.
 
+## Conservative encounter selection
+
+[LocalAutonomousEncounterController](../../src/OpenFantasy.Hosting/Simulation/LocalAutonomousEncounterController.cs)
+selects choices only for due required-human actors whose durable assignment is Autonomous. It retains
+their resident identity, timing role, original principal/session entitlement, body and possessions.
+It never selects for Human or ReconnectAllowance. The host processes safe restoration before encounter
+selection and requires at least one gameplay-ready port for fresh autonomous choices. The exception
+for completing a returning player's accepted work cannot authorize new autonomous choices.
+
+The selector first seeks a legal retreat through the ordinary route advisor and complete queue
+eligibility checks. It otherwise queues ordinary Wait, which incurs the normal positive readiness
+cost on resolution and confers no invented defensive benefit. Unsupported party retreat therefore
+does not abandon companions. The ordinary authority still adjudicates each captured command; route
+steps pay their normal costs, preserve custody and may be interrupted by changing world conditions.
+
+Existing accepted decisions and standing retreat routes are preserved. Actors with another command
+already selected at the same cutoff receive no second choice. Candidates are ordered by actor identity;
+an already selected player or NPC retreat reserves the single route slot before autonomous selection.
+Commands and receipts use the ordinary journal and deterministic replay. Selection is host policy,
+not a second world authority or a change to canonical Core state.
+
+The captured-choice projection treats pending autonomous choices like other pending host selections:
+it withholds executable offers until those publications settle, because they change the shared timing
+revision. No other actor's command or escape route is disclosed. Human choices still hold indefinitely.
+
+This policy selects neither attacks nor care/outcome acknowledgments. Prior care permission, acceptance
+of a particular treatment episode, treatment itself and acceptance of an encounter outcome remain
+distinct facts. In particular, an autonomous command must not be presented as evidence that a human
+read an outcome. These separate policy obligations can hold completion after the selector has acted.
+
 ## Policy and presentation obligations
 
 Human assignment is not evidence of a connected socket. Loading a saved allowance does not recreate
@@ -89,9 +119,9 @@ its process-local timestamp, infer offline elapsed time or automatically expire 
 must explicitly reconcile outstanding allowance before a production host can rely on automatic handoff.
 The default simulation still pauses when no gameplay-ready players are connected.
 
-Autonomous assignment is permission for a separately qualified conservative selector to submit legal
-survival actions through ordinary admission; expiry itself chooses none. A co-player requires explicit
+Autonomous assignment permits the conservative encounter selector above; expiry itself chooses none.
+Care, outcome completion and other survival behavior require their own explicit policies. A co-player requires explicit
 policy and authorization, not mere presence in the world. Client presentation must distinguish a
 pending control request from ordinary pause and bind its fresh readiness acknowledgement to the
 restored observation. The boolean readiness wire contract alone does not prove that acknowledgement.
-These policy, selector and client contracts are distinct from the live external-event binding.
+These policy and client contracts are distinct from the live external-event binding and encounter selection.
