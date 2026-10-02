@@ -25,6 +25,35 @@ public sealed record LocalMarketShowingView(SpotLotKind Kind, EntityId LotId, ul
 /// </summary>
 public sealed class LocalMarketStallView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalMarketStallView(EntityId marketId,
+        EntityId merchantActorId,
+        CountedItemDefinition commodity,
+        string commodityName,
+        ulong maximumUnitsPerOffer,
+        ulong maximumWindowSteps,
+        bool isAvailableInPerson,
+        LocalMarketShowingView? ownShowing,
+        ReadOnlyCollection<LocalMarketLotView> ownLots,
+        EntityId capturedPlayerAccountId,
+        ulong capturedAdvancingStep)
+    {
+        MarketId = marketId;
+        MerchantActorId = merchantActorId;
+        Commodity = commodity;
+        CommodityName = commodityName;
+        MaximumUnitsPerOffer = maximumUnitsPerOffer;
+        MaximumWindowSteps = maximumWindowSteps;
+        IsAvailableInPerson = isAvailableInPerson;
+        OwnShowing = ownShowing;
+        OwnLots = Array.AsReadOnly(ownLots.ToArray());
+        _playerAccountId = capturedPlayerAccountId;
+        _advancingStep = capturedAdvancingStep;
+    }
+
+    internal EntityId CapturedPlayerAccountId => _playerAccountId;
+    internal ulong CapturedAdvancingStep => _advancingStep;
+
     private readonly EntityId _playerAccountId;
     private readonly ulong _advancingStep;
 
@@ -105,7 +134,7 @@ public sealed class LocalMarketStallView
 /// </summary>
 public sealed class LocalMarketView
 {
-    private LocalMarketView(ulong advancingStep, IEnumerable<LocalMarketStallView> stalls)
+    internal LocalMarketView(ulong advancingStep, IEnumerable<LocalMarketStallView> stalls)
     {
         AdvancingStep = advancingStep;
         Stalls = Array.AsReadOnly(stalls.ToArray());

@@ -25,7 +25,7 @@ public sealed record LocalCarePermissionView(EntityId PermissionId, EntityId Hel
 /// <summary>Ordinary self-use and patient-owned withdrawal; known blocked choices remain inspectable.</summary>
 public sealed class LocalRestorativeView
 {
-    private LocalRestorativeView(IEnumerable<LocalRestorativeUseView> selfUseOffers,
+    internal LocalRestorativeView(IEnumerable<LocalRestorativeUseView> selfUseOffers,
         IEnumerable<LocalCarePermissionView> permissionOffers)
     {
         SelfUseOffers = Array.AsReadOnly(selfUseOffers.ToArray());

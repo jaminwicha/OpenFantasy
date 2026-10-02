@@ -37,6 +37,28 @@ public sealed record LocalEncounterAbilityOffer(EntityId AbilityDefinitionId, st
 /// </summary>
 public sealed class LocalEncounterActionView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalEncounterActionView(EntityId encounterId,
+        ulong timingRevision,
+        ulong actorRevision,
+        ulong remainingDelay,
+        int? currentHp,
+        int? currentMp,
+        ulong waitDelay,
+        LocalEncounterActionBlockedReason waitBlockedReason,
+        ReadOnlyCollection<LocalEncounterAbilityOffer> abilityOffers)
+    {
+        EncounterId = encounterId;
+        TimingRevision = timingRevision;
+        ActorRevision = actorRevision;
+        RemainingDelay = remainingDelay;
+        CurrentHp = currentHp;
+        CurrentMp = currentMp;
+        WaitDelay = waitDelay;
+        WaitBlockedReason = waitBlockedReason;
+        AbilityOffers = Array.AsReadOnly(abilityOffers.ToArray());
+    }
+
     private LocalEncounterActionView(WorldSnapshot world, EntityId observerId, EncounterTimingSnapshot timing)
     {
         EncounterId = timing.EncounterId;

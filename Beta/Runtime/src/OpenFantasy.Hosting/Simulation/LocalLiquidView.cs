@@ -13,6 +13,14 @@ public sealed record LocalLiquidCellView(CellCoordinate Coordinate, ulong Volume
 /// </summary>
 public sealed class LocalLiquidView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalLiquidView(ReadOnlyCollection<LocalLiquidCellView> cells,
+        ReadOnlyCollection<LocalLiquidTerrainView> terrain)
+    {
+        Cells = Array.AsReadOnly(cells.ToArray());
+        Terrain = Array.AsReadOnly(terrain.ToArray());
+    }
+
     public const ulong CellCapacityMicrolitres = 1_000_000_000UL;
 
     internal LocalLiquidView(WorldSnapshot state)

@@ -161,6 +161,31 @@ quote/proposal inspection; HTTP/TLS listener; actual Godot clients and solo enve
 1–4-client validation and recorded disconnect/reconnect/controller handoff. The full campaign and all
 unclosed gates remain in force. No provider request was made while its spend-limit failure holds.
 
+## Player observations
+
+[Player observations](p02/player-observations/RESULT.md) is qualified as
+`codex/milestone-player-observations-20261002`: complete typed regional views and captured action terms,
+bounded visible-revision deltas/full recovery, atomic replica publication, explicit subscription and
+bounded output work. Actual host actions/receipts and regional views cross local and real loopback
+WebSocket transports without exposing private world commit counters. Default diagnostic JSON is intact.
+
+[Final checks](p02/player-observations/FINAL_CHECKS.json): solution build and 237 distinct affected cases
+pass, including 87 new observation cases, all 60 prior networking and all nine shared-player cases.
+The independent critic reproduced an admitted 4,096-lot overflow; lossless encoding now delivers that
+complete view over both transports. Wire cap remains 900 KiB; expanded JSON has a new explicit 16 MiB
+budget and bounded serialization/decompression. Maximum composite-world coverage and production
+memory/latency remain open. [Review](p02/player-observations/CRITIC_REVIEW.md) retains the red regression,
+focused follow-up and precise cadence contract. All original failures, 645 protected files, 23 specs,
+93 checked architecture links and exact predecessor staging are recorded in the packet.
+
+Pre-change checkpoint `codex/checkpoint-before-player-observations-20261002T082210Z` preserves
+`cc073fd`; WIP checkpoints `codex/checkpoint-observations-before-packing-20261002T084343Z` (`bf00a142`)
+and `codex/checkpoint-observations-before-capacity-20261002T085257Z` (`e3e74af2`) preserve successor
+edits/evidence before format adaptations. The source/binary-pinned final results claim this bounded
+boundary only; no new native/full-game/platform/human qualification or provider request is inferred.
+Next: authenticated trade inquiry/inspection replies, HTTP/TLS, actual Godot clients and solo envelope
+parity, native 1–4-player proof, and journaled disconnect/reconnect/controller handoff.
+
 ## Next dependency and remaining scope
 
 Native accepted treatment and approach/entry are now proved by the bounded journey above. Native

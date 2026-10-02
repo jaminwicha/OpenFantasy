@@ -34,8 +34,8 @@ public sealed class LocalObservedRegion
         }
         Bounds = bounds;
         Revision = revision;
-        Ground = Array.AsReadOnly(ground);
-        OpeningDepth = Array.AsReadOnly(openingDepth);
+        Ground = Array.AsReadOnly(ground.ToArray());
+        OpeningDepth = Array.AsReadOnly(openingDepth.ToArray());
     }
 
     public TerrainRegionBounds Bounds { get; }

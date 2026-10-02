@@ -25,6 +25,6 @@ public sealed partial class LocalWorldSession
     }
 
     internal Task<LocalPlayerConnection> ConnectNetworkPlayerAsync(EntityId actorId, TrustedCommandDelivery delivery,
-        PlayerWorldCompatibility compatibility, CancellationToken cancellationToken) =>
-        ConnectPlayerCoreAsync(actorId, delivery, null, compatibility, cancellationToken);
+        PlayerWorldCompatibility compatibility, CancellationToken cancellationToken, CargoPresentation.LocalRegionObserver? regions = null) =>
+        ConnectPlayerCoreAsync(actorId, delivery, regions, compatibility, cancellationToken);
 }

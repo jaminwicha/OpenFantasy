@@ -6,6 +6,16 @@ namespace OpenFantasy.Hosting.Simulation;
 /// <summary>Complete committed occupancy inside these bounds. Outside cells remain unknown, not empty.</summary>
 public sealed class LocalWorksiteTerrainView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalWorksiteTerrainView(TerrainRegionBounds bounds,
+        ulong revision,
+        ReadOnlyCollection<bool> occupancy)
+    {
+        Bounds = bounds;
+        Revision = revision;
+        Occupancy = Array.AsReadOnly(occupancy.ToArray());
+    }
+
     internal LocalWorksiteTerrainView(TerrainRegionSnapshot region)
     {
         Bounds = region.Bounds;

@@ -35,6 +35,22 @@ public enum RestorativeAvailabilityReason
 /// </summary>
 public sealed class RestorativeAvailability
 {
+    /// <summary>
+    /// Recreates read-only availability advice from explicit values. It performs no world admission and grants
+    /// no authority to use the selected item; normal authenticated submission must reevaluate the intent.
+    /// </summary>
+    public static RestorativeAvailability FromObservation(RestorativeAvailabilityReason reason,
+        WorldActionRejection rejection, UseRestorativeItemIntent? intent)
+    {
+        if (!Enum.IsDefined(reason) || !Enum.IsDefined(rejection)
+            || (reason == RestorativeAvailabilityReason.Available) != (intent is not null)
+            || (reason == RestorativeAvailabilityReason.Available) != (rejection == WorldActionRejection.None))
+        {
+            throw new ArgumentException("Availability advice requires a known blocker or a complete available selection.");
+        }
+        return new RestorativeAvailability(reason, rejection, intent);
+    }
+
     internal RestorativeAvailability(RestorativeAvailabilityReason reason, WorldActionRejection rejection,
         UseRestorativeItemIntent? intent = null)
     {

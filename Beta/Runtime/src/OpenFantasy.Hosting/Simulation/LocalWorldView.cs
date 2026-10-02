@@ -44,6 +44,74 @@ public sealed class LocalInventoryView
 /// </summary>
 public sealed class LocalWorldView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalWorldView(EntityId worldId,
+        EntityId branchId,
+        EntityId playerActorId,
+        CargoPresentation.LocalRegionObservation? regional,
+        bool isRegional,
+        WorldInstant calendar,
+        bool hasReadingHold,
+        bool isResolvingConsequences,
+        LocalEncounterView? encounter,
+        LocalEncounterLifecycleView? encounterLifecycle,
+        LocalEncounterActionView? encounterActions,
+        Retreat.LocalRetreatView? retreat,
+        EncounterOutcome.LocalEncounterOutcomeView? encounterOutcome,
+        IReadOnlyList<RoadThreat.LocalRoadThreatView>? roadThreats,
+        LocalCareView? care,
+        LocalRestorativeView? restorative,
+        LocalMaterialProposalView? materialProposals,
+        ReadOnlyCollection<PaidQuoteView> paidQuotes,
+        LocalMarketView? markets,
+        ReadOnlyCollection<LocalEncounterActorView> encounterActors,
+        ReadOnlyCollection<LocalActorView> actors,
+        LocalInventoryView playerInventory,
+        ReadOnlyCollection<LocalGatherNodeView> gatheringNodes,
+        ReadOnlyCollection<LocalGatherToolLotView> gatheringTools,
+        uint? playerGatherEffort,
+        LocalWorksiteView? worksite,
+        LocalLiquidView? liquids,
+        LocalCraftingView? crafting,
+        LocalDialogueView? dialogue,
+        LocalProgressionView? progression,
+        ReadOnlyCollection<LocalQuestView> quests,
+        ReadOnlyCollection<LocalConstructionView> construction)
+    {
+        WorldId = worldId;
+        BranchId = branchId;
+        PlayerActorId = playerActorId;
+        Regional = regional;
+        IsRegional = isRegional;
+        Calendar = calendar;
+        HasReadingHold = hasReadingHold;
+        IsResolvingConsequences = isResolvingConsequences;
+        Encounter = encounter;
+        EncounterLifecycle = encounterLifecycle;
+        EncounterActions = encounterActions;
+        Retreat = retreat;
+        EncounterOutcome = encounterOutcome;
+        RoadThreats = roadThreats is null ? null : Array.AsReadOnly(roadThreats.ToArray());
+        Care = care;
+        Restorative = restorative;
+        MaterialProposals = materialProposals;
+        PaidQuotes = Array.AsReadOnly(paidQuotes.ToArray());
+        Markets = markets;
+        EncounterActors = Array.AsReadOnly(encounterActors.ToArray());
+        Actors = Array.AsReadOnly(actors.ToArray());
+        PlayerInventory = playerInventory;
+        GatheringNodes = Array.AsReadOnly(gatheringNodes.ToArray());
+        GatheringTools = Array.AsReadOnly(gatheringTools.ToArray());
+        PlayerGatherEffort = playerGatherEffort;
+        Worksite = worksite;
+        Liquids = liquids;
+        Crafting = crafting;
+        Dialogue = dialogue;
+        Progression = progression;
+        Quests = Array.AsReadOnly(quests.ToArray());
+        Construction = Array.AsReadOnly(construction.ToArray());
+    }
+
     internal LocalWorldView(WorldSnapshot state, EntityId playerActorId, bool careHelperSelectionOccupied = false,
         CargoPresentation.LocalRegionObserver? regions = null)
     {

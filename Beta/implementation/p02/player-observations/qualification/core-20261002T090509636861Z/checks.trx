@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="fffcc858-0348-4c6b-98ff-d564fa222285" name="@mac 2026-10-02 04:05:13" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T04:05:13.0419900-05:00" queuing="2026-10-02T04:05:13.0419900-05:00" start="2026-10-02T04:05:11.2358780-05:00" finish="2026-10-02T04:05:13.0456070-05:00" />
+  <TestSettings name="default" id="48c3998b-7e46-4320-8c5c-d60dcda9b91b">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_04_05_13" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="1e047848-3b5c-4973-99b6-d9d4edcd12f3" testId="0d416a47-ed40-11a1-1594-4bf0175df9da" testName="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests.Tagged_ordinary_evidence_preserves_exact_selected_request_and_ordered_capped_effect(assisted: False, kind: Source)" computerName="mac" duration="00:00:00.0009054" startTime="2026-10-02T04:05:12.9772960-05:00" endTime="2026-10-02T04:05:12.9782280-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e047848-3b5c-4973-99b6-d9d4edcd12f3" />
+    <UnitTestResult executionId="e9ad2128-10af-43c5-aa27-a6b0458a733a" testId="424f7a83-10ba-e963-4e16-988a521d62c3" testName="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests.Ordinary_evidence_cannot_mislabel_a_different_action_or_generated_identity" computerName="mac" duration="00:00:00.0139171" startTime="2026-10-02T04:05:12.9154780-05:00" endTime="2026-10-02T04:05:12.9339920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9ad2128-10af-43c5-aa27-a6b0458a733a" />
+    <UnitTestResult executionId="be39eec0-1fcc-43c0-8175-3f6765403266" testId="1e406c91-6d59-2598-e05a-063efb2a1523" testName="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests.Tagged_ordinary_evidence_preserves_exact_selected_request_and_ordered_capped_effect(assisted: True, kind: Transformed)" computerName="mac" duration="00:00:00.0395926" startTime="2026-10-02T04:05:12.9373070-05:00" endTime="2026-10-02T04:05:12.9769650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="be39eec0-1fcc-43c0-8175-3f6765403266" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests.Tagged_ordinary_evidence_preserves_exact_selected_request_and_ordered_capped_effect(assisted: True, kind: Transformed)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="1e406c91-6d59-2598-e05a-063efb2a1523">
+      <Execution id="be39eec0-1fcc-43c0-8175-3f6765403266" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests" name="Tagged_ordinary_evidence_preserves_exact_selected_request_and_ordered_capped_effect" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests.Ordinary_evidence_cannot_mislabel_a_different_action_or_generated_identity" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="424f7a83-10ba-e963-4e16-988a521d62c3">
+      <Execution id="e9ad2128-10af-43c5-aa27-a6b0458a733a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests" name="Ordinary_evidence_cannot_mislabel_a_different_action_or_generated_identity" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests.Tagged_ordinary_evidence_preserves_exact_selected_request_and_ordered_capped_effect(assisted: False, kind: Source)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="0d416a47-ed40-11a1-1594-4bf0175df9da">
+      <Execution id="1e047848-3b5c-4973-99b6-d9d4edcd12f3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Care.RestorativeResourceEvidenceTests" name="Tagged_ordinary_evidence_preserves_exact_selected_request_and_ordered_capped_effect" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0d416a47-ed40-11a1-1594-4bf0175df9da" executionId="1e047848-3b5c-4973-99b6-d9d4edcd12f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="424f7a83-10ba-e963-4e16-988a521d62c3" executionId="e9ad2128-10af-43c5-aa27-a6b0458a733a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e406c91-6d59-2598-e05a-063efb2a1523" executionId="be39eec0-1fcc-43c0-8175-3f6765403266" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.50]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:00.99]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.14]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.24]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

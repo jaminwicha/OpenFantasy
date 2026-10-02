@@ -24,7 +24,7 @@ public sealed record LocalCareAcknowledgmentView(EntityId HelperActorId, string 
 /// </summary>
 public sealed class LocalCareView
 {
-    private LocalCareView(IEnumerable<LocalCareAcknowledgmentView> offers, LocalCareStatus status,
+    internal LocalCareView(IEnumerable<LocalCareAcknowledgmentView> offers, LocalCareStatus status,
         EntityId? pendingAcknowledgmentId = null, EntityId? helperActorId = null, string? helperName = null)
     {
         Offers = Array.AsReadOnly(offers.ToArray());

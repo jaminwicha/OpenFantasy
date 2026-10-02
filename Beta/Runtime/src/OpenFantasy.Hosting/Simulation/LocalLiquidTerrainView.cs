@@ -6,6 +6,16 @@ namespace OpenFantasy.Hosting.Simulation;
 /// <summary>Committed local occupancy; outside these known bounds remains unknown.</summary>
 public sealed class LocalLiquidTerrainView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalLiquidTerrainView(TerrainRegionBounds bounds,
+        ulong revision,
+        ReadOnlyCollection<bool> occupancy)
+    {
+        Bounds = bounds;
+        Revision = revision;
+        Occupancy = Array.AsReadOnly(occupancy.ToArray());
+    }
+
     internal LocalLiquidTerrainView(TerrainRegionSnapshot region)
     {
         Bounds = region.Bounds;

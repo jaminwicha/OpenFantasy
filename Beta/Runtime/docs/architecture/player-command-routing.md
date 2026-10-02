@@ -46,14 +46,15 @@ bounds limit transient work and memory; they are not simulated time or a timeout
 Wait. A slow or flooding receiver cannot hold the host's serialization gate through socket output.
 
 Goodbye, orderly peer closure, transport failure, cancellation and host completion terminate the session.
-Termination closes its channel and port, cancels uncommitted action waiters and joins receiver, sender
-and action work. A committed effect remains saved even when its response is lost. Other players and
+Termination closes its channel and port, cancels uncommitted action waiters and joins receiver, sender,
+observation publisher and action work. A committed effect remains saved even when its response is lost. Other players and
 host-owned autonomous work retain their own lifetimes. The command session runs once per owned channel.
 
 ## Other adapter responsibilities
 
-These messages do not encode public observations or make a Godot scene into a network client. Regional
-observations require an explicit participant-safe codec, bounded publication and recovery by visible
-revision. HTTP Upgrade/TLS, provisioning, native clients and solo envelope parity bind around these
+An empty observation input subscribes to [bounded view publication](player-observation-streams.md)
+and requests full recovery. Its asynchronous output uses a separate canonical typed view and visible
+revision, sharing the bounded sender without blocking input processing. The channel does not itself
+make a Godot scene into a network client. HTTP Upgrade/TLS, provisioning, native clients and solo envelope parity bind around these
 components. Transient closure is separate from the full design's journaled disconnect, reconnect grace
 and controller-handoff rules; a socket error alone cannot grant a human decision or rewrite saved control.

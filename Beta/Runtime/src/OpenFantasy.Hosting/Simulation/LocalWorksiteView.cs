@@ -15,6 +15,28 @@ namespace OpenFantasy.Hosting.Simulation;
 /// </summary>
 public sealed class LocalWorksiteView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalWorksiteView(ReadOnlyCollection<LocalWorksiteTerrainView> terrain,
+        ReadOnlyCollection<LocalWorksiteMemberView> members,
+        ReadOnlyCollection<LocalExcavationView> excavationTargets,
+        ReadOnlyCollection<LocalExcavationToolView> tools,
+        uint playerEffort,
+        bool canManipulate,
+        bool isResolvingConsequences,
+        bool hasPhysicalConstruction,
+        bool supportsAssistedTraversal)
+    {
+        Terrain = Array.AsReadOnly(terrain.ToArray());
+        Members = Array.AsReadOnly(members.ToArray());
+        ExcavationTargets = Array.AsReadOnly(excavationTargets.ToArray());
+        Tools = Array.AsReadOnly(tools.ToArray());
+        PlayerEffort = playerEffort;
+        CanManipulate = canManipulate;
+        IsResolvingConsequences = isResolvingConsequences;
+        HasPhysicalConstruction = hasPhysicalConstruction;
+        SupportsAssistedTraversal = supportsAssistedTraversal;
+    }
+
     internal LocalWorksiteView(WorldSnapshot state, EntityId playerActorId)
     {
         var physical = state.ConstructionPhysical;

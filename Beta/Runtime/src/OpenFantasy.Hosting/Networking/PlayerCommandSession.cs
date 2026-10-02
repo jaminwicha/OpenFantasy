@@ -14,6 +14,7 @@ public sealed class PlayerCommandSession
     public const int MaximumQueuedResponses = 8;
     public const int MaximumInputsPerSecond = 128;
     public static readonly TimeSpan SendLimit = TimeSpan.FromSeconds(5);
+    public static readonly TimeSpan ObservationInterval = TimeSpan.FromMilliseconds(100);
     private readonly AuthenticatedPlayerChannel _channel;
     private readonly TimeProvider _time;
     private readonly Channel<PlayerMessage> _responses = Channel.CreateBounded<PlayerMessage>(new BoundedChannelOptions(MaximumQueuedResponses)
@@ -24,6 +25,9 @@ public sealed class PlayerCommandSession
     private Task _action = Task.CompletedTask;
     private int _busy;
     private int _started;
+    private int _observationRequested;
+    private int _forceFullObservation;
+    private int _observationPending;
 
     public PlayerCommandSession(AuthenticatedPlayerChannel channel, TimeProvider? time = null)
     {
@@ -39,10 +43,11 @@ public sealed class PlayerCommandSession
         using var stop = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
         Task receiver = ReceiveAsync(stop.Token);
         Task sender = SendAsync(stop.Token);
+        Task observations = PublishObservationsAsync(stop.Token);
         Exception? failure = null;
         try
         {
-            Task ended = await Task.WhenAny(receiver, sender, _channel.Player.HostCompletion, _actionFailure.Task).ConfigureAwait(false);
+            Task ended = await Task.WhenAny(receiver, sender, observations, _channel.Player.HostCompletion, _actionFailure.Task).ConfigureAwait(false);
             if (ReferenceEquals(ended, _actionFailure.Task)) throw await _actionFailure.Task.ConfigureAwait(false);
             await ended.ConfigureAwait(false);
         }
@@ -53,7 +58,7 @@ public sealed class PlayerCommandSession
             try { await _channel.DisposeAsync().ConfigureAwait(false); }
             catch (Exception error) { failure ??= error; }
             // Closing the port releases an uncommitted action waiter; a committed effect stays durable.
-            foreach (Task task in new[] { receiver, sender })
+            foreach (Task task in new[] { receiver, sender, observations })
             {
                 try { await task.ConfigureAwait(false); }
                 catch (OperationCanceledException) when (stop.IsCancellationRequested) { }
@@ -101,6 +106,11 @@ public sealed class PlayerCommandSession
                     RequireEmpty(message);
                     Enqueue(new PlayerMessage(PlayerMessageKind.Pong, message.RequestId, []));
                     break;
+                case PlayerMessageKind.Observation:
+                    RequireEmpty(message);
+                    Interlocked.Exchange(ref _forceFullObservation, 1);
+                    Volatile.Write(ref _observationRequested, 1);
+                    break;
                 case PlayerMessageKind.Goodbye:
                     RequireEmpty(message);
                     return;
@@ -140,6 +150,29 @@ public sealed class PlayerCommandSession
             await _channel.Transport.SendAsync(PlayerMessageCodec.Encode(message), linked.Token).ConfigureAwait(false);
             if (_time.GetElapsedTime(started, _time.GetTimestamp()) >= SendLimit)
                 throw new TimeoutException("The player response exceeded its send deadline.");
+            if (message.Kind == PlayerMessageKind.Observation) Volatile.Write(ref _observationPending, 0);
+        }
+    }
+
+    private async Task PublishObservationsAsync(CancellationToken cancellationToken)
+    {
+        var stream = new PlayerObservationStream();
+        using var timer = new PeriodicTimer(ObservationInterval, _time);
+        long? lastPublication = null;
+        while (await timer.WaitForNextTickAsync(cancellationToken).ConfigureAwait(false))
+        {
+            if (Volatile.Read(ref _observationRequested) == 0
+                || lastPublication is { } previous && _time.GetElapsedTime(previous, _time.GetTimestamp()) < ObservationInterval
+                || Interlocked.CompareExchange(ref _observationPending, 1, 0) != 0) continue;
+            bool full = Interlocked.Exchange(ref _forceFullObservation, 0) != 0;
+            PlayerObservationFrame? frame = stream.Capture(_channel.Player.ReadView(), full);
+            if (frame is null)
+            {
+                Volatile.Write(ref _observationPending, 0);
+                continue;
+            }
+            Enqueue(new PlayerMessage(PlayerMessageKind.Observation, 0, PlayerObservationFrameCodec.Encode(frame)));
+            lastPublication = _time.GetTimestamp();
         }
     }
 

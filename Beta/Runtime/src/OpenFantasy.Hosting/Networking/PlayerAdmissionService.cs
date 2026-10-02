@@ -34,10 +34,12 @@ public sealed class PlayerAdmissionService
     public PlayerWorldCompatibility Compatibility { get; }
 
     /// <summary>Privileged operator operation. Reissuing invalidates an inactive actor's earlier credential.</summary>
-    public PlayerJoinCredential Issue(EntityId actorId, TrustedCommandDelivery delivery, TimeSpan lifetime)
+    public PlayerJoinCredential Issue(EntityId actorId, TrustedCommandDelivery delivery, TimeSpan lifetime,
+        Simulation.CargoPresentation.LocalRegionObserver? regions = null)
     {
         ArgumentNullException.ThrowIfNull(delivery);
         if (lifetime <= TimeSpan.Zero || lifetime > MaximumCredentialLifetime) throw new ArgumentOutOfRangeException(nameof(lifetime));
+        if (regions is not null && regions.PlayerActorId != actorId) throw new ArgumentException("A regional observer must belong to the credential's actor.", nameof(regions));
         _host.ValidatePlayerCredentialBinding(actorId, delivery, Compatibility);
         lock (_gate)
         {
@@ -48,7 +50,7 @@ public sealed class PlayerAdmissionService
             if (_credentials.Count == LocalWorldSession.MaximumPlayerConnections) throw new PlayerAdmissionException();
             byte[] secret = RandomNumberGenerator.GetBytes(PlayerJoinCredential.ByteLength);
             var credential = new PlayerJoinCredential(secret);
-            _credentials.Add(new CredentialBinding(actorId, delivery, SHA256.HashData(secret), _time.GetTimestamp(), lifetime));
+            _credentials.Add(new CredentialBinding(actorId, delivery, SHA256.HashData(secret), _time.GetTimestamp(), lifetime, regions));
             CryptographicOperations.ZeroMemory(secret);
             return credential;
         }
@@ -100,7 +102,7 @@ public sealed class PlayerAdmissionService
                 if (binding is null || binding.Active || !IsValid(binding)) { binding = null; throw new PlayerAdmissionException(); }
                 binding.Active = true;
             }
-            player = await _host.ConnectNetworkPlayerAsync(binding.ActorId, binding.Delivery, Compatibility, linked.Token).ConfigureAwait(false);
+            player = await _host.ConnectNetworkPlayerAsync(binding.ActorId, binding.Delivery, Compatibility, linked.Token, binding.Regions).ConfigureAwait(false);
             CheckDeadline(started, linked.Token);
             lock (_gate) { if (!IsValid(binding)) throw new PlayerAdmissionException(); }
             PlayerMessage welcome = PlayerHandshakeCodec.Welcome(hello.RequestId, Compatibility, binding.ActorId, binding.Delivery);
@@ -139,13 +141,15 @@ public sealed class PlayerAdmissionService
             throw new OperationCanceledException("The player handshake exceeded its deadline.", cancellationToken);
     }
 
-    private sealed class CredentialBinding(EntityId actorId, TrustedCommandDelivery delivery, byte[] hash, long issuedAt, TimeSpan lifetime)
+    private sealed class CredentialBinding(EntityId actorId, TrustedCommandDelivery delivery, byte[] hash, long issuedAt, TimeSpan lifetime,
+        Simulation.CargoPresentation.LocalRegionObserver? regions)
     {
         internal EntityId ActorId { get; } = actorId;
         internal TrustedCommandDelivery Delivery { get; } = delivery;
         internal byte[] Hash { get; } = hash;
         internal long IssuedAt { get; } = issuedAt;
         internal TimeSpan Lifetime { get; } = lifetime;
+        internal Simulation.CargoPresentation.LocalRegionObserver? Regions { get; } = regions;
         internal bool Revoked { get; set; }
         internal bool Active { get; set; }
     }

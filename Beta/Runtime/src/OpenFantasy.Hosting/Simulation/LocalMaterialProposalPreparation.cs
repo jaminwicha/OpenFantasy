@@ -17,6 +17,27 @@ public sealed record LocalMaterialProposalLot(ConsentedMaterialLotKind Kind, Ent
 /// </summary>
 public sealed class LocalMaterialProposalPreparation
 {
+    /// <summary>Restores only the captured participant terms used to prepare an explicit proposal.</summary>
+    internal LocalMaterialProposalPreparation(EntityId worldId, EntityId branchId, EntityId senderActorId,
+        EntityId sourceCustodianId, IReadOnlyDictionary<EntityId, EntityId> destinations,
+        IEnumerable<LocalMaterialProposalLot> lots, ulong expiresAtAdvancingStep)
+    {
+        _worldId = worldId;
+        _branchId = branchId;
+        _senderActorId = senderActorId;
+        _sourceCustodianId = sourceCustodianId;
+        _destinations = new ReadOnlyDictionary<EntityId, EntityId>(destinations.ToDictionary(pair => pair.Key, pair => pair.Value));
+        RecipientActorIds = Array.AsReadOnly(_destinations.Keys.Order().ToArray());
+        Lots = Array.AsReadOnly(lots.ToArray());
+        ExpiresAtAdvancingStep = expiresAtAdvancingStep;
+    }
+
+    internal EntityId CapturedWorldId => _worldId;
+    internal EntityId CapturedBranchId => _branchId;
+    internal EntityId CapturedSenderActorId => _senderActorId;
+    internal EntityId CapturedSourceCustodianId => _sourceCustodianId;
+    internal IEnumerable<KeyValuePair<EntityId, EntityId>> CapturedDestinations => _destinations.OrderBy(pair => pair.Key);
+
     public const ulong OfferLifetimeSteps = 1200;
     private readonly EntityId _worldId;
     private readonly EntityId _branchId;

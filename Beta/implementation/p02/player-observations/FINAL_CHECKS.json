@@ -1,0 +1,97 @@
+{
+  "status": "qualified bounded player observation boundary; complete multiplayer and production gates remain open",
+  "milestone": "codex/milestone-player-observations-20261002",
+  "sourceParent": "cc073fdfa3b4aec478632d28a432fcb6e959599a",
+  "checkpoint": {
+    "ref": "codex/checkpoint-before-player-observations-20261002T082210Z",
+    "sourceHead": "cc073fdfa3b4aec478632d28a432fcb6e959599a",
+    "scope": "Clean successor routing milestone; predecessor staging excluded",
+    "verification": "Prior build + 69 affected cases; native/production multiplayer open"
+  },
+  "packingCheckpoint": {
+    "ref": "codex/checkpoint-observations-before-packing-20261002T084343Z",
+    "snapshot": "bf00a1422b4dd8233dd5215146b0b6200eb683fd",
+    "parent": "cc073fdfa3b4aec478632d28a432fcb6e959599a",
+    "scope": "All current successor observation code/tests/docs/evidence; predecessor staged overlay excluded; original index unchanged",
+    "verification": "WIP only: current-source build passed; focused 51 passed / 5 failed. Production size defect and test fixture issues unresolved. No acceptance claim."
+  },
+  "capacityCheckpoint": {
+    "ref": "codex/checkpoint-observations-before-capacity-20261002T085257Z",
+    "snapshot": "e3e74af28b4cbcd508d038c67ebd3bfe7d36fd60",
+    "parent": "cc073fdfa3b4aec478632d28a432fcb6e959599a",
+    "scope": "Current successor observation WIP/evidence; predecessor overlay excluded; real index unchanged",
+    "verification": "Current build passes;62/63 focused pass; valid4096-lot world fails900KiB wire encoding. WIP, not acceptance."
+  },
+  "checks": {
+    "build": {
+      "report": "qualification/build-20261002T091142764571Z/report.json",
+      "seconds": 4.252971082998556,
+      "limitSeconds": 240,
+      "outcomes": null
+    },
+    "network": {
+      "report": "qualification/network-20261002T091147773657Z/report.json",
+      "seconds": 8.29714370900183,
+      "limitSeconds": 120,
+      "outcomes": {
+        "Passed": 147
+      }
+    },
+    "views": {
+      "report": "qualification/views-20261002T091156509530Z/report.json",
+      "seconds": 10.519687499996508,
+      "limitSeconds": 600,
+      "outcomes": {
+        "Passed": 78
+      }
+    },
+    "core": {
+      "report": "qualification/core-20261002T091207287576Z/report.json",
+      "seconds": 2.67722391699499,
+      "limitSeconds": 120,
+      "outcomes": {
+        "Passed": 3
+      }
+    },
+    "shared": {
+      "report": "qualification/shared-20261002T091210385161Z/report.json",
+      "seconds": 38.564526415997534,
+      "limitSeconds": 600,
+      "outcomes": {
+        "Passed": 9
+      }
+    }
+  },
+  "distinctCases": 237,
+  "newObservationCases": 87,
+  "previousNetworkCasesRetained": 60,
+  "previousSharedPlayerCasesRetained": 9,
+  "exactSourceAndBinariesVerifiedAfterChecks": true,
+  "checkerSha256": "e8ec5e1e7c3d861611b1ee261794bdbd5f15a7dd70cdebb33a53e8d7c7e31c64",
+  "protectedFileCounts": {
+    "Beta/Runtime/tests": 617,
+    "Beta/spec-v1_1": 23,
+    "transportTests": 3,
+    "acceptedNetworkTests": 4,
+    "priorNetworkTests": 5
+  },
+  "distinctProtectedFiles": 645,
+  "predecessorIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "architectureLocalLinksChecked": 93,
+  "independentReview": "CRITIC_REVIEW.md",
+  "wireBodyLimitBytes": 921600,
+  "expandedJsonLimitBytes": 16777216,
+  "productionRegionalBodyBytes": 97122,
+  "admittedMaximumLotObservationBytes": 15440,
+  "scopeLimits": [
+    "Real loopback WebSocket streams; no HTTP Upgrade/TLS qualification",
+    "No Godot network session/client or native1\u20134 client qualification",
+    "No trade inquiry/historical inspection wire protocol",
+    "No recorded disconnect/reconnect grace/control handoff",
+    "No blanket maximum-composite-world, allocation, latency or production-scale acceptance",
+    "ExpandedJSON16MiB is a new explicit decoder/writer budget; wire900KiB unchanged",
+    "No full Core/whole-game/native/platform/human qualification inferred from these affected tests",
+    "No external provider request or credit savings claim"
+  ],
+  "finalSourceHygiene": "Removed surplus final blank lines in four new DTO source files; rebuilt and repeated all affected checks on exact final source/binaries."
+}

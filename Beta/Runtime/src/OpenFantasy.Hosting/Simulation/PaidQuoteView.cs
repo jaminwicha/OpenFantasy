@@ -24,6 +24,67 @@ public enum PaidQuoteStatus { Open = 1, Filled = 2, Superseded = 3, Withdrawn = 
 /// </summary>
 public sealed class PaidQuoteView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal PaidQuoteView(EntityId quoteId,
+        EntityId? marketId,
+        EntityId issuerActorId,
+        EntityId counterpartyActorId,
+        bool viewerIsIssuer,
+        SpotQuoteSide side,
+        CountedItemDefinition definition,
+        SpotLotKind lotKind,
+        EntityId lotId,
+        ulong expectedLotRevision,
+        EntityId sellerCustodianId,
+        EntityId buyerCustodianId,
+        EntityId currencyDefinitionId,
+        ContentHash currencyVersion,
+        EntityId sellerAccountId,
+        EntityId buyerAccountId,
+        ulong unitPrice,
+        ReadOnlyCollection<SpotFee> fees,
+        ulong quantityAllowance,
+        ulong issuedAtStep,
+        ulong expiresAtStep,
+        ContentHash quoteHash,
+        PaidQuoteStatus status,
+        ulong? closedAtSequence,
+        ulong? filledQuantity,
+        ulong? filledPayment,
+        ulong? filledFees,
+        ulong? observedIssuerRevision)
+    {
+        QuoteId = quoteId;
+        MarketId = marketId;
+        IssuerActorId = issuerActorId;
+        CounterpartyActorId = counterpartyActorId;
+        ViewerIsIssuer = viewerIsIssuer;
+        Side = side;
+        Definition = definition;
+        LotKind = lotKind;
+        LotId = lotId;
+        ExpectedLotRevision = expectedLotRevision;
+        SellerCustodianId = sellerCustodianId;
+        BuyerCustodianId = buyerCustodianId;
+        CurrencyDefinitionId = currencyDefinitionId;
+        CurrencyVersion = currencyVersion;
+        SellerAccountId = sellerAccountId;
+        BuyerAccountId = buyerAccountId;
+        UnitPrice = unitPrice;
+        Fees = Array.AsReadOnly(fees.ToArray());
+        QuantityAllowance = quantityAllowance;
+        IssuedAtStep = issuedAtStep;
+        ExpiresAtStep = expiresAtStep;
+        QuoteHash = quoteHash;
+        Status = status;
+        ClosedAtSequence = closedAtSequence;
+        FilledQuantity = filledQuantity;
+        FilledPayment = filledPayment;
+        FilledFees = filledFees;
+        ObservedIssuerRevision = observedIssuerRevision;
+        UnitFees = Fees.Aggregate(0UL, (sum, fee) => checked(sum + fee.UnitAmount));
+    }
+
     internal PaidQuoteView(SpotQuote quote, EntityId viewerActorId, PaidQuoteStatus status, ulong? closedAtSequence,
         SpotAcceptance? fill, ulong? observedIssuerRevision, EntityId? marketId = null)
     {

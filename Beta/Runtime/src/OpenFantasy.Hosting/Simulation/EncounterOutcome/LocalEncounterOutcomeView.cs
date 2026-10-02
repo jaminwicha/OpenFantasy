@@ -55,7 +55,7 @@ public sealed record LocalOutcomeParticipantView(EntityId ActorId, string Name, 
 /// </summary>
 public sealed class LocalEncounterOutcomeView
 {
-    private LocalEncounterOutcomeView(LocalOutcomeStage stage, EntityId encounterId, EncounterOutcomeResult result,
+    internal LocalEncounterOutcomeView(LocalOutcomeStage stage, EntityId encounterId, EncounterOutcomeResult result,
         int standingSide, LocalOutcomeStanding standing, IEnumerable<LocalOutcomeParticipantView> participants,
         AcknowledgeEncounterOutcomeIntent? acknowledgment, int requiredReaders, int readersRemaining, bool observerHasRead,
         LocalOutcomeRestriction restriction, ulong observerRecoveryDelay, ulong? completedAtSequence)

@@ -65,6 +65,18 @@ public sealed record LocalRetreatRecord(EntityId ActorId, EntityId CommandId, En
 /// </summary>
 public sealed class LocalRetreatView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalRetreatView(LocalRetreatOffer? offer,
+        LocalRetreatProgress? progress,
+        LocalRetreatRecord? last,
+        bool otherWithdrawing)
+    {
+        Offer = offer;
+        Progress = progress;
+        Last = last;
+        OtherWithdrawing = otherWithdrawing;
+    }
+
     private LocalRetreatView(WorldSnapshot world, EntityId observerId, EncounterRetreatState retreat)
     {
         if (retreat.Active is { } active)

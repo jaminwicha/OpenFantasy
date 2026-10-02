@@ -7,6 +7,14 @@ namespace OpenFantasy.Hosting.Simulation;
 /// <summary>The controlled participant's bounded live offers and outcomes; constructing it publishes nothing.</summary>
 public sealed class LocalMaterialProposalView
 {
+    /// <summary>Rehydrates immutable presentation values without consulting or constructing authority state.</summary>
+    internal LocalMaterialProposalView(ReadOnlyCollection<MaterialProposalView> offers,
+        LocalMaterialProposalPreparation? preparation)
+    {
+        Offers = Array.AsReadOnly(offers.ToArray());
+        Preparation = preparation;
+    }
+
     private LocalMaterialProposalView(WorldSnapshot state, EntityId playerActorId)
     {
         Offers = Array.AsReadOnly(MaterialProposalService.Project(state, playerActorId).ToArray());

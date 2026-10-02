@@ -1,0 +1,122 @@
+# Player observation values
+
+## Boundary
+
+[PlayerViewCodec](../../src/OpenFantasy.Hosting/Networking/ObservationViews/PlayerViewCodec.cs)
+encodes and decodes the immutable `LocalWorldView` used by the Godot client. The host selects and
+projects that view for an authenticated player before encoding it. Decoding restores presentation
+values only: it never constructs a `WorldSnapshot`, reads a save, creates a controller or evaluates
+an action against authority state. Authenticated command admission remains separate.
+
+The codec is separate from the existing default diagnostic JSON. The projection's public properties,
+property order and JSON attributes retain their diagnostic meaning. In particular, `Regional` and
+`IsRegional` remain ignored there, and nullable retreat/outcome/threat fields retain their omission
+rules. A diagnostic digest therefore is not a network observation encoding.
+
+## Typed reconstruction
+
+The codec's explicit converter registry maps each projection-only class to a concrete immutable
+transport record. Its value constructor copies already-projected fields and freezes collections;
+ordinary public leaf records retain their concrete types. Derived facts are either omitted from
+the transport record and recomputed by the existing type, or checked through canonical re-encoding.
+There is no object-property bag, private field restoration or polymorphic type-name activation.
+
+Three details require an explicit representation beyond diagnostic JSON:
+
+- Material proposal preparation retains its captured world, branch, sender and source storage,
+  eligible recipient-to-destination storage mappings, own exact lots and fixed expiry. These are the
+  terms already consumed by `Prepare` and `CanStillPropose`, not another actor's inventory or policy.
+- A market stall retains the player's own receiving account and the captured advancing step used
+  by `PrepareShowing`. The enclosing market observation must carry that same advancing step.
+- `CommandContentHash` uses its canonical lowercase hexadecimal form. Its codec-local converter
+  does not alter its default diagnostic encoding. Content hashes are exact concurrency pins, not
+  authentication credentials.
+
+`RestorativeAvailability.FromObservation` reconstructs read-only advice from a known reason,
+rejection and optional exact intent. It validates their shape; it performs no admission and grants
+no use of medicine. Available advice requires an intent and no rejection; blocked advice requires
+no intent and a nonempty rejection. The authority reevaluates every submitted intent normally.
+
+## Geometry and privacy
+
+Regional data contains the observer identity and exact feet, each observed region's full bounds
+and revision, row-major ground kinds and opening depths, and each wet column's exact volume and
+surface height. Standing floor height derives from the feet. Ground and water are received with
+the same view's actors and offers. `IsRegional = true` with a null regional observation remains a
+supported message describing an unsupported standing floor; it preserves the client's recoverable
+last-frame behavior.
+
+The observer must match the view's player and feet, and a nonnull regional observation includes
+that player's column. Occupancy arrays retain their exact bounds and indexing contracts. Unknown
+space is not reconstructed as empty terrain. Geometry contains no geological material identity,
+source lineage, excavation history or reservoir identity.
+
+The codec preserves the existing sight-complete projection contract. The regional terrain window
+is not general fog-of-war: other projected collections retain their existing admitted-locality scope,
+and presentation still filters regional positions. The codec does not silently discard those fields.
+Participant quote/proposal checks, own preparation scope and own retreat identity prevent a
+contradictory payload from being published as the current player's view. Host projection remains
+the owner of privacy; the decoder cannot independently authenticate facts using the view alone.
+
+## Bounded format
+
+Small observations retain the existing UTF-8 JSON body with a version and a typed view. Version 1
+JSON has one canonical spelling: property order, explicit nulls, number and string representation,
+and complete field presence are fixed by the codec. Expanded JSON must exactly match re-encoding of
+its reconstructed values. Missing, duplicate, unknown, contradictory derived fields and alternate
+JSON spellings are refused. Even otherwise harmless whitespace is refused.
+
+Terrain occupancy uses a bounded `{Count, Bits}` value: row-major boolean entries are packed low bit
+first into base64 bytes. The byte length is exactly the ceiling of count divided by eight, and every
+unused trailing bit is zero. Region bounds still require the complete cell count; packing omits no
+geometry. The existing diagnostic encoding remains a boolean array.
+
+The encoded wire body is limited to **900 KiB**, including any compression header. JSON at or below
+that limit is sent unchanged. Larger canonical JSON uses a 12-byte `OFVB` header followed by one
+Brotli stream. Header bytes 4–5 are big-endian wrapper version 1, bytes 6–7 are zero reserved bits,
+and bytes 8–11 are the big-endian unsigned expanded JSON length. The encoder uses fixed Brotli
+quality 5 and window 22. A compressed wrapper for JSON at or below 900 KiB is refused.
+
+The separate expanded JSON cap is **16 MiB**. This explicit resource budget equals the current
+complete-world codec byte budget as a sizing choice; it does not prove that every composite maximum
+admitted world fits an observation. Before decompression, the decoder validates the header and
+clamps the declared length to that cap. It allocates exactly that declared output length and permits
+no decoder growth or retry. Decompression must report completion, consume every compressed byte and
+write exactly the declared length. Truncated, trailing, concatenated, malformed and overexpanding
+streams are refused. The expanded JSON then receives all ordinary shape and canonical-value checks.
+
+Different Brotli implementations can produce different valid compressed bytes. The decoder compares
+expanded JSON with typed canonical JSON, never with locally recompressed bytes. Observation stream
+identity and delta comparison use the originating server's transmitted bytes; a consumer must not
+replace them with its own recompression.
+
+Encoding also has a hard bound while serializing. `Utf8JsonWriter` writes into a bounded
+`IBufferWriter<byte>` that refuses output beyond 16 MiB. Its buffer has a fixed additional 128 KiB
+reservation margin for writer span requests, which cannot become accepted output. No unbounded
+intermediate serialized array is created. Compression receives at most the capped JSON and an output
+buffer of exactly the wire limit. An incompressible body that exceeds the wire limit is refused as a
+whole; fields are never truncated.
+
+The expanded budget adds real memory cost. Decoding can simultaneously hold a 16 MiB expanded array,
+a canonical comparison buffer of up to 16 MiB plus its fixed reservation margin, the decoded view,
+and Brotli working memory. Encoding buffer growth can temporarily retain both old and new arrays.
+The 900 KiB wire limit is not a total memory limit or proof of runtime performance at maximum capacity.
+
+JSON nesting remains limited to 48 levels, text values/property names to 16,384 encoded bytes and
+collections to 16,384 elements. A streaming JSON preflight bounds containers and depth before typed
+deserialization. Typed construction and public-value validation then check nullability, known enums,
+collection dimensions, identity uniqueness and participant/observer consistency. Public-value
+traversal inspects only public properties for validation; private preparation values have explicit
+typed accessors and checks. Malformed bodies raise `FormatException` and yield no view. Arrays retained
+by decoded views are read-only copies. These transport/resource bounds do not change world admission
+rules. Maximum inventory, proposal/quote and composite-geometry size coverage remains a separate
+qualification obligation.
+
+## Extension contract
+
+A new presented or action-relevant field must be added to the affected typed transport record and
+its capture/reconstruction mapping, with parity and malformed-input coverage. A new private
+preparation capture must be explained as participant-visible request terms before it is transported.
+Default diagnostic JSON changes require their own compatibility decision; this codec grants none.
+Network publication, observation ordering/recovery and native client session ownership are separate
+bindings around this value codec.

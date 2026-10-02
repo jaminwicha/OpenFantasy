@@ -24,6 +24,11 @@ The host rechecks current control and compatibility under the same serialization
 and player attachment. It never steals the original local port. A dedicated host explicitly closes that
 port before admitting its actor remotely, or reserves it for an actual local player.
 
+The issuer may attach a `LocalRegionObserver` for that same actor. The service checks its identity
+before issuing the credential and passes it to the admitted port. A client cannot select another
+observer through Hello or gameplay input. The resulting regional geometry belongs to each published
+view's own root and crosses the [observation value boundary](player-observation-views.md) explicitly.
+
 ## Secret lifetime and bounded work
 
 The registry holds at most four actor credentials. Each has an explicit positive lifetime of at most
@@ -65,5 +70,6 @@ it is not the full design's journaled disconnect, reconnect allowance or control
 
 [Player command routing](player-command-routing.md) consumes the admitted channel for readiness,
 movement and exact action/receipt exchange. The HTTP/TLS listener and native view adapter remain
-separate responsibilities, preserving bounded output and participant-safe projections. Network observations must
-encode regional data explicitly and never expose hidden world counters as synchronization shortcuts.
+separate responsibilities, preserving bounded output and participant-safe projections.
+[Observation streams](player-observation-streams.md) encode regional data explicitly and use visible
+connection-local revisions without exposing hidden world counters as synchronization shortcuts.
