@@ -1,0 +1,21 @@
+{
+  "exitCode": 0,
+  "seconds": 3.6305258750071516,
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--nologo",
+    "--filter",
+    "FullyQualifiedName~FarmSubmissionSeamTests",
+    "--logger",
+    "console;verbosity=detailed",
+    "--logger",
+    "trx;LogFileName=checks.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/compatibility-diagnostic-20261002T054812Z"
+  ],
+  "limitSeconds": 60
+}

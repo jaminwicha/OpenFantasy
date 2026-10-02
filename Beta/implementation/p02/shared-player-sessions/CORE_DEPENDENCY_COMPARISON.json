@@ -1,0 +1,17 @@
+{
+  "priorCoreReport": "Beta/implementation/p02/native-accepted-care/qualification/core-20261002T043241Z-f7345/report.json",
+  "newBuildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/build-20261002T053525076476Z/report.json",
+  "coreSourceIdentical": true,
+  "comparedAssemblyPaths": [
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll"
+  ],
+  "coreAssemblyIdentity": false,
+  "changedAssemblies": [
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll"
+  ],
+  "disposition": "Core source is unchanged, but actual Debug assemblies differ. Execute current Core regression without an unbounded metadata investigation."
+}

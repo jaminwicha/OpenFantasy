@@ -1,4 +1,5 @@
 using System.Collections.Frozen;
+using System.Collections.Concurrent;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Custody;
@@ -46,7 +47,7 @@ internal sealed class LocalTradingController
     private readonly List<Inquiry> _waiting = [];
     private readonly Dictionary<EntityId, Attempt> _attempts = [];
     private readonly List<PlannedAnswer> _answers = [];
-    private LocalTradeInquiryView? _playerInquiry;
+    private readonly ConcurrentDictionary<EntityId, LocalTradeInquiryView> _inquiries = new();
     private ulong _sequence;
 
     internal LocalTradingController(WorldSnapshot state, EntityId playerActorId, LocalTradingConfiguration configuration)
@@ -79,8 +80,10 @@ internal sealed class LocalTradingController
         _shoppers = shoppers.Values.ToArray();
     }
 
-    /// <summary>The player's current or last inquiry, published for frame-safe reading.</summary>
-    internal LocalTradeInquiryView? PlayerInquiry => Volatile.Read(ref _playerInquiry);
+    /// <summary>The original player's current or last inquiry, published for frame-safe reading.</summary>
+    internal LocalTradeInquiryView? PlayerInquiry => ReadInquiry(_playerActorId);
+    internal LocalTradeInquiryView? ReadInquiry(EntityId actorId) => _inquiries.GetValueOrDefault(actorId);
+    internal void ForgetInquiry(EntityId actorId) => _inquiries.TryRemove(actorId, out _);
 
     /// <summary>
     /// Admits one shopper's inquiry. A shopper has at most one waiting inquiry: repeating identical terms shares
@@ -107,7 +110,7 @@ internal sealed class LocalTradingController
     {
         if (_waiting.FirstOrDefault(value => value.ShopperActorId == shopperActorId) is not { } waiting)
         {
-            return shopperActorId == _playerActorId ? PlayerInquiry : null;
+            return ReadInquiry(shopperActorId);
         }
         Close(waiting, LocalTradeInquiryState.Cancelled);
         return waiting.View;
@@ -444,10 +447,7 @@ internal sealed class LocalTradingController
 
     private void Publish(Inquiry inquiry)
     {
-        if (inquiry.ShopperActorId == _playerActorId)
-        {
-            Volatile.Write(ref _playerInquiry, inquiry.View);
-        }
+        _inquiries[inquiry.ShopperActorId] = inquiry.View;
     }
 
     private sealed class Inquiry(ulong sequence, EntityId shopperActorId, EntityId requestId, LocalTradeInquiry request,

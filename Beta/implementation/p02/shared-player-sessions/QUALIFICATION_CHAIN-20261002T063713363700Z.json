@@ -1,0 +1,100 @@
+[
+  {
+    "script": "check.py",
+    "mode": "focused",
+    "exitCode": 0,
+    "seconds": 47.8,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-focused.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "outcome-unit",
+    "exitCode": 0,
+    "seconds": 83.658,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-outcome-unit.log"
+  },
+  {
+    "script": "check.py",
+    "mode": "regression",
+    "exitCode": 0,
+    "seconds": 582.134,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-regression.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "care-fixtures",
+    "exitCode": 0,
+    "seconds": 8.905,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-care-fixtures.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "care-native",
+    "exitCode": 0,
+    "seconds": 51.036,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-care-native.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "care-auth",
+    "exitCode": 0,
+    "seconds": 14.262,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-care-auth.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "outcome-fixtures",
+    "exitCode": 0,
+    "seconds": 82.938,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-outcome-fixtures.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "outcome-native",
+    "exitCode": 0,
+    "seconds": 117.692,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-outcome-native.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "outcome-auth",
+    "exitCode": 0,
+    "seconds": 22.104,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-outcome-auth.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "fixtures",
+    "exitCode": 0,
+    "seconds": 51.938,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-fixtures.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "road-native",
+    "exitCode": 0,
+    "seconds": 258.273,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-road-native.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "road-auth",
+    "exitCode": 0,
+    "seconds": 27.564,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-road-auth.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "native",
+    "exitCode": 0,
+    "seconds": 61.758,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-native.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "native-auth",
+    "exitCode": 0,
+    "seconds": 12.655,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T063713363700Z-native-auth.log"
+  }
+]

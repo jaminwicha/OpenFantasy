@@ -10,28 +10,27 @@ public sealed partial class LocalWorldSession
     /// <summary>Advancing steps a trade inquiry may wait for a merchant's answer unless the trading configuration names another bound.</summary>
     public const ulong TradeInquiryLifetimeSteps = LocalTradingConfiguration.DefaultInquiryLifetimeSteps;
 
-    private readonly LocalInspectionSlot<PaidQuoteView?> _quoteInspection =
-        new("One quote inspection is already awaiting its result.");
-
     /// <summary>
     /// Admits the player's nonbinding trade inquiry. Nothing about the named market is checked or revealed here:
     /// at the next ready, unheld advancing cutoff the merchant answers only if its market is available to the
     /// player in person. One inquiry may wait; identical terms share it and different terms are refused.
     /// The inquiry is session memory only: it promises nothing, survives no restart and expires in fixed-world time.
     /// </summary>
-    public async Task<LocalTradeInquiryView> SubmitTradeInquiryAsync(LocalTradeInquiry inquiry)
+    public Task<LocalTradeInquiryView> SubmitTradeInquiryAsync(LocalTradeInquiry inquiry) => SubmitTradeInquiryAsync(_localPlayer, inquiry);
+
+    internal async Task<LocalTradeInquiryView> SubmitTradeInquiryAsync(LocalPlayerConnection player, LocalTradeInquiry inquiry)
     {
         ArgumentNullException.ThrowIfNull(inquiry);
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
         {
-            lock (_inputs) { EnsureInputAvailable(); }
+            lock (_inputs) { EnsurePlayerAvailable(player); }
             WorldSnapshot state = _authority.ReadStateForHost();
             if (state.Coordination?.Markets is null)
             {
                 throw new AuthorityDispatchException("This saved profile admits no local market inquiries.");
             }
-            return _trading.Admit(_playerActorId, NewRequestId(), inquiry, state.AdvancingSteps);
+            return _trading.Admit(player.ActorId, NewRequestId(), inquiry, state.AdvancingSteps);
         }
         finally { _serialization.Release(); }
     }
@@ -40,33 +39,42 @@ public sealed partial class LocalWorldSession
     /// Cancels the player's waiting inquiry. Serialized with cutoffs, so a cancelled inquiry is never answered
     /// afterwards; an offer already issued keeps its world lifecycle and the player may still ignore it.
     /// </summary>
-    public async Task<LocalTradeInquiryView?> CancelTradeInquiryAsync()
+    public Task<LocalTradeInquiryView?> CancelTradeInquiryAsync() => CancelTradeInquiryAsync(_localPlayer);
+
+    internal async Task<LocalTradeInquiryView?> CancelTradeInquiryAsync(LocalPlayerConnection player)
     {
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
         {
-            lock (_inputs) { EnsureInputAvailable(); }
-            return _trading.Cancel(_playerActorId);
+            lock (_inputs) { EnsurePlayerAvailable(player); }
+            return _trading.Cancel(player.ActorId);
         }
         finally { _serialization.Release(); }
     }
 
     /// <summary>The player's current or last inquiry; a pure in-memory read safe for every frame.</summary>
-    public LocalTradeInquiryView? ReadTradeInquiry() => _trading.PlayerInquiry;
+    public LocalTradeInquiryView? ReadTradeInquiry() => ReadTradeInquiry(_localPlayer);
+
+    internal LocalTradeInquiryView? ReadTradeInquiry(LocalPlayerConnection player)
+    {
+        lock (_inputs) { EnsurePlayerAvailable(player); return _trading.ReadInquiry(player.ActorId); }
+    }
 
     /// <summary>
     /// Explicit participant inspection of one paid quote, including an archived terminal outcome. Unknown and
     /// foreign quotes both give null. Runs in the background history slot, never on the caller's thread or a
     /// tick, starts no step and caches nothing; one lookup may be outstanding at a time.
     /// </summary>
-    public Task<PaidQuoteView?> InspectPaidQuoteAsync(EntityId quoteId)
+    public Task<PaidQuoteView?> InspectPaidQuoteAsync(EntityId quoteId) => InspectPaidQuoteAsync(_localPlayer, quoteId);
+
+    internal Task<PaidQuoteView?> InspectPaidQuoteAsync(LocalPlayerConnection player, EntityId quoteId)
     {
         lock (_inputs)
         {
-            EnsureInputAvailable();
-            return _quoteInspection.Admit(quoteId, subject => ReadHistoryAsync(() =>
-                _authority.ReadRecordedPaidQuoteForController(subject, _playerActorId, _delivery,
-                    (state, archived) => PaidQuoteProjection.ProjectRecorded(state, archived, subject, _playerActorId))));
+            EnsurePlayerAvailable(player);
+            return player.QuoteInspection.Admit(quoteId, subject => ReadHistoryAsync(() =>
+                _authority.ReadRecordedPaidQuoteForController(subject, player.ActorId, player.Delivery,
+                    (state, archived) => PaidQuoteProjection.ProjectRecorded(state, archived, subject, player.ActorId))));
         }
     }
 

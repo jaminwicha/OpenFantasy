@@ -1,0 +1,27 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-auth-20261002T070043Z-0dda0
+{
+  "kind": "native-auth",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/accepted-build.json",
+  "buildReportSha256": "57245d982fe417ced5376732b33e5f7e372a02d5698dff8891f8f240e7cf0c8e",
+  "nativeReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-20261002T065942Z-3cddb/report.json",
+  "nativeReportSha256": "7da6cc045bcbbb7f441510f86ff85d4814044f3eb55751a8edd917f3dbe31965",
+  "outcomes": {
+    "Passed": 1
+  },
+  "preservationAfter": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "elapsedSeconds": 11.952,
+  "sourceUnchanged": true,
+  "accepted": true
+}

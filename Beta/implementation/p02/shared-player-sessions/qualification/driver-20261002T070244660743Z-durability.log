@@ -1,0 +1,43 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/durability-20261002T070531Z-ee5ca
+{
+  "kind": "durability",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/accepted-build.json",
+  "buildReportSha256": "57245d982fe417ced5376732b33e5f7e372a02d5698dff8891f8f240e7cf0c8e",
+  "durabilityReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/durability-20261002T070531Z-ee5ca/durability.json",
+  "durabilityReportSha256": "67913dca7166cba41e53b505f39ee2644d8c2e20f06d231f7c59875f23c81f94",
+  "durabilityFixtureSha256": {
+    "unbroken.sqlite": "8484dc0120e25d09e77b70ef9c34c78174dafabb77f302950ae3bdf842990225",
+    "disengage.step.bin": "c6418642277b618935af8bd7c36f18b88e5fb33a8da7e5be34ef056c3b6f856d",
+    "sample.after.sqlite": "3f3e47e70bf4231235834f115d948607b32e7a9f5fa2f08431ca3b96e915d516",
+    "sample.before.sqlite": "31810d7b7f2d5ccf5ea285d1cecc195b5d772ec4aeb167ee36caa1cf27d43b95",
+    "queue.step.bin": "18d6d932ddc2ea8fb8ff88b7e3b0408e9dc8907d1eb369d9043f74d61bf990da",
+    "disengage.after.sqlite": "73a7411e4361849ecb807c3fa5c77f00260269b2e40cb7f51af1789c29d8d918",
+    "queue.before.sqlite": "755df6b5557fec6a28c16e9a6be52300cf2fa9ca7cf940ae490df9893e2fbd1c",
+    "manifest.json": "0320a016591474d29a5a79f92437a1c6be97665d9c5295a6d988555aa180853b",
+    "queue.after.sqlite": "21842f16eea2dc40924f7412ff5340eaedd7de537390cb9622f1bab069b2ed9e",
+    "disengage.before.sqlite": "da8c9740b3600f5913ce9feed2ed30792d963dc3ea89028832dc64cb34f1a372",
+    "genesis.ofc": "ff95c0f843794dfa26f4eb90bb8b51d719c829fe8b6d18548e09769787964ddd",
+    "sample.step.bin": "76204a7af4490ff3d1d29feb51c6d8c6f91eb6512119201d6f50282f3e7ec966",
+    "command.bin": "b721293b6b228fd78d94a32bf17e61a365ebe0e69000029fe574a557f7044bfb"
+  },
+  "actualProcessKills": 6,
+  "outcomes": {
+    "Passed": 2
+  },
+  "preservationAfter": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "elapsedSeconds": 30.088,
+  "sourceUnchanged": true,
+  "accepted": true
+}

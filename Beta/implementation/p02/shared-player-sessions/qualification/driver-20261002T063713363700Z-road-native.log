@@ -1,0 +1,34 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf
+{
+  "kind": "road-native",
+  "limitSeconds": 900,
+  "preservationBefore": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/accepted-build.json",
+  "buildReportSha256": "57245d982fe417ced5376732b33e5f7e372a02d5698dff8891f8f240e7cf0c8e",
+  "fixtureDependencyComparison": {
+    "sourceEntries": 1559,
+    "authorityAssemblies": 6,
+    "exactMatch": true,
+    "claim": "Prepared fixture bytes are reused; native input is executed again.",
+    "excluded": "client presentation, tool scripts, pure client tests, new outcome result authentication"
+  },
+  "fixtureReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/fixtures-20261002T065404Z-49a09/report.json",
+  "fixtureReportSha256": "aaf5bc57dccb5124ad27216c8134cc3e9377b9aab43e3fc41c63cdd6749343b8",
+  "roadReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf/road.json",
+  "roadReportSha256": "5782e19685d73f4f3e0cf9d1c0f3a526623e8e1d022b2a096f1e6f6e3fa7fa43",
+  "roadAuthenticationManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf/native-road-threat-wjsbwr40/native-manifest.json",
+  "preservationAfter": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "elapsedSeconds": 257.411,
+  "sourceUnchanged": true,
+  "accepted": true
+}

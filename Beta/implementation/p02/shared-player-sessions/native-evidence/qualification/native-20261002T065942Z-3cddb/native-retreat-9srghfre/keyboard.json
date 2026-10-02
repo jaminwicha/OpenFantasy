@@ -1,0 +1,506 @@
+{
+  "Kind": "native-retreat-v2",
+  "Mode": "keyboard",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-retreat-probe",
+  "OpeningSeconds": 2.139,
+  "ProbeMilliseconds": 20808,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "engage",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "cancel",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "travel",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "travel",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Left"
+    }
+  ],
+  "Inspected": {
+    "Stage": "commit",
+    "Name": "Retreat",
+    "Details": "Target: To cell (100, 324), north-west\nCost: 16 steps \u00B7 2.25 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 2.08 s total.",
+    "Tooltip": "Target: To cell (100, 324), north-west\nCost: 16 steps \u00B7 2.25 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 2.08 s total."
+  },
+  "Openings": [
+    {
+      "Stage": "inspect",
+      "Timing": 1,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null,
+      "CanExecute": true
+    },
+    {
+      "Stage": "commit",
+      "Timing": 1,
+      "Slot": "To cell (100, 324), north-west",
+      "SlotBlocker": null,
+      "CanExecute": true
+    }
+  ],
+  "Positions": [
+    {
+      "X": 25984,
+      "Y": 83328,
+      "Z": 256,
+      "Seconds": 4.5699891
+    },
+    {
+      "X": 25984,
+      "Y": 83296,
+      "Z": 256,
+      "Seconds": 4.6356
+    },
+    {
+      "X": 25984,
+      "Y": 83264,
+      "Z": 256,
+      "Seconds": 4.896764
+    },
+    {
+      "X": 25984,
+      "Y": 83232,
+      "Z": 256,
+      "Seconds": 5.0839828
+    },
+    {
+      "X": 25984,
+      "Y": 83200,
+      "Z": 256,
+      "Seconds": 5.2843249
+    },
+    {
+      "X": 25984,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 5.4847295
+    },
+    {
+      "X": 25952,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 5.6965207
+    },
+    {
+      "X": 25920,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 5.8966173
+    },
+    {
+      "X": 25888,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 6.0843445
+    },
+    {
+      "X": 25856,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 6.2846394
+    },
+    {
+      "X": 25824,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 6.5465067
+    },
+    {
+      "X": 25792,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 6.7839902
+    },
+    {
+      "X": 25760,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 6.983281
+    },
+    {
+      "X": 25728,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.1848862
+    },
+    {
+      "X": 25696,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.3965472
+    },
+    {
+      "X": 25664,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.5846415
+    },
+    {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256,
+      "Seconds": 7.7965582
+    }
+  ],
+  "Checks": [
+    "Engaging the real wolf offers a 16-step retreat: 16 steps \u00B7 2.25 s walk \u00B7 0.13 s recovery.",
+    "The first wheel opening at the ready boundary showed the current Retreat offer; nothing read as changed.",
+    "Cancelling the inspected Retreat sends nothing: the player\u0027s own boundary still waits, unanswered.",
+    "While the route is walked the player is shown as retreating and is offered no Wait or Strike.",
+    "The committed route was walked as 16 presented 32-subunit steps and ended the encounter.",
+    "Held-key travel carried the player from the retreat to Marla\u0027s stall in Brasshollow.",
+    "At Marla\u0027s stall one ration was asked, reviewed and bought at the exact quoted total; the pack holds both lots."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-20261002T065942Z-3cddb/native-retreat-9srghfre/keyboard.retreat-inspected.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-20261002T065942Z-3cddb/native-retreat-9srghfre/keyboard.retreating.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-20261002T065942Z-3cddb/native-retreat-9srghfre/keyboard.disengaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-20261002T065942Z-3cddb/native-retreat-9srghfre/keyboard.marla.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-20261002T065942Z-3cddb/native-retreat-9srghfre/keyboard.buy-review.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-20261002T065942Z-3cddb/native-retreat-9srghfre/keyboard.bought.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/native-20261002T065942Z-3cddb/native-retreat-9srghfre/keyboard.final.png"
+  ],
+  "Notice": "You broke away after 16 steps. The encounter is over; recovery continues while you explore.",
+  "Trade": {
+    "QuoteId": "06cca18f220d97cf16b39155dd4cec52",
+    "Total": 22,
+    "BalanceBefore": 180,
+    "BalanceAfter": 158,
+    "RationsBefore": 1,
+    "RationsAfter": 2
+  },
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 16,
+    "RouteSamples": 16,
+    "ReadinessCharged": 208,
+    "WorldSequence": 536,
+    "Final": {
+      "X": 25632,
+      "Y": 83168,
+      "Z": 256
+    },
+    "ActorId": "71f5fa372b63c9229a886168930ccf64",
+    "CommandId": "69c8a451d97d2c82e2f9f4ede837d102"
+  },
+  "FinalFeet": {
+    "X": 24960,
+    "Y": 89472,
+    "Z": 256
+  },
+  "FinalBalance": 158,
+  "CarriedRations": 2
+}

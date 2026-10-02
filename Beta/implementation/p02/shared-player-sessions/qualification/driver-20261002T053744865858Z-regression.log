@@ -1,0 +1,11 @@
+{
+  "mode": "regression",
+  "limitSeconds": 600,
+  "accepted": false,
+  "error": "TimeoutExpired(['/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet', 'test', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj', '--no-build', '--no-restore', '--nologo', '--filter', '(FullyQualifiedName~Simulation|FullyQualifiedName~Client|FullyQualifiedName~WorldExchange|FullyQualifiedName~MaterialProposal|FullyQualifiedName~Content)&FullyQualifiedName!~NativeTradingResultTests&FullyQualifiedName!~NativeGiftResultTests&FullyQualifiedName!~RetainedGiftResultTests&FullyQualifiedName!~NativeTradingBoundaryResultTests&FullyQualifiedName!~NativeCargoResultTests&FullyQualifiedName!~CargoCircuitJourneyTests&FullyQualifiedName!~CargoCircuitEvidenceTests&FullyQualifiedName!~NativeRetreatResultTests&FullyQualifiedName!~RetreatDurabilityResultTests&FullyQualifiedName!~RetreatDurabilityFixtureTests&FullyQualifiedName!~NativeRoadThreatResultTests&FullyQualifiedName!~NativeEncounterOutcomeResultTests&FullyQualifiedName!~NativeEncounterOutcomeFixtureTests&FullyQualifiedName!~EncounterOutcomeDurabilityResultTests&FullyQualifiedName!~EncounterOutcomeDurabilityFixtureTests', '--logger', 'trx;LogFileName=checks.trx', '--results-directory', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/regression-20261002T053744917951Z'], 600)",
+  "seconds": 600.2328764999984
+}
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/regression-20261002T053744917951Z
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+

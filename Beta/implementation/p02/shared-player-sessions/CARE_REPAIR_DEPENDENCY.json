@@ -1,0 +1,12 @@
+{
+  "coreReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/core-20261002T055533Z-2ae1d/report.json",
+  "coreSourceIdentical": true,
+  "coreSourceCount": 1012,
+  "exactCoreAssemblies": {
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "ffd361be4006c8c6b78545c67d56b030e57d2aff2610a236a8923a04d3b88094",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "ffd361be4006c8c6b78545c67d56b030e57d2aff2610a236a8923a04d3b88094",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "ddd9268b346d059f0cbd4beb6ac32146965fb3b277611a57ccdd2ce646574378"
+  },
+  "coreAssemblyIdentity": true,
+  "meaning": "The patient-care correction changes Hosting and its new tests only. Existing Core regression remains applicable only with these exact source and assembly identities."
+}

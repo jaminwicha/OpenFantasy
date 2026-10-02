@@ -1,0 +1,15 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:03.97]     OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter [2 s]
+  Error Message:
+   Two choices from the same presented boundary must commit together without recapture.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SharedPlayers/SharedEncounterSessionTests.cs:line 94
+   at OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SharedPlayers/SharedEncounterSessionTests.cs:line 126
+   at OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SharedPlayers/SharedEncounterSessionTests.cs:line 126
+   at OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SharedPlayers/SharedEncounterSessionTests.cs:line 127
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/focused-20261002T051051305681Z/checks.trx
+
+Failed!  - Failed:     1, Passed:    21, Skipped:     0, Total:    22, Duration: 16 s - OpenFantasy.Hosting.Tests.dll (net8.0)

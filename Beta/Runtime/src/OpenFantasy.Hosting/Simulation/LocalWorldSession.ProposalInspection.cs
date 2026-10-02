@@ -9,8 +9,6 @@ public sealed record LocalHistoryVerification(ulong Revision, bool ReproducesHea
 
 public sealed partial class LocalWorldSession
 {
-    private readonly LocalInspectionSlot<MaterialProposalView?> _proposalInspection =
-        new("One proposal inspection is already awaiting its result.");
     private Task<LocalHistoryVerification>? _historyVerification;
 
     /// <summary>
@@ -39,18 +37,18 @@ public sealed partial class LocalWorldSession
     /// never replays on the calling thread. One lookup may be outstanding; an identical request shares
     /// that task and a different request is refused. There is no result cache or auto-retry.
     /// </summary>
-    public Task<MaterialProposalView?> InspectMaterialProposalAsync(EntityId proposalId)
+    public Task<MaterialProposalView?> InspectMaterialProposalAsync(EntityId proposalId) => InspectMaterialProposalAsync(_localPlayer, proposalId);
+
+    internal Task<MaterialProposalView?> InspectMaterialProposalAsync(LocalPlayerConnection player, EntityId proposalId)
     {
         lock (_inputs)
         {
-            EnsureInputAvailable();
-            return _proposalInspection.Admit(proposalId, InspectProposalCoreAsync);
+            EnsurePlayerAvailable(player);
+            return player.ProposalInspection.Admit(proposalId, subject => ReadHistoryAsync(() =>
+                _authority.ReadRecordedProposalForController(subject, player.ActorId, player.Delivery,
+                    (state, archived) => MaterialProposalService.ProjectRecorded(state, archived, subject, player.ActorId))));
         }
     }
-
-    private Task<MaterialProposalView?> InspectProposalCoreAsync(EntityId proposalId) =>
-        ReadHistoryAsync(() => _authority.ReadRecordedProposalForController(proposalId, _playerActorId, _delivery,
-            (state, archived) => MaterialProposalService.ProjectRecorded(state, archived, proposalId, _playerActorId)));
 
     /// <summary>
     /// Runs one durable participant history read in the session's serialized slot, on a worker. It selects
@@ -79,7 +77,11 @@ public sealed partial class LocalWorldSession
         // Stop prevents new inspection admission before this method is called. Waiting here keeps
         // the durable owner alive until a selected replay completes or a queued query is cancelled.
         Task?[] inspections;
-        lock (_inputs) { inspections = [_proposalInspection.Latest, _quoteInspection.Latest, _historyVerification]; }
+        lock (_inputs)
+        {
+            inspections = _players.Values.SelectMany(player => new Task?[]
+                { player.ProposalInspection.Latest, player.QuoteInspection.Latest }).Append(_historyVerification).ToArray();
+        }
         foreach (Task? inspection in inspections)
         {
             if (inspection is null) { continue; }

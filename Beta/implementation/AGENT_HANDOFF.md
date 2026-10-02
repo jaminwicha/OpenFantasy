@@ -93,10 +93,38 @@ post-draw observation. [Upstream efficiency sync](p02/native-accepted-care/UPSTR
 records source commit 9b8bcc3 and three installed targets: limit inconclusive binary reproduction work
 by the cheaper affected verification alternative. No source-equality shortcut permits evidence reuse.
 
+## Shared-player host checkpoint
+
+[Shared player sessions](p02/shared-player-sessions/RESULT.md) is qualified as
+`codex/milestone-shared-player-sessions-20261002`: up to four authenticated in-process ports share one
+clock, authority and NPC scheduler. Inputs, private views/inquiries, readiness, ordinary fairness,
+simultaneous combat, outcome readings, independent close/reconnect and saved recovery are proved.
+
+The [final checks](p02/shared-player-sessions/FINAL_CHECKS.json) cover 2,363 distinct managed cases
+(1,773 Core, 590 Hosting), including every prior 2,354 case and nine new shared-player cases; fifteen
+fresh native processes; authentication of fresh journals and all six retained families; and twelve
+actual process kills across both recovery families. Build, 26 focused, 34 outcome and 569 broad Hosting
+cases pass. Broad elapsed time is 580.861 seconds under the unchanged 600-second bound. Core reuse is
+supported by exact source and compiled-assembly identity. All 612 protected tests/fixtures, 23 frozen
+spec files and exact unrelated predecessor staging remain intact.
+
+The independent critic and unchanged compatibility tests exposed scheduling errors that the lead
+corrected: observer starvation, live-port threat selection, care priority and stale receipt boundaries.
+The original patient's matching stale offer receives at most one separate committed refusal immediately
+after acknowledgment. Its durable revision closes that window across reopening; later requests cannot
+starve the helper, and failed preflight cannot defer it. Core remains the owner of action legality.
+The [review record](p02/shared-player-sessions/CRITIC_REVIEW.md) preserves all failures and dispositions.
+The fresh rendered frame was inspected; prototype art/UI has no new human acceptance.
+
+The [architecture reference](../Runtime/docs/architecture/hosted-player-connections.md) is current.
+In-process closure grants no automatic human decision and is not a journaled network disconnect.
+Network transport, recorded disconnect handoff and native multiple-client acceptance remain open.
+No provider request was made while the account spending-limit failure holds.
+
 ## Next dependency and remaining scope
 
-Native accepted treatment and approach/entry are now proved by the bounded journey above. Actual
-multiple-session readiness, no-survivor resolver reachability, lived profile34 migration and full
+Native accepted treatment and approach/entry are now proved by the bounded journey above. Native
+multiple-client readiness, no-survivor resolver reachability, lived profile34 migration and full
 phase/production gates remain open. Managed two-human/repeated-episode journeys do not substitute for
 native/session proofs. Follow the full plan before selecting the next unit; retain all world-composition,
 custody, campaign, frontier, content migration, 1–4-player networking, art/device and human gates.

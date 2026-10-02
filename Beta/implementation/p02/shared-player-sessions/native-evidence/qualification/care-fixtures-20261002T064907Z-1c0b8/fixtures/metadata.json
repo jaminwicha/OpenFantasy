@@ -1,0 +1,12 @@
+{
+  "Kind": "native-encounter-outcome-fixture-v1",
+  "Route": "care-accepted",
+  "SeedText": "native-accepted-care",
+  "PlayerName": "Traveler",
+  "PlayerActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+  "OpponentActorId": "1f88b82fc87321770e482e56a1bdc7d3",
+  "WrenActorId": "ecbc5c71be5bf5abbd71a342669b2601",
+  "GenesisHash": "c9906cb7852b29a7c8ed49054df6fc3116781297a5459ae7abfbea0384860d8d",
+  "BeforeHash": "c9906cb7852b29a7c8ed49054df6fc3116781297a5459ae7abfbea0384860d8d",
+  "Boundary": "Unplayed uncalibrated production genesis; all approach, entry and combat belong to native input."
+}

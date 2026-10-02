@@ -1,0 +1,43 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636
+{
+  "kind": "outcome-durability",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/accepted-build.json",
+  "buildReportSha256": "57245d982fe417ced5376732b33e5f7e372a02d5698dff8891f8f240e7cf0c8e",
+  "durabilityReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/durability.json",
+  "durabilityReportSha256": "29a4ea9f18bf54487d40b5dbdb4fe97d65c5edc2c26098bf7d9c2073ee15d28e",
+  "durabilityFixtureSha256": {
+    "read-player.after.sqlite": "360aca5bbad92f3f583b2e2cef6e4b24c362f031646f3e3d717a60f06469ac14",
+    "unbroken.sqlite": "77f0c28595a7cf62411ef76c1089a8d17db8145e9202424b87589eafbe33d2c6",
+    "read-human.before.sqlite": "360aca5bbad92f3f583b2e2cef6e4b24c362f031646f3e3d717a60f06469ac14",
+    "complete.after.sqlite": "a1ec4769a0765efaf19d08e211f790ed3b03872cb724a35d2bfd6999e58802d9",
+    "complete.step.bin": "3db240cf8a458e945cfe9d41a02ad529bfe25f436e51c07d00de73f37b05ce21",
+    "read-player.before.sqlite": "9022c4a41f1a49c6b1c6f7ff3c913ea263fb413f966f4b62310d54b430bbbea4",
+    "read-human.step.bin": "59f9e515584b94ae167f4c014a879ba8478fd22771ff5c34c110e9f4604a2e9a",
+    "read-player.step.bin": "620abe1804d68d1dec92b5c386366371270404a13963b41596a639c3445398cf",
+    "complete.before.sqlite": "02a66ad66fca222189b79ba3a56978a691b8a2d72bab36372c146f82da6f24e2",
+    "read-human.after.sqlite": "02a66ad66fca222189b79ba3a56978a691b8a2d72bab36372c146f82da6f24e2",
+    "manifest.json": "86564789fe0a18c952e997174653be9c35ce82bccb73920a1d25e65bd8cde6c2",
+    "genesis.ofc": "a8cf5ebc9c86dcd3c16bc52250114e785883fb6467ea2008d5ef83d66ef965b9",
+    "command.bin": "50c221abc0b3ce7e987032a1f64f5276f0df42744f26c4a97ab0b0a51901dbff"
+  },
+  "actualProcessKills": 6,
+  "outcomes": {
+    "Passed": 2
+  },
+  "preservationAfter": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "elapsedSeconds": 26.339,
+  "sourceUnchanged": true,
+  "accepted": true
+}

@@ -1,0 +1,467 @@
+{
+  "status": "passed",
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794",
+  "fixtures": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures",
+  "limits": {
+    "runSeconds": 30,
+    "signalSeconds": 30,
+    "killSeconds": 10,
+    "aggregateSeconds": 600
+  },
+  "runs": [
+    {
+      "label": "read-player-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-player.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/00-read-player-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/00-read-player-normal.stderr.log",
+      "seconds": 0.599,
+      "exitCode": 0
+    },
+    {
+      "label": "read-player-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-player.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/01-read-player-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/01-read-player-normal-duplicate.stderr.log",
+      "seconds": 0.539,
+      "exitCode": 1
+    },
+    {
+      "label": "read-player-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-before.sqlite",
+        "6"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/03-read-player-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/03-read-player-recover-before.stderr.log",
+      "seconds": 0.609,
+      "exitCode": 0
+    },
+    {
+      "label": "read-player-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-player.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/04-read-player-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/04-read-player-retry.stderr.log",
+      "seconds": 0.641,
+      "exitCode": 0
+    },
+    {
+      "label": "read-player-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-player.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/05-read-player-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/05-read-player-before-duplicate.stderr.log",
+      "seconds": 0.553,
+      "exitCode": 1
+    },
+    {
+      "label": "read-player-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-after.sqlite",
+        "7"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/07-read-player-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/07-read-player-recover-after.stderr.log",
+      "seconds": 0.584,
+      "exitCode": 0
+    },
+    {
+      "label": "read-player-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-player.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/08-read-player-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/08-read-player-after-duplicate.stderr.log",
+      "seconds": 0.549,
+      "exitCode": 1
+    },
+    {
+      "label": "read-human-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-human.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/09-read-human-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/09-read-human-normal.stderr.log",
+      "seconds": 0.614,
+      "exitCode": 0
+    },
+    {
+      "label": "read-human-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-human.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/10-read-human-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/10-read-human-normal-duplicate.stderr.log",
+      "seconds": 0.554,
+      "exitCode": 1
+    },
+    {
+      "label": "read-human-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-before.sqlite",
+        "7"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/12-read-human-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/12-read-human-recover-before.stderr.log",
+      "seconds": 0.615,
+      "exitCode": 0
+    },
+    {
+      "label": "read-human-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-human.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/13-read-human-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/13-read-human-retry.stderr.log",
+      "seconds": 0.597,
+      "exitCode": 0
+    },
+    {
+      "label": "read-human-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-human.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/14-read-human-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/14-read-human-before-duplicate.stderr.log",
+      "seconds": 0.597,
+      "exitCode": 1
+    },
+    {
+      "label": "read-human-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-after.sqlite",
+        "8"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/16-read-human-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/16-read-human-recover-after.stderr.log",
+      "seconds": 0.62,
+      "exitCode": 0
+    },
+    {
+      "label": "read-human-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-human.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/17-read-human-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/17-read-human-after-duplicate.stderr.log",
+      "seconds": 0.543,
+      "exitCode": 1
+    },
+    {
+      "label": "complete-normal",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/complete.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/18-complete-normal.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/18-complete-normal.stderr.log",
+      "seconds": 0.754,
+      "exitCode": 0
+    },
+    {
+      "label": "complete-normal-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-normal.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/complete.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/19-complete-normal-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/19-complete-normal-duplicate.stderr.log",
+      "seconds": 0.581,
+      "exitCode": 1
+    },
+    {
+      "label": "complete-recover-before",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-before.sqlite",
+        "8"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/21-complete-recover-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/21-complete-recover-before.stderr.log",
+      "seconds": 0.607,
+      "exitCode": 0
+    },
+    {
+      "label": "complete-retry",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/complete.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/22-complete-retry.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/22-complete-retry.stderr.log",
+      "seconds": 0.654,
+      "exitCode": 0
+    },
+    {
+      "label": "complete-before-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-before.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/complete.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/23-complete-before-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/23-complete-before-duplicate.stderr.log",
+      "seconds": 0.578,
+      "exitCode": 1
+    },
+    {
+      "label": "complete-recover-after",
+      "arguments": [
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-after.sqlite",
+        "9"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/25-complete-recover-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/25-complete-recover-after.stderr.log",
+      "seconds": 0.649,
+      "exitCode": 0
+    },
+    {
+      "label": "complete-after-duplicate",
+      "arguments": [
+        "--execute-world-step",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-after.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/complete.step.bin"
+      ],
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/26-complete-after-duplicate.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/26-complete-after-duplicate.stderr.log",
+      "seconds": 0.595,
+      "exitCode": 1
+    }
+  ],
+  "processKills": [
+    {
+      "case": "read-player-before",
+      "boundary": "before",
+      "pid": 43025,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/02-read-player-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/02-read-player-before.stderr.log",
+      "signalSeconds": 0.503,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "read-player-after",
+      "boundary": "after",
+      "pid": 43059,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/06-read-player-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/06-read-player-after.stderr.log",
+      "signalSeconds": 0.522,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "read-human-before",
+      "boundary": "before",
+      "pid": 43093,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/11-read-human-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/11-read-human-before.stderr.log",
+      "signalSeconds": 0.545,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "read-human-after",
+      "boundary": "after",
+      "pid": 43133,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/15-read-human-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/15-read-human-after.stderr.log",
+      "signalSeconds": 0.536,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "complete-before",
+      "boundary": "before",
+      "pid": 43170,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-before.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/20-complete-before.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/20-complete-before.stderr.log",
+      "signalSeconds": 0.609,
+      "signal": "{\"Boundary\":\"BeforeCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.005,
+      "successfulWaitsWithinBounds": true
+    },
+    {
+      "case": "complete-after",
+      "boundary": "after",
+      "pid": 43197,
+      "database": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-after.sqlite",
+      "stdout": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/24-complete-after.stdout.log",
+      "stderr": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/24-complete-after.stderr.log",
+      "signalSeconds": 0.53,
+      "signal": "{\"Boundary\":\"AfterCommit\"}",
+      "exitCode": -9,
+      "killSeconds": 0.01,
+      "successfulWaitsWithinBounds": true
+    }
+  ],
+  "cases": [
+    {
+      "label": "read-player",
+      "sequence": 7,
+      "kind": "EncounterLifecycle",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-player.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-player.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-player-after.sqlite"
+    },
+    {
+      "label": "read-human",
+      "sequence": 8,
+      "kind": "EncounterLifecycle",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-human.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/read-human.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/read-human-after.sqlite"
+    },
+    {
+      "label": "complete",
+      "sequence": 9,
+      "kind": "EncounterLifecycle",
+      "before": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-before.sqlite",
+      "step": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/complete.step.bin",
+      "unbrokenAfter": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/complete.after.sqlite",
+      "normal": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-normal.sqlite",
+      "beforeRecovered": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-before-recovered.sqlite",
+      "after": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/encounter-outcome-durability-070606527794/complete-after.sqlite"
+    }
+  ],
+  "startedUtc": "2026-10-02T07:06:06.528295+00:00",
+  "execution": {
+    "dotnet": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "host": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+    "hostSha256": "b56a0ebe16ca9d965a73ca27c580b7604ccc451ef01c9a889d27e389873297f4"
+  },
+  "successfulWaitChecks": {
+    "signals": 6,
+    "kills": 6,
+    "operations": 21
+  },
+  "aggregateSeconds": 15.957,
+  "manifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-durability-20261002T070602Z-27636/fixtures/manifest.json",
+  "limitations": [
+    "Kills the Host child at the authority transaction boundaries it reports; it does not interrupt SQLite inside a page write or model power loss.",
+    "One fresh declared two-human profile-35 fixture driven by a local managed session; no network, device, lived-save migration or native presentation is implied."
+  ],
+  "sourceFixturesUnchanged": true,
+  "artifactSha256": {
+    "11-read-human-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "read-human-before-recovered.sqlite": "360aca5bbad92f3f583b2e2cef6e4b24c362f031646f3e3d717a60f06469ac14",
+    "05-read-player-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "16-read-human-recover-after.stdout.log": "b5b5313aec4a67ad50685b8c3a93aa3a4077c8c9dc986c54d63836cb06d13e25",
+    "07-read-player-recover-after.stdout.log": "04955287454d48a0a902f43207560be447a66d76d0a9539773d62d3dbf9c137a",
+    "read-player-normal.sqlite": "bcec9511f0b5e68cbeb408a5f068057b1bdc20a9c139ab1a28d051a5462eff85",
+    "15-read-human-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "04-read-player-retry.stdout.log": "66b0504f58fce68f6ec19934a651d44beccec2642d1ea6188d0f39fb68ebec5a",
+    "read-human-normal.sqlite": "9e78ec3b313e2db53ffdf6cf17c9df6d7be054231d46fb24ce2c795b74c2fa32",
+    "02-read-player-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "03-read-player-recover-before.stdout.log": "32bad10177ef39053efb2c2abe2f19778a86576966983c81277dff78f31e7e20",
+    "25-complete-recover-after.stdout.log": "17a39af1ed3902922d4f1879c37227fd9709e10b99233aeb5d5c3a69f5de67a0",
+    "08-read-player-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "24-complete-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "01-read-player-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "21-complete-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "complete-before.sqlite": "dbac0bc2dcbe2d9fdfb6c32d3a9ff96163cfcb6ffd943428df9177f5d7e3c902",
+    "13-read-human-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "06-read-player-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "22-complete-retry.stdout.log": "33e097471862fcaca80cc6b77d83d58c1c057b0655c50f010301d3c5b92535a0",
+    "09-read-human-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "26-complete-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "12-read-human-recover-before.stdout.log": "04955287454d48a0a902f43207560be447a66d76d0a9539773d62d3dbf9c137a",
+    "19-complete-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "18-complete-normal.stdout.log": "33e097471862fcaca80cc6b77d83d58c1c057b0655c50f010301d3c5b92535a0",
+    "23-complete-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "complete-after.sqlite": "dbac0bc2dcbe2d9fdfb6c32d3a9ff96163cfcb6ffd943428df9177f5d7e3c902",
+    "17-read-human-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "00-read-player-normal.stdout.log": "66b0504f58fce68f6ec19934a651d44beccec2642d1ea6188d0f39fb68ebec5a",
+    "14-read-human-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "20-complete-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "read-player-after.sqlite": "bcec9511f0b5e68cbeb408a5f068057b1bdc20a9c139ab1a28d051a5462eff85",
+    "complete-before-recovered.sqlite": "02a66ad66fca222189b79ba3a56978a691b8a2d72bab36372c146f82da6f24e2",
+    "10-read-human-normal-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "07-read-player-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "15-read-human-after.stdout.log": "d514553e3475e873499b33a8cc28745dc2e038d8993a4fcff04c7b3ddf20f10c",
+    "16-read-human-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "05-read-player-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "11-read-human-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "read-player-before-recovered.sqlite": "9022c4a41f1a49c6b1c6f7ff3c913ea263fb413f966f4b62310d54b430bbbea4",
+    "25-complete-recover-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "03-read-player-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "24-complete-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "complete-normal.sqlite": "dbac0bc2dcbe2d9fdfb6c32d3a9ff96163cfcb6ffd943428df9177f5d7e3c902",
+    "01-read-player-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "08-read-player-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "04-read-player-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "02-read-player-before.stdout.log": "341a7e5c27c6c5a484fbe3b0be4c908f048f0c3dfa67f442d158fa6ed4ff6771",
+    "read-human-before.sqlite": "9e78ec3b313e2db53ffdf6cf17c9df6d7be054231d46fb24ce2c795b74c2fa32",
+    "19-complete-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "22-complete-retry.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "06-read-player-after.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "09-read-human-normal.stdout.log": "b03843cdeb7bfb4865ad99dc9a96309090ac41baea70c2caf160298b2050fd63",
+    "21-complete-recover-before.stdout.log": "b5b5313aec4a67ad50685b8c3a93aa3a4077c8c9dc986c54d63836cb06d13e25",
+    "13-read-human-retry.stdout.log": "b03843cdeb7bfb4865ad99dc9a96309090ac41baea70c2caf160298b2050fd63",
+    "26-complete-after-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "12-read-human-recover-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "20-complete-before.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "14-read-human-before-duplicate.stdout.log": "cccba360b6e6f462205c6bcf62dcfd22b44353705058651901541110c08c3773",
+    "00-read-player-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "17-read-human-after-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "10-read-human-normal-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "read-human-after.sqlite": "9e78ec3b313e2db53ffdf6cf17c9df6d7be054231d46fb24ce2c795b74c2fa32",
+    "23-complete-before-duplicate.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "18-complete-normal.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "read-player-before.sqlite": "bcec9511f0b5e68cbeb408a5f068057b1bdc20a9c139ab1a28d051a5462eff85"
+  },
+  "finishedUtc": "2026-10-02T07:06:22.497041+00:00"
+}

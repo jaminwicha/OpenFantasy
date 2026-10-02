@@ -1,0 +1,23 @@
+[
+  {
+    "script": "native_checks.py",
+    "mode": "retained-auth",
+    "exitCode": 0,
+    "seconds": 166.729,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T070244660743Z-retained-auth.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "durability",
+    "exitCode": 0,
+    "seconds": 30.813,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T070244660743Z-durability.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "outcome-durability",
+    "exitCode": 0,
+    "seconds": 26.989,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T070244660743Z-outcome-durability.log"
+  }
+]

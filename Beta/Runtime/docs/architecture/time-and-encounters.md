@@ -19,7 +19,8 @@ and deterministic selection. Their presence does not bind every world process to
 ## Runtime binding: local session pacing
 
 [LocalWorldSession](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) owns one admitted
-authority and a player control binding. Construction does not start time; readiness permits selection.
+authority and up to four [player connections](hosted-player-connections.md). Construction or connection does not
+start time; at least one gameplay-ready port permits selection.
 The session targets 50 ms monotonic deadlines. After a late step it discards missed deadlines and
 waits at least one interval; there is no burst catch-up or offline progress.
 
@@ -29,8 +30,8 @@ cadence, 48,000 steps produce a full day in 2,400 real seconds: approximately 40
 pauses and host stalls lengthen wall-clock days. Input never chooses elapsed simulation time.
 
 Movement is an exact 32-subunit cardinal sample or zero, with a 150 ms freshness lease. Losing
-readiness clears movement. A batch selected before that change may finish committing; later batches
-remain paused. The client therefore cannot infer committed state solely from its latest focus flag.
+readiness clears that port's movement. A batch selected before that change may finish committing; later
+ordinary cutoffs pause only when no connected player is ready. The client therefore cannot infer committed state solely from its latest focus flag.
 
 An advancing batch resolves actions before movement. Opening a dialogue suppresses movement but
 retains that already selected step's time increment. A held batch selects eligible actions only and

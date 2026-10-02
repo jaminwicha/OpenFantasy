@@ -1,0 +1,30 @@
+[
+  {
+    "pid": 33564,
+    "ppid": 2466,
+    "cpu": "0.0",
+    "elapsed": "12:09",
+    "executable": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python"
+  },
+  {
+    "pid": 36277,
+    "ppid": 33564,
+    "cpu": "0.0",
+    "elapsed": "00:07",
+    "executable": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python"
+  },
+  {
+    "pid": 36306,
+    "ppid": 36277,
+    "cpu": "0.0",
+    "elapsed": "00:05",
+    "executable": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python"
+  },
+  {
+    "pid": 36310,
+    "ppid": 36306,
+    "cpu": "0.4",
+    "elapsed": "00:05",
+    "executable": "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot"
+  }
+]

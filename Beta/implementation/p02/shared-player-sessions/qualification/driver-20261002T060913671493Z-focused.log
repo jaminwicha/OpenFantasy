@@ -1,0 +1,36 @@
+{
+  "mode": "focused",
+  "limitSeconds": 600,
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/build-20261002T060830544550Z/report.json",
+  "buildReportSha256": "2c262418da3bf7c7ccd7343f0bfb16184cd2cddbe67485991cfa5b0d95ab2596",
+  "exitCode": 1,
+  "seconds": 44.78246799999033,
+  "sourceUnchanged": true,
+  "outcomes": {
+    "Failed": 1,
+    "Passed": 23
+  },
+  "accepted": false
+}
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/focused-20261002T060913722378Z
+rshedNetwork watershedNetwork, LiquidReservoirState reservoirs, ReservoirTransportState transport, ExcavationSnapshot excavation, ConstructionPhysicalSnapshot constructionPhysical, ConstructionLoadPolicy structuralPolicy, StructuralSettlementPolicy structuralSettlementPolicy, ConsequenceExecutionPolicy consequencePolicy, PendingExcavation pendingExcavation, CoupledSettlementPolicy coupledSettlementPolicy, ConstructionDescentMode descentMode, ReservoirSealPolicy reservoirSeals, LiquidCellState liquidCells, WorldPacingState pacing, EncounterActionSnapshot encounterActions, EncounterLifecycleSnapshot encounterLifecycle, CareSnapshot care, WorldResourceHistory resourceHistory, WorldCoordinatedContinuation coordination, EncounterRetreatState retreat, EncounterOutcomeState encounterOutcome, WorldIdentityIndex previous) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs:line 249
+   at OpenFantasy.Core.Worlds.WorldSnapshot..ctor(CountedAuthorityState inventory, LocalSpatialSnapshot space, IEnumerable`1 residents, ContentHash admissionVersion, WorldInstant calendar, UInt64 revision, UInt64 advancingSteps, IEnumerable`1 dialogues, GatheringSnapshot gathering, ProductionSnapshot production, ProgressionSnapshot progression, QuestSnapshot quests, ConstructionSnapshot construction, PreparedWatershed watershed, PreparedWatershedNetwork watershedNetwork, LiquidReservoirState reservoirs, ReservoirTransportState transport, ExcavationSnapshot excavation, ConstructionPhysicalSnapshot constructionPhysical, ConstructionLoadPolicy structuralPolicy, StructuralSettlementPolicy structuralSettlementPolicy, ConsequenceExecutionPolicy consequencePolicy, PendingExcavation pendingExcavation, CoupledSettlementPolicy coupledSettlementPolicy, ConstructionDescentMode descentMode, ReservoirSealPolicy reservoirSeals, LiquidCellState liquidCells, WorldPacingState pacing, EncounterActionSnapshot encounterActions, EncounterLifecycleSnapshot encounterLifecycle, CareSnapshot care, WorldResourceHistory resourceHistory, WorldCoordinatedContinuation coordination, EncounterRetreatState retreat, EncounterOutcomeState encounterOutcome) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs:line 44
+   at OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedOutcomeCalibration.WithObserverCare(WorldSnapshot basis) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SharedPlayers/SharedOutcomeCalibration.cs:line 26
+   at OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SharedPlayers/SharedEncounterSessionTests.cs:line 25
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Simultaneous_choices_use_one_presented_timing_revision_and_inquiries_stay_with_their_owner [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Four_real_connections_are_bounded_and_host_stop_cancels_all_inputs [922 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ConsequenceSessionTests.Exact_saved_retry_attaches_while_paused_and_stop_cancels_only_its_waiter [7 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ConsequenceSessionTests.A_selected_excavation_is_isolated_and_its_waiters_complete_only_after_paused_resolution(harmless: False) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ConsequenceSessionTests.A_selected_excavation_is_isolated_and_its_waiters_complete_only_after_paused_resolution(harmless: True) [3 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ConsequenceSessionTests.A_reopened_pending_world_resumes_without_readiness_or_an_actor_request [5 s]
+[xUnit.net 00:00:42.69]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.SharedPlayers.SharedThreatSessionTests.Closing_the_target_port_does_not_remove_a_lawful_hostile_opportunity [41 s]
+
+Test Run Failed.
+Total tests: 24
+     Passed: 23
+     Failed: 1
+ Total time: 43.3635 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/focused-20261002T060913722378Z/checks.trx
+

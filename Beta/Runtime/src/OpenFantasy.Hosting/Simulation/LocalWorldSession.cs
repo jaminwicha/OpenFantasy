@@ -12,7 +12,7 @@ using OpenFantasy.Hosting.Worlds;
 
 namespace OpenFantasy.Hosting.Simulation;
 
-/// <summary>The local host's current scheduling policy, independent of which client panel is visible.</summary>
+/// <summary>A player port's scheduling state; other ready ports can keep their shared host running.</summary>
 public enum LocalWorldRunState { Unavailable, Paused, Waiting, Running, Resolving }
 
 /// <summary>
@@ -27,8 +27,6 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private readonly SemaphoreSlim _serialization = new(1, 1);
     private readonly CancellationTokenSource _stop = new();
     private readonly SqliteWorldAuthority _authority;
-    private readonly EntityId _playerActorId;
-    private readonly TrustedCommandDelivery _delivery;
     private readonly TimeProvider _time;
     private readonly LocalNpcController _npcs = new();
     private readonly LocalCareController _care = new();
@@ -37,19 +35,14 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private readonly LocalMaterialGiftController _materialGifts;
     private readonly LocalTradingController _trading;
     private readonly Retreat.LocalRetreatConfiguration _retreat;
-    private readonly RoadThreat.LocalRoadThreatController _threats;
-    private readonly CargoPresentation.LocalRegionObserver? _regions;
     private readonly Task _loop;
-    private LocalWorldView _view;
+    private readonly LocalPlayerConnection _localPlayer;
+    private readonly SortedDictionary<EntityId, LocalPlayerConnection> _players = [];
+    private EntityId? _lastServedActor;
     private ContentHash _projectedStateHash;
-    private PendingLocalAction? _pending;
     private Exception? _failure;
     private Task? _stopping;
-    private bool _ready;
     private bool _stopRequested;
-    private long _movementX;
-    private long _movementY;
-    private long _movementAt;
 
     public LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId, TrustedCommandDelivery delivery)
         : this(authority, playerActorId, delivery, TimeProvider.System) { }
@@ -96,7 +89,6 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         ArgumentNullException.ThrowIfNull(authority);
         ArgumentNullException.ThrowIfNull(delivery);
         ArgumentNullException.ThrowIfNull(timeProvider);
-        _regions = regions;
         _retreat = retreat ?? Retreat.LocalRetreatConfiguration.None;
         WorldSnapshot state = authority.ReadStateForHost();
         if (!state.Inventory.CanControl(delivery, playerActorId)
@@ -105,13 +97,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             throw new AuthorityDispatchException("The local session requires its admitted player and current delivery binding.");
         }
         _authority = authority;
-        _playerActorId = playerActorId;
-        _threats = new RoadThreat.LocalRoadThreatController(playerActorId);
-        _delivery = delivery;
         _time = timeProvider;
         _materialGifts = new LocalMaterialGiftController(state, giftPolicies ?? []);
         _trading = new LocalTradingController(state, playerActorId, trading ?? LocalTradingConfiguration.None);
-        _view = ProjectView(state);
+        _localPlayer = new LocalPlayerConnection(this, playerActorId, delivery, ProjectView(state, playerActorId, regions), regions);
+        _players.Add(playerActorId, _localPlayer);
         _projectedStateHash = state.ContentHash;
         _loop = Task.Run(RunAsync);
     }
@@ -119,52 +109,17 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     /// <summary>Faults on storage, recovery or host-loop failure; input rejection is reported by its own task.</summary>
     public Task Completion => _loop;
 
-    public LocalWorldView ReadView() => Volatile.Read(ref _view);
+    public LocalWorldView ReadView() => _localPlayer.ReadView();
 
-    public LocalWorldRunState ReadRunState()
-    {
-        lock (_inputs)
-        {
-            if (_failure is not null || _stopRequested) return LocalWorldRunState.Unavailable;
-            if (_view.IsResolvingConsequences) return LocalWorldRunState.Resolving;
-            if (!_ready) return LocalWorldRunState.Paused;
-            return _view.HasReadingHold || _view.Encounter?.HasRequiredDecisions == true || _view.Encounter?.IsOutcome == true
-                ? LocalWorldRunState.Waiting : LocalWorldRunState.Running;
-        }
-    }
+    public LocalWorldRunState ReadRunState() => ReadRunState(_localPlayer);
 
-    public void SetReady(bool ready)
-    {
-        lock (_inputs)
-        {
-            EnsureInputAvailable();
-            _ready = ready;
-            if (!ready)
-            {
-                _movementX = 0;
-                _movementY = 0;
-            }
-        }
-    }
+    public void SetReady(bool ready) => SetReady(_localPlayer, ready);
 
-    public void SetMovement(long dx, long dy)
-    {
-        bool cardinal = ((dx == 32 || dx == -32) && dy == 0) || ((dy == 32 || dy == -32) && dx == 0);
-        if (!cardinal && (dx != 0 || dy != 0))
-        {
-            throw new ArgumentException("Movement selects one fixed cardinal sample, or zero to stop.");
-        }
-        lock (_inputs)
-        {
-            EnsureInputAvailable();
-            bool acceptsMovement = _ready && !_view.IsResolvingConsequences && !_view.IsInEncounter;
-            _movementX = acceptsMovement ? dx : 0;
-            _movementY = acceptsMovement ? dy : 0;
-            _movementAt = _time.GetTimestamp();
-        }
-    }
+    public void SetMovement(long dx, long dy) => SetMovement(_localPlayer, dx, dy);
 
-    public async Task<WorldActionReceipt> SubmitAction(WorldActionCommand command)
+    public Task<WorldActionReceipt> SubmitAction(WorldActionCommand command) => SubmitAction(_localPlayer, command);
+
+    internal async Task<WorldActionReceipt> SubmitAction(LocalPlayerConnection player, WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
         byte[] encoded = WorldActionCodec.Encode(command);
@@ -172,15 +127,15 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
         {
-            lock (_inputs) { EnsureInputAvailable(); }
-            if (command.ActorId != _playerActorId)
+            lock (_inputs) { EnsurePlayerAvailable(player); }
+            if (command.ActorId != player.ActorId)
             {
                 throw new AuthorityDispatchException("This session accepts only its admitted player's actions.");
             }
             WorldActionReceipt? prior;
             try
             {
-                prior = _authority.FindReceipt(command, _delivery);
+                prior = _authority.FindReceipt(command, player.Delivery);
             }
             catch (AuthorityDispatchException) { throw; }
             catch (Exception error) { Fail(error); throw; }
@@ -232,8 +187,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             }
             lock (_inputs)
             {
-                EnsureInputAvailable();
-                if (_pending is { } existing)
+                EnsurePlayerAvailable(player);
+                if (player.Pending is { } existing)
                 {
                     if (!existing.Bytes.AsSpan().SequenceEqual(encoded))
                     {
@@ -243,7 +198,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 }
                 else
                 {
-                    if (!_ready && !durablePending)
+                    if (!player.Ready && !durablePending)
                     {
                         throw new AuthorityDispatchException("The local session is not ready to select a new action.");
                     }
@@ -258,8 +213,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                             throw new AuthorityDispatchException("The command identity is already occupied.");
                         }
                     }
-                    _pending = new PendingLocalAction(command, encoded);
-                    result = _pending.Completion.Task;
+                    if (_players.Values.Any(other => !ReferenceEquals(other, player)
+                        && other.Pending?.Command.CommandId == command.CommandId))
+                        throw new AuthorityDispatchException("Another player already queued this command identity.");
+                    player.Pending = new PendingLocalAction(command, encoded);
+                    result = player.Pending.Completion.Task;
                 }
             }
         }
@@ -286,7 +244,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             var agreement = state.Care.Agreements.SingleOrDefault(value => value.AgreementId == acknowledgment.AgreementId);
             if (agreement is not null && LocalCareController.HostControl(state, agreement.HelperActorId) is null)
                 throw new AuthorityDispatchException("This local care route requires an admitted host helper.");
-            // Stale phase, revision and agreement choices still receive durable terminal receipts.
+            // Stale revision and agreement choices still receive durable terminal receipts.
             return;
         }
         if (state.Care?.Pending is not null)
@@ -299,7 +257,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 throw new AuthorityDispatchException("A lifecycle choice requires its admitted world without a reading hold.");
             if (command.Intent is ReleaseEncounterIntent && LocalProfileBindings.AdmitsOutcomeCompletion(state))
                 throw new AuthorityDispatchException("This world completes an outcome after it is read; it has no initiator release.");
-            // Exact phase, target, identity and captured revisions receive normal durable receipts.
+            // Exact target, identity and captured revisions receive normal durable receipts.
             return;
         }
         if (command.Intent is AcknowledgeEncounterOutcomeIntent)
@@ -323,6 +281,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         if (command.Intent is QueueEncounterAbilityIntent or QueueEncounterRetreatIntent && state.EncounterActions is null
             || WorldEncounterActions.IsOutcome(state))
             throw new AuthorityDispatchException("This encounter does not admit another ability or timing action.");
+        if (command.Intent is QueueEncounterWaitIntent or QueueEncounterAbilityIntent or QueueEncounterRetreatIntent
+            && (WorldEncounterActions.DueActors(state).All(actor => actor.ActorId != command.ActorId)
+                || state.Pacing!.Encounter!.Decisions.Any(decision => decision.ActorId == command.ActorId)
+                || WorldEncounterRetreats.HoldsActor(state, command.ActorId)))
+            throw new AuthorityDispatchException("Only an eligible participant awaiting its own decision may queue a combat choice.");
     }
 
     public Task StopAsync()
@@ -366,9 +329,12 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             lock (_inputs)
             {
-                if (_failure is { } failure) { _pending?.Completion.TrySetException(failure); }
-                else { _pending?.Completion.TrySetCanceled(_stop.Token); }
-                _pending = null;
+                foreach (LocalPlayerConnection player in _players.Values)
+                {
+                    if (_failure is { } failure) { player.Pending?.Completion.TrySetException(failure); }
+                    else { player.Pending?.Completion.TrySetCanceled(_stop.Token); }
+                    player.Pending = null;
+                }
             }
         }
         Exception? finalFailure;
@@ -393,20 +359,31 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 return;
             }
             PendingLocalAction? pending;
-            long x;
-            long y;
+            List<WorldMovementInput> playerMovement;
             lock (_inputs)
             {
-                if (!_ready || _stopRequested) { return; }
-                pending = _pending;
-                bool fresh = _time.GetElapsedTime(_movementAt, _time.GetTimestamp()) <= MovementLease;
-                x = fresh ? _movementX : 0;
-                y = fresh ? _movementY : 0;
+                if (_stopRequested || !_players.Values.Any(player => player.Ready)) { return; }
+                pending = SelectPendingAction(state);
+                playerMovement = SamplePlayerMovement();
             }
             if (pending?.Command.Intent is AcknowledgeCareIntent || state.Care?.Pending is not null)
             {
                 TickCare(state, pending);
-                return;
+                if (state.Care?.Pending is not null)
+                {
+                    WorldSnapshot afterCare = _authority.ReadStateForHost();
+                    // Only a published receipt earns the patient's separate cutoff. A failed preflight
+                    // changes no durable revision and must not defer the already accepted helper action.
+                    if (pending is not null && afterCare.Revision == state.Revision)
+                        TickCare(afterCare, null);
+                    return;
+                }
+                if (!WasRefused(pending) || pending is not null && IsCurrentCareChoice(state, pending.Command))
+                    return;
+                // A patient's care offer is adjudicated unchanged, including after its encounter ends.
+                // Outside the genuine outcome choice, a refusal cannot stop the due world boundary.
+                state = _authority.ReadStateForHost();
+                pending = null;
             }
             // Profile 35: a reading is the player's own lifecycle command; completion is the world's own boundary once
             // every required human has read the outcome and no care is pending. Neither earns time.
@@ -415,7 +392,18 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 || WorldEncounterOutcomes.IsReadyToFinalize(state))
             {
                 TickLifecycle(state, pending);
-                return;
+                if (!WasRefused(pending) || pending is not null && IsLegacyInitiatorRelease(state, pending.Command))
+                    return;
+                // A rejected zero-time request is a receipt, not an extra pause entitlement. Continue the
+                // already-due world cutoff once, without retrying or replacing the player's command.
+                state = _authority.ReadStateForHost();
+                pending = null;
+                if (state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
+                    || WorldEncounterOutcomes.IsReadyToFinalize(state))
+                {
+                    TickLifecycle(state, null);
+                    return;
+                }
             }
             if (state.Pacing?.Encounter is not null)
             {
@@ -439,7 +427,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             else if (!state.HasReadingHold)
             {
                 movement.AddRange(_npcs.SelectMovement(state));
-                if (x != 0 || y != 0) { movement.Add(new WorldMovementInput(_delivery, _playerActorId, x, y)); }
+                movement.AddRange(playerMovement);
             }
             WorldStepBatch? batch = SelectAdmissibleBatch(state, ref pending, movement);
             if (batch is null)
@@ -451,9 +439,28 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         finally { _serialization.Release(); }
     }
 
+    private static bool IsCurrentCareChoice(WorldSnapshot state, WorldActionCommand command) =>
+        command.Intent is AcknowledgeCareIntent care && state.EncounterLifecycle?.Phase == EncounterLifecyclePhase.Outcome
+        && state.EncounterActions?.Scope.EncounterId == care.EncounterId
+        && state.Care?.Agreements.Any(agreement => agreement.AgreementId == care.AgreementId
+            && agreement.PatientActorId == command.ActorId) == true
+        && state.EncounterActions.Combatants.Any(actor => actor.ActorId == command.ActorId && actor.Side != 0);
+
+    private static bool IsLegacyInitiatorRelease(WorldSnapshot state, WorldActionCommand command) =>
+        command.Intent is ReleaseEncounterIntent release
+        && state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
+        && state.EncounterActions?.Scope.EncounterId == release.EncounterId
+        && state.EncounterLifecycle.Scenarios.Single(scenario => scenario.DefinitionId == state.EncounterLifecycle.ScenarioId)
+            .InitiatingActorId == command.ActorId;
+
+    private static bool WasRefused(PendingLocalAction? pending) => pending is not null
+        && (pending.Completion.Task.IsFaulted || pending.Completion.Task.IsCanceled
+            || pending.Completion.Task.IsCompletedSuccessfully
+                && pending.Completion.Task.Result.Rejection != WorldActionRejection.None);
+
     private void TickCare(WorldSnapshot state, PendingLocalAction? pending)
     {
-        ClearMovement();
+        if (state.Pacing?.Encounter is not null) ClearMovement();
         RefuseUnrepresentable(state, WorldBatchKind.Care, ref pending);
         WorldActionCommand? command = pending?.Command
             ?? _care.SelectTreatment(state, _authority.IsIdentityOccupiedForHost);
@@ -475,7 +482,6 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
 
     private void TickLifecycle(WorldSnapshot state, PendingLocalAction? pending)
     {
-        ClearMovement();
         if (RefuseUnrepresentable(state, WorldBatchKind.EncounterLifecycle, ref pending)
             && state.EncounterLifecycle?.Phase is not (EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging)
             && !WorldEncounterOutcomes.IsReadyToFinalize(state))
@@ -492,6 +498,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             return;
         }
         CommitSelectedBatch(batch, pending);
+        if (_authority.ReadStateForHost().Pacing?.Encounter is not null) ClearMovement();
     }
 
     /// <summary>
@@ -506,7 +513,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     /// </summary>
     private bool TickHostileEntry(WorldSnapshot state, PendingLocalAction? pending)
     {
-        WorldActionCommand? entry = _threats.SelectEntry(state, () => NewCause(null));
+        WorldActionCommand? entry = RoadThreat.LocalRoadThreatController.SelectPlayerEntry(state, () => NewCause(null));
         if (entry is null)
         {
             return false;
@@ -521,7 +528,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             return false;
         }
         ClearMovement();
-        CommitSelectedBatch(batch, null);
+        CommitSelectedBatch(batch, (PendingLocalAction?)null);
         if (pending is not null)
         {
             CompletePending(pending, null,
@@ -533,17 +540,30 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private void TickEncounter(WorldSnapshot state, PendingLocalAction? pending)
     {
         ClearMovement();
+        List<PendingLocalAction> awaiting = [];
+        lock (_inputs)
+        {
+            awaiting.AddRange(_players.Values.Where(player => player.Ready && player.Pending is not null)
+                .Select(player => player.Pending!));
+        }
+        foreach (PendingLocalAction request in awaiting.ToArray())
+        {
+            PendingLocalAction? candidate = request;
+            if (WorldEncounterActions.IsOutcome(state))
+            {
+                CompletePending(request, null, new AuthorityDispatchException("The encounter now awaits outcome reading."));
+                awaiting.Remove(request);
+            }
+            else if (RefuseUnrepresentable(state, WorldBatchKind.EncounterDecision, ref candidate))
+            {
+                awaiting.Remove(request);
+            }
+        }
         if (WorldEncounterActions.IsOutcome(state)) return;
-        RefuseUnrepresentable(state, WorldBatchKind.EncounterDecision, ref pending);
-        var timing = state.Pacing!.Encounter!;
         EntityId cause = NewCause(pending?.Command.CommandId);
         HashSet<EntityId> selected = [cause];
-        List<WorldActionCommand> actions = [];
-        if (pending is not null)
-        {
-            selected.Add(pending.Command.CommandId);
-            actions.Add(pending.Command);
-        }
+        List<WorldActionCommand> actions = awaiting.Select(request => request.Command).ToList();
+        selected.UnionWith(actions.Select(command => command.CommandId));
         actions.AddRange(_npcs.SelectEncounterChoices(state, () => AllocateSelectedIdentity(selected), _retreat));
         WorldBatchKind kind;
         if (actions.Count != 0)
@@ -564,14 +584,14 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             _authority.Preview(batch);
         }
-        catch (AuthorityDispatchException error) when (pending is not null)
+        catch (AuthorityDispatchException error) when (awaiting.Count != 0)
         {
             // A refused selected request leaves this encounter at the same boundary. It cannot
             // select ordinary movement, work or exploration time as a fallback.
-            CompletePending(pending, null, error);
+            foreach (PendingLocalAction request in awaiting) CompletePending(request, null, error);
             return;
         }
-        CommitSelectedBatch(batch, pending);
+        CommitSelectedBatch(batch, awaiting);
     }
 
     private void ContinueConsequences(WorldSnapshot state)
@@ -580,9 +600,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         lock (_inputs)
         {
             if (_stopRequested) { return; }
-            _movementX = 0;
-            _movementY = 0;
-            awaiting = _pending;
+            foreach (LocalPlayerConnection player in _players.Values) player.ClearMovement();
+            awaiting = _players.GetValueOrDefault(state.PendingExcavation!.Command.ActorId)?.Pending;
         }
         if (awaiting is not null && !WorldActionCodec.Encode(state.PendingExcavation!.Command).AsSpan()
             .SequenceEqual(awaiting.Bytes))
@@ -594,37 +613,41 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         CommitSelectedBatch(batch, awaiting);
     }
 
-    private void CommitSelectedBatch(WorldStepBatch batch, PendingLocalAction? awaiting)
+    private void CommitSelectedBatch(WorldStepBatch batch, PendingLocalAction? awaiting) =>
+        CommitSelectedBatch(batch, awaiting is null ? Array.Empty<PendingLocalAction>() : [awaiting]);
+
+    private void CommitSelectedBatch(WorldStepBatch batch, IReadOnlyList<PendingLocalAction> awaiting)
     {
         WorldStepDecision decision = _authority.Commit(batch);
-        // Only a committed receipt turns a merchant's selected answer into an offer.
         _trading.Observe(decision);
         PublishViewIfChanged(decision.Candidate);
         if (decision.Candidate.PendingExcavation is { } pending)
         {
             ClearMovement();
-            if (awaiting is not null && !WorldActionCodec.Encode(pending.Command).AsSpan().SequenceEqual(awaiting.Bytes))
-            {
-                throw new InvalidDataException("The committed consequence command differs from the local waiter.");
-            }
+            if (awaiting.Count > 1 || awaiting.Count == 1
+                && !WorldActionCodec.Encode(pending.Command).AsSpan().SequenceEqual(awaiting[0].Bytes))
+                throw new InvalidDataException("The committed consequence command differs from its player waiter.");
         }
-        else if (awaiting is not null)
+        else
         {
-            WorldActionReceipt receipt = decision.Receipts.Single(value => value.CommandId == awaiting.Command.CommandId);
-            CompletePending(awaiting, receipt, null);
+            foreach (PendingLocalAction request in awaiting)
+            {
+                WorldActionReceipt receipt = decision.Receipts.Single(value => value.CommandId == request.Command.CommandId);
+                CompletePending(request, receipt, null);
+            }
         }
     }
 
     /// <summary>Runs at publication on the serialized host owner, never in a frame; the regional cache is reused.</summary>
-    private LocalWorldView ProjectView(WorldSnapshot state) => new(state, _playerActorId,
-        state.Care?.Pending is not null && _authority.IsIdentityOccupiedForHost(LocalCareController.SelectionId(state)), _regions);
+    private LocalWorldView ProjectView(WorldSnapshot state, EntityId actorId,
+        CargoPresentation.LocalRegionObserver? regions) => new(state, actorId,
+        state.Care?.Pending is not null && _authority.IsIdentityOccupiedForHost(LocalCareController.SelectionId(state)), regions);
 
     private void ClearMovement()
     {
         lock (_inputs)
         {
-            _movementX = 0;
-            _movementY = 0;
+            foreach (LocalPlayerConnection player in _players.Values) player.ClearMovement();
         }
     }
 
@@ -765,7 +788,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             RandomNumberGenerator.Fill(bytes);
             EntityId id = EntityId.FromBytes(bytes);
-            if (id != commandId && !_authority.IsIdentityOccupiedForHost(id)) { return id; }
+            bool queued;
+            lock (_inputs) { queued = _players.Values.Any(player => player.Pending?.Command.CommandId == id); }
+            if (id != commandId && !queued && !_authority.IsIdentityOccupiedForHost(id)) { return id; }
         }
         throw new InvalidOperationException("The host could not allocate an unoccupied commit cause.");
     }
@@ -780,7 +805,10 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             return;
         }
-        Volatile.Write(ref _view, ProjectView(state));
+        foreach (LocalPlayerConnection player in _players.Values)
+        {
+            player.Publish(ProjectView(state, player.ActorId, player.Regions));
+        }
         _projectedStateHash = state.ContentHash;
     }
 
@@ -788,7 +816,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     {
         lock (_inputs)
         {
-            if (ReferenceEquals(_pending, pending)) { _pending = null; }
+            if (_players.TryGetValue(pending.Command.ActorId, out LocalPlayerConnection? player)
+                && ReferenceEquals(player.Pending, pending)) player.Pending = null;
         }
         if (error is not null) { pending.Completion.TrySetException(error); }
         else { pending.Completion.TrySetResult(receipt!); }
@@ -799,10 +828,12 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         lock (_inputs)
         {
             _failure ??= error;
-            _ready = false;
-            _movementX = 0;
-            _movementY = 0;
-            _pending?.Completion.TrySetException(_failure);
+            foreach (LocalPlayerConnection player in _players.Values)
+            {
+                player.Ready = false;
+                player.ClearMovement();
+                player.Pending?.Completion.TrySetException(_failure);
+            }
         }
         _stop.Cancel();
     }
@@ -816,9 +847,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     private async Task StopCoreAsync()
     {
         _stopRequested = true;
-        _ready = false;
-        _movementX = 0;
-        _movementY = 0;
+        foreach (LocalPlayerConnection player in _players.Values)
+        {
+            player.Ready = false;
+            player.ClearMovement();
+        }
         _stop.Cancel();
         try { await _loop.ConfigureAwait(false); }
         finally

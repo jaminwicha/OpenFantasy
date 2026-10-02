@@ -1,0 +1,32 @@
+{
+  "Kind": "native-road-threat-fixture-v1",
+  "ProfileVersion": 34,
+  "SeedText": "native-road-threat-fixture",
+  "PlayerName": "Traveler",
+  "Setup": "Fresh threatened cargo world; Wren\u0027s quest reward earned, one ration bought from Marla in person, the lot carried along the authored lane to road cell (346,318) at ordinary session cutoffs, outside the chief\u0027s reach. Native begins paused in exploration at that road cell.",
+  "Boundary": "Short native fixtures begin on the actual road after this managed preparation; the native journey owns the approach, the chief\u0027s entry, the fight/retreat, the detour, the far sale and reopening.",
+  "WorldId": "1db86fdec7d6f4bd47a2374437e9299e",
+  "BranchId": "5760014592f7a80f46f5d7c905997a32",
+  "GenesisHash": "ac9fe93d6064e0b574098c3990a9c6f21f1d386eeb0f0d25d8656b07553cfb0b",
+  "BeforeHash": "c568ace0b7902d942b197e227d1f71fe21bf327f5635272a1d5d361b3d7d32d6",
+  "BeforeRevision": 2470,
+  "BeforeAdvancingSteps": 2467,
+  "PlayerActorId": "2bfa5e10a9524c31b8d79a1aa254770e",
+  "ChiefActorId": "ec3a3103de258e65420c3aa478fb19b9",
+  "ScenarioId": "ea9f6cf8f599e8cd4d1793dacc4e5107",
+  "ChiefFeet": {
+    "X": 88960,
+    "Y": 79744,
+    "Z": 256
+  },
+  "ReachSubunits": 400,
+  "MarlaActorId": "b88309f58e73983112dd155ecefc0dc5",
+  "MarlaMarketId": "f17db94c8301888766a27ab2711a6c8b",
+  "KeggaActorId": "415ab9a6433a89717c556531e5e3d5b4",
+  "KeggaMarketId": "75e2427f9ff76db574f7f0d7d6c17fd5",
+  "CarriedLotId": "033f038b37f5ed11b5bb80553d59bf41",
+  "RewardCurrency": 200,
+  "PaidCurrency": 20,
+  "PlayerBalance": 180,
+  "Limits": "Fresh threatened cargo world only: no retained-save migration, escort wage, pursuit, party retreat, multiplayer, physical device or human acceptance claim."
+}

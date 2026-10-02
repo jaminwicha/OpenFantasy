@@ -1,0 +1,49 @@
+{
+  "mode": "regression",
+  "limitSeconds": 600,
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/build-20261002T061818120298Z/report.json",
+  "buildReportSha256": "cb0e0bdcfe41fd8b0e57c9daa2995c493d5b277be0a80dd397efbf36d15d5fb7",
+  "exitCode": 1,
+  "seconds": 438.91198183299275,
+  "sourceUnchanged": true,
+  "outcomes": {
+    "Failed": 2,
+    "Passed": 566
+  },
+  "accepted": false
+}
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/regression-20261002T062104459297Z
+l_stock_are_owned_finite_lots_with_explicit_capacity [88 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Same_input_is_byte_identical_while_other_seeds_have_distinct_instances_and_stable_definitions [182 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Embedded_and_filesystem_profiles_restore_with_the_complete_world_codec [190 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Admits_two_representative_finite_nodes_with_exact_source_swing_and_renewal_counts [72 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Domain_separates_user_seed_and_preserves_the_unchanged_base_composition [137 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Invalid_user_text_rejects_before_any_filesystem_content_read [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Forged_local_source_pin_missing_profile_and_oversized_profile_are_rejected [388 ms]
+  Passed OpenFantasy.Hosting.Tests.Content.GatheringFarmAdmissionTests.Initial_actor_work_and_node_sites_are_supported_without_advancing_or_opening_dialogue [67 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ConsequenceSessionTests.Exact_saved_retry_attaches_while_paused_and_stop_cancels_only_its_waiter [14 s]
+  Passed OpenFantasy.Hosting.Tests.Client.Retreat.NativeRetreatFixtureTests.An_earned_and_bought_lot_is_carried_back_beside_the_real_wolf_before_any_encounter [36 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ConsequenceSessionTests.A_selected_excavation_is_isolated_and_its_waiters_complete_only_after_paused_resolution(harmless: False) [12 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ConsequenceSessionTests.A_selected_excavation_is_isolated_and_its_waiters_complete_only_after_paused_resolution(harmless: True) [11 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_player_buys_retreats_on_walked_ground_with_real_costs_then_travels_trades_and_reopens_exactly [56 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.An_occupancy_change_after_selection_interrupts_without_movement_and_still_charges_the_sample [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.The_accepted_cargo_world_keeps_its_profile_and_refuses_a_retreat_request [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.Stale_wrong_controller_blocked_contact_and_unready_retreats_are_refused_without_effect [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatSessionTests.A_committed_retreat_resumes_after_full_journal_recovery_without_skipping_samples_and_retries_exactly [9 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ConsequenceSessionTests.A_reopened_pending_world_resumes_without_readiness_or_an_actor_request [20 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.Readiness_and_recorded_state_decide_entry_through_reopens_mid_encounter_mid_retreat_and_at_outcome [3 m 22 s]
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck [3 m 55 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.A_waiting_request_never_holds_back_entry_and_is_refused_at_that_cutoff_while_outside_reach_it_is_answered [1 m 9 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.The_production_threat_selection_creates_reopens_and_refuses_other_worlds_saves [6 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatCheckpointTests.A_journal_checkpoint_inside_an_active_retreat_keeps_every_retained_row_and_replays_exactly [4 m 33 s]
+[xUnit.net 00:07:16.97]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatBoundaryTests.The_warning_row_follows_actual_observation_and_a_declared_calibration_hides_it_by_floor_or_wall [1 m 6 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RoadThreat.RoadThreatJourneyTests.Bought_cargo_meets_the_chief_on_the_lane_escapes_detours_sells_and_reopens [3 m 30 s]
+
+Test Run Failed.
+Total tests: 568
+     Passed: 566
+     Failed: 2
+ Total time: 7.2933 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/regression-20261002T062104459297Z/checks.trx
+

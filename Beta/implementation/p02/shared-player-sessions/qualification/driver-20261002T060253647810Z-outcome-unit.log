@@ -1,0 +1,25 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-unit-20261002T060338Z-85415
+{
+  "kind": "outcome-unit",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/accepted-build.json",
+  "buildReportSha256": "fcfaec40fd52c497995a46b2442f06339a5b30aeb9ef91a7a1c302becfbfb2ea",
+  "outcomes": {
+    "Passed": 34
+  },
+  "preservationAfter": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "elapsedSeconds": 78.312,
+  "sourceUnchanged": true,
+  "accepted": true
+}

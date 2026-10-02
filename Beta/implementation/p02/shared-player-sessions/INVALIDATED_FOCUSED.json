@@ -1,0 +1,5 @@
+{
+  "report": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/focused-20261002T060709810871Z/report.json",
+  "status": "not_qualification",
+  "reason": "Invoked after a failed build: test assembly predates the added observer-care fixture. Passing old tests cannot verify current source. Native adapter correctly refused the next step; rerun after a successful exact-source build."
+}

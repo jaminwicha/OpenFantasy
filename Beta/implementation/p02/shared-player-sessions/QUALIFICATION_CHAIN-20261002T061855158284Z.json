@@ -1,0 +1,23 @@
+[
+  {
+    "script": "check.py",
+    "mode": "focused",
+    "exitCode": 0,
+    "seconds": 47.596,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T061855158284Z-focused.log"
+  },
+  {
+    "script": "native_checks.py",
+    "mode": "outcome-unit",
+    "exitCode": 0,
+    "seconds": 81.625,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T061855158284Z-outcome-unit.log"
+  },
+  {
+    "script": "check.py",
+    "mode": "regression",
+    "exitCode": 1,
+    "seconds": 440.119,
+    "log": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/qualification/driver-20261002T061855158284Z-regression.log"
+  }
+]

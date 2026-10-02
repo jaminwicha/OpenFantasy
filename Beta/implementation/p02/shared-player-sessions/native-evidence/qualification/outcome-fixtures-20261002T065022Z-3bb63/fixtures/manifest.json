@@ -1,0 +1,18 @@
+{
+  "Kind": "native-encounter-outcome-fixtures-v1",
+  "Routes": [
+    {
+      "Route": "victory",
+      "Directory": "victory"
+    },
+    {
+      "Route": "defeat",
+      "Directory": "defeat"
+    },
+    {
+      "Route": "care",
+      "Directory": "care"
+    }
+  ],
+  "Boundary": "Managed preparation only. Road routes: ordinary session cutoffs earn, buy and walk, stopping in exploration before any encounter. Care: ordinary cutoffs walk beside the first wolf and the player\u0027s own managed entry command begins the encounter, stopping at the Active first decision. Nothing resolves, reads, completes or cares before the native journey; native care-specific approach and entry timing are not exercised."
+}

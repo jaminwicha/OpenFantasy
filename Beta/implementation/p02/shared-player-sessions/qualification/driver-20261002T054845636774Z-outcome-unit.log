@@ -1,0 +1,62 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-unit-20261002T055726Z-5304e
+   OpenFantasy.Hosting.AuthorityDispatchException : This phase does not admit that lifecycle or care request.
+  Stack Trace:
+     at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 239
+   at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(LocalPlayerConnection player, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 149
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 65
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs:line 291
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs:line 302
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld [4 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission [3 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis [832 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading [5 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoCompletedEpisodesInOneWorldReplaceTheLatestRecordAndRetainIdentities [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.CompleteRootDecodeRefusesForeignPinsAndImpossibleOwnerContents [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening [38 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues [33 s]
+[xUnit.net 00:01:13.89]     OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [FAIL]
+[xUnit.net 00:01:13.89]       OpenFantasy.Hosting.AuthorityDispatchException : This actor has no remaining aftermath care choice.
+[xUnit.net 00:01:13.89]       Stack Trace:
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs(247,0): at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs(149,0): at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(LocalPlayerConnection player, WorldActionCommand command)
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(65,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command)
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(380,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(419,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:01:13.89]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:13.89]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem [531 ms]
+  Failed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [505 ms]
+  Error Message:
+   OpenFantasy.Hosting.AuthorityDispatchException : This actor has no remaining aftermath care choice.
+  Stack Trace:
+     at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 247
+   at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(LocalPlayerConnection player, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 149
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 65
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 380
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 419
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 25
+     Passed: 23
+     Failed: 2
+ Total time: 1.2384 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-unit-20261002T055726Z-5304e/outcome-host.trx
+{
+  "kind": "outcome-unit",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/accepted-build.json",
+  "buildReportSha256": "362be8d1bd106f86c31ff399075035c54102a03c444f8ffbba635abdfbd9c0ad",
+  "error": "AssertionError('Command failed; retained /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-unit-20261002T055726Z-5304e/1.log')",
+  "elapsedSeconds": 77.327,
+  "sourceUnchanged": true,
+  "accepted": false
+}

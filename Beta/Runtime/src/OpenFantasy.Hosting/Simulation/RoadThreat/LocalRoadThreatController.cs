@@ -58,11 +58,25 @@ internal sealed class LocalRoadThreatController
     }
 
     /// <summary>The first eligible hostile entry under the initiator's own control, or null when none is eligible.</summary>
-    internal WorldActionCommand? SelectEntry(WorldSnapshot state, Func<EntityId> newIdentity)
+    internal WorldActionCommand? SelectEntry(WorldSnapshot state, Func<EntityId> newIdentity) =>
+        SelectEntry(state, HostileScenarios(state, _playerActorId), newIdentity);
+
+    /// <summary>World-resident opportunities survive a player's UI port closing or becoming unready.</summary>
+    internal static WorldActionCommand? SelectPlayerEntry(WorldSnapshot state, Func<EntityId> newIdentity)
+    {
+        ArgumentNullException.ThrowIfNull(state);
+        var scenarios = state.EncounterLifecycle?.Scenarios.Where(scenario =>
+            state.GetResident(scenario.TargetActorId).ControllerKind == ResidentControllerKind.Player
+            && state.GetResident(scenario.InitiatingActorId).ControllerKind == ResidentControllerKind.Host) ?? [];
+        return SelectEntry(state, scenarios, newIdentity);
+    }
+
+    private static WorldActionCommand? SelectEntry(WorldSnapshot state, IEnumerable<EncounterScenarioDefinition> scenarios,
+        Func<EntityId> newIdentity)
     {
         ArgumentNullException.ThrowIfNull(state);
         ArgumentNullException.ThrowIfNull(newIdentity);
-        foreach (EncounterScenarioDefinition scenario in HostileScenarios(state, _playerActorId))
+        foreach (EncounterScenarioDefinition scenario in scenarios)
         {
             if (!CanInitiate(state, scenario)) continue;
             EncounterLifecycleSnapshot lifecycle = state.EncounterLifecycle!;

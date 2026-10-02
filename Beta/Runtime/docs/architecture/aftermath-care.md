@@ -82,9 +82,10 @@ guards selection. An occupied identity, including a rejected earlier selection o
 attention; the controller does not mint another identity to retry. A missing eligible dose or helper
 produces no selected command. Dispatch/storage failures remain host failures rather than fabricated care.
 
-Reopening reconstructs the public view but performs no helper work until readiness. Losing readiness
-prevents later cutoffs; an already selected transaction may finish under the session's ordinary serialized
-commit policy. Pending care retains Outcome and therefore reports Waiting when ready, Paused otherwise.
+Reopening reconstructs the public view but performs no helper work until at least one player port is ready.
+When no player port remains ready, later care cutoffs stop; an already selected transaction may finish
+under the host's ordinary serialized commit policy. Pending care retains Outcome. Each port reports
+Waiting when ready and Paused otherwise; a paused port does not pause another ready participant.
 
 [LocalCareView](../../src/OpenFantasy.Hosting/Simulation/LocalCareView.cs), available through
 `LocalWorldView.Care`, projects only the current patient's applicable lethal outcome or pending care.

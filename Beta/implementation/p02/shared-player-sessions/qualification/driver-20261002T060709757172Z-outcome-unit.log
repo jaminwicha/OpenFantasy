@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native_checks.py", line 15, in <module>
+    assert build['accepted'] and current.sources()==build['source'] and current.assemblies()==build['binaries'],'Build evidence is stale'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Build evidence is stale

@@ -1,0 +1,29 @@
+{
+  "Kind": "native-encounter-outcome-fixture-v1",
+  "Route": "care",
+  "ProfileVersion": 35,
+  "SeedText": "native-encounter-outcome-care",
+  "PlayerName": "Traveler",
+  "Calibration": {
+    "WoundedHp": {
+      "c9622c927741434f5217a2765aad3f9c": 1
+    },
+    "HumanControlled": []
+  },
+  "CalibrationText": "Declared fresh calibration: the player starts at 1 HP (CreateCalibratedFresh); qualification only, not balance.",
+  "Setup": "Walked by ordinary session cutoffs beside the first inherited wolf near Wren and entered by the player\u0027s own entry command; paused at the player\u0027s first decision boundary, before any combat choice or resolution.",
+  "Boundary": "Fixture preparation ends here at the Active episode\u0027s first decision boundary, after the genuine managed approach and the player\u0027s own managed entry; the native journey owns every combat choice, the resolution, the outcome reading that declines the offered care, and the world\u0027s completion. Native care-specific approach and entry timing are not exercised by this fixture.",
+  "WorldId": "2a091821dc2415a12f6cf166ecb8cc86",
+  "BranchId": "281ae5e4b8b4cb21db565fa654fd9419",
+  "GenesisHash": "1f8d7dce1d721ea8bcc72db708833f256f9eda57f5e5f6f45d2383797fe158cf",
+  "BeforeHash": "18b7d43b18c6727ee126630854e1bb0a883218e8647538b873563ffc9f222982",
+  "BeforeRevision": 4,
+  "PlayerActorId": "c9622c927741434f5217a2765aad3f9c",
+  "OpponentActorId": "3a39201662c01d63edc79a65d0cfa143",
+  "WrenActorId": "9e5f5739cd09534e02f0bf71d3d1b722",
+  "CarriedLotId": null,
+  "RewardCurrency": 0,
+  "PaidCurrency": 0,
+  "PlayerBalance": 0,
+  "Limits": "Fresh profile-35 cargo world only: no retained-save migration, multiplayer, network, physical device, balance or human acceptance claim."
+}

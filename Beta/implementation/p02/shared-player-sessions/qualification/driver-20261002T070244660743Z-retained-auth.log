@@ -1,0 +1,57 @@
+evidence: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/retained-auth-20261002T070246Z-dcbf0
+{
+  "kind": "retained-auth",
+  "limitSeconds": 600,
+  "preservationBefore": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "buildReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/accepted-build.json",
+  "buildReportSha256": "57245d982fe417ced5376732b33e5f7e372a02d5698dff8891f8f240e7cf0c8e",
+  "retainedManifests": {
+    "cargo": {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/native-20261001T121703Z-94270/native-cargo-g7o_q616/native-manifest.json",
+      "copiedManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/retained-auth-20261002T070246Z-dcbf0/cargo/manifest.json",
+      "sourceFiles": 38
+    },
+    "trading": {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/legacy-native-20261001T122817Z-825a8/native-trading-57iuqin_/native-manifest.json",
+      "copiedManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/retained-auth-20261002T070246Z-dcbf0/trading/manifest.json",
+      "sourceFiles": 40
+    },
+    "gifts": {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-cargo-repair/qualification/legacy-native-20261001T122817Z-825a8/native-gifts-0i3k3wnj/native-manifest.json",
+      "copiedManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/retained-auth-20261002T070246Z-dcbf0/gifts/manifest.json",
+      "sourceFiles": 13
+    },
+    "trading-failed": {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/combat-retreat-repair/qualification/legacy-native-20261001T161819Z-7af6f/native-trading-1mf9zhkf/native-manifest.json",
+      "copiedManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/retained-auth-20261002T070246Z-dcbf0/trading-failed/manifest.json",
+      "sourceFiles": 40
+    },
+    "retreat": {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/retreat-integration/qualification/native-20261001T172931Z-e84d4/native-retreat-z41y8hgp/native-manifest.json",
+      "copiedManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/retained-auth-20261002T070246Z-dcbf0/retreat/manifest.json",
+      "sourceFiles": 27
+    },
+    "road": {
+      "source": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/road-threat-corrections/qualification/road-native-20261001T215358Z-a0863/native-road-threat-dz08uy29/native-manifest.json",
+      "copiedManifest": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/retained-auth-20261002T070246Z-dcbf0/road/manifest.json",
+      "sourceFiles": 46
+    }
+  },
+  "outcomes": {
+    "Passed": 6
+  },
+  "preservationAfter": {
+    "existingTests": 612,
+    "frozenSpecs": 23,
+    "sourceHead": "a189f8c3de4844538a322f04feff7afab94f84f8",
+    "unrelatedIndexPreserved": true
+  },
+  "elapsedSeconds": 164.633,
+  "sourceUnchanged": true,
+  "accepted": true
+}

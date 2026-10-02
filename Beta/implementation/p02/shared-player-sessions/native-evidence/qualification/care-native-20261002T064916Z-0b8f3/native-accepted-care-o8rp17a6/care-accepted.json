@@ -1,0 +1,2002 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "care-accepted",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 3.429,
+  "ProbeMilliseconds": 28110,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "select-wolf",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "enter-wolf",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "accept-care",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "accept-final-outcome",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "approach-wolf",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "approach-wolf",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "approach-wolf",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "approach-wolf",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "approach-wolf",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "approach-wolf",
+      "Hold": "Up"
+    }
+  ],
+  "Strikes": 0,
+  "Waits": 12,
+  "Engagement": {
+    "EncounterCount": 1,
+    "HelperDistance": 256,
+    "InitialHp": 60,
+    "Episode": "d48199757ad4d87ac4f11a7a513589af"
+  },
+  "Outcome": {
+    "Title": "Defeated",
+    "Body": "Bramble Wolf \u00B7 standing side \u00B7 HP 62/62\nYou \u00B7 defeated side \u00B7 incapacitated (0 HP)\nYou are incapacitated (0 HP) and cannot move or act. Accepting the defeat lets the world end this fight once every required player has read it; you stay incapacitated afterwards. Your save is kept.\nCare: Wren cannot treat you now.",
+    "Status": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren cannot treat you now\nBramble Wolf \u00B7 HP 62/62",
+    "StatusTooltip": "You are incapacitated (0 HP) and cannot move or act. Accepting the defeat lets the world end this fight once every required player has read it; you stay incapacitated afterwards. Your save is kept.\nRemaining recovery: 0.15 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+    "Result": "Victory",
+    "Standing": "OpponentStands",
+    "Hp": 0,
+    "Seconds": 27.8408481
+  },
+  "Completed": {
+    "CompletedAtSequence": 430,
+    "Stage": "Completed",
+    "EncounterCount": 1,
+    "Hp": 0,
+    "Body": "Defeated \u00B7 You are incapacitated (0 HP): no movement or action is possible \u00B7 This encounter is complete: aftermath care applies only before its outcome is accepted, and ordinary care cannot treat an incapacitated (0 HP) character \u00B7 Save and leave keeps this world\nBramble Wolf \u00B7 standing side \u00B7 HP 62/62\nYou \u00B7 defeated side \u00B7 incapacitated (0 HP)",
+    "Status": "Defeated \u00B7 Incapacitated (0 HP) \u00B7 Encounter complete",
+    "Seconds": 28.0160294
+  },
+  "Decline": null,
+  "Trade": null,
+  "Panels": [
+    {
+      "Label": "care-offered",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 207
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 75
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 157
+      },
+      "Lines": 8,
+      "VisibleLines": 8,
+      "Leave": null,
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    },
+    {
+      "Label": "second-outcome",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 167
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 75
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 117
+      },
+      "Lines": 6,
+      "VisibleLines": 6,
+      "Leave": null,
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    },
+    {
+      "Label": "terminal",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 204
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 287
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 75
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 195.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 195.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 117
+      },
+      "Lines": 6,
+      "VisibleLines": 6,
+      "Leave": {
+        "X": 22,
+        "Y": 249,
+        "Width": 396,
+        "Height": 31
+      },
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "HudBounds": [
+    {
+      "Label": "care-offered",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 337,
+        "Width": 924,
+        "Height": 185
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 75
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 0/60 \u00B7 MP 10/10",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 162,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:02 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 347,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Your wait was queued.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 377,
+            "Width": 896,
+            "Height": 49
+          },
+          "Text": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren can help (care)\nBramble Wolf \u00B7 HP 62/62",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 580,
+            "Height": 55
+          },
+          "Text": "Defeated\nE / A: care \u00B7 V: choices",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 185,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 616,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ReleaseEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 720,
+            "Y": 457,
+            "Width": 128,
+            "Height": 55
+          },
+          "Text": "Accept defeat",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "AcknowledgeCare",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    },
+    {
+      "Label": "treated",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 337,
+        "Width": 924,
+        "Height": 185
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 75
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 40/60 \u00B7 MP 10/10",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 173,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:02 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 347,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Health restored: \u002B40 HP.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 377,
+            "Width": 896,
+            "Height": 49
+          },
+          "Text": "Recovering \u00B7 World time continues until a choice is needed\nBramble Wolf \u00B7 HP 62/62",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 632,
+            "Height": 55
+          },
+          "Text": "Choose \u00B7 Inspect \u00B7 Confirm\nE / A: act \u00B7 G / X: wait",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 227,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 668,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Strike",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 772,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Wait",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[G]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    },
+    {
+      "Label": "second-outcome",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 337,
+        "Width": 924,
+        "Height": 185
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 75
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 182.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 0/60 \u00B7 MP 10/10",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 162,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:02 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 347,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Your wait was queued.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 377,
+            "Width": 896,
+            "Height": 49
+          },
+          "Text": "Defeated \u00B7 You are incapacitated (0 HP) and cannot move or act \u00B7 Wren cannot treat you now\nBramble Wolf \u00B7 HP 62/62",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 712,
+            "Height": 55
+          },
+          "Text": "Defeated\nE / A: accept defeat",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 166,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 748,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ReleaseEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    },
+    {
+      "Label": "terminal",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 363,
+        "Width": 924,
+        "Height": 159
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 75
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 287
+      },
+      "PlayerSprite": {
+        "X": 464,
+        "Y": 195.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 496,
+        "Y": 195.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 1 \u00B7 0 gil\nHP 0/60 \u00B7 MP 10/10",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 162,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 09:02 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 8 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 373,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Outcome accepted; completion waits for every required reader and no pending care.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 403,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Defeated \u00B7 Incapacitated (0 HP) \u00B7 Encounter complete",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 712,
+            "Height": 55
+          },
+          "Text": "Incapacitated\nEsc: pause",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 119,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 748,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EnterEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    }
+  ],
+  "WheelBounds": [],
+  "AcceptedCare": {
+    "Helper": "Wren",
+    "HelperActorId": "ecbc5c71be5bf5abbd71a342669b2601",
+    "PatientActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+    "Episode": "d48199757ad4d87ac4f11a7a513589af",
+    "InitialHp": 60,
+    "HealedHp": 40,
+    "Seconds": 19.0111879
+  },
+  "Selections": [
+    {
+      "Ready": {
+        "Stage": "enter-wolf",
+        "Route": "key-E",
+        "Action": "EnterEncounter",
+        "Frame": 3816,
+        "MillisecondsWithinDay": 32540400,
+        "ActorRevision": 64,
+        "Timing": null
+      },
+      "CommandId": "6a16871b9c5483f45e4e15a44b85fa68",
+      "SubmittedFrame": 3816,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000C000000106A16871B9C5483F45E4E15A44B85FA6800000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000784F46430000000001000000060000001C776F726C642E616374696F6E2E656E7465722D656E636F756E74657200000008000000000000000100000010B48C8E55C8270588E15255724602EC5B00000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000000000000080000000000000000",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 3943,
+        "MillisecondsWithinDay": 32540400,
+        "ActorRevision": 64,
+        "Timing": 1
+      },
+      "CommandId": "9276ba078b32ce78749382cfb8bd75ff",
+      "SubmittedFrame": 3943,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A000000109276BA078B32CE78749382CFB8BD75FF00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000001",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 4556,
+        "MillisecondsWithinDay": 32541650,
+        "ActorRevision": 64,
+        "Timing": 29
+      },
+      "CommandId": "050e25ae2848750ba3b732a3efdca89e",
+      "SubmittedFrame": 4556,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010050E25AE2848750BA3B732A3EFDCA89E00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF00000008000000000000001D",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 5174,
+        "MillisecondsWithinDay": 32542900,
+        "ActorRevision": 64,
+        "Timing": 58
+      },
+      "CommandId": "4ef8ab464f299b66c58e9b3c7929e9cb",
+      "SubmittedFrame": 5174,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A000000104EF8AB464F299B66C58E9B3C7929E9CB00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF00000008000000000000003A",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 5827,
+        "MillisecondsWithinDay": 32544150,
+        "ActorRevision": 64,
+        "Timing": 87
+      },
+      "CommandId": "034e63ce69ffbdeb3f208b330c6d4ea6",
+      "SubmittedFrame": 5827,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010034E63CE69FFBDEB3F208B330C6D4EA600000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000057",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 6445,
+        "MillisecondsWithinDay": 32545400,
+        "ActorRevision": 64,
+        "Timing": 116
+      },
+      "CommandId": "6da2642c40934c445fcaee9402f3d29a",
+      "SubmittedFrame": 6445,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A000000106DA2642C40934C445FCAEE9402F3D29A00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000074",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 7036,
+        "MillisecondsWithinDay": 32546650,
+        "ActorRevision": 64,
+        "Timing": 145
+      },
+      "CommandId": "0fbb7bf20e1e47b77b2c1e45cda8ad88",
+      "SubmittedFrame": 7036,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A000000100FBB7BF20E1E47B77B2C1E45CDA8AD8800000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000091",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 7652,
+        "MillisecondsWithinDay": 32547900,
+        "ActorRevision": 64,
+        "Timing": 174
+      },
+      "CommandId": "d6c91000822f5e74a223f88e9b328def",
+      "SubmittedFrame": 7652,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010D6C91000822F5E74A223F88E9B328DEF00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF0000000800000000000000AE",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "accept-care",
+        "Route": "key-E",
+        "Action": "AcknowledgeCare",
+        "Frame": 8257,
+        "MillisecondsWithinDay": 32548500,
+        "ActorRevision": 64,
+        "Timing": 190
+      },
+      "CommandId": "c423dd0b8096fc4e9b026b1abe30ac26",
+      "SubmittedFrame": 8257,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000D00000010C423DD0B8096FC4E9B026B1ABE30AC2600000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000914F46430000000001000000060000001D776F726C642E616374696F6E2E61636B6E6F776C656467652D6361726500000008000000000000000100000010DEDFC30501BE0E6DA7CAC6614C46C63E00000010D48199757AD4D87AC4F11A7A513589AF00000008000000000000010F000000202DB55ED42D98DAA31D07CEFD6DDFF1CC647A6947D919482E7FE50633681C25B2",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 8556,
+        "MillisecondsWithinDay": 32549150,
+        "ActorRevision": 64,
+        "Timing": 204
+      },
+      "CommandId": "e6ba162f922626e0e97f7d653a1d95f8",
+      "SubmittedFrame": 8556,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010E6BA162F922626E0E97F7D653A1D95F800000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF0000000800000000000000CC",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 9163,
+        "MillisecondsWithinDay": 32550400,
+        "ActorRevision": 64,
+        "Timing": 233
+      },
+      "CommandId": "d532d3924486eff88099f84f62e3567f",
+      "SubmittedFrame": 9163,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010D532D3924486EFF88099F84F62E3567F00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF0000000800000000000000E9",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 9811,
+        "MillisecondsWithinDay": 32551650,
+        "ActorRevision": 64,
+        "Timing": 262
+      },
+      "CommandId": "ff4d2e5c51fbd6851efe3cda6c640aa7",
+      "SubmittedFrame": 9811,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010FF4D2E5C51FBD6851EFE3CDA6C640AA700000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000106",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 10379,
+        "MillisecondsWithinDay": 32552900,
+        "ActorRevision": 64,
+        "Timing": 291
+      },
+      "CommandId": "b00ef03f03ed773e04abd072e0008688",
+      "SubmittedFrame": 10379,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010B00EF03F03ED773E04ABD072E000868800000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000123",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "wait-for-wolf",
+        "Route": "key-G",
+        "Action": "Wait",
+        "Frame": 11008,
+        "MillisecondsWithinDay": 32554150,
+        "ActorRevision": 64,
+        "Timing": 320
+      },
+      "CommandId": "69b462b31a4e0ce281dd6fbd72823474",
+      "SubmittedFrame": 11008,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A0000001069B462B31A4E0CE281DD6FBD7282347400000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000140",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "accept-final-outcome",
+        "Route": "key-E",
+        "Action": "ReleaseEncounter",
+        "Frame": 11815,
+        "MillisecondsWithinDay": 32555250,
+        "ActorRevision": 64,
+        "Timing": 346
+      },
+      "CommandId": "951242fbcbfb79d91e3dc665862c64ae",
+      "SubmittedFrame": 11815,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001400000010951242FBCBFB79D91E3DC665862C64AE00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000744F464300000000010000000400000020776F726C642E616374696F6E2E61636B6E6F776C656467652D6F7574636F6D6500000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF00000020F16B336E89AA6041E7B10CAF51B57FE1346294AE73B012D87545E116E527BE7D",
+      "SameOfferObject": true
+    }
+  ],
+  "Submissions": [
+    {
+      "Stage": "enter-wolf",
+      "Action": "EnterEncounter",
+      "Label": "Confront",
+      "TargetName": "Bramble Wolf",
+      "TargetId": "1f88b82fc87321770e482e56a1bdc7d3",
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "EnterEncounterIntent",
+      "IntentText": "EnterEncounterIntent { ScenarioId = b48c8e55c8270588e15255724602ec5b, EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedEncounterCount = 0, ExpectedTargetRevision = 0 }",
+      "OfferCommandId": null,
+      "CommandId": "6a16871b9c5483f45e4e15a44b85fa68",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000C000000106A16871B9C5483F45E4E15A44B85FA6800000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000784F46430000000001000000060000001C776F726C642E616374696F6E2E656E7465722D656E636F756E74657200000008000000000000000100000010B48C8E55C8270588E15255724602EC5B00000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000000000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000106A16871B9C5483F45E4E15A44B85FA6800000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA4300000020C90EE788B9C7EE91428C2E1AE92C02243E4DC74E7B8F967779298DDD6870C4AE00000008000000000000004F000000080000000000000001000000080000000000000000",
+        "CommandId": "6a16871b9c5483f45e4e15a44b85fa68",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 79,
+        "ResultId": "ec8ee037db63e8b00b267318f0903de0"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 1 }",
+      "OfferCommandId": null,
+      "CommandId": "9276ba078b32ce78749382cfb8bd75ff",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A000000109276BA078B32CE78749382CFB8BD75FF00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000001",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000109276BA078B32CE78749382CFB8BD75FF00000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA4300000020558E67DCE31A2BF004B89BA392EFC13C76AA69C182768891C603CFA80A28C275000000080000000000000053000000080000000000000001000000080000000000000000",
+        "CommandId": "9276ba078b32ce78749382cfb8bd75ff",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 83,
+        "ResultId": "1fb2c455043e75bc5ef59bc2996d8341"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 29 }",
+      "OfferCommandId": null,
+      "CommandId": "050e25ae2848750ba3b732a3efdca89e",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010050E25AE2848750BA3B732A3EFDCA89E00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF00000008000000000000001D",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010050E25AE2848750BA3B732A3EFDCA89E00000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA4300000020E1A9DBCFF3F495103A59170364A36D865F82AA4F549FDAEA9007D9357F7B193900000008000000000000006F000000080000000000000001000000080000000000000000",
+        "CommandId": "050e25ae2848750ba3b732a3efdca89e",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 111,
+        "ResultId": "204530ef152ddce618a19612246e4ad7"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 58 }",
+      "OfferCommandId": null,
+      "CommandId": "4ef8ab464f299b66c58e9b3c7929e9cb",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A000000104EF8AB464F299B66C58E9B3C7929E9CB00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF00000008000000000000003A",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000104EF8AB464F299B66C58E9B3C7929E9CB00000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000206D91BD485E1E17AC412474E0E937F29BE0030147B2601604A8FD4952A285A23300000008000000000000008C000000080000000000000001000000080000000000000000",
+        "CommandId": "4ef8ab464f299b66c58e9b3c7929e9cb",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 140,
+        "ResultId": "7665919ea15692a5dea1c302d279a93c"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 87 }",
+      "OfferCommandId": null,
+      "CommandId": "034e63ce69ffbdeb3f208b330c6d4ea6",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010034E63CE69FFBDEB3F208B330C6D4EA600000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000057",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010034E63CE69FFBDEB3F208B330C6D4EA600000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA4300000020672F67AE25C0008AE77DFCBFB904B76398D3D6532044292AA88F17FDCBA1B77D0000000800000000000000A9000000080000000000000001000000080000000000000000",
+        "CommandId": "034e63ce69ffbdeb3f208b330c6d4ea6",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 169,
+        "ResultId": "e401fb50cbefe828acad1e7c85ed312d"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 116 }",
+      "OfferCommandId": null,
+      "CommandId": "6da2642c40934c445fcaee9402f3d29a",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A000000106DA2642C40934C445FCAEE9402F3D29A00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000074",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000106DA2642C40934C445FCAEE9402F3D29A00000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000208E6FB6F059B1B4ACF8184000F114D4D83A3F57F17B4EE7EDB0D773686D4ADDEA0000000800000000000000C6000000080000000000000001000000080000000000000000",
+        "CommandId": "6da2642c40934c445fcaee9402f3d29a",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 198,
+        "ResultId": "998fa2d147709cbce30cf6fc63972bec"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 145 }",
+      "OfferCommandId": null,
+      "CommandId": "0fbb7bf20e1e47b77b2c1e45cda8ad88",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A000000100FBB7BF20E1E47B77B2C1E45CDA8AD8800000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000091",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000100FBB7BF20E1E47B77B2C1E45CDA8AD8800000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA430000002011524A47EC52F7B32B98CD9254EF6A8E4A68B94293FBB67594EC9DD4588F299C0000000800000000000000E3000000080000000000000001000000080000000000000000",
+        "CommandId": "0fbb7bf20e1e47b77b2c1e45cda8ad88",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 227,
+        "ResultId": "eb89781426351f1517d2740aa1589147"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 174 }",
+      "OfferCommandId": null,
+      "CommandId": "d6c91000822f5e74a223f88e9b328def",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010D6C91000822F5E74A223F88E9B328DEF00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF0000000800000000000000AE",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010D6C91000822F5E74A223F88E9B328DEF00000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA4300000020A139AC3EC433BAEF6416AFCA7A001607184D6ED0E2B705D043B7E457B8CAA7D4000000080000000000000100000000080000000000000001000000080000000000000000",
+        "CommandId": "d6c91000822f5e74a223f88e9b328def",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 256,
+        "ResultId": "8602d526c8963db2db0496c14cb25bf3"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "accept-care",
+      "Action": "AcknowledgeCare",
+      "Label": "Acknowledge care",
+      "TargetName": "Wren",
+      "TargetId": "ecbc5c71be5bf5abbd71a342669b2601",
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "AcknowledgeCareIntent",
+      "IntentText": "AcknowledgeCareIntent { AgreementId = dedfc30501be0e6da7cac6614c46c63e, EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedLifecycleRevision = 271, ExpectedActionHash = 2db55ed42d98daa31d07cefd6ddff1cc647a6947d919482e7fe50633681c25b2 }",
+      "OfferCommandId": null,
+      "CommandId": "c423dd0b8096fc4e9b026b1abe30ac26",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000D00000010C423DD0B8096FC4E9B026B1ABE30AC2600000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000914F46430000000001000000060000001D776F726C642E616374696F6E2E61636B6E6F776C656467652D6361726500000008000000000000000100000010DEDFC30501BE0E6DA7CAC6614C46C63E00000010D48199757AD4D87AC4F11A7A513589AF00000008000000000000010F000000202DB55ED42D98DAA31D07CEFD6DDFF1CC647A6947D919482E7FE50633681C25B2",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010C423DD0B8096FC4E9B026B1ABE30AC2600000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA430000002061EA98041A94C88EC82CAEC1D07A8CF27C34D268DA5E01B7BAB64DE2A2B679D0000000080000000000000110000000080000000000000001000000080000000000000000",
+        "CommandId": "c423dd0b8096fc4e9b026b1abe30ac26",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 272,
+        "ResultId": "75f97fde0489b7d1a63a2058b5729f89"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 204 }",
+      "OfferCommandId": null,
+      "CommandId": "e6ba162f922626e0e97f7d653a1d95f8",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010E6BA162F922626E0E97F7D653A1D95F800000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF0000000800000000000000CC",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010E6BA162F922626E0E97F7D653A1D95F800000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA430000002011B9CD74D49C0EECCDCBE41E85D92E378BDC9D26074EC9358C16A9B21B50308200000008000000000000011F000000080000000000000001000000080000000000000000",
+        "CommandId": "e6ba162f922626e0e97f7d653a1d95f8",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 287,
+        "ResultId": "0e7eea60725ba7b31c752fef74c39fec"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 233 }",
+      "OfferCommandId": null,
+      "CommandId": "d532d3924486eff88099f84f62e3567f",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010D532D3924486EFF88099F84F62E3567F00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF0000000800000000000000E9",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010D532D3924486EFF88099F84F62E3567F00000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA430000002049F9D2D5EAD2F97964043BBCB23C97214B66928B5F0BA603D598671BD703AC4A00000008000000000000013C000000080000000000000001000000080000000000000000",
+        "CommandId": "d532d3924486eff88099f84f62e3567f",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 316,
+        "ResultId": "1a31cfd658fc7bc571a28a61291bfd64"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 262 }",
+      "OfferCommandId": null,
+      "CommandId": "ff4d2e5c51fbd6851efe3cda6c640aa7",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010FF4D2E5C51FBD6851EFE3CDA6C640AA700000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000106",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010FF4D2E5C51FBD6851EFE3CDA6C640AA700000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA430000002099E8F962944D4DC0CAFD961390C331DB0D8A0217DD37DCF05F4E522A7E2CD295000000080000000000000159000000080000000000000001000000080000000000000000",
+        "CommandId": "ff4d2e5c51fbd6851efe3cda6c640aa7",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 345,
+        "ResultId": "377722e2095f1af8c096077d463d4acc"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 291 }",
+      "OfferCommandId": null,
+      "CommandId": "b00ef03f03ed773e04abd072e0008688",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A00000010B00EF03F03ED773E04ABD072E000868800000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000123",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010B00EF03F03ED773E04ABD072E000868800000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA4300000020F39D16FC954A1599204FDD78B84106485CADB374074B0035C0364E2F1EF240F9000000080000000000000176000000080000000000000001000000080000000000000000",
+        "CommandId": "b00ef03f03ed773e04abd072e0008688",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 374,
+        "ResultId": "d904652366d3cee3120448d9be5ba1f7"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "wait-for-wolf",
+      "Action": "Wait",
+      "Label": "Wait",
+      "TargetName": "Your readiness",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "QueueEncounterWaitIntent",
+      "IntentText": "QueueEncounterWaitIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedTimingRevision = 320 }",
+      "OfferCommandId": null,
+      "CommandId": "69b462b31a4e0ce281dd6fbd72823474",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000A0000001069B462B31A4E0CE281DD6FBD7282347400000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000534F464300000000010000000400000017776F726C642E616374696F6E2E71756575652D7761697400000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF000000080000000000000140",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001069B462B31A4E0CE281DD6FBD7282347400000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000204931E1B1C285AC03B3579E20571460BEA2A8CD6FAD704FFE795689485FD5E242000000080000000000000193000000080000000000000001000000080000000000000000",
+        "CommandId": "69b462b31a4e0ce281dd6fbd72823474",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 403,
+        "ResultId": "59f9143792840fa391dd5d9c6cb384c1"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "accept-final-outcome",
+      "Action": "ReleaseEncounter",
+      "Label": "Accept defeat",
+      "TargetName": "Defeated",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "f96ffa52d001a4293e0871674c1ad359",
+        "SessionId": "b57f69179b18a77c600b0c0311b228ce",
+        "ActorId": "2bf2731f95cb67aa89ecb4d5bf92966f",
+        "WorldId": "81e51919f4ca66f539ad096fca0bf64d",
+        "BranchId": "2f64a0473514ef802a1e7b351acaea43",
+        "ExpectedActorRevision": 64
+      },
+      "IntentType": "AcknowledgeEncounterOutcomeIntent",
+      "IntentText": "AcknowledgeEncounterOutcomeIntent { EncounterId = d48199757ad4d87ac4f11a7a513589af, ExpectedActionHash = f16b336e89aa6041e7b10caf51b57fe1346294ae73b012d87545e116e527be7d }",
+      "OfferCommandId": null,
+      "CommandId": "951242fbcbfb79d91e3dc665862c64ae",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001400000010951242FBCBFB79D91E3DC665862C64AE00000010F96FFA52D001A4293E0871674C1AD35900000010B57F69179B18A77C600B0C0311B228CE000000102BF2731F95CB67AA89ECB4D5BF92966F0000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA43000000080000000000000040000000744F464300000000010000000400000020776F726C642E616374696F6E2E61636B6E6F776C656467652D6F7574636F6D6500000008000000000000000100000010D48199757AD4D87AC4F11A7A513589AF00000020F16B336E89AA6041E7B10CAF51B57FE1346294AE73B012D87545E116E527BE7D",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010951242FBCBFB79D91E3DC665862C64AE00000010F96FFA52D001A4293E0871674C1AD3590000001081E51919F4CA66F539AD096FCA0BF64D000000102F64A0473514EF802A1E7B351ACAEA4300000020B00803D4516A46C2A67C10F40630ACBCB5B7A994BDA1C4AF1C98971ADD91CB3D0000000800000000000001AD000000080000000000000001000000080000000000000000",
+        "CommandId": "951242fbcbfb79d91e3dc665862c64ae",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 429,
+        "ResultId": "de28149558ff86dae1336cb6150c7c9c"
+      },
+      "Answer": "receipt"
+    }
+  ],
+  "SubmissionLimit": 128,
+  "SubmissionOverflow": false,
+  "Checks": [
+    "The care-offered panel stated the result and reason while the world held, clear of the HUD and combatants.",
+    "The second-outcome panel stated the result and reason while the world held, clear of the HUD and combatants.",
+    "The terminal panel explains incapacity and the completion policy and offers Save and leave.",
+    "Native full-health approach and entry, two real defeats and separate finite helper care resume the same encounter."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/care-native-20261002T064916Z-0b8f3/native-accepted-care-o8rp17a6/care-accepted.healthy.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/care-native-20261002T064916Z-0b8f3/native-accepted-care-o8rp17a6/care-accepted.entered.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/care-native-20261002T064916Z-0b8f3/native-accepted-care-o8rp17a6/care-accepted.care-offered.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/care-native-20261002T064916Z-0b8f3/native-accepted-care-o8rp17a6/care-accepted.treated.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/care-native-20261002T064916Z-0b8f3/native-accepted-care-o8rp17a6/care-accepted.second-outcome.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/care-native-20261002T064916Z-0b8f3/native-accepted-care-o8rp17a6/care-accepted.terminal.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/care-native-20261002T064916Z-0b8f3/native-accepted-care-o8rp17a6/care-accepted.final.png"
+  ],
+  "SaveAndLeave": false,
+  "FinalStage": "Completed",
+  "FinalTerminal": true,
+  "CompletedAtSequence": 430,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 2,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalHp": 0,
+  "FinalBalance": 0,
+  "CarriedRations": 0
+}

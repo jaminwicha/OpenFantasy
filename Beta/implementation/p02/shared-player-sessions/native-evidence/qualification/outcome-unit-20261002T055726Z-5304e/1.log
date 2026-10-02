@@ -1,0 +1,76 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.25]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.70]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.87]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.IncapacitatedWinnerIsNotPromisedExploration [18 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeInputTests.InteractKeepsChoosingCareWhileTheProfile35ReadingStaysASeparatePermittedChoice [20 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.CareReasonComesFromTheCareViewNotFromAReachAssumption [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.PendingButUnavailableHelperIsNotDescribedAsPreparingCare [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.HudFormsStayCompactWhileTheCardKeepsTheFullExplanation [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeInputTests.EarlierWheelLayoutsAndWordingAreUnchanged [12 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.DefeatWithAvailableCareSaysThatAcceptingDeclinesIt [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.WheelConsequencesKeepIncapacityCompletionAndDeclinedCareExplicit [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.TerminalTextStatesTheCompletionPolicy [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeTextTests.ObserverOwesNoReadingAndSeesOnlyObservedCondition [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeInputTests.TheWheelExposesTheReadingBesideCareInTheUnusedRightSectorWithItsOwnWording [10 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.EncounterOutcomeInputTests.LegacyCareStillRefusesTheReleaseThatTheProfile35ReadingIsDistinguishedFrom [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.EncounterOutcome.FarmSubmissionSeamTests.TheSeamReportsTheExactSelectionKeepsRetryIdentityAndRecordsTheStaleRejection [2 s]
+[xUnit.net 00:00:04.56]     OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode [FAIL]
+[xUnit.net 00:00:04.56]       OpenFantasy.Hosting.AuthorityDispatchException : This phase does not admit that lifecycle or care request.
+[xUnit.net 00:00:04.57]       Stack Trace:
+[xUnit.net 00:00:04.57]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs(239,0): at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
+[xUnit.net 00:00:04.57]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs(149,0): at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(LocalPlayerConnection player, WorldActionCommand command)
+[xUnit.net 00:00:04.57]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(65,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command)
+[xUnit.net 00:00:04.57]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs(291,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode()
+[xUnit.net 00:00:04.57]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs(302,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode()
+[xUnit.net 00:00:04.57]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode [3 s]
+  Error Message:
+   OpenFantasy.Hosting.AuthorityDispatchException : This phase does not admit that lifecycle or care request.
+  Stack Trace:
+     at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 239
+   at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(LocalPlayerConnection player, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 149
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 65
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs:line 291
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.AcceptingDeclinesAvailableCareAndTheNextOrdinaryCutoffCompletesTheEpisode() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/EncounterOutcomeCorrectionTests.cs:line 302
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.ProductionSelectionIsAFreshProfile35OverTheUnchangedThreatenedWorld [4 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.CalibrationsAreDeclaredWoundOnlyAndKeepTheirOwnAdmission [3 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.AdmissionRefusesAnythingButAnUnplayedRetreatGenesis [832 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoHumanCareContrastResumesTheSameEpisodeAndClearsTheOtherReading [5 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.TwoCompletedEpisodesInOneWorldReplaceTheLatestRecordAndRetainIdentities [2 s]
+  Passed OpenFantasy.Hosting.Tests.Content.EncounterOutcome.CargoOutcomeAdmissionTests.SavesOfOtherSelectionsAreRefusedAndNeverUpgraded [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeCorrectionTests.CompleteRootDecodeRefusesForeignPinsAndImpossibleOwnerContents [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.ChiefDefeatIsReadableThenTerminalAcrossReopening [38 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.WoundedChiefVictoryIsReadThenCompletedByTheWorldAndPlayContinues [33 s]
+[xUnit.net 00:01:13.89]     OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [FAIL]
+[xUnit.net 00:01:13.89]       OpenFantasy.Hosting.AuthorityDispatchException : This actor has no remaining aftermath care choice.
+[xUnit.net 00:01:13.89]       Stack Trace:
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs(247,0): at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command)
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs(149,0): at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(LocalPlayerConnection player, WorldActionCommand command)
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs(65,0): at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command)
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(380,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:01:13.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs(419,0): at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings()
+[xUnit.net 00:01:13.89]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:13.89]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.TwoRequiredHumansHoldCompletionUntilBothReadAndOthersCannotReadForThem [531 ms]
+  Failed OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings [505 ms]
+  Error Message:
+   OpenFantasy.Hosting.AuthorityDispatchException : This actor has no remaining aftermath care choice.
+  Stack Trace:
+     at OpenFantasy.Hosting.Simulation.LocalWorldSession.ValidateEncounterSelection(WorldSnapshot state, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 247
+   at OpenFantasy.Hosting.Simulation.LocalWorldSession.SubmitAction(LocalPlayerConnection player, WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs:line 149
+   at OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatJourneyWorld.Submit(WorldActionCommand command) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/Retreat/RetreatJourneyWorld.cs:line 65
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 380
+   at OpenFantasy.Hosting.Tests.Worlds.EncounterOutcome.EncounterOutcomeJourneyTests.CareResumesOnlyTheUnfinalizedEpisodeAndClearsItsReadings() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/EncounterOutcome/EncounterOutcomeJourneyTests.cs:line 419
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 25
+     Passed: 23
+     Failed: 2
+ Total time: 1.2384 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/outcome-unit-20261002T055726Z-5304e/outcome-host.trx

@@ -1,0 +1,62 @@
+Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org
+OpenGL API 4.1 Metal - 89.4 - Compatibility - Using Device: Apple - Apple M2
+
+Outcome probe care-accepted [opening] 0.009s: Waiting for the world to open.
+Outcome probe care-accepted [opening] 3.429s: World opened.
+Outcome probe care-accepted [opening] 3.435s: Waiting for draw: healthy; drawable=True.
+Outcome probe care-accepted [opening] 3.509s: Captured healthy.
+Outcome probe care-accepted [resume] 3.509s: Stage entered.
+Outcome probe care-accepted [approach-wolf] 3.517s: Stage entered.
+Outcome probe care-accepted [select-wolf] 7.127s: Stage entered.
+Outcome probe care-accepted [enter-wolf] 7.642s: Stage entered.
+Outcome probe care-accepted [enter-wolf] 7.646s: Injecting EnterEncounter.
+Outcome probe care-accepted [enter-wolf] 7.723s: Applied EnterEncounter.
+Outcome probe care-accepted [enter-wolf] 7.724s: Waiting for draw: entered; drawable=True.
+Outcome probe care-accepted [enter-wolf] 7.765s: Captured entered.
+Outcome probe care-accepted [wait-for-wolf] 7.766s: Stage entered.
+Outcome probe care-accepted [wait-for-wolf] 7.987s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 8.042s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 9.490s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 9.567s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 10.972s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 11.001s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 12.589s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 12.620s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 14.190s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 14.216s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 15.707s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 15.732s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 17.251s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 17.320s: Applied Wait.
+Outcome probe care-accepted [read] 18.172s: Stage entered.
+Outcome probe care-accepted [read] 18.779s: Waiting for draw: care-offered; drawable=True.
+Outcome probe care-accepted [read] 18.825s: Captured care-offered.
+Outcome probe care-accepted [accept-care] 18.868s: Stage entered.
+Outcome probe care-accepted [accept-care] 18.868s: Injecting AcknowledgeCare.
+Outcome probe care-accepted [accept-care] 18.944s: Applied AcknowledgeCare.
+Outcome probe care-accepted [accept-care] 19.017s: Waiting for draw: treated; drawable=True.
+Outcome probe care-accepted [accept-care] 19.054s: Captured treated.
+Outcome probe care-accepted [wait-for-wolf] 19.057s: Stage entered.
+Outcome probe care-accepted [wait-for-wolf] 19.722s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 19.800s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 21.259s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 21.309s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 22.887s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 22.925s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 24.332s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 24.367s: Applied Wait.
+Outcome probe care-accepted [wait-for-wolf] 25.915s: Injecting Wait.
+Outcome probe care-accepted [wait-for-wolf] 25.982s: Applied Wait.
+Outcome probe care-accepted [read] 27.240s: Stage entered.
+Outcome probe care-accepted [read] 27.841s: Waiting for draw: second-outcome; drawable=True.
+Outcome probe care-accepted [read] 27.885s: Captured second-outcome.
+Outcome probe care-accepted [accept-final-outcome] 27.890s: Stage entered.
+Outcome probe care-accepted [accept-final-outcome] 27.891s: Injecting ReleaseEncounter.
+Outcome probe care-accepted [accept-final-outcome] 27.951s: Applied ReleaseEncounter.
+Outcome probe care-accepted [accept-final-outcome] 27.952s: Waiting for terminal completion.
+Outcome probe care-accepted [accept-final-outcome] 28.001s: Terminal completion observed.
+Outcome probe care-accepted [accept-final-outcome] 28.016s: Waiting for draw: terminal; drawable=True.
+Outcome probe care-accepted [accept-final-outcome] 28.054s: Captured terminal.
+Outcome probe care-accepted [pause] 28.059s: Stage entered.
+Outcome probe care-accepted [pause] 28.059s: Waiting for draw: final; drawable=True.
+Outcome probe care-accepted [pause] 28.101s: Captured final.

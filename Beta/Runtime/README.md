@@ -813,3 +813,13 @@ come from native controls. Run `tools/check_native_accepted_care.py --dotnet <do
 journal authentication are separate required gates; neither alone qualifies treatment. The saved authority authenticates
 Wren's own action and exact consumed dose independently of the patient's request. These disposable controls preserve
 normal focus policy and do not establish physical-device, human art or multiplayer acceptance.
+
+### Shared player host API
+
+`LocalWorldSession.Player` exposes the original local player port. `ConnectPlayerAsync(actorId, delivery,
+regions)` attaches another already admitted human to the same in-process host, initially unready, up to
+four live ports. Each `LocalPlayerConnection` has its own view, readiness, movement, commands, inquiry
+and participant-inspection methods. Dispose a port to leave without closing the host; stop the host to
+close the authority. All ports share one clock and NPC scheduler. See the
+[connection contract](docs/architecture/hosted-player-connections.md) for scheduling, privacy and recovery.
+This API does not authenticate network transports or implement the planned recorded disconnect handoff.

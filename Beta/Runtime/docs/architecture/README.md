@@ -14,6 +14,7 @@ different kind of person.
 | [World composition](world-composition.md) | How do meaningful domain actions compose typed facets, relations, active/passive processes and atomic cross-system changes? |
 | [Identity and determinism](identity-and-determinism.md) | Which bytes, numbers, random streams and orderings define the same world? |
 | [Persistence and history](persistence-and-history.md) | What is stored, replayed, migrated and addressed through history? |
+| [Hosted player connections](hosted-player-connections.md) | How do up to four authenticated player ports share one clock, input cutoff, authority and NPC scheduler while retaining separate readiness, views and queries? |
 | [Time and encounters](time-and-encounters.md) | How do calendar, exposure, Wait, rest and host readiness interact? |
 | [Encounter timing](encounter-timing.md) | How do portable readiness, required choices, retained debt and exposure carry preserve exact tactical time? |
 | [World pacing](world-pacing.md) | How do authenticated Wait choices, tactical time and earned process intervals commit with the complete world? |

@@ -1,0 +1,561 @@
+{
+  "Kind": "native-road-threat-v1",
+  "Mode": "controller",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-threat-probe",
+  "OpeningSeconds": 3.538,
+  "ProbeMilliseconds": 13566,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Start": "road",
+  "Reward": null,
+  "Purchase": null,
+  "Unobserved": {
+    "X": 88704,
+    "Y": 81536,
+    "Z": 256,
+    "Rows": 0,
+    "Status": "Explore freely \u00B7 Select a wolf to inspect an encounter."
+  },
+  "WarningObservation": {
+    "DistanceSubunits": 749,
+    "ReachSubunits": 400,
+    "Feet": {
+      "X": 88704,
+      "Y": 80448,
+      "Z": 256
+    },
+    "ChiefDrawn": true,
+    "ChiefViewport": {
+      "X": 496,
+      "Y": 180
+    },
+    "ChiefInField": true,
+    "ChiefSprite": {
+      "X": 480,
+      "Y": 136,
+      "Width": 32,
+      "Height": 48
+    },
+    "PlayerSprite": {
+      "X": 448,
+      "Y": 224,
+      "Width": 32,
+      "Height": 48
+    },
+    "Field": {
+      "X": 0,
+      "Y": 76,
+      "Width": 960,
+      "Height": 256
+    },
+    "ChiefSpriteVisible": true,
+    "PlayerSpriteVisible": true,
+    "Seconds": 5.7411579
+  },
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "controller",
+      "Controller": "Start"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "cancel",
+      "Route": "controller",
+      "Controller": "B"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "RightStick"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "commit",
+      "Route": "controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "pause",
+      "Route": "controller",
+      "Controller": "Start"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "warning",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "travel",
+      "Hold": "Down"
+    }
+  ],
+  "Warning": "Danger nearby \u00B7 Bandit Chief guards the road \u00B7 attacks within 1.6 cells\nExplore freely \u00B7 Select a wolf to inspect an encounter.",
+  "WarningDetail": "Bandit Chief \u00B7 level 7 \u00B7 HP 800/800. It attacks you when you come within 1.56 cells in its sight, and is 2.9 cells away now. It does not chase: walk around it outside that reach, or retreat if it engages you. An early traveller cannot expect to win.\nRemaining recovery: 0 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+  "Approach": [
+    {
+      "X": 88704,
+      "Y": 81536,
+      "Z": 256,
+      "Seconds": 3.5548482
+    },
+    {
+      "X": 88704,
+      "Y": 81504,
+      "Z": 256,
+      "Seconds": 3.639232
+    },
+    {
+      "X": 88704,
+      "Y": 81472,
+      "Z": 256,
+      "Seconds": 3.6892373
+    },
+    {
+      "X": 88704,
+      "Y": 81440,
+      "Z": 256,
+      "Seconds": 3.7392913
+    },
+    {
+      "X": 88704,
+      "Y": 81408,
+      "Z": 256,
+      "Seconds": 3.7893234
+    },
+    {
+      "X": 88704,
+      "Y": 81376,
+      "Z": 256,
+      "Seconds": 3.8393507
+    },
+    {
+      "X": 88704,
+      "Y": 81344,
+      "Z": 256,
+      "Seconds": 3.8784737
+    },
+    {
+      "X": 88704,
+      "Y": 81312,
+      "Z": 256,
+      "Seconds": 3.9392609
+    },
+    {
+      "X": 88704,
+      "Y": 81280,
+      "Z": 256,
+      "Seconds": 3.9893522
+    },
+    {
+      "X": 88704,
+      "Y": 81248,
+      "Z": 256,
+      "Seconds": 4.0392605
+    },
+    {
+      "X": 88704,
+      "Y": 81216,
+      "Z": 256,
+      "Seconds": 4.0783066
+    },
+    {
+      "X": 88704,
+      "Y": 81184,
+      "Z": 256,
+      "Seconds": 4.1392908
+    },
+    {
+      "X": 88704,
+      "Y": 81152,
+      "Z": 256,
+      "Seconds": 4.1893604
+    },
+    {
+      "X": 88704,
+      "Y": 81120,
+      "Z": 256,
+      "Seconds": 4.2272402
+    },
+    {
+      "X": 88704,
+      "Y": 81088,
+      "Z": 256,
+      "Seconds": 4.2779762
+    },
+    {
+      "X": 88704,
+      "Y": 81056,
+      "Z": 256,
+      "Seconds": 4.3276465
+    },
+    {
+      "X": 88704,
+      "Y": 81024,
+      "Z": 256,
+      "Seconds": 4.3784938
+    },
+    {
+      "X": 88704,
+      "Y": 80992,
+      "Z": 256,
+      "Seconds": 4.4276795
+    },
+    {
+      "X": 88704,
+      "Y": 80960,
+      "Z": 256,
+      "Seconds": 4.4893018
+    },
+    {
+      "X": 88704,
+      "Y": 80928,
+      "Z": 256,
+      "Seconds": 4.52831
+    },
+    {
+      "X": 88704,
+      "Y": 80896,
+      "Z": 256,
+      "Seconds": 4.579747
+    },
+    {
+      "X": 88704,
+      "Y": 80864,
+      "Z": 256,
+      "Seconds": 4.6392253
+    },
+    {
+      "X": 88704,
+      "Y": 80832,
+      "Z": 256,
+      "Seconds": 4.6783706
+    },
+    {
+      "X": 88704,
+      "Y": 80800,
+      "Z": 256,
+      "Seconds": 4.72566
+    },
+    {
+      "X": 88704,
+      "Y": 80768,
+      "Z": 256,
+      "Seconds": 4.7788555
+    },
+    {
+      "X": 88704,
+      "Y": 80736,
+      "Z": 256,
+      "Seconds": 4.8392832
+    },
+    {
+      "X": 88704,
+      "Y": 80704,
+      "Z": 256,
+      "Seconds": 4.8893269
+    },
+    {
+      "X": 88704,
+      "Y": 80672,
+      "Z": 256,
+      "Seconds": 4.9276085
+    },
+    {
+      "X": 88704,
+      "Y": 80640,
+      "Z": 256,
+      "Seconds": 4.9784628
+    },
+    {
+      "X": 88704,
+      "Y": 80608,
+      "Z": 256,
+      "Seconds": 5.0272282
+    },
+    {
+      "X": 88704,
+      "Y": 80576,
+      "Z": 256,
+      "Seconds": 5.0781607
+    },
+    {
+      "X": 88704,
+      "Y": 80544,
+      "Z": 256,
+      "Seconds": 5.1392226
+    },
+    {
+      "X": 88704,
+      "Y": 80512,
+      "Z": 256,
+      "Seconds": 5.1784835
+    },
+    {
+      "X": 88704,
+      "Y": 80480,
+      "Z": 256,
+      "Seconds": 5.227688
+    },
+    {
+      "X": 88704,
+      "Y": 80448,
+      "Z": 256,
+      "Seconds": 5.2892043
+    },
+    {
+      "X": 88704,
+      "Y": 80416,
+      "Z": 256,
+      "Seconds": 5.7892663
+    },
+    {
+      "X": 88704,
+      "Y": 80384,
+      "Z": 256,
+      "Seconds": 5.8392137
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 5.8775025
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 5.9392604
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 5.9777752
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 6.0272749
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 6.0781222
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 6.1281303
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 6.1782858
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 6.2391808
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 6.279194
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 6.3276305
+    },
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 6.3780244
+    }
+  ],
+  "Engagement": {
+    "EncounterCount": 1,
+    "Distance": 385,
+    "Reach": 400,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 6.444883
+  },
+  "Hit": null,
+  "Inspected": {
+    "Stage": "commit",
+    "Name": "Retreat",
+    "Details": "Target: To cell (346, 313), south\nCost: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 1.3 s total.",
+    "Tooltip": "Target: To cell (346, 313), south\nCost: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 1.3 s total."
+  },
+  "Openings": [
+    {
+      "Stage": "inspect",
+      "Timing": 1,
+      "Slot": "To cell (346, 313), south",
+      "SlotBlocker": null,
+      "CanExecute": true
+    },
+    {
+      "Stage": "commit",
+      "Timing": 1,
+      "Slot": "To cell (346, 313), south",
+      "SlotBlocker": null,
+      "CanExecute": true
+    }
+  ],
+  "Positions": [
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 8.1673509
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 8.239164
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 8.489247
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 8.6892757
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 8.8780235
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 9.0784415
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 9.2782055
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 9.4779536
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 9.6784268
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 9.8891421
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 10.0891843
+    }
+  ],
+  "HoldOff": {
+    "FromStep": 2552,
+    "ToStep": 2572,
+    "EncounterCount": 1
+  },
+  "Checks": [
+    "Seven cells south of the camp the chief is unobserved: no warning or detail is published.",
+    "Walking north, the chief came into view three cells away: the HUD warned before contact, with level, HP, reach and distance on inspection, and both complete sprites cleared the HUD.",
+    "Walking the lane north, the chief began the encounter itself once the player was within its reach.",
+    "The chief\u0027s encounter offers a 10-step retreat: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery.",
+    "Cancelling the inspected Retreat sends nothing: the player\u0027s own boundary still waits, unanswered.",
+    "The committed route was walked as 10 presented 32-subunit steps and ended the chief\u0027s encounter.",
+    "Twenty exploration steps after disengaging, the chief has not re-entered: the retreat ended contact beyond its reach.",
+    "Held-key travel back down the lane continues after the retained readiness is paid, without another encounter."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf/native-road-threat-wjsbwr40/controller.warning.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf/native-road-threat-wjsbwr40/controller.engaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf/native-road-threat-wjsbwr40/controller.retreat-inspected.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf/native-road-threat-wjsbwr40/controller.retreating.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf/native-road-threat-wjsbwr40/controller.disengaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-player-sessions/native-evidence/qualification/road-native-20261002T065456Z-18adf/native-road-threat-wjsbwr40/controller.final.png"
+  ],
+  "Notice": "You broke away after 10 steps. The encounter is over; recovery continues while you explore.",
+  "Trade": null,
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 10,
+    "RouteSamples": 10,
+    "ReadinessCharged": 130,
+    "WorldSequence": 2570,
+    "Final": {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256
+    },
+    "ActorId": "2bfa5e10a9524c31b8d79a1aa254770e",
+    "CommandId": "91de5cc100982152b8ce4bc3fae9d106"
+  },
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 81536,
+    "Z": 256
+  },
+  "FinalHp": 78,
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}

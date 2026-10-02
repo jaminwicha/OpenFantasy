@@ -100,9 +100,11 @@ authenticated transition that first resolves any in-flight Outcome under its rec
 [LocalWorldSession](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) routes a pending reading to the
 lifecycle cutoff and selects the actionless completion boundary at a ready cutoff when
 `WorldEncounterOutcomes.IsReadyToFinalize` holds; care cutoffs (a pending care acknowledgment or obligation) are routed
-first. Outcome keeps Full Wait (`Waiting`); a not-ready session selects no cutoff, so it cannot complete either. Other
-humans' commands reach the same authority through their own control bindings; one local session does not establish
-multi-session or networked readiness.
+first. Outcome keeps Full Wait (`Waiting`); with no ready player port the host selects no ordinary cutoff and cannot
+complete it. [Shared player connections](hosted-player-connections.md) submit each human's reading under its own
+control binding and observe their own outcome standing. A ready peer can complete the world boundary even while
+the original local port is paused, after every required reading and pending obligation is satisfied. In-process
+ports do not by themselves establish networked or native multi-client readiness.
 
 [LocalEncounterOutcomeView](../../src/OpenFantasy.Hosting/Simulation/EncounterOutcome/LocalEncounterOutcomeView.cs)
 (`LocalWorldView.EncounterOutcome`, omitted when null) keeps **outcome facts** and **present condition** apart. Facts:
