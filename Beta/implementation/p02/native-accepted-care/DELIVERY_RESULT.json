@@ -1,0 +1,31 @@
+{
+  "status": "process_error",
+  "elapsed_seconds": 179.564,
+  "process_exit_code": 1,
+  "context_status": "verified",
+  "requested_model": "claude-opus-5-5[1m]",
+  "requested_effort": "max",
+  "result": "You've hit your monthly spend limit \u00b7 raise it at claude.ai/settings/usage?from=cc_cli_limit_message \u00b7 your weekly limit resets 10am (America/Chicago)",
+  "modelUsage": {
+    "claude-opus-5-5[1m]": {
+      "inputTokens": 56,
+      "outputTokens": 16563,
+      "cacheReadInputTokens": 2951986,
+      "cacheCreationInputTokens": 161802,
+      "webSearchRequests": 0,
+      "costUSD": 1.7358292000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 9100,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "clientEstimateUsd": 1.7358292000000002,
+  "delivered": [
+    "DESIGN.md"
+  ],
+  "runtimeChanges": false,
+  "disposition": "Terminal account spend limit. No automatic retry or fallback. Astra continues locally."
+}

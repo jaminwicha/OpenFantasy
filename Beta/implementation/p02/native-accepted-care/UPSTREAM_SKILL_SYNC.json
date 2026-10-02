@@ -1,0 +1,10 @@
+{
+  "commit": "bf23c2b069d5dd72601143b5c1a7acdf6ed17097",
+  "milestone": "codex/milestone-bounded-render-waits-20261002",
+  "changedTargets": 3,
+  "verifiedAlignmentRows": 71,
+  "frontmatter": "unchanged from HEAD predecessor; manually checked",
+  "validatorLimitation": "quick_validate.py could not import PyYAML in either the default or bundled interpreter; no package installed or validator changed",
+  "backup": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/bounded-render-skill-sync-t1afjnud/installed-backup/receipt.json",
+  "restore": "Run tools/sync_portable_skills.py rollback --receipt with the saved receipt if needed; reviewed source commit remains in Git."
+}

@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "roots": {
+    "project": "/Users/alucinor/Workspace/Projects/OpenFantasy",
+    "ecosystem": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem",
+    "codex_skills": "/Users/alucinor/.codex/skills",
+    "shared_skills": "/Users/alucinor/.agents/skills",
+    "claude": "/Users/alucinor/.claude",
+    "codex": "/Users/alucinor/.codex",
+    "owner_home": "/Users/alucinor"
+  },
+  "inputs": [
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "AGENTS.md"
+    },
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "CLAUDE.md"
+    },
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "Beta/AGENTS.md"
+    },
+    {
+      "role": "steering",
+      "root": "project",
+      "path": "Beta/AGENTS.md"
+    },
+    {
+      "role": "instructions",
+      "root": "owner_home",
+      "path": "AGENTS.md"
+    },
+    {
+      "role": "handoff",
+      "root": "project",
+      "path": "Beta/implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/Runtime/docs/architecture/world-composition.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/encounter-outcome-integration/lead-care-investigation/NEXT_NATIVE_CARE_PROOF.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/ASSIGNMENT.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/CHECKPOINT.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/PRESERVATION.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/PROTECTED_APPLICATION.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/PROTECTED_REGRESSIONS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/CLIENT_BASELINE_PATHS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/Hosting.Tests.csproj.original"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/BASELINE_DEPENDENCIES.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/run_checks.py"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/inputs/README.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/inputs/docs/architecture/encounter-outcome.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/inputs/docs/architecture/aftermath-care.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/p02/native-accepted-care/inputs/docs/architecture/native-encounters.md"
+    },
+    {
+      "role": "skill",
+      "root": "codex_skills",
+      "path": "godot-csharp-standards/SKILL.md"
+    },
+    {
+      "role": "skill",
+      "root": "codex_skills",
+      "path": "game-verification-loop/SKILL.md"
+    }
+  ],
+  "skill_sync": {
+    "tool": {
+      "root": "ecosystem",
+      "path": "tools/sync_portable_skills.py"
+    },
+    "manifests": [
+      {
+        "root": "ecosystem",
+        "path": "manifests/portable-skill-bundles.json"
+      },
+      {
+        "root": "ecosystem",
+        "path": "manifests/delegation-skill-alignment.json"
+      }
+    ]
+  }
+}

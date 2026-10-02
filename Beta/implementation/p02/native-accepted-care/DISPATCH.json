@@ -1,0 +1,16 @@
+{
+  "status": "terminal_monthly_spend_limit",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "requestedEffort": "max",
+  "timeoutSeconds": 4500,
+  "maxBudgetUsd": 20,
+  "foregroundCommandSeconds": 960,
+  "sourceRevision": "698778d7e539519723d05bce81ee46194a4a5041",
+  "startedUtc": "2026-10-02T03:55:25Z",
+  "privateOutputDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-native-accepted-care-692vqz7n",
+  "contextManifestSha256": "bd291e9296870b48fe750b188ab6aaf21de1e2e38062e756f3207a560a62cf13",
+  "adapterExitCode": 1,
+  "finishedUtc": "2026-10-02T03:58:26Z",
+  "runtimeOwner": "Astra",
+  "automaticRetry": false
+}
