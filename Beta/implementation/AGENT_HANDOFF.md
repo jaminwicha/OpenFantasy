@@ -40,6 +40,14 @@ Commit `2f91983`, preserved on `codex/milestone-architecture-reference`, records
 project hook. Ecosystem commit `4e83086` records the portable hook and verified five-entrypoint sync.
 All 123 reference links resolve; the bounded factual review corrections are retained in the packet.
 
+## Owner scope clarification
+
+The [equipment and vehicle upkeep roadmap](EQUIPMENT_AND_VEHICLE_UPKEEP.md) makes clothing mending,
+item/armor/weapon repair, vehicle/part wear/damage/maintenance and direct attacks on vehicles/mounts
+explicit. Mounts retain bodily injury/care; vehicles retain material/part damage and repair. Baseline RQ-093–095,
+RQ-107, RQ-111, RQ-131 and RQ-179 already cover the shared concepts. Integration remains in P04–P07,
+with P11 catalog reconciliation and P12–P14 qualification; no priority change or implementation claim.
+
 ## Current work and routing
 
 Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits when delegating;

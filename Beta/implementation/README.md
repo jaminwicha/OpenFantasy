@@ -6,7 +6,8 @@ This index routes readers to that record; historical packet counts apply only to
 
 Use the [runtime setup and controls](../Runtime/README.md),
 [architecture reference](../Runtime/docs/architecture/README.md),
-[living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md) and
+[living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md),
+[equipment and vehicle upkeep roadmap](EQUIPMENT_AND_VEHICLE_UPKEEP.md) and
 [full production plan](../spec-v1_1/IMPLEMENTATION_PLAN.md) for their respective contracts.
 Frozen designs and predecessor content remain preserved. Scope extends through production; a passing
 increment does not close a phase, art/UX acceptance, platform coverage or a production feasibility gate.
