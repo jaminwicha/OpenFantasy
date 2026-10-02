@@ -11,7 +11,7 @@ namespace OpenFantasy.Server;
 
 /// <summary>
 /// Owns one HTTPS WebSocket listener and its bounded request lifetimes. It never owns or disposes the world host,
-/// provisions credentials, selects player identity or turns a transport close into a gameplay disconnect decision.
+/// provisions credentials or selects player identity. Established transport termination is confirmed by the session.
 /// </summary>
 public sealed class PlayerWebSocketServer : IAsyncDisposable
 {
@@ -107,8 +107,8 @@ public sealed class PlayerWebSocketServer : IAsyncDisposable
             }).ConfigureAwait(false);
             var transport = new WebSocketPlayerTransport(socket);
             // Admission owns the transport on both success and failure. The session owns the admitted channel.
-            AuthenticatedPlayerChannel channel = await _admission.AcceptAsync(transport, cancellation.Token).ConfigureAwait(false);
-            await new PlayerCommandSession(channel).RunAsync(cancellation.Token).ConfigureAwait(false);
+            AuthenticatedPlayerChannel channel = await _admission.AcceptAsync(transport, _sessions.Token, context.RequestAborted).ConfigureAwait(false);
+            await new PlayerCommandSession(channel).RunAsync(_sessions.Token, context.RequestAborted).ConfigureAwait(false);
         }
         catch (Exception error)
         {

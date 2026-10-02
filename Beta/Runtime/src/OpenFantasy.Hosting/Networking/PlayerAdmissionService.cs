@@ -2,6 +2,7 @@ using System.Security.Cryptography;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Hosting.Networking;
@@ -76,7 +77,12 @@ public sealed class PlayerAdmissionService
     /// on any failure closes the transport and any newly created port. The deadline includes Hello,
     /// actor admission and Welcome, and is never renewed by input or transport progress.
     /// </summary>
-    public async Task<AuthenticatedPlayerChannel> AcceptAsync(PlayerMessageTransport transport, CancellationToken cancellationToken = default)
+    public Task<AuthenticatedPlayerChannel> AcceptAsync(PlayerMessageTransport transport, CancellationToken cancellationToken = default) =>
+        AcceptAsync(transport, cancellationToken, CancellationToken.None);
+
+    /// <summary>Separates caller shutdown from loss of an HTTP transport during final establishment.</summary>
+    public async Task<AuthenticatedPlayerChannel> AcceptAsync(PlayerMessageTransport transport,
+        CancellationToken cancellationToken, CancellationToken transportAborted)
     {
         ArgumentNullException.ThrowIfNull(transport);
         CredentialBinding? binding = null;
@@ -84,7 +90,7 @@ public sealed class PlayerAdmissionService
         bool entered = false;
         long started = _time.GetTimestamp();
         using var deadline = new CancellationTokenSource(HandshakeLimit, _time);
-        using var linked = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, deadline.Token);
+        using var linked = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, transportAborted, deadline.Token);
         try
         {
             lock (_gate)
@@ -115,6 +121,20 @@ public sealed class PlayerAdmissionService
             CheckDeadline(started, linked.Token);
             if (player.ReadRunState() == LocalWorldRunState.Unavailable) throw new PlayerAdmissionException();
             lock (_gate) { if (!IsValid(binding)) throw new PlayerAdmissionException(); }
+            // No credential lock or network send may overlap the world's serialized restoration boundary.
+            await player.CompleteNetworkAdmissionAsync(linked.Token, () =>
+            {
+                CheckDeadline(started, linked.Token);
+                lock (_gate) { if (!IsValid(binding)) throw new PlayerAdmissionException(); }
+            }).ConfigureAwait(false);
+            try { CheckDeadline(started, linked.Token); }
+            catch (OperationCanceledException) when (!cancellationToken.IsCancellationRequested)
+            {
+                // This Welcome already established control. A late successful host boundary must still
+                // honor the absolute deadline, and its resulting loss is no longer a failed Welcome.
+                await player.ConfirmTransportDisconnectedAsync(WorldControllerDisconnectReason.TransportLost).ConfigureAwait(false);
+                throw;
+            }
             CredentialBinding accepted = binding;
             return new AuthenticatedPlayerChannel(player, transport, () => Release(accepted), binding.Presentation);
         }
@@ -141,8 +161,9 @@ public sealed class PlayerAdmissionService
 
     private void CheckDeadline(long started, CancellationToken cancellationToken)
     {
+        long now = _time.GetTimestamp();
         cancellationToken.ThrowIfCancellationRequested();
-        if (_time.GetElapsedTime(started, _time.GetTimestamp()) >= HandshakeLimit)
+        if (_time.GetElapsedTime(started, now) >= HandshakeLimit)
             throw new OperationCanceledException("The player handshake exceeded its deadline.", cancellationToken);
     }
 

@@ -53,17 +53,45 @@ keep their exact accepted kinds. [SqliteWorldAuthority](../../src/OpenFantasy.Ho
 publishes event, state, cause reservation and journal row in its existing transaction. Recovery reproduces
 the state by ordinary deterministic Core replay; no second writer or session-state database is involved.
 
-## Live session contract
+## Live session binding
 
-The [hosted connection boundary](hosted-player-connections.md) supplies authenticated ports and one
-serialized host. Binding a transport to durable control requires explicit termination classification,
-episode-bound host timers, provisional unready rejoin, stale-port exclusion and a conservative action
-selector. Ordinary local disposal, failed admission and deliberate server shutdown are not confirmed
-transport disconnects. A connected idle human retains unlimited Wait. Autonomous control authorizes
-legal host-policy actions through ordinary action admission; the controller event itself chooses none.
-A permitted co-player requires explicit policy and authorization, not mere presence in the same world.
+[LocalWorldSession.Controllers](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.Controllers.cs)
+serializes confirmed transport loss, allowance expiry and restoration with ordinary world commits.
+Only the same current, established port may record loss. The journal transition precedes transient
+port removal; a failed write stops the host. Late callbacks from an older port cannot detach its
+replacement, restart its allowance or cancel its inquiry. Permanent actor entitlements are unchanged.
 
-The durable event API is a host authority surface, not a network request. Network timer measurement,
-restart treatment, input suppression and survival selection are separate application bindings; the
-existence of the Core facet does not imply those bindings. Owner restoration preserves accepted action
-costs and debts and must refresh the reconnecting player's observation before new input.
+Each observed disconnect owns its unique episode ID and a monotonic host timestamp. The host checks
+external events before its zero-ready gameplay return, recording elapsed whole milliseconds only when
+at least 30 seconds have passed. Expiry neither selects an action nor earns simulation time. A connected
+idle actor has no timer. Episode comparison prevents an old timer from expiring a newer disconnect.
+Ordinary local disposal, unsuccessful admission, server shutdown and host failure do not start timers.
+
+After successful Welcome and final admission checks, a returning port requests restoration. At an
+unsafe boundary it remains provisionally attached and unable to make new choices or trade inquiries;
+exact committed receipts and participant observations remain readable. The host retries the boundary
+check at its existing cutoff, without extending the handshake deadline or erasing accepted work.
+A sole returning player does not deadlock on already accepted work: the host may complete retained
+care, staging, the actor's committed combat choice or retreat while that port awaits restoration. This
+exception cannot choose a new human action or start ordinary exploration; other required human
+decisions still hold the world. At a safe boundary it journals restoration and publishes the resulting
+view before permitting new input. Early readiness requests are discarded. Restoration leaves the port unready, with no movement;
+the client must acknowledge readiness again after applying the playable view. Reconnecting does not
+supply consent for care, acknowledge reading or assign a co-player.
+
+The durable event API is host-only. No player wire request supplies an external event or elapsed time.
+Older profiles have no controller facet and retain ordinary connection closure without new journal rows.
+
+## Policy and presentation obligations
+
+Human assignment is not evidence of a connected socket. Loading a saved allowance does not recreate
+its process-local timestamp, infer offline elapsed time or automatically expire it. A restart policy
+must explicitly reconcile outstanding allowance before a production host can rely on automatic handoff.
+The default simulation still pauses when no gameplay-ready players are connected.
+
+Autonomous assignment is permission for a separately qualified conservative selector to submit legal
+survival actions through ordinary admission; expiry itself chooses none. A co-player requires explicit
+policy and authorization, not mere presence in the world. Client presentation must distinguish a
+pending control request from ordinary pause and bind its fresh readiness acknowledgement to the
+restored observation. The boolean readiness wire contract alone does not prove that acknowledgement.
+These policy, selector and client contracts are distinct from the live external-event binding.

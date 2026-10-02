@@ -1,4 +1,5 @@
 using System.Runtime.ExceptionServices;
+using System.Net.WebSockets;
 using System.Threading.Channels;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Worlds;
@@ -30,6 +31,7 @@ public sealed class PlayerCommandSession
     private int _observationRequested;
     private int _forceFullObservation;
     private int _observationPending;
+    private int _disconnectReason;
 
     public PlayerCommandSession(AuthenticatedPlayerChannel channel, TimeProvider? time = null)
     {
@@ -38,11 +40,14 @@ public sealed class PlayerCommandSession
         _time = time ?? TimeProvider.System;
     }
 
-    /// <summary>Owns the channel until all loops terminate; may be called once. Closing it journals no disconnect policy.</summary>
-    public async Task RunAsync(CancellationToken cancellationToken = default)
+    /// <summary>Owns the channel until all loops terminate; caller cancellation is ordinary local shutdown.</summary>
+    public Task RunAsync(CancellationToken cancellationToken = default) => RunAsync(cancellationToken, CancellationToken.None);
+
+    /// <summary>Separates server shutdown from an established HTTP request whose transport was aborted.</summary>
+    public async Task RunAsync(CancellationToken cancellationToken, CancellationToken transportAborted)
     {
         if (Interlocked.Exchange(ref _started, 1) != 0) throw new InvalidOperationException("A player command session can run only once.");
-        using var stop = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken);
+        using var stop = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, transportAborted);
         Task receiver = ReceiveAsync(stop.Token);
         Task sender = SendAsync(stop.Token);
         Task observations = PublishObservationsAsync(stop.Token);
@@ -56,8 +61,23 @@ public sealed class PlayerCommandSession
         catch (Exception error) { failure = error; }
         finally
         {
+            if (transportAborted.IsCancellationRequested) MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
             stop.Cancel();
-            try { await _channel.DisposeAsync().ConfigureAwait(false); }
+            try
+            {
+                int reason = Volatile.Read(ref _disconnectReason);
+                if (reason == 0)
+                    reason = _channel.Transport.Termination switch
+                    {
+                        PlayerTransportTermination.ProtocolFailure => (int)WorldControllerDisconnectReason.ProtocolFailure,
+                        PlayerTransportTermination.TransportLost => (int)WorldControllerDisconnectReason.TransportLost,
+                        _ => 0
+                    };
+                if (!cancellationToken.IsCancellationRequested
+                    && _channel.Transport.Termination != PlayerTransportTermination.LocalDisposal && reason != 0)
+                    await _channel.ConfirmTransportDisconnectedAsync((WorldControllerDisconnectReason)reason).ConfigureAwait(false);
+                else await _channel.DisposeAsync().ConfigureAwait(false);
+            }
             catch (Exception error) { failure ??= error; }
             // Closing the port releases an uncommitted action waiter; a committed effect stays durable.
             foreach (Task task in new[] { receiver, sender, observations })
@@ -79,52 +99,77 @@ public sealed class PlayerCommandSession
         ulong lastRequest = 0;
         long window = _time.GetTimestamp();
         int inputs = 0;
-        while (await _channel.Transport.ReceiveAsync(cancellationToken).ConfigureAwait(false) is { } bytes)
+        while (await ReceiveFrameAsync(cancellationToken).ConfigureAwait(false) is { } bytes)
         {
             if (_time.GetElapsedTime(window, _time.GetTimestamp()) >= TimeSpan.FromSeconds(1))
             {
                 window = _time.GetTimestamp();
                 inputs = 0;
             }
-            if (++inputs > MaximumInputsPerSecond) throw new InvalidDataException("The player exceeded its input-rate limit.");
-            PlayerMessage message = PlayerMessageCodec.Decode(bytes);
-            if (message.RequestId <= lastRequest) throw new FormatException("Player request IDs must strictly increase within a connection.");
+            if (++inputs > MaximumInputsPerSecond)
+            {
+                MarkDisconnected(WorldControllerDisconnectReason.ProtocolFailure);
+                throw new InvalidDataException("The player exceeded its input-rate limit.");
+            }
+            PlayerCommandInput input;
+            try { input = PlayerCommandInput.Decode(bytes, lastRequest); }
+            catch (FormatException)
+            {
+                MarkDisconnected(WorldControllerDisconnectReason.ProtocolFailure);
+                throw;
+            }
+            PlayerMessage message = input.Message;
             lastRequest = message.RequestId;
             switch (message.Kind)
             {
                 case PlayerMessageKind.Readiness:
-                    _channel.Player.SetReady(PlayerGameplayCodec.ReadReadiness(message));
+                    _channel.Player.SetReady(input.Ready);
                     break;
                 case PlayerMessageKind.Movement:
-                    (int x, int y) = PlayerGameplayCodec.ReadMovement(message);
-                    _channel.Player.SetMovement(x, y);
+                    _channel.Player.SetMovement(input.X, input.Y);
                     break;
                 case PlayerMessageKind.Command:
-                    WorldActionCommand command = PlayerGameplayCodec.ReadCommand(message);
                     if (Interlocked.CompareExchange(ref _busy, 1, 0) != 0)
                         Enqueue(Refusal(message.RequestId, PlayerRequestRefusal.Busy));
-                    else _action = CompleteActionAsync(message.RequestId, command, cancellationToken);
+                    else _action = CompleteActionAsync(message.RequestId, input.Command!, cancellationToken);
                     break;
                 case PlayerMessageKind.Query:
-                    PlayerQuery query = PlayerQueryCodec.Decode(message.Payload);
                     if (Interlocked.CompareExchange(ref _queryBusy, 1, 0) != 0)
                         Enqueue(Refusal(message.RequestId, PlayerRequestRefusal.Busy));
-                    else _query = CompleteQueryAsync(message.RequestId, query, cancellationToken);
+                    else _query = CompleteQueryAsync(message.RequestId, input.Query!, cancellationToken);
                     break;
                 case PlayerMessageKind.Ping:
-                    RequireEmpty(message);
                     Enqueue(new PlayerMessage(PlayerMessageKind.Pong, message.RequestId, []));
                     break;
                 case PlayerMessageKind.Observation:
-                    RequireEmpty(message);
                     Interlocked.Exchange(ref _forceFullObservation, 1);
                     Volatile.Write(ref _observationRequested, 1);
                     break;
                 case PlayerMessageKind.Goodbye:
-                    RequireEmpty(message);
+                    MarkDisconnected(WorldControllerDisconnectReason.PeerClosed);
                     return;
-                default: throw new FormatException("Unsupported player input message.");
             }
+        }
+        if (!cancellationToken.IsCancellationRequested) MarkDisconnected(WorldControllerDisconnectReason.PeerClosed);
+    }
+
+    private async ValueTask<byte[]?> ReceiveFrameAsync(CancellationToken cancellationToken)
+    {
+        try { return await _channel.Transport.ReceiveAsync(cancellationToken).ConfigureAwait(false); }
+        catch (InvalidDataException)
+        {
+            MarkDisconnected(WorldControllerDisconnectReason.ProtocolFailure);
+            throw;
+        }
+        catch (OperationCanceledException) when (_channel.Transport.Termination == PlayerTransportTermination.TransportLost)
+        {
+            if (!cancellationToken.IsCancellationRequested) MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
+            throw;
+        }
+        catch (Exception error) when (error is IOException or WebSocketException or ChannelClosedException)
+        {
+            if (!cancellationToken.IsCancellationRequested) MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
+            throw;
         }
     }
 
@@ -179,9 +224,29 @@ public sealed class PlayerCommandSession
             long started = _time.GetTimestamp();
             using var deadline = new CancellationTokenSource(SendLimit, _time);
             using var linked = CancellationTokenSource.CreateLinkedTokenSource(cancellationToken, deadline.Token);
-            await _channel.Transport.SendAsync(PlayerMessageCodec.Encode(message), linked.Token).ConfigureAwait(false);
+            // Register after the linked source: cancellation callbacks run last-in-first-out, so the
+            // deadline origin is visible before a socket abort wakes the competing receive loop.
+            using var deadlineOrigin = deadline.Token.Register(() =>
+            {
+                if (!cancellationToken.IsCancellationRequested) MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
+            });
+            byte[] bytes = PlayerMessageCodec.Encode(message);
+            try { await _channel.Transport.SendAsync(bytes, linked.Token).ConfigureAwait(false); }
+            catch (OperationCanceledException) when (deadline.IsCancellationRequested && !cancellationToken.IsCancellationRequested)
+            {
+                MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
+                throw;
+            }
+            catch (Exception error) when (error is IOException or WebSocketException or ChannelClosedException)
+            {
+                if (!cancellationToken.IsCancellationRequested) MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
+                throw;
+            }
             if (_time.GetElapsedTime(started, _time.GetTimestamp()) >= SendLimit)
+            {
+                MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
                 throw new PlayerResponseTimeoutException();
+            }
             if (message.Kind == PlayerMessageKind.Observation) Volatile.Write(ref _observationPending, 0);
         }
     }
@@ -210,14 +275,16 @@ public sealed class PlayerCommandSession
 
     private void Enqueue(PlayerMessage message)
     {
-        if (!_responses.Writer.TryWrite(message)) throw new IOException("The player response queue is full.");
+        if (!_responses.Writer.TryWrite(message))
+        {
+            MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
+            throw new IOException("The player response queue is full.");
+        }
     }
 
     private static PlayerMessage Refusal(ulong requestId, PlayerRequestRefusal refusal) =>
         new(PlayerMessageKind.Refusal, requestId, new[] { (byte)refusal });
 
-    private static void RequireEmpty(PlayerMessage message)
-    {
-        if (!message.Payload.IsEmpty) throw new FormatException("This player message must have an empty payload.");
-    }
+    private void MarkDisconnected(WorldControllerDisconnectReason reason) =>
+        Interlocked.CompareExchange(ref _disconnectReason, (int)reason, 0);
 }

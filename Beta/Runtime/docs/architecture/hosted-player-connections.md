@@ -25,7 +25,12 @@ for the same actor. The host owns authority disposal, independently of any playe
 
 A new connection starts unready. Its client acknowledges readiness only after applying a playable
 view. Any ready port permits the single host cutoff; zero ready ports pause ordinary world selection.
-Already accepted physical consequence work keeps its existing completion policy. Connection alone,
+The controller-event binding checks confirmed disconnect allowances and safe restoration independently
+of gameplay readiness; these external decisions earn no simulation time.
+Already accepted physical consequence work keeps its existing completion policy. An established
+returning player awaiting control can also permit completion of accepted care, staging, queued combat
+or retreat to reach the safe restoration boundary. This never supplies a new human choice or grants
+exploration time; restoration itself still leaves that player unready. Connection alone,
 reopening or missed wall time earns no simulation time. Readiness loss clears only that port's movement.
 The existing 150 ms movement lease and 50 ms host deadline apply independently to each input stream.
 All ready, fresh movement samples join the same advancing batch, so more clients do not multiply time.
@@ -97,10 +102,11 @@ receipts remain retrievable after reopening; connection closure grants no item, 
 connection gate, additionally checking actual world/profile/admission pins there. It creates no new
 control assignment and does not replace an occupied local port.
 
-In-process closure is distinct from a confirmed transport disconnect. The full design requires a
-journaled disconnect decision, the stated reconnect allowance, permitted controller handoff and safe
-reconnection. Those require the network/control adapter and are not inferred from disposing this
-port. This shared host supports coordinated branch Wait; independent encounter pockets, network
+In-process closure is distinct from a confirmed transport disconnect. For profile 36, the explicit
+network/control adapter journals established transport loss, observes the 30-second allowance and
+restores control at a safe boundary. These events are never inferred from ordinary port disposal.
+An attached port awaiting restoration cannot become ready or submit a new choice; it can recover an
+exact committed receipt. Restoration publishes its view and requires a new readiness acknowledgement. This shared host supports coordinated branch Wait; independent encounter pockets, network
 transport and native multi-client delivery are separate bindings of the full design. The connection
 limit is the first production player target, not an NPC population or world-resident limit.
 

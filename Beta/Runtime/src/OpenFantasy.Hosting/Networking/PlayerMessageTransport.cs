@@ -11,6 +11,7 @@ public abstract class PlayerMessageTransport : IAsyncDisposable
     private int _disposed;
     private int _sending;
     private int _receiving;
+    private int _termination;
 
     protected PlayerMessageTransport(int maximumMessageBytes)
     {
@@ -21,6 +22,7 @@ public abstract class PlayerMessageTransport : IAsyncDisposable
     }
 
     public int MaximumMessageBytes { get; }
+    internal PlayerTransportTermination Termination => (PlayerTransportTermination)Volatile.Read(ref _termination);
 
     public async ValueTask SendAsync(ReadOnlyMemory<byte> message, CancellationToken cancellationToken = default)
     {
@@ -51,14 +53,18 @@ public abstract class PlayerMessageTransport : IAsyncDisposable
         catch (InvalidDataException)
         {
             // Never reinterpret an unread malformed message suffix as another logical message.
-            await DisposeAsync().ConfigureAwait(false);
+            await AbortTransportAsync(PlayerTransportTermination.ProtocolFailure).ConfigureAwait(false);
             throw;
         }
         finally { Volatile.Write(ref _receiving, 0); }
     }
 
-    public ValueTask DisposeAsync()
+    public ValueTask DisposeAsync() => AbortTransportAsync(PlayerTransportTermination.LocalDisposal);
+
+    internal ValueTask AbortTransportAsync(PlayerTransportTermination termination)
     {
+        if (termination != PlayerTransportTermination.None)
+            Interlocked.CompareExchange(ref _termination, (int)termination, 0);
         if (Interlocked.Exchange(ref _disposed, 1) == 0)
         {
             try { _lifetime.Cancel(); }

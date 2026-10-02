@@ -1,0 +1,7 @@
+{
+  "ref": "codex/checkpoint-live-controller-before-critic-fixes-20261002T145637Z",
+  "snapshot": "170cc425e0522f3ccb101735e5d76c5a29d6246c",
+  "sourceHead": "adb0893bb7eb85a7d16e7b41291132dd17659aa5",
+  "scope": "All successor working changes/new files; predecessor staging excluded",
+  "verification": "WIP, initial build/46 focused cases pass; critic identified single-player reconnect and admission races; no acceptance"
+}

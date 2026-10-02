@@ -54,26 +54,31 @@ Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits
 Astra retains integration. The latest direct request reached the account monthly spending limit.
 No automatic retry, fallback, account limit change or further provider request is pending.
 
-The [durable controller foundation](p02/controller-lifecycle/RESULT.md) is qualified at
-`codex/milestone-controller-journal-20261002`, based on native roster milestone 5e4a0e47. Explicit
-profile 36/schema 9 records disconnect, allowance expiry and safe restoration through the same world
-authority, preserving character ownership, accepted actions and simulation time. Lifecycle bookkeeping
-keeps its existing exact world-revision invariant. Old profiles retain their bytes and admission.
+The [live controller host binding](p02/live-controller-host/RESULT.md) is qualified at
+`codex/milestone-live-controller-host-20261002`, on the durable controller foundation `7aef4971`.
+Confirmed established transport termination journals profile 36 events, a monotonic episode-bound
+30-second allowance runs even with zero ready ports, and restoration waits for accepted work while
+preserving fresh readiness. Lone-player combat/staging/care continuation, stale callbacks, request
+abort versus shutdown, and final credential validation races have executable coverage.
 
-[Final checks](p02/controller-lifecycle/FINAL_CHECKS.json): solution build and 2,476 distinct passing
-cases, including 27new controller cases, actual archive/reopen, queued paid combat and pending finite
-care. The exact previous four-native-player profile 35 save replays through the new assemblies to
-revision 180 and its original hash. All 662 older tests/fixtures, 23 frozen specs and unrelated predecessor
-staging remain exact. The affected timeless architecture reference and 1,249 links are checked.
-The [review](p02/controller-lifecycle/REVIEW.md) records the critic's coverage suggestions and missed
-revision dependency; real execution exposed it and no old invariant or deadline was weakened.
+[Final evidence](p02/live-controller-host/FINAL_CHECKS.json): corrected build, 341 distinct cases with
+passing evidence (46 new), including 55 focused controller checks, 219 networking, 26 shared/session,
+72 managed server and three native cases. Seven actual Godot processes exercise the unchanged profile
+35 native route. The broad concurrent native+managed aggregate is NOT accepted: one original
+five-second TLS observation timed out; its isolated case and the established separate managed selection
+pass. Cause/concurrent-load implications remain unqualified. Windows ACL remains unrun on macOS.
+The [review](p02/live-controller-host/REVIEW.md) retains critic findings, fixes and all failure dispositions.
+667 old tests/fixtures, 23 frozen specs, predecessor staging and Core source remain unchanged;
+1,252 architecture links resolve. Native originals are recoverable from the hashed committed archive.
 
-Next: implement the [live host/transport integration](p02/controller-lifecycle/PLAN.md): confirmed
-disconnect versus shutdown/disposal, a real episode-bound 30-second timer even with zero ready ports,
-safe provisional rejoin, conservative survival, restart/co-player policy and production selection.
-The Core event API is host-only; it does not yet bind network input or enable automatic control.
-Human mode is not proof of a connected socket. No fresh native proof, lived-save transition or complete
-disconnect gate is claimed. No provider request occurred; native workers consume Astra capacity.
+Next: conservative survival and authorized co-player policy, explicit saved-allowance/restart
+reconciliation, pending-control presentation and fresh-observation readiness acknowledgement, then
+profile 36 native journeys and production selection. The full disconnect gate remains open. No
+production operator enables profile 36; autonomous mode alone is not survival implementation.
+The [original integration plan](p02/controller-lifecycle/PLAN.md) and new packet's remaining dependencies
+retain the whole scope. Earlier Core/journal qualification remains at the controller-journal milestone.
+No provider request occurred; native workers/critics consume Astra capacity. Roadmap additions are
+committed as `adb0893b` and preserve the existing phase sequence.
 
 The [native four-player journey](p02/native-player-roster/RESULT.md) is qualified at
 `codex/milestone-native-player-roster-20261002`, based on roster milestone `25a28d8`. Four actual

@@ -49,8 +49,18 @@ silence, Hello, port admission and Welcome; progress does not reset it. Successf
 elapsed time. WebSocket fragments retain the separate [transport work/deadline limits](player-message-transport.md).
 Reservations prevent concurrent use of a credential. Admission rechecks actual host/port availability
 after Welcome so a host stopped during output backpressure cannot report a successful admission.
-Failure closes the supplied transport, closes any
-new port and releases the reservation. Neither refusal nor Welcome is a durable gameplay receipt.
+After successful Welcome, the service awaits host establishment under that same deadline. It rechecks
+credential validity and the deadline at the serialized establishment boundary, after any wait for the
+host gate. A refused credential does not fail the host. No admission lock is held across that await. Establishment can restore profile 36 control at a safe boundary; an unsafe character
+remains provisionally unready. A failed Welcome never restores control. If establishment completes but
+the final elapsed-time check reaches the deadline, admission still fails and explicitly records the
+established transport's loss before cleanup. Separate shutdown and request-abort tokens preserve that distinction during admission as well as
+gameplay: request abortion after establishment records transport loss; caller/server shutdown remains
+nonjournaled. This preserves the
+absolute bound without treating an already established port as an unsuccessful Welcome.
+
+Failure closes the supplied transport, closes any new port and releases the reservation. Neither
+refusal nor Welcome is a durable gameplay receipt.
 
 ## Wire contract and channel ownership
 
@@ -65,8 +75,10 @@ does not authenticate the server; its protected transport and request correlatio
 owns the admitted port and transport. The port starts unready until the client applies a playable view.
 Disposal is idempotent, cancels transport work, closes that port and releases its credential reservation.
 Player cleanup still runs if transport disposal fails; a close error cannot strand an occupied actor port.
-It leaves other players and the world owner alive. Closing this channel invokes in-process port closure;
-it is not the full design's journaled disconnect, reconnect allowance or controller handoff.
+It leaves other players and the world owner alive. Ordinary disposal invokes only in-process closure.
+The explicit confirmed-close path first asks the host to journal eligible established transport loss,
+then performs the same cleanup. Both share one close task, so a racing disposal cannot detach a
+replacement. The [controller binding](controller-lifecycle.md) owns profile, episode and safe-return rules.
 
 [Player command routing](player-command-routing.md) consumes the admitted channel for readiness,
 movement and exact action/receipt exchange. The [HTTP/TLS listener](player-http-host.md) and native view adapter have

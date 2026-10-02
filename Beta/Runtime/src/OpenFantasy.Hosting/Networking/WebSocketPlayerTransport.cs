@@ -27,7 +27,8 @@ public sealed class WebSocketPlayerTransport : PlayerMessageTransport
         try { await _socket.SendAsync(message.AsMemory(), WebSocketMessageType.Binary, true, cancellationToken).ConfigureAwait(false); }
         catch (OperationCanceledException)
         {
-            await DisposeAsync().ConfigureAwait(false);
+            // The caller may be shutting down or imposing a response deadline; it owns that distinction.
+            await AbortTransportAsync(PlayerTransportTermination.None).ConfigureAwait(false);
             throw;
         }
     }
@@ -38,7 +39,8 @@ public sealed class WebSocketPlayerTransport : PlayerMessageTransport
         catch (OperationCanceledException)
         {
             // A canceled socket operation may have consumed a prefix. Never resume at that suffix.
-            await DisposeAsync().ConfigureAwait(false);
+            await AbortTransportAsync(cancellationToken.IsCancellationRequested
+                ? PlayerTransportTermination.None : PlayerTransportTermination.TransportLost).ConfigureAwait(false);
             throw;
         }
     }

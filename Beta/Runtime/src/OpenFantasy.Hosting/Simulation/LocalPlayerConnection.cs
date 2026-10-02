@@ -15,13 +15,14 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     private LocalWorldView _view;
 
     internal LocalPlayerConnection(LocalWorldSession host, EntityId actorId, TrustedCommandDelivery delivery,
-        LocalWorldView view, CargoPresentation.LocalRegionObserver? regions)
+        LocalWorldView view, CargoPresentation.LocalRegionObserver? regions, bool controlAvailable = true)
     {
         _host = host;
         ActorId = actorId;
         Delivery = delivery;
         _view = view;
         Regions = regions;
+        ControlAvailable = controlAvailable;
     }
 
     public EntityId ActorId { get; }
@@ -44,6 +45,12 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     internal CargoPresentation.LocalRegionObserver? Regions { get; }
     internal bool Connected { get; set; } = true;
     internal bool Ready { get; set; }
+    internal bool ControlAvailable { get; set; }
+    internal bool NetworkEstablished { get; set; }
+    internal Task CompleteNetworkAdmissionAsync(CancellationToken cancellationToken, Action validateAdmission) =>
+        _host.CompleteNetworkAdmissionAsync(this, cancellationToken, validateAdmission);
+    internal Task ConfirmTransportDisconnectedAsync(WorldControllerDisconnectReason reason) =>
+        _host.ConfirmTransportDisconnectedAsync(this, reason);
     internal PendingLocalAction? Pending { get; set; }
     internal long MovementX { get; set; }
     internal long MovementY { get; set; }

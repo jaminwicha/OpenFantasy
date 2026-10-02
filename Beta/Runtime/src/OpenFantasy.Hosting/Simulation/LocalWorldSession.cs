@@ -100,7 +100,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         _time = timeProvider;
         _materialGifts = new LocalMaterialGiftController(state, giftPolicies ?? []);
         _trading = new LocalTradingController(state, playerActorId, trading ?? LocalTradingConfiguration.None);
-        _localPlayer = new LocalPlayerConnection(this, playerActorId, delivery, ProjectView(state, playerActorId, regions), regions);
+        _localPlayer = new LocalPlayerConnection(this, playerActorId, delivery, ProjectView(state, playerActorId, regions), regions,
+            state.Controllers is null || state.Controllers.Get(playerActorId).Mode == WorldControllerMode.Human);
         _players.Add(playerActorId, _localPlayer);
         _projectedStateHash = state.ContentHash;
         _loop = Task.Run(RunAsync);
@@ -143,6 +144,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 return prior;
             }
+            lock (_inputs) { EnsureControlAvailable(player); }
             WorldSnapshot state = _authority.ReadStateForHost();
             _materialProposals.Validate(state, command);
             ValidateTradeSelection(state, command);
@@ -351,7 +353,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 if (_stopRequested) { return; }
             }
-            WorldSnapshot state = _authority.ReadStateForHost();
+            WorldSnapshot state = TickControllers(_authority.ReadStateForHost());
             PublishViewIfChanged(state);
             if (state.PendingExcavation is not null)
             {
@@ -362,7 +364,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             List<WorldMovementInput> playerMovement;
             lock (_inputs)
             {
-                if (_stopRequested || !_players.Values.Any(player => player.Ready)) { return; }
+                if (_stopRequested || !_players.Values.Any(player => player.Ready) && !CanContinueAcceptedControlReturn(state)) { return; }
                 pending = SelectPendingAction(state);
                 playerMovement = SamplePlayerMovement();
             }

@@ -41,7 +41,8 @@ public sealed partial class LocalWorldSession
                 EnsureInputAvailable();
                 if (_players.ContainsKey(actorId) || _players.Count >= MaximumPlayerConnections)
                     throw new AuthorityDispatchException("The actor is already connected or all four player slots are occupied.");
-                var player = new LocalPlayerConnection(this, actorId, delivery, ProjectView(state, actorId, regions), regions);
+                var player = new LocalPlayerConnection(this, actorId, delivery, ProjectView(state, actorId, regions), regions,
+                    state.Controllers is null || state.Controllers.Get(actorId).Mode == WorldControllerMode.Human);
                 _players.Add(actorId, player);
                 return player;
             }
@@ -86,8 +87,8 @@ public sealed partial class LocalWorldSession
         lock (_inputs)
         {
             EnsurePlayerAvailable(player);
-            player.Ready = ready;
-            if (!ready) player.ClearMovement();
+            player.Ready = ready && player.ControlAvailable;
+            if (!player.Ready) player.ClearMovement();
         }
     }
 
@@ -161,20 +162,31 @@ public sealed partial class LocalWorldSession
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
         {
-            lock (_inputs)
-            {
-                if (!player.Connected) return;
-                player.Connected = false;
-                player.Ready = false;
-                player.ClearMovement();
-                player.Pending?.Completion.TrySetCanceled();
-                player.Pending = null;
-                _players.Remove(player.ActorId);
-            }
-            _trading.Cancel(player.ActorId);
-            _trading.ForgetInquiry(player.ActorId);
+            DetachPlayer(player);
         }
         finally { _serialization.Release(); }
+        await AwaitPlayerInspectionsAsync(player).ConfigureAwait(false);
+    }
+
+    // Caller holds serialization; stale cleanup never cancels the replacement port's inquiry.
+    private void DetachPlayer(LocalPlayerConnection player)
+    {
+        lock (_inputs)
+        {
+            if (!IsCurrentPlayer(player)) return;
+            player.Connected = false;
+            player.Ready = false;
+            player.ClearMovement();
+            player.Pending?.Completion.TrySetCanceled();
+            player.Pending = null;
+            _players.Remove(player.ActorId);
+        }
+        _trading.Cancel(player.ActorId);
+        _trading.ForgetInquiry(player.ActorId);
+    }
+
+    private static async Task AwaitPlayerInspectionsAsync(LocalPlayerConnection player)
+    {
         // Reads already admitted may finish, but no new query can enter through the closed port.
         foreach (Task? inspection in new Task?[] { player.ProposalInspection.Latest, player.QuoteInspection.Latest })
         {

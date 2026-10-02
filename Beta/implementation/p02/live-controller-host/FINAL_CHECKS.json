@@ -1,0 +1,70 @@
+{
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261002T150022354429Z/report.json",
+      "seconds": 21.62286345800385,
+      "outcomes": {}
+    },
+    "controller": {
+      "path": "qualification/controller-20261002T150114991873Z/report.json",
+      "seconds": 27.739390542003093,
+      "outcomes": {
+        "Passed": 55
+      }
+    },
+    "network": {
+      "path": "qualification/network-20261002T150218807284Z/report.json",
+      "seconds": 19.27564683399396,
+      "outcomes": {
+        "Passed": 219
+      }
+    },
+    "shared": {
+      "path": "qualification/shared-20261002T150238614042Z/report.json",
+      "seconds": 42.391925667005125,
+      "outcomes": {
+        "Passed": 26
+      }
+    },
+    "server-managed": {
+      "path": "qualification/server-managed-20261002T151022555770Z/report.json",
+      "seconds": 29.257043292018352,
+      "outcomes": {
+        "Passed": 72,
+        "NotExecuted": 1
+      }
+    },
+    "server-roster": {
+      "path": "qualification/server-roster-20261002T150910496281Z/report.json",
+      "seconds": 7.6318357920099515,
+      "outcomes": {
+        "Passed": 1
+      }
+    }
+  },
+  "nativeIndividualCases": [
+    {
+      "name": "OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: True)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: False)",
+      "outcome": "Passed"
+    },
+    {
+      "name": "OpenFantasy.Server.Tests.NativeRosterJourneyTests.Four_native_players_assemble_choose_wait_and_reconnect_the_missing_required_human",
+      "outcome": "Passed"
+    }
+  ],
+  "nativeSourceReport": "qualification/server-20261002T150507505479Z/report.json",
+  "nativeSourceAggregateAccepted": false,
+  "distinctPassingCases": 341,
+  "passingExecutionsInSelectedEvidence": 376,
+  "newControllerCases": 46,
+  "unresolvedConcurrentFailure": "The broad native+managed server aggregate missed the existing five-second PlayerRosterHostTests observation deadline. Its exact case passes in isolation and the established separate managed selection passes; cause and production-load implications remain unqualified.",
+  "unrunPlatformCase": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "coreEvidence": "Core sources/tests and frozen schemas/specs unchanged; prior Core gate retained at controller-journal milestone. No new full Core run.",
+  "archiveBytes": 6331379
+}

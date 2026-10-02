@@ -45,3 +45,12 @@ never privileged world roots or hashes as a shortcut to observation synchronizat
 The [player protocol client](player-client.md) supplies participant-side startup, bounded output,
 reply correlation and replica ownership. Its production connector validates TLS before credentials
 enter the transport; an already-open socket supplied directly retains the caller's protection obligation.
+
+## Termination origin
+
+The transport keeps a small internal origin marker for local disposal, malformed input or transport
+failure. Abort publishes that marker before canceling I/O. Public exceptions retain their original
+types. Ordinary Dispose records local intent; internal abort without a cause allows its caller (for
+example a response deadline owner) to supply the actual reason. The command session uses origin and
+separate server/peer cancellation to request the host's confirmed-disconnect boundary. The marker
+itself is transient and grants no saved control or gameplay action.

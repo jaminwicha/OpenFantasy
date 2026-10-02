@@ -1,0 +1,69 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:01.12]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.66]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.90]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerAdmissionRaceTests.Request_abort_before_establishment_is_still_a_failed_welcome_without_an_event [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Explicit_profile_roundtrips_without_reinterpreting_the_old_genesis_or_batch [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Sole_returning_player_finishes_existing_staging_then_requires_new_readiness [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Established_eof_and_goodbye_record_peer_closed_without_gameplay_time(goodbye: False) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerAdmissionRaceTests.An_abort_after_establishment_is_distinct_from_shutdown_during_the_same_boundary(shutdown: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerAdmissionRaceTests.An_abort_after_establishment_is_distinct_from_shutdown_during_the_same_boundary(shutdown: True) [516 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Established_eof_and_goodbye_record_peer_closed_without_gameplay_time(goodbye: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerAdmissionRaceTests.A_welcome_queued_at_host_serialization_revalidates_before_establishing(invalidation: "revoke") [704 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Failed_welcome_never_establishes_or_disconnects_control(failure: "deadline") [703 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerAdmissionRaceTests.A_welcome_queued_at_host_serialization_revalidates_before_establishing(invalidation: "credential-expiry") [717 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Failed_welcome_never_establishes_or_disconnects_control(failure: "write") [697 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.A_late_transport_callback_after_host_shutdown_is_not_a_disconnect_event [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.An_acknowledged_finite_treatment_survives_disconnect_and_blocks_rejoin_until_the_helper_finishes [3 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Failed_welcome_never_establishes_or_disconnects_control(failure: "revoked") [906 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerAdmissionRaceTests.A_welcome_queued_at_host_serialization_revalidates_before_establishing(invalidation: "handshake-deadline") [907 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Adapter_protocol_abort_is_recorded_even_when_its_sender_finishes_before_the_receiver [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerWebSocketTests.Actual_websocket_end_origin_reaches_the_established_world_authority(termination: "reassembly-timeout", reason: TransportLost) [7 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Actual_send_or_receive_io_failure_records_transport_lost(reading: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Every_actor_disconnect_expiry_and_rejoin_replays_without_time_or_ownership_changes [3 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Allowance_uses_the_confirmed_episode_and_expires_at_thirty_seconds_with_no_ready_port [3 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerWebSocketTests.Actual_websocket_end_origin_reaches_the_established_world_authority(termination: "close", reason: PeerClosed) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Actual_send_or_receive_io_failure_records_transport_lost(reading: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerWebSocketTests.Actual_websocket_end_origin_reaches_the_established_world_authority(termination: "text", reason: ProtocolFailure) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Legacy_profile35_peer_close_retains_its_original_bytes [648 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Local_shutdown_and_disposal_preserve_controller_history(close: "caller") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerWebSocketTests.Actual_websocket_end_origin_reaches_the_established_world_authority(termination: "abort", reason: TransportLost) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Rejoin_waits_for_actual_paid_choice_resolution_and_does_not_replay_early_readiness [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.A_transaction_fault_recovers_exactly_before_or_after_the_control_event(committed: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Duplicate_stale_and_aliased_events_are_refused_without_publishing_a_new_root [278 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Local_shutdown_and_disposal_preserve_controller_history(close: "transport") [661 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Local_shutdown_and_disposal_preserve_controller_history(close: "host") [734 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Disconnect_and_rejoin_preserve_an_actual_reading_hold [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Local_shutdown_and_disposal_preserve_controller_history(close: "channel") [860 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Malformed_established_input_records_protocol_failure_at_the_parse_boundary(fault: "frame") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Rejoin_before_or_after_expiry_preserves_identity_and_starts_unready(afterExpiry: False) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Malformed_established_input_records_protocol_failure_at_the_parse_boundary(fault: "payload") [728 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Malformed_established_input_records_protocol_failure_at_the_parse_boundary(fault: "envelope") [735 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Rejoin_before_or_after_expiry_preserves_identity_and_starts_unready(afterExpiry: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Malformed_established_input_records_protocol_failure_at_the_parse_boundary(fault: "query") [835 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.A_response_deadline_records_transport_lost_even_when_the_send_returns_success(lateSuccess: True) [635 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Connected_ready_human_has_unlimited_combat_wait [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Actual_archive_rollover_retains_disconnected_actor_and_its_exact_episode_on_reopen [6 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.A_response_deadline_records_transport_lost_even_when_the_send_returns_success(lateSuccess: False) [729 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.A_send_backend_format_exception_is_not_mislabeled_as_client_protocol_failure [360 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.A_completed_admission_at_the_absolute_deadline_is_an_established_transport_loss [694 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.A_new_loss_has_its_own_full_allowance_and_old_callback_cannot_restart_it [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.A_real_rejoin_restores_only_after_welcome_and_stale_closure_cannot_remove_the_replacement [382 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Accepted_combat_choice_survives_disconnect_and_must_resolve_before_control_returns [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Authority_query_refusal_keeps_the_established_channel_and_history_unchanged [500 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.Controllers.ControllerJournalTests.Disconnect_and_rejoin_do_not_release_a_reading_hold_or_change_its_dialogue [397 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ControllerTransport.ControllerTransportTests.Request_aborted_is_a_transport_loss_independent_of_caller_shutdown [622 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Sole_returning_patient_finishes_accepted_finite_care_without_free_healing_or_readiness [1 s]
+[xUnit.net 00:00:25.25]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Sole_returning_player_finishes_accepted_combat_without_automatic_readiness [515 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Connected_idle_and_ordinary_disposal_never_start_an_allowance [478 ms]
+
+Test Run Successful.
+Total tests: 55
+     Passed: 55
+ Total time: 26.0880 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-controller-host/qualification/controller-20261002T150114991873Z/checks.trx

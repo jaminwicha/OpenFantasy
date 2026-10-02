@@ -49,10 +49,21 @@ deadline failure without hiding unrelated backend timeouts. Up to 128 inputs are
 bounds limit transient work and memory; they are not simulated time or a timeout on an idle human's
 Wait. A slow or flooding receiver cannot hold the host's serialization gate through socket output.
 
+[PlayerCommandInput](../../src/OpenFantasy.Hosting/Networking/PlayerCommandInput.cs) decodes and
+validates the complete request before any host callback. This separates malformed client bytes from
+backend failures that happen to use the same exception type. Established EOF/Goodbye means peer
+closure; invalid client framing, payload or rate means protocol failure; transport I/O, reassembly or
+response deadlines and output saturation mean transport loss. The adapter records abort origin before
+canceling sibling I/O, so whichever loop finishes first observes the same cause.
+
 Goodbye, orderly peer closure, transport failure, cancellation and host completion terminate the session.
 Termination closes its channel and port, cancels uncommitted action waiters and joins receiver, sender,
 observation publisher, action and query work. A committed effect remains saved even when its response is lost. Other players and
 host-owned autonomous work retain their own lifetimes. The command session runs once per owned channel.
+Its two-token entrypoint distinguishes server shutdown from an established HTTP request abort. The
+single-token entrypoint retains caller-shutdown semantics. Local channel/transport disposal and host
+failure do not become confirmed peer loss. Only the host can journal an eligible controller transition;
+ordinary teardown never grants actions or advances the world.
 
 ## Other adapter responsibilities
 
@@ -60,5 +71,7 @@ An empty observation input subscribes to [bounded view publication](player-obser
 and requests full recovery. Its asynchronous output uses a separate canonical typed view and visible
 revision, sharing the bounded sender without blocking input processing. The channel does not itself
 make a Godot scene into a network client. [HTTP Upgrade/TLS and provisioning](player-http-host.md) bind around these components; native clients
-and solo envelope parity have separate adapter contracts. Transient closure is separate from the full design's journaled disconnect, reconnect grace
-and controller-handoff rules; a socket error alone cannot grant a human decision or rewrite saved control.
+and solo envelope parity have separate adapter contracts. The [controller binding](controller-lifecycle.md) journals confirmed loss for its explicit profile and
+measures allowance independently of simulation time. Survival selection, restart reconciliation and
+client return-to-control presentation remain separate contracts; a socket error cannot grant a human
+decision or bypass the authority.

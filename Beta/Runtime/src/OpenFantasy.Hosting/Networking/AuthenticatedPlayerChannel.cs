@@ -1,5 +1,7 @@
 using OpenFantasy.Hosting.Simulation;
 
+using OpenFantasy.Core.Worlds;
+
 namespace OpenFantasy.Hosting.Networking;
 
 /// <summary>Owns one admitted player port and its transport, never the world or its scheduler.</summary>
@@ -24,16 +26,32 @@ public sealed class AuthenticatedPlayerChannel : IAsyncDisposable
 
     public ValueTask DisposeAsync()
     {
-        lock (_gate) { return new ValueTask(_closing ??= CloseAsync()); }
+        lock (_gate) { return new ValueTask(_closing ??= CloseAsync(null)); }
     }
 
-    private async Task CloseAsync()
+    /// <summary>Only the transport owner confirms peer termination; local disposal is deliberately separate.</summary>
+    internal ValueTask ConfirmTransportDisconnectedAsync(WorldControllerDisconnectReason reason)
     {
-        try { await Transport.DisposeAsync().ConfigureAwait(false); }
+        lock (_gate) { return new ValueTask(_closing ??= CloseAsync(reason)); }
+    }
+
+    private async Task CloseAsync(WorldControllerDisconnectReason? reason)
+    {
+        // Publish the single close task before transport cancellation can resume the session's cleanup.
+        await Task.Yield();
+        try
+        {
+            if (reason is { } confirmed)
+                await Player.ConfirmTransportDisconnectedAsync(confirmed).ConfigureAwait(false);
+        }
         finally
         {
-            try { await Player.DisposeAsync().ConfigureAwait(false); }
-            finally { _release(); }
+            try { await Transport.DisposeAsync().ConfigureAwait(false); }
+            finally
+            {
+                try { await Player.DisposeAsync().ConfigureAwait(false); }
+                finally { _release(); }
+            }
         }
     }
 }

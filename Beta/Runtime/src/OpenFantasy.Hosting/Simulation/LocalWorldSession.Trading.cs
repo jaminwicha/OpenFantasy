@@ -24,7 +24,7 @@ public sealed partial class LocalWorldSession
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
         {
-            lock (_inputs) { EnsurePlayerAvailable(player); }
+            lock (_inputs) { EnsurePlayerAvailable(player); EnsureControlAvailable(player); }
             WorldSnapshot state = _authority.ReadStateForHost();
             if (state.Coordination?.Markets is null)
             {
