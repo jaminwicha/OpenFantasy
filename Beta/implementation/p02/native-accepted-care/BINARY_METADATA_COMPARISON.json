@@ -1,0 +1,100 @@
+{
+  "status": "failed",
+  "referenceRevision": "cdeb919081ee8fe0ad9533f0ce2cd85fab4e2a43",
+  "output": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h",
+  "commands": [
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "build",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-restore",
+        "-m:1",
+        "-p:UseSharedCompilation=false",
+        "-p:SourceRevisionId=cdeb919081ee8fe0ad9533f0ce2cd85fab4e2a43",
+        "-p:SourceLink=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/reference.sourcelink.json",
+        "-p:CustomAfterMicrosoftCommonTargets=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/embedding.targets",
+        "-p:OutputPath=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/core-test/",
+        "--verbosity",
+        "quiet"
+      ],
+      "log": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/core-test.log",
+      "exit": 0,
+      "seconds": 22.469428208991303
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "build",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/OpenFantasy.Host.csproj",
+        "--no-restore",
+        "-m:1",
+        "-p:UseSharedCompilation=false",
+        "-p:SourceRevisionId=cdeb919081ee8fe0ad9533f0ce2cd85fab4e2a43",
+        "-p:SourceLink=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/reference.sourcelink.json",
+        "-p:CustomAfterMicrosoftCommonTargets=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/embedding.targets",
+        "-p:OutputPath=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/host/",
+        "--verbosity",
+        "quiet"
+      ],
+      "log": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/host.log",
+      "exit": 0,
+      "seconds": 7.701602250002907
+    }
+  ],
+  "expected": {
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "0a3ea43ab8dc5b0cec90ae9454d06b620beceed1864523f8f418d9da7b4115be",
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "0f171cc249fccb0ec00660f2683e1234da71108c083a39050d0530e5e027d801"
+  },
+  "matches": {
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "actual": "b46acfc599979c4ce12a53d277c656c66f432ccabc2f40abcb05dd13e60d5b19",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/host/OpenFantasy.Core.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+      "actual": "b46acfc599979c4ce12a53d277c656c66f432ccabc2f40abcb05dd13e60d5b19",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/host/OpenFantasy.Core.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": {
+      "actual": "7af25d182b6baead21787a70d527e91fd80ddf9bbbcae3ba2ea7b665a1adcf13",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/host/OpenFantasy.Hosting.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": {
+      "actual": "242f1b86f6c13ffb70ecc7d1d4b915cf8436a039af0db2d161fe562495f848c8",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/host/OpenFantasy.Host.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "actual": "b46acfc599979c4ce12a53d277c656c66f432ccabc2f40abcb05dd13e60d5b19",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/host/OpenFantasy.Core.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": {
+      "actual": "7af25d182b6baead21787a70d527e91fd80ddf9bbbcae3ba2ea7b665a1adcf13",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/host/OpenFantasy.Hosting.dll"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "actual": "b46acfc599979c4ce12a53d277c656c66f432ccabc2f40abcb05dd13e60d5b19",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/core-test/OpenFantasy.Core.dll"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": {
+      "actual": "ac20bb4b7aaabb17e3c6ce447b235ddc240d836e7f826315afb1c8e91aa57b3f",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-f6fs1l6h/core-test/OpenFantasy.Core.Tests.dll"
+    }
+  },
+  "scope": "Isolated output rebuild of unchanged authority/Core tests with the old Git SourceRevisionId; current accepted binaries must remain unchanged.",
+  "error": "Reference outputs did not reproduce prior pinned binaries.",
+  "liveBinariesUnchanged": true
+}

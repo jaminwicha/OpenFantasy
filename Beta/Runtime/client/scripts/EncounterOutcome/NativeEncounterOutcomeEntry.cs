@@ -18,7 +18,7 @@ public partial class NativeEncounterOutcomeEntry : Node
     {
         string[] arguments = OS.GetCmdlineUserArgs();
         FarmInputMap.InstallDefaults();
-        bool background = arguments is [ProbeArgument, _, _, _, _, "victory" or "defeat" or "care" or "care-wheel" or "reopen", BackgroundArgument];
+        bool background = arguments is [ProbeArgument, _, _, _, _, "victory" or "defeat" or "care" or "care-wheel" or "reopen" or "care-accepted" or "care-reopen", BackgroundArgument];
         if (arguments.Contains(BackgroundArgument) && !background)
         {
             Refuse("Background rendering requires the supported disposable outcome probe invocation.");
@@ -32,7 +32,7 @@ public partial class NativeEncounterOutcomeEntry : Node
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
         }
         if (arguments is [ProbeArgument, var probeSave, var report, var probeGenesis, var metadata, var mode]
-            && mode is "victory" or "defeat" or "care" or "care-wheel" or "reopen")
+            && mode is "victory" or "defeat" or "care" or "care-wheel" or "reopen" or "care-accepted" or "care-reopen")
         {
             if (!File.Exists(probeSave) || !File.Exists(probeGenesis) || !File.Exists(metadata))
             {

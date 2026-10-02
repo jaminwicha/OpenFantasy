@@ -113,7 +113,7 @@ internal sealed partial class EncounterOutcomePlayProbe : Node
             Trace("World opened.");
             _game.InjectFixtureFocus(true);
             using var metadata = JsonDocument.Parse(File.ReadAllText(_metadataPath));
-            string fixture = _mode == "reopen" ? "defeat" : _mode == "care-wheel" ? "care" : _mode;
+            string fixture = _mode == "care-reopen" ? "care-accepted" : _mode == "reopen" ? "defeat" : _mode == "care-wheel" ? "care" : _mode;
             Require(metadata.RootElement.GetProperty("Kind").GetString() == "native-encounter-outcome-fixture-v1"
                 && metadata.RootElement.GetProperty("Route").GetString() == fixture
                 && metadata.RootElement.GetProperty("PlayerActorId").GetString() == View.PlayerActorId.ToString(),
@@ -123,6 +123,12 @@ internal sealed partial class EncounterOutcomePlayProbe : Node
             Require(_game.IsLocallyPaused, "The outcome fixture must open paused.");
             switch (_mode)
             {
+                case "care-accepted":
+                    await AcceptCare(opponent);
+                    break;
+                case "care-reopen":
+                    await Reopen(opponent);
+                    break;
                 case "reopen":
                     await Reopen(opponent);
                     break;
@@ -494,7 +500,7 @@ internal sealed partial class EncounterOutcomePlayProbe : Node
         Require(!_submissionOverflow && _submitted.Count == _selections.Count && _submitted.All(row => !row.Submission.IsRetry),
             $"Observed {_submitted.Count} submissions for {_selections.Count} checked selections.");
         Require(_game.SubmissionObservationFailure is null, "The submission observer failed: " + _game.SubmissionObservationFailure);
-        Require(_mode != "reopen" || _submitted.Count == 0, "The paused reopen submitted a command.");
+        Require(_mode is not ("reopen" or "care-reopen") || _submitted.Count == 0, "The paused reopen submitted a command.");
     }
 
     /// <summary>The unfinalized outcome panel: visible, readable and clear of the HUD and both combatants.</summary>
@@ -868,7 +874,7 @@ internal sealed partial class EncounterOutcomePlayProbe : Node
             Paused = _game.IsLocallyPaused, WindowFocusObserved = _observedNativeFocus, LogicalFocus = _game.IsWindowFocused,
             Inputs = _driver.Inputs, WalkInputs = _walkInputs, Strikes = _strikes, Waits = _waits, Engagement = _engagement,
             Outcome = _outcome, Completed = _completed, Decline = _decline, Trade = _trade, Panels = _panels, HudBounds = _hudBounds,
-            WheelBounds = _wheelBounds,
+            WheelBounds = _wheelBounds, AcceptedCare = _acceptedCare,
             Selections = _selections, Submissions = _submitted.Select(row => SubmissionEvidence(row.Stage, row.Submission)).ToArray(),
             SubmissionLimit = MaximumSubmissions, SubmissionOverflow = _submissionOverflow, Checks = _checks,
             Images = _images, SaveAndLeave = _mode == "defeat",

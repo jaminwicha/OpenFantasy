@@ -59,7 +59,9 @@ def fixture_dependencies(source_map):
  # Full production authority/content plus fixture and shared test support source. Client-only
  # presentation and outcome result authentication do not generate the prepared world.
  ignored=('Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/',
-          'Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeResultTests.cs')
+          'Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EncounterOutcome/NativeEncounterOutcomeResultTests.cs',
+          'Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/NativeAcceptedCare/NativeAcceptedCareResultTests.cs',
+          'Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/NativeAcceptedCare/NativeAcceptedCareHealthNoticeTests.cs')
  return {p:h for p,h in source_map.items() if p.startswith(('Beta/Runtime/src/','Beta/Runtime/content/','Beta/Runtime/tests/')) and not p.startswith(ignored)}
 def fixture_assemblies(assembly_map):
  # Result-test/client links may rebuild the test assembly. Unchanged complete fixture-source

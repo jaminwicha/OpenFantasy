@@ -1,0 +1,5 @@
+{
+  "status": "equivalence_unproven_fresh_authority_checks_completed",
+  "comparison": "BINARY_METADATA_COMPARISON.json",
+  "decision": "Three reference builds failed byte reproduction; no equivalence claim is made. Fresh current Core, Hosting, retained-journal and both durability checks passed. FINAL_CHECKS.json identifies the actual evidence; failed comparisons remain preserved."
+}

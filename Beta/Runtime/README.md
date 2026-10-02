@@ -800,3 +800,16 @@ which re-derives each declared genesis and replays the complete journals. A boun
 records each pre-input selection's full canonical command, actual submitted command and receipt. Authentication compares
 them with journaled commands and rejects altered nested terms, receipts, identities or missing rows. These are the
 verifier's contracts; execution results and unresolved routes remain in the implementation packet.
+
+
+The uncalibrated accepted-care route uses `NativeAcceptedCareFixtureTests` with
+`OPENFANTASY_NATIVE_ACCEPTED_CARE_FIXTURES=<fresh-directory>`. It exports the unplayed production genesis;
+all movement away/back, first-wolf entry, paid Wait choices, patient care request and subsequent outcome acceptance
+come from native controls. Run `tools/check_native_accepted_care.py --dotnet <dotnet> --godot <godot>
+--fixtures <directory> --output <new-result.json> --rendered`. It launches the explicit disposable
+`NativeEncounterOutcome.tscn -- --cargo-outcomes-probe <save> <report> <genesis> <metadata> care-accepted
+--background-render`, then `care-reopen` in a separate process. The output's authentication manifest feeds
+`NativeAcceptedCareResultTests` through `OPENFANTASY_NATIVE_ACCEPTED_CARE_RESULTS`. Rendered checks and full
+journal authentication are separate required gates; neither alone qualifies treatment. The saved authority authenticates
+Wren's own action and exact consumed dose independently of the patient's request. These disposable controls preserve
+normal focus policy and do not establish physical-device, human art or multiplayer acceptance.

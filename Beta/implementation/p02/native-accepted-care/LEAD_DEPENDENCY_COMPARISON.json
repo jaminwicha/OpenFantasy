@@ -1,0 +1,34 @@
+{
+  "baseline": "698778d7e539519723d05bce81ee46194a4a5041",
+  "changedSources": [
+    "Beta/Runtime/client/scripts/FarmGame.cs",
+    "Beta/Runtime/client/scripts/EncounterOutcome/NativeEncounterOutcomeEntry.cs",
+    "Beta/Runtime/client/scripts/EncounterOutcome/EncounterOutcomePlayProbe.cs",
+    "Beta/Runtime/client/scripts/Presentation/FarmHealthFeedback.cs"
+  ],
+  "addedSources": [
+    "Beta/Runtime/client/scripts/NativeAcceptedCare/EncounterOutcomePlayProbe.AcceptedCare.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/NativeAcceptedCare/NativeAcceptedCareFixtureTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/NativeAcceptedCare/NativeAcceptedCareHealthNoticeTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/NativeAcceptedCare/NativeAcceptedCareResultTests.cs",
+    "Beta/Runtime/tools/check_native_accepted_care.py"
+  ],
+  "unchangedAuthorityAndCoreTestSourceEntries": 1273,
+  "binaryEquivalenceToPreviousMilestone": "unproven; all three failed reproduction attempts retained",
+  "authorityBytesMatchCurrentEarlierOutcomeRun": {
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "116e879468a92d244e765ac6e8843bd8037652cd425ef547ea4f85b0f81ea8df",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "116e879468a92d244e765ac6e8843bd8037652cd425ef547ea4f85b0f81ea8df",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "4b917a26c4a8f8be594f376f7a5a4c6d59afe57fd45d2bd9d85a9b7acebd62a0",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "1419fc355e94ca5364bf96e5064daeb4e548b63aba0049996c70afeecb7dfa0a",
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": "116e879468a92d244e765ac6e8843bd8037652cd425ef547ea4f85b0f81ea8df",
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "4b917a26c4a8f8be594f376f7a5a4c6d59afe57fd45d2bd9d85a9b7acebd62a0"
+  },
+  "claims": [
+    "The current earlier outcome34 run uses exactly the same six authority DLLs as the final build. Its unchanged test methods are independent of the linked health-feedback implementation and added pure-client/opt-in native test classes.",
+    "The new pure-client classes define no module initializer or shared test fixture. Final client167 explicitly covers the altered health observer, plus all earlier client cases.",
+    "Fresh current Core, broad Host, retained authentication and durability checks replace uncertain old binary-based inheritance. Only actual terminal reports can establish each claim.",
+    "Fresh native care, outcome, road and retreat families run on the final client/authority binaries and authenticate complete saved journals.",
+    "Prepared fixture reuse excludes the new native result authentication and pure health-notice test files, which have no fixture-generation role. All remaining fixture/authority/test-support inputs and six authority DLLs compare exactly."
+  ],
+  "remaining": "No full phase/release, multi-session, lived migration, production scale, physical-device or human art acceptance claim."
+}

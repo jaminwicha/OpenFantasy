@@ -21,6 +21,7 @@ public partial class FarmGame : Node2D
     private IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> _presented =
         new Dictionary<FarmSemanticAction, FarmActionOffer>();
     private readonly RetreatOutcomeNotice _retreatNotice = new();
+    private readonly FarmHealthFeedback _healthNotice = new();
     private string _actionDescription = "";
     private bool _failed;
     private FarmTargetSelection? _targets;
@@ -344,6 +345,8 @@ public partial class FarmGame : Node2D
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
         _presented = _session.CreateOffers(view, _targets.Selected, _gifts, _marketDraft);
         if (_retreatNotice.Observe(view.Retreat) is { } notice) _hud.Message(notice);
+        if (_healthNotice.Observe(view.Progression?.Hp) == FarmHealthChange.Restoration)
+            _hud.Message($"Health restored: +{_healthNotice.Amount} HP.");
         _canvas.PresentTarget(_targets.Selected);
         _hud.Present(view, _session.WoodQuantity(view), _session.BerryQuantity(view),
             _action is not null || view.IsResolvingConsequences,

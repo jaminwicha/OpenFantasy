@@ -13,7 +13,7 @@ internal sealed class FarmHealthFeedback
     internal double AgeSeconds { get; private set; } = LifetimeSeconds;
     internal bool IsVisible => Change != FarmHealthChange.None && AgeSeconds < LifetimeSeconds;
 
-    internal void Observe(int? health)
+    internal FarmHealthChange Observe(int? health)
     {
         if (health is < 0) throw new ArgumentOutOfRangeException(nameof(health));
         if (health is null)
@@ -22,15 +22,18 @@ internal sealed class FarmHealthFeedback
             Change = FarmHealthChange.None;
             Amount = 0;
             AgeSeconds = LifetimeSeconds;
-            return;
+            return FarmHealthChange.None;
         }
+        FarmHealthChange observed = FarmHealthChange.None;
         if (_previous is { } before && health.Value != before)
         {
             Change = health.Value < before ? FarmHealthChange.Damage : FarmHealthChange.Restoration;
             Amount = Math.Abs(health.Value - before);
             AgeSeconds = 0;
+            observed = Change;
         }
         _previous = health;
+        return observed;
     }
 
     internal void Advance(double seconds)

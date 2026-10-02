@@ -1,0 +1,1251 @@
+{
+  "Kind": "native-encounter-outcome-v1",
+  "Mode": "victory",
+  "Status": "passed",
+  "Failure": null,
+  "Entry": "--cargo-outcomes-probe",
+  "OpeningSeconds": 3.568,
+  "ProbeMilliseconds": 79021,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "continue",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "PauseToRead",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CloseMarket",
+      "To": "MarketStall"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "RowReached": 2,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 within reach",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "Selected": 2,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 within reach"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketStall",
+      "To": "BuyMode"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLot"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketLot",
+      "RowReached": 1,
+      "Text": "Lot 1: 1 ration",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketLot",
+      "Selected": 1,
+      "Text": "Lot 1: 1 ration"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLot",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "ShowLot"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "ShowLot",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "to-gearford",
+      "Hold": "Up"
+    }
+  ],
+  "Strikes": 1,
+  "Waits": 0,
+  "Engagement": {
+    "EncounterCount": 1,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 5.9854923
+  },
+  "Outcome": {
+    "Title": "Victory",
+    "Body": "Bandit Chief \u00B7 defeated side \u00B7 incapacitated (0 HP)\nYou \u00B7 standing side \u00B7 HP 44/78\nYour side is still standing. Continuing returns you to exploration once every required player has read it and no care is pending. Injuries and recovery remain; nothing is rewarded or looted.",
+    "Status": "Victory \u00B7 World waiting while you read the result\nBandit Chief \u00B7 incapacitated",
+    "StatusTooltip": "Your side is still standing. Continuing returns you to exploration once every required player has read it and no care is pending. Injuries and recovery remain; nothing is rewarded or looted.\nRemaining recovery: 1 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+    "Result": "Victory",
+    "Standing": "YourSideStands",
+    "Hp": 44,
+    "Seconds": 6.8853108
+  },
+  "Completed": {
+    "CompletedAtSequence": 2526,
+    "Stage": "Completed",
+    "EncounterCount": 1,
+    "Hp": 44,
+    "Seconds": 7.0247873
+  },
+  "Decline": null,
+  "Trade": {
+    "QuoteId": "04dd06ef60b093ecdc7b0df824c9e5de",
+    "LotId": "d55d1a9f047c140b100e7cf4777ebe5c",
+    "Total": 38,
+    "BalanceBefore": 180,
+    "BalanceAfter": 218,
+    "RationsBefore": 1,
+    "RationsAfter": 0
+  },
+  "Panels": [
+    {
+      "Label": "victory-outcome",
+      "Panel": {
+        "X": 12,
+        "Y": 84,
+        "Width": 416,
+        "Height": 147
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 200.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 164.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Body": {
+        "X": 22,
+        "Y": 126,
+        "Width": 396,
+        "Height": 97
+      },
+      "Lines": 5,
+      "VisibleLines": 5,
+      "Leave": null,
+      "InViewport": true,
+      "InField": true,
+      "ClearOfTargetBar": true,
+      "ClearOfPlayer": true,
+      "ClearOfOpponent": true,
+      "Readable": true,
+      "LeaveShown": true
+    }
+  ],
+  "HudBounds": [
+    {
+      "Label": "victory-outcome",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 337,
+        "Width": 924,
+        "Height": 185
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 261
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 200.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 164.5,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 3 \u00B7 180 gil\nHP 44/78 \u00B7 MP 14/14",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 173,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 10:15 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 2 \u00B7 Berries: 0\nRations: 1 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 347,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Your attack was queued.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 377,
+            "Width": 896,
+            "Height": 49
+          },
+          "Text": "Victory \u00B7 World waiting while you read the result\nBandit Chief \u00B7 incapacitated",
+          "Lines": 2,
+          "VisibleLines": 2,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 430,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 457,
+            "Width": 712,
+            "Height": 55
+          },
+          "Text": "Victory\nE / A: continue",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 125,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 748,
+            "Y": 457,
+            "Width": 100,
+            "Height": 55
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ReleaseEncounter",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 852,
+            "Y": 457,
+            "Width": 76,
+            "Height": 55
+          },
+          "Text": "[E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    },
+    {
+      "Label": "victory-completed",
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Header": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 76
+      },
+      "Footer": {
+        "X": 18,
+        "Y": 358,
+        "Width": 924,
+        "Height": 164
+      },
+      "TargetBar": {
+        "X": 574,
+        "Y": 86,
+        "Width": 368,
+        "Height": 54
+      },
+      "Field": {
+        "X": 0,
+        "Y": 76,
+        "Width": 960,
+        "Height": 282
+      },
+      "PlayerSprite": {
+        "X": 448,
+        "Y": 211,
+        "Width": 32,
+        "Height": 48
+      },
+      "OpponentSprite": {
+        "X": 480,
+        "Y": 175,
+        "Width": 32,
+        "Height": 48
+      },
+      "Controls": [
+        {
+          "Name": "Identity",
+          "Panel": "Header",
+          "Rect": {
+            "X": 18,
+            "Y": 10,
+            "Width": 270,
+            "Height": 55
+          },
+          "Text": "Level 3 \u00B7 180 gil\nHP 44/78 \u00B7 MP 14/14",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 173,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Clock",
+          "Panel": "Header",
+          "Rect": {
+            "X": 306,
+            "Y": 25,
+            "Width": 218,
+            "Height": 26
+          },
+          "Text": "Day 1 \u00B7 10:15 \u00B7 Height 1 m",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 218,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Inventory",
+          "Panel": "Header",
+          "Rect": {
+            "X": 542,
+            "Y": 10,
+            "Width": 183,
+            "Height": 55
+          },
+          "Text": "Wood: 2 \u00B7 Berries: 0\nRations: 1 \u00B7 Offcuts: 0",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 183,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Pause",
+          "Panel": "Header",
+          "Rect": {
+            "X": 743,
+            "Y": 10,
+            "Width": 110,
+            "Height": 56
+          },
+          "Text": "Pause  [Esc]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenPack",
+          "Panel": "Header",
+          "Rect": {
+            "X": 871,
+            "Y": 10,
+            "Width": 71,
+            "Height": 56
+          },
+          "Text": "Pack [I]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Message",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 368,
+            "Width": 896,
+            "Height": 26
+          },
+          "Text": "Outcome accepted; completion waits for every required reader and no pending care.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "EncounterStatus",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 398,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Recovering \u00B7 Exploration time restores readiness; injuries remain.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "ActionPreview",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 425,
+            "Width": 896,
+            "Height": 23
+          },
+          "Text": "Hover or focus an action to see its target and cost.",
+          "Lines": 1,
+          "VisibleLines": 1,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Movement",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 32,
+            "Y": 454,
+            "Width": 170,
+            "Height": 55
+          },
+          "Text": "Move\nWASD / arrows",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": 129,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "OpenWheel",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 206,
+            "Y": 452,
+            "Width": 100,
+            "Height": 60
+          },
+          "Text": "Actions [V]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Talk",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 310,
+            "Y": 452,
+            "Width": 76,
+            "Height": 60
+          },
+          "Text": "Talk  [E]",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Give",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 390,
+            "Y": 452,
+            "Width": 180,
+            "Height": 60
+          },
+          "Text": "Ask about tasks  [G]\nNot yet known",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Gather",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 574,
+            "Y": 452,
+            "Width": 141,
+            "Height": 60
+          },
+          "Text": "Pick berries  [F]\n400 effort",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "Craft",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 719,
+            "Y": 452,
+            "Width": 157,
+            "Height": 60
+          },
+          "Text": "Pack rations  [C]\n1 wood, 2 berries",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        },
+        {
+          "Name": "UseRestorative",
+          "Panel": "Footer",
+          "Rect": {
+            "X": 880,
+            "Y": 452,
+            "Width": 48,
+            "Height": 60
+          },
+          "Text": "",
+          "Lines": null,
+          "VisibleLines": null,
+          "TextWidth": null,
+          "Inside": true,
+          "Complete": true
+        }
+      ],
+      "Failures": []
+    }
+  ],
+  "WheelBounds": [],
+  "AcceptedCare": null,
+  "Selections": [
+    {
+      "Ready": {
+        "Stage": "strike",
+        "Route": "key-E",
+        "Action": "Strike",
+        "Frame": 706,
+        "MillisecondsWithinDay": 36925200,
+        "ActorRevision": 2511,
+        "Timing": 1
+      },
+      "CommandId": "bafb223cf999d532964861751120c871",
+      "SubmittedFrame": 706,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B00000010BAFB223CF999D532964861751120C871000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB32500000010BE37D46829E3BBA09EF0C689945477F000000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF0000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C6974790000000800000000000000010000001011A147D4AC833207B084DF46F9C23977000000080000000000000001000000101C9BDDC8F4804246D25387187E8B507100000010898E73D806B443CE220AF60A96831737",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "continue",
+        "Route": "key-E",
+        "Action": "ReleaseEncounter",
+        "Frame": 797,
+        "MillisecondsWithinDay": 36925200,
+        "ActorRevision": 2511,
+        "Timing": 4
+      },
+      "CommandId": "89f7054af5345bce5cc7d3f0c33793e4",
+      "SubmittedFrame": 797,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000140000001089F7054AF5345BCE5CC7D3F0C33793E4000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB32500000010BE37D46829E3BBA09EF0C689945477F000000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF0000000800000000000009CF000000744F464300000000010000000400000020776F726C642E616374696F6E2E61636B6E6F776C656467652D6F7574636F6D650000000800000000000000010000001011A147D4AC833207B084DF46F9C239770000002090588FCCA8CA123E3645600D2A1B5020549A47CFD0868CDFF9AA254D06621B8F",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "sell",
+        "Route": "panel-keyboard",
+        "Action": "ShowTradeLot",
+        "Frame": 9331,
+        "MillisecondsWithinDay": 39501000,
+        "ActorRevision": 3928,
+        "Timing": null
+      },
+      "CommandId": "0523a305588b97c78dbce9a3f8d2a5ba",
+      "SubmittedFrame": 9331,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000012000000100523A305588B97C78DBCE9A3F8D2A5BA000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB32500000010BE37D46829E3BBA09EF0C689945477F000000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF000000080000000000000F58000000E04F464300000000010000000B00000020776F726C642E616374696F6E2E6D61726B65742D6C6F742D646973636C6F736500000008000000000000000100000010AD214A6A43366EFB0164A530B72AF65400000008000000000000000100000010D55D1A9F047C140B100E7CF4777EBE5C0000001053FD24D5841AE076DCA620B5EBE41AAD00000020E0CAEB48806FD4EB2F6E0EAA148BD2194AB95FB83C840BF7E7408BAC75FDE32200000008000000000000000000000008000000000000000100000010643ECE2A022DC0F2DDA39CFD896F2DEB0000000800000000000018CA",
+      "SameOfferObject": true
+    },
+    {
+      "Ready": {
+        "Stage": "sell",
+        "Route": "panel-keyboard",
+        "Action": "ConfirmTrade",
+        "Frame": 9354,
+        "MillisecondsWithinDay": 39508200,
+        "ActorRevision": 3928,
+        "Timing": null
+      },
+      "CommandId": "71263b1d6015e4c6bd21e7d6393d4dd0",
+      "SubmittedFrame": 9354,
+      "ExpectedCommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000110000001071263B1D6015E4C6BD21E7D6393D4DD0000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB32500000010BE37D46829E3BBA09EF0C689945477F000000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF000000080000000000000F58000001154F46430000000001000000040000001E776F726C642E616374696F6E2E73706F742D71756F74652D616363657074000000080000000000000001000000CB4F464300000000010000000A000000176D61726B6574732E73706F742E616363657074616E63650000000800000000000000010000001071263B1D6015E4C6BD21E7D6393D4DD0000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB3250000001004DD06EF60B093ECDC7B0DF824C9E5DE00000020FECA3791316C7EDA9DBA554F508B8F0E62ABF52441B1E10E0942712D974EEA09000000080000000000000001000000080000000000000026000000080000000000000000000000080000000000000000",
+      "SameOfferObject": true
+    }
+  ],
+  "Submissions": [
+    {
+      "Stage": "strike",
+      "Action": "Strike",
+      "Label": "Strike",
+      "TargetName": "Bandit Chief",
+      "TargetId": "898e73d806b443ce220af60a96831737",
+      "Scope": {
+        "PrincipalId": "9d8fad9e3cbba3535e809ee30efac433",
+        "SessionId": "72eedd5c94219ebca4cef625195fb325",
+        "ActorId": "be37d46829e3bba09ef0c689945477f0",
+        "WorldId": "a6218d4ec45dbc2fef54e9ba0da6554a",
+        "BranchId": "858f1c9129202ee6e12b46b7258313bf",
+        "ExpectedActorRevision": 2511
+      },
+      "IntentType": "QueueEncounterAbilityIntent",
+      "IntentText": "QueueEncounterAbilityIntent { EncounterId = 11a147d4ac833207b084df46f9c23977, ExpectedTimingRevision = 1, AbilityDefinitionId = 1c9bddc8f4804246d25387187e8b5071, TargetActorId = 898e73d806b443ce220af60a96831737 }",
+      "OfferCommandId": null,
+      "CommandId": "bafb223cf999d532964861751120c871",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000B00000010BAFB223CF999D532964861751120C871000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB32500000010BE37D46829E3BBA09EF0C689945477F000000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF0000000800000000000009CF0000007E4F46430000000001000000060000001A776F726C642E616374696F6E2E71756575652D6162696C6974790000000800000000000000010000001011A147D4AC833207B084DF46F9C23977000000080000000000000001000000101C9BDDC8F4804246D25387187E8B507100000010898E73D806B443CE220AF60A96831737",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010BAFB223CF999D532964861751120C871000000109D8FAD9E3CBBA3535E809EE30EFAC43300000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF00000020D28B14C8681CDF2384AF73373576BAC72ACC7C1286C7463EEEA10BCE5292F8B00000000800000000000009DA000000080000000000000001000000080000000000000000",
+        "CommandId": "bafb223cf999d532964861751120c871",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 2522,
+        "ResultId": "2fa8494ba47fbbf060eaf5506847fc2b"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "continue",
+      "Action": "ReleaseEncounter",
+      "Label": "Continue",
+      "TargetName": "Victory",
+      "TargetId": null,
+      "Scope": {
+        "PrincipalId": "9d8fad9e3cbba3535e809ee30efac433",
+        "SessionId": "72eedd5c94219ebca4cef625195fb325",
+        "ActorId": "be37d46829e3bba09ef0c689945477f0",
+        "WorldId": "a6218d4ec45dbc2fef54e9ba0da6554a",
+        "BranchId": "858f1c9129202ee6e12b46b7258313bf",
+        "ExpectedActorRevision": 2511
+      },
+      "IntentType": "AcknowledgeEncounterOutcomeIntent",
+      "IntentText": "AcknowledgeEncounterOutcomeIntent { EncounterId = 11a147d4ac833207b084df46f9c23977, ExpectedActionHash = 90588fcca8ca123e3645600d2a1b5020549a47cfd0868cdff9aa254d06621b8f }",
+      "OfferCommandId": null,
+      "CommandId": "89f7054af5345bce5cc7d3f0c33793e4",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000140000001089F7054AF5345BCE5CC7D3F0C33793E4000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB32500000010BE37D46829E3BBA09EF0C689945477F000000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF0000000800000000000009CF000000744F464300000000010000000400000020776F726C642E616374696F6E2E61636B6E6F776C656467652D6F7574636F6D650000000800000000000000010000001011A147D4AC833207B084DF46F9C239770000002090588FCCA8CA123E3645600D2A1B5020549A47CFD0868CDFF9AA254D06621B8F",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001089F7054AF5345BCE5CC7D3F0C33793E4000000109D8FAD9E3CBBA3535E809EE30EFAC43300000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF00000020AF871885A142AF818ECC0EF11F505A31916E37A90938C189C12A4D441BE894A60000000800000000000009DD000000080000000000000001000000080000000000000000",
+        "CommandId": "89f7054af5345bce5cc7d3f0c33793e4",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 2525,
+        "ResultId": "bd2cc8008a3440bb309061d292c8afff"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "sell",
+      "Action": "ShowTradeLot",
+      "Label": "Show to Kegga Toolwright",
+      "TargetName": "Kegga Toolwright",
+      "TargetId": "ceae70009d01ade89766a210a750d3ee",
+      "Scope": {
+        "PrincipalId": "9d8fad9e3cbba3535e809ee30efac433",
+        "SessionId": "72eedd5c94219ebca4cef625195fb325",
+        "ActorId": "be37d46829e3bba09ef0c689945477f0",
+        "WorldId": "a6218d4ec45dbc2fef54e9ba0da6554a",
+        "BranchId": "858f1c9129202ee6e12b46b7258313bf",
+        "ExpectedActorRevision": 3928
+      },
+      "IntentType": "DiscloseMarketLotIntent",
+      "IntentText": "DiscloseMarketLotIntent { MarketId = ad214a6a43366efb0164a530b72af654, LotKind = CountedSource, LotId = d55d1a9f047c140b100e7cf4777ebe5c, Definition = CountedItemDefinition { DefinitionId = 53fd24d5841ae076dca620b5ebe41aad, Version = e0caeb48806fd4eb2f6e0eaa148bd2194ab95fb83c840bf7e7408bac75fde322 }, ExpectedLotRevision = 0, Quantity = 1, SellerAccountId = 643ece2a022dc0f2dda39cfd896f2deb, ExpiresAtStep = 6346 }",
+      "OfferCommandId": null,
+      "CommandId": "0523a305588b97c78dbce9a3f8d2a5ba",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000012000000100523A305588B97C78DBCE9A3F8D2A5BA000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB32500000010BE37D46829E3BBA09EF0C689945477F000000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF000000080000000000000F58000000E04F464300000000010000000B00000020776F726C642E616374696F6E2E6D61726B65742D6C6F742D646973636C6F736500000008000000000000000100000010AD214A6A43366EFB0164A530B72AF65400000008000000000000000100000010D55D1A9F047C140B100E7CF4777EBE5C0000001053FD24D5841AE076DCA620B5EBE41AAD00000020E0CAEB48806FD4EB2F6E0EAA148BD2194AB95FB83C840BF7E7408BAC75FDE32200000008000000000000000000000008000000000000000100000010643ECE2A022DC0F2DDA39CFD896F2DEB0000000800000000000018CA",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000100523A305588B97C78DBCE9A3F8D2A5BA000000109D8FAD9E3CBBA3535E809EE30EFAC43300000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF000000200C892DC9BF65071DCBFB7F05091DCF36205E56B6B8541CE3F0FDD7F41601E917000000080000000000000F76000000080000000000000001000000080000000000000000",
+        "CommandId": "0523a305588b97c78dbce9a3f8d2a5ba",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 3958,
+        "ResultId": "a6626208f2256df1960ab491c63bb3dd"
+      },
+      "Answer": "receipt"
+    },
+    {
+      "Stage": "sell",
+      "Action": "ConfirmTrade",
+      "Label": "Confirm sale",
+      "TargetName": "Kegga Toolwright",
+      "TargetId": "ceae70009d01ade89766a210a750d3ee",
+      "Scope": {
+        "PrincipalId": "9d8fad9e3cbba3535e809ee30efac433",
+        "SessionId": "72eedd5c94219ebca4cef625195fb325",
+        "ActorId": "be37d46829e3bba09ef0c689945477f0",
+        "WorldId": "a6218d4ec45dbc2fef54e9ba0da6554a",
+        "BranchId": "858f1c9129202ee6e12b46b7258313bf",
+        "ExpectedActorRevision": 3928
+      },
+      "IntentType": "AcceptSpotQuoteIntent",
+      "IntentText": "AcceptSpotQuoteIntent { Acceptance = OpenFantasy.Core.Markets.SpotAcceptance, ExpectedIssuerRevision = 0 }",
+      "OfferCommandId": "71263b1d6015e4c6bd21e7d6393d4dd0",
+      "CommandId": "71263b1d6015e4c6bd21e7d6393d4dd0",
+      "CommandBytes": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000110000001071263B1D6015E4C6BD21E7D6393D4DD0000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB32500000010BE37D46829E3BBA09EF0C689945477F000000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF000000080000000000000F58000001154F46430000000001000000040000001E776F726C642E616374696F6E2E73706F742D71756F74652D616363657074000000080000000000000001000000CB4F464300000000010000000A000000176D61726B6574732E73706F742E616363657074616E63650000000800000000000000010000001071263B1D6015E4C6BD21E7D6393D4DD0000000109D8FAD9E3CBBA3535E809EE30EFAC4330000001072EEDD5C94219EBCA4CEF625195FB3250000001004DD06EF60B093ECDC7B0DF824C9E5DE00000020FECA3791316C7EDA9DBA554F508B8F0E62ABF52441B1E10E0942712D974EEA09000000080000000000000001000000080000000000000026000000080000000000000000000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": {
+        "Bytes": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001071263B1D6015E4C6BD21E7D6393D4DD0000000109D8FAD9E3CBBA3535E809EE30EFAC43300000010A6218D4EC45DBC2FEF54E9BA0DA6554A00000010858F1C9129202EE6E12B46B7258313BF0000002084E0A3355A5903CD0BF25E56947C15E5B8F2AA40202F298F1E23B775ECA8B46E000000080000000000000F7A000000080000000000000001000000080000000000000000",
+        "CommandId": "71263b1d6015e4c6bd21e7d6393d4dd0",
+        "Status": "Applied",
+        "Rejection": "None",
+        "CommitSequence": 3962,
+        "ResultId": "617ceb63a9b8321fe95a52c952199eab"
+      },
+      "Answer": "receipt"
+    }
+  ],
+  "SubmissionLimit": 128,
+  "SubmissionOverflow": false,
+  "Checks": [
+    "The victory-outcome panel stated the result and reason while the world held, clear of the HUD and combatants.",
+    "Continue (E) read the victory; the world completed the encounter and returned the player to exploration.",
+    "After the completed victory, held keys walked the detour to Gearford and the carried ration was sold at Kegga."
+  ],
+  "Images": [
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-accepted-care/qualification/outcome-native-20261002T041816Z-f718a/native-encounter-outcome-xrq0t0up/victory.victory-engaged.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-accepted-care/qualification/outcome-native-20261002T041816Z-f718a/native-encounter-outcome-xrq0t0up/victory.victory-outcome.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-accepted-care/qualification/outcome-native-20261002T041816Z-f718a/native-encounter-outcome-xrq0t0up/victory.victory-completed.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-accepted-care/qualification/outcome-native-20261002T041816Z-f718a/native-encounter-outcome-xrq0t0up/victory.gearford.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-accepted-care/qualification/outcome-native-20261002T041816Z-f718a/native-encounter-outcome-xrq0t0up/victory.sold.png",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-accepted-care/qualification/outcome-native-20261002T041816Z-f718a/native-encounter-outcome-xrq0t0up/victory.final.png"
+  ],
+  "SaveAndLeave": false,
+  "FinalStage": "Completed",
+  "FinalTerminal": false,
+  "CompletedAtSequence": 2526,
+  "FinalResult": "Victory",
+  "FinalStandingSide": 1,
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 36224,
+    "Z": 256
+  },
+  "FinalHp": 44,
+  "FinalBalance": 218,
+  "CarriedRations": 0
+}

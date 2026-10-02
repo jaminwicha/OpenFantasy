@@ -1,0 +1,11 @@
+{
+  "commit": "9b8bcc36a4453f0bb7ec7020d8c5c1ac6b9851b3",
+  "checkpoint": "codex/checkpoint-before-binary-evidence-cadence-20261002T043412Z",
+  "milestone": "codex/milestone-binary-evidence-cadence-20261002T043412Z",
+  "changedTargets": 3,
+  "syncVerifyLog": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/binary-evidence-skill-sync-e2fafeag/verify.log",
+  "backupReceipt": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/binary-evidence-skill-sync-e2fafeag/installed-backup/receipt.json",
+  "sourceSkillSha256": "0a17962a5ab4e278abc7ebc25dd29f5a7c142f81f08f8b1f9f48d4d5fa5d13b3",
+  "frontmatter": "unchanged; focused diff and installed alignment verified",
+  "validatorLimitation": "The prior quick_validate.py attempts could not import PyYAML in default or bundled Python. No dependency installed; this edit changes body prose only."
+}

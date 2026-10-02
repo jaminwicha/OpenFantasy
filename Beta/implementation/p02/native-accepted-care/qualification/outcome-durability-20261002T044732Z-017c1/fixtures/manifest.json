@@ -1,0 +1,55 @@
+{
+  "Kind": "encounter-outcome-durability-fixtures-v1",
+  "SeedText": "outcome-durability",
+  "ProfileVersion": 35,
+  "Genesis": "genesis.ofc",
+  "Command": "command.bin",
+  "CommandId": "d09f71bd0cdf9e74aefe28f25d046257",
+  "PlayerActorId": "2fef32de9324ba37aff5a3df4d1afd04",
+  "OtherHumanActorId": "f1dfdd22e7d7b0dd9393e10302d01938",
+  "Unbroken": "unbroken.sqlite",
+  "UnbrokenHead": 9,
+  "Cases": [
+    {
+      "Label": "read-player",
+      "Sequence": 7,
+      "Kind": "EncounterLifecycle",
+      "Before": "read-player.before.sqlite",
+      "Step": "read-player.step.bin",
+      "After": "read-player.after.sqlite",
+      "BeforeHash": "4659f071421514649edd198842c39e96cf092c04e28de67544bb9ebc8745a2e5",
+      "AfterHash": "9c3422ab469ee7baeee32b1cb2b100128a950038fcb44303ad8885c68f2f6e52",
+      "AfterPhase": "Outcome",
+      "AfterReaders": 1,
+      "AfterFinalized": 0
+    },
+    {
+      "Label": "read-human",
+      "Sequence": 8,
+      "Kind": "EncounterLifecycle",
+      "Before": "read-human.before.sqlite",
+      "Step": "read-human.step.bin",
+      "After": "read-human.after.sqlite",
+      "BeforeHash": "9c3422ab469ee7baeee32b1cb2b100128a950038fcb44303ad8885c68f2f6e52",
+      "AfterHash": "503f2f2bc98dca851bb7ee12e7c119a800773580d407e3d1fbc9a5ccf9159281",
+      "AfterPhase": "Outcome",
+      "AfterReaders": 2,
+      "AfterFinalized": 0
+    },
+    {
+      "Label": "complete",
+      "Sequence": 9,
+      "Kind": "EncounterLifecycle",
+      "Before": "complete.before.sqlite",
+      "Step": "complete.step.bin",
+      "After": "complete.after.sqlite",
+      "BeforeHash": "503f2f2bc98dca851bb7ee12e7c119a800773580d407e3d1fbc9a5ccf9159281",
+      "AfterHash": "7a7c5b7483bc217362b240b5ca7cc63408595bc36751e340ccb91596b36b71d3",
+      "AfterPhase": "Exploration",
+      "AfterReaders": 0,
+      "AfterFinalized": 1
+    }
+  ],
+  "Calibration": "Declared two-human managed fixture: both inherited wolves bound to human controllers, the first at 1 HP.",
+  "Setup": "Ordinary session journey (enter the first wolf, actual strikes to its incapacity, the player\u0027s reading through the session, the other human\u0027s reading through its own controller, world completion at a ready cutoff); its journal replayed through a fresh normal authority with closed saves exported before each selected publication."
+}

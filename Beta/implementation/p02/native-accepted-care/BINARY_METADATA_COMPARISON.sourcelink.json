@@ -1,0 +1,98 @@
+{
+  "status": "failed",
+  "referenceRevision": "cdeb919081ee8fe0ad9533f0ce2cd85fab4e2a43",
+  "output": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0",
+  "commands": [
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "build",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-restore",
+        "-m:1",
+        "-p:UseSharedCompilation=false",
+        "-p:SourceRevisionId=cdeb919081ee8fe0ad9533f0ce2cd85fab4e2a43",
+        "-p:SourceLink=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/reference.sourcelink.json",
+        "-p:OutputPath=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/core-test/",
+        "--verbosity",
+        "quiet"
+      ],
+      "log": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/core-test.log",
+      "exit": 0,
+      "seconds": 13.913700875011273
+    },
+    {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "build",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/OpenFantasy.Host.csproj",
+        "--no-restore",
+        "-m:1",
+        "-p:UseSharedCompilation=false",
+        "-p:SourceRevisionId=cdeb919081ee8fe0ad9533f0ce2cd85fab4e2a43",
+        "-p:SourceLink=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/reference.sourcelink.json",
+        "-p:OutputPath=/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/host/",
+        "--verbosity",
+        "quiet"
+      ],
+      "log": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/host.log",
+      "exit": 0,
+      "seconds": 7.847191374996328
+    }
+  ],
+  "expected": {
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "0a3ea43ab8dc5b0cec90ae9454d06b620beceed1864523f8f418d9da7b4115be",
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "795720aa140f73e3c5589753b75bd350cd5ed43c73e5bf7ab3c3bf77500189f0",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "4e5faac33e5ff20951e59c03059971903c89c19aaa54e571acbff52ebda51e40",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "0f171cc249fccb0ec00660f2683e1234da71108c083a39050d0530e5e027d801"
+  },
+  "matches": {
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "actual": "f8596e7da9d17da79005a15476b565fc5988a8e872d6b70e8722f4348fa9269e",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/host/OpenFantasy.Core.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+      "actual": "f8596e7da9d17da79005a15476b565fc5988a8e872d6b70e8722f4348fa9269e",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/host/OpenFantasy.Core.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": {
+      "actual": "44de95b6fbf8a8b3c4e0e2e0b9ab5cc381b920f7e8009df0cc0cc083e209892c",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/host/OpenFantasy.Hosting.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": {
+      "actual": "242f1b86f6c13ffb70ecc7d1d4b915cf8436a039af0db2d161fe562495f848c8",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/host/OpenFantasy.Host.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "actual": "f8596e7da9d17da79005a15476b565fc5988a8e872d6b70e8722f4348fa9269e",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/host/OpenFantasy.Core.dll"
+    },
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll": {
+      "actual": "44de95b6fbf8a8b3c4e0e2e0b9ab5cc381b920f7e8009df0cc0cc083e209892c",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/host/OpenFantasy.Hosting.dll"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "actual": "f8596e7da9d17da79005a15476b565fc5988a8e872d6b70e8722f4348fa9269e",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/core-test/OpenFantasy.Core.dll"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": {
+      "actual": "2b4781f8f8cddc069946666995e5e09c4a2c38d58bc5a76601ff951829010c83",
+      "matches": false,
+      "referenceBinary": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-metadata-reproduction-4xaq4hk0/core-test/OpenFantasy.Core.Tests.dll"
+    }
+  },
+  "scope": "Isolated output rebuild of unchanged authority/Core tests with the old Git SourceRevisionId; current accepted binaries must remain unchanged.",
+  "error": "Reference outputs did not reproduce prior pinned binaries.",
+  "liveBinariesUnchanged": true
+}

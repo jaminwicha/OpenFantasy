@@ -76,7 +76,11 @@ custody. Source appearance is explicitly bound to the admitted actor role, not i
 permitted HP observations. A decrease retains the damage cue; an increase uses a brief mint tint and a
 stationary signed amount without additional sprite motion. The cue describes observed HP restoration,
 including a level refill, rather than asserting a medical cause or an anatomical repair. Repeated equal
-observations do not restart it. Losing HP visibility discards the baseline and transient cue; the next
+observations do not restart it. The same observation model returns the new change separately from its
+short-lived sprite state. The player's HUD announces a newly observed HP increase once, replacing an older
+acknowledgment receipt; it does not continue saying treatment is pending after restoration. The notice names
+only the observed HP increase, without inferring a medical cause. Initial or newly visible HP establishes a
+baseline and produces no restoration notice. Losing HP visibility discards the baseline and transient cue; the next
 observation and a newly opened view establish a baseline without replaying an unobserved change. The
 latest observed change replaces the earlier cue; this display is not a complete event ledger.
 

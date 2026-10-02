@@ -148,6 +148,25 @@ capture. A stale selected action is sent unchanged and refused; it is never sile
 is bounded and observation failures invalidate the evidence. These diagnostics do not grant permission or replace the
 authority's validation.
 
+## Native accepted-care observation
+
+The disposable `care-accepted` route in
+[EncounterOutcomePlayProbe](../../client/scripts/NativeAcceptedCare/EncounterOutcomePlayProbe.AcceptedCare.cs)
+starts from an unplayed, uncalibrated outcome-world genesis. It walks away from the adjacent wolf and back through
+ordinary movement input, selects and enters the encounter, and pays for Wait choices until actual attacks incapacitate
+the player. E requests admitted care; the probe waits for the separately committed restoration before issuing another
+combat choice. It retains the same episode through treatment, a second defeat, outcome acceptance and terminal save.
+The `care-reopen` route opens that save paused without issuing commands. Neither route grants resources, suppresses
+ordinary assistance, changes health directly or substitutes a prepared encounter for native approach.
+
+The route shares the existing passive submission and bounded post-draw observers. Its new fixture and result checks
+live under [NativeAcceptedCare](../../tests/OpenFantasy.Hosting.Tests/Worlds/NativeAcceptedCare/NativeAcceptedCareResultTests.cs).
+Full replay authenticates both patient and helper commands, their distinct control bindings and cutoffs, the exact
+retired source interval, restoration, episode identity and completion. A patient's acknowledgment is insufficient proof
+of treatment. Helper private stock stays out of the player projection; the authority-side verifier reads it from the
+saved journal. A solo route with no earlier outcome readings establishes an empty reading set after treatment; the
+separate managed contrasts establish invalidation of nonempty prior readings.
+
 ## Design boundaries
 
 Mutual incapacity (`NoSurvivors`) is handled by the same determination, record and presentation path. Under the retained
