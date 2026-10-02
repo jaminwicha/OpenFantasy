@@ -6,8 +6,8 @@ namespace OpenFantasy.Core.Care;
 /// <summary>
 /// Bounded immutable frontier of one closed care boundary, captured from the actual closing owner. It keeps
 /// exact catalog and permission references, the sole pending acknowledgment, cumulative archived counters,
-/// a position watermark and the latest completed treatment per patient. It retains no closing owner,
-/// earlier context or closed history, and it cannot prove historical identity uniqueness: the world's
+/// a position watermark, the latest completed treatment and an optional exact closed request per patient.
+/// It retains no closing owner, earlier context or complete closed history, and it cannot prove historical identity uniqueness: the world's
 /// permanent identity index and the host's authenticated closing world remain separate obligations.
 /// </summary>
 public sealed class CareContinuationContext
@@ -28,16 +28,19 @@ public sealed class CareContinuationContext
         // The pending acknowledgment stays an active retained record, so it is not archived or counted twice.
         ArchivedAcknowledgments = checked(closing.TotalAcknowledgments - (Pending is null ? 0UL : 1UL));
         ArchivedTreatments = closing.TotalTreatments;
+        ArchivedDispositions = closing.TotalDispositions;
+        SupportsDispositions = closing.SupportsDispositions;
         ArchivedOrdinaryUses = closing.TotalOrdinaryUses;
-        if (ArchivedAcknowledgments != ArchivedTreatments)
-            throw new ArgumentException("A closed care boundary archives only completed acknowledgment and treatment pairs.");
+        if (ArchivedAcknowledgments != checked(ArchivedTreatments + ArchivedDispositions))
+            throw new ArgumentException("A closed care boundary archives only requests with exactly one terminal treatment or disposition.");
         Frontier = new(LatestSequence(closing, previous?.Frontier.WorldSequence ?? 0));
         Remedies = closing.Remedies;
         Agreements = closing.Agreements;
         Definitions = closing.Ordinary?.Definitions;
         Permissions = closing.Ordinary?.Permissions;
         PatientWitnesses = LatestTreatments(closing, previous);
-        _commitment = CareCodecV3.ComputeContinuation(this);
+        ClosedDefeatWitnesses = LatestClosedDefeats(closing, previous);
+        _commitment = SupportsDispositions ? CareCodecV5.ComputeContinuation(this) : CareCodecV3.ComputeContinuation(this);
         ContentHash = ContentHash.Compute(_commitment);
     }
 
@@ -49,6 +52,9 @@ public sealed class CareContinuationContext
     public ulong ClosingRevision { get; }
     public ulong ArchivedAcknowledgments { get; }
     public ulong ArchivedTreatments { get; }
+    public ulong ArchivedDispositions { get; }
+    public bool SupportsDispositions { get; }
+    public ReadOnlyCollection<CareClosedDefeatWitness> ClosedDefeatWitnesses { get; }
     public ulong ArchivedOrdinaryUses { get; }
     public CareContinuationPosition Frontier { get; }
     public bool SupportsOrdinary => Definitions is not null;
@@ -146,7 +152,8 @@ public sealed class CareContinuationContext
     private static ulong LatestSequence(CareSnapshot closing, ulong frontier)
     {
         var sequences = closing.Acknowledgments.Select(value => value.WorldSequence)
-            .Concat(closing.Treatments.Select(value => value.WorldSequence));
+            .Concat(closing.Treatments.Select(value => value.WorldSequence))
+            .Concat(closing.Dispositions.Select(value => value.WorldSequence));
         if (closing.Ordinary is { } ordinary)
         {
             sequences = sequences.Concat(ordinary.Uses.Select(value => value.WorldSequence))
@@ -154,6 +161,26 @@ public sealed class CareContinuationContext
                     .Select(value => value.WorldSequence));
         }
         return sequences.Append(frontier).Max();
+    }
+
+    private static ReadOnlyCollection<CareClosedDefeatWitness> LatestClosedDefeats(CareSnapshot closing,
+        CareContinuationContext? previous)
+    {
+        SortedDictionary<EntityId, CareClosedDefeatWitness> latest = [];
+        if (!closing.SupportsDispositions) return Array.AsReadOnly(Array.Empty<CareClosedDefeatWitness>());
+        if (previous is not null)
+            foreach (var witness in previous.ClosedDefeatWitnesses) latest[witness.PatientActorId] = witness;
+        foreach (var acknowledgment in closing.Acknowledgments)
+        {
+            var treatment = closing.Treatments.SingleOrDefault(value => value.AcknowledgmentId == acknowledgment.AcknowledgmentId);
+            var disposition = closing.Dispositions.SingleOrDefault(value => value.AcknowledgmentId == acknowledgment.AcknowledgmentId);
+            if (treatment is null && disposition is null) continue;
+            EntityId patient = closing.GetAgreement(acknowledgment.AgreementId).PatientActorId;
+            var witness = new CareClosedDefeatWitness(patient, acknowledgment, treatment, disposition);
+            if (!latest.TryGetValue(patient, out var prior) || witness.TerminalSequence > prior.TerminalSequence)
+                latest[patient] = witness;
+        }
+        return Array.AsReadOnly(latest.Values.ToArray());
     }
 
     private static ReadOnlyCollection<CarePatientWitness> LatestTreatments(CareSnapshot closing,

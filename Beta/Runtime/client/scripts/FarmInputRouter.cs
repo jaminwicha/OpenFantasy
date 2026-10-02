@@ -76,6 +76,9 @@ internal enum FarmSemanticAction
     CloseMarket,
     /// <summary>Commits the inspected retreat route; each step is still walked and charged by the world.</summary>
     Retreat,
+    CancelCare,
+    DeclineCare,
+    AdministerCare,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -289,6 +292,8 @@ internal sealed class FarmInputRouter
             FarmSemanticAction.ShowTradeLot or FarmSemanticAction.ConfirmTrade => layer == FarmInputLayer.Market
                 && !Paused && !situation.ActionPending && !situation.ReadingHold,
             FarmSemanticAction.TradeBuy or FarmSemanticAction.TradeSell or FarmSemanticAction.TradeOffers => false,
+            FarmSemanticAction.CancelCare or FarmSemanticAction.DeclineCare or FarmSemanticAction.AdministerCare =>
+                layer == FarmInputLayer.Encounter && !situation.ActionPending,
             FarmSemanticAction.AcknowledgeCare => layer == FarmInputLayer.Encounter
                 && situation.HasCareAcknowledgment && !situation.ActionPending,
             FarmSemanticAction.ReleaseEncounter when situation.HasCareAcknowledgment && situation.HasOutcomeReadingBesideCare =>

@@ -1,0 +1,44 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.93]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.60]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.76]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Contradictory_observation_is_rejected(mutation: "request") [288 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Contradictory_observation_is_rejected(mutation: "helper-leak") [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Contradictory_observation_is_rejected(mutation: "capability") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Contradictory_observation_is_rejected(mutation: "patient") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Contradictory_observation_is_rejected(mutation: "version") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Contradictory_observation_is_rejected(mutation: "encounter") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Exact_participant_choices_roundtrip_and_inspection_does_not_submit_or_substitute(helper: False) [14 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Exact_participant_choices_roundtrip_and_inspection_does_not_submit_or_substitute(helper: True) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Explicit_empty_capability_selects_version_four_while_legacy_bytes_omit_it [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Terminal_record_names_the_actual_result_and_has_no_repeat_choice(kind: Treated, status: Treated, word: "administered") [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Terminal_record_names_the_actual_result_and_has_no_repeat_choice(kind: PatientCancelled, status: Cancelled, word: "cancelled") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Terminal_record_names_the_actual_result_and_has_no_repeat_choice(kind: HelperDeclined, status: Declined, word: "declined") [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionViewTests.Delta_replaces_pending_choice_with_closure_without_retaining_a_stale_cancellation [14 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionRootTests.Pending_patient_control_can_return_without_closing_the_request_or_advancing_gameplay [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionJournalTests.Treatment_wins_over_the_original_cancellation_and_cannot_be_closed_twice [1 s]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionHostTests.Invalid_terminal_traffic_gets_a_receipt_but_does_not_starve_host_treatment(wrongActor: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionJournalTests.Refused_disposition_is_durable_and_preserves_the_pending_request(contrast: "wrong-request", rejection: Unavailable) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionRootTests.Only_fresh_recovery_roots_explicitly_select_dispositions_and_old_frames_keep_their_interpretation [1 s]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionHostTests.Invalid_terminal_traffic_gets_a_receipt_but_does_not_starve_host_treatment(wrongActor: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionJournalTests.Refused_disposition_is_durable_and_preserves_the_pending_request(contrast: "wrong-episode", rejection: Unavailable) [726 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionJournalTests.Refused_disposition_is_durable_and_preserves_the_pending_request(contrast: "wrong-actor", rejection: NotAuthorized) [634 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionHostTests.Invalid_next_player_cannot_push_automatic_treatment_ahead_of_an_already_queued_patient_cancellation [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionJournalTests.Refused_disposition_is_durable_and_preserves_the_pending_request(contrast: "stale-care", rejection: RevisionConflict) [454 ms]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionHostTests.Human_helper_receives_its_own_explicit_choice_and_is_never_automatically_conscripted(treat: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionHostTests.Human_helper_receives_its_own_explicit_choice_and_is_never_automatically_conscripted(treat: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionHostTests.A_later_real_defeat_in_the_same_episode_reports_current_care_eligibility_instead_of_the_previous_treatment [969 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionJournalTests.Patient_or_helper_closes_the_real_request_without_healing_and_exact_receipt_survives_a_real_cut(decline: True) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionHostTests.Queued_patient_cancellation_precedes_automatic_treatment_and_exact_retry_retains_its_receipt [2 s]
+  Passed OpenFantasy.Hosting.Tests.Dispositions.CareDecisionHostTests.Returning_incapacitated_patient_regains_control_unready_and_can_cancel_after_expiry [1 s]
+[xUnit.net 00:00:16.89]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Care.Dispositions.CareDispositionJournalTests.Patient_or_helper_closes_the_real_request_without_healing_and_exact_receipt_survives_a_real_cut(decline: False) [5 s]
+
+Test Run Successful.
+Total tests: 30
+     Passed: 30
+ Total time: 18.2792 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/pending-care-disposition/qualification/dispositions-20261002T191005447212Z/checks.trx

@@ -60,6 +60,12 @@ terminal. The property is omitted when false, preserving older transport and dia
 3 without the marker and older versions carrying it are refused; delta reconstruction retains the
 same interpretation checks. Current HP remains visible independently of any retained outcome record.
 
+`SupportsCareDispositions` selects body version 4 even with no pending request. Scoped
+[care decisions](care-dispositions.md) distinguish patient cancellation, helper treatment/decline and
+terminal results. The false capability and null additions are omitted in legacy views. A mismatched
+body version, contradictory participant/request/episode or private helper dose exposed to the patient
+is refused. The capability describes the saved law; it does not authorize a command.
+
 ## Geometry and privacy
 
 Regional data contains the observer identity and exact feet, each observed region's full bounds

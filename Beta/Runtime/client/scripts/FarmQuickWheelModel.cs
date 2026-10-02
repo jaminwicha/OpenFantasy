@@ -21,7 +21,10 @@ internal sealed class FarmQuickWheelModel
     internal FarmQuickWheelModel(IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
         // Entry exists only before an encounter and Retreat only during one, so they share the upper slot.
-        FarmSemanticAction[] order = offers.Keys.Any(IsEncounterAction)
+        FarmSemanticAction[] order = offers.Keys.Any(IsPendingCareAction)
+            ? [FarmSemanticAction.AdministerCare, FarmSemanticAction.ReleaseEncounter,
+                FarmSemanticAction.DeclineCare, FarmSemanticAction.CancelCare]
+            : offers.Keys.Any(IsEncounterAction)
             ? EncounterOutcomeText.ReadingBesideCare(offers)
                 // An outcome-completion reading beside admitted care: care keeps its left slot and the reading takes the
                 // right slot, which no outcome otherwise uses (Strike exists only in an active fight).
@@ -71,7 +74,11 @@ internal sealed class FarmQuickWheelModel
 
     internal static bool IsEncounterAction(FarmSemanticAction action) => action is FarmSemanticAction.EnterEncounter
         or FarmSemanticAction.Strike or FarmSemanticAction.Wait or FarmSemanticAction.ReleaseEncounter
-        or FarmSemanticAction.AcknowledgeCare or FarmSemanticAction.Retreat;
+        or FarmSemanticAction.AcknowledgeCare or FarmSemanticAction.Retreat
+        or FarmSemanticAction.CancelCare or FarmSemanticAction.DeclineCare or FarmSemanticAction.AdministerCare;
+
+    private static bool IsPendingCareAction(FarmSemanticAction action) => action is FarmSemanticAction.CancelCare
+        or FarmSemanticAction.DeclineCare or FarmSemanticAction.AdministerCare;
 
     /// <summary>
     /// The short sector name. The outcome sector names its captured reading (Accept defeat, Accept outcome or Continue,
@@ -86,6 +93,8 @@ internal sealed class FarmQuickWheelModel
         FarmSemanticAction.Wait => "Wait", FarmSemanticAction.ReleaseEncounter => slot.Offer.Label,
         FarmSemanticAction.AcknowledgeCare => "Care", FarmSemanticAction.UseRestorative => "Potion",
         FarmSemanticAction.RevokeCarePermission => "Withdraw",
+        FarmSemanticAction.CancelCare => "Cancel care", FarmSemanticAction.DeclineCare => "Decline care",
+        FarmSemanticAction.AdministerCare => "Treat",
         FarmSemanticAction.ProposeMaterial => "Offer", FarmSemanticAction.AcceptMaterial => "Accept",
         FarmSemanticAction.DeclineMaterial => "Decline", FarmSemanticAction.WithdrawMaterial => "Withdraw",
         FarmSemanticAction.TradeBuy => "Buy", FarmSemanticAction.TradeSell => "Sell",

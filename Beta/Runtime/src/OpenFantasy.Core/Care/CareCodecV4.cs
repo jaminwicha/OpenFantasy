@@ -22,6 +22,7 @@ public static class CareCodecV4
     public static byte[] EncodeContinuation(CareContinuationContext context)
     {
         ArgumentNullException.ThrowIfNull(context);
+        if (context.SupportsDispositions) throw new ArgumentException("Care V4 cannot encode a disposition continuation.");
         if (context.Definitions?.Any(value => value.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance) != true)
             throw new ArgumentException("Care V4 requires an explicit recovery catalog.");
         return context.ToCommitment();

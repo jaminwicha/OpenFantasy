@@ -26,6 +26,7 @@ public static class CareCodecV3
     {
         if (version is not (3 or 4)) throw new ArgumentOutOfRangeException(nameof(version));
         ArgumentNullException.ThrowIfNull(state);
+        if (state.SupportsDispositions) throw new ArgumentException("Legacy care cannot discard voluntary-closure ownership.");
         if (state.Continuation is not { } continuation) throw new ArgumentException("Care V3 requires a continued owner.");
         if ((state.Ordinary?.SupportsIncapacitatedAssistance == true) != (version == 4))
             throw new ArgumentException("Care format must select the exact recovery catalog interpretation.");
@@ -86,6 +87,7 @@ public static class CareCodecV3
     public static byte[] EncodeContinuation(CareContinuationContext context)
     {
         ArgumentNullException.ThrowIfNull(context);
+        if (context.SupportsDispositions) throw new ArgumentException("Care V3 cannot encode a disposition continuation.");
         if (context.Definitions?.Any(value => value.DeliveryMode == RestorativeDeliveryMode.IncapacitatedAssistance) == true)
             throw new ArgumentException("Care V3 cannot encode a recovery continuation.");
         return context.ToCommitment();
@@ -119,7 +121,7 @@ public static class CareCodecV3
         Collection("care.acknowledgments", state.Acknowledgments.Select(CareCodecV1.EncodeAcknowledgment)),
         Collection("care.treatments", state.Treatments.Select(CareCodecV1.EncodeTreatment)));
 
-    private static byte[] EncodeOrdinary(OrdinaryCareSnapshot state, bool recovery)
+    internal static byte[] EncodeOrdinary(OrdinaryCareSnapshot state, bool recovery)
     {
         byte[] bytes = Frame("care.ordinary", Number(recovery ? 4UL : 2UL), Number(state.Revision), Number(state.TotalUses),
             Collection("care.use-definitions", state.Definitions.Select(value => CareCodecV2.EncodeUseDefinition(value, recovery))),
@@ -129,7 +131,7 @@ public static class CareCodecV3
         return bytes;
     }
 
-    private static OrdinaryCareSnapshot DecodeOrdinary(ReadOnlySpan<byte> bytes, CareContinuationContext context, bool recovery)
+    internal static OrdinaryCareSnapshot DecodeOrdinary(ReadOnlySpan<byte> bytes, CareContinuationContext context, bool recovery)
     {
         var reader = new WorldFrameReader(bytes, MaximumOrdinaryBytes, 7);
         reader.Tag("care.ordinary"u8);

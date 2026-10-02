@@ -389,6 +389,13 @@ public static class WorldAdmissionValidator
                 Add(treatment.CommandId, WorldIdentityRole.CauseReference);
                 Require(treatment.ConsumptionId, WorldIdentityRole.ItemConsumption);
             }
+            foreach (var disposition in care.Dispositions)
+            {
+                Add(disposition.DispositionId, WorldIdentityRole.CareDisposition, unique: true);
+                Add(disposition.CommandId, WorldIdentityRole.CauseReference);
+                Require(disposition.AcknowledgmentId, WorldIdentityRole.CareAcknowledgment);
+                Require(disposition.DecidingActorId, WorldIdentityRole.Actor);
+            }
         }
 
         internal void ReadPacing()

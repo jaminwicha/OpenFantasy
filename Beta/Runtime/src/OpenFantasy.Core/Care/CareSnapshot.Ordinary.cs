@@ -19,16 +19,18 @@ public sealed partial class CareSnapshot
         }
         var operations = OrdinaryPositions(ordinary).ToArray();
         var aftermathCommands = Acknowledgments.Select(value => value.CommandId)
-            .Concat(Treatments.Select(value => value.CommandId)).ToHashSet();
+            .Concat(Treatments.Select(value => value.CommandId)).Concat(Dispositions.Select(value => value.CommandId)).ToHashSet();
         var aftermathSequences = Acknowledgments.Select(value => value.WorldSequence)
-            .Concat(Treatments.Select(value => value.WorldSequence)).ToHashSet();
+            .Concat(Treatments.Select(value => value.WorldSequence)).Concat(Dispositions.Select(value => value.WorldSequence)).ToHashSet();
         if (operations.Any(value => aftermathCommands.Contains(value.Command) || aftermathSequences.Contains(value.Sequence)))
             throw new ArgumentException("Ordinary care cannot reuse an aftermath command or its exclusive world boundary.");
         foreach (var acknowledgment in Acknowledgments)
         {
             var treatment = Treatments.SingleOrDefault(value => value.AcknowledgmentId == acknowledgment.AcknowledgmentId);
+            var disposition = Dispositions.SingleOrDefault(value => value.AcknowledgmentId == acknowledgment.AcknowledgmentId);
+            ulong? terminalSequence = treatment?.WorldSequence ?? disposition?.WorldSequence;
             if (operations.Any(value => value.Sequence > acknowledgment.WorldSequence
-                && (treatment is null || value.Sequence < treatment.WorldSequence)))
+                && (!terminalSequence.HasValue || value.Sequence < terminalSequence.Value)))
                 throw new ArgumentException("Ordinary care cannot occur while an aftermath obligation is pending.");
         }
     }
@@ -36,7 +38,7 @@ public sealed partial class CareSnapshot
     private void ValidateAddedPositions(CareSnapshot successor)
     {
         ulong lastAftermath = Acknowledgments.Select(value => value.WorldSequence)
-            .Concat(Treatments.Select(value => value.WorldSequence)).DefaultIfEmpty(0UL).Max();
+            .Concat(Treatments.Select(value => value.WorldSequence)).Concat(Dispositions.Select(value => value.WorldSequence)).DefaultIfEmpty(0UL).Max();
         ulong lastOrdinary = 0;
         if (Ordinary is { } previous && successor.Ordinary is { } current)
         {
@@ -50,7 +52,9 @@ public sealed partial class CareSnapshot
         ulong lastSequence = Math.Max(lastOrdinary, lastAftermath);
         var oldAcknowledgments = Acknowledgments.Select(value => value.AcknowledgmentId).ToHashSet();
         var oldTreatments = Treatments.Select(value => value.TreatmentId).ToHashSet();
-        if (successor.Acknowledgments.Any(value => !oldAcknowledgments.Contains(value.AcknowledgmentId) && value.WorldSequence <= lastSequence)
+        var oldDispositions = Dispositions.Select(value => value.DispositionId).ToHashSet();
+        if (successor.Dispositions.Any(value => !oldDispositions.Contains(value.DispositionId) && value.WorldSequence <= lastSequence)
+            || successor.Acknowledgments.Any(value => !oldAcknowledgments.Contains(value.AcknowledgmentId) && value.WorldSequence <= lastSequence)
             || successor.Treatments.Any(value => !oldTreatments.Contains(value.TreatmentId) && value.WorldSequence <= lastSequence))
             throw new ArgumentException("New aftermath care must follow every retained care operation.");
     }

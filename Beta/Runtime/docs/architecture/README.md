@@ -29,6 +29,7 @@ different kind of person.
 | [Time and encounters](time-and-encounters.md) | How do calendar, exposure, Wait, rest and host readiness interact? |
 | [Encounter timing](encounter-timing.md) | How do portable readiness, required choices, retained debt and exposure carry preserve exact tactical time? |
 | [World pacing](world-pacing.md) | How do authenticated Wait choices, tactical time and earned process intervals commit with the complete world? |
+| [Pending-care decisions](care-dispositions.md) | How do cancellation, helper decline, terminal chronology, safe control return and exact scoped choices preserve care history? |
 | [Encounter actions](encounter-actions.md) | How do source-backed abilities, real HP/MP, deterministic damage and incapacity share timing and durable authority? |
 | [Encounter lifecycle](encounter-lifecycle.md) | How do exploration, authenticated entry, outcomes and release preserve permanent recovery debt and fractional process carry? |
 | [Native encounters](native-encounters.md) | How do public combat choices, contextual controls, hit feedback and exact reopening connect to the lifecycle? |

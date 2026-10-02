@@ -76,8 +76,9 @@ public sealed class LocalWorldView
         LocalDialogueView? dialogue,
         LocalProgressionView? progression,
         ReadOnlyCollection<LocalQuestView> quests,
-        ReadOnlyCollection<LocalConstructionView> construction)
+        ReadOnlyCollection<LocalConstructionView> construction, bool supportsCareDispositions = false)
     {
+        SupportsCareDispositions = supportsCareDispositions;
         WorldId = worldId;
         BranchId = branchId;
         PlayerActorId = playerActorId;
@@ -122,6 +123,7 @@ public sealed class LocalWorldView
         // Projected from this same root, so a frame's terrain, water, actors and offers always agree.
         Regional = regions?.Observe(state);
         IsRegional = regions is not null;
+        SupportsCareDispositions = LocalProfileBindings.AdmitsCareDispositions(state);
         WorldId = state.WorldId;
         BranchId = state.BranchId;
         PlayerActorId = playerActorId;
@@ -260,6 +262,8 @@ public sealed class LocalWorldView
     /// </summary>
     [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
     public IReadOnlyList<Simulation.RoadThreat.LocalRoadThreatView>? RoadThreats { get; }
+    [System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)]
+    public bool SupportsCareDispositions { get; }
     public LocalCareView? Care { get; }
     public LocalRestorativeView? Restorative { get; }
     public LocalMaterialProposalView? MaterialProposals { get; }

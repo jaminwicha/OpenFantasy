@@ -57,6 +57,11 @@ expiry). After completion aftermath care is refused (the phase is no longer Outc
 refuses an incapacitated recipient: a completed defeat — including an incapacitated member of a winning side — is this
 interpretation's explicit terminal state. Profiles 25–34 keep the original care-resumes-the-same-fight law and bytes.
 
+The [care-disposition interpretation](care-dispositions.md) adds explicit patient cancellation/helper
+decline to close a pending request without treatment. Closure preserves outcome acknowledgments and
+requires a separate completion boundary. It neither heals nor turns the original profile-35 terminal
+policy into a recovery permission.
+
 ## Formats, admission and selection
 
 | Format | Content |

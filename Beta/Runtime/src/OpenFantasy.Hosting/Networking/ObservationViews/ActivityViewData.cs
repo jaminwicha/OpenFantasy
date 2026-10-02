@@ -103,16 +103,20 @@ internal sealed record CareViewData(
     LocalCareStatus Status,
     EntityId? PendingAcknowledgmentId,
     EntityId? HelperActorId,
-    string? HelperName)
+    string? HelperName,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] LocalCareDecisionView? Decision = null,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] LocalCareClosureView? Closure = null)
 {
-    internal LocalCareView ToView() => new(Offers, Status, PendingAcknowledgmentId, HelperActorId, HelperName);
+    internal LocalCareView ToView() => new(Offers, Status, PendingAcknowledgmentId, HelperActorId, HelperName, Decision, Closure);
 
     internal static CareViewData From(LocalCareView value) => new(
         value.Offers,
         value.Status,
         value.PendingAcknowledgmentId,
         value.HelperActorId,
-        value.HelperName);
+        value.HelperName,
+        value.Decision,
+        value.Closure);
 }
 
 internal sealed record RestorativeViewData(

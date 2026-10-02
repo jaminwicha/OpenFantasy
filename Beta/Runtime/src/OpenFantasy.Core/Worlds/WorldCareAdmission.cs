@@ -45,7 +45,7 @@ public static class WorldCareAdmission
     internal static void Validate(WorldSnapshot world)
     {
         if (world.Care is not { } care) return;
-        if (world.ProfileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle
+        if (world.ProfileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || world.BaseProfileVersion != 21 || world.EncounterLifecycle is not { } lifecycle
             || world.Production is not { SupportsConsumption: true } production || care.WorldId != world.WorldId
             || care.BranchId != world.BranchId || !care.SupportsOrdinary && care.Revision > world.Revision
             || care.Treatments.Count + (care.Ordinary?.Uses.Count ?? 0) != production.ConsumedItems.Count)
@@ -97,6 +97,17 @@ public static class WorldCareAdmission
                     || timing.Decisions.Count != 0 || lifecycle.Phase != EncounterLifecyclePhase.Active)
                     throw new ArgumentException("The treatment boundary must retain its actual helper debt and resume without old choices.");
             }
+        }
+        foreach (var disposition in care.Dispositions)
+        {
+            var acknowledgment = care.GetAcknowledgment(disposition.AcknowledgmentId);
+            var agreement = care.GetAgreement(acknowledgment.AgreementId);
+            EntityId decidingActor = disposition.Kind == CareDispositionKind.PatientCancelled
+                ? agreement.PatientActorId : agreement.HelperActorId;
+            if (disposition.WorldSequence > world.Revision || disposition.WorldSequence <= acknowledgment.WorldSequence
+                || disposition.DecidingActorId != decidingActor
+                || disposition.DispositionId != EntityId.DeriveSpawned(disposition.CommandId, 0))
+                throw new ArgumentException("A care disposition requires its actual patient or helper and ordered command boundary.");
         }
         if (care.Pending is { } pending)
         {

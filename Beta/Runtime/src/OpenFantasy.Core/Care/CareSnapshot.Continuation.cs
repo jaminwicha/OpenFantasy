@@ -8,7 +8,7 @@ public sealed partial class CareSnapshot
         IEnumerable<CareAcknowledgment> acknowledgments, IEnumerable<CareTreatment> treatments,
         OrdinaryCareSnapshot? ordinary)
         : this(continuation ?? throw new ArgumentNullException(nameof(continuation)), continuation.WorldId,
-            continuation.BranchId, revision, remedies, agreements, acknowledgments, treatments, ordinary)
+            continuation.BranchId, revision, remedies, agreements, acknowledgments, treatments, ordinary, continuation.SupportsDispositions)
     {
     }
 
@@ -16,6 +16,7 @@ public sealed partial class CareSnapshot
     public CareContinuationContext? Continuation { get; }
     public ulong TotalAcknowledgments => checked((Continuation?.ArchivedAcknowledgments ?? 0) + (ulong)Acknowledgments.Count);
     public ulong TotalTreatments => checked((Continuation?.ArchivedTreatments ?? 0) + (ulong)Treatments.Count);
+    public ulong TotalDispositions => checked((Continuation?.ArchivedDispositions ?? 0) + (ulong)Dispositions.Count);
     public ulong TotalOrdinaryUses => Ordinary?.TotalUses ?? 0;
 
     private void ValidateContinuation(OrdinaryCareSnapshot? ordinary)
@@ -26,7 +27,7 @@ public sealed partial class CareSnapshot
                 throw new ArgumentException("Inline care cannot adopt an ordinary owner continued from a closed boundary.");
             return;
         }
-        if ((ordinary is not null) != continuation.SupportsOrdinary
+        if (SupportsDispositions != continuation.SupportsDispositions || (ordinary is not null) != continuation.SupportsOrdinary
             || ordinary is not null && !continuation.Matches(ordinary.Continuation))
             throw new ArgumentException("Continued care and its ordinary owner share one exact closed boundary.");
         continuation.RequireCatalogs(Remedies, Agreements);
@@ -42,7 +43,8 @@ public sealed partial class CareSnapshot
             else if (continuation.Frontier.Closes(acknowledgment.WorldSequence))
                 throw new ArgumentException("Only the carried pending acknowledgment may predate the closed boundary.");
         }
-        if (!carried || Treatments.Any(value => continuation.Frontier.Closes(value.WorldSequence)))
-            throw new ArgumentException("Continued care keeps its exact pending acknowledgment and treats only after the closed boundary.");
+        if (!carried || Treatments.Any(value => continuation.Frontier.Closes(value.WorldSequence))
+            || Dispositions.Any(value => continuation.Frontier.Closes(value.WorldSequence)))
+            throw new ArgumentException("Continued care keeps its exact pending acknowledgment and terminal records follow the closed boundary.");
     }
 }

@@ -135,6 +135,13 @@ internal static class EncounterOutcomeText
     /// <summary>Why care is or is not offered to the incapacitated observer, exactly as far as the care view states it.</summary>
     internal static string CareReason(LocalCareView? care)
     {
+        if (care?.Closure is { } closure)
+            return closure.Kind switch
+            {
+                LocalCareClosureKind.PatientCancelled => "Care request cancelled; no treatment was given",
+                LocalCareClosureKind.HelperDeclined => "The helper declined care; no treatment was given",
+                _ => "The remedy was administered"
+            };
         // A missing or empty view only shows that nothing is offered here; it does not establish that no agreement exists.
         if (care is null || care.Offers.Count == 0 && care.PendingAcknowledgmentId is null) return "No care is offered to you";
         if (AvailableHelper(care) is { } helper) return $"{helper} can help (care)";
@@ -156,6 +163,7 @@ internal static class EncounterOutcomeText
     /// </summary>
     internal static string Hint(LocalEncounterOutcomeView outcome, LocalCareView? care)
     {
+        if (care?.Decision is not null) return Title(outcome) + "\nV: care choices";
         bool careOffered = care is not null && (care.PendingAcknowledgmentId is not null || care.Offers.Any(offer => offer.CanAcknowledge));
         if (outcome.Acknowledgment is null) return Title(outcome) + "\n" + CompactBlocker(outcome);
         return careOffered
@@ -356,6 +364,10 @@ internal static class ControllerOutcomeText
 
     private static string PendingCare(LocalCareView? care)
     {
+        if (care?.Decision is { } decision)
+            return decision.Cancellation is not null
+                ? "Your care request is pending. V opens Cancel care request; cancellation gives no treatment and leaves the outcome unread."
+                : "This care request needs your decision. V opens available treatment and decline choices; neither is selected for you.";
         string requested = care?.HelperName is { } named ? "Care was requested from " + named : "Care was requested";
         return care?.Status switch
         {

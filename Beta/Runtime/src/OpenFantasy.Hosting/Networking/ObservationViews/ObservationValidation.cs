@@ -69,6 +69,7 @@ internal static class ObservationValidation
             Require(outcome.Acknowledgment is null || outcome.Acknowledgment.EncounterId == outcome.EncounterId,
                 "Outcome acknowledgment names another encounter.");
         }
+        ValidateCare(view, actors);
         ValidateExchange(view, actors);
         ValidateTerrain(view, player);
         if (view.Restorative is { } restorative)
@@ -81,6 +82,49 @@ internal static class ObservationValidation
                         "A self-use selection must belong to this player and offer.");
                 }
             }
+        }
+    }
+
+    private static void ValidateCare(LocalWorldView view, HashSet<EntityId> actors)
+    {
+        if (view.Care is not { } care) return;
+        Require(Enum.IsDefined(care.Status), "Unknown care status.");
+        Require(view.SupportsCareDispositions || care.Decision is null && care.Closure is null
+            && care.Status <= LocalCareStatus.NeedsAttention, "Care decisions require their explicit interpretation.");
+        if (care.Decision is { } decision)
+        {
+            Require(care.Closure is null && care.PendingAcknowledgmentId is not null
+                && care.HelperActorId is { } helper && actors.Contains(helper)
+                && actors.Contains(decision.PatientActorId) && !string.IsNullOrWhiteSpace(decision.PatientName)
+                && (view.PlayerActorId == decision.PatientActorId || view.PlayerActorId == care.HelperActorId),
+                "A care decision belongs only to this request's patient or helper.");
+            if (decision.Cancellation is { } cancellation)
+                Require(view.PlayerActorId == decision.PatientActorId
+                    && cancellation.AcknowledgmentId == care.PendingAcknowledgmentId
+                    && cancellation.EncounterId == view.Encounter?.EncounterId,
+                    "Cancellation must name the observer's pending request and encounter.");
+            if (decision.Decline is { } decline)
+                Require(view.PlayerActorId == care.HelperActorId
+                    && decline.AcknowledgmentId == care.PendingAcknowledgmentId
+                    && decline.EncounterId == view.Encounter?.EncounterId,
+                    "Decline must name the helper's pending request and encounter.");
+            if (decision.Treatment is { } treatment)
+                Require(view.PlayerActorId == care.HelperActorId
+                    && treatment.AcknowledgmentId == care.PendingAcknowledgmentId
+                    && view.PlayerInventory.Lots.Any(lot => lot.LotId == treatment.Ingredient.LotId),
+                    "Only the helper may observe treatment using its own captured dose.");
+        }
+        if (care.Closure is { } closure)
+        {
+            Require(care.PendingAcknowledgmentId is null && care.Offers.Count == 0 && Enum.IsDefined(closure.Kind)
+                && (view.PlayerActorId == closure.PatientActorId || view.PlayerActorId == care.HelperActorId),
+                "A care closure belongs to its participants and cannot also be pending or offered.");
+            Require(care.Status == (closure.Kind switch
+            {
+                LocalCareClosureKind.Treated => LocalCareStatus.Treated,
+                LocalCareClosureKind.PatientCancelled => LocalCareStatus.Cancelled,
+                _ => LocalCareStatus.Declined
+            }), "Care closure status disagrees with its terminal result.");
         }
     }
 

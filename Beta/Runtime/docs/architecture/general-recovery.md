@@ -71,7 +71,7 @@ An absent old outcome does not imply healed HP: current progression remains auth
 aftermath care retains its acceptance warning: closing that encounter declines that offered care;
 the general recovery policy does not establish a separate usable patient permission.
 
-An unmatched aftermath request still blocks completion. Supporting explicit patient cancellation or
-helper decline requires retained disposition/actor/command evidence, an admitted archive relation
-between acknowledgments, treatments and closures, and a bounded closed-defeat frontier. It cannot
-be fabricated as successful treatment. A later general recovery remains a separate operation.
+An unmatched aftermath request blocks completion. The explicit [care-disposition interpretation](care-dispositions.md)
+adds patient cancellation and helper decline with retained actor/command evidence and a bounded
+closed-defeat frontier. Legacy unmatched requests retain their original law. A closure cannot be
+fabricated as successful treatment; later general recovery remains a separate operation.

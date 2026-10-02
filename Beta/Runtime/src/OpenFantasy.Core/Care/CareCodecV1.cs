@@ -16,6 +16,7 @@ public static class CareCodecV1
     public static byte[] Encode(CareSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
+        if (state.SupportsDispositions) throw new ArgumentException("Legacy care cannot discard voluntary-closure ownership.");
         if (state.SupportsOrdinary) throw new ArgumentException("Care V1 cannot discard ordinary care ownership.");
         if (state.Continuation is not null) throw new ArgumentException("Care V1 cannot discard a continuation frontier.");
         byte[] bytes = Frame("care.snapshot", Number(1), state.WorldId.ToByteArray(), state.BranchId.ToByteArray(),

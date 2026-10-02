@@ -36,13 +36,14 @@ internal static class WorldCareProcessor
             {
                 AcknowledgeCareIntent acknowledge => WorldCareActions.EvaluateAcknowledgment(world, command.ActorId, acknowledge),
                 AdministerRemedyIntent administer => WorldCareActions.EvaluateRemedy(world, command.ActorId, administer),
+                PendingCareDispositionIntent disposition => WorldCareActions.EvaluateDisposition(world, command.ActorId, disposition),
                 _ => throw new InvalidOperationException("Unknown care intent.")
             };
         }
         WorldSnapshot? candidate = null;
         // Assigned and cleared together with the candidate; a refused root leaves no frame behind.
         WorldCanonicalFrame? candidateFrame = null;
-        EntityId[] created = command.Intent is AcknowledgeCareIntent
+        EntityId[] created = command.Intent is AcknowledgeCareIntent or PendingCareDispositionIntent
             ? [EntityId.DeriveSpawned(command.CommandId, 0)]
             : [EntityId.DeriveSpawned(command.CommandId, 0), EntityId.DeriveSpawned(command.CommandId, 1)];
         if (rejection == WorldActionRejection.None)
@@ -52,11 +53,14 @@ internal static class WorldCareProcessor
             {
                 try
                 {
-                    (candidate, rejection) = command.Intent is AcknowledgeCareIntent acknowledge
-                        ? (Acknowledge(world, command, acknowledge, sequence), WorldActionRejection.None)
-                        : Administer(world, command, (AdministerRemedyIntent)command.Intent, sequence,
-                            world.Production!.IsContinued
-                                ? identity => identity != command.CommandId && Occupied(identity) : null);
+                    (candidate, rejection) = command.Intent switch
+                    {
+                        AcknowledgeCareIntent acknowledge => (Acknowledge(world, command, acknowledge, sequence), WorldActionRejection.None),
+                        PendingCareDispositionIntent disposition => (CloseRequest(world, command, disposition, sequence), WorldActionRejection.None),
+                        AdministerRemedyIntent administer => Administer(world, command, administer, sequence,
+                            world.Production!.IsContinued ? identity => identity != command.CommandId && Occupied(identity) : null),
+                        _ => throw new InvalidOperationException("Unknown care intent.")
+                    };
                     if (candidate is not null) candidateFrame = WorldCanonicalFrame.Capture(candidate);
                 }
                 catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
@@ -106,6 +110,16 @@ internal static class WorldCareProcessor
             world.Pacing!.Encounter!.ContentHash, world.EncounterActions.LastResolution!);
         return Copy(world, sequence, world.Care!.Acknowledge(acknowledgment), world.Inventory, world.Production!,
             world.Progression!, world.EncounterLifecycle!.RetainBoundary(), world.Pacing, world.Reservoirs!, world.LiquidCells!);
+    }
+
+    private static WorldSnapshot CloseRequest(WorldSnapshot world, WorldActionCommand command,
+        PendingCareDispositionIntent intent, ulong sequence)
+    {
+        var disposition = new CareDisposition(EntityId.DeriveSpawned(command.CommandId, 0), command.CommandId,
+            intent.AcknowledgmentId, command.ActorId, intent is CancelPendingCareIntent
+                ? CareDispositionKind.PatientCancelled : CareDispositionKind.HelperDeclined, sequence);
+        return Copy(world, sequence, world.Care!.CloseRequest(disposition), world.Inventory, world.Production!,
+            world.Progression!, world.EncounterLifecycle!.RetainBoundary(), world.Pacing!, world.Reservoirs!, world.LiquidCells!);
     }
 
     private static (WorldSnapshot? Candidate, WorldActionRejection Rejection) Administer(WorldSnapshot world,

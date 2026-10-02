@@ -240,6 +240,14 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             throw new AuthorityDispatchException("Ordinary care requires its admitted unheld exploration boundary.");
         }
+        if (command.Intent is PendingCareDispositionIntent
+            || command.Intent is AdministerRemedyIntent && LocalProfileBindings.AdmitsCareDispositions(state))
+        {
+            if (!LocalProfileBindings.AdmitsCareDispositions(state) || state.HasReadingHold || state.PendingExcavation is not null)
+                throw new AuthorityDispatchException("A care decision requires its admitted unheld care boundary.");
+            // Captured choices, including a competing stale terminal choice, receive their own durable receipt.
+            return;
+        }
         if (command.Intent is AdministerRemedyIntent)
         {
             throw new AuthorityDispatchException("This local adapter selects treatment through the admitted host helper.");
@@ -249,7 +257,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             if (state.Care is null || state.HasReadingHold || state.PendingExcavation is not null)
                 throw new AuthorityDispatchException("Care acknowledgment requires its available care boundary.");
             var agreement = state.Care.Agreements.SingleOrDefault(value => value.AgreementId == acknowledgment.AgreementId);
-            if (agreement is not null && LocalCareController.HostControl(state, agreement.HelperActorId) is null)
+            if (!LocalProfileBindings.AdmitsCareDispositions(state) && agreement is not null
+                && LocalCareController.HostControl(state, agreement.HelperActorId) is null)
                 throw new AuthorityDispatchException("This local care route requires an admitted host helper.");
             // Stale revision and agreement choices still receive durable terminal receipts.
             return;
@@ -375,15 +384,17 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                 pending = SelectPendingAction(state);
                 playerMovement = SamplePlayerMovement();
             }
-            if (pending?.Command.Intent is AcknowledgeCareIntent || state.Care?.Pending is not null)
+            if (pending?.Command.Intent is AcknowledgeCareIntent || pending is not null && IsCareDecision(pending.Command.Intent)
+                || state.Care?.Pending is not null)
             {
                 TickCare(state, pending);
                 if (state.Care?.Pending is not null)
                 {
                     WorldSnapshot afterCare = _authority.ReadStateForHost();
-                    // Only a published receipt earns the patient's separate cutoff. A failed preflight
-                    // changes no durable revision and must not defer the already accepted helper action.
-                    if (pending is not null && afterCare.Revision == state.Revision)
+                    // Legacy acknowledgment has one separate cutoff. New terminal requests get a receipt,
+                    // but a refused decision cannot postpone the already accepted helper action.
+                    if (pending is not null && (afterCare.Revision == state.Revision
+                        || LocalProfileBindings.AdmitsCareDispositions(state) && WasRefused(pending)))
                         TickCare(afterCare, null);
                     return;
                 }
@@ -473,6 +484,25 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         && (pending.Completion.Task.IsFaulted || pending.Completion.Task.IsCanceled
             || pending.Completion.Task.IsCompletedSuccessfully
                 && pending.Completion.Task.Result.Rejection != WorldActionRejection.None);
+
+    private static bool IsCareDecision(WorldActionIntent intent) =>
+        intent is CancelPendingCareIntent or DeclinePendingCareIntent or AdministerRemedyIntent;
+
+    private static bool IsLawfulPendingCareDecision(WorldSnapshot state, WorldActionCommand command)
+    {
+        if (command.WorldId != state.WorldId || command.BranchId != state.BranchId
+            || command.ExpectedActorRevision != state.Space.GetActor(command.ActorId).Revision
+            || !state.Inventory.CanControl(new OpenFantasy.Core.Authority.TrustedCommandDelivery(
+                command.PrincipalId, command.OriginSessionId), command.ActorId)) return false;
+        return command.Intent switch
+        {
+            PendingCareDispositionIntent disposition => WorldCareActions.EvaluateDisposition(state, command.ActorId, disposition)
+                == WorldActionRejection.None,
+            AdministerRemedyIntent remedy => WorldCareActions.EvaluateRemedy(state, command.ActorId, remedy)
+                == WorldActionRejection.None,
+            _ => false
+        };
+    }
 
     private void TickCare(WorldSnapshot state, PendingLocalAction? pending)
     {

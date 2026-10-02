@@ -1,0 +1,127 @@
+{
+  "status": "bounded managed care decision foundation verified; complete acceptance remains open",
+  "sourceHead": "6358c9b77a16f0ffbaf429db790be6496d5e9b41",
+  "checkpoint": "codex/checkpoint-before-care-dispositions-20261002T182611Z",
+  "milestone": "codex/milestone-care-dispositions-20261002",
+  "allSelectedAggregatesPassed": false,
+  "distinctCasesWithPassingEvidence": 2544,
+  "newPassingCases": 69,
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261002T190934024034Z/report.json",
+      "accepted": true,
+      "outcomes": null
+    },
+    "core": {
+      "path": "qualification/core-20261002T185202913922Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 1870
+      }
+    },
+    "dispositions": {
+      "path": "qualification/dispositions-20261002T191005447212Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 30
+      }
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261002T190429481781Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 179
+      }
+    },
+    "care": {
+      "path": "qualification/care-20261002T190510128555Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 9
+      }
+    },
+    "care-compatibility": {
+      "path": "qualification/care-compatibility-20261002T190524689063Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 21
+      }
+    },
+    "controller": {
+      "path": "qualification/controller-20261002T190537276325Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 73
+      }
+    },
+    "shared": {
+      "path": "qualification/shared-20261002T190629445628Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 26
+      }
+    },
+    "recovery": {
+      "path": "qualification/recovery-20261002T190730253601Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 42
+      }
+    },
+    "network": {
+      "path": "qualification/network-20261002T190748940106Z/report.json",
+      "accepted": true,
+      "outcomes": {
+        "Passed": 265
+      }
+    },
+    "server-managed": {
+      "path": "qualification/server-managed-20261002T190810688693Z/report.json",
+      "accepted": false,
+      "outcomes": {
+        "NotExecuted": 1,
+        "Passed": 76,
+        "Failed": 1
+      }
+    }
+  },
+  "failedSelectedCases": [
+    {
+      "mode": "server-managed",
+      "name": "OpenFantasy.Server.Tests.PlayerRosterHostTests.Four_production_players_connect_move_and_reconnect_over_real_tls_without_converting_npcs",
+      "outcome": "Failed"
+    }
+  ],
+  "failedReportsRetained": [
+    "qualification/build-20261002T184442156484Z/report.json",
+    "qualification/build-20261002T184617426535Z/report.json",
+    "qualification/build-20261002T184655793224Z/report.json",
+    "qualification/client-managed-20261002T190130991846Z/report.json",
+    "qualification/dispositions-20261002T184920702916Z/report.json",
+    "qualification/dispositions-20261002T185647440872Z/report.json",
+    "qualification/dispositions-20261002T190355378606Z/report.json",
+    "qualification/dispositions-core-20261002T184811546157Z/report.json",
+    "qualification/network-20261002T185955995914Z/report.json",
+    "qualification/server-managed-20261002T190810688693Z/report.json"
+  ],
+  "protectedOldTests": 691,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "finalSourceAndBinariesVerified": true,
+  "evidenceReuse": "EVIDENCE_REUSE.json",
+  "architectureLinks": "ARCHITECTURE_LINKS.json",
+  "unrun": [
+    "native profile38 UI/device acceptance",
+    "live-save migration and production selection",
+    "pending-cut/disposition/cut complete journal journey",
+    "disposition-only complete-world capacity-pressure cut",
+    "maximum composite world frame",
+    "process-crash injection for new disposition",
+    "full hostile survival/restart/coplayer campaign"
+  ],
+  "unresolvedTiming": [
+    "retained four-player TLS movement observation timeout at unchanged five-second deadline",
+    "two archived query socket deadlines failed before constructor repair; final Networking selection passes, cause not established"
+  ],
+  "claudeOffload": false
+}

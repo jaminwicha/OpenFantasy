@@ -4,6 +4,10 @@
 distinct definition/use and continuation markers. Recovery permissions and zero-before treatment
 witnesses survive cuts; legacy Care V1–V3 refuse that interpretation.
 
+The explicit [pending-care decision law](care-dispositions.md) adds Care V5 dispositions and a separate
+latest-closed-defeat frontier. Its treatment witness remains independent; older interpretations retain
+their acknowledgment/treatment-only relation and unchanged byte bounds.
+
 ## Bounded domain frontier
 
 [CareContinuationContext](../../src/OpenFantasy.Core/Care/CareContinuationContext.cs) captures an

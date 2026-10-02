@@ -37,7 +37,7 @@ while reading or while a gameplay obligation exists; doing so cannot release tha
 an archive cut. Ordinary gameplay and coordinated archival copies retain the controller facet.
 
 [WorldControllerBoundaries](../../src/OpenFantasy.Core/Worlds/WorldControllerBoundaries.cs) prevents
-restoration during pending care or excavation, confrontation/staging, the actor's committed encounter
+restoration during legacy pending care or excavation, confrontation/staging, the actor's committed encounter
 choice or committed retreat. A reading hold is a stable boundary and can retain its dialogue while
 control returns. Observing a safe boundary is neither authentication nor permission to publish an event.
 
@@ -169,3 +169,8 @@ policy and authorization, not mere presence in the world. Client presentation mu
 pending control request from ordinary pause and bind its fresh readiness acknowledgement to the
 restored observation. The boolean readiness wire contract alone does not prove that acknowledgement.
 These policy and client contracts are distinct from the live external-event binding and encounter selection.
+
+Under the explicit [care-disposition law](care-dispositions.md), pending care alone permits restoration
+for its patient or named helper. All other accepted-work restrictions remain. Control return leaves
+the request and HP unchanged and starts the returning port unready, so cancellation/decline requires
+a fresh deliberate choice.

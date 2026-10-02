@@ -257,6 +257,7 @@ public sealed class WorldSnapshot
         WorldEncounterOutcomeAdmission.Validate(this);
         WorldControllerAdmission.Validate(this);
         WorldRecoveryAdmission.Validate(this);
+        WorldCareDispositionAdmission.Validate(this);
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
         if (structuralPolicy is not null)
         {
@@ -323,7 +324,7 @@ public sealed class WorldSnapshot
     public EncounterActionSnapshot? EncounterActions => EncounterLifecycle is { } lifecycle
         ? lifecycle.HasEncounter ? lifecycle.Actions : null : _standaloneEncounterActions;
     public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
-    public ushort ProfileVersion => Recovery is not null ? WorldRecoveryAdmission.ProfileVersion : Controllers is not null ? WorldControllerAdmission.ProfileVersion : Coordination?.Markets is not null
+    public ushort ProfileVersion => Care?.SupportsDispositions == true ? WorldCareDispositionAdmission.ProfileVersion : Recovery is not null ? WorldRecoveryAdmission.ProfileVersion : Controllers is not null ? WorldControllerAdmission.ProfileVersion : Coordination?.Markets is not null
         ? Retreat is not null
             ? EncounterOutcome is not null ? WorldEncounterOutcomeAdmission.ProfileVersion : WorldEncounterRetreatAdmission.ProfileVersion
             : WorldMarketAdmission.ProfileVersion

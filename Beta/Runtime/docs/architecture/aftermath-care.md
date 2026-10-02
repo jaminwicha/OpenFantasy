@@ -1,5 +1,9 @@
 # Aftermath care
 
+The explicit [pending-care decision interpretation](care-dispositions.md) adds cancellation, helper
+decline and authenticated human-helper choices. The original unmatched-request interpretation below
+remains the contract of older profiles.
+
 ## Responsibilities and participants
 
 [CareSnapshot](../../src/OpenFantasy.Core/Care/CareSnapshot.cs) retains pinned remedies, prior
@@ -73,7 +77,8 @@ care-bearing profiles, including the paid (32) and local-market (33) worlds.
 remedy only for a Host resident with an admitted control binding. It constructs the treatment command
 with that helper's principal and session. The player's adapter neither accepts a foreign actor command
 nor impersonates the helper. Core agreements remain controller-neutral; another player-controlled helper
-needs a separately authenticated adapter. This local policy exposes that route as unavailable.
+uses its own authenticated player port under profile 38. Earlier local profiles expose that route as
+unavailable; the automatic controller remains Host-only in every interpretation.
 
 One automatic helper selection identity belongs to each scoped acknowledgment. It is the first sixteen
 bytes of SHA-256 over ASCII `local.care-selection.v1`, followed by the sixteen-byte world, branch,
@@ -88,11 +93,13 @@ under the host's ordinary serialized commit policy. Pending care retains Outcome
 Waiting when ready and Paused otherwise; a paused port does not pause another ready participant.
 
 [LocalCareView](../../src/OpenFantasy.Hosting/Simulation/LocalCareView.cs), available through
-`LocalWorldView.Care`, projects only the current patient's applicable lethal outcome or pending care.
+`LocalWorldView.Care`, projects the current patient's applicable lethal outcome or pending care in the
+legacy interpretation. Profile 38 also projects the helper's exact decision and retained terminal results,
+with private dose terms restricted to that helper.
 Offers contain helper identity/name, eligibility/reason and the exact acknowledgment intent. Its opaque
 action hash is a stale-boundary token. Pending status distinguishes available automatic work, unavailable
-care and an occupied selection needing attention. It exposes no helper credentials, material lots,
-quantities or provenance. The projection grants no physical action to an incapacitated actor and is not
+care and an occupied selection needing attention. The patient's projection exposes no helper credentials,
+material lots, quantities or provenance. The projection grants no physical action to an incapacitated actor and is not
 a general perception, consent or medical UI model.
 
 ## Canonical scope and extension boundaries

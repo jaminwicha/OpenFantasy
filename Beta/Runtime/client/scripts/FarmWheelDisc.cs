@@ -26,6 +26,8 @@ internal sealed partial class FarmWheelDisc : Control
             (FarmSemanticAction.Wait, "wait"), (FarmSemanticAction.ReleaseEncounter, "leave"),
             (FarmSemanticAction.AcknowledgeCare, "care"), (FarmSemanticAction.UseRestorative, "care"),
             (FarmSemanticAction.RevokeCarePermission, "leave"),
+            (FarmSemanticAction.CancelCare, "withdraw-gift"), (FarmSemanticAction.DeclineCare, "decline-gift"),
+            (FarmSemanticAction.AdministerCare, "care"),
             (FarmSemanticAction.ProposeMaterial, "give"), (FarmSemanticAction.AcceptMaterial, "accept-gift"),
             (FarmSemanticAction.DeclineMaterial, "decline-gift"), (FarmSemanticAction.WithdrawMaterial, "withdraw-gift"),
             (FarmSemanticAction.TradeBuy, "market-buy"), (FarmSemanticAction.TradeSell, "market-sell"),

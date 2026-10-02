@@ -9,6 +9,29 @@ namespace OpenFantasy.Core.Worlds;
 /// <summary>Care legality and exact dose selection over actual participants, resources and geometry.</summary>
 public static class WorldCareActions
 {
+    public static WorldActionRejection EvaluateDisposition(WorldSnapshot world, EntityId actorId,
+        PendingCareDispositionIntent intent)
+    {
+        ArgumentNullException.ThrowIfNull(world);
+        ArgumentNullException.ThrowIfNull(intent);
+        if (world.Care is not { SupportsDispositions: true, Pending: { } pending } care
+            || world.HasReadingHold || world.PendingExcavation is not null
+            || world.EncounterLifecycle is not { Phase: EncounterLifecyclePhase.Outcome } lifecycle
+            || pending.AcknowledgmentId != intent.AcknowledgmentId || pending.EncounterId != intent.EncounterId
+            || lifecycle.Actions!.Scope.EncounterId != intent.EncounterId)
+            return WorldActionRejection.Unavailable;
+        var agreement = care.GetAgreement(pending.AgreementId);
+        EntityId decidingActor = intent switch
+        {
+            CancelPendingCareIntent => agreement.PatientActorId,
+            DeclinePendingCareIntent => agreement.HelperActorId,
+            _ => throw new ArgumentException("Unknown pending-care decision.", nameof(intent))
+        };
+        if (actorId != decidingActor) return WorldActionRejection.NotAuthorized;
+        return intent.ExpectedCareRevision != care.Revision
+            ? WorldActionRejection.RevisionConflict : WorldActionRejection.None;
+    }
+
     public static WorldActionRejection EvaluateAcknowledgment(WorldSnapshot world, EntityId actorId,
         AcknowledgeCareIntent intent)
     {
@@ -19,6 +42,7 @@ public static class WorldCareActions
             || !care.Agreements.Any(value => value.AgreementId == intent.AgreementId)
             || care.Acknowledgments.Count == CareSnapshot.MaximumAcknowledgments
             || care.Treatments.Count == CareSnapshot.MaximumTreatments
+            || care.SupportsDispositions && care.Dispositions.Count == CareSnapshot.MaximumDispositions
             || world.Production!.ConsumedItems.Count == ProductionSnapshot.MaximumConsumedItems
             || world.Revision >= ulong.MaxValue - 1)
             return WorldActionRejection.Unavailable;
@@ -29,6 +53,7 @@ public static class WorldCareActions
         if (lifecycle.Actions.LastResolution is not { Status: EncounterActionResolutionStatus.Damaged, TargetHpAfter: 0 } defeat
             || defeat.TargetActorId != actorId || world.Progression!.GetActor(actorId).CurrentHp != 0
             || care.Acknowledgments.Any(value => value.Defeat.DecisionCommandId == defeat.DecisionCommandId)
+            || care.SupportsDispositions && !care.CanAcknowledgeDefeat(actorId, defeat.WorldSequence)
             || world.Pacing!.Encounter!.Revision != defeat.TimingRevision)
             return WorldActionRejection.Unavailable;
         var available = EvaluateHelper(world, agreement);

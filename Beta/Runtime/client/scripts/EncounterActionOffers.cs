@@ -21,7 +21,7 @@ internal static class EncounterActionOffers
             // offered only when the care view admits it (or is already pending); the reading always states its reason.
             if (view.Care is { } admitted && (admitted.PendingAcknowledgmentId is not null || admitted.Offers.Any(offer => offer.CanAcknowledge)))
             {
-                offers[FarmSemanticAction.AcknowledgeCare] = AcknowledgeCare(admitted, scope, selected);
+                AddCare(admitted, scope, selected, offers);
             }
             // An observer outside the fight owes no reading, so it is offered no (disabled) reading choice at all.
             if (outcome.ObserverIsParticipant)
@@ -29,9 +29,9 @@ internal static class EncounterActionOffers
                 offers[FarmSemanticAction.ReleaseEncounter] = ReadOutcome(outcome, view.Care, scope);
             }
         }
-        else if (view.Care is { } care)
+        else if (view.Care is { Closure: null } care)
         {
-            offers[FarmSemanticAction.AcknowledgeCare] = AcknowledgeCare(care, scope, selected);
+            AddCare(care, scope, selected, offers);
         }
         else if (view.IsInEncounter)
         {
@@ -63,6 +63,34 @@ internal static class EncounterActionOffers
         }
         else return null;
         return new ReadOnlyDictionary<FarmSemanticAction, FarmActionOffer>(offers);
+    }
+
+    private static void AddCare(LocalCareView care, FarmActionScope scope, FarmTarget? selected,
+        Dictionary<FarmSemanticAction, FarmActionOffer> offers)
+    {
+        if (care.Decision is not { } decision)
+        {
+            offers[FarmSemanticAction.AcknowledgeCare] = AcknowledgeCare(care, scope, selected);
+            return;
+        }
+        const string closureDetail = "Ends only this care request. Health, medicine, the care agreement and separate "
+            + "recovery permissions remain unchanged. Accepting the encounter outcome is a separate choice.";
+        if (decision.Cancellation is { } cancellation)
+            offers[FarmSemanticAction.CancelCare] = new(FarmSemanticAction.CancelCare, scope,
+                "Cancel care request", care.HelperName ?? "Care helper", care.HelperActorId,
+                FarmActionOffers.NoCost, "Care request cancelled; no treatment was given.", cancellation, null,
+                detailText: closureDetail);
+        if (decision.Decline is { } decline)
+            offers[FarmSemanticAction.DeclineCare] = new(FarmSemanticAction.DeclineCare, scope,
+                "Decline care request", decision.PatientName, decision.PatientActorId,
+                FarmActionOffers.NoCost, "Care request declined; no treatment was given.", decline, null,
+                detailText: closureDetail);
+        if (decision.Treatment is { } treatment)
+            offers[FarmSemanticAction.AdministerCare] = new(FarmSemanticAction.AdministerCare, scope,
+                "Administer remedy", decision.PatientName, decision.PatientActorId,
+                "1 dose · helper recovery", "The remedy was administered.", treatment, null,
+                detailText: "Uses the captured dose from your own inventory. Restores the patient's health and resumes "
+                    + "the same encounter; your recovery delay is retained.");
     }
 
     private static FarmActionOffer AcknowledgeCare(LocalCareView care, FarmActionScope scope, FarmTarget? selected)

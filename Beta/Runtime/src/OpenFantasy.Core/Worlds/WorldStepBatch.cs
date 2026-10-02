@@ -49,7 +49,7 @@ public sealed class WorldStepBatch
     {
         ArgumentNullException.ThrowIfNull(movement);
         ArgumentNullException.ThrowIfNull(actions);
-        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
+        if (profileVersion is not 1 and not 2 and not 3 and not 4 and not 5 and not 6 and not 7 and not 8 and not 9 and not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 19 and not 20 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || !Enum.IsDefined(kind) || causeId == worldId || causeId == branchId)
         {
             throw new ArgumentException("The world batch kind or cause identity is invalid.");
         }
@@ -75,58 +75,63 @@ public sealed class WorldStepBatch
             }
             // Saved proposals are a separate interpretation; no earlier profile reads them.
             if (command.Intent is MaterialProposalIntent
-                && (profileVersion is not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.AdvancingStep))
+                && (profileVersion is not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.AdvancingStep))
             {
                 throw new ArgumentException("Saved material proposals require their explicit complete-world profile.");
             }
             // Paid quotes are interpreted only by the explicit paid world; no other profile reads them.
             if (command.Intent is PaidExchangeIntent
-                && (profileVersion is not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.AdvancingStep))
+                && (profileVersion is not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.AdvancingStep))
             {
                 throw new ArgumentException("Paid spot exchange requires its explicit complete-world profile.");
             }
             // Market rules and price knowledge are interpreted only by the explicit local-market world.
             if (command.Intent is MarketIntent
-                && (profileVersion is not 33 and not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.AdvancingStep))
+                && (profileVersion is not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.AdvancingStep))
             {
                 throw new ArgumentException("Local markets require their explicit complete-world profile.");
             }
             // A committed retreat is interpreted only by the explicit retreat world, at an encounter decision boundary.
             if (command.Intent is QueueEncounterRetreatIntent
-                && (profileVersion is not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.EncounterDecision))
+                && (profileVersion is not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.EncounterDecision))
             {
                 throw new ArgumentException("A committed retreat requires its explicit profile and decision boundary.");
             }
             if (command.Intent is UseRestorativeItemIntent or RevokeCarePermissionIntent
-                && (profileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.AdvancingStep))
+                && (profileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.AdvancingStep))
             {
                 throw new ArgumentException("Ordinary care requires its explicit advancing exploration profile.");
             }
             if (command.Intent is AcknowledgeCareIntent or AdministerRemedyIntent
-                && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.Care))
+                && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.Care))
             {
                 throw new ArgumentException("Care choices require their explicit profile and care boundary.");
             }
-            if (command.Intent is QueueEncounterWaitIntent && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.EncounterDecision))
+            if (command.Intent is PendingCareDispositionIntent
+                && (profileVersion != WorldCareDispositionAdmission.ProfileVersion || kind != WorldBatchKind.Care))
+            {
+                throw new ArgumentException("Pending-care dispositions require their explicit profile and care boundary.");
+            }
+            if (command.Intent is QueueEncounterWaitIntent && (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.EncounterDecision))
             {
                 throw new ArgumentException("Encounter choices require their explicit decision boundary.");
             }
-            if (command.Intent is QueueEncounterAbilityIntent && (profileVersion is not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.EncounterDecision))
+            if (command.Intent is QueueEncounterAbilityIntent && (profileVersion is not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.EncounterDecision))
             {
                 throw new ArgumentException("An ability choice requires its admitted combat decision boundary.");
             }
             if (command.Intent is EnterEncounterIntent or ReleaseEncounterIntent
-                && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || kind != WorldBatchKind.EncounterLifecycle))
+                && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.EncounterLifecycle))
             {
                 throw new ArgumentException("Lifecycle choices require the explicit lifecycle boundary.");
             }
             // Profile 35 completes outcomes through the world, never through the initiator-only release.
-            if (command.Intent is ReleaseEncounterIntent && profileVersion is 35 or 36 or 37)
+            if (command.Intent is ReleaseEncounterIntent && profileVersion is 35 or 36 or 37 or 38)
             {
                 throw new ArgumentException("The outcome-completion interpretation has no initiator release.");
             }
             if (command.Intent is AcknowledgeEncounterOutcomeIntent
-                && (profileVersion is not 35 and not 36 and not 37 || kind != WorldBatchKind.EncounterLifecycle))
+                && (profileVersion is not 35 and not 36 and not 37 and not 38 || kind != WorldBatchKind.EncounterLifecycle))
             {
                 throw new ArgumentException("An outcome acknowledgment requires its explicit profile and lifecycle boundary.");
             }
@@ -134,7 +139,7 @@ public sealed class WorldStepBatch
             {
                 throw new ArgumentException("Assisted climbing requires its explicit world profile.");
             }
-            if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37)
+            if (command.Intent is ExcavateIntent && profileVersion is not 10 and not 11 and not 12 and not 13 and not 14 and not 15 and not 16 and not 17 and not 18 and not 21 and not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38)
             {
                 throw new ArgumentException("Excavation requires its explicit world profile.");
             }
@@ -165,12 +170,12 @@ public sealed class WorldStepBatch
                 throw new ArgumentException("A batch needs unique commands, one action per actor, in its own world/branch.");
             }
         }
-        if (kind == WorldBatchKind.Care && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || moving.Count != 0 || acting.Count != 1
-            || acting.Values.Any(command => command.Intent is not AcknowledgeCareIntent and not AdministerRemedyIntent)))
+        if (kind == WorldBatchKind.Care && (profileVersion is not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || moving.Count != 0 || acting.Count != 1
+            || acting.Values.Any(command => command.Intent is not AcknowledgeCareIntent and not AdministerRemedyIntent and not PendingCareDispositionIntent)))
         {
             throw new ArgumentException("A care boundary requires exactly one care command and no movement.");
         }
-        if (kind == WorldBatchKind.EncounterLifecycle && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || moving.Count != 0 || acting.Count > 1
+        if (kind == WorldBatchKind.EncounterLifecycle && (profileVersion is not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || moving.Count != 0 || acting.Count > 1
             || acting.Values.Any(command => command.Intent is not EnterEncounterIntent and not ReleaseEncounterIntent
                 and not AcknowledgeEncounterOutcomeIntent)))
         {
@@ -187,7 +192,7 @@ public sealed class WorldStepBatch
         }
         if (kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterResolution or WorldBatchKind.EncounterDecision)
         {
-            if (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 || moving.Count != 0
+            if (profileVersion is not 22 and not 23 and not 24 and not 25 and not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 || moving.Count != 0
                 || kind == WorldBatchKind.EncounterDecision && (acting.Count == 0 || acting.Values.Any(command => command.Intent is not QueueEncounterWaitIntent
                     and not QueueEncounterAbilityIntent and not QueueEncounterRetreatIntent))
                 || kind != WorldBatchKind.EncounterDecision && acting.Count != 0)
@@ -196,7 +201,7 @@ public sealed class WorldStepBatch
             }
         }
         if ((kind == WorldBatchKind.ControllerLifecycle) != (controllerEvent is not null)
-            || controllerEvent is not null && (profileVersion is not WorldControllerAdmission.ProfileVersion and not WorldRecoveryAdmission.ProfileVersion
+            || controllerEvent is not null && (profileVersion is not WorldControllerAdmission.ProfileVersion and not WorldRecoveryAdmission.ProfileVersion and not WorldCareDispositionAdmission.ProfileVersion
                 || moving.Count != 0 || acting.Count != 0))
             throw new ArgumentException("Controller events require their dedicated profile and an otherwise empty boundary.");
         ControllerEvent = controllerEvent;

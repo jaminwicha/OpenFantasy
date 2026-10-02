@@ -131,14 +131,25 @@ public sealed partial class LocalWorldSession
         LocalPlayerConnection[] waiting = _players.Values.Where(player => player.Ready && player.Pending is not null).ToArray();
         if (state.Care?.Pending is { } acknowledged)
         {
-            // Preserve one separate stale-offer receipt for the original patient. Its durable revision
-            // closes this window across reconnects and reloads; later requests cannot starve treatment.
-            if (state.Revision != acknowledged.WorldSequence) return null;
-            EntityId patient = state.Care.GetAgreement(acknowledged.AgreementId).PatientActorId;
-            waiting = waiting.Where(player => player.ActorId == patient
-                && player.Pending!.Command.Intent is AcknowledgeCareIntent care
-                && care.AgreementId == acknowledged.AgreementId
-                && care.EncounterId == acknowledged.EncounterId).ToArray();
+            // A queued terminal decision competes before automatic treatment. Refusal gives the helper
+            // the remainder of this cutoff; legacy stale acknowledgment retains its one-receipt window.
+            LocalPlayerConnection[] decisions = LocalProfileBindings.AdmitsCareDispositions(state)
+                ? waiting.Where(player => IsCareDecision(player.Pending!.Command.Intent)).ToArray() : [];
+            if (decisions.Length != 0)
+            {
+                LocalPlayerConnection[] lawful = decisions.Where(player =>
+                    IsLawfulPendingCareDecision(state, player.Pending!.Command)).ToArray();
+                waiting = lawful.Length != 0 ? lawful : decisions;
+            }
+            else
+            {
+                if (state.Revision != acknowledged.WorldSequence) return null;
+                EntityId patient = state.Care.GetAgreement(acknowledged.AgreementId).PatientActorId;
+                waiting = waiting.Where(player => player.ActorId == patient
+                    && player.Pending!.Command.Intent is AcknowledgeCareIntent care
+                    && care.AgreementId == acknowledged.AgreementId
+                    && care.EncounterId == acknowledged.EncounterId).ToArray();
+            }
         }
         else
         {

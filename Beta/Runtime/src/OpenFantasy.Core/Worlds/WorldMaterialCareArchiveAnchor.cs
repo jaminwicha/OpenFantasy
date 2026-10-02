@@ -32,7 +32,8 @@ public sealed class WorldMaterialCareArchiveAnchor
             || closing.Progression is not { } progression || closing.Quests is not { } quests
             || closing.EncounterLifecycle is not { } lifecycle || !production.SupportsCompleteWorld
             || geography.Context.ContentHash != production.ContentHash
-            || care.Frontier.WorldSequence > closing.Revision)
+            || care.Frontier.WorldSequence > closing.Revision
+            || care.ClosedDefeatWitnesses.Any(value => value.TerminalSequence > closing.Revision))
         {
             throw new ArgumentException("A coordinated anchor requires its complete scoped closing boundary.");
         }
@@ -173,6 +174,7 @@ public sealed class WorldMaterialCareArchiveAnchor
             }
         }
         if (successor.Treatments.Any(value => value.WorldSequence <= ClosingWorldSequence)
+            || successor.Dispositions.Any(value => value.WorldSequence <= ClosingWorldSequence)
             || successor.Ordinary!.Uses.Any(value => value.WorldSequence <= ClosingWorldSequence))
         {
             throw new ArgumentException("A new care effect must follow the complete closing world boundary.");

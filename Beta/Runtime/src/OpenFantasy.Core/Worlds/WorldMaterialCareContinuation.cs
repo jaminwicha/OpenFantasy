@@ -70,6 +70,7 @@ internal static class WorldMaterialCareContinuation
         int uses = batch.Actions.Count(command => command.Intent is UseRestorativeItemIntent);
         int treatments = batch.Actions.Count(command => command.Intent is AdministerRemedyIntent);
         int acknowledgments = batch.Actions.Count(command => command.Intent is AcknowledgeCareIntent);
+        int dispositions = batch.Actions.Count(command => command.Intent is PendingCareDispositionIntent);
         int crafts = batch.Actions.Count(command => command.Intent is CraftIntent or WorkConstructionIntent);
         (int batches, int effects) = WorldResourceContinuation.RequiredCapacity(batch);
         int retainedUses = care.Ordinary?.Uses.Count ?? 0;
@@ -86,7 +87,7 @@ internal static class WorldMaterialCareContinuation
         int retainedQuoteOutcomes = paid?.Outcomes.Count ?? 0;
         int closableQuotes = (paid?.Open.Count ?? 0) + batch.Actions.Count(command => command.Intent is IssueSpotQuoteIntent);
         bool progressed = production.Batches.Count + production.ConsumedItems.Count + history.Batches.Count
-            + care.Treatments.Count + completedAcknowledgments + retainedUses + retainedTransfers + retainedOutcomes
+            + care.Treatments.Count + care.Dispositions.Count + completedAcknowledgments + retainedUses + retainedTransfers + retainedOutcomes
             + retainedQuoteOutcomes != 0;
         return progressed && (
             paid is not null
@@ -99,6 +100,7 @@ internal static class WorldMaterialCareContinuation
             || production.Batches.Count + crafts + ReservedOperations > ProductionSnapshot.MaximumBatches
             || production.ConsumedItems.Count + uses + treatments + ReservedOperations > ProductionSnapshot.MaximumConsumedItems
             || care.Treatments.Count + treatments + ReservedOperations > CareSnapshot.MaximumTreatments
+            || care.SupportsDispositions && care.Dispositions.Count + dispositions + ReservedOperations > CareSnapshot.MaximumDispositions
             || care.Acknowledgments.Count + acknowledgments + ReservedOperations > CareSnapshot.MaximumAcknowledgments
             || retainedUses + uses + ReservedOperations > OrdinaryCareSnapshot.MaximumUses);
     }

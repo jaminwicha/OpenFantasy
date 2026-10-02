@@ -19,6 +19,7 @@ public static partial class CareCodecV2
     {
         if (version is not (2 or 4)) throw new ArgumentOutOfRangeException(nameof(version));
         ArgumentNullException.ThrowIfNull(state);
+        if (state.SupportsDispositions) throw new ArgumentException("Legacy care cannot discard voluntary-closure ownership.");
         if (state.Ordinary is not { } ordinary) throw new ArgumentException("Care V2 requires an explicit ordinary owner.");
         if (ordinary.SupportsIncapacitatedAssistance != (version == 4))
             throw new ArgumentException("Care format must select the exact recovery catalog interpretation.");
@@ -64,7 +65,7 @@ public static partial class CareCodecV2
         }
     }
 
-    private static byte[] EncodeOrdinary(OrdinaryCareSnapshot state, bool recovery)
+    internal static byte[] EncodeOrdinary(OrdinaryCareSnapshot state, bool recovery)
     {
         byte[] bytes = Frame("care.ordinary", Number(recovery ? 3UL : 1UL), Number(state.Revision),
             Collection("care.use-definitions", state.Definitions.Select(value => EncodeUseDefinition(value, recovery))),
@@ -74,7 +75,7 @@ public static partial class CareCodecV2
         return bytes;
     }
 
-    private static OrdinaryCareSnapshot DecodeOrdinary(ReadOnlySpan<byte> bytes, bool recovery)
+    internal static OrdinaryCareSnapshot DecodeOrdinary(ReadOnlySpan<byte> bytes, bool recovery)
     {
         var reader = new WorldFrameReader(bytes, MaximumOrdinaryBytes, 6);
         reader.Tag("care.ordinary"u8);
