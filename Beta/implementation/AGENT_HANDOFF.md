@@ -121,6 +121,15 @@ In-process closure grants no automatic human decision and is not a journaled net
 Network transport, recorded disconnect handoff and native multiple-client acceptance remain open.
 No provider request was made while the account spending-limit failure holds.
 
+## Player networking work
+
+The [transport increment](p02/player-networking/RESULT.md) adds versioned bounded envelopes, in-memory
+backpressure and binary WebSocket reassembly. Build and 18 focused cases pass, including actual loopback
+TCP traffic, fragmentation limits and terminal cancellation. Independent critique found and corrected
+unbounded empty continuations. These are standalone I/O proofs, not authenticated/native multiplayer.
+Connection admission, game routing, safe observations, TLS and durable disconnect remain required;
+[the design](p02/player-networking/DESIGN.md) retains their implementation order and full scope.
+
 ## Next dependency and remaining scope
 
 Native accepted treatment and approach/entry are now proved by the bounded journey above. Native

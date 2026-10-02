@@ -28,6 +28,10 @@ be assemblies or services. The core and application use C# in one process; porta
 engine-free domain contracts. Algorithms, data layout, allocation and scheduling are the optimization
 boundaries. A custom native kernel or IPC worker is outside this architecture.
 
+The standalone [player message transports](player-message-transport.md) provide bounded local and
+WebSocket I/O. They grant no authority; authenticated connection admission and participant-safe
+projection must bind transport to the shared host.
+
 ## Runtime bindings: state ownership
 
 [WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) is the immutable composed world
