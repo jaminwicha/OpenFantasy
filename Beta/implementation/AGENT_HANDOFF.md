@@ -186,6 +186,26 @@ boundary only; no new native/full-game/platform/human qualification or provider 
 Next: authenticated trade inquiry/inspection replies, HTTP/TLS, actual Godot clients and solo envelope
 parity, native 1–4-player proof, and journaled disconnect/reconnect/controller handoff.
 
+## Authenticated query checkpoint
+
+[Player queries](p02/player-queries/RESULT.md) expose shopper inquiry submission/cancellation/status
+and participant-only paid-quote/material-proposal history through authenticated local/socket channels.
+Requests carry no controller claims; typed results bind scope, kind and subject. One independent
+query slot, bounded output and joined teardown preserve controls while actual history work is pending.
+Merchant offers and separate durable acceptance remain unchanged. Real archived participant/outsider
+cases and real authority-lock backpressure/closure are proved. Historical replay still serializes
+with the host; no production latency/scale claim is made.
+
+[Final checks](p02/player-queries/FINAL_CHECKS.json): current-source build and 228 distinct affected
+cases pass (188 networking, 31 retained trade/history, 9 shared), including all prior 147 networking
+cases and 41 new cases. Independent native critique found no actionable defects; initial test-fixture
+failures remain retained. All 651 protected test/spec files and the starting predecessor staging are
+unchanged. Timeless architecture references are updated. Checkpoint before edits:
+`codex/checkpoint-before-player-queries-20261002T092308Z`; verified milestone:
+`codex/milestone-player-queries-20261002`. No provider request occurred after its terminal limit.
+Next: HTTP/TLS/provisioning, actual Godot network clients and solo envelope parity, native 1–4-player
+proof, and journaled disconnect/reconnect/controller handoff. Full design and unclosed gates remain.
+
 ## Next dependency and remaining scope
 
 Native accepted treatment and approach/entry are now proved by the bounded journey above. Native

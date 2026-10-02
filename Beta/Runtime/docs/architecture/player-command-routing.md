@@ -2,7 +2,7 @@
 
 [PlayerCommandSession](../../src/OpenFantasy.Hosting/Networking/PlayerCommandSession.cs) owns the
 lifetime of one [authenticated player channel](player-admission.md). It routes readiness, fixed cardinal
-movement and discrete world actions through that channel's existing player port. It creates no clock,
+movement, discrete world actions and [typed player queries](player-queries.md) through that channel's existing player port. It creates no clock,
 world writer, NPC policy or gameplay permission. The host's ordinary selection, costs, holds, inventory
 rules and committed receipts remain authoritative for both local and network callers.
 
@@ -35,7 +35,8 @@ original durable result. The client retains its exact command whenever delivery 
 
 ## Scheduling and resource ownership
 
-The receiver continues while an action awaits the host. A player can therefore pause or resume readiness
+The receiver continues while an action or explicit query awaits the host. Each has one independent
+in-flight slot. A player can therefore pause or resume readiness
 without deadlocking behind that action's receipt. Host admission and cutoff policy still decide whether
 an action was selected before a readiness change. No render or network timing grants an extra world step.
 
@@ -47,7 +48,7 @@ Wait. A slow or flooding receiver cannot hold the host's serialization gate thro
 
 Goodbye, orderly peer closure, transport failure, cancellation and host completion terminate the session.
 Termination closes its channel and port, cancels uncommitted action waiters and joins receiver, sender,
-observation publisher and action work. A committed effect remains saved even when its response is lost. Other players and
+observation publisher, action and query work. A committed effect remains saved even when its response is lost. Other players and
 host-owned autonomous work retain their own lifetimes. The command session runs once per owned channel.
 
 ## Other adapter responsibilities

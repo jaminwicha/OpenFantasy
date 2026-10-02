@@ -1,0 +1,45 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.24]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.72]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.88]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingSessionTests.An_in_person_stall_answers_only_what_it_can_see_and_fund_and_never_requotes_a_stale_offer [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Paused_inspection_filters_participants_and_does_not_advance_or_replay_a_command [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledTradingSessionTests.A_working_merchant_answers_player_inquiries_in_each_direction_and_only_confirmation_settles [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Backend_failure_faults_a_new_inspection_and_completion_instead_of_returning_a_cached_result [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "missing-creation-receipt", reason: "The retained actor-command table is incomplete.") [3 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.MarketQuoteIdentityTests.Live_and_archived_quotes_name_their_market_from_the_canonical_record [6 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.CargoPresentation.MarketQuoteIdentityTests.The_participant_view_exposes_the_market_but_never_its_pricing_basis [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "head-without-offer", reason: "The stored world head does not match exact replay.") [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Archived_inspection_reopens_exactly_and_exclusive_storage_prevents_live_external_damage(damage: False) [3 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledNpcTradingTests.A_host_shopper_sells_its_own_shown_goods_to_a_working_merchant_and_history_survives_a_cut [7 s]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "foreign-genesis", reason: "The local world journal is discontinuous.") [1 s]
+  Passed OpenFantasy.Hosting.Tests.WorldExchange.Scheduled.ScheduledNpcTradingTests.Inquiries_to_one_merchant_are_answered_in_admission_order_and_a_busy_merchant_keeps_their_place [889 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "altered-proposal-identity", reason: "A retained identity differs from its replayed comm"···) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "changed-journal-terms", reason: "A stored world batch or outcome differs from deter"···) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Archived_inspection_reopens_exactly_and_exclusive_storage_prevents_live_external_damage(damage: True) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "missing-proposal-identity", reason: "The retained world-identity table is incomplete.") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Inspection_returns_without_the_authority_lock_bounds_requests_and_finishes_before_stop(stopWhileReading: False) [628 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ScheduledMaterialInspectionTests.Inspection_returns_without_the_authority_lock_bounds_requests_and_finishes_before_stop(stopWhileReading: True) [661 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Recovery_refuses_damaged_proposal_state_journal_receipts_and_identities(corruption: "altered-creation-receipt", reason: "A stored actor command or receipt differs from its"···) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Wrong_deliveries_and_roles_learn_nothing_and_the_first_terminal_action_wins_once [356 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.A_produced_split_offer_keeps_its_producer_through_acceptance_recraft_and_self_use [907 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Injected_loss_publishes_a_creation_or_an_acceptance_completely_or_not_at_all(acceptance: False, afterCommit: True) [543 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Injected_loss_publishes_a_creation_or_an_acceptance_completely_or_not_at_all(acceptance: True, afterCommit: True) [549 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Injected_loss_publishes_a_creation_or_an_acceptance_completely_or_not_at_all(acceptance: True, afterCommit: False) [547 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Injected_loss_publishes_a_creation_or_an_acceptance_completely_or_not_at_all(acceptance: False, afterCommit: False) [513 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Coupled_physical_storage_refuses_a_valid_acceptance_without_moving_goods [273 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Competing_use_refuses_the_stale_offer_without_retargeting_and_leaves_it_open [275 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.A_raw_split_offer_is_saved_inspected_and_accepted_by_separate_authenticated_submissions [766 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Participants_who_walked_apart_are_out_of_reach_and_the_open_offer_settles_when_they_return [295 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.Withdrawal_and_the_exact_expiry_boundary_close_an_offer_once [286 ms]
+[xUnit.net 00:00:29.30]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Care.MaterialProposalHostTests.An_open_offer_spans_an_owner_published_cut_and_settles_after_reopening [9 s]
+
+Test Run Successful.
+Total tests: 31
+     Passed: 31
+ Total time: 29.8677 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/player-queries/qualification/history-20261002T093702363007Z/checks.trx

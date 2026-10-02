@@ -1,0 +1,9 @@
+{
+  "ref": "codex/checkpoint-before-player-queries-20261002T092308Z",
+  "sourceHead": "df2b1d7de25b88bf4d8378eef169ba1fdb5f1a3d",
+  "scope": "Clean successor observation milestone; unrelated 19-path predecessor staging excluded and pinned at current bytes",
+  "verification": "Accepted observation build and 237 affected cases; complete phase and production gates remain open",
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "priorRecordedIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+  "note": "Pre-existing predecessor index differs from prior packet before any task edits; current state is preserved, never restored."
+}

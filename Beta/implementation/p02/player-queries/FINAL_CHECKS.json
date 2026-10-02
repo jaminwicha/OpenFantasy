@@ -1,0 +1,65 @@
+{
+  "status": "qualified bounded authenticated query boundary; full multiplayer and production gates remain open",
+  "milestone": "codex/milestone-player-queries-20261002",
+  "sourceParent": "df2b1d7de25b88bf4d8378eef169ba1fdb5f1a3d",
+  "checkpoint": {
+    "ref": "codex/checkpoint-before-player-queries-20261002T092308Z",
+    "sourceHead": "df2b1d7de25b88bf4d8378eef169ba1fdb5f1a3d",
+    "scope": "Clean successor observation milestone; unrelated 19-path predecessor staging excluded and pinned at current bytes",
+    "verification": "Accepted observation build and 237 affected cases; complete phase and production gates remain open",
+    "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+    "priorRecordedIndexSha256": "d44a6fdce302b42b5720f8464b0051bf43f5297ff46f431a9f950be090767737",
+    "note": "Pre-existing predecessor index differs from prior packet before any task edits; current state is preserved, never restored."
+  },
+  "checks": {
+    "build": {
+      "report": "qualification/build-20261002T093540074208Z/report.json",
+      "seconds": 10.984462583001005,
+      "limitSeconds": 240,
+      "outcomes": null
+    },
+    "network": {
+      "report": "qualification/network-20261002T093617978299Z/report.json",
+      "seconds": 14.969982833994436,
+      "limitSeconds": 120,
+      "outcomes": {
+        "Passed": 188
+      }
+    },
+    "history": {
+      "report": "qualification/history-20261002T093702363007Z/report.json",
+      "seconds": 31.5360176670074,
+      "limitSeconds": 600,
+      "outcomes": {
+        "Passed": 31
+      }
+    },
+    "shared": {
+      "report": "qualification/shared-20261002T093744896758Z/report.json",
+      "seconds": 44.37197645800188,
+      "limitSeconds": 600,
+      "outcomes": {
+        "Passed": 9
+      }
+    }
+  },
+  "distinctCases": 228,
+  "newQueryCases": 41,
+  "previousNetworkCasesRetained": 147,
+  "exactSourceAndBinariesVerifiedAfterChecks": true,
+  "checkerSha256": "4f1d1bc8b68dec02fa6327dfee915bc427de66b1d22f60f4755e8d315b81dc7b",
+  "protectedFileCounts": {
+    "Beta/Runtime/tests": 628,
+    "Beta/spec-v1_1": 23
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "architectureLocalLinksChecked": 93,
+  "review": "CRITIC_REVIEW.md",
+  "limits": [
+    "No new full-Core or whole-game qualification",
+    "No HTTP/TLS endpoint or credential provisioning",
+    "No native Godot network-client or 1-4-client physical/OS/human acceptance",
+    "No recorded disconnect/reconnect/controller handoff",
+    "Historical replay retains its serialization cost; no scale/latency qualification"
+  ]
+}

@@ -81,7 +81,7 @@ public static class PlayerViewCodec
         }
     }
 
-    private static JsonSerializerOptions CreateOptions()
+    internal static JsonSerializerOptions CreateOptions()
     {
         var options = new JsonSerializerOptions
         {
@@ -100,7 +100,7 @@ public static class PlayerViewCodec
         return options;
     }
 
-    private static void Preflight(ReadOnlySpan<byte> bytes)
+    internal static void Preflight(ReadOnlySpan<byte> bytes)
     {
         if (bytes.IsEmpty || bytes.Length > MaximumExpandedJsonBytes)
         {

@@ -18,6 +18,7 @@ different kind of person.
 | [Player message transport](player-message-transport.md) | How do bounded local and WebSocket envelopes preserve ordering, ownership and complete-message boundaries? |
 | [Player connection admission](player-admission.md) | How do scoped host-issued credentials, compatibility pins and bounded handshakes select one actual player port? |
 | [Player gameplay routing](player-command-routing.md) | How do readiness, leased movement, canonical actions and durable receipts cross authenticated channels without blocking the host? |
+| [Player queries](player-queries.md) | How do nonbinding merchant inquiries and participant-only historical inspections cross authenticated channels with bounded work and complete terms? |
 | [Player observation values](player-observation-views.md) | How do typed immutable views preserve geometry, participant terms and prepared actions across a bounded canonical encoding? |
 | [Player observation streams](player-observation-streams.md) | How do visible revisions, bounded delta publication and atomic full recovery synchronize an authenticated player's view? |
 | [Time and encounters](time-and-encounters.md) | How do calendar, exposure, Wait, rest and host readiness interact? |

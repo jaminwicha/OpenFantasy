@@ -12,7 +12,9 @@ public enum PlayerMessageKind : ushort
     Refusal = 8,
     Goodbye = 9,
     Ping = 10,
-    Pong = 11
+    Pong = 11,
+    Query = 12,
+    QueryResult = 13
 }
 
 /// <summary>A transport envelope, not authentication, a world command or a durable receipt.</summary>

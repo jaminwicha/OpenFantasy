@@ -13,6 +13,13 @@ internal static class ObservationValidation
 {
     private static readonly ConcurrentDictionary<Type, PropertyContract[]> Contracts = new();
 
+    internal static void ValidateValues(object value)
+    {
+        ArgumentNullException.ThrowIfNull(value);
+        int values = 0;
+        ValidateValue(value, null, 0, ref values);
+    }
+
     internal static void Validate(LocalWorldView view)
     {
         int values = 0;

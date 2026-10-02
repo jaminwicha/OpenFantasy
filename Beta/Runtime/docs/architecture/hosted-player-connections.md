@@ -79,7 +79,9 @@ One shared [trading controller](../../src/OpenFantasy.Hosting/Simulation/LocalTr
 keeps merchant/shopping scheduling single-owned. Inquiry publication is indexed by shopper identity;
 ports can read/cancel only their own inquiry. Merchant answers keep their existing FIFO policy and
 finite stock. Each port's explicit quote/proposal inspection uses its own authenticated actor and its
-own bounded slot. Full history verification remains a host operation.
+own bounded slot. Full history verification remains a host operation. The [network query adapter](player-queries.md)
+exposes the same operations with one independent in-flight query per authenticated connection,
+bounded typed results and explicit request/scope matching.
 
 Closing a port clears its movement, cancels its uncommitted waiter and transient inquiry, and waits
 for its admitted inspections. It neither disposes the authority nor cancels another port's input.

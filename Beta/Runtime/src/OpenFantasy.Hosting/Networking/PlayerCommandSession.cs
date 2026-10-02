@@ -7,7 +7,7 @@ namespace OpenFantasy.Hosting.Networking;
 
 /// <summary>
 /// Routes one admitted connection to its existing host port. A pending world action never blocks
-/// readiness input. One action and a bounded response queue isolate slow clients from host commits.
+/// readiness input. One action, one query and a bounded response queue isolate slow clients from host commits.
 /// </summary>
 public sealed class PlayerCommandSession
 {
@@ -21,9 +21,11 @@ public sealed class PlayerCommandSession
     {
         SingleReader = true, SingleWriter = false, FullMode = BoundedChannelFullMode.Wait, AllowSynchronousContinuations = false
     });
-    private readonly TaskCompletionSource<Exception> _actionFailure = new(TaskCreationOptions.RunContinuationsAsynchronously);
+    private readonly TaskCompletionSource<Exception> _requestFailure = new(TaskCreationOptions.RunContinuationsAsynchronously);
     private Task _action = Task.CompletedTask;
+    private Task _query = Task.CompletedTask;
     private int _busy;
+    private int _queryBusy;
     private int _started;
     private int _observationRequested;
     private int _forceFullObservation;
@@ -47,8 +49,8 @@ public sealed class PlayerCommandSession
         Exception? failure = null;
         try
         {
-            Task ended = await Task.WhenAny(receiver, sender, observations, _channel.Player.HostCompletion, _actionFailure.Task).ConfigureAwait(false);
-            if (ReferenceEquals(ended, _actionFailure.Task)) throw await _actionFailure.Task.ConfigureAwait(false);
+            Task ended = await Task.WhenAny(receiver, sender, observations, _channel.Player.HostCompletion, _requestFailure.Task).ConfigureAwait(false);
+            if (ReferenceEquals(ended, _requestFailure.Task)) throw await _requestFailure.Task.ConfigureAwait(false);
             await ended.ConfigureAwait(false);
         }
         catch (Exception error) { failure = error; }
@@ -66,7 +68,8 @@ public sealed class PlayerCommandSession
                 catch (Exception error) { failure ??= error; }
             }
             await _action.ConfigureAwait(false);
-            if (_actionFailure.Task.IsCompletedSuccessfully) failure ??= await _actionFailure.Task.ConfigureAwait(false);
+            await _query.ConfigureAwait(false);
+            if (_requestFailure.Task.IsCompletedSuccessfully) failure ??= await _requestFailure.Task.ConfigureAwait(false);
         }
         if (failure is not null) ExceptionDispatchInfo.Capture(failure).Throw();
     }
@@ -102,6 +105,12 @@ public sealed class PlayerCommandSession
                         Enqueue(Refusal(message.RequestId, PlayerRequestRefusal.Busy));
                     else _action = CompleteActionAsync(message.RequestId, command, cancellationToken);
                     break;
+                case PlayerMessageKind.Query:
+                    PlayerQuery query = PlayerQueryCodec.Decode(message.Payload);
+                    if (Interlocked.CompareExchange(ref _queryBusy, 1, 0) != 0)
+                        Enqueue(Refusal(message.RequestId, PlayerRequestRefusal.Busy));
+                    else _query = CompleteQueryAsync(message.RequestId, query, cancellationToken);
+                    break;
                 case PlayerMessageKind.Ping:
                     RequireEmpty(message);
                     Enqueue(new PlayerMessage(PlayerMessageKind.Pong, message.RequestId, []));
@@ -129,15 +138,38 @@ public sealed class PlayerCommandSession
         catch (AuthorityDispatchException)
         {
             try { Enqueue(Refusal(requestId, PlayerRequestRefusal.NotAdmitted)); }
-            catch (Exception error) { _actionFailure.TrySetResult(error); }
+            catch (Exception error) { _requestFailure.TrySetResult(error); }
         }
         // Host shutdown cancels action waiters before its completion task necessarily becomes observable.
         // That cancellation is ordinary teardown; a real host failure still propagates through HostCompletion.
         catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested
             || _channel.Player.ReadRunState() == Simulation.LocalWorldRunState.Unavailable) { }
         catch (ObjectDisposedException) when (cancellationToken.IsCancellationRequested) { }
-        catch (Exception error) { _actionFailure.TrySetResult(error); }
+        catch (Exception error) { _requestFailure.TrySetResult(error); }
         finally { Volatile.Write(ref _busy, 0); }
+    }
+
+    private async Task CompleteQueryAsync(ulong requestId, PlayerQuery query, CancellationToken cancellationToken)
+    {
+        try
+        {
+            PlayerQueryResult result = await PlayerPortQueries.ExecuteAsync(_channel.Player, query).ConfigureAwait(false);
+            if (!cancellationToken.IsCancellationRequested)
+                Enqueue(new PlayerMessage(PlayerMessageKind.QueryResult, requestId, PlayerQueryResultCodec.Encode(result)));
+        }
+        catch (AuthorityDispatchException)
+        {
+            try
+            {
+                if (!cancellationToken.IsCancellationRequested) Enqueue(Refusal(requestId, PlayerRequestRefusal.NotAdmitted));
+            }
+            catch (Exception error) { _requestFailure.TrySetResult(error); }
+        }
+        catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested
+            || _channel.Player.ReadRunState() == Simulation.LocalWorldRunState.Unavailable) { }
+        catch (ObjectDisposedException) when (cancellationToken.IsCancellationRequested) { }
+        catch (Exception error) { _requestFailure.TrySetResult(error); }
+        finally { Volatile.Write(ref _queryBusy, 0); }
     }
 
     private async Task SendAsync(CancellationToken cancellationToken)

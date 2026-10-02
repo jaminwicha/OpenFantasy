@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="7d614f38-c061-42c9-998c-4c5577b59aa1" name="@Xanadu 2026-10-02 04:37:48" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T04:37:48.2785680-05:00" queuing="2026-10-02T04:37:48.2785680-05:00" start="2026-10-02T04:37:46.2319700-05:00" finish="2026-10-02T04:38:28.8380220-05:00" />
+  <TestSettings name="default" id="03777cf0-c4b8-4444-969f-9a6a71a406b0">
+    <Deployment runDeploymentRoot="_Xanadu_2026-10-02_04_37_48" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d6857207-8eb0-46ad-a587-bd9257a21021" testId="498f6d26-81dc-6658-6e28-18a612328943" testName="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Simultaneous_choices_use_one_presented_timing_revision_and_inquiries_stay_with_their_owner" computerName="Xanadu" duration="00:00:01.2909100" startTime="2026-10-02T04:37:56.5083130-05:00" endTime="2026-10-02T04:37:57.7993900-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d6857207-8eb0-46ad-a587-bd9257a21021" />
+    <UnitTestResult executionId="ca0bb5f0-e5bc-4444-868b-bdc013615ced" testId="39db78be-2847-7f85-0cf3-34cf0bfeb0b2" testName="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedCareSchedulingTests.A_queued_patients_care_precedes_observer_traffic_and_accepted_treatment_cannot_be_starved(reopen: True)" computerName="Xanadu" duration="00:00:03.9480100" startTime="2026-10-02T04:37:47.6713740-05:00" endTime="2026-10-02T04:37:51.6269820-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ca0bb5f0-e5bc-4444-868b-bdc013615ced" />
+    <UnitTestResult executionId="ed3692c0-b475-4708-b314-9d7ed4a5a1b6" testId="d469e31c-a260-9bdd-9cb5-501f282cad50" testName="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests.Rotating_service_does_not_starve_a_peer_and_closing_one_port_preserves_the_other" computerName="Xanadu" duration="00:00:00.0503927" startTime="2026-10-02T04:37:47.9275250-05:00" endTime="2026-10-02T04:37:47.9780680-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed3692c0-b475-4708-b314-9d7ed4a5a1b6" />
+    <UnitTestResult executionId="b278fa03-0249-4c7f-87d2-85a693fdf8fa" testId="2f67a9c8-e2c8-c985-520c-480e96d24952" testName="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedCareSchedulingTests.A_queued_patients_care_precedes_observer_traffic_and_accepted_treatment_cannot_be_starved(reopen: False)" computerName="Xanadu" duration="00:00:02.9834464" startTime="2026-10-02T04:37:51.6463930-05:00" endTime="2026-10-02T04:37:54.6300330-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b278fa03-0249-4c7f-87d2-85a693fdf8fa" />
+    <UnitTestResult executionId="b2b21269-057e-4a0d-9272-ddb1623d7859" testId="96786224-8c2f-3256-cfc8-3afe75968b1b" testName="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Four_real_connections_are_bounded_and_host_stop_cancels_all_inputs" computerName="Xanadu" duration="00:00:00.5888518" startTime="2026-10-02T04:37:57.8010260-05:00" endTime="2026-10-02T04:37:58.3899550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b2b21269-057e-4a0d-9272-ddb1623d7859" />
+    <UnitTestResult executionId="7b7f140d-c7af-45ba-a600-4a0231fde173" testId="d18d5e2b-4b87-a31d-42e8-6d5403dc2274" testName="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter" computerName="Xanadu" duration="00:00:08.8243245" startTime="2026-10-02T04:37:47.6713720-05:00" endTime="2026-10-02T04:37:56.4993400-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7b7f140d-c7af-45ba-a600-4a0231fde173" />
+    <UnitTestResult executionId="db931937-cf37-4928-a2c4-dee422da9bbd" testId="a85b2aea-c6ce-3ef8-d081-023e8d816f45" testName="OpenFantasy.Hosting.Tests.Worlds.SharedPlayers.SharedThreatSessionTests.Closing_the_target_port_does_not_remove_a_lawful_hostile_opportunity" computerName="Xanadu" duration="00:00:40.9821727" startTime="2026-10-02T04:37:47.6713720-05:00" endTime="2026-10-02T04:38:28.6574610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db931937-cf37-4928-a2c4-dee422da9bbd" />
+    <UnitTestResult executionId="27905708-1268-40c3-b987-12f91706f6ca" testId="ac019112-3996-a14e-eb0d-f0289c948c9a" testName="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests.Connections_reject_impersonation_duplicate_owners_and_queued_identity_collisions" computerName="Xanadu" duration="00:00:00.0127100" startTime="2026-10-02T04:37:47.9796740-05:00" endTime="2026-10-02T04:37:47.9924290-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="27905708-1268-40c3-b987-12f91706f6ca" />
+    <UnitTestResult executionId="81341f24-5b07-4b6f-930e-8dafc8077b28" testId="8befade4-ab42-137f-7c3b-87a2fee4c678" testName="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests.Two_ready_players_share_one_clock_and_independent_movement_leases_and_views" computerName="Xanadu" duration="00:00:00.2342119" startTime="2026-10-02T04:37:47.6713760-05:00" endTime="2026-10-02T04:37:47.9115130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="81341f24-5b07-4b6f-930e-8dafc8077b28" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests.Two_ready_players_share_one_clock_and_independent_movement_leases_and_views" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8befade4-ab42-137f-7c3b-87a2fee4c678">
+      <Execution id="81341f24-5b07-4b6f-930e-8dafc8077b28" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests" name="Two_ready_players_share_one_clock_and_independent_movement_leases_and_views" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d18d5e2b-4b87-a31d-42e8-6d5403dc2274">
+      <Execution id="7b7f140d-c7af-45ba-a600-4a0231fde173" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests" name="Actual_player_ports_hold_choose_read_and_reopen_one_shared_encounter" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.SharedPlayers.SharedThreatSessionTests.Closing_the_target_port_does_not_remove_a_lawful_hostile_opportunity" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="a85b2aea-c6ce-3ef8-d081-023e8d816f45">
+      <Execution id="db931937-cf37-4928-a2c4-dee422da9bbd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.SharedPlayers.SharedThreatSessionTests" name="Closing_the_target_port_does_not_remove_a_lawful_hostile_opportunity" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Simultaneous_choices_use_one_presented_timing_revision_and_inquiries_stay_with_their_owner" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="498f6d26-81dc-6658-6e28-18a612328943">
+      <Execution id="d6857207-8eb0-46ad-a587-bd9257a21021" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests" name="Simultaneous_choices_use_one_presented_timing_revision_and_inquiries_stay_with_their_owner" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedCareSchedulingTests.A_queued_patients_care_precedes_observer_traffic_and_accepted_treatment_cannot_be_starved(reopen: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="39db78be-2847-7f85-0cf3-34cf0bfeb0b2">
+      <Execution id="ca0bb5f0-e5bc-4444-868b-bdc013615ced" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedCareSchedulingTests" name="A_queued_patients_care_precedes_observer_traffic_and_accepted_treatment_cannot_be_starved" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests.Connections_reject_impersonation_duplicate_owners_and_queued_identity_collisions" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ac019112-3996-a14e-eb0d-f0289c948c9a">
+      <Execution id="27905708-1268-40c3-b987-12f91706f6ca" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests" name="Connections_reject_impersonation_duplicate_owners_and_queued_identity_collisions" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests.Rotating_service_does_not_starve_a_peer_and_closing_one_port_preserves_the_other" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d469e31c-a260-9bdd-9cb5-501f282cad50">
+      <Execution id="ed3692c0-b475-4708-b314-9d7ed4a5a1b6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedPlayerSessionTests" name="Rotating_service_does_not_starve_a_peer_and_closing_one_port_preserves_the_other" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedCareSchedulingTests.A_queued_patients_care_precedes_observer_traffic_and_accepted_treatment_cannot_be_starved(reopen: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2f67a9c8-e2c8-c985-520c-480e96d24952">
+      <Execution id="b278fa03-0249-4c7f-87d2-85a693fdf8fa" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedCareSchedulingTests" name="A_queued_patients_care_precedes_observer_traffic_and_accepted_treatment_cannot_be_starved" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests.Four_real_connections_are_bounded_and_host_stop_cancels_all_inputs" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="96786224-8c2f-3256-cfc8-3afe75968b1b">
+      <Execution id="b2b21269-057e-4a0d-9272-ddb1623d7859" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.SharedPlayers.SharedEncounterSessionTests" name="Four_real_connections_are_bounded_and_host_stop_cancels_all_inputs" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="498f6d26-81dc-6658-6e28-18a612328943" executionId="d6857207-8eb0-46ad-a587-bd9257a21021" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="39db78be-2847-7f85-0cf3-34cf0bfeb0b2" executionId="ca0bb5f0-e5bc-4444-868b-bdc013615ced" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d469e31c-a260-9bdd-9cb5-501f282cad50" executionId="ed3692c0-b475-4708-b314-9d7ed4a5a1b6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2f67a9c8-e2c8-c985-520c-480e96d24952" executionId="b278fa03-0249-4c7f-87d2-85a693fdf8fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="96786224-8c2f-3256-cfc8-3afe75968b1b" executionId="b2b21269-057e-4a0d-9272-ddb1623d7859" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d18d5e2b-4b87-a31d-42e8-6d5403dc2274" executionId="7b7f140d-c7af-45ba-a600-4a0231fde173" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a85b2aea-c6ce-3ef8-d081-023e8d816f45" executionId="db931937-cf37-4928-a2c4-dee422da9bbd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ac019112-3996-a14e-eb0d-f0289c948c9a" executionId="27905708-1268-40c3-b987-12f91706f6ca" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8befade4-ab42-137f-7c3b-87a2fee4c678" executionId="81341f24-5b07-4b6f-930e-8dafc8077b28" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.24]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.73]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.92]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:41.98]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
