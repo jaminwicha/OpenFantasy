@@ -12,7 +12,7 @@ namespace OpenFantasy.Hosting.Networking;
 /// Routes one admitted connection to its existing host port. A pending world action never blocks
 /// readiness input. One action, one query and a bounded response queue isolate slow clients from host commits.
 /// </summary>
-public sealed class PlayerCommandSession
+public sealed partial class PlayerCommandSession
 {
     public const int MaximumQueuedResponses = 8;
     public const int MaximumInputsPerSecond = 128;
@@ -97,6 +97,8 @@ public sealed class PlayerCommandSession
             }
             await _action.ConfigureAwait(false);
             await _query.ConfigureAwait(false);
+            await _administration.ConfigureAwait(false);
+            await _selectionChange.ConfigureAwait(false);
             if (_requestFailure.Task.IsCompletedSuccessfully) failure ??= await _requestFailure.Task.ConfigureAwait(false);
             HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "session.cleanup.end");
         }
@@ -130,6 +132,13 @@ public sealed class PlayerCommandSession
             PlayerMessage message = input.Message;
             HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "server.input", unchecked((long)message.RequestId), (long)message.Kind);
             lastRequest = message.RequestId;
+            if (RouteExtendedInput(input, cancellationToken)) continue;
+            if (Volatile.Read(ref _selectedMode) != 0 && message.Kind is
+                PlayerMessageKind.Readiness or PlayerMessageKind.Movement or PlayerMessageKind.Command)
+            {
+                Enqueue(Refusal(message.RequestId, PlayerRequestRefusal.NotAdmitted));
+                continue;
+            }
             switch (message.Kind)
             {
                 case PlayerMessageKind.Readiness:
@@ -258,7 +267,9 @@ public sealed class PlayerCommandSession
                 MarkDisconnected(WorldControllerDisconnectReason.TransportLost);
                 throw new PlayerResponseTimeoutException();
             }
-            if (message.Kind == PlayerMessageKind.Observation) Volatile.Write(ref _observationPending, 0);
+            ConfirmSelectedDelivery(message);
+            if (message.Kind is PlayerMessageKind.Observation or PlayerMessageKind.SelectionObservation && message.RequestId == 0)
+                Volatile.Write(ref _observationPending, 0);
             HostTimingEvents.Log.Stage(_channel.Player.TimingOwner, "server.send.end", unchecked((long)message.RequestId), (long)message.Kind);
         }
     }
@@ -275,6 +286,12 @@ public sealed class PlayerCommandSession
                 || lastPublication is { } previous && _time.GetElapsedTime(previous, _time.GetTimestamp()) < ObservationInterval
                 || Interlocked.CompareExchange(ref _observationPending, 1, 0) != 0) continue;
             bool full = Interlocked.Exchange(ref _forceFullObservation, 0) != 0;
+            if (Volatile.Read(ref _selectedMode) != 0)
+            {
+                if (!PublishSelectedObservation(0, full)) Volatile.Write(ref _observationPending, 0);
+                lastPublication = _time.GetTimestamp();
+                continue;
+            }
             var observation = _channel.Player.ReadObservation();
             bool controlChanged = observation.Control != PlayerControlStatus.Available && observation.Control != announced;
             full |= controlChanged;

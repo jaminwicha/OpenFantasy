@@ -33,10 +33,11 @@ subjects reveal no publishing root. Corruption after the requested event still r
 ## Explicit actor-selection queries
 
 [Selected local queries](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.SelectedQueries.cs)
-are a separate internal interface. Each request captures the exact immutable selection: home actor,
+are a separate explicit interface. Each request captures the exact immutable selection: home actor,
 operated actor, port identity, generation and assignment witness. The port supplies its actual trusted
 delivery. Legacy query methods continue to address the home actor and are never relabeled as another
-actor's result. A selected interface does not change the existing wire operations or their bytes.
+actor's result. [Selected network operations](selected-player-protocol.md) carry these explicit envelopes;
+the existing legacy wire operations and their bytes remain unchanged.
 
 | Selected operation | Required delegated capability | Information returned |
 |---|---|---|
@@ -72,7 +73,10 @@ includes operation, subject and the complete selection. Identical running work s
 a different operation or generation is busy until that work finishes. Switching never clears an
 active slot or abandons its worker. History work remains off the caller's thread and holds host
 serialization, so normal host selection/revocation waits for it. Shutdown joins admitted work before
-releasing storage. Expected stale or revoked requests are refusals, not host faults; damaged durable
+releasing storage. An admitted read still waiting for serialization is cancelled on shutdown, including
+when semaphore acquisition wins the race with cancellation. It does not become a new-call disposal
+error after acquiring the slot. New closed legacy calls remain disposal errors; an executing selected
+read still validates current authority before disclosure. Expected stale or revoked requests are refusals, not host faults; damaged durable
 history still fences authority and fails the session.
 
 ## Wire values and correlation

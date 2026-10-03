@@ -15,7 +15,14 @@ public enum PlayerMessageKind : ushort
     Pong = 11,
     Query = 12,
     QueryResult = 13,
-    ControlStatus = 14
+    ControlStatus = 14,
+    SelectionSubscribe = 15,
+    SelectionObservation = 16,
+    SelectionInput = 17,
+    SelectionQueryResult = 18,
+    ControlRequest = 19,
+    ControlResult = 20,
+    SelectionDelivered = 21
 }
 
 /// <summary>A transport envelope, not authentication, a world command or a durable receipt.</summary>

@@ -56,7 +56,7 @@ public partial class FarmGame
         else _marketDraft.Look(view, stall.MarketId);
         _input.SetMarketOpen(true);
         _hud.SetCovered(true);
-        try { _session.World.SetMovement(0, 0); }
+        try { SendMovement(0, 0); }
         catch (InvalidOperationException error) { Fail("The world has stopped. " + error.GetBaseException().Message); return; }
         _market.Open(choice == FarmSemanticAction.TradeOffers);
         if (!_marketDraft.IsExplicit)
@@ -86,7 +86,7 @@ public partial class FarmGame
         }
         try
         {
-            _marketRequest = _session.AskAsync(inquiry);
+            _marketRequest = _presentedSelection is { } selected ? _session.AskSelectedAsync(selected, inquiry) : _session.AskAsync(inquiry);
             _market.Notice(_input.Paused ? "Asked. World time is paused, so the answer waits until you resume."
                 : "Asked. Nothing is reserved; the answer comes shortly while time runs.");
         }
@@ -99,7 +99,8 @@ public partial class FarmGame
     private void CancelMarketRequest()
     {
         if (_session is null || !_input.MarketOpen || HasMarketRequestInFlight) return;
-        try { _marketCancellation = _session.CancelRequestAsync(); }
+        try { _marketCancellation = _presentedSelection is { } selected
+            ? _session.CancelSelectedRequestAsync(selected) : _session.CancelRequestAsync(); }
         catch (Exception error) { _market.Notice(error.Message); }
     }
 

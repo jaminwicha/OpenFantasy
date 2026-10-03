@@ -19,6 +19,7 @@ public sealed partial class PlayerProtocolClient
 
     private void ProcessMessage(PlayerMessage message)
     {
+        if (ProcessSelectedMessage(message)) return;
         if (message.Kind == PlayerMessageKind.ControlStatus)
         {
             if (message.RequestId != 0) throw new FormatException("Control status requires request identity zero.");

@@ -1,11 +1,13 @@
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Networking.Selection;
+using OpenFantasy.Hosting.Networking.Control;
 using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Hosting.Networking;
 
 /// <summary>Fully parsed client input. No authority, observation or host callback runs inside this boundary.</summary>
 internal sealed record PlayerCommandInput(PlayerMessage Message, bool Ready = false, int X = 0, int Y = 0,
-    WorldActionCommand? Command = null, PlayerQuery? Query = null, PlayerControlStatus? Control = null)
+    WorldActionCommand? Command = null, PlayerQuery? Query = null, PlayerControlStatus? Control = null, PlayerSelectedInput? Selected = null, PlayerControlRequest? Administration = null)
 {
     internal static PlayerCommandInput Decode(byte[] bytes, ulong lastRequest)
     {
@@ -14,6 +16,14 @@ internal sealed record PlayerCommandInput(PlayerMessage Message, bool Ready = fa
             throw new FormatException("Player request IDs must strictly increase within a connection.");
         switch (message.Kind)
         {
+            case PlayerMessageKind.SelectionSubscribe:
+                if (message.Payload.Length != 1 || message.Payload[0] != 1)
+                    throw new FormatException("Unsupported selected-player subscription version.");
+                return new(message);
+            case PlayerMessageKind.SelectionInput:
+                return new(message, Selected: PlayerSelectedInputCodec.Decode(message.Payload));
+            case PlayerMessageKind.ControlRequest:
+                return new(message, Administration: PlayerControlRequestCodec.Decode(message.Payload));
             case PlayerMessageKind.Readiness:
                 return new(message, Ready: PlayerGameplayCodec.ReadReadiness(message),
                     Control: message.Payload.Length == 1 ? null : PlayerControlCodec.Decode(message.Payload[1..]));

@@ -16,6 +16,7 @@ public sealed partial class PlayerProtocolClient
     public Task<WorldActionReceipt> SubmitActionAsync(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (SupportsActorSelection) throw new InvalidOperationException("Capture an actor selection before submitting gameplay.");
         if (command.ActorId != Welcome.ActorId || command.PrincipalId != Welcome.Delivery.PrincipalId
             || command.OriginSessionId != Welcome.Delivery.SessionId
             || command.WorldId != Welcome.Compatibility.WorldId || command.BranchId != Welcome.Compatibility.BranchId)
@@ -40,7 +41,7 @@ public sealed partial class PlayerProtocolClient
         lock (_gate)
         {
             ThrowIfClosedLocked();
-            if (_query is not null) return Task.FromException<PlayerQueryResult>(Busy());
+            if (_query is not null || _selectedQuery is not null) return Task.FromException<PlayerQueryResult>(Busy());
             ulong id = EnqueueLocked(requestId => new PlayerMessage(PlayerMessageKind.Query, requestId, bytes));
             _query = new QueryPending(id, query);
             return _query.Source.Task;

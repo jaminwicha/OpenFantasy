@@ -20,6 +20,7 @@ different kind of person.
 | [Controller allowance recovery](controller-recovery.md) | How do explicit recovery admission, durable measured lower bounds and fenced host segments preserve allowance across restart without offline time? |
 | [Co-player permission](control-permissions.md) | How do named offers, exact acceptance and revocation preserve ownership while separating consent from effective control? |
 | [Effective co-player control](effective-control.md) | How do temporary assignments authorize real commands while preserving true submitter identity, accepted work and historical outcomes? |
+| [Connected character control](selected-player-protocol.md) | How do consent, selection, scoped observations and deliberate Resume reach authenticated clients and native controls? |
 | [Fresh player rosters](player-rosters.md) | How does fresh cargo admission create one to four real human characters with owned facets, finite starter tools and a complete cooperative encounter catalog? |
 | [Player message transport](player-message-transport.md) | How do bounded local and WebSocket envelopes preserve ordering, ownership and complete-message boundaries? |
 | [Player connection admission](player-admission.md) | How do scoped host-issued credentials, compatibility pins and bounded handshakes select one actual player port? |

@@ -2,7 +2,7 @@ using OpenFantasy.Core;
 
 namespace OpenFantasy.Hosting.Simulation;
 
-internal enum LocalSelectedQueryOperation
+public enum LocalSelectedQueryOperation
 {
     SubmitTradeInquiry,
     CancelTradeInquiry,
@@ -14,10 +14,10 @@ internal enum LocalSelectedQueryOperation
 }
 
 /// <summary>A response belongs to its captured selection, never whichever actor happens to be selected later.</summary>
-internal sealed record LocalSelectedQueryResult<T>(EntityId WorldId, EntityId BranchId,
+public sealed record LocalSelectedQueryResult<T>(EntityId WorldId, EntityId BranchId,
     LocalActorSelection Selection, LocalSelectedQueryOperation Operation, EntityId? SubjectId, T Value)
 {
-    internal void ValidateFor(LocalSelectedPlayerObservation observation, LocalSelectedQueryOperation operation,
+    public void ValidateFor(LocalSelectedPlayerObservation observation, LocalSelectedQueryOperation operation,
         EntityId? subjectId = null)
     {
         ArgumentNullException.ThrowIfNull(observation);

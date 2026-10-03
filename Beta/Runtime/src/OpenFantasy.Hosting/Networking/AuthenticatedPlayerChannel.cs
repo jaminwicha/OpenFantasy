@@ -12,14 +12,16 @@ public sealed class AuthenticatedPlayerChannel : IAsyncDisposable
     private Task? _closing;
 
     internal AuthenticatedPlayerChannel(LocalPlayerConnection player, PlayerMessageTransport transport, Action release,
-        PlayerPresentationBootstrap? presentation = null)
+        PlayerPresentationBootstrap? presentation = null, ushort profileVersion = 0)
     {
         Player = player;
         Transport = transport;
         _release = release;
         Presentation = presentation;
+        ProfileVersion = profileVersion;
     }
 
+    internal ushort ProfileVersion { get; }
     public LocalPlayerConnection Player { get; }
     public PlayerMessageTransport Transport { get; }
     public PlayerPresentationBootstrap? Presentation { get; }

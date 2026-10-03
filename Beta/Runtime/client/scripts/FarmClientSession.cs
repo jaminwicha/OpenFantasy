@@ -20,7 +20,7 @@ using OpenFantasy.Hosting.Networking.Client;
 namespace OpenFantasy.Client;
 
 /// <summary>Authentication and content binding at startup; gameplay UI receives participant projections only.</summary>
-internal sealed class FarmClientSession : IAsyncDisposable
+internal sealed partial class FarmClientSession : IAsyncDisposable
 {
     private const ushort CoordinatedProfileVersion = 27;
     /// <summary>The one interpretation a retained coordinated world may continue under after its explicit transition.</summary>
@@ -57,7 +57,7 @@ internal sealed class FarmClientSession : IAsyncDisposable
         _ownedLocalWorld = world;
     }
 
-    private FarmClientSession(IPlayerSession world, TrustedCommandDelivery delivery,
+    internal FarmClientSession(IPlayerSession world, TrustedCommandDelivery delivery,
         EntityId wrenActorId, EntityId woodDefinitionId, EntityId? berryDefinitionId)
     {
         ArgumentNullException.ThrowIfNull(world);
@@ -601,7 +601,9 @@ internal sealed class FarmClientSession : IAsyncDisposable
     /// </summary>
     internal LocalWorldView CaptureWheelView()
     {
-        World.SetMovement(0, 0);
+        if (SelectedSession is { SupportsActorSelection: true } selected)
+            selected.SetSelectedMovement(selected.ReadSelectedObservation().Selection, 0, 0);
+        else World.SetMovement(0, 0);
         return World.ReadView();
     }
 
@@ -610,6 +612,14 @@ internal sealed class FarmClientSession : IAsyncDisposable
         FarmGiftSelection? giftSelection = null, FarmMarketDraft? marketDraft = null)
     {
         IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view, selectedTarget, giftSelection, marketDraft);
+        if (ReadSelection() is { } observed)
+        {
+            if (observed.Selection.ActorId != view.PlayerActorId || observed.HomeView.WorldId != view.WorldId
+                || observed.HomeView.BranchId != view.BranchId)
+                throw new InvalidOperationException("Read the selected character's scoped offers before choosing an action.");
+            FarmActionScope scope = FarmActionScope.From(_delivery, view) with { Selection = observed.Selection };
+            offers = offers.ToDictionary(pair => pair.Key, pair => pair.Value.WithScope(scope));
+        }
         foreach (FarmActionOffer offer in offers.Values)
         {
             _issuedOffers.Add(offer, new OfferedAction());
@@ -648,17 +658,23 @@ internal sealed class FarmClientSession : IAsyncDisposable
             retry = issued.Submission is not null;
             if (!retry)
             {
-                LocalWorldView current = World.ReadView();
-                if (!offer.Scope.BelongsTo(_delivery, current))
+                LocalSelectedPlayerObservation? selected = offer.Scope.Selection is not null
+                    ? SelectedSession?.ReadSelectedObservation() : null;
+                LocalWorldView current = selected?.HomeView ?? World.ReadView();
+                if (offer.Scope.Selection is not null ? selected is null || !offer.Scope.BelongsTo(_delivery, selected)
+                    : !offer.Scope.BelongsTo(_delivery, current))
                 {
                     throw new InvalidOperationException("That action belongs to another session, world or branch.");
                 }
-                if (offer.DialogueId is { } conversation && current.Dialogue?.DialogueId != conversation)
+                LocalDialogueView? dialogue = selected?.ControlledView is { } controlled
+                    ? controlled.Conversation?.Dialogue : current.Dialogue;
+                if (offer.DialogueId is { } conversation && dialogue?.DialogueId != conversation)
                 {
                     throw new InvalidOperationException("That conversation has ended; the action no longer applies.");
                 }
                 issued.Command = offer.ToCommand(offer.CommandId ?? NewCommandId());
-                issued.Submission = World.SubmitAction(issued.Command);
+                issued.Submission = offer.Scope.Selection is { } selection
+                    ? SelectedSession!.SubmitSelectedAction(selection, issued.Command) : World.SubmitAction(issued.Command);
             }
             command = issued.Command!;
             submission = issued.Submission!;

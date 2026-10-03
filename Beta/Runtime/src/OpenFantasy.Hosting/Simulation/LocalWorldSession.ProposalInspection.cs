@@ -59,7 +59,13 @@ public sealed partial class LocalWorldSession
         await _serialization.WaitAsync(_stop.Token).ConfigureAwait(false);
         try
         {
-            lock (_inputs) { EnsureInputAvailable(); }
+            lock (_inputs)
+            {
+                // The serialized slot can become available concurrently with stop cancellation.
+                // This read was already admitted, so shutdown cancels it rather than rejecting a new call.
+                if (_stopRequested) { throw new OperationCanceledException(_stop.Token); }
+                EnsureInputAvailable();
+            }
             try
             {
                 // Acquiring an available session slot is cheap; the durable read must run on a

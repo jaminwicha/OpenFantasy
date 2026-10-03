@@ -1,0 +1,268 @@
+{
+  "allSelectedQualificationsPassed": true,
+  "connectedManagedJourneyQualified": true,
+  "selectedNativeJourneyQualified": false,
+  "fullCoPlayerFeatureAccepted": false,
+  "movementTimingGateClosed": false,
+  "productionHistoryLatencyGateClosed": false,
+  "sourceHead": "f71e1b7891870ebc7ada364643e0cbffd8a2a531",
+  "preChangeCheckpoint": "codex/checkpoint-before-connected-control-20261003T052146Z",
+  "deliveryProofWipCheckpoint": {
+    "ref": "codex/checkpoint-connected-control-before-delivery-proof-20261003T055643Z",
+    "commit": "64516726e0d96d0811f92510b4a1cc62093e3307",
+    "parent": "f71e1b7891870ebc7ada364643e0cbffd8a2a531",
+    "scope": "Beta working tree only; predecessor staged changes excluded; independent new test files may still be under construction",
+    "verification": "WIP; two failed builds retained; no current tests executed"
+  },
+  "milestone": "codex/milestone-connected-player-control-20261003",
+  "protectedCounts": {
+    "tests": 764,
+    "specs": 23
+  },
+  "permittedTestRefactors": {
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj": {
+      "original": "Beta/implementation/p02/connected-player-control/preserved/OpenFantasy.Hosting.Tests.csproj",
+      "reason": "Only linked Compile registrations for new native application source; retained test bodies/fixtures and every original registration remain unchanged."
+    }
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "9e1f1b5689fbd74f9c1df93f8629df26da0882e712e7eb64fffcd003862e79f6",
+  "distinctCasesPassingOnVerifiedDependencies": 2500,
+  "coreDependencyInheritance": {
+    "report": "qualification/core-20261003T063126104954Z/report.json",
+    "reportMatchesRecordedHash": true,
+    "sourcesMatch": true,
+    "dependencyFilesMatch": true,
+    "rationale": "Recorded after the passing Core qualification and before rebuilding the Hosting-only shutdown repair. Core source and both test-bin OpenFantasy assemblies equal that report. The test project references only Core; its fixture files and build properties are included. These exact dependency files must also remain unchanged for inheritance.",
+    "accepted": true
+  },
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T064009415892Z/report.json",
+      "sha256": "ae31a9bce89830918c6078f534f2240845c5753c0a5e0f9348afde55d2946aba",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesActualDependencies": true,
+      "seconds": 15.651551415998256,
+      "outcomes": null,
+      "expectedSkips": null,
+      "unrunCases": []
+    },
+    "new-hosting": {
+      "path": "qualification/new-hosting-20261003T064207514771Z/report.json",
+      "sha256": "99bed3bc9c4b6312272ed9b9a6eafd6bb5aac18e9774f7d4cbc5473a74ee9960",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesActualDependencies": true,
+      "seconds": 15.202937791997101,
+      "outcomes": {
+        "Passed": 27
+      },
+      "expectedSkips": true,
+      "unrunCases": []
+    },
+    "connected-server": {
+      "path": "qualification/connected-server-20261003T064222917534Z/report.json",
+      "sha256": "b6a89fc3dc8f2cce7e6910b7abb4f8f1b2eb123bf1bcaf92e604340755da78da",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesActualDependencies": true,
+      "seconds": 39.419238291011425,
+      "outcomes": {
+        "Passed": 2
+      },
+      "expectedSkips": true,
+      "unrunCases": []
+    },
+    "hosting-compatibility": {
+      "path": "qualification/hosting-compatibility-20261003T064049498803Z/report.json",
+      "sha256": "99f1bcdc396b181133d1747cdb51e3957dfdd3ce9146ab467d57a3254be771f3",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesActualDependencies": true,
+      "seconds": 77.43728933300008,
+      "outcomes": {
+        "Passed": 508
+      },
+      "expectedSkips": true,
+      "unrunCases": []
+    },
+    "server-compatibility": {
+      "path": "qualification/server-compatibility-20261003T064302554142Z/report.json",
+      "sha256": "d1d390ad21774d65c689be171cbccc9dfccb6aeea7987e7b7c883498e7f15d8f",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesActualDependencies": true,
+      "seconds": 30.091046082990943,
+      "outcomes": {
+        "NotExecuted": 1,
+        "Passed": 76
+      },
+      "expectedSkips": true,
+      "unrunCases": [
+        "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+      ]
+    },
+    "core": {
+      "path": "qualification/core-20261003T063126104954Z/report.json",
+      "sha256": "604ca35e66faecc20752a12bb8a667b03575ed92e99f9a55c9469a1ba0191da4",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": false,
+      "matchesActualDependencies": true,
+      "seconds": 102.31366625000373,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "expectedSkips": true,
+      "unrunCases": []
+    },
+    "native-compatibility": {
+      "path": "qualification/native-compatibility-20261003T064332854504Z/report.json",
+      "sha256": "b56baf109a4f999a98973776530113f7b242b5c09a68efe27c95602b03992ab6",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesActualDependencies": true,
+      "seconds": 13.775938291975763,
+      "outcomes": {
+        "Passed": 2
+      },
+      "expectedSkips": true,
+      "unrunCases": []
+    }
+  },
+  "unresolvedSelectedFailures": [],
+  "retainedFailedAttempts": [
+    {
+      "path": "qualification/build-20261003T054331829656Z/report.json",
+      "sha256": "1ee50592bd7764c6f70dc04418e4bb1690096d537fa694e857fca518a621435c",
+      "mode": "build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/build-20261003T054418019365Z/report.json",
+      "sha256": "ffd34e1862c65041e8e4d31570308941ee6c04c6f050cd3d9afbb804acdbea23",
+      "mode": "build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/build-20261003T060529792555Z/report.json",
+      "sha256": "f75ebdfab1ec1bcb0b9e51a9c8906a99c956182c6680a3ac7933d948076a39c6",
+      "mode": "build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/build-20261003T060608409734Z/report.json",
+      "sha256": "d0db4bb12176ea1c1039594d3214c841bdd3e737eb6f95098d35cab1d091f9d0",
+      "mode": "build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/build-20261003T062455317984Z/report.json",
+      "sha256": "0d69efac95bbf378da8b9dfff45c5235edfbc1afa3c82fd183a365b35898ddfe",
+      "mode": "build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/connected-server-20261003T060740179948Z/report.json",
+      "sha256": "2e1450168a46651bd208a24232bb381251a2fa7e9fcd1eaaf82e8a2e3580230f",
+      "mode": "connected-server",
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/connected-server-20261003T061114923261Z/report.json",
+      "sha256": "992a80e832297ef8bd1bc56e1eecfc5b9c7d5dfe9295db7f7a4bdf6a1e045b0a",
+      "mode": "connected-server",
+      "outcomes": {
+        "Passed": 1,
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/connected-server-20261003T061557378907Z/report.json",
+      "sha256": "1cdbcf49889e55e0bcb8361eaef6c789b22fd33a158dd9a44d3f9c08bc4d683f",
+      "mode": "connected-server",
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/connected-server-20261003T062255241627Z/report.json",
+      "sha256": "9559e895d3e26d26e3583686fa4d4c8b42f4ce0fa58c6a221830836c2c9e3c2f",
+      "mode": "connected-server",
+      "outcomes": {
+        "Passed": 1,
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/connected-server-20261003T062532024672Z/report.json",
+      "sha256": "d1738c123e471ebb184818e02550eca6b7052ddeb3b739ebb4612746a504c759",
+      "mode": "connected-server",
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/connected-server-20261003T062629841180Z/report.json",
+      "sha256": "c6e833b112b01f5c72ed6e384de34f57197d638e4825ee34893ced1a80fc007d",
+      "mode": "connected-server",
+      "outcomes": {
+        "Passed": 1,
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/hosting-compatibility-20261003T062901809542Z/report.json",
+      "sha256": "9e2ba42634de14193bd44cac56d8354c38896237b30b91718bd2ff0e0d615ad5",
+      "mode": "hosting-compatibility",
+      "outcomes": {
+        "Failed": 2,
+        "Passed": 505
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/new-hosting-20261003T060702468171Z/report.json",
+      "sha256": "e8bbd66963062c0ca21c33873e1af3d8b6b9ccc6ea3183519bfd6f813ec79477",
+      "mode": "new-hosting",
+      "outcomes": {
+        "Passed": 20,
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/server-compatibility-20261003T063041957861Z/report.json",
+      "sha256": "5595ec45b915e8b30c51debba2bd4ced0edd2ffb7a200408fadbfa0dbee7b6e0",
+      "mode": "server-compatibility",
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 75,
+        "NotExecuted": 1
+      },
+      "error": null
+    }
+  ],
+  "externalClaudeRequestExecuted": false,
+  "limits": [
+    "Native compatibility covers original home-player journeys, not selected character UI.",
+    "Scripted malformed-peer tests prove protocol validation, not live restoration gameplay.",
+    "Fresh passes do not explain earlier retained latency failures or establish production reliability."
+  ]
+}

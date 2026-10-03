@@ -1,0 +1,72 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.31]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.49]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.62]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:02.14]     OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [FAIL]
+[xUnit.net 00:00:02.14]       Assert.NotEqual() Failure: Values are equal
+[xUnit.net 00:00:02.14]       Expected: Not Reachable
+[xUnit.net 00:00:02.14]       Actual:       Reachable
+[xUnit.net 00:00:02.14]       Stack Trace:
+[xUnit.net 00:00:02.14]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(174,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.PrepareApproach(SqliteWorldAuthority authority)
+[xUnit.net 00:00:02.14]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(65,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach)
+[xUnit.net 00:00:02.14]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(73,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach)
+[xUnit.net 00:00:02.14]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs(85,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return()
+[xUnit.net 00:00:02.14]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [1 s]
+  Error Message:
+   Assert.NotEqual() Failure: Values are equal
+Expected: Not Reachable
+Actual:       Reachable
+  Stack Trace:
+     at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.PrepareApproach(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 174
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 65
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 73
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs:line 85
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:03.92]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board [1 s]
+  Standard Output Messages:
+ 1.428s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=4 bytes=301
+ 1.437s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+ 1.445s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=795
+ 1.450s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=433
+ 1.471s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+ 1.474s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=5 bytes=71
+ 1.476s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=5 bytes=1235
+ 1.481s 79dddd9ea31bf745606a5473ea76ed14 send ControlRequest request=5 bytes=71
+ 1.482s 79dddd9ea31bf745606a5473ea76ed14 receive ControlResult request=5 bytes=795
+ 1.482s e1d57b89bcce6b6237bd754d53734e55 send ControlRequest request=5 bytes=71
+ 1.482s e1d57b89bcce6b6237bd754d53734e55 receive ControlResult request=5 bytes=797
+ 1.482s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=6 bytes=71
+ 1.482s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=6 bytes=1235
+ 1.483s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=7 bytes=493
+ 1.487s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=7 bytes=532
+ 1.487s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=7 bytes=71
+ 1.487s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=7 bytes=1266
+ 1.488s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=8 bytes=433
+ 1.489s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97775
+ 1.492s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=8 bytes=531
+ 1.492s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=9 bytes=71
+ 1.493s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=9 bytes=1266
+ 1.493s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=10 bytes=417
+ 1.496s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=10 bytes=531
+ 1.496s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=8 bytes=71
+ 1.496s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=8 bytes=1131
+ 1.496s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=11 bytes=433
+ 1.496s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=11 bytes=531
+ 1.496s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=9 bytes=493
+ 1.497s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=9 bytes=532
+ 1.497s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=10 bytes=71
+ 1.497s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=10 bytes=1131
+
+
+
+Test Run Failed.
+Total tests: 2
+     Passed: 1
+     Failed: 1
+ Total time: 4.2446 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/connected-player-control/qualification/connected-server-20261003T060740179948Z/checks.trx

@@ -1,0 +1,41 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.18]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.65]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.79]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectedCodecTests.Selected_inputs_preserve_witness_command_bytes_and_reject_cross_actor_or_trailing_payloads [3 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ControlPermissions.LocalControlPermissionTests.Board_rehydration_copies_bounded_collections_and_refuses_another_homes_private_pair [3 s]
+  Passed OpenFantasy.Hosting.Tests.Client.ActorSelection.FarmSelectedBindingTests.Captured_offer_keeps_real_delivery_and_rejects_an_actor_cycle_and_another_adapter [3 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.ControlAdministrationCodecTests.Control_decoding_rejects_shape_conflicts_foreign_board_and_noncanonical_values [3 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectionDeliveryProtocolTests.Queued_selected_frame_cannot_authorize_resume_before_its_bounded_transport_delivery [4 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.CareSelectedCodecTests.Actual_pending_care_roundtrips_only_the_selected_participants_permitted_decisions(selectHelper: False, capabilities: CareDisposition) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectionClientSequenceTests.Canonical_frames_cannot_replace_selection_or_control_identity_without_the_required_generation(substitution: "control-generation") [827 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectionClientSequenceTests.Canonical_frames_cannot_replace_selection_or_control_identity_without_the_required_generation(substitution: "witness") [367 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectionClientSequenceTests.Canonical_frames_cannot_replace_selection_or_control_identity_without_the_required_generation(substitution: "control-port") [328 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectedCodecTests.Actual_scoped_observation_roundtrips_without_a_fake_inventory_or_full_controlled_view(capabilities: PrivateHistory) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectionClientSequenceTests.Canonical_frames_cannot_replace_selection_or_control_identity_without_the_required_generation(substitution: "actor") [240 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectionClientSequenceTests.Spontaneous_restored_observation_requires_delivery_proof_then_the_same_capture_can_resume [308 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ControlPermissions.LocalControlPermissionTests.Stale_consent_is_one_receipt_but_foreign_actor_delivery_and_altered_retry_never_enter_the_journal [3 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectedCodecTests.Actual_scoped_observation_roundtrips_without_a_fake_inventory_or_full_controlled_view(capabilities: All) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.CareSelectedCodecTests.Actual_pending_care_roundtrips_only_the_selected_participants_permitted_decisions(selectHelper: True, capabilities: CareDisposition) [3 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.ControlAdministrationCodecTests.Real_private_board_acquisition_and_original_receipt_roundtrip_without_delivery_credentials [3 s]
+  Passed OpenFantasy.Hosting.Tests.Client.ActorSelection.FarmSelectedBindingTests.Trade_only_capture_omits_other_facets_and_prepares_one_exact_paid_command [3 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectedCodecTests.Actual_scoped_observation_roundtrips_without_a_fake_inventory_or_full_controlled_view(capabilities: Production | ConversationAndQuests) [938 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.CareSelectedCodecTests.Actual_pending_care_roundtrips_only_the_selected_participants_permitted_decisions(selectHelper: False, capabilities: Recovery) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ControlPermissions.LocalControlPermissionTests.Consent_uses_home_even_while_another_actor_is_selected_and_preserves_that_inputs_readiness [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectedCodecTests.Selected_observation_rejects_duplicate_unknown_missing_foreign_and_capability_leaking_fields [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.SelectedCodecTests.Selected_query_response_cannot_survive_an_actor_cycle_or_mismatched_operation [869 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.Selection.CareSelectedCodecTests.Actual_pending_care_roundtrips_only_the_selected_participants_permitted_decisions(selectHelper: True, capabilities: Recovery) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ControlPermissions.LocalControlPermissionTests.Provisional_and_replaced_ports_cannot_read_or_administer_home_consent [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ControlPermissions.LocalControlPermissionTests.Board_opportunity_requires_real_absence_expiry_and_custody_stays_visible_when_selection_returns_home [754 ms]
+[xUnit.net 00:00:13.52]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.ControlPermissions.LocalControlPermissionTests.Real_home_offer_named_accept_and_revoke_are_private_nonadvancing_and_keep_exact_original_receipts [683 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.ControlPermissions.LocalControlPermissionTests.Returning_home_owner_revokes_while_restoration_is_pending_without_erasing_accepted_paid_work [403 ms]
+
+Test Run Successful.
+Total tests: 27
+     Passed: 27
+ Total time: 13.8643 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/connected-player-control/qualification/new-hosting-20261003T064207514771Z/checks.trx

@@ -19,6 +19,20 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
     internal FarmTarget? Selected { get; private set; }
     internal bool CanCycle => _candidates.Count > 0;
 
+    internal void Refresh(LocalControlledActorView view)
+    {
+        var scope = (view.WorldId, view.BranchId, view.ActorId);
+        if (_scope != scope) { Selected = null; _scope = scope; }
+        var enemies = view.Combat?.Actions?.AbilityOffers.Select(offer => offer.TargetActorId).ToHashSet() ?? [];
+        _candidates = view.Actors.Where(actor => actor.ActorId != view.ActorId)
+            .Select(actor => new FarmTarget(actor.ActorId, actor.DisplayName,
+                enemies.Contains(actor.ActorId) ? FarmTargetKind.Encounter : FarmTargetKind.Person, actor.Feet))
+            .Concat(view.Production?.GatheringNodes.Select(node => new FarmTarget(node.NodeId, node.DisplayName,
+                FarmTargetKind.Harvestable, node.Feet)) ?? []).OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
+        if (Selected is { } selected)
+            Selected = _candidates.FirstOrDefault(target => target.Id == selected.Id) ?? selected with { Feet = null };
+    }
+
     internal void Refresh(LocalWorldView view)
     {
         var scope = (view.WorldId, view.BranchId, view.PlayerActorId);

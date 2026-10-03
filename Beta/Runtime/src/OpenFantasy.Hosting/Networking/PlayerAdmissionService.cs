@@ -136,7 +136,7 @@ public sealed class PlayerAdmissionService
                 throw;
             }
             CredentialBinding accepted = binding;
-            return new AuthenticatedPlayerChannel(player, transport, () => Release(accepted), binding.Presentation);
+            return new AuthenticatedPlayerChannel(player, transport, () => Release(accepted), binding.Presentation, Compatibility.ProfileVersion);
         }
         catch
         {

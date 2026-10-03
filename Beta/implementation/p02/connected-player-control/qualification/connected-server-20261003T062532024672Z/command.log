@@ -1,0 +1,80 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.78]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.99]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.14]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:02.88]     OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [FAIL]
+[xUnit.net 00:00:02.88]       System.ArgumentException : An admitted actor requires complete clear space, direct support and exclusive occupancy. (Parameter 'actors')
+[xUnit.net 00:00:02.89]       Stack Trace:
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs(58,0): at OpenFantasy.Core.Spatial.LocalSpatialSnapshot..ctor(TerrainScope scope, IEnumerable`1 regions, IEnumerable`1 actors, IEnumerable`1 structures, GroundSupportMode groundSupport, StructureSupportMode structureSupport)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs(70,0): at OpenFantasy.Core.Spatial.LocalSpatialSnapshot.WithActors(IEnumerable`1 actors)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(374,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.DescribeCohortGoal(WorldSnapshot state, EncounterScenarioDefinition scenario, EntityId actorId, SubunitPosition goal)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(334,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.<>c__DisplayClass60_1.<PrepareCohort>b__5(SubunitPosition point)
+[xUnit.net 00:00:02.89]            at System.Linq.Enumerable.ArraySelectIterator`2.MoveNext()
+[xUnit.net 00:00:02.89]            at System.String.Join(String separator, IEnumerable`1 values)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(331,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.PrepareCohort(SqliteWorldAuthority authority)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(70,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(80,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach)
+[xUnit.net 00:00:02.89]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs(85,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return()
+[xUnit.net 00:00:02.89]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [1 s]
+  Error Message:
+   System.ArgumentException : An admitted actor requires complete clear space, direct support and exclusive occupancy. (Parameter 'actors')
+  Stack Trace:
+     at OpenFantasy.Core.Spatial.LocalSpatialSnapshot..ctor(TerrainScope scope, IEnumerable`1 regions, IEnumerable`1 actors, IEnumerable`1 structures, GroundSupportMode groundSupport, StructureSupportMode structureSupport) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs:line 58
+   at OpenFantasy.Core.Spatial.LocalSpatialSnapshot.WithActors(IEnumerable`1 actors) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs:line 70
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.DescribeCohortGoal(WorldSnapshot state, EncounterScenarioDefinition scenario, EntityId actorId, SubunitPosition goal) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 374
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.<>c__DisplayClass60_1.<PrepareCohort>b__5(SubunitPosition point) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 334
+   at System.Linq.Enumerable.ArraySelectIterator`2.MoveNext()
+   at System.String.Join(String separator, IEnumerable`1 values)
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.PrepareCohort(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 331
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 70
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 80
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs:line 85
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:04.78]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board [1 s]
+  Standard Output Messages:
+ 1.530s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=4 bytes=301
+ 1.537s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+ 1.546s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=795
+ 1.549s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=433
+ 1.564s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+ 1.567s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=5 bytes=71
+ 1.571s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=5 bytes=1235
+ 1.576s 79dddd9ea31bf745606a5473ea76ed14 send ControlRequest request=5 bytes=71
+ 1.576s 79dddd9ea31bf745606a5473ea76ed14 receive ControlResult request=5 bytes=795
+ 1.576s e1d57b89bcce6b6237bd754d53734e55 send ControlRequest request=5 bytes=71
+ 1.576s e1d57b89bcce6b6237bd754d53734e55 receive ControlResult request=5 bytes=797
+ 1.577s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=6 bytes=71
+ 1.577s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=6 bytes=1235
+ 1.577s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=7 bytes=493
+ 1.581s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=7 bytes=532
+ 1.581s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=7 bytes=71
+ 1.581s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=7 bytes=1266
+ 1.581s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=8 bytes=433
+ 1.584s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=8 bytes=531
+ 1.584s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=9 bytes=71
+ 1.585s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=9 bytes=1266
+ 1.585s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=10 bytes=417
+ 1.588s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=10 bytes=531
+ 1.588s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=8 bytes=71
+ 1.589s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=8 bytes=1131
+ 1.589s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=11 bytes=433
+ 1.589s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=11 bytes=531
+ 1.589s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=9 bytes=493
+ 1.589s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=9 bytes=532
+ 1.590s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=10 bytes=71
+ 1.590s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=10 bytes=1131
+ 1.595s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97775
+
+
+
+Test Run Failed.
+Total tests: 2
+     Passed: 1
+     Failed: 1
+ Total time: 5.1138 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/connected-player-control/qualification/connected-server-20261003T062532024672Z/checks.trx

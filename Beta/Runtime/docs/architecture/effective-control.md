@@ -120,7 +120,7 @@ cleanup committed; the next attachment reconciles the persisted assignment throu
 ## Player selection boundary
 
 [LocalWorldSession.ActorSelection](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.ActorSelection.cs)
-binds explicit internal local selection to a current established port and the held assignment. The
+binds explicit local selection to a current established port and the held assignment. The
 [selection value](../../src/OpenFantasy.Hosting/Simulation/EffectiveControl/LocalActorSelection.cs)
 separates immutable home identity from operated actor, random port identity, monotonic generation and
 exact witness. Connection dictionaries, admission, disconnects, custody and the home character's human
@@ -160,5 +160,7 @@ captured selection through admission, serialized reads and response validation. 
 expose only their open participant offers; PrivateHistory independently permits actual terminal quote
 and proposal history through narrowly authorized storage readers. Home history remains permanently
 home-bound. Inquiry ownership includes the port and generation, so transition cleanup cannot cancel
-another selection's request. TLS/Godot selection and consent interfaces need explicit wire and
-presentation bindings; internal local APIs do not establish native reachability.
+another selection's request. The [connected character protocol](selected-player-protocol.md) provides
+explicit consent and selected-input envelopes, bounded typed observations and a delivered Resume proof.
+Its optional application interface carries the same captured context into the Godot presentation;
+managed authority and serialization checks alone do not establish native usability.

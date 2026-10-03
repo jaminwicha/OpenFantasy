@@ -12,6 +12,22 @@ namespace OpenFantasy.Client;
 internal sealed record FarmActionScope(EntityId PrincipalId, EntityId SessionId, EntityId ActorId,
     EntityId WorldId, EntityId BranchId, ulong ExpectedActorRevision)
 {
+    internal LocalActorSelection? Selection { get; init; }
+
+    internal static FarmActionScope From(TrustedCommandDelivery delivery, LocalSelectedPlayerObservation observation)
+    {
+        LocalActorSelection selected = observation.Selection;
+        var actors = observation.ControlledView?.Actors ?? observation.HomeView.Actors;
+        return new(delivery.PrincipalId, delivery.SessionId, selected.ActorId, observation.HomeView.WorldId,
+            observation.HomeView.BranchId, actors.Single(actor => actor.ActorId == selected.ActorId).PresenceRevision)
+        { Selection = selected };
+    }
+
+    internal bool BelongsTo(TrustedCommandDelivery delivery, LocalSelectedPlayerObservation observation) =>
+        Selection == observation.Selection && PrincipalId == delivery.PrincipalId && SessionId == delivery.SessionId
+        && ActorId == observation.Selection.ActorId && WorldId == observation.HomeView.WorldId
+        && BranchId == observation.HomeView.BranchId;
+
     internal static FarmActionScope From(TrustedCommandDelivery delivery, LocalWorldView view) => new(
         delivery.PrincipalId, delivery.SessionId, view.PlayerActorId, view.WorldId, view.BranchId,
         view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).PresenceRevision);
@@ -103,6 +119,9 @@ internal sealed class FarmActionOffer
     /// </summary>
     internal bool OpensPanel { get; }
 
+    internal FarmActionOffer WithScope(FarmActionScope scope) => new(Action, scope, Label, TargetName, TargetId,
+        CostText, CompletionText, Intent, BlockingReason, DialogueId, DetailText, CommandId, OpensPanel);
+
     /// <summary>
     /// The command identity the captured intent already names, such as a paid acceptance that restates its own
     /// command; null lets submission allocate a new identity.
@@ -124,6 +143,6 @@ internal sealed class FarmActionOffer
             throw new InvalidOperationException("This intent names its own command identity.");
         }
         return new WorldActionCommand(commandId, Scope.PrincipalId, Scope.SessionId, Scope.ActorId,
-            Scope.WorldId, Scope.BranchId, Scope.ExpectedActorRevision, intent);
+            Scope.WorldId, Scope.BranchId, Scope.ExpectedActorRevision, intent, Scope.Selection?.ControlWitness);
     }
 }

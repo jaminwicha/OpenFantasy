@@ -146,10 +146,44 @@ internal sealed partial class FarmHud : CanvasLayer
 
     private void Request(FarmSemanticAction action) => ActionRequested?.Invoke(action);
 
+    internal void PresentControlled(LocalSelectedPlayerObservation observation, bool pending, bool paused,
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, FarmTargetSelection targets)
+    {
+        LocalControlledActorView view = observation.ControlledView!;
+        _offers = offers;
+        _outcomeChoices = view.Combat?.OutcomeAcknowledgment is not null;
+        string name = view.Actors.Single(actor => actor.ActorId == view.ActorId).DisplayName;
+        _identity.Text = "Operating " + name;
+        if (view.Combat?.Resources is { } combat) _identity.Text += $" · HP {combat.Hp}/{combat.MaxHp} · MP {combat.Mp}/{combat.MaxMp}";
+        else if (view.Recovery?.Health is { } health) _identity.Text += $" · HP {health.Hp}/{health.MaxHp}";
+        _clock.Text = $"Day {view.Calendar.Days + 1} · {view.Calendar.MillisecondsWithinDay / 3_600_000:D2}:"
+            + $"{view.Calendar.MillisecondsWithinDay / 60_000 % 60:D2}";
+        _wood.Text = view.Trade?.Wallet is { } wallet ? $"Selected wallet: {wallet.Balance} {wallet.Unit}" : "";
+        _project.Visible = true;
+        LocalWorldView home = observation.HomeView;
+        _project.Text = "Home character: " + home.Actors.Single(actor => actor.ActorId == home.PlayerActorId).DisplayName
+            + (home.HasReadingHold || home.IsInEncounter ? " · requires your attention; use Characters → Select home." : " · obligations remain yours.");
+        _targetName.Text = targets.Selected is { } target ? "Target: " + target.Name : "Target: none";
+        _nextTarget.Disabled = pending || paused || !targets.CanCycle;
+        _clearTarget.Disabled = pending || paused || targets.Selected is null;
+        _openPack.Disabled = pending;
+        _openPack.Text = "Character controls";
+        _openWheel.Disabled = pending;
+        foreach (FarmSemanticAction action in _buttons.Keys) PresentOffer(action, "", pending || paused);
+        _pause.Text = paused ? "Resume [Esc]" : "Pause [Esc]";
+        _dialogue.Visible = view.Conversation?.Dialogue is not null;
+        _speech.Text = view.Conversation?.Dialogue is { } dialogue ? dialogue.SpeakerName + ": continue to close the conversation." : "";
+        GetNode<Label>("%EncounterStatus").Text = view.Combat?.Encounter is not null ? "Selected character's encounter" : "";
+        GetNode<Label>("Root/Footer/Column/Actions/Movement").Text =
+            (view.Capabilities & OpenFantasy.Core.Worlds.WorldControlCapabilities.Traversal) != 0 ? "Move\nWASD / arrows" : "Traversal not granted";
+        PresentPreview();
+    }
+
     internal void Present(LocalWorldView view, ulong wood, ulong berries, bool pending, bool paused,
         IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, FarmTargetSelection targets)
     {
         _offers = offers;
+        _openPack.Text = "Pack [I]";
         _outcomeChoices = view.EncounterOutcome is { Stage: not LocalOutcomeStage.Completed };
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;
         int minute = view.Calendar.MillisecondsWithinDay / 60_000 % 60;

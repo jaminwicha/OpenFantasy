@@ -60,7 +60,8 @@ public static class RoadThreatWorldAdmission
 
     /// <summary>
     /// The same derived-identity binding in one explicitly named interpretation: the threatened selection (profile 34)
-    /// or the outcome-completion selection built on it unchanged (profile 35). A root of any other profile is refused.
+    /// or its outcome-completion and explicitly selected consent/delegation interpretations.
+    /// The supplied profile must match; reading never upgrades or relabels the saved world.
     /// </summary>
     internal static RoadThreatBinding? FindInProfile(WorldSnapshot world, CargoCircuitSources cargo, RoadThreatSources threat,
         ushort profileVersion)
@@ -68,7 +69,8 @@ public static class RoadThreatWorldAdmission
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(cargo);
         ArgumentNullException.ThrowIfNull(threat);
-        if (profileVersion is not (WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion)
+        if (profileVersion is not (WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion
+                or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion)
             || world.ProfileVersion != profileVersion || CargoWorldAdmission.Find(world, cargo) is null
             || world.EncounterLifecycle is not { } lifecycle)
         {

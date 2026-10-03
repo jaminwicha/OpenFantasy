@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/FarmControlPanel.cs" id="1"]
+
+[node name="FarmControlPanel" type="CanvasLayer"]
+layer = 8
+script = ExtResource("1")
+
+[node name="Root" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Characters" type="Button" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -155.0
+offset_top = 12.0
+offset_right = -12.0
+offset_bottom = 45.0
+text = "Characters"
+
+[node name="Panel" type="PanelContainer" parent="Root"]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -490.0
+offset_top = 52.0
+offset_right = -12.0
+offset_bottom = -24.0
+
+[node name="Column" type="VBoxContainer" parent="Root/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Header" type="HBoxContainer" parent="Root/Panel/Column"]
+layout_mode = 2
+
+[node name="Refresh" type="Button" parent="Root/Panel/Column/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Refresh choices"
+
+[node name="Close" type="Button" parent="Root/Panel/Column/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close"
+
+[node name="Status" type="Label" parent="Root/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+text = "Reading control permissions…"
+
+[node name="Recipient" type="OptionButton" parent="Root/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Scopes" type="GridContainer" parent="Root/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+columns = 2
+
+[node name="Grant" type="Button" parent="Root/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Offer checked scopes to selected person"
+
+[node name="Units" type="SpinBox" parent="Root/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+min_value = 1.0
+max_value = 1000000.0
+value = 1.0
+prefix = "Trade units:"
+
+[node name="Scroll" type="ScrollContainer" parent="Root/Panel/Column"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Rows" type="VBoxContainer" parent="Root/Panel/Column/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 6

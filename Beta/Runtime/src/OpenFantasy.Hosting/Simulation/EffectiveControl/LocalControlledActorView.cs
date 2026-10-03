@@ -17,6 +17,22 @@ namespace OpenFantasy.Hosting.Simulation;
 /// </summary>
 public sealed class LocalControlledActorView
 {
+    // Restores already scoped transport values only. The selected observation codec validates cross-field scope.
+    internal LocalControlledActorView(EntityId worldId, EntityId branchId, EntityId actorId,
+        WorldControlCapabilities capabilities, WorldInstant calendar, bool hasReadingHold, bool isResolvingConsequences,
+        bool isRegional, IEnumerable<LocalActorView> actors, LocalRegionObservation? regional,
+        LocalControlledCombatView? combat, LocalControlledRetreatView? retreat, LocalControlledRecoveryView? recovery,
+        LocalControlledCareDispositionView? careDisposition, LocalInventoryView? inventory,
+        LocalMaterialProposalView? materialProposals, LocalControlledTradeView? trade,
+        LocalControlledProductionView? production, LocalControlledConversationView? conversation)
+    {
+        WorldId = worldId; BranchId = branchId; ActorId = actorId; Capabilities = capabilities; Calendar = calendar;
+        HasReadingHold = hasReadingHold; IsResolvingConsequences = isResolvingConsequences; IsRegional = isRegional;
+        Actors = Array.AsReadOnly(actors.ToArray()); Regional = regional; Combat = combat; Retreat = retreat;
+        Recovery = recovery; CareDisposition = careDisposition; Inventory = inventory; MaterialProposals = materialProposals;
+        Trade = trade; Production = production; Conversation = conversation;
+    }
+
     private LocalControlledActorView(WorldSnapshot state, LocalWorldView source, WorldControlCapabilities capabilities)
     {
         WorldId = source.WorldId;

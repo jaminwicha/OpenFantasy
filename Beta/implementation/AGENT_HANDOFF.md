@@ -19,6 +19,32 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Connected participant control](p02/connected-player-control/RESULT.md) now binds actual TLS consent,
+private permission boards, acquisition/selection, versioned scoped observations/input/queries and the
+remote/Godot adapter. A delivered-frame proof gates explicit Resume; stale selection and proof-pending
+input are transient refusals. The genuine four-human TLS journey covers real allowance expiry, movement,
+ordinary Strike, each home character's explicit Wait, owner return/revocation, exact old receipts and
+original-genesis replay. Native selected-character screens remain separately unqualified.
+
+The warning-free build and **2,500 distinct checks** pass on verified dependencies: Hosting508,
+focused27, connected-server2, server76, Core1,885 and native2; the Windows-only ACL case is skipped.
+An unchanged shutdown test exposed a real semaphore/cancellation race; the small repair and a new
+deterministic regression pass. The Core run is inherited only after exact source, output, fixture,
+checker and build-dependency comparison. Final Godot compatibility images were inspected; they cover
+home-player behavior, not selected UI or physical input. Earlier history/movement timing failures
+remain retained and unexplained; diagnostic passes do not close production timing.
+
+[Evidence](p02/connected-player-control/FINAL_CHECKS.json), independent review and the timeless
+architecture accompany this scope. All764 prior test/project inputs and23 specs remain preserved;
+the sole old test-project edit adds two client source links and its original is archived. Before-change
+ref `codex/checkpoint-before-connected-control-20261003T052146Z` preserves `f71e1b78`; the separate
+WIP checkpoint retains the pre-delivery-proof integration. Milestone
+`codex/milestone-connected-player-control-20261003` records this bounded scope without closing native
+selection, crash, latency or phase gates. External Claude remains terminally limited.
+
+Earlier milestone notes below describe evidence at their checkpoints; the connected binding above
+supersedes their then-unimplemented TLS/application boundary, without expanding their acceptance claims.
+
 [Selected participant queries](p02/selected-player-queries/RESULT.md) now bind asynchronous inspections
 and transient inquiry ownership to exact port/actor/generation/witness context. Trade and Inventory
 expose their respective open offers; PrivateHistory independently exposes terminal participant history.
@@ -137,29 +163,28 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Bind the internal local selection to explicit TLS/Godot consent/selection and profile39/40 client
-   startup paths. Preserve immutable home identity, scoped observations and deliberate generation-bound
-   Resume. Bind the implemented selected-query envelopes/readers to explicit wire requests and client
-   response validation; old A→B→A responses must never become valid in a later selection. Use the
-   [connected binding notes](p02/selected-player-queries/TLS_BINDING_NOTES.md) for actual entrypoints,
-   versioning, aggregate payload limits and the required four-human journey.
-2. Keep the grantee's own human character's ordinary decisions/holds. Autonomous owner input cannot
-   compete while assigned; accepted obligations finish before safe return. Transport loss cannot
-   restart the original allowance or manufacture presence. Permission is not a socket or UI selection.
-3. Bind explicit profile39/40 feature/startup-control paths and the local/TLS/Godot consent/selection
-   journey with actual paid actions, third/fourth live participants, revocation/return, archive/reopen
-   and crash evidence. Native reachability remains separate from managed preparation;
-   retain the [complete obligations](p02/co-player-control/DESIGN.md).
-4. Keep the retained failed timing gate open. The bounded CPU/pause captures did not reproduce it;
-   no more unchanged diagnostic aggregates are justified. Include the opt-in counters at the next
-   relevant changed-implementation qualification, then inspect an actual failure before selecting a
-   repair. Component averages and later passes do not establish its cause; preserve every bound.
+1. Qualify the actual Godot selected-character journey through the shipped Characters panel: explicit
+   consent, owner loss/allowance expiry, acquisition, scoped presentation, deliberate Resume, paid actions,
+   home-character obligations, return/revoke and paused handback. Managed TLS and existing home-player
+   rendering do not substitute for that native input/visibility proof. See the
+   [client scope notes](p02/connected-player-control/CLIENT_NOTES.md) for incomplete surfaces.
+2. Complete selected material-gift, worksite/production, private-history, restorative-permission and
+   sell-management screens against existing typed facets and readers. Retain current capture/confirmation
+   rules, immutable home identity and explicit scopes; no withheld full-view synthesis.
+3. Qualify full profile40 archive/reopen and actual process-kill recovery with native continuation.
+   Preserve accepted obligations, permission/assignment lineage and original controller allowance;
+   retain the [complete obligations](p02/co-player-control/DESIGN.md). No production world or lived save
+   upgrades automatically.
+4. Keep the retained failed timing gate open. Later instrumented compatibility passes do not explain
+   earlier original history/movement timeouts. No unchanged diagnostic reruns simply to seek green;
+   use a genuine changed dependency or an actual failed trace to justify the next bounded repair.
 
 Combat + traversal + recovery remains a provisional simple preset, not an owner-approved preference.
 Offers carry explicit scopes. Inventory, trade, production, conversation/quests, care disposition and
-private history remain independently scoped. Internal selected history readers are implemented;
-their authenticated TLS and Godot binding remains required.
-No production world or lived save upgrades automatically.
+private history remain independently scoped. Selected readers and authenticated TLS envelopes exist;
+full native screen/domain coverage remains required. The four-human TLS proof includes each actor's
+actual home decision, not general party rescue/retreat or all encounter combinations.
+
 
 ## Relevant inherited behavior and evidence
 

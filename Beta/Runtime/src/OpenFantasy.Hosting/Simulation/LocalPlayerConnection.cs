@@ -51,6 +51,9 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     public LocalTradeInquiryView? ReadTradeInquiry() => _host.ReadTradeInquiry(this);
     public Task<PaidQuoteView?> InspectPaidQuoteAsync(EntityId quoteId) => _host.InspectPaidQuoteAsync(this, quoteId);
     public Task<MaterialProposalView?> InspectMaterialProposalAsync(EntityId proposalId) => _host.InspectMaterialProposalAsync(this, proposalId);
+    public Task<LocalControlPermissionBoard> ReadControlPermissionsAsync() => _host.ReadControlPermissionsAsync(this);
+    public Task<WorldActionReceipt> SubmitControlPermissionAsync(WorldActionCommand command) =>
+        _host.SubmitControlPermissionAsync(this, command);
     public ValueTask DisposeAsync() => new(_host.ClosePlayerAsync(this));
 
     internal TrustedCommandDelivery Delivery { get; }
@@ -66,32 +69,32 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     internal CargoPresentation.LocalRegionObserver? SelectedRegions { get; set; }
     internal bool SelectionNeedsProjection { get; set; }
     internal LocalActorSelection? MovementSelection { get; set; }
-    internal LocalSelectedPlayerObservation ReadSelectedObservation() => _host.ReadSelectedObservation(this);
-    internal Task<LocalSelectedPlayerObservation> SelectActorAsync(LocalActorSelection observed, EntityId actorId) =>
+    public LocalSelectedPlayerObservation ReadSelectedObservation() => _host.ReadSelectedObservation(this);
+    public Task<LocalSelectedPlayerObservation> SelectActorAsync(LocalActorSelection observed, EntityId actorId) =>
         _host.SelectActorAsync(this, observed, actorId);
-    internal void ResumeSelected(LocalSelectedPlayerObservation observed) => _host.ResumeSelected(this, observed);
-    internal void PauseSelected(LocalActorSelection observed) => _host.PauseSelected(this, observed);
-    internal void SetSelectedMovement(LocalActorSelection observed, long dx, long dy) =>
+    public void ResumeSelected(LocalSelectedPlayerObservation observed) => _host.ResumeSelected(this, observed);
+    public void PauseSelected(LocalActorSelection observed) => _host.PauseSelected(this, observed);
+    public void SetSelectedMovement(LocalActorSelection observed, long dx, long dy) =>
         _host.SetSelectedMovement(this, observed, dx, dy);
-    internal Task<WorldActionReceipt> SubmitSelectedAction(LocalActorSelection observed, WorldActionCommand command) =>
+    public Task<WorldActionReceipt> SubmitSelectedAction(LocalActorSelection observed, WorldActionCommand command) =>
         _host.SubmitSelectedAction(this, observed, command);
-    internal Task<LocalSelectedQueryResult<LocalTradeInquiryView>> SubmitSelectedTradeInquiryAsync(
+    public Task<LocalSelectedQueryResult<LocalTradeInquiryView>> SubmitSelectedTradeInquiryAsync(
         LocalActorSelection observed, LocalTradeInquiry inquiry) => _host.SubmitSelectedTradeInquiryAsync(this, observed, inquiry);
-    internal Task<LocalSelectedQueryResult<LocalTradeInquiryView?>> CancelSelectedTradeInquiryAsync(LocalActorSelection observed) =>
+    public Task<LocalSelectedQueryResult<LocalTradeInquiryView?>> CancelSelectedTradeInquiryAsync(LocalActorSelection observed) =>
         _host.CancelSelectedTradeInquiryAsync(this, observed);
-    internal Task<LocalSelectedQueryResult<LocalTradeInquiryView?>> ReadSelectedTradeInquiryAsync(LocalActorSelection observed) =>
+    public Task<LocalSelectedQueryResult<LocalTradeInquiryView?>> ReadSelectedTradeInquiryAsync(LocalActorSelection observed) =>
         _host.ReadSelectedTradeInquiryAsync(this, observed);
-    internal Task<LocalSelectedQueryResult<PaidQuoteView?>> InspectSelectedOpenPaidQuoteAsync(LocalActorSelection observed, EntityId subject) =>
+    public Task<LocalSelectedQueryResult<PaidQuoteView?>> InspectSelectedOpenPaidQuoteAsync(LocalActorSelection observed, EntityId subject) =>
         _host.InspectSelectedOpenPaidQuoteAsync(this, observed, subject);
-    internal Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedOpenMaterialProposalAsync(LocalActorSelection observed, EntityId subject) =>
+    public Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedOpenMaterialProposalAsync(LocalActorSelection observed, EntityId subject) =>
         _host.InspectSelectedOpenMaterialProposalAsync(this, observed, subject);
-    internal Task<LocalSelectedQueryResult<PaidQuoteView?>> InspectSelectedPaidQuoteHistoryAsync(LocalActorSelection observed, EntityId subject) =>
+    public Task<LocalSelectedQueryResult<PaidQuoteView?>> InspectSelectedPaidQuoteHistoryAsync(LocalActorSelection observed, EntityId subject) =>
         _host.InspectSelectedPaidQuoteHistoryAsync(this, observed, subject);
-    internal Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedMaterialProposalHistoryAsync(LocalActorSelection observed, EntityId subject) =>
+    public Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedMaterialProposalHistoryAsync(LocalActorSelection observed, EntityId subject) =>
         _host.InspectSelectedMaterialProposalHistoryAsync(this, observed, subject);
-    internal Task<WorldControlWitness> AcquireControlAsync(LocalControlAcquisition observed) =>
+    public Task<WorldControlWitness> AcquireControlAsync(LocalControlAcquisition observed) =>
         _host.AcquireControlAsync(this, observed);
-    internal Task ReleaseControlAsync(WorldControlWitness observed) => _host.ReleaseControlAsync(this, observed);
+    public Task ReleaseControlAsync(WorldControlWitness observed) => _host.ReleaseControlAsync(this, observed);
     internal (LocalWorldView View, PlayerControlStatus Control) ReadObservation() => _host.ReadObservation(this);
     internal void SetLegacyNetworkReady(bool ready) => _host.SetLegacyNetworkReady(this, ready);
     internal Task CompleteNetworkAdmissionAsync(CancellationToken cancellationToken, Action validateAdmission) =>

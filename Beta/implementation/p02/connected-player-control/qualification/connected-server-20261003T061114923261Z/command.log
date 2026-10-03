@@ -1,0 +1,206 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.72]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.85]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:35.06]     OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [FAIL]
+[xUnit.net 00:00:35.06]       5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/3; ready=False; control=Available; combat=Exploration; calendar=0:32434200
+[xUnit.net 00:00:35.06]       79dddd9ea31bf745606a5473ea76ed14: protocol=WaitingForActivation; selection=79dddd9ea31bf745606a5473ea76ed14/0; ready=False; control=Available; combat=; calendar=0:32434200
+[xUnit.net 00:00:35.06]       e1d57b89bcce6b6237bd754d53734e55: protocol=WaitingForActivation; selection=e1d57b89bcce6b6237bd754d53734e55/0; ready=False; control=Available; combat=; calendar=0:32434200
+[xUnit.net 00:00:35.06]       33.508s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=431 bytes=79
+[xUnit.net 00:00:35.06]       33.514s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=431 bytes=105952
+[xUnit.net 00:00:35.06]       33.521s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+[xUnit.net 00:00:35.06]       33.524s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=300
+[xUnit.net 00:00:35.06]       33.525s 5795dc4890da7573cfc5b3948d0296df receive Pong request=432 bytes=0
+[xUnit.net 00:00:35.06]       33.585s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+[xUnit.net 00:00:35.06]       33.615s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+[xUnit.net 00:00:35.06]       33.648s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105951
+[xUnit.net 00:00:35.06]       33.658s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=433 bytes=284
+[xUnit.net 00:00:35.06]       33.659s 5795dc4890da7573cfc5b3948d0296df receive Pong request=433 bytes=0
+[xUnit.net 00:00:35.06]       33.659s 5795dc4890da7573cfc5b3948d0296df send Query request=434 bytes=2
+[xUnit.net 00:00:35.06]       33.660s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=434 bytes=301
+[xUnit.net 00:00:35.06]       33.693s 79dddd9ea31bf745606a5473ea76ed14 send Query request=129 bytes=2
+[xUnit.net 00:00:35.06]       33.693s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=129 bytes=300
+[xUnit.net 00:00:35.06]       33.726s e1d57b89bcce6b6237bd754d53734e55 send Query request=127 bytes=2
+[xUnit.net 00:00:35.06]       33.729s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=127 bytes=301
+[xUnit.net 00:00:35.06]       33.791s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+[xUnit.net 00:00:35.06]       33.816s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+[xUnit.net 00:00:35.06]       33.857s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105951
+[xUnit.net 00:00:35.06]       33.879s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=284
+[xUnit.net 00:00:35.06]       33.879s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=436 bytes=276
+[xUnit.net 00:00:35.06]       33.879s 5795dc4890da7573cfc5b3948d0296df receive Pong request=435 bytes=0
+[xUnit.net 00:00:35.06]       33.879s 5795dc4890da7573cfc5b3948d0296df receive Pong request=436 bytes=0
+[xUnit.net 00:00:35.06]       33.910s 5795dc4890da7573cfc5b3948d0296df send Query request=437 bytes=2
+[xUnit.net 00:00:35.06]       33.911s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=437 bytes=301
+[xUnit.net 00:00:35.06]       33.944s 79dddd9ea31bf745606a5473ea76ed14 send Query request=130 bytes=2
+[xUnit.net 00:00:35.06]       33.944s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=130 bytes=300
+[xUnit.net 00:00:35.06]       33.975s e1d57b89bcce6b6237bd754d53734e55 send Query request=128 bytes=2
+[xUnit.net 00:00:35.06]       33.975s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=128 bytes=301
+[xUnit.net 00:00:35.06]       33.991s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+[xUnit.net 00:00:35.06]       34.025s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+[xUnit.net 00:00:35.06]       34.054s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105952
+[xUnit.net 00:00:35.06]       Stack Trace:
+[xUnit.net 00:00:35.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs(159,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return()
+[xUnit.net 00:00:35.07]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs(258,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return()
+[xUnit.net 00:00:35.07]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:35.07]       Output:
+[xUnit.net 00:00:35.07]         5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/3; ready=False; control=Available; combat=Exploration; calendar=0:32434200
+[xUnit.net 00:00:35.07]         79dddd9ea31bf745606a5473ea76ed14: protocol=WaitingForActivation; selection=79dddd9ea31bf745606a5473ea76ed14/0; ready=False; control=Available; combat=; calendar=0:32434200
+[xUnit.net 00:00:35.07]         e1d57b89bcce6b6237bd754d53734e55: protocol=WaitingForActivation; selection=e1d57b89bcce6b6237bd754d53734e55/0; ready=False; control=Available; combat=; calendar=0:32434200
+[xUnit.net 00:00:35.07]         33.508s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=431 bytes=79
+[xUnit.net 00:00:35.07]         33.514s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=431 bytes=105952
+[xUnit.net 00:00:35.07]         33.521s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+[xUnit.net 00:00:35.07]         33.524s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=300
+[xUnit.net 00:00:35.07]         33.525s 5795dc4890da7573cfc5b3948d0296df receive Pong request=432 bytes=0
+[xUnit.net 00:00:35.07]         33.585s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+[xUnit.net 00:00:35.07]         33.615s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+[xUnit.net 00:00:35.07]         33.648s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105951
+[xUnit.net 00:00:35.07]         33.658s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=433 bytes=284
+[xUnit.net 00:00:35.07]         33.659s 5795dc4890da7573cfc5b3948d0296df receive Pong request=433 bytes=0
+[xUnit.net 00:00:35.07]         33.659s 5795dc4890da7573cfc5b3948d0296df send Query request=434 bytes=2
+[xUnit.net 00:00:35.07]         33.660s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=434 bytes=301
+[xUnit.net 00:00:35.07]         33.693s 79dddd9ea31bf745606a5473ea76ed14 send Query request=129 bytes=2
+[xUnit.net 00:00:35.07]         33.693s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=129 bytes=300
+[xUnit.net 00:00:35.07]         33.726s e1d57b89bcce6b6237bd754d53734e55 send Query request=127 bytes=2
+[xUnit.net 00:00:35.07]         33.729s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=127 bytes=301
+[xUnit.net 00:00:35.07]         33.791s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+[xUnit.net 00:00:35.07]         33.816s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+[xUnit.net 00:00:35.07]         33.857s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105951
+[xUnit.net 00:00:35.07]         33.879s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=284
+[xUnit.net 00:00:35.07]         33.879s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=436 bytes=276
+[xUnit.net 00:00:35.07]         33.879s 5795dc4890da7573cfc5b3948d0296df receive Pong request=435 bytes=0
+[xUnit.net 00:00:35.07]         33.879s 5795dc4890da7573cfc5b3948d0296df receive Pong request=436 bytes=0
+[xUnit.net 00:00:35.07]         33.910s 5795dc4890da7573cfc5b3948d0296df send Query request=437 bytes=2
+[xUnit.net 00:00:35.07]         33.911s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=437 bytes=301
+[xUnit.net 00:00:35.07]         33.944s 79dddd9ea31bf745606a5473ea76ed14 send Query request=130 bytes=2
+[xUnit.net 00:00:35.07]         33.944s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=130 bytes=300
+[xUnit.net 00:00:35.07]         33.975s e1d57b89bcce6b6237bd754d53734e55 send Query request=128 bytes=2
+[xUnit.net 00:00:35.07]         33.975s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=128 bytes=301
+[xUnit.net 00:00:35.07]         33.991s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+[xUnit.net 00:00:35.07]         34.025s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+[xUnit.net 00:00:35.07]         34.054s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105952
+  Failed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [34 s]
+  Error Message:
+   5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/3; ready=False; control=Available; combat=Exploration; calendar=0:32434200
+79dddd9ea31bf745606a5473ea76ed14: protocol=WaitingForActivation; selection=79dddd9ea31bf745606a5473ea76ed14/0; ready=False; control=Available; combat=; calendar=0:32434200
+e1d57b89bcce6b6237bd754d53734e55: protocol=WaitingForActivation; selection=e1d57b89bcce6b6237bd754d53734e55/0; ready=False; control=Available; combat=; calendar=0:32434200
+33.508s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=431 bytes=79
+33.514s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=431 bytes=105952
+33.521s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+33.524s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=300
+33.525s 5795dc4890da7573cfc5b3948d0296df receive Pong request=432 bytes=0
+33.585s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+33.615s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+33.648s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105951
+33.658s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=433 bytes=284
+33.659s 5795dc4890da7573cfc5b3948d0296df receive Pong request=433 bytes=0
+33.659s 5795dc4890da7573cfc5b3948d0296df send Query request=434 bytes=2
+33.660s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=434 bytes=301
+33.693s 79dddd9ea31bf745606a5473ea76ed14 send Query request=129 bytes=2
+33.693s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=129 bytes=300
+33.726s e1d57b89bcce6b6237bd754d53734e55 send Query request=127 bytes=2
+33.729s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=127 bytes=301
+33.791s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+33.816s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+33.857s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105951
+33.879s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=284
+33.879s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=436 bytes=276
+33.879s 5795dc4890da7573cfc5b3948d0296df receive Pong request=435 bytes=0
+33.879s 5795dc4890da7573cfc5b3948d0296df receive Pong request=436 bytes=0
+33.910s 5795dc4890da7573cfc5b3948d0296df send Query request=437 bytes=2
+33.911s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=437 bytes=301
+33.944s 79dddd9ea31bf745606a5473ea76ed14 send Query request=130 bytes=2
+33.944s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=130 bytes=300
+33.975s e1d57b89bcce6b6237bd754d53734e55 send Query request=128 bytes=2
+33.975s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=128 bytes=301
+33.991s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+34.025s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+34.054s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105952
+  Stack Trace:
+     at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs:line 159
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs:line 258
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ 5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/3; ready=False; control=Available; combat=Exploration; calendar=0:32434200
+ 79dddd9ea31bf745606a5473ea76ed14: protocol=WaitingForActivation; selection=79dddd9ea31bf745606a5473ea76ed14/0; ready=False; control=Available; combat=; calendar=0:32434200
+ e1d57b89bcce6b6237bd754d53734e55: protocol=WaitingForActivation; selection=e1d57b89bcce6b6237bd754d53734e55/0; ready=False; control=Available; combat=; calendar=0:32434200
+ 33.508s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=431 bytes=79
+ 33.514s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=431 bytes=105952
+ 33.521s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+ 33.524s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=300
+ 33.525s 5795dc4890da7573cfc5b3948d0296df receive Pong request=432 bytes=0
+ 33.585s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+ 33.615s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+ 33.648s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105951
+ 33.658s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=433 bytes=284
+ 33.659s 5795dc4890da7573cfc5b3948d0296df receive Pong request=433 bytes=0
+ 33.659s 5795dc4890da7573cfc5b3948d0296df send Query request=434 bytes=2
+ 33.660s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=434 bytes=301
+ 33.693s 79dddd9ea31bf745606a5473ea76ed14 send Query request=129 bytes=2
+ 33.693s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=129 bytes=300
+ 33.726s e1d57b89bcce6b6237bd754d53734e55 send Query request=127 bytes=2
+ 33.729s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=127 bytes=301
+ 33.791s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+ 33.816s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+ 33.857s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105951
+ 33.879s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=284
+ 33.879s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=436 bytes=276
+ 33.879s 5795dc4890da7573cfc5b3948d0296df receive Pong request=435 bytes=0
+ 33.879s 5795dc4890da7573cfc5b3948d0296df receive Pong request=436 bytes=0
+ 33.910s 5795dc4890da7573cfc5b3948d0296df send Query request=437 bytes=2
+ 33.911s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=437 bytes=301
+ 33.944s 79dddd9ea31bf745606a5473ea76ed14 send Query request=130 bytes=2
+ 33.944s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=130 bytes=300
+ 33.975s e1d57b89bcce6b6237bd754d53734e55 send Query request=128 bytes=2
+ 33.975s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=128 bytes=301
+ 33.991s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97787
+ 34.025s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97779
+ 34.054s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105952
+
+
+[xUnit.net 00:00:36.77]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board [1 s]
+  Standard Output Messages:
+ 1.307s e1d57b89bcce6b6237bd754d53734e55 send Query request=4 bytes=2
+ 1.307s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=4 bytes=301
+ 1.308s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+ 1.308s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=795
+ 1.308s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=433
+ 1.311s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+ 1.311s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=5 bytes=71
+ 1.311s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=5 bytes=1235
+ 1.315s 79dddd9ea31bf745606a5473ea76ed14 send ControlRequest request=5 bytes=71
+ 1.315s 79dddd9ea31bf745606a5473ea76ed14 receive ControlResult request=5 bytes=795
+ 1.315s e1d57b89bcce6b6237bd754d53734e55 send ControlRequest request=5 bytes=71
+ 1.315s e1d57b89bcce6b6237bd754d53734e55 receive ControlResult request=5 bytes=797
+ 1.315s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=6 bytes=71
+ 1.315s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=6 bytes=1235
+ 1.315s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=7 bytes=493
+ 1.318s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=7 bytes=532
+ 1.318s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=7 bytes=71
+ 1.318s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=7 bytes=1266
+ 1.318s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=8 bytes=433
+ 1.321s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=8 bytes=531
+ 1.321s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=9 bytes=71
+ 1.321s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=9 bytes=1266
+ 1.321s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=10 bytes=417
+ 1.323s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=10 bytes=531
+ 1.323s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=8 bytes=71
+ 1.324s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=8 bytes=1131
+ 1.324s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=11 bytes=433
+ 1.324s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=11 bytes=531
+ 1.324s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=9 bytes=493
+ 1.325s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=9 bytes=532
+ 1.325s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=10 bytes=71
+ 1.325s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=10 bytes=1131
+
+
+
+Test Run Failed.
+Total tests: 2
+     Passed: 1
+     Failed: 1
+ Total time: 37.1131 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/connected-player-control/qualification/connected-server-20261003T061114923261Z/checks.trx

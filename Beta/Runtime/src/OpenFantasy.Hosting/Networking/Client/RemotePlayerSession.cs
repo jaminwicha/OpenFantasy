@@ -5,7 +5,7 @@ using OpenFantasy.Hosting.Simulation;
 namespace OpenFantasy.Hosting.Networking.Client;
 
 /// <summary>Application owner for a remote participant: cached status, bounded queries and joined connection cleanup.</summary>
-public sealed class RemotePlayerSession : IPlayerSession
+public sealed partial class RemotePlayerSession : IPlayerSession, ISelectedPlayerSession
 {
     public static readonly TimeSpan RefreshInterval = TimeSpan.FromMilliseconds(250);
     private readonly object _gate = new();

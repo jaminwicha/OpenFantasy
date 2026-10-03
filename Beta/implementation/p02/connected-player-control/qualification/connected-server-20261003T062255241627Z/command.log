@@ -1,0 +1,72 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.41]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.63]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.78]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:02.73]     OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [FAIL]
+[xUnit.net 00:00:02.73]       System.InvalidOperationException : Sequence contains no matching element
+[xUnit.net 00:00:02.73]       Stack Trace:
+[xUnit.net 00:00:02.73]            at System.Linq.ThrowHelper.ThrowNoMatchException()
+[xUnit.net 00:00:02.73]            at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+[xUnit.net 00:00:02.73]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(330,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.PrepareCohort(SqliteWorldAuthority authority)
+[xUnit.net 00:00:02.73]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(70,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach)
+[xUnit.net 00:00:02.73]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(80,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach)
+[xUnit.net 00:00:02.73]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs(85,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return()
+[xUnit.net 00:00:02.73]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [1 s]
+  Error Message:
+   System.InvalidOperationException : Sequence contains no matching element
+  Stack Trace:
+     at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source, Func`2 predicate)
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.PrepareCohort(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 330
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 70
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 80
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs:line 85
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:05.57]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board [2 s]
+  Standard Output Messages:
+ 2.394s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+ 2.397s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=5 bytes=71
+ 2.400s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=5 bytes=1235
+ 2.408s 79dddd9ea31bf745606a5473ea76ed14 send ControlRequest request=5 bytes=71
+ 2.409s 79dddd9ea31bf745606a5473ea76ed14 receive ControlResult request=5 bytes=795
+ 2.410s e1d57b89bcce6b6237bd754d53734e55 send ControlRequest request=5 bytes=71
+ 2.411s e1d57b89bcce6b6237bd754d53734e55 receive ControlResult request=5 bytes=797
+ 2.412s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=6 bytes=71
+ 2.417s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=6 bytes=1235
+ 2.418s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=7 bytes=493
+ 2.425s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97773
+ 2.425s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=97778
+ 2.434s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=7 bytes=2
+ 2.436s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=7 bytes=300
+ 2.443s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=99274
+ 2.445s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=7 bytes=532
+ 2.445s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=8 bytes=71
+ 2.453s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=8 bytes=1266
+ 2.453s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=9 bytes=433
+ 2.457s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=9 bytes=531
+ 2.457s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=10 bytes=71
+ 2.457s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=10 bytes=1266
+ 2.458s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=11 bytes=417
+ 2.465s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=11 bytes=531
+ 2.466s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=8 bytes=71
+ 2.466s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=8 bytes=1131
+ 2.466s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=12 bytes=433
+ 2.466s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=12 bytes=531
+ 2.467s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=9 bytes=493
+ 2.467s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=9 bytes=532
+ 2.467s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=10 bytes=71
+ 2.467s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=10 bytes=1131
+
+
+
+Test Run Failed.
+Total tests: 2
+     Passed: 1
+     Failed: 1
+ Total time: 5.9486 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/connected-player-control/qualification/connected-server-20261003T062255241627Z/checks.trx

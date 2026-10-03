@@ -11,6 +11,13 @@ namespace OpenFantasy.Hosting.Simulation;
 /// <summary>Only available ingredients of the admitted crafting recipes, with exact current request pins.</summary>
 public sealed class LocalControlledCraftPreparation
 {
+    internal LocalControlledCraftPreparation(IEnumerable<LocalCraftRecipeView> recipes, ulong productionRevision,
+        EntityId custodianId, ulong storageRevision, IEnumerable<LocalItemLotView> ingredients)
+    {
+        Recipes = Array.AsReadOnly(recipes.ToArray()); ProductionRevision = productionRevision;
+        CustodianId = custodianId; StorageRevision = storageRevision; Ingredients = Array.AsReadOnly(ingredients.ToArray());
+    }
+
     internal LocalControlledCraftPreparation(WorldSnapshot state, LocalWorldView view)
     {
         Recipes = Array.AsReadOnly(view.Crafting!.Recipes.ToArray());
@@ -63,6 +70,15 @@ public sealed class LocalControlledCraftPreparation
 public sealed class LocalControlledQuestPreparation
 {
     private readonly IReadOnlyDictionary<EntityId, ulong> _giverRevisions;
+    internal IReadOnlyDictionary<EntityId, ulong> CapturedGiverRevisions => _giverRevisions;
+    internal LocalControlledQuestPreparation(ulong progressionRevision, ulong inventoryRevision,
+        IEnumerable<LocalQuestView> quests, IEnumerable<LocalItemLotView> deliveryLots,
+        IReadOnlyDictionary<EntityId, ulong> giverRevisions)
+    {
+        ProgressionRevision = progressionRevision; InventoryRevision = inventoryRevision;
+        Quests = Array.AsReadOnly(quests.ToArray()); DeliveryLots = Array.AsReadOnly(deliveryLots.ToArray());
+        _giverRevisions = new ReadOnlyDictionary<EntityId, ulong>(giverRevisions.ToDictionary(pair => pair.Key, pair => pair.Value));
+    }
 
     internal LocalControlledQuestPreparation(LocalWorldView view)
     {
@@ -111,7 +127,7 @@ public sealed class LocalControlledQuestPreparation
 /// <summary>Exact work requests for the current builder's visible unfinished project and owned matching tools.</summary>
 public sealed class LocalControlledConstructionPreparation
 {
-    private LocalControlledConstructionPreparation(EntityId projectId, IEnumerable<WorkConstructionIntent> choices)
+    internal LocalControlledConstructionPreparation(EntityId projectId, IEnumerable<WorkConstructionIntent> choices)
     {
         ProjectId = projectId;
         Choices = Array.AsReadOnly(choices.ToArray());

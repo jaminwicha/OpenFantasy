@@ -43,7 +43,10 @@ public sealed class CargoPlayerHost : IAsyncDisposable
             try
             {
                 WorldSnapshot state = authority.ReadStateForHost();
-                if (CargoOutcomeWorldAdmission.Find(state, NativeCargoWorld.Sources, RoadThreatSources.LoadEmbedded()) is null)
+                var threat = state.ProfileVersion is WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion
+                    ? RoadThreatWorldAdmission.FindInProfile(state, NativeCargoWorld.Sources, RoadThreatSources.LoadEmbedded(), state.ProfileVersion)
+                    : CargoOutcomeWorldAdmission.Find(state, NativeCargoWorld.Sources, RoadThreatSources.LoadEmbedded());
+                if (threat is null)
                     throw new InvalidDataException("The dedicated cargo host requires the admitted outcome-completion cargo world.");
                 EntityId[] players = state.Residents.Where(actor => actor.ControllerKind == ResidentControllerKind.Player)
                     .Select(actor => actor.ActorId).Order().ToArray();

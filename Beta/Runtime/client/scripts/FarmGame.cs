@@ -4,6 +4,7 @@ using OpenFantasy.Client.Presentation;
 using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
+using OpenFantasy.Hosting;
 
 namespace OpenFantasy.Client;
 
@@ -130,6 +131,7 @@ public partial class FarmGame : Node2D
         AddChild(_wheel);
         _wheel.ActionRequested += Perform;
         ReadyMarket();
+        ReadyActorSelection();
         Input.Singleton.JoyConnectionChanged += OnControllerConnectionChanged;
         GetTree().AutoAcceptQuit = false;
         GetWindow().CloseRequested += BeginClose;
@@ -273,6 +275,7 @@ public partial class FarmGame : Node2D
                 _targets = new FarmTargetSelection(_session.WrenActorId);
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
                 AttachCargo(_session);
+                ObserveActorSelection(_session.ReadSelection());
                 ObserveControlReturn(ParticipantControl);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
                     ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
@@ -314,6 +317,7 @@ public partial class FarmGame : Node2D
             if (_input.MarketOpen) _market.Notice(outcome);
         }
         CompleteMarketTasks();
+        CompleteControlOperations();
         if (_giftInspection is { IsCompleted: true } inspection)
         {
             _giftInspection = null;
@@ -331,9 +335,14 @@ public partial class FarmGame : Node2D
             return;
         }
         // Capture permission before its view: a later view is safe, a later control marker beside an older view is not.
-        PlayerControlStatus control = ParticipantControl;
-        LocalWorldView view = _session.World.ReadView();
+        LocalSelectedPlayerObservation? selected;
+        try { selected = _session.ReadSelection(); }
+        catch (AuthorityDispatchException error) { _hud.Message(error.Message); return; }
+        ObserveActorSelection(selected);
+        PlayerControlStatus control = selected?.ControlStatus ?? ParticipantControl;
+        LocalWorldView view = selected?.HomeView ?? _session.World.ReadView();
         ObserveControlReturn(control);
+        if (selected?.ControlledView is not null) { PresentControlled(selected); return; }
         _targets.Refresh(view);
         if (_session.IsRegional)
         {
@@ -363,7 +372,8 @@ public partial class FarmGame : Node2D
             ? new Vector2((float)cargoFraming.FollowOffset.X, (float)cargoFraming.FollowOffset.Y)
             : new Vector2(0, BreachProfile ? 96 : WatercourseProfile ? 72 : -26));
         // One coherent snapshot per frame: the HUD explains and the keys submit the same offers.
-        _presented = _session.CreateOffers(view, _targets.Selected, _gifts, _marketDraft);
+        _presented = selected is null ? _session.CreateOffers(view, _targets.Selected, _gifts, _marketDraft)
+            : _session.CreateOffers(selected, _targets.Selected, _gifts, _marketDraft);
         if (_retreatNotice.Observe(view.Retreat) is { } notice) _hud.Message(notice);
         if (_healthNotice.Observe(view.Progression?.Hp) == FarmHealthChange.Restoration)
             _hud.Message($"Health restored: +{_healthNotice.Amount} HP.");
@@ -376,7 +386,9 @@ public partial class FarmGame : Node2D
         if (_wheel.Model is { } wheel)
         {
             // The same explicit stall choice as the presented offers, so a stall slot never reads as changed.
-            wheel.Refresh(target => _session.CreateOffers(view, LocatePinnedTarget(view, target), _gifts, _marketDraft));
+            wheel.Refresh(target => selected is null
+                ? _session.CreateOffers(view, LocatePinnedTarget(view, target), _gifts, _marketDraft)
+                : _session.CreateOffers(selected, LocatePinnedTarget(view, target), _gifts, _marketDraft));
             _wheel.Present(view, _session.World.ReadRunState(), _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel), _session.IsRemote);
         }
         PresentMarket(view);
@@ -391,8 +403,10 @@ public partial class FarmGame : Node2D
         try
         {
             FarmMovementIntent movement = _input.Movement(Situation(), ReadWalkingInput());
-            _session.World.SetMovement(movement.DeltaX, movement.DeltaY);
+            SendMovement(movement.DeltaX, movement.DeltaY);
         }
+        catch (AuthorityDispatchException error) { _hud.Message(error.Message); }
+        catch (SelectedInputUnavailableException error) { _hud.Message(error.Message); }
         catch (InvalidOperationException error)
         {
             Fail("The world has stopped. " + error.GetBaseException().Message);
@@ -423,7 +437,7 @@ public partial class FarmGame : Node2D
     }
 
     /// <summary>World facts the router consults; the projection read is a lock-free snapshot.</summary>
-    private FarmInputSituation Situation() => new(
+    private FarmInputSituation Situation() => _presentedSelection is { } selected ? SelectedSituation(selected) : new(
         SessionOpen: _session is not null,
         ReadingHold: _session?.World.ReadView().HasReadingHold ?? false,
         ActionPending: _action is not null || (_session?.World.ReadView().IsResolvingConsequences ?? false))
@@ -468,6 +482,11 @@ public partial class FarmGame : Node2D
     /// <summary>Single entry for HUD, device and contextual requests; the router owns the context check.</summary>
     private void Perform(FarmSemanticAction action)
     {
+        if (_controlPanel.IsOpen)
+        {
+            if (action is FarmSemanticAction.CloseInventory or FarmSemanticAction.TogglePause) CloseControlPanel();
+            return;
+        }
         if (!_input.Permits(Situation(), action)) return;
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
         if (action is FarmSemanticAction.OpenWheel or FarmSemanticAction.CloseWheel)
@@ -556,6 +575,19 @@ public partial class FarmGame : Node2D
 
     private void TogglePause()
     {
+        if (_session?.SelectedSession is { SupportsActorSelection: true } selected && _presentedSelection is { } observed)
+        {
+            if (!_input.Focused || observed.ControlStatus.State == PlayerControlState.Pending) return;
+            try
+            {
+                if (_input.Paused) selected.ResumeSelected(observed); else selected.PauseSelected(observed.Selection);
+                _input.CaptureBoundary(Situation(), ReadWalkingInput());
+                _input.TogglePause();
+                _hud.Message(_input.Paused ? "Your input is paused." : "Selected character resumed.");
+            }
+            catch (InvalidOperationException error) { _hud.Message(error.Message); }
+            return;
+        }
         if (_input.Paused && ResumeReturnedControl()) return;
         if (!_input.TogglePause()) return;
         if (ChangeReadiness(_input.WorldShouldRun))
@@ -566,13 +598,14 @@ public partial class FarmGame : Node2D
 
     private void ChangeInventory(bool open)
     {
+        if (open && _presentedSelection?.ControlledView is not null) { OpenControlPanel(); return; }
         if (_session is null || _inventoryModel is null) return;
         _input.SetInventoryOpen(open);
         if (open)
         {
             _inventory.Open(_inventoryModel, _gifts);
             _hud.SetCovered(true);
-            try { _session.World.SetMovement(0, 0); }
+            try { SendMovement(0, 0); }
             catch (InvalidOperationException error)
             {
                 Fail("The world has stopped. " + error.GetBaseException().Message);
@@ -600,6 +633,7 @@ public partial class FarmGame : Node2D
         if (_input.SetFocused(false))
         {
             _input.CaptureBoundary(Situation(), ReadWalkingInput());
+            CloseControlPanel();
             if (_input.WheelOpen) ChangeWheel(false);
             InterruptMarketReview("Focus left the game, so the reviewed offer was set aside. Review it again to confirm.");
             ChangeReadiness(_input.WorldShouldRun);
@@ -614,6 +648,7 @@ public partial class FarmGame : Node2D
         {
             _hud.SetCovered(true);
             try { _session.CaptureWheelView(); }
+            catch (SelectedInputUnavailableException error) { _input.SetWheelOpen(false); _hud.SetCovered(false); _hud.Message(error.Message); return; }
             catch (InvalidOperationException error) { Fail(error.GetBaseException().Message); return; }
             // The wheel opens on the offers of the world as it is now, never on an earlier frame's presentation;
             // presenting the same view again then refreshes the open wheel without anything reading as changed.
@@ -630,6 +665,7 @@ public partial class FarmGame : Node2D
 
     private void OnControllerConnectionChanged(long device, bool connected)
     {
+        if (!connected) CloseControlPanel();
         if (!connected && _input.WheelOpen)
         {
             _input.CaptureBoundary(Situation(), ReadWalkingInput());
@@ -651,7 +687,18 @@ public partial class FarmGame : Node2D
 
     private bool ChangeReadiness(bool ready)
     {
-        try { _session?.World.SetReady(ready); return true; }
+        try
+        {
+            if (_session?.SelectedSession is { SupportsActorSelection: true } selected)
+            {
+                if (_presentedSelection is not { } observed) return false;
+                if (ready) selected.ResumeSelected(observed); else selected.PauseSelected(observed.Selection);
+            }
+            else _session?.World.SetReady(ready);
+            return true;
+        }
+        catch (AuthorityDispatchException error) { _hud.Message(error.Message); return false; }
+        catch (SelectedInputUnavailableException error) { _hud.Message(error.Message); return false; }
         catch (InvalidOperationException error) { Fail("The world has stopped. " + error.GetBaseException().Message); return false; }
     }
 
@@ -662,7 +709,12 @@ public partial class FarmGame : Node2D
         if (_input.InventoryOpen) ChangeInventory(false);
         if (_input.WheelOpen) ChangeWheel(false);
         if (_input.MarketOpen) CloseMarket();
-        try { _session?.World.SetReady(false); }
+        try
+        {
+            if (_session?.SelectedSession is { SupportsActorSelection: true } selected && _presentedSelection is { } observed)
+                selected.PauseSelected(observed.Selection);
+            else _session?.World.SetReady(false);
+        }
         catch (InvalidOperationException) { /* A failed host already stopped accepting input. */ }
         _hud.Message(message);
         GD.PushError(message);

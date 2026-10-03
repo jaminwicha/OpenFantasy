@@ -51,13 +51,18 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
         _controlWindow = time.GetTimestamp();
         _replica = new PlayerObservationReplica(welcome.Compatibility.WorldId, welcome.Compatibility.BranchId, welcome.ActorId);
         // Subscription is not a recovery attempt: a missing initial basis must still request a full frame.
-        lock (_gate) EnqueueLocked(id => new PlayerMessage(PlayerMessageKind.Observation, id, []));
+        lock (_gate)
+        {
+            if (SupportsActorSelection)
+                _selectionSubscribeId = EnqueueLocked(id => new PlayerMessage(PlayerMessageKind.SelectionSubscribe, id, new byte[] { 1 }));
+            else EnqueueLocked(id => new PlayerMessage(PlayerMessageKind.Observation, id, []));
+        }
         _completion = RunAsync();
     }
 
     public PlayerWelcome Welcome { get; }
     public Task Completion => _completion;
-    public LocalWorldView ReadView() => _replica.ReadView()
+    public LocalWorldView ReadView() => SupportsActorSelection ? ReadSelectedObservation().HomeView : _replica.ReadView()
         ?? throw new InvalidOperationException("The first full observation has not arrived.");
     public PlayerControlStatus ReadControlStatus() { lock (_gate) return _controlStatus; }
 
@@ -100,7 +105,8 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
             client = new PlayerProtocolClient(transport, welcome, time, timingOwner);
             await client._firstFull.Task.WaitAsync(attempt.Token).ConfigureAwait(false);
             if (welcome.Compatibility.ProfileVersion is WorldControllerAdmission.ProfileVersion
-                or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion)
+                or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion
+                or WorldControlPermissionAdmission.ProfileVersion)
                 await client._firstControl.Task.WaitAsync(attempt.Token).ConfigureAwait(false);
             CheckStartup();
             lock (client._gate) client.ThrowIfClosedLocked();
@@ -127,6 +133,7 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
 
     public void SetReady(bool ready)
     {
+        if (SupportsActorSelection) throw new InvalidOperationException("Capture an actor selection before changing readiness.");
         lock (_gate)
         {
             ThrowIfClosedLocked();
@@ -142,6 +149,7 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
     /// <summary>Only a fresh explicit choice may use an applied restored observation. Invalid status throws; nothing is retried.</summary>
     public void Resume(PlayerControlStatus observed)
     {
+        if (SupportsActorSelection) throw new InvalidOperationException("Capture the selected observation before Resume.");
         ArgumentNullException.ThrowIfNull(observed);
         lock (_gate)
         {
@@ -165,6 +173,7 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
     /// <summary>Each call is a fresh input sample; held movement is never renewed autonomously.</summary>
     public void SetMovement(int x, int y)
     {
+        if (SupportsActorSelection) throw new InvalidOperationException("Capture an actor selection before movement.");
         if (!(x == 0 && y == 0 || x == 0 && y is -32 or 32 || y == 0 && x is -32 or 32))
             throw new ArgumentOutOfRangeException(nameof(x), "Movement must be one cardinal 32-unit sample or stop.");
         lock (_gate)
@@ -192,6 +201,7 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
 
     private void RequestFullLocked()
     {
+        if (SupportsActorSelection) return; // Selected frames are complete bases; there is no delta recovery request.
         if (_fullRequested) return;
         EnqueueLocked(id => new PlayerMessage(PlayerMessageKind.Observation, id, []));
         _fullRequested = true;
@@ -247,6 +257,7 @@ public sealed partial class PlayerProtocolClient : IAsyncDisposable
         _action = null;
         _query = null;
         _ping = null;
+        CloseSelectedLocked(ended);
         _output.Writer.TryComplete();
         _lifetime.Cancel();
     }

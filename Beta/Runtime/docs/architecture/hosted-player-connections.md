@@ -21,6 +21,11 @@ serialization gate. Views publish from the same committed root and are frame-saf
 by a closed port is its last observation; the port cannot submit or inspect through a later connection
 for the same actor. The host owns authority disposal, independently of any player's lifetime.
 
+The [selected character boundary](effective-control.md#player-selection-boundary) adds an explicitly
+authorized operated actor while retaining the permanent home port. The
+[connected protocol](selected-player-protocol.md) exposes its consent, scoped observations and exact
+selection inputs without altering these permanent inventory or participant identities.
+
 Worksite and liquid views share [owned terrain occupancy](player-observation-views.md) across
 ports and publications for the exact immutable region instance. This avoids rebuilding unchanged
 cell arrays during serialized publication. Each actor still receives its own current inventory,

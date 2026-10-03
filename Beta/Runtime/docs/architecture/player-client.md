@@ -6,6 +6,11 @@ owns one authenticated participant connection, its ordered sender, reply correla
 local channels and WebSockets. It owns neither a world authority nor a simulation clock. Its cached
 `LocalWorldView` contains participant-visible state; it is not a mutable world or a prediction.
 
+The delegated-control profile explicitly negotiates the [selected character protocol](selected-player-protocol.md)
+with atomic home/controlled observations and delivered Resume proofs. Its input names an exact selected
+actor, generation and witness; the ordinary view remains home-bound. The replica and legacy control
+marker rules below describe connections using the original home observation stream.
+
 ## Connection and ownership
 
 `ConnectAsync` takes ownership of an already-protected transport, including failed admission. It

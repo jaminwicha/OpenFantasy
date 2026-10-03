@@ -1,0 +1,244 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.44]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.68]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.89]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:34.30]     OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [FAIL]
+[xUnit.net 00:00:34.30]       Entry bramble_wolf_first/3a73964f7bb97a37178adf04d21a779c: range=448; phase=Exploration; hold=False; playerCanAct=True; recovery=0; projectedCanEnter=False; owner=4073c2e750cd349c3ee91b2f7c70fb49; target=3c518986694d413370864df9385200a5; sample=(0, -32).
+[xUnit.net 00:00:34.30]       Required Bramble Wolf/3c518986694d413370864df9385200a5: side=2; feet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; preparedFeet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; reach=Reachable; observedIncapacitated=False; preparedHp=62.
+[xUnit.net 00:00:34.30]       Required Amber/4073c2e750cd349c3ee91b2f7c70fb49: side=1; feet=SubunitPosition { X = 25984, Y = 83616, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; preparedFeet=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; reach=Reachable; observedIncapacitated=False; preparedHp=60.
+[xUnit.net 00:00:34.30]       Required Birch/5795dc4890da7573cfc5b3948d0296df: side=1; feet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; preparedFeet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; reach=Reachable; observedIncapacitated=False; preparedHp=60.
+[xUnit.net 00:00:34.30]       Required Cedar/79dddd9ea31bf745606a5473ea76ed14: side=1; feet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; preparedFeet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; reach=Reachable; observedIncapacitated=False; preparedHp=60.
+[xUnit.net 00:00:34.30]       Required Dawn/e1d57b89bcce6b6237bd754d53734e55: side=1; feet=SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }; preparedFeet=SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }; reach=OutOfRange; observedIncapacitated=False; preparedHp=60.
+[xUnit.net 00:00:34.30]       Recomputed entry conditions: phase=True; unheld=True; everyRequiredParticipantCooperativeAndReachable=False.
+[xUnit.net 00:00:34.30]       Prepared bramble_wolf_first: range=448; owner=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; oneSampleCandidate=SubunitPosition { X = 25984, Y = 83680, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; journalRevision=12; steps=12.
+[xUnit.net 00:00:34.30]       Prepared required 3c518986694d413370864df9385200a5: side=2; feet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; hp=62; oneSampleReach=Reachable.
+[xUnit.net 00:00:34.30]       Prepared required 4073c2e750cd349c3ee91b2f7c70fb49: side=1; feet=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+[xUnit.net 00:00:34.30]       Prepared required 5795dc4890da7573cfc5b3948d0296df: side=1; feet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+[xUnit.net 00:00:34.30]       Prepared required 79dddd9ea31bf745606a5473ea76ed14: side=1; feet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+[xUnit.net 00:00:34.30]       Prepared required e1d57b89bcce6b6237bd754d53734e55: side=1; feet=SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }; hp=60; oneSampleReach=OutOfRange.
+[xUnit.net 00:00:34.30]       5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/3; ready=False; control=Available; combat=Exploration; calendar=0:32436000
+[xUnit.net 00:00:34.30]       79dddd9ea31bf745606a5473ea76ed14: protocol=WaitingForActivation; selection=79dddd9ea31bf745606a5473ea76ed14/0; ready=False; control=Available; combat=; calendar=0:32436000
+[xUnit.net 00:00:34.30]       e1d57b89bcce6b6237bd754d53734e55: protocol=WaitingForActivation; selection=e1d57b89bcce6b6237bd754d53734e55/0; ready=False; control=Available; combat=; calendar=0:32436000
+[xUnit.net 00:00:34.30]       32.647s e1d57b89bcce6b6237bd754d53734e55 send Query request=126 bytes=2
+[xUnit.net 00:00:34.30]       32.647s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=126 bytes=301
+[xUnit.net 00:00:34.30]       32.647s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+[xUnit.net 00:00:34.30]       32.650s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=300
+[xUnit.net 00:00:34.30]       32.651s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+[xUnit.net 00:00:34.30]       32.651s 5795dc4890da7573cfc5b3948d0296df receive Pong request=432 bytes=0
+[xUnit.net 00:00:34.30]       32.791s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+[xUnit.net 00:00:34.30]       32.807s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105953
+[xUnit.net 00:00:34.30]       32.820s 5795dc4890da7573cfc5b3948d0296df send Query request=433 bytes=2
+[xUnit.net 00:00:34.30]       32.820s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=434 bytes=284
+[xUnit.net 00:00:34.30]       32.820s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=433 bytes=301
+[xUnit.net 00:00:34.30]       32.821s 5795dc4890da7573cfc5b3948d0296df receive Pong request=434 bytes=0
+[xUnit.net 00:00:34.30]       32.849s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+[xUnit.net 00:00:34.30]       32.856s 79dddd9ea31bf745606a5473ea76ed14 send Query request=129 bytes=2
+[xUnit.net 00:00:34.30]       32.859s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=129 bytes=300
+[xUnit.net 00:00:34.30]       32.899s e1d57b89bcce6b6237bd754d53734e55 send Query request=127 bytes=2
+[xUnit.net 00:00:34.30]       32.899s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=127 bytes=301
+[xUnit.net 00:00:34.30]       32.993s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+[xUnit.net 00:00:34.30]       33.015s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105953
+[xUnit.net 00:00:34.30]       33.034s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=284
+[xUnit.net 00:00:34.30]       33.034s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=436 bytes=276
+[xUnit.net 00:00:34.30]       33.034s 5795dc4890da7573cfc5b3948d0296df receive Pong request=435 bytes=0
+[xUnit.net 00:00:34.30]       33.035s 5795dc4890da7573cfc5b3948d0296df receive Pong request=436 bytes=0
+[xUnit.net 00:00:34.30]       33.057s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+[xUnit.net 00:00:34.30]       33.069s 5795dc4890da7573cfc5b3948d0296df send Query request=437 bytes=2
+[xUnit.net 00:00:34.30]       33.070s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=437 bytes=301
+[xUnit.net 00:00:34.30]       33.107s 79dddd9ea31bf745606a5473ea76ed14 send Query request=130 bytes=2
+[xUnit.net 00:00:34.30]       33.107s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=130 bytes=300
+[xUnit.net 00:00:34.30]       33.146s e1d57b89bcce6b6237bd754d53734e55 send Query request=128 bytes=2
+[xUnit.net 00:00:34.30]       33.146s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=128 bytes=301
+[xUnit.net 00:00:34.30]       33.196s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+[xUnit.net 00:00:34.30]       33.217s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105954
+[xUnit.net 00:00:34.30]       Stack Trace:
+[xUnit.net 00:00:34.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs(159,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return()
+[xUnit.net 00:00:34.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs(258,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return()
+[xUnit.net 00:00:34.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:34.30]       Output:
+[xUnit.net 00:00:34.30]         Prepared bramble_wolf_first: range=448; owner=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; oneSampleCandidate=SubunitPosition { X = 25984, Y = 83680, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; journalRevision=12; steps=12.
+[xUnit.net 00:00:34.30]         Prepared required 3c518986694d413370864df9385200a5: side=2; feet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; hp=62; oneSampleReach=Reachable.
+[xUnit.net 00:00:34.30]         Prepared required 4073c2e750cd349c3ee91b2f7c70fb49: side=1; feet=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+[xUnit.net 00:00:34.30]         Prepared required 5795dc4890da7573cfc5b3948d0296df: side=1; feet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+[xUnit.net 00:00:34.30]         Prepared required 79dddd9ea31bf745606a5473ea76ed14: side=1; feet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+[xUnit.net 00:00:34.30]         Prepared required e1d57b89bcce6b6237bd754d53734e55: side=1; feet=SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }; hp=60; oneSampleReach=OutOfRange.
+[xUnit.net 00:00:34.30]         5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/3; ready=False; control=Available; combat=Exploration; calendar=0:32436000
+[xUnit.net 00:00:34.30]         79dddd9ea31bf745606a5473ea76ed14: protocol=WaitingForActivation; selection=79dddd9ea31bf745606a5473ea76ed14/0; ready=False; control=Available; combat=; calendar=0:32436000
+[xUnit.net 00:00:34.30]         e1d57b89bcce6b6237bd754d53734e55: protocol=WaitingForActivation; selection=e1d57b89bcce6b6237bd754d53734e55/0; ready=False; control=Available; combat=; calendar=0:32436000
+[xUnit.net 00:00:34.30]         32.647s e1d57b89bcce6b6237bd754d53734e55 send Query request=126 bytes=2
+[xUnit.net 00:00:34.30]         32.647s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=126 bytes=301
+[xUnit.net 00:00:34.30]         32.647s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+[xUnit.net 00:00:34.30]         32.650s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=300
+[xUnit.net 00:00:34.30]         32.651s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+[xUnit.net 00:00:34.30]         32.651s 5795dc4890da7573cfc5b3948d0296df receive Pong request=432 bytes=0
+[xUnit.net 00:00:34.30]         32.791s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+[xUnit.net 00:00:34.30]         32.807s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105953
+[xUnit.net 00:00:34.30]         32.820s 5795dc4890da7573cfc5b3948d0296df send Query request=433 bytes=2
+[xUnit.net 00:00:34.30]         32.820s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=434 bytes=284
+[xUnit.net 00:00:34.30]         32.820s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=433 bytes=301
+[xUnit.net 00:00:34.30]         32.821s 5795dc4890da7573cfc5b3948d0296df receive Pong request=434 bytes=0
+[xUnit.net 00:00:34.30]         32.849s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+[xUnit.net 00:00:34.30]         32.856s 79dddd9ea31bf745606a5473ea76ed14 send Query request=129 bytes=2
+[xUnit.net 00:00:34.30]         32.859s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=129 bytes=300
+[xUnit.net 00:00:34.30]         32.899s e1d57b89bcce6b6237bd754d53734e55 send Query request=127 bytes=2
+[xUnit.net 00:00:34.30]         32.899s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=127 bytes=301
+[xUnit.net 00:00:34.30]         32.993s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+[xUnit.net 00:00:34.30]         33.015s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105953
+[xUnit.net 00:00:34.30]         33.034s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=284
+[xUnit.net 00:00:34.30]         33.034s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=436 bytes=276
+[xUnit.net 00:00:34.30]         33.034s 5795dc4890da7573cfc5b3948d0296df receive Pong request=435 bytes=0
+[xUnit.net 00:00:34.30]         33.035s 5795dc4890da7573cfc5b3948d0296df receive Pong request=436 bytes=0
+[xUnit.net 00:00:34.30]         33.057s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+[xUnit.net 00:00:34.30]         33.069s 5795dc4890da7573cfc5b3948d0296df send Query request=437 bytes=2
+[xUnit.net 00:00:34.30]         33.070s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=437 bytes=301
+[xUnit.net 00:00:34.30]         33.107s 79dddd9ea31bf745606a5473ea76ed14 send Query request=130 bytes=2
+[xUnit.net 00:00:34.30]         33.107s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=130 bytes=300
+[xUnit.net 00:00:34.30]         33.146s e1d57b89bcce6b6237bd754d53734e55 send Query request=128 bytes=2
+[xUnit.net 00:00:34.30]         33.146s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=128 bytes=301
+[xUnit.net 00:00:34.30]         33.196s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+[xUnit.net 00:00:34.30]         33.217s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105954
+  Failed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [33 s]
+  Error Message:
+   Entry bramble_wolf_first/3a73964f7bb97a37178adf04d21a779c: range=448; phase=Exploration; hold=False; playerCanAct=True; recovery=0; projectedCanEnter=False; owner=4073c2e750cd349c3ee91b2f7c70fb49; target=3c518986694d413370864df9385200a5; sample=(0, -32).
+Required Bramble Wolf/3c518986694d413370864df9385200a5: side=2; feet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; preparedFeet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; reach=Reachable; observedIncapacitated=False; preparedHp=62.
+Required Amber/4073c2e750cd349c3ee91b2f7c70fb49: side=1; feet=SubunitPosition { X = 25984, Y = 83616, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; preparedFeet=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; reach=Reachable; observedIncapacitated=False; preparedHp=60.
+Required Birch/5795dc4890da7573cfc5b3948d0296df: side=1; feet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; preparedFeet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; reach=Reachable; observedIncapacitated=False; preparedHp=60.
+Required Cedar/79dddd9ea31bf745606a5473ea76ed14: side=1; feet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; preparedFeet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; reach=Reachable; observedIncapacitated=False; preparedHp=60.
+Required Dawn/e1d57b89bcce6b6237bd754d53734e55: side=1; feet=SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }; preparedFeet=SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }; reach=OutOfRange; observedIncapacitated=False; preparedHp=60.
+Recomputed entry conditions: phase=True; unheld=True; everyRequiredParticipantCooperativeAndReachable=False.
+Prepared bramble_wolf_first: range=448; owner=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; oneSampleCandidate=SubunitPosition { X = 25984, Y = 83680, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; journalRevision=12; steps=12.
+Prepared required 3c518986694d413370864df9385200a5: side=2; feet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; hp=62; oneSampleReach=Reachable.
+Prepared required 4073c2e750cd349c3ee91b2f7c70fb49: side=1; feet=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+Prepared required 5795dc4890da7573cfc5b3948d0296df: side=1; feet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+Prepared required 79dddd9ea31bf745606a5473ea76ed14: side=1; feet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+Prepared required e1d57b89bcce6b6237bd754d53734e55: side=1; feet=SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }; hp=60; oneSampleReach=OutOfRange.
+5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/3; ready=False; control=Available; combat=Exploration; calendar=0:32436000
+79dddd9ea31bf745606a5473ea76ed14: protocol=WaitingForActivation; selection=79dddd9ea31bf745606a5473ea76ed14/0; ready=False; control=Available; combat=; calendar=0:32436000
+e1d57b89bcce6b6237bd754d53734e55: protocol=WaitingForActivation; selection=e1d57b89bcce6b6237bd754d53734e55/0; ready=False; control=Available; combat=; calendar=0:32436000
+32.647s e1d57b89bcce6b6237bd754d53734e55 send Query request=126 bytes=2
+32.647s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=126 bytes=301
+32.647s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+32.650s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=300
+32.651s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+32.651s 5795dc4890da7573cfc5b3948d0296df receive Pong request=432 bytes=0
+32.791s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+32.807s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105953
+32.820s 5795dc4890da7573cfc5b3948d0296df send Query request=433 bytes=2
+32.820s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=434 bytes=284
+32.820s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=433 bytes=301
+32.821s 5795dc4890da7573cfc5b3948d0296df receive Pong request=434 bytes=0
+32.849s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+32.856s 79dddd9ea31bf745606a5473ea76ed14 send Query request=129 bytes=2
+32.859s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=129 bytes=300
+32.899s e1d57b89bcce6b6237bd754d53734e55 send Query request=127 bytes=2
+32.899s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=127 bytes=301
+32.993s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+33.015s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105953
+33.034s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=284
+33.034s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=436 bytes=276
+33.034s 5795dc4890da7573cfc5b3948d0296df receive Pong request=435 bytes=0
+33.035s 5795dc4890da7573cfc5b3948d0296df receive Pong request=436 bytes=0
+33.057s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+33.069s 5795dc4890da7573cfc5b3948d0296df send Query request=437 bytes=2
+33.070s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=437 bytes=301
+33.107s 79dddd9ea31bf745606a5473ea76ed14 send Query request=130 bytes=2
+33.107s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=130 bytes=300
+33.146s e1d57b89bcce6b6237bd754d53734e55 send Query request=128 bytes=2
+33.146s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=128 bytes=301
+33.196s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+33.217s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105954
+  Stack Trace:
+     at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs:line 159
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs:line 258
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ Prepared bramble_wolf_first: range=448; owner=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; oneSampleCandidate=SubunitPosition { X = 25984, Y = 83680, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; journalRevision=12; steps=12.
+ Prepared required 3c518986694d413370864df9385200a5: side=2; feet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; hp=62; oneSampleReach=Reachable.
+ Prepared required 4073c2e750cd349c3ee91b2f7c70fb49: side=1; feet=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+ Prepared required 5795dc4890da7573cfc5b3948d0296df: side=1; feet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+ Prepared required 79dddd9ea31bf745606a5473ea76ed14: side=1; feet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+ Prepared required e1d57b89bcce6b6237bd754d53734e55: side=1; feet=SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }; hp=60; oneSampleReach=OutOfRange.
+ 5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/3; ready=False; control=Available; combat=Exploration; calendar=0:32436000
+ 79dddd9ea31bf745606a5473ea76ed14: protocol=WaitingForActivation; selection=79dddd9ea31bf745606a5473ea76ed14/0; ready=False; control=Available; combat=; calendar=0:32436000
+ e1d57b89bcce6b6237bd754d53734e55: protocol=WaitingForActivation; selection=e1d57b89bcce6b6237bd754d53734e55/0; ready=False; control=Available; combat=; calendar=0:32436000
+ 32.647s e1d57b89bcce6b6237bd754d53734e55 send Query request=126 bytes=2
+ 32.647s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=126 bytes=301
+ 32.647s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+ 32.650s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=300
+ 32.651s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+ 32.651s 5795dc4890da7573cfc5b3948d0296df receive Pong request=432 bytes=0
+ 32.791s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+ 32.807s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105953
+ 32.820s 5795dc4890da7573cfc5b3948d0296df send Query request=433 bytes=2
+ 32.820s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=434 bytes=284
+ 32.820s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=433 bytes=301
+ 32.821s 5795dc4890da7573cfc5b3948d0296df receive Pong request=434 bytes=0
+ 32.849s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+ 32.856s 79dddd9ea31bf745606a5473ea76ed14 send Query request=129 bytes=2
+ 32.859s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=129 bytes=300
+ 32.899s e1d57b89bcce6b6237bd754d53734e55 send Query request=127 bytes=2
+ 32.899s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=127 bytes=301
+ 32.993s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+ 33.015s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105953
+ 33.034s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=284
+ 33.034s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=436 bytes=276
+ 33.034s 5795dc4890da7573cfc5b3948d0296df receive Pong request=435 bytes=0
+ 33.035s 5795dc4890da7573cfc5b3948d0296df receive Pong request=436 bytes=0
+ 33.057s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97783
+ 33.069s 5795dc4890da7573cfc5b3948d0296df send Query request=437 bytes=2
+ 33.070s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=437 bytes=301
+ 33.107s 79dddd9ea31bf745606a5473ea76ed14 send Query request=130 bytes=2
+ 33.107s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=130 bytes=300
+ 33.146s e1d57b89bcce6b6237bd754d53734e55 send Query request=128 bytes=2
+ 33.146s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=128 bytes=301
+ 33.196s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97780
+ 33.217s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=105954
+
+
+[xUnit.net 00:00:36.00]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board [1 s]
+  Standard Output Messages:
+ 1.211s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=4 bytes=301
+ 1.213s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+ 1.214s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=795
+ 1.214s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=433
+ 1.221s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+ 1.221s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=5 bytes=71
+ 1.222s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=5 bytes=1235
+ 1.229s 79dddd9ea31bf745606a5473ea76ed14 send ControlRequest request=5 bytes=71
+ 1.229s 79dddd9ea31bf745606a5473ea76ed14 receive ControlResult request=5 bytes=795
+ 1.229s e1d57b89bcce6b6237bd754d53734e55 send ControlRequest request=5 bytes=71
+ 1.230s e1d57b89bcce6b6237bd754d53734e55 receive ControlResult request=5 bytes=797
+ 1.230s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=6 bytes=71
+ 1.230s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=6 bytes=1235
+ 1.231s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=7 bytes=493
+ 1.241s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=7 bytes=532
+ 1.242s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=7 bytes=71
+ 1.242s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=7 bytes=1266
+ 1.242s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=8 bytes=433
+ 1.252s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=8 bytes=531
+ 1.253s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=9 bytes=71
+ 1.253s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=97775
+ 1.253s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=9 bytes=1266
+ 1.254s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=10 bytes=417
+ 1.267s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=10 bytes=531
+ 1.267s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=8 bytes=71
+ 1.268s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=8 bytes=1131
+ 1.268s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=11 bytes=433
+ 1.274s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=11 bytes=531
+ 1.277s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=9 bytes=493
+ 1.277s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=9 bytes=532
+ 1.277s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=10 bytes=71
+ 1.277s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=10 bytes=1131
+
+
+
+Test Run Failed.
+Total tests: 2
+     Passed: 1
+     Failed: 1
+ Total time: 36.4853 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/connected-player-control/qualification/connected-server-20261003T061557378907Z/checks.trx

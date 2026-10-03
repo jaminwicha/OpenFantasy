@@ -1,0 +1,84 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.36]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.56]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.71]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:02.27]     OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [FAIL]
+[xUnit.net 00:00:02.27]       System.InvalidOperationException : No admitted cohort destination for e1d57b89bcce6b6237bd754d53734e55
+[xUnit.net 00:00:02.27]       goal=SubunitPosition { X = 25984, Y = 83328, Z = 256, Cell = CellCoordinate { X = 101, Y = 325, Z = 1 } }; occupancy=Clear; route=ExpansionLimit
+[xUnit.net 00:00:02.27]       goal=SubunitPosition { X = 26240, Y = 83072, Z = 256, Cell = CellCoordinate { X = 102, Y = 324, Z = 1 } }; occupancy=Clear; route=Reachable; step=1; movement=Prepared; reach=OutOfRange; step=2; movement=Prepared; reach=OutOfRange; step=3; movement=Prepared; reach=OutOfRange; step=4; movement=Prepared; reach=OutOfRange
+[xUnit.net 00:00:02.27]       goal=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; occupancy=BlockedActor; route=Blocked
+[xUnit.net 00:00:02.27]       goal=SubunitPosition { X = 26496, Y = 83328, Z = 256, Cell = CellCoordinate { X = 103, Y = 325, Z = 1 } }; occupancy=Clear; route=Reachable; step=1; movement=Prepared; reach=OutOfRange; step=2; movement=Prepared; reach=OutOfRange; step=3; movement=Prepared; reach=OutOfRange; step=4; movement=Prepared; reach=OutOfRange
+[xUnit.net 00:00:02.27]       goal=SubunitPosition { X = 25984, Y = 83072, Z = 256, Cell = CellCoordinate { X = 101, Y = 324, Z = 1 } }; occupancy=BlockedActor; route=Blocked
+[xUnit.net 00:00:02.27]       goal=SubunitPosition { X = 25984, Y = 83584, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; occupancy=BlockedActor; route=Blocked
+[xUnit.net 00:00:02.27]       goal=SubunitPosition { X = 26496, Y = 83072, Z = 256, Cell = CellCoordinate { X = 103, Y = 324, Z = 1 } }; occupancy=Clear; route=Reachable; step=1; movement=Prepared; reach=OutOfRange; step=2; movement=Prepared; reach=OutOfRange; step=3; movement=Prepared; reach=OutOfRange; step=4; movement=Prepared; reach=OutOfRange
+[xUnit.net 00:00:02.27]       goal=SubunitPosition { X = 26496, Y = 83584, Z = 256, Cell = CellCoordinate { X = 103, Y = 326, Z = 1 } }; occupancy=Clear; route=Reachable; step=1; movement=Prepared; reach=OutOfRange; step=2; movement=Prepared; reach=OutOfRange; step=3; movement=Prepared; reach=OutOfRange; step=4; movement=Prepared; reach=OutOfRange
+[xUnit.net 00:00:02.27]       Stack Trace:
+[xUnit.net 00:00:02.27]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(331,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.PrepareCohort(SqliteWorldAuthority authority)
+[xUnit.net 00:00:02.27]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(70,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach)
+[xUnit.net 00:00:02.27]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(80,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach)
+[xUnit.net 00:00:02.27]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs(85,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return()
+[xUnit.net 00:00:02.27]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [1 s]
+  Error Message:
+   System.InvalidOperationException : No admitted cohort destination for e1d57b89bcce6b6237bd754d53734e55
+goal=SubunitPosition { X = 25984, Y = 83328, Z = 256, Cell = CellCoordinate { X = 101, Y = 325, Z = 1 } }; occupancy=Clear; route=ExpansionLimit
+goal=SubunitPosition { X = 26240, Y = 83072, Z = 256, Cell = CellCoordinate { X = 102, Y = 324, Z = 1 } }; occupancy=Clear; route=Reachable; step=1; movement=Prepared; reach=OutOfRange; step=2; movement=Prepared; reach=OutOfRange; step=3; movement=Prepared; reach=OutOfRange; step=4; movement=Prepared; reach=OutOfRange
+goal=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; occupancy=BlockedActor; route=Blocked
+goal=SubunitPosition { X = 26496, Y = 83328, Z = 256, Cell = CellCoordinate { X = 103, Y = 325, Z = 1 } }; occupancy=Clear; route=Reachable; step=1; movement=Prepared; reach=OutOfRange; step=2; movement=Prepared; reach=OutOfRange; step=3; movement=Prepared; reach=OutOfRange; step=4; movement=Prepared; reach=OutOfRange
+goal=SubunitPosition { X = 25984, Y = 83072, Z = 256, Cell = CellCoordinate { X = 101, Y = 324, Z = 1 } }; occupancy=BlockedActor; route=Blocked
+goal=SubunitPosition { X = 25984, Y = 83584, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; occupancy=BlockedActor; route=Blocked
+goal=SubunitPosition { X = 26496, Y = 83072, Z = 256, Cell = CellCoordinate { X = 103, Y = 324, Z = 1 } }; occupancy=Clear; route=Reachable; step=1; movement=Prepared; reach=OutOfRange; step=2; movement=Prepared; reach=OutOfRange; step=3; movement=Prepared; reach=OutOfRange; step=4; movement=Prepared; reach=OutOfRange
+goal=SubunitPosition { X = 26496, Y = 83584, Z = 256, Cell = CellCoordinate { X = 103, Y = 326, Z = 1 } }; occupancy=Clear; route=Reachable; step=1; movement=Prepared; reach=OutOfRange; step=2; movement=Prepared; reach=OutOfRange; step=3; movement=Prepared; reach=OutOfRange; step=4; movement=Prepared; reach=OutOfRange
+  Stack Trace:
+     at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.PrepareCohort(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 331
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 70
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Open(Boolean prepareCombatApproach) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 80
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlTests.cs:line 85
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:04.63]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board [2 s]
+  Standard Output Messages:
+ 1.892s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+ 1.904s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=795
+ 1.910s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=433
+ 1.928s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+ 1.930s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=5 bytes=71
+ 1.933s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=5 bytes=1235
+ 1.938s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=97776
+ 1.939s 79dddd9ea31bf745606a5473ea76ed14 send ControlRequest request=5 bytes=71
+ 1.951s 79dddd9ea31bf745606a5473ea76ed14 receive ControlResult request=5 bytes=795
+ 1.951s e1d57b89bcce6b6237bd754d53734e55 send ControlRequest request=5 bytes=71
+ 1.952s e1d57b89bcce6b6237bd754d53734e55 receive ControlResult request=5 bytes=797
+ 1.952s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=6 bytes=71
+ 1.952s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=6 bytes=1235
+ 1.952s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=7 bytes=493
+ 1.956s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=7 bytes=532
+ 1.956s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=7 bytes=71
+ 1.957s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=7 bytes=1266
+ 1.957s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=8 bytes=433
+ 1.966s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=8 bytes=531
+ 1.966s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=9 bytes=71
+ 1.966s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=9 bytes=1266
+ 1.967s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=10 bytes=417
+ 1.969s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=10 bytes=531
+ 1.969s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=8 bytes=71
+ 1.970s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=8 bytes=1131
+ 1.970s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=11 bytes=433
+ 1.970s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=11 bytes=531
+ 1.970s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=9 bytes=493
+ 1.971s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=9 bytes=532
+ 1.971s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=10 bytes=71
+ 1.971s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=10 bytes=1131
+ 1.975s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=97775
+
+
+
+Test Run Failed.
+Total tests: 2
+     Passed: 1
+     Failed: 1
+ Total time: 4.9681 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/connected-player-control/qualification/connected-server-20261003T062629841180Z/checks.trx
