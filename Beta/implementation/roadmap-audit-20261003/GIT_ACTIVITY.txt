@@ -1,0 +1,182 @@
+Read-only Git history sample at ffa1f971. Counts/timestamps are not feature completion, person-hours or credit consumption.
+
+ffa1f971 2026-10-03T09:30:02-05:00 feat: add independently scoped participant history screen
+
+ 30 files changed, 2278 insertions(+), 14 deletions(-)
+bb18995e 2026-10-03T08:30:28-05:00 Add authenticated private history discovery and scoped application access
+
+ 34 files changed, 1394 insertions(+), 29 deletions(-)
+d3f8ebc2 2026-10-03T07:44:51-05:00 Add shared restorative choices and scoped care descriptions
+
+ 42 files changed, 2671 insertions(+), 67 deletions(-)
+0e8414a4 2026-10-03T06:47:34-05:00 Unify selected-character trading with scoped reviews and query lifetimes
+
+ 28 files changed, 1839 insertions(+), 254 deletions(-)
+02f295bf 2026-10-03T05:49:44-05:00 Qualify human construction and independently public installed geometry
+
+ 49 files changed, 2155 insertions(+), 56 deletions(-)
+7cab55df 2026-10-03T04:59:26-05:00 Add explicit recipe library and scoped public material descriptions
+
+ 45 files changed, 2289 insertions(+), 33 deletions(-)
+8c68ee04 2026-10-03T04:04:52-05:00 Connect scoped field production and retain native qualification evidence
+
+ 26 files changed, 2030 insertions(+), 104 deletions(-)
+3467ee2d 2026-10-03T03:05:54-05:00 Bind selected character gifts to the shared inventory UI
+
+ 28 files changed, 1710 insertions(+), 108 deletions(-)
+8741766b 2026-10-03T02:22:38-05:00 Qualify native selected-character control and consent UI
+
+ 11 files changed, 1100 insertions(+), 70 deletions(-)
+bb3812ff 2026-10-03T01:46:35-05:00 Connect scoped co-player control over TLS and native adapter
+
+ 64 files changed, 4772 insertions(+), 63 deletions(-)
+f71e1b78 2026-10-03T00:19:22-05:00 Bind selected participant queries to scoped control and history
+
+ 19 files changed, 1318 insertions(+), 69 deletions(-)
+2a885656 2026-10-02T23:12:23-05:00 Bind local actor selection to scoped control and observations
+
+ 16 files changed, 1351 insertions(+), 51 deletions(-)
+885e3b07 2026-10-02T22:25:26-05:00 Record bounded runtime scheduling diagnostics and preserve latency gate
+
+ 1 file changed, 219 insertions(+)
+7ab81d44 2026-10-02T22:01:31-05:00 Capture failed movement lease and measure observation codec costs
+
+ 1 file changed, 135 insertions(+)
+b2bc3196 2026-10-02T21:41:32-05:00 Bind live authenticated ports to delegated control custody
+
+ 13 files changed, 748 insertions(+), 7 deletions(-)
+0132b308 2026-10-02T21:10:35-05:00 Reuse immutable excavation reservations with unchanged replay validation
+
+ 3 files changed, 65 insertions(+), 17 deletions(-)
+53cd1085 2026-10-02T20:54:47-05:00 Preserve host timing and reservation allocation baseline (WIP red test)
+
+ 1 file changed, 149 insertions(+)
+d76f4681 2026-10-02T20:08:09-05:00 Implement witnessed co-player command authority and managed journeys
+
+ 108 files changed, 2697 insertions(+), 222 deletions(-)
+fca8961e 2026-10-02T19:03:52-05:00 Persist explicit co-player consent without transferring actor control
+
+ 51 files changed, 1594 insertions(+), 83 deletions(-)
+e7416062 2026-10-02T17:50:40-05:00 Persist measured controller allowance across explicit host recovery
+
+ 31 files changed, 1952 insertions(+), 16 deletions(-)
+2950c00c 2026-10-02T17:05:16-05:00 Bind restored player control to observed state and deliberate Resume
+
+ 41 files changed, 1529 insertions(+), 35 deletions(-)
+68fa9fc5 2026-10-02T16:23:15-05:00 Qualify care durability and archived decisions; repair adaptive HUD layout
+
+ 14 files changed, 1084 insertions(+), 24 deletions(-)
+5f770bc2 2026-10-02T15:36:10-05:00 Qualify native care decisions and archived world continuation
+
+ 20 files changed, 1342 insertions(+), 2 deletions(-)
+66977a07 2026-10-02T14:56:37-05:00 Reuse one fully verified replay for archived quote inspection
+
+ 9 files changed, 484 insertions(+), 15 deletions(-)
+7f9ffb43 2026-10-02T14:36:31-05:00 Reuse immutable terrain projections to reduce multiplayer input latency
+
+ 7 files changed, 217 insertions(+), 2 deletions(-)
+272140ea 2026-10-02T14:15:17-05:00 Add explicit care request cancellation and helper decline
+
+ 79 files changed, 2211 insertions(+), 142 deletions(-)
+6358c9b7 2026-10-02T13:23:41-05:00 Reduce occupancy validation allocations and add bounded host timing
+
+ 17 files changed, 676 insertions(+), 12 deletions(-)
+d9e6ec57 2026-10-02T12:45:09-05:00 Add explicit general recovery and join remote query completion
+
+ 60 files changed, 1675 insertions(+), 183 deletions(-)
+64ddda3e 2026-10-02T11:32:03-05:00 Add lawful autonomous aftermath care and outcome acceptance
+
+ 16 files changed, 1008 insertions(+), 14 deletions(-)
+b8c1854e 2026-10-02T10:44:54-05:00 Add conservative encounter choices for disconnected characters
+
+ 7 files changed, 564 insertions(+), 5 deletions(-)
+c4f3838d 2026-10-02T10:15:26-05:00 Bind live disconnect events and safe controller restoration
+
+ 24 files changed, 1474 insertions(+), 90 deletions(-)
+7aef4971 2026-10-02T09:26:22-05:00 Journal controller lifecycle through the deterministic world authority
+
+ 43 files changed, 1310 insertions(+), 67 deletions(-)
+5e4a0e47 2026-10-02T08:36:30-05:00 Prove four native players through combat reconnect and recovery
+
+ 8 files changed, 1007 insertions(+)
+25a28d82 2026-10-02T08:03:14-05:00 Admit finite player rosters into cooperative cargo worlds
+
+ 25 files changed, 1184 insertions(+), 19 deletions(-)
+4a9a2ad2 2026-10-02T06:53:08-05:00 Bind native player sessions to authenticated shared hosts
+
+ 35 files changed, 1332 insertions(+), 64 deletions(-)
+ed0e590b 2026-10-02T05:56:44-05:00 Add bounded authenticated player client with exact pending replies and replica recovery
+
+ 16 files changed, 1059 insertions(+)
+f2ec8674 2026-10-02T05:33:04-05:00 Host authenticated players over TLS with private invitations and joined shutdown
+
+ 45 files changed, 2177 insertions(+), 19 deletions(-)
+6a0d36fb 2026-10-02T04:41:34-05:00 Route authenticated trade and participant history queries
+
+ 20 files changed, 1150 insertions(+), 14 deletions(-)
+df2b1d7d 2026-10-02T04:13:51-05:00 Publish bounded player observations and recover complete views
+
+ 47 files changed, 3024 insertions(+), 21 deletions(-)
+cc073fdf 2026-10-02T03:17:45-05:00 Route authenticated player inputs and durable receipts
+
+ 8 files changed, 693 insertions(+), 5 deletions(-)
+3a94ee3d 2026-10-02T02:58:16-05:00 Bind player handshakes to authenticated shared host ports
+
+ 14 files changed, 841 insertions(+), 11 deletions(-)
+6f3a8912 2026-10-02T02:39:02-05:00 Add bounded local and WebSocket player message transports
+
+ 11 files changed, 588 insertions(+)
+6e8baec6 2026-10-02T02:10:52-05:00 Add shared player sessions with durable care scheduling
+
+ 18 files changed, 1253 insertions(+), 166 deletions(-)
+a189f8c3 2026-10-01T23:56:25-05:00 feat: prove native accepted care and correct restoration feedback
+
+ 13 files changed, 612 insertions(+), 8 deletions(-)
+698778d7 2026-10-01T22:42:08-05:00 Complete encounter outcomes with explicit readings and care choices
+
+ 76 files changed, 6213 insertions(+), 103 deletions(-)
+cdeb9190 2026-10-01T17:12:28-05:00 feat: integrate observed road threats with lawful retreat
+
+ 43 files changed, 3825 insertions(+), 68 deletions(-)
+223160ea 2026-10-01T12:49:10-05:00 feat: add lawful encounter retreat with durable native validation
+
+ 89 files changed, 5760 insertions(+), 87 deletions(-)
+2cf2c3c2 2026-10-01T07:39:54-05:00 feat: present and validate the native two-market cargo journey
+
+ 81 files changed, 4683 insertions(+), 80 deletions(-)
+f3c7f77e 2026-10-01T06:32:09-05:00 perf: cache immutable terrain encodings without changing canonical bytes
+
+ 3 files changed, 82 insertions(+)
+e6a3230e 2026-10-01T05:02:12-05:00 feat: compose and validate the retained two-market cargo world
+
+ 28 files changed, 3401 insertions(+), 5 deletions(-)
+bf0e5a39 2026-10-01T03:05:11-05:00 fix: refine trading controls and prove native refusal recovery
+
+ 24 files changed, 1714 insertions(+), 388 deletions(-)
+ff120fbd 2026-10-01T02:05:12-05:00 feat: bind native trading to real stock and explicit confirmation
+
+ 52 files changed, 3519 insertions(+), 26 deletions(-)
+214da29b 2026-10-01T00:42:08-05:00 feat: schedule local trading alongside gifts and ordinary work
+
+ 37 files changed, 3156 insertions(+), 71 deletions(-)
+257f4600 2026-09-30T22:44:29-05:00 feat: bind local markets to owned stock and disclosed goods
+
+ 52 files changed, 4188 insertions(+), 58 deletions(-)
+cf555653 2026-09-30T20:40:42-05:00 Qualify hosted trade competition and real stock constraints
+
+ 4 files changed, 718 insertions(+), 1 deletion(-)
+9c192bd9 2026-09-30T20:12:11-05:00 Prove paid settlement rolls back at placed-liquid world validation
+
+ 2 files changed, 106 insertions(+)
+d10b28f0 2026-09-30T19:57:05-05:00 Prove paid trade availability and conflicting actions through real hosted journeys
+
+ 2 files changed, 544 insertions(+)
+ebd23540 2026-09-30T19:28:19-05:00 Bind atomic paid exchanges to durable world history and quote lifecycle
+
+ 50 files changed, 3566 insertions(+), 69 deletions(-)
+9867ecb4 2026-09-29T23:30:56-05:00 Add atomic spot exchange with continued material provenance
+
+ 30 files changed, 2468 insertions(+), 18 deletions(-)
+a658a591 2026-09-29T22:28:53-05:00 Continue retained worlds through native gifts and reuse resource encodings
+
+ 20 files changed, 2116 insertions(+), 24 deletions(-)

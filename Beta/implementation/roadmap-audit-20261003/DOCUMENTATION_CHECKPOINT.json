@@ -1,0 +1,14 @@
+{
+  "ref": "codex/checkpoint-before-documentation-hooks-20261003T1522",
+  "commit": "8134c788676f03c0c9f97cc58ef2b2f42ed8b774",
+  "parent": "ffa1f971ee2e5541ea7608b6d1da78b8b0598d4d",
+  "scope": [
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/DelegatedRecovery",
+    "Beta/implementation/p02/delegated-control-recovery",
+    "Beta/implementation/roadmap-audit-20261003",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/DOCUMENTATION_MAINTENANCE.md"
+  ],
+  "verification": "WIP; current recovery finalization, roadmap synthesis and documentation hooks not accepted; unrelated predecessor index excluded."
+}

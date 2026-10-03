@@ -172,6 +172,16 @@ See [coverage](ui-management/COVERAGE.json) for baseline requirement links and e
 
 ## 10. Current implementation boundary
 
-As reviewed on 2026-09-10, the client has prototype-specific FarmInputMap bindings and a fixed FarmHud action strip. Controller B performs ration crafting and Escape directly toggles local pause; those bindings require context-aware routing before adding menus. The gather preview selects a nearby nonempty node, and talk targets the admitted Wren fixture. There are no general inventory/stat/skill/journal/map screens, wheel or in-game rebinding screen yet. LocalWorldView is deliberately sight-complete for the farm and is not a production discovery/atlas feed.
+Reviewed 2026-10-03 against the [runtime controls](../Runtime/README.md) and
+[shared History checkpoint](p02/shared-history/RESULT.md). The client has a contextual action wheel,
+Pack, admitted Recipes, market/trade, restorative Care, character selection/permissions and independent
+History screens. Home and permitted operated-character routes share those surfaces with explicit
+review/confirmation and stale-response/input guards. Their exact native/managed acceptance is bounded
+by the linked result packets; old September10 statements that no inventory or wheel exists are obsolete.
 
-This supplement changes documentation and reusable workflow guidance only. It neither replaces the current controls nor pauses the running game. Native implementation and user acceptance remain future work at the phases above.
+The ordinary launcher still opens the construction farm. Advanced hosted admissions and fixtures expose
+broader behavior; this is not one complete default campaign or finished general UI. Full stats/equipment/
+skills/journal/map/calendar navigation, remapping, customizable libraries, earned expert views and
+human/device/accessibility acceptance remain open as mapped above. Existing observations do not become
+a production discovery/atlas feed merely because they render a region. Update this boundary when the
+actual implementation changes, using the [documentation review hook](DOCUMENTATION_MAINTENANCE.md).

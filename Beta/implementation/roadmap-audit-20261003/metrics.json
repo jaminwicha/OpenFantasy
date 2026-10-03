@@ -1,0 +1,172 @@
+{
+  "snapshot": "ffa1f971ee2e5541ea7608b6d1da78b8b0598d4d",
+  "measured_utc": "2026-10-03T15:06:38.105835+00:00",
+  "scope": "Committed Git tree only; uncommitted delegated recovery and audit files excluded. File sizes are logical uncompressed blob lengths, not compressed Git disk usage, model usage or productivity. Counts are not feature completion.",
+  "commands": [
+    "git ls-tree -rl ffa1f971ee2e5541ea7608b6d1da78b8b0598d4d -- Beta/Runtime Beta/implementation",
+    "git log ffa1f971ee2e5541ea7608b6d1da78b8b0598d4d --date=iso-strict --format=%h\\t%aI\\t%cI\\t%s -- Beta",
+    "git diff --stat 8741766b d3f8ebc2 -- Beta/Runtime/src/OpenFantasy.Core Beta/Runtime/tests/OpenFantasy.Core.Tests Beta/Runtime/Directory.Build.props Beta/Runtime/global.json",
+    "Read the six named FINAL_CHECKS.json report objects; select qualification/core-* and sum seconds."
+  ],
+  "groups": {
+    "runtime_source": {
+      "files": 1122,
+      "bytes": 4803100
+    },
+    "runtime_client": {
+      "files": 322,
+      "bytes": 1626059
+    },
+    "runtime_tests": {
+      "files": 836,
+      "bytes": 10426470
+    },
+    "runtime_tools": {
+      "files": 60,
+      "bytes": 821284
+    },
+    "runtime_architecture": {
+      "files": 83,
+      "bytes": 1015880
+    },
+    "implementation_all": {
+      "files": 53449,
+      "bytes": 5916856842
+    },
+    "implementation_qualification": {
+      "files": 51201,
+      "bytes": 5844481719
+    }
+  },
+  "implementation_unique_blobs": {
+    "count": 31457,
+    "bytes": 4840166758,
+    "repeated_blob_references": 21992
+  },
+  "packet_directories": {
+    "p01": 34,
+    "p02": 132
+  },
+  "packet_scripts_named_verify_finalize_check": 67,
+  "docs": {
+    "Beta/implementation/AGENT_HANDOFF.md": {
+      "lines": 428,
+      "words": 3998,
+      "bytes": 36549
+    },
+    "Beta/implementation/GIT_MILESTONES.md": {
+      "lines": 483,
+      "words": 11775,
+      "bytes": 107318
+    },
+    "Beta/Runtime/README.md": {
+      "lines": 909,
+      "words": 10466,
+      "bytes": 83741
+    }
+  },
+  "commit_windows": {
+    "implementation_start": {
+      "start_utc_inclusive": "2026-09-08T00:00:00+00:00",
+      "end_utc_inclusive": "2026-10-03T14:30:02+00:00",
+      "beta_path_commits": 274,
+      "first_commit": "4b339610",
+      "last_commit": "ffa1f971"
+    },
+    "recent_window": {
+      "start_utc_inclusive": "2026-09-27T00:00:00+00:00",
+      "end_utc_inclusive": "2026-10-03T14:30:02+00:00",
+      "beta_path_commits": 103,
+      "first_commit": "049408ed",
+      "last_commit": "ffa1f971"
+    },
+    "oct3_utc": {
+      "start_utc_inclusive": "2026-10-03T00:00:00+00:00",
+      "end_utc_inclusive": "2026-10-03T14:30:02+00:00",
+      "beta_path_commits": 20,
+      "first_commit": "fca8961e",
+      "last_commit": "ffa1f971"
+    }
+  },
+  "supported_snapshot_codec_versions": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    30,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "core_repeat_sample": [
+    {
+      "packet": "selected-material-gifts",
+      "report": "qualification/core-20261003T075823280071Z/report.json",
+      "seconds": 217.47181474999525,
+      "passed": 1885
+    },
+    {
+      "packet": "selected-production",
+      "report": "qualification/core-20261003T085910374842Z/report.json",
+      "seconds": 89.84272937499918,
+      "passed": 1885
+    },
+    {
+      "packet": "recipe-library",
+      "report": "qualification/core-20261003T094956078044Z/report.json",
+      "seconds": 93.02061387500726,
+      "passed": 1885
+    },
+    {
+      "packet": "human-construction",
+      "report": "qualification/core-20261003T104445784294Z/report.json",
+      "seconds": 100.60294000001159,
+      "passed": 1885
+    },
+    {
+      "packet": "selected-trading",
+      "report": "qualification/core-20261003T113632316153Z/report.json",
+      "seconds": 91.99671150001814,
+      "passed": 1885
+    },
+    {
+      "packet": "restorative-choices",
+      "report": "qualification/core-20261003T122820938760Z/report.json",
+      "seconds": 91.1796468749817,
+      "passed": 1885
+    }
+  ],
+  "core_repeat_sample_total_seconds": 684.1144563750131,
+  "core_repeat_sample_total_executions": 11310,
+  "core_source_test_build_contract_diff_empty": true
+}

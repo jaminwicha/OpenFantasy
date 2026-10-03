@@ -1,0 +1,44 @@
+{
+  "status": "completed_reviewed_with_corrections",
+  "requestedModel": "fable[1m]",
+  "requestedEffort": "max",
+  "modelUsage": {
+    "claude-fable-5-1": {
+      "inputTokens": 194,
+      "outputTokens": 29217,
+      "cacheReadInputTokens": 678542,
+      "cacheCreationInputTokens": 208336,
+      "webSearchRequests": 0,
+      "costUSD": 5.799145500000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 64000,
+      "thinkingTokens": 16028,
+      "canonicalModel": "claude-fable-5-1",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "contextStatus": "verified",
+  "processExitCode": 0,
+  "providerError": false,
+  "elapsedSeconds": 456.468,
+  "providerDurationMs": 454479,
+  "turns": 61,
+  "permissionDenials": [],
+  "responseWords": 2147,
+  "timeLimitSeconds": 900,
+  "clientListPriceBudgetUsd": 8,
+  "reportedListPriceUsd": 5.799145500000001,
+  "billingClaim": "List estimate only; not subscription consumption or demonstrated savings.",
+  "rawLocalDirectory": "/private/tmp/openfantasy-roadmap-fable-20261003T1514",
+  "files": {
+    "response.json": "9940fcda5079a3c67c49d61227653bf34144d5c2cf94849049b10836a1b48b4d",
+    "summary.json": "1360472521ee787ca15c069b9bc72201b1ca807db53c4586b1c1492d3026b78c",
+    "context-preflight.json": "f45a9db718cd627f8ad571847775e61d0405d30b5ecec6d4f4efe721bf613692",
+    "context-postflight.json": "2065c693a0b3ceb9f32213bc03a025433f0ec2b338745b5fe443950d40301fe6",
+    "request.json": "46b08dde071c625c5499c795780855a62accb6e7a2fa945066508d8c79bafb99"
+  },
+  "providerRequests": 1,
+  "automaticRetries": 0,
+  "modelSubstitutions": 0
+}

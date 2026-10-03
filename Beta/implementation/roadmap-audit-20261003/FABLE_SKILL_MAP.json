@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "description": "Narrow read-only roadmap critique knowledge alignment.",
+  "allowed_target_roots": [
+    "/Users/alucinor/.agents/skills",
+    "/Users/alucinor/.codex/skills",
+    "/Users/alucinor/.claude/skills"
+  ],
+  "entries": [
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/SKILL.md",
+      "target": "/Users/alucinor/.codex/skills/cross-agent-delegation/SKILL.md",
+      "sha256": "db8b5ca485b67a91aad6d7bdff274770ecfd6a119f4161921b7d2bbb8d4964f5",
+      "expected_target_sha256": "8d53d760e9f5293b431d34cec9d2cce048194e0accce4ae809101beb50601e68"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/SKILL.md",
+      "target": "/Users/alucinor/.agents/skills/cross-agent-delegation/SKILL.md",
+      "sha256": "db8b5ca485b67a91aad6d7bdff274770ecfd6a119f4161921b7d2bbb8d4964f5",
+      "expected_target_sha256": "8d53d760e9f5293b431d34cec9d2cce048194e0accce4ae809101beb50601e68"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/SKILL.md",
+      "target": "/Users/alucinor/.claude/skills/cross-agent-delegation/SKILL.md",
+      "sha256": "db8b5ca485b67a91aad6d7bdff274770ecfd6a119f4161921b7d2bbb8d4964f5",
+      "expected_target_sha256": "8d53d760e9f5293b431d34cec9d2cce048194e0accce4ae809101beb50601e68"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/claude-code.md",
+      "target": "/Users/alucinor/.codex/skills/cross-agent-delegation/references/claude-code.md",
+      "sha256": "b37a33f450bd69b69ff489a286a7a83a7352f35a8b7a7a8d72bcf22099782676",
+      "expected_target_sha256": "79802be73bb401f1a3b393c2cac4ce2f969fa50fe5853be322014957f2556898"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/claude-code.md",
+      "target": "/Users/alucinor/.agents/skills/cross-agent-delegation/references/claude-code.md",
+      "sha256": "b37a33f450bd69b69ff489a286a7a83a7352f35a8b7a7a8d72bcf22099782676",
+      "expected_target_sha256": "79802be73bb401f1a3b393c2cac4ce2f969fa50fe5853be322014957f2556898"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/claude-code.md",
+      "target": "/Users/alucinor/.claude/skills/cross-agent-delegation/references/claude-code.md",
+      "sha256": "b37a33f450bd69b69ff489a286a7a83a7352f35a8b7a7a8d72bcf22099782676",
+      "expected_target_sha256": "79802be73bb401f1a3b393c2cac4ce2f969fa50fe5853be322014957f2556898"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/task-packet.md",
+      "target": "/Users/alucinor/.codex/skills/cross-agent-delegation/references/task-packet.md",
+      "sha256": "2eba48c263323489a49c9a0b7c56bdbe0c30cd7ce70d01d6c985ad029a90c5af",
+      "expected_target_sha256": "d498d0f0d3a1ad9273ae608f0511978e597d3cdd3094155dd471e2a74588f3ab"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/task-packet.md",
+      "target": "/Users/alucinor/.agents/skills/cross-agent-delegation/references/task-packet.md",
+      "sha256": "2eba48c263323489a49c9a0b7c56bdbe0c30cd7ce70d01d6c985ad029a90c5af",
+      "expected_target_sha256": "d498d0f0d3a1ad9273ae608f0511978e597d3cdd3094155dd471e2a74588f3ab"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/task-packet.md",
+      "target": "/Users/alucinor/.claude/skills/cross-agent-delegation/references/task-packet.md",
+      "sha256": "2eba48c263323489a49c9a0b7c56bdbe0c30cd7ce70d01d6c985ad029a90c5af",
+      "expected_target_sha256": "d498d0f0d3a1ad9273ae608f0511978e597d3cdd3094155dd471e2a74588f3ab"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/economics.md",
+      "target": "/Users/alucinor/.codex/skills/cross-agent-delegation/references/economics.md",
+      "sha256": "2427073cd2614c0b799f6cfc806da46a29d95bbe44914ce92fc51212c6f37213",
+      "expected_target_sha256": "352341238935899faeaf41edcdffb7040cbcd2658a5137bd3f1d5bfb0e614cd4"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/economics.md",
+      "target": "/Users/alucinor/.agents/skills/cross-agent-delegation/references/economics.md",
+      "sha256": "2427073cd2614c0b799f6cfc806da46a29d95bbe44914ce92fc51212c6f37213",
+      "expected_target_sha256": "352341238935899faeaf41edcdffb7040cbcd2658a5137bd3f1d5bfb0e614cd4"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/references/economics.md",
+      "target": "/Users/alucinor/.claude/skills/cross-agent-delegation/references/economics.md",
+      "sha256": "2427073cd2614c0b799f6cfc806da46a29d95bbe44914ce92fc51212c6f37213",
+      "expected_target_sha256": "352341238935899faeaf41edcdffb7040cbcd2658a5137bd3f1d5bfb0e614cd4"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/tests/test_run_claude_task.py",
+      "target": "/Users/alucinor/.codex/skills/cross-agent-delegation/tests/test_run_claude_task.py",
+      "sha256": "e835c5eecbb8df23a52708272f0289d302428df5c215bf167f5c4f2b28bc105e",
+      "expected_target_sha256": "26d458a00a00644a3baa299c76345c6dfaa17f57320ce612ba1550f865ce11ce"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/tests/test_run_claude_task.py",
+      "target": "/Users/alucinor/.agents/skills/cross-agent-delegation/tests/test_run_claude_task.py",
+      "sha256": "e835c5eecbb8df23a52708272f0289d302428df5c215bf167f5c4f2b28bc105e",
+      "expected_target_sha256": "26d458a00a00644a3baa299c76345c6dfaa17f57320ce612ba1550f865ce11ce"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/tests/test_run_claude_task.py",
+      "target": "/Users/alucinor/.claude/skills/cross-agent-delegation/tests/test_run_claude_task.py",
+      "sha256": "e835c5eecbb8df23a52708272f0289d302428df5c215bf167f5c4f2b28bc105e",
+      "expected_target_sha256": "26d458a00a00644a3baa299c76345c6dfaa17f57320ce612ba1550f865ce11ce"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/context_gate.py",
+      "target": "/Users/alucinor/.codex/skills/cross-agent-delegation/scripts/context_gate.py",
+      "sha256": "83b1e65eab5cbb970c17772ebf4357fc88fb6da12b9ab2bf8560d1939135be75",
+      "expected_target_sha256": "83b1e65eab5cbb970c17772ebf4357fc88fb6da12b9ab2bf8560d1939135be75"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/context_gate.py",
+      "target": "/Users/alucinor/.agents/skills/cross-agent-delegation/scripts/context_gate.py",
+      "sha256": "83b1e65eab5cbb970c17772ebf4357fc88fb6da12b9ab2bf8560d1939135be75",
+      "expected_target_sha256": "83b1e65eab5cbb970c17772ebf4357fc88fb6da12b9ab2bf8560d1939135be75"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/context_gate.py",
+      "target": "/Users/alucinor/.claude/skills/cross-agent-delegation/scripts/context_gate.py",
+      "sha256": "83b1e65eab5cbb970c17772ebf4357fc88fb6da12b9ab2bf8560d1939135be75",
+      "expected_target_sha256": "83b1e65eab5cbb970c17772ebf4357fc88fb6da12b9ab2bf8560d1939135be75"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/run_claude_task.py",
+      "target": "/Users/alucinor/.codex/skills/cross-agent-delegation/scripts/run_claude_task.py",
+      "sha256": "0998c4b1fcf234b6eeff2bd5b055028f975bbd32e371df3d82f5fb0703009486",
+      "expected_target_sha256": "42b5d2e27d21bd26fbb4a81852572f622f88988d866a725b10d6562ad3e5ba90"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/run_claude_task.py",
+      "target": "/Users/alucinor/.agents/skills/cross-agent-delegation/scripts/run_claude_task.py",
+      "sha256": "0998c4b1fcf234b6eeff2bd5b055028f975bbd32e371df3d82f5fb0703009486",
+      "expected_target_sha256": "42b5d2e27d21bd26fbb4a81852572f622f88988d866a725b10d6562ad3e5ba90"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/run_claude_task.py",
+      "target": "/Users/alucinor/.claude/skills/cross-agent-delegation/scripts/run_claude_task.py",
+      "sha256": "0998c4b1fcf234b6eeff2bd5b055028f975bbd32e371df3d82f5fb0703009486",
+      "expected_target_sha256": "42b5d2e27d21bd26fbb4a81852572f622f88988d866a725b10d6562ad3e5ba90"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-vertical-slice-planning/SKILL.md",
+      "target": "/Users/alucinor/.codex/skills/game-vertical-slice-planning/SKILL.md",
+      "sha256": "e732a6da3d7ce6efcbe642c0870a718737dbcff2aa3f1136bb7c91068b80e6bf",
+      "expected_target_sha256": "e732a6da3d7ce6efcbe642c0870a718737dbcff2aa3f1136bb7c91068b80e6bf"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-vertical-slice-planning/SKILL.md",
+      "target": "/Users/alucinor/.agents/skills/game-vertical-slice-planning/SKILL.md",
+      "sha256": "e732a6da3d7ce6efcbe642c0870a718737dbcff2aa3f1136bb7c91068b80e6bf",
+      "expected_target_sha256": "e732a6da3d7ce6efcbe642c0870a718737dbcff2aa3f1136bb7c91068b80e6bf"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-vertical-slice-planning/SKILL.md",
+      "target": "/Users/alucinor/.claude/skills/game-vertical-slice-planning/SKILL.md",
+      "sha256": "e732a6da3d7ce6efcbe642c0870a718737dbcff2aa3f1136bb7c91068b80e6bf",
+      "expected_target_sha256": "e732a6da3d7ce6efcbe642c0870a718737dbcff2aa3f1136bb7c91068b80e6bf"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/prepare_context.py",
+      "target": "/Users/alucinor/.codex/skills/cross-agent-delegation/scripts/prepare_context.py",
+      "sha256": "126c5422b58b5e590de2a15795efb5265f062ab29193e2a2c5021a5f6e3d0639",
+      "expected_target_sha256": "126c5422b58b5e590de2a15795efb5265f062ab29193e2a2c5021a5f6e3d0639"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/prepare_context.py",
+      "target": "/Users/alucinor/.agents/skills/cross-agent-delegation/scripts/prepare_context.py",
+      "sha256": "126c5422b58b5e590de2a15795efb5265f062ab29193e2a2c5021a5f6e3d0639",
+      "expected_target_sha256": "126c5422b58b5e590de2a15795efb5265f062ab29193e2a2c5021a5f6e3d0639"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/cross-agent-delegation/scripts/prepare_context.py",
+      "target": "/Users/alucinor/.claude/skills/cross-agent-delegation/scripts/prepare_context.py",
+      "sha256": "126c5422b58b5e590de2a15795efb5265f062ab29193e2a2c5021a5f6e3d0639",
+      "expected_target_sha256": "126c5422b58b5e590de2a15795efb5265f062ab29193e2a2c5021a5f6e3d0639"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+      "target": "/Users/alucinor/.agents/skills/game-verification-loop/SKILL.md",
+      "sha256": "33bfbd0122ca36ed95fae7fbc97f8650db3800232d30dee5be0cf816b984f8a6",
+      "expected_target_sha256": "33bfbd0122ca36ed95fae7fbc97f8650db3800232d30dee5be0cf816b984f8a6"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+      "target": "/Users/alucinor/.codex/skills/game-verification-loop/SKILL.md",
+      "sha256": "33bfbd0122ca36ed95fae7fbc97f8650db3800232d30dee5be0cf816b984f8a6",
+      "expected_target_sha256": "33bfbd0122ca36ed95fae7fbc97f8650db3800232d30dee5be0cf816b984f8a6"
+    },
+    {
+      "source": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem/skills/game-verification-loop/SKILL.md",
+      "target": "/Users/alucinor/.claude/skills/game-verification-loop/SKILL.md",
+      "sha256": "33bfbd0122ca36ed95fae7fbc97f8650db3800232d30dee5be0cf816b984f8a6",
+      "expected_target_sha256": "33bfbd0122ca36ed95fae7fbc97f8650db3800232d30dee5be0cf816b984f8a6"
+    }
+  ]
+}

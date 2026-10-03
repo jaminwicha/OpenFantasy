@@ -1,0 +1,12 @@
+{
+  "sourceSha256": "2564f0b5b4df2a8663aa690257112b16c3af713e5e7054ba58077cd57a5e77ea",
+  "cases": {
+    "valid": "passed",
+    "empty_fields": "passed",
+    "fenced_template": "passed",
+    "missing_section": "passed",
+    "missing_link_rejected": "passed",
+    "real_link_and_fenced_example": "passed"
+  },
+  "scope": "Focused positive/negative structure and local-link checks; no semantic approval"
+}

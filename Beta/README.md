@@ -1,5 +1,11 @@
 # Beta
 
+For the implementation's actual status and binding later decisions, start with the
+[living roadmap](implementation/CURRENT_ROADMAP.md) and [short handoff](implementation/AGENT_HANDOFF.md).
+The [documentation maintenance contract](implementation/DOCUMENTATION_MAINTENANCE.md) keeps these
+aligned with the preserved baseline and the timeless [runtime reference](Runtime/docs/README.md).
+The planning-folder codename does not belong in runtime code or project identifiers.
+
 The current [specification baseline 1.1](spec-v1_1/README.md) consolidates **181 requirements** into the [GDD](spec-v1_1/GDD.md), [technical design](spec-v1_1/TECHNICAL_DESIGN.md), [decision register](spec-v1_1/DECISIONS.md) and [full implementation plan](spec-v1_1/IMPLEMENTATION_PLAN.md). Every requirement has an introduction phase, full completion phase and required evidence mapped in the [coverage register](spec-v1_1/COVERAGE.json); planned evidence is not a runtime pass. P00–P14 cover retained foundations through desktop production and later mobile support.
 
 Read the preserved baseline with current [implementation instructions](AGENTS.md) and dated owner supplements. The [player interface, actions and navigation supplement](implementation/PLAYER_INTERFACE_AND_NAVIGATION.md) adds contextual actions, stable quick wheels, capability-relevant management screens, integrated maps/calendar/atlas and input/focus contracts within the existing phases. It is living design scope, not an archived option or a change in priority. Reviewed specification snapshots remain unchanged; the latest owner direction governs its explicit refinements.
@@ -10,7 +16,10 @@ The [expanded research pass](research-v0_9/README.md) covers 35 topic groups acr
 
 The [Astra handoff checklist](spec-v1_1/IMPLEMENTATION_HANDOFF.md) gives the reading order, complete scope, first retained work and open proof gates. The [delivered 1.0 baseline](spec-v1_0/README.md) and its companion documents remain unchanged and archived. Additional [local implementation candidates](spec-v1_1/LOCAL_REUSE_DECISIONS.md) are conditional adaptations, not automatic runtime imports.
 
-Earlier decisions and evidence remain available below. For conflicts, use the current GDD, technical design and decisions; older “open” or “not approved” statements record historical status. No successor runtime was implemented in this specification pass. Original source and staged milestone work remain preserved.
+Earlier decisions and evidence remain available below. Read the baseline GDD, technical design and
+decisions with the living roadmap's explicit owner overrides; older “open” or “not approved” statements
+record historical status. The original specification pass preceded the [implemented development
+runtime](Runtime/README.md). Original source and unrelated staged milestone work remain preserved.
 
 - [Archived GDD versions and design snapshots](archive/README.md)
 - [Architecture synthesis and final design pass — v0.6](architecture-synthesis-v0_6.md)

@@ -1,0 +1,20 @@
+{
+  "paths": [
+    "Beta/AGENTS.md",
+    "Beta/README.md",
+    "Beta/Runtime/README.md",
+    "Beta/Runtime/docs/README.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/GIT_MILESTONES.md",
+    "Beta/implementation/PLAYER_INTERFACE_AND_NAVIGATION.md",
+    "Beta/implementation/AGENT_HANDOFF_20261003_PRE_ROADMAP_AUDIT.md",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/DOCUMENTATION_MAINTENANCE.md",
+    "Beta/implementation/roadmap-audit-20261003",
+    "Beta/tools/check_documentation.py"
+  ],
+  "sourceHead": "cbcd7565b05ac057276e57977ff12195412bb41d",
+  "qualification": "Document review and91 live-page link/field checks; six checker cases; frozen181 mappings/23specs/919inputs and predecessor staging preserved. Separate runtime recovery commit stays qualified only within RESULT scope.",
+  "upstream": "c970e00c521decc74346a2e504f0340440322e4b",
+  "milestone": "codex/milestone-roadmap-audit-20261003"
+}

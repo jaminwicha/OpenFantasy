@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "roots": {
+    "project": "/Users/alucinor/Workspace/Projects/OpenFantasy",
+    "ecosystem": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem",
+    "shared_skills": "/Users/alucinor/.agents/skills",
+    "codex_skills": "/Users/alucinor/.codex/skills",
+    "claude": "/Users/alucinor/.claude"
+  },
+  "inputs": [
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "AGENTS.md"
+    },
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "CLAUDE.md"
+    },
+    {
+      "role": "instructions",
+      "root": "project",
+      "path": "Beta/AGENTS.md"
+    },
+    {
+      "role": "handoff",
+      "root": "project",
+      "path": "Beta/implementation/AGENT_HANDOFF.md"
+    },
+    {
+      "role": "steering",
+      "root": "project",
+      "path": "Beta/implementation/roadmap-audit-20261003/REQUEST.md"
+    },
+    {
+      "role": "evidence",
+      "root": "project",
+      "path": "Beta/implementation/roadmap-audit-20261003/GIT_ACTIVITY.txt"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/IMPLEMENTATION_PLAN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/REQUIREMENTS.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/COVERAGE.json"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/GDD.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/DECISIONS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/VALIDATION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/TECHNICAL_DESIGN.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/PRESENTATION_CONTRACTS.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/spec-v1_1/PLAYER_EXPERIENCE_AND_ONBOARDING.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/PLAYER_INTERFACE_AND_NAVIGATION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/EQUIPMENT_AND_VEHICLE_UPKEEP.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/WORLD_COMPOSITION_DECISION.md"
+    },
+    {
+      "role": "specification",
+      "root": "project",
+      "path": "Beta/implementation/GIT_MILESTONES.md"
+    },
+    {
+      "role": "reference",
+      "root": "project",
+      "path": "Beta/Runtime/README.md"
+    },
+    {
+      "role": "reference",
+      "root": "project",
+      "path": "Beta/Runtime/docs/architecture/README.md"
+    },
+    {
+      "role": "reference",
+      "root": "project",
+      "path": "Beta/Runtime/docs/architecture/world-composition.md"
+    }
+  ],
+  "skill_sync": {
+    "tool": {
+      "root": "ecosystem",
+      "path": "tools/sync_portable_skills.py"
+    },
+    "manifests": [
+      {
+        "root": "ecosystem",
+        "path": "manifests/roadmap-review-20261003.local.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "repository": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem",
+  "commit": "c970e00c521decc74346a2e504f0340440322e4b",
+  "checkpoint": "codex/checkpoint-before-documentation-sync-20261003T1528",
+  "checkpointSource": "0d062cd18a8e0393633567460fcee5d1c0d75c9e",
+  "scope": [
+    "skills/game-technical-design/SKILL.md",
+    "skills/game-verification-loop/SKILL.md",
+    "skills/game-vertical-slice-planning/SKILL.md"
+  ],
+  "sourceHashes": {
+    "skills/game-technical-design/SKILL.md": "ad8612e8b9fe3c13eeb6d1aeca5bb3e1c28e9c8f523983493916c7832f17e4e1",
+    "skills/game-verification-loop/SKILL.md": "1329e13d57ffc801026525fedff5cf7a165760f56648abea81148c83f55f8b29",
+    "skills/game-vertical-slice-planning/SKILL.md": "82fd9d2d8da546eebd29a1ee8b226d84155ddfe203693382b0ac1de194b37703"
+  },
+  "installedVerified": 8,
+  "installedRoots": [
+    "/Users/alucinor/.agents/skills",
+    "/Users/alucinor/.codex/skills",
+    "/Users/alucinor/.claude/skills"
+  ],
+  "backupReceipt": "/private/tmp/openfantasy-documentation-sync-20261003.backups/receipt.json",
+  "scopeNote": "Only existing installed copies updated; no unrelated ecosystem AGENTS/CHANGELOG/untracked work staged or committed.",
+  "validation": {
+    "sourceWhitespace": "passed",
+    "installedHashes": "8 verified",
+    "frontmatter": "byte-identical to prior maintained source for all3 skills",
+    "skillCreatorQuickValidator": "Could not run: system Python lacks PyYAML; no package installed. No metadata/interface changes were made."
+  }
+}

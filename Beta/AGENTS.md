@@ -18,6 +18,19 @@ The reviewed `spec-v1_1` documents remain the design baseline. `implementation/`
 
 ## Architecture reference and maintenance hook
 
+Owner steering, 2026-10-03: synchronize **both** the roadmap/specification/implementation plan and
+the timeless project reference in `Runtime/docs/`, with explicit accuracy/completeness review.
+Follow [documentation maintenance](implementation/DOCUMENTATION_MAINTENANCE.md) at work selection,
+source freeze, acceptance/commit and phase handoff. Use the [current roadmap](implementation/CURRENT_ROADMAP.md)
+as the living phase/dependency view; keep the handoff short and frozen specifications intact.
+Every coherent accepted increment records Plan/spec, Reference, Accuracy/completeness and Checks
+in a `Documentation review` section of its existing result/review. A reasoned no-impact statement
+is valid; boilerplate or an automatic link pass is not a factual review. Before accepting it, run
+`python3 Beta/tools/check_documentation.py --work-record <record>` from the repository root
+(use `--files <affected-live-pages>` for a narrow change). Resolve affected inaccuracies and missing
+contracts; retain unproved design obligations explicitly. Independent review covers substantial
+adaptations and complete phase handoffs, without a new ceremonial review for each small fix.
+
 [Runtime/docs/architecture/](Runtime/docs/architecture/README.md) is the maintained encyclopedic
 reference. Read the affected subject before changing its architecture; use source links rather than
 reloading the research archive. Backfill newly discovered undocumented behavior as part of that work.

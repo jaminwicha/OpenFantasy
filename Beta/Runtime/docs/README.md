@@ -1,5 +1,10 @@
 # OpenFantasy documentation
 
+The [documentation maintenance contract](../../implementation/DOCUMENTATION_MAINTENANCE.md) defines
+source-based reference review and plan/spec synchronization before acceptance. The
+[current roadmap](../../implementation/CURRENT_ROADMAP.md) owns phase progress and later decisions;
+the reference below explains enduring architecture and explicitly labeled design obligations.
+
 The [architecture reference](architecture/README.md) explains the game's boundaries, state ownership,
 data flow and invariants. It is organized by subject and describes contracts independently of the
 implementation schedule.

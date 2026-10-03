@@ -1,0 +1,8 @@
+{
+  "paidRequests": 0,
+  "failures": [
+    "Output path under a Git checkout rejected before request.",
+    "Source manifest outside maintained ecosystem root rejected before request."
+  ],
+  "correction": "Use private/tmp output and source-relative manifest under maintained ecosystem/manifests; no guard bypass or provider retry."
+}
