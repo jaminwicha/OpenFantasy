@@ -1,0 +1,2362 @@
+{
+  "BeforeRevision": 1058,
+  "RestoredRevision": 1120,
+  "Before": [
+    {
+      "ActorId": {
+        "High": 3393468082097642802,
+        "Low": 1050372204332507447
+      },
+      "Revision": 255,
+      "Profile": {
+        "DefinitionId": {
+          "High": 17426835454033647463,
+          "Low": 12804932957950021770
+        },
+        "Key": "human_squire",
+        "DisplayName": "Squire",
+        "Kind": 1,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 12,
+          "Magic": 4,
+          "Defense": 8,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 9,
+          "Mp": 2,
+          "Attack": 3,
+          "Magic": 1,
+          "Defense": 2,
+          "Speed": 1
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 1,
+      "Experience": 0,
+      "CurrentHp": 97577,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 12,
+        "Magic": 4,
+        "Defense": 8,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 5443618050566532958,
+        "Low": 5232342590854652707
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 5631680271917309959,
+          "Low": 1997468270829842935
+        },
+        "Key": "wren_unassigned",
+        "DisplayName": "Unassigned",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "07476f7a1ed9ed145bdf82cbea4008183fd3ce88ffcd0a5cf4c15d04d059fc65"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 1,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 0,
+        "Magic": 0,
+        "Defense": 0,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 8109418430889976577,
+        "Low": 13520719415845822077
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 9689023469552230871,
+          "Low": 15983897997776634133
+        },
+        "Key": "bandit_chief",
+        "DisplayName": "Bandit Chief",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 27,
+          "Magic": 0,
+          "Defense": 15,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "78511bed6c508e87b35fa5de03088400d515442f3c9eea9809da47d915eed8d4"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 7,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 27,
+        "Magic": 0,
+        "Defense": 15,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 10344438764656359608,
+        "Low": 5241001823971026412
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 5631680271917309959,
+          "Low": 1997468270829842935
+        },
+        "Key": "wren_unassigned",
+        "DisplayName": "Unassigned",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "07476f7a1ed9ed145bdf82cbea4008183fd3ce88ffcd0a5cf4c15d04d059fc65"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 1,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 0,
+        "Magic": 0,
+        "Defense": 0,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 12076413178689362572,
+        "Low": 3983097286985724931
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 5631680271917309959,
+          "Low": 1997468270829842935
+        },
+        "Key": "wren_unassigned",
+        "DisplayName": "Unassigned",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "07476f7a1ed9ed145bdf82cbea4008183fd3ce88ffcd0a5cf4c15d04d059fc65"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 1,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 0,
+        "Magic": 0,
+        "Defense": 0,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 15238016676689976191,
+        "Low": 6470629072573932829
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 9695981407709847430,
+          "Low": 656767605417488016
+        },
+        "Key": "bramble_wolf",
+        "DisplayName": "Bramble Wolf",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 14,
+          "Magic": 0,
+          "Defense": 5,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "d3cf5cdaa3e3c71fb9852ffc7dfe931fc495338ba26df4cf6ce47576f01fc97b"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 3,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 14,
+        "Magic": 0,
+        "Defense": 5,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 15819280243438859931,
+        "Low": 16292503915802541580
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 9695981407709847430,
+          "Low": 656767605417488016
+        },
+        "Key": "bramble_wolf",
+        "DisplayName": "Bramble Wolf",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 14,
+          "Magic": 0,
+          "Defense": 5,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "d3cf5cdaa3e3c71fb9852ffc7dfe931fc495338ba26df4cf6ce47576f01fc97b"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 3,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 14,
+        "Magic": 0,
+        "Defense": 5,
+        "Speed": 10000
+      }
+    }
+  ],
+  "Changes": [
+    {
+      "WorldSequence": 1060,
+      "CommandOrdinal": 0,
+      "CommandId": {
+        "High": 16005347216193486848,
+        "Low": 11570
+      },
+      "Changes": [
+        {
+          "Ordinal": 0,
+          "Cause": {
+            "EvidenceId": {
+              "High": 16005347216193486848,
+              "Low": 11570
+            },
+            "DefinitionId": {
+              "High": 11423197120648315469,
+              "Low": 2579770440114251613
+            },
+            "DefinitionVersion": {
+              "Value": "19ae130fde8ac70e68e84763ddc7b6f6f3a49b1c86ed1931972d9c48012be93e"
+            }
+          },
+          "Operation": 0,
+          "RequestedAmount": 10,
+          "Before": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 255,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97577,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          },
+          "After": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 256,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97567,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          }
+        }
+      ]
+    },
+    {
+      "WorldSequence": 1064,
+      "CommandOrdinal": 0,
+      "CommandId": {
+        "High": 5255725644962645107,
+        "Low": 12066517955381884528
+      },
+      "Changes": [
+        {
+          "Ordinal": 0,
+          "Cause": {
+            "EvidenceId": {
+              "High": 5255725644962645107,
+              "Low": 12066517955381884528
+            },
+            "DefinitionId": {
+              "High": 11423197120648315469,
+              "Low": 2579770440114251613
+            },
+            "DefinitionVersion": {
+              "Value": "19ae130fde8ac70e68e84763ddc7b6f6f3a49b1c86ed1931972d9c48012be93e"
+            }
+          },
+          "Operation": 0,
+          "RequestedAmount": 10,
+          "Before": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 256,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97567,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          },
+          "After": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 257,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97557,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          }
+        }
+      ]
+    },
+    {
+      "WorldSequence": 1068,
+      "CommandOrdinal": 0,
+      "CommandId": {
+        "High": 11889056848788521357,
+        "Low": 3526960861700102257
+      },
+      "Changes": [
+        {
+          "Ordinal": 0,
+          "Cause": {
+            "EvidenceId": {
+              "High": 11889056848788521357,
+              "Low": 3526960861700102257
+            },
+            "DefinitionId": {
+              "High": 11423197120648315469,
+              "Low": 2579770440114251613
+            },
+            "DefinitionVersion": {
+              "Value": "19ae130fde8ac70e68e84763ddc7b6f6f3a49b1c86ed1931972d9c48012be93e"
+            }
+          },
+          "Operation": 0,
+          "RequestedAmount": 9,
+          "Before": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 257,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97557,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          },
+          "After": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 258,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97548,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          }
+        }
+      ]
+    },
+    {
+      "WorldSequence": 1072,
+      "CommandOrdinal": 0,
+      "CommandId": {
+        "High": 10459075818077168109,
+        "Low": 14773836365456416760
+      },
+      "Changes": [
+        {
+          "Ordinal": 0,
+          "Cause": {
+            "EvidenceId": {
+              "High": 10459075818077168109,
+              "Low": 14773836365456416760
+            },
+            "DefinitionId": {
+              "High": 11423197120648315469,
+              "Low": 2579770440114251613
+            },
+            "DefinitionVersion": {
+              "Value": "19ae130fde8ac70e68e84763ddc7b6f6f3a49b1c86ed1931972d9c48012be93e"
+            }
+          },
+          "Operation": 0,
+          "RequestedAmount": 10,
+          "Before": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 258,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97548,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          },
+          "After": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 259,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97538,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          }
+        }
+      ]
+    },
+    {
+      "WorldSequence": 1076,
+      "CommandOrdinal": 0,
+      "CommandId": {
+        "High": 16251748740320793993,
+        "Low": 3994775207193077231
+      },
+      "Changes": [
+        {
+          "Ordinal": 0,
+          "Cause": {
+            "EvidenceId": {
+              "High": 16251748740320793993,
+              "Low": 3994775207193077231
+            },
+            "DefinitionId": {
+              "High": 11423197120648315469,
+              "Low": 2579770440114251613
+            },
+            "DefinitionVersion": {
+              "Value": "19ae130fde8ac70e68e84763ddc7b6f6f3a49b1c86ed1931972d9c48012be93e"
+            }
+          },
+          "Operation": 0,
+          "RequestedAmount": 9,
+          "Before": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 259,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97538,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          },
+          "After": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 260,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97529,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          }
+        }
+      ]
+    },
+    {
+      "WorldSequence": 1080,
+      "CommandOrdinal": 0,
+      "CommandId": {
+        "High": 6465631383923779731,
+        "Low": 13447845808235613097
+      },
+      "Changes": [
+        {
+          "Ordinal": 0,
+          "Cause": {
+            "EvidenceId": {
+              "High": 6465631383923779731,
+              "Low": 13447845808235613097
+            },
+            "DefinitionId": {
+              "High": 11423197120648315469,
+              "Low": 2579770440114251613
+            },
+            "DefinitionVersion": {
+              "Value": "19ae130fde8ac70e68e84763ddc7b6f6f3a49b1c86ed1931972d9c48012be93e"
+            }
+          },
+          "Operation": 0,
+          "RequestedAmount": 9,
+          "Before": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 260,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97529,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          },
+          "After": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 261,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97520,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          }
+        }
+      ]
+    },
+    {
+      "WorldSequence": 1084,
+      "CommandOrdinal": 0,
+      "CommandId": {
+        "High": 16163154775101941489,
+        "Low": 18180767728385989050
+      },
+      "Changes": [
+        {
+          "Ordinal": 0,
+          "Cause": {
+            "EvidenceId": {
+              "High": 16163154775101941489,
+              "Low": 18180767728385989050
+            },
+            "DefinitionId": {
+              "High": 11423197120648315469,
+              "Low": 2579770440114251613
+            },
+            "DefinitionVersion": {
+              "Value": "19ae130fde8ac70e68e84763ddc7b6f6f3a49b1c86ed1931972d9c48012be93e"
+            }
+          },
+          "Operation": 0,
+          "RequestedAmount": 10,
+          "Before": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 261,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97520,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          },
+          "After": {
+            "ActorId": {
+              "High": 3393468082097642802,
+              "Low": 1050372204332507447
+            },
+            "Revision": 262,
+            "Profile": {
+              "DefinitionId": {
+                "High": 17426835454033647463,
+                "Low": 12804932957950021770
+              },
+              "Key": "human_squire",
+              "DisplayName": "Squire",
+              "Kind": 1,
+              "BaseStats": {
+                "MaxHp": 100000,
+                "MaxMp": 4096,
+                "Attack": 12,
+                "Magic": 4,
+                "Defense": 8,
+                "Speed": 10000
+              },
+              "Growth": {
+                "Hp": 9,
+                "Mp": 2,
+                "Attack": 3,
+                "Magic": 1,
+                "Defense": 2,
+                "Speed": 1
+              },
+              "HeritageModifiers": {
+                "Hp": 0,
+                "Mp": 0,
+                "Attack": 0,
+                "Magic": 0,
+                "Defense": 0,
+                "Speed": 0
+              },
+              "Version": {
+                "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+              }
+            },
+            "Curve": {
+              "DefinitionId": {
+                "High": 2280849616166380007,
+                "Low": 5469416810446212472
+              },
+              "Key": "source_levels_1_10",
+              "Thresholds": [
+                100,
+                282,
+                519,
+                800,
+                1118,
+                1469,
+                1852,
+                2262,
+                2700
+              ],
+              "MaximumLevel": 10,
+              "Version": {
+                "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+              }
+            },
+            "Level": 1,
+            "Experience": 0,
+            "CurrentHp": 97510,
+            "CurrentMp": 4096,
+            "Stats": {
+              "MaxHp": 100000,
+              "MaxMp": 4096,
+              "Attack": 12,
+              "Magic": 4,
+              "Defense": 8,
+              "Speed": 10000
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "After": [
+    {
+      "ActorId": {
+        "High": 3393468082097642802,
+        "Low": 1050372204332507447
+      },
+      "Revision": 262,
+      "Profile": {
+        "DefinitionId": {
+          "High": 17426835454033647463,
+          "Low": 12804932957950021770
+        },
+        "Key": "human_squire",
+        "DisplayName": "Squire",
+        "Kind": 1,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 12,
+          "Magic": 4,
+          "Defense": 8,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 9,
+          "Mp": 2,
+          "Attack": 3,
+          "Magic": 1,
+          "Defense": 2,
+          "Speed": 1
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "a1830d99996a74429894ab45507fa00d1cf0e7768961049d667a8a8f7b4801d2"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 1,
+      "Experience": 0,
+      "CurrentHp": 97510,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 12,
+        "Magic": 4,
+        "Defense": 8,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 5443618050566532958,
+        "Low": 5232342590854652707
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 5631680271917309959,
+          "Low": 1997468270829842935
+        },
+        "Key": "wren_unassigned",
+        "DisplayName": "Unassigned",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "07476f7a1ed9ed145bdf82cbea4008183fd3ce88ffcd0a5cf4c15d04d059fc65"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 1,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 0,
+        "Magic": 0,
+        "Defense": 0,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 8109418430889976577,
+        "Low": 13520719415845822077
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 9689023469552230871,
+          "Low": 15983897997776634133
+        },
+        "Key": "bandit_chief",
+        "DisplayName": "Bandit Chief",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 27,
+          "Magic": 0,
+          "Defense": 15,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "78511bed6c508e87b35fa5de03088400d515442f3c9eea9809da47d915eed8d4"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 7,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 27,
+        "Magic": 0,
+        "Defense": 15,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 10344438764656359608,
+        "Low": 5241001823971026412
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 5631680271917309959,
+          "Low": 1997468270829842935
+        },
+        "Key": "wren_unassigned",
+        "DisplayName": "Unassigned",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "07476f7a1ed9ed145bdf82cbea4008183fd3ce88ffcd0a5cf4c15d04d059fc65"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 1,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 0,
+        "Magic": 0,
+        "Defense": 0,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 12076413178689362572,
+        "Low": 3983097286985724931
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 5631680271917309959,
+          "Low": 1997468270829842935
+        },
+        "Key": "wren_unassigned",
+        "DisplayName": "Unassigned",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "07476f7a1ed9ed145bdf82cbea4008183fd3ce88ffcd0a5cf4c15d04d059fc65"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 1,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 0,
+        "Magic": 0,
+        "Defense": 0,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 15238016676689976191,
+        "Low": 6470629072573932829
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 9695981407709847430,
+          "Low": 656767605417488016
+        },
+        "Key": "bramble_wolf",
+        "DisplayName": "Bramble Wolf",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 14,
+          "Magic": 0,
+          "Defense": 5,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "d3cf5cdaa3e3c71fb9852ffc7dfe931fc495338ba26df4cf6ce47576f01fc97b"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 3,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 14,
+        "Magic": 0,
+        "Defense": 5,
+        "Speed": 10000
+      }
+    },
+    {
+      "ActorId": {
+        "High": 15819280243438859931,
+        "Low": 16292503915802541580
+      },
+      "Revision": 0,
+      "Profile": {
+        "DefinitionId": {
+          "High": 9695981407709847430,
+          "Low": 656767605417488016
+        },
+        "Key": "bramble_wolf",
+        "DisplayName": "Bramble Wolf",
+        "Kind": 2,
+        "BaseStats": {
+          "MaxHp": 100000,
+          "MaxMp": 4096,
+          "Attack": 14,
+          "Magic": 0,
+          "Defense": 5,
+          "Speed": 10000
+        },
+        "Growth": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "HeritageModifiers": {
+          "Hp": 0,
+          "Mp": 0,
+          "Attack": 0,
+          "Magic": 0,
+          "Defense": 0,
+          "Speed": 0
+        },
+        "Version": {
+          "Value": "d3cf5cdaa3e3c71fb9852ffc7dfe931fc495338ba26df4cf6ce47576f01fc97b"
+        }
+      },
+      "Curve": {
+        "DefinitionId": {
+          "High": 2280849616166380007,
+          "Low": 5469416810446212472
+        },
+        "Key": "source_levels_1_10",
+        "Thresholds": [
+          100,
+          282,
+          519,
+          800,
+          1118,
+          1469,
+          1852,
+          2262,
+          2700
+        ],
+        "MaximumLevel": 10,
+        "Version": {
+          "Value": "cd473627fea4252aad802648e4801b1db6a94f67ec287d70cdc163d1e39ced1b"
+        }
+      },
+      "Level": 3,
+      "Experience": 0,
+      "CurrentHp": 100000,
+      "CurrentMp": 4096,
+      "Stats": {
+        "MaxHp": 100000,
+        "MaxMp": 4096,
+        "Attack": 14,
+        "Magic": 0,
+        "Defense": 5,
+        "Speed": 10000
+      }
+    }
+  ]
+}

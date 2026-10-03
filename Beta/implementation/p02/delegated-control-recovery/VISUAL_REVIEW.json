@@ -1,0 +1,36 @@
+{
+  "acceptedWithinScope": true,
+  "scope": "Control-return message, availability and unobscured returning actor only. Prototype UI/art remains unaccepted.",
+  "images": [
+    {
+      "image": "Beta/implementation/p02/delegated-control-recovery/qualification/native-recovery-20261003T151129535926Z/native/delegated-recovery/rendered-owner/0002.png",
+      "sha256": "1a15b1145e16bd2d7030b13adbda0d3d3368789bdda542fa9eefefd72f07cfc3",
+      "state": "Beta/implementation/p02/delegated-control-recovery/qualification/native-recovery-20261003T151129535926Z/native/delegated-recovery/rendered-owner/0002.response.json",
+      "stateSha256": "d6af577dcf8c23c8e7dc906fa1e18fccfabac14a01bfca585fc9613457433cf3",
+      "controlState": "Pending",
+      "inspection": "Lead visually inspected actual frame; returning actor clears HUD, control message and Pause/Resume are readable. Existing CaptureControl measures actual post-draw control bounds and full actor sprite against HUD."
+    },
+    {
+      "image": "Beta/implementation/p02/delegated-control-recovery/qualification/native-recovery-20261003T151129535926Z/native/delegated-recovery/rendered-owner/0006.png",
+      "sha256": "7f38d8c61b98bd5cba2253045eae2a0075a03752dd05056dc1b9bbfc3cc37225",
+      "state": "Beta/implementation/p02/delegated-control-recovery/qualification/native-recovery-20261003T151129535926Z/native/delegated-recovery/rendered-owner/0006.response.json",
+      "stateSha256": "7ef297477274d2f93d4a1a78df3e64db92175b0bb97c0a58524f5dce6651788c",
+      "controlState": "Restored",
+      "inspection": "Lead visually inspected actual frame; returning actor clears HUD, control message and Pause/Resume are readable. Existing CaptureControl measures actual post-draw control bounds and full actor sprite against HUD."
+    },
+    {
+      "image": "Beta/implementation/p02/delegated-control-recovery/qualification/native-recovery-20261003T151129535926Z/native/delegated-recovery/rendered-owner/0010.png",
+      "sha256": "5899e5f3d877e087b059d859005cbcb752223453a4e1518d80ca72bccdc6fa51",
+      "state": "Beta/implementation/p02/delegated-control-recovery/qualification/native-recovery-20261003T151129535926Z/native/delegated-recovery/rendered-owner/0010.response.json",
+      "stateSha256": "9e8a79ae1504c4f501a7102b832124e1396070723d67c57e02fe72baabc9e1fe",
+      "controlState": "Available",
+      "inspection": "Lead visually inspected actual frame; returning actor clears HUD, control message and Pause/Resume are readable. Existing CaptureControl measures actual post-draw control bounds and full actor sprite against HUD."
+    }
+  ],
+  "limits": [
+    "Stress endurance figures are declared test admission, not game balance.",
+    "Header numbers wrap and crowd the Characters control; general HUD readability remains open.",
+    "No physical-device, OS-focus or human art approval."
+  ],
+  "source": "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.ControlReturn.cs"
+}

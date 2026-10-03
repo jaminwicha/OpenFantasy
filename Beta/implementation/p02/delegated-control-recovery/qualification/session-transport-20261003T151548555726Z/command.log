@@ -1,0 +1,104 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.19]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.41]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.55]   Starting:    OpenFantasy.Server.Tests
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Old_result_shape_and_diagnostic_fields_remain_exact_while_new_kind_requires_version_two [82 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "run-state") [1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "missing") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "foreign-kind") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: "extra") [< 1 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadPresentationBootstrap) [3 ms]
+  Passed OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadParticipantStatus) [< 1 ms]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "cancel") [2 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "proposal") [1 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: "submit") [1 s]
+  Passed OpenFantasy.Server.Tests.RemoteQueryJoinTests.Invalid_and_closed_queries_return_faulted_tasks_without_throwing_from_the_facade [1 s]
+  Passed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return [37 s]
+  Standard Output Messages:
+ Cohort travel: e1d57b89bcce6b6237bd754d53734e55, SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } } to SubunitPosition { X = 25728, Y = 83840, Z = 256, Cell = CellCoordinate { X = 100, Y = 327, Z = 1 } }, 40 actual movement commits.
+ Prepared bramble_wolf_first: range=448; owner=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; oneSampleCandidate=SubunitPosition { X = 25984, Y = 83680, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; journalRevision=52; steps=52.
+ Prepared required 3c518986694d413370864df9385200a5: side=2; feet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; hp=62; oneSampleReach=Reachable.
+ Prepared required 4073c2e750cd349c3ee91b2f7c70fb49: side=1; feet=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+ Prepared required 5795dc4890da7573cfc5b3948d0296df: side=1; feet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+ Prepared required 79dddd9ea31bf745606a5473ea76ed14: side=1; feet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+ Prepared required e1d57b89bcce6b6237bd754d53734e55: side=1; feet=SubunitPosition { X = 25728, Y = 83840, Z = 256, Cell = CellCoordinate { X = 100, Y = 327, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+ 35.146s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=448 bytes=301
+ 35.188s 79dddd9ea31bf745606a5473ea76ed14 send Query request=141 bytes=2
+ 35.189s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=141 bytes=300
+ 35.215s 4073c2e750cd349c3ee91b2f7c70fb49 send Hello request=1 bytes=130
+ 35.215s 4073c2e750cd349c3ee91b2f7c70fb49 receive Welcome request=1 bytes=146
+ 35.215s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionSubscribe request=2 bytes=1
+ 35.231s e1d57b89bcce6b6237bd754d53734e55 send Query request=139 bytes=2
+ 35.231s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=139 bytes=301
+ 35.231s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=2 bytes=102970
+ 35.236s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionDelivered request=0 bytes=25
+ 35.236s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=3 bytes=2
+ 35.236s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=3 bytes=1249
+ 35.236s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=4 bytes=2
+ 35.236s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=4 bytes=300
+ 35.312s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=102016
+ 35.317s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+ 35.318s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=102019
+ 35.321s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=449 bytes=71
+ 35.321s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=449 bytes=1272
+ 35.322s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+ 35.324s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=1271
+ 35.324s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=417
+ 35.330s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+ 35.330s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=450 bytes=71
+ 35.330s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=450 bytes=1133
+ 35.332s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=451 bytes=851
+ 35.332s 5795dc4890da7573cfc5b3948d0296df receive Receipt request=451 bytes=200
+ 35.332s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=452 bytes=851
+ 35.333s 5795dc4890da7573cfc5b3948d0296df receive Refusal request=452 bytes=1
+ 35.333s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=453 bytes=71
+ 35.333s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=453 bytes=1133
+ 35.334s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=102970
+
+
+[xUnit.net 00:00:45.39]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board [7 s]
+  Standard Output Messages:
+ 5.098s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=795
+ 5.098s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=7 bytes=433
+ 5.102s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=7 bytes=531
+ 5.103s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=5 bytes=71
+ 5.103s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=5 bytes=1235
+ 5.107s 79dddd9ea31bf745606a5473ea76ed14 send ControlRequest request=5 bytes=71
+ 5.107s 79dddd9ea31bf745606a5473ea76ed14 receive ControlResult request=5 bytes=795
+ 5.115s e1d57b89bcce6b6237bd754d53734e55 send ControlRequest request=5 bytes=71
+ 5.121s e1d57b89bcce6b6237bd754d53734e55 receive ControlResult request=5 bytes=797
+ 5.121s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=6 bytes=71
+ 5.124s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=99576
+ 5.129s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=6 bytes=1235
+ 5.129s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=7 bytes=493
+ 5.132s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=7 bytes=532
+ 5.132s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=8 bytes=71
+ 5.134s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=8 bytes=1266
+ 5.134s 5795dc4890da7573cfc5b3948d0296df send Query request=8 bytes=2
+ 5.134s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=9 bytes=433
+ 5.134s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=8 bytes=301
+ 5.139s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=9 bytes=531
+ 5.139s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=10 bytes=71
+ 5.139s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=10 bytes=1266
+ 5.141s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=11 bytes=417
+ 5.144s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=11 bytes=531
+ 5.144s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=9 bytes=71
+ 5.144s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=9 bytes=1131
+ 5.144s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=12 bytes=433
+ 5.144s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=12 bytes=531
+ 5.144s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=10 bytes=493
+ 5.144s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=10 bytes=532
+ 5.145s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=11 bytes=71
+ 5.145s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=11 bytes=1131
+
+
+
+Test Run Successful.
+Total tests: 13
+     Passed: 13
+ Total time: 45.8462 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/delegated-control-recovery/qualification/session-transport-20261003T151548555726Z/checks.trx

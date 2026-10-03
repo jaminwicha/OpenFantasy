@@ -1,0 +1,45 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.45]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.57]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.98]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Operational_checkpoint_or_segment_fault_requires_reopen_without_canonical_changes(beginSegment: True, after: False) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Operational_checkpoint_or_segment_fault_requires_reopen_without_canonical_changes(beginSegment: True, after: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Operational_checkpoint_or_segment_fault_requires_reopen_without_canonical_changes(beginSegment: False, after: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Operational_checkpoint_or_segment_fault_requires_reopen_without_canonical_changes(beginSegment: False, after: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Current_rows_must_match_recovered_world_even_when_their_checksum_is_recomputed(corruption: "actor") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Current_rows_must_match_recovered_world_even_when_their_checksum_is_recomputed(corruption: "orphan") [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Current_rows_must_match_recovered_world_even_when_their_checksum_is_recomputed(corruption: "revision") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Current_rows_must_match_recovered_world_even_when_their_checksum_is_recomputed(corruption: "missing") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Current_rows_must_match_recovered_world_even_when_their_checksum_is_recomputed(corruption: "episode") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Fresh_admission_is_explicit_and_preserves_exact_canonical_genesis(profile: 37) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Fresh_admission_is_explicit_and_preserves_exact_canonical_genesis(profile: 38) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Fresh_admission_is_explicit_and_preserves_exact_canonical_genesis(profile: 36) [987 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Replay_enforces_capped_expiry_only_after_explicit_recovery_activation(history: "fresh-after") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Replay_enforces_capped_expiry_only_after_explicit_recovery_activation(history: "upgraded-after") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Replay_enforces_capped_expiry_only_after_explicit_recovery_activation(history: "before") [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Damaged_operational_metadata_is_not_ignored_by_ordinary_open(corruption: "policy") [652 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Damaged_operational_metadata_is_not_ignored_by_ordinary_open(corruption: "missing-activation") [682 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Damaged_operational_metadata_is_not_ignored_by_ordinary_open(corruption: "activation-hash") [676 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Damaged_operational_metadata_is_not_ignored_by_ordinary_open(corruption: "progress-hash") [673 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Damaged_operational_metadata_is_not_ignored_by_ordinary_open(corruption: "missing-segment") [755 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Legacy_nine_remains_unmodified_and_unsupported_admission_is_refused [721 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Event_and_progress_rows_recover_atomically_before_or_after_commit(kind: Reconnected, after: True) [974 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Event_and_progress_rows_recover_atomically_before_or_after_commit(kind: AllowanceExpired, after: True) [903 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Event_and_progress_rows_recover_atomically_before_or_after_commit(kind: Disconnected, after: True) [758 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Event_and_progress_rows_recover_atomically_before_or_after_commit(kind: Disconnected, after: False) [888 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Event_and_progress_rows_recover_atomically_before_or_after_commit(kind: AllowanceExpired, after: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Event_and_progress_rows_recover_atomically_before_or_after_commit(kind: Reconnected, after: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Exact_current_set_and_fenced_nondecreasing_progress_gate_every_expiry_entrypoint [535 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Explicit_upgrade_retains_history_and_original_unknown_episode_provenance_after_later_events [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryStorageTests.Activation_unknown_episodes_are_checked_at_original_snapshot_not_later_current_head [3 s]
+[xUnit.net 00:00:57.96]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerRecovery.ControllerRecoveryArchiveTests.Recovery_activation_preserves_an_inherited_care_archive_and_publishes_a_later_actual_cut [55 s]
+
+Test Run Successful.
+Total tests: 31
+     Passed: 31
+ Total time: 59.2789 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/delegated-control-recovery/qualification/recovery-storage-20261003T151446254839Z/checks.trx

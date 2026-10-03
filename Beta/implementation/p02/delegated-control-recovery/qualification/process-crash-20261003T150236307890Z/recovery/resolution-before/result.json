@@ -1,0 +1,13 @@
+{
+  "Status": "passed",
+  "Boundary": "resolution",
+  "Committed": false,
+  "ExitCode": 137,
+  "BeforeRevision": 1118,
+  "AfterRevision": 1118,
+  "StateHash": "5904d7676aa2630c66adc8328b87bfc0a09a460b97d4242e757cd6d28f03a519",
+  "ArchivesHash": "AF689DAA1854617E10C6818838A04342269656DFA12ED916BCDA77C22CBFE969",
+  "ElapsedSeconds": 10.6152842,
+  "TerminationSeconds": 0.0157177,
+  "Scope": "Actual Host storage-process death at its existing transaction barrier; original-genesis pure reopen. No live listener/socket failure claim."
+}

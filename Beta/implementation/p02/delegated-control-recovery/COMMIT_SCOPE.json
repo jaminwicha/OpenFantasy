@@ -1,0 +1,11 @@
+{
+  "paths": [
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/DelegatedRecovery",
+    "Beta/implementation/p02/delegated-control-recovery"
+  ],
+  "stagedFiles": 400,
+  "sourceBefore": "ffa1f971ee2e5541ea7608b6d1da78b8b0598d4d",
+  "verification": "FINAL_CHECKS.json accepted95 final-source cases,919 protected inputs, raw failures retained.",
+  "whitespace": "Authored source/docs/checker files checked; qualification artifacts kept byte-exact and excluded from whitespace normalization.",
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5"
+}

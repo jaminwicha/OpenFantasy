@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="db7bbe4a-2bad-4099-bae1-e8b853151fdb" name="@mac 2026-10-03 10:23:02" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T10:23:02.5771670-05:00" queuing="2026-10-03T10:23:02.5771670-05:00" start="2026-10-03T10:22:05.1319120-05:00" finish="2026-10-03T10:25:38.2480260-05:00" />
+  <TestSettings name="default" id="14001de6-1bf7-4bbb-ab60-039b16a5d584">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_10_23_02" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a219b234-e83b-4131-a245-4ff6440c317c" testId="b1103969-6669-0ba6-0a55-79322ba91fb1" testName="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;resolution&quot;, committed: True)" computerName="mac" duration="00:00:29.5091148" startTime="2026-10-03T10:23:02.3589480-05:00" endTime="2026-10-03T10:23:31.8687240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a219b234-e83b-4131-a245-4ff6440c317c" />
+    <UnitTestResult executionId="5a110d75-8143-42ed-be79-250f82c285cd" testId="79e4b2fe-4fd0-fe45-84d7-246274942042" testName="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;archive&quot;, committed: True)" computerName="mac" duration="00:00:22.1925756" startTime="2026-10-03T10:25:15.7600600-05:00" endTime="2026-10-03T10:25:37.9530060-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5a110d75-8143-42ed-be79-250f82c285cd" />
+    <UnitTestResult executionId="8a5e9b00-c3e3-4995-9d3b-226deae6b318" testId="ad2555be-3b31-d6d0-5b7f-10a675853888" testName="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;revoke&quot;, committed: False)" computerName="mac" duration="00:00:30.7869390" startTime="2026-10-03T10:22:31.5180610-05:00" endTime="2026-10-03T10:23:02.3332060-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8a5e9b00-c3e3-4995-9d3b-226deae6b318" />
+    <UnitTestResult executionId="44d3e4b8-a971-43db-a382-94e991339891" testId="6d98cdd3-e2d4-cb86-c654-bfc62c612500" testName="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;archive&quot;, committed: False)" computerName="mac" duration="00:00:42.6456703" startTime="2026-10-03T10:24:33.0970870-05:00" endTime="2026-10-03T10:25:15.7436350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="44d3e4b8-a971-43db-a382-94e991339891" />
+    <UnitTestResult executionId="723d16c0-b660-4a45-8eaa-ce858124bcee" testId="5f89b90c-afe8-e0ff-5104-612cd6528881" testName="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;revoke&quot;, committed: True)" computerName="mac" duration="00:00:23.6351662" startTime="2026-10-03T10:23:31.8772160-05:00" endTime="2026-10-03T10:23:55.5127790-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="723d16c0-b660-4a45-8eaa-ce858124bcee" />
+    <UnitTestResult executionId="f6a7dcb6-06f2-4efc-a072-6b34fe7b5b36" testId="a2b68a57-dba0-ce06-130e-62452fdfacf3" testName="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;resolution&quot;, committed: False)" computerName="mac" duration="00:00:37.4745828" startTime="2026-10-03T10:23:55.5213690-05:00" endTime="2026-10-03T10:24:33.0002480-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f6a7dcb6-06f2-4efc-a072-6b34fe7b5b36" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;revoke&quot;, committed: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="5f89b90c-afe8-e0ff-5104-612cd6528881">
+      <Execution id="723d16c0-b660-4a45-8eaa-ce858124bcee" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests" name="Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;revoke&quot;, committed: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="ad2555be-3b31-d6d0-5b7f-10a675853888">
+      <Execution id="8a5e9b00-c3e3-4995-9d3b-226deae6b318" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests" name="Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;archive&quot;, committed: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="6d98cdd3-e2d4-cb86-c654-bfc62c612500">
+      <Execution id="44d3e4b8-a971-43db-a382-94e991339891" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests" name="Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;resolution&quot;, committed: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="a2b68a57-dba0-ce06-130e-62452fdfacf3">
+      <Execution id="f6a7dcb6-06f2-4efc-a072-6b34fe7b5b36" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests" name="Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;resolution&quot;, committed: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="b1103969-6669-0ba6-0a55-79322ba91fb1">
+      <Execution id="a219b234-e83b-4131-a245-4ff6440c317c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests" name="Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: &quot;archive&quot;, committed: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="79e4b2fe-4fd0-fe45-84d7-246274942042">
+      <Execution id="5a110d75-8143-42ed-be79-250f82c285cd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests" name="Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b1103969-6669-0ba6-0a55-79322ba91fb1" executionId="a219b234-e83b-4131-a245-4ff6440c317c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="79e4b2fe-4fd0-fe45-84d7-246274942042" executionId="5a110d75-8143-42ed-be79-250f82c285cd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ad2555be-3b31-d6d0-5b7f-10a675853888" executionId="8a5e9b00-c3e3-4995-9d3b-226deae6b318" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d98cdd3-e2d4-cb86-c654-bfc62c612500" executionId="44d3e4b8-a971-43db-a382-94e991339891" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5f89b90c-afe8-e0ff-5104-612cd6528881" executionId="723d16c0-b660-4a45-8eaa-ce858124bcee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a2b68a57-dba0-ce06-130e-62452fdfacf3" executionId="f6a7dcb6-06f2-4efc-a072-6b34fe7b5b36" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.35]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.79]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.17]   Starting:    OpenFantasy.Server.Tests
+OpenFantasy.Server.Tests(97394) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+OpenFantasy.Server.Tests(97586) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+OpenFantasy.Server.Tests(97785) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+OpenFantasy.Server.Tests(97911) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+OpenFantasy.Server.Tests(98188) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+OpenFantasy.Server.Tests(98464) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+[xUnit.net 00:03:32.04]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

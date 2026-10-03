@@ -1,0 +1,26 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.35]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.79]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:01.17]   Starting:    OpenFantasy.Server.Tests
+OpenFantasy.Server.Tests(97394) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+  Passed OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: "revoke", committed: False) [30 s]
+OpenFantasy.Server.Tests(97586) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+  Passed OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: "resolution", committed: True) [29 s]
+OpenFantasy.Server.Tests(97785) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+  Passed OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: "revoke", committed: True) [23 s]
+OpenFantasy.Server.Tests(97911) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+  Passed OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: "resolution", committed: False) [37 s]
+OpenFantasy.Server.Tests(98188) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+  Passed OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: "archive", committed: False) [42 s]
+OpenFantasy.Server.Tests(98464) MallocStackLogging: can't turn off malloc stack logging because it was not enabled.
+[xUnit.net 00:03:32.04]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.DelegatedRecovery.DelegatedRecoveryProcessTests.Real_host_storage_process_death_preserves_the_complete_original_delegated_transaction(name: "archive", committed: True) [22 s]
+
+Test Run Successful.
+Total tests: 6
+     Passed: 6
+ Total time: 3.5513 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/delegated-control-recovery/qualification/process-crash-20261003T152201349000Z/checks.trx
