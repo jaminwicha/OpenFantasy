@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="68be3ba1-59b0-4ca6-a790-31fdd64e587b" name="@mac 2026-10-02 21:55:40" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T21:55:40.6493850-05:00" queuing="2026-10-02T21:55:40.6493860-05:00" start="2026-10-02T21:55:37.1691300-05:00" finish="2026-10-02T21:55:41.2021550-05:00" />
+  <TestSettings name="default" id="08990280-fa9c-4774-9bb7-1c439194c51b">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_21_55_40" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="b41b6e48-60d0-45b2-a7ce-e279cc3510cc" testId="426a1103-7d8e-d32d-99bb-f57579f2d735" testName="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Four_player_production_codec_preserves_scope_and_bytes_and_reports_warmed_component_cost" computerName="mac" duration="00:00:02.0361430" startTime="2026-10-02T21:55:39.1199430-05:00" endTime="2026-10-02T21:55:41.1561700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b41b6e48-60d0-45b2-a7ce-e279cc3510cc">
+      <Output>
+        <StdOut>observation:workload; player:0; wire-bytes:98605; expanded-bytes:98605; compressed:False
+observation:workload; player:1; wire-bytes:97106; expanded-bytes:97106; compressed:False
+observation:workload; player:2; wire-bytes:97108; expanded-bytes:97108; compressed:False
+observation:workload; player:3; wire-bytes:97103; expanded-bytes:97103; compressed:False
+observation:encode; warmup-calls:8; calls:32; milliseconds:122.923; allocated-bytes:24198496
+observation:decode; warmup-calls:8; calls:32; milliseconds:217.649; allocated-bytes:59018120
+observation:preflight-expanded-json; warmup-calls:8; calls:32; milliseconds:9.912; allocated-bytes:3968768</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5dd4cfc5-13e5-489d-a9be-7594fead8b62" testId="eca24821-6d35-116c-8ed4-fdb839ee26c2" testName="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: &quot;{\&quot;Value\&quot;:1,\&quot;Value\&quot;:2}&quot;)" computerName="mac" duration="00:00:00.0002520" startTime="2026-10-02T21:55:39.1175750-05:00" endTime="2026-10-02T21:55:39.1179240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5dd4cfc5-13e5-489d-a9be-7594fead8b62" />
+    <UnitTestResult executionId="066485c2-78c0-412c-962b-5d89927a4eab" testId="34ef5050-d7e2-d271-e676-5f8028c98c0a" testName="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: &quot;{\&quot;a/b\&quot;:1,\&quot;a\\/b\&quot;:2}&quot;)" computerName="mac" duration="00:00:00.0000611" startTime="2026-10-02T21:55:39.1181850-05:00" endTime="2026-10-02T21:55:39.1182650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="066485c2-78c0-412c-962b-5d89927a4eab" />
+    <UnitTestResult executionId="794b78da-a8f1-44cd-be59-9e50a0566e42" testId="962bb999-6223-4928-668e-0619a5aec719" testName="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: &quot;{\&quot;Value\&quot;:1,\&quot;\\u0056alue\&quot;:2}&quot;)" computerName="mac" duration="00:00:00.0109562" startTime="2026-10-02T21:55:39.1000480-05:00" endTime="2026-10-02T21:55:39.1152360-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="794b78da-a8f1-44cd-be59-9e50a0566e42" />
+    <UnitTestResult executionId="04ff4b91-1765-4a0f-8084-3f686f5fb7e6" testId="de48c919-1f50-d77c-ab91-58744d10f349" testName="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: &quot;{\&quot;Items\&quot;:[{\&quot;Value\&quot;:1,\&quot;\\u0056alue\&quot;:2}]}&quot;)" computerName="mac" duration="00:00:00.0000567" startTime="2026-10-02T21:55:39.1184260-05:00" endTime="2026-10-02T21:55:39.1184990-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04ff4b91-1765-4a0f-8084-3f686f5fb7e6" />
+    <UnitTestResult executionId="919b9e91-c98d-4ab3-8932-9d7c347dc28c" testId="c75e95ce-15dc-509b-6cc2-1ac392020d08" testName="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_keeps_sibling_object_names_independent_and_accepts_unique_escaped_names" computerName="mac" duration="00:00:00.0002031" startTime="2026-10-02T21:55:39.1193970-05:00" endTime="2026-10-02T21:55:39.1196130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="919b9e91-c98d-4ab3-8932-9d7c347dc28c" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Four_player_production_codec_preserves_scope_and_bytes_and_reports_warmed_component_cost" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="426a1103-7d8e-d32d-99bb-f57579f2d735">
+      <Execution id="b41b6e48-60d0-45b2-a7ce-e279cc3510cc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests" name="Four_player_production_codec_preserves_scope_and_bytes_and_reports_warmed_component_cost" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_keeps_sibling_object_names_independent_and_accepts_unique_escaped_names" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c75e95ce-15dc-509b-6cc2-1ac392020d08">
+      <Execution id="919b9e91-c98d-4ab3-8932-9d7c347dc28c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests" name="Preflight_keeps_sibling_object_names_independent_and_accepts_unique_escaped_names" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: &quot;{\&quot;Value\&quot;:1,\&quot;\\u0056alue\&quot;:2}&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="962bb999-6223-4928-668e-0619a5aec719">
+      <Execution id="794b78da-a8f1-44cd-be59-9e50a0566e42" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests" name="Preflight_refuses_duplicate_decoded_property_names_within_the_same_object" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: &quot;{\&quot;Items\&quot;:[{\&quot;Value\&quot;:1,\&quot;\\u0056alue\&quot;:2}]}&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="de48c919-1f50-d77c-ab91-58744d10f349">
+      <Execution id="04ff4b91-1765-4a0f-8084-3f686f5fb7e6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests" name="Preflight_refuses_duplicate_decoded_property_names_within_the_same_object" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: &quot;{\&quot;Value\&quot;:1,\&quot;Value\&quot;:2}&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="eca24821-6d35-116c-8ed4-fdb839ee26c2">
+      <Execution id="5dd4cfc5-13e5-489d-a9be-7594fead8b62" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests" name="Preflight_refuses_duplicate_decoded_property_names_within_the_same_object" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: &quot;{\&quot;a/b\&quot;:1,\&quot;a\\/b\&quot;:2}&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="34ef5050-d7e2-d271-e676-5f8028c98c0a">
+      <Execution id="066485c2-78c0-412c-962b-5d89927a4eab" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests" name="Preflight_refuses_duplicate_decoded_property_names_within_the_same_object" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="426a1103-7d8e-d32d-99bb-f57579f2d735" executionId="b41b6e48-60d0-45b2-a7ce-e279cc3510cc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="eca24821-6d35-116c-8ed4-fdb839ee26c2" executionId="5dd4cfc5-13e5-489d-a9be-7594fead8b62" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="34ef5050-d7e2-d271-e676-5f8028c98c0a" executionId="066485c2-78c0-412c-962b-5d89927a4eab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="962bb999-6223-4928-668e-0619a5aec719" executionId="794b78da-a8f1-44cd-be59-9e50a0566e42" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="de48c919-1f50-d77c-ab91-58744d10f349" executionId="04ff4b91-1765-4a0f-8084-3f686f5fb7e6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c75e95ce-15dc-509b-6cc2-1ac392020d08" executionId="919b9e91-c98d-4ab3-8932-9d7c347dc28c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.69]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.25]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.41]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.51]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

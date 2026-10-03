@@ -1,0 +1,31 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.42]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.92]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.04]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: "{\"Value\":1,\"\\u0056alue\":2}") [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: "{\"Value\":1,\"Value\":2}") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: "{\"a/b\":1,\"a\\/b\":2}") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_refuses_duplicate_decoded_property_names_within_the_same_object(json: "{\"Items\":[{\"Value\":1,\"\\u0056alue\":2}]}") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Preflight_keeps_sibling_object_names_independent_and_accepts_unique_escaped_names [< 1 ms]
+[xUnit.net 00:00:02.79]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Networking.ObservationViews.ObservationCodecCostTests.Four_player_production_codec_preserves_scope_and_bytes_and_reports_warmed_component_cost [1 s]
+  Standard Output Messages:
+ observation:runtime; version:10.0.12; framework:.NET 10.0.12
+ observation:workload; player:0; wire-bytes:98605; expanded-bytes:98605; compressed:False
+ observation:workload; player:1; wire-bytes:97106; expanded-bytes:97106; compressed:False
+ observation:workload; player:2; wire-bytes:97108; expanded-bytes:97108; compressed:False
+ observation:workload; player:3; wire-bytes:97103; expanded-bytes:97103; compressed:False
+ observation:encode; warmup-calls:8; calls:32; milliseconds:112.832; allocated-bytes:24197200
+ observation:decode; warmup-calls:8; calls:32; milliseconds:178.880; allocated-bytes:58976736
+ observation:preflight-expanded-json; warmup-calls:8; calls:32; milliseconds:9.612; allocated-bytes:3968768
+
+
+
+Test Run Successful.
+Total tests: 6
+     Passed: 6
+ Total time: 3.1005 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/movement-delivery-diagnosis/qualification/codec-cost-net10-20261003T025903995718Z/checks.trx

@@ -1,0 +1,27 @@
+{
+  "diagnosticCheckpointAccepted": true,
+  "serverTimingGateClosed": false,
+  "productionRuntimeChanged": false,
+  "sourceHead": "b2bc319675afa738801a3965eab0285f7029f0a0",
+  "preChangeCheckpoint": "codex/checkpoint-before-movement-delivery-20261003T024353Z",
+  "milestone": "codex/milestone-movement-delivery-diagnosis-20261003",
+  "protectedCounts": {
+    "tests": 754,
+    "specs": 23
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "build": "qualification/build-20261003T025831923110Z/report.json",
+  "currentFocusedChecks": "qualification/codec-cost-net10-20261003T025903995718Z/report.json",
+  "passedDistinctCurrentCases": 6,
+  "applicationRuntime": "10.0.12",
+  "retainedFailedServerReport": "qualification/server-compatibility-20261003T024354293307Z/report.json",
+  "validatedDocumentLinks": 169,
+  "architectureImpact": "No production contracts change; diagnostic progress remains in implementation records.",
+  "checkerSha256": "b265f184fa306b4ec6039a68b05574a617b2e5628bf0c63f68f2ba0e921e50fd",
+  "review": "REVIEW.md",
+  "limits": [
+    "No repaired multiplayer gate",
+    "No new native, Core, storage or production acceptance",
+    "No causal separation of CPU, GC/runtime pause and executor scheduling yet"
+  ]
+}

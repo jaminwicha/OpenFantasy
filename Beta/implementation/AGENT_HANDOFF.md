@@ -19,6 +19,18 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Movement delivery diagnosis](p02/movement-delivery-diagnosis/RESULT.md) captures an actually failed
+four-player sample: accepted movement is first sampled at151.9644ms, beyond its unchanged150ms lease,
+with no selection. The424.742125ms scheduling gap precedes tick serialization; lock acquisition is
+0.003542ms. The traced baseline has75 passes, one movement failure and the expected Windows-only skip.
+A warning-free build and six new codec measurement/scope/duplicate-name cases pass on verified
+.NET10.0.12. Warmed encoding and decoding average3.5ms/5.6ms per real regional view; these averages
+do not explain the live delay. Independent review caught and corrected the original .NET8 probe mismatch.
+Runtime code is unchanged. CPU, runtime pauses and executor scheduling still need discrimination;
+no speculative parser/scheduler rewrite, lease extension or closed latency gate is claimed.
+Diagnostic milestone: `codex/milestone-movement-delivery-diagnosis-20261003`; before-change ref
+`codex/checkpoint-before-movement-delivery-20261003T024353Z` preserves `b2bc3196`.
+
 [Live host assignment custody](p02/live-control-presence/RESULT.md) binds internal acquisition to a
 current, fully admitted transport and captured permission/expiry terms. Exact per-port witnesses,
 revocation reconciliation and release on owner return/loss/disposal/startup/stop preserve home identity,
@@ -88,11 +100,10 @@ including the failed broader gates. Before-change ref:
    journey with actual paid actions, third/fourth live participants, revocation/return, archive/reopen
    and crash evidence. Native reachability remains separate from managed preparation;
    retain the [complete obligations](p02/co-player-control/DESIGN.md).
-4. The fresh uninstrumented server run repeats the movement timeout; retain the timing investigation
-   for latency qualification. Capture a genuinely failed movement
-   sample's receipt, lease age, selection and observation, using the actual test application descendant.
-   Separate shared load, allocation/algorithm costs and live-host scheduling. A later pass alone is
-   not diagnosis; do not repeat aggregates without a new purpose or change their bounds.
+4. The timing investigation now captures a genuinely failed sample in the actual test application.
+   Separate CPU/runtime pauses/executor scheduling around observation work and the delayed host tick
+   before choosing a repair. Component-cost averages do not establish the live scheduling cause.
+   A later pass alone is not diagnosis; do not repeat aggregates without a new purpose or change bounds.
 
 Combat + traversal + recovery remains a provisional simple preset, not an owner-approved preference.
 Offers carry explicit scopes. Inventory, trade, production, conversation/quests, care disposition and
