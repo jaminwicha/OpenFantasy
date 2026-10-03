@@ -130,7 +130,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
 
     public Task<WorldActionReceipt> SubmitAction(WorldActionCommand command) => SubmitAction(_localPlayer, command);
 
-    internal async Task<WorldActionReceipt> SubmitAction(LocalPlayerConnection player, WorldActionCommand command)
+    internal Task<WorldActionReceipt> SubmitAction(LocalPlayerConnection player, WorldActionCommand command) =>
+        SubmitActionCore(player, command, null);
+
+    private async Task<WorldActionReceipt> SubmitActionCore(LocalPlayerConnection player, WorldActionCommand command,
+        LocalActorSelection? observed)
     {
         ArgumentNullException.ThrowIfNull(command);
         byte[] encoded = WorldActionCodec.Encode(command);
@@ -139,10 +143,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         try
         {
             lock (_inputs) { EnsurePlayerAvailable(player); }
-            if (command.ActorId != player.ActorId)
-            {
-                throw new AuthorityDispatchException("This session accepts only its admitted player's actions.");
-            }
+            if (command.PrincipalId != player.Delivery.PrincipalId || command.OriginSessionId != player.Delivery.SessionId)
+                throw new AuthorityDispatchException("The command must retain this authenticated port's original delivery.");
             WorldActionReceipt? prior;
             try
             {
@@ -159,8 +161,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 throw new AuthorityDispatchException("This player adapter does not select control-permission commands.");
             }
-            lock (_inputs) { EnsureControlAvailable(player); }
             WorldSnapshot state = _authority.ReadStateForHost();
+            ReconcileControlCustody(state);
+            lock (_inputs) { ValidateActionSelection(player, observed, state, command); }
             _materialProposals.Validate(state, command);
             ValidateTradeSelection(state, command);
             ValidateEncounterSelection(state, command);
@@ -392,7 +395,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 if (_stopRequested || !_players.Values.Any(player => player.Ready) && !CanContinueAcceptedControlReturn(state)) { return; }
                 pending = SelectPendingAction(state);
-                playerMovement = SamplePlayerMovement();
+                playerMovement = SamplePlayerMovement(state);
             }
             if (pending?.Command.Intent is AcknowledgeCareIntent || pending is not null && IsCareDecision(pending.Command.Intent)
                 || state.Care?.Pending is not null)
@@ -502,8 +505,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     {
         if (command.WorldId != state.WorldId || command.BranchId != state.BranchId
             || command.ExpectedActorRevision != state.Space.GetActor(command.ActorId).Revision
-            || !state.Inventory.CanControl(new OpenFantasy.Core.Authority.TrustedCommandDelivery(
-                command.PrincipalId, command.OriginSessionId), command.ActorId)) return false;
+            || WorldActorCommandAuthority.AuthorizeSelection(state, command) is null) return false;
         return command.Intent switch
         {
             PendingCareDispositionIntent disposition => WorldCareActions.EvaluateDisposition(state, command.ActorId, disposition)
@@ -663,7 +665,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             if (_stopRequested) { return; }
             foreach (LocalPlayerConnection player in _players.Values) player.ClearMovement();
-            awaiting = _players.GetValueOrDefault(state.PendingExcavation!.Command.ActorId)?.Pending;
+            ContentHash acceptedHash = state.PendingExcavation!.Command.ContentHash;
+            awaiting = _players.Values.Select(player => player.Pending)
+                .SingleOrDefault(pending => pending?.Command.ContentHash == acceptedHash);
         }
         if (awaiting is not null && !WorldActionCodec.Encode(state.PendingExcavation!.Command).AsSpan()
             .SequenceEqual(awaiting.Bytes))
@@ -877,13 +881,19 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         HostTimingEvents.Log.Stage(TimingOwner, "publication.hash.begin", unchecked((long)state.Revision));
         ContentHash hash = state.ContentHash;
         HostTimingEvents.Log.Stage(TimingOwner, "publication.hash.end", unchecked((long)state.Revision));
-        if (_projectedStateHash == hash)
-        {
-            return;
-        }
+        if (_projectedStateHash == hash && !_players.Values.Any(player => player.SelectionNeedsProjection)) return;
         foreach (LocalPlayerConnection player in _players.Values)
         {
-            player.Publish(ProjectView(state, player.ActorId, player.Regions));
+            LocalWorldView home = ProjectView(state, player.ActorId, player.Regions);
+            LocalControlledActorView? controlled = player.Selection.ControlWitness is { } witness
+                ? LocalControlledActorView.Project(state, player.ActorId, player.Delivery, witness,
+                    state.Care?.Pending is not null && _authority.IsIdentityOccupiedForHost(LocalCareController.SelectionId(state)), player.SelectedRegions) : null;
+            lock (_inputs)
+            {
+                player.Publish(home);
+                player.ControlledView = controlled;
+                player.SelectionNeedsProjection = false;
+            }
         }
         _projectedStateHash = hash;
     }
@@ -892,8 +902,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     {
         lock (_inputs)
         {
-            if (_players.TryGetValue(pending.Command.ActorId, out LocalPlayerConnection? player)
-                && ReferenceEquals(player.Pending, pending)) player.Pending = null;
+            LocalPlayerConnection? player = _players.Values.SingleOrDefault(candidate => ReferenceEquals(candidate.Pending, pending));
+            if (player is not null) player.Pending = null;
         }
         if (error is not null) { pending.Completion.TrySetException(error); }
         else { pending.Completion.TrySetResult(receipt!); }

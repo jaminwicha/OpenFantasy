@@ -148,6 +148,7 @@ public sealed partial class LocalWorldSession
         lock (_inputs)
         {
             EnsurePlayerAvailable(player);
+            RequireUnboundHomeInput(player);
             PlayerControlStatus current = player.ControlStatus;
             if (!player.ControlAvailable || observed.State is not (PlayerControlState.Available or PlayerControlState.Restored)
                 || observed.PortId != current.PortId || observed.ActorId != current.ActorId

@@ -19,12 +19,30 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Local actor selection](p02/local-actor-selection/RESULT.md) now binds internal input to a separate
+selected actor, immutable home port, exact custody witness and monotonic generation. Transitions clear
+readiness/movement/inquiry/unaccepted input; stale zero/false commands cannot affect a later selection.
+Scoped views with purpose-specific quest/craft request captures preserve privacy. Completion follows
+the submitting port, exact old receipts remain distinct from new authority, and revocation/return
+forces paused home selection. Profile39/40 local feature guards are explicit; wire/client admission
+and native UI are still separate required bindings. Home human obligations remain intact.
+
+The warning-free build and 2,155 distinct checks pass: new selection/projection 11, affected Hosting 183,
+full Core 1,885, server 76 with the expected Windows-only skip. [Evidence](p02/local-actor-selection/FINAL_CHECKS.json)
+retains two failed builds and one corrected false construction-fixture assumption; 756 old tests/fixtures,
+23 specs and unrelated staging are unchanged. [Independent review](p02/local-actor-selection/REVIEW.md)
+corrected stale inquiry ingress and missing actionable scope captures. The server diagnostic does not
+reproduce or explain the earlier failed movement sample; its timing gate stays open. Positive delegated
+human-builder work, helper treatment/decline and a separate home-character decision confrontation still
+need explicit proof. Before-change ref `codex/checkpoint-before-local-actor-selection-20261003T033121Z`
+preserves `885e3b07`; marker `codex/milestone-local-actor-selection-20261003` records only this local scope.
+
 [Bounded runtime scheduling captures](p02/runtime-scheduling-diagnosis/RESULT.md) add opt-in
 test-process CPU/GC/pool counters without production changes. Two original server selections pass76
 with the expected Windows-only skip; the isolated original four-player case also passes. No failed
 sample reproduces. Captures show substantial process GC pauses in aggregate workloads, but cannot
 attribute the prior failure or justify a scheduler rewrite. The predeclared repeats are exhausted;
-resume full actor selection and retain the diagnostic for its next relevant qualification. The timing
+retain the diagnostic for relevant changed-implementation qualifications. The timing
 gate stays open. Before-change ref `codex/checkpoint-before-runtime-scheduling-20261003T030339Z`
 preserves `7ab81d44`; marker `codex/milestone-runtime-scheduling-diagnosis-20261003` records this scope.
 
@@ -98,10 +116,10 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Build explicit actor selection on the internal live-presence custody boundary. Separate permanent
-   home actor from selected actor; publish authorized observations,
-   clear queued input/readiness, and require deliberate Resume against the current selection generation.
-   Stale A→B→A observations, queries, inputs and readiness must never regain authority.
+1. Bind the internal local selection to explicit TLS/Godot consent/selection and profile39/40 client
+   startup paths. Preserve immutable home identity, scoped observations and deliberate generation-bound
+   Resume. Implement selected asynchronous query admission/response checks and separately authorized
+   private-history readers; old A→B→A responses must never become valid in a later selection.
 2. Keep the grantee's own human character's ordinary decisions/holds. Autonomous owner input cannot
    compete while assigned; accepted obligations finish before safe return. Transport loss cannot
    restart the original allowance or manufacture presence. Permission is not a socket or UI selection.

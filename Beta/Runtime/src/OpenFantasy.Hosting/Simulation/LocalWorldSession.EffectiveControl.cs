@@ -159,7 +159,9 @@ public sealed partial class LocalWorldSession
                 if (player.LiveControlWitness is not { } witness
                     || state.EffectiveControl?.Find(witness.OwnerActorId)?.Witness == witness) continue;
                 player.LiveControlWitness = null;
-                ClearUnacceptedControlInput(player, state);
+                if (player.Selection.Generation != 0)
+                    ChangeActorSelection(player, state, player.ActorId, null);
+                else ClearUnacceptedControlInput(player, state);
             }
         }
     }

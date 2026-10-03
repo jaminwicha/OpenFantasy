@@ -95,30 +95,47 @@ public sealed partial class LocalWorldSession
         lock (_inputs)
         {
             EnsurePlayerAvailable(player);
-            player.Ready = ready && player.ControlAvailable;
-            // Direct in-process calls are synchronous with the port boundary and retain their admitted API.
-            if (player.Ready && player.ControlStatus.State == PlayerControlState.Restored)
-                player.ControlStatus = player.ControlStatus with { State = PlayerControlState.Available };
-            HostTimingEvents.Log.Stage(player.TimingOwner, "ready", value: player.Ready ? 1 : 0);
-            if (!player.Ready) player.ClearMovement();
+            RequireUnboundHomeInput(player);
+            ApplyReady(player, ready);
         }
+    }
+
+    private static void ApplyReady(LocalPlayerConnection player, bool ready)
+    {
+        player.Ready = ready && player.ControlAvailable;
+        if (player.Ready && player.ControlStatus.State == PlayerControlState.Restored)
+            player.ControlStatus = player.ControlStatus with { State = PlayerControlState.Available };
+        HostTimingEvents.Log.Stage(player.TimingOwner, "ready", value: player.Ready ? 1 : 0);
+        if (!player.Ready) player.ClearMovement();
     }
 
     internal void SetMovement(LocalPlayerConnection player, long dx, long dy)
     {
-        bool cardinal = ((dx == 32 || dx == -32) && dy == 0) || ((dy == 32 || dy == -32) && dx == 0);
-        if (!cardinal && (dx != 0 || dy != 0))
-            throw new ArgumentException("Movement selects one fixed cardinal sample, or zero to stop.");
+        ValidateMovementSample(dx, dy);
         lock (_inputs)
         {
             EnsurePlayerAvailable(player);
-            LocalWorldView view = player.ReadView();
-            bool acceptsMovement = player.Ready && !view.IsResolvingConsequences && !view.IsInEncounter;
-            player.MovementX = acceptsMovement ? dx : 0;
-            player.MovementY = acceptsMovement ? dy : 0;
-            player.MovementAt = _time.GetTimestamp();
-            HostTimingEvents.Log.Stage(player.TimingOwner, acceptsMovement ? "movement.accepted" : "movement.rejected", dx, dy);
+            RequireUnboundHomeInput(player);
+            ApplyMovement(player, dx, dy);
         }
+    }
+
+    private static void ValidateMovementSample(long dx, long dy)
+    {
+        bool cardinal = ((dx == 32 || dx == -32) && dy == 0) || ((dy == 32 || dy == -32) && dx == 0);
+        if (!cardinal && (dx != 0 || dy != 0))
+            throw new ArgumentException("Movement selects one fixed cardinal sample, or zero to stop.");
+    }
+
+    private void ApplyMovement(LocalPlayerConnection player, long dx, long dy)
+    {
+        LocalWorldView view = player.ReadView();
+        bool acceptsMovement = player.Ready && !view.IsResolvingConsequences && !view.IsInEncounter;
+        player.MovementX = acceptsMovement ? dx : 0;
+        player.MovementY = acceptsMovement ? dy : 0;
+        player.MovementAt = _time.GetTimestamp();
+        player.MovementSelection = acceptsMovement ? player.Selection : null;
+        HostTimingEvents.Log.Stage(player.TimingOwner, acceptsMovement ? "movement.accepted" : "movement.rejected", dx, dy);
     }
 
     private void EnsurePlayerAvailable(LocalPlayerConnection player)
@@ -149,7 +166,7 @@ public sealed partial class LocalWorldSession
             {
                 if (state.Revision != acknowledged.WorldSequence) return null;
                 EntityId patient = state.Care.GetAgreement(acknowledged.AgreementId).PatientActorId;
-                waiting = waiting.Where(player => player.ActorId == patient
+                waiting = waiting.Where(player => player.Pending!.Command.ActorId == patient
                     && player.Pending!.Command.Intent is AcknowledgeCareIntent care
                     && care.AgreementId == acknowledged.AgreementId
                     && care.EncounterId == acknowledged.EncounterId).ToArray();
@@ -168,7 +185,7 @@ public sealed partial class LocalWorldSession
         return next.Pending;
     }
 
-    private List<WorldMovementInput> SamplePlayerMovement()
+    private List<WorldMovementInput> SamplePlayerMovement(WorldSnapshot state)
     {
         List<WorldMovementInput> movement = [];
         long now = _time.GetTimestamp();
@@ -178,8 +195,12 @@ public sealed partial class LocalWorldSession
                 HostTimingEvents.Log.Stage(player.TimingOwner, "movement.age", value: _time.GetElapsedTime(player.MovementAt, now).Ticks);
             if (!player.Ready || _time.GetElapsedTime(player.MovementAt, now) > MovementLease
                 || player.MovementX == 0 && player.MovementY == 0) continue;
+            if (player.MovementSelection != player.Selection || player.SelectionNeedsProjection) continue;
+            var sample = new WorldMovementInput(player.Delivery, player.Selection.ActorId, player.MovementX,
+                player.MovementY, player.Selection.ControlWitness);
+            if (WorldActorCommandAuthority.AuthorizeMovement(state, sample) is null) continue;
             HostTimingEvents.Log.Stage(player.TimingOwner, "movement.selected", player.MovementX, player.MovementY);
-            movement.Add(new WorldMovementInput(player.Delivery, player.ActorId, player.MovementX, player.MovementY));
+            movement.Add(sample);
         }
         return movement;
     }

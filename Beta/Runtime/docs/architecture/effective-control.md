@@ -119,9 +119,42 @@ cleanup committed; the next attachment reconciles the persisted assignment throu
 
 ## Player selection boundary
 
-The internal live-host acquisition API implements assignment custody. Player-facing possession requires
-a separately admitted adapter binding: authenticated live presence, explicit actor selection,
-selection generations, freshly authorized observations, cleared queued input/readiness, and deliberate
-Resume. Stale selection or readiness cannot become valid after an A-to-B-to-A switch. Saved consent
-alone supplies none of these facts. The existing local/TLS/Godot player route remains bound to its
-home actor; the trusted-host API is not a rendered actor-switching interface.
+[LocalWorldSession.ActorSelection](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.ActorSelection.cs)
+binds explicit internal local selection to a current established port and the held assignment. The
+[selection value](../../src/OpenFantasy.Hosting/Simulation/EffectiveControl/LocalActorSelection.cs)
+separates immutable home identity from operated actor, random port identity, monotonic generation and
+exact witness. Connection dictionaries, admission, disconnects, custody and the home character's human
+obligations continue to use the permanent home actor. Returning selection home does not release the
+assignment; explicit custody release is a separate boundary.
+
+A transition clears held movement, waiting trade inquiry, readiness and unaccepted queued action.
+Accepted obligations retain their original command. The host publishes the home view and an authorized
+selected view together before accepting Resume against that generation. The generation identifies an
+input lifetime, not a continually advancing world revision. Switching A-to-home-to-A cannot revive
+old readiness, movement, zero/stop input, pause or command selection. After the first transition,
+unbound legacy input and inquiry mutation remain refused even when home is selected again. Existing
+read-only history queries continue to address the permanent home actor; they never become delegated
+readers implicitly.
+
+New selected commands retain the authenticated port's real principal/session and exact witness;
+Core derives their required capability and rechecks ordinary authority. Movement retains its original
+150ms lease and current witness at the simulation cutoff. A queued result belongs to the actual
+submitting port, not a dictionary lookup by the operated actor. Exact earlier committed receipts are
+retrievable with original authenticated command bytes before fresh selection checks. Receipt lookup
+is not permission to queue a new command. Revocation, replacement and owner return invalidate custody,
+force a new paused home generation and clear the selected view; old input cannot resume it.
+
+[LocalControlledActorView](../../src/OpenFantasy.Hosting/Simulation/EffectiveControl/LocalControlledActorView.cs)
+projects current capability-specific choices without retaining a full actor view or world root.
+Missing sections mean withheld information. Combat, recovery, care disposition, inventory, trade,
+production and conversation/quests have separate purpose disclosures; no blanket progression or
+completed private history is supplied. Purpose-scoped
+[request preparation](../../src/OpenFantasy.Hosting/Simulation/EffectiveControl/LocalControlledRequests.cs)
+captures quest concurrency tokens and matching delivery lots, recipe inputs and production/storage
+revisions, and unfinished construction project/storage/tool choices. It keeps captured terms rather
+than reading fresh authority while the player confirms them. Material selection takes larger stacks
+first with stable identity ties to respect bounded request sizes. Home and selected observations come
+from one published root.
+Recording PrivateHistory supplies no history reader. Selected asynchronous queries require their own
+captured-generation admission and response contract. TLS/Godot selection and consent interfaces need
+explicit wire and presentation bindings; internal local APIs do not establish native reachability.

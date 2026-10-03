@@ -31,6 +31,7 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
         ControlStatus = !publishesControlStatus ? PlayerControlStatus.Available : new(
             controlAvailable ? PlayerControlState.Available : PlayerControlState.Pending,
             EntityId.FromBytes(RandomNumberGenerator.GetBytes(EntityId.ByteLength)), actorId, 0);
+        Selection = new(EntityId.FromBytes(RandomNumberGenerator.GetBytes(EntityId.ByteLength)), actorId, actorId, 0, null);
         HostTimingEvents.Log.Bind(TimingOwner, host.TimingOwner);
         if (HostTimingEvents.Log.IsEnabled()) HostTimingEvents.Log.Bind(TimingOwner, actorId.ToString());
     }
@@ -60,6 +61,20 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     internal bool ControlAvailable { get; set; }
     internal bool NetworkEstablished { get; set; }
     internal WorldControlWitness? LiveControlWitness { get; set; }
+    internal LocalActorSelection Selection { get; set; }
+    internal LocalControlledActorView? ControlledView { get; set; }
+    internal CargoPresentation.LocalRegionObserver? SelectedRegions { get; set; }
+    internal bool SelectionNeedsProjection { get; set; }
+    internal LocalActorSelection? MovementSelection { get; set; }
+    internal LocalSelectedPlayerObservation ReadSelectedObservation() => _host.ReadSelectedObservation(this);
+    internal Task<LocalSelectedPlayerObservation> SelectActorAsync(LocalActorSelection observed, EntityId actorId) =>
+        _host.SelectActorAsync(this, observed, actorId);
+    internal void ResumeSelected(LocalSelectedPlayerObservation observed) => _host.ResumeSelected(this, observed);
+    internal void PauseSelected(LocalActorSelection observed) => _host.PauseSelected(this, observed);
+    internal void SetSelectedMovement(LocalActorSelection observed, long dx, long dy) =>
+        _host.SetSelectedMovement(this, observed, dx, dy);
+    internal Task<WorldActionReceipt> SubmitSelectedAction(LocalActorSelection observed, WorldActionCommand command) =>
+        _host.SubmitSelectedAction(this, observed, command);
     internal Task<WorldControlWitness> AcquireControlAsync(LocalControlAcquisition observed) =>
         _host.AcquireControlAsync(this, observed);
     internal Task ReleaseControlAsync(WorldControlWitness observed) => _host.ReleaseControlAsync(this, observed);
@@ -76,5 +91,5 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     internal LocalInspectionSlot<PaidQuoteView?> QuoteInspection { get; } = new("One quote inspection is already awaiting its result.");
     internal LocalInspectionSlot<MaterialProposalView?> ProposalInspection { get; } = new("One proposal inspection is already awaiting its result.");
     internal void Publish(LocalWorldView view) => Volatile.Write(ref _view, view);
-    internal void ClearMovement() { MovementX = 0; MovementY = 0; }
+    internal void ClearMovement() { MovementX = 0; MovementY = 0; MovementSelection = null; }
 }

@@ -24,7 +24,7 @@ public sealed partial class LocalWorldSession
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
         {
-            lock (_inputs) { EnsurePlayerAvailable(player); EnsureControlAvailable(player); }
+            lock (_inputs) { EnsurePlayerAvailable(player); RequireUnboundHomeInput(player); EnsureControlAvailable(player); }
             WorldSnapshot state = _authority.ReadStateForHost();
             if (state.Coordination?.Markets is null)
             {
@@ -46,7 +46,7 @@ public sealed partial class LocalWorldSession
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
         {
-            lock (_inputs) { EnsurePlayerAvailable(player); }
+            lock (_inputs) { EnsurePlayerAvailable(player); RequireUnboundHomeInput(player); }
             return _trading.Cancel(player.ActorId);
         }
         finally { _serialization.Release(); }

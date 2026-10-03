@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="33ad6149-b399-4a1a-b435-b87d33ff9b59" name="@mac 2026-10-02 22:56:55" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T22:56:55.7623110-05:00" queuing="2026-10-02T22:56:55.7623110-05:00" start="2026-10-02T22:56:50.9152430-05:00" finish="2026-10-02T22:57:05.8109340-05:00" />
+  <TestSettings name="default" id="7f78dcd4-a523-45e6-94ae-54d768eab00b">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_22_56_55" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="11a65f6a-6c29-4883-884d-0da06c6fec95" testId="9081ef99-0bc3-d808-8cb0-fae86b97738f" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Quest_and_craft_requests_use_only_scoped_inputs_after_real_resource_and_storage_revisions" computerName="mac" duration="00:00:00.5130797" startTime="2026-10-02T22:57:04.9986270-05:00" endTime="2026-10-02T22:57:05.6920870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="11a65f6a-6c29-4883-884d-0da06c6fec95">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Single() Failure: The collection was empty</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Quest_and_craft_requests_use_only_scoped_inputs_after_real_resource_and_storage_revisions() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ActorSelection/ControlledActorProjectionTests.cs:line 283
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="fc2f64b4-afbf-41ba-a972-a685e9fa3b20" testId="79749142-af53-2b97-d8cb-55d03618027e" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Separately_accepted_scopes_disclose_only_current_purpose_sections_and_never_blanket_progression" computerName="mac" duration="00:00:08.9638274" startTime="2026-10-02T22:56:53.5557270-05:00" endTime="2026-10-02T22:57:02.5246500-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fc2f64b4-afbf-41ba-a972-a685e9fa3b20" />
+    <UnitTestResult executionId="2396f0b2-c872-42ae-bffb-3eaf67d4a801" testId="fdc19941-fbda-e4bf-ae12-9e48d8d976b7" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Selected_movement_journals_the_real_grantee_delivery_and_witness_without_moving_other_humans" computerName="mac" duration="00:00:02.6840921" startTime="2026-10-02T22:57:00.4557700-05:00" endTime="2026-10-02T22:57:03.1399470-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2396f0b2-c872-42ae-bffb-3eaf67d4a801" />
+    <UnitTestResult executionId="c1676e0c-3d06-43bb-91d4-cb76b400e747" testId="26d07db4-5f5e-10a2-df8d-fd913e3f33d2" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Genuine_pending_care_and_outcome_choices_disappear_after_their_actual_cancellation_and_completion" computerName="mac" duration="00:00:00.6756584" startTime="2026-10-02T22:57:04.3214300-05:00" endTime="2026-10-02T22:57:04.9971450-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c1676e0c-3d06-43bb-91d4-cb76b400e747" />
+    <UnitTestResult executionId="49c33ef4-915a-4930-b1da-952d35962a63" testId="59dd1e85-1c56-8a9a-2481-e28121afbc10" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Selected_paid_attack_completes_its_own_waiter_and_keeps_exact_receipt_and_cost_after_switch_and_revoke" computerName="mac" duration="00:00:01.5389358" startTime="2026-10-02T22:56:57.3371670-05:00" endTime="2026-10-02T22:56:58.8762620-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49c33ef4-915a-4930-b1da-952d35962a63" />
+    <UnitTestResult executionId="b0767bd8-276c-4fd9-a629-9eefdb78f302" testId="da84ddd9-da06-981f-5f83-6a7a782ef93a" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Exact_current_witness_home_delivery_and_regional_observer_are_required_without_mutating_the_root" computerName="mac" duration="00:00:00.9213309" startTime="2026-10-02T22:57:03.3964190-05:00" endTime="2026-10-02T22:57:04.3184980-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b0767bd8-276c-4fd9-a629-9eefdb78f302" />
+    <UnitTestResult executionId="5eb79f39-988f-4ba1-a361-9d27ce74cdb7" testId="20602c9d-65e3-ec67-15e0-260d54263788" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Four_original_humans_keep_home_identity_and_only_the_custodian_can_select_the_absent_owner" computerName="mac" duration="00:00:01.5762767" startTime="2026-10-02T22:56:58.8781270-05:00" endTime="2026-10-02T22:57:00.4544950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5eb79f39-988f-4ba1-a361-9d27ce74cdb7" />
+    <UnitTestResult executionId="b036bc83-cddc-48a1-a5b8-c5710f404a18" testId="f704f1ca-65c3-767e-4289-2b57eaf61700" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Real_open_material_and_paid_terms_are_visible_but_their_actual_withdrawals_are_not_history_access" computerName="mac" duration="00:00:00.8697807" startTime="2026-10-02T22:57:02.5257250-05:00" endTime="2026-10-02T22:57:03.3955600-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b036bc83-cddc-48a1-a5b8-c5710f404a18" />
+    <UnitTestResult executionId="d76da2f3-d6e4-457f-9e66-46d4a520cdcc" testId="db178db3-e5b9-7db3-cd9e-4bc83ff31dc0" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Revocation_or_real_owner_return_forces_a_new_paused_home_selection(ownerReturns: False)" computerName="mac" duration="00:00:01.6294215" startTime="2026-10-02T22:56:55.7051280-05:00" endTime="2026-10-02T22:56:57.3346630-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d76da2f3-d6e4-457f-9e66-46d4a520cdcc" />
+    <UnitTestResult executionId="cd689285-c080-4212-ba17-c0d3bbd305f8" testId="7d71aa0a-a6a8-ae6e-3c36-9ef84c41fe05" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Revocation_or_real_owner_return_forces_a_new_paused_home_selection(ownerReturns: True)" computerName="mac" duration="00:00:02.1386320" startTime="2026-10-02T22:56:53.5557270-05:00" endTime="2026-10-02T22:56:55.7011650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd689285-c080-4212-ba17-c0d3bbd305f8" />
+    <UnitTestResult executionId="29bf4f39-7d2b-4b93-9ec8-fc7e56f7477d" testId="b18b51d2-f3fb-0e49-3d63-54f8881b213e" testName="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Returning_to_the_same_actor_never_revives_old_input_readiness_or_legacy_unbound_authority" computerName="mac" duration="00:00:01.5199543" startTime="2026-10-02T22:57:03.1407580-05:00" endTime="2026-10-02T22:57:04.6607720-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="29bf4f39-7d2b-4b93-9ec8-fc7e56f7477d" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Quest_and_craft_requests_use_only_scoped_inputs_after_real_resource_and_storage_revisions" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9081ef99-0bc3-d808-8cb0-fae86b97738f">
+      <Execution id="11a65f6a-6c29-4883-884d-0da06c6fec95" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests" name="Quest_and_craft_requests_use_only_scoped_inputs_after_real_resource_and_storage_revisions" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Revocation_or_real_owner_return_forces_a_new_paused_home_selection(ownerReturns: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7d71aa0a-a6a8-ae6e-3c36-9ef84c41fe05">
+      <Execution id="cd689285-c080-4212-ba17-c0d3bbd305f8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests" name="Revocation_or_real_owner_return_forces_a_new_paused_home_selection" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Selected_paid_attack_completes_its_own_waiter_and_keeps_exact_receipt_and_cost_after_switch_and_revoke" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="59dd1e85-1c56-8a9a-2481-e28121afbc10">
+      <Execution id="49c33ef4-915a-4930-b1da-952d35962a63" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests" name="Selected_paid_attack_completes_its_own_waiter_and_keeps_exact_receipt_and_cost_after_switch_and_revoke" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Real_open_material_and_paid_terms_are_visible_but_their_actual_withdrawals_are_not_history_access" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f704f1ca-65c3-767e-4289-2b57eaf61700">
+      <Execution id="b036bc83-cddc-48a1-a5b8-c5710f404a18" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests" name="Real_open_material_and_paid_terms_are_visible_but_their_actual_withdrawals_are_not_history_access" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Four_original_humans_keep_home_identity_and_only_the_custodian_can_select_the_absent_owner" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="20602c9d-65e3-ec67-15e0-260d54263788">
+      <Execution id="5eb79f39-988f-4ba1-a361-9d27ce74cdb7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests" name="Four_original_humans_keep_home_identity_and_only_the_custodian_can_select_the_absent_owner" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Revocation_or_real_owner_return_forces_a_new_paused_home_selection(ownerReturns: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="db178db3-e5b9-7db3-cd9e-4bc83ff31dc0">
+      <Execution id="d76da2f3-d6e4-457f-9e66-46d4a520cdcc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests" name="Revocation_or_real_owner_return_forces_a_new_paused_home_selection" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Selected_movement_journals_the_real_grantee_delivery_and_witness_without_moving_other_humans" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fdc19941-fbda-e4bf-ae12-9e48d8d976b7">
+      <Execution id="2396f0b2-c872-42ae-bffb-3eaf67d4a801" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests" name="Selected_movement_journals_the_real_grantee_delivery_and_witness_without_moving_other_humans" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Exact_current_witness_home_delivery_and_regional_observer_are_required_without_mutating_the_root" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="da84ddd9-da06-981f-5f83-6a7a782ef93a">
+      <Execution id="b0767bd8-276c-4fd9-a629-9eefdb78f302" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests" name="Exact_current_witness_home_delivery_and_regional_observer_are_required_without_mutating_the_root" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Separately_accepted_scopes_disclose_only_current_purpose_sections_and_never_blanket_progression" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="79749142-af53-2b97-d8cb-55d03618027e">
+      <Execution id="fc2f64b4-afbf-41ba-a972-a685e9fa3b20" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests" name="Separately_accepted_scopes_disclose_only_current_purpose_sections_and_never_blanket_progression" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests.Returning_to_the_same_actor_never_revives_old_input_readiness_or_legacy_unbound_authority" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b18b51d2-f3fb-0e49-3d63-54f8881b213e">
+      <Execution id="29bf4f39-7d2b-4b93-9ec8-fc7e56f7477d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.LocalActorSelectionTests" name="Returning_to_the_same_actor_never_revives_old_input_readiness_or_legacy_unbound_authority" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Genuine_pending_care_and_outcome_choices_disappear_after_their_actual_cancellation_and_completion" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="26d07db4-5f5e-10a2-df8d-fd913e3f33d2">
+      <Execution id="c1676e0c-3d06-43bb-91d4-cb76b400e747" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests" name="Genuine_pending_care_and_outcome_choices_disappear_after_their_actual_cancellation_and_completion" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9081ef99-0bc3-d808-8cb0-fae86b97738f" executionId="11a65f6a-6c29-4883-884d-0da06c6fec95" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="79749142-af53-2b97-d8cb-55d03618027e" executionId="fc2f64b4-afbf-41ba-a972-a685e9fa3b20" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fdc19941-fbda-e4bf-ae12-9e48d8d976b7" executionId="2396f0b2-c872-42ae-bffb-3eaf67d4a801" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26d07db4-5f5e-10a2-df8d-fd913e3f33d2" executionId="c1676e0c-3d06-43bb-91d4-cb76b400e747" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="59dd1e85-1c56-8a9a-2481-e28121afbc10" executionId="49c33ef4-915a-4930-b1da-952d35962a63" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="da84ddd9-da06-981f-5f83-6a7a782ef93a" executionId="b0767bd8-276c-4fd9-a629-9eefdb78f302" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="20602c9d-65e3-ec67-15e0-260d54263788" executionId="5eb79f39-988f-4ba1-a361-9d27ce74cdb7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f704f1ca-65c3-767e-4289-2b57eaf61700" executionId="b036bc83-cddc-48a1-a5b8-c5710f404a18" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="db178db3-e5b9-7db3-cd9e-4bc83ff31dc0" executionId="d76da2f3-d6e4-457f-9e66-46d4a520cdcc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7d71aa0a-a6a8-ae6e-3c36-9ef84c41fe05" executionId="cd689285-c080-4212-ba17-c0d3bbd305f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b18b51d2-f3fb-0e49-3d63-54f8881b213e" executionId="29bf4f39-7d2b-4b93-9ec8-fc7e56f7477d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="11" executed="11" passed="10" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.52]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.09]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.26]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:13.45]       Assert.Single() Failure: The collection was empty
+[xUnit.net 00:00:13.45]       Stack Trace:
+[xUnit.net 00:00:13.45]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/ActorSelection/ControlledActorProjectionTests.cs(283,0): at OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Quest_and_craft_requests_use_only_scoped_inputs_after_real_resource_and_storage_revisions()
+[xUnit.net 00:00:13.45]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:13.45]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:13.46]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T22:57:05.7098930-05:00">
+        <Text>[xUnit.net 00:00:13.45]     OpenFantasy.Hosting.Tests.Simulation.ActorSelection.ControlledActorProjectionTests.Quest_and_craft_requests_use_only_scoped_inputs_after_real_resource_and_storage_revisions [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

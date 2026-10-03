@@ -1,0 +1,88 @@
+{
+  "localBoundaryCheckpointAccepted": true,
+  "fullCoPlayerFeatureAccepted": false,
+  "serverTimingGateClosed": false,
+  "nativeSelectionQualified": false,
+  "preChangeCheckpoint": "codex/checkpoint-before-local-actor-selection-20261003T033121Z",
+  "sourceHead": "885e3b070912b65c2ed6c1ee2083d833384ea90e",
+  "milestone": "codex/milestone-local-actor-selection-20261003",
+  "protectedCounts": {
+    "tests": 756,
+    "specs": 23
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "ef7a5de87b38f88556ca8de4cbe21913b4037f189807b559ac761e059cd637da",
+  "distinctPassingCases": 2155,
+  "reports": {
+    "build": {
+      "report": "qualification/build-20261003T035746225670Z/report.json",
+      "sha256": "00644d478fa7d5f4c760cd967b0f423d36571993c7d062dac2e18954ecfbce4c",
+      "seconds": 15.486465416994179,
+      "outcomes": null
+    },
+    "selection": {
+      "report": "qualification/selection-20261003T035811674979Z/report.json",
+      "sha256": "ae9b05a9e8ae4ec75b4a9a0bdd76b932c871625b8386749170e976d5b1e3003b",
+      "seconds": 22.886934500013012,
+      "outcomes": {
+        "Passed": 11
+      }
+    },
+    "hosting": {
+      "report": "qualification/hosting-20261003T035903371471Z/report.json",
+      "sha256": "ff9c37bb67774c74c880a00ac0808baf76cc5a0c2b3a3a6a7fb5cff5ba2eb280",
+      "seconds": 297.997978667001,
+      "outcomes": {
+        "Passed": 183
+      }
+    },
+    "core": {
+      "report": "qualification/core-20261003T040406610241Z/report.json",
+      "sha256": "30e57cfe51087ffea3b54a627d35568f7a8fbb8fe59a89fd9940d754c48c78d1",
+      "seconds": 172.1206603339815,
+      "outcomes": {
+        "Passed": 1885
+      }
+    },
+    "server-compatibility": {
+      "report": "qualification/server-compatibility-20261003T040705111536Z/report.json",
+      "sha256": "394a5764ee860ee91e9426b840bb2b5278df64e53d0dc6ff7d724c6583d4f814",
+      "seconds": 46.10354270902462,
+      "outcomes": {
+        "Passed": 76,
+        "NotExecuted": 1
+      }
+    }
+  },
+  "retainedFailedAttempts": [
+    {
+      "report": "qualification/build-20261003T034708890501Z/report.json",
+      "outcomes": null,
+      "exitCode": 1
+    },
+    {
+      "report": "qualification/build-20261003T035413709531Z/report.json",
+      "outcomes": null,
+      "exitCode": 1
+    },
+    {
+      "report": "qualification/selection-20261003T035649127323Z/report.json",
+      "outcomes": {
+        "Passed": 10,
+        "Failed": 1
+      },
+      "exitCode": 1
+    }
+  ],
+  "serverSelectionMatchesPriorCaseNames": true,
+  "openProofs": [
+    "TLS/Godot consent and actor selection, explicit profile39/40 client startup admission",
+    "Generation-bound selected asynchronous query admission and responses; separate private-history readers",
+    "Positive delegated human-builder construction and helper treatment/decline journeys",
+    "Separate selected-home required-decision confrontation; four-player native journeys",
+    "Profile40 process-kill and complete feature/archive/native qualification",
+    "Earlier failed movement timing cause and production latency reliability",
+    "Full campaign, migration, platform, physical-device, art, human and production acceptance"
+  ],
+  "delegation": "Native bounded workers and one critic; no external provider request or external-credit savings claim."
+}

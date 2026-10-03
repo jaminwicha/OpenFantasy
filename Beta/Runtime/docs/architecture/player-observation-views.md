@@ -169,3 +169,13 @@ preparation capture must be explained as participant-visible request terms befor
 Default diagnostic JSON changes require their own compatibility decision; this codec grants none.
 Network publication, observation ordering/recovery and native client session ownership are separate
 bindings around this value codec.
+
+## Delegated local observations
+
+The [effective-control selection boundary](effective-control.md#player-selection-boundary) publishes
+an immutable home view alongside a separate capability-filtered selected actor view. `ReadView()`
+retains its permanent home meaning. `ReadSelectedObservation()` captures selection, both views,
+control status and readiness under the input lock. An unpublished transition refuses observation
+and input rather than pairing a new selection token with an old actor view. These internal values
+have no implicit representation in the home-player wire codec described above; adding transport
+requires explicit mapping and generation checks at both ends.
