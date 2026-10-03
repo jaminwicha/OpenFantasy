@@ -83,6 +83,7 @@ internal enum FarmSemanticAction
     CloseRecipes,
     PrepareRecipe,
     ConfirmRecipe,
+    Build,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -492,6 +493,7 @@ internal sealed class FarmInputRouter
     {
         FarmInputLayer.World => action is FarmSemanticAction.Speak or FarmSemanticAction.Give
             or FarmSemanticAction.Gather or FarmSemanticAction.Craft
+            or FarmSemanticAction.Build
             or FarmSemanticAction.Excavate or FarmSemanticAction.Traverse or FarmSemanticAction.EnterEncounter
             or FarmSemanticAction.UseRestorative or FarmSemanticAction.RevokeCarePermission
             or FarmSemanticAction.ProposeMaterial or FarmSemanticAction.AcceptMaterial

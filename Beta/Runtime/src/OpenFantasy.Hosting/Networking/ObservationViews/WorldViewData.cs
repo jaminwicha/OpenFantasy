@@ -54,9 +54,16 @@ internal sealed record WorldViewData(
     [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)]
     bool SupportsCareDispositions = false,
     [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
-    LocalMaterialDescriptions? MaterialDescriptions = null)
+    LocalMaterialDescriptions? MaterialDescriptions = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    ReadOnlyCollection<LocalConstructionWorkView>? ConstructionWork = null,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    ReadOnlyCollection<LocalPublicStructureView>? Structures = null)
 {
-    internal LocalWorldView ToView() => new(WorldId, BranchId, PlayerActorId, Regional, IsRegional, Calendar, HasReadingHold, IsResolvingConsequences, Encounter, EncounterLifecycle, EncounterActions, Retreat, EncounterOutcome, RoadThreats, Care, Restorative, MaterialProposals, PaidQuotes, Markets, EncounterActors, Actors, PlayerInventory, GatheringNodes, GatheringTools, PlayerGatherEffort, Worksite, Liquids, Crafting, Dialogue, Progression, Quests, Construction, SupportsCareDispositions, MaterialDescriptions);
+    internal LocalWorldView ToView() => new(WorldId, BranchId, PlayerActorId, Regional, IsRegional, Calendar, HasReadingHold, IsResolvingConsequences, Encounter, EncounterLifecycle, EncounterActions, Retreat, EncounterOutcome, RoadThreats, Care, Restorative, MaterialProposals, PaidQuotes, Markets, EncounterActors, Actors, PlayerInventory, GatheringNodes, GatheringTools, PlayerGatherEffort, Worksite, Liquids, Crafting, Dialogue, Progression, Quests, Construction, SupportsCareDispositions, MaterialDescriptions, ConstructionWork, Structures);
+
+    internal static WorldViewData FromConstruction(LocalWorldView value) => FromDescribed(value) with
+    { ConstructionWork = value.ConstructionWork, Structures = value.Structures ?? throw new FormatException("Missing public structure observation.") };
 
     internal static WorldViewData FromDescribed(LocalWorldView value) => From(value) with { MaterialDescriptions = value.MaterialDescriptions };
 

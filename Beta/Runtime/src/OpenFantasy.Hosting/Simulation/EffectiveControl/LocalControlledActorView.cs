@@ -25,9 +25,11 @@ public sealed class LocalControlledActorView
         LocalControlledCareDispositionView? careDisposition, LocalInventoryView? inventory,
         LocalMaterialProposalView? materialProposals, LocalControlledTradeView? trade,
         LocalControlledProductionView? production, LocalControlledConversationView? conversation,
-        LocalMaterialDescriptions? materialDescriptions = null)
+        LocalMaterialDescriptions? materialDescriptions = null,
+        ReadOnlyCollection<LocalPublicStructureView>? structures = null)
     {
         MaterialDescriptions = materialDescriptions;
+        Structures = structures is null ? null : Array.AsReadOnly(structures.ToArray());
         WorldId = worldId; BranchId = branchId; ActorId = actorId; Capabilities = capabilities; Calendar = calendar;
         HasReadingHold = hasReadingHold; IsResolvingConsequences = isResolvingConsequences; IsRegional = isRegional;
         Actors = Array.AsReadOnly(actors.ToArray()); Regional = regional; Combat = combat; Retreat = retreat;
@@ -47,6 +49,7 @@ public sealed class LocalControlledActorView
         Actors = Array.AsReadOnly(source.Actors.ToArray());
         Regional = source.Regional;
         IsRegional = source.IsRegional;
+        Structures = source.Structures;
 
         bool Has(WorldControlCapabilities scope) => (capabilities & scope) == scope;
         if (Has(WorldControlCapabilities.Combat))
@@ -92,7 +95,8 @@ public sealed class LocalControlledActorView
                 Array.AsReadOnly(source.GatheringTools.ToArray()), source.PlayerGatherEffort, source.Worksite,
                 source.Crafting, source.Crafting is null ? null : new LocalControlledCraftPreparation(state, source),
                 Array.AsReadOnly(source.Construction.Where(project => !project.IsCompleted).ToArray()),
-                LocalControlledConstructionPreparation.Project(state, source));
+                LocalControlledConstructionPreparation.Project(state, source))
+            { ConstructionWorkViews = source.ConstructionWork };
         if (Has(WorldControlCapabilities.ConversationAndQuests))
             Conversation = new(source.Dialogue,
                 Array.AsReadOnly(source.Quests.Where(quest => quest.Status != ActorQuestStatus.Completed).ToArray()),
@@ -102,6 +106,9 @@ public sealed class LocalControlledActorView
 
     [System.Text.Json.Serialization.JsonIgnore]
     public LocalMaterialDescriptions? MaterialDescriptions { get; }
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public ReadOnlyCollection<LocalPublicStructureView>? Structures { get; }
 
     public EntityId WorldId { get; }
     public EntityId BranchId { get; }
@@ -179,6 +186,10 @@ public sealed record LocalControlledTradeView(ReadOnlyCollection<PaidQuoteView> 
 public sealed record LocalControlledProductionView(ReadOnlyCollection<LocalGatherNodeView> GatheringNodes,
     ReadOnlyCollection<LocalGatherToolLotView> GatheringTools, uint? GatherEffort, LocalWorksiteView? Worksite,
     LocalCraftingView? Crafting, LocalControlledCraftPreparation? CraftPreparation,
-    ReadOnlyCollection<LocalConstructionView> Construction, ReadOnlyCollection<LocalControlledConstructionPreparation> ConstructionWork);
+    ReadOnlyCollection<LocalConstructionView> Construction, ReadOnlyCollection<LocalControlledConstructionPreparation> ConstructionWork)
+{
+    [System.Text.Json.Serialization.JsonIgnore]
+    public ReadOnlyCollection<LocalConstructionWorkView> ConstructionWorkViews { get; init; } = Array.AsReadOnly(Array.Empty<LocalConstructionWorkView>());
+}
 public sealed record LocalControlledConversationView(LocalDialogueView? Dialogue, ReadOnlyCollection<LocalQuestView> Quests,
     LocalControlledQuestPreparation? Requests);

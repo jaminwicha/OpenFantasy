@@ -69,6 +69,13 @@ itself, so its delivered Resume basis and encoded payload refer to the same repr
 diagnostic JSON ignores this presentation marker. Both versions retain the same authority and
 selection semantics; unsupported representation versions are refused, not silently downgraded.
 
+Selected body version 3, selected through `WithConstruction()` or `EncodeWithConstruction`, adds
+purpose-specific construction work under Production and installed structure geometry outside that
+capability. Public visibility does not imply authority to build or read a project's stock/history.
+Both facets belong to the selected observation; clients cannot fill a missing facet from the home
+character. The frame retains its actual presentation version through publication, delivery proof and
+canonical decoding. The version-2 material-description entrypoint retains its declared semantics.
+
 [Selected inputs](../../src/OpenFantasy.Hosting/Networking/Selection/PlayerSelectedInputCodec.cs) use
 an explicit binary version and exact selection. Inner world commands retain their 16 KiB cap and canonical
 bytes; witnesses retain their 256-byte cap. Administration and selected query replies use bounded 16 KiB

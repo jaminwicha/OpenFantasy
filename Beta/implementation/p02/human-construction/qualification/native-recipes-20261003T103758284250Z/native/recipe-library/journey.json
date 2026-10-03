@@ -1,0 +1,97 @@
+{
+  "Status": "passed",
+  "AllowanceSeconds": 30.4877493,
+  "RegrowthSeconds": 36.0955002,
+  "ElapsedMilliseconds": 88955,
+  "Stages": [
+    {
+      "Name": "paused-two-recipes-no-command",
+      "ElapsedMilliseconds": 40317,
+      "Peers": [
+        {
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 64,
+          "Commands": 0
+        },
+        {
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 4,
+          "Commands": 0
+        },
+        {
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 4,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "ordinary-regrowth-observed",
+      "ElapsedMilliseconds": 80312,
+      "Peers": [
+        {
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 200,
+          "Commands": 4
+        },
+        {
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 8,
+          "Commands": 0
+        },
+        {
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 7,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "two-batches-and-unconsumed-capture",
+      "ElapsedMilliseconds": 82517,
+      "Peers": [
+        {
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 225,
+          "Commands": 9
+        },
+        {
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 8,
+          "Commands": 0
+        },
+        {
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 8,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "return-revoke-invalidates-unconsumed-batch",
+      "ElapsedMilliseconds": 85124,
+      "Peers": [
+        {
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Sequence": 2,
+          "Commands": 0
+        },
+        {
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 234,
+          "Commands": 9
+        },
+        {
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 9,
+          "Commands": 0
+        },
+        {
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 9,
+          "Commands": 0
+        }
+      ]
+    }
+  ]
+}

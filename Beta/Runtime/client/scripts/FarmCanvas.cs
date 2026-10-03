@@ -71,6 +71,13 @@ public partial class FarmCanvas : Node2D
     /// <summary>The drawn cue's viewport envelope, independent of the selected resource's own appearance.</summary>
     internal Rect2? TargetCueViewportBounds => _targetMarker.ViewportBounds;
 
+    /// <summary>Actual installed appearance bounds; generic structures use their drawn member polygons.</summary>
+    internal Rect2? StructureViewportBounds(EntityId identity) =>
+        _structures.TryGetValue(identity, out var view) ? view.ViewportBounds : null;
+
+    internal Rect2? StructureSpriteViewportBounds(EntityId identity) =>
+        _structures.TryGetValue(identity, out var view) ? view.SpriteViewportBounds : null;
+
     /// <summary>Whether the observed-ground layer, rather than the farm grid's fixed floor, is drawn.</summary>
     internal bool DrawsObservedGround => _cargoTerrain.Visible && !_ground.Visible;
 
@@ -209,6 +216,30 @@ public partial class FarmCanvas : Node2D
 
     private void PresentStructures(FarmCanvasFrame frame)
     {
+        if (frame.PublicStructures is { } observed)
+        {
+            // The physical worksite view already owns displaced members, condition and its cutaway.
+            LocalPublicStructureView[] visible = frame.Worksite?.HasPhysicalConstruction == true ? [] : observed.ToArray();
+            HashSet<EntityId> identities = visible.Select(value => value.StructureId).ToHashSet();
+            foreach (var identity in _structures.Keys.Where(identity => !identities.Contains(identity)).ToArray())
+            {
+                _structures[identity].QueueFree();
+                _structures.Remove(identity);
+            }
+            foreach (var structure in visible)
+            {
+                if (!_structures.TryGetValue(structure.StructureId, out var view))
+                {
+                    view = GD.Load<PackedScene>("res://scenes/FarmStructureView.tscn").Instantiate<FarmStructureView>();
+                    view.Name = "Structure_" + structure.StructureId;
+                    _actorLayer.AddChild(view);
+                    _structures.Add(structure.StructureId, view);
+                }
+                view.Present(structure, Project(structure.Origin), frame.IsMultilevel);
+                view.ZIndex = frame.IsMultilevel ? WorksiteCoordinates.DepthIndex(structure.Origin.Z, actor: true) : 0;
+            }
+            return;
+        }
         // Excavation alone does not supply physical member appearances. Retain the ordinary
         // completed guard art until the view explicitly owns physical construction geometry.
         IEnumerable<FarmStructureFrame> structures = frame.Worksite?.HasPhysicalConstruction == true ? [] : frame.Structures;
@@ -227,7 +258,7 @@ public partial class FarmCanvas : Node2D
                 _actorLayer.AddChild(view);
                 _structures.Add(structure.ProjectId, view);
             }
-            view.Present(structure);
+            view.Present(structure, Project(structure.Feet));
             view.ZIndex = frame.IsMultilevel ? WorksiteCoordinates.DepthIndex(structure.Feet.Z, actor: true) : 0;
         }
     }

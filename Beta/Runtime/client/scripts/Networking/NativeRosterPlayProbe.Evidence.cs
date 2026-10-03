@@ -42,6 +42,7 @@ internal sealed partial class NativeRosterPlayProbe
             Gifts = GiftEvidence(), GiftSnapshots = _giftSnapshots, GiftCaptures = _giftCaptures,
             Production = ProductionEvidence(), ProductionCaptures = _productionCaptures,
             Recipes = RecipeEvidence(), RecipeCaptures = _recipeCaptures,
+            Construction = ConstructionEvidence(), ConstructionCaptures = _constructionCaptures,
             GiftOpeningLayout = _giftOpeningLayout, FailureFrame = failureFrame
         });
     }
@@ -75,6 +76,7 @@ internal sealed partial class NativeRosterPlayProbe
         Gifts = GiftEvidence(), GiftSnapshots = _giftSnapshots, GiftCaptures = _giftCaptures,
         Production = ProductionEvidence(), ProductionCaptures = _productionCaptures,
         Recipes = RecipeEvidence(), RecipeCaptures = _recipeCaptures,
+            Construction = ConstructionEvidence(), ConstructionCaptures = _constructionCaptures,
         GiftOpeningLayout = _giftOpeningLayout,
         ElapsedMilliseconds = _driver.ElapsedMilliseconds,
         NativeFocused = GetWindow().HasFocus(), ObservedNativeFocus = _nativeFocus,

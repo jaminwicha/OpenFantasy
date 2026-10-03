@@ -19,6 +19,28 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Human construction](p02/human-construction/RESULT.md) now binds explicit builder projects to exact
+home/delegated Build reviews and independently public installed geometry. A separately selected fresh
+four-human scenario retains Wren's real kit, supply contract and200-work requirement. Its native journey
+funds the project, earns all200 steps (198 delegated), survives actual partial-work stop/reopen, refuses
+an unconsumed capture after owner return/revoke and completes with original-genesis replay/conservation.
+Managed Traversal-only observation separately proves public geometry with Production withheld.
+
+The warning-free build and [final evidence](p02/human-construction/FINAL_CHECKS.json) record **2,299
+distinct passing cases**, including20 new cases, fresh fullCore1,885 and nine native cases. Four final
+images were inspected, with explicit visual limits: the builder overlaps the small guard, so unobscured
+completed-object legibility is unaccepted; the compatibility frame also retains clipped idle-preview
+text. Atomic200-confirmation input is not a polished sustained activity. P04/P07 start/interrupt/resume
+contracts remain in the living UI plan. Five failed attempts plus one deliberate interrupted fixture
+run remain retained. Independent review and current timeless architecture accompany this scope.
+
+Before-change `codex/checkpoint-before-human-construction-20261003T100417Z` preserves `7cab55df`;
+all797 prior test inputs,23 specs and19 unrelated staged files remain pinned. One additive client source
+link subtracts to its archived original. Marker `codex/milestone-human-construction-20261003` records
+this increment. Full history, profile40 process-kill, earlier unexplained timing/gift-opening failures,
+physical/human/art, maximum/scale and complete campaign gates remain open. No paid provider request
+was executed; the external spending-limit failure stays terminal.
+
 [Explicit recipe library](p02/recipe-library/RESULT.md) now binds all disclosed admitted nonconstruction
 recipes to separate Prepare/Confirm, exact ingredient/selection captures and independently permitted
 public material names. Home presentation v5 and selected v2 retain legacy decoding/canonical bytes;
@@ -243,9 +265,12 @@ including the failed broader gates. Before-change ref:
    rules, immutable home identity and explicit scopes; no withheld full-view synthesis. The native
    consent/selection/combat route is qualified above; the [client scope notes](p02/connected-player-control/CLIENT_NOTES.md)
    retain the incomplete domain surfaces. Native source-lot and produced-gift journeys have bounded passing evidence; retain the unexplained
-   raw-gift reopening failure and its diagnostic. Selected history lifetime interactions, complete recipe
-   and human-construction interfaces, mouse dropdowns and permission-independent readable public
-   item names remain explicit work. Preserve the shared Pack instead of adding duplicate domain panels
+   raw-gift reopening failure and its diagnostic. Selected history lifetime interactions, restorative/sell-management
+   screens and mouse dropdowns remain explicit work. Atomic human construction is qualified above;
+   sustained work, unobscured completed-object legibility and the clipped idle-preview HUD need their
+   normal interface/presentation work. The admitted recipe library and independently
+   permitted public material names are qualified above; learning and full catalog/UI breadth remain open.
+   Preserve the shared Pack instead of adding duplicate domain panels
    to Characters; the final icon/tooltip presentation still needs its normal production pass.
 2. Qualify full profile40 archive/reopen and actual process-kill recovery with native continuation.
    Preserve accepted obligations, permission/assignment lineage and original controller allowance;

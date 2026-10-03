@@ -20,6 +20,7 @@ internal sealed class FarmProductionPresentation
         GatheringTools = view.GatheringTools;
         GatherEffort = view.PlayerGatherEffort;
         Worksite = view.Worksite;
+        ConstructionWork = view.ConstructionWork;
         HasCrafting = view.Crafting is not null;
         DefaultRecipe = FarmCrafting.RationsRecipe(view);
         CraftSelection = FarmCrafting.SelectRations(view);
@@ -50,6 +51,7 @@ internal sealed class FarmProductionPresentation
         GatheringTools = production.GatheringTools;
         GatherEffort = production.GatherEffort;
         Worksite = production.Worksite;
+        ConstructionWork = production.ConstructionWorkViews;
         HasCrafting = production.Crafting is not null;
         var recipes = production.CraftPreparation?.Recipes;
         Recipes = recipes?.ToArray() ?? [];
@@ -87,6 +89,7 @@ internal sealed class FarmProductionPresentation
     internal IReadOnlyList<LocalGatherToolLotView> GatheringTools { get; }
     internal uint? GatherEffort { get; }
     internal LocalWorksiteView? Worksite { get; }
+    internal IReadOnlyList<LocalConstructionWorkView> ConstructionWork { get; }
     internal bool HasCrafting { get; }
     internal LocalCraftRecipeView? DefaultRecipe { get; }
     internal FarmCraftSelection CraftSelection { get; }

@@ -11,6 +11,11 @@ public sealed record PlayerSelectedObservation(EntityId StreamId, ulong Revision
     [System.Text.Json.Serialization.JsonIgnore]
     public int PresentationVersion { get; init; } = PlayerSelectedObservationCodec.Version;
 
+    public PlayerSelectedObservation WithConstruction() => this with
+    {
+        PresentationVersion = PlayerSelectedObservationCodec.ConstructionVersion
+    };
+
     public PlayerSelectedObservation WithMaterialDescriptions() => this with
     {
         PresentationVersion = PlayerSelectedObservationCodec.MaterialDescriptionsVersion
@@ -22,15 +27,19 @@ public static class PlayerSelectedObservationCodec
 {
     public const int Version = 1;
     public const int MaterialDescriptionsVersion = 2;
+    public const int ConstructionVersion = 3;
     public const int MaximumBodyBytes = PlayerViewCodec.MaximumBodyBytes;
     public const int MaximumExpandedJsonBytes = PlayerViewCodec.MaximumExpandedJsonBytes;
     private static readonly JsonSerializerOptions Options = SelectedObservationOptions.Create();
     private static readonly JsonSerializerOptions DescribedOptions = SelectedObservationOptions.Create(includeMaterialDescriptions: true);
+    private static readonly JsonSerializerOptions ConstructionOptions = SelectedObservationOptions.Create(includeMaterialDescriptions: true, includeConstruction: true);
     public static byte[] Encode(PlayerSelectedObservation observation)
     {
         using var json = EncodeJson(observation);
         return json.WrittenSpan.Length <= MaximumBodyBytes ? json.WrittenSpan.ToArray() : ObservationCompression.Encode(json.WrittenSpan);
     }
+    public static byte[] EncodeWithConstruction(PlayerSelectedObservation observation) => Encode(observation.WithConstruction());
+
     public static byte[] EncodeWithMaterialDescriptions(PlayerSelectedObservation observation) =>
         Encode(observation.WithMaterialDescriptions());
 
@@ -43,7 +52,7 @@ public static class PlayerSelectedObservationCodec
             ReadOnlySpan<byte> json = expanded is null ? bytes : expanded;
             PlayerViewCodec.Preflight(json);
             var body = JsonSerializer.Deserialize<Body>(json, Options) ?? throw new FormatException("Missing selected observation.");
-            if (body.Version is not Version and not MaterialDescriptionsVersion || body.Value is null) throw new FormatException("Unsupported selected observation version.");
+            if (body.Version is not Version and not MaterialDescriptionsVersion and not ConstructionVersion || body.Value is null) throw new FormatException("Unsupported selected observation version.");
             var value = body.Value with { PresentationVersion = body.Version };
             using var canonical = EncodeJson(value);
             if (!json.SequenceEqual(canonical.WrittenSpan)) throw new FormatException("Noncanonical selected observation.");
@@ -56,9 +65,15 @@ public static class PlayerSelectedObservationCodec
     private static BoundedObservationJsonBuffer EncodeJson(PlayerSelectedObservation value)
     {
         SelectedObservationValidation.Validate(value);
-        if (value.PresentationVersion is not Version and not MaterialDescriptionsVersion)
+        if (value.PresentationVersion is not Version and not MaterialDescriptionsVersion and not ConstructionVersion)
             throw new FormatException("Unsupported selected presentation version.");
-        bool described = value.PresentationVersion == MaterialDescriptionsVersion;
+        bool construction = value.PresentationVersion == ConstructionVersion;
+        bool described = value.PresentationVersion >= MaterialDescriptionsVersion;
+        if (construction)
+        {
+            ConstructionObservationValidation.Validate(value.Observation.HomeView);
+            if (value.Observation.ControlledView is { } operated) ConstructionObservationValidation.Validate(operated);
+        }
         if (described)
         {
             MaterialDescriptionValidation.Validate(value.Observation.HomeView);
@@ -68,7 +83,7 @@ public static class PlayerSelectedObservationCodec
         try
         {
             using var writer = new Utf8JsonWriter(buffer);
-            JsonSerializer.Serialize(writer, new Body(value.PresentationVersion, value), described ? DescribedOptions : Options); writer.Flush();
+            JsonSerializer.Serialize(writer, new Body(value.PresentationVersion, value), construction ? ConstructionOptions : described ? DescribedOptions : Options); writer.Flush();
             PlayerViewCodec.Preflight(buffer.WrittenSpan);
             return buffer;
         }

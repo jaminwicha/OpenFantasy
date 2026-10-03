@@ -197,6 +197,11 @@ internal sealed partial class FarmHud : CanvasLayer
             _wood.Text += (_wood.Text.Length == 0 ? "" : "\n") + $"Work effort: {effort}";
             _wood.Visible = true;
         }
+        if (target?.Kind == FarmTargetKind.Construction)
+        {
+            PresentConstruction(production.ConstructionWorkViews, target, pending, paused, append: true);
+            return;
+        }
         if (production.Worksite is not { } worksite) return;
         long elevation = view.Actors.Single(actor => actor.ActorId == view.ActorId).Feet.Z;
         _clock.Text += $" · Height {elevation / 256.0:0.##} m";
@@ -223,6 +228,20 @@ internal sealed partial class FarmHud : CanvasLayer
             if (mine is not null) detail = Explain(mine);
         }
         _project.TooltipText = _project.Text + (detail is null ? "" : "\n" + detail);
+    }
+
+    private void PresentConstruction(IReadOnlyList<LocalConstructionWorkView> projects, FarmTarget target,
+        bool pending, bool paused, bool append)
+    {
+        LocalConstructionWorkView? work = projects.FirstOrDefault(value => value.Project.ProjectId == target.Id);
+        _offers.TryGetValue(FarmSemanticAction.Build, out FarmActionOffer? build);
+        string status = pending ? "Action pending" : paused ? "Paused"
+            : build?.CanExecute == true ? "V: inspect Build" : "Unavailable · V: inspect";
+        string text = work is null ? "Selected project is no longer available for work."
+            : $"Build {work.Project.CompletedWork}/{work.Project.RequiredWork} · {status}";
+        _project.Visible = true;
+        _project.Text = (append ? _project.Text + "\n" : "") + text;
+        _project.TooltipText = _project.Text + (build is null ? "" : "\n" + Explain(build));
     }
 
     internal void Present(LocalWorldView view, ulong wood, ulong berries, bool pending, bool paused,
@@ -293,9 +312,12 @@ internal sealed partial class FarmHud : CanvasLayer
             _project.Text = (view.IsResolvingConsequences ? "Finishing the work…" : activity)
                 + "\nQ: choose work face · V: " + (worksite.SupportsAssistedTraversal ? "Mine / Climb" : "Mine");
         }
-        if (view.IsInEncounter || view.EncounterLifecycle is not null
-            && targets.Selected?.Kind != FarmTargetKind.Excavation && !speaking) _project.Visible = false;
         _project.TooltipText = _project.Text;
+        if (targets.Selected is { Kind: FarmTargetKind.Construction } constructionTarget)
+            PresentConstruction(view.ConstructionWork, constructionTarget, pending, paused, append: false);
+        if (view.IsInEncounter || view.EncounterLifecycle is not null
+            && targets.Selected?.Kind is not (FarmTargetKind.Excavation or FarmTargetKind.Construction)
+            && !speaking) _project.Visible = false;
         _dialogue.Visible = speaking;
         if (view.Dialogue is { } dialogue)
         {

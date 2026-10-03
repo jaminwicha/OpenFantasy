@@ -18,6 +18,7 @@ internal static class FarmProductionActionOffers
         if (view.HasCrafting)
             offers[FarmSemanticAction.Craft] = Craft(view, scope, woodDefinition, berryDefinition);
         WorksiteActionOffers.Add(offers, view.Worksite, view.Feet, scope, target, view.CanTraverse, view.ContextBlocker);
+        ConstructionActionOffers.Add(offers, view.ConstructionWork, scope, target);
     }
 
     private static FarmActionOffer Gather(FarmProductionPresentation view, FarmActionScope scope, FarmTarget? selected)

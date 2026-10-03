@@ -203,9 +203,10 @@ public partial class FarmGame
         _canvas.Present(new FarmCanvasFrame(view.Calendar, actors, projection,
             view.GatheringNodes.Where(node => projection.Admits(node.Feet)).Select(node => new FarmGatherNodeFrame(node.NodeId,
                 node.DisplayName, node.Feet, node.RequiredTool, node.Visibility)),
-            view.Construction.Where(project => project.IsCompleted && projection.Admits(project.SiteFeet)).Select(project =>
-                new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)),
-            view.Worksite?.ExcavationTargets.Where(target => observation.RegionAt(target.Cell.X, target.Cell.Y) is not null)));
+            view.Structures is null ? view.Construction.Where(project => project.IsCompleted && projection.Admits(project.SiteFeet))
+                .Select(project => new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [],
+            view.Worksite?.ExcavationTargets.Where(target => observation.RegionAt(target.Cell.X, target.Cell.Y) is not null),
+            view.Structures?.Where(structure => projection.Admits(structure.Origin))));
         Rect2 viewport = GetViewport().GetVisibleRect();
         Rect2 field = _hud.FieldViewportBounds;
         _cargoCameraFraming = new CargoCameraFraming(projection.Bounds,

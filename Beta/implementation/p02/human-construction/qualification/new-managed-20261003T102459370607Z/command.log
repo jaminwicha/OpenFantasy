@@ -1,0 +1,27 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.22]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.79]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.94]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.HumanConstruction.ConstructionOfferTests.Missing_or_wrong_project_selection_never_substitutes_an_owned_project [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Tool_eligibility_requires_one_owned_unprotected_unreserved_item(quantity: 2, protection: None, reserved: False, expected: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Client.HumanConstruction.ConstructionOfferTests.Work_wheel_pins_every_command_term_even_for_the_unselected_home_interface [995 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Tool_eligibility_requires_one_owned_unprotected_unreserved_item(quantity: 1, protection: Favorite, reserved: False, expected: False) [463 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.HumanConstruction.ConstructionObservationTests.Home_six_and_selected_three_roundtrip_while_older_representations_omit_extensions [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Tool_eligibility_requires_one_owned_unprotected_unreserved_item(quantity: 1, protection: None, reserved: True, expected: False) [519 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.HumanConstruction.ConstructionObservationTests.New_frames_reject_old_version_extensions_and_contradictory_work_capture [672 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Tool_eligibility_requires_one_owned_unprotected_unreserved_item(quantity: 1, protection: None, reserved: False, expected: True) [529 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.HumanConstruction.ConstructionOfferTests.Human_builder_can_inspect_own_unfunded_project_without_a_supplier_participation [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Work_capture_uses_explicit_revision_rather_than_displayed_work_units [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Completed_geometry_is_public_without_production_or_history_and_omits_private_backing [2 s]
+[xUnit.net 00:00:06.89]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Actual_funding_and_stance_prepare_true_delegated_work_without_inventory_or_quest_disclosure [375 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Actual_human_builder_sees_own_unfunded_project_without_being_a_supplier [277 ms]
+
+Test Run Successful.
+Total tests: 13
+     Passed: 13
+ Total time: 7.3088 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/human-construction/qualification/new-managed-20261003T102459370607Z/checks.trx

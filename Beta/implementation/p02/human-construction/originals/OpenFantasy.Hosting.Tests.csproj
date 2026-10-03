@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <IsTestProject>true</IsTestProject>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="18.0.1" />
+    <PackageReference Include="xunit.v3" Version="3.2.2" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.5">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <Using Include="Xunit" />
+    <ProjectReference Include="../../src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj" />
+    <Compile Include="../../client/scripts/FarmSaveOpener.cs" Link="Client/FarmSaveOpener.cs" />
+    <Compile Include="../../client/scripts/FarmQuestSaveOpener.cs" Link="Client/FarmQuestSaveOpener.cs" />
+    <Compile Include="../../client/scripts/FarmConstructionSaveOpener.cs" Link="Client/FarmConstructionSaveOpener.cs" />
+    <Compile Include="../../client/scripts/FarmQuestActions.cs" Link="Client/FarmQuestActions.cs" />
+    <Compile Include="../../client/scripts/FarmInputRouter.cs" Link="Client/FarmInputRouter.cs" />
+    <Compile Include="../../client/scripts/FarmProductionPresentation.cs" Link="Client/FarmProductionPresentation.cs" />
+    <Compile Include="../../client/scripts/FarmProductionActionOffers.cs" Link="Client/FarmProductionActionOffers.cs" />
+    <Compile Include="../../client/scripts/FarmCrafting.cs" Link="Client/FarmCrafting.cs" />
+    <Compile Include="../../client/scripts/FarmRecipeLibraryModel.cs" Link="Client/FarmRecipeLibraryModel.cs" />
+    <Compile Include="../../client/scripts/FarmClientSession.Recipes.cs" Link="Client/FarmClientSession.Recipes.cs" />
+    <Compile Include="../../client/scripts/FarmActionOffer.cs" Link="Client/FarmActionOffer.cs" />
+    <Compile Include="../../client/scripts/FarmTargetSelection.cs" Link="Client/FarmTargetSelection.cs" />
+    <Compile Include="../../client/scripts/FarmInventoryModel.cs" Link="Client/FarmInventoryModel.cs" />
+    <Compile Include="../../client/scripts/FarmInventoryPresentation.cs" Link="Client/FarmInventoryPresentation.cs" />
+    <Compile Include="../../client/scripts/FarmQuickWheelModel.cs" Link="Client/FarmQuickWheelModel.cs" />
+    <Compile Include="../../client/scripts/WorksiteActionOffers.cs" Link="Client/WorksiteActionOffers.cs" />
+    <Compile Include="../../client/scripts/EncounterActionOffers.cs" Link="Client/EncounterActionOffers.cs" />
+    <Compile Include="../../client/scripts/EncounterOutcome/EncounterOutcomeText.cs" Link="Client/EncounterOutcome/EncounterOutcomeText.cs" />
+    <Compile Include="../../client/scripts/FarmSubmission.cs" Link="Client/FarmSubmission.cs" />
+    <Compile Include="../../client/scripts/RestorativeActionOffers.cs" Link="Client/RestorativeActionOffers.cs" />
+    <Compile Include="../../client/scripts/FarmActionOffers.cs" Link="Client/FarmActionOffers.cs" />
+    <Compile Include="../../client/scripts/FarmGiftSelection.cs" Link="Client/FarmGiftSelection.cs" />
+    <Compile Include="../../client/scripts/MaterialProposalActionOffers.cs" Link="Client/MaterialProposalActionOffers.cs" />
+    <Compile Include="../../client/scripts/FarmClientSession.cs" Link="Client/FarmClientSession.cs" />
+    <Compile Include="../../client/scripts/FarmClientSession.ActorSelection.cs" Link="Client/FarmClientSession.ActorSelection.cs" />
+    <Compile Include="../../client/scripts/FarmSelectedActionOffers.cs" Link="Client/FarmSelectedActionOffers.cs" />
+    <Compile Include="../../client/scripts/FarmMarketDraft.cs" Link="Client/FarmMarketDraft.cs" />
+    <Compile Include="../../client/scripts/MarketActionOffers.cs" Link="Client/MarketActionOffers.cs" />
+    <Compile Include="../../client/scripts/FarmMarketTerms.cs" Link="Client/FarmMarketTerms.cs" />
+    <Compile Include="../../client/scripts/Presentation/FarmHealthFeedback.cs" Link="Client/FarmHealthFeedback.cs" />
+    <Compile Include="../../client/scripts/Cargo/CargoViewProjection.cs" Link="Client/Cargo/CargoViewProjection.cs" />
+    <Compile Include="../../client/scripts/Cargo/CargoStallPick.cs" Link="Client/Cargo/CargoStallPick.cs" />
+    <Compile Include="../../client/scripts/Cargo/CargoPaperdollPlan.cs" Link="Client/Cargo/CargoPaperdollPlan.cs" />
+    <Compile Include="../../client/scripts/Cargo/CargoCameraFraming.cs" Link="Client/Cargo/CargoCameraFraming.cs" />
+    <Compile Include="../../client/scripts/Retreat/RetreatOffers.cs" Link="Client/Retreat/RetreatOffers.cs" />
+    <None Include="../OpenFantasy.Core.Tests/Fixtures/consented-world-formats-v1.json" Link="Fixtures/consented-world-formats-v1.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

@@ -277,14 +277,15 @@ public partial class FarmGame
         var plants = production?.GatheringNodes.Where(node => regional?.Admits(node.Feet) != false)
             .Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
                 node.RequiredTool, node.Visibility));
-        var structures = production?.Construction.Where(project => project.IsCompleted
+        var structures = view.Structures is null ? production?.Construction.Where(project => project.IsCompleted
                 && (regional?.Admits(project.SiteFeet) ?? worksite?.HasPhysicalConstruction != true))
-            .Select(project => new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet));
+            .Select(project => new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : null;
+        var publicStructures = view.Structures?.Where(structure => regional?.Admits(structure.Origin) != false);
         _canvas.Present(regional is null
-            ? new FarmCanvasFrame(view.Calendar, actors, plants, structures, worksite)
+            ? new FarmCanvasFrame(view.Calendar, actors, plants, structures, worksite, publicStructures: publicStructures)
             : new FarmCanvasFrame(view.Calendar, actors, regional, plants, structures,
                 worksite?.ExcavationTargets.Where(target =>
-                    regional.Observation.RegionAt(target.Cell.X, target.Cell.Y) is not null)));
+                    regional.Observation.RegionAt(target.Cell.X, target.Cell.Y) is not null), publicStructures));
         Vector2 focus = _canvas.FocusPosition;
         if (regional is not null)
         {

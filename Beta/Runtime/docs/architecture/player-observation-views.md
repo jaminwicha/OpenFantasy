@@ -82,9 +82,20 @@ expose Recovery. These metadata are ignored by default diagnostic JSON.
 the legacy interpretation-specific representation, including when a local view contains metadata.
 The decoder accepts both representations and checks canonical bytes using the received version;
 descriptors cannot be smuggled into an older body. Re-encoding a described view with the explicit
-entrypoint retains its described representation. Live observation publication uses that entrypoint.
+entrypoint retains its described representation. The construction-aware live representation below also includes these descriptors.
 Clients must support the host's emitted presentation version; old saved frames remain independently
 readable. This is not a world profile or save-schema change.
+
+### Construction work and installed geometry
+
+`EncodeWithConstruction` selects home body version 6, including purpose-specific construction work
+and independently public installed structures. Work choices retain explicit project/storage/tool
+revisions and the builder's actual readiness, funding, stance and reach facts. They are previews,
+not authority or reservations. Installed members carry their exact bounded identity and geometry
+without private backing stock. Missing legacy fields and present-empty current fields remain distinct.
+The version-5 material-description entrypoint retains its own representation; default legacy encodings
+remain unchanged. Live publication uses the construction-aware representation and canonical decoding
+follows the received version.
 
 Regional data contains the observer identity and exact feet, each observed region's full bounds
 and revision, row-major ground kinds and opening depths, and each wet column's exact volume and

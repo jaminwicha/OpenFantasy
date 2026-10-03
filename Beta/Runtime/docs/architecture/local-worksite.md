@@ -35,6 +35,40 @@ entry, verifies world/branch/profile/admission identity and attaches the ordinar
 does not copy or upgrade a farm save. An incompatible existing path is refused and its lease released.
 The `--worksite` application argument selects this entry; the default farm retains its own save chain.
 
+[`HumanConstructionWorldAdmission`](../../src/OpenFantasy.Hosting/Content/HumanConstructionWorldAdmission.cs)
+defines a separate, explicitly selected playable qualification scenario. Three travelers join the
+retained builder Wren as a fourth human through the declared fresh calibration contract. Her permanent
+identity, project, kit, work requirement, placement and supply quest stay intact; another human supplies
+the original materials through that quest. The Host's `--create-human-construction` command creates a
+new database and refuses an existing one. This does not change the default population, qualify
+production balance or convert a lived NPC. Subsequent recovery/permission admissions add their declared
+laws without granting treatment, resources, funding, work or elapsed time.
+
+## Human work and completed structures
+
+An unfinished project is inspectable by its designated builder as well as its participating supplier.
+The builder need not be a participant in their own supply quest. The shared construction work view
+provides purpose-specific funding, readiness, manipulation, stance and reach facts, plus exact legal
+singleton tool choices. It exposes no project-stock ledger or full private inventory. Home characters
+and Production-authorized operated characters use the same projection and ordinary command path.
+
+[`ConstructionActionOffers`](../../client/scripts/ConstructionActionOffers.cs) requires an explicit
+project target. The field work control and wheel review one `WorkConstructionIntent` with its captured
+actor, project revision, project-storage revision, tool identity/revision and selection witness. A
+changed review cannot become another project or tool. Each confirmation requests one ordinary work
+step; it is not consent to an unattended job. The Core checks actual ownership, completed supply
+commitment, reserved materials, body, exact work stance, reachable site and safe placement/access.
+Final work converts the real reserved input and installs geometry atomically. Previously accepted
+partial work remains when control changes, while further work requires current authority.
+
+[`LocalPublicStructureView`](../../src/OpenFantasy.Hosting/Simulation/LocalPublicStructureView.cs)
+separately exposes actual installed identity, origin and member geometry/collision from the same
+observation. Seeing a completed structure does not require Production or private history and exposes
+neither funding nor backing lots. An absent older facet differs from a present empty collection.
+The renderer applies its current region/floor and projection to these members. Physical construction
+retains its condition/displacement owner and renderer; public geometry cannot invent condition or
+reconstruct a removed collider from a definition.
+
 ## Public geometry and interactions
 
 [LocalWorksiteView](../../src/OpenFantasy.Hosting/Simulation/LocalWorksiteView.cs) exposes committed

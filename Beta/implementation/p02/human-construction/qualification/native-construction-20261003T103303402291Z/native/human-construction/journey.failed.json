@@ -1,0 +1,80 @@
+{
+  "Error": "Xunit.Sdk.EqualException: Assert.Equal() Failure: Collections differ\n                                                                                                                  \u2193 (pos 4)\nExpected: [\u00B7\u00B7\u00B7, Tuple (6879f5585b0e80582f3eab149c3150b9, 60, 10), Tuple (7f10fe468a64f7166a90d3588ce7fe32, 1, 0), Tuple (8c631e8b65e694d9914789ffb629da72, 60, 10), Tuple (989058c090add5ab6482bdb3271bc698, 62, 0), Tuple (a7341c7cbdd9e63effec9bf6f0936da4, 60, 10), \u00B7\u00B7\u00B7]\nActual:   [\u00B7\u00B7\u00B7, Tuple (6879f5585b0e80582f3eab149c3150b9, 60, 10), Tuple (7f10fe468a64f7166a90d3588ce7fe32, 1, 0), Tuple (8c631e8b65e694d9914789ffb629da72, 78, 14), Tuple (989058c090add5ab6482bdb3271bc698, 62, 0), Tuple (a7341c7cbdd9e63effec9bf6f0936da4, 60, 10), \u00B7\u00B7\u00B7]\n                                                                                                                  \u2191 (pos 4)\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer\u00601 comparer) in /_/src/xunit.v3.assert/Asserts/EqualityAsserts.cs:line 233\n   at Xunit.Assert.Equal[T](IEnumerable\u00601 expected, IEnumerable\u00601 actual) in /_/src/xunit.v3.assert/Asserts/CollectionAsserts.cs:line 467\n   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Verify(String output, HumanConstructionWorld world, IReadOnlyList\u00601 processes, WorldControlWitness witness) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionEvidence.cs:line 164\n   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 155",
+  "AllowanceSeconds": 30.9945181,
+  "ElapsedMilliseconds": 112548,
+  "Stages": [
+    {
+      "Name": "native-funded-and-first-work",
+      "ElapsedMilliseconds": 13164,
+      "Peers": [
+        {
+          "Actor": "d644fe990d9982aa999ab41d836aee8a",
+          "Sequence": 5,
+          "Commands": 1
+        },
+        {
+          "Actor": "8c631e8b65e694d9914789ffb629da72",
+          "Sequence": 7,
+          "Commands": 4
+        },
+        {
+          "Actor": "6879f5585b0e80582f3eab149c3150b9",
+          "Sequence": 1,
+          "Commands": 0
+        },
+        {
+          "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+          "Sequence": 1,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "native-work-199-before-owner-return",
+      "ElapsedMilliseconds": 98602,
+      "Peers": [
+        {
+          "Actor": "8c631e8b65e694d9914789ffb629da72",
+          "Sequence": 7,
+          "Commands": 0
+        },
+        {
+          "Actor": "6879f5585b0e80582f3eab149c3150b9",
+          "Sequence": 76,
+          "Commands": 198
+        },
+        {
+          "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+          "Sequence": 7,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "all200-native-work-and-public-completion",
+      "ElapsedMilliseconds": 103574,
+      "Peers": [
+        {
+          "Actor": "d644fe990d9982aa999ab41d836aee8a",
+          "Sequence": 6,
+          "Commands": 1
+        },
+        {
+          "Actor": "8c631e8b65e694d9914789ffb629da72",
+          "Sequence": 8,
+          "Commands": 0
+        },
+        {
+          "Actor": "6879f5585b0e80582f3eab149c3150b9",
+          "Sequence": 79,
+          "Commands": 198
+        },
+        {
+          "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+          "Sequence": 10,
+          "Commands": 0
+        }
+      ]
+    }
+  ]
+}

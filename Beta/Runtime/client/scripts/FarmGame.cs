@@ -354,8 +354,10 @@ public partial class FarmGame : Node2D
                     : view.EncounterActors.FirstOrDefault(value => value.ActorId == actor.ActorId)?.CurrentHp }),
             view.GatheringNodes.Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
                 node.RequiredTool, node.Visibility)),
-            view.Worksite?.HasPhysicalConstruction != true ? view.Construction.Where(project => project.IsCompleted).Select(project =>
-                new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [], view.Worksite, view.Liquids));
+            view.Structures is null && view.Worksite?.HasPhysicalConstruction != true
+                ? view.Construction.Where(project => project.IsCompleted).Select(project =>
+                    new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [],
+            view.Worksite, view.Liquids, view.Structures));
         Vector2 focus = FrameCargoThreats(view, _canvas.FocusPosition);
         if (view.Dialogue is { } conversation)
         {
@@ -685,6 +687,8 @@ public partial class FarmGame : Node2D
         if (person is not null) return target with { Feet = person.Feet };
         LocalExcavationView? site = view.Worksite?.ExcavationTargets.FirstOrDefault(value => value.SiteId == target.Id);
         if (site is not null) return target with { Kind = FarmTargetKind.Excavation, Feet = site.Stance };
+        LocalConstructionWorkView? work = view.ConstructionWork.FirstOrDefault(value => value.Project.ProjectId == target.Id);
+        if (work is not null) return target with { Kind = FarmTargetKind.Construction, Feet = work.Project.SiteFeet };
         LocalGatherNodeView? plant = view.GatheringNodes.FirstOrDefault(node => node.NodeId == target.Id);
         return target with { Kind = plant is null ? target.Kind : FarmTargetKind.Harvestable, Feet = plant?.Feet };
     }

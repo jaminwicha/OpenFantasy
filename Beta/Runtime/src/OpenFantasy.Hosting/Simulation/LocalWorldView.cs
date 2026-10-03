@@ -77,9 +77,13 @@ public sealed class LocalWorldView
         LocalProgressionView? progression,
         ReadOnlyCollection<LocalQuestView> quests,
         ReadOnlyCollection<LocalConstructionView> construction, bool supportsCareDispositions = false,
-        LocalMaterialDescriptions? materialDescriptions = null)
+        LocalMaterialDescriptions? materialDescriptions = null,
+        ReadOnlyCollection<LocalConstructionWorkView>? constructionWork = null,
+        ReadOnlyCollection<LocalPublicStructureView>? structures = null)
     {
         MaterialDescriptions = materialDescriptions;
+        ConstructionWork = Array.AsReadOnly(constructionWork?.ToArray() ?? []);
+        Structures = structures is null ? null : Array.AsReadOnly(structures.ToArray());
         SupportsCareDispositions = supportsCareDispositions;
         WorldId = worldId;
         BranchId = branchId;
@@ -208,7 +212,7 @@ public sealed class LocalWorldView
                 speaker.OpeningUtterance!.Text);
         }
         Quests = ProjectQuests(state, playerActorId, dialogue);
-        Construction = Array.AsReadOnly(state.Construction?.Projects.Where(project => project.IsCompleted
+        Construction = Array.AsReadOnly(state.Construction?.Projects.Where(project => project.IsCompleted || project.BuilderActorId == playerActorId
                 || state.Quests!.FindParticipation(playerActorId, project.QuestId) is not null)
             .Select(project => new LocalConstructionView(project.ProjectId, project.BuilderActorId,
                 project.Definition.DisplayName, project.SiteFeet, project.WorkFeet, project.Progress.CompletedUnits,
@@ -221,10 +225,18 @@ public sealed class LocalWorldView
                 progression.Currency.GetActorAccount(playerActorId).Balance, progression.Currency.Currency.UnitName);
         }
         MaterialDescriptions = LocalMaterialDescriptionProjection.Project(state, this);
+        ConstructionWork = LocalConstructionWorkProjection.Project(state, playerActorId);
+        Structures = LocalPublicStructureView.Project(state);
     }
 
     [System.Text.Json.Serialization.JsonIgnore]
     public LocalMaterialDescriptions? MaterialDescriptions { get; }
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public ReadOnlyCollection<LocalConstructionWorkView> ConstructionWork { get; }
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public ReadOnlyCollection<LocalPublicStructureView>? Structures { get; }
 
     public EntityId WorldId { get; }
     public EntityId BranchId { get; }

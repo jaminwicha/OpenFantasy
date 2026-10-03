@@ -95,8 +95,9 @@ public sealed class FarmCanvasFrame
 
     public FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors,
         IEnumerable<FarmGatherNodeFrame>? gatheringNodes = null, IEnumerable<FarmStructureFrame>? structures = null,
-        LocalWorksiteView? worksite = null, LocalLiquidView? liquids = null)
-        : this(calendar, actors, gatheringNodes, structures, worksite, liquids, null)
+        LocalWorksiteView? worksite = null, LocalLiquidView? liquids = null,
+        IEnumerable<LocalPublicStructureView>? publicStructures = null)
+        : this(calendar, actors, gatheringNodes, structures, worksite, liquids, null, publicStructures)
     {
     }
 
@@ -106,8 +107,9 @@ public sealed class FarmCanvasFrame
     /// </summary>
     internal FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors, Cargo.CargoViewProjection regional,
         IEnumerable<FarmGatherNodeFrame>? gatheringNodes = null, IEnumerable<FarmStructureFrame>? structures = null,
-        IEnumerable<LocalExcavationView>? workTargets = null)
-        : this(calendar, actors, gatheringNodes, structures, null, null, regional)
+        IEnumerable<LocalExcavationView>? workTargets = null,
+        IEnumerable<LocalPublicStructureView>? publicStructures = null)
+        : this(calendar, actors, gatheringNodes, structures, null, null, regional, publicStructures)
     {
         LocalExcavationView[] targets = workTargets?.ToArray() ?? [];
         if (targets.Length > 32 || targets.Select(target => target.SiteId).Distinct().Count() != targets.Length)
@@ -122,7 +124,8 @@ public sealed class FarmCanvasFrame
 
     private FarmCanvasFrame(WorldInstant calendar, IEnumerable<FarmActorFrame> actors,
         IEnumerable<FarmGatherNodeFrame>? gatheringNodes, IEnumerable<FarmStructureFrame>? structures,
-        LocalWorksiteView? worksite, LocalLiquidView? liquids, Cargo.CargoViewProjection? regional)
+        LocalWorksiteView? worksite, LocalLiquidView? liquids, Cargo.CargoViewProjection? regional,
+        IEnumerable<LocalPublicStructureView>? publicStructures)
     {
         ArgumentNullException.ThrowIfNull(actors);
         var selected = new SortedDictionary<EntityId, FarmActorFrame>();
@@ -178,6 +181,20 @@ public sealed class FarmCanvasFrame
             }
         }
         Structures = Array.AsReadOnly(installed.Values.ToArray());
+        if (publicStructures is not null)
+        {
+            var geometry = publicStructures.Take(33).ToArray();
+            if (geometry.Length > 32 || geometry.Any(value => value is null)
+                || geometry.Select(value => value.StructureId).Distinct().Count() != geometry.Length)
+                throw new ArgumentException("The public structure projection exceeds its bounded appearance profile.", nameof(publicStructures));
+            foreach (var structure in geometry)
+            {
+                if (regional is null && (worksite is not null || liquids is not null))
+                    WorksiteCoordinates.Validate(structure.Origin);
+                else Validate(structure.Origin);
+            }
+            PublicStructures = Array.AsReadOnly(geometry.OrderBy(value => value.StructureId).ToArray());
+        }
         Worksite = worksite;
         Liquids = liquids;
         Regional = regional;
@@ -190,6 +207,8 @@ public sealed class FarmCanvasFrame
     public ReadOnlyCollection<FarmActorFrame> Actors { get; }
     public ReadOnlyCollection<FarmGatherNodeFrame> GatheringNodes { get; }
     public ReadOnlyCollection<FarmStructureFrame> Structures { get; }
+    /// <summary>Null only for older observations; an empty observed set must never revive legacy project art.</summary>
+    public ReadOnlyCollection<LocalPublicStructureView>? PublicStructures { get; }
     public LocalWorksiteView? Worksite { get; }
     public LocalLiquidView? Liquids { get; }
     public bool IsMultilevel => Worksite is not null || Liquids is not null;

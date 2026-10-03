@@ -8,8 +8,8 @@ inventory, participant offers and the host-selected regional projection. Observa
 outside the host commit path. It grants no control, advances no simulation clock and never sends the
 private `WorldSnapshot` or a private world commit counter.
 
-Live frames explicitly use the described-material presentation encoding. The stream compares and
-retains those actual transmitted bytes, including names disclosed by that observation; default legacy
+Live frames explicitly use the construction-aware presentation encoding, including permitted material
+descriptions. The stream compares and retains those actual transmitted bytes; default legacy
 diagnostic/codec representations do not replace its delta basis.
 
 An empty `Observation` input subscribes the connection and requests a full view. It follows the
@@ -96,3 +96,7 @@ also owns session metadata, exact uncertain commands, input readiness and recove
 alone is not that client session. HTTP Upgrade/TLS, native Godot session binding, solo envelope parity,
 and recorded disconnect grace/controller handoff surround this transport boundary. An observation
 stream cannot manufacture those policies or replace the authority's saved history.
+
+Older projected observations with an omitted structure facet retain the material-described home
+encoding when captured by `PlayerObservationStream`. The stream cannot invent an observed empty set
+to promote them. Fresh Host projections supply the complete facet and use the construction-aware body.

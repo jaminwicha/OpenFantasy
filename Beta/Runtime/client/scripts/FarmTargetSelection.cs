@@ -5,7 +5,7 @@ using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
 
-internal enum FarmTargetKind { Person, Harvestable, Excavation, Encounter }
+internal enum FarmTargetKind { Person, Harvestable, Excavation, Encounter, Construction }
 
 /// <summary>A known selection. An absent position means it is no longer in the public view.</summary>
 internal sealed record FarmTarget(EntityId Id, string Name, FarmTargetKind Kind, SubunitPosition? Feet);
@@ -30,6 +30,7 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             .Concat(view.Production?.GatheringNodes.Select(node => new FarmTarget(node.NodeId, node.DisplayName,
                 FarmTargetKind.Harvestable, node.Feet)) ?? [])
             .Concat(ExcavationTargets(view.Production?.Worksite))
+            .Concat(ConstructionTargets(view.Production?.ConstructionWorkViews))
             .OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
         if (Selected is { } selected)
             Selected = _candidates.FirstOrDefault(target => target.Id == selected.Id) ?? selected with { Feet = null };
@@ -49,7 +50,7 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             .Select(actor => new FarmTarget(actor.ActorId, actor.DisplayName, FarmTargetKind.Person, actor.Feet))
             .Concat(view.GatheringNodes.Select(node =>
                 new FarmTarget(node.NodeId, node.DisplayName, FarmTargetKind.Harvestable, node.Feet)))
-            .Concat(ExcavationTargets(view.Worksite)).Concat(encounterTargets))
+            .Concat(ExcavationTargets(view.Worksite)).Concat(ConstructionTargets(view.ConstructionWork)).Concat(encounterTargets))
             .OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
         if (Selected is { } selected)
         {
@@ -86,6 +87,10 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             site.ReachMode == ExcavationReachMode.RaisedBankTop
                 ? site.IsComplete ? "Opening" : "Bank face" : "Worksite face", FarmTargetKind.Excavation,
             site.Stance)) ?? [];
+
+    private static IEnumerable<FarmTarget> ConstructionTargets(IEnumerable<LocalConstructionWorkView>? work) =>
+        work?.Select(choice => new FarmTarget(choice.Project.ProjectId, choice.Project.DisplayName,
+            FarmTargetKind.Construction, choice.Project.SiteFeet)) ?? [];
 
     private static IEnumerable<FarmTarget> EncounterTargets(LocalWorldView view)
     {

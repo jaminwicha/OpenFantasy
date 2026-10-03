@@ -1,0 +1,24 @@
+{
+  "images": [
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/6879f5585b0e80582f3eab149c3150b9-continuation/0062-construction.png",
+      "sha256": "78a930f2d3b84ab722210db1db5d3ea69bb805376217de00cc0c976b261bb692",
+      "inspection": "Lead inspected rendered frame. Build target, exact progress, work/time and stance text fit; completion shows actual retained guard in the field with native bounds clear of HUD. This does not qualify final art or sustained-work usability."
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/6879f5585b0e80582f3eab149c3150b9-continuation/0075-construction.png",
+      "sha256": "d9a421014d826fa12b27f05c774b7638b34ac9f61e18606f3f642e4bf7579ee5",
+      "inspection": "Lead inspected rendered frame. Build target, exact progress, work/time and stance text fit; completion shows actual retained guard in the field with native bounds clear of HUD. This does not qualify final art or sustained-work usability."
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/a7341c7cbdd9e63effec9bf6f0936da4-continuation/0010-construction.png",
+      "sha256": "f51d5c9a9900181ec307c91afb7aa888e6883eb6490a3de285f943e9fe8973eb",
+      "inspection": "Lead inspected actual completion frame and native sprite bounds (13\u00d78 at 505.625,177), clear of the HUD. The builder overlaps the guard footprint; unobscured guard legibility is not accepted from this frame. Geometry delivery, exact shape selection and instantiated sprite bounds are qualified separately; final art/human usability remain open."
+    },
+    {
+      "path": "qualification/native-compatibility-20261003T104431014202Z/native/rendered/native-player.png",
+      "sha256": "8a180c173c1d7d682bff1a1fc3614a2bef8dafc15884f5df89c3c092dd0a5ba6",
+      "inspection": "Lead inspected retained compatibility frame: character, target cues and main controls fit. The idle preview text begins clipped at the left edge; ordinary HUD readability remains unaccepted. This is the existing home connection/focus fixture, not human construction or final artwork approval."
+    }
+  ]
+}

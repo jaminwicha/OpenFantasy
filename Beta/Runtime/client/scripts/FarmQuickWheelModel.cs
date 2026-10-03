@@ -35,6 +35,8 @@ internal sealed class FarmQuickWheelModel
                     offers.ContainsKey(FarmSemanticAction.AcknowledgeCare) ? FarmSemanticAction.AcknowledgeCare : FarmSemanticAction.ReleaseEncounter]
             : offers.ContainsKey(FarmSemanticAction.Excavate)
             ? [FarmSemanticAction.Speak, FarmSemanticAction.Excavate, FarmSemanticAction.Traverse, FarmSemanticAction.Give]
+            : offers.ContainsKey(FarmSemanticAction.Build)
+            ? [FarmSemanticAction.Speak, FarmSemanticAction.Build, FarmSemanticAction.Craft, FarmSemanticAction.Give]
             : Order;
         AddPage("Actions", order, offers);
         if (offers.ContainsKey(FarmSemanticAction.UseRestorative) || offers.ContainsKey(FarmSemanticAction.RevokeCarePermission))
@@ -90,6 +92,7 @@ internal sealed class FarmQuickWheelModel
         FarmSemanticAction.Speak => "Talk", FarmSemanticAction.Gather => "Gather",
         FarmSemanticAction.Craft => "Craft", FarmSemanticAction.Give => "Give",
         FarmSemanticAction.Excavate => "Mine", FarmSemanticAction.Traverse => "Climb",
+        FarmSemanticAction.Build => "Build",
         FarmSemanticAction.EnterEncounter => "Engage", FarmSemanticAction.Strike => "Strike",
         FarmSemanticAction.Wait => "Wait", FarmSemanticAction.ReleaseEncounter => slot.Offer.Label,
         FarmSemanticAction.AcknowledgeCare => "Care", FarmSemanticAction.UseRestorative => "Potion",
@@ -138,6 +141,7 @@ internal sealed class FarmWheelSlot
                 {
                     FarmSemanticAction.Gather => FarmTargetKind.Harvestable,
                     FarmSemanticAction.Excavate or FarmSemanticAction.Traverse => FarmTargetKind.Excavation,
+                    FarmSemanticAction.Build => FarmTargetKind.Construction,
                     FarmSemanticAction.EnterEncounter or FarmSemanticAction.Strike => FarmTargetKind.Encounter,
                     _ => FarmTargetKind.Person
                 }, null);
@@ -160,6 +164,10 @@ internal sealed class FarmWheelSlot
         if (Action == FarmSemanticAction.Traverse && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
             || candidate?.Intent != _original.Intent))
             same = false;
+        // Every Build review pins one work step, including legacy home sessions. Work cannot
+        // silently move to another tool, project revision or stock revision during inspection.
+        if (Action == FarmSemanticAction.Build && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
+            || candidate?.Intent != _original.Intent)) same = false;
         if (FarmQuickWheelModel.IsEncounterAction(Action) && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
             || candidate?.Intent != _original.Intent)) same = false;
         if (Action is FarmSemanticAction.UseRestorative or FarmSemanticAction.RevokeCarePermission

@@ -1,0 +1,20 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.17]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.38]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.57]   Starting:    OpenFantasy.Server.Tests
+  Passed OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_refuses_an_ambiguous_roster_before_creating_a_database(count: 2) [20 ms]
+  Passed OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_refuses_an_ambiguous_roster_before_creating_a_database(count: 4) [< 1 ms]
+  Passed OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_refuses_an_ambiguous_roster_before_creating_a_database(count: 1) [< 1 ms]
+  Passed OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_refuses_an_ambiguous_roster_before_creating_a_database(count: 0) [< 1 ms]
+  Passed OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Explicit_fresh_builder_selection_preserves_the_original_kit_contract_and_materials [3 s]
+[xUnit.net 00:00:06.21]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_persists_the_named_scenario_and_refuses_to_overwrite_it [2 s]
+
+Test Run Successful.
+Total tests: 6
+     Passed: 6
+ Total time: 6.6268 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/human-construction/qualification/admission-20261003T103749951229Z/checks.trx

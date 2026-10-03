@@ -12,11 +12,13 @@ namespace OpenFantasy.Hosting.Networking.Selection;
 
 internal static class SelectedObservationOptions
 {
-    internal static JsonSerializerOptions Create(bool includeMaterialDescriptions = false)
+    internal static JsonSerializerOptions Create(bool includeMaterialDescriptions = false, bool includeConstruction = false)
     {
-        var options = PlayerViewCodec.CreateOptions(includeMaterialDescriptions);
+        var options = PlayerViewCodec.CreateOptions(includeMaterialDescriptions, includeConstruction);
         options.Converters.Add(new WitnessConverter());
-        options.Converters.Add(new ObservationValueConverter<LocalControlledActorView, ControlledActorData>(includeMaterialDescriptions ? ControlledActorData.FromDescribed : ControlledActorData.From, value => value.ToView()));
+        options.Converters.Add(new ObservationValueConverter<LocalControlledProductionView, ControlledProductionData>(
+            value => ControlledProductionData.From(value, includeConstruction), value => value.ToView()));
+        options.Converters.Add(new ObservationValueConverter<LocalControlledActorView, ControlledActorData>(includeConstruction ? ControlledActorData.FromConstruction : includeMaterialDescriptions ? ControlledActorData.FromDescribed : ControlledActorData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalControlledCraftPreparation, CraftPreparationData>(CraftPreparationData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalControlledQuestPreparation, QuestPreparationData>(QuestPreparationData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalControlledConstructionPreparation, ConstructionPreparationData>(ConstructionPreparationData.From, value => value.ToView()));
@@ -43,8 +45,11 @@ internal sealed record ControlledActorData(EntityId WorldId, EntityId BranchId, 
     LocalControlledCareDispositionView? CareDisposition, LocalInventoryView? Inventory,
     LocalMaterialProposalView? MaterialProposals, LocalControlledTradeView? Trade,
     LocalControlledProductionView? Production, LocalControlledConversationView? Conversation,
-    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] LocalMaterialDescriptions? MaterialDescriptions = null)
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] LocalMaterialDescriptions? MaterialDescriptions = null,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] ReadOnlyCollection<LocalPublicStructureView>? Structures = null)
 {
+    internal static ControlledActorData FromConstruction(LocalControlledActorView view) => FromDescribed(view) with
+    { Structures = view.Structures ?? throw new FormatException("Missing public structure observation.") };
     internal static ControlledActorData FromDescribed(LocalControlledActorView view) => From(view) with { MaterialDescriptions = view.MaterialDescriptions };
     internal static ControlledActorData From(LocalControlledActorView view) => new(view.WorldId, view.BranchId,
         view.ActorId, view.Capabilities, view.Calendar, view.HasReadingHold, view.IsResolvingConsequences, view.IsRegional,
@@ -52,7 +57,7 @@ internal sealed record ControlledActorData(EntityId WorldId, EntityId BranchId, 
         view.MaterialProposals, view.Trade, view.Production, view.Conversation);
     internal LocalControlledActorView ToView() => new(WorldId, BranchId, ActorId, Capabilities, Calendar,
         HasReadingHold, IsResolvingConsequences, IsRegional, Actors, Regional, Combat, Retreat, Recovery,
-        CareDisposition, Inventory, MaterialProposals, Trade, Production, Conversation, MaterialDescriptions);
+        CareDisposition, Inventory, MaterialProposals, Trade, Production, Conversation, MaterialDescriptions, Structures);
 }
 
 internal sealed record CraftPreparationData(ReadOnlyCollection<LocalCraftRecipeView> Recipes, ulong ProductionRevision,
@@ -79,4 +84,18 @@ internal sealed record ConstructionPreparationData(EntityId ProjectId, ReadOnlyC
 {
     internal static ConstructionPreparationData From(LocalControlledConstructionPreparation value) => new(value.ProjectId, value.Choices);
     internal LocalControlledConstructionPreparation ToView() => new(ProjectId, Choices);
+}
+
+internal sealed record ControlledProductionData(ReadOnlyCollection<LocalGatherNodeView> GatheringNodes,
+    ReadOnlyCollection<LocalGatherToolLotView> GatheringTools, uint? GatherEffort, LocalWorksiteView? Worksite,
+    LocalCraftingView? Crafting, LocalControlledCraftPreparation? CraftPreparation,
+    ReadOnlyCollection<LocalConstructionView> Construction, ReadOnlyCollection<LocalControlledConstructionPreparation> ConstructionWork,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] ReadOnlyCollection<LocalConstructionWorkView>? ConstructionWorkViews = null)
+{
+    internal static ControlledProductionData From(LocalControlledProductionView value, bool includeConstruction) =>
+        new(value.GatheringNodes, value.GatheringTools, value.GatherEffort, value.Worksite, value.Crafting,
+            value.CraftPreparation, value.Construction, value.ConstructionWork, includeConstruction ? value.ConstructionWorkViews : null);
+    internal LocalControlledProductionView ToView() => new(GatheringNodes, GatheringTools, GatherEffort, Worksite,
+        Crafting, CraftPreparation, Construction, ConstructionWork)
+        { ConstructionWorkViews = ConstructionWorkViews ?? Array.AsReadOnly(Array.Empty<LocalConstructionWorkView>()) };
 }

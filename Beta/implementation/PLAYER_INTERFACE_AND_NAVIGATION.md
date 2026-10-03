@@ -122,6 +122,15 @@ Opening a wheel/screen consumes the initiating press and associated release. A b
 
 The action flow is **offer → choose → target/parameterize if needed → preview → confirm → host validation → committed result → feedback**. Trivial interactions may combine steps without redundant dialogs. An offer is a read-only scoped snapshot, not a reservation or promise. The host revalidates action identity, current actor/control, target, knowledge, resources, costs and world revisions. Stale selection yields an explanation or a fresh preview, never substitution or automatic retry of a different action. Once committed, cancel can only request a legal interruption; it does not undo costs by hiding animation.
 
+Long activities such as construction, repair and production must eventually be comfortable to start,
+inspect, interrupt and resume without confirming every atomic work step. A one-step command proves
+authority and resource composition; it does not qualify that long-activity interaction. P04 production
+activities and P07 construction/delegated jobs must declare their target, resource budget, stopping
+conditions and interruption/return policy. Each step still uses current authority and world rules.
+An explicit activity commitment must not be implemented as UI click replay, an unlimited retry loop
+or permission silently surviving owner return. Preserve already earned work and show the reason for
+any stop; qualify the sustained interaction with human playtests at its normal phase.
+
 ## 8. Modular implementation boundaries and persistence
 
 These are cohesive responsibilities, initially within existing assemblies. Names describe proposed roles, not already implemented types; avoid a universal UI manager or new services/processes solely for menu organization.

@@ -1,0 +1,52 @@
+{
+  "documents": [
+    {
+      "path": "Beta/Runtime/README.md",
+      "sha256": "737eccd0eb6e8467de952704f152eff2b13598841f8af5847317af3455c54ac5"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/local-worksite.md",
+      "sha256": "b2f5af95a4cb8255be9f117331ff5eedbd50d207a3b6f7bda83b4ee01af7d83e"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/player-observation-streams.md",
+      "sha256": "6f9f1c5f65a413f2567a9e040c0bc07ebf39fda4e3b5d097485957cfde97cc48"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/player-observation-views.md",
+      "sha256": "1065f7c93db265009f5a6823603ef0960969797186bfe3eebf14661fb117faf4"
+    },
+    {
+      "path": "Beta/Runtime/docs/architecture/selected-player-protocol.md",
+      "sha256": "30240f6dde5a1d61d5db20feee5a92528337aacaefee681e654150afd6579a60"
+    },
+    {
+      "path": "Beta/implementation/AGENT_HANDOFF.md",
+      "sha256": "a5efc71d3bc9268bae87bd2d3baaea373d20db7ed3471dc58622384fbcbf6ff1"
+    },
+    {
+      "path": "Beta/implementation/GIT_MILESTONES.md",
+      "sha256": "df518a3691807b4b7601698655e39885a5a737e5411bbc76f45cd8c2090c935c"
+    },
+    {
+      "path": "Beta/implementation/PLAYER_INTERFACE_AND_NAVIGATION.md",
+      "sha256": "1a099ed73c6e3f0a71e43ec501467b6d72e1c4d6e65345cd395607fba17e948d"
+    },
+    {
+      "path": "Beta/implementation/p02/human-construction/DESIGN.md",
+      "sha256": "a645a15ed410cc0890be335ecd55e664ed16ebdcc8a03eab479402eb64018794"
+    },
+    {
+      "path": "Beta/implementation/p02/human-construction/RESULT.md",
+      "sha256": "0640118d4a45fee7c29722accfb782b53843f7663560e554f876edcfce2fb640"
+    },
+    {
+      "path": "Beta/implementation/p02/human-construction/REVIEW.md",
+      "sha256": "8f2c21eee66a7977c09db8b98a09f9bcbdda7f8ced411c132dce51f1a620bba1"
+    }
+  ],
+  "missingLinks": [],
+  "runtimeNamingViolations": [],
+  "diffCheckPassed": true,
+  "architectureContractReview": "Fresh-only human scenario; builder-specific work facts; scoped offers; explicit versions with legacy omission; independently public live geometry; same-phase sustained-activity obligation. Implementation evidence stays separate."
+}

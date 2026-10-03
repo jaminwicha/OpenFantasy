@@ -1,0 +1,493 @@
+{
+  "allCurrentSelectedReportsPassed": true,
+  "humanConstructionNativeQualified": true,
+  "fullRecipeLearningSystemAccepted": false,
+  "fullRegressionAccepted": false,
+  "originalNativeGiftOpeningFailureExplained": false,
+  "fullPhaseAccepted": false,
+  "fullCoPlayerFeatureAccepted": false,
+  "movementTimingGateClosed": false,
+  "productionHistoryLatencyGateClosed": false,
+  "profile40ProcessKillQualified": false,
+  "selectedHumanConstructionQualified": true,
+  "completedNonphysicalGeometryQualified": true,
+  "nativeSelectedObserverWithProductionWithheldQualified": false,
+  "sustainedWorkUsabilityAccepted": false,
+  "unobscuredCompletedGuardLegibilityAccepted": false,
+  "nativeSelectedHistoryLifecycleQualified": false,
+  "physicalDeviceAcceptance": false,
+  "humanUsabilityAcceptance": false,
+  "artAcceptance": false,
+  "sourceHead": "7cab55df393354f22163cdd297228292f892c3a6",
+  "preChangeCheckpoint": "codex/checkpoint-before-human-construction-20261003T100417Z",
+  "milestone": "codex/milestone-human-construction-20261003",
+  "protectedCounts": {
+    "tests": 797,
+    "specs": 23
+  },
+  "onlyExistingTestProjectChange": "One additive construction offer source link; exact archived original compared byte for byte.",
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "ff5ff9a160e5a560b30532504c675e2aa5514643f8e71a47a32b601ad3188610",
+  "finalizerSha256": "3e31191e088a05601b0bd4c9f4d14f3f68c1cce3411fddda3c57f30942f2eb17",
+  "distinctCasesPassingOnVerifiedDependencies": 2299,
+  "newCases": [
+    "OpenFantasy.Hosting.Tests.Client.HumanConstruction.ConstructionOfferTests.Human_builder_can_inspect_own_unfunded_project_without_a_supplier_participation",
+    "OpenFantasy.Hosting.Tests.Client.HumanConstruction.ConstructionOfferTests.Missing_or_wrong_project_selection_never_substitutes_an_owned_project",
+    "OpenFantasy.Hosting.Tests.Client.HumanConstruction.ConstructionOfferTests.Work_wheel_pins_every_command_term_even_for_the_unselected_home_interface",
+    "OpenFantasy.Hosting.Tests.Networking.HumanConstruction.ConstructionObservationTests.Home_six_and_selected_three_roundtrip_while_older_representations_omit_extensions",
+    "OpenFantasy.Hosting.Tests.Networking.HumanConstruction.ConstructionObservationTests.New_frames_reject_old_version_extensions_and_contradictory_work_capture",
+    "OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Actual_funding_and_stance_prepare_true_delegated_work_without_inventory_or_quest_disclosure",
+    "OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Actual_human_builder_sees_own_unfunded_project_without_being_a_supplier",
+    "OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Completed_geometry_is_public_without_production_or_history_and_omits_private_backing",
+    "OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Tool_eligibility_requires_one_owned_unprotected_unreserved_item(quantity: 1, protection: Favorite, reserved: False, expected: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Tool_eligibility_requires_one_owned_unprotected_unreserved_item(quantity: 1, protection: None, reserved: False, expected: True)",
+    "OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Tool_eligibility_requires_one_owned_unprotected_unreserved_item(quantity: 1, protection: None, reserved: True, expected: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Tool_eligibility_requires_one_owned_unprotected_unreserved_item(quantity: 2, protection: None, reserved: False, expected: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.HumanConstruction.ConstructionViewTests.Work_capture_uses_explicit_revision_rather_than_displayed_work_units",
+    "OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Explicit_fresh_builder_selection_preserves_the_original_kit_contract_and_materials",
+    "OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_persists_the_named_scenario_and_refuses_to_overwrite_it",
+    "OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_refuses_an_ambiguous_roster_before_creating_a_database(count: 0)",
+    "OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_refuses_an_ambiguous_roster_before_creating_a_database(count: 1)",
+    "OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_refuses_an_ambiguous_roster_before_creating_a_database(count: 2)",
+    "OpenFantasy.Server.Tests.HumanConstruction.HumanConstructionAdmissionTests.Operator_refuses_an_ambiguous_roster_before_creating_a_database(count: 4)",
+    "OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard"
+  ],
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T103556010984Z/report.json",
+      "sha256": "1e80781c8d833aa8a64700fa35fb7ce5f662d1df1c48f4870d03a6d80faec3fc",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 6.051838959014276,
+      "outcomes": null,
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "hosting-build": {
+      "path": "qualification/hosting-build-20261003T102438215774Z/report.json",
+      "sha256": "0c51f1021e8396614f8c18f2d3502b57fdf0f269e5a02461d206e9da96f624f9",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 1.5312958330032416,
+      "outcomes": null,
+      "dependencyFamily": "Hosting and exact linked client files",
+      "unrunCases": []
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261003T102514869875Z/report.json",
+      "sha256": "1759ceb0e5269f78746f76d77031318065e4facb3bb38d92294340bf51353228",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 56.73357633399428,
+      "outcomes": {
+        "Passed": 247
+      },
+      "dependencyFamily": "Hosting and exact linked client files",
+      "unrunCases": []
+    },
+    "codec": {
+      "path": "qualification/codec-20261003T102440299004Z/report.json",
+      "sha256": "ab2e4e5a67116922750a4f73002a712abc896b7a9c4c6b8059197b59ec0b68c5",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 18.833573499985505,
+      "outcomes": {
+        "Passed": 171
+      },
+      "dependencyFamily": "Hosting and exact linked client files",
+      "unrunCases": []
+    },
+    "new-managed": {
+      "path": "qualification/new-managed-20261003T102459370607Z/report.json",
+      "sha256": "0bad3d262244c99e3a1f3fc35c85d4336443999633197c47f185a708a016eec6",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 8.776645499980077,
+      "outcomes": {
+        "Passed": 13
+      },
+      "dependencyFamily": "Hosting and exact linked client files",
+      "unrunCases": []
+    },
+    "admission": {
+      "path": "qualification/admission-20261003T103749951229Z/report.json",
+      "sha256": "16912b9751cb0b0e78efec1c2231b58358dc7142260e7e06ea17942db8472714",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 8.038559709006222,
+      "outcomes": {
+        "Passed": 6
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "core": {
+      "path": "qualification/core-20261003T104445784294Z/report.json",
+      "sha256": "e384cfe26215f643082e2e4762203db19ff5bb2d86c912d6996fc8fcb6c55dea",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 100.60294000001159,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-construction": {
+      "path": "qualification/native-construction-20261003T103602785700Z/report.json",
+      "sha256": "d3ab0cc4e90bf54e27f076846693fbadd498152bad152b24e79b1889159de0ad",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 106.77057391699054,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-recipes": {
+      "path": "qualification/native-recipes-20261003T103758284250Z/report.json",
+      "sha256": "59c1b510a2223d2fc97491e7b479be911b778ccfc72ac318d327320bf75b64dd",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 93.3092104580137,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-production": {
+      "path": "qualification/native-production-20261003T103931909943Z/report.json",
+      "sha256": "3406e44fc75dcc6d2cd870bbdbad2427e4b7ae1546eaecb2c758aa99abbd6a17",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 102.99728604199481,
+      "outcomes": {
+        "Passed": 2
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-gifts": {
+      "path": "qualification/native-gifts-20261003T104115193988Z/report.json",
+      "sha256": "856925b464f78d68766a6707a442a3df4fc1c318552e78a0541213f9bc52e4bb",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 63.36809104200802,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-selection": {
+      "path": "qualification/native-selection-20261003T104218834137Z/report.json",
+      "sha256": "af29561b08d9b053faba5e1501d734524c80eb181480c1383e2582166f5d0a25",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 51.63554258298245,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-roster": {
+      "path": "qualification/native-roster-20261003T104310747505Z/report.json",
+      "sha256": "5117566f5b94f451e7bed6d3dd5c7018b347209200a4ef66f541179b62db87d7",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 79.98164587499923,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-compatibility": {
+      "path": "qualification/native-compatibility-20261003T104431014202Z/report.json",
+      "sha256": "620b0489e884a70f6fb1378c3a8451cf439f41f9f1d41ab7db94d7483cfa4892",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 14.531274750013836,
+      "outcomes": {
+        "Passed": 2
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    }
+  },
+  "retainedFailedAttempts": [
+    {
+      "path": "qualification/build-20261003T102329904454Z/report.json",
+      "sha256": "b6d768c0932c2f586230a00114af679af015ee460a5af8ff89e2172ba6d148e3",
+      "mode": "build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/codec-20261003T102227201329Z/report.json",
+      "sha256": "50f48361c66d50df3b16fdab35cd6359d8bc34c393c05eafe87a44fa703016b5",
+      "mode": "codec",
+      "outcomes": {
+        "Passed": 169,
+        "Failed": 2
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/native-construction-20261003T102616177010Z/report.json",
+      "sha256": "4aa7635bc44376b30db326e88a97a0b5a352648611ff39e47cc3e405c6caa484",
+      "mode": "native-construction",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/native-construction-20261003T102859726683Z/report.json",
+      "sha256": "b267fb721444d25789f3949b1820145a57fbcbb89a56282fb6efe6bdc9597d37",
+      "mode": "native-construction",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/native-construction-20261003T103303402291Z/report.json",
+      "sha256": "771ffe5ad75ebc0432428b0569afcf3f48b021877256dbb91a02c3ea566c5ba7",
+      "mode": "native-construction",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/native-construction-20261003T103157060786Z/INTERRUPTED.json",
+      "sha256": "6839dac2630c2b5a2a319fdce63f8d4faf824bf258deffea5130c33456bf6a16",
+      "mode": "native-construction",
+      "interrupted": true,
+      "accepted": false
+    }
+  ],
+  "journey": {
+    "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/journey.json",
+    "Status": "passed",
+    "AllowanceSeconds": 30.3313267,
+    "ElapsedMilliseconds": 102406,
+    "Stages": [
+      {
+        "Name": "native-funded-and-first-work",
+        "ElapsedMilliseconds": 11993,
+        "Peers": [
+          {
+            "Actor": "d644fe990d9982aa999ab41d836aee8a",
+            "Sequence": 5,
+            "Commands": 1
+          },
+          {
+            "Actor": "8c631e8b65e694d9914789ffb629da72",
+            "Sequence": 7,
+            "Commands": 4
+          },
+          {
+            "Actor": "6879f5585b0e80582f3eab149c3150b9",
+            "Sequence": 1,
+            "Commands": 0
+          },
+          {
+            "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+            "Sequence": 1,
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Name": "native-work-199-before-owner-return",
+        "ElapsedMilliseconds": 92790,
+        "Peers": [
+          {
+            "Actor": "8c631e8b65e694d9914789ffb629da72",
+            "Sequence": 7,
+            "Commands": 0
+          },
+          {
+            "Actor": "6879f5585b0e80582f3eab149c3150b9",
+            "Sequence": 75,
+            "Commands": 198
+          },
+          {
+            "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+            "Sequence": 7,
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Name": "all200-native-work-and-public-completion",
+        "ElapsedMilliseconds": 96900,
+        "Peers": [
+          {
+            "Actor": "d644fe990d9982aa999ab41d836aee8a",
+            "Sequence": 6,
+            "Commands": 1
+          },
+          {
+            "Actor": "8c631e8b65e694d9914789ffb629da72",
+            "Sequence": 8,
+            "Commands": 0
+          },
+          {
+            "Actor": "6879f5585b0e80582f3eab149c3150b9",
+            "Sequence": 78,
+            "Commands": 198
+          },
+          {
+            "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+            "Sequence": 10,
+            "Commands": 0
+          }
+        ]
+      }
+    ],
+    "Scope": "All 200 work commands are native; 198 delegated; completion by returning owner. Public observer is home; selected Traversal-only visibility is a separate managed proof."
+  },
+  "authenticatedNativeArtifacts": [
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/final.ofc",
+      "sha256": "0fd670db14b460f9bdfe3a5bf250a1c4e17599a62eda743948622b748c5e2782"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/genesis.ofc",
+      "sha256": "8649a5f8cd8bcd4187a4521478974d38affb6edec1d342bbdc15a7d0e5efc500"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/identities.json",
+      "sha256": "99c76cb2b8dc370d78ba65b03bbbd0e437657a53be02501bcaba99be0757ea69"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/journal.json",
+      "sha256": "b24781a28ed83e117e03695d877cfa2c4a8d5fa3697671c371f40be5e51f4420"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/journey.json",
+      "sha256": "feb49dd6a223e2623f19060ae2927a8c05f5d4d119a1e6dc8faf874869a97bc8"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/partial.ofc",
+      "sha256": "fed99666369ce7b7169d69e12406780ac0853b3b6d0e744900724f8fac03adbf"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/partial.sqlite3",
+      "sha256": "720a7f9757bb4aa9f2a73d4ae576d258dc2e84852b094112ebbd081b1dc9911c"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/preparation.txt",
+      "sha256": "e3238c7ac79f7f91066e35a98d5316ac460ff776ceeaea6314e22d06cdfb259c"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/prepared.ofc",
+      "sha256": "3479179a26c2ed398f87397b29b6e91aa757c4b63079f29fee056d438223d8f0"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/receipts.json",
+      "sha256": "76be446ae00af7e4655d137b25f12279bed1b8af72f5aa9eb57a238c0d20b3c0"
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/world.sqlite3",
+      "sha256": "ff159e0161cce31f536af739abebfc1591a5d3967e17c2de7bc265742e483322"
+    }
+  ],
+  "leadInspectedImages": [
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/6879f5585b0e80582f3eab149c3150b9-continuation/0062-construction.png",
+      "sha256": "78a930f2d3b84ab722210db1db5d3ea69bb805376217de00cc0c976b261bb692",
+      "inspection": "Lead inspected rendered frame. Build target, exact progress, work/time and stance text fit; completion shows actual retained guard in the field with native bounds clear of HUD. This does not qualify final art or sustained-work usability."
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/6879f5585b0e80582f3eab149c3150b9-continuation/0075-construction.png",
+      "sha256": "d9a421014d826fa12b27f05c774b7638b34ac9f61e18606f3f642e4bf7579ee5",
+      "inspection": "Lead inspected rendered frame. Build target, exact progress, work/time and stance text fit; completion shows actual retained guard in the field with native bounds clear of HUD. This does not qualify final art or sustained-work usability."
+    },
+    {
+      "path": "qualification/native-construction-20261003T103602785700Z/native/human-construction/a7341c7cbdd9e63effec9bf6f0936da4-continuation/0010-construction.png",
+      "sha256": "f51d5c9a9900181ec307c91afb7aa888e6883eb6490a3de285f943e9fe8973eb",
+      "inspection": "Lead inspected actual completion frame and native sprite bounds (13\u00d78 at 505.625,177), clear of the HUD. The builder overlaps the guard footprint; unobscured guard legibility is not accepted from this frame. Geometry delivery, exact shape selection and instantiated sprite bounds are qualified separately; final art/human usability remain open."
+    },
+    {
+      "path": "qualification/native-compatibility-20261003T104431014202Z/native/rendered/native-player.png",
+      "sha256": "8a180c173c1d7d682bff1a1fc3614a2bef8dafc15884f5df89c3c092dd0a5ba6",
+      "inspection": "Lead inspected retained compatibility frame: character, target cues and main controls fit. The idle preview text begins clipped at the left edge; ordinary HUD readability remains unaccepted. This is the existing home connection/focus fixture, not human construction or final artwork approval."
+    }
+  ],
+  "review": "REVIEW.md",
+  "externalClaudeRequestExecuted": false,
+  "limits": [
+    "Explicit fresh Wren-as-human qualification scenario; ordinary population and lived saves are unchanged.",
+    "All200 native work confirmations, including198 delegated steps, original funding, partial stop/reopen, owner return/revoke and original-genesis replay.",
+    "Ordinary home observer shows completed geometry; withheld-Production selected observer is a managed projection proof, not a native journey.",
+    "Actual installed collision and required access are domain-query proofs, not a native movement-collision gesture.",
+    "Unit confirmations qualify authority/input composition, not a polished sustained-work activity or production balance.",
+    "Hosting managed evidence is reused only after matching its actual complete source, linked client files and binary dependency family.",
+    "Prior raw-gift opening and movement/history timing failures remain unexplained; later regressions do not close those reliability gates.",
+    "Controlled background rendering and injected controls do not prove physical input, OS focus, human usability or final art. The completion guard footprint overlaps its builder, so unobscured guard legibility is not accepted from that frame.",
+    "Full selected history, profile40 process kills, composite maximums, production scale and the complete campaign remain open."
+  ]
+}

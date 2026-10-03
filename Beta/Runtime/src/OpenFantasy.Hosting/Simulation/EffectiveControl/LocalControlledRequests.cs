@@ -143,9 +143,8 @@ public sealed class LocalControlledConstructionPreparation
             .Select(project => project.ProjectId).ToHashSet();
         return Array.AsReadOnly(state.Construction!.Projects.Where(project => visible.Contains(project.ProjectId))
             .Select(project => new LocalControlledConstructionPreparation(project.ProjectId,
-                state.Inventory.Custody.Lots.Where(lot => lot.CustodianId == view.PlayerInventory.CustodianId
-                    && lot.Definition == project.Definition.RequiredTool.Item && lot.ReservedBy is null
-                    && lot.Protection == LotProtection.None).OrderBy(lot => lot.LotId)
+                state.Inventory.Custody.Lots.Where(lot => LocalConstructionWorkProjection.IsEligibleTool(lot,
+                    view.PlayerInventory.CustodianId, project.Definition.RequiredTool.Item)).OrderBy(lot => lot.LotId)
                     .Select(lot => new WorkConstructionIntent(project.ProjectId, project.Revision,
                         state.Inventory.Custody.GetStorage(project.ProjectCustodianId).Revision, lot.LotId, lot.Revision))))
             .ToArray());

@@ -22,6 +22,7 @@ internal sealed partial class FarmWheelDisc : Control
             (FarmSemanticAction.Speak, "talk"), (FarmSemanticAction.Gather, "gather"),
             (FarmSemanticAction.Craft, "craft"), (FarmSemanticAction.Give, "give"),
             (FarmSemanticAction.Excavate, "excavate"), (FarmSemanticAction.Traverse, "traverse"),
+            (FarmSemanticAction.Build, "gather"),
             (FarmSemanticAction.EnterEncounter, "engage"), (FarmSemanticAction.Strike, "strike"),
             (FarmSemanticAction.Wait, "wait"), (FarmSemanticAction.ReleaseEncounter, "leave"),
             (FarmSemanticAction.AcknowledgeCare, "care"), (FarmSemanticAction.UseRestorative, "care"),

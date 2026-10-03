@@ -1,0 +1,29 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.50]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.67]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.81]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:01:37.14]     OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard [FAIL]
+[xUnit.net 00:01:37.15]       System.ArgumentNullException : Value cannot be null. (Parameter 'collection')
+[xUnit.net 00:01:37.15]       Stack Trace:
+[xUnit.net 00:01:37.15]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs(136,0): at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard()
+[xUnit.net 00:01:37.15]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs(172,0): at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard()
+[xUnit.net 00:01:37.15]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs(172,0): at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard()
+[xUnit.net 00:01:37.15]         --- End of stack trace from previous location ---
+[xUnit.net 00:01:37.17]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard [1 m 36 s]
+  Error Message:
+   System.ArgumentNullException : Value cannot be null. (Parameter 'collection')
+  Stack Trace:
+     at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 136
+   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 172
+   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 172
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 1.6263 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/human-construction/qualification/native-construction-20261003T102859726683Z/checks.trx

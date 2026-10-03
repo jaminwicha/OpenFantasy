@@ -127,6 +127,15 @@ Craft wheel sector and **C** keep their ration shortcut. Production permission c
 without exposing Pack or medicine-use controls. The current catalog is admitted content, not a
 completed recipe-learning system.
 
+For the explicit human-builder qualification scenario, create a separate new hosted world with
+`OpenFantasy.Host --create-human-construction <new-world.sqlite> <seed> Amber Birch Cedar`.
+The three travelers join Wren as a fourth human. Serve that database through the ordinary cargo-host
+settings and invitations. Another traveler supplies Wren's original quest; select the assigned project
+and inspect **Build** in the field controls or action wheel. Each confirmation performs one work step.
+Funding, the owned matching tool and exact work stance remain required. This scenario preserves the
+original 200-step guard requirement; it is not a polished sustained-work interface or production balance.
+The command refuses an existing database and does not change the default cargo population.
+
 The pack displays the local host’s running, waiting or paused status. Opening it stops player movement/input but leaves the existing time policy in effect; a running world continues. Opening from pause preserves that pause. Escape, I, View/Select, B or Close unwinds only the pack. Focus remains inside the screen, returns to the prior valid HUD control, and held navigation requires release before walking resumes. Selection is local to the current client and owned actor; no UI click is replayed after restart. These controls have injected native regression coverage, not physical-controller or full multiplayer acceptance.
 
 Choose an explicit field target with **Q** or the controller's **right shoulder**, or use the

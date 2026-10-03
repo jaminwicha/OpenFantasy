@@ -1,0 +1,49 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.13]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.29]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.42]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:14.23]     OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard [FAIL]
+[xUnit.net 00:00:14.24]       Native roster stage=construction-batch, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/human-construction/qualification/native-construction-20261003T102616177010Z/native/human-construction/d644fe990d9982aa999ab41d836aee8a-funding/0004.response.json: System.InvalidOperationException: The exact executable building offer did not reach the presented frame.
+[xUnit.net 00:00:14.24]          at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+[xUnit.net 00:00:14.24]          at OpenFantasy.Client.MarketProbeDriver.Until(Func`1 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149
+[xUnit.net 00:00:14.24]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ReviewConstruction(EntityId project) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Construction.cs:line 51
+[xUnit.net 00:00:14.24]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ConstructionBatch(EntityId project, String countText) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Construction.cs:line 123
+[xUnit.net 00:00:14.24]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 142
+[xUnit.net 00:00:14.24]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+[xUnit.net 00:00:14.24]       Stack Trace:
+[xUnit.net 00:00:14.24]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(79,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds)
+[xUnit.net 00:00:14.24]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(53,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target)
+[xUnit.net 00:00:14.24]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs(194,0): at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.<>c__DisplayClass3_0.<<Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard>g__Send|2>d.MoveNext()
+[xUnit.net 00:00:14.24]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:14.24]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs(50,0): at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard()
+[xUnit.net 00:00:14.24]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs(172,0): at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard()
+[xUnit.net 00:00:14.24]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs(172,0): at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard()
+[xUnit.net 00:00:14.24]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:14.27]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard [13 s]
+  Error Message:
+   Native roster stage=construction-batch, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/human-construction/qualification/native-construction-20261003T102616177010Z/native/human-construction/d644fe990d9982aa999ab41d836aee8a-funding/0004.response.json: System.InvalidOperationException: The exact executable building offer did not reach the presented frame.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.MarketProbeDriver.Until(Func`1 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ReviewConstruction(EntityId project) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Construction.cs:line 51
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ConstructionBatch(EntityId project, String countText) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Construction.cs:line 123
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 142
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.<>c__DisplayClass3_0.<<Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard>g__Send|2>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 194
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 50
+   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 172
+   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 172
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 14.6172 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/human-construction/qualification/native-construction-20261003T102616177010Z/checks.trx

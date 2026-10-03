@@ -1,0 +1,54 @@
+{
+  "Error": "System.ArgumentNullException: Value cannot be null. (Parameter \u0027collection\u0027)\n   at Xunit.Assert.Single[T](IEnumerable\u00601 collection) in /_/src/xunit.v3.assert/Asserts/CollectionAsserts.cs:line 637\n   at OpenFantasy.Server.Tests.HumanConstructionNative.NativeHumanConstructionTests.Native_human_builder_and_consented_operator_earn_all_two_hundred_work_steps_and_complete_funded_guard() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/HumanConstructionNative/NativeHumanConstructionTests.cs:line 136",
+  "AllowanceSeconds": 30.2177178,
+  "ElapsedMilliseconds": 92013,
+  "Stages": [
+    {
+      "Name": "native-funded-and-first-work",
+      "ElapsedMilliseconds": 9644,
+      "Peers": [
+        {
+          "Actor": "d644fe990d9982aa999ab41d836aee8a",
+          "Sequence": 5,
+          "Commands": 1
+        },
+        {
+          "Actor": "8c631e8b65e694d9914789ffb629da72",
+          "Sequence": 7,
+          "Commands": 4
+        },
+        {
+          "Actor": "6879f5585b0e80582f3eab149c3150b9",
+          "Sequence": 1,
+          "Commands": 0
+        },
+        {
+          "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+          "Sequence": 1,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "native-work-199-before-owner-return",
+      "ElapsedMilliseconds": 86931,
+      "Peers": [
+        {
+          "Actor": "8c631e8b65e694d9914789ffb629da72",
+          "Sequence": 7,
+          "Commands": 0
+        },
+        {
+          "Actor": "6879f5585b0e80582f3eab149c3150b9",
+          "Sequence": 75,
+          "Commands": 198
+        },
+        {
+          "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+          "Sequence": 7,
+          "Commands": 0
+        }
+      ]
+    }
+  ]
+}

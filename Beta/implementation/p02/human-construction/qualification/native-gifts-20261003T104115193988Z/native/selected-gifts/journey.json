@@ -1,0 +1,97 @@
+{
+  "Kind": "native-selected-gifts-v1",
+  "Status": "passed",
+  "ExpirySeconds": 30.1452597,
+  "ElapsedMilliseconds": 59931,
+  "Stages": [
+    {
+      "Stage": "inventory-only-selected-paused",
+      "ElapsedMilliseconds": 39164,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "ResponseSequence": 62,
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Generation": 1,
+          "Commands": 0
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "ResponseSequence": 2,
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Generation": 0,
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "ResponseSequence": 2,
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Generation": 0,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "both-native-participants-decided",
+      "ElapsedMilliseconds": 46331,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "ResponseSequence": 120,
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Generation": 1,
+          "Commands": 6
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "ResponseSequence": 43,
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Generation": 0,
+          "Commands": 4
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "ResponseSequence": 2,
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Generation": 0,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "old-grant-refused-owner-withdrew",
+      "ElapsedMilliseconds": 51633,
+      "Peers": [
+        {
+          "Home": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "ResponseSequence": 12,
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Generation": 0,
+          "Commands": 1
+        },
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "ResponseSequence": 135,
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Generation": 2,
+          "Commands": 7
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "ResponseSequence": 54,
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Generation": 0,
+          "Commands": 5
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "ResponseSequence": 5,
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Generation": 0,
+          "Commands": 0
+        }
+      ]
+    }
+  ],
+  "Preparation": "Original-genesis ordinary journaled travel only; no stock or body changes and no native travel claim."
+}
