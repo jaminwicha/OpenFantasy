@@ -94,8 +94,26 @@ revisions and the builder's actual readiness, funding, stance and reach facts. T
 not authority or reservations. Installed members carry their exact bounded identity and geometry
 without private backing stock. Missing legacy fields and present-empty current fields remain distinct.
 The version-5 material-description entrypoint retains its own representation; default legacy encodings
-remain unchanged. Live publication uses the construction-aware representation and canonical decoding
-follows the received version.
+remain unchanged. Canonical decoding follows the received version; the cumulative care representation
+also retains construction validation and fields.
+
+### Known care permission terms
+
+`EncodeWithCarePermissionDescriptions` selects home body version 7 when ordinary permission terms are
+present. It includes material descriptions and construction alongside each grant's known medicine,
+restoration amount, duration and delivery mode. The authority projection resolves the authenticated
+permission → use definition → remedy relationship. The wire validator checks bounded shape, supported
+assistance modes, the ordinary duration and matching withdrawal identity; the view alone cannot
+authenticate that catalog relationship. No helper inventory or executable assistance request is exposed.
+
+The permission model's `Description` is ignored by default diagnostic JSON. Its explicit
+[wire record](../../src/OpenFantasy.Hosting/Networking/ObservationViews/CarePermissionDescriptionData.cs)
+emits terms only under the declared new representation. Existing encoding APIs retain their exact
+older field sets. Canonical decoding rejects a descriptor under an older version, missing terms under
+version 7 and inconsistent withdrawal identities. Repeated self-use definition identities or permission
+identities are rejected in home and selected arrays before they can become ambiguous menu keys. Views without descriptions retain the construction
+or material-only representation according to their existing structure facet; omitted older facts are
+not invented during republishing. Live publication uses this conditional cumulative encoding.
 
 Regional data contains the observer identity and exact feet, each observed region's full bounds
 and revision, row-major ground kinds and opening depths, and each wet column's exact volume and

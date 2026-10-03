@@ -1,0 +1,40 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.21]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.75]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.89]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Full_dose_policy_requires_living_recipient_and_the_whole_restoration_to_fit(hp: 0, maximum: 60, expected: False) [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Full_dose_policy_requires_living_recipient_and_the_whole_restoration_to_fit(hp: 21, maximum: 60, expected: False) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Full_dose_policy_requires_living_recipient_and_the_whole_restoration_to_fit(hp: 1, maximum: 60, expected: True) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Full_dose_policy_requires_living_recipient_and_the_whole_restoration_to_fit(hp: 20, maximum: 60, expected: True) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Full_dose_policy_requires_living_recipient_and_the_whole_restoration_to_fit(hp: 60, maximum: 60, expected: False) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Structural_candidate_health_form_and_manipulation_diagnostics_are_independent_of_other_blockers [11 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Structural_retained_owner_limits_are_distinct_and_do_not_claim_archives_free_capacity(materialCount: 255, ordinaryCount: 0, reason: Available) [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Structural_retained_owner_limits_are_distinct_and_do_not_claim_archives_free_capacity(materialCount: 1, ordinaryCount: 256, reason: OrdinaryHistoryCapacity) [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Structural_retained_owner_limits_are_distinct_and_do_not_claim_archives_free_capacity(materialCount: 1, ordinaryCount: 255, reason: Available) [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Structural_retained_owner_limits_are_distinct_and_do_not_claim_archives_free_capacity(materialCount: 256, ordinaryCount: 256, reason: MaterialHistoryCapacity) [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Structural_retained_owner_limits_are_distinct_and_do_not_claim_archives_free_capacity(materialCount: 256, ordinaryCount: 0, reason: MaterialHistoryCapacity) [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Earned_injury_offers_exact_owned_dose_then_actual_use_invalidates_the_captured_selection [49 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Existing_commitments_and_actual_patient_revocation_suppress_otherwise_eligible_aid [854 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Known_full_health_choice_stays_inspectable_and_permission_withdrawal_does_not_require_an_injury [164 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Actual_missing_helper_dose_and_permission_failures_are_not_mislabeled_full_health_or_debt [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Patient_withdrawal_captures_exact_permission_and_revoked_choice_remains_inspectable [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Actual_crafted_aid_reports_range_after_real_helper_movement_without_refreshing_the_selected_dose [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Actual_encounter_aftermath_readiness_and_reading_holds_explain_their_own_context [6 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.RestorativeAvailabilityTests.Captured_lot_revision_is_explained_as_stale_without_changing_its_saved_receipt_meaning [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Actual_stale_selection_gets_one_rejection_and_is_not_retried_after_movement_time_or_recovery [456 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeSessionTests.Queued_patient_self_use_or_revoke_wins_the_same_cutoff_over_an_otherwise_ready_helper(revoke: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Real_source_injury_selects_helper_owned_raw_or_crafted_dose_and_commits_once(crafted: True) [415 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Real_source_injury_selects_helper_owned_raw_or_crafted_dose_and_commits_once(crafted: False) [475 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeSessionTests.Queued_patient_self_use_or_revoke_wins_the_same_cutoff_over_an_otherwise_ready_helper(revoke: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeControllerTests.Permanent_command_and_derived_claim_collisions_withhold_the_exact_choice_without_new_identities [448 ms]
+[xUnit.net 00:00:04.21]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.RestorativeSessionTests.Actual_stocked_helper_waits_through_pause_then_commits_one_owned_dose_at_a_ready_cutoff_and_reopens [759 ms]
+
+Test Run Successful.
+Total tests: 26
+     Passed: 26
+ Total time: 4.6575 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-choices/qualification/care-managed-20261003T122814719679Z/checks.trx

@@ -1,0 +1,428 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "00b0d467071e98cf60f8bf7708515da1",
+  "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+  "Inputs": [
+    {
+      "Stage": "control-offer",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Characters",
+      "X": 89.5,
+      "Y": 103
+    },
+    {
+      "Stage": "control-offer",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Recipient",
+      "X": 185,
+      "Y": 235.5
+    },
+    {
+      "Stage": "control-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "control-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "control-offer",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "@CheckBox@91",
+      "X": 118,
+      "Y": 334
+    },
+    {
+      "Stage": "control-offer",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Grant",
+      "X": 185,
+      "Y": 432.5
+    },
+    {
+      "Stage": "control-close",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Close",
+      "X": 905,
+      "Y": 111.5
+    }
+  ],
+  "Submissions": [],
+  "PermissionSubmissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001600000010E9E1F3292F1E38BA07C6326A479658DF000000104BFA85ADA9AB0FB0D377F011F0025D88000000106F085FB1A0B16DFB75517BBE725BDAAA000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000000800000000000000E0000000594F46430000000001000000040000001D776F726C642E616374696F6E2E6F666665722D636F6E74726F6C2E7631000000105795DC4890DA7573CFC5B3948D0296DF000000080000000000000000000000080000000000000010",
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010E9E1F3292F1E38BA07C6326A479658DF000000104BFA85ADA9AB0FB0D377F011F0025D880000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020C7443055AAEA592DA8835DE4FA3F16A0D71FFCD9B0228B3F535C54DBDAD47CEA0000000800000000000000E5000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "Selection": {
+    "World": "00b0d467071e98cf60f8bf7708515da1",
+    "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+    "Port": "7a190768fb8442c691353c8472e2f71e",
+    "HomeActor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 24960,
+      "Y": 89472,
+      "Z": 256,
+      "Cell": {
+        "X": 97,
+        "Y": 349,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 24960,
+      "Y": 89472,
+      "Z": 256,
+      "Cell": {
+        "X": 97,
+        "Y": 349,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 78,
+    "Mp": 14,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "CareLibrary": {
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "Open": false,
+    "RecoveryDisclosed": true,
+    "DispositionDisclosed": true,
+    "InventoryDisclosed": true,
+    "CombatDisclosed": true,
+    "Hp": 78,
+    "Entries": [],
+    "Selected": null,
+    "Prepared": null,
+    "Captured": null,
+    "Uses": [
+      {
+        "Id": "4687be4683e912343e998b3c36e5fcbd",
+        "ItemName": "Potion",
+        "HealHitPoints": 40,
+        "ExpectedHealingHp": 0,
+        "CanUse": false,
+        "Reason": "FullHealth",
+        "Ingredient": null
+      }
+    ],
+    "Permissions": [
+      {
+        "Id": "247067932734310a02db5db871e088fb",
+        "Helper": "2d8e5e0319d821395e44fc387b13b8be",
+        "HelperName": "Wren",
+        "IsActive": true,
+        "CanRevoke": true
+      }
+    ]
+  },
+  "CareLibraryCaptures": [],
+  "Trading": {
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "TradeDisclosed": true,
+    "InventoryDisclosed": true,
+    "PrivateHistory": true,
+    "Open": false,
+    "Wallet": 200,
+    "InquiryPending": false,
+    "AskDisabled": false,
+    "Draft": {
+      "Market": null,
+      "Direction": "Buy",
+      "Quantity": 1,
+      "Lot": null,
+      "Review": null
+    },
+    "Inquiry": null,
+    "Stalls": [
+      {
+        "Market": "05ca783618c81ca538fce81d098135bc",
+        "Merchant": "ff4d6c8fab8c1898c04d783d32ab32ce",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      },
+      {
+        "Market": "6a8ea725b461e6c09fc2529ffb495306",
+        "Merchant": "0cd16008ae92d2ce647c5035330e24ba",
+        "IsAvailableInPerson": true,
+        "Lots": [],
+        "Showing": null
+      }
+    ],
+    "Quotes": [],
+    "Reviewed": null
+  },
+  "TradeCaptures": [],
+  "Gifts": {
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 0,
+    "OfferSelectionVersion": 0,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "003e66ea97412e2c91fc173d8eee1565",
+        "Quantity": 2,
+        "Revision": 1,
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "41796ceea98e362698dc7d32086bd2f6",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "9bb7cf68db7bc28bae131326a24697a8",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "bf937ccc8defe9ef5c1d602575b2f725"
+      }
+    ],
+    "Offers": [],
+    "Draft": null,
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. Inspection spends nothing.",
+        "CostText": "Choose a stack and quantity",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 224,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive Select an offer",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 224,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 224,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 224,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [],
+  "Production": {
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Pick berries",
+        "TargetName": "Berry Bush",
+        "Target": "1af8604257cc99ed0df73189a5d21879",
+        "CanExecute": false,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": "Move closer to the Berry Bush.",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "ExpectedActorRevision": 224,
+        "Port": "7a190768fb8442c691353c8472e2f71e",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": {
+          "Node": "1af8604257cc99ed0df73189a5d21879",
+          "ExpectedNodeRevision": 0,
+          "Tool": "41796ceea98e362698dc7d32086bd2f6",
+          "ExpectedToolLotRevision": 0
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "ExpectedActorRevision": 224,
+        "Port": "7a190768fb8442c691353c8472e2f71e",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "Recipes": {
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "Open": false,
+    "InventoryDisclosed": true,
+    "RecoveryDisclosed": true,
+    "CombatDisclosed": true,
+    "ProductionDisclosed": true,
+    "Selected": null,
+    "Notice": null,
+    "Entries": [],
+    "Prepared": null,
+    "Captured": null
+  },
+  "RecipeCaptures": [],
+  "Construction": {
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "ProductionDisclosed": true,
+    "InventoryDisclosed": false,
+    "RecoveryDisclosed": false,
+    "Projects": [
+      {
+        "ProjectId": {
+          "High": 3552237999070367962,
+          "Low": 11062656870777227477
+        },
+        "BuilderActorId": {
+          "High": 3282664545811177785,
+          "Low": 6792831457494808766
+        },
+        "DisplayName": "Small sapling guard",
+        "SiteFeet": {
+          "X": 27213,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "WorkFeet": {
+          "X": 27264,
+          "Y": 83328,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "CompletedWork": 0,
+        "RequiredWork": 200,
+        "IsCompleted": false
+      }
+    ],
+    "Work": [],
+    "Structures": [],
+    "Reviewed": null
+  },
+  "ConstructionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 3303,
+  "NativeFocused": true,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": false,
+  "Display": "headless"
+}

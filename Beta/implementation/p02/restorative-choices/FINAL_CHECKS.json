@@ -1,0 +1,483 @@
+{
+  "allCurrentSelectedReportsPassed": true,
+  "sharedCareNativeQualified": true,
+  "fullRegressionAccepted": false,
+  "fullPhaseAccepted": false,
+  "fullCoPlayerFeatureAccepted": false,
+  "nativeFullMedicineCatalogQualified": false,
+  "runtimePermissionGrantOrRegrantImplemented": false,
+  "originalNativeGiftOpeningFailureExplained": false,
+  "movementTimingGateClosed": false,
+  "productionHistoryLatencyGateClosed": false,
+  "profile40ProcessKillQualified": false,
+  "fullHistoryDiscoveryImplemented": false,
+  "physicalDeviceAcceptance": false,
+  "humanUsabilityAcceptance": false,
+  "artAcceptance": false,
+  "sourceHead": "0e8414a4aae722f5c42a84722a302fa4a2b41f82",
+  "preChangeCheckpoint": "codex/checkpoint-before-restorative-choices-20261003T115211Z",
+  "milestone": "codex/milestone-restorative-choices-20261003",
+  "protectedCounts": {
+    "tests": 811,
+    "specs": 23
+  },
+  "onlyExistingTestProjectChange": "Three additive care source links; subtracting exact lines restores archived original bytes.",
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "05b893bb8fb686b8074f422f9f908bd5aeeca84c3f2217702a5eb4fd9ff9b35f",
+  "finalizerSha256": "1ec941a749cf0d937f55488ed609564a662ed7c8bb941622510840076fd96430",
+  "distinctCasesPassingOnVerifiedDependencies": 2360,
+  "newCases": [
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Browsing_and_closing_preserve_the_existing_readiness_policy(paused: False)",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Browsing_and_closing_preserve_the_existing_readiness_policy(paused: True)",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Care_cannot_open_over_existing_modal_owners",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Controller_cancel_does_not_fall_through_to_quick_crafting",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Focus_loss_and_pending_control_cannot_confirm_a_care",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Focused_native_button_owns_accept_release_without_world_talk",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Menu_direction_stays_neutral_after_closing_until_released",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Pending_work_or_reading_blocks_commit_but_keeps_close_available",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceModelTests.A_consumed_shared_dose_invalidates_review_without_switching_to_another_definition",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceModelTests.Missing_description_remains_explicit_without_inventing_agreement_terms",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceModelTests.Two_medicines_and_two_same_helper_permissions_are_explicit_distinct_unspent_choices",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceModelTests.Withdrawal_targets_one_agreement_and_keeps_other_same_helper_permission_active",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceReferenceTests.Identical_terms_keep_distinct_stable_visible_references_and_withdraw_only_the_reviewed_grant",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceReferenceTests.Noncolliding_choices_keep_the_concise_usual_labels_and_details",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Exact_selected_permission_executes_without_recovery_or_inventory_capabilities",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Presence_revision_and_cross_actor_scope_cannot_silently_retarget_review",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Recovery_and_permission_disclosure_remain_independent(capability: CareDisposition, recovery: False, disposition: True)",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Recovery_and_permission_disclosure_remain_independent(capability: Inventory, recovery: False, disposition: False)",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Recovery_and_permission_disclosure_remain_independent(capability: Recovery, recovery: True, disposition: False)",
+    "OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Same_actor_reselected_in_a_new_generation_discards_selection_review_and_old_submission",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Care_versions_reject_downgrades_missing_terms_foreign_withdrawal_and_unsupported_delivery",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Duplicate_choice_identities_are_rejected_before_they_reach_menu_keys(selected: False, use: False)",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Duplicate_choice_identities_are_rejected_before_they_reach_menu_keys(selected: False, use: True)",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Duplicate_choice_identities_are_rejected_before_they_reach_menu_keys(selected: True, use: False)",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Duplicate_choice_identities_are_rejected_before_they_reach_menu_keys(selected: True, use: True)",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Home_seven_retains_known_terms_while_legacy_encoders_and_diagnostics_keep_their_shape",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Patient_terms_come_from_each_exact_grant_and_remedy_without_supplier_inventory",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Republishing_older_views_does_not_invent_known_terms_or_omitted_construction",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Selected_terms_follow_care_disposition_independently_of_recovery_and_other_facets(capabilities: CareDisposition)",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Selected_terms_follow_care_disposition_independently_of_recovery_and_other_facets(capabilities: PrivateHistory)",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Selected_terms_follow_care_disposition_independently_of_recovery_and_other_facets(capabilities: Recovery | CareDisposition)",
+    "OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Selected_terms_follow_care_disposition_independently_of_recovery_and_other_facets(capabilities: Recovery)",
+    "OpenFantasy.Server.Tests.RestorativeChoicesNative.NativeRestorativeChoicesTests.Real_native_care_library_pins_patient_permission_and_finite_dose_without_Inventory_and_refuses_a_returned_owner_capture"
+  ],
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T123507351852Z/report.json",
+      "sha256": "d9318cea5015efef1a4b219a30dd7978992b8347d5b3ef3c0aafd63dc3b8aad8",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": null,
+      "seconds": 2.4751210839895066
+    },
+    "hosting-build": {
+      "path": "qualification/hosting-build-20261003T122038145524Z/report.json",
+      "sha256": "531921e9cebd1634c98cbb093807dbe51926f576f56ecd04edfdccb6ebcae0c4",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": null,
+      "seconds": 7.018898459005868
+    },
+    "new-managed": {
+      "path": "qualification/new-managed-20261003T122046854626Z/report.json",
+      "sha256": "0275abcfd2d9c718f4009a5a5fb45a64f67c87ba9dcf4489c857fa3a6774e169",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 32
+      },
+      "seconds": 19.539460166997742
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261003T122134570934Z/report.json",
+      "sha256": "64aa3907aeecf19e2acfa7997ed28fc1ab544d9366495290c3626f33eedfa9ca",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 275
+      },
+      "seconds": 96.11519579199376
+    },
+    "codec": {
+      "path": "qualification/codec-20261003T122106710498Z/report.json",
+      "sha256": "f6523ebdf7f03817c1d1742cb28b4325c751491934d7fa4a6acf3405c5eae50d",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 183
+      },
+      "seconds": 27.6211399169988
+    },
+    "care-managed": {
+      "path": "qualification/care-managed-20261003T122814719679Z/report.json",
+      "sha256": "7a9bf4cb8dcffe3b574d79edc674af93053ae590b37115b048ad1a4008bd13bd",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "narrowSceneReuse": "WHEEL_DETAIL_CORRECTION.json",
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 26
+      },
+      "seconds": 6.011818875005702
+    },
+    "core": {
+      "path": "qualification/core-20261003T122820938760Z/report.json",
+      "sha256": "e2b53e5763fd007a7db1d951b7fba81b8feb5135718a3520e868528566852915",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "narrowSceneReuse": "WHEEL_DETAIL_CORRECTION.json",
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "seconds": 91.1796468749817
+    },
+    "native-care": {
+      "path": "qualification/native-care-20261003T123510471605Z/report.json",
+      "sha256": "7d0977d4e9507a4d569edc3f5f9379e1d6abd37e7938ca91e674a357cdeacd54",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 1
+      },
+      "seconds": 47.70440637500724
+    },
+    "home-fixtures": {
+      "path": "qualification/home-fixtures-20261003T123558477557Z/report.json",
+      "sha256": "e886f99886025de0859ed9c952832f771de4faedfd79fc7eb60e9690e02e72da",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 3
+      },
+      "seconds": 5.350021958001889
+    },
+    "home-native": {
+      "path": "qualification/home-native-20261003T123604031527Z/report.json",
+      "sha256": "8b205c697fb639e98133dacb91f8923d9c81527a7d85db0af6240fb6acb6c374",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": null,
+      "seconds": 45.886051875015255
+    },
+    "home-auth": {
+      "path": "qualification/home-auth-20261003T123650229541Z/report.json",
+      "sha256": "e7addaf0b10e119bb9fec02d9a3798a8f3f782ceabd178c1ceeb7a6c78203b10",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 1
+      },
+      "seconds": 10.456336250004824
+    },
+    "native-trading": {
+      "path": "qualification/native-trading-20261003T123701271574Z/report.json",
+      "sha256": "d8746997ced0a9946dd62e08d1b2fe19f0334fdcd60bbc79060c4b041f64ed64",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 1
+      },
+      "seconds": 55.271230709011434
+    },
+    "native-recipes": {
+      "path": "qualification/native-recipes-20261003T123756789104Z/report.json",
+      "sha256": "7ced87184f445bd789650de86bcf8169ed581cd3232cdb62dd470f94de95828c",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 1
+      },
+      "seconds": 94.29337062500417
+    },
+    "native-compatibility": {
+      "path": "qualification/native-compatibility-20261003T123931408502Z/report.json",
+      "sha256": "f90fa1d64445a181e6463434a6ca7596cddfe220751b4144268334ec46663a54",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "outcomes": {
+        "Passed": 2
+      },
+      "seconds": 23.607184791995678
+    }
+  },
+  "retainedFailedAttempts": [
+    {
+      "path": "qualification/hosting-build-20261003T120904445733Z/report.json",
+      "sha256": "fc0e775e2fc6ff807cf93bccd4835a781e221e455aaab37e36fcf6fe586466c4",
+      "mode": "hosting-build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/hosting-build-20261003T121003144746Z/report.json",
+      "sha256": "8bb13dddb38747e22565a13a03d68b234f796d93c47558943c9f1c283f307b7f",
+      "mode": "hosting-build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/native-care-20261003T121958659705Z/report.json",
+      "sha256": "35b41501ba2cf307d442232c2859ef3f59bb35411a3dbec207b3401464aaf013",
+      "mode": "native-care",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/native-care-20261003T122444160886Z/report.json",
+      "sha256": "60f05062bddeeb7e13387e9cacee8119c66da7d6b5ba5a154e1d7ad91e5e44ed",
+      "mode": "native-care",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    }
+  ],
+  "journey": {
+    "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/journey.json",
+    "Kind": "native-restorative-choices-v1",
+    "Status": "passed",
+    "AllowanceSeconds": 30.6449595,
+    "ElapsedMilliseconds": 44666,
+    "Stages": [
+      {
+        "Stage": "patient-withdrew-exact-permission-without-medicine",
+        "ElapsedMilliseconds": 39032,
+        "Peers": [
+          {
+            "Home": "5795dc4890da7573cfc5b3948d0296df",
+            "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Commands": 1
+          },
+          {
+            "Home": "79dddd9ea31bf745606a5473ea76ed14",
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Commands": 0
+          },
+          {
+            "Home": "e1d57b89bcce6b6237bd754d53734e55",
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Stage": "delegated-own-dose-paid-and-healed",
+        "ElapsedMilliseconds": 39630,
+        "Peers": [
+          {
+            "Home": "5795dc4890da7573cfc5b3948d0296df",
+            "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Commands": 2
+          },
+          {
+            "Home": "79dddd9ea31bf745606a5473ea76ed14",
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Commands": 0
+          },
+          {
+            "Home": "e1d57b89bcce6b6237bd754d53734e55",
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Stage": "unconsumed-crafted-dose-capture-refused",
+        "ElapsedMilliseconds": 42134,
+        "Peers": [
+          {
+            "Home": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Commands": 0
+          },
+          {
+            "Home": "5795dc4890da7573cfc5b3948d0296df",
+            "Actor": "5795dc4890da7573cfc5b3948d0296df",
+            "Commands": 2
+          },
+          {
+            "Home": "79dddd9ea31bf745606a5473ea76ed14",
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Commands": 0
+          },
+          {
+            "Home": "e1d57b89bcce6b6237bd754d53734e55",
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Commands": 0
+          }
+        ]
+      }
+    ],
+    "Preparation": "Journaled ordinary travel 5795dc4890da7573cfc5b3948d0296df: SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } } \u2192 SubunitPosition { X = 25984, Y = 83584, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }, 8 samples; no native travel claim.\nJournaled ordinary travel e1d57b89bcce6b6237bd754d53734e55: SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } } \u2192 SubunitPosition { X = 26240, Y = 83072, Z = 256, Cell = CellCoordinate { X = 102, Y = 324, Z = 1 } }, 32 samples; no native travel claim.\nSource-stat first-wolf combat: all four humans made ordinary choices and read the victory; owner HP 14/60. No health/stat edit, aftermath dose, quest reward or native-combat claim.\nJournaled ordinary travel 5795dc4890da7573cfc5b3948d0296df: SubunitPosition { X = 25984, Y = 83584, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } } \u2192 SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }, 8 samples; no native travel claim.\nJournaled ordinary travel e1d57b89bcce6b6237bd754d53734e55: SubunitPosition { X = 26240, Y = 83072, Z = 256, Cell = CellCoordinate { X = 102, Y = 324, Z = 1 } } \u2192 SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }, 32 samples; no native travel claim.\nJournaled ordinary travel 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 83328, Z = 256, Cell = CellCoordinate { X = 101, Y = 325, Z = 1 } } \u2192 SubunitPosition { X = 27008, Y = 85120, Z = 256, Cell = CellCoordinate { X = 105, Y = 332, Z = 1 } }, 88 samples; no native travel claim.\nThree source gathering choices consumed actual work effort and finite berries, then recipe ce9910134d08f3ca97157fe4d0896f9f produced one Potion ad037d910cd9acd62e97f233a8faefc8; original raw Potion remains. No native harvesting/crafting claim.\nThe injured owner remains at the berry field, outside the stocked helper's mutual reach. Native withdrawal proves exact permission/no-cost; eligible-helper suppression is a separate managed contrast.",
+    "Scope": "Two existing distinct choice kinds; exact Recovery/CareDisposition without Inventory; source-stat injury and finite raw/crafted medicine. Multiple remedy definitions and otherwise-eligible helper suppression remain separate managed contrasts."
+  },
+  "authenticatedNativeArtifacts": [
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/final.ofc",
+      "sha256": "eb67f0d82836cc7ee24220d664c2594738a51b37fdfda8a03693bd1640a20382"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/genesis.ofc",
+      "sha256": "5507af8dc171adc82d88d16e16c528540276cd3c0e3f5e7dc22db796e2e96d13"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/journal.json",
+      "sha256": "0655ec1b13c0b352c5fbcbd2893936b2323e2d86c2842641a84d094148194fea"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/journey.json",
+      "sha256": "804eaf578fe24a60135e66c434f3948df3a3b24efa835a9e7d3124b46c747922"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/preparation.txt",
+      "sha256": "7abacd155d8fd20387fae67cd6627f96813926c3251948b786c7b25ce232413b"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/prepared.ofc",
+      "sha256": "16bc23412f5ce6a6d0dc9bec43a410eac90861a79dcb49ed5fb4a2b4ea5b3cb0"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/receipts.json",
+      "sha256": "ced2a46821d9f306aa5c9d8421616659ce1854e0c0f791d00a6564b238332a07"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/world.sqlite3",
+      "sha256": "de19a9fb38562fcfae793d7cae2f4bca6bc86edd0be3586624bc3a02453fe297"
+    }
+  ],
+  "leadInspectedImages": [
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/5795dc4890da7573cfc5b3948d0296df-first/0062-care-library.png",
+      "sha256": "14e63ddad43a3091066a3ca69162636ad5e69d9dea7299947eb3b53f929cad05",
+      "inspection": "Unselected real remedy and aid permission; Review/Confirm disabled, header and controls fit.",
+      "identicalToInspectedImage": "qualification/native-care-20261003T122723390796Z/native/restorative-choices/5795dc4890da7573cfc5b3948d0296df-first/0062-care-library.png"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/5795dc4890da7573cfc5b3948d0296df-first/0065-care-library.png",
+      "sha256": "89d2932fea5c81eec4c0344a1c1e4fd7a70e686426dff7d2be9baa738549e009",
+      "inspection": "Exact permanent withdrawal terms, no-dose cost and confirmation visible; truncated row label resolved by full title/detail.",
+      "identicalToInspectedImage": "qualification/native-care-20261003T122723390796Z/native/restorative-choices/5795dc4890da7573cfc5b3948d0296df-first/0065-care-library.png"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/5795dc4890da7573cfc5b3948d0296df-first/0069-care-library.png",
+      "sha256": "5bf52276b58fd89f4b5822e4823fc010d7cc54b3095702d86b6b2ecabbc6e68d",
+      "inspection": "Raw-dose review shows real 40 HP gain, finite cost and confirmation.",
+      "identicalToInspectedImage": "qualification/native-care-20261003T122723390796Z/native/restorative-choices/5795dc4890da7573cfc5b3948d0296df-first/0069-care-library.png"
+    },
+    {
+      "path": "qualification/native-care-20261003T123510471605Z/native/restorative-choices/5795dc4890da7573cfc5b3948d0296df-first/0073-care-library.png",
+      "sha256": "1ea25cc12487aef0ea1e4d58a856978ccdee19e47f9c5fa899ecfa5584f9dc6e",
+      "inspection": "Remaining crafted-dose review shows actual capped 6 HP gain before owner-return invalidation.",
+      "identicalToInspectedImage": "qualification/native-care-20261003T122723390796Z/native/restorative-choices/5795dc4890da7573cfc5b3948d0296df-first/0073-care-library.png"
+    },
+    {
+      "path": "qualification/home-native-20261003T123604031527Z/native-restorative-30xv95j2/raw-pointer.inspection.png",
+      "sha256": "76968ee96184401a2dd366ca6e4ccf0d5c3f57e51c8c3a5a20027adef6179c27",
+      "inspection": "Corrected wheel detail typography fits the complete panel; original Potion shortcut and new Library sector readable."
+    },
+    {
+      "path": "qualification/home-native-20261003T123604031527Z/native-restorative-30xv95j2/revoke.inspection.png",
+      "sha256": "b9e56670c5940e02214fb7cc4e2ae4a8b629a6bc2cc02760252e580524ef72f8",
+      "inspection": "Permanent withdrawal, cost, aftermath distinction and confirmation all fit with visible viewport margins."
+    },
+    {
+      "path": "qualification/home-native-20261003T123604031527Z/native-restorative-30xv95j2/helper.restoration.png",
+      "sha256": "eff9e56a60a784685f0b418e6205f3d51f4d666f74de7de7532790383a699438",
+      "inspection": "Actual helper aid and +40 HP feedback readable without covering either actor."
+    },
+    {
+      "path": "qualification/home-native-20261003T123604031527Z/native-restorative-30xv95j2/raw-keyboard.reopen.png",
+      "sha256": "fefd1623b3bd242148159981fecd5b5769239ddc03bd723703d54c1c1fd51dce",
+      "inspection": "Separate reopening remains paused with restored HP and accessible Resume."
+    },
+    {
+      "path": "qualification/native-trading-20261003T123701271574Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0064-trade.png",
+      "sha256": "b1a2afaab1fdeb8b82dfe80153480fa997211bc3cdc35cf651da1f1368cde690",
+      "inspection": "Shared Trade-only purchase review retains visible exact price, actor, time policy and confirmation; supplemental history is scrollable."
+    },
+    {
+      "path": "qualification/native-recipes-20261003T123756789104Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0063-recipes.png",
+      "sha256": "487e163797a99855e945f833c0c254a0df26e2aee9a3d5b3e9faab0a56627bf4",
+      "inspection": "Shared Recipes inspection retains real missing-input blocker, paused shared-world policy and disabled confirmation."
+    }
+  ],
+  "narrowSceneEvidenceReuse": {
+    "source": "Beta/Runtime/client/scenes/FarmQuickWheel.tscn",
+    "beforeSha256": "c5d05757866e2db7489f42465f2c0618486030d19d797d66f48f662e76996e4a",
+    "afterSha256": "e80f773818f785a907d916883229a217d7cdd4552de6f2d031048fbe9fe29ede",
+    "exactRemovedBytes": "[node name=\"ChoiceDetails\" type=\"Label\" parent=\"WheelRoot/Panel/Column/Body/Inspector\"]\nunique_name_in_owner = true\nlayout_mode = 2\nsize_flags_vertical = 3\nautowrap_mode = 3",
+    "replacementBytes": "[node name=\"ChoiceDetails\" type=\"Label\" parent=\"WheelRoot/Panel/Column/Body/Inspector\"]\nunique_name_in_owner = true\nlayout_mode = 2\nsize_flags_vertical = 3\ntheme_override_font_sizes/font_size = 16\nautowrap_mode = 3",
+    "reusedModes": [
+      "core",
+      "care-managed"
+    ],
+    "scope": "Only the quick-wheel detail Label uses the existing 16-pixel secondary-text size. Full native UI routes rerun. Core and managed care-law reports are reused only if every other source and every binary matches exactly. No command, timing, authority, test or acceptance threshold changes."
+  },
+  "review": "REVIEW.md",
+  "externalClaudeRequestExecuted": false,
+  "limits": [
+    "Native preparation is journaled original-stat combat, ordinary movement, gathering and crafting; not native gestures.",
+    "The native content has one self-use policy and one ordinary grant; multiple/identical-term choices are actual admitted managed contrasts.",
+    "The native helper is out of reach; original managed stocked eligible-helper tests establish same-cutoff withdrawal suppression.",
+    "Host stop/reopen and original-genesis replay do not claim a second selected native process epoch or process-kill recovery.",
+    "All five original home restorative routes include separate native process reopen and managed journal authentication.",
+    "Older movement/history latency and raw-gift opening failures remain unexplained; full release reliability stays open.",
+    "Background rendered/injected input is not physical-device, OS-focus, human, final-art or cross-platform acceptance.",
+    "Full history discovery, aftermath native breadth, sustained work, composite maxima and complete campaign remain open."
+  ]
+}

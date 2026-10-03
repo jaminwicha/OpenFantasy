@@ -116,6 +116,7 @@ autowrap_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_font_sizes/font_size = 16
 autowrap_mode = 3
 
 [node name="ConfirmChoice" type="Button" parent="WheelRoot/Panel/Column/Body/Inspector"]

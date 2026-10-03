@@ -18,6 +18,7 @@ public static class PlayerViewCodec
     public const int CareDispositionVersion = 4;
     public const int MaterialDescriptionsVersion = 5;
     public const int ConstructionVersion = 6;
+    public const int CarePermissionDescriptionsVersion = 7;
     public const int MaximumBodyBytes = 900 * 1024;
     public const int MaximumExpandedJsonBytes = 16 * 1024 * 1024;
     public const int MaximumDepth = 48;
@@ -26,6 +27,8 @@ public static class PlayerViewCodec
     private static readonly JsonSerializerOptions Options = CreateOptions();
     private static readonly JsonSerializerOptions DescribedOptions = CreateOptions(includeMaterialDescriptions: true);
     private static readonly JsonSerializerOptions ConstructionOptions = CreateOptions(includeMaterialDescriptions: true, includeConstruction: true);
+    private static readonly JsonSerializerOptions CarePermissionOptions = CreateOptions(includeMaterialDescriptions: true,
+        includeConstruction: true, includeCarePermissionDescriptions: true);
 
     public static byte[] Encode(LocalWorldView view)
     {
@@ -53,6 +56,18 @@ public static class PlayerViewCodec
             : ObservationCompression.Encode(json.WrittenSpan);
     }
 
+    /// <summary>Current care terms supplement the complete construction view; absent older terms retain their shape.</summary>
+    public static byte[] EncodeWithCarePermissionDescriptions(LocalWorldView view)
+    {
+        ArgumentNullException.ThrowIfNull(view);
+        if (!CarePermissionDescriptionValidation.HasDescriptions(view))
+            return view.Structures is null ? EncodeWithMaterialDescriptions(view) : EncodeWithConstruction(view);
+        using BoundedObservationJsonBuffer json = EncodeJson(view, includeMaterialDescriptions: true,
+            includeConstruction: true, includeCarePermissionDescriptions: true);
+        return json.WrittenSpan.Length <= MaximumBodyBytes ? json.WrittenSpan.ToArray()
+            : ObservationCompression.Encode(json.WrittenSpan);
+    }
+
     public static LocalWorldView Decode(ReadOnlySpan<byte> bytes)
     {
         try
@@ -66,13 +81,16 @@ public static class PlayerViewCodec
             Preflight(json);
             ObservationBody body = JsonSerializer.Deserialize<ObservationBody>(json, Options)
                 ?? throw new FormatException("Missing observation body.");
-            if (body.View is null || body.Version != ConstructionVersion && body.Version != MaterialDescriptionsVersion && body.Version != VersionFor(body.View))
+            if (body.View is null || body.Version != CarePermissionDescriptionsVersion && body.Version != ConstructionVersion
+                && body.Version != MaterialDescriptionsVersion && body.Version != VersionFor(body.View))
             {
                 throw new FormatException("Unsupported or incomplete observation body.");
             }
             // Canonical JSON rejects duplicate, missing, unknown and contradictory derived fields. Brotli's
             // compressed spelling may vary across implementations; only the expanded typed bytes must agree.
-            using BoundedObservationJsonBuffer canonical = EncodeJson(body.View, body.Version >= MaterialDescriptionsVersion, body.Version == ConstructionVersion);
+            using BoundedObservationJsonBuffer canonical = EncodeJson(body.View, body.Version >= MaterialDescriptionsVersion,
+                body.Version is ConstructionVersion or CarePermissionDescriptionsVersion,
+                body.Version == CarePermissionDescriptionsVersion);
             if (!json.SequenceEqual(canonical.WrittenSpan))
             {
                 throw new FormatException("An observation must use its complete canonical value encoding.");
@@ -86,18 +104,21 @@ public static class PlayerViewCodec
         }
     }
 
-    private static BoundedObservationJsonBuffer EncodeJson(LocalWorldView view, bool includeMaterialDescriptions = false, bool includeConstruction = false)
+    private static BoundedObservationJsonBuffer EncodeJson(LocalWorldView view, bool includeMaterialDescriptions = false,
+        bool includeConstruction = false, bool includeCarePermissionDescriptions = false)
     {
         ObservationValidation.Validate(view);
         if (includeConstruction) ConstructionObservationValidation.Validate(view);
         if (includeMaterialDescriptions) MaterialDescriptionValidation.Validate(view);
+        CarePermissionDescriptionValidation.Validate(view, required: includeCarePermissionDescriptions);
         var buffer = new BoundedObservationJsonBuffer();
         try
         {
             using (var writer = new Utf8JsonWriter(buffer))
             {
-                JsonSerializer.Serialize(writer, new ObservationBody(includeConstruction ? ConstructionVersion : includeMaterialDescriptions ? MaterialDescriptionsVersion : VersionFor(view), view),
-                    includeConstruction ? ConstructionOptions : includeMaterialDescriptions ? DescribedOptions : Options);
+                JsonSerializer.Serialize(writer, new ObservationBody(includeCarePermissionDescriptions ? CarePermissionDescriptionsVersion
+                    : includeConstruction ? ConstructionVersion : includeMaterialDescriptions ? MaterialDescriptionsVersion : VersionFor(view), view),
+                    includeCarePermissionDescriptions ? CarePermissionOptions : includeConstruction ? ConstructionOptions : includeMaterialDescriptions ? DescribedOptions : Options);
                 writer.Flush();
             }
             Preflight(buffer.WrittenSpan);
@@ -116,7 +137,8 @@ public static class PlayerViewCodec
             : view.EncounterOutcome?.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance
             ? ControllerAcceptanceVersion : Version;
 
-    internal static JsonSerializerOptions CreateOptions(bool includeMaterialDescriptions = false, bool includeConstruction = false)
+    internal static JsonSerializerOptions CreateOptions(bool includeMaterialDescriptions = false, bool includeConstruction = false,
+        bool includeCarePermissionDescriptions = false)
     {
         var options = new JsonSerializerOptions
         {
@@ -124,7 +146,7 @@ public static class PlayerViewCodec
             UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow,
             NumberHandling = JsonNumberHandling.Strict
         };
-        ObservationViewConverters.AddTo(options, includeMaterialDescriptions, includeConstruction);
+        ObservationViewConverters.AddTo(options, includeMaterialDescriptions, includeConstruction, includeCarePermissionDescriptions);
         options.Converters.Add(new ObservationValueConverter<LocalMaterialProposalPreparation, MaterialProposalPreparationData>(
             MaterialProposalPreparationData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<RestorativeAvailability, RestorativeAvailabilityData>(

@@ -1,0 +1,97 @@
+{
+  "Status": "passed",
+  "AllowanceSeconds": 30.3801512,
+  "RegrowthSeconds": 34.936877,
+  "ElapsedMilliseconds": 90797,
+  "Stages": [
+    {
+      "Name": "paused-two-recipes-no-command",
+      "ElapsedMilliseconds": 39563,
+      "Peers": [
+        {
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 63,
+          "Commands": 0
+        },
+        {
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 4,
+          "Commands": 0
+        },
+        {
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 4,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "ordinary-regrowth-observed",
+      "ElapsedMilliseconds": 78729,
+      "Peers": [
+        {
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 197,
+          "Commands": 4
+        },
+        {
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 7,
+          "Commands": 0
+        },
+        {
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 7,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "two-batches-and-unconsumed-capture",
+      "ElapsedMilliseconds": 81333,
+      "Peers": [
+        {
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 222,
+          "Commands": 9
+        },
+        {
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 8,
+          "Commands": 0
+        },
+        {
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 8,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "return-revoke-invalidates-unconsumed-batch",
+      "ElapsedMilliseconds": 84794,
+      "Peers": [
+        {
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Sequence": 2,
+          "Commands": 0
+        },
+        {
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 231,
+          "Commands": 9
+        },
+        {
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 9,
+          "Commands": 0
+        },
+        {
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 9,
+          "Commands": 0
+        }
+      ]
+    }
+  ]
+}

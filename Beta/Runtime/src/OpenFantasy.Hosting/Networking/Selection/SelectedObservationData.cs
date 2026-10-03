@@ -12,9 +12,10 @@ namespace OpenFantasy.Hosting.Networking.Selection;
 
 internal static class SelectedObservationOptions
 {
-    internal static JsonSerializerOptions Create(bool includeMaterialDescriptions = false, bool includeConstruction = false)
+    internal static JsonSerializerOptions Create(bool includeMaterialDescriptions = false, bool includeConstruction = false,
+        bool includeCarePermissionDescriptions = false)
     {
-        var options = PlayerViewCodec.CreateOptions(includeMaterialDescriptions, includeConstruction);
+        var options = PlayerViewCodec.CreateOptions(includeMaterialDescriptions, includeConstruction, includeCarePermissionDescriptions);
         options.Converters.Add(new WitnessConverter());
         options.Converters.Add(new ObservationValueConverter<LocalControlledProductionView, ControlledProductionData>(
             value => ControlledProductionData.From(value, includeConstruction), value => value.ToView()));

@@ -1,0 +1,41 @@
+{
+  "Action": "UseRestorative",
+  "CanExecute": true,
+  "BlockingReason": null,
+  "CostText": "1 Potion \u00B7 1.8 s world time",
+  "DetailText": "Restores up to 40 HP; 6 HP at your current health. Uses one exact dose from your own pack during exploration. Inspection spends nothing.",
+  "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+  "ExpectedActorRevision": 88,
+  "Generation": 1,
+  "Witness": "T0ZDAAAAAAEAAAACAAAAGHdvcmxkLmNvbnRyb2wtd2l0bmVzcy52MQAAAKkBQHPC51DNNJw\u002B6RsvfHD7SVeV3EiQ2nVzz8WzlI0Clt9ySnEkc31tMDCrqKZH9MCZPSgkMfnZVUs4MtnzXXZFGgdDQbcjpoMDKDLYRAXE0pQ5dOTmDw2wHQ0KpUwcjGldAAAAAAAAAAIAAAAAAAAAhAAAAAAAAAABAAAAAAAAAW4AAAAAAAAAAjwfx/rC51W5IGGhxomk3eTQk3xYee9dwUsFb2aeNHeL",
+  "Use": {
+    "RecipientActorId": {
+      "High": 4644269939497972892,
+      "Low": 4533184390690306889
+    },
+    "UseDefinitionId": {
+      "High": 5082239914580972084,
+      "Low": 4510789592523603133
+    },
+    "UseDefinitionVersion": {
+      "Value": "163ba6a7bd5f1a3104e157b9e8b54ecf014e605b780c76332f44c0d1207d77b2"
+    },
+    "PermissionId": null,
+    "PermissionGrantVersion": null,
+    "ExpectedPermissionRevision": null,
+    "ExpectedPatientPresenceRevision": 88,
+    "ExpectedPatientProgressionRevision": 6,
+    "ExpectedStorageRevision": 5,
+    "ExpectedProductionRevision": 2,
+    "Ingredient": {
+      "Kind": 2,
+      "LotId": {
+        "High": 12466946255430986966,
+        "Low": 3357418350920265672
+      },
+      "ExpectedRevision": 0,
+      "Quantity": 1
+    }
+  },
+  "Withdrawal": null
+}

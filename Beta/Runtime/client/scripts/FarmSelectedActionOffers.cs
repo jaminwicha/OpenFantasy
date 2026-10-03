@@ -56,13 +56,6 @@ internal static class FarmSelectedActionOffers
                     retreat.Destination, retreat.Route), detail: RetreatOffers.Detail + " " + RetreatOffers.Charges(retreat));
         if (view.Recovery is { } recovery)
         {
-            if (recovery.SelfUseOffers.Count == 1)
-            {
-                var use = recovery.SelfUseOffers[0];
-                Add(FarmSemanticAction.UseRestorative, "Use " + use.ItemName, "Selected character", view.ActorId,
-                    $"1 {use.ItemName} · {use.ExplorationMilliseconds / 1000m:0.##} s world time", use.Intent,
-                    use.Reason == RestorativeAvailabilityReason.Available ? null : use.Reason.ToString());
-            }
             var choices = recovery.Care?.Offers.Where(value => target is null || value.HelperActorId == target.Id).ToArray();
             if (choices is { Length: 1 })
                 Add(FarmSemanticAction.AcknowledgeCare, "Acknowledge care", choices[0].HelperName, choices[0].HelperActorId,
@@ -95,6 +88,7 @@ internal static class FarmSelectedActionOffers
                     questIntent is CompleteDeliveryQuestIntent ? $"{quests[0].RequiredQuantity} quest items" : FarmActionOffers.NoCost,
                     questIntent);
         }
+        RestorativeActionOffers.Add(FarmCarePresentation.From(observation), scope, target, offers);
         if (view.Production is not null)
             FarmProductionActionOffers.Add(offers, FarmProductionPresentation.From(observation), scope,
                 target, woodDefinitionId ?? default, berryDefinitionId);

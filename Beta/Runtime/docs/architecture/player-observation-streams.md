@@ -8,8 +8,9 @@ inventory, participant offers and the host-selected regional projection. Observa
 outside the host commit path. It grants no control, advances no simulation clock and never sends the
 private `WorldSnapshot` or a private world commit counter.
 
-Live frames explicitly use the construction-aware presentation encoding, including permitted material
-descriptions. The stream compares and retains those actual transmitted bytes; default legacy
+Live frames use the cumulative care-permission presentation encoding when known terms are present,
+including construction and permitted material descriptions. Otherwise they retain their applicable
+construction/material representation. The stream compares and retains those actual transmitted bytes; default legacy
 diagnostic/codec representations do not replace its delta basis.
 
 An empty `Observation` input subscribes the connection and requests a full view. It follows the
@@ -99,4 +100,5 @@ stream cannot manufacture those policies or replace the authority's saved histor
 
 Older projected observations with an omitted structure facet retain the material-described home
 encoding when captured by `PlayerObservationStream`. The stream cannot invent an observed empty set
-to promote them. Fresh Host projections supply the complete facet and use the construction-aware body.
+to promote them. Fresh Host projections supply the complete facet and include known care terms when
+the patient's permission rows carry them. Missing older terms are never reconstructed by the stream.

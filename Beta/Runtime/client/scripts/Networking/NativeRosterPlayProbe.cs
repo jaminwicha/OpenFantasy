@@ -153,6 +153,12 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "trade-review": await ReviewTrade(); break;
             case "trade-confirm": await ConfirmTrade(request.GetProperty("Direction").GetString() ?? "Applied"); break;
             case "capture-trade": await CaptureTrade(request.GetProperty("Direction").GetString() ?? "trade"); break;
+            case "care-library-open": await CareOperation(OpenCareLibrary); break;
+            case "care-library-select": await CareOperation(() => ChooseCareLibrary(request.GetProperty("Direction").GetString()!, RequestActor(request))); break;
+            case "care-library-prepare": await CareOperation(PrepareCareLibrary); break;
+            case "care-library-confirm": await CareOperation(() => ConfirmCareLibrary(request.GetProperty("Direction").GetString() ?? "Applied")); break;
+            case "care-library-close": await CareOperation(CloseCareLibrary); break;
+            case "capture-care-library": await CareOperation(() => CaptureCareLibrary(request.GetProperty("Direction").GetString() ?? "care")); break;
             case "try-pending-resume": await TryPendingResume(); break;
             case "focus-return": await FocusReturn(); break;
             case "hold-right": SetRight(true); await _driver.Delay(0.15); break;
@@ -163,6 +169,7 @@ internal sealed partial class NativeRosterPlayProbe : Node
         if (_stage.StartsWith("control-", StringComparison.Ordinal) || _stage.StartsWith("selected-", StringComparison.Ordinal)
             || _stage.StartsWith("gift-", StringComparison.Ordinal) || _stage.StartsWith("production-", StringComparison.Ordinal)
             || _stage.StartsWith("recipe-", StringComparison.Ordinal) || _stage.StartsWith("construction-", StringComparison.Ordinal)
+            || _stage.StartsWith("care-library-", StringComparison.Ordinal) || _stage == "capture-care-library"
             || _stage.StartsWith("trade-", StringComparison.Ordinal) || _stage == "capture-trade"
             || _stage is "capture-selection" or "capture-gifts" or "capture-production" or "capture-recipes" or "capture-construction")
             MarketProbeDriver.Require(requestElapsed.Elapsed < TimeSpan.FromSeconds(20), "The selected native request exceeded twenty seconds.");

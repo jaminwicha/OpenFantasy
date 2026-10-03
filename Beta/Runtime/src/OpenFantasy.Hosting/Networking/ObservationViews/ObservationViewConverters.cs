@@ -8,7 +8,8 @@ namespace OpenFantasy.Hosting.Networking.ObservationViews;
 
 internal static class ObservationViewConverters
 {
-    internal static void AddTo(JsonSerializerOptions options, bool includeMaterialDescriptions = false, bool includeConstruction = false)
+    internal static void AddTo(JsonSerializerOptions options, bool includeMaterialDescriptions = false,
+        bool includeConstruction = false, bool includeCarePermissionDescriptions = false)
     {
         options.Converters.Add(new ObservationValueConverter<LocalWorldView, WorldViewData>(includeConstruction ? WorldViewData.FromConstruction : includeMaterialDescriptions ? WorldViewData.FromDescribed : WorldViewData.From, value => value.ToView()));
         ConstructionObservationConverters.AddTo(options);
@@ -28,6 +29,8 @@ internal static class ObservationViewConverters
         options.Converters.Add(new ObservationValueConverter<LocalInventoryView, InventoryViewData>(InventoryViewData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalCareView, CareViewData>(CareViewData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalRestorativeView, RestorativeViewData>(RestorativeViewData.From, value => value.ToView()));
+        options.Converters.Add(new ObservationValueConverter<LocalCarePermissionView, CarePermissionDescriptionData>(
+            value => CarePermissionDescriptionData.From(value, includeCarePermissionDescriptions), value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalMarketView, MarketViewData>(MarketViewData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalEncounterOutcomeView, EncounterOutcomeViewData>(EncounterOutcomeViewData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalObservedRegion, ObservedRegionData>(ObservedRegionData.From, value => value.ToView()));

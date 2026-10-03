@@ -76,6 +76,14 @@ Both facets belong to the selected observation; clients cannot fill a missing fa
 character. The frame retains its actual presentation version through publication, delivery proof and
 canonical decoding. The version-2 material-description entrypoint retains its declared semantics.
 
+`WithCarePermissionDescriptions()` selects cumulative body version 4 when either permitted view
+carries known ordinary-care permission terms. It retains version-3 construction and version-2 material
+fields and validation. The selected patient's terms belong only to CareDisposition, independently of
+Recovery, Inventory and PrivateHistory. The home character's terms remain home facts. Older entrypoints
+omit the extension and retain their bytes; absent older descriptions do not promote a frame. Missing
+required terms and extensions smuggled under an older version are refused. Live publication applies
+construction and this conditional care extension before capturing its delivered Resume basis.
+
 [Selected inputs](../../src/OpenFantasy.Hosting/Networking/Selection/PlayerSelectedInputCodec.cs) use
 an explicit binary version and exact selection. Inner world commands retain their 16 KiB cap and canonical
 bytes; witnesses retain their 256-byte cap. Administration and selected query replies use bounded 16 KiB
@@ -170,6 +178,13 @@ not Inventory or Recovery; public material names do not imply permission to use 
 Displayed plants, effort and work progress belong to the
 operated character. Movement and assisted traversal still require their separate permission and the
 world's admitted interpretation; seeing a worksite does not confer those capabilities.
+
+The shared [Care library](ordinary-care.md#public-controls-and-patient-owned-permission) uses Recovery
+for self-use choices and CareDisposition for ordinary patient-permission withdrawal. Its typed keys
+distinguish use definitions and exact grants rather than selecting by item or helper alone. Review and
+Confirm retain the issued offer, exact dose or permission, selection generation and witness; updated
+terms invalidate the review. The library and quick shortcuts share blockers and submission ownership.
+Withdrawing an ordinary permission cannot cancel an aftermath agreement or reveal private history.
 
 The [Characters scene](../../client/scenes/FarmControlPanel.tscn) owns layout, with a grant column and
 scrollable permission/selection rows below the main header. Recipient choice is explicit; refresh and

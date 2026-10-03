@@ -1,0 +1,40 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.52]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.66]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.83]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Browsing_and_closing_preserve_the_existing_readiness_policy(paused: True) [28 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Browsing_and_closing_preserve_the_existing_readiness_policy(paused: False) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Pending_work_or_reading_blocks_commit_but_keeps_close_available [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Controller_cancel_does_not_fall_through_to_quick_crafting [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Menu_direction_stays_neutral_after_closing_until_released [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Focused_native_button_owns_accept_release_without_world_talk [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Focus_loss_and_pending_control_cannot_confirm_a_care [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceInputTests.Care_cannot_open_over_existing_modal_owners [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceModelTests.A_consumed_shared_dose_invalidates_review_without_switching_to_another_definition [1 s]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceModelTests.Two_medicines_and_two_same_helper_permissions_are_explicit_distinct_unspent_choices [943 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceModelTests.Missing_description_remains_explicit_without_inventing_agreement_terms [342 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Recovery_and_permission_disclosure_remain_independent(capability: CareDisposition, recovery: False, disposition: True) [3 s]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.CareChoiceModelTests.Withdrawal_targets_one_agreement_and_keeps_other_same_helper_permission_active [959 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Republishing_older_views_does_not_invent_known_terms_or_omitted_construction [4 s]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Recovery_and_permission_disclosure_remain_independent(capability: Recovery, recovery: True, disposition: False) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Selected_terms_follow_care_disposition_independently_of_recovery_and_other_facets(capabilities: CareDisposition) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Selected_terms_follow_care_disposition_independently_of_recovery_and_other_facets(capabilities: Recovery | CareDisposition) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Recovery_and_permission_disclosure_remain_independent(capability: Inventory, recovery: False, disposition: False) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Selected_terms_follow_care_disposition_independently_of_recovery_and_other_facets(capabilities: PrivateHistory) [978 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Selected_terms_follow_care_disposition_independently_of_recovery_and_other_facets(capabilities: Recovery) [897 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Patient_terms_come_from_each_exact_grant_and_remedy_without_supplier_inventory [746 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Exact_selected_permission_executes_without_recovery_or_inventory_capabilities [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Care_versions_reject_downgrades_missing_terms_foreign_withdrawal_and_unsupported_delivery [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.CarePermissionDescriptions.CarePermissionDescriptionTests.Home_seven_retains_known_terms_while_legacy_encoders_and_diagnostics_keep_their_shape [506 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Presence_revision_and_cross_actor_scope_cannot_silently_retarget_review [1 s]
+[xUnit.net 00:00:16.27]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Client.RestorativeChoices.SelectedCareChoiceTests.Same_actor_reselected_in_a_new_generation_discards_selection_review_and_old_submission [2 s]
+
+Test Run Successful.
+Total tests: 26
+     Passed: 26
+ Total time: 17.5987 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/restorative-choices/qualification/new-managed-20261003T121233811511Z/checks.trx

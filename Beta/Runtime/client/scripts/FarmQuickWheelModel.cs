@@ -39,10 +39,10 @@ internal sealed class FarmQuickWheelModel
             ? [FarmSemanticAction.Speak, FarmSemanticAction.Build, FarmSemanticAction.Craft, FarmSemanticAction.Give]
             : Order;
         AddPage("Actions", order, offers);
-        if (offers.ContainsKey(FarmSemanticAction.UseRestorative) || offers.ContainsKey(FarmSemanticAction.RevokeCarePermission))
+        if (offers.ContainsKey(FarmSemanticAction.UseRestorative) || offers.ContainsKey(FarmSemanticAction.RevokeCarePermission) || offers.ContainsKey(FarmSemanticAction.OpenCare))
         {
             AddPage("Care", [FarmSemanticAction.UseRestorative, FarmSemanticAction.RevokeCarePermission,
-                FarmSemanticAction.None, FarmSemanticAction.None], offers);
+                FarmSemanticAction.OpenCare, FarmSemanticAction.None], offers);
         }
         if (offers.Keys.Any(MaterialProposalActionOffers.IsGiftAction))
         {
@@ -96,7 +96,7 @@ internal sealed class FarmQuickWheelModel
         FarmSemanticAction.EnterEncounter => "Engage", FarmSemanticAction.Strike => "Strike",
         FarmSemanticAction.Wait => "Wait", FarmSemanticAction.ReleaseEncounter => slot.Offer.Label,
         FarmSemanticAction.AcknowledgeCare => "Care", FarmSemanticAction.UseRestorative => "Potion",
-        FarmSemanticAction.RevokeCarePermission => "Withdraw",
+        FarmSemanticAction.RevokeCarePermission => "Withdraw", FarmSemanticAction.OpenCare => "Library",
         FarmSemanticAction.CancelCare => "Cancel care", FarmSemanticAction.DeclineCare => "Decline care",
         FarmSemanticAction.AdministerCare => "Treat",
         FarmSemanticAction.ProposeMaterial => "Offer", FarmSemanticAction.AcceptMaterial => "Accept",

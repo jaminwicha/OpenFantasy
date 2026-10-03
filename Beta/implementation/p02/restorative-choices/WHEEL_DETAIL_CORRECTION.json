@@ -1,0 +1,12 @@
+{
+  "source": "Beta/Runtime/client/scenes/FarmQuickWheel.tscn",
+  "beforeSha256": "c5d05757866e2db7489f42465f2c0618486030d19d797d66f48f662e76996e4a",
+  "afterSha256": "e80f773818f785a907d916883229a217d7cdd4552de6f2d031048fbe9fe29ede",
+  "exactRemovedBytes": "[node name=\"ChoiceDetails\" type=\"Label\" parent=\"WheelRoot/Panel/Column/Body/Inspector\"]\nunique_name_in_owner = true\nlayout_mode = 2\nsize_flags_vertical = 3\nautowrap_mode = 3",
+  "replacementBytes": "[node name=\"ChoiceDetails\" type=\"Label\" parent=\"WheelRoot/Panel/Column/Body/Inspector\"]\nunique_name_in_owner = true\nlayout_mode = 2\nsize_flags_vertical = 3\ntheme_override_font_sizes/font_size = 16\nautowrap_mode = 3",
+  "reusedModes": [
+    "core",
+    "care-managed"
+  ],
+  "scope": "Only the quick-wheel detail Label uses the existing 16-pixel secondary-text size. Full native UI routes rerun. Core and managed care-law reports are reused only if every other source and every binary matches exactly. No command, timing, authority, test or acceptance threshold changes."
+}

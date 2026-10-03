@@ -19,6 +19,25 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Shared restorative choices](p02/restorative-choices/RESULT.md) now bind the Care library to home or
+independently scoped Recovery/CareDisposition, with exact Review/Confirm, same-item/same-helper and
+identical-term distinctions, permanent withdrawal and owner-return invalidation. Compatible home7/
+selected4 descriptions disclose known permission terms without helper stock or a fake full view.
+The real four-human native route uses source-stat injury and finite raw/crafted doses, exact receipts
+and original-genesis replay. Native catalog breadth and eligible-helper suppression are explicitly
+separated from their managed contrasts; no runtime grant/regrant is invented.
+
+The warning-free build and **2,360 distinct dependency-verified passes** include33 new cases, all
+Core1,885, client/control275, codec183, existing care26 and five native cases. The original five home
+restorative routes also pass separate-process reopening and managed authentication. Ten inspected
+captures and independent critique accompany current architecture. Four failures remain retained;
+a one-line wheel font correction reruns native UI and narrowly reuses unchanged Core/care-law evidence.
+All811 prior inputs,23 specs and unrelated staging are preserved; three additive Compile links restore
+the exact archived original. Before-change ref `codex/checkpoint-before-restorative-choices-20261003T115211Z`
+preserves `0e8414a4`; `codex/milestone-restorative-choices-20261003` records this bounded scope.
+Full history, aftermath/catalog breadth, crash/reliability, scale, physical/human/art and campaign gates
+remain open. External Claude remains terminally limited; native workers consumed Astra capacity.
+
 [Shared selected trading](p02/selected-trading/RESULT.md) now binds the ordinary Market wheel and
 stall panel to home or operated Trade facts, with exact lot showing/retraction, separate quote review
 and confirmation, and independent Inventory/history permissions. Scope/lifetime guards reject stale
@@ -283,14 +302,15 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Extend selected-domain coverage with private-history discovery/lifetimes and restorative-permission
-   screens against existing typed facets and readers. Retain current capture/confirmation
+1. Extend selected-domain coverage with private-history discovery/lifetimes and broader aftermath-care
+   screen proofs against existing typed facets and readers. Shared ordinary restorative choices and
+   patient permission withdrawal now have bounded evidence in the restorative-choices packet. Retain current capture/confirmation
    rules, immutable home identity and explicit scopes; no withheld full-view synthesis. The native
    consent/selection/combat route is qualified above; the [client scope notes](p02/connected-player-control/CLIENT_NOTES.md)
    retain the incomplete domain surfaces. Native source-lot and produced-gift journeys have bounded passing evidence; retain the unexplained
    raw-gift reopening failure and its diagnostic. Shared selected buying/selling now has bounded evidence
-   in the selected-trading packet. Selected history discovery/lifetime interactions, restorative screens
-   and mouse dropdown breadth remain explicit work. Atomic human construction is qualified above;
+   in the selected-trading packet. Selected history discovery/lifetime interactions, broader aftermath-care and medicine-catalog
+   interactions, and mouse dropdown breadth remain explicit work. Atomic human construction is qualified above;
    sustained work, unobscured completed-object legibility and the clipped idle-preview HUD need their
    normal interface/presentation work. The admitted recipe library and independently
    permitted public material names are qualified above; learning and full catalog/UI breadth remain open.

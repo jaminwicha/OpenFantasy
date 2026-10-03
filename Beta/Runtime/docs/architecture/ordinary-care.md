@@ -122,9 +122,15 @@ The item label derives from its admitted physical item key, with a generic fallb
 separate authoritative item-name catalog.
 
 Permission offers expose the helper's visible identity/name, active state and exact patient revocation
-selection. Withdrawing permission requires an available living, ready patient in unheld exploration.
+selection. Their known terms resolve the permission's exact use definition and remedy: medicine identity
+and name, maximum HP restoration, exploration duration and living/incapacitated delivery mode. They do
+not expose the helper's available doses or promise that the helper can act. Missing terms in an older
+observation remain unknown; the client cannot infer them from another permission or aftermath agreement.
+Withdrawing permission requires an available living, ready patient in unheld exploration.
 It requires neither missing HP nor medicine, supplier stock, proximity or manipulation. A revoked
-permission stays inspectable without another executable revocation. Withdrawal is permanent for that
+permission stays inspectable in the home view without another executable revocation. The operated
+CareDisposition facet exposes active grants only; withdrawing one removes that row without disclosing
+terminal permission history. Withdrawal is permanent for that
 grant and preserves prior care; it does not cancel the separate aftermath agreement.
 
 The projection contains no helper-controlled use intent, helper inventory, source lineage, control
@@ -139,6 +145,23 @@ keeps the existing four cardinal action slots and places ordinary care on a sepa
 Inspection and page changes issue no command. Refreshing an open choice cannot silently change its
 captured intent or actor revision: changed choices require a new selection. Input devices use the same
 semantic offer and client submission boundary.
+
+The shared [Care library](../../client/scripts/FarmCareLibraryModel.cs) selects remedies by use-definition
+identity and permissions by permission identity. Same-item policies and multiple permissions with one
+helper remain separate choices. Otherwise identical visible descriptions receive unique reference
+prefixes and full choice references in review details; unambiguous descriptions remain concise.
+References distinguish disclosed choices and confer no permission. Its [purpose-specific presentation](../../client/scripts/FarmCarePresentation.cs)
+reads either the home view or independently permitted selected Recovery and CareDisposition facets;
+it never fills missing facts from the home character or borrows Inventory or PrivateHistory.
+
+The [Care scene](../../client/scenes/FarmCarePanel.tscn) owns layout and focus. Review captures the exact
+issued offer; Confirm submits that same object only while its full scope, selection generation, actor
+revision, intent and displayed terms remain current. Refresh can discard a review but cannot replace
+it. Closing, focus/controller loss and a control-return boundary discard the applicable review. A
+completed submission updates only its originating panel lifetime and character. Browsing and reviewing
+spend nothing and reserve nothing. Confirmation requires actual readiness; a shared world can continue
+while the panel is open. The quick-wheel Library entry supplements unambiguous shortcuts without
+creating runtime permission grant/regrant operations.
 
 ## Helper-owned ordinary aid
 

@@ -156,6 +156,13 @@ open restorative choice pins its actor, recipient, permission and ingredient rev
 choice becomes unavailable until the wheel is reopened. The helper's private stock and executable
 controller commands are not exposed by the player's permission controls.
 
+The Care page's Library sector opens the shared scene-owned
+[care choices](ordinary-care.md#public-controls-and-patient-owned-permission). Its modal layer owns
+selection, Review and Confirm while suppressing walking; inspection does not change world readiness.
+Use definitions and permission identities distinguish choices even when their medicine or helper is
+the same. A changed observation, selection lifetime, focus loss or controller disconnect discards
+review without submitting. Confirmation requires readiness and sends only the exact issued offer.
+
 [RestorativeActionOffers](../../client/scripts/RestorativeActionOffers.cs) translates typed eligibility
 into an item label, effect, cost and known blocker. Full health, missing medicine and retained-history
 capacity are different explanations. The personal-use HUD button is icon-led with an inspection

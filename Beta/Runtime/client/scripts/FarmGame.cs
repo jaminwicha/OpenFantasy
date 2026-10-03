@@ -130,6 +130,7 @@ public partial class FarmGame : Node2D
         _wheel.ActionRequested += Perform;
         ReadyMarket();
         ReadyRecipes();
+        ReadyCare();
         ReadyActorSelection();
         Input.Singleton.JoyConnectionChanged += OnControllerConnectionChanged;
         GetTree().AutoAcceptQuit = false;
@@ -315,6 +316,7 @@ public partial class FarmGame : Node2D
             _hud.Message(outcome);
             if (_input.MarketOpen) _market.Notice(outcome);
             if (_input.RecipesOpen) _recipeLibrary.DiscardReview(outcome);
+            CompleteCareAction(action, outcome);
         }
         CompleteMarketTasks();
         CompleteControlOperations();
@@ -337,6 +339,7 @@ public partial class FarmGame : Node2D
         LocalWorldView view = selected?.HomeView ?? _session.World.ReadView();
         ObserveControlReturn(control);
         RefreshRecipes(selected);
+        RefreshCare(selected);
         if (selected?.ControlledView is not null) { PresentControlled(selected); return; }
         _targets.Refresh(view);
         if (_session.IsRegional)
@@ -487,6 +490,10 @@ public partial class FarmGame : Node2D
         }
         if (!_input.Permits(Situation(), action)) return;
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
+        if (action == FarmSemanticAction.OpenCare) { OpenCare(); return; }
+        if (action == FarmSemanticAction.CloseCare) { CloseCare(); return; }
+        if (action == FarmSemanticAction.PrepareCare) { PrepareCare(); return; }
+        if (action == FarmSemanticAction.ConfirmCare) { ConfirmCare(); return; }
         if (action == FarmSemanticAction.OpenRecipes) { OpenRecipes(); return; }
         if (action == FarmSemanticAction.CloseRecipes) { CloseRecipes(); return; }
         if (action == FarmSemanticAction.PrepareRecipe) { PrepareRecipe(); return; }
@@ -506,7 +513,11 @@ public partial class FarmGame : Node2D
             FarmActionOffer? chosen = _wheel.Model?.Selected?.Offer;
             if (chosen?.CanExecute != true) return;
             ChangeWheel(false);
-            if (chosen.OpensPanel) OpenMarket(chosen.Action);
+            if (chosen.OpensPanel)
+            {
+                if (chosen.Action == FarmSemanticAction.OpenCare) OpenCare();
+                else if (MarketActionOffers.IsStallChoice(chosen.Action)) OpenMarket(chosen.Action);
+            }
             else Submit(chosen);
             return;
         }
@@ -641,6 +652,7 @@ public partial class FarmGame : Node2D
             if (_input.WheelOpen) ChangeWheel(false);
             InterruptMarketReview("Focus left the game, so the reviewed offer was set aside. Review it again to confirm.");
             InterruptRecipeReview("Focus left the game. Prepare the recipe again before confirming.");
+            InterruptCareReview("Focus left the game. Review this care choice again before confirming.");
             ChangeReadiness(_input.WorldShouldRun);
         }
     }
@@ -677,6 +689,7 @@ public partial class FarmGame : Node2D
             ChangeWheel(false);
         }
         if (!connected) InterruptMarketReview("A controller disconnected, so the reviewed offer was set aside.");
+        if (!connected) InterruptCareReview("A controller disconnected. Review the care choice again before confirming.");
         if (!connected) InterruptRecipeReview("A controller disconnected. Prepare the recipe again before confirming.");
     }
 
@@ -718,6 +731,7 @@ public partial class FarmGame : Node2D
         if (_input.WheelOpen) ChangeWheel(false);
         if (_input.MarketOpen) CloseMarket();
         if (_input.RecipesOpen) CloseRecipes();
+        if (_input.CareOpen) CloseCare();
         try
         {
             if (_session?.SelectedSession is { SupportsActorSelection: true } selected && _presentedSelection is { } observed)
@@ -734,6 +748,7 @@ public partial class FarmGame : Node2D
         if (_closing is not null) return;
         _input.MarkUnavailable();
         if (_input.RecipesOpen) CloseRecipes();
+        if (_input.CareOpen) CloseCare();
         _hud.Message("Closing the farm…");
         _closing = CloseAsync();
     }

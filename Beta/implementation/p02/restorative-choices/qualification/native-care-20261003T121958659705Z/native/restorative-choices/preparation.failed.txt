@@ -1,0 +1,11 @@
+Journaled ordinary travel 5795dc4890da7573cfc5b3948d0296df: SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } } → SubunitPosition { X = 25984, Y = 83584, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }, 8 samples; no native travel claim.
+Journaled ordinary travel e1d57b89bcce6b6237bd754d53734e55: SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } } → SubunitPosition { X = 26240, Y = 83072, Z = 256, Cell = CellCoordinate { X = 102, Y = 324, Z = 1 } }, 32 samples; no native travel claim.
+Source-stat first-wolf combat: all four humans made ordinary choices and read the victory; owner HP 14/60. No health/stat edit, aftermath dose, quest reward or native-combat claim.
+Xunit.Sdk.EqualException: Assert.Equal() Failure: Values differ
+Expected: Reachable
+Actual:   Blocked
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer) in /_/src/xunit.v3.assert/Asserts/EqualityAsserts.cs:line 102
+   at Xunit.Assert.Equal[T](T expected, T actual) in /_/src/xunit.v3.assert/Asserts/EqualityAsserts.cs:line 36
+   at OpenFantasy.Server.Tests.RestorativeChoicesNative.RestorativeChoicesWorld.Walk(SqliteWorldAuthority authority, EntityId actorId, SubunitPosition destination) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RestorativeChoicesNative/RestorativeChoicesWorld.cs:line 139
+   at OpenFantasy.Server.Tests.RestorativeChoicesNative.RestorativeChoicesWorld.CraftSecondDose(SqliteWorldAuthority authority) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RestorativeChoicesNative/RestorativeChoicesWorld.Preparation.cs:line 121
+   at OpenFantasy.Server.Tests.RestorativeChoicesNative.RestorativeChoicesWorld.Open(String output) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RestorativeChoicesNative/RestorativeChoicesWorld.cs:line 64

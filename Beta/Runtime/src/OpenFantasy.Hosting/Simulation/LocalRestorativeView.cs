@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using System.Globalization;
+using System.Text.Json.Serialization;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Care;
 using OpenFantasy.Core.Encounters;
@@ -20,7 +21,16 @@ public sealed record LocalRestorativeUseView(EntityId DefinitionId, EntityId Ite
 /// <summary>The patient's own permission scope. No supplier stock, credentials or executable supplier request is exposed.</summary>
 public sealed record LocalCarePermissionView(EntityId PermissionId, EntityId HelperActorId, string HelperName,
     bool IsActive, bool CanRevoke, RestorativeAvailabilityReason Reason, WorldActionRejection Rejection,
-    RevokeCarePermissionIntent? Intent);
+    RevokeCarePermissionIntent? Intent)
+{
+    // Explicit presentation codecs carry this extension; legacy diagnostic and wire shapes stay intact.
+    [JsonIgnore]
+    public LocalCarePermissionDescription? Description { get; init; }
+}
+
+/// <summary>The patient's known grant terms, without a helper's stock, current health or executable use.</summary>
+public sealed record LocalCarePermissionDescription(EntityId UseDefinitionId, EntityId ItemDefinitionId,
+    string ItemName, uint HealHitPoints, ulong ExplorationMilliseconds, RestorativeDeliveryMode DeliveryMode);
 
 /// <summary>Ordinary self-use and patient-owned withdrawal; known blocked choices remain inspectable.</summary>
 public sealed class LocalRestorativeView
@@ -44,10 +54,7 @@ public sealed class LocalRestorativeView
             .Select(definition =>
             {
                 var remedy = world.Care.GetRemedy(definition.RemedyDefinitionId);
-                string? key = world.Production!.Recipes.SelectMany(recipe => recipe.Bindings)
-                    .FirstOrDefault(binding => binding.Item == remedy.Item)?.Physical.Key;
-                string name = key is null ? "Restorative item"
-                    : CultureInfo.InvariantCulture.TextInfo.ToTitleCase(key.Replace('_', ' '));
+                string name = ItemName(world, remedy);
                 return new LocalRestorativeUseView(definition.DefinitionId, remedy.Item.DefinitionId, name,
                     remedy.RestoredHp, Math.Min(remedy.RestoredHp, (uint)(actor.Stats.MaxHp - actor.CurrentHp)),
                     definition.ExplorationMilliseconds,
@@ -58,12 +65,27 @@ public sealed class LocalRestorativeView
             {
                 RestorativeAvailabilityReason reason = WithdrawalReason(world, playerActorId, permission);
                 bool canRevoke = reason == RestorativeAvailabilityReason.Available;
+                var definition = ordinary.GetDefinition(permission.UseDefinitionId);
+                var remedy = world.Care.GetRemedy(definition.RemedyDefinitionId);
                 return new LocalCarePermissionView(permission.PermissionId, permission.HelperActorId,
                     world.GetResident(permission.HelperActorId).DisplayName, permission.IsActive, canRevoke, reason,
                     canRevoke ? WorldActionRejection.None : WorldActionRejection.Unavailable,
-                    canRevoke ? new(permission.PermissionId, permission.Revision, permission.GrantVersion) : null);
+                    canRevoke ? new(permission.PermissionId, permission.Revision, permission.GrantVersion) : null)
+                {
+                    Description = new(definition.DefinitionId, remedy.Item.DefinitionId,
+                        ItemName(world, remedy), remedy.RestoredHp,
+                        definition.ExplorationMilliseconds, definition.DeliveryMode)
+                };
             });
         return new(offers, permissions);
+    }
+
+    private static string ItemName(WorldSnapshot world, RestorativeRemedyDefinition remedy)
+    {
+        string? key = world.Production!.Recipes.SelectMany(recipe => recipe.Bindings)
+            .FirstOrDefault(binding => binding.Item == remedy.Item)?.Physical.Key;
+        return key is null ? "Restorative item"
+            : CultureInfo.InvariantCulture.TextInfo.ToTitleCase(key.Replace('_', ' '));
     }
 
     private static RestorativeAvailabilityReason WithdrawalReason(WorldSnapshot world, EntityId patient, CarePermission permission)
