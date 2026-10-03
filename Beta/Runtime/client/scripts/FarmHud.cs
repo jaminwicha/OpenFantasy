@@ -35,6 +35,7 @@ internal sealed partial class FarmHud : CanvasLayer
     private Button _clearTarget = null!;
     private Button _openPack = null!;
     private Button _openWheel = null!;
+    private Button _recipes = null!;
     private readonly Dictionary<FarmSemanticAction, Button> _buttons = [];
     private IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> _offers =
         new Dictionary<FarmSemanticAction, FarmActionOffer>();
@@ -97,6 +98,8 @@ internal sealed partial class FarmHud : CanvasLayer
         _openWheel = GetNode<Button>("%OpenWheel");
         _openWheel.Pressed += () => Request(FarmSemanticAction.OpenWheel);
         _openPack.Pressed += () => Request(FarmSemanticAction.OpenInventory);
+        _recipes = GetNode<Button>("%Recipes");
+        _recipes.Pressed += () => Request(FarmSemanticAction.OpenRecipes);
         _nextTarget.Pressed += () => Request(FarmSemanticAction.NextTarget);
         _clearTarget.Pressed += () => Request(FarmSemanticAction.ClearTarget);
         BindOfferButton(FarmSemanticAction.Speak, _talk);
@@ -173,6 +176,8 @@ internal sealed partial class FarmHud : CanvasLayer
         _openPack.Disabled = pending;
         _openPack.Text = "Pack [I]";
         _openPack.Visible = view.Inventory is not null;
+        _recipes.Visible = view.Production?.Crafting is not null;
+        _recipes.Disabled = pending || view.HasReadingHold;
         _openWheel.Disabled = pending;
         foreach (FarmSemanticAction action in _buttons.Keys) PresentOffer(action, "", pending || paused);
         _pause.Text = paused ? "Resume [Esc]" : "Pause [Esc]";
@@ -226,6 +231,8 @@ internal sealed partial class FarmHud : CanvasLayer
         _offers = offers;
         _openPack.Text = "Pack [I]";
         _openPack.Visible = true;
+        _recipes.Visible = view.Crafting is not null;
+        _recipes.Disabled = pending || view.HasReadingHold;
         _wood.Visible = true;
         _outcomeChoices = view.EncounterOutcome is { Stage: not LocalOutcomeStage.Completed };
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;

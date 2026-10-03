@@ -8,6 +8,10 @@ inventory, participant offers and the host-selected regional projection. Observa
 outside the host commit path. It grants no control, advances no simulation clock and never sends the
 private `WorldSnapshot` or a private world commit counter.
 
+Live frames explicitly use the described-material presentation encoding. The stream compares and
+retains those actual transmitted bytes, including names disclosed by that observation; default legacy
+diagnostic/codec representations do not replace its delta basis.
+
 An empty `Observation` input subscribes the connection and requests a full view. It follows the
 same nonzero, strictly increasing request IDs and input-rate bound as other gameplay input. A request
 cannot supply a view, observer identity, region selection or revision. The trusted credential issuer

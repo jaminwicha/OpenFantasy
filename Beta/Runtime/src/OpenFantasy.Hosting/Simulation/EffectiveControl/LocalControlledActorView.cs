@@ -24,8 +24,10 @@ public sealed class LocalControlledActorView
         LocalControlledCombatView? combat, LocalControlledRetreatView? retreat, LocalControlledRecoveryView? recovery,
         LocalControlledCareDispositionView? careDisposition, LocalInventoryView? inventory,
         LocalMaterialProposalView? materialProposals, LocalControlledTradeView? trade,
-        LocalControlledProductionView? production, LocalControlledConversationView? conversation)
+        LocalControlledProductionView? production, LocalControlledConversationView? conversation,
+        LocalMaterialDescriptions? materialDescriptions = null)
     {
+        MaterialDescriptions = materialDescriptions;
         WorldId = worldId; BranchId = branchId; ActorId = actorId; Capabilities = capabilities; Calendar = calendar;
         HasReadingHold = hasReadingHold; IsResolvingConsequences = isResolvingConsequences; IsRegional = isRegional;
         Actors = Array.AsReadOnly(actors.ToArray()); Regional = regional; Combat = combat; Retreat = retreat;
@@ -95,7 +97,11 @@ public sealed class LocalControlledActorView
             Conversation = new(source.Dialogue,
                 Array.AsReadOnly(source.Quests.Where(quest => quest.Status != ActorQuestStatus.Completed).ToArray()),
                 source.Progression is null ? null : new LocalControlledQuestPreparation(source));
+        MaterialDescriptions = LocalMaterialDescriptionProjection.Project(state, this);
     }
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public LocalMaterialDescriptions? MaterialDescriptions { get; }
 
     public EntityId WorldId { get; }
     public EntityId BranchId { get; }

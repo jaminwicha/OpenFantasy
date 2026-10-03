@@ -129,6 +129,13 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "production-confirm": await ConfirmProduction(request.GetProperty("Direction").GetString() ?? "Applied"); break;
             case "production-cancel": await CancelProduction(); break;
             case "capture-production": await ObserveProductionPresentation(request.GetProperty("Direction").GetString() ?? "production", saveImage: true); break;
+            case "recipe-open": await OpenRecipes(); break;
+            case "recipe-select": await SelectRecipe(RequestActor(request)); break;
+            case "recipe-prepare": await PrepareRecipe(); break;
+            case "recipe-confirm": await ConfirmRecipe(request.GetProperty("Direction").GetString() ?? "Applied"); break;
+            case "recipe-close": await CloseRecipes(); break;
+            case "recipe-cancel": await CancelRecipe(); break;
+            case "capture-recipes": await CaptureRecipes(request.GetProperty("Direction").GetString() ?? "recipes"); break;
             case "try-pending-resume": await TryPendingResume(); break;
             case "focus-return": await FocusReturn(); break;
             case "hold-right": SetRight(true); await _driver.Delay(0.15); break;
@@ -138,7 +145,8 @@ internal sealed partial class NativeRosterPlayProbe : Node
         }
         if (_stage.StartsWith("control-", StringComparison.Ordinal) || _stage.StartsWith("selected-", StringComparison.Ordinal)
             || _stage.StartsWith("gift-", StringComparison.Ordinal) || _stage.StartsWith("production-", StringComparison.Ordinal)
-            || _stage is "capture-selection" or "capture-gifts" or "capture-production")
+            || _stage.StartsWith("recipe-", StringComparison.Ordinal)
+            || _stage is "capture-selection" or "capture-gifts" or "capture-production" or "capture-recipes")
             MarketProbeDriver.Require(requestElapsed.Elapsed < TimeSpan.FromSeconds(20), "The selected native request exceeded twenty seconds.");
         return false;
     }

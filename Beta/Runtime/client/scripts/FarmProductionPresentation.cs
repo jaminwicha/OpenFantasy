@@ -10,6 +10,8 @@ namespace OpenFantasy.Client;
 /// <summary>Operated production facts, independent of permission to inspect the entire inventory.</summary>
 internal sealed class FarmProductionPresentation
 {
+    private readonly Func<EntityId, FarmCraftSelection> _prepareRecipe;
+
     private FarmProductionPresentation(LocalWorldView view)
     {
         ActorId = view.PlayerActorId;
@@ -23,6 +25,18 @@ internal sealed class FarmProductionPresentation
         CraftSelection = FarmCrafting.SelectRations(view);
         CanTraverse = true;
         PackName = "Your pack";
+        Recipes = view.Crafting?.Recipes.ToArray() ?? [];
+        MaterialDescriptions = view.MaterialDescriptions;
+        _prepareRecipe = recipeId => FarmCrafting.SelectRecipe(view, recipeId);
+        LibraryContextBlocker = view.HasReadingHold ? "Finish the current conversation before crafting."
+            : view.IsResolvingConsequences ? "Wait for the accepted world change to finish."
+            : view.EncounterLifecycle is { Phase: not EncounterLifecyclePhase.Exploration }
+                ? "Crafting is available during ordinary exploration."
+            : view.Actors.Single(actor => actor.ActorId == ActorId).IsIncapacitated
+                ? "This character cannot craft while incapacitated."
+            : view.Care?.PendingAcknowledgmentId is not null ? "The accepted recovery treatment must finish first."
+            : view.EncounterLifecycle is { PlayerCanAct: false }
+                ? "This character cannot craft until current recovery ends." : null;
     }
 
     private FarmProductionPresentation(LocalSelectedPlayerObservation observation, LocalControlledActorView view)
@@ -38,6 +52,13 @@ internal sealed class FarmProductionPresentation
         Worksite = production.Worksite;
         HasCrafting = production.Crafting is not null;
         var recipes = production.CraftPreparation?.Recipes;
+        Recipes = recipes?.ToArray() ?? [];
+        MaterialDescriptions = view.MaterialDescriptions;
+        _prepareRecipe = recipeId =>
+        {
+            var prepared = production.CraftPreparation?.Prepare(recipeId);
+            return new(prepared, prepared is null ? "The required ingredients are not currently available." : null);
+        };
         DefaultRecipe = recipes?.SingleOrDefault(recipe => recipe.Key == "craft_rations")
             ?? (recipes is { Count: 1 } ? recipes[0] : null);
         var request = DefaultRecipe is null ? null : production.CraftPreparation!.Prepare(DefaultRecipe.RecipeId);
@@ -57,6 +78,7 @@ internal sealed class FarmProductionPresentation
                 ? "The accepted recovery treatment must finish first."
             : view.Combat?.Lifecycle is { PlayerCanAct: false }
                 ? "This character cannot work until current recovery ends." : null;
+        LibraryContextBlocker = ContextBlocker;
     }
 
     internal EntityId ActorId { get; }
@@ -71,6 +93,10 @@ internal sealed class FarmProductionPresentation
     internal bool CanTraverse { get; }
     internal string PackName { get; }
     internal string? ContextBlocker { get; }
+    internal string? LibraryContextBlocker { get; }
+    internal IReadOnlyList<LocalCraftRecipeView> Recipes { get; }
+    internal LocalMaterialDescriptions? MaterialDescriptions { get; }
+    internal FarmCraftSelection PrepareRecipe(EntityId recipeId) => _prepareRecipe(recipeId);
 
     internal static FarmProductionPresentation From(LocalWorldView view) => new(view);
     internal static FarmProductionPresentation From(LocalSelectedPlayerObservation observation) =>

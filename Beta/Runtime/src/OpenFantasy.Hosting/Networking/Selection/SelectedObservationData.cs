@@ -12,11 +12,11 @@ namespace OpenFantasy.Hosting.Networking.Selection;
 
 internal static class SelectedObservationOptions
 {
-    internal static JsonSerializerOptions Create()
+    internal static JsonSerializerOptions Create(bool includeMaterialDescriptions = false)
     {
-        var options = PlayerViewCodec.CreateOptions();
+        var options = PlayerViewCodec.CreateOptions(includeMaterialDescriptions);
         options.Converters.Add(new WitnessConverter());
-        options.Converters.Add(new ObservationValueConverter<LocalControlledActorView, ControlledActorData>(ControlledActorData.From, value => value.ToView()));
+        options.Converters.Add(new ObservationValueConverter<LocalControlledActorView, ControlledActorData>(includeMaterialDescriptions ? ControlledActorData.FromDescribed : ControlledActorData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalControlledCraftPreparation, CraftPreparationData>(CraftPreparationData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalControlledQuestPreparation, QuestPreparationData>(QuestPreparationData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalControlledConstructionPreparation, ConstructionPreparationData>(ConstructionPreparationData.From, value => value.ToView()));
@@ -42,15 +42,17 @@ internal sealed record ControlledActorData(EntityId WorldId, EntityId BranchId, 
     LocalControlledCombatView? Combat, LocalControlledRetreatView? Retreat, LocalControlledRecoveryView? Recovery,
     LocalControlledCareDispositionView? CareDisposition, LocalInventoryView? Inventory,
     LocalMaterialProposalView? MaterialProposals, LocalControlledTradeView? Trade,
-    LocalControlledProductionView? Production, LocalControlledConversationView? Conversation)
+    LocalControlledProductionView? Production, LocalControlledConversationView? Conversation,
+    [property: JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)] LocalMaterialDescriptions? MaterialDescriptions = null)
 {
+    internal static ControlledActorData FromDescribed(LocalControlledActorView view) => From(view) with { MaterialDescriptions = view.MaterialDescriptions };
     internal static ControlledActorData From(LocalControlledActorView view) => new(view.WorldId, view.BranchId,
         view.ActorId, view.Capabilities, view.Calendar, view.HasReadingHold, view.IsResolvingConsequences, view.IsRegional,
         view.Actors, view.Regional, view.Combat, view.Retreat, view.Recovery, view.CareDisposition, view.Inventory,
         view.MaterialProposals, view.Trade, view.Production, view.Conversation);
     internal LocalControlledActorView ToView() => new(WorldId, BranchId, ActorId, Capabilities, Calendar,
         HasReadingHold, IsResolvingConsequences, IsRegional, Actors, Regional, Combat, Retreat, Recovery,
-        CareDisposition, Inventory, MaterialProposals, Trade, Production, Conversation);
+        CareDisposition, Inventory, MaterialProposals, Trade, Production, Conversation, MaterialDescriptions);
 }
 
 internal sealed record CraftPreparationData(ReadOnlyCollection<LocalCraftRecipeView> Recipes, ulong ProductionRevision,

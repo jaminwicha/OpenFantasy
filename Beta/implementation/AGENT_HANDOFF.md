@@ -19,6 +19,24 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Explicit recipe library](p02/recipe-library/RESULT.md) now binds all disclosed admitted nonconstruction
+recipes to separate Prepare/Confirm, exact ingredient/selection captures and independently permitted
+public material names. Home presentation v5 and selected v2 retain legacy decoding/canonical bytes;
+an actual older home frame re-encodes exactly. A four-peer native journey proves seven real harvests,
+ordinary regrowth, Potion and Rations crafting, paused browsing/cancel, owner-return invalidation and
+original-genesis replay without borrowing Inventory/Recovery/Combat.
+
+The warning-free build and [final evidence](p02/recipe-library/FINAL_CHECKS.json) record **2,280 distinct
+passes**, including 28 new managed/native cases, fresh fullCore1,885 and eight native journeys/cases.
+Ten images were inspected; independent source review and timeless architecture are retained. Two failed
+attempts preserve new-fixture effort and invalid Godot metadata-key findings. All789 prior test inputs,
+23 specs and unrelated staging remain pinned; two additive source links subtract to the exact original.
+Before-change `codex/checkpoint-before-recipe-library-20261003T090753Z` preserves `8c68ee04`; marker
+`codex/milestone-recipe-library-20261003` records this bounded increment. This closes the admitted recipe
+selection/public-name gaps below, not recipe learning, human construction or public completed geometry.
+The prior raw-gift opening and movement/history timing failures remain unexplained despite passing
+regressions; full reliability, profile40 crash, human/device/art and campaign gates stay open.
+
 [Selected field production](p02/selected-production/RESULT.md) connects permitted gathering, quick
 crafting and excavation to the shared field/HUD/wheel. Exact reviewed scope and ingredient/tool/site
 captures remain fixed; regional resources use the actual projection and camera framing. Production

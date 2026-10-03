@@ -23,6 +23,7 @@ internal sealed class FarmInventoryPresentation
         GatheringTools = view.GatheringTools;
         Restoratives = view.Restorative?.SelfUseOffers.ToArray() ?? [];
         RationsRecipe = FarmCrafting.RationsRecipe(view);
+        MaterialDescriptions = view.MaterialDescriptions;
         CanReadHistory = true;
         ContextBlocker = view.HasReadingHold ? "Finish the current conversation before changing gifts."
             : view.IsResolvingConsequences ? "Wait for the current world changes to finish."
@@ -43,6 +44,7 @@ internal sealed class FarmInventoryPresentation
         GatheringTools = view.Production?.GatheringTools.ToArray() ?? [];
         Restoratives = view.Recovery?.SelfUseOffers.ToArray() ?? [];
         RationsRecipe = view.Production?.Crafting?.Recipes.SingleOrDefault(recipe => recipe.Key == "craft_rations");
+        MaterialDescriptions = view.MaterialDescriptions;
         CanReadHistory = (view.Capabilities & WorldControlCapabilities.PrivateHistory) != 0;
         // Phase and holds are shared world facts. Never borrow the home actor's readiness or care state.
         ContextBlocker = view.HasReadingHold ? "Finish the current conversation before changing gifts."
@@ -69,6 +71,7 @@ internal sealed class FarmInventoryPresentation
     internal IReadOnlyList<LocalGatherToolLotView> GatheringTools { get; }
     internal IReadOnlyList<LocalRestorativeUseView> Restoratives { get; }
     internal LocalCraftRecipeView? RationsRecipe { get; }
+    internal LocalMaterialDescriptions? MaterialDescriptions { get; }
     internal bool CanReadHistory { get; }
     internal string? ContextBlocker { get; }
     internal bool IsSelected => Selection is { ControlWitness: not null };
@@ -88,6 +91,7 @@ internal sealed class FarmInventoryPresentation
 
     internal string ItemName(EntityId definition, EntityId? woodDefinition = null, EntityId? berryDefinition = null)
     {
+        if (MaterialDescriptions?.Find(definition) is { } description) return description.DisplayName;
         if (definition == woodDefinition) return "Wood";
         if (definition == berryDefinition) return "Berries";
         if (Restoratives.FirstOrDefault(value => value.ItemDefinitionId == definition) is { } restorative)

@@ -76,8 +76,10 @@ public sealed class LocalWorldView
         LocalDialogueView? dialogue,
         LocalProgressionView? progression,
         ReadOnlyCollection<LocalQuestView> quests,
-        ReadOnlyCollection<LocalConstructionView> construction, bool supportsCareDispositions = false)
+        ReadOnlyCollection<LocalConstructionView> construction, bool supportsCareDispositions = false,
+        LocalMaterialDescriptions? materialDescriptions = null)
     {
+        MaterialDescriptions = materialDescriptions;
         SupportsCareDispositions = supportsCareDispositions;
         WorldId = worldId;
         BranchId = branchId;
@@ -171,7 +173,8 @@ public sealed class LocalWorldView
                 .Select(lot => new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity,
                     IngredientLotKind.Source, lot.Protection == LotProtection.None && lot.ReservedBy is null))
                 .Concat(state.Production?.Lots.Where(lot => lot.CustodianId == storage).Select(lot =>
-                    new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity, IngredientLotKind.Transformed)) ?? []));
+                    new LocalItemLotView(lot.LotId, lot.Definition.DefinitionId, lot.Revision, lot.Quantity,
+                        IngredientLotKind.Transformed, lot.Protection == LotProtection.None && lot.ReservedBy is null)) ?? []));
         Crafting = state.Production is { } production ? new LocalCraftingView(production, state.Construction is { } construction
             ? construction.IsConstructionRecipe : null) : null;
         GatheringNodes = Array.AsReadOnly(state.Gathering is { } gathering
@@ -217,7 +220,11 @@ public sealed class LocalWorldView
                 actor.Experience, actor.CurrentHp, actor.Stats.MaxHp, actor.CurrentMp, actor.Stats.MaxMp,
                 progression.Currency.GetActorAccount(playerActorId).Balance, progression.Currency.Currency.UnitName);
         }
+        MaterialDescriptions = LocalMaterialDescriptionProjection.Project(state, this);
     }
+
+    [System.Text.Json.Serialization.JsonIgnore]
+    public LocalMaterialDescriptions? MaterialDescriptions { get; }
 
     public EntityId WorldId { get; }
     public EntityId BranchId { get; }

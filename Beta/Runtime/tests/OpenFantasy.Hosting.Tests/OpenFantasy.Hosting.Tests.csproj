@@ -22,6 +22,8 @@
     <Compile Include="../../client/scripts/FarmProductionPresentation.cs" Link="Client/FarmProductionPresentation.cs" />
     <Compile Include="../../client/scripts/FarmProductionActionOffers.cs" Link="Client/FarmProductionActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmCrafting.cs" Link="Client/FarmCrafting.cs" />
+    <Compile Include="../../client/scripts/FarmRecipeLibraryModel.cs" Link="Client/FarmRecipeLibraryModel.cs" />
+    <Compile Include="../../client/scripts/FarmClientSession.Recipes.cs" Link="Client/FarmClientSession.Recipes.cs" />
     <Compile Include="../../client/scripts/FarmActionOffer.cs" Link="Client/FarmActionOffer.cs" />
     <Compile Include="../../client/scripts/FarmTargetSelection.cs" Link="Client/FarmTargetSelection.cs" />
     <Compile Include="../../client/scripts/FarmInventoryModel.cs" Link="Client/FarmInventoryModel.cs" />

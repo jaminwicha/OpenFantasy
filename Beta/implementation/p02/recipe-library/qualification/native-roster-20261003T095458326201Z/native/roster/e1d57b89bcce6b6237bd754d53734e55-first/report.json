@@ -1,0 +1,197 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "00b0d467071e98cf60f8bf7708515da1",
+  "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+  "Inputs": [
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25472,
+        "Y": 82816,
+        "Z": 256,
+        "Cell": {
+          "X": 99,
+          "Y": 323,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25472,
+        "Y": 82976,
+        "Z": 256,
+        "Cell": {
+          "X": 99,
+          "Y": 324,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25472,
+        "Y": 83104,
+        "Z": 256,
+        "Cell": {
+          "X": 99,
+          "Y": 324,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25472,
+        "Y": 83168,
+        "Z": 256,
+        "Cell": {
+          "X": 99,
+          "Y": 324,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25472,
+        "Y": 83264,
+        "Z": 256,
+        "Cell": {
+          "X": 99,
+          "Y": 325,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25472,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 99,
+          "Y": 325,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25472,
+        "Y": 83424,
+        "Z": 256,
+        "Cell": {
+          "X": 99,
+          "Y": 325,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    }
+  ],
+  "Submissions": [],
+  "PermissionSubmissions": [],
+  "Selection": null,
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "Gifts": null,
+  "GiftSnapshots": [],
+  "GiftCaptures": [],
+  "Production": null,
+  "ProductionCaptures": [],
+  "Recipes": null,
+  "RecipeCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 11558,
+  "NativeFocused": true,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": false,
+  "Display": "headless"
+}

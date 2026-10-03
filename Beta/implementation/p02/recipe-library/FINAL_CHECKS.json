@@ -1,0 +1,458 @@
+{
+  "allCurrentSelectedReportsPassed": true,
+  "admittedRecipeLibraryNativeQualified": true,
+  "fullRecipeLearningSystemAccepted": false,
+  "fullRegressionAccepted": false,
+  "originalNativeGiftOpeningFailureExplained": false,
+  "fullPhaseAccepted": false,
+  "fullCoPlayerFeatureAccepted": false,
+  "movementTimingGateClosed": false,
+  "productionHistoryLatencyGateClosed": false,
+  "profile40ProcessKillQualified": false,
+  "selectedHumanConstructionQualified": false,
+  "completedNonphysicalGeometryQualified": false,
+  "nativeSelectedHistoryLifecycleQualified": false,
+  "physicalDeviceAcceptance": false,
+  "humanUsabilityAcceptance": false,
+  "artAcceptance": false,
+  "sourceHead": "8c68ee0494c38ad59a7156406f9fc7341e802040",
+  "preChangeCheckpoint": "codex/checkpoint-before-recipe-library-20261003T090753Z",
+  "milestone": "codex/milestone-recipe-library-20261003",
+  "protectedCounts": {
+    "tests": 789,
+    "specs": 23
+  },
+  "onlyExistingTestProjectChange": "Two additive recipe model/session source links; exact archived original compared byte for byte.",
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "cb06ff722cdc0a7282857afdf885eec411ade0101802f26fb4d1fb40330e563e",
+  "finalizerSha256": "7269dc14eefdb728fd753f02614a3664b065d0212fce10c5236e6f0dfc2a5170",
+  "distinctCasesPassingOnVerifiedDependencies": 2280,
+  "newCases": [
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Browsing_and_closing_preserve_the_existing_readiness_policy(paused: False)",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Browsing_and_closing_preserve_the_existing_readiness_policy(paused: True)",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Controller_cancel_does_not_fall_through_to_quick_crafting",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Focus_loss_and_pending_control_cannot_confirm_a_recipe",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Focused_native_button_owns_accept_release_without_world_talk",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Menu_direction_stays_neutral_after_closing_until_released",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Pending_work_or_reading_blocks_commit_but_keeps_close_available",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Recipes_cannot_open_over_existing_modal_owners",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Home_generation_zero_and_selected_lifetimes_both_pin_actor_revision_and_identity",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Inventory_only_names_potion_and_exact_axe_without_exposing_treatment_or_production",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.New_stock_invalidates_prepared_batch_even_when_the_original_recipe_remains_possible",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Preparation_pins_exact_recipe_and_materials_and_equal_wire_refresh_never_recaptures",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Production_only_library_discloses_both_blocked_recipes_without_borrowing_inventory_or_care",
+    "OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Session_issues_exact_library_offer_and_retains_one_receipt_without_reselecting",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Catalog_refuses_changed_authored_metadata_instead_of_admitting_a_label_from_an_unpinned_file",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Described_home_frames_reject_legacy_extension_spelling_wrong_versions_and_false_metadata",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Descriptor_values_are_bounded_copied_and_do_not_guess_unknown_item_pins",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Home_public_labels_use_exact_content_and_explicit_version_five_preserves_the_legacy_representation",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Selected_descriptions_follow_only_disclosed_facets_and_retain_the_declared_presentation_version(capabilities: Inventory)",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Selected_descriptions_follow_only_disclosed_facets_and_retain_the_declared_presentation_version(capabilities: PrivateHistory)",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Selected_descriptions_follow_only_disclosed_facets_and_retain_the_declared_presentation_version(capabilities: Production)",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Selected_frames_reject_home_metadata_borrowing_and_extensions_in_legacy_frames",
+    "OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.RetainedMaterialViewTests.Actual_prior_native_frame_decodes_and_preserves_its_original_canonical_bytes",
+    "OpenFantasy.Hosting.Tests.Simulation.PublicMaterialDescriptions.ProducedLotAvailabilityTests.Home_transformed_stock_reports_actual_protection_and_reservation(protection: Favorite, reserved: False, available: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.PublicMaterialDescriptions.ProducedLotAvailabilityTests.Home_transformed_stock_reports_actual_protection_and_reservation(protection: None, reserved: False, available: True)",
+    "OpenFantasy.Hosting.Tests.Simulation.PublicMaterialDescriptions.ProducedLotAvailabilityTests.Home_transformed_stock_reports_actual_protection_and_reservation(protection: None, reserved: True, available: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.PublicMaterialDescriptions.ProducedLotAvailabilityTests.Home_transformed_stock_reports_actual_protection_and_reservation(protection: UserReserved, reserved: False, available: False)",
+    "OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope"
+  ],
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T094619450967Z/report.json",
+      "sha256": "a95044218083a3355dd4a06648cb7c02b300f1515441ba96533bb45d1a6ea52f",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 5.615826082997955,
+      "outcomes": null,
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "hosting-build": {
+      "path": "qualification/hosting-build-20261003T094941322979Z/report.json",
+      "sha256": "ab82574cf32d52a732bc3f4baf912c3ea73891a19cdd81eb1c9c22d3f9e3aa03",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 1.747360374982236,
+      "outcomes": null,
+      "dependencyFamily": "Hosting and exact linked client files",
+      "unrunCases": []
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261003T094823923117Z/report.json",
+      "sha256": "f1df45cdb9da5bb6c888675e028a88ccbf99a35016692efcb8cb15a2cd3f2840",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 76.80992212498677,
+      "outcomes": {
+        "Passed": 244
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "codec": {
+      "path": "qualification/codec-20261003T094943267901Z/report.json",
+      "sha256": "7cc25b178b60483dc8bfca3d78cd5e4e8b415fefec255e6c40da3f6254916099",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 12.605759875004878,
+      "outcomes": {
+        "Passed": 161
+      },
+      "dependencyFamily": "Hosting and exact linked client files",
+      "unrunCases": []
+    },
+    "new-managed": {
+      "path": "qualification/new-managed-20261003T093858136776Z/report.json",
+      "sha256": "09d335a1ff0007f93dd805da18e09d7a3f5ae170b3e773a1894a2945e7250c44",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 12.449579915992217,
+      "outcomes": {
+        "Passed": 27
+      },
+      "dependencyFamily": "Hosting and exact linked client files",
+      "unrunCases": []
+    },
+    "core": {
+      "path": "qualification/core-20261003T094956078044Z/report.json",
+      "sha256": "cdb8e4f34af9f9ad2df921ec194b85834e48cdd309c8d41803df4326da4defbb",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 93.02061387500726,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-recipes": {
+      "path": "qualification/native-recipes-20261003T094634035278Z/report.json",
+      "sha256": "bd6f040bf259dc69e9ea1c2e19f68f73d61d0ef72412e8b43603e03c04115ac5",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 90.54041116699227,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-production": {
+      "path": "qualification/native-production-20261003T095129316952Z/report.json",
+      "sha256": "90df44451f18ae271bfa91fbd41d6e8fe0351df70de5dbd17af0776b90e6ee1c",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 99.48225058300886,
+      "outcomes": {
+        "Passed": 2
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-gifts": {
+      "path": "qualification/native-gifts-20261003T095309050450Z/report.json",
+      "sha256": "6fe02def61b5f4a66bd63b7cb37b11de34c139dc9face3859368788d813e2758",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 58.678071416012244,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-selection": {
+      "path": "qualification/native-selection-20261003T095407941047Z/report.json",
+      "sha256": "ecf81ecef9615fecd4bfcc1d9261bfdbf6d94292959d9f115c5ca5bb0de2fef2",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 50.11812741699396,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-roster": {
+      "path": "qualification/native-roster-20261003T095458326201Z/report.json",
+      "sha256": "b980d9abf7c1a5c30d3e8fb5c8926e17113b2376c0a0352dcb21999ddd153565",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 69.8966715419956,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    },
+    "native-compatibility": {
+      "path": "qualification/native-compatibility-20261003T095608542277Z/report.json",
+      "sha256": "030053b3ab1b11d406af0fed57aab36de98ab89ffa480dcb67e36267b31c04c5",
+      "accepted": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "verified": true,
+      "seconds": 14.50334691698663,
+      "outcomes": {
+        "Passed": 2
+      },
+      "dependencyFamily": "Full solution",
+      "unrunCases": []
+    }
+  },
+  "retainedFailedAttempts": [
+    {
+      "path": "qualification/native-recipes-20261003T094451053797Z/report.json",
+      "sha256": "243eafdca8c9ca5f95f7c6bb0151264a67d7c0ed44555b26655fb4205b5829f6",
+      "mode": "native-recipes",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/new-managed-20261003T093629521542Z/report.json",
+      "sha256": "6b3958fc3567af494adddfd88a78de5e2fc7968535c2ca60d288b8afab6724b4",
+      "mode": "new-managed",
+      "outcomes": {
+        "Failed": 2,
+        "Passed": 25
+      },
+      "error": null
+    }
+  ],
+  "retainedFrame": "RETAINED_FRAME.json",
+  "journey": {
+    "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/journey.json",
+    "Status": "passed",
+    "AllowanceSeconds": 30.6314217,
+    "RegrowthSeconds": 35.1440606,
+    "ElapsedMilliseconds": 87271,
+    "Stages": [
+      {
+        "Name": "paused-two-recipes-no-command",
+        "ElapsedMilliseconds": 40094,
+        "Peers": [
+          {
+            "Actor": "5795dc4890da7573cfc5b3948d0296df",
+            "Sequence": 65,
+            "Commands": 0
+          },
+          {
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Sequence": 4,
+            "Commands": 0
+          },
+          {
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Sequence": 4,
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Name": "ordinary-regrowth-observed",
+        "ElapsedMilliseconds": 78946,
+        "Peers": [
+          {
+            "Actor": "5795dc4890da7573cfc5b3948d0296df",
+            "Sequence": 203,
+            "Commands": 4
+          },
+          {
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Sequence": 7,
+            "Commands": 0
+          },
+          {
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Sequence": 7,
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Name": "two-batches-and-unconsumed-capture",
+        "ElapsedMilliseconds": 81315,
+        "Peers": [
+          {
+            "Actor": "5795dc4890da7573cfc5b3948d0296df",
+            "Sequence": 228,
+            "Commands": 9
+          },
+          {
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Sequence": 8,
+            "Commands": 0
+          },
+          {
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Sequence": 8,
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Name": "return-revoke-invalidates-unconsumed-batch",
+        "ElapsedMilliseconds": 83779,
+        "Peers": [
+          {
+            "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Sequence": 2,
+            "Commands": 0
+          },
+          {
+            "Actor": "5795dc4890da7573cfc5b3948d0296df",
+            "Sequence": 237,
+            "Commands": 9
+          },
+          {
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Sequence": 9,
+            "Commands": 0
+          },
+          {
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Sequence": 9,
+            "Commands": 0
+          }
+        ]
+      }
+    ]
+  },
+  "authenticatedNativeArtifacts": [
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/final.ofc",
+      "sha256": "543bf1416205bffa874095d2df71b50cd60506de99547172b65756fe04ad97e1"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/genesis.ofc",
+      "sha256": "c692cfa5f2cc42c0e7720433dea60877ef4140dc529c414c2990835d3f83ce16"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/identities.json",
+      "sha256": "30acc116fba49ec556725c96b951234b61d62b588f245524fd2133174cb8bb78"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/journal.json",
+      "sha256": "c6bd2e20e1d8ac5c56d05a1cde233617e64954cd7ac65ceef1164d5ffd6ba1bb"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/journey.json",
+      "sha256": "b9911a03b10b1f9fbb7fe484e1e3cbe454c79a50dfaa002edc9f382652a6042e"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/prepared.ofc",
+      "sha256": "f5bddd2327987157eaa439de4243ac1eeea53071a43c46c0621e0e306ff925d7"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/receipts.json",
+      "sha256": "9027fe1012aca6ed112f51d0311e586541c23f6b01f536507f4142db8a97efcb"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/world.sqlite3",
+      "sha256": "08a9fc57fdd95f3b82173161da9547bb764bbfb396810678bf220142d2094885"
+    }
+  ],
+  "leadInspectedImages": [
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0063-recipes.png",
+      "sha256": "6a3a96deba14fc4ac85b0a2bd443dcb66da5142ebe555eabcf276ba0e271fc2f"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0065-recipes.png",
+      "sha256": "487e163797a99855e945f833c0c254a0df26e2aee9a3d5b3e9faab0a56627bf4"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0210-recipes.png",
+      "sha256": "b69b9c1adb5099a5b19b7d58c0b5c0de9eb1d40c116096001708b5a34786c50c"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0216-recipes.png",
+      "sha256": "5c51c3a67ec1be5fd299dd7281046c233a58e0c6b37a6c13c3aa5e55bac5182c"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0228-recipes.png",
+      "sha256": "3e63e850031ea57c74b26c2f1a38058c796958853cf07a71595029295b37ffa0"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0233-recipes.png",
+      "sha256": "ec202684aed870c40f608435f2ca20a268f8a7c1b39d96a67b35a9640faf8afe"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T095309050450Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0062.png",
+      "sha256": "05a2aaccfdea30556e96434caf7e0d069a175c61aaf941f8c00fb804ba2bade6"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T095309050450Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0108.png",
+      "sha256": "8eef797b91e50ce4e13bac42df5844d3a0dd8031dfa339a44d0fa78a86502e6f"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T095309050450Z/native/selected-gifts/79dddd9ea31bf745606a5473ea76ed14-first/0017.png",
+      "sha256": "21c20880a11c7e7ea150e6528bfecf5a46e2a89402bc480bbcc91bd0e0805f55"
+    },
+    {
+      "path": "qualification/native-compatibility-20261003T095608542277Z/native/rendered/native-player.png",
+      "sha256": "30b3d759ce8da3954227c990b88a9562335bd4c32637f3a19d83e868a83c1875"
+    }
+  ],
+  "review": "REVIEW.md",
+  "externalClaudeRequestExecuted": false,
+  "limits": [
+    "The admitted catalog has two nonconstruction recipes; recipe learning, arbitrary recipe breadth and construction are separate obligations.",
+    "Four actual TLS peers, controlled background rendering, seven lawful harvests, ordinary biological regrowth, two crafted batches and exact original-genesis replay.",
+    "Public descriptions follow exact content pins and disclosed facets; a functional tool kind alone cannot identify a particular material.",
+    "The actual retained home version4 frame remains byte-exact. Selected legacy versions are covered by unchanged codec/protocol tests, not an exported retained selected frame.",
+    "All report dependency families match current source and actual binaries; no result is reused solely by filename or test-only classification.",
+    "The earlier raw-gift opening and movement/history timing failures remain unexplained. Later passes do not close those reliability gates.",
+    "Only the named images received lead visual inspection. Injected controls do not qualify physical input, OS focus, human usability or final art.",
+    "The native journey does not exercise profile40 process kills, complete selected history, production scale or full campaign acceptance."
+  ]
+}

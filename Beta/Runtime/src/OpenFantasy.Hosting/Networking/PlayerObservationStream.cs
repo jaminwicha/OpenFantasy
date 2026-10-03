@@ -17,7 +17,7 @@ public sealed class PlayerObservationStream
     {
         ArgumentNullException.ThrowIfNull(view);
         if (ReferenceEquals(view, _lastView) && !forceFull) return null;
-        byte[] current = PlayerViewCodec.Encode(view);
+        byte[] current = PlayerViewCodec.EncodeWithMaterialDescriptions(view);
         bool unchanged = _previous is not null && current.AsSpan().SequenceEqual(_previous);
         if (unchanged && !forceFull)
         {

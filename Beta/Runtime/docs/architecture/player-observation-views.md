@@ -68,6 +68,24 @@ is refused. The capability describes the saved law; it does not authorize a comm
 
 ## Geometry and privacy
 
+### Public material descriptions
+
+[`LocalMaterialDescriptions`](../../src/OpenFantasy.Hosting/Simulation/LocalMaterialDescriptions.cs)
+contains bounded immutable definition identity, exact item version, stable key and display name. The
+content catalog validates authored payloads and their source pins before associating names. Unknown or
+conflicting pins cannot acquire a known label by matching a tool kind or recipe role. The projection
+selects names only for disclosed inventory lots, open material terms and Production recipe/tool facts;
+it carries no quantities, effects, knowledge, eligibility or private stock. Naming a medicine does not
+expose Recovery. These metadata are ignored by default diagnostic JSON.
+
+`PlayerViewCodec.EncodeWithMaterialDescriptions` opts into body version 5. Default `Encode` preserves
+the legacy interpretation-specific representation, including when a local view contains metadata.
+The decoder accepts both representations and checks canonical bytes using the received version;
+descriptors cannot be smuggled into an older body. Re-encoding a described view with the explicit
+entrypoint retains its described representation. Live observation publication uses that entrypoint.
+Clients must support the host's emitted presentation version; old saved frames remain independently
+readable. This is not a world profile or save-schema change.
+
 Regional data contains the observer identity and exact feet, each observed region's full bounds
 and revision, row-major ground kinds and opening depths, and each wet column's exact volume and
 surface height. Standing floor height derives from the feet. Ground and water are received with

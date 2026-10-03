@@ -1,0 +1,41 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.42]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.99]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.14]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Menu_direction_stays_neutral_after_closing_until_released [8 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Focus_loss_and_pending_control_cannot_confirm_a_recipe [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Browsing_and_closing_preserve_the_existing_readiness_policy(paused: True) [3 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Browsing_and_closing_preserve_the_existing_readiness_policy(paused: False) [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Pending_work_or_reading_blocks_commit_but_keeps_close_available [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Focused_native_button_owns_accept_release_without_world_talk [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Recipes_cannot_open_over_existing_modal_owners [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeInputTests.Controller_cancel_does_not_fall_through_to_quick_crafting [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Descriptor_values_are_bounded_copied_and_do_not_guess_unknown_item_pins [112 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Catalog_refuses_changed_authored_metadata_instead_of_admitting_a_label_from_an_unpinned_file [72 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PublicMaterialDescriptions.ProducedLotAvailabilityTests.Home_transformed_stock_reports_actual_protection_and_reservation(protection: Favorite, reserved: False, available: False) [249 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PublicMaterialDescriptions.ProducedLotAvailabilityTests.Home_transformed_stock_reports_actual_protection_and_reservation(protection: None, reserved: True, available: False) [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.RetainedMaterialViewTests.Actual_prior_native_frame_decodes_and_preserves_its_original_canonical_bytes [257 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PublicMaterialDescriptions.ProducedLotAvailabilityTests.Home_transformed_stock_reports_actual_protection_and_reservation(protection: None, reserved: False, available: True) [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PublicMaterialDescriptions.ProducedLotAvailabilityTests.Home_transformed_stock_reports_actual_protection_and_reservation(protection: UserReserved, reserved: False, available: False) [5 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Selected_frames_reject_home_metadata_borrowing_and_extensions_in_legacy_frames [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Described_home_frames_reject_legacy_extension_spelling_wrong_versions_and_false_metadata [418 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.New_stock_invalidates_prepared_batch_even_when_the_original_recipe_remains_possible [2 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Selected_descriptions_follow_only_disclosed_facets_and_retain_the_declared_presentation_version(capabilities: Inventory) [744 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Selected_descriptions_follow_only_disclosed_facets_and_retain_the_declared_presentation_version(capabilities: PrivateHistory) [769 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Inventory_only_names_potion_and_exact_axe_without_exposing_treatment_or_production [1 s]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Selected_descriptions_follow_only_disclosed_facets_and_retain_the_declared_presentation_version(capabilities: Production) [685 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PublicMaterialDescriptions.PublicMaterialDescriptionTests.Home_public_labels_use_exact_content_and_explicit_version_five_preserves_the_legacy_representation [124 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Session_issues_exact_library_offer_and_retains_one_receipt_without_reselecting [1 s]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Preparation_pins_exact_recipe_and_materials_and_equal_wire_refresh_never_recaptures [1 s]
+[xUnit.net 00:00:10.08]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Production_only_library_discloses_both_blocked_recipes_without_borrowing_inventory_or_care [973 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.RecipeLibrary.RecipeLibraryModelTests.Home_generation_zero_and_selected_lifetimes_both_pin_actor_revision_and_identity [912 ms]
+
+Test Run Successful.
+Total tests: 27
+     Passed: 27
+ Total time: 10.6708 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/recipe-library/qualification/new-managed-20261003T093858136776Z/checks.trx

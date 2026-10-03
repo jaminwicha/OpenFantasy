@@ -1,0 +1,46 @@
+{
+  "reviewer": "integration lead",
+  "scope": "Six actual post-draw recipe captures: both blocked recipes while paused; prepared Potion and Rations; unconsumed preparation; home character after return. Labels, ingredients, by-products, pause, buttons and actor identity are visible without clipping. Functional baseline only, not human or final-art acceptance. Three existing gift views also inspected: correct operated/home title, permission notice and public Copper Axe label. These are scrollable forms; the captures are not a claim that all content is visible simultaneously. The existing native compatibility HUD also shows the new Recipes button alongside readable stats, Pack, pause and ordinary action controls.",
+  "images": [
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0063-recipes.png",
+      "sha256": "6a3a96deba14fc4ac85b0a2bd443dcb66da5142ebe555eabcf276ba0e271fc2f"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0065-recipes.png",
+      "sha256": "487e163797a99855e945f833c0c254a0df26e2aee9a3d5b3e9faab0a56627bf4"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0210-recipes.png",
+      "sha256": "b69b9c1adb5099a5b19b7d58c0b5c0de9eb1d40c116096001708b5a34786c50c"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0216-recipes.png",
+      "sha256": "5c51c3a67ec1be5fd299dd7281046c233a58e0c6b37a6c13c3aa5e55bac5182c"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0228-recipes.png",
+      "sha256": "3e63e850031ea57c74b26c2f1a38058c796958853cf07a71595029295b37ffa0"
+    },
+    {
+      "path": "qualification/native-recipes-20261003T094634035278Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0233-recipes.png",
+      "sha256": "ec202684aed870c40f608435f2ca20a268f8a7c1b39d96a67b35a9640faf8afe"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T095309050450Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0062.png",
+      "sha256": "05a2aaccfdea30556e96434caf7e0d069a175c61aaf941f8c00fb804ba2bade6"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T095309050450Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0108.png",
+      "sha256": "8eef797b91e50ce4e13bac42df5844d3a0dd8031dfa339a44d0fa78a86502e6f"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T095309050450Z/native/selected-gifts/79dddd9ea31bf745606a5473ea76ed14-first/0017.png",
+      "sha256": "21c20880a11c7e7ea150e6528bfecf5a46e2a89402bc480bbcc91bd0e0805f55"
+    },
+    {
+      "path": "qualification/native-compatibility-20261003T095608542277Z/native/rendered/native-player.png",
+      "sha256": "30b3d759ce8da3954227c990b88a9562335bd4c32637f3a19d83e868a83c1875"
+    }
+  ]
+}

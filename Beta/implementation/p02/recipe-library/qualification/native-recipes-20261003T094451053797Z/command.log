@@ -1,0 +1,47 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.43]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.60]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.73]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:42.39]     OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope [FAIL]
+[xUnit.net 00:00:42.40]       Native roster stage=recipe-select, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/recipe-library/qualification/native-recipes-20261003T094451053797Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0060.response.json: System.InvalidOperationException: Sequence contains no matching element
+[xUnit.net 00:00:42.40]          at System.Linq.ThrowHelper.ThrowNoMatchException()
+[xUnit.net 00:00:42.40]          at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate)
+[xUnit.net 00:00:42.40]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.SelectRecipe(EntityId recipe) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Recipes.cs:line 33
+[xUnit.net 00:00:42.40]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 133
+[xUnit.net 00:00:42.40]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+[xUnit.net 00:00:42.40]       Stack Trace:
+[xUnit.net 00:00:42.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(79,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds)
+[xUnit.net 00:00:42.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(53,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target)
+[xUnit.net 00:00:42.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RecipeLibraryNative/NativeRecipeLibraryTests.cs(195,0): at OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.<>c__DisplayClass4_0.<<Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope>g__Send|2>d.MoveNext()
+[xUnit.net 00:00:42.41]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:42.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RecipeLibraryNative/NativeRecipeLibraryTests.cs(75,0): at OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope()
+[xUnit.net 00:00:42.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RecipeLibraryNative/NativeRecipeLibraryTests.cs(178,0): at OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope()
+[xUnit.net 00:00:42.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RecipeLibraryNative/NativeRecipeLibraryTests.cs(178,0): at OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope()
+[xUnit.net 00:00:42.41]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:42.42]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope [41 s]
+  Error Message:
+   Native roster stage=recipe-select, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/recipe-library/qualification/native-recipes-20261003T094451053797Z/native/recipe-library/5795dc4890da7573cfc5b3948d0296df-first/0060.response.json: System.InvalidOperationException: Sequence contains no matching element
+   at System.Linq.ThrowHelper.ThrowNoMatchException()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source, Func`2 predicate)
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.SelectRecipe(EntityId recipe) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Recipes.cs:line 33
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 133
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.<>c__DisplayClass4_0.<<Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope>g__Send|2>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RecipeLibraryNative/NativeRecipeLibraryTests.cs:line 195
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RecipeLibraryNative/NativeRecipeLibraryTests.cs:line 75
+   at OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RecipeLibraryNative/NativeRecipeLibraryTests.cs:line 178
+   at OpenFantasy.Server.Tests.RecipeLibraryNative.NativeRecipeLibraryTests.Native_library_crafts_both_recipes_from_real_regrowth_without_private_or_healing_scope() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/RecipeLibraryNative/NativeRecipeLibraryTests.cs:line 178
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 42.8382 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/recipe-library/qualification/native-recipes-20261003T094451053797Z/checks.trx

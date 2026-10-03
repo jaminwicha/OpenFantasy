@@ -109,7 +109,8 @@ public sealed partial class PlayerCommandSession
             try { observation = _channel.Player.ReadSelectedObservation(); }
             catch (AuthorityDispatchException) when (requestId == 0) { return false; }
             if (!force && requestId == 0 && observation == _lastSelectedObservation) return false;
-            var frame = new PlayerSelectedObservation(_selectionStream, checked(++_selectionRevision), observation);
+            var frame = new PlayerSelectedObservation(_selectionStream, checked(++_selectionRevision), observation)
+                .WithMaterialDescriptions();
             byte[] bytes = PlayerSelectedObservationCodec.Encode(frame);
             var message = new PlayerMessage(PlayerMessageKind.SelectionObservation, requestId, bytes);
             // The response queue bounds this table to its capacity plus the one in-flight send.

@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
-  "date": "2026-09-11",
+  "date": "2026-10-03",
   "status": "owner_supplement_with_partial_p01_p02_evidence",
   "baseline": "../../spec-v1_1/REQUIREMENTS.json",
   "design": "../PLAYER_INTERFACE_AND_NAVIGATION.md",
   "baseline_requirement_count": 181,
-  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-01/UI-03/UI-11 have bounded P01 input, offer and explicit-target evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs. P02 inventory inspection now supplies a bounded UI-05/UI-11 prerequisite; no full case or phase exit is closed. Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed.",
+  "scope_note": "15 supplemental interface contracts refine the preserved baseline; they do not replace or renumber its 181 requirements. Phase priority and dependencies remain unchanged. UI-01/UI-03/UI-11 have bounded P01 input, offer and explicit-target evidence; all 14 full acceptance cases remain unrun. Introduction means first actual proof, completion means stated breadth; later platform/quality regression still applies. UI-03/UI-11 explicitly distinguish P03 foundational qualification from later full-domain completion; this does not postpone their early proofs. P02 inventory inspection now supplies a bounded UI-05/UI-11 prerequisite; no full case or phase exit is closed. Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed. The admitted two-recipe library adds independently permitted browsing, exact Prepare/Confirm, scoped public material names, paused inspection, controller cancellation and actor-return invalidation. Four-peer native crafting uses real harvest/regrowth, exact receipts and original replay; six recipe images are inspected. Recipe learning, arbitrary catalog breadth, production icons, physical/human acceptance and full UI cases remain open.",
   "contracts": [
     {
       "id": "UI-01",
@@ -88,9 +88,10 @@
       "evidence_scope": "P01 captured farm offers, fixed target/intent/revisions, bounded stale/duplicate/session checks and native controls only. Full wheels/action library, P03 foundation and completion-phase acceptance remain open. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open.",
       "partial_evidence_paths": [
         "../p02/quick-wheel/README.md",
-        "../p02/shared-desktop-validation/README.md"
+        "../p02/shared-desktop-validation/README.md",
+        "../p02/recipe-library/RESULT.md"
       ],
-      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed. The admitted two-recipe library adds independently permitted browsing, exact Prepare/Confirm, scoped public material names, paused inspection, controller cancellation and actor-return invalidation. Four-peer native crafting uses real harvest/regrowth, exact receipts and original replay; six recipe images are inspected. Recipe learning, arbitrary catalog breadth, production icons, physical/human acceptance and full UI cases remain open."
     },
     {
       "id": "UI-04",
@@ -109,7 +110,11 @@
         "UIV-11"
       ],
       "status": "planned",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "partial_evidence_paths": [
+        "../p02/recipe-library/RESULT.md"
+      ],
+      "partial_evidence_scope": " The admitted two-recipe library adds independently permitted browsing, exact Prepare/Confirm, scoped public material names, paused inspection, controller cancellation and actor-return invalidation. Four-peer native crafting uses real harvest/regrowth, exact receipts and original replay; six recipe images are inspected. Recipe learning, arbitrary catalog breadth, production icons, physical/human acceptance and full UI cases remain open."
     },
     {
       "id": "UI-05",
@@ -135,8 +140,10 @@
       ],
       "evidence_scope": " P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open.",
       "partial_evidence_paths": [
-        "../p02/shared-desktop-validation/README.md"
-      ]
+        "../p02/shared-desktop-validation/README.md",
+        "../p02/recipe-library/RESULT.md"
+      ],
+      "partial_evidence_scope": " The admitted two-recipe library adds independently permitted browsing, exact Prepare/Confirm, scoped public material names, paused inspection, controller cancellation and actor-return invalidation. Four-peer native crafting uses real harvest/regrowth, exact receipts and original replay; six recipe images are inspected. Recipe learning, arbitrary catalog breadth, production icons, physical/human acceptance and full UI cases remain open."
     },
     {
       "id": "UI-06",
@@ -176,9 +183,10 @@
       "status": "planned",
       "evidence_paths": [],
       "partial_evidence_paths": [
-        "../p02/inventory-inspection/README.md"
+        "../p02/inventory-inspection/README.md",
+        "../p02/recipe-library/RESULT.md"
       ],
-      "partial_evidence_scope": "Host running/waiting/paused status in the pack only; calendar, appointments, other clocks and full temporal/co-op qualification remain unimplemented or unrun."
+      "partial_evidence_scope": "Host running/waiting/paused status in the pack only; calendar, appointments, other clocks and full temporal/co-op qualification remain unimplemented or unrun. The admitted two-recipe library adds independently permitted browsing, exact Prepare/Confirm, scoped public material names, paused inspection, controller cancellation and actor-return invalidation. Four-peer native crafting uses real harvest/regrowth, exact receipts and original replay; six recipe images are inspected. Recipe learning, arbitrary catalog breadth, production icons, physical/human acceptance and full UI cases remain open."
     },
     {
       "id": "UI-08",
@@ -270,9 +278,10 @@
       "evidence_scope": "Current farm contexts and injected native input only; no full UIV-04/UIV-05, P03 foundation or P13 completion claim. Explicit farm target cycling/clear, stable identity across movement/depletion/absence, incompatible-verb blocking and gated injected target controls are now covered; general pointer targeting, rich confirmation and physical devices remain open. P02 actual own-pack inspection, provenance/protection grouping, discrete focus/hover/confirm, host timing display and input/pause retention only. Equipment/use/transfer, large catalogs, physical devices and full acceptance remain open.",
       "partial_evidence_paths": [
         "../p02/quick-wheel/README.md",
-        "../p02/shared-desktop-validation/README.md"
+        "../p02/shared-desktop-validation/README.md",
+        "../p02/recipe-library/RESULT.md"
       ],
-      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed."
+      "partial_evidence_scope": " Bounded P02 farm quick wheel adds native glyphs, stable cardinal slots and pinned targets, explicit inspect/confirm, held-input isolation, actual harvest and exact reopen. No saved favorites, full library, physical device, scaling, co-op or full-case acceptance is claimed. The admitted two-recipe library adds independently permitted browsing, exact Prepare/Confirm, scoped public material names, paused inspection, controller cancellation and actor-return invalidation. Four-peer native crafting uses real harvest/regrowth, exact receipts and original replay; six recipe images are inspected. Recipe learning, arbitrary catalog breadth, production icons, physical/human acceptance and full UI cases remain open."
     },
     {
       "id": "UI-12",

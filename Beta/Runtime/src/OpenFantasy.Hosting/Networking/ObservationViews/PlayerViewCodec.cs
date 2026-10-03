@@ -16,17 +16,28 @@ public static class PlayerViewCodec
     public const int ControllerAcceptanceVersion = 2;
     public const int AssistedRecoveryVersion = 3;
     public const int CareDispositionVersion = 4;
+    public const int MaterialDescriptionsVersion = 5;
     public const int MaximumBodyBytes = 900 * 1024;
     public const int MaximumExpandedJsonBytes = 16 * 1024 * 1024;
     public const int MaximumDepth = 48;
     public const int MaximumCollectionItems = 16_384;
     public const int MaximumStringBytes = 16_384;
     private static readonly JsonSerializerOptions Options = CreateOptions();
+    private static readonly JsonSerializerOptions DescribedOptions = CreateOptions(includeMaterialDescriptions: true);
 
     public static byte[] Encode(LocalWorldView view)
     {
         ArgumentNullException.ThrowIfNull(view);
         using BoundedObservationJsonBuffer json = EncodeJson(view);
+        return json.WrittenSpan.Length <= MaximumBodyBytes ? json.WrittenSpan.ToArray()
+            : ObservationCompression.Encode(json.WrittenSpan);
+    }
+
+    /// <summary>Explicitly includes public descriptors; Encode remains the exact legacy representation.</summary>
+    public static byte[] EncodeWithMaterialDescriptions(LocalWorldView view)
+    {
+        ArgumentNullException.ThrowIfNull(view);
+        using BoundedObservationJsonBuffer json = EncodeJson(view, includeMaterialDescriptions: true);
         return json.WrittenSpan.Length <= MaximumBodyBytes ? json.WrittenSpan.ToArray()
             : ObservationCompression.Encode(json.WrittenSpan);
     }
@@ -44,13 +55,13 @@ public static class PlayerViewCodec
             Preflight(json);
             ObservationBody body = JsonSerializer.Deserialize<ObservationBody>(json, Options)
                 ?? throw new FormatException("Missing observation body.");
-            if (body.View is null || body.Version != VersionFor(body.View))
+            if (body.View is null || body.Version != MaterialDescriptionsVersion && body.Version != VersionFor(body.View))
             {
                 throw new FormatException("Unsupported or incomplete observation body.");
             }
             // Canonical JSON rejects duplicate, missing, unknown and contradictory derived fields. Brotli's
             // compressed spelling may vary across implementations; only the expanded typed bytes must agree.
-            using BoundedObservationJsonBuffer canonical = EncodeJson(body.View);
+            using BoundedObservationJsonBuffer canonical = EncodeJson(body.View, body.Version == MaterialDescriptionsVersion);
             if (!json.SequenceEqual(canonical.WrittenSpan))
             {
                 throw new FormatException("An observation must use its complete canonical value encoding.");
@@ -64,15 +75,17 @@ public static class PlayerViewCodec
         }
     }
 
-    private static BoundedObservationJsonBuffer EncodeJson(LocalWorldView view)
+    private static BoundedObservationJsonBuffer EncodeJson(LocalWorldView view, bool includeMaterialDescriptions = false)
     {
         ObservationValidation.Validate(view);
+        if (includeMaterialDescriptions) MaterialDescriptionValidation.Validate(view);
         var buffer = new BoundedObservationJsonBuffer();
         try
         {
             using (var writer = new Utf8JsonWriter(buffer))
             {
-                JsonSerializer.Serialize(writer, new ObservationBody(VersionFor(view), view), Options);
+                JsonSerializer.Serialize(writer, new ObservationBody(includeMaterialDescriptions ? MaterialDescriptionsVersion : VersionFor(view), view),
+                    includeMaterialDescriptions ? DescribedOptions : Options);
                 writer.Flush();
             }
             Preflight(buffer.WrittenSpan);
@@ -91,7 +104,7 @@ public static class PlayerViewCodec
             : view.EncounterOutcome?.AcknowledgmentMode == LocalOutcomeAcknowledgmentMode.ControllerAcceptance
             ? ControllerAcceptanceVersion : Version;
 
-    internal static JsonSerializerOptions CreateOptions()
+    internal static JsonSerializerOptions CreateOptions(bool includeMaterialDescriptions = false)
     {
         var options = new JsonSerializerOptions
         {
@@ -99,7 +112,7 @@ public static class PlayerViewCodec
             UnmappedMemberHandling = JsonUnmappedMemberHandling.Disallow,
             NumberHandling = JsonNumberHandling.Strict
         };
-        ObservationViewConverters.AddTo(options);
+        ObservationViewConverters.AddTo(options, includeMaterialDescriptions);
         options.Converters.Add(new ObservationValueConverter<LocalMaterialProposalPreparation, MaterialProposalPreparationData>(
             MaterialProposalPreparationData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<RestorativeAvailability, RestorativeAvailabilityData>(

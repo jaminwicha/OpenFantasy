@@ -52,9 +52,13 @@ internal sealed record WorldViewData(
     ReadOnlyCollection<LocalQuestView> Quests,
     ReadOnlyCollection<LocalConstructionView> Construction,
     [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingDefault)]
-    bool SupportsCareDispositions = false)
+    bool SupportsCareDispositions = false,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    LocalMaterialDescriptions? MaterialDescriptions = null)
 {
-    internal LocalWorldView ToView() => new(WorldId, BranchId, PlayerActorId, Regional, IsRegional, Calendar, HasReadingHold, IsResolvingConsequences, Encounter, EncounterLifecycle, EncounterActions, Retreat, EncounterOutcome, RoadThreats, Care, Restorative, MaterialProposals, PaidQuotes, Markets, EncounterActors, Actors, PlayerInventory, GatheringNodes, GatheringTools, PlayerGatherEffort, Worksite, Liquids, Crafting, Dialogue, Progression, Quests, Construction, SupportsCareDispositions);
+    internal LocalWorldView ToView() => new(WorldId, BranchId, PlayerActorId, Regional, IsRegional, Calendar, HasReadingHold, IsResolvingConsequences, Encounter, EncounterLifecycle, EncounterActions, Retreat, EncounterOutcome, RoadThreats, Care, Restorative, MaterialProposals, PaidQuotes, Markets, EncounterActors, Actors, PlayerInventory, GatheringNodes, GatheringTools, PlayerGatherEffort, Worksite, Liquids, Crafting, Dialogue, Progression, Quests, Construction, SupportsCareDispositions, MaterialDescriptions);
+
+    internal static WorldViewData FromDescribed(LocalWorldView value) => From(value) with { MaterialDescriptions = value.MaterialDescriptions };
 
     internal static WorldViewData From(LocalWorldView value) => new(
         value.WorldId,

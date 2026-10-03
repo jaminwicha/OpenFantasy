@@ -61,6 +61,14 @@ compression format: the combined home and controlled frame fits the 900 KiB body
 inside the 1 MiB transport envelope. The decoder rejects missing, duplicate, unknown and contradictory
 fields. Full frames have one stream ID and increasing revision; there is no selected delta fallback.
 
+Selected body version 2 carries independently disclosed public material descriptions in home and
+controlled facets. `PlayerSelectedObservation.PresentationVersion` names the transmitted representation;
+`WithMaterialDescriptions()` opts into it. Existing frame constructors retain version 1, and decoding
+retains the received version for canonical re-encoding. Live publication queues the described frame
+itself, so its delivered Resume basis and encoded payload refer to the same representation. Default
+diagnostic JSON ignores this presentation marker. Both versions retain the same authority and
+selection semantics; unsupported representation versions are refused, not silently downgraded.
+
 [Selected inputs](../../src/OpenFantasy.Hosting/Networking/Selection/PlayerSelectedInputCodec.cs) use
 an explicit binary version and exact selection. Inner world commands retain their 16 KiB cap and canonical
 bytes; witnesses retain their 256-byte cap. Administration and selected query replies use bounded 16 KiB
@@ -149,7 +157,10 @@ Production feeds the shared [field-production presentation](presentation-and-int
 and [worksite controls](local-worksite.md#public-geometry-and-interactions) independently of Inventory.
 Gathering retains exact target/tool revisions; crafting uses the permitted prepared input set; mining
 retains site, terrain, tool and destination revisions. Scoped wheel refresh cannot replace those
-reviewed terms or their selection lifetime. Displayed plants, effort and work progress belong to the
+reviewed terms or their selection lifetime. The separate Recipes library lists all disclosed admitted
+nonconstruction recipes, prepares one exact batch and confirms that original offer. It needs Production,
+not Inventory or Recovery; public material names do not imply permission to use a crafted medicine.
+Displayed plants, effort and work progress belong to the
 operated character. Movement and assisted traversal still require their separate permission and the
 world's admitted interpretation; seeing a worksite does not confer those capabilities.
 

@@ -79,6 +79,10 @@ internal enum FarmSemanticAction
     CancelCare,
     DeclineCare,
     AdministerCare,
+    OpenRecipes,
+    CloseRecipes,
+    PrepareRecipe,
+    ConfirmRecipe,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -106,6 +110,8 @@ internal enum FarmInputLayer
     Market,
     /// <summary>Accepted work is finishing before this player can explicitly resume control.</summary>
     ControlReturn,
+    /// <summary>Known recipes and a separately prepared batch own input without changing world time.</summary>
+    Recipes,
 }
 
 /// <summary>World facts the router does not own, read from the current projection at each decision.</summary>
@@ -225,6 +231,7 @@ internal sealed class FarmInputRouter
     internal bool InventoryOpen { get; private set; }
     internal bool WheelOpen { get; private set; }
     internal bool MarketOpen { get; private set; }
+    internal bool RecipesOpen { get; private set; }
     internal bool ControlPending { get; private set; }
 
     /// <summary>
@@ -238,6 +245,7 @@ internal sealed class FarmInputRouter
         if (_unavailable) return FarmInputLayer.Unavailable;
         if (!Focused) return FarmInputLayer.Unfocused;
         if (ControlPending) return FarmInputLayer.ControlReturn;
+        if (RecipesOpen) return FarmInputLayer.Recipes;
         if (InventoryOpen) return FarmInputLayer.Inventory;
         if (WheelOpen) return FarmInputLayer.Wheel;
         if (MarketOpen) return FarmInputLayer.Market;
@@ -280,6 +288,8 @@ internal sealed class FarmInputRouter
 
     internal void SetMarketOpen(bool open) => MarketOpen = open;
 
+    internal void SetRecipesOpen(bool open) => RecipesOpen = open;
+
     /// <summary>Whether the owning layer accepts this semantic action right now, from any source.</summary>
     internal bool Permits(FarmInputSituation situation, FarmSemanticAction action)
     {
@@ -288,7 +298,13 @@ internal sealed class FarmInputRouter
         {
             FarmSemanticAction.None => false,
             FarmSemanticAction.TogglePause => layer is not (FarmInputLayer.Unavailable or FarmInputLayer.Unfocused
-                or FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.ControlReturn),
+                or FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Recipes or FarmInputLayer.ControlReturn),
+            FarmSemanticAction.OpenRecipes => situation.SessionOpen && !situation.ReadingHold && !situation.ActionPending
+                && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused,
+            FarmSemanticAction.CloseRecipes => layer == FarmInputLayer.Recipes,
+            FarmSemanticAction.PrepareRecipe => layer == FarmInputLayer.Recipes && !situation.ReadingHold && !situation.ActionPending,
+            FarmSemanticAction.ConfirmRecipe => layer == FarmInputLayer.Recipes && !Paused
+                && !situation.ReadingHold && !situation.ActionPending,
             FarmSemanticAction.OpenInventory => situation.SessionOpen && !situation.ReadingHold && !situation.ActionPending
                 && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused,
             FarmSemanticAction.CloseInventory => layer == FarmInputLayer.Inventory,
@@ -425,7 +441,7 @@ internal sealed class FarmInputRouter
     /// controller A, which is Talk in ordinary play. A layer command always keeps its press.
     /// </summary>
     private static bool LeavesAcceptToControl(FarmInputLayer layer, IReadOnlyList<string> actions) =>
-        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Market)
+        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Market or FarmInputLayer.Recipes)
         && Resolve(layer, actions) == FarmSemanticAction.None;
 
     private static FarmSemanticAction Resolve(FarmInputLayer layer, IReadOnlyList<string> actions)
@@ -445,6 +461,8 @@ internal sealed class FarmInputRouter
     /// </summary>
     private static FarmSemanticAction Bind(FarmInputLayer layer, string action) => (layer, action) switch
     {
+        (FarmInputLayer.Recipes, FarmInputActions.Pause or FarmInputActions.Cancel
+            or FarmInputActions.Inventory or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseRecipes,
         (FarmInputLayer.Wheel, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseWheel,
         (FarmInputLayer.Wheel, FarmInputActions.NextTarget) => FarmSemanticAction.NextWheelPage,
         (FarmInputLayer.Market, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseMarket,

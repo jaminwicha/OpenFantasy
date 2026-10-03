@@ -25,6 +25,7 @@ public partial class FarmGame
         if (_input.InventoryOpen) ChangeInventory(false);
         if (_input.WheelOpen) ChangeWheel(false);
         if (_input.MarketOpen) CloseMarket();
+        if (_input.RecipesOpen) CloseRecipes();
         ChangeReadiness(false);
     }
 

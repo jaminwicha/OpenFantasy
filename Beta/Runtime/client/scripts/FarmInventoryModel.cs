@@ -68,6 +68,12 @@ internal sealed class FarmInventoryModel(EntityId woodDefinitionId, EntityId? be
             _ when key.DefinitionId == berryDefinitionId => ("Berries", "Berries for packing rations."),
             _ => DescribeRecipeMaterial(view, key.DefinitionId)
         };
+        if (view.MaterialDescriptions?.Find(key.DefinitionId) is { } material)
+        {
+            name = material.DisplayName;
+            if (description == "An item in your pack. No further details are known.")
+                description = "An identified material in this character's pack. Its uses depend on available skills and actions.";
+        }
         return new FarmInventoryEntry(key, name, description,
             lots.Aggregate(0UL, (sum, lot) => checked(sum + lot.Quantity)), lots.Length, tool?.Power);
     }

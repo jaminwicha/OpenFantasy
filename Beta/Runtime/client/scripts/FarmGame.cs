@@ -129,6 +129,7 @@ public partial class FarmGame : Node2D
         AddChild(_wheel);
         _wheel.ActionRequested += Perform;
         ReadyMarket();
+        ReadyRecipes();
         ReadyActorSelection();
         Input.Singleton.JoyConnectionChanged += OnControllerConnectionChanged;
         GetTree().AutoAcceptQuit = false;
@@ -313,6 +314,7 @@ public partial class FarmGame : Node2D
                 : "That action was not completed. " + action.Exception?.GetBaseException().Message;
             _hud.Message(outcome);
             if (_input.MarketOpen) _market.Notice(outcome);
+            if (_input.RecipesOpen) _recipeLibrary.DiscardReview(outcome);
         }
         CompleteMarketTasks();
         CompleteControlOperations();
@@ -334,6 +336,7 @@ public partial class FarmGame : Node2D
         PlayerControlStatus control = selected?.ControlStatus ?? ParticipantControl;
         LocalWorldView view = selected?.HomeView ?? _session.World.ReadView();
         ObserveControlReturn(control);
+        RefreshRecipes(selected);
         if (selected?.ControlledView is not null) { PresentControlled(selected); return; }
         _targets.Refresh(view);
         if (_session.IsRegional)
@@ -482,6 +485,10 @@ public partial class FarmGame : Node2D
         }
         if (!_input.Permits(Situation(), action)) return;
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
+        if (action == FarmSemanticAction.OpenRecipes) { OpenRecipes(); return; }
+        if (action == FarmSemanticAction.CloseRecipes) { CloseRecipes(); return; }
+        if (action == FarmSemanticAction.PrepareRecipe) { PrepareRecipe(); return; }
+        if (action == FarmSemanticAction.ConfirmRecipe) { ConfirmRecipe(); return; }
         if (action is FarmSemanticAction.OpenWheel or FarmSemanticAction.CloseWheel)
         {
             ChangeWheel(action == FarmSemanticAction.OpenWheel);
@@ -631,6 +638,7 @@ public partial class FarmGame : Node2D
             _inventory.InvalidateGiftHistory();
             if (_input.WheelOpen) ChangeWheel(false);
             InterruptMarketReview("Focus left the game, so the reviewed offer was set aside. Review it again to confirm.");
+            InterruptRecipeReview("Focus left the game. Prepare the recipe again before confirming.");
             ChangeReadiness(_input.WorldShouldRun);
         }
     }
@@ -667,6 +675,7 @@ public partial class FarmGame : Node2D
             ChangeWheel(false);
         }
         if (!connected) InterruptMarketReview("A controller disconnected, so the reviewed offer was set aside.");
+        if (!connected) InterruptRecipeReview("A controller disconnected. Prepare the recipe again before confirming.");
     }
 
     private static FarmTarget? LocatePinnedTarget(LocalWorldView view, FarmTarget? target)
@@ -704,6 +713,7 @@ public partial class FarmGame : Node2D
         if (_input.InventoryOpen) ChangeInventory(false);
         if (_input.WheelOpen) ChangeWheel(false);
         if (_input.MarketOpen) CloseMarket();
+        if (_input.RecipesOpen) CloseRecipes();
         try
         {
             if (_session?.SelectedSession is { SupportsActorSelection: true } selected && _presentedSelection is { } observed)
@@ -719,6 +729,7 @@ public partial class FarmGame : Node2D
     {
         if (_closing is not null) return;
         _input.MarkUnavailable();
+        if (_input.RecipesOpen) CloseRecipes();
         _hud.Message("Closing the farm…");
         _closing = CloseAsync();
     }

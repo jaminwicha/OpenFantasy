@@ -105,9 +105,24 @@ quick crafting and worksite offer construction between home and scoped operated 
 does not require disclosure of the full Inventory facet. Selected craft preparation supplies exact
 eligible ingredients, custody and recipe/storage revisions; it is not reconstructed from home stock.
 The quick craft uses the known ration recipe or, for a selected character, its sole other admitted
-recipe. It never selects the first of several unrelated recipes. A complete recipe library is a
-separate interface contract. Personal readiness comes only from operated disclosures and the ordinary
+recipe. It never selects the first of several unrelated recipes. The explicit recipe library is a
+separate interface from that quick shortcut. Personal readiness comes only from operated disclosures and the ordinary
 authority; shared world holds and phase may block work for everyone.
+
+[`FarmRecipeLibraryModel`](../../client/scripts/FarmRecipeLibraryModel.cs) lists the disclosed admitted
+nonconstruction recipes, including choices whose ingredients are missing. This projection does not
+implement a learned-recipe filter. The scene-owned Recipes panel is available through the HUD without
+requiring Inventory or Recovery. It keeps the recipe list and descriptions scrollable while preparation,
+confirmation and closing remain explicit controls. Recipe labels, costs, outputs and by-products describe
+the particular selected recipe; navigating does not reserve stock or submit a command.
+
+Preparing a recipe captures its exact version, selected ingredient identities, provenance, quantities
+and revisions, custody, storage and production revisions, plus the complete action scope. Confirmation
+submits that original offer through the ordinary client session. Equal observation refreshes leave the
+capture intact; changed terms invalidate it without automatic renewal. Actor, branch, session or selection
+lifetime changes clear the review. Focus interruption also requires new preparation. Opening and closing
+preserve host timing and suppress held walking. A public Potion name authorizes neither consumption nor
+healing. Construction retains its separate work path.
 
 The selection protocol pins reviewed production requests through the wheel, including home generation
 zero. Its full selection, actor revision, node/tool/site and recipe/ingredient fields must still match;
@@ -147,8 +162,10 @@ historical cue. This presentation neither changes health nor exposes private NPC
 [FarmInventoryModel](../../client/scripts/FarmInventoryModel.cs) and
 [FarmInventoryScreen](../../client/scripts/FarmInventoryScreen.cs) inspect actual owned stock,
 tools and recipe information. Display groups distinguish raw/derived and protected/reserved stock
-without merging canonical lots. Known restorative items expose their admitted physical label and
-strength and direct use to the Care page. The pack does not execute equipment, use or transfer operations.
+without merging canonical lots. Public item descriptions identify exact content pins independently of
+private capabilities. Strength and Care guidance appear only when restorative advice is actually
+disclosed. Tool-kind fallback describes its function without inventing a particular material or item
+definition. The pack does not execute equipment, use or transfer operations.
 
 ## Runtime binding: gift preparation
 

@@ -119,6 +119,14 @@ Alternatively, build Debug and open `client/project.godot` with the pinned .NET 
 
 Open the pack with **I**, controller **View/Select**, or the **Pack** button. Inspect actual owned tools, materials and crafted supplies with hover, arrow keys/D-pad, Tab, or item selection. Inspection never equips, consumes, crafts or transfers anything. Counts aggregate display groups while keeping source/crafted and protected stock distinct; the underlying lots are unchanged. Item names and details cover the admitted farm catalog, with an explicit unfamiliar-item fallback. Native item icons, equipment/use actions and richer management remain future work.
 
+Open **Recipes** from the HUD to browse the character’s admitted crafting recipes. Inspect ingredients
+and outputs, select a recipe, choose **Prepare**, then **Confirm craft** to spend the captured materials.
+Browsing and preparation reserve nothing. Changed materials or character selection require fresh
+preparation. The panel preserves an existing pause; crafting requires running local time. The quick
+Craft wheel sector and **C** keep their ration shortcut. Production permission can expose Recipes
+without exposing Pack or medicine-use controls. The current catalog is admitted content, not a
+completed recipe-learning system.
+
 The pack displays the local host’s running, waiting or paused status. Opening it stops player movement/input but leaves the existing time policy in effect; a running world continues. Opening from pause preserves that pause. Escape, I, View/Select, B or Close unwinds only the pack. Focus remains inside the screen, returns to the prior valid HUD control, and held navigation requires release before walking resumes. Selection is local to the current client and owned actor; no UI click is replayed after restart. These controls have injected native regression coverage, not physical-controller or full multiplayer acceptance.
 
 Choose an explicit field target with **Q** or the controller's **right shoulder**, or use the

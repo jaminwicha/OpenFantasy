@@ -98,6 +98,7 @@ public partial class FarmGame
         if (_input.WheelOpen) ChangeWheel(false);
         if (_input.InventoryOpen) ChangeInventory(false);
         if (_input.MarketOpen) CloseMarket();
+        if (_input.RecipesOpen) CloseRecipes();
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
         _input.SetInventoryOpen(true);
         SendMovement(0, 0);
@@ -199,6 +200,8 @@ public partial class FarmGame
         if (_input.InventoryOpen) ChangeInventory(false);
         if (_input.WheelOpen) ChangeWheel(false);
         if (_input.MarketOpen) CloseMarket();
+        if (_input.RecipesOpen) CloseRecipes();
+        _recipeLibrary.Clear();
         _targets?.Clear();
         try { _session!.SelectedSession!.PauseSelected(observation.Selection); }
         catch (AuthorityDispatchException error) { _hud.Message(error.Message); return; }

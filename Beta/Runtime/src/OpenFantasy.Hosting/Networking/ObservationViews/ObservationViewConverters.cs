@@ -8,9 +8,11 @@ namespace OpenFantasy.Hosting.Networking.ObservationViews;
 
 internal static class ObservationViewConverters
 {
-    internal static void AddTo(JsonSerializerOptions options)
+    internal static void AddTo(JsonSerializerOptions options, bool includeMaterialDescriptions = false)
     {
-        options.Converters.Add(new ObservationValueConverter<LocalWorldView, WorldViewData>(WorldViewData.From, value => value.ToView()));
+        options.Converters.Add(new ObservationValueConverter<LocalWorldView, WorldViewData>(includeMaterialDescriptions ? WorldViewData.FromDescribed : WorldViewData.From, value => value.ToView()));
+        options.Converters.Add(new ObservationValueConverter<LocalMaterialDescriptions, MaterialDescriptionsData>(
+            value => new(value.Items), value => new(value.Items)));
         options.Converters.Add(new ObservationValueConverter<LocalCraftRecipeView, CraftRecipeViewData>(CraftRecipeViewData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalCraftingView, CraftingViewData>(CraftingViewData.From, value => value.ToView()));
         options.Converters.Add(new ObservationValueConverter<LocalEncounterActionView, EncounterActionViewData>(EncounterActionViewData.From, value => value.ToView()));
@@ -31,3 +33,5 @@ internal static class ObservationViewConverters
         options.Converters.Add(new ObservationValueConverter<LocalRegionObservation, RegionObservationData>(RegionObservationData.From, value => value.ToView()));
     }
 }
+
+internal sealed record MaterialDescriptionsData(System.Collections.ObjectModel.ReadOnlyCollection<LocalMaterialDescription> Items);
