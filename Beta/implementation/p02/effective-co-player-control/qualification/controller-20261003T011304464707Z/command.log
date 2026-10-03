@@ -1,0 +1,52 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.53]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.05]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.41]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Sole_returning_player_finishes_existing_staging_then_requires_new_readiness [12 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Expiry_with_zero_ready_ports_changes_control_only_until_a_human_bystander_is_ready [14 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_saved_autonomous_request_reopens_exactly_and_the_helper_spends_only_one_dose [20 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.A_party_blocked_retreat_falls_back_to_paid_wait_and_preserves_every_human_hold [11 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.A_late_transport_callback_after_host_shutdown_is_not_a_disconnect_event [14 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.Safe_return_clears_the_old_row_and_a_later_disconnect_earns_its_own_full_allowance_across_restart [29 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.A_saved_allowance_retains_paid_work_and_only_its_remaining_monotonic_time_expires_after_restart [30 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_player_controlled_helper_is_not_conscripted_and_incapacity_is_not_automatically_terminalized [10 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Survival.HostileSurvivalJourneyTests.Transport_loss_earns_a_paid_autonomous_escape_then_restores_unready_control_and_replays_exactly [34 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Human_and_unexpired_allowance_never_choose_even_with_a_ready_bystander(disconnected: False) [13 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Allowance_uses_the_confirmed_episode_and_expires_at_thirty_seconds_with_no_ready_port [13 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Living_acceptance_and_world_completion_are_separate_and_neutral_after_rejoin [10 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Survival.HostileSurvivalJourneyTests.An_attacking_npc_holds_for_a_connected_human_without_wall_clock_takeover [8 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Human_and_unexpired_allowance_never_choose_even_with_a_ready_bystander(disconnected: True) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceEpisodeTests.A_durable_backup_reopens_only_the_committed_lower_bound_and_drops_the_unpublished_tail [15 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Repeated_restart_and_checkpoints_add_each_segment_once_and_never_credit_UTC_or_downtime [13 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Rejoin_waits_for_actual_paid_choice_resolution_and_does_not_replay_early_readiness [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Autonomous_care_preserves_another_humans_queued_outcome_request_and_never_returns_the_wrong_receipt [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Disconnect_and_rejoin_preserve_an_actual_reading_hold [3 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Survival.HostileSurvivalJourneyTests.The_actual_first_paid_retreat_sample_reopens_as_an_unsafe_autonomous_return_fixture [6 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Recovery.ControllerAllowanceRestartTests.Human_without_a_socket_stays_human_and_an_already_autonomous_reopen_cannot_expire_twice [5 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Ordinary_autonomous_choice_and_controller_events_replay_to_the_identical_saved_root [6 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Legal_autonomous_care_has_separate_patient_and_helper_receipts_and_one_real_paid_dose [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Rejoin_before_or_after_expiry_preserves_identity_and_starts_unready(afterExpiry: False) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.A_living_autonomous_acceptance_does_not_satisfy_the_other_required_human [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Autonomous_retreat_uses_the_ordinary_legal_route_and_charges_its_first_physical_sample [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Rejoin_before_or_after_expiry_preserves_identity_and_starts_unready(afterExpiry: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Human_and_grace_preserve_the_exact_outcome_and_care_choice(lost: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Rejoin_at_a_safe_autonomous_boundary_restores_before_any_fresh_choice [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Aftermath.AutonomousAftermathTests.Human_and_grace_preserve_the_exact_outcome_and_care_choice(lost: False) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Connected_ready_human_has_unlimited_combat_wait [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.Selector_reserves_a_proposed_retreat_and_does_not_replace_a_selected_choice_for_the_same_actor [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.A_new_loss_has_its_own_full_allowance_and_old_callback_cannot_restart_it [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.An_accepted_human_wait_survives_expiry_and_rejoin_without_replacement_or_automatic_readiness [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.Conservative.ConservativeControllerHostTests.A_zero_ready_return_finishes_no_new_choice_for_another_autonomous_human [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Sole_returning_patient_finishes_accepted_finite_care_without_free_healing_or_readiness [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Sole_returning_player_finishes_accepted_combat_without_automatic_readiness [607 ms]
+[xUnit.net 00:01:02.14]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.Controllers.LiveControllerHostTests.Connected_idle_and_ordinary_disposal_never_start_an_allowance [562 ms]
+
+Test Run Successful.
+Total tests: 38
+     Passed: 38
+ Total time: 1.0573 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/effective-co-player-control/qualification/controller-20261003T011304464707Z/checks.trx

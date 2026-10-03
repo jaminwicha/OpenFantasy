@@ -1,0 +1,28 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.27]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.93]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.13]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.Standalone_production_contracts_refuse_the_coordinated_owner [849 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_second_cut_keeps_one_bounded_anchor_and_decodes_with_its_predecessor [477 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.Pending_aftermath_care_survives_a_cut_and_the_actual_remedy_executes_once [1 s]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_lived_ordinary_world_is_never_upgraded [371 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.New_revocations_follow_the_world_closure_even_when_the_care_frontier_is_older(claimedSequence: 10) [430 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.A_cut_changes_representation_only_and_requires_its_exact_joint_context [641 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.New_revocations_follow_the_world_closure_even_when_the_care_frontier_is_older(claimedSequence: 1) [683 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedWorldContinuationTests.Fresh_opt_in_selects_the_coordinated_profile_without_changing_the_ordinary_genesis [493 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.A_joint_context_preserves_the_encounter_ability_catalog [348 ms]
+  Passed OpenFantasy.Hosting.Tests.Care.CoordinatedIntegrationRegressionTests.Actual_crafting_after_two_cuts_keeps_its_imported_producer_and_permanent_command_checks [380 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.Retreat.RetreatArchiveCutTests.Actual_bites_trigger_a_coordinated_archive_during_retreat_and_reopen_with_exact_continuation [31 s]
+  Passed OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly(decline: True) [27 s]
+  Passed OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Pending_request_crosses_a_real_cut_then_cancel_or_decline_and_recut_reopen_exactly(decline: False) [26 s]
+[xUnit.net 00:01:25.39]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Care.DispositionContinuation.CareDispositionContinuationJournalTests.Later_disposition_archives_the_latest_closure_without_replacing_the_earlier_real_treatment [21 s]
+
+Test Run Successful.
+Total tests: 14
+     Passed: 14
+ Total time: 1.4354 Minutes
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/effective-co-player-control/qualification/archive-20261003T011514352675Z/checks.trx

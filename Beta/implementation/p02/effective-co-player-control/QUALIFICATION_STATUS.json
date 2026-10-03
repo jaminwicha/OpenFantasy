@@ -1,0 +1,233 @@
+{
+  "status": "managed effective-command scope proved; broader storage and server qualification incomplete",
+  "fullQualificationAccepted": false,
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T004907751154Z/report.json",
+      "sha256": "0213e08cf89a0c115194fb0f107ef6c095964f6171bde81e0a425321d3249000",
+      "accepted": true,
+      "seconds": 11.77667633301462,
+      "outcomes": null,
+      "error": null
+    },
+    "effective-core": {
+      "path": "qualification/effective-core-20261003T004920108047Z/report.json",
+      "sha256": "3de56033b7d00ae860de2371c68368098d973e3ad5d408265229fbe40dcd9f53",
+      "accepted": true,
+      "seconds": 3.4783725830202457,
+      "outcomes": {
+        "Passed": 4
+      },
+      "error": null
+    },
+    "effective-hosting": {
+      "path": "qualification/effective-hosting-20261003T004923819893Z/report.json",
+      "sha256": "610990656a50871ba4749508f3f4600c066eb1d1e50006cf03b1eab1d7345ca6",
+      "accepted": true,
+      "seconds": 38.5645551669877,
+      "outcomes": {
+        "Passed": 17
+      },
+      "error": null
+    },
+    "core": {
+      "path": "qualification/core-20261003T005018760804Z/report.json",
+      "sha256": "7568dd700202c9578d3ead8fea90b4a1b9b33e543166a878dfc5611fa877ce74",
+      "accepted": true,
+      "seconds": 447.6990600829886,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "error": null
+    },
+    "storage": {
+      "path": "qualification/storage-20261003T011741850753Z/report.json",
+      "sha256": "74f479994ecebf4be310b9c723e0e1358c72765e495b3889ab2d767aa4393074",
+      "accepted": false,
+      "seconds": 600.2544586250151,
+      "outcomes": null,
+      "error": "TimeoutExpired(['/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet', 'test', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj', '--no-build', '--no-restore', '--nologo', '--logger', 'console;verbosity=detailed', '--logger', 'trx;LogFileName=checks.trx', '--results-directory', '/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/effective-co-player-control/qualification/storage-20261003T011741850753Z', '--filter', 'FullyQualifiedName~WorldStorage|FullyQualifiedName~Worlds.Controllers|FullyQualifiedName~Worlds.ControllerRecovery'], 600)"
+    },
+    "storage-tail": {
+      "path": "qualification/storage-tail-20261003T013048935751Z/report.json",
+      "sha256": "16ae2ce43f2fbd01abc3256094fcad61e80688dfe40a52267c38153e099c7456",
+      "accepted": true,
+      "seconds": 135.02056054200511,
+      "outcomes": {
+        "Passed": 3
+      },
+      "error": null
+    },
+    "commerce": {
+      "path": "qualification/commerce-20261003T010832140641Z/report.json",
+      "sha256": "97a5ee6e70b8a0aea2b4b4d7a2d2058ff0be950028c780f6484266c1ecfecb9e",
+      "accepted": true,
+      "seconds": 138.75915512500796,
+      "outcomes": {
+        "Passed": 107
+      },
+      "error": null
+    },
+    "care-retreat": {
+      "path": "qualification/care-retreat-20261003T011053032912Z/report.json",
+      "sha256": "49dbe03a45cfae2832ab0a78b1105d555dade7f97264a8a84bccd91747afd09c",
+      "accepted": true,
+      "seconds": 77.60766958299791,
+      "outcomes": {
+        "Passed": 35
+      },
+      "error": null
+    },
+    "permissions-storage": {
+      "path": "qualification/permissions-storage-20261003T011211315396Z/report.json",
+      "sha256": "0b806c6340c5955f34a4019e50f4eeaa4ae3387911636d706d3a91eeb9baf196",
+      "accepted": true,
+      "seconds": 52.46620408297167,
+      "outcomes": {
+        "Passed": 23
+      },
+      "error": null
+    },
+    "controller": {
+      "path": "qualification/controller-20261003T011304464707Z/report.json",
+      "sha256": "063e68b689536ef7355ab181efce54a25a6e5abab0a2c4daf2fa147a2f47912b",
+      "accepted": true,
+      "seconds": 66.44682291700155,
+      "outcomes": {
+        "Passed": 38
+      },
+      "error": null
+    },
+    "network": {
+      "path": "qualification/network-20261003T011411304587Z/report.json",
+      "sha256": "ba4825ef123074578d3cd36f64fd9df86f820f40ac3402d5b4d39158083ffd25",
+      "accepted": true,
+      "seconds": 27.040077625017148,
+      "outcomes": {
+        "Passed": 272
+      },
+      "error": null
+    },
+    "shared": {
+      "path": "qualification/shared-20261003T011438598863Z/report.json",
+      "sha256": "4a97b6689e993becb458f130097f047e1b9332f4efef949d51f27a62465a641e",
+      "accepted": true,
+      "seconds": 35.39016095799161,
+      "outcomes": {
+        "Passed": 26
+      },
+      "error": null
+    },
+    "archive": {
+      "path": "qualification/archive-20261003T011514352675Z/report.json",
+      "sha256": "4da9865ec6b26e2b81e3fcf33ede22e244ca6c8f14168d4081d1eb360e85e317",
+      "accepted": true,
+      "seconds": 88.21255458297674,
+      "outcomes": {
+        "Passed": 14
+      },
+      "error": null
+    },
+    "server-compatibility": {
+      "path": "qualification/server-compatibility-20261003T012819491425Z/report.json",
+      "sha256": "17b9763470f3ef597abd2a493567439695a2dcec6b85f25b5883a9cf829032ff",
+      "accepted": false,
+      "seconds": 116.05126125001698,
+      "outcomes": {
+        "Failed": 2,
+        "Passed": 74,
+        "NotExecuted": 1
+      },
+      "error": null
+    }
+  },
+  "distinctPassingCasesFromAcceptedGroups": 2420,
+  "newPassingCases": 21,
+  "newCases": [
+    "OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Historical_witness_retains_true_grantee_without_granting_permanent_or_current_authority",
+    "OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Profile40_movement_and_assignment_batches_are_explicit_and_legacy_bytes_stay_unchanged",
+    "OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Retained_combat_retreat_and_remedy_envelopes_fit_unchanged_domain_bounds",
+    "OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Witness_and_assignment_roundtrip_exactly_and_refuse_malformed_or_impossible_history",
+    "OpenFantasy.Hosting.Tests.Worlds.CoPlayerTrade.CoPlayerTradeConsumerTests.Actually_crafted_goods_pass_delegated_gift_and_paid_sale_then_archive_and_reopen_with_exact_output_rights",
+    "OpenFantasy.Hosting.Tests.Worlds.CoPlayerTrade.CoPlayerTradeConsumerTests.Delegated_market_issuance_keeps_the_original_market_command_and_exact_rule_pricing_through_fill_archive_and_reopen",
+    "OpenFantasy.Hosting.Tests.Worlds.CoPlayerTrade.CoPlayerTradeJournalTests.Actual_delegated_gifts_and_paid_fills_keep_true_operators_after_revocation_archive_copy_and_full_replay",
+    "OpenFantasy.Hosting.Tests.Worlds.CoPlayerTrade.CoPlayerTradeJournalTests.Regrant_cannot_resurrect_old_material_or_paid_offers_and_returning_owner_withdraws_with_its_own_attribution",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlChronologyTests.Acquisition_needs_its_own_world_boundary_but_revocation_can_share_the_release",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlCombatTests.Accepted_delegated_attack_resolves_once_after_revoke_with_original_principal_costs_history_and_receipt",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlContinuationTests.Accepted_retreat_pays_each_sample_after_revocation_and_returns_control_only_at_safe_boundary",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlContinuationTests.Delegated_patient_acknowledgment_survives_revocation_and_helper_pays_one_actual_dose",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Closing_authority_invalidates_the_captured_assignment_without_changing_ownership_or_earning_time(closure: \"grantee-loss\")",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Closing_authority_invalidates_the_captured_assignment_without_changing_ownership_or_earning_time(closure: \"release\")",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Closing_authority_invalidates_the_captured_assignment_without_changing_ownership_or_earning_time(closure: \"return\")",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Closing_authority_invalidates_the_captured_assignment_without_changing_ownership_or_earning_time(closure: \"revoke\")",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Named_grantee_really_moves_the_owner_with_true_delivery_and_exact_reopen",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Scope_and_direct_owner_competition_are_refused_before_gameplay_dispatch",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlRecoveryTests.Assignment_publication_fault_recovers_exactly_one_side_of_the_transaction(committed: False)",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlRecoveryTests.Assignment_publication_fault_recovers_exactly_one_side_of_the_transaction(committed: True)",
+    "OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlRecoveryTests.Authentic_active_head_cannot_hide_a_missing_acquisition_commit"
+  ],
+  "storageAttempts": [
+    {
+      "path": "qualification/storage-20261003T005747417558Z/report.json",
+      "accepted": false,
+      "consoleReportedPasses": 482,
+      "terminalTrxAvailable": false,
+      "limitSeconds": 600
+    },
+    {
+      "path": "qualification/storage-20261003T011741850753Z/report.json",
+      "accepted": false,
+      "consoleReportedPasses": 485,
+      "terminalTrxAvailable": false,
+      "limitSeconds": 600
+    }
+  ],
+  "failedReportsRetained": [
+    "qualification/build-20261003T003425472053Z/report.json",
+    "qualification/build-20261003T003459448922Z/report.json",
+    "qualification/build-20261003T004500207541Z/report.json",
+    "qualification/effective-core-20261003T003620735707Z/report.json",
+    "qualification/effective-hosting-20261003T004808169014Z/report.json",
+    "qualification/server-compatibility-20261003T011642915568Z/report.json",
+    "qualification/server-compatibility-20261003T012819491425Z/report.json",
+    "qualification/storage-20261003T005747417558Z/report.json",
+    "qualification/storage-20261003T011741850753Z/report.json"
+  ],
+  "unrunCases": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "sourceSha256": "c0558724c4cbf3be6e12f8dff601820afb57adca2878e5d6a38c9cf3aa32471e",
+  "sourceFiles": 2113,
+  "architectureLinks": 1349,
+  "protectedTestsAndFixtures": 741,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "managedCheckpoint": {
+    "ref": "codex/checkpoint-effective-control-managed-20261003T0108Z",
+    "commit": "d76f4681ff2bfd59f7346b843247061761db479f",
+    "sourceCheckpoint": "codex/checkpoint-before-effective-co-player-control-20261003T000511Z",
+    "scope": "Core/Hosting effective command integration, new tests, timeless architecture and recorded review/failures; unrelated predecessor staging excluded.",
+    "verified": "Clean build; 1885 complete Core cases; 4 new Core +17 new Hosting cases.",
+    "pending": "Broader affected Hosting/server regressions. Storage aggregate timed out at unchanged600s after482 console-reported passes; no completed TRX/aggregate pass.",
+    "acceptance": "Recoverable managed-integration checkpoint, not full phase/native/production acceptance."
+  },
+  "handoffArchive": {
+    "source": "Beta/implementation/AGENT_HANDOFF.md",
+    "archive": "Beta/implementation/AGENT_HANDOFF_20261003_PERMISSION_ARCHIVE.md",
+    "sha256": "7a30b642cfb55e1fd7adddbee07d194c267f5fd3e5f9c8f6515fe0279cef2e5d",
+    "sourceCommit": "fca8961ece87a2a4ec9e0c24682c4a97cdf2b691",
+    "note": "Exact preceding compact handoff; original relative links remain valid beside its archive."
+  },
+  "checkerSha256": "80335100a24414bf83fcb53fc906b099798da5c18649262357a04822e489c5da",
+  "strictFinalizerSha256": "3050a5c4d0d5c62c73cd6c7239087cc0b103d19bfe067aeb8bed29b1671ef92b",
+  "strictFinalizerStillRequiresAllGroups": true,
+  "actualProfile40HostKills": 0,
+  "nativeProfile40Processes": 0,
+  "limits": [
+    "Two unchanged600s storage aggregates remain failed; separately passing unreported cases do not replace them.",
+    "Two server aggregates retain the repeated five-second movement-observation failure; the repeat also has a15s Host startup failure.",
+    "Shared-machine load observations establish no timing cause.",
+    "No full phase, production, native selection, physical-device, human or platform acceptance claim.",
+    "No external provider request or external-credit savings."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "ref": "codex/checkpoint-effective-control-managed-20261003T0108Z",
+  "commit": "d76f4681ff2bfd59f7346b843247061761db479f",
+  "sourceCheckpoint": "codex/checkpoint-before-effective-co-player-control-20261003T000511Z",
+  "scope": "Core/Hosting effective command integration, new tests, timeless architecture and recorded review/failures; unrelated predecessor staging excluded.",
+  "verified": "Clean build; 1885 complete Core cases; 4 new Core +17 new Hosting cases.",
+  "pending": "Broader affected Hosting/server regressions. Storage aggregate timed out at unchanged600s after482 console-reported passes; no completed TRX/aggregate pass.",
+  "acceptance": "Recoverable managed-integration checkpoint, not full phase/native/production acceptance."
+}

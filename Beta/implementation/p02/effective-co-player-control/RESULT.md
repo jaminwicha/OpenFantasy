@@ -1,7 +1,12 @@
 # Effective co-player command authority
 
-Status: implementation and focused proof complete; broader qualification in progress. This is a
+Status: implementation and focused proof complete; broader storage/server qualification incomplete. This is a
 trusted-host authority increment, not a player-facing takeover or production-acceptance claim.
+Commit `d76f4681` and [managed checkpoint](MANAGED_CHECKPOINT.json) preserve this coherent scope.
+The [qualification status](QUALIFICATION_STATUS.json) records 2,420 distinct passing cases from
+accepted groups and the unresolved aggregate failures. The bounded milestone
+`codex/milestone-effective-control-managed-20261003` preserves the implementation and this evidence;
+it does not qualify the failed storage/server groups or close a phase.
 
 Fresh profile40/schema12 composes an effective assignment with existing named permission and original
 controller lifecycle. Commands/movement retain the actual grantee principal/session and operated actor;
@@ -18,7 +23,9 @@ Current gameplay passes typed authority internally; standalone public planners r
 ## Evidence
 
 - Clean build; four new Core and seventeen new Hosting cases pass. The complete 1,885-case Core run
-  also passes. Final aggregate reports are produced only after the remaining selected families finish.
+  also passes. Selected commerce (107), care/retreat (35), consent storage (23), controller sessions
+  (38), network (272), shared sessions (26) and archives (14) pass. Three separately selected storage
+  cases pass; these do not replace the incomplete storage aggregate. Counts overlap across groups.
 - Real delegated movement, direct-owner competition refusal, scope refusal, release, owner return,
   grantee loss and revoked assignments; exact original-genesis reopen.
 - An actual granted attack damages its real target and pays its normal cost after revocation,
@@ -43,6 +50,18 @@ The runtime source then remains frozen throughout the serialized qualification r
 
 ## Retained failures and limits
 
+Two storage attempts exceed the unchanged 600-second bound after 482 and 485 console-reported
+passes, respectively. Neither produces terminal TRX evidence, so neither is an aggregate pass.
+The three cases without terminal output in the second attempt pass in a separate selection; this
+establishes only those cases, without closing the original timing gate.
+
+Both server attempts fail the existing five-second four-player movement-observation assertion.
+The second also exceeds the dedicated-host test's 15-second startup limit. The first reports
+75 passes, one failure and the expected Windows-only skip; the second reports 74 passes, two
+failures and that skip. Windows invitation ACL behavior remains unrun on this Mac. All original
+reports and deadlines are retained. The strict finalizer still requires every required group to
+pass; no full-qualification `FINAL_CHECKS.json` has been produced.
+
 Qualification retains every unsuccessful report: initial collection-expression compile errors;
 missing test imports/nullability/analyzer corrections; a fresh test calibration's references to
 internal-only APIs; new profile40 step-version dispatch missing its extra field; and a combat test
@@ -53,7 +72,12 @@ Shared-machine load samples are observations, not causal attribution. A passing 
 does not qualify production history latency, memory, capacity or scale. Old timing failures remain
 in their original packets. No window focus is taken by these headless checks.
 
-Required subsequent work: authenticated live grantee presence and actor selection, selection
+Next, diagnose the storage/server failures using source-pinned measurements of the actual test
+application descendants. Distinguish shared load, algorithm/allocation costs and live-host latency;
+do not repeat aggregates without a new diagnostic purpose or relax their bounds. Complete these
+required regressions before treating broader integration as qualified.
+
+Subsequent implementation requires authenticated live grantee presence and actor selection, selection
 generations, fresh authorized observations, cleared queued input/readiness, deliberate Resume,
 local/TLS/Godot reachability and actual rendered/crash journeys. The grantee's own human character
 must keep ordinary holds. Private-history grants require their own reader implementation. No lived

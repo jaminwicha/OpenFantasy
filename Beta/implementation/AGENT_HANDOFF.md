@@ -19,62 +19,62 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
-Effective command integration is under verification in the
-[current packet](p02/effective-co-player-control/DESIGN.md). Fresh profile40/schema12, real delegated
-movement/combat/retreat/care and material/paid/market consumers are implemented; the clean build and
-21 new focused cases pass. Broader affected regressions are running before acceptance/commit. The
-[critic](p02/effective-co-player-control/CRITIC_REVIEW.md) found two repaired boundaries: impossible
-acquisition chronology and overly broad public planner authorization. No native selection or live
-presence proof is claimed. The following foundation remains the last committed milestone.
+[Effective co-player command authority](p02/effective-co-player-control/RESULT.md) explicitly admits
+fresh profile40/schema12 over the [durable consent foundation](p02/co-player-control/RESULT.md).
+Active assignment, scoped current authorization and immutable command witnesses retain the real
+submitting principal/session and operated actor without changing permanent inventory bindings.
+Revocation/return/loss stop new input; actual accepted combat and retreat retain ordinary paid
+resolution. Care acknowledgment remains separate from helper treatment. Raw/produced gifts, paid
+exchange and rule-priced markets retain original attribution through actual archive and reopen.
+Old offers cannot revive after regrant; returning owners can withdraw with their own terminal identity.
+Exact prior submitter receipts remain distinct from new authority and private-history access.
 
+[Independent critique](p02/effective-co-player-control/CRITIC_REVIEW.md) corrected impossible combined
+acquisition chronology and public planner authorization widening. Authorized lower-level overloads
+are internal to Core composition; standalone public planners remain owner-only. The
+[timeless contract](../Runtime/docs/architecture/effective-control.md) and dependent references are current.
 
-[Durable co-player consent](p02/co-player-control/RESULT.md) adds fresh profile39/schema11 to the
-existing sole world authority: named owner offers, separate exact acceptance, replacement/revocation,
-bounded scopes and twelve ordered slots across four home actors. Nonadvancing consent decisions
-preserve holds, bodies, supplies, possessions, controller assignments and accepted work. Original
-genesis replay, receipts, occupied identities and real archive publication preserve the facet.
+Clean build, the full 1,885-case Core suite and all 21 new focused cases pass. Selected commerce (107),
+care/retreat (35), consent storage (23), controller sessions (38), network (272), shared sessions (26)
+and archives (14) pass. Accepted groups cover 2,420 distinct passing cases, including three separately
+selected storage cases.
+**Broader qualification is incomplete:** two storage aggregates time out at the unchanged 600s bound
+(after 482/485 console-reported passes). The server aggregate twice misses the five-second four-player
+movement-observation bound; its repeat also misses the 15s dedicated-host startup bound. Windows ACL
+is unrun on this Mac. Shared load observations do not establish the cause. No test, deadline or
+acceptance gate is relaxed, and targeted storage-tail evidence cannot replace the failed aggregate.
+The packet retains each report and the [qualification status](p02/effective-co-player-control/QUALIFICATION_STATUS.json);
+no native control-selection or profile40 process-kill proof is claimed.
 
-Permission alone authorizes no delegated gameplay or private view. The player adapter refuses fresh
-consent commands before queueing until a dedicated route exists; authenticated exact prior receipts
-remain retrievable while paused. No production world or lived save upgrades automatically.
-The [complete dependency design](p02/co-player-control/DESIGN.md) and
-[timeless consent contract](../Runtime/docs/architecture/control-permissions.md) distinguish this
-storage foundation from the required effective-control consumer.
+Implementation commit: `d76f4681`; [managed checkpoint](p02/effective-co-player-control/MANAGED_CHECKPOINT.json):
+`codex/checkpoint-effective-control-managed-20261003T0108Z`. This is a recoverable bounded checkpoint,
+not full phase/production acceptance. The bounded milestone
+`codex/milestone-effective-control-managed-20261003` also preserves the completed evidence and this
+handoff, including the failed broader gates. Before-change ref:
+`codex/checkpoint-before-effective-co-player-control-20261003T000511Z` at
+`fca8961ece87a2a4ec9e0c24682c4a97cdf2b691`. Keep work on `codex/runtime-foundation`.
 
-[Final checks](p02/co-player-control/FINAL_CHECKS.json) record a warning-free build and 2,818 distinct
-passing cases, including all 34 new cases and the complete 1,881-case Core run with verified unchanged
-Core dependencies. Final Hosting storage488, controller81, network272, shared26, archive14 and server76
-pass; Windows ACL remains unrun. The storage repeat passes in 444.86 seconds under the unchanged
-600-second limit, without explaining its retained earlier timeout. Independent critique corrected
-fabricated recovery provenance and impossible consent chronology. All 735 older tests/fixtures, 23
-frozen specs, unrelated predecessor staging and 1,330 architecture links are verified. No new native
-or process-kill qualification is claimed. Milestone: `codex/milestone-control-permissions-20261002`.
+## Next dependencies
 
-Before-change ref: `codex/checkpoint-before-co-player-control-20261002T225515Z` at `e741606225e83f68821efe385af35521401df5f4`.
-The [handoff WIP checkpoint](p02/co-player-control/HANDOFF_CHECKPOINT.json) preserves successor edits
-and partial evidence before consolidation. It is a recoverable backup, not an acceptance claim.
-Keep work on `codex/runtime-foundation`; the integration lead owns focused commits and milestone refs.
+1. Investigate the retained storage/server timing failures with source-pinned measurements and an
+   identified test-process descendant. Separate shared load, algorithm/allocation costs and actual
+   live-host latency; do not repeatedly rerun aggregates or change bounds to obtain green output.
+   Complete the same required regressions before treating broader integration as qualified.
+2. Bind authenticated live grantee presence and explicit actor selection to the effective-control
+   contract. Separate permanent home actor from selected actor; publish authorized observations,
+   clear queued input/readiness, and require deliberate Resume against the current selection generation.
+   Stale A→B→A observations, queries, inputs and readiness must never regain authority.
+3. Keep the grantee's own human character's ordinary decisions/holds. Autonomous owner input cannot
+   compete while assigned; accepted obligations finish before safe return. Transport loss cannot
+   restart the original allowance or manufacture presence. Permission is not a socket or UI selection.
+4. Build the local/TLS/Godot consent/selection journey with actual paid actions, revocation/return,
+   archive/reopen and crash evidence. Native reachability remains separate from managed preparation;
+   retain the [complete obligations](p02/co-player-control/DESIGN.md).
 
-## Next coherent dependency: effective co-player control
-
-1. Separate active assignment from permission and ownership. Require the original expired disconnect
-   episode, safe action boundary, actually connected grantee and explicit acquisition. Keep the true
-   submitting principal/session and operated actor; do not manufacture owner deliveries.
-2. Add typed authorization and immutable acceptance-time witnesses to delegated commands/movement and
-   material/paid history. Revalidate permission for new decisions/open offers; accepted work and closed
-   outcomes retain their original authority and complete exactly once after revocation or owner return.
-   A submitter's exact old receipt must remain accessible without new action or private-history access.
-3. Bind explicit character selection to fresh authorized observations, selection generations, cleared
-   queued input/readiness and deliberate Resume. Preserve the grantee's own character's ordinary human
-   holds. Stale A→B→A offers, queries and readiness cannot regain authority; transport loss cannot restart
-   the original owner's allowance or fabricate presence.
-4. Implement the local/TLS/Godot consent and selection journey with actual paid actions, revocation,
-   return, archive/reopen and crash evidence. Native reachability is required separately from managed
-   preparation. Follow the [detailed acceptance obligations](p02/co-player-control/DESIGN.md).
-
-Combat + traversal + recovery is a provisional simple capability preset, not an owner-approved answer
-to the pending preference question. Offers always carry explicit scopes. Inventory, trade, production,
-conversation/quests, care disposition and private history remain independently scoped.
+Combat + traversal + recovery remains a provisional simple preset, not an owner-approved preference.
+Offers carry explicit scopes. Inventory, trade, production, conversation/quests, care disposition and
+private history remain independently scoped; recording private-history scope implements no reader.
+No production world or lived save upgrades automatically.
 
 ## Relevant inherited behavior and evidence
 
@@ -126,8 +126,11 @@ culture, narrative, progression, all gameplay domains and their art/audio/UI int
 required. Windows invitation ACL execution is unrun on this Mac. Passing managed tests cannot close
 rendered, physical-device or human acceptance gates.
 
-[The complete previous handoff](AGENT_HANDOFF_20261002_ALLOWANCE_ARCHIVE.md) is preserved byte-for-byte
+[The older complete handoff](AGENT_HANDOFF_20261002_ALLOWANCE_ARCHIVE.md) is preserved byte-for-byte
 with its original relative links; [archive identity](p02/co-player-control/HANDOFF_ARCHIVE.json) records
 its hash. It links earlier archives, milestone evidence, migration/delegation history and failures.
 [Git milestone doctrine and index](GIT_MILESTONES.md) remain authoritative for checkpoint practice.
 Archives preserve evidence; this file carries the current assignment without removing any requirement.
+
+[The immediately preceding consent handoff](AGENT_HANDOFF_20261003_PERMISSION_ARCHIVE.md) remains
+byte-for-byte preserved with [its identity](p02/effective-co-player-control/HANDOFF_ARCHIVE.json).

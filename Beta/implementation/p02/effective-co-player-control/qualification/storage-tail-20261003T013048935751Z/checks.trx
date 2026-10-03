@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="f2e42449-a301-4d7a-8d32-fa7b80718952" name="@mac 2026-10-02 20:31:08" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T20:31:08.5261930-05:00" queuing="2026-10-02T20:31:08.5261930-05:00" start="2026-10-02T20:30:51.9854110-05:00" finish="2026-10-02T20:33:03.8342540-05:00" />
+  <TestSettings name="default" id="26eadece-aac4-49c4-a243-a74a846546aa">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_20_31_08" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="3f5c8ac2-f07a-45e7-802d-2c352d773e8e" testId="7456ab67-b513-d9c3-5479-7177e3f2897b" testName="OpenFantasy.Hosting.Tests.WorldStorage.EventSettlementWorldTests.Event_interpretation_requires_fresh_admission_and_preserves_the_default_coupled_fixture" computerName="mac" duration="00:00:00.8941140" startTime="2026-10-02T20:31:08.4247450-05:00" endTime="2026-10-02T20:31:09.3190020-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3f5c8ac2-f07a-45e7-802d-2c352d773e8e" />
+    <UnitTestResult executionId="43afe603-b14f-4455-beaf-9996286e65d6" testId="4f2fed87-36f3-5e34-103b-b42c7b41e43b" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck" computerName="mac" duration="00:02:08.3013426" startTime="2026-10-02T20:30:55.3222160-05:00" endTime="2026-10-02T20:33:03.6303420-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="43afe603-b14f-4455-beaf-9996286e65d6" />
+    <UnitTestResult executionId="02fbd20f-1c36-420f-9004-2f9e0deab1c0" testId="bdd43040-f8e6-9cf4-ffa5-0d8abf0181c1" testName="OpenFantasy.Hosting.Tests.WorldStorage.EventSettlementWorldTests.Successful_geometric_assessment_does_not_supply_the_excavators_spent_labor" computerName="mac" duration="00:00:13.0842005" startTime="2026-10-02T20:30:55.3222160-05:00" endTime="2026-10-02T20:31:08.4156960-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02fbd20f-1c36-420f-9004-2f9e0deab1c0" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.EventSettlementWorldTests.Event_interpretation_requires_fresh_admission_and_preserves_the_default_coupled_fixture" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7456ab67-b513-d9c3-5479-7177e3f2897b">
+      <Execution id="3f5c8ac2-f07a-45e7-802d-2c352d773e8e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.EventSettlementWorldTests" name="Event_interpretation_requires_fresh_admission_and_preserves_the_default_coupled_fixture" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests.Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4f2fed87-36f3-5e34-103b-b42c7b41e43b">
+      <Execution id="43afe603-b14f-4455-beaf-9996286e65d6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorksiteContentTests" name="Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.EventSettlementWorldTests.Successful_geometric_assessment_does_not_supply_the_excavators_spent_labor" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bdd43040-f8e6-9cf4-ffa5-0d8abf0181c1">
+      <Execution id="02fbd20f-1c36-420f-9004-2f9e0deab1c0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.EventSettlementWorldTests" name="Successful_geometric_assessment_does_not_supply_the_excavators_spent_labor" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="7456ab67-b513-d9c3-5479-7177e3f2897b" executionId="3f5c8ac2-f07a-45e7-802d-2c352d773e8e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4f2fed87-36f3-5e34-103b-b42c7b41e43b" executionId="43afe603-b14f-4455-beaf-9996286e65d6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bdd43040-f8e6-9cf4-ffa5-0d8abf0181c1" executionId="02fbd20f-1c36-420f-9004-2f9e0deab1c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="3" executed="3" passed="3" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.38]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.15]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.41]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:02:10.81]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

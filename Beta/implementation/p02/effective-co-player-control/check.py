@@ -28,6 +28,8 @@ def main(mode):
  'care-retreat':('Hosting','FullyQualifiedName~Care.OrdinaryCareWorldTests|FullyQualifiedName~Care.Dispositions|FullyQualifiedName~Recovery.RecoveryJournalTests|FullyQualifiedName~Simulation.Retreat.RetreatContrastTests|FullyQualifiedName~Simulation.Retreat.RetreatSessionTests|FullyQualifiedName~Simulation.Retreat.RetreatRootCodecTests|FullyQualifiedName~Simulation.RetreatCompletion'),
  'core':('Core',None),
  'storage':('Hosting','FullyQualifiedName~WorldStorage|FullyQualifiedName~Worlds.Controllers|FullyQualifiedName~Worlds.ControllerRecovery'),
+ # Separate evidence for cases without terminal output in the retained timed-out aggregate; never replaces storage.
+ 'storage-tail':('Hosting','FullyQualifiedName~Event_interpretation_requires_fresh_admission_and_preserves_the_default_coupled_fixture|FullyQualifiedName~Successful_geometric_assessment_does_not_supply_the_excavators_spent_labor|FullyQualifiedName~Real_earned_stock_builds_walkable_decks_and_support_extraction_settles_only_the_removable_deck'),
  # Storage and network modes already cover Worlds.Controllers and Networking.ControllerTransport.
  'controller':('Hosting','FullyQualifiedName~Simulation.Controllers'),
  'network':('Hosting','FullyQualifiedName~Networking'),

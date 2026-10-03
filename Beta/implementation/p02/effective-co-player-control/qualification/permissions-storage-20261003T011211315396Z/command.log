@@ -1,0 +1,37 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.17]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.66]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 2) [6 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 0) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Permission_publication_fault_recovers_the_complete_before_or_after_transaction(committed: True) [10 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAuthorityTests.Four_real_home_actors_can_accept_all_twelve_pairs_without_transferring_control [11 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 1) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAuthorityTests.Absent_players_cannot_offer_or_accept_but_the_owner_can_revoke_without_earning_time [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 2) [5 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Permission_publication_fault_recovers_the_complete_before_or_after_transaction(committed: False) [7 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionContinuationTests.Accepted_permission_survives_measured_allowance_backup_expiry_and_owner_return_without_becoming_control [19 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAuthorityTests.Accepted_scopes_cannot_be_used_to_impersonate_the_owner_or_delegate_onward [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 0) [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 1) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.A_checksum_valid_accepted_head_cannot_replace_its_missing_acceptance_journal [5 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.A_paused_player_can_retrieve_an_exact_prior_permission_receipt_without_queuing_a_new_choice [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Permission_actions_preserve_an_actual_reading_hold_and_its_captured_dialogue [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Later_corruption_prevents_earlier_permission_history_or_receipts_from_becoming_available(corruption: "UPDATE world_command_outcomes SET receipt=X'00' WH"···) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Later_corruption_prevents_earlier_permission_history_or_receipts_from_becoming_available(corruption: "UPDATE world_commits SET after_hash=zeroblob(32) W"···) [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionContinuationTests.An_actual_material_archive_cut_preserves_the_accepted_permission_and_its_original_commands_in_a_copy [16 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Later_corruption_prevents_earlier_permission_history_or_receipts_from_becoming_available(corruption: "UPDATE world_head SET hash=zeroblob(32)") [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionContinuationTests.Schema_eleven_rejects_a_forged_later_activation_even_when_its_snapshot_and_all_checksums_are_authentic [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Later_corruption_prevents_earlier_permission_history_or_receipts_from_becoming_available(corruption: "DELETE FROM world_occupied_identity WHERE sequence"···) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Captured_stale_terms_and_stolen_command_identity_cannot_replace_an_accepted_grant [795 ms]
+[xUnit.net 00:00:46.68]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionJournalTests.Original_principals_offer_accept_revoke_and_reoffer_across_exact_genesis_reopening [3 s]
+
+Test Run Successful.
+Total tests: 23
+     Passed: 23
+ Total time: 47.9911 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/effective-co-player-control/qualification/permissions-storage-20261003T011211315396Z/checks.trx
