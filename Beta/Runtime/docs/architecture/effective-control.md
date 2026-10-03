@@ -158,8 +158,10 @@ from one published root.
 [Selected asynchronous queries](player-queries.md#explicit-actor-selection-queries) preserve the exact
 captured selection through admission, serialized reads and response validation. Trade and Inventory
 expose only their open participant offers; PrivateHistory independently permits actual terminal quote
-and proposal history through narrowly authorized storage readers. Home history remains permanently
-home-bound. Inquiry ownership includes the port and generation, so transition cleanup cannot cancel
+and proposal history through narrowly authorized storage readers. The
+[history directory](private-history-directory.md) applies that same independent permission to bounded
+discovery, including archived records, with exact selection and page-request correlation. Home history
+remains permanently home-bound. Inquiry ownership includes the port and generation, so transition cleanup cannot cancel
 another selection's request. The [connected character protocol](selected-player-protocol.md) provides
 explicit consent and selected-input envelopes, bounded typed observations and a delivered Resume proof.
 Its optional application interface carries the same captured context into the Godot presentation;

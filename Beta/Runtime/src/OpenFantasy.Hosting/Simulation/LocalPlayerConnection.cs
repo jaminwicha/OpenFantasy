@@ -92,6 +92,9 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
         _host.InspectSelectedPaidQuoteHistoryAsync(this, observed, subject);
     public Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedMaterialProposalHistoryAsync(LocalActorSelection observed, EntityId subject) =>
         _host.InspectSelectedMaterialProposalHistoryAsync(this, observed, subject);
+    public Task<LocalSelectedQueryResult<LocalPrivateHistoryPage>> ReadSelectedPrivateHistoryAsync(
+        LocalActorSelection observed, LocalPrivateHistoryPageRequest request) =>
+        _host.ReadSelectedPrivateHistoryAsync(this, observed, request);
     public Task<WorldControlWitness> AcquireControlAsync(LocalControlAcquisition observed) =>
         _host.AcquireControlAsync(this, observed);
     public Task ReleaseControlAsync(WorldControlWitness observed) => _host.ReleaseControlAsync(this, observed);
@@ -107,6 +110,7 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     internal long MovementAt { get; set; }
     internal LocalInspectionSlot<PaidQuoteView?> QuoteInspection { get; } = new("One quote inspection is already awaiting its result.");
     internal LocalInspectionSlot<MaterialProposalView?> ProposalInspection { get; } = new("One proposal inspection is already awaiting its result.");
+    internal LocalInspectionSlot<LocalPrivateHistoryPage> PrivateHistoryInspection { get; } = new("One history directory page is already awaiting its result.");
     internal void Publish(LocalWorldView view) => Volatile.Write(ref _view, view);
     internal void ClearMovement() { MovementX = 0; MovementY = 0; MovementSelection = null; }
 }

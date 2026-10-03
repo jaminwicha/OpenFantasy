@@ -168,6 +168,7 @@ public sealed partial class PlayerCommandSession
             LocalPlayerConnection player = _channel.Player;
             PlayerSelectedQueryResponse result = input.Operation switch
             {
+                LocalSelectedQueryOperation.ReadPrivateHistory => PlayerSelectedQueryResponse.From(await player.ReadSelectedPrivateHistoryAsync(input.Selection, input.DirectoryRequest!).ConfigureAwait(false)),
                 LocalSelectedQueryOperation.SubmitTradeInquiry => PlayerSelectedQueryResponse.From(await player.SubmitSelectedTradeInquiryAsync(input.Selection, input.Inquiry!).ConfigureAwait(false)),
                 LocalSelectedQueryOperation.CancelTradeInquiry => PlayerSelectedQueryResponse.From(await player.CancelSelectedTradeInquiryAsync(input.Selection).ConfigureAwait(false)),
                 LocalSelectedQueryOperation.ReadTradeInquiry => PlayerSelectedQueryResponse.From(await player.ReadSelectedTradeInquiryAsync(input.Selection).ConfigureAwait(false)),

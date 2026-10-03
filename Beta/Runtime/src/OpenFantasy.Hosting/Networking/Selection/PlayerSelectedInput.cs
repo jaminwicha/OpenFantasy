@@ -12,10 +12,12 @@ public sealed class PlayerSelectedInput
     private PlayerSelectedInput(PlayerSelectedInputKind kind, LocalActorSelection selection,
         EntityId? targetActorId = null, EntityId? streamId = null, ulong? revision = null,
         int deltaX = 0, int deltaY = 0, WorldActionCommand? action = null,
-        LocalSelectedQueryOperation? operation = null, LocalTradeInquiry? inquiry = null, EntityId? subjectId = null)
+        LocalSelectedQueryOperation? operation = null, LocalTradeInquiry? inquiry = null, EntityId? subjectId = null,
+        LocalPrivateHistoryPageRequest? directoryRequest = null)
     {
         Kind = kind; Selection = selection; TargetActorId = targetActorId; StreamId = streamId; Revision = revision;
         DeltaX = deltaX; DeltaY = deltaY; Action = action; Operation = operation; Inquiry = inquiry; SubjectId = subjectId;
+        DirectoryRequest = directoryRequest;
     }
     public PlayerSelectedInputKind Kind { get; }
     public LocalActorSelection Selection { get; }
@@ -28,6 +30,7 @@ public sealed class PlayerSelectedInput
     public LocalSelectedQueryOperation? Operation { get; }
     public LocalTradeInquiry? Inquiry { get; }
     public EntityId? SubjectId { get; }
+    public LocalPrivateHistoryPageRequest? DirectoryRequest { get; }
     public static PlayerSelectedInput SelectActor(LocalActorSelection selection, EntityId target) => new(PlayerSelectedInputKind.SelectActor, selection, targetActorId: target);
     public static PlayerSelectedInput Pause(LocalActorSelection selection) => new(PlayerSelectedInputKind.Pause, selection);
     public static PlayerSelectedInput Resume(LocalActorSelection selection, EntityId streamId, ulong revision) => new(PlayerSelectedInputKind.Resume, selection, streamId: streamId, revision: revision);
@@ -35,4 +38,7 @@ public sealed class PlayerSelectedInput
     public static PlayerSelectedInput Command(LocalActorSelection selection, WorldActionCommand command) => new(PlayerSelectedInputKind.Command, selection, action: command);
     public static PlayerSelectedInput Query(LocalActorSelection selection, LocalSelectedQueryOperation operation,
         LocalTradeInquiry? inquiry = null, EntityId? subjectId = null) => new(PlayerSelectedInputKind.Query, selection, operation: operation, inquiry: inquiry, subjectId: subjectId);
+    public static PlayerSelectedInput ReadPrivateHistory(LocalActorSelection selection, LocalPrivateHistoryPageRequest request) =>
+        new(PlayerSelectedInputKind.Query, selection, operation: LocalSelectedQueryOperation.ReadPrivateHistory,
+            directoryRequest: request ?? throw new ArgumentNullException(nameof(request)));
 }

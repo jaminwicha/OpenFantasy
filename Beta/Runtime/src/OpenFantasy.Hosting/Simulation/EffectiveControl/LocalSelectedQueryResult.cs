@@ -10,7 +10,8 @@ public enum LocalSelectedQueryOperation
     InspectOpenPaidQuote,
     InspectOpenMaterialProposal,
     InspectPaidQuoteHistory,
-    InspectMaterialProposalHistory
+    InspectMaterialProposalHistory,
+    ReadPrivateHistory
 }
 
 /// <summary>A response belongs to its captured selection, never whichever actor happens to be selected later.</summary>
@@ -28,5 +29,5 @@ public sealed record LocalSelectedQueryResult<T>(EntityId WorldId, EntityId Bran
     }
 }
 
-internal sealed record LocalInspectionKey(EntityId SubjectId, LocalActorSelection? Selection = null,
-    LocalSelectedQueryOperation? Operation = null);
+internal sealed record LocalInspectionKey(EntityId? SubjectId, LocalActorSelection? Selection = null,
+    LocalSelectedQueryOperation? Operation = null, LocalPrivateHistoryPageRequest? DirectoryRequest = null);

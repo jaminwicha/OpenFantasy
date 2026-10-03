@@ -28,6 +28,7 @@ different kind of person.
 | [Player HTTP/TLS hosting](player-http-host.md) | How does a bounded native-client TLS listener join existing saved player control, protect invitations and shut down without abandoning world work? |
 | [Player protocol client](player-client.md) | How does a participant validate its connection, own bounded input and pending requests, and recover a complete visible replica? |
 | [Player queries](player-queries.md) | How do nonbinding merchant inquiries and participant-only historical inspections cross authenticated channels with bounded work and complete terms? |
+| [Participant history discovery](private-history-directory.md) | How do bounded terminal-record pages preserve stable navigation, complete replay and independent selected permission? |
 | [Player observation values](player-observation-views.md) | How do typed immutable views preserve geometry, participant terms and prepared actions across a bounded canonical encoding? |
 | [Player observation streams](player-observation-streams.md) | How do visible revisions, bounded delta publication and atomic full recovery synchronize an authenticated player's view? |
 | [Time and encounters](time-and-encounters.md) | How do calendar, exposure, Wait, rest and host readiness interact? |

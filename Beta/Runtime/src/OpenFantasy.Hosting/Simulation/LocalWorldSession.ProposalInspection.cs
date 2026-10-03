@@ -86,7 +86,7 @@ public sealed partial class LocalWorldSession
         lock (_inputs)
         {
             inspections = _players.Values.SelectMany(player => new Task?[]
-                { player.ProposalInspection.Latest, player.QuoteInspection.Latest }).Append(_historyVerification).ToArray();
+                { player.ProposalInspection.Latest, player.QuoteInspection.Latest, player.PrivateHistoryInspection.Latest }).Append(_historyVerification).ToArray();
         }
         foreach (Task? inspection in inspections)
         {

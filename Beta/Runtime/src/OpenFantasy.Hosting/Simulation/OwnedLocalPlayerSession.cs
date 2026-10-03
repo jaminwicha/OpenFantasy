@@ -4,7 +4,7 @@ using OpenFantasy.Core.Worlds;
 namespace OpenFantasy.Hosting.Simulation;
 
 /// <summary>The solo composition owns its complete host; a remote session owns only its connection.</summary>
-public sealed class OwnedLocalPlayerSession(LocalWorldSession world) : IPlayerSession
+public sealed class OwnedLocalPlayerSession(LocalWorldSession world) : IPlayerSession, IPrivateHistoryPlayerSession
 {
     private readonly LocalWorldSession _world = world ?? throw new ArgumentNullException(nameof(world));
     public Task Completion => _world.Completion;
@@ -20,5 +20,10 @@ public sealed class OwnedLocalPlayerSession(LocalWorldSession world) : IPlayerSe
     public LocalTradeInquiryView? ReadTradeInquiry() => _world.ReadTradeInquiry();
     public Task<PaidQuoteView?> InspectPaidQuoteAsync(EntityId quoteId) => _world.InspectPaidQuoteAsync(quoteId);
     public Task<MaterialProposalView?> InspectMaterialProposalAsync(EntityId proposalId) => _world.InspectMaterialProposalAsync(proposalId);
+    public bool SupportsPrivateHistoryDirectory => true;
+    public LocalSelectedPlayerObservation ReadPrivateHistoryObservation() => _world.Player.ReadSelectedObservation();
+    public Task<LocalSelectedQueryResult<LocalPrivateHistoryPage>> ReadSelectedPrivateHistoryAsync(
+        LocalActorSelection observed, LocalPrivateHistoryPageRequest request) =>
+        _world.Player.ReadSelectedPrivateHistoryAsync(observed, request);
     public ValueTask DisposeAsync() => _world.DisposeAsync();
 }

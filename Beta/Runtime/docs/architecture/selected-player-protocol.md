@@ -50,7 +50,7 @@ home semantics; the selected stream does not reinterpret a legacy observation as
 | SelectionSubscribe (15) | Initial authenticated feature subscription |
 | SelectionObservation (16) | Full atomic home/selected frame; zero ID for publication, request ID for subscription/selection reply |
 | SelectionInput (17) | Select, pause, Resume, movement, captured action or selected query |
-| SelectionQueryResult (18) | Exact selection/operation/subject query response |
+| SelectionQueryResult (18) | Exact selection/operation with inspected subject or complete directory page request |
 | ControlRequest (19), ControlResult (20) | Separately correlated home consent, board, acquisition and release |
 | SelectionDelivered (21) | Unsolicited confirmation that the captured Resume basis completed its bounded send |
 
@@ -90,6 +90,15 @@ bytes; witnesses retain their 256-byte cap. Administration and selected query re
 canonical bodies. Request IDs increase across the whole connection, regardless of operation family.
 Parsing completes before host dispatch. A decoded request or response confers no authority.
 
+The [private-history directory](private-history-directory.md) uses selected input version 2 exclusively
+for `ReadPrivateHistory`. After the ordinary selection header it carries the operation and a one-byte
+cursor-presence flag. A present cursor adds the inclusive revision ceiling, terminal sequence, record
+kind and exact subject identity. Other selected inputs remain version 1 with their existing bytes.
+The directory response alone uses selected-result version 2 and carries `Directory`; version-1 replies
+omit that property and preserve their existing shape. Both codecs reject cross-version operations,
+malformed cursors, contradictory pages and noncanonical fields. Response matching includes the exact
+page request, independently of the null inspection subject. The existing 16 KiB response bound applies.
+
 ## Delivered observation and deliberate Resume
 
 The [server stream owner](../../src/OpenFantasy.Hosting/Networking/PlayerCommandSession.Selection.cs)
@@ -122,7 +131,8 @@ selected protocol connection, so callers must use the optional interface from ge
 
 The server retains one gameplay action, one query, one consent/assignment administration and one actor
 selection operation per connection. Selected and legacy queries share the same query slot; the host's
-quote/proposal slots remain shared as described in [player queries](player-queries.md). Output queues,
+quote/proposal slots remain shared, and its directory slot includes the complete page request, as
+described in [player queries](player-queries.md). Output queues,
 input rates and send deadlines stay bounded. Cleanup joins admitted operations before releasing owners.
 Administration can revoke while an already accepted paid action is still resolving; sharing its waiter
 would incorrectly block that consent boundary.

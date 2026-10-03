@@ -40,12 +40,23 @@ public static class PlayerSelectedInputCodec
                 break;
             case PlayerSelectedInputKind.Query:
                 var operation = input.Operation ?? throw new FormatException("Missing selected query operation.");
+                if (operation == LocalSelectedQueryOperation.ReadPrivateHistory)
+                {
+                    if (input.Inquiry is not null || input.SubjectId is not null || input.DirectoryRequest is null)
+                        throw new FormatException("Directory input requires only its page request.");
+                    byte[] directory = PlayerPrivateHistoryRequestCodec.Encode(input.DirectoryRequest);
+                    payload = new byte[1 + directory.Length]; payload[0] = (byte)operation; directory.CopyTo(payload, 1);
+                    break;
+                }
+                if (input.DirectoryRequest is not null) throw new FormatException("Unexpected directory request.");
                 var query = LegacyQuery(operation, input.Inquiry, input.SubjectId);
                 byte[] encoded = PlayerQueryCodec.Encode(query);
                 payload = new byte[1 + encoded.Length]; payload[0] = (byte)operation; encoded.CopyTo(payload, 1); break;
             default: throw new FormatException("Unknown selected input kind.");
         }
-        byte[] bytes = new byte[4 + selection.Length + payload.Length]; bytes[0] = 1; bytes[1] = (byte)input.Kind;
+        byte[] bytes = new byte[4 + selection.Length + payload.Length];
+        bytes[0] = input.Operation == LocalSelectedQueryOperation.ReadPrivateHistory ? (byte)2 : (byte)1;
+        bytes[1] = (byte)input.Kind;
         BinaryPrimitives.WriteUInt16BigEndian(bytes.AsSpan(2), checked((ushort)selection.Length));
         selection.CopyTo(bytes, 4); payload.CopyTo(bytes, 4 + selection.Length); return bytes;
     }
@@ -54,7 +65,7 @@ public static class PlayerSelectedInputCodec
     {
         try
         {
-            if (bytes.Length < 4 || bytes.Length > MaximumBodyBytes || bytes[0] != 1) throw new FormatException("Invalid selected input header.");
+            if (bytes.Length < 4 || bytes.Length > MaximumBodyBytes || bytes[0] is not (1 or 2)) throw new FormatException("Invalid selected input header.");
             int length = BinaryPrimitives.ReadUInt16BigEndian(bytes[2..]);
             if (length > bytes.Length - 4) throw new FormatException("Truncated actor selection.");
             var selection = PlayerSelectionCodec.Decode(bytes.Slice(4, length));
@@ -67,7 +78,10 @@ public static class PlayerSelectedInputCodec
                 PlayerSelectedInputKind.Resume when payload.Length == 24 => PlayerSelectedInput.Resume(selection, EntityId.FromBytes(payload[..16]), BinaryPrimitives.ReadUInt64BigEndian(payload[16..])),
                 PlayerSelectedInputKind.Movement when payload.Length == 8 => PlayerSelectedInput.Movement(selection, BinaryPrimitives.ReadInt32BigEndian(payload), BinaryPrimitives.ReadInt32BigEndian(payload[4..])),
                 PlayerSelectedInputKind.Command when payload.Length <= WorldActionCodec.MaximumCommandByteLength => PlayerSelectedInput.Command(selection, WorldActionCodec.Decode(payload)),
-                PlayerSelectedInputKind.Query when payload.Length > 1 => ReadQuery(selection, payload),
+                PlayerSelectedInputKind.Query when payload.Length > 1 && bytes[0] == 1 => ReadQuery(selection, payload),
+                PlayerSelectedInputKind.Query when payload.Length > 1 && bytes[0] == 2
+                    && payload[0] == (byte)LocalSelectedQueryOperation.ReadPrivateHistory =>
+                    PlayerSelectedInput.ReadPrivateHistory(selection, PlayerPrivateHistoryRequestCodec.Decode(payload[1..])),
                 _ => throw new FormatException("Unknown selected input or contradictory payload length.")
             };
             if (!bytes.SequenceEqual(Encode(result))) throw new FormatException("Noncanonical selected input.");

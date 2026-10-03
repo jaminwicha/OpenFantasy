@@ -19,6 +19,24 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Authenticated private-history discovery](p02/private-history-directory/RESULT.md) now supplies bounded
+terminal quote/proposal pages across live and archived records, independently scoped to PrivateHistory.
+Stable revision/sequence/kind/identity navigation uses complete verified replay through the current head;
+late corruption still refuses disclosure. The selected version2 query/result extension preserves old bytes.
+The optional local/remote directory facade exposes real observation capture and explicit availability;
+availability does not grant permission. Exact scopes, task sharing and both shutdown joins remain intact.
+
+The warning-free final build and [evidence](p02/private-history-directory/FINAL_CHECKS.json) record **194
+distinct passing cases**, including 33 new cases and a real TLS discovery/allowance/return-revoke route.
+Actual 19-outcome tied expiry, archive/original-genesis reopen, stable append, due-but-unclosed exclusion,
+corrupt-tail refusal and independent review qualify this backend boundary. Three failed attempts remain
+with import and test synchronization corrections. All 821 old inputs, 23 specs and unrelated staging stay
+pinned. Before-change ref `codex/checkpoint-before-private-history-directory-20261003T125116Z` preserves
+`d3f8ebc2`; WIP `codex/checkpoint-history-directory-api-wip-20261003T132008Z` preserves `3a9eb52a`.
+Marker `codex/milestone-private-history-directory-20261003` records the bounded final scope. Shared
+History UI/lifetimes, delayed inbound directory delivery, latency/crash/scale, physical/human/art and
+campaign gates remain open. Native agents used Astra capacity; external Claude was not retried.
+
 [Shared restorative choices](p02/restorative-choices/RESULT.md) now bind the Care library to home or
 independently scoped Recovery/CareDisposition, with exact Review/Confirm, same-item/same-helper and
 identical-term distinctions, permanent withdrawal and owner-return invalidation. Compatible home7/
@@ -302,14 +320,18 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Extend selected-domain coverage with private-history discovery/lifetimes and broader aftermath-care
-   screen proofs against existing typed facets and readers. Shared ordinary restorative choices and
+1. Bind a shared independently accessible History screen to `IPrivateHistoryPlayerSession`, using its
+   real observation capture and explicit availability. Authenticated terminal discovery is now qualified
+   above; panel-opening/page/request/row lifetimes and native interaction are not. Preserve independent
+   PrivateHistory access without requiring Pack/Inventory or Market/Trade, stable page caps and exact
+   subsequent inspections. Add delayed inbound response and owner-return/revoke UI evidence. Continue
+   broader aftermath-care screen proofs against existing typed facets and readers. Shared ordinary restorative choices and
    patient permission withdrawal now have bounded evidence in the restorative-choices packet. Retain current capture/confirmation
    rules, immutable home identity and explicit scopes; no withheld full-view synthesis. The native
    consent/selection/combat route is qualified above; the [client scope notes](p02/connected-player-control/CLIENT_NOTES.md)
    retain the incomplete domain surfaces. Native source-lot and produced-gift journeys have bounded passing evidence; retain the unexplained
    raw-gift reopening failure and its diagnostic. Shared selected buying/selling now has bounded evidence
-   in the selected-trading packet. Selected history discovery/lifetime interactions, broader aftermath-care and medicine-catalog
+   in the selected-trading packet. Selected history screen/lifetime interactions, broader aftermath-care and medicine-catalog
    interactions, and mouse dropdown breadth remain explicit work. Atomic human construction is qualified above;
    sustained work, unobscured completed-object legibility and the clipped idle-preview HUD need their
    normal interface/presentation work. The admitted recipe library and independently

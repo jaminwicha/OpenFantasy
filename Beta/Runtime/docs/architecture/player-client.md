@@ -102,6 +102,15 @@ completion of a lower protocol task does not establish completion of that caller
 admission and refresh priority use the tracked task's completion under the session gate. Invalid,
 closed and busy query calls return faulted tasks while preserving the asynchronous interface contract.
 
+[IPrivateHistoryPlayerSession](../../src/OpenFantasy.Hosting/Simulation/IPrivateHistoryPlayerSession.cs)
+is the optional application boundary for authenticated history discovery. Both owned local and remote
+sessions expose their real observation capture and return explicitly selected pages through it. The
+local facade supports its permanent home port; remote availability requires the negotiated selected
+protocol. Availability is separate from the current PrivateHistory grant. The remote binding shares foreground query
+ownership, preserves the exact page request and validates the captured selection before application;
+it adds no automatic directory refresh. [Directory navigation](private-history-directory.md) describes
+its independent permission, stable cursor and complete replay contract.
+
 [FarmClientSession](../../client/scripts/FarmClientSession.cs) builds the same immutable offers for either
 adapter, retaining per-session offer registration and exact command retry identity. Wheel opening queues
 stop and captures the latest published view; it adds no remote barrier or promise that terms cannot become

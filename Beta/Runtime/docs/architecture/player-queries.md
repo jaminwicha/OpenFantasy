@@ -45,6 +45,7 @@ the existing legacy wire operations and their bytes remain unchanged.
 | Inspect open paid quote | Trade | One current open participant quote |
 | Inspect open material proposal | Inventory | One current open participant proposal |
 | Inspect paid quote or proposal history | PrivateHistory | One actual terminal participant outcome, live or archived |
+| Read private-history page | PrivateHistory | Up to 16 terminal participant summaries, with stable bounded continuation |
 
 PrivateHistory is independent of Trade and Inventory. It does not expose actionable open offers,
 current stock or balances. Tactical advances can make an offer due while its book remains open;
@@ -53,12 +54,13 @@ inspection nor terminal history exposes the intervening due-but-unclosed entry. 
 foreign and wrong-lifecycle subjects return an absent value after authorization. Null-witness home
 reads retain permanent entitlement; inquiry mutation also requires the port's available control.
 
-These inspection operations address an exact known identifier; they do not enumerate a participant's
-past quotes or proposals. The selected Trade projection lists open quotes only. Remembering identifiers
-already observed by a client can support revisiting those records under current permission, but it
-cannot discover records from earlier sessions or constitute a complete history directory. Any directory
-must independently enforce PrivateHistory, participant scope, bounded retrieval and authenticated
-history; it cannot expose the home actor's records as the operated actor's history.
+These inspection operations address an exact known identifier. The independently scoped
+[participant history directory](private-history-directory.md) discovers terminal quote/proposal
+identities from earlier sessions and archived segments through `ReadSelectedPrivateHistoryAsync`.
+Its fixed-size pages share an inclusive revision ceiling and an exclusive sequence/kind/identity
+cursor. The entire current history still verifies before a page is returned, including publications
+after that ceiling. The selected Trade projection lists open quotes only; remembering those identifiers
+is useful for revisiting an observed offer but cannot replace authenticated directory discovery.
 
 The host checks the selection and capability at admission, after entering serialization and before
 publishing the result. [Typed storage readers](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.SelectedInspections.cs)

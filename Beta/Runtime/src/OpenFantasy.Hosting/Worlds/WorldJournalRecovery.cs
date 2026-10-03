@@ -1,6 +1,7 @@
 using OpenFantasy.Core;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Hosting.Worlds;
 
@@ -67,11 +68,20 @@ internal sealed class WorldJournalRecovery
             trace.SelectedQuotePublishingState);
     }
 
-    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal = null, ulong? selectedMaterialSequence = null, ulong? selectedMaterialCareOrdinal = null, EntityId? selectedProposalId = null, EntityId? selectedQuoteId = null)
+    internal RecordedPrivateHistoryPage ReadPrivateHistory(WorldDatabase database, EntityId actor,
+        LocalPrivateHistoryPageRequest request, ulong throughRevision)
+    {
+        var selection = new WorldPrivateHistoryReplaySelection(actor, request, throughRevision);
+        ReplayedWorld trace = VerifyAndReplay(database, null, privateHistory: selection);
+        return new(selection.Complete(), trace.Head.State.Revision, trace.Head.StateHash);
+    }
+
+    private static ReplayedWorld VerifyAndReplay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal = null, ulong? selectedMaterialSequence = null, ulong? selectedMaterialCareOrdinal = null, EntityId? selectedProposalId = null, EntityId? selectedQuoteId = null,
+        WorldPrivateHistoryReplaySelection? privateHistory = null)
     {
         try
         {
-            return Replay(database, selectedRevision, selectedOrdinal, selectedMaterialSequence, selectedMaterialCareOrdinal, selectedProposalId, selectedQuoteId);
+            return Replay(database, selectedRevision, selectedOrdinal, selectedMaterialSequence, selectedMaterialCareOrdinal, selectedProposalId, selectedQuoteId, privateHistory);
         }
         catch (Exception error) when (error is ArgumentException or InvalidOperationException or FormatException or OverflowException)
         {
@@ -79,7 +89,8 @@ internal sealed class WorldJournalRecovery
         }
     }
 
-    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal, ulong? selectedMaterialSequence, ulong? selectedMaterialCareOrdinal, EntityId? selectedProposalId, EntityId? selectedQuoteId)
+    private static ReplayedWorld Replay(WorldDatabase database, ulong? selectedRevision, ulong? selectedOrdinal, ulong? selectedMaterialSequence, ulong? selectedMaterialCareOrdinal, EntityId? selectedProposalId, EntityId? selectedQuoteId,
+        WorldPrivateHistoryReplaySelection? privateHistory)
     {
         byte[] genesisBytes = database.ReadGenesis();
         WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
@@ -198,6 +209,7 @@ internal sealed class WorldJournalRecovery
             state = expected.Candidate;
             controllerRecovery?.Observe(state);
             quoteSelection?.Observe(state);
+            privateHistory?.Observe(state);
             if (state.Revision == selectedRevision)
             {
                 selected = state;

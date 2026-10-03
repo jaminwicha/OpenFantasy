@@ -1,0 +1,45 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.55]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.13]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.29]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryPageTests.Page_rejects_open_mixed_status_duplicate_unsorted_oversized_and_false_cursor_shapes [17 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryPageTests.Page_copies_rows_and_correlates_the_complete_request_and_next_cursor [9 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "future-cap") [84 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "duplicate") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "order") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "unknown-status") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "future-entry") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "open") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "bad-next") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "missing-request") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "unknown-property") [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "counterparty") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "both-statuses") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Malformed_directory_frames_are_refused(mutation: "malformed-id") [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.New_request_versions_preserve_every_legacy_selected_query_byte [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Directory_response_correlates_request_cap_cursor_world_branch_and_complete_selection [13 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Zero_subject_identity_is_preserved_in_directory_cursor_and_page_roundtrips [2 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Directory_request_has_no_subject_and_exact_first_and_continuation_shapes [4 ms]
+  Passed OpenFantasy.Hosting.Tests.Networking.PrivateHistoryDirectory.PrivateHistoryDirectoryCodecTests.Legacy_result_shape_remains_exact_and_directory_cannot_use_its_version [7 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryApplicationTests.Owned_application_exposes_its_real_home_capture_without_a_separate_selected_control_interface [217 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectorySessionTests.Actor_cycle_invalidates_directory_result_and_future_cursor_refusal_keeps_the_host_available [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectorySessionTests.Exact_request_shares_its_slot_different_cursor_is_busy_and_shutdown_joins_the_directory_read(stopHost: False) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectorySessionTests.Exact_request_shares_its_slot_different_cursor_is_busy_and_shutdown_joins_the_directory_read(stopHost: True) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectorySessionTests.Home_directory_remains_readable_while_permanent_owner_control_is_delegated [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectoryStorageTests.Directory_permission_is_independent_and_foreign_history_is_empty_without_affecting_authority [5 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectorySessionTests.Revocation_while_waiting_for_storage_refuses_without_a_host_fault [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectoryStorageTests.Original_genesis_reopen_discovers_every_archived_subject_and_preserves_mixed_kind_ties_across_pages [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectoryStorageTests.Malformed_and_future_cursors_refuse_without_fencing_or_reading_history [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectoryStorageTests.Continuation_excludes_new_publications_and_independent_refresh_discovers_them [4 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectoryStorageTests.Tactical_due_but_unclosed_offers_are_absent_from_the_directory [1 s]
+[xUnit.net 00:00:24.65]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.PrivateHistoryDirectory.PrivateHistoryDirectoryStorageTests.Corruption_after_cursor_ceiling_prevents_disclosure_and_fences_the_authority [1 s]
+
+Test Run Successful.
+Total tests: 31
+     Passed: 31
+ Total time: 25.1951 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/private-history-directory/qualification/new-managed-20261003T132339864383Z/checks.trx

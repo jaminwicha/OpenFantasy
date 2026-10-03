@@ -1,0 +1,103 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.39]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.60]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.78]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:05.70]     OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke [FAIL]
+[xUnit.net 00:00:05.70]       OpenFantasy.Hosting.Networking.PlayerAdmissionException : The player connection was not admitted.
+[xUnit.net 00:00:05.70]       Stack Trace:
+[xUnit.net 00:00:05.70]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerAdmissionService.cs(54,0): at OpenFantasy.Hosting.Networking.PlayerAdmissionService.Issue(EntityId actorId, TrustedCommandDelivery delivery, TimeSpan lifetime, LocalRegionObserver regions, PlayerPresentationBootstrap presentation)
+[xUnit.net 00:00:05.70]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/CargoPlayerHost.cs(75,0): at OpenFantasy.Hosting.Networking.CargoPlayerHost.Issue(EntityId actor, TimeSpan lifetime)
+[xUnit.net 00:00:05.70]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs(87,0): at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Connect(EntityId actor)
+[xUnit.net 00:00:05.70]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/PrivateHistoryDirectory/PrivateHistoryDirectoryTlsTests.cs(43,0): at OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke()
+[xUnit.net 00:00:05.70]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/PrivateHistoryDirectory/PrivateHistoryDirectoryTlsTests.cs(124,0): at OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke()
+[xUnit.net 00:00:05.70]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.70]       Output:
+[xUnit.net 00:00:05.70]         5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=5795dc4890da7573cfc5b3948d0296df/0; ready=False; control=Available; combat=; calendar=0:32412600
+[xUnit.net 00:00:05.70]         4.174s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=4 bytes=300
+[xUnit.net 00:00:05.70]         4.206s 5795dc4890da7573cfc5b3948d0296df send Hello request=1 bytes=130
+[xUnit.net 00:00:05.70]         4.207s 5795dc4890da7573cfc5b3948d0296df receive Welcome request=1 bytes=146
+[xUnit.net 00:00:05.70]         4.207s 5795dc4890da7573cfc5b3948d0296df send SelectionSubscribe request=2 bytes=1
+[xUnit.net 00:00:05.70]         4.214s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=2 bytes=99580
+[xUnit.net 00:00:05.70]         4.223s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+[xUnit.net 00:00:05.70]         4.223s 5795dc4890da7573cfc5b3948d0296df send Query request=3 bytes=2
+[xUnit.net 00:00:05.70]         4.223s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=3 bytes=1250
+[xUnit.net 00:00:05.70]         4.223s 5795dc4890da7573cfc5b3948d0296df send Query request=4 bytes=2
+[xUnit.net 00:00:05.70]         4.224s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=4 bytes=301
+[xUnit.net 00:00:05.70]         4.225s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=5 bytes=87
+[xUnit.net 00:00:05.70]         4.230s 4073c2e750cd349c3ee91b2f7c70fb49 receive Pong request=5 bytes=0
+[xUnit.net 00:00:05.70]         4.314s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99582
+[xUnit.net 00:00:05.70]         4.368s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=101075
+[xUnit.net 00:00:05.70]         4.390s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=6 bytes=620
+[xUnit.net 00:00:05.70]         4.427s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=7 bytes=2
+[xUnit.net 00:00:05.70]         4.429s 4073c2e750cd349c3ee91b2f7c70fb49 receive Receipt request=6 bytes=200
+[xUnit.net 00:00:05.70]         4.429s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=7 bytes=300
+[xUnit.net 00:00:05.70]         4.477s 5795dc4890da7573cfc5b3948d0296df send Query request=5 bytes=2
+[xUnit.net 00:00:05.70]         4.478s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=5 bytes=301
+[xUnit.net 00:00:05.70]         4.516s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99582
+[xUnit.net 00:00:05.70]         4.571s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=102065
+[xUnit.net 00:00:05.70]         4.584s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=8 bytes=332
+[xUnit.net 00:00:05.70]         4.618s 4073c2e750cd349c3ee91b2f7c70fb49 receive Receipt request=8 bytes=200
+[xUnit.net 00:00:05.70]         4.619s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=9 bytes=63
+[xUnit.net 00:00:05.71]         4.619s 4073c2e750cd349c3ee91b2f7c70fb49 receive Pong request=9 bytes=0
+[xUnit.net 00:00:05.71]         4.678s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=10 bytes=2
+[xUnit.net 00:00:05.71]         4.679s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=10 bytes=300
+[xUnit.net 00:00:05.71]         4.718s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99582
+[xUnit.net 00:00:05.71]         4.725s 5795dc4890da7573cfc5b3948d0296df send Query request=6 bytes=2
+[xUnit.net 00:00:05.71]         4.727s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=6 bytes=301
+[xUnit.net 00:00:05.71]         4.768s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=102063
+[xUnit.net 00:00:05.72]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke [4 s]
+  Error Message:
+   OpenFantasy.Hosting.Networking.PlayerAdmissionException : The player connection was not admitted.
+  Stack Trace:
+     at OpenFantasy.Hosting.Networking.PlayerAdmissionService.Issue(EntityId actorId, TrustedCommandDelivery delivery, TimeSpan lifetime, LocalRegionObserver regions, PlayerPresentationBootstrap presentation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerAdmissionService.cs:line 54
+   at OpenFantasy.Hosting.Networking.CargoPlayerHost.Issue(EntityId actor, TimeSpan lifetime) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/CargoPlayerHost.cs:line 75
+   at OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlWorld.Connect(EntityId actor) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/ConnectedControl/ConnectedControlWorld.cs:line 87
+   at OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/PrivateHistoryDirectory/PrivateHistoryDirectoryTlsTests.cs:line 43
+   at OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/PrivateHistoryDirectory/PrivateHistoryDirectoryTlsTests.cs:line 124
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ 5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=5795dc4890da7573cfc5b3948d0296df/0; ready=False; control=Available; combat=; calendar=0:32412600
+ 4.174s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=4 bytes=300
+ 4.206s 5795dc4890da7573cfc5b3948d0296df send Hello request=1 bytes=130
+ 4.207s 5795dc4890da7573cfc5b3948d0296df receive Welcome request=1 bytes=146
+ 4.207s 5795dc4890da7573cfc5b3948d0296df send SelectionSubscribe request=2 bytes=1
+ 4.214s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=2 bytes=99580
+ 4.223s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+ 4.223s 5795dc4890da7573cfc5b3948d0296df send Query request=3 bytes=2
+ 4.223s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=3 bytes=1250
+ 4.223s 5795dc4890da7573cfc5b3948d0296df send Query request=4 bytes=2
+ 4.224s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=4 bytes=301
+ 4.225s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=5 bytes=87
+ 4.230s 4073c2e750cd349c3ee91b2f7c70fb49 receive Pong request=5 bytes=0
+ 4.314s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99582
+ 4.368s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=101075
+ 4.390s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=6 bytes=620
+ 4.427s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=7 bytes=2
+ 4.429s 4073c2e750cd349c3ee91b2f7c70fb49 receive Receipt request=6 bytes=200
+ 4.429s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=7 bytes=300
+ 4.477s 5795dc4890da7573cfc5b3948d0296df send Query request=5 bytes=2
+ 4.478s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=5 bytes=301
+ 4.516s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99582
+ 4.571s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=102065
+ 4.584s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=8 bytes=332
+ 4.618s 4073c2e750cd349c3ee91b2f7c70fb49 receive Receipt request=8 bytes=200
+ 4.619s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=9 bytes=63
+ 4.619s 4073c2e750cd349c3ee91b2f7c70fb49 receive Pong request=9 bytes=0
+ 4.678s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=10 bytes=2
+ 4.679s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=10 bytes=300
+ 4.718s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99582
+ 4.725s 5795dc4890da7573cfc5b3948d0296df send Query request=6 bytes=2
+ 4.727s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=6 bytes=301
+ 4.768s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=102063
+
+
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 6.1706 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/private-history-directory/qualification/new-tls-20261003T131117788956Z/checks.trx

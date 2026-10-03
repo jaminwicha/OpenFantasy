@@ -237,7 +237,8 @@ public sealed partial class LocalWorldSession
     private static async Task AwaitPlayerInspectionsAsync(LocalPlayerConnection player)
     {
         // Reads already admitted may finish, but no new query can enter through the closed port.
-        foreach (Task? inspection in new Task?[] { player.ProposalInspection.Latest, player.QuoteInspection.Latest })
+        foreach (Task? inspection in new Task?[] { player.ProposalInspection.Latest, player.QuoteInspection.Latest,
+            player.PrivateHistoryInspection.Latest })
         {
             if (inspection is null) continue;
             try { await inspection.ConfigureAwait(false); }

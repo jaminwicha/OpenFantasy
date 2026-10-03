@@ -1,0 +1,53 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.65]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.84]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.97]   Starting:    OpenFantasy.Server.Tests
+  Passed OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryApplicationTests.Legacy_remote_profile_does_not_advertise_an_unnegotiated_directory_capture [2 s]
+[xUnit.net 00:00:34.86]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke [33 s]
+  Standard Output Messages:
+ 5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=5795dc4890da7573cfc5b3948d0296df/4; ready=False; control=Available; combat=; calendar=0:32414400
+ 4073c2e750cd349c3ee91b2f7c70fb49: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/0; ready=False; control=Restored; combat=; calendar=0:32414400
+ 33.309s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=429 bytes=106877
+ 33.320s 5795dc4890da7573cfc5b3948d0296df send Query request=430 bytes=2
+ 33.327s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+ 33.327s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=430 bytes=301
+ 33.331s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=431 bytes=278
+ 33.517s 5795dc4890da7573cfc5b3948d0296df receive SelectionQueryResult request=431 bytes=1086
+ 33.524s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=295
+ 33.524s 5795dc4890da7573cfc5b3948d0296df receive Refusal request=432 bytes=1
+ 33.526s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=433 bytes=292
+ 33.537s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=433 bytes=99580
+ 33.547s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+ 33.547s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=434 bytes=79
+ 33.556s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=434 bytes=106878
+ 33.566s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+ 33.606s 4073c2e750cd349c3ee91b2f7c70fb49 send Hello request=1 bytes=130
+ 33.606s 4073c2e750cd349c3ee91b2f7c70fb49 receive Welcome request=1 bytes=146
+ 33.606s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionSubscribe request=2 bytes=1
+ 33.624s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=2 bytes=102063
+ 33.633s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionDelivered request=0 bytes=25
+ 33.634s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=3 bytes=2
+ 33.634s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=3 bytes=1249
+ 33.634s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=4 bytes=2
+ 33.634s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=4 bytes=300
+ 33.634s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+ 33.634s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=1270
+ 33.635s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=417
+ 33.640s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+ 33.732s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=102063
+ 33.761s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99581
+ 33.771s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+ 33.781s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=435 bytes=278
+ 33.781s 5795dc4890da7573cfc5b3948d0296df receive Refusal request=435 bytes=1
+
+
+
+Test Run Successful.
+Total tests: 2
+     Passed: 2
+ Total time: 35.2328 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/private-history-directory/qualification/new-tls-20261003T132406901227Z/checks.trx

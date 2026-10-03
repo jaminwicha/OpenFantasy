@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="95c71ff0-166b-4363-8aa9-466e466ed98e" name="@mac 2026-10-03 08:26:10" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T08:26:10.8881550-05:00" queuing="2026-10-03T08:26:10.8881550-05:00" start="2026-10-03T08:26:09.0820960-05:00" finish="2026-10-03T08:26:47.4693670-05:00" />
+  <TestSettings name="default" id="49d2a4b5-af37-48dd-a27c-a8e9a8c61617">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_08_26_10" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2a915841-b551-442a-8f8a-7b0e81ff9d9f" testId="c928eb7e-48a6-0816-dcd3-c7adf7287b56" testName="OpenFantasy.Server.Tests.RemoteQueryJoinTests.Invalid_and_closed_queries_return_faulted_tasks_without_throwing_from_the_facade" computerName="mac" duration="00:00:00.9957147" startTime="2026-10-03T08:26:14.7580190-05:00" endTime="2026-10-03T08:26:15.7537960-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a915841-b551-442a-8f8a-7b0e81ff9d9f" />
+    <UnitTestResult executionId="8390aae7-4c78-4cee-b693-9eaf69373d2a" testId="169a12af-e3b7-5bc0-270f-b66ec8dfb0ec" testName="OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: &quot;cancel&quot;)" computerName="mac" duration="00:00:02.4731747" startTime="2026-10-03T08:26:09.9377600-05:00" endTime="2026-10-03T08:26:12.4151760-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8390aae7-4c78-4cee-b693-9eaf69373d2a" />
+    <UnitTestResult executionId="62a887a7-d0c9-4a78-9a68-9e18e7e0a37e" testId="b1c0cad0-4d0a-e4a6-43eb-b57cbeac84fb" testName="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: &quot;missing&quot;)" computerName="mac" duration="00:00:00.0001975" startTime="2026-10-03T08:26:10.0396920-05:00" endTime="2026-10-03T08:26:10.0399040-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="62a887a7-d0c9-4a78-9a68-9e18e7e0a37e" />
+    <UnitTestResult executionId="517c8ea6-fa74-4e92-b97d-6ea776dba448" testId="bcef9876-e14f-e53c-e10d-a15aafd6e5c5" testName="OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: &quot;submit&quot;)" computerName="mac" duration="00:00:01.2387329" startTime="2026-10-03T08:26:13.5177360-05:00" endTime="2026-10-03T08:26:14.7565610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="517c8ea6-fa74-4e92-b97d-6ea776dba448" />
+    <UnitTestResult executionId="d7b787e7-af74-4585-8327-737eae5f4df1" testId="3aa41e06-ce77-6b8f-0a16-692044748832" testName="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: &quot;extra&quot;)" computerName="mac" duration="00:00:00.0000853" startTime="2026-10-03T08:26:10.0401550-05:00" endTime="2026-10-03T08:26:10.0402490-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d7b787e7-af74-4585-8327-737eae5f4df1" />
+    <UnitTestResult executionId="d0015506-1a85-402b-8acc-8e271d25d97f" testId="4e053338-635f-8dbb-88e3-d21d6c741e0a" testName="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: &quot;foreign-kind&quot;)" computerName="mac" duration="00:00:00.0000683" startTime="2026-10-03T08:26:10.0399970-05:00" endTime="2026-10-03T08:26:10.0400760-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0015506-1a85-402b-8acc-8e271d25d97f" />
+    <UnitTestResult executionId="9e7d58da-b1c1-4611-a852-0bde370d6fa4" testId="33fa65e9-0aac-1c96-3339-6de492b25e33" testName="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Old_result_shape_and_diagnostic_fields_remain_exact_while_new_kind_requires_version_two" computerName="mac" duration="00:00:00.0920465" startTime="2026-10-03T08:26:09.9377580-05:00" endTime="2026-10-03T08:26:10.0347920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9e7d58da-b1c1-4611-a852-0bde370d6fa4" />
+    <UnitTestResult executionId="db5ebdc9-c7f8-4ab2-a3ce-c7c01dc1c946" testId="f59ac3c8-9caf-d8ee-19e7-9435e0435090" testName="OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: &quot;proposal&quot;)" computerName="mac" duration="00:00:01.0998683" startTime="2026-10-03T08:26:12.4170520-05:00" endTime="2026-10-03T08:26:13.5169910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="db5ebdc9-c7f8-4ab2-a3ce-c7c01dc1c946" />
+    <UnitTestResult executionId="1ce0db15-6c81-47dc-a05c-eecf7c3c9e20" testId="4d7738a7-1886-e94a-870c-73dc065a94bc" testName="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadParticipantStatus)" computerName="mac" duration="00:00:00.0002341" startTime="2026-10-03T08:26:10.0449080-05:00" endTime="2026-10-03T08:26:10.0451550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ce0db15-6c81-47dc-a05c-eecf7c3c9e20" />
+    <UnitTestResult executionId="8b64911b-d87c-48cf-bc24-4ec45f363042" testId="a407e2a9-5490-e9fc-062d-1b5fe754c5ab" testName="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: &quot;run-state&quot;)" computerName="mac" duration="00:00:00.0019606" startTime="2026-10-03T08:26:10.0375510-05:00" endTime="2026-10-03T08:26:10.0395510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8b64911b-d87c-48cf-bc24-4ec45f363042" />
+    <UnitTestResult executionId="cc95fd88-61db-4eff-9f90-eedd243cb349" testId="e6a4d38a-628a-e547-837b-d1ad71f209e8" testName="OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board" computerName="mac" duration="00:00:01.3730777" startTime="2026-10-03T08:26:46.0136990-05:00" endTime="2026-10-03T08:26:47.3869310-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cc95fd88-61db-4eff-9f90-eedd243cb349">
+      <Output>
+        <StdOut>1.061s e1d57b89bcce6b6237bd754d53734e55 send Query request=4 bytes=2
+1.062s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=4 bytes=301
+1.062s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+1.062s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=795
+1.062s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=433
+1.069s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+1.070s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=5 bytes=71
+1.070s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=5 bytes=1235
+1.073s 79dddd9ea31bf745606a5473ea76ed14 send ControlRequest request=5 bytes=71
+1.073s 79dddd9ea31bf745606a5473ea76ed14 receive ControlResult request=5 bytes=795
+1.073s e1d57b89bcce6b6237bd754d53734e55 send ControlRequest request=5 bytes=71
+1.073s e1d57b89bcce6b6237bd754d53734e55 receive ControlResult request=5 bytes=797
+1.073s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=6 bytes=71
+1.073s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=6 bytes=1235
+1.073s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=7 bytes=493
+1.075s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=7 bytes=532
+1.076s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=7 bytes=71
+1.076s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=7 bytes=1266
+1.076s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=8 bytes=433
+1.078s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=8 bytes=531
+1.078s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=9 bytes=71
+1.078s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=9 bytes=1266
+1.078s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=10 bytes=417
+1.082s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=10 bytes=531
+1.082s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=8 bytes=71
+1.082s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=8 bytes=1131
+1.082s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=11 bytes=433
+1.082s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=11 bytes=531
+1.082s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=9 bytes=493
+1.082s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=9 bytes=532
+1.082s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=10 bytes=71
+1.082s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=10 bytes=1131</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cf6a1913-84bc-4276-8f80-292276d6ae63" testId="fe8e7bb7-2232-ef7a-b7a5-35b859b13467" testName="OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return" computerName="mac" duration="00:00:36.0670186" startTime="2026-10-03T08:26:09.9377580-05:00" endTime="2026-10-03T08:26:46.0085360-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf6a1913-84bc-4276-8f80-292276d6ae63">
+      <Output>
+        <StdOut>Cohort travel: e1d57b89bcce6b6237bd754d53734e55, SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } } to SubunitPosition { X = 25728, Y = 83840, Z = 256, Cell = CellCoordinate { X = 100, Y = 327, Z = 1 } }, 40 actual movement commits.
+Prepared bramble_wolf_first: range=448; owner=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; oneSampleCandidate=SubunitPosition { X = 25984, Y = 83680, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }; journalRevision=52; steps=52.
+Prepared required 3c518986694d413370864df9385200a5: side=2; feet=SubunitPosition { X = 26240, Y = 83328, Z = 256, Cell = CellCoordinate { X = 102, Y = 325, Z = 1 } }; hp=62; oneSampleReach=Reachable.
+Prepared required 4073c2e750cd349c3ee91b2f7c70fb49: side=1; feet=SubunitPosition { X = 25984, Y = 83712, Z = 256, Cell = CellCoordinate { X = 101, Y = 327, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+Prepared required 5795dc4890da7573cfc5b3948d0296df: side=1; feet=SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+Prepared required 79dddd9ea31bf745606a5473ea76ed14: side=1; feet=SubunitPosition { X = 26240, Y = 83584, Z = 256, Cell = CellCoordinate { X = 102, Y = 326, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+Prepared required e1d57b89bcce6b6237bd754d53734e55: side=1; feet=SubunitPosition { X = 25728, Y = 83840, Z = 256, Cell = CellCoordinate { X = 100, Y = 327, Z = 1 } }; hp=60; oneSampleReach=Reachable.
+35.015s 4073c2e750cd349c3ee91b2f7c70fb49 receive Welcome request=1 bytes=146
+35.015s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionSubscribe request=2 bytes=1
+35.020s 5795dc4890da7573cfc5b3948d0296df send Query request=455 bytes=2
+35.023s e1d57b89bcce6b6237bd754d53734e55 receive SelectionObservation request=0 bytes=102019
+35.024s 5795dc4890da7573cfc5b3948d0296df receive QueryResult request=455 bytes=301
+35.028s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=2 bytes=102972
+35.032s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionDelivered request=0 bytes=25
+35.032s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=3 bytes=2
+35.033s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=3 bytes=1249
+35.033s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=4 bytes=2
+35.033s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=4 bytes=300
+35.053s 79dddd9ea31bf745606a5473ea76ed14 send Query request=141 bytes=2
+35.053s 79dddd9ea31bf745606a5473ea76ed14 receive QueryResult request=141 bytes=300
+35.087s e1d57b89bcce6b6237bd754d53734e55 send Query request=139 bytes=2
+35.087s e1d57b89bcce6b6237bd754d53734e55 receive QueryResult request=139 bytes=301
+35.090s 79dddd9ea31bf745606a5473ea76ed14 receive SelectionObservation request=0 bytes=102019
+35.158s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=102020
+35.163s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+35.165s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=456 bytes=71
+35.165s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=456 bytes=1272
+35.166s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+35.166s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=1271
+35.166s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=417
+35.170s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+35.170s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=457 bytes=71
+35.171s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=457 bytes=1133
+35.172s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=458 bytes=851
+35.173s 5795dc4890da7573cfc5b3948d0296df receive Receipt request=458 bytes=200
+35.173s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=459 bytes=851
+35.173s 5795dc4890da7573cfc5b3948d0296df receive Refusal request=459 bytes=1
+35.173s 5795dc4890da7573cfc5b3948d0296df send ControlRequest request=460 bytes=71
+35.173s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=460 bytes=1133</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1014d0c6-179b-481b-a2f0-e4c9f1af548a" testId="a467ba26-434d-9d07-dda7-5c41e147b46e" testName="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadPresentationBootstrap)" computerName="mac" duration="00:00:00.0040144" startTime="2026-10-03T08:26:10.0405440-05:00" endTime="2026-10-03T08:26:10.0447570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1014d0c6-179b-481b-a2f0-e4c9f1af548a" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: &quot;run-state&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="a407e2a9-5490-e9fc-062d-1b5fe754c5ab">
+      <Execution id="8b64911b-d87c-48cf-bc24-4ec45f363042" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerSessionQueryTests" name="Participant_results_refuse_incomplete_or_contradictory_payloads" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="e6a4d38a-628a-e547-837b-d1ad71f209e8">
+      <Execution id="cc95fd88-61db-4eff-9f90-eedd243cb349" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests" name="Four_human_tls_applications_offer_accept_and_revoke_exact_scopes_without_disclosing_another_pairs_board" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: &quot;submit&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="bcef9876-e14f-e53c-e10d-a15aafd6e5c5">
+      <Execution id="517c8ea6-fa74-4e92-b97d-6ea776dba448" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.RemoteQueryJoinTests" name="Disposal_joins_the_exact_typed_foreground_task_before_returning" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: &quot;cancel&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="169a12af-e3b7-5bc0-270f-b66ec8dfb0ec">
+      <Execution id="8390aae7-4c78-4cee-b693-9eaf69373d2a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.RemoteQueryJoinTests" name="Disposal_joins_the_exact_typed_foreground_task_before_returning" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadPresentationBootstrap)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="a467ba26-434d-9d07-dda7-5c41e147b46e">
+      <Execution id="1014d0c6-179b-481b-a2f0-e4c9f1af548a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerSessionQueryTests" name="Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: &quot;missing&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="b1c0cad0-4d0a-e4a6-43eb-b57cbeac84fb">
+      <Execution id="62a887a7-d0c9-4a78-9a68-9e18e7e0a37e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerSessionQueryTests" name="Participant_results_refuse_incomplete_or_contradictory_payloads" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: &quot;foreign-kind&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="4e053338-635f-8dbb-88e3-d21d6c741e0a">
+      <Execution id="d0015506-1a85-402b-8acc-8e271d25d97f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerSessionQueryTests" name="Participant_results_refuse_incomplete_or_contradictory_payloads" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.RemoteQueryJoinTests.Disposal_joins_the_exact_typed_foreground_task_before_returning(operation: &quot;proposal&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="f59ac3c8-9caf-d8ee-19e7-9435e0435090">
+      <Execution id="db5ebdc9-c7f8-4ab2-a3ce-c7c01dc1c946" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.RemoteQueryJoinTests" name="Disposal_joins_the_exact_typed_foreground_task_before_returning" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Participant_results_refuse_incomplete_or_contradictory_payloads(mutation: &quot;extra&quot;)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="3aa41e06-ce77-6b8f-0a16-692044748832">
+      <Execution id="d7b787e7-af74-4585-8327-737eae5f4df1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerSessionQueryTests" name="Participant_results_refuse_incomplete_or_contradictory_payloads" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.RemoteQueryJoinTests.Invalid_and_closed_queries_return_faulted_tasks_without_throwing_from_the_facade" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="c928eb7e-48a6-0816-dcd3-c7adf7287b56">
+      <Execution id="2a915841-b551-442a-8f8a-7b0e81ff9d9f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.RemoteQueryJoinTests" name="Invalid_and_closed_queries_return_faulted_tasks_without_throwing_from_the_facade" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data(kind: ReadParticipantStatus)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="4d7738a7-1886-e94a-870c-73dc065a94bc">
+      <Execution id="1ce0db15-6c81-47dc-a05c-eecf7c3c9e20" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerSessionQueryTests" name="Extensions_have_exact_requests_and_do_not_accept_other_versions_or_trailing_data" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PlayerSessionQueryTests.Old_result_shape_and_diagnostic_fields_remain_exact_while_new_kind_requires_version_two" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="33fa65e9-0aac-1c96-3339-6de492b25e33">
+      <Execution id="9e7d58da-b1c1-4611-a852-0bde370d6fa4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PlayerSessionQueryTests" name="Old_result_shape_and_diagnostic_fields_remain_exact_while_new_kind_requires_version_two" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests.Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="fe8e7bb7-2232-ef7a-b7a5-35b859b13467">
+      <Execution id="cf6a1913-84bc-4276-8f80-292276d6ae63" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.ConnectedControl.ConnectedControlTests" name="Actual_tls_loss_expiry_takeover_movement_and_paid_strike_keep_true_operator_and_receipts_after_owner_return" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="c928eb7e-48a6-0816-dcd3-c7adf7287b56" executionId="2a915841-b551-442a-8f8a-7b0e81ff9d9f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="169a12af-e3b7-5bc0-270f-b66ec8dfb0ec" executionId="8390aae7-4c78-4cee-b693-9eaf69373d2a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b1c0cad0-4d0a-e4a6-43eb-b57cbeac84fb" executionId="62a887a7-d0c9-4a78-9a68-9e18e7e0a37e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bcef9876-e14f-e53c-e10d-a15aafd6e5c5" executionId="517c8ea6-fa74-4e92-b97d-6ea776dba448" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3aa41e06-ce77-6b8f-0a16-692044748832" executionId="d7b787e7-af74-4585-8327-737eae5f4df1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4e053338-635f-8dbb-88e3-d21d6c741e0a" executionId="d0015506-1a85-402b-8acc-8e271d25d97f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33fa65e9-0aac-1c96-3339-6de492b25e33" executionId="9e7d58da-b1c1-4611-a852-0bde370d6fa4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f59ac3c8-9caf-d8ee-19e7-9435e0435090" executionId="db5ebdc9-c7f8-4ab2-a3ce-c7c01dc1c946" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4d7738a7-1886-e94a-870c-73dc065a94bc" executionId="1ce0db15-6c81-47dc-a05c-eecf7c3c9e20" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a407e2a9-5490-e9fc-062d-1b5fe754c5ab" executionId="8b64911b-d87c-48cf-bc24-4ec45f363042" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e6a4d38a-628a-e547-837b-d1ad71f209e8" executionId="cc95fd88-61db-4eff-9f90-eedd243cb349" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fe8e7bb7-2232-ef7a-b7a5-35b859b13467" executionId="cf6a1913-84bc-4276-8f80-292276d6ae63" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a467ba26-434d-9d07-dda7-5c41e147b46e" executionId="1014d0c6-179b-481b-a2f0-e4c9f1af548a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="13" executed="13" passed="13" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.17]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.35]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.53]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:38.03]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

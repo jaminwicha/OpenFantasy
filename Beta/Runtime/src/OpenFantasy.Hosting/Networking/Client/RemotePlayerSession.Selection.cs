@@ -44,6 +44,12 @@ public sealed partial class RemotePlayerSession
     public Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedMaterialProposalHistoryAsync(LocalActorSelection observed, EntityId subject) =>
         SelectedForeground(PlayerSelectedInput.Query(observed, LocalSelectedQueryOperation.InspectMaterialProposalHistory, subjectId: subject), value => value.MaterialProposal);
 
+    public bool SupportsPrivateHistoryDirectory => SupportsActorSelection;
+    public LocalSelectedPlayerObservation ReadPrivateHistoryObservation() => ReadSelectedObservation();
+    public Task<LocalSelectedQueryResult<LocalPrivateHistoryPage>> ReadSelectedPrivateHistoryAsync(
+        LocalActorSelection observed, LocalPrivateHistoryPageRequest request) =>
+        SelectedForeground(PlayerSelectedInput.ReadPrivateHistory(observed, request), value => value.Directory!);
+
     private Task<LocalSelectedQueryResult<T>> SelectedForeground<T>(PlayerSelectedInput input, Func<PlayerSelectedQueryResponse, T> project)
     {
         lock (_gate)
