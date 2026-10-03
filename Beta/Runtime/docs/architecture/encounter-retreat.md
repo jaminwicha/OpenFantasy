@@ -140,6 +140,10 @@ input or selected-character permission does not override that restriction. A par
 rules for each member's commitment, movement, incapacitation, remaining opponents and episode lifetime;
 it cannot be obtained by removing the `AllyRemains` guard.
 
+The standalone [party withdrawal commitment component](party-withdrawal.md) represents multiple
+independent choices and complete side membership. It has no complete-world binding and does not
+alter this law, its owner, its codecs or the `AllyRemains` refusal.
+
 Bystanders keep side zero, bodies and identities. Opponents have no pursuit movement in this
 interpretation. The retreat uses terrain ground; stepped or construction-supported ground, independent
 pockets, joining/merging and outside hazards admitted during a retreat require separate contracts.

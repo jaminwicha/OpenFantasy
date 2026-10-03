@@ -138,6 +138,12 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    The [shared opening](p02/shared-adventure/RESULT.md) first joins independent gathering, consented
    supplies, crafting and Wren's work in one fresh two-human world. Its bounded native run is qualified;
    this does not complete the expedition or general shared quest attribution.
+   The [party withdrawal decision](PARTY_WITHDRAWAL_DECISION.md) selects independent actor commitments
+   with a collective departure condition. Its [component checkpoint](p02/party-withdrawal/RESULT.md)
+   implements immutable membership/route progress and canonical restoration, with 18 new domain cases
+   and 12 existing retreat/attribution cases passing. This component is not bound into the world.
+   Next implement the authenticated resolver and explicit lived-save continuity before host/UI and
+   the complete shared expedition; version selection and independent architectural review remain open.
    A separate party-exit design is necessary before calling the solo danger/retreat route cooperative:
    roster scenarios put the humans on the same side, whereas retreat law v2 admits only a lone
    combatant on its side. Define commitments, member movement/incapacity, opponent continuity,

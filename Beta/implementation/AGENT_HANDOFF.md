@@ -82,6 +82,16 @@ Timeless roster/retreat/road-threat references and the roadmap record that depen
 The maintained verification skill reinforces documentation priority in upstream commit `70401b8`,
 synchronized and hash-verified in all three installed copies. No orchestration resumed.
 
+The [party withdrawal component](p02/party-withdrawal/RESULT.md) adds immutable complete-side membership,
+independent exact commands/routes/speeds and canonical restored progress. All 30 focused cases pass
+(18 new, 12 legacy/attribution); the 128-member/32-sample domain fixture encodes to 72,424 bytes.
+It is **not runtime party retreat**: no world/profile/schema/protocol or default launch changes.
+Follow the [integration decision](PARTY_WITHDRAWAL_DECISION.md) for authenticated due-boundary resolution,
+arrival/cancellation/incapacity, explicit lived-save continuity, host/UI and native journey proof.
+Independent architectural critique is unrun under the no-orchestration instruction. Checkpoint
+`codex/checkpoint-before-party-withdrawal-20261003` preserves `8366b36f`; the component marker is
+`codex/milestone-withdrawal-commitments-20261003`.
+
 Then build the missing bounded NPC motivation/memory/offscreen-work, recruitment/cooperative action
 and changed-place return, followed by investigation/puzzle and required environment/coordination/UI
 introductions. Native art/motion/audio/onboarding are concurrent dependency-bound lanes. The complete

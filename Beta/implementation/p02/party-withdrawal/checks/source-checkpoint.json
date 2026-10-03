@@ -1,0 +1,13 @@
+{
+  "base_revision": "8366b36f2c43d1af286c47170167166e27049923",
+  "scope": "New standalone component and focused test binary; not a gameplay binding or native qualification.",
+  "dotnet": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+  "sha256": {
+    "Beta/Runtime/src/OpenFantasy.Core/Encounters/Withdrawal/EncounterWithdrawalCodecV1.cs": "200a8b6cb54863d5e92b10c509a15e857bebf9f7a09e38cec8c8972b1d2e53f9",
+    "Beta/Runtime/src/OpenFantasy.Core/Encounters/Withdrawal/EncounterWithdrawalMember.cs": "98ebc58367beb6c26d33f721154cc190bf348bafc01a05e9ed3e32d33cdf450c",
+    "Beta/Runtime/src/OpenFantasy.Core/Encounters/Withdrawal/EncounterWithdrawalParty.cs": "7610ecf1334ba50264fa126167ff112c65f55b2c485108515bc4c309c08e567a",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Encounters/Withdrawal/EncounterWithdrawalTests.cs": "7b8e9c56475472f9a887e155b00e467f10df94d979e9c106d1fd57c9357e87b0",
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": "0ea4955407e88b82e4584fe1c3f12179a45157b243f793b1fb771ac6b881279a",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "2bdd9415020ace4a9349095f39279967857c96f9a1a7f5d157936f19f5ce9d57"
+  }
+}
