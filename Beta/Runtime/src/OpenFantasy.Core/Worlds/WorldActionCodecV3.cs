@@ -9,6 +9,7 @@ public static class WorldActionCodecV3
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         if (command.Intent is not CraftIntent craft)
         {
             throw new ArgumentException("This action version encodes crafting only.", nameof(command));

@@ -29,7 +29,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         _state = recovered.State;
         _stateHash = recovered.StateHash;
         _usage = recovered.Usage;
-        if (database.SchemaVersion is WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version)
+        if (database.SchemaVersion is WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version or WorldDatabaseSchemaTwelve.Version)
         {
             _controllerRecovery = database.ReadControllerRecovery();
             _controllerRecovery.ValidateHead(_state);
@@ -49,6 +49,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
             27 or 28 or 30 or 32 or 33 or 34 or 35 => WorldDatabaseSchemaEight.Version,
             36 or 37 or 38 => WorldDatabaseSchemaNine.Version,
             WorldControlPermissionAdmission.ProfileVersion => WorldDatabaseSchemaEleven.Version,
+            WorldDelegatedControlAdmission.ProfileVersion => WorldDatabaseSchemaTwelve.Version,
             25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,
@@ -291,7 +292,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
     }
 
     /// <summary>
-    /// Retrieves an exact terminal receipt only after current control checks. An old origin session
+    /// Retrieves an exact terminal receipt after authenticating its original submitter. An old origin session
     /// remains immutable retry content for terminal or retained pending commands; fresh requests
     /// must instead match the current delivery session. A pending command has no terminal receipt yet.
     /// </summary>
@@ -303,7 +304,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         {
             EnsureAvailable();
             if (command.WorldId != _state.WorldId || command.BranchId != _state.BranchId
-                || command.PrincipalId != delivery.PrincipalId || !_state.Inventory.CanControl(delivery, command.ActorId))
+                || command.PrincipalId != delivery.PrincipalId || !CanReadOwnCommandStream(command, delivery))
             {
                 throw new AuthorityDispatchException("The delivery cannot access this actor command stream.");
             }
@@ -328,8 +329,24 @@ public sealed partial class SqliteWorldAuthority : IDisposable
             {
                 throw new AuthorityDispatchException("A fresh command must originate in the current session.");
             }
+            if (_state.EffectiveControl is not null
+                && WorldActorCommandAuthority.AuthorizeSelection(_state, command) is null)
+            {
+                throw new AuthorityDispatchException("A fresh command requires its exact current actor authorization.");
+            }
             return null;
         }
+    }
+
+    private bool CanReadOwnCommandStream(WorldActionCommand command, TrustedCommandDelivery delivery)
+    {
+        if (_state.Inventory.CanControl(delivery, command.ActorId))
+        {
+            return true;
+        }
+        // This authenticates B's own receipt stream, not a current permission to act or read A's history.
+        return _state.EffectiveControl is not null && _state.Controllers!.Assignments.Any(home =>
+            _state.Inventory.CanControl(delivery, home.ActorId));
     }
 
     /// <summary>Privileged inspection. The returned root is not a player-facing permission-filtered projection.</summary>

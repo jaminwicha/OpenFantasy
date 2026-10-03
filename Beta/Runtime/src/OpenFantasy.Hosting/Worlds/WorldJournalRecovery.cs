@@ -108,11 +108,13 @@ internal sealed class WorldJournalRecovery
             throw new InvalidDataException("The controller world and its exclusive session-event schema disagree.");
         if ((genesis.ProfileVersion == WorldControlPermissionAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaEleven.Version))
             throw new InvalidDataException("The permission world and its exclusive recovery schema disagree.");
+        if ((genesis.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaTwelve.Version))
+            throw new InvalidDataException("The effective-control world and its exclusive recovery schema disagree.");
         if ((genesis.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("A coordinated genesis requires its exclusive material and care archive schema.");
         }
-        ControllerRecoveryReplay? controllerRecovery = database.SchemaVersion is WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version
+        ControllerRecoveryReplay? controllerRecovery = database.SchemaVersion is WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version or WorldDatabaseSchemaTwelve.Version
             ? new ControllerRecoveryReplay(database) : null;
         controllerRecovery?.Observe(genesis);
         WorldSnapshot state = genesis;
@@ -234,6 +236,8 @@ internal sealed class WorldJournalRecovery
             throw new InvalidDataException("The controller world and its exclusive session-event schema disagree.");
         if ((state.ProfileVersion == WorldControlPermissionAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaEleven.Version))
             throw new InvalidDataException("The permission world and its exclusive recovery schema disagree.");
+        if ((state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaTwelve.Version))
+            throw new InvalidDataException("The effective-control world and its exclusive recovery schema disagree.");
         if ((state.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
@@ -243,7 +247,7 @@ internal sealed class WorldJournalRecovery
         // one replayed explicit proposal transition; that commit's processor admits only 27 to 30.
         bool transitioned = genesis.ProfileVersion == WorldProposalTransition.SourceProfileVersion
             && state.ProfileVersion == WorldProposalTransition.TargetProfileVersion && transitionCount == 1;
-        if (database.SchemaVersion is WorldDatabaseSchemaEight.Version or WorldDatabaseSchemaNine.Version or WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version
+        if (database.SchemaVersion is WorldDatabaseSchemaEight.Version or WorldDatabaseSchemaNine.Version or WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version or WorldDatabaseSchemaTwelve.Version
             && (state.ProfileVersion != genesis.ProfileVersion || transitionCount != 0) && !transitioned)
         {
             throw new InvalidDataException("The coordinated world departed from its genesis-selected interpretation.");

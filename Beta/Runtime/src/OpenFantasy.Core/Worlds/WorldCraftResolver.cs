@@ -16,7 +16,7 @@ internal sealed class WorldCraftResolver
         LocalSpatialSnapshot space = currentSpace ?? world.Space;
         CraftPlan Reject(WorldActionRejection rejection) => new(inventory, production, rejection, []);
         var delivery = new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId);
-        if (!inventory.CanControl(delivery, command.ActorId))
+        if (WorldActorCommandAuthority.AuthorizeSelection(world, command) is null)
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }
@@ -32,7 +32,8 @@ internal sealed class WorldCraftResolver
             return Reject(WorldActionRejection.Unavailable);
         }
         CraftPlan plan = _crafting.Plan(inventory, production, delivery, actor.ActorId, command.CommandId, intent.Request,
-            production.IsContinued ? identity => identity != command.CommandId && occupied(identity) : null);
+            production.IsContinued ? identity => identity != command.CommandId && occupied(identity) : null,
+            WorldActorCommandAuthority.AuthorizeSelection(world, command));
         return plan.CreatedIds.Any(occupied) ? Reject(WorldActionRejection.Unavailable) : plan;
     }
 }

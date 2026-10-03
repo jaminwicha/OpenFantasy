@@ -8,6 +8,7 @@ public static class WorldActionCodecV5
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         if (command.Intent is not WorkConstructionIntent intent)
         {
             throw new ArgumentException("This action version encodes construction work only.", nameof(command));

@@ -61,6 +61,11 @@ and lifetimes. Recording consent changes neither possession nor gameplay authori
 attribution must retain the real submitting principal; a temporary grant cannot rewrite ownership or
 invalidate previously accepted work when it is revoked.
 
+The [effective-control binding](effective-control.md) supplies typed current authorization and immutable
+command witnesses to gameplay owners. Current authority, retained obligation and historical evidence
+are different contexts: an open offer needs current authority, a queued action retains its accepted
+commitment, and closed history retains attribution without granting a new action or private view.
+
 Definition identity and pinned version govern interchangeability. Two admitted items can share a
 source label or payload while retaining distinct definitions and physical calibrations. A recipe's
 exact input binding does not accept another definition merely because both are called berries. Any

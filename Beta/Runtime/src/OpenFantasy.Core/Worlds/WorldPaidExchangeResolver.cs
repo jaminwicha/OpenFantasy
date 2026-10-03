@@ -40,7 +40,9 @@ internal static class WorldPaidExchangeResolver
 
         var delivery = new TrustedCommandDelivery(action.PrincipalId, action.OriginSessionId);
         if (action.WorldId != state.WorldId || action.BranchId != state.BranchId
-            || !inventory.CanControl(delivery, action.ActorId))
+            || (state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+                ? WorldActorCommandAuthority.AuthorizeSelection(state, action) is null
+                : !inventory.CanControl(delivery, action.ActorId)))
         {
             return Refuse(WorldActionRejection.NotAuthorized);
         }
@@ -62,6 +64,10 @@ internal static class WorldPaidExchangeResolver
             IssueSpotQuoteIntent issue when issue.Quote.Side == SpotQuoteSide.IssuerBuys
                 && counterpartyDisclosed is not null && !counterpartyDisclosed(issue.Quote) => Refuse(WorldActionRejection.NotAuthorized),
             IssueSpotQuoteIntent issue => Issue(state, inventory, production, progression, book, action, issue.Quote,
+                sequence, occupied, counterpartyDisclosed is not null, Refuse),
+            IssueMarketQuoteIntent issue when issue.Quote.Side == SpotQuoteSide.IssuerBuys
+                && counterpartyDisclosed is not null && !counterpartyDisclosed(issue.Quote) => Refuse(WorldActionRejection.NotAuthorized),
+            IssueMarketQuoteIntent issue => Issue(state, inventory, production, progression, book, action, issue.Quote,
                 sequence, occupied, counterpartyDisclosed is not null, Refuse),
             AcceptSpotQuoteIntent accept => Accept(state, batch, inventory, space, production, progression, book,
                 action, accept, actionIndex, sequence, worked, occupied, Refuse),
@@ -86,7 +92,7 @@ internal static class WorldPaidExchangeResolver
         {
             return refuse(WorldActionRejection.Unavailable);
         }
-        var withdrawn = new WorldPaidQuoteOutcome(open, sequence, new WorldPaidWithdrawal(action.CommandId, delivery, actionIndex));
+        var withdrawn = new WorldPaidQuoteOutcome(open, sequence, new WorldPaidWithdrawal(action.CommandId, delivery, actionIndex, action.ControlWitness));
         return new(inventory, production, progression, book.Withdraw(withdrawn), WorldActionRejection.None, [], null, null);
     }
 
@@ -124,7 +130,7 @@ internal static class WorldPaidExchangeResolver
             return refuse(requiresDisclosure && quote.Side == SpotQuoteSide.IssuerBuys
                 ? WorldActionRejection.Unavailable : pin);
         }
-        var issued = new WorldPaidQuote(action.CommandId, quote, sequence);
+        var issued = new WorldPaidQuote(action.CommandId, quote, sequence, action.ControlWitness);
         return new(inventory, production, progression, book.Issue(issued), WorldActionRejection.None,
             [quote.QuoteId], null, null);
     }
@@ -157,7 +163,10 @@ internal static class WorldPaidExchangeResolver
         // The issuer submits no command of its own in the settling step. Its recorded delivery stays valid
         // only while it is the issuer's current control binding.
         EntityId issuerId = quote.IssuerActorId;
-        if (!inventory.CanControl(open.IssuerDelivery, issuerId)
+        if (!(state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+                ? WorldActorCommandAuthority.IsCurrentWitness(state, issuerId, open.IssuerDelivery,
+                    open.ControlWitness, WorldControlCapabilities.Trade)
+                : inventory.CanControl(open.IssuerDelivery, issuerId))
             || batch.Actions.Any(other => other.ActorId == issuerId)
             || worked.Contains(issuerId) || worked.Contains(action.ActorId)
             || !WorldActorAvailability.CanAct(state, issuerId))
@@ -217,7 +226,7 @@ internal static class WorldPaidExchangeResolver
             // Payment redistributes existing balances; every touched account advances once.
             ProgressionSnapshot paid = progression.WithCurrency(
                 progression.Currency.Transfer(quote.BuyerAccountId, quote.PaymentsFor(acceptance.Quantity)));
-            WorldPaidSettlement settlement = Witness(actionIndex, acceptance, quote, movedLotId, movement.Inventory, candidate);
+            WorldPaidSettlement settlement = Witness(actionIndex, acceptance, quote, movedLotId, movement.Inventory, candidate, action.ControlWitness);
             var filled = new WorldPaidQuoteOutcome(open, WorldPaidQuoteOutcomeKind.Filled, sequence, settlement);
             var witness = new WorldCustodyWitness(quote.LotKind == SpotLotKind.Produced, inventory.ContentHash,
                 production.ContentHash, movement.Inventory.ContentHash, candidate.ContentHash);
@@ -271,14 +280,15 @@ internal static class WorldPaidExchangeResolver
     }
 
     private static WorldPaidSettlement Witness(uint actionIndex, SpotAcceptance acceptance, SpotQuote quote,
-        EntityId movedLotId, CountedAuthorityState candidateInventory, ProductionSnapshot candidateProduction)
+        EntityId movedLotId, CountedAuthorityState candidateInventory, ProductionSnapshot candidateProduction,
+        WorldControlWitness? controlWitness)
     {
         if (quote.LotKind == SpotLotKind.Produced)
         {
             ProductionOutputInterval moved = candidateProduction.Lots.Single(value => value.LotId == movedLotId).Output;
-            return new(actionIndex, acceptance, movedLotId, moved.BatchId, moved.OutputIndex, moved.Start, moved.End);
+            return new(actionIndex, acceptance, movedLotId, moved.BatchId, moved.OutputIndex, moved.Start, moved.End, controlWitness);
         }
         SourceInterval source = candidateInventory.Custody.GetLot(movedLotId).Source;
-        return new(actionIndex, acceptance, movedLotId, source.SourceId, 0, source.Start, source.End);
+        return new(actionIndex, acceptance, movedLotId, source.SourceId, 0, source.Start, source.End, controlWitness);
     }
 }

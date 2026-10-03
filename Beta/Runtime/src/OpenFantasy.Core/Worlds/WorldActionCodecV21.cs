@@ -10,6 +10,7 @@ public static class WorldActionCodecV21
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         string tag = command.Intent switch
         {
             CancelPendingCareIntent => "world.action.cancel-care",

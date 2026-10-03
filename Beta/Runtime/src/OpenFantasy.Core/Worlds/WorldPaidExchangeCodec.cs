@@ -85,13 +85,14 @@ public static class WorldPaidExchangeCodec
 
     private static WorldPaidQuote DecodeQuote(ReadOnlySpan<byte> bytes)
     {
-        var reader = new WorldFrameReader(bytes, WorldPaidQuote.MaximumByteLength, 4);
-        reader.Tag("world.paid-quote.v1"u8);
+        var reader = new WorldFrameReader(bytes, WorldPaidQuote.MaximumByteLength, 5);
+        bool witnessed = Version(ref reader, "world.paid-quote.v1"u8, "world.paid-quote.v2"u8);
         SpotQuote quote = SpotExchangeCodecV1.DecodeQuote(reader.Field(SpotExchangeCodecV1.MaximumQuoteByteLength));
         EntityId creation = reader.Identity();
         ulong sequence = reader.Number();
+        WorldControlWitness? witness = witnessed ? WorldControlWitnessCodecV1.Decode(reader.Field(WorldControlWitnessCodecV1.MaximumByteLength)) : null;
         reader.Complete();
-        return new WorldPaidQuote(creation, quote, sequence);
+        return new WorldPaidQuote(creation, quote, sequence, witness);
     }
 
     private static WorldPaidQuoteOutcome DecodeOutcome(ReadOnlySpan<byte> bytes)
@@ -128,20 +129,21 @@ public static class WorldPaidExchangeCodec
 
     private static WorldPaidWithdrawal DecodeWithdrawal(ReadOnlySpan<byte> bytes)
     {
-        var reader = new WorldFrameReader(bytes, WorldPaidWithdrawal.MaximumByteLength, 5);
-        reader.Tag("world.paid-withdrawal.v1"u8);
+        var reader = new WorldFrameReader(bytes, WorldPaidWithdrawal.MaximumAuthorizedByteLength, 6);
+        bool witnessed = Version(ref reader, "world.paid-withdrawal.v1"u8, "world.paid-withdrawal.v2"u8);
         EntityId command = reader.Identity();
         EntityId principal = reader.Identity();
         EntityId session = reader.Identity();
         uint index = checked((uint)reader.Number());
+        WorldControlWitness? witness = witnessed ? WorldControlWitnessCodecV1.Decode(reader.Field(WorldControlWitnessCodecV1.MaximumByteLength)) : null;
         reader.Complete();
-        return new WorldPaidWithdrawal(command, new TrustedCommandDelivery(principal, session), index);
+        return new WorldPaidWithdrawal(command, new TrustedCommandDelivery(principal, session), index, witness);
     }
 
     private static WorldPaidSettlement DecodeSettlement(ReadOnlySpan<byte> bytes)
     {
-        var reader = new WorldFrameReader(bytes, WorldPaidSettlement.MaximumByteLength, 8);
-        reader.Tag("world.paid-settlement.v1"u8);
+        var reader = new WorldFrameReader(bytes, WorldPaidSettlement.MaximumByteLength, 9);
+        bool witnessed = Version(ref reader, "world.paid-settlement.v1"u8, "world.paid-settlement.v2"u8);
         uint index = checked((uint)reader.Number());
         SpotAcceptance acceptance = SpotExchangeCodecV1.DecodeAcceptance(
             reader.Field(SpotExchangeCodecV1.MaximumAcceptanceByteLength));
@@ -150,8 +152,17 @@ public static class WorldPaidExchangeCodec
         uint outputIndex = checked((uint)reader.Number());
         ulong start = reader.Number();
         ulong end = reader.Number();
+        WorldControlWitness? witness = witnessed ? WorldControlWitnessCodecV1.Decode(reader.Field(WorldControlWitnessCodecV1.MaximumByteLength)) : null;
         reader.Complete();
-        return new WorldPaidSettlement(index, acceptance, movedLot, rightsOwner, outputIndex, start, end);
+        return new WorldPaidSettlement(index, acceptance, movedLot, rightsOwner, outputIndex, start, end, witness);
+    }
+
+    private static bool Version(ref WorldFrameReader reader, ReadOnlySpan<byte> oldTag, ReadOnlySpan<byte> witnessedTag)
+    {
+        ReadOnlySpan<byte> tag = reader.Field(witnessedTag.Length);
+        if (tag.SequenceEqual(oldTag)) return false;
+        if (tag.SequenceEqual(witnessedTag)) return true;
+        throw new FormatException("Unsupported paid exchange provenance version.");
     }
 
     private static byte[] Bounded(byte[] bytes, int maximum) => bytes.Length <= maximum ? bytes

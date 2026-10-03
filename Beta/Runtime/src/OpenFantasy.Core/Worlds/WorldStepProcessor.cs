@@ -60,7 +60,7 @@ public sealed class WorldStepProcessor
         ArgumentNullException.ThrowIfNull(batch);
         if (batch.ProfileVersion != state.ProfileVersion || batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
-            || batch.Kind is not WorldBatchKind.ControllerLifecycle and not WorldBatchKind.ControlPermission
+            || batch.Kind is not WorldBatchKind.ControllerLifecycle and not WorldBatchKind.ControlPermission and not WorldBatchKind.ControlAssignment
                 && (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold)
         {
             throw new InvalidOperationException("The selected batch does not match the current world, revision or hold.");
@@ -77,6 +77,9 @@ public sealed class WorldStepProcessor
 
         if (batch.Kind == WorldBatchKind.ControlPermission)
             return WorldControlPermissionProcessor.Decide(state, batch, historicallyOccupied);
+
+        if (batch.Kind == WorldBatchKind.ControlAssignment)
+            return WorldControlAssignmentProcessor.Decide(state, batch, historicallyOccupied);
 
         var prepared = WorldResourceContinuation.Prepare(state, batch);
         if (prepared.Sealed is not null && historicallyOccupied is null)
@@ -668,7 +671,7 @@ public sealed class WorldStepProcessor
             {
                 foreach (WorldMovementInput input in batch.Movement)
                 {
-                    if (worked.Contains(input.ActorId) || !inventory.CanControl(input.Delivery, input.ActorId)
+                    if (worked.Contains(input.ActorId) || WorldActorCommandAuthority.AuthorizeMovement(state, input) is null
                         || !WorldActorAvailability.CanAct(state, input.ActorId))
                     {
                         continue;

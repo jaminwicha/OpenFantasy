@@ -16,6 +16,7 @@ public static class WorldActionCodec
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) return WorldActionCodecV23.Encode(command);
         return command.Intent switch
         {
             ControlPermissionIntent => WorldActionCodecV22.Encode(command),
@@ -46,6 +47,7 @@ public static class WorldActionCodec
     public static WorldActionCommand Decode(ReadOnlySpan<byte> bytes) =>
         WorldCodecVersion.Read(bytes, "world.actor-action"u8, MaximumCommandByteLength, 10) switch
         {
+            23 => WorldActionCodecV23.Decode(bytes),
             22 => WorldActionCodecV22.Decode(bytes),
             21 => WorldActionCodecV21.Decode(bytes),
             20 => WorldActionCodecV20.Decode(bytes),

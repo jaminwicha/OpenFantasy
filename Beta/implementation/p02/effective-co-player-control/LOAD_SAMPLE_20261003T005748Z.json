@@ -1,0 +1,18 @@
+{
+  "utc": "20261003T005748Z",
+  "processColumns": "PID PPID %CPU %MEM ELAPSED COMMAND_PATH",
+  "processes": [
+    "  306     1  20.8  0.5       40:23 /Applications/Godot_mono.app/Contents/MacOS/Godot",
+    "  870     1  34.7  0.5 02-01:45:14 /System/Library/PrivateFrameworks/SkyLight.framework/Resources/WindowServer",
+    " 1073     1  54.9  0.2 02-01:45:11 /System/Library/PrivateFrameworks/FileProvider.framework/Support/fileproviderd",
+    " 3148     1   0.0  0.0       23:20 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/sdk/10.0.401/Roslyn/bincore/VBCSCompiler",
+    " 7304  7302   1.1  0.5       04:48 dotnet",
+    " 8715  7304   0.0  0.3       00:32 dotnet",
+    " 8718  8715  94.0  1.4       00:31 /usr/local/share/dotnet/dotnet",
+    " 8839  6773  84.1  0.8       00:07 /Users/alucinor/Workspace/Projects/botboard/target/release/deps/fairy_suite-f22734a6c2b223db",
+    " 8881  8865  81.2  1.2       00:01 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    " 8886  8881   0.0  0.4       00:00 /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet"
+  ],
+  "load": "19:57  up 2 days, 19:35, 2 users, load averages: 101.33 101.13 60.97",
+  "note": "Read-only shared-process sample. Does not establish a timing cause or authorize changing limits/other processes."
+}

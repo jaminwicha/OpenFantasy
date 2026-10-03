@@ -10,6 +10,7 @@ public static class WorldActionCodecV4
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         if (command.Intent is not DeliveryQuestIntent quest)
         {
             throw new ArgumentException("This action version encodes delivery quests only.", nameof(command));

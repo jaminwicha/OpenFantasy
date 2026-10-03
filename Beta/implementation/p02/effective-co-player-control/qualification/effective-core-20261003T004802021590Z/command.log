@@ -1,0 +1,18 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.47]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.33]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.61]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.85]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+  Passed OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Historical_witness_retains_true_grantee_without_granting_permanent_or_current_authority [115 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Witness_and_assignment_roundtrip_exactly_and_refuse_malformed_or_impossible_history [14 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Retained_combat_retreat_and_remedy_envelopes_fit_unchanged_domain_bounds [15 ms]
+  Passed OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Profile40_movement_and_assignment_batches_are_explicit_and_legacy_bytes_stay_unchanged [10 ms]
+
+Test Run Successful.
+Total tests: 4
+     Passed: 4
+ Total time: 3.2752 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/effective-co-player-control/qualification/effective-core-20261003T004802021590Z/checks.trx

@@ -22,12 +22,29 @@ internal static class ConsentedMaterialTransferStep
     /// <param name="isCreatedOccupied">Permanent occupancy for a split child, including later segment commands.</param>
     internal static ConsentedMaterialTransferOutcome Apply(CountedAuthorityState inventory,
         IReadOnlyCollection<TransformedLot> produced, ConsentedMaterialApproval approval,
-        Func<EntityId, bool> isOccupied, Func<EntityId, bool> isCreatedOccupied)
+        Func<EntityId, bool> isOccupied, Func<EntityId, bool> isCreatedOccupied) =>
+        ApplySelected(inventory, produced, approval, isOccupied, isCreatedOccupied, null, null);
+
+    internal static ConsentedMaterialTransferOutcome Apply(CountedAuthorityState inventory,
+        IReadOnlyCollection<TransformedLot> produced, ConsentedMaterialApproval approval,
+        Func<EntityId, bool> isOccupied, Func<EntityId, bool> isCreatedOccupied,
+        WorldActorAuthorization sender, WorldActorAuthorization recipient)
+    {
+        ArgumentNullException.ThrowIfNull(sender);
+        ArgumentNullException.ThrowIfNull(recipient);
+        return ApplySelected(inventory, produced, approval, isOccupied, isCreatedOccupied, sender, recipient);
+    }
+
+    private static ConsentedMaterialTransferOutcome ApplySelected(CountedAuthorityState inventory,
+        IReadOnlyCollection<TransformedLot> produced, ConsentedMaterialApproval approval,
+        Func<EntityId, bool> isOccupied, Func<EntityId, bool> isCreatedOccupied,
+        WorldActorAuthorization? sender, WorldActorAuthorization? recipient)
     {
         ConsentedMaterialTerms terms = approval.Command.Terms;
         ConsentedMaterialTransferOutcome Reject(WorldActionRejection reason) => new(reason, inventory, produced, null);
         // Authentication is decided first: an unapproved caller learns nothing about stock or identities.
-        if (!approval.IsApprovedByBothParticipants(inventory))
+        if (!(sender is null || recipient is null ? approval.IsApprovedByBothParticipants(inventory)
+            : approval.IsApprovedByBothParticipants(inventory, sender, recipient)))
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }

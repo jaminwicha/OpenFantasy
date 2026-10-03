@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e74fe8ca-1f2d-4d18-9a0a-4b756fcf2bf5" name="@mac 2026-10-02 19:36:24" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T19:36:24.7492770-05:00" queuing="2026-10-02T19:36:24.7492770-05:00" start="2026-10-02T19:36:22.1837430-05:00" finish="2026-10-02T19:36:24.7535320-05:00" />
+  <TestSettings name="default" id="9594ce65-0d4f-4bd5-aaaa-e6df10a50940">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_19_36_24" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="fd0d99c9-4397-40a7-a66c-c944d7b10f21" testId="532b6505-48e8-3129-a8f8-4776b067c597" testName="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Witness_and_assignment_roundtrip_exactly_and_refuse_malformed_or_impossible_history" computerName="mac" duration="00:00:00.0096998" startTime="2026-10-02T19:36:24.6433200-05:00" endTime="2026-10-02T19:36:24.6530820-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fd0d99c9-4397-40a7-a66c-c944d7b10f21" />
+    <UnitTestResult executionId="4cc7418d-b341-420e-9b49-9ec7bcc4ba14" testId="30d287d0-5adf-8346-20a1-ca080f57473a" testName="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Profile40_movement_and_assignment_batches_are_explicit_and_legacy_bytes_stay_unchanged" computerName="mac" duration="00:00:00.0044444" startTime="2026-10-02T19:36:24.6628820-05:00" endTime="2026-10-02T19:36:24.6802440-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4cc7418d-b341-420e-9b49-9ec7bcc4ba14">
+      <Output>
+        <ErrorInfo>
+          <Message>System.FormatException : Invalid world frame field count.</Message>
+          <StackTrace>   at OpenFantasy.Core.Worlds.WorldFrameReader..ctor(ReadOnlySpan`1 bytes, Int32 maximumBytes, Int32 maximumFields) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldFrameReader.cs:line 26
+   at OpenFantasy.Core.Worlds.WorldCodecVersion.Read(ReadOnlySpan`1 bytes, ReadOnlySpan`1 tag, Int32 maximumBytes, Int32 maximumFields) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCodecVersion.cs:line 8
+   at OpenFantasy.Core.Worlds.WorldStepCodec.Decode(ReadOnlySpan`1 bytes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs:line 55
+   at OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Profile40_movement_and_assignment_batches_are_explicit_and_legacy_bytes_stay_unchanged() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/EffectiveControl/EffectiveControlCodecTests.cs:line 75
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a7bbe409-d75b-4d51-bb99-8302a8bf10ab" testId="7b444019-850c-5827-f874-267cdef420b0" testName="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Retained_combat_retreat_and_remedy_envelopes_fit_unchanged_domain_bounds" computerName="mac" duration="00:00:00.0091857" startTime="2026-10-02T19:36:24.6533850-05:00" endTime="2026-10-02T19:36:24.6626180-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a7bbe409-d75b-4d51-bb99-8302a8bf10ab" />
+    <UnitTestResult executionId="6f64a7de-5ff2-4d42-9bb8-680c288bf1c0" testId="59f56f97-a8be-0f4c-480c-9540b063b6a4" testName="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Historical_witness_retains_true_grantee_without_granting_permanent_or_current_authority" computerName="mac" duration="00:00:00.0811449" startTime="2026-10-02T19:36:24.5541120-05:00" endTime="2026-10-02T19:36:24.6402470-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6f64a7de-5ff2-4d42-9bb8-680c288bf1c0" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Profile40_movement_and_assignment_batches_are_explicit_and_legacy_bytes_stay_unchanged" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="30d287d0-5adf-8346-20a1-ca080f57473a">
+      <Execution id="4cc7418d-b341-420e-9b49-9ec7bcc4ba14" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests" name="Profile40_movement_and_assignment_batches_are_explicit_and_legacy_bytes_stay_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Historical_witness_retains_true_grantee_without_granting_permanent_or_current_authority" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="59f56f97-a8be-0f4c-480c-9540b063b6a4">
+      <Execution id="6f64a7de-5ff2-4d42-9bb8-680c288bf1c0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests" name="Historical_witness_retains_true_grantee_without_granting_permanent_or_current_authority" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Witness_and_assignment_roundtrip_exactly_and_refuse_malformed_or_impossible_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="532b6505-48e8-3129-a8f8-4776b067c597">
+      <Execution id="fd0d99c9-4397-40a7-a66c-c944d7b10f21" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests" name="Witness_and_assignment_roundtrip_exactly_and_refuse_malformed_or_impossible_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Retained_combat_retreat_and_remedy_envelopes_fit_unchanged_domain_bounds" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="7b444019-850c-5827-f874-267cdef420b0">
+      <Execution id="a7bbe409-d75b-4d51-bb99-8302a8bf10ab" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests" name="Retained_combat_retreat_and_remedy_envelopes_fit_unchanged_domain_bounds" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="532b6505-48e8-3129-a8f8-4776b067c597" executionId="fd0d99c9-4397-40a7-a66c-c944d7b10f21" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="30d287d0-5adf-8346-20a1-ca080f57473a" executionId="4cc7418d-b341-420e-9b49-9ec7bcc4ba14" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7b444019-850c-5827-f874-267cdef420b0" executionId="a7bbe409-d75b-4d51-bb99-8302a8bf10ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="59f56f97-a8be-0f4c-480c-9540b063b6a4" executionId="6f64a7de-5ff2-4d42-9bb8-680c288bf1c0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="3" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.48]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.07]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.22]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.39]       System.FormatException : Invalid world frame field count.
+[xUnit.net 00:00:01.39]       Stack Trace:
+[xUnit.net 00:00:01.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldFrameReader.cs(26,0): at OpenFantasy.Core.Worlds.WorldFrameReader..ctor(ReadOnlySpan`1 bytes, Int32 maximumBytes, Int32 maximumFields)
+[xUnit.net 00:00:01.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCodecVersion.cs(8,0): at OpenFantasy.Core.Worlds.WorldCodecVersion.Read(ReadOnlySpan`1 bytes, ReadOnlySpan`1 tag, Int32 maximumBytes, Int32 maximumFields)
+[xUnit.net 00:00:01.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepCodec.cs(55,0): at OpenFantasy.Core.Worlds.WorldStepCodec.Decode(ReadOnlySpan`1 bytes)
+[xUnit.net 00:00:01.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Worlds/EffectiveControl/EffectiveControlCodecTests.cs(75,0): at OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Profile40_movement_and_assignment_batches_are_explicit_and_legacy_bytes_stay_unchanged()
+[xUnit.net 00:00:01.39]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.39]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.40]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T19:36:24.6836920-05:00">
+        <Text>[xUnit.net 00:00:01.39]     OpenFantasy.Core.Tests.Worlds.EffectiveControl.EffectiveControlCodecTests.Profile40_movement_and_assignment_batches_are_explicit_and_legacy_bytes_stay_unchanged [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

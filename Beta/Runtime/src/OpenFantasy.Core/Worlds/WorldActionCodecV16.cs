@@ -16,6 +16,7 @@ public static class WorldActionCodecV16
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         byte[] intent = command.Intent switch
         {
             ProposeMaterialIntent propose => CanonicalEncodingV1.Frame("world.action.material-proposal-create", Number(1),

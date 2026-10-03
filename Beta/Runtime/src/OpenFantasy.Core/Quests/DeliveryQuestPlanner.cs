@@ -33,7 +33,7 @@ public sealed class DeliveryQuestPlanner
         var authenticated = new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId);
         if (space.Scope != world.Space.Scope || command.WorldId != world.WorldId || command.BranchId != world.BranchId
             || inventory.WorldId != world.WorldId || inventory.BranchId != world.BranchId
-            || !inventory.CanControl(authenticated, command.ActorId))
+            || WorldActorCommandAuthority.AuthorizeSelection(world, command) is null)
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }
@@ -98,7 +98,7 @@ public sealed class DeliveryQuestPlanner
                 completion.ExpectedInventoryRevision, definition.DestinationCustodianId, definition.Item,
                 definition.Quantity, definition.MaterialReservationId, completion.Selections);
             SourceDeliveryPlan material = _delivery.Plan(inventory, production, authenticated, command.ActorId,
-                command.CommandId, request, historicallyOccupied);
+                command.CommandId, request, historicallyOccupied, WorldActorCommandAuthority.AuthorizeSelection(world, command));
             if (!material.Succeeded)
             {
                 return Reject(material.Rejection);

@@ -14,6 +14,7 @@ public static class WorldActionCodecV13
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         byte[] intent = command.Intent switch
         {
             AcknowledgeCareIntent acknowledge => CanonicalEncodingV1.Frame("world.action.acknowledge-care",

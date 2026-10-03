@@ -6,7 +6,7 @@ namespace OpenFantasy.Core.Worlds;
 public sealed class WorldActionCommand
 {
     public WorldActionCommand(EntityId commandId, EntityId principalId, EntityId originSessionId,
-        EntityId actorId, EntityId worldId, EntityId branchId, ulong expectedActorRevision, WorldActionIntent intent)
+        EntityId actorId, EntityId worldId, EntityId branchId, ulong expectedActorRevision, WorldActionIntent intent, WorldControlWitness? controlWitness = null)
     {
         ArgumentNullException.ThrowIfNull(intent);
         if (commandId == principalId || commandId == originSessionId || commandId == actorId
@@ -21,7 +21,12 @@ public sealed class WorldActionCommand
         WorldId = worldId;
         BranchId = branchId;
         ExpectedActorRevision = expectedActorRevision;
+        if (controlWitness is not null && (controlWitness.OwnerActorId != actorId || intent is ControlPermissionIntent
+            || commandId == controlWitness.GrantCommandId || commandId == controlWitness.AcceptanceCommandId
+            || commandId == controlWitness.AssignmentId || commandId == controlWitness.DisconnectId))
+            throw new ArgumentException("A delegated command must name its assigned actor and cannot administer permissions.");
         Intent = intent;
+        ControlWitness = controlWitness;
     }
 
     public EntityId CommandId { get; }
@@ -31,6 +36,7 @@ public sealed class WorldActionCommand
     public EntityId WorldId { get; }
     public EntityId BranchId { get; }
     public ulong ExpectedActorRevision { get; }
+    public WorldControlWitness? ControlWitness { get; }
     public WorldActionIntent Intent { get; }
     public ContentHash ContentHash => ContentHash.Compute(WorldActionCodec.Encode(this));
 }

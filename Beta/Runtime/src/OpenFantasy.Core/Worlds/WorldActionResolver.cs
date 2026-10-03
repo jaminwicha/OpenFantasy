@@ -18,7 +18,7 @@ internal sealed class WorldActionResolver
         LocalSpatialSnapshot space = currentSpace ?? world.Space;
         WorldActionResolution Reject(WorldActionRejection rejection) => new(inventory, dialogues, rejection, null);
         var delivery = new TrustedCommandDelivery(action.PrincipalId, action.OriginSessionId);
-        if (!inventory.CanControl(delivery, action.ActorId))
+        if (WorldActorCommandAuthority.AuthorizeSelection(world, action) is null)
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }

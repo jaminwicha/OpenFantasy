@@ -170,5 +170,7 @@ public static class WorldEncounterRetreats
 
     /// <summary>Whether the command's delivery still controls the actor; a changed controller interrupts the retreat.</summary>
     internal static bool StillControls(WorldSnapshot world, WorldActionCommand command) =>
-        world.Inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId);
+        world.EffectiveControl is not null
+            ? WorldActorCommandAuthority.AuthorizeAccepted(world, command) is not null
+            : world.Inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId);
 }

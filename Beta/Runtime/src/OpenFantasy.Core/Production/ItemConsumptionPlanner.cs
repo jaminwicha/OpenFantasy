@@ -9,7 +9,13 @@ public sealed class ItemConsumptionPlanner
 {
     public ItemConsumptionPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
         TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, ConsumeItemRequest request,
-        Func<EntityId, bool>? isIdentityOccupied = null)
+        Func<EntityId, bool>? isIdentityOccupied = null) =>
+        Plan(inventory, production, delivery, actorId, commandId, request, isIdentityOccupied, null);
+
+    // Only complete-world composition may supply the authorization for its selected operation.
+    internal ItemConsumptionPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
+        TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, ConsumeItemRequest request,
+        Func<EntityId, bool>? isIdentityOccupied, WorldActorAuthorization? authorization)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(production);
@@ -18,7 +24,8 @@ public sealed class ItemConsumptionPlanner
         if (production.IsContinued && isIdentityOccupied is null)
             throw new ArgumentException("Continued production requires permanent historical identity lookup.", nameof(isIdentityOccupied));
         ItemConsumptionPlan Reject(WorldActionRejection reason) => new(inventory, production, reason);
-        if (!inventory.CanControl(delivery, actorId)) return Reject(WorldActionRejection.NotAuthorized);
+        if ((authorization is null ? !inventory.CanControl(delivery, actorId)
+            : !authorization.Matches(delivery, actorId, commandId) || !authorization.Permits(WorldControlCapabilities.Recovery))) return Reject(WorldActionRejection.NotAuthorized);
         CustodianAccessPolicy? policy = inventory.Policies.FirstOrDefault(value => value.CustodianId == request.CustodianId);
         if (policy is null || policy.OwnerActorId != actorId)
             return Reject(WorldActionRejection.NotAuthorized);

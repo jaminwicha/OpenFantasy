@@ -15,7 +15,8 @@ internal enum WorldCommitKind
     EncounterLifecycle = 8,
     Care = 9,
     ControllerLifecycle = 10,
-    ControlPermission = 11
+    ControlPermission = 11,
+    ControlAssignment = 12
 }
 
 internal enum WorldIdentityKind

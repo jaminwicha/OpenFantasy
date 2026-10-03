@@ -25,6 +25,8 @@ internal static class WorldGenesisAdmission
         }
         if (genesis.ControlPermissions is { } permissions && (permissions.Revision != 0 || permissions.Slots.Count != 0))
             throw new ArgumentException("Fresh control permissions cannot import an offer, acceptance or revocation.", nameof(genesis));
+        if (genesis.EffectiveControl is { } control && (control.Revision != 0 || control.Slots.Count != 0))
+            throw new ArgumentException("Fresh effective control cannot import an assignment or release.", nameof(genesis));
         if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
         {
             throw new ArgumentException("A new local world requires unheld commit zero and step zero.", nameof(genesis));

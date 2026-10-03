@@ -71,27 +71,30 @@ public static class WorldMaterialProposalCodec
 
     private static WorldMaterialProposal DecodeProposal(ReadOnlySpan<byte> bytes)
     {
-        var reader = new WorldFrameReader(bytes, WorldMaterialProposal.MaximumByteLength, 7);
-        reader.Tag("world.material-proposal.v1"u8);
+        var reader = new WorldFrameReader(bytes, WorldMaterialProposal.MaximumByteLength, 8);
+        bool witnessed = Version(ref reader, "world.material-proposal.v1"u8, "world.material-proposal.v2"u8);
         ConsentedMaterialCommand grant = ConsentedMaterialCodecV1.DecodeCommand(
             reader.Field(ConsentedMaterialCodecV1.MaximumCommandByteLength));
         var delivery = new TrustedCommandDelivery(reader.Identity(), reader.Identity());
         ulong sequence = reader.Number();
         ulong step = reader.Number();
         ulong expiry = reader.Number();
+        WorldControlWitness? witness = witnessed ? WorldControlWitnessCodecV1.Decode(reader.Field(WorldControlWitnessCodecV1.MaximumByteLength)) : null;
         reader.Complete();
-        return new WorldMaterialProposal(grant, delivery, sequence, step, expiry);
+        return new WorldMaterialProposal(grant, delivery, sequence, step, expiry, witness);
     }
 
     private static WorldMaterialProposalOutcome DecodeOutcome(ReadOnlySpan<byte> bytes)
     {
-        var reader = new WorldFrameReader(bytes, WorldMaterialProposalOutcome.MaximumByteLength, 6);
-        reader.Tag("world.material-proposal-outcome.v1"u8);
+        var reader = new WorldFrameReader(bytes, WorldMaterialProposalOutcome.MaximumByteLength, 7);
+        bool attributed = Version(ref reader, "world.material-proposal-outcome.v1"u8, "world.material-proposal-outcome.v2"u8);
         WorldMaterialProposal proposal = DecodeProposal(reader.Field(WorldMaterialProposal.MaximumByteLength));
         ulong kind = reader.Number();
         ulong sequence = reader.Number();
         ReadOnlySpan<byte> terminal = reader.Field(16);
         ReadOnlySpan<byte> settlement = reader.Field(MaximumSettlementByteLength);
+        WorldMaterialProposalTermination? termination = attributed
+            ? DecodeTermination(reader.Field(WorldMaterialProposalTermination.MaximumByteLength)) : null;
         reader.Complete();
         if (kind is 0 or > 4 || terminal.Length is not (0 or 16))
         {
@@ -99,13 +102,13 @@ public static class WorldMaterialProposalCodec
         }
         return new WorldMaterialProposalOutcome(proposal, (WorldMaterialProposalOutcomeKind)kind, sequence,
             terminal.IsEmpty ? null : EntityId.FromBytes(terminal),
-            settlement.IsEmpty ? null : DecodeSettlement(settlement));
+            settlement.IsEmpty ? null : DecodeSettlement(settlement), termination);
     }
 
     private static WorldMaterialProposalSettlement DecodeSettlement(ReadOnlySpan<byte> bytes)
     {
-        var reader = new WorldFrameReader(bytes, MaximumSettlementByteLength, 14);
-        reader.Tag("world.material-proposal-settlement.v1"u8);
+        var reader = new WorldFrameReader(bytes, MaximumSettlementByteLength, 15);
+        bool witnessed = Version(ref reader, "world.material-proposal-settlement.v1"u8, "world.material-proposal-settlement.v2"u8);
         uint index = checked((uint)reader.Number());
         ConsentedMaterialAcceptance acceptance = ConsentedMaterialCodecV1.DecodeAcceptance(
             reader.Field(ConsentedMaterialCodecV1.MaximumAcceptanceByteLength));
@@ -119,9 +122,29 @@ public static class WorldMaterialProposalCodec
         ContentHash originalProduction = ReadHash(ref reader);
         ContentHash candidateInventory = ReadHash(ref reader);
         ContentHash candidateProduction = ReadHash(ref reader);
+        WorldControlWitness? witness = witnessed ? WorldControlWitnessCodecV1.Decode(reader.Field(WorldControlWitnessCodecV1.MaximumByteLength)) : null;
         reader.Complete();
         return new WorldMaterialProposalSettlement(index, acceptance, recipient, movedLot, rightsOwner, outputIndex,
-            start, end, originalInventory, originalProduction, candidateInventory, candidateProduction);
+            start, end, originalInventory, originalProduction, candidateInventory, candidateProduction, witness);
+    }
+
+    private static WorldMaterialProposalTermination DecodeTermination(ReadOnlySpan<byte> bytes)
+    {
+        var reader = new WorldFrameReader(bytes, WorldMaterialProposalTermination.MaximumByteLength, 5);
+        reader.Tag("world.material-proposal-termination.v1"u8);
+        EntityId command = reader.Identity();
+        var delivery = new TrustedCommandDelivery(reader.Identity(), reader.Identity());
+        ReadOnlySpan<byte> witness = reader.Field(WorldControlWitnessCodecV1.MaximumByteLength);
+        reader.Complete();
+        return new(command, delivery, witness.IsEmpty ? null : WorldControlWitnessCodecV1.Decode(witness));
+    }
+
+    private static bool Version(ref WorldFrameReader reader, ReadOnlySpan<byte> oldTag, ReadOnlySpan<byte> witnessedTag)
+    {
+        ReadOnlySpan<byte> tag = reader.Field(witnessedTag.Length);
+        if (tag.SequenceEqual(oldTag)) return false;
+        if (tag.SequenceEqual(witnessedTag)) return true;
+        throw new FormatException("Unsupported saved material provenance version.");
     }
 
     private static ContentHash ReadHash(ref WorldFrameReader reader) =>

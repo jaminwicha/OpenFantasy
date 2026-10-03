@@ -18,6 +18,7 @@ public static class WorldActionCodecV18
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         byte[] intent = command.Intent switch
         {
             IssueMarketQuoteIntent issue => CanonicalEncodingV1.Frame("world.action.market-quote-issue", Number(1),

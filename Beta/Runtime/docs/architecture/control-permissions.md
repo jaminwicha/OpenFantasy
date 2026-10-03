@@ -51,7 +51,7 @@ selects that schema explicitly; earlier profiles retain their schema selection. 
 save migration, second writer or separate consent database exists. Its recovery activation must name
 the fresh genesis: fabricated upgrade provenance cannot create an unchecked pre-activation history.
 
-## Effective control integration obligations
+## Effective control and player integration
 
 The permission owner is not an alternate `CanControl` path. Active delegated gameplay additionally
 requires the expired original-owner disconnect episode, an explicit assignment at a safe boundary,
@@ -70,8 +70,9 @@ observation, and require deliberate Resume bound to the current selection genera
 own character keeps its ordinary human choices and holds. Saved permission cannot manufacture an
 active player, earn offline time, recreate a socket or restart the original owner's allowance.
 
-These are requirements for an effective-control consumer. The consent API itself records agreement;
-it does not provide actor switching, delegated execution, private views or a player-facing control UI.
+The [effective-control interpretation](effective-control.md) binds active assignments, typed gameplay
+authority, accepted-work witnesses and historical attribution through profile40/schema12. The consent
+API itself records agreement; it does not provide actor switching, private views or a player-facing control UI.
 The [player session](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) explicitly refuses
 fresh permission commands before queueing, because its scheduler does not select the dedicated consent
 boundary. Exact previously committed receipts still return through authenticated retry before this

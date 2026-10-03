@@ -126,7 +126,7 @@ internal static class WorldEncounterActionProcessor
     private static WorldActionRejection ValidateChoice(WorldSnapshot world, EncounterTimingSnapshot basis, WorldActionCommand command,
         EncounterRetreatState? running)
     {
-        if (!world.Inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId))
+        if (WorldActorCommandAuthority.AuthorizeSelection(world, command) is null)
             return WorldActionRejection.NotAuthorized;
         if (world.Space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision)
             return WorldActionRejection.RevisionConflict;
@@ -176,6 +176,8 @@ internal static class WorldEncounterActionProcessor
         if (choice.Kind == EncounterDecisionKind.Action)
         {
             var command = actions.Pending.Single(value => value.CommandId == choice.DecisionId);
+            if (world.EffectiveControl is not null && WorldActorCommandAuthority.AuthorizeAccepted(world, command) is null)
+                throw new InvalidOperationException("The resolution must retain the exact admitted actor command.");
             var intent = (QueueEncounterAbilityIntent)command.Intent;
             var ability = actions.GetAbility(intent.AbilityDefinitionId);
             targetId = intent.TargetActorId;

@@ -187,6 +187,14 @@ until an explicit session or roster transition exists. Such a transition must ch
 deliveries against the bindings in force when they acted, or a legitimate segment would become
 inadmissible. Only the durable journal replay authenticates that the commands were actually delivered.
 
+The [effective-control interpretation](effective-control.md) carries immutable control witnesses on
+quote issuance, settlement and withdrawal. Outstanding delegated quotes require their exact captured
+assignment at settlement; closed outcomes retain historical authority after revocation or owner
+return. Full replay authenticates each command against its original state. The returning original
+owner can withdraw a delegated quote while keeping the delegate's original issuance and the owner's
+later withdrawal distinct. Canonical wrapper extensions preserve older unwitnessed bytes and limits.
+Authority to act does not grant private quote or market-knowledge access.
+
 ## Cuts and durability
 
 The joint anchor carries a `WorldPaidExchangeContinuationContext` with the open quotes and issuer

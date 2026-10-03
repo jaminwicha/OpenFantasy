@@ -19,6 +19,15 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+Effective command integration is under verification in the
+[current packet](p02/effective-co-player-control/DESIGN.md). Fresh profile40/schema12, real delegated
+movement/combat/retreat/care and material/paid/market consumers are implemented; the clean build and
+21 new focused cases pass. Broader affected regressions are running before acceptance/commit. The
+[critic](p02/effective-co-player-control/CRITIC_REVIEW.md) found two repaired boundaries: impossible
+acquisition chronology and overly broad public planner authorization. No native selection or live
+presence proof is claimed. The following foundation remains the last committed milestone.
+
+
 [Durable co-player consent](p02/co-player-control/RESULT.md) adds fresh profile39/schema11 to the
 existing sole world authority: named owner offers, separate exact acceptance, replacement/revocation,
 bounded scopes and twelve ordered slots across four home actors. Nonadvancing consent decisions

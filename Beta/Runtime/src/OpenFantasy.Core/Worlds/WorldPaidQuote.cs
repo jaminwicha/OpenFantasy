@@ -29,7 +29,7 @@ public sealed class WorldPaidQuote
     // Distinct from the split child ordinal, so one creation command names two separate identities.
     private const ulong IdentityOrdinal = 0x5351_0001;
 
-    public WorldPaidQuote(EntityId creationCommandId, SpotQuote quote, ulong createdSequence)
+    public WorldPaidQuote(EntityId creationCommandId, SpotQuote quote, ulong createdSequence, WorldControlWitness? controlWitness = null)
     {
         ArgumentNullException.ThrowIfNull(quote);
         if (createdSequence == 0 || quote.IssuedAtStep == 0 || quote.QuoteId != DeriveIdentity(creationCommandId)
@@ -38,6 +38,7 @@ public sealed class WorldPaidQuote
         {
             throw new ArgumentException("A world quote requires its creation identity and a bounded later expiry step.");
         }
+        ControlWitness = controlWitness;
         CreationCommandId = creationCommandId;
         Quote = quote;
         CreatedSequence = createdSequence;
@@ -49,6 +50,7 @@ public sealed class WorldPaidQuote
 
     public EntityId QuoteId => Quote.QuoteId;
     public EntityId CreationCommandId { get; }
+    public WorldControlWitness? ControlWitness { get; }
     public SpotQuote Quote { get; }
 
     /// <summary>The issuer's delivery recorded by the accepted issuance.</summary>
@@ -73,8 +75,11 @@ public sealed class WorldPaidQuote
 
     public bool HasParticipant(EntityId actorId) => Quote.IssuerActorId == actorId || Quote.CounterpartyActorId == actorId;
 
-    public byte[] Encode() => CanonicalEncodingV1.Frame("world.paid-quote.v1", SpotExchangeCodecV1.Encode(Quote),
-        CreationCommandId.ToByteArray(), CanonicalEncodingV1.Unsigned64(CreatedSequence));
+    public byte[] Encode() => ControlWitness is null
+        ? CanonicalEncodingV1.Frame("world.paid-quote.v1", SpotExchangeCodecV1.Encode(Quote),
+            CreationCommandId.ToByteArray(), CanonicalEncodingV1.Unsigned64(CreatedSequence))
+        : CanonicalEncodingV1.Frame("world.paid-quote.v2", SpotExchangeCodecV1.Encode(Quote),
+            CreationCommandId.ToByteArray(), CanonicalEncodingV1.Unsigned64(CreatedSequence), WorldControlWitnessCodecV1.Encode(ControlWitness));
 }
 
 /// <summary>
@@ -86,7 +91,7 @@ public sealed class WorldPaidSettlement
     public const int MaximumByteLength = SpotExchangeCodecV1.MaximumAcceptanceByteLength + 256;
 
     public WorldPaidSettlement(uint actionIndex, SpotAcceptance acceptance, EntityId movedLotId, EntityId rightsOwnerId,
-        uint outputIndex, ulong movedStart, ulong movedEnd)
+        uint outputIndex, ulong movedStart, ulong movedEnd, WorldControlWitness? controlWitness = null)
     {
         ArgumentNullException.ThrowIfNull(acceptance);
         if (actionIndex >= WorldStepBatch.MaximumActorsPerBatch || movedEnd <= movedStart
@@ -95,6 +100,7 @@ public sealed class WorldPaidSettlement
         {
             throw new ArgumentException("A paid settlement requires its command position and the exact moved interval.");
         }
+        ControlWitness = controlWitness;
         ActionIndex = actionIndex;
         Acceptance = acceptance;
         MovedLotId = movedLotId;
@@ -107,6 +113,7 @@ public sealed class WorldPaidSettlement
     /// <summary>The acceptance's position in its world batch; it orders currency causes within one revision.</summary>
     public uint ActionIndex { get; }
     public SpotAcceptance Acceptance { get; }
+    public WorldControlWitness? ControlWitness { get; }
     public TrustedCommandDelivery CounterpartyDelivery => new(Acceptance.PrincipalId, Acceptance.OriginSessionId);
     public EntityId MovedLotId { get; }
 
@@ -116,10 +123,15 @@ public sealed class WorldPaidSettlement
     public ulong MovedStart { get; }
     public ulong MovedEnd { get; }
 
-    public byte[] Encode() => CanonicalEncodingV1.Frame("world.paid-settlement.v1",
-        CanonicalEncodingV1.Unsigned64(ActionIndex), SpotExchangeCodecV1.Encode(Acceptance), MovedLotId.ToByteArray(),
-        RightsOwnerId.ToByteArray(), CanonicalEncodingV1.Unsigned64(OutputIndex),
-        CanonicalEncodingV1.Unsigned64(MovedStart), CanonicalEncodingV1.Unsigned64(MovedEnd));
+    public byte[] Encode() => ControlWitness is null
+        ? CanonicalEncodingV1.Frame("world.paid-settlement.v1",
+            CanonicalEncodingV1.Unsigned64(ActionIndex), SpotExchangeCodecV1.Encode(Acceptance), MovedLotId.ToByteArray(),
+            RightsOwnerId.ToByteArray(), CanonicalEncodingV1.Unsigned64(OutputIndex),
+            CanonicalEncodingV1.Unsigned64(MovedStart), CanonicalEncodingV1.Unsigned64(MovedEnd))
+        : CanonicalEncodingV1.Frame("world.paid-settlement.v2",
+            CanonicalEncodingV1.Unsigned64(ActionIndex), SpotExchangeCodecV1.Encode(Acceptance), MovedLotId.ToByteArray(),
+            RightsOwnerId.ToByteArray(), CanonicalEncodingV1.Unsigned64(OutputIndex),
+            CanonicalEncodingV1.Unsigned64(MovedStart), CanonicalEncodingV1.Unsigned64(MovedEnd), WorldControlWitnessCodecV1.Encode(ControlWitness));
 }
 
 /// <summary>
@@ -157,14 +169,16 @@ public sealed class WorldPaidSupersession
 public sealed class WorldPaidWithdrawal
 {
     public const int MaximumByteLength = 256;
+    public const int MaximumAuthorizedByteLength = MaximumByteLength + WorldControlWitnessCodecV1.MaximumByteLength + sizeof(uint);
 
-    public WorldPaidWithdrawal(EntityId commandId, TrustedCommandDelivery delivery, uint actionIndex)
+    public WorldPaidWithdrawal(EntityId commandId, TrustedCommandDelivery delivery, uint actionIndex, WorldControlWitness? controlWitness = null)
     {
         ArgumentNullException.ThrowIfNull(delivery);
         if (actionIndex >= WorldStepBatch.MaximumActorsPerBatch)
         {
             throw new ArgumentException("A withdrawal requires its command position inside one world batch.");
         }
+        ControlWitness = controlWitness;
         CommandId = commandId;
         Delivery = delivery;
         ActionIndex = actionIndex;
@@ -172,12 +186,17 @@ public sealed class WorldPaidWithdrawal
 
     public EntityId CommandId { get; }
     public TrustedCommandDelivery Delivery { get; }
+    public WorldControlWitness? ControlWitness { get; }
 
     /// <summary>The withdrawal's position in its world batch; it orders outcomes within one revision.</summary>
     public uint ActionIndex { get; }
 
-    public byte[] Encode() => CanonicalEncodingV1.Frame("world.paid-withdrawal.v1", CommandId.ToByteArray(),
-        Delivery.PrincipalId.ToByteArray(), Delivery.SessionId.ToByteArray(), CanonicalEncodingV1.Unsigned64(ActionIndex));
+    public byte[] Encode() => ControlWitness is null
+        ? CanonicalEncodingV1.Frame("world.paid-withdrawal.v1", CommandId.ToByteArray(),
+            Delivery.PrincipalId.ToByteArray(), Delivery.SessionId.ToByteArray(), CanonicalEncodingV1.Unsigned64(ActionIndex))
+        : CanonicalEncodingV1.Frame("world.paid-withdrawal.v2", CommandId.ToByteArray(),
+            Delivery.PrincipalId.ToByteArray(), Delivery.SessionId.ToByteArray(), CanonicalEncodingV1.Unsigned64(ActionIndex),
+            WorldControlWitnessCodecV1.Encode(ControlWitness));
 }
 
 /// <summary>

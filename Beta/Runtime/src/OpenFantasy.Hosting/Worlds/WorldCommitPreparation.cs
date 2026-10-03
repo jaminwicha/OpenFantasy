@@ -73,9 +73,9 @@ internal sealed class WorldCommitPreparation
     {
         if (batch.ProfileVersion != state.ProfileVersion || batch.WorldId != state.WorldId || batch.BranchId != state.BranchId
             || batch.ExpectedRevision != state.Revision || batch.ExpectedAdvancingSteps != state.AdvancingSteps
-            || batch.Kind is not WorldBatchKind.ControllerLifecycle and not WorldBatchKind.ControlPermission && (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold
-            || batch.Kind is not WorldBatchKind.ControllerLifecycle and not WorldBatchKind.ControlPermission && (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null)
-            || batch.Kind is not WorldBatchKind.EncounterLifecycle and not WorldBatchKind.Care and not WorldBatchKind.ControllerLifecycle and not WorldBatchKind.ControlPermission
+            || batch.Kind is not WorldBatchKind.ControllerLifecycle and not WorldBatchKind.ControlPermission and not WorldBatchKind.ControlAssignment && (batch.Kind == WorldBatchKind.HeldInteraction) != state.HasReadingHold
+            || batch.Kind is not WorldBatchKind.ControllerLifecycle and not WorldBatchKind.ControlPermission and not WorldBatchKind.ControlAssignment && (batch.Kind == WorldBatchKind.ConsequenceContinuation) != (state.PendingExcavation is not null)
+            || batch.Kind is not WorldBatchKind.EncounterLifecycle and not WorldBatchKind.Care and not WorldBatchKind.ControllerLifecycle and not WorldBatchKind.ControlPermission and not WorldBatchKind.ControlAssignment
                 && (batch.Kind is WorldBatchKind.TacticalAdvance or WorldBatchKind.EncounterDecision or WorldBatchKind.EncounterResolution)
                     != (state.Pacing?.Encounter is not null))
         {
@@ -83,15 +83,20 @@ internal sealed class WorldCommitPreparation
         }
         foreach (WorldActionCommand command in batch.Actions)
         {
-            var delivery = new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId);
-            if (!state.Inventory.CanControl(delivery, command.ActorId))
+            bool authorized = state.EffectiveControl is null
+                ? state.Inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId)
+                : WorldActorCommandAuthority.AuthorizeSelection(state, command) is not null;
+            if (!authorized)
             {
                 throw new AuthorityDispatchException("A fresh actor command requires its current origin and controller.");
             }
         }
         foreach (WorldMovementInput movement in batch.Movement)
         {
-            if (!state.Inventory.CanControl(movement.Delivery, movement.ActorId))
+            bool authorized = state.EffectiveControl is null
+                ? state.Inventory.CanControl(movement.Delivery, movement.ActorId)
+                : WorldActorCommandAuthority.AuthorizeMovement(state, movement) is not null;
+            if (!authorized)
             {
                 throw new AuthorityDispatchException("A selected movement requires its current controller.");
             }
@@ -101,7 +106,7 @@ internal sealed class WorldCommitPreparation
     private static void AccountForPendingCommand(WorldSnapshot state, WorldStepBatch batch, WorldSnapshot candidate,
         Dictionary<EntityId, WorldActionCommand> actions)
     {
-        if (batch.Kind is WorldBatchKind.ControllerLifecycle or WorldBatchKind.ControlPermission)
+        if (batch.Kind is WorldBatchKind.ControllerLifecycle or WorldBatchKind.ControlPermission or WorldBatchKind.ControlAssignment)
         {
             if (!ReferenceEquals(state.PendingExcavation, candidate.PendingExcavation))
                 throw new InvalidDataException("A session event must preserve any pending gameplay consequence exactly.");
@@ -156,6 +161,7 @@ internal sealed class WorldCommitPreparation
         WorldBatchKind.Care => WorldCommitKind.Care,
         WorldBatchKind.ControllerLifecycle => WorldCommitKind.ControllerLifecycle,
         WorldBatchKind.ControlPermission => WorldCommitKind.ControlPermission,
+        WorldBatchKind.ControlAssignment => WorldCommitKind.ControlAssignment,
         _ => throw new ArgumentOutOfRangeException(nameof(kind))
     };
 

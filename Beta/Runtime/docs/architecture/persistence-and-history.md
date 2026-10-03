@@ -19,9 +19,9 @@ The [world schema](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs) 
 | `world_checkpoints` | Canonical state at declared recovery boundaries |
 | `world_resource_segments` (schema7) | Exact closing roots, immutable scope/ordinal and atomic successor publication sequence |
 | `world_material_care_segments` (schema8) | Exact joint material/care/resource closing roots and atomic successor publication sequence |
-| `controller_recovery_activation` (schemas10–11) | Immutable recovery policy and original activation provenance |
-| `controller_recovery_segment` (schemas10–11) | Fenced host generation and checksum of the complete operational allowance set |
-| `controller_allowances` (schemas10–11) | Episode-bound, durably measured host milliseconds for each outstanding disconnect allowance |
+| `controller_recovery_activation` (schemas10–12) | Immutable recovery policy and original activation provenance |
+| `controller_recovery_segment` (schemas10–12) | Fenced host generation and checksum of the complete operational allowance set |
+| `controller_allowances` (schemas10–12) | Episode-bound, durably measured host milliseconds for each outstanding disconnect allowance |
 
 [Schema three](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs) extends accepted
 commit/identity kinds for profile transitions. Schema version and snapshot profile version are
@@ -46,6 +46,13 @@ does not upgrade a save or start a clock.
 actor-command boundary stores ordinary receipts and permission state in the same journal transaction.
 Schema11 retains measured allowance recovery, while admitting the new batch kind without changing
 schemas1–10. Consent is not an active controller assignment or new gameplay authorization.
+
+[Effective control](effective-control.md) explicitly selects fresh profile40/schema12. Assignment
+events use their dedicated nonadvancing commit kind in the same transaction and recovery lineage.
+Commands retain the real grantee principal/session and operated actor; exact prior receipt retrieval
+remains distinct from new authority and private-history access. Replay authenticates the original
+grant and acceptance even when permission is subsequently revoked. Earlier schema definitions remain
+unchanged, and ordinary opening does not migrate a lived save.
 
 ## Runtime bindings: snapshot profiles
 
@@ -91,6 +98,7 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 37 | Assisted incapacity recovery independent of the latest encounter |
 | 38 | Explicit patient cancellation and helper decline of pending care without fabricated treatment |
 | 39 | Named co-player permission offers, exact acceptance and revocation, separate from effective control |
+| 40 | Explicit effective co-player assignment, scoped gameplay authority and immutable command attribution over the complete permission world |
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not

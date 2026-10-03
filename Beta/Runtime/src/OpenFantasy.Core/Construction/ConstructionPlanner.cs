@@ -45,7 +45,7 @@ public sealed class ConstructionPlanner
             || construction.WorldId != world.WorldId || construction.BranchId != world.BranchId
             || production.WorldId != world.WorldId || production.BranchId != world.BranchId
             || space.Scope.WorldId != world.WorldId || space.Scope.BranchId != world.BranchId
-            || !inventory.CanControl(delivery, command.ActorId))
+            || WorldActorCommandAuthority.AuthorizeSelection(world, command) is null)
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }

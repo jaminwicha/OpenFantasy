@@ -120,7 +120,7 @@ public sealed class ExcavationPlanner
         {
             throw new ArgumentException("Excavation requires the selected world's explicit action.");
         }
-        if (!inventory.CanControl(new(command.PrincipalId, command.OriginSessionId), command.ActorId))
+        if (WorldActorCommandAuthority.AuthorizeSelection(world, command) is null)
         {
             return WorldActionRejection.NotAuthorized;
         }

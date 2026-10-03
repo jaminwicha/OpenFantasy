@@ -13,6 +13,7 @@ public static class WorldActionCodecV14
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         byte[] intent = command.Intent switch
         {
             UseRestorativeItemIntent use => CanonicalEncodingV1.Frame("world.action.restorative-use", Number(1),

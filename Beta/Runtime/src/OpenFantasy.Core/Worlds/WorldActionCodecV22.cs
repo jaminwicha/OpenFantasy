@@ -9,6 +9,7 @@ public static class WorldActionCodecV22
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         byte[] intent = command.Intent switch
         {
             OfferControlPermissionIntent offer => CanonicalEncodingV1.Frame("world.action.offer-control.v1", offer.GranteeActorId.ToByteArray(), Number(offer.ExpectedSlotRevision), Number((ulong)offer.Capabilities)),

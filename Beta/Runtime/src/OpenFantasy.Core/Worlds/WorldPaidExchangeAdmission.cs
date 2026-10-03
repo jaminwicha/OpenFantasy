@@ -62,13 +62,20 @@ public static class WorldPaidExchangeAdmission
             if (outcome.Settlement is { } settled)
             {
                 ValidateFill(world, outcome.Quote, settled);
+                if (world.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion)
+                    RequireRecorded(world, outcome.Quote.Quote.CounterpartyActorId, settled.CounterpartyDelivery,
+                        settled.ControlWitness, outcome.WorldSequence);
             }
             // Like fills, this compares recorded deliveries with the admitted bindings. Bindings are immutable
             // until an explicit session or roster transition exists; that transition must replace this check.
-            if (outcome.Withdrawal is { } withdrawal
-                && !world.Inventory.CanControl(withdrawal.Delivery, outcome.Quote.Quote.IssuerActorId))
+            if (outcome.Withdrawal is { } withdrawal)
             {
-                throw new ArgumentException("A withdrawal requires the issuer under its admitted control binding.");
+                if (world.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion)
+                    RequireRecorded(world, outcome.Quote.Quote.IssuerActorId, withdrawal.Delivery,
+                        withdrawal.ControlWitness, outcome.WorldSequence);
+                else if (withdrawal.ControlWitness is not null
+                    || !world.Inventory.CanControl(withdrawal.Delivery, outcome.Quote.Quote.IssuerActorId))
+                    throw new ArgumentException("A withdrawal requires the issuer under its admitted control binding.");
             }
         }
         if (world.Coordination?.Anchor is null)
@@ -192,6 +199,10 @@ public static class WorldPaidExchangeAdmission
     private static void ValidateQuote(WorldSnapshot world, WorldPaidQuote proposal)
     {
         SpotQuote quote = proposal.Quote;
+        if (world.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion)
+            RequireRecorded(world, quote.IssuerActorId, proposal.IssuerDelivery, proposal.ControlWitness, proposal.CreatedSequence);
+        else if (proposal.ControlWitness is not null)
+            throw new ArgumentException("Delegated quote provenance requires its explicit world profile.");
         // A commit publishes at most one advancing step, so no count can exceed its own revision.
         // An open quote's recorded delivery is history: it stays representable when it is stale or due.
         if (quote.WorldId != world.WorldId || quote.BranchId != world.BranchId
@@ -203,12 +214,23 @@ public static class WorldPaidExchangeAdmission
         }
     }
 
+    private static void RequireRecorded(WorldSnapshot world, EntityId actor, TrustedCommandDelivery delivery,
+        WorldControlWitness? witness, ulong sequence)
+    {
+        if (!WorldActorCommandAuthority.ValidateRecordedEvidence(world.Inventory, actor, delivery, witness, WorldControlCapabilities.Trade)
+            || witness is not null && witness.AcquiredSequence >= sequence)
+            throw new ArgumentException("Paid history must retain the actual operator and its earlier assignment evidence.");
+    }
+
     private static void ValidateFill(WorldSnapshot world, WorldPaidQuote proposal, WorldPaidSettlement settled)
     {
         SpotQuote quote = proposal.Quote;
-        bool Controls(TrustedCommandDelivery delivery, EntityId actor) => world.Inventory.CanControl(delivery, actor);
-        if (!Controls(proposal.IssuerDelivery, quote.IssuerActorId)
-            || !Controls(settled.CounterpartyDelivery, quote.CounterpartyActorId))
+        bool Controls(TrustedCommandDelivery delivery, EntityId actor, WorldControlWitness? witness) =>
+            world.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+                ? WorldActorCommandAuthority.ValidateRecordedEvidence(world.Inventory, actor, delivery, witness, WorldControlCapabilities.Trade)
+                : witness is null && world.Inventory.CanControl(delivery, actor);
+        if (!Controls(proposal.IssuerDelivery, quote.IssuerActorId, proposal.ControlWitness)
+            || !Controls(settled.CounterpartyDelivery, quote.CounterpartyActorId, settled.ControlWitness))
         {
             throw new ArgumentException("A fill requires both participants under their admitted control bindings.");
         }

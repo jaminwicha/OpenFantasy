@@ -54,6 +54,8 @@ public static class WorldAdmissionValidator
         admission.ReadMarkets();
         admission.ReadControllers();
         admission.ReadControlPermissions();
+        admission.ReadEffectiveControl();
+        admission.ReadRetainedControlWitnesses();
         return admission.Complete();
     }
 
@@ -130,6 +132,69 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed, world.EncounterLifecycle);
+
+        internal void ReadEffectiveControl()
+        {
+            if (world.EffectiveControl is not { } effective) return;
+            foreach (var slot in effective.Slots)
+            {
+                Require(slot.ActorId, WorldIdentityRole.Actor);
+                if (slot.Witness is not { } witness) continue;
+                Require(witness.GranteeActorId, WorldIdentityRole.Actor);
+                Add(witness.AssignmentId, WorldIdentityRole.CauseReference, unique: true);
+                Add(witness.GrantCommandId, WorldIdentityRole.CauseReference);
+                Add(witness.AcceptanceCommandId, WorldIdentityRole.CauseReference);
+            }
+        }
+
+        internal void ReadRetainedControlWitnesses()
+        {
+            void Read(WorldControlWitness? witness)
+            {
+                if (witness is null) return;
+                if (world.EffectiveControl is null || witness.AcquiredSequence > world.Revision)
+                    throw new ArgumentException("Retained control attribution requires its explicit profile and committed acquisition.");
+                Require(witness.OwnerActorId, WorldIdentityRole.Actor);
+                Require(witness.GranteeActorId, WorldIdentityRole.Actor);
+                Add(witness.GrantCommandId, WorldIdentityRole.CauseReference);
+                Add(witness.AcceptanceCommandId, WorldIdentityRole.CauseReference);
+                Add(witness.AssignmentId, WorldIdentityRole.CauseReference);
+                Add(witness.DisconnectId, WorldIdentityRole.CauseReference);
+            }
+            foreach (var command in world.EncounterActions?.Pending.AsEnumerable() ?? []) Read(command.ControlWitness);
+            Read(world.Retreat?.Active?.Command.ControlWitness);
+            foreach (var evidence in world.ResourceHistory?.Evidence.AsEnumerable() ?? [])
+            {
+                if (evidence is WorldEncounterResourceEvidence attack) Read(attack.Request.ControlWitness);
+                if (evidence is WorldRestorativeUseResourceEvidence use) Read(use.Request.ControlWitness);
+            }
+            foreach (var operation in world.Production?.MaterialHistory?.Operations.AsEnumerable() ?? [])
+            {
+                if (operation is MaterialGatherOperation gather) Read(gather.Evidence.Command.ControlWitness);
+                if (operation is MaterialExcavationWorkOperation work) Read(work.Evidence.Command.ControlWitness);
+                if (operation is MaterialConstructionOperation construction) Read(construction.Evidence.Command.ControlWitness);
+            }
+            if (world.Coordination?.Proposals is { } proposals)
+            {
+                foreach (var proposal in proposals.Open) Read(proposal.ControlWitness);
+                foreach (var outcome in proposals.Outcomes)
+                {
+                    Read(outcome.Proposal.ControlWitness);
+                    Read(outcome.Settlement?.ControlWitness);
+                    Read(outcome.Termination?.ControlWitness);
+                }
+            }
+            if (world.Coordination?.PaidExchange is { } paid)
+            {
+                foreach (var quote in paid.Open) Read(quote.ControlWitness);
+                foreach (var outcome in paid.Outcomes)
+                {
+                    Read(outcome.Quote.ControlWitness);
+                    Read(outcome.Settlement?.ControlWitness);
+                    Read(outcome.Withdrawal?.ControlWitness);
+                }
+            }
+        }
 
         internal void ReadControlPermissions()
         {

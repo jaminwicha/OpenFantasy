@@ -25,6 +25,9 @@ This policy does not promise exact reconstruction of every elapsed millisecond.
 
 `CreateRecoverable` explicitly creates a fresh schema-10 controller world. `CreateNew` retains its
 ordinary schema selection for earlier profiles and selects schema11 for a fresh profile39 world.
+The [effective-control profile40](effective-control.md) selects schema12 with the same measured
+allowance owner and mandatory fresh-genesis provenance. Acquiring or releasing delegated control
+does not restart the original disconnect episode or manufacture additional measured time.
 `UpgradeControllerRecovery` copies a schema-nine source into a create-only
 destination, preserving its exact genesis, journal, receipts, identities and canonical head. The source
 remains a recovery copy. Ordinary `OpenExisting` never performs an upgrade or restarts a timer.

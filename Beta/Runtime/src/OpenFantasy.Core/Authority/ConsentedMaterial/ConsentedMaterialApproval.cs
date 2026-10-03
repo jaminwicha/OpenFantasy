@@ -1,3 +1,5 @@
+using OpenFantasy.Core.Worlds;
+
 namespace OpenFantasy.Core.Authority.ConsentedMaterial;
 
 /// <summary>
@@ -43,6 +45,24 @@ public sealed class ConsentedMaterialApproval
                 terms.SenderActorId)
             && IsCurrentController(state, RecipientDelivery, Acceptance.PrincipalId, Acceptance.OriginSessionId,
                 terms.RecipientActorId)
+            && IsOwner(state, terms.SenderActorId, terms.SourceCustodianId)
+            && IsOwner(state, terms.RecipientActorId, terms.DestinationCustodianId);
+    }
+
+    /// <summary>Both exact submissions already authorized by the complete world; storage ownership remains actor-bound.</summary>
+    internal bool IsApprovedByBothParticipants(CountedAuthorityState state,
+        WorldActorAuthorization sender, WorldActorAuthorization recipient)
+    {
+        ArgumentNullException.ThrowIfNull(state);
+        ArgumentNullException.ThrowIfNull(sender);
+        ArgumentNullException.ThrowIfNull(recipient);
+        ConsentedMaterialTerms terms = Command.Terms;
+        return terms.WorldId == state.WorldId && terms.BranchId == state.BranchId && Acceptance.Binds(Command)
+            && Command.PrincipalId == SenderDelivery.PrincipalId && Command.OriginSessionId == SenderDelivery.SessionId
+            && Acceptance.PrincipalId == RecipientDelivery.PrincipalId && Acceptance.OriginSessionId == RecipientDelivery.SessionId
+            && sender.Matches(SenderDelivery, terms.SenderActorId, Command.CommandId)
+            && recipient.Matches(RecipientDelivery, terms.RecipientActorId, Acceptance.AcceptanceId)
+            && sender.Permits(WorldControlCapabilities.Inventory) && recipient.Permits(WorldControlCapabilities.Inventory)
             && IsOwner(state, terms.SenderActorId, terms.SourceCustodianId)
             && IsOwner(state, terms.RecipientActorId, terms.DestinationCustodianId);
     }

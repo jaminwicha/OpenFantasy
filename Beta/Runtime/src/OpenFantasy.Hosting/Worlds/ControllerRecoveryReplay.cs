@@ -22,7 +22,7 @@ internal sealed class ControllerRecoveryReplay(WorldDatabase database)
     internal void Observe(WorldSnapshot state)
     {
         var activation = _stored.Activation;
-        if (database.SchemaVersion == WorldDatabaseSchemaEleven.Version
+        if ((database.SchemaVersion is WorldDatabaseSchemaEleven.Version or WorldDatabaseSchemaTwelve.Version)
             && (activation.Upgraded || activation.SourceRevision != 0 || activation.UnknownPriorElapsed.Count != 0))
             throw new InvalidDataException("Permission storage requires recovery provenance from its exact fresh genesis.");
         if (state.Revision != activation.SourceRevision) return;

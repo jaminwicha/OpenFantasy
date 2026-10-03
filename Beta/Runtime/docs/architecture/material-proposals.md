@@ -61,6 +61,14 @@ The shared [`ConsentedMaterialApproval`](../../src/OpenFantasy.Core/Authority/Co
 therefore compares a recorded grant with the current binding; only the recipient's delivery belongs
 to the settling step.
 
+In [effective-control worlds](effective-control.md), proposal and settlement wrappers also retain
+the actual submitting delegate's immutable control witness. The complete-world resolver supplies
+typed current authorization for both participants to the shared transfer. It keeps permanent storage
+ownership actor-bound. An outstanding delegated grant requires the exact same assignment at settlement;
+revocation, replacement or reacquisition cannot make the old grant current again. Historical closed
+settlements validate their original attribution through full journal replay rather than requiring a
+still-active grant. Older standalone approval entrypoints retain permanent-control checks.
+
 ## Lifecycle
 
 ```text
@@ -102,6 +110,11 @@ owner, and the receipt reports no success. Every refusal is an ordinary elapsed 
 **Decline** belongs to the recipient and **withdrawal** to the sender's creating principal. The first
 authorized terminal outcome in authoritative order wins. Later, duplicate and reordered requests
 cannot reopen an offer or move stock twice.
+
+Profile40 also lets the returning original owner withdraw the actor's delegated offer. Its explicit
+termination witness records the actual terminal command/delivery separately from the original
+delegate's grant. Recipient decline likewise retains truthful terminal attribution. Older unwitnessed
+wrapper formats and their rules remain unchanged.
 
 ## Expiry
 

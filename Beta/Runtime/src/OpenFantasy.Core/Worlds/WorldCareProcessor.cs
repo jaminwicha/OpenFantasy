@@ -96,7 +96,7 @@ internal static class WorldCareProcessor
 
     private static WorldActionRejection ValidateControl(WorldSnapshot world, WorldActionCommand command)
     {
-        if (!world.Inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId))
+        if (WorldActorCommandAuthority.AuthorizeSelection(world, command) is null)
             return WorldActionRejection.NotAuthorized;
         return world.Space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision
             ? WorldActionRejection.RevisionConflict : WorldActionRejection.None;
@@ -134,7 +134,8 @@ internal static class WorldCareProcessor
             new(command.PrincipalId, command.OriginSessionId), command.ActorId, command.CommandId,
             new(world.GetResident(command.ActorId).InventoryCustodianId, intent.ExpectedStorageRevision,
                 intent.ExpectedProductionRevision, agreement.PatientActorId, remedy.Item, intent.Ingredient),
-            intent.ExpectedPatientProgressionRevision, remedy.RestoredHp, occupied);
+            intent.ExpectedPatientProgressionRevision, remedy.RestoredHp, occupied,
+            WorldActorCommandAuthority.AuthorizeSelection(world, command));
         if (restoration.Rejection != WorldActionRejection.None) return (null, restoration.Rejection);
         int hp = restoration.ActorTransition!.Candidate.CurrentHp;
         var basisTiming = world.Pacing!.Encounter!;

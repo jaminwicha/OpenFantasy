@@ -39,7 +39,7 @@ public sealed class GatherPlanner
             throw new ArgumentException("Gather planning requires one exact world, branch, step and supported action.");
         }
         GatherPlan Reject(WorldActionRejection rejection) => new(currentInventory, gathering, rejection, null);
-        if (!currentInventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId))
+        if (WorldActorCommandAuthority.AuthorizeSelection(world, command) is null)
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }

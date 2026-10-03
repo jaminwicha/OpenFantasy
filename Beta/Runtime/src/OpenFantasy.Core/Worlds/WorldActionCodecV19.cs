@@ -13,6 +13,7 @@ public static class WorldActionCodecV19
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         if (command.Intent is not QueueEncounterRetreatIntent intent)
         {
             throw new ArgumentException("This action version retains a committed retreat request.", nameof(command));

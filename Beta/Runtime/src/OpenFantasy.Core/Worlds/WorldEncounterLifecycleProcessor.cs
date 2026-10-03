@@ -106,7 +106,7 @@ internal static class WorldEncounterLifecycleProcessor
 
     private static WorldActionRejection ValidateControl(WorldSnapshot world, WorldActionCommand command)
     {
-        if (!world.Inventory.CanControl(new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId), command.ActorId))
+        if (WorldActorCommandAuthority.AuthorizeSelection(world, command) is null)
             return WorldActionRejection.NotAuthorized;
         if (world.Space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision)
             return WorldActionRejection.RevisionConflict;

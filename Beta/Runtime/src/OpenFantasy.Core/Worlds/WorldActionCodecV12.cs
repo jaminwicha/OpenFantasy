@@ -10,6 +10,7 @@ public static class WorldActionCodecV12
 
     public static byte[] Encode(WorldActionCommand command)
     {
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         byte[] intent = command.Intent switch
         {
             EnterEncounterIntent enter => CanonicalEncodingV1.Frame("world.action.enter-encounter",

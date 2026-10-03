@@ -31,7 +31,7 @@ public static class WorldRestorativeAdmission
     internal static void Validate(WorldSnapshot world)
     {
         if (world.Care?.Ordinary is not { } ordinary) return;
-        if (world.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 and not 39) throw new ArgumentException("Ordinary care requires its explicit world interpretation.");
+        if (world.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 and not 39 and not 40) throw new ArgumentException("Ordinary care requires its explicit world interpretation.");
         foreach (var definition in ordinary.Definitions)
         {
             foreach (var form in definition.SupportedForms)

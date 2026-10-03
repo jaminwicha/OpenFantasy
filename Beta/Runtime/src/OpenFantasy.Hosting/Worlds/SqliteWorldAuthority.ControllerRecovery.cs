@@ -7,7 +7,7 @@ namespace OpenFantasy.Hosting.Worlds;
 public sealed partial class SqliteWorldAuthority
 {
     private ControllerRecoveryState? _controllerRecovery;
-    public bool SupportsControllerRecovery => _database.SchemaVersion is WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version;
+    public bool SupportsControllerRecovery => _database.SchemaVersion is WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version or WorldDatabaseSchemaTwelve.Version;
 
     /// <summary>Explicit fresh operational policy; canonical controller world bytes remain unchanged.</summary>
     public static SqliteWorldAuthority CreateRecoverable(string path, WorldSnapshot genesis)

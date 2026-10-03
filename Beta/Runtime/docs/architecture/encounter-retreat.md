@@ -58,6 +58,12 @@ pacing binding ends with exposure and fractional carry intact; other actors' que
 identities retained in the terminal record. HP, MP, positions, custody and rewards are never fabricated, and the
 completed-combat [release](encounter-lifecycle.md#entry-staging-and-release) keeps its meaning.
 
+In the [effective-control interpretation](effective-control.md), the exact accepted retreat command
+retains its original grantee attribution through later revocation or release. Each sample derives
+authority from that retained obligation rather than requesting a new grant. Body, scope, ground and
+complete-root checks still apply, and every attempted sample still charges readiness. Fresh input
+requires current permission, and original-owner return waits until the route reaches a safe boundary.
+
 ## Ownership and canonical bytes
 
 `EncounterRetreatState` owns the pinned law, the accepted-retreat count, at most one committed continuation (the

@@ -26,7 +26,7 @@ public sealed class WorldMaterialProposal
     private const ulong IdentityOrdinal = 0x4D50_0001;
 
     public WorldMaterialProposal(ConsentedMaterialCommand grant, TrustedCommandDelivery senderDelivery,
-        ulong createdSequence, ulong createdAdvancingStep, ulong expiresAtAdvancingStep)
+        ulong createdSequence, ulong createdAdvancingStep, ulong expiresAtAdvancingStep, WorldControlWitness? controlWitness = null)
     {
         ArgumentNullException.ThrowIfNull(grant);
         ArgumentNullException.ThrowIfNull(senderDelivery);
@@ -37,6 +37,7 @@ public sealed class WorldMaterialProposal
         {
             throw new ArgumentException("A saved proposal requires its creating delivery and a bounded later expiry step.");
         }
+        ControlWitness = controlWitness;
         Grant = grant;
         SenderDelivery = senderDelivery;
         CreatedSequence = createdSequence;
@@ -56,6 +57,7 @@ public sealed class WorldMaterialProposal
     public ConsentedMaterialTerms Terms => Grant.Terms;
     public CommandContentHash GrantHash { get; }
     public TrustedCommandDelivery SenderDelivery { get; }
+    public WorldControlWitness? ControlWitness { get; }
 
     /// <summary>The world revision published by the step that accepted the creation.</summary>
     public ulong CreatedSequence { get; }
@@ -76,10 +78,14 @@ public sealed class WorldMaterialProposal
     public bool HasParticipant(EntityId actorId) =>
         Terms.SenderActorId == actorId || Terms.RecipientActorId == actorId;
 
-    public byte[] Encode() => CanonicalEncodingV1.Frame("world.material-proposal.v1",
+    public byte[] Encode() => ControlWitness is null ? CanonicalEncodingV1.Frame("world.material-proposal.v1",
         ConsentedMaterialCodecV1.Encode(Grant), SenderDelivery.PrincipalId.ToByteArray(),
         SenderDelivery.SessionId.ToByteArray(), CanonicalEncodingV1.Unsigned64(CreatedSequence),
-        CanonicalEncodingV1.Unsigned64(CreatedAdvancingStep), CanonicalEncodingV1.Unsigned64(ExpiresAtAdvancingStep));
+        CanonicalEncodingV1.Unsigned64(CreatedAdvancingStep), CanonicalEncodingV1.Unsigned64(ExpiresAtAdvancingStep))
+        : CanonicalEncodingV1.Frame("world.material-proposal.v2", ConsentedMaterialCodecV1.Encode(Grant),
+            SenderDelivery.PrincipalId.ToByteArray(), SenderDelivery.SessionId.ToByteArray(),
+            CanonicalEncodingV1.Unsigned64(CreatedSequence), CanonicalEncodingV1.Unsigned64(CreatedAdvancingStep),
+            CanonicalEncodingV1.Unsigned64(ExpiresAtAdvancingStep), WorldControlWitnessCodecV1.Encode(ControlWitness));
 }
 
 /// <summary>
@@ -92,7 +98,7 @@ public sealed class WorldMaterialProposalSettlement
     public WorldMaterialProposalSettlement(uint acceptanceActionIndex, ConsentedMaterialAcceptance acceptance,
         TrustedCommandDelivery recipientDelivery, EntityId movedLotId, EntityId rightsOwnerId, uint outputIndex,
         ulong movedStart, ulong movedEnd, ContentHash originalInventoryHash, ContentHash originalProductionHash,
-        ContentHash candidateInventoryHash, ContentHash candidateProductionHash)
+        ContentHash candidateInventoryHash, ContentHash candidateProductionHash, WorldControlWitness? controlWitness = null)
     {
         ArgumentNullException.ThrowIfNull(acceptance);
         ArgumentNullException.ThrowIfNull(recipientDelivery);
@@ -105,6 +111,7 @@ public sealed class WorldMaterialProposalSettlement
         {
             throw new ArgumentException("A settlement requires the recipient's own delivery and the exact moved interval.");
         }
+        ControlWitness = controlWitness;
         AcceptanceActionIndex = acceptanceActionIndex;
         Acceptance = acceptance;
         RecipientDelivery = recipientDelivery;
@@ -122,6 +129,7 @@ public sealed class WorldMaterialProposalSettlement
     public uint AcceptanceActionIndex { get; }
     public ConsentedMaterialAcceptance Acceptance { get; }
     public TrustedCommandDelivery RecipientDelivery { get; }
+    public WorldControlWitness? ControlWitness { get; }
     public EntityId MovedLotId { get; }
 
     /// <summary>The producing batch of produced stock, or the admitted source of raw stock.</summary>
@@ -147,13 +155,21 @@ public sealed class WorldMaterialProposalSettlement
                 new ProductionOutputInterval(RightsOwnerId, OutputIndex, MovedStart, MovedEnd), terms.Definition);
     }
 
-    public byte[] Encode() => CanonicalEncodingV1.Frame("world.material-proposal-settlement.v1",
-        CanonicalEncodingV1.Unsigned64(AcceptanceActionIndex), ConsentedMaterialCodecV1.Encode(Acceptance),
-        RecipientDelivery.PrincipalId.ToByteArray(), RecipientDelivery.SessionId.ToByteArray(),
-        MovedLotId.ToByteArray(), RightsOwnerId.ToByteArray(), CanonicalEncodingV1.Unsigned64(OutputIndex),
-        CanonicalEncodingV1.Unsigned64(MovedStart), CanonicalEncodingV1.Unsigned64(MovedEnd),
-        OriginalInventoryHash.ToByteArray(), OriginalProductionHash.ToByteArray(),
-        CandidateInventoryHash.ToByteArray(), CandidateProductionHash.ToByteArray());
+    public byte[] Encode()
+    {
+        List<ReadOnlyMemory<byte>> fields =
+        [
+            CanonicalEncodingV1.Unsigned64(AcceptanceActionIndex), ConsentedMaterialCodecV1.Encode(Acceptance),
+            RecipientDelivery.PrincipalId.ToByteArray(), RecipientDelivery.SessionId.ToByteArray(),
+            MovedLotId.ToByteArray(), RightsOwnerId.ToByteArray(), CanonicalEncodingV1.Unsigned64(OutputIndex),
+            CanonicalEncodingV1.Unsigned64(MovedStart), CanonicalEncodingV1.Unsigned64(MovedEnd),
+            OriginalInventoryHash.ToByteArray(), OriginalProductionHash.ToByteArray(),
+            CandidateInventoryHash.ToByteArray(), CandidateProductionHash.ToByteArray()
+        ];
+        if (ControlWitness is not null) fields.Add(WorldControlWitnessCodecV1.Encode(ControlWitness));
+        return CanonicalEncodingV1.Frame(ControlWitness is null
+            ? "world.material-proposal-settlement.v1" : "world.material-proposal-settlement.v2", fields.ToArray());
+    }
 }
 
 /// <summary>
@@ -165,7 +181,8 @@ public sealed class WorldMaterialProposalOutcome
     public const int MaximumByteLength = 4_096;
 
     public WorldMaterialProposalOutcome(WorldMaterialProposal proposal, WorldMaterialProposalOutcomeKind kind,
-        ulong worldSequence, EntityId? terminalCommandId, WorldMaterialProposalSettlement? settlement)
+        ulong worldSequence, EntityId? terminalCommandId, WorldMaterialProposalSettlement? settlement,
+        WorldMaterialProposalTermination? termination = null)
     {
         ArgumentNullException.ThrowIfNull(proposal);
         bool split = settlement is not null && settlement.MovedLotId != proposal.Terms.LotId;
@@ -180,6 +197,10 @@ public sealed class WorldMaterialProposalOutcome
         {
             throw new ArgumentException("A proposal outcome requires one later terminal cause and its exact bound settlement.");
         }
+        if (termination is not null && (kind is not WorldMaterialProposalOutcomeKind.Declined and not WorldMaterialProposalOutcomeKind.Withdrawn
+            || termination.CommandId != terminalCommandId))
+            throw new ArgumentException("Only a matching decline or withdrawal carries terminal operator evidence.");
+        Termination = termination;
         Proposal = proposal;
         Kind = kind;
         WorldSequence = worldSequence;
@@ -197,13 +218,35 @@ public sealed class WorldMaterialProposalOutcome
     /// <summary>The accepting, declining or withdrawing command; absent when world time expired the offer.</summary>
     public EntityId? TerminalCommandId { get; }
     public WorldMaterialProposalSettlement? Settlement { get; }
+    public WorldMaterialProposalTermination? Termination { get; }
     public ContentHash ContentHash { get; }
 
-    public byte[] Encode() => CanonicalEncodingV1.Frame("world.material-proposal-outcome.v1", Proposal.Encode(),
-        CanonicalEncodingV1.Unsigned64((ulong)Kind), CanonicalEncodingV1.Unsigned64(WorldSequence),
-        TerminalCommandId?.ToByteArray() ?? Array.Empty<byte>(), Settlement?.Encode() ?? Array.Empty<byte>());
+    public byte[] Encode() => Termination is null
+        ? CanonicalEncodingV1.Frame("world.material-proposal-outcome.v1", Proposal.Encode(),
+            CanonicalEncodingV1.Unsigned64((ulong)Kind), CanonicalEncodingV1.Unsigned64(WorldSequence),
+            TerminalCommandId?.ToByteArray() ?? Array.Empty<byte>(), Settlement?.Encode() ?? Array.Empty<byte>())
+        : CanonicalEncodingV1.Frame("world.material-proposal-outcome.v2", Proposal.Encode(),
+            CanonicalEncodingV1.Unsigned64((ulong)Kind), CanonicalEncodingV1.Unsigned64(WorldSequence),
+            TerminalCommandId?.ToByteArray() ?? Array.Empty<byte>(), Settlement?.Encode() ?? Array.Empty<byte>(), Termination.Encode());
 }
 
 /// <summary>Owner hashes around one custody movement, for the reservoir's custody reconciliation.</summary>
 internal readonly record struct WorldCustodyWitness(bool Produced, ContentHash OriginalInventoryHash,
     ContentHash OriginalProductionHash, ContentHash CandidateInventoryHash, ContentHash CandidateProductionHash);
+
+/// <summary>The actual principal closing an actor's offer, independent of its original grant principal.</summary>
+public sealed class WorldMaterialProposalTermination
+{
+    public const int MaximumByteLength = WorldControlWitnessCodecV1.MaximumByteLength + 128;
+    public WorldMaterialProposalTermination(EntityId commandId, TrustedCommandDelivery delivery, WorldControlWitness? controlWitness = null)
+    {
+        ArgumentNullException.ThrowIfNull(delivery);
+        CommandId = commandId; Delivery = delivery; ControlWitness = controlWitness;
+    }
+    public EntityId CommandId { get; }
+    public TrustedCommandDelivery Delivery { get; }
+    public WorldControlWitness? ControlWitness { get; }
+    public byte[] Encode() => CanonicalEncodingV1.Frame("world.material-proposal-termination.v1", CommandId.ToByteArray(),
+        Delivery.PrincipalId.ToByteArray(), Delivery.SessionId.ToByteArray(),
+        ControlWitness is null ? [] : WorldControlWitnessCodecV1.Encode(ControlWitness));
+}

@@ -27,7 +27,10 @@ internal static class WorldMarketResolver
             (new(inventory, production, progression, quotes, reason, [], null, null), markets);
 
         var delivery = new TrustedCommandDelivery(action.PrincipalId, action.OriginSessionId);
-        if (action.WorldId != state.WorldId || action.BranchId != state.BranchId || !inventory.CanControl(delivery, action.ActorId))
+        if (action.WorldId != state.WorldId || action.BranchId != state.BranchId
+            || (state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+                ? WorldActorCommandAuthority.AuthorizeSelection(state, action) is null
+                : !inventory.CanControl(delivery, action.ActorId)))
         {
             return Refuse(WorldActionRejection.NotAuthorized);
         }
@@ -127,10 +130,8 @@ internal static class WorldMarketResolver
             return refuse(WorldActionRejection.RevisionConflict);
         }
         // Every remaining issuance rule is the shared paid contract under this same command.
-        WorldActionCommand paid = new(action.CommandId, action.PrincipalId, action.OriginSessionId, action.ActorId,
-            action.WorldId, action.BranchId, action.ExpectedActorRevision, new IssueSpotQuoteIntent(quote));
         WorldPaidExchangePlan plan = WorldPaidExchangeResolver.Resolve(state, batch, inventory, space, production,
-            progression, quotes, held, paid, actionIndex, sequence, worked, occupied,
+            progression, quotes, held, action, actionIndex, sequence, worked, occupied,
             candidate => markets.DisclosesTo(candidate, market.MarketId, state.AdvancingSteps));
         if (plan.Rejection != WorldActionRejection.None)
         {

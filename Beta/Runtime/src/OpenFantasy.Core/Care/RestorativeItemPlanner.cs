@@ -14,7 +14,14 @@ public sealed class RestorativeItemPlanner
     public RestorativeItemPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
         ProgressionSnapshot progression, TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId,
         ConsumeItemRequest dose, ulong expectedPatientRevision, uint restoredHp,
-        Func<EntityId, bool>? isIdentityOccupied = null)
+        Func<EntityId, bool>? isIdentityOccupied = null) =>
+        Plan(inventory, production, progression, delivery, actorId, commandId, dose,
+            expectedPatientRevision, restoredHp, isIdentityOccupied, null);
+
+    internal RestorativeItemPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
+        ProgressionSnapshot progression, TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId,
+        ConsumeItemRequest dose, ulong expectedPatientRevision, uint restoredHp,
+        Func<EntityId, bool>? isIdentityOccupied, WorldActorAuthorization? authorization)
     {
         ArgumentNullException.ThrowIfNull(progression);
         ArgumentNullException.ThrowIfNull(production);
@@ -25,7 +32,7 @@ public sealed class RestorativeItemPlanner
         RestorativeItemPlan Reject(WorldActionRejection reason) => new(inventory, production, progression, reason);
         // Material admission authenticates the supplier before any patient state is inspected.
         var consumption = new ItemConsumptionPlanner().Plan(inventory, production, delivery, actorId, commandId, dose,
-            isIdentityOccupied: isIdentityOccupied);
+            isIdentityOccupied: isIdentityOccupied, authorization: authorization);
         if (consumption.Rejection != WorldActionRejection.None)
         {
             return Reject(consumption.Rejection);

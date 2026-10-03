@@ -109,7 +109,7 @@ internal sealed class MaterialContinuationReplay
         if (evidence.BeforeInventoryHash != _inventory.ContentHash
             || evidence.BeforeProductionHash != ProductionMaterialCodec.HashReplayPrefix(_state.Continuation!, _replayed, _derived.Values)
             || evidence.Command.WorldId != _inventory.WorldId || evidence.Command.BranchId != _inventory.BranchId
-            || !_inventory.CanControl(new(evidence.Command.PrincipalId, evidence.Command.OriginSessionId), evidence.Command.ActorId))
+            || !WorldActorCommandAuthority.ValidateRecordedEvidence(_inventory, evidence.Command))
             throw new ArgumentException("Work evidence requires the exact preceding material prefix and actual controller.");
         var next = before.Apply(evidence);
         if (evidence.GatherEvidence is { } gather)
@@ -189,7 +189,7 @@ internal sealed class MaterialContinuationReplay
             || evidence.BeforeProductionHash != ProductionMaterialCodec.HashReplayPrefix(_state.Continuation!, _replayed, _derived.Values)
             || evidence.Command.WorldId != _inventory.WorldId || evidence.Command.BranchId != _inventory.BranchId
             || evidence.Command.ActorId != evidence.Batch.ActorId || evidence.Command.CommandId != evidence.Batch.CommandId
-            || !_inventory.CanControl(new(evidence.Command.PrincipalId, evidence.Command.OriginSessionId), evidence.Batch.ActorId)
+            || !WorldActorCommandAuthority.ValidateRecordedEvidence(_inventory, evidence.Command)
             || !_inventory.ReservationIds.Contains(evidence.ReservationId))
             throw new ArgumentException("Construction retirement requires actual matching completion evidence and controller.");
         ProductionBatch batch = evidence.Batch;
@@ -275,7 +275,7 @@ internal sealed class MaterialContinuationReplay
     {
         if (_inventory.ContentHash != evidence.BeforeInventoryHash || evidence.Command.WorldId != _inventory.WorldId
             || evidence.Command.BranchId != _inventory.BranchId
-            || !_inventory.CanControl(new(evidence.Command.PrincipalId, evidence.Command.OriginSessionId), evidence.Command.ActorId))
+            || !WorldActorCommandAuthority.ValidateRecordedEvidence(_inventory, evidence.Command))
             throw new ArgumentException("Actual gather evidence must match the exact current inventory and controller.");
         CountedSourceLot lot = evidence.IssuedLot;
         Created(lot.LotId);

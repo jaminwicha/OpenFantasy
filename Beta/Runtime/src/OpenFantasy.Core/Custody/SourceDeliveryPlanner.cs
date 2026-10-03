@@ -12,7 +12,13 @@ public sealed class SourceDeliveryPlanner
 {
     public SourceDeliveryPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
         TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, SourceDeliveryRequest request,
-        Func<EntityId, bool>? historicallyOccupied = null)
+        Func<EntityId, bool>? historicallyOccupied = null) =>
+        Plan(inventory, production, delivery, actorId, commandId, request, historicallyOccupied, null);
+
+    // Only complete-world composition may supply the authorization for its selected operation.
+    internal SourceDeliveryPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
+        TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, SourceDeliveryRequest request,
+        Func<EntityId, bool>? historicallyOccupied, WorldActorAuthorization? authorization)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(production);
@@ -30,7 +36,7 @@ public sealed class SourceDeliveryPlanner
         {
             return Prepare(inventory, delivery, actorId, commandId, request,
                 id => production.ContainsIdentity(id) || historicallyOccupied?.Invoke(id) == true,
-                candidate => production.ValidateForAuthority(candidate), () => production.ValidateForAuthority(inventory));
+                candidate => production.ValidateForAuthority(candidate), () => production.ValidateForAuthority(inventory), authorization);
         }
         catch (Exception error) when (error is ArgumentException or CustodyConflictException or OverflowException)
         {
@@ -40,10 +46,11 @@ public sealed class SourceDeliveryPlanner
 
     internal static SourceDeliveryPlan Prepare(CountedAuthorityState inventory, TrustedCommandDelivery delivery,
         EntityId actorId, EntityId commandId, SourceDeliveryRequest request, Func<EntityId, bool> occupied,
-        Action<CountedAuthorityState> validateCandidate, Action? validateInitial = null)
+        Action<CountedAuthorityState> validateCandidate, Action? validateInitial = null, WorldActorAuthorization? authorization = null)
     {
         SourceDeliveryPlan Reject(WorldActionRejection reason) => new(inventory, reason, [], []);
-        if (!inventory.CanControl(delivery, actorId)
+        if ((authorization is null ? !inventory.CanControl(delivery, actorId)
+            : !authorization.Matches(delivery, actorId, commandId) || !authorization.Permits(WorldControlCapabilities.ConversationAndQuests))
             || !inventory.AllowsTransfer(actorId, request.SourceCustodianId, request.DestinationCustodianId))
         {
             return Reject(WorldActionRejection.NotAuthorized);

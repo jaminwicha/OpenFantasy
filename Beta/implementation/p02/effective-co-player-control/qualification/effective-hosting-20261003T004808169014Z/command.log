@@ -1,0 +1,48 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.47]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.29]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.64]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:07.98]     OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlCombatTests.Accepted_delegated_attack_resolves_once_after_revoke_with_original_principal_costs_history_and_receipt [FAIL]
+[xUnit.net 00:00:07.99]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:07.99]       Expected: None
+[xUnit.net 00:00:07.99]       Actual:   Unavailable
+[xUnit.net 00:00:07.99]       Stack Trace:
+[xUnit.net 00:00:07.99]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EffectiveControl/EffectiveControlCombatTests.cs(26,0): at OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlCombatTests.Accepted_delegated_attack_resolves_once_after_revoke_with_original_principal_costs_history_and_receipt()
+[xUnit.net 00:00:07.99]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:07.99]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlCombatTests.Accepted_delegated_attack_resolves_once_after_revoke_with_original_principal_costs_history_and_receipt [5 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: None
+Actual:   Unavailable
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlCombatTests.Accepted_delegated_attack_resolves_once_after_revoke_with_original_principal_costs_history_and_receipt() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EffectiveControl/EffectiveControlCombatTests.cs:line 26
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlRecoveryTests.Assignment_publication_fault_recovers_exactly_one_side_of_the_transaction(committed: False) [9 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlChronologyTests.Acquisition_needs_its_own_world_boundary_but_revocation_can_share_the_release [9 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Closing_authority_invalidates_the_captured_assignment_without_changing_ownership_or_earning_time(closure: "grantee-loss") [9 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlContinuationTests.Delegated_patient_acknowledgment_survives_revocation_and_helper_pays_one_actual_dose [11 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Closing_authority_invalidates_the_captured_assignment_without_changing_ownership_or_earning_time(closure: "release") [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlRecoveryTests.Assignment_publication_fault_recovers_exactly_one_side_of_the_transaction(committed: True) [4 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Closing_authority_invalidates_the_captured_assignment_without_changing_ownership_or_earning_time(closure: "revoke") [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlContinuationTests.Accepted_retreat_pays_each_sample_after_revocation_and_returns_control_only_at_safe_boundary [5 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlRecoveryTests.Authentic_active_head_cannot_hide_a_missing_acquisition_commit [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Closing_authority_invalidates_the_captured_assignment_without_changing_ownership_or_earning_time(closure: "return") [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Named_grantee_really_moves_the_owner_with_true_delivery_and_exact_reopen [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.EffectiveControl.EffectiveControlJournalTests.Scope_and_direct_owner_competition_are_refused_before_gameplay_dispatch [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.CoPlayerTrade.CoPlayerTradeConsumerTests.Actually_crafted_goods_pass_delegated_gift_and_paid_sale_then_archive_and_reopen_with_exact_output_rights [24 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.CoPlayerTrade.CoPlayerTradeJournalTests.Actual_delegated_gifts_and_paid_fills_keep_true_operators_after_revocation_archive_copy_and_full_replay [26 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.CoPlayerTrade.CoPlayerTradeJournalTests.Regrant_cannot_resurrect_old_material_or_paid_offers_and_returning_owner_withdraws_with_its_own_attribution [1 s]
+[xUnit.net 00:00:31.49]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.CoPlayerTrade.CoPlayerTradeConsumerTests.Delegated_market_issuance_keeps_the_original_market_command_and_exact_rule_pricing_through_fill_archive_and_reopen [4 s]
+
+Test Run Failed.
+Total tests: 17
+     Passed: 16
+     Failed: 1
+ Total time: 32.2131 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/effective-co-player-control/qualification/effective-hosting-20261003T004808169014Z/checks.trx

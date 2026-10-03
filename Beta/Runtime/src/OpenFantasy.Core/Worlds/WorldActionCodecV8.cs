@@ -11,6 +11,7 @@ public static class WorldActionCodecV8
     public static byte[] Encode(WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(command);
+        if (command.ControlWitness is not null) throw new ArgumentException("Delegated attribution requires action codec 23.", nameof(command));
         if (command.Intent is not ExcavateIntent intent)
         {
             throw new ArgumentException("This action version encodes excavation only.", nameof(command));

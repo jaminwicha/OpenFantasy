@@ -9,7 +9,13 @@ public sealed class InstantCraftPlanner
 {
     public CraftPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
         TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, CraftRequest request,
-        Func<EntityId, bool>? isIdentityOccupied = null)
+        Func<EntityId, bool>? isIdentityOccupied = null) =>
+        Plan(inventory, production, delivery, actorId, commandId, request, isIdentityOccupied, null);
+
+    // Only complete-world composition may supply the authorization for its selected operation.
+    internal CraftPlan Plan(CountedAuthorityState inventory, ProductionSnapshot production,
+        TrustedCommandDelivery delivery, EntityId actorId, EntityId commandId, CraftRequest request,
+        Func<EntityId, bool>? isIdentityOccupied, WorldActorAuthorization? authorization)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(production);
@@ -18,7 +24,8 @@ public sealed class InstantCraftPlanner
         if (production.IsContinued && isIdentityOccupied is null)
             throw new ArgumentException("Continued production requires permanent historical identity lookup.", nameof(isIdentityOccupied));
         CraftPlan Reject(WorldActionRejection rejection) => new(inventory, production, rejection, []);
-        if (!inventory.CanControl(delivery, actorId))
+        if ((authorization is null ? !inventory.CanControl(delivery, actorId)
+            : !authorization.Matches(delivery, actorId, commandId) || !authorization.Permits(WorldControlCapabilities.Production)))
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }

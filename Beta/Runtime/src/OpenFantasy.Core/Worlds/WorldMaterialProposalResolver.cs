@@ -33,8 +33,10 @@ internal static class WorldMaterialProposalResolver
             new(inventory, production, book, reason, [], null, null);
 
         var delivery = new TrustedCommandDelivery(action.PrincipalId, action.OriginSessionId);
+        bool delegatedProfile = state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion;
+        WorldActorAuthorization? authorization = delegatedProfile ? WorldActorCommandAuthority.AuthorizeSelection(state, action) : null;
         if (action.WorldId != state.WorldId || action.BranchId != state.BranchId
-            || !inventory.CanControl(delivery, action.ActorId))
+            || (delegatedProfile ? authorization is null : !inventory.CanControl(delivery, action.ActorId)))
         {
             return Refuse(WorldActionRejection.NotAuthorized);
         }
@@ -58,7 +60,7 @@ internal static class WorldMaterialProposalResolver
             ProposeMaterialIntent propose => Create(state, inventory, production, book, action, propose, delivery,
                 sequence, occupied, Refuse),
             AcceptMaterialProposalIntent accept => Accept(state, batch, inventory, space, production, book, action,
-                accept, delivery, actionIndex, sequence, worked, occupied, Refuse),
+                accept, delivery, actionIndex, sequence, worked, occupied, Refuse, authorization),
             DeclineMaterialProposalIntent decline => Close(state, book, action, decline.ProposalId,
                 WorldMaterialProposalOutcomeKind.Declined, sequence, inventory, production, Refuse),
             WithdrawMaterialProposalIntent withdraw => Close(state, book, action, withdraw.ProposalId,
@@ -94,7 +96,7 @@ internal static class WorldMaterialProposalResolver
             return refuse(pin);
         }
         var proposal = new WorldMaterialProposal(propose.ToGrant(action), delivery, sequence, createdStep,
-            propose.ExpiresAtAdvancingStep);
+            propose.ExpiresAtAdvancingStep, action.ControlWitness);
         return new(inventory, production, book.Create(proposal), WorldActionRejection.None, [proposalId], null, null);
     }
 
@@ -107,11 +109,14 @@ internal static class WorldMaterialProposalResolver
         bool withdraws = kind == WorldMaterialProposalOutcomeKind.Withdrawn;
         if (proposal is null || proposal.IsDue(state.AdvancingSteps) || !book.CanClose
             || (withdraws ? proposal.Terms.SenderActorId : proposal.Terms.RecipientActorId) != action.ActorId
-            || withdraws && proposal.Grant.PrincipalId != action.PrincipalId)
+            || withdraws && state.ProfileVersion != WorldDelegatedControlAdmission.ProfileVersion
+                && proposal.Grant.PrincipalId != action.PrincipalId)
         {
             return refuse(WorldActionRejection.Unavailable);
         }
-        return new(inventory, production, book.Close(new(proposal, kind, sequence, action.CommandId, null)),
+        WorldMaterialProposalTermination? termination = state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+            ? new(action.CommandId, new(action.PrincipalId, action.OriginSessionId), action.ControlWitness) : null;
+        return new(inventory, production, book.Close(new(proposal, kind, sequence, action.CommandId, null, termination)),
             WorldActionRejection.None, [], null, null);
     }
 
@@ -119,7 +124,8 @@ internal static class WorldMaterialProposalResolver
         CountedAuthorityState inventory, LocalSpatialSnapshot space, ProductionSnapshot production,
         WorldMaterialProposalBook book, WorldActionCommand action, AcceptMaterialProposalIntent accept,
         TrustedCommandDelivery recipientDelivery, uint actionIndex, ulong sequence, IReadOnlySet<EntityId> worked,
-        Func<EntityId, bool> occupied, Func<WorldActionRejection, WorldMaterialProposalPlan> refuse)
+        Func<EntityId, bool> occupied, Func<WorldActionRejection, WorldMaterialProposalPlan> refuse,
+        WorldActorAuthorization? recipientAuthorization)
     {
         WorldMaterialProposal? proposal = book.FindOpen(accept.ProposalId);
         if (proposal is null || proposal.Terms.RecipientActorId != action.ActorId
@@ -136,7 +142,11 @@ internal static class WorldMaterialProposalResolver
         // The saved grant stays valid only while its named principal's recorded binding still
         // controls the source actor. It is compared with current control, never treated as a delivery.
         EntityId senderId = terms.SenderActorId;
-        if (!inventory.CanControl(proposal.SenderDelivery, senderId)
+        WorldActorAuthorization? senderAuthorization = state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+            ? WorldActorCommandAuthority.AuthorizeRetainedOffer(state, senderId, proposal.SenderDelivery,
+                proposal.ControlWitness, proposal.CreationCommandId, WorldControlCapabilities.Inventory) : null;
+        if ((state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+                ? senderAuthorization is null : !inventory.CanControl(proposal.SenderDelivery, senderId))
             || batch.Actions.Any(other => other.ActorId == senderId)
             || worked.Contains(senderId) || worked.Contains(action.ActorId)
             || !WorldActorAvailability.CanAct(state, senderId))
@@ -166,7 +176,9 @@ internal static class WorldMaterialProposalResolver
         }
         var approval = new ConsentedMaterialApproval(proposal.Grant, proposal.SenderDelivery,
             accept.ToMaterialAcceptance(action, proposal.CreationCommandId), recipientDelivery);
-        if (!approval.IsApprovedByBothParticipants(inventory))
+        if (!(senderAuthorization is not null && recipientAuthorization is not null
+            ? approval.IsApprovedByBothParticipants(inventory, senderAuthorization, recipientAuthorization)
+            : approval.IsApprovedByBothParticipants(inventory)))
         {
             return refuse(WorldActionRejection.Unavailable);
         }
@@ -175,8 +187,10 @@ internal static class WorldMaterialProposalResolver
             && identity != action.CommandId && occupied(identity);
         try
         {
-            ConsentedMaterialTransferOutcome outcome = ConsentedMaterialTransferStep.Apply(inventory, production.Lots,
-                approval, MaterialOccupied, MaterialOccupied);
+            ConsentedMaterialTransferOutcome outcome = senderAuthorization is not null && recipientAuthorization is not null
+                ? ConsentedMaterialTransferStep.Apply(inventory, production.Lots, approval, MaterialOccupied, MaterialOccupied,
+                    senderAuthorization, recipientAuthorization)
+                : ConsentedMaterialTransferStep.Apply(inventory, production.Lots, approval, MaterialOccupied, MaterialOccupied);
             if (outcome.Rejection != WorldActionRejection.None || outcome.MovedLotId is not { } movedLotId)
             {
                 return refuse(outcome.Rejection == WorldActionRejection.None
@@ -188,7 +202,7 @@ internal static class WorldMaterialProposalResolver
                 production.SupportsConsumption ? production.ConsumedItems : null, production.Continuation);
             candidate.ValidateForAuthority(outcome.Inventory);
             WorldMaterialProposalSettlement settlement = Witness(actionIndex, approval, recipientDelivery, movedLotId,
-                inventory, production, outcome.Inventory, candidate);
+                inventory, production, outcome.Inventory, candidate, action.ControlWitness);
             var closed = new WorldMaterialProposalOutcome(proposal, WorldMaterialProposalOutcomeKind.Accepted,
                 sequence, action.CommandId, settlement);
             return new(outcome.Inventory, candidate, book.Close(closed), WorldActionRejection.None,
@@ -227,18 +241,19 @@ internal static class WorldMaterialProposalResolver
 
     private static WorldMaterialProposalSettlement Witness(uint actionIndex, ConsentedMaterialApproval approval,
         TrustedCommandDelivery recipientDelivery, EntityId movedLotId, CountedAuthorityState inventory,
-        ProductionSnapshot production, CountedAuthorityState candidateInventory, ProductionSnapshot candidateProduction)
+        ProductionSnapshot production, CountedAuthorityState candidateInventory, ProductionSnapshot candidateProduction,
+        WorldControlWitness? controlWitness)
     {
         if (approval.Command.Terms.LotKind == ConsentedMaterialLotKind.Produced)
         {
             ProductionOutputInterval moved = candidateProduction.Lots.Single(value => value.LotId == movedLotId).Output;
             return new(actionIndex, approval.Acceptance, recipientDelivery, movedLotId, moved.BatchId, moved.OutputIndex,
                 moved.Start, moved.End, inventory.ContentHash, production.ContentHash, candidateInventory.ContentHash,
-                candidateProduction.ContentHash);
+                candidateProduction.ContentHash, controlWitness);
         }
         SourceInterval source = candidateInventory.Custody.GetLot(movedLotId).Source;
         return new(actionIndex, approval.Acceptance, recipientDelivery, movedLotId, source.SourceId, 0, source.Start,
             source.End, inventory.ContentHash, production.ContentHash, candidateInventory.ContentHash,
-            candidateProduction.ContentHash);
+            candidateProduction.ContentHash, controlWitness);
     }
 }
