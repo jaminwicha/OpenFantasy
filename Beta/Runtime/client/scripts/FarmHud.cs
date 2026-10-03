@@ -168,7 +168,8 @@ internal sealed partial class FarmHud : CanvasLayer
         _nextTarget.Disabled = pending || paused || !targets.CanCycle;
         _clearTarget.Disabled = pending || paused || targets.Selected is null;
         _openPack.Disabled = pending;
-        _openPack.Text = "Character controls";
+        _openPack.Text = "Pack [I]";
+        _openPack.Visible = view.Inventory is not null;
         _openWheel.Disabled = pending;
         foreach (FarmSemanticAction action in _buttons.Keys) PresentOffer(action, "", pending || paused);
         _pause.Text = paused ? "Resume [Esc]" : "Pause [Esc]";
@@ -185,6 +186,7 @@ internal sealed partial class FarmHud : CanvasLayer
     {
         _offers = offers;
         _openPack.Text = "Pack [I]";
+        _openPack.Visible = true;
         _wood.Visible = true;
         _outcomeChoices = view.EncounterOutcome is { Stage: not LocalOutcomeStage.Completed };
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;

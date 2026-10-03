@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="6ebb8989-5e25-429d-9fb3-c7038cfc68be" name="@mac 2026-10-03 02:39:11" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T02:39:11.3951560-05:00" queuing="2026-10-03T02:39:11.3951560-05:00" start="2026-10-03T02:39:07.6262760-05:00" finish="2026-10-03T02:39:16.3196950-05:00" />
+  <TestSettings name="default" id="25954635-32fc-4192-8da6-9bdc4ed4e1d7">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_02_39_11" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="64fd63b4-2883-4279-b05e-5f36bf876643" testId="b9416a13-47a9-5c87-57b6-45ec74622349" testName="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Actor_cycle_discards_draft_and_emitted_offer_even_when_stock_and_actor_are_unchanged" computerName="mac" duration="00:00:00.9380388" startTime="2026-10-03T02:39:15.3268700-05:00" endTime="2026-10-03T02:39:16.2649740-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="64fd63b4-2883-4279-b05e-5f36bf876643" />
+    <UnitTestResult executionId="b3cb9979-9450-4a47-ae6b-64842c13db7b" testId="4fe8dd1e-d3cf-4c5c-0db3-1bdf0b79fe25" testName="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Actual_creation_and_withdrawal_keep_selected_scope_and_do_not_move_stock" computerName="mac" duration="00:00:00.9019276" startTime="2026-10-03T02:39:13.7629450-05:00" endTime="2026-10-03T02:39:14.6649240-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b3cb9979-9450-4a47-ae6b-64842c13db7b" />
+    <UnitTestResult executionId="ac2e1d64-a2ec-460e-8b07-9193b7eca0b5" testId="e34a2ac1-b02e-f236-6988-b64def5674bc" testName="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.History_permission_is_independent_of_current_inventory(scopes: Inventory | PrivateHistory, history: True)" computerName="mac" duration="00:00:00.8621108" startTime="2026-10-03T02:39:12.2144380-05:00" endTime="2026-10-03T02:39:13.0765950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ac2e1d64-a2ec-460e-8b07-9193b7eca0b5" />
+    <UnitTestResult executionId="e965ecc3-12f7-4633-895e-8b604625f3ad" testId="852f7537-6b40-996b-6bab-e998ce41a055" testName="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Withheld_inventory_is_not_replaced_with_the_home_pack_or_gift_actions" computerName="mac" duration="00:00:00.6603702" startTime="2026-10-03T02:39:14.6657600-05:00" endTime="2026-10-03T02:39:15.3261750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e965ecc3-12f7-4633-895e-8b604625f3ad" />
+    <UnitTestResult executionId="1db3d9ce-ecaa-47d6-9e65-be08d2feb2ab" testId="e0c10c49-21ff-ea68-c2a2-1ea16354e05b" testName="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Inventory_only_uses_the_operated_pack_and_exact_delivery_without_combat_or_private_history" computerName="mac" duration="00:00:00.8539881" startTime="2026-10-03T02:39:11.3588850-05:00" endTime="2026-10-03T02:39:12.2129570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1db3d9ce-ecaa-47d6-9e65-be08d2feb2ab" />
+    <UnitTestResult executionId="8d2b0dfe-0ee9-4fb5-b274-75cf238df161" testId="44703d9b-a61f-a4db-0fa3-2b7f845853c6" testName="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Revocation_invalidates_review_and_returns_a_paused_home_selection" computerName="mac" duration="00:00:01.6352272" startTime="2026-10-03T02:39:09.7141780-05:00" endTime="2026-10-03T02:39:11.3542410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8d2b0dfe-0ee9-4fb5-b274-75cf238df161" />
+    <UnitTestResult executionId="4d3512f7-093d-4678-94da-1f847ba36523" testId="131cccfb-cda0-4978-430d-1a2ba5f064db" testName="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.History_permission_is_independent_of_current_inventory(scopes: Inventory, history: False)" computerName="mac" duration="00:00:00.6847751" startTime="2026-10-03T02:39:13.0773450-05:00" endTime="2026-10-03T02:39:13.7621660-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d3512f7-093d-4678-94da-1f847ba36523" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Revocation_invalidates_review_and_returns_a_paused_home_selection" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="44703d9b-a61f-a4db-0fa3-2b7f845853c6">
+      <Execution id="8d2b0dfe-0ee9-4fb5-b274-75cf238df161" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests" name="Revocation_invalidates_review_and_returns_a_paused_home_selection" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.History_permission_is_independent_of_current_inventory(scopes: Inventory | PrivateHistory, history: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e34a2ac1-b02e-f236-6988-b64def5674bc">
+      <Execution id="ac2e1d64-a2ec-460e-8b07-9193b7eca0b5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests" name="History_permission_is_independent_of_current_inventory" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Actor_cycle_discards_draft_and_emitted_offer_even_when_stock_and_actor_are_unchanged" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b9416a13-47a9-5c87-57b6-45ec74622349">
+      <Execution id="64fd63b4-2883-4279-b05e-5f36bf876643" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests" name="Actor_cycle_discards_draft_and_emitted_offer_even_when_stock_and_actor_are_unchanged" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Withheld_inventory_is_not_replaced_with_the_home_pack_or_gift_actions" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="852f7537-6b40-996b-6bab-e998ce41a055">
+      <Execution id="e965ecc3-12f7-4633-895e-8b604625f3ad" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests" name="Withheld_inventory_is_not_replaced_with_the_home_pack_or_gift_actions" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Inventory_only_uses_the_operated_pack_and_exact_delivery_without_combat_or_private_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e0c10c49-21ff-ea68-c2a2-1ea16354e05b">
+      <Execution id="1db3d9ce-ecaa-47d6-9e65-be08d2feb2ab" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests" name="Inventory_only_uses_the_operated_pack_and_exact_delivery_without_combat_or_private_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Actual_creation_and_withdrawal_keep_selected_scope_and_do_not_move_stock" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4fe8dd1e-d3cf-4c5c-0db3-1bdf0b79fe25">
+      <Execution id="b3cb9979-9450-4a47-ae6b-64842c13db7b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests" name="Actual_creation_and_withdrawal_keep_selected_scope_and_do_not_move_stock" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.History_permission_is_independent_of_current_inventory(scopes: Inventory, history: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="131cccfb-cda0-4978-430d-1a2ba5f064db">
+      <Execution id="4d3512f7-093d-4678-94da-1f847ba36523" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests" name="History_permission_is_independent_of_current_inventory" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b9416a13-47a9-5c87-57b6-45ec74622349" executionId="64fd63b4-2883-4279-b05e-5f36bf876643" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4fe8dd1e-d3cf-4c5c-0db3-1bdf0b79fe25" executionId="b3cb9979-9450-4a47-ae6b-64842c13db7b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e34a2ac1-b02e-f236-6988-b64def5674bc" executionId="ac2e1d64-a2ec-460e-8b07-9193b7eca0b5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="852f7537-6b40-996b-6bab-e998ce41a055" executionId="e965ecc3-12f7-4633-895e-8b604625f3ad" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e0c10c49-21ff-ea68-c2a2-1ea16354e05b" executionId="1db3d9ce-ecaa-47d6-9e65-be08d2feb2ab" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="44703d9b-a61f-a4db-0fa3-2b7f845853c6" executionId="8d2b0dfe-0ee9-4fb5-b274-75cf238df161" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="131cccfb-cda0-4978-430d-1a2ba5f064db" executionId="4d3512f7-093d-4678-94da-1f847ba36523" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="7" executed="7" passed="7" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.49]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.12]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.28]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:07.87]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

@@ -14,6 +14,7 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
     private Label _details = null!;
     private Label _summary = null!;
     private Label _time = null!;
+    private Label _subject = null!;
     private Button _close = null!;
     private Button _giftToggle = null!;
     private Control _body = null!;
@@ -27,6 +28,9 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
     internal event Action? GiftsReviewRequested;
     internal event Action<EntityId>? GiftHistoryRequested;
     internal bool IsOpen => _root.Visible;
+    internal FarmInventoryPresentation? CurrentPresentation { get; private set; }
+    internal ulong PresentationLifetime { get; private set; }
+    internal ulong GiftOfferSelectionVersion => _gifts.OfferSelectionVersion;
 
     public override void _Ready()
     {
@@ -37,6 +41,7 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
         _details = GetNode<Label>("%ItemDetails");
         _summary = GetNode<Label>("%PackSummary");
         _time = GetNode<Label>("%PackTime");
+        _subject = GetNode<Label>("InventoryRoot/Panel/Column/Header/Title");
         _close = GetNode<Button>("%ClosePack");
         _giftToggle = GetNode<Button>("%GiftToggle");
         _body = GetNode<Control>("InventoryRoot/Panel/Column/Body");
@@ -50,6 +55,9 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
     internal void Open(FarmInventoryModel model, FarmGiftSelection? gifts = null)
     {
         _returnFocus = GetViewport().GuiGetFocusOwner();
+        PresentationLifetime++;
+        CurrentPresentation = null;
+        _gifts.Suspend();
         _model = model;
         _gifts.Selection = gifts;
         _gifts.Hide();
@@ -61,6 +69,9 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
     internal void Close()
     {
         _root.Hide();
+        PresentationLifetime++;
+        CurrentPresentation = null;
+        _gifts.Suspend();
         if (IsInstanceValid(_returnFocus) && _returnFocus!.IsVisibleInTree())
         {
             _returnFocus.GrabFocus();
@@ -81,9 +92,13 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
         }
     }
 
-    internal void Present(LocalWorldView view, LocalWorldRunState runState, bool shared = false)
+    internal void Present(LocalWorldView view, LocalWorldRunState runState, bool shared = false) =>
+        Present(FarmInventoryPresentation.From(view), runState, shared);
+
+    internal void Present(FarmInventoryPresentation view, LocalWorldRunState runState, bool shared = false)
     {
         if (!IsOpen || _model is null) return;
+        CurrentPresentation = view;
         _model.Refresh(view);
         bool hasGifts = view.MaterialProposals is not null;
         if (_giftToggle.Visible != hasGifts)
@@ -104,7 +119,12 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;
         int minute = view.Calendar.MillisecondsWithinDay / 60_000 % 60;
         _time.Text += $" · Day {view.Calendar.Days + 1} · {hour:D2}:{minute:D2}";
-        _summary.Text = $"{view.PlayerInventory.Lots.Count(lot => lot.Quantity > 0)} stacks · {view.PlayerInventory.Quantity} units";
+        bool borrowed = view.Selection?.ControlWitness is not null;
+        string name = view.Actors.FirstOrDefault(actor => actor.ActorId == view.ActorId)?.DisplayName ?? "Selected character";
+        _subject.Text = borrowed ? name + "'s pack" : "Your pack";
+        _subject.TooltipText = borrowed ? "Operating " + name + ". Your home character keeps its own belongings and obligations." : "Your own pack";
+        _summary.Text = $"{view.Inventory.Lots.Count(lot => lot.Quantity > 0)} stacks · {view.Inventory.Quantity} units";
+        if (borrowed) _summary.Text += " · Current permissions limit the details shown.";
         if (!_shown.SequenceEqual(_model.Entries))
         {
             Rebuild();
@@ -166,9 +186,16 @@ internal sealed partial class FarmInventoryScreen : CanvasLayer
     internal void ShowGiftHistory(EntityId identity, MaterialProposalView? result, string? message) =>
         _gifts.ShowHistory(identity, result, message);
 
+    internal void InvalidateGiftHistory()
+    {
+        PresentationLifetime++;
+        _gifts.ClearHistory();
+    }
+
     private void ToggleGifts()
     {
         bool show = !_gifts.Visible;
+        InvalidateGiftHistory();
         _gifts.Visible = show;
         _body.Visible = !show;
         _giftToggle.Text = show ? "Items" : "Gifts";

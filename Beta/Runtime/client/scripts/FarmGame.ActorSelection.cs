@@ -191,6 +191,7 @@ public partial class FarmGame
         bool changed = _presentedSelection?.Selection != observation.Selection;
         _presentedSelection = observation;
         if (!changed) return;
+        _gifts.Reset();
         _input.RequireControlResume(observation.ControlStatus.State == PlayerControlState.Pending);
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
         _input.ReconcileHeldActions(FarmInputActions.Routed.Where(action => Input.IsActionPressed(action)));
@@ -241,7 +242,7 @@ public partial class FarmGame
     {
         LocalControlledActorView view = observation.ControlledView!;
         _targets!.Refresh(view);
-        _presented = _session!.CreateOffers(observation, _targets.Selected);
+        _presented = _session!.CreateOffers(observation, _targets.Selected, _gifts);
         if (view.IsRegional && view.Regional is null)
         {
             _hud.Message("The selected character's regional observation is not available yet.");
@@ -281,9 +282,11 @@ public partial class FarmGame
         _canvas.PresentTarget(_targets.Selected);
         _hud.PresentControlled(observation, _action is not null, _input.Paused || !_input.Focused, _presented, _targets);
         PresentControlReturn(observation.ControlStatus);
+        if (view.Inventory is not null)
+            _inventory.Present(FarmInventoryPresentation.From(observation), _session.World.ReadRunState(), _session.IsRemote);
         if (_wheel.Model is { } wheel)
         {
-            wheel.Refresh(target => _session.CreateOffers(observation, target));
+            wheel.Refresh(target => _session.CreateOffers(observation, target, _gifts));
             _wheel.Present(observation.HomeView, _session.World.ReadRunState(),
                 _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel), _session.IsRemote);
         }

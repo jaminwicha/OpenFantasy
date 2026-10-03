@@ -19,6 +19,25 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Selected material gifts](p02/selected-material-gifts/RESULT.md) now binds the shared Pack/Gifts wheel
+to permitted operated Inventory, exact preparation/selection and separate history permission. A real
+four-human native journey covers Inventory-only consent, allowance expiry, both participants' explicit
+gift choices, two finite source-lot transfers and refusal after owner return/revoke. All commands,
+receipts, identities, care/resources and original-genesis replay are checked. Characters remains the
+control surface; the same Pack serves either character without a substitute full private view.
+
+The warning-free build and **2,111 distinct checks** pass on current dependencies:221 affected managed,
+one new native gift journey, four existing native cases and fresh fullCore1,885. Eight actual images
+were inspected. [Final evidence](p02/selected-material-gifts/FINAL_CHECKS.json) and
+[review](p02/selected-material-gifts/REVIEW.md) retain three failures and the fixes, including real
+dropdown overflow. The mixed keyboard-dropdown/pointer-button/controller route is qualified;
+mouse dropdowns, native produced gifts/full history, crash, physical/human/art and production gates
+remain open. Inventory-only readable item descriptions need a permitted public catalog rather than
+unrelated capabilities. Before-change ref `codex/checkpoint-before-selected-material-gifts-20261003T072527Z`
+preserves `8741766b`;777 prior inputs,23 specs and unrelated staging remain preserved, with one additive
+test-project link and exact archived original. Marker `codex/milestone-selected-material-gifts-20261003`
+records this scope. External Claude remains terminally limited; no provider request was executed.
+
 [Native selected-character control](p02/native-selected-control/RESULT.md) now qualifies the actual
 Characters panel across four native TLS peers: explicit consent, real30s loss allowance, acquisition,
 paused selection/Resume, held movement, paid combat, each human's own Wait, owner return/revoke and
@@ -26,7 +45,7 @@ paused handback. Exact native commands/receipts and original-genesis replay pres
 The panel fixes overlap, viewport fit, draft retention and stale opening/row work; the selected HUD
 shows complete permitted resources. The grantee renders with controlled focus; three peers are headless.
 
-The warning-free build and **2,103 distinct checks** pass on current source/binaries:214 affected
+At that checkpoint, the warning-free build and **2,103 distinct checks** passed:214 affected
 managed cases,1 new native journey,3 legacy native cases and fresh fullCore1,885. Nine actual images
 were inspected. [Final evidence](p02/native-selected-control/FINAL_CHECKS.json) retains the failed
 metadata-key attempt and later functional pass whose clipped HUD images were rejected before repair.
@@ -181,11 +200,14 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Complete selected material-gift, worksite/production, private-history, restorative-permission and
+1. Complete remaining selected material-gift, worksite/production, private-history, restorative-permission and
    sell-management screens against existing typed facets and readers. Retain current capture/confirmation
    rules, immutable home identity and explicit scopes; no withheld full-view synthesis. The native
    consent/selection/combat route is qualified above; the [client scope notes](p02/connected-player-control/CLIENT_NOTES.md)
-   retain the incomplete domain surfaces.
+   retain the incomplete domain surfaces. Current native source-lot gifts now pass; produced gifts,
+   selected history lifetime interactions, mouse dropdowns and permission-independent readable public
+   item names remain explicit work. Preserve the shared Pack instead of adding duplicate domain panels
+   to Characters; the final icon/tooltip presentation still needs its normal production pass.
 2. Qualify full profile40 archive/reopen and actual process-kill recovery with native continuation.
    Preserve accepted obligations, permission/assignment lineage and original controller allowance;
    retain the [complete obligations](p02/co-player-control/DESIGN.md). No production world or lived save

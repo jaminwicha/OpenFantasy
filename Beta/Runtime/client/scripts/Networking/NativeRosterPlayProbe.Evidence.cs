@@ -37,7 +37,8 @@ internal sealed partial class NativeRosterPlayProbe
             InitialFocusGuard = _initialFocusGuard, Submissions = Submissions(),
             Selection = SelectionEvidence(), ControlBoard = ControlBoardEvidence(),
             ControlOperationPending = _game.ControlOperationPending, ControlOperationStatus = _game.LastControlOperationStatus,
-            PermissionSubmissions = PermissionSubmissions(), SelectionCaptures = _selectionCaptures
+            PermissionSubmissions = PermissionSubmissions(), SelectionCaptures = _selectionCaptures,
+            Gifts = GiftEvidence(), GiftSnapshots = _giftSnapshots, GiftCaptures = _giftCaptures
         });
     }
 
@@ -54,6 +55,7 @@ internal sealed partial class NativeRosterPlayProbe
         World = _game.CurrentView?.WorldId.ToString(), Actor = _game.CurrentView?.PlayerActorId.ToString(),
         Inputs = _driver.Inputs, Submissions = Submissions(), PermissionSubmissions = PermissionSubmissions(),
         Selection = SelectionEvidence(), ControlBoard = ControlBoardEvidence(), SelectionCaptures = _selectionCaptures,
+        Gifts = GiftEvidence(), GiftSnapshots = _giftSnapshots, GiftCaptures = _giftCaptures,
         ElapsedMilliseconds = _driver.ElapsedMilliseconds,
         NativeFocused = GetWindow().HasFocus(), ObservedNativeFocus = _nativeFocus,
         InitialFocusGuard = _initialFocusGuard, Unfocusable = GetWindow().Unfocusable, Display = DisplayServer.GetName()

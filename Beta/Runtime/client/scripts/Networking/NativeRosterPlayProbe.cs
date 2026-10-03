@@ -111,6 +111,19 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "selected-strike": await SelectedWheel(FarmSemanticAction.Strike); break;
             case "selected-wait": await SelectedWheel(FarmSemanticAction.Wait); break;
             case "capture-selection": await CaptureSelection(); break;
+            case "gift-open": await OpenGifts(); break;
+            case "gift-close": await CloseGifts(); break;
+            case "gift-lot": await ChooseGiftLot(request.GetProperty("Direction").GetString()!, RequestActor(request)); break;
+            case "gift-recipient": await ChooseGiftRecipient(RequestActor(request)); break;
+            case "gift-quantity": await ChooseGiftQuantity(request.GetProperty("Direction").GetString()!); break;
+            case "gift-prepare": await PrepareGift(); break;
+            case "gift-offer": await ChooseGiftOffer(RequestActor(request)); break;
+            case "gift-review": await ReviewGift(request.GetProperty("Direction").GetString()!, blocked: false); break;
+            case "gift-review-blocked": await ReviewGift(request.GetProperty("Direction").GetString()!, blocked: true); break;
+            case "gift-confirm": await ConfirmGift(request.GetProperty("Direction").GetString() ?? "Applied"); break;
+            case "gift-cancel": await CancelGift(); break;
+            case "gift-snapshot": SnapshotGift(request.GetProperty("Direction").GetString()!); break;
+            case "capture-gifts": await CaptureGifts(); break;
             case "try-pending-resume": await TryPendingResume(); break;
             case "focus-return": await FocusReturn(); break;
             case "hold-right": SetRight(true); await _driver.Delay(0.15); break;
@@ -119,7 +132,7 @@ internal sealed partial class NativeRosterPlayProbe : Node
             default: throw new InvalidDataException("Unsupported roster mailbox verb.");
         }
         if (_stage.StartsWith("control-", StringComparison.Ordinal) || _stage.StartsWith("selected-", StringComparison.Ordinal)
-            || _stage == "capture-selection")
+            || _stage.StartsWith("gift-", StringComparison.Ordinal) || _stage is "capture-selection" or "capture-gifts")
             MarketProbeDriver.Require(requestElapsed.Elapsed < TimeSpan.FromSeconds(20), "The selected native request exceeded twenty seconds.");
         return false;
     }

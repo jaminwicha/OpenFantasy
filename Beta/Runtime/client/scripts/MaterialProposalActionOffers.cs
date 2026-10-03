@@ -15,10 +15,17 @@ internal static class MaterialProposalActionOffers
 
     internal static void Add(LocalWorldView view, FarmActionScope scope, FarmGiftSelection? selection,
         IDictionary<FarmSemanticAction, FarmActionOffer> offers, EntityId? woodDefinitionId = null,
+        EntityId? berryDefinitionId = null) =>
+        Add(FarmInventoryPresentation.From(view), scope, selection, offers, woodDefinitionId, berryDefinitionId);
+
+    internal static void Add(FarmInventoryPresentation view, FarmActionScope scope, FarmGiftSelection? selection,
+        IDictionary<FarmSemanticAction, FarmActionOffer> offers, EntityId? woodDefinitionId = null,
         EntityId? berryDefinitionId = null)
     {
         if (view.MaterialProposals is null) return;
-        string? contextBlocker = ContextBlocker(view);
+        string? contextBlocker = view.ContextBlocker
+            ?? (selection is not null && !selection.MatchesScope(view)
+                ? "Choose and prepare gifts for the current character selection." : null);
         offers[FarmSemanticAction.ProposeMaterial] = Create(view, scope, selection, contextBlocker,
             woodDefinitionId, berryDefinitionId);
         foreach (FarmSemanticAction action in new[] { FarmSemanticAction.AcceptMaterial,
@@ -29,14 +36,14 @@ internal static class MaterialProposalActionOffers
         }
     }
 
-    private static FarmActionOffer Create(LocalWorldView view, FarmActionScope scope, FarmGiftSelection? selection,
+    private static FarmActionOffer Create(FarmInventoryPresentation view, FarmActionScope scope, FarmGiftSelection? selection,
         string? contextBlocker, EntityId? woodDefinitionId, EntityId? berryDefinitionId)
     {
         ProposeMaterialIntent? prepared = selection?.PreparedGift;
         EntityId? recipient = prepared?.Terms.RecipientActorId ?? selection?.RecipientActorId;
-        string partner = ActorName(view, recipient);
+        string partner = view.Name(recipient);
         string cost = prepared is null ? "Choose a stack and quantity"
-            : $"{prepared.Terms.Quantity} {ItemName(view, prepared.Terms.Definition.DefinitionId, woodDefinitionId, berryDefinitionId)}";
+            : $"{prepared.Terms.Quantity} {view.ItemName(prepared.Terms.Definition.DefinitionId, woodDefinitionId, berryDefinitionId)}";
         string? blocker = contextBlocker
             ?? (selection?.LotId is null || selection.LotKind is null ? "Choose one inventory stack in your pack."
             : recipient is null ? "Choose the named recipient."
@@ -46,11 +53,12 @@ internal static class MaterialProposalActionOffers
         string detail = "Creation reserves no stock. The recipient must separately accept this exact gift."
             + (prepared is null ? " Inspection spends nothing."
                 : $" To {partner}. Available briefly while world time advances. Status: Prepared.");
+        if (view.IsSelected) detail += " " + view.AvailabilityNote;
         return new(FarmSemanticAction.ProposeMaterial, scope, "Create gift", partner, recipient, cost,
             $"You offered {cost} to {partner}.", blocker is null ? prepared : null, blocker, detailText: detail);
     }
 
-    private static FarmActionOffer Reply(LocalWorldView view, FarmActionScope scope, MaterialProposalView? selected,
+    private static FarmActionOffer Reply(FarmInventoryPresentation view, FarmActionScope scope, MaterialProposalView? selected,
         FarmSemanticAction action, string? contextBlocker, EntityId? woodDefinitionId, EntityId? berryDefinitionId)
     {
         string label = action switch
@@ -63,14 +71,14 @@ internal static class MaterialProposalActionOffers
             : view.MaterialProposals!.Offers.FirstOrDefault(offer => offer.ProposalId == selected.ProposalId);
         EntityId? partnerId = selected is null ? null
             : selected.ViewerIsSender ? selected.Terms.RecipientActorId : selected.Terms.SenderActorId;
-        string partner = ActorName(view, partnerId);
+        string partner = view.Name(partnerId);
         string quantity = selected is null ? "Select an offer"
-            : $"{selected.Terms.Quantity} {ItemName(view, selected.Terms.Definition.DefinitionId, woodDefinitionId, berryDefinitionId)}";
+            : $"{selected.Terms.Quantity} {view.ItemName(selected.Terms.Definition.DefinitionId, woodDefinitionId, berryDefinitionId)}";
         bool withdrawing = action == FarmSemanticAction.WithdrawMaterial;
         string? blocker = contextBlocker
             ?? (selected is null ? "Select one saved gift offer in your pack."
             : selected.Terms.WorldId != view.WorldId || selected.Terms.BranchId != view.BranchId
-                || (selected.ViewerIsSender ? selected.Terms.SenderActorId : selected.Terms.RecipientActorId) != view.PlayerActorId
+                || (selected.ViewerIsSender ? selected.Terms.SenderActorId : selected.Terms.RecipientActorId) != view.ActorId
                 ? "This selected gift belongs to another participant or world."
             : current is null ? "This selected gift is no longer in the live list. Inspect its recorded outcome explicitly."
             : current.Status != MaterialProposalStatus.Open ? $"This gift is {current.Status.ToString().ToLowerInvariant()}."
@@ -93,6 +101,7 @@ internal static class MaterialProposalActionOffers
             : $"{quantity} {(selected.ViewerIsSender ? "to" : "from")} {partner}; expires as world time advances. "
                 + $"Status: {current?.Status.ToString() ?? selected.Status.ToString()}.";
         detail += " Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.";
+        if (view.IsSelected) detail += " " + view.AvailabilityNote;
         string completion = action switch
         {
             FarmSemanticAction.AcceptMaterial => $"You accepted {quantity} from {partner}.",
@@ -104,34 +113,11 @@ internal static class MaterialProposalActionOffers
             completion, intent, blocker, detailText: detail);
     }
 
-    private static string? ContextBlocker(LocalWorldView view) => view.HasReadingHold
-        ? "Finish the current conversation before changing gifts."
-        : view.IsResolvingConsequences ? "Wait for the current world changes to finish."
-        : view.Care?.PendingAcknowledgmentId is not null ? "The accepted recovery treatment must finish first."
-        : view.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration
-            ? "Gifts are available during ordinary exploration."
-        : view.EncounterLifecycle is { PlayerCanAct: false } ? "You cannot act until your current recovery ends."
-        : null;
+    internal static string ActorName(LocalWorldView view, EntityId? actorId) =>
+        FarmInventoryPresentation.From(view).Name(actorId);
 
-    internal static string ActorName(LocalWorldView view, EntityId? actorId) => actorId is null ? "Choose a person"
-        : view.Actors.FirstOrDefault(actor => actor.ActorId == actorId)?.DisplayName ?? $"Person {actorId}";
-
-    /// <summary>Only known public material descriptions are used; an unrecognized definition stays explicit.</summary>
+    /// <summary>Only permitted public material descriptions are used.</summary>
     internal static string ItemName(LocalWorldView view, EntityId definitionId, EntityId? woodDefinitionId = null,
-        EntityId? berryDefinitionId = null)
-    {
-        if (definitionId == woodDefinitionId) return "Wood";
-        if (definitionId == berryDefinitionId) return "Berries";
-        var restorative = view.Restorative?.SelfUseOffers.FirstOrDefault(offer => offer.ItemDefinitionId == definitionId);
-        if (restorative is not null) return restorative.ItemName;
-        var tool = view.GatheringTools.FirstOrDefault(candidate => view.PlayerInventory.Lots.Any(lot =>
-            lot.LotId == candidate.LotId && lot.DefinitionId == definitionId));
-        if (tool is not null) return tool.Kind == GatherToolKind.Axe ? "Axe" : "Sickle";
-        return FarmCrafting.RationsRecipe(view)?.Terms.FirstOrDefault(term => term.DefinitionId == definitionId)?.Role switch
-        {
-            RecipeMaterialRole.Output => "Rations",
-            RecipeMaterialRole.Waste => "Wood offcuts",
-            _ => $"Unfamiliar item ({definitionId})"
-        };
-    }
+        EntityId? berryDefinitionId = null) =>
+        FarmInventoryPresentation.From(view).ItemName(definitionId, woodDefinitionId, berryDefinitionId);
 }

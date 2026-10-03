@@ -1,0 +1,45 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.17]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.34]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.47]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:44.70]     OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity [FAIL]
+[xUnit.net 00:00:44.70]       Native roster stage=capture-gifts, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-material-gifts/qualification/native-gifts-20261003T074744873018Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0110.response.json: System.InvalidOperationException: A rendered gift control lies outside the viewport.
+[xUnit.net 00:00:44.70]          at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+[xUnit.net 00:00:44.70]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.CaptureGifts() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Gifts.cs:line 255
+[xUnit.net 00:00:44.70]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 126
+[xUnit.net 00:00:44.70]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+[xUnit.net 00:00:44.70]       Stack Trace:
+[xUnit.net 00:00:44.71]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(79,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds)
+[xUnit.net 00:00:44.71]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(53,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target)
+[xUnit.net 00:00:44.71]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedGiftsNative/NativeSelectedGiftJourneyTests.cs(202,0): at OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.<>c__DisplayClass12_0.<<Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity>g__Reply|2>d.MoveNext()
+[xUnit.net 00:00:44.71]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:44.71]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedGiftsNative/NativeSelectedGiftJourneyTests.cs(109,0): at OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity()
+[xUnit.net 00:00:44.71]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedGiftsNative/NativeSelectedGiftJourneyTests.cs(158,0): at OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity()
+[xUnit.net 00:00:44.71]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedGiftsNative/NativeSelectedGiftJourneyTests.cs(158,0): at OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity()
+[xUnit.net 00:00:44.71]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:44.73]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity [44 s]
+  Error Message:
+   Native roster stage=capture-gifts, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-material-gifts/qualification/native-gifts-20261003T074744873018Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0110.response.json: System.InvalidOperationException: A rendered gift control lies outside the viewport.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.CaptureGifts() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Gifts.cs:line 255
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 126
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.<>c__DisplayClass12_0.<<Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity>g__Reply|2>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedGiftsNative/NativeSelectedGiftJourneyTests.cs:line 202
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedGiftsNative/NativeSelectedGiftJourneyTests.cs:line 109
+   at OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedGiftsNative/NativeSelectedGiftJourneyTests.cs:line 158
+   at OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedGiftsNative/NativeSelectedGiftJourneyTests.cs:line 158
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 45.2544 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-material-gifts/qualification/native-gifts-20261003T074744873018Z/checks.trx

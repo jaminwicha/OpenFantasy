@@ -611,15 +611,14 @@ internal sealed partial class FarmClientSession : IAsyncDisposable
     internal IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> CreateOffers(LocalWorldView view, FarmTarget? selectedTarget = null,
         FarmGiftSelection? giftSelection = null, FarmMarketDraft? marketDraft = null)
     {
-        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view, selectedTarget, giftSelection, marketDraft);
         if (ReadSelection() is { } observed)
         {
             if (observed.Selection.ActorId != view.PlayerActorId || observed.HomeView.WorldId != view.WorldId
                 || observed.HomeView.BranchId != view.BranchId)
                 throw new InvalidOperationException("Read the selected character's scoped offers before choosing an action.");
-            FarmActionScope scope = FarmActionScope.From(_delivery, view) with { Selection = observed.Selection };
-            offers = offers.ToDictionary(pair => pair.Key, pair => pair.Value.WithScope(scope));
+            return CreateOffers(observed with { HomeView = view }, selectedTarget, giftSelection, marketDraft);
         }
+        IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers = _offers.Create(view, selectedTarget, giftSelection, marketDraft);
         foreach (FarmActionOffer offer in offers.Values)
         {
             _issuedOffers.Add(offer, new OfferedAction());

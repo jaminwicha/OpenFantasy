@@ -137,6 +137,14 @@ review presents exact captured terms and confirmation submits those terms unchan
 obligations remain represented alongside the selected character; unavailable facets do not create inert
 menus. Rendered usability, input and complete domain-screen coverage are separate acceptance obligations.
 
+Pack opens the operated inventory through the shared [typed pack presentation](../../client/scripts/FarmInventoryPresentation.cs)
+when Inventory is permitted; Characters remains the consent and selection surface. The
+[gift binding](material-proposals.md#native-selection-and-commitment) retains explicit physical stock,
+recipient and quantity, fixed preparation and the separate four-action Gifts wheel. Its draft and
+captured action carry the complete selection lifetime; another actor or generation cannot inherit
+them. History controls require PrivateHistory and asynchronous results are fenced by the exact
+selection, pack opening and inspected offer. No missing facet is synthesized from home state.
+
 The [Characters scene](../../client/scenes/FarmControlPanel.tscn) owns layout, with a grant column and
 scrollable permission/selection rows below the main header. Recipient choice is explicit; refresh and
 reopening preserve its actor identity and checked-scope draft for the same home character. Those local

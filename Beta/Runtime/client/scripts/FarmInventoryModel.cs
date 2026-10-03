@@ -20,20 +20,22 @@ internal sealed record FarmInventoryEntry(FarmInventoryKey Key, string Name, str
 /// <summary>Read-only inspection of the current actor's public pack; no command or authority access.</summary>
 internal sealed class FarmInventoryModel(EntityId woodDefinitionId, EntityId? berryDefinitionId)
 {
-    private (EntityId World, EntityId Branch, EntityId Actor)? _scope;
+    private FarmInventoryScope? _scope;
     internal IReadOnlyList<FarmInventoryEntry> Entries { get; private set; } = Array.Empty<FarmInventoryEntry>();
     internal FarmInventoryKey? SelectedKey { get; private set; }
     internal FarmInventoryEntry? Selected => Entries.FirstOrDefault(entry => entry.Key == SelectedKey);
 
-    internal void Refresh(LocalWorldView view)
+    internal void Refresh(LocalWorldView view) => Refresh(FarmInventoryPresentation.From(view));
+
+    internal void Refresh(FarmInventoryPresentation view)
     {
-        var scope = (view.WorldId, view.BranchId, view.PlayerActorId);
+        var scope = view.Scope;
         if (_scope != scope)
         {
             _scope = scope;
             SelectedKey = null;
         }
-        Entries = Array.AsReadOnly(view.PlayerInventory.Lots.Where(lot => lot.Quantity > 0)
+        Entries = Array.AsReadOnly(view.Inventory.Lots.Where(lot => lot.Quantity > 0)
             .GroupBy(lot => new FarmInventoryKey(lot.DefinitionId, lot.Provenance, lot.AvailableForDelivery))
             .Select(group => Describe(view, group.Key, group.ToArray()))
             .OrderBy(entry => entry.ToolPower is null ? 1 : 0)
@@ -55,7 +57,7 @@ internal sealed class FarmInventoryModel(EntityId woodDefinitionId, EntityId? be
         return true;
     }
 
-    private FarmInventoryEntry Describe(LocalWorldView view, FarmInventoryKey key, LocalItemLotView[] lots)
+    private FarmInventoryEntry Describe(FarmInventoryPresentation view, FarmInventoryKey key, LocalItemLotView[] lots)
     {
         LocalGatherToolLotView? tool = view.GatheringTools.FirstOrDefault(candidate => lots.Any(lot => lot.LotId == candidate.LotId));
         (string name, string description) = tool?.Kind switch
@@ -70,12 +72,12 @@ internal sealed class FarmInventoryModel(EntityId woodDefinitionId, EntityId? be
             lots.Aggregate(0UL, (sum, lot) => checked(sum + lot.Quantity)), lots.Length, tool?.Power);
     }
 
-    private static (string Name, string Description) DescribeRecipeMaterial(LocalWorldView view, EntityId definition)
+    private static (string Name, string Description) DescribeRecipeMaterial(FarmInventoryPresentation view, EntityId definition)
     {
-        var restorative = view.Restorative?.SelfUseOffers.FirstOrDefault(value => value.ItemDefinitionId == definition);
+        var restorative = view.Restoratives.FirstOrDefault(value => value.ItemDefinitionId == definition);
         if (restorative is not null)
             return (restorative.ItemName, $"Restores up to {restorative.HealHitPoints} HP during exploration. Inspect the Care wheel page to use a dose.");
-        LocalCraftTermView? term = FarmCrafting.RationsRecipe(view)?.Terms.FirstOrDefault(value => value.DefinitionId == definition);
+        LocalCraftTermView? term = view.RationsRecipe?.Terms.FirstOrDefault(value => value.DefinitionId == definition);
         return term?.Role switch
         {
             RecipeMaterialRole.Output => ("Rations", "Cold berry portions packed in wooden containers."),

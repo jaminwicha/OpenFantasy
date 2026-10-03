@@ -1,0 +1,21 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.49]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.12]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.28]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Revocation_invalidates_review_and_returns_a_paused_home_selection [1 s]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Inventory_only_uses_the_operated_pack_and_exact_delivery_without_combat_or_private_history [853 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.History_permission_is_independent_of_current_inventory(scopes: Inventory | PrivateHistory, history: True) [862 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.History_permission_is_independent_of_current_inventory(scopes: Inventory, history: False) [684 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Actual_creation_and_withdrawal_keep_selected_scope_and_do_not_move_stock [901 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Withheld_inventory_is_not_replaced_with_the_home_pack_or_gift_actions [660 ms]
+[xUnit.net 00:00:07.87]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Actor_cycle_discards_draft_and_emitted_offer_even_when_stock_and_actor_are_unchanged [938 ms]
+
+Test Run Successful.
+Total tests: 7
+     Passed: 7
+ Total time: 8.6869 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-material-gifts/qualification/new-managed-20261003T073906074496Z/checks.trx

@@ -1,0 +1,8 @@
+{
+  "previousReport": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-selected-control/qualification/core-20261003T071427627272Z/report.json",
+  "changedCoreTestOutputFiles": [
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll"
+  ],
+  "decision": "Run full Core on current final binaries; source equality cannot establish binary identity."
+}

@@ -419,6 +419,20 @@ participant offer. The pack uses public projections; it neither enumerates priva
 submits commands. Missing or spent choices remain missing, without same-item fallback. A draft
 remains fixed across frame updates until the player deliberately prepares again.
 
+[`FarmInventoryPresentation`](../../client/scripts/FarmInventoryPresentation.cs) supplies the same
+Pack and Gifts controls from either a home observation or the operated character's permitted facets.
+It retains no substitute full-world view. Its scope includes world, branch, actor and the complete
+optional port/selection generation/control witness. Drafts and inspected offers belong to that scope;
+selection transitions clear them, even when a later transition returns to the same actor and stock.
+Item labels use only available descriptions. Withheld inventory cannot become an empty or home pack.
+
+Current gifts require Inventory permission. PrivateHistory independently governs the explicit
+history control; a current open proposal does not disclose terminal history. Shared holds and encounter
+phase constrain gifts, while personal readiness and care come only from the operated actor's available
+facets. Unknown conditions are checked by the ordinary authority at confirmation; the home actor's
+personal readiness is never substituted. The permanent home participant keeps its own belongings and
+obligations, and native command delivery still names the actual operator.
+
 [`MaterialProposalActionOffers`](../../client/scripts/MaterialProposalActionOffers.cs) maps those
 choices into four independent semantic actions. The Gifts wheel follows Actions and any available
 Care page, keeping create/accept/decline/withdraw in stable cardinal positions. Opening or paging
@@ -431,7 +445,16 @@ a popup is visible, then validates the selected identity against the latest publ
 reselection of the same offer refreshes its observed terms. Only separate wheel confirmation can
 submit through the ordinary authenticated session cutoff. Pause, dialogue, pending action and focus
 ownership retain their usual rules. The pack's explicit history button starts the bounded background
-query; frames only observe completion, and results apply only to the still-selected identity.
+query; frames only observe completion. A selected query uses the exact selection envelope, including
+when the selected actor is home. A result applies only while the same pack opening, full selection,
+explicit offer-selection version, proposal identity and focus remain current. Closure, focus loss or
+tab switching invalidates presentation of a pending result without abandoning its task or swallowing
+its failure. Refresh and history inspection never renew the gift or submit a recipient decision.
+
+Dropdown labels stay within their column, using ellipsis for overflow. Full labels remain in the
+selected-control and popup-item tooltips; wrapped, scrollable details retain the actual offer terms.
+Long item or participant names cannot enlarge the pack beyond the viewport. Focus navigation scrolls
+the target control into view, while the review and close controls remain outside the scrolling content.
 
 ## Retained-world native selection
 

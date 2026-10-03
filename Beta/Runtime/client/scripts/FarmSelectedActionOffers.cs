@@ -14,9 +14,11 @@ namespace OpenFantasy.Client;
 /// <summary>Offers from purpose-scoped disclosures. An absent facet never becomes empty owned state.</summary>
 internal static class FarmSelectedActionOffers
 {
-    internal static IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> Create(LocalControlledActorView view,
-        FarmActionScope scope, FarmTarget? target, EntityId defaultSpeaker)
+    internal static IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> Create(LocalSelectedPlayerObservation observation,
+        FarmActionScope scope, FarmTarget? target, EntityId defaultSpeaker, FarmGiftSelection? gifts = null,
+        EntityId? woodDefinitionId = null, EntityId? berryDefinitionId = null)
     {
+        LocalControlledActorView view = observation.ControlledView!;
         Dictionary<FarmSemanticAction, FarmActionOffer> offers = [];
         void Add(FarmSemanticAction action, string label, string name, EntityId? id, string cost,
             WorldActionIntent? intent, string? blocked = null, string? detail = null) => offers[action] =
@@ -101,6 +103,9 @@ internal static class FarmSelectedActionOffers
                 string.Join(", ", recipe.Terms.Where(term => term.Role == RecipeMaterialRole.Input)
                     .Select(term => $"{term.Quantity} × {term.DefinitionId}")), request is null ? null : new CraftIntent(request));
         }
+        if (view.Inventory is not null)
+            MaterialProposalActionOffers.Add(FarmInventoryPresentation.From(observation), scope, gifts, offers,
+                woodDefinitionId, berryDefinitionId);
         return new ReadOnlyDictionary<FarmSemanticAction, FarmActionOffer>(offers);
     }
 

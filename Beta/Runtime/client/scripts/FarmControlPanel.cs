@@ -155,11 +155,6 @@ internal sealed partial class FarmControlPanel : CanvasLayer
                     AddButton("Select " + Name(witness.OwnerActorId), () => SelectionRequested?.Invoke(selected, witness.OwnerActorId), "select", witness.OwnerActorId);
                 AddButton("Release borrowed control", () => ReleaseRequested?.Invoke(witness), "release", witness.OwnerActorId);
             }
-            if (selected.ControlledView?.Inventory is { } inventory)
-            {
-                AddText("Selected character's pack");
-                foreach (var lot in inventory.Lots) AddText($"{lot.Quantity} × {lot.DefinitionId} · lot {lot.LotId}");
-            }
             if (selected.ControlledView?.Trade is { } trade)
             {
                 AddText("Selected character's trade · choose the quantity at left. Requests reserve nothing.");

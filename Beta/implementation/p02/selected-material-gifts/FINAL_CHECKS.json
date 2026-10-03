@@ -1,0 +1,261 @@
+{
+  "allSelectedQualificationsPassed": true,
+  "selectedNativeGiftJourneyQualified": true,
+  "fullCoPlayerFeatureAccepted": false,
+  "fullPhaseAccepted": false,
+  "movementTimingGateClosed": false,
+  "productionHistoryLatencyGateClosed": false,
+  "profile40ProcessKillQualified": false,
+  "nativeProducedGiftQualified": false,
+  "nativeSelectedHistoryLifecycleQualified": false,
+  "mouseDropdownQualified": false,
+  "physicalDeviceAcceptance": false,
+  "humanUsabilityAcceptance": false,
+  "artAcceptance": false,
+  "sourceHead": "8741766b5a10615a23d50e21dd4bb0d58138f5e7",
+  "preChangeCheckpoint": "codex/checkpoint-before-selected-material-gifts-20261003T072527Z",
+  "milestone": "codex/milestone-selected-material-gifts-20261003",
+  "protectedCounts": {
+    "tests": 777,
+    "specs": 23
+  },
+  "onlyExistingTestProjectChange": "One additive FarmInventoryPresentation.cs source link; exact original archived and compared.",
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "b4531e88d5283742cb5d915dec8a5232c344e90049db2269c3f959c57a4a16ae",
+  "finalizerSha256": "4b9e701f788e5a7ed724cae78f8a36ed8f8bdf4d9b991d66df133cad2d66121c",
+  "distinctCasesPassingOnVerifiedDependencies": 2111,
+  "newCases": [
+    "OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Actor_cycle_discards_draft_and_emitted_offer_even_when_stock_and_actor_are_unchanged",
+    "OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Actual_creation_and_withdrawal_keep_selected_scope_and_do_not_move_stock",
+    "OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.History_permission_is_independent_of_current_inventory(scopes: Inventory | PrivateHistory, history: True)",
+    "OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.History_permission_is_independent_of_current_inventory(scopes: Inventory, history: False)",
+    "OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Inventory_only_uses_the_operated_pack_and_exact_delivery_without_combat_or_private_history",
+    "OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Revocation_invalidates_review_and_returns_a_paused_home_selection",
+    "OpenFantasy.Hosting.Tests.Client.SelectedGifts.SelectedGiftBindingTests.Withheld_inventory_is_not_replaced_with_the_home_pack_or_gift_actions",
+    "OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity"
+  ],
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T075048016749Z/report.json",
+      "sha256": "917a80fedfdd7062d9f9d2968313d1dd73f0835cac963b59d195821dccc62514",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 5.176055834017461,
+      "tracing": false,
+      "outcomes": null,
+      "unrunCases": []
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261003T075450696698Z/report.json",
+      "sha256": "4bbc7de0ad61e48cc7c83f4826f0a9cde255acb268f8773819a2ed6e01f08000",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 45.717700459004845,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 221
+      },
+      "unrunCases": []
+    },
+    "native-gifts": {
+      "path": "qualification/native-gifts-20261003T075054009383Z/report.json",
+      "sha256": "a02dc74862f30a57f4eb3349b3ceab28223d728362b155413adcc4060cd42406",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 59.77732754099998,
+      "tracing": true,
+      "outcomes": {
+        "Passed": 1
+      },
+      "unrunCases": []
+    },
+    "native-selection": {
+      "path": "qualification/native-selection-20261003T075537114119Z/report.json",
+      "sha256": "db499f3305801fe9acc6cd3f87001f1e1542ee730f50f5bd17091ed83e0cb11b",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 51.6614605000068,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 1
+      },
+      "unrunCases": []
+    },
+    "native-roster": {
+      "path": "qualification/native-roster-20261003T075629005672Z/report.json",
+      "sha256": "676c3a83c4aea96b2cf5a4c4ace4b23397dc34bdce561ea3f87351722c0d7d33",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 94.13168870800291,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 1
+      },
+      "unrunCases": []
+    },
+    "native-compatibility": {
+      "path": "qualification/native-compatibility-20261003T075803571397Z/report.json",
+      "sha256": "d73d97d91f18eb346a5f3db3f3badb6faba013aed8a7bda9c2a9a1eb7f364cce",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 19.1570154580113,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 2
+      },
+      "unrunCases": []
+    },
+    "core": {
+      "path": "qualification/core-20261003T075823280071Z/report.json",
+      "sha256": "ddee7977825f1f30963dd9bb65c67021981562e2a9d1afc1c4e733b2ebbaf20f",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 217.47181474999525,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "unrunCases": []
+    }
+  },
+  "unresolvedSelectedFailures": [],
+  "retainedFailedAttempts": [
+    {
+      "path": "qualification/native-gifts-20261003T073917217172Z/report.json",
+      "sha256": "c96e956ac9c5048e4ae7c52a766c2238bed85135ab3811aa37978d4a389fde43",
+      "mode": "native-gifts",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/native-gifts-20261003T074410647280Z/report.json",
+      "sha256": "483ee1e2682c667323fe312d44722786acfaace30517a0e9375620fbe8ff63d9",
+      "mode": "native-gifts",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/native-gifts-20261003T074744873018Z/report.json",
+      "sha256": "bccffd55eabe77373a67272151821c1fe0f91051b07a11df0b4412582b011769",
+      "mode": "native-gifts",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    }
+  ],
+  "journey": {
+    "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/journey.json",
+    "status": "passed",
+    "elapsedMilliseconds": 56500,
+    "observedAllowanceSeconds": 30.3049591,
+    "preparation": "Original-genesis ordinary journaled travel only; no stock or body changes and no native travel claim.",
+    "gameplaySubmissions": 13,
+    "permissionSubmissions": 3,
+    "actualTransfers": 2
+  },
+  "authenticatedNativeArtifacts": [
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/final.ofc",
+      "sha256": "bf5c4f2891c422b5b1bdef480d91e9f8ee0d55cdf09b2907e5221720f35a6677"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/genesis.ofc",
+      "sha256": "1d996c20d31a325e33f7c966d49c924be1c639338e50d936b42ca46706d77db9"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/journal.json",
+      "sha256": "6c7030677cf61d2cefd592bd0f30582440f50af49e775818d98641ade8e21791"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/journey.json",
+      "sha256": "0792d99b299430e0ab0aeaf4f34067af6cf96395495b452b8ff01723ab94bed2"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/preparation.txt",
+      "sha256": "51703e8ae6dd85e85fa0ee907cf7cbc48cc90556ae5f5e17accaf92a7d7c24e1"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/prepared.ofc",
+      "sha256": "1d996c20d31a325e33f7c966d49c924be1c639338e50d936b42ca46706d77db9"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/public.cer",
+      "sha256": "4460e4c4f78f0240df6f5598d5a9111f18f533a6e9a029c5e6b5c8a19c66c0f2"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/receipts.json",
+      "sha256": "1e81f0a51613ed8c7e447c629c5ff72b86b0e02dfdc0a25f7c7be3165d68c443"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/world.sqlite3",
+      "sha256": "23ed3ae4831c9ffaae506cfb0c7682ccda98f02913681189a6fcff44314485cc"
+    }
+  ],
+  "leadInspectedImages": [
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0061.png",
+      "sha256": "97b8b16716b5d427782cb4bba34e23031fe4a19ff718d93e8799d0c518f4135d"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0108-gift-GiftLot.png",
+      "sha256": "c885eeb98e537c4ba737e9f7e4e0724622c21ab970a653878203377c9a3ad832"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/5795dc4890da7573cfc5b3948d0296df-first/0108-gift-GiftOfferDetails.png",
+      "sha256": "8c1e098ebd0b1215c2b78e16b198478f20bd46e4ead1ae71e1eff2e279c301bb"
+    },
+    {
+      "path": "qualification/native-gifts-20261003T075054009383Z/native/selected-gifts/79dddd9ea31bf745606a5473ea76ed14-first/0018-gift-GiftOfferDetails.png",
+      "sha256": "0c057523382a4e1987cac3778268b0c3a6172ff45bf2d7955a10527740be321c"
+    },
+    {
+      "path": "qualification/native-selection-20261003T075537114119Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0318.png",
+      "sha256": "71e12144e790c2f29a5a8f1783ae73b0e03d8ea7f38f11b364bba3271f3b6fc7"
+    },
+    {
+      "path": "qualification/native-selection-20261003T075537114119Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0345.png",
+      "sha256": "05396a445b3cebfebf4926804ba466224063f3d5bda8b9922a0e46c388c60597"
+    },
+    {
+      "path": "qualification/native-roster-20261003T075629005672Z/native/roster/5795dc4890da7573cfc5b3948d0296df-first/0040.png",
+      "sha256": "645c8eb61f4c7a610e162d5087bdd26a6218266a0633981bad4695a46404daa0"
+    },
+    {
+      "path": "qualification/native-compatibility-20261003T075803571397Z/native/rendered/native-player.png",
+      "sha256": "bfccb8ba4561580ada38d8655b972037e8528e1b8f839df25900d0a9f3610fea"
+    }
+  ],
+  "review": "REVIEW.md",
+  "externalClaudeRequestExecuted": false,
+  "limits": [
+    "Four native TLS peers; grantee and recipient render with controlled input and no-focus configuration.",
+    "Native raw/source-lot gifts use real finite stock and actual human choices; preparation travel is journaled, not native-qualified.",
+    "The successful new native journey has tracing enabled; it is not a production latency measurement.",
+    "Core evidence is fresh because actual dependency binaries differed; no inherited Core pass is claimed.",
+    "Only the listed images received manual inspection; other per-control captures have executable bounds checks.",
+    "Mouse dropdown behavior retains an earlier failed input attempt; keyboard navigation does not qualify that route.",
+    "This journey does not perform a profile40 archive cut or process kill or exercise the complete selected history lifecycle.",
+    "Readable public item descriptions for Inventory-only control and polished icon/tooltip presentation remain follow-up work.",
+    "Fresh selected passes do not explain earlier retained latency failures or establish production reliability.",
+    "Independent source review covers UI/adapter/shared presentation; root integrates and reviews the separately authored probe/coordinator."
+  ]
+}

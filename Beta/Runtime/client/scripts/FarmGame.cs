@@ -30,8 +30,6 @@ public partial class FarmGame : Node2D
     private FarmInventoryScreen _inventory = null!;
     private FarmQuickWheel _wheel = null!;
     private readonly FarmGiftSelection _gifts = new();
-    private Task<MaterialProposalView?>? _giftInspection;
-    private EntityId? _inspectingGiftId;
     private Action<FarmSubmission>? _submissionObserver;
 
     internal string? SavePathOverride { get; init; }
@@ -318,13 +316,7 @@ public partial class FarmGame : Node2D
         }
         CompleteMarketTasks();
         CompleteControlOperations();
-        if (_giftInspection is { IsCompleted: true } inspection)
-        {
-            _giftInspection = null;
-            _inventory.ShowGiftHistory(_inspectingGiftId!.Value,
-                inspection.IsCompletedSuccessfully ? inspection.Result : null,
-                inspection.IsCompletedSuccessfully ? null : "History inspection failed; the save was retained.");
-        }
+        CompleteGiftInspection();
         Present();
     }
 
@@ -382,7 +374,8 @@ public partial class FarmGame : Node2D
             _action is not null || view.IsResolvingConsequences,
             _input.Paused || !_input.Focused, _presented, _targets);
         PresentControlReturn(control);
-        _inventory.Present(view, _session.World.ReadRunState(), _session.IsRemote);
+        _inventory.Present(selected is null ? FarmInventoryPresentation.From(view) : FarmInventoryPresentation.From(selected),
+            _session.World.ReadRunState(), _session.IsRemote);
         if (_wheel.Model is { } wheel)
         {
             // The same explicit stall choice as the presented offers, so a stall slot never reads as changed.
@@ -598,8 +591,9 @@ public partial class FarmGame : Node2D
 
     private void ChangeInventory(bool open)
     {
-        if (open && _presentedSelection?.ControlledView is not null) { OpenControlPanel(); return; }
         if (_session is null || _inventoryModel is null) return;
+        if (open && _presentedSelection?.ControlledView is { Inventory: null })
+        { _hud.Message("This character's inventory is not included in your control permission."); return; }
         _input.SetInventoryOpen(open);
         if (open)
         {
@@ -634,6 +628,7 @@ public partial class FarmGame : Node2D
         {
             _input.CaptureBoundary(Situation(), ReadWalkingInput());
             CloseControlPanel();
+            _inventory.InvalidateGiftHistory();
             if (_input.WheelOpen) ChangeWheel(false);
             InterruptMarketReview("Focus left the game, so the reviewed offer was set aside. Review it again to confirm.");
             ChangeReadiness(_input.WorldShouldRun);
