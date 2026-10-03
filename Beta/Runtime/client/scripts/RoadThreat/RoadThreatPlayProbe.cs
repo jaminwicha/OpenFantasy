@@ -42,6 +42,8 @@ internal sealed partial class RoadThreatPlayProbe : Node
     private readonly List<string> _images = [];
     private readonly List<object> _walkInputs = [];
     private readonly List<object> _openings = [];
+    private readonly List<object> _captures = [];
+    private long _postDrawEvents;
     private string _stage = "opening";
     private double _openingSeconds;
     private bool _observedNativeFocus;
@@ -79,7 +81,9 @@ internal sealed partial class RoadThreatPlayProbe : Node
     private NativeCargoStall Kegga => _game.CargoStalls.Single(stall => stall.MerchantSourceId == CargoCircuitSources.DestinationMerchantId);
     private NativeCargoStall Marla => _game.CargoStalls.Single(stall => stall.MerchantSourceId == CargoCircuitSources.OriginMerchantId);
     private LocalMarketStallView StallOf(NativeCargoStall stall) => View.Markets!.Stalls.Single(value => value.MarketId == stall.MarketId);
-    private ulong CarriedRations => StallOf(Marla).OwnLots.Aggregate(0UL, (sum, lot) => sum + lot.Quantity);
+    private ulong CarriedRations => _game.AdventureProfile
+        ? StallOf(Marla).OwnLots.Where(lot => lot.LotId == _adventureCargoLot).Aggregate(0UL, (sum, lot) => sum + lot.Quantity)
+        : StallOf(Marla).OwnLots.Aggregate(0UL, (sum, lot) => sum + lot.Quantity);
     private ulong EncounterCount => View.EncounterLifecycle!.EncounterCount;
     private LocalRoadThreatView Threat => View.RoadThreats?.Single() ?? throw new InvalidOperationException("No observed road threat.");
 
@@ -87,6 +91,12 @@ internal sealed partial class RoadThreatPlayProbe : Node
     {
         if (DisplayServer.GetName() != "headless" && GetWindow().HasFocus()) _observedNativeFocus = true;
     }
+
+    public override void _EnterTree() => RenderingServer.FramePostDraw += ObservePostDraw;
+
+    public override void _ExitTree() => RenderingServer.FramePostDraw -= ObservePostDraw;
+
+    private void ObservePostDraw() => Interlocked.Increment(ref _postDrawEvents);
 
     public override async void _Ready()
     {
@@ -96,6 +106,10 @@ internal sealed partial class RoadThreatPlayProbe : Node
                 "The threatened cargo world did not open.", OpeningSeconds);
             _openingSeconds = _watch.Elapsed.TotalSeconds;
             _game.InjectFixtureFocus(true);
+            EntityId chief;
+            if (_game.AdventureProfile) chief = OpenAdventureContinuation();
+            else
+            {
             using var metadata = JsonDocument.Parse(File.ReadAllText(_metadataPath));
             // The keyboard journey (and its reopening) starts from the fresh farm fixture; the device routes from the road.
             string kind = _mode is "keyboard" or "reopen" ? "native-road-threat-farm-fixture-v1" : "native-road-threat-fixture-v1";
@@ -103,11 +117,13 @@ internal sealed partial class RoadThreatPlayProbe : Node
                 && metadata.RootElement.GetProperty("PlayerActorId").GetString() == View.PlayerActorId.ToString(),
                 "The fixture metadata names another fixture, world or player.");
             string chiefText = metadata.RootElement.GetProperty("ChiefActorId").GetString()!;
-            EntityId chief = View.Actors.Single(actor => actor.ActorId.ToString() == chiefText).ActorId;
+            chief = View.Actors.Single(actor => actor.ActorId.ToString() == chiefText).ActorId;
+            }
             Require(_game.IsLocallyPaused && !View.IsInEncounter, "The road-threat fixture must open paused in exploration.");
             if (_mode == "reopen")
             {
                 _stage = "reopen";
+                if (_game.AdventureProfile) await VerifyReturnedAdventure();
                 await Capture("reopen");
                 _checks.Add("The saved world reopens paused in exploration with its retained encounter and retreat records.");
             }
@@ -117,6 +133,7 @@ internal sealed partial class RoadThreatPlayProbe : Node
             }
             Require(_game.IsLocallyPaused && !_game.HasPendingAction && !WheelOpen && !_game.IsMarketOpen,
                 "The journey did not end paused and closed.");
+            _driver.Deadline();
             Report("passed", null);
             _game.RequestClose();
         }
@@ -133,7 +150,8 @@ internal sealed partial class RoadThreatPlayProbe : Node
     {
         if (_mode == "keyboard")
         {
-            await EarnBuyAndTravel();
+            if (_game.AdventureProfile) await ContinueFromMarla();
+            else await EarnBuyAndTravel();
         }
         else
         {
@@ -313,12 +331,14 @@ internal sealed partial class RoadThreatPlayProbe : Node
         _checks.Add("Twenty exploration steps after disengaging, the chief has not re-entered: the retreat ended contact beyond its reach.");
 
         _stage = "travel";
-        WorldSnapshot genesis = WorldSnapshotCodec.Decode(File.ReadAllBytes(_genesisPath));
+        WorldSnapshot genesis = ReadGenesis();
         CargoCorridor corridor = NativeCargoWorld.Corridor(genesis);
         CellCoordinate here = new(Feet.Cell.X, Feet.Cell.Y, Feet.Cell.Z - 1);
         if (_mode == "keyboard")
         {
+            if (_game.AdventureProfile) await UseAdventureMedicine();
             await DetourAndSell(corridor, here);
+            if (_game.AdventureProfile) await ReturnToWrensWork(corridor);
         }
         else
         {
@@ -348,7 +368,7 @@ internal sealed partial class RoadThreatPlayProbe : Node
         Pause();
         await _driver.Until(() => !_game.IsLocallyPaused, "Ordinary input did not resume world time.");
         SubunitPosition origin = Feet;
-        CargoCorridor corridor = NativeCargoWorld.Corridor(WorldSnapshotCodec.Decode(File.ReadAllBytes(_genesisPath)));
+        CargoCorridor corridor = NativeCargoWorld.Corridor(ReadGenesis());
 
         _stage = "walk-to-wren";
         LocalActorView wren = View.Actors.Single(actor => actor.ActorId == _game.CompanionActorId);
@@ -387,7 +407,13 @@ internal sealed partial class RoadThreatPlayProbe : Node
         await _driver.Until(() => StallOf(Marla).IsAvailableInPerson, "Marla's stall is not available at her approach.");
         await Capture("brasshollow");
 
+        await BuyAndTravelToChief(corridor);
+    }
+
+    private async Task BuyAndTravelToChief(CargoCorridor corridor)
+    {
         _stage = "buy";
+        HashSet<EntityId> priorLots = StallOf(Marla).OwnLots.Select(lot => lot.LotId).ToHashSet();
         ulong funds = View.Progression!.CurrencyBalance;
         FarmActionOffer buyOffer = _game.CurrentOffers[FarmSemanticAction.TradeBuy];
         Require(buyOffer.TargetId == Marla.MerchantActorId && buyOffer.CanExecute, "The wheel's Buy does not address Marla in reach.");
@@ -405,8 +431,15 @@ internal sealed partial class RoadThreatPlayProbe : Node
         await _driver.Activate(Node<Button>("ConfirmTrade"));
         await _driver.Until(() => View.PaidQuotes.FirstOrDefault(value => value.QuoteId == quote.QuoteId)?.Status == PaidQuoteStatus.Filled
             && !_game.HasPendingAction, "The confirmed purchase was not filled.");
+        if (_game.AdventureProfile)
+        {
+            await _driver.Until(() => StallOf(Marla).OwnLots.Any(lot => !priorLots.Contains(lot.LotId)),
+                "The purchase created no distinct cargo lot.");
+            _adventureCargoLot = StallOf(Marla).OwnLots.Single(lot => !priorLots.Contains(lot.LotId)).LotId;
+            RequireAdventureSupplies();
+        }
         await _driver.Until(() => CarriedRations == 1, "The bought ration did not reach the player's pack.");
-        EntityId lot = StallOf(Marla).OwnLots.Single().LotId;
+        EntityId lot = _adventureCargoLot ?? StallOf(Marla).OwnLots.Single().LotId;
         Require(View.Progression!.CurrencyBalance == funds - quote.TotalFor(1), "The purchase did not pay exactly the quoted total.");
         _purchase = new { QuoteId = quote.QuoteId.ToString(), LotId = lot.ToString(), Units = 1UL, Total = quote.TotalFor(1),
             BalanceBefore = funds, BalanceAfter = View.Progression.CurrencyBalance };
@@ -468,8 +501,9 @@ internal sealed partial class RoadThreatPlayProbe : Node
         await _driver.Choose(Node<OptionButton>("MarketStall"), keggaRow);
         await _driver.Until(() => _game.MarketDraft.MarketId == Kegga.MarketId, "Choosing Kegga's stall did not address it.");
         await _driver.Activate(Node<Button>("SellMode"));
-        await _driver.Choose(Node<OptionButton>("MarketLot"), 1);
-        EntityId lot = StallOf(Kegga).OwnLots.Single().LotId;
+        EntityId lot = _adventureCargoLot ?? StallOf(Kegga).OwnLots.Single().LotId;
+        int lotRow = Array.FindIndex(StallOf(Kegga).OwnLots.ToArray(), value => value.LotId == lot) + 1;
+        await _driver.Choose(Node<OptionButton>("MarketLot"), lotRow);
         Require(_game.MarketDraft.LotId == lot, "The carried lot was not chosen.");
         await _driver.Activate(Node<Button>("ShowLot"));
         await _driver.Until(() => StallOf(Kegga).OwnShowing is { IsLive: true, MatchesOwnLot: true } shown && shown.Units == 1,
@@ -650,11 +684,34 @@ internal sealed partial class RoadThreatPlayProbe : Node
     private async Task Capture(string label)
     {
         if (DisplayServer.GetName() == "headless") return;
-        await ToSignal(RenderingServer.Singleton, RenderingServer.SignalName.FramePostDraw);
+        _driver.Deadline();
+        object before = DrawObservation();
+        var captureWatch = Stopwatch.StartNew();
+        bool drawn = false;
+        try
+        {
+            await AwaitAdventureDraw().WaitAsync(TimeSpan.FromSeconds(5));
+            drawn = true;
+        }
+        finally
+        {
+            _captures.Add(new { Label = label, Stage = _stage, Drawn = drawn,
+                Seconds = captureWatch.Elapsed.TotalSeconds, Before = before, After = DrawObservation() });
+        }
+        _driver.Deadline();
         string path = Path.Combine(Path.GetDirectoryName(_reportPath)!, Path.GetFileNameWithoutExtension(_reportPath) + "." + label + ".png");
         Require(GetViewport().GetTexture().GetImage().SavePng(path) == Error.Ok, "Could not save the rendered frame " + label);
         _images.Add(path);
     }
+
+    private object DrawObservation() => new
+    {
+        ProcessFrames = Engine.GetProcessFrames(), RenderedFrames = Engine.GetFramesDrawn(),
+        PostDrawEvents = Interlocked.Read(ref _postDrawEvents), WindowVisible = GetWindow().Visible,
+        WindowMode = GetWindow().Mode.ToString(), WindowFocus = GetWindow().HasFocus(),
+        TreePaused = GetTree().Paused, _game.IsLocallyPaused, _game.HasPendingAction,
+        ThreadId = System.Environment.CurrentManagedThreadId
+    };
 
     private void Report(string status, string? failure)
     {
@@ -664,7 +721,11 @@ internal sealed partial class RoadThreatPlayProbe : Node
         ulong? rations = view?.Markets is not null && _game.CargoStalls.Count != 0 ? CarriedRations : null;
         File.WriteAllText(_reportPath, JsonSerializer.Serialize(new
         {
-            Kind = "native-road-threat-v1", Mode = _mode, Status = status, Failure = failure, Entry = "--cargo-threat-probe",
+            Kind = _game.AdventureProfile ? "native-adventure-journey-v1" : "native-road-threat-v1",
+            Mode = _mode, Status = status, Failure = failure,
+            Stage = _stage, Captures = _captures,
+            Entry = _game.AdventureProfile ? "--adventure-journey" : "--cargo-threat-probe",
+            Adventure = AdventureEvidence(),
             OpeningSeconds = Math.Round(_openingSeconds, 3), ProbeMilliseconds = _watch.ElapsedMilliseconds,
             Paused = _game.IsLocallyPaused, WindowFocusObserved = _observedNativeFocus, LogicalFocus = _game.IsWindowFocused,
             Start = _mode is "keyboard" or "reopen" ? "farm" : "road", Reward = _reward, Purchase = _purchase,

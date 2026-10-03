@@ -1,0 +1,25 @@
+test_another_cargo_lot_cannot_be_substituted (test_native_adventure.AdventureEvidenceTests.test_another_cargo_lot_cannot_be_substituted) ... ok
+test_complete_retained_native_evidence_is_accepted (test_native_adventure.AdventureEvidenceTests.test_complete_retained_native_evidence_is_accepted) ... ok
+test_duplicate_supply_identity_cannot_hide_behind_correct_total (test_native_adventure.AdventureEvidenceTests.test_duplicate_supply_identity_cannot_hide_behind_correct_total) ... ok
+test_failed_draw_cannot_be_accepted (test_native_adventure.AdventureEvidenceTests.test_failed_draw_cannot_be_accepted) ... ok
+test_failed_native_run_cannot_be_accepted (test_native_adventure.AdventureEvidenceTests.test_failed_native_run_cannot_be_accepted) ... ok
+test_immutable_reads_leave_no_evidence_sidecars (test_native_adventure.AdventureEvidenceTests.test_immutable_reads_leave_no_evidence_sidecars) ... ok
+test_late_success_cannot_hide_a_draw_timeout (test_native_adventure.AdventureEvidenceTests.test_late_success_cannot_hide_a_draw_timeout) ... ok
+test_missing_care_cannot_be_accepted (test_native_adventure.AdventureEvidenceTests.test_missing_care_cannot_be_accepted) ... ok
+test_original_history_cannot_be_replaced (test_native_adventure.AdventureEvidenceTests.test_original_history_cannot_be_replaced) ... ok
+test_paid_amount_cannot_diverge_from_returned_purse (test_native_adventure.AdventureEvidenceTests.test_paid_amount_cannot_diverge_from_returned_purse) ... ok
+test_partial_images_cannot_be_accepted (test_native_adventure.AdventureEvidenceTests.test_partial_images_cannot_be_accepted) ... ok
+test_paused_allowance_change_is_not_ignored_as_metadata (test_native_adventure.AdventureEvidenceTests.test_paused_allowance_change_is_not_ignored_as_metadata) ... ok
+test_paused_recovery_generation_cannot_advance_twice (test_native_adventure.AdventureEvidenceTests.test_paused_recovery_generation_cannot_advance_twice) ... ok
+test_paused_recovery_hash_must_authenticate_generation (test_native_adventure.AdventureEvidenceTests.test_paused_recovery_hash_must_authenticate_generation) ... ok
+test_paused_world_row_change_is_refused (test_native_adventure.AdventureEvidenceTests.test_paused_world_row_change_is_refused) ... ok
+test_receipt_bytes_must_match_the_actual_database (test_native_adventure.AdventureEvidenceTests.test_receipt_bytes_must_match_the_actual_database) ... ok
+test_reopening_another_public_state_is_refused (test_native_adventure.AdventureEvidenceTests.test_reopening_another_public_state_is_refused) ... ok
+test_return_to_another_place_cannot_be_accepted (test_native_adventure.AdventureEvidenceTests.test_return_to_another_place_cannot_be_accepted) ... ok
+test_stale_or_missing_dependency_is_refused (test_native_adventure.AdventureEvidenceTests.test_stale_or_missing_dependency_is_refused) ... ok
+test_unverified_reopening_is_refused (test_native_adventure.AdventureEvidenceTests.test_unverified_reopening_is_refused) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.258s
+
+OK

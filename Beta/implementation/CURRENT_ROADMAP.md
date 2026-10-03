@@ -27,8 +27,10 @@ The ordinary local launcher now opens the [inhabited adventure](p02/adventure-en
 profile40 world with Wren still autonomous, original finite resources and one human locally, or one
 to four through explicit hosted creation. Older worlds remain separately selectable; no played save
 is silently migrated. Native gathering/crafting/quest/build/mining/water/first-merchant and paused
-reopening are qualified; the entire buy/haul/danger/care/sell/return journey in this admission is still
-open. There are 38 supported snapshot codecs, not 38 completed worlds. The original farm is one
+reopening are qualified. The [solo adventure continuation](p02/adventure-journey/RESULT.md) connects
+that same earned save through buy/haul/danger/retreat/care/sell/return and exact paused world recovery.
+Shared participation, deeper changed-place behavior and human acceptance remain open. There are 38
+supported snapshot codecs, not 38 completed worlds. The original farm is one
 32×32×16 region; the cargo corridor has14 such regions within a16-region interpretation. Those proofs
 do not establish an effectively endless frontier, a20,000-resident city or complete NPC cognition.
 
@@ -45,7 +47,7 @@ and workflow cost without claiming a shipping percentage, date or provider-credi
 | --- | --- | --- |
 | Shared participant History | Qualified for its bounded native/managed scope and committed | Native paid-quote/paging breadth and historical-name catalogs remain separate work |
 | Delegated paid-work recovery | Qualified within the [recovery result](p02/delegated-control-recovery/RESULT.md): 95 cases, ten new, three native; exact source/build reconciliation | Bounded checkpoint complete; populated allowance rows, grantee reacquisition and listener/socket-death proofs remain. No full reliability claim |
-| Ordinary adventure entry | Qualified bounded opening and reopening, plus four-player TLS movement/reconnect | Same-save full trade/danger/care/return, deeper NPC/story/environment and human acceptance remain |
+| Ordinary adventure entry | Qualified solo opening and same-save trade/danger/retreat/care/sale/return/reopening; separate four-player TLS movement/reconnect | Shared participation in this journey, deeper NPC/story/environment and human acceptance remain |
 | Full P02 | Partial; material gameplay and presentation gaps | Every row in the P02 closure table below, integrated in one retained lineage, plus the unchanged human/native exit |
 | Complete desktop game | Broad later work remains | Complete non-mobile scope and catalogs through P11, full P12 quality/scale/campaign proof, P13 packaged desktop release |
 | Mobile completion | Later required phase | P14 actual Android/iOS/device/cross-play acceptance using the same game core |
@@ -86,7 +88,7 @@ its exact scope; no row is fully accepted merely because a supporting primitive 
 
 | ID / accountable role | Current boundary | Required next witness |
 | --- | --- | --- |
-| LOOP — integration lead | Ordinary profile40 admission now connects native gathering/crafting, Wren quest/build, excavation/water and first merchant; paused reopen qualifies | One ordinary discoverable route: notice→talk→gather/make→recruit→cooperative expedition→changed-place return, incorporating buy/haul/danger/sell and care. Declare any fresh admission or preserved migration explicitly. |
+| LOOP — integration lead | Ordinary profile40 solo lineage connects gathering/crafting, Wren quest/build, excavation/water, buy/haul/danger/retreat/care/sale and return; paused recovery retains exact world rows and history | One ordinary discoverable route: notice→talk→gather/make→recruit→cooperative expedition→changed-place return. Deeper autonomous change while away, shared participation and human discovery remain; no new admission or migration was needed for the continuation. |
 | NPC — actor/narrative builder | Routed amble/work and common legal actions | Persistent evidence→belief/desire→commitment→feasible action→memory; bounded offscreen reconciliation, recruitment and useful companion contribution; dialogue responds to the actual outcome. |
 | STORY — narrative/level builder | Source quest/content and durable facts | Missing-cargo investigation with actual testimony/evidence and alternate clues; field-action puzzle with team and noncombat paths, real costs, readable motion and accessible alternatives. |
 | TRADE — economy/actor builder | Actual buy/haul/threat/sell with finite goods and two markets | A traveling merchant brings those real goods, with retained NPC travel routes/commitments and the bounded cargo/escort introduction. Broader caravan networks, wages and settlement economy remain P07; this early route cannot be deferred wholesale. |
@@ -127,9 +129,11 @@ admissions retain their separate meanings. Owner steering pauses orchestration: 
 The two external audits are now [reviewed](EFFICIENCY_AUDIT_DISPOSITION.md); useful delivery doctrine
 is adopted, while unsupported dates, percentages and orchestration savings remain excluded.
 
-1. Extend the qualified opening into the whole same-save buy/haul/danger/care/sell/changed-place
-   return. Preserve prior saves and unsupported transition refusal. Qualify shared participation in
-   that journey; four-player connection/movement/reconnect alone is not full cooperative gameplay.
+1. Qualify shared participation in the connected buy/haul/danger/retreat/care/sell/return journey;
+   four-player connection/movement/reconnect alone is not full cooperative gameplay. The solo route
+   retains Wren's already-completed construction, not yet new autonomous changes during the expedition.
+   Preserve prior saves and unsupported transition refusal. Keep the unexplained earlier post-draw
+   timeout visible; a later instrumented pass does not establish its cause or production reliability.
 
 2. Build the missing NPC/recruitment/changed-place, traveling-merchant/escort and mystery/puzzle
    behavior as coherent units.

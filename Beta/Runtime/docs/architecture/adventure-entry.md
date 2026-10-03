@@ -51,6 +51,23 @@ The [human-construction scenario](../../src/OpenFantasy.Hosting/Content/HumanCon
 has a different admission: it intentionally makes Wren human-controlled. It is never chosen as the
 ordinary adventure or silently substituted for its population. Its saved identity remains intact.
 
+## Continuous trade, danger and care
+
+The adventure keeps one authority and inventory across the [cargo circuit](cargo-circuit.md),
+[road threat](road-threat.md), [retreat](encounter-retreat.md) and [ordinary care](ordinary-care.md).
+A market purchase adds a distinct owned lot; its definition alone does not identify which goods the
+player intends to sell. The market draft selects a particular lot and captures the merchant's exact
+terms before confirmation. Crafted supplies of the same definition retain their own identities and
+quantities when another lot is sold. A price quote, a selected lot and a completed exchange remain
+different facts.
+
+The camp chief enters under its own control when the spatial and temporal rules permit. Retreat
+walks the committed route and ends contact; it does not reset health or restock carried medicine.
+An injured traveler can inspect the Care wheel and explicitly use an owned dose during exploration.
+The care transaction restores the assessed amount and consumes that dose together. Its health and
+material consequences use the same owners and recorded history as the prior encounter and trades.
+Returning to the farm reads Wren's retained construction; it does not regenerate the opening.
+
 ## Presentation and validation boundaries
 
 Regional terrain, merchant appearances, field actions, recipes, inventory, care, history and encounter
@@ -63,3 +80,21 @@ autonomous construction, and continues to the first merchant. A separate invocat
 save paused and verifies recorded history. Background rendering is confined to the explicit probe;
 normal play retains window-focus handling. Runtime qualification results belong in the implementation
 records, not in the admission contract.
+
+The explicit `--adventure-journey SAVE REPORT keyboard|reopen` probe continues an existing earned
+opening at Marla. It cannot create or replace a missing save. Its keyboard route buys a distinct lot,
+encounters the chief, inspects/cancels/confirms retreat, uses one personal dose, sells the bought lot
+and walks home. The probe distinguishes the original crafted supplies from bought cargo and records
+exact submitted command and receipt bytes. Reopening is a separate paused invocation that compares
+the returned public view and verifies recorded history against the ordinary adventure's original
+genesis. This named fixture contract is bounded; it is not a general player-save verifier, physical
+device test, or proof of the full campaign. The checker operates on a copy of a closed source save;
+immutable SQLite inspection cannot create sidecars beside retained evidence.
+
+Paused live reopening and read-only inspection have different storage effects. The live session
+starts a [controller recovery segment](controller-recovery.md#live-measurement), advancing its
+operational generation once even when gameplay is paused. A byte-identical whole SQLite file is
+therefore not the pause invariant. For the solo continuation with no allowance rows or live delegated
+assignment to release, the schema and every other retained row remain exact; the generation and its
+authenticated checksum change together. This bound must not be generalized to populated recovery
+allowances or shared assignment reconciliation.

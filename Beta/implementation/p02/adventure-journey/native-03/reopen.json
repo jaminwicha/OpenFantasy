@@ -1,0 +1,102 @@
+{
+  "Kind": "native-adventure-journey-v1",
+  "Mode": "reopen",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "reopen",
+  "Captures": [
+    {
+      "Label": "reopen",
+      "Stage": "reopen",
+      "Drawn": true,
+      "Seconds": 0.0025123,
+      "Before": {
+        "ProcessFrames": 4380,
+        "RenderedFrames": 4381,
+        "PostDrawEvents": 4381,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": true,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 4381,
+        "RenderedFrames": 4381,
+        "PostDrawEvents": 4382,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": true,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    }
+  ],
+  "Entry": "--adventure-journey",
+  "Adventure": {
+    "CargoLot": null,
+    "Care": null,
+    "Returned": null,
+    "PublicHash": "E4573BA52BDC6CD07C93A093018DE65F2DBB03C65753574628AF554F4153DF02",
+    "HistoryVerified": true,
+    "Submissions": []
+  },
+  "OpeningSeconds": 18.453,
+  "ProbeMilliseconds": 37585,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Start": "farm",
+  "Reward": null,
+  "Purchase": null,
+  "Unobserved": null,
+  "WarningObservation": null,
+  "Inputs": [],
+  "WalkInputs": [],
+  "Warning": null,
+  "WarningDetail": null,
+  "Approach": [],
+  "Engagement": null,
+  "Hit": null,
+  "Inspected": null,
+  "Openings": [],
+  "Positions": [],
+  "HoldOff": null,
+  "Checks": [
+    "Separate paused reopening restores the exact returned view and replays the original adventure through all commerce, injury, retreat and care.",
+    "The saved world reopens paused in exploration with its retained encounter and retreat records."
+  ],
+  "Images": [
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/reopen.reopen.png"
+  ],
+  "Notice": null,
+  "Trade": null,
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 10,
+    "RouteSamples": 10,
+    "ReadinessCharged": 130,
+    "WorldSequence": 3204,
+    "Final": {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256
+    },
+    "ActorId": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "CommandId": "8af7d2d66db904b40e8c4f8f4ad16b12"
+  },
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalHp": 78,
+  "FinalBalance": 218,
+  "CarriedRations": 0
+}

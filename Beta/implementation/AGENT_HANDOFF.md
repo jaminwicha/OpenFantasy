@@ -55,13 +55,19 @@ native input gathers/crafts, earns Wren's reward, observes her completed constru
 and released water, then reaches Marla; a separate paused reopening verifies original-genesis history.
 All1279 pinned execution dependencies match the rendered run. Original failures are retained.
 
-Next connect buy/haul/danger/care/sell/return in this same save, then qualify shared participation.
-Existing separate journeys are useful prior evidence, not proof that this full joined route works.
-The graphics/HUD are provisional; no new independent critic or human acceptance is claimed.
-The continuation is WIP: its native attempt bought cargo and walked outbound, then hit the new continuation probe's
-five-second post-draw bound. Preserve `p02/adventure-journey/checks/native-01.json`; diagnose before
-claiming the full route. Pre-review WIP is `codex/checkpoint-before-efficiency-doctrine-20261003`
-(`0f38907b`), with its successful focused build and unqualified journey source.
+The [solo continuation](p02/adventure-journey/RESULT.md) now qualifies buy/haul/danger/retreat/care/sell
+and return in that same earned save. Native input retains original supplies and construction, with
+six authenticated command/receipt pairs; paused reopening reproduces the exact public view/history.
+Every saved row except the required single host recovery-fence increment stays exact.20 checker
+qualification cases and9 managed regressions pass. The original post-draw timeout remains unexplained;
+the later instrumented pass is bounded evidence, not a reliability diagnosis. The wrong whole-SQLite
+byte assertion and subsequent exact-row correction are preserved. Graphics/HUD remain provisional;
+no independent critic, shared-journey or human acceptance is claimed.
+
+Next qualify shared participation in this connected journey. Four-player connection/movement/reconnect
+alone is not that proof; the returned construction was already complete before departure, so new
+autonomous changes during the expedition are still required. Checkpoint `26d90ffa` preserves the WIP
+before the reopening correction; the accepted marker is `codex/milestone-adventure-continuation-20261003`.
 
 Then build the missing bounded NPC motivation/memory/offscreen-work, recruitment/cooperative action
 and changed-place return, followed by investigation/puzzle and required environment/coordination/UI

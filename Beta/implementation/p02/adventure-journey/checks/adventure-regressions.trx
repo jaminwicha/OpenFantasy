@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="731ce9c7-2f43-42df-94d6-6a2cc3bc748d" name="@mac 2026-10-03 13:06:28" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T13:06:28.8674300-05:00" queuing="2026-10-03T13:06:28.8674300-05:00" start="2026-10-03T13:06:22.8569340-05:00" finish="2026-10-03T13:06:39.8031690-05:00" />
+  <TestSettings name="default" id="87251eff-22f8-4f40-a562-197889a0fee6">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_13_06_28" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="1ec0af1c-87f8-49d8-a139-abafdfcdd3a2" testId="bae7889f-05ac-9306-28c4-e23e921d8178" testName="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 1)" computerName="mac" duration="00:00:02.2562290" startTime="2026-10-03T13:06:32.2383150-05:00" endTime="2026-10-03T13:06:34.4946460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1ec0af1c-87f8-49d8-a139-abafdfcdd3a2" />
+    <UnitTestResult executionId="09e68448-20ac-4221-95cd-d69ef4952a13" testId="3a2a4ee5-c4e2-9738-e54c-6fcbd237883c" testName="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Different_profile_or_cooperative_roster_is_refused_without_rewriting_the_save(cooperative: True)" computerName="mac" duration="00:00:02.4025778" startTime="2026-10-03T13:06:31.8110440-05:00" endTime="2026-10-03T13:06:34.2137520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="09e68448-20ac-4221-95cd-d69ef4952a13" />
+    <UnitTestResult executionId="cc7e707a-75e5-4b2b-9b3e-349643c657f5" testId="b6de12c5-1239-33e0-1329-474d1492b838" testName="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Admission_binds_seed_order_name_and_roster_size" computerName="mac" duration="00:00:01.8580895" startTime="2026-10-03T13:06:35.9245280-05:00" endTime="2026-10-03T13:06:37.7827920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cc7e707a-75e5-4b2b-9b3e-349643c657f5" />
+    <UnitTestResult executionId="1deb9f25-caaa-4423-a864-277b4563903d" testId="92a1d953-64f4-f92b-a4f1-42073c020b3f" testName="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 4)" computerName="mac" duration="00:00:03.3934059" startTime="2026-10-03T13:06:28.8357830-05:00" endTime="2026-10-03T13:06:32.2371700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1deb9f25-caaa-4423-a864-277b4563903d" />
+    <UnitTestResult executionId="02c2ac12-dc04-485e-9ac7-afde02a28421" testId="cf7b9409-5b79-154d-b85a-bf0bd3184b52" testName="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Different_profile_or_cooperative_roster_is_refused_without_rewriting_the_save(cooperative: False)" computerName="mac" duration="00:00:01.9526626" startTime="2026-10-03T13:06:29.8574160-05:00" endTime="2026-10-03T13:06:31.8102210-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="02c2ac12-dc04-485e-9ac7-afde02a28421" />
+    <UnitTestResult executionId="28a5d54d-c321-444a-bc48-9c1c58892aa2" testId="c4b35791-9734-4cf1-8f3f-d837e293bcb4" testName="OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatFixtureTests.An_earned_and_bought_lot_is_carried_up_the_lane_to_just_outside_the_chiefs_reach" computerName="mac" duration="00:00:14.5796734" startTime="2026-10-03T13:06:25.1768430-05:00" endTime="2026-10-03T13:06:39.7596750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="28a5d54d-c321-444a-bc48-9c1c58892aa2" />
+    <UnitTestResult executionId="a5f56ee3-9f67-4f58-bfcd-262c7d62039c" testId="b26eafb0-5403-6752-96c9-7fd4e6dbac72" testName="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Ordinary_opening_earns_Wrens_reward_and_reopens_the_same_recorded_adventure" computerName="mac" duration="00:00:04.6728940" startTime="2026-10-03T13:06:25.1768360-05:00" endTime="2026-10-03T13:06:29.8541320-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a5f56ee3-9f67-4f58-bfcd-262c7d62039c" />
+    <UnitTestResult executionId="e633085c-c186-4601-a833-13dd667455c6" testId="e9876850-f40e-bbee-5863-41f4dd189630" testName="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 2)" computerName="mac" duration="00:00:01.4281249" startTime="2026-10-03T13:06:34.4953720-05:00" endTime="2026-10-03T13:06:35.9236260-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e633085c-c186-4601-a833-13dd667455c6" />
+    <UnitTestResult executionId="b133dfe3-e6a3-4a5e-aeba-20d6c0e493f3" testId="fc51eaf0-9a54-3979-621f-0d20839ba482" testName="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 3)" computerName="mac" duration="00:00:03.6466929" startTime="2026-10-03T13:06:25.1768410-05:00" endTime="2026-10-03T13:06:28.8283120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b133dfe3-e6a3-4a5e-aeba-20d6c0e493f3" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 4)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="92a1d953-64f4-f92b-a4f1-42073c020b3f">
+      <Execution id="1deb9f25-caaa-4423-a864-277b4563903d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests" name="Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 3)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fc51eaf0-9a54-3979-621f-0d20839ba482">
+      <Execution id="b133dfe3-e6a3-4a5e-aeba-20d6c0e493f3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests" name="Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Admission_binds_seed_order_name_and_roster_size" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b6de12c5-1239-33e0-1329-474d1492b838">
+      <Execution id="cc7e707a-75e5-4b2b-9b3e-349643c657f5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests" name="Admission_binds_seed_order_name_and_roster_size" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bae7889f-05ac-9306-28c4-e23e921d8178">
+      <Execution id="1ec0af1c-87f8-49d8-a139-abafdfcdd3a2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests" name="Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Ordinary_opening_earns_Wrens_reward_and_reopens_the_same_recorded_adventure" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b26eafb0-5403-6752-96c9-7fd4e6dbac72">
+      <Execution id="a5f56ee3-9f67-4f58-bfcd-262c7d62039c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests" name="Ordinary_opening_earns_Wrens_reward_and_reopens_the_same_recorded_adventure" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Different_profile_or_cooperative_roster_is_refused_without_rewriting_the_save(cooperative: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3a2a4ee5-c4e2-9738-e54c-6fcbd237883c">
+      <Execution id="09e68448-20ac-4221-95cd-d69ef4952a13" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests" name="Different_profile_or_cooperative_roster_is_refused_without_rewriting_the_save" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatFixtureTests.An_earned_and_bought_lot_is_carried_up_the_lane_to_just_outside_the_chiefs_reach" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c4b35791-9734-4cf1-8f3f-d837e293bcb4">
+      <Execution id="28a5d54d-c321-444a-bc48-9c1c58892aa2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatFixtureTests" name="An_earned_and_bought_lot_is_carried_up_the_lane_to_just_outside_the_chiefs_reach" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Different_profile_or_cooperative_roster_is_refused_without_rewriting_the_save(cooperative: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="cf7b9409-5b79-154d-b85a-bf0bd3184b52">
+      <Execution id="02c2ac12-dc04-485e-9ac7-afde02a28421" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.AdventureEntryTests" name="Different_profile_or_cooperative_roster_is_refused_without_rewriting_the_save" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e9876850-f40e-bbee-5863-41f4dd189630">
+      <Execution id="e633085c-c186-4601-a833-13dd667455c6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests" name="Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="bae7889f-05ac-9306-28c4-e23e921d8178" executionId="1ec0af1c-87f8-49d8-a139-abafdfcdd3a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3a2a4ee5-c4e2-9738-e54c-6fcbd237883c" executionId="09e68448-20ac-4221-95cd-d69ef4952a13" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b6de12c5-1239-33e0-1329-474d1492b838" executionId="cc7e707a-75e5-4b2b-9b3e-349643c657f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="92a1d953-64f4-f92b-a4f1-42073c020b3f" executionId="1deb9f25-caaa-4423-a864-277b4563903d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="cf7b9409-5b79-154d-b85a-bf0bd3184b52" executionId="02c2ac12-dc04-485e-9ac7-afde02a28421" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c4b35791-9734-4cf1-8f3f-d837e293bcb4" executionId="28a5d54d-c321-444a-bc48-9c1c58892aa2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b26eafb0-5403-6752-96c9-7fd4e6dbac72" executionId="a5f56ee3-9f67-4f58-bfcd-262c7d62039c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9876850-f40e-bbee-5863-41f4dd189630" executionId="e633085c-c186-4601-a833-13dd667455c6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fc51eaf0-9a54-3979-621f-0d20839ba482" executionId="b133dfe3-e6a3-4a5e-aeba-20d6c0e493f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.47]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.04]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.19]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:15.81]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

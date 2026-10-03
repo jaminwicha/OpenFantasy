@@ -41,6 +41,7 @@ public partial class Bootstrap : Control
         // still exercises the same readiness/cancellation policy; native OS binding is tested separately.
         bool backgroundProbe = arguments is ["--farm-wheel", _, _, "fresh" or "reopen", "--background-render"]
             or ["--adventure-onboarding", _, _, "fresh" or "reopen", "--background-render"]
+            or ["--adventure-journey", _, _, "keyboard" or "reopen", "--background-render"]
             or ["--farm-action-offers", _, _, "--background-render"]
             or ["--encounter-probe", _, _, "fresh" or "duel" or "reopen", "--background-render"]
             or ["--encounter-defeat-probe", _, _, "fresh" or "reopen", "--background-render"]
@@ -74,6 +75,22 @@ public partial class Bootstrap : Control
             AddChild(adventure);
             AddChild(EncounterOutcomeOverlay.Create(adventure));
             AddChild(probe);
+            return;
+        }
+        if (arguments is ["--adventure-journey", var journeySave, var journeyReport, var journeyMode]
+            && journeyMode is "keyboard" or "reopen")
+        {
+            if (!File.Exists(journeySave))
+            {
+                GD.PushError("The adventure continuation requires its existing saved opening.");
+                GetTree().Quit(1);
+                return;
+            }
+            var adventure = new FarmGame { AdventureProfile = true, SavePathOverride = journeySave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            AddChild(adventure);
+            AddChild(EncounterOutcomeOverlay.Create(adventure));
+            AddChild(new RoadThreatPlayProbe(adventure, journeyReport, journeyMode));
             return;
         }
         if (arguments.Length == 0 || arguments is ["--adventure"] or ["--adventure", _])

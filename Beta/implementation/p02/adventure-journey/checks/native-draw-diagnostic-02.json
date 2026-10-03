@@ -1,0 +1,8 @@
+{
+  "status": "failed",
+  "workDirectory": "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-yjmj_eqa",
+  "sourceSave": "/private/tmp/openfantasy-adventure-e8ktlvpv/adventure.sqlite",
+  "runs": [],
+  "failure": "Source must be a closed save.",
+  "traceback": "Traceback (most recent call last):\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_adventure.py\", line 89, in main\n    require(source.is_file() and not any(Path(str(source) + s).exists() for s in (\"-wal\", \"-shm\")), \"Source must be a closed save.\")\n    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_road_threat.py\", line 39, in require\n    raise RuntimeError(message)\nRuntimeError: Source must be a closed save.\n"
+}

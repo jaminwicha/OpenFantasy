@@ -1,0 +1,1976 @@
+{
+  "Kind": "native-adventure-journey-v1",
+  "Mode": "keyboard",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "pause",
+  "Captures": [
+    {
+      "Label": "retained-opening",
+      "Stage": "retained-opening",
+      "Drawn": true,
+      "Seconds": 0.0040255,
+      "Before": {
+        "ProcessFrames": 378,
+        "RenderedFrames": 378,
+        "PostDrawEvents": 378,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": true,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 378,
+        "RenderedFrames": 378,
+        "PostDrawEvents": 379,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": true,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "buy-review",
+      "Stage": "buy",
+      "Drawn": true,
+      "Seconds": 0.0127406,
+      "Before": {
+        "ProcessFrames": 399,
+        "RenderedFrames": 399,
+        "PostDrawEvents": 399,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 399,
+        "RenderedFrames": 399,
+        "PostDrawEvents": 400,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "marla-bought",
+      "Stage": "buy",
+      "Drawn": true,
+      "Seconds": 0.0104798,
+      "Before": {
+        "ProcessFrames": 413,
+        "RenderedFrames": 413,
+        "PostDrawEvents": 413,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 413,
+        "RenderedFrames": 413,
+        "PostDrawEvents": 414,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "road",
+      "Stage": "outbound",
+      "Drawn": true,
+      "Seconds": 0.0021913,
+      "Before": {
+        "ProcessFrames": 13808,
+        "RenderedFrames": 13808,
+        "PostDrawEvents": 13808,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 13808,
+        "RenderedFrames": 13808,
+        "PostDrawEvents": 13809,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "warning",
+      "Stage": "warning",
+      "Drawn": true,
+      "Seconds": 0.0112973,
+      "Before": {
+        "ProcessFrames": 14062,
+        "RenderedFrames": 14062,
+        "PostDrawEvents": 14062,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 14062,
+        "RenderedFrames": 14062,
+        "PostDrawEvents": 14063,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "engaged",
+      "Stage": "approach",
+      "Drawn": true,
+      "Seconds": 0.0139464,
+      "Before": {
+        "ProcessFrames": 14149,
+        "RenderedFrames": 14149,
+        "PostDrawEvents": 14149,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 14149,
+        "RenderedFrames": 14149,
+        "PostDrawEvents": 14150,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "hit",
+      "Stage": "strike",
+      "Drawn": true,
+      "Seconds": 0.0022475,
+      "Before": {
+        "ProcessFrames": 14300,
+        "RenderedFrames": 14300,
+        "PostDrawEvents": 14300,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 14300,
+        "RenderedFrames": 14300,
+        "PostDrawEvents": 14301,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "retreat-inspected",
+      "Stage": "inspect",
+      "Drawn": true,
+      "Seconds": 0.0130994,
+      "Before": {
+        "ProcessFrames": 14372,
+        "RenderedFrames": 14372,
+        "PostDrawEvents": 14373,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 14373,
+        "RenderedFrames": 14373,
+        "PostDrawEvents": 14374,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "retreating",
+      "Stage": "retreating",
+      "Drawn": true,
+      "Seconds": 0.0048585,
+      "Before": {
+        "ProcessFrames": 14498,
+        "RenderedFrames": 14498,
+        "PostDrawEvents": 14498,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 14498,
+        "RenderedFrames": 14498,
+        "PostDrawEvents": 14499,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "disengaged",
+      "Stage": "retreating",
+      "Drawn": true,
+      "Seconds": 0.0075813,
+      "Before": {
+        "ProcessFrames": 14726,
+        "RenderedFrames": 14726,
+        "PostDrawEvents": 14726,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 14726,
+        "RenderedFrames": 14726,
+        "PostDrawEvents": 14727,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "care-inspection",
+      "Stage": "personal-care",
+      "Drawn": true,
+      "Seconds": 0.0045837,
+      "Before": {
+        "ProcessFrames": 14849,
+        "RenderedFrames": 14849,
+        "PostDrawEvents": 14849,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 14849,
+        "RenderedFrames": 14849,
+        "PostDrawEvents": 14850,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "treated",
+      "Stage": "personal-care",
+      "Drawn": true,
+      "Seconds": 0.0124907,
+      "Before": {
+        "ProcessFrames": 14861,
+        "RenderedFrames": 14861,
+        "PostDrawEvents": 14861,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 14861,
+        "RenderedFrames": 14861,
+        "PostDrawEvents": 14862,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "detoured",
+      "Stage": "detour",
+      "Drawn": true,
+      "Seconds": 0.0043651,
+      "Before": {
+        "ProcessFrames": 15654,
+        "RenderedFrames": 15654,
+        "PostDrawEvents": 15654,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 15654,
+        "RenderedFrames": 15654,
+        "PostDrawEvents": 15655,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "gearford",
+      "Stage": "to-gearford",
+      "Drawn": true,
+      "Seconds": 0.0018041,
+      "Before": {
+        "ProcessFrames": 23407,
+        "RenderedFrames": 23407,
+        "PostDrawEvents": 23407,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 23407,
+        "RenderedFrames": 23407,
+        "PostDrawEvents": 23408,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "sell-review",
+      "Stage": "sell",
+      "Drawn": true,
+      "Seconds": 0.0135518,
+      "Before": {
+        "ProcessFrames": 23445,
+        "RenderedFrames": 23445,
+        "PostDrawEvents": 23445,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 23445,
+        "RenderedFrames": 23445,
+        "PostDrawEvents": 23446,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "sold",
+      "Stage": "sell",
+      "Drawn": true,
+      "Seconds": 0.014018,
+      "Before": {
+        "ProcessFrames": 23451,
+        "RenderedFrames": 23451,
+        "PostDrawEvents": 23451,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 23451,
+        "RenderedFrames": 23451,
+        "PostDrawEvents": 23452,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "returned-work",
+      "Stage": "return-home",
+      "Drawn": true,
+      "Seconds": 0.0091225,
+      "Before": {
+        "ProcessFrames": 46984,
+        "RenderedFrames": 46984,
+        "PostDrawEvents": 46984,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 46984,
+        "RenderedFrames": 46984,
+        "PostDrawEvents": 46985,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": false,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    },
+    {
+      "Label": "final",
+      "Stage": "pause",
+      "Drawn": true,
+      "Seconds": 0.008683,
+      "Before": {
+        "ProcessFrames": 46984,
+        "RenderedFrames": 46984,
+        "PostDrawEvents": 46985,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": true,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      },
+      "After": {
+        "ProcessFrames": 46985,
+        "RenderedFrames": 46985,
+        "PostDrawEvents": 46986,
+        "WindowVisible": true,
+        "WindowMode": "Windowed",
+        "WindowFocus": false,
+        "TreePaused": false,
+        "IsLocallyPaused": true,
+        "HasPendingAction": false,
+        "ThreadId": 1
+      }
+    }
+  ],
+  "Entry": "--adventure-journey",
+  "Adventure": {
+    "CargoLot": "c505a79e13afd557d0fe798e8520219f",
+    "Care": {
+      "BeforeHp": 46,
+      "AfterHp": 78,
+      "ExpectedHealingHp": 32,
+      "UnitsBefore": 1,
+      "UnitsAfter": 0,
+      "ItemDefinitionId": "bf937ccc8defe9ef5c1d602575b2f725"
+    },
+    "Returned": {
+      "X": 25984,
+      "Y": 83328,
+      "Z": 256,
+      "CompletedProjects": 1,
+      "Balance": 218,
+      "Hp": 78,
+      "CraftedLots": [
+        {
+          "LotId": "0d1eefbf4ce51dc420bcb3b7bc74dc47",
+          "Quantity": 2
+        }
+      ]
+    },
+    "PublicHash": "E4573BA52BDC6CD07C93A093018DE65F2DBB03C65753574628AF554F4153DF02",
+    "HistoryVerified": false,
+    "Submissions": [
+      {
+        "Action": "ConfirmTrade",
+        "CommandId": "b12652f238542189a031fd3207649721",
+        "Command": "T0ZDAAAAAAEAAAAKAAAAEndvcmxkLmFjdG9yLWFjdGlvbgAAAAgAAAAAAAAAEQAAABCxJlLyOFQhiaAx/TIHZJchAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABDHb0aLGjX6O/giuCtm2fjEAAAAEGwkSe2XI\u002BGqGBAvGS/RpLQAAAAQEOnvgRhv6idwpnz8fWsadwAAAAgAAAAAAAACwAAAARVPRkMAAAAAAQAAAAQAAAAed29ybGQuYWN0aW9uLnNwb3QtcXVvdGUtYWNjZXB0AAAACAAAAAAAAAABAAAAy09GQwAAAAABAAAACgAAABdtYXJrZXRzLnNwb3QuYWNjZXB0YW5jZQAAAAgAAAAAAAAAAQAAABCxJlLyOFQhiaAx/TIHZJchAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABCU\u002BmClqR3/k2kwkosixegbAAAAIAoccE4VaB3lGglZef4YLVGj5cNUwiIFP1ZJjeOKSQL9AAAACAAAAAAAAAABAAAACAAAAAAAAAAUAAAACAAAAAAAAAAAAAAACAAAAAAAAAAA",
+        "IsRetry": false,
+        "Receipt": {
+          "Bytes": "T0ZDAAAAAAEAAAAKAAAAFHdvcmxkLmFjdGlvbi1yZWNlaXB0AAAACAAAAAAAAAABAAAAELEmUvI4VCGJoDH9MgdklyEAAAAQkKalf5RoT2Ywp1OJ44OFqwAAABBsJEntlyPhqhgQLxkv0aS0AAAAEBDp74EYb\u002BoncKZ8/H1rGncAAAAg6jrZN44/vAIyyevdCPAxRkIZg3ozgNUU6KPINpR\u002BreUAAAAIAAAAAAAAA0UAAAAIAAAAAAAAAAEAAAAIAAAAAAAAAAA=",
+          "Rejection": "None",
+          "CommitSequence": 837
+        }
+      },
+      {
+        "Action": "Strike",
+        "CommandId": "68890d635f4b75c62c9d88e3061ef88c",
+        "Command": "T0ZDAAAAAAEAAAAKAAAAEndvcmxkLmFjdG9yLWFjdGlvbgAAAAgAAAAAAAAACwAAABBoiQ1jX0t1xiydiOMGHviMAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABDHb0aLGjX6O/giuCtm2fjEAAAAEGwkSe2XI\u002BGqGBAvGS/RpLQAAAAQEOnvgRhv6idwpnz8fWsadwAAAAgAAAAAAAALrwAAAH5PRkMAAAAAAQAAAAYAAAAad29ybGQuYWN0aW9uLnF1ZXVlLWFiaWxpdHkAAAAIAAAAAAAAAAEAAAAQhymLRy3VaAtqNYzfkJn9QwAAAAgAAAAAAAAAAQAAABAcm93I9IBCRtJThxh\u002Bi1BxAAAAEGiEH3n3I0ZsInbjtUYN\u002BKM=",
+        "IsRetry": false,
+        "Receipt": {
+          "Bytes": "T0ZDAAAAAAEAAAAKAAAAFHdvcmxkLmFjdGlvbi1yZWNlaXB0AAAACAAAAAAAAAABAAAAEGiJDWNfS3XGLJ2I4wYe\u002BIwAAAAQkKalf5RoT2Ywp1OJ44OFqwAAABBsJEntlyPhqhgQLxkv0aS0AAAAEBDp74EYb\u002BoncKZ8/H1rGncAAAAg565QAm\u002BmzvxobWGlWgvw5UENSzqtyfsEb58rFZBAjkgAAAAIAAAAAAAADEYAAAAIAAAAAAAAAAEAAAAIAAAAAAAAAAA=",
+          "Rejection": "None",
+          "CommitSequence": 3142
+        }
+      },
+      {
+        "Action": "Retreat",
+        "CommandId": "8af7d2d66db904b40e8c4f8f4ad16b12",
+        "Command": "T0ZDAAAAAAEAAAAKAAAAEndvcmxkLmFjdG9yLWFjdGlvbgAAAAgAAAAAAAAAEwAAABCK99LWbbkEtA6MT49K0WsSAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABDHb0aLGjX6O/giuCtm2fjEAAAAEGwkSe2XI\u002BGqGBAvGS/RpLQAAAAQEOnvgRhv6idwpnz8fWsadwAAAAgAAAAAAAALrwAAALdPRkMAAAAAAQAAAAYAAAAad29ybGQuYWN0aW9uLnF1ZXVlLXJldHJlYXQAAAAIAAAAAAAAAAEAAAAQhymLRy3VaAtqNYzfkJn9QwAAAAgAAAAAAAAAGAAAAE9PRkMAAAAAAQAAAAQAAAAbc3BhdGlhbC5zdWJ1bml0LXBvc2l0aW9uLnYxAAAACAAAAAAAAVqAAAAACAAAAAAAATngAAAACAAAAAAAAAEAAAAACgMDAwMDAwMDAwM=",
+        "IsRetry": false,
+        "Receipt": {
+          "Bytes": "T0ZDAAAAAAEAAAAKAAAAFHdvcmxkLmFjdGlvbi1yZWNlaXB0AAAACAAAAAAAAAABAAAAEIr30tZtuQS0DoxPj0rRaxIAAAAQkKalf5RoT2Ywp1OJ44OFqwAAABBsJEntlyPhqhgQLxkv0aS0AAAAEBDp74EYb\u002BoncKZ8/H1rGncAAAAg31Hh5mXnsO\u002BO5xt\u002B4oyHTmonwzG4B6Am0AcSSbTJFFQAAAAIAAAAAAAADF0AAAAIAAAAAAAAAAEAAAAIAAAAAAAAAAA=",
+          "Rejection": "None",
+          "CommitSequence": 3165
+        }
+      },
+      {
+        "Action": "UseRestorative",
+        "CommandId": "b8d64c1f010102cb4019cddd6b889304",
+        "Command": "T0ZDAAAAAAEAAAAKAAAAEndvcmxkLmFjdG9yLWFjdGlvbgAAAAgAAAAAAAAADgAAABC41kwfAQECy0AZzd1riJMEAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABDHb0aLGjX6O/giuCtm2fjEAAAAEGwkSe2XI\u002BGqGBAvGS/RpLQAAAAQEOnvgRhv6idwpnz8fWsadwAAAAgAAAAAAAALuQAAAUVPRkMAAAAAAQAAAAsAAAAcd29ybGQuYWN0aW9uLnJlc3RvcmF0aXZlLXVzZQAAAAgAAAAAAAAAAQAAABDHb0aLGjX6O/giuCtm2fjEAAAAEEaHvkaD6RI0PpmLPDbl/L0AAAAgFjump71fGjEE4Ve56LVOzwFOYFt4DHYzL0TA0SB9d7IAAAAsT0ZDAAAAAAEAAAABAAAAHHdvcmxkLnJlc3RvcmF0aXZlLnBlcm1pc3Npb24AAAAIAAAAAAAAC7kAAAAIAAAAAAAAAAIAAAAIAAAAAAAAAAcAAAAIAAAAAAAAAAIAAABdT0ZDAAAAAAEAAAAFAAAAFXdvcmxkLmNhcmUuaW5ncmVkaWVudAAAAAgAAAAAAAAAAQAAABAAa4TvuU\u002B86nFHNBnhNHnaAAAACAAAAAAAAAAAAAAACAAAAAAAAAAB",
+        "IsRetry": false,
+        "Receipt": {
+          "Bytes": "T0ZDAAAAAAEAAAAKAAAAFHdvcmxkLmFjdGlvbi1yZWNlaXB0AAAACAAAAAAAAAABAAAAELjWTB8BAQLLQBnN3WuIkwQAAAAQkKalf5RoT2Ywp1OJ44OFqwAAABBsJEntlyPhqhgQLxkv0aS0AAAAEBDp74EYb\u002BoncKZ8/H1rGncAAAAgC78NP61Vzs23L7URc82kEzpawtLfC0EPvNHrlJM2EiwAAAAIAAAAAAAADKEAAAAIAAAAAAAAAAEAAAAIAAAAAAAAAAA=",
+          "Rejection": "None",
+          "CommitSequence": 3233
+        }
+      },
+      {
+        "Action": "ShowTradeLot",
+        "CommandId": "8dec7f5f03c3b1000b876f069ae46df4",
+        "Command": "T0ZDAAAAAAEAAAAKAAAAEndvcmxkLmFjdG9yLWFjdGlvbgAAAAgAAAAAAAAAEgAAABCN7H9fA8OxAAuHbwaa5G30AAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABDHb0aLGjX6O/giuCtm2fjEAAAAEGwkSe2XI\u002BGqGBAvGS/RpLQAAAAQEOnvgRhv6idwpnz8fWsadwAAAAgAAAAAAAARTAAAAOBPRkMAAAAAAQAAAAsAAAAgd29ybGQuYWN0aW9uLm1hcmtldC1sb3QtZGlzY2xvc2UAAAAIAAAAAAAAAAEAAAAQl0uhxQzcG6Kv3MivLaR4eAAAAAgAAAAAAAAAAQAAABDFBaeeE6/VV9D\u002BeY6FICGfAAAAEFP9JNWEGuB23KYgtevkGq0AAAAg4MrrSIBv1Osvbg6qFIvSGUq5X7g8hAv350CLrHX94yIAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAAEAAAAQ\u002B1P206kW4pRvDCmfcQt5oAAAAAgAAAAAAAAbiA==",
+        "IsRetry": false,
+        "Receipt": {
+          "Bytes": "T0ZDAAAAAAEAAAAKAAAAFHdvcmxkLmFjdGlvbi1yZWNlaXB0AAAACAAAAAAAAAABAAAAEI3sf18Dw7EAC4dvBprkbfQAAAAQkKalf5RoT2Ywp1OJ44OFqwAAABBsJEntlyPhqhgQLxkv0aS0AAAAEBDp74EYb\u002BoncKZ8/H1rGncAAAAgmtPsgiVTZ6ZWRAmllLZJzRfeCtqdNxtMjVvSPTwmYKQAAAAIAAAAAAAAEj8AAAAIAAAAAAAAAAEAAAAIAAAAAAAAAAA=",
+          "Rejection": "None",
+          "CommitSequence": 4671
+        }
+      },
+      {
+        "Action": "ConfirmTrade",
+        "CommandId": "c74d85a790c3ac27a88117ad43742d0e",
+        "Command": "T0ZDAAAAAAEAAAAKAAAAEndvcmxkLmFjdG9yLWFjdGlvbgAAAAgAAAAAAAAAEQAAABDHTYWnkMOsJ6iBF61DdC0OAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABDHb0aLGjX6O/giuCtm2fjEAAAAEGwkSe2XI\u002BGqGBAvGS/RpLQAAAAQEOnvgRhv6idwpnz8fWsadwAAAAgAAAAAAAARTAAAARVPRkMAAAAAAQAAAAQAAAAed29ybGQuYWN0aW9uLnNwb3QtcXVvdGUtYWNjZXB0AAAACAAAAAAAAAABAAAAy09GQwAAAAABAAAACgAAABdtYXJrZXRzLnNwb3QuYWNjZXB0YW5jZQAAAAgAAAAAAAAAAQAAABDHTYWnkMOsJ6iBF61DdC0OAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABBcn6\u002BlAUkfZaSvN3bwn8eLAAAAIK9luDGi2ApW3GsHfnE\u002BxrCAgpLy/RIFzJuTwkTXpBKoAAAACAAAAAAAAAABAAAACAAAAAAAAAAmAAAACAAAAAAAAAAAAAAACAAAAAAAAAAA",
+        "IsRetry": false,
+        "Receipt": {
+          "Bytes": "T0ZDAAAAAAEAAAAKAAAAFHdvcmxkLmFjdGlvbi1yZWNlaXB0AAAACAAAAAAAAAABAAAAEMdNhaeQw6wnqIEXrUN0LQ4AAAAQkKalf5RoT2Ywp1OJ44OFqwAAABBsJEntlyPhqhgQLxkv0aS0AAAAEBDp74EYb\u002BoncKZ8/H1rGncAAAAg3gJ\u002BhMk2egSDRF2kXkkMcjvDq5RZ2gH/YXcxhJka6qoAAAAIAAAAAAAAEkIAAAAIAAAAAAAAAAEAAAAIAAAAAAAAAAA=",
+          "Rejection": "None",
+          "CommitSequence": 4674
+        }
+      }
+    ]
+  },
+  "OpeningSeconds": 3.375,
+  "ProbeMilliseconds": 395827,
+  "Paused": true,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Start": "farm",
+  "Reward": 200,
+  "Purchase": {
+    "QuoteId": "94fa60a5a91dff936930928b22c5e81b",
+    "LotId": "c505a79e13afd557d0fe798e8520219f",
+    "Units": 1,
+    "Total": 20,
+    "BalanceBefore": 200,
+    "BalanceAfter": 180
+  },
+  "Unobserved": {
+    "X": 88704,
+    "Y": 81536,
+    "Z": 256,
+    "Rows": 0,
+    "Status": "Explore freely \u00B7 Select a wolf to inspect an encounter."
+  },
+  "WarningObservation": {
+    "DistanceSubunits": 749,
+    "ReachSubunits": 400,
+    "Feet": {
+      "X": 88704,
+      "Y": 80448,
+      "Z": 256
+    },
+    "ChiefDrawn": true,
+    "ChiefViewport": {
+      "X": 496,
+      "Y": 194
+    },
+    "ChiefInField": true,
+    "ChiefSprite": {
+      "X": 480,
+      "Y": 150,
+      "Width": 32,
+      "Height": 48
+    },
+    "PlayerSprite": {
+      "X": 448,
+      "Y": 238,
+      "Width": 32,
+      "Height": 48
+    },
+    "Field": {
+      "X": 0,
+      "Y": 104,
+      "Width": 960,
+      "Height": 228
+    },
+    "ChiefSpriteVisible": true,
+    "PlayerSpriteVisible": true,
+    "Seconds": 118.9586994
+  },
+  "Inputs": [
+    {
+      "Stage": "retained-opening",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "strike",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "inspect",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "cancel",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "commit",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "personal-care",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "personal-care",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "personal-care",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "personal-care",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "personal-care",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketHistory",
+      "To": "CheckRecord"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CheckRecord",
+      "To": "PauseToRead"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "PauseToRead",
+      "To": "CloseMarket"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CloseMarket",
+      "To": "MarketStall"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "RowReached": 2,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 within reach",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketStall",
+      "Selected": 2,
+      "Text": "Kegga Toolwright\u0027s stall \u00B7 Gearford \u00B7 rations \u00B7 within reach"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketStall",
+      "To": "BuyMode"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "SellMode",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLot"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketLot",
+      "RowReached": 2,
+      "Text": "Lot 2: 1 ration",
+      "X": 0,
+      "Y": 0
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Dropdown": "MarketLot",
+      "Selected": 2,
+      "Text": "Lot 2: 1 ration"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLot",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "ShowLot"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ShowLot",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "ShowLot",
+      "To": "StopShowing"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "StopShowing",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "sell",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "outbound",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "outbound",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "warning",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "approach",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "detour",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "to-gearford",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "return-home",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "return-home",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "return-home",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "return-home",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "return-home",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "return-home",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "return-home",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "return-home",
+      "Hold": "Up"
+    }
+  ],
+  "Warning": "Danger nearby \u00B7 Bandit Chief guards the road \u00B7 attacks within 1.6 cells\nExplore freely \u00B7 Select a wolf to inspect an encounter.",
+  "WarningDetail": "Bandit Chief \u00B7 level 7 \u00B7 HP 800/800. It attacks you when you come within 1.56 cells in its sight, and is 2.9 cells away now. It does not chase: walk around it outside that reach, or retreat if it engages you. An early traveller cannot expect to win.\nRemaining recovery: 0 seconds of advancing world time. Reading an action does not spend it. A queued choice resolves through the host; closing a menu cannot undo it.",
+  "Approach": [
+    {
+      "X": 88704,
+      "Y": 81536,
+      "Z": 256,
+      "Seconds": 116.8007633
+    },
+    {
+      "X": 88704,
+      "Y": 81504,
+      "Z": 256,
+      "Seconds": 116.8609388
+    },
+    {
+      "X": 88704,
+      "Y": 81472,
+      "Z": 256,
+      "Seconds": 116.9109483
+    },
+    {
+      "X": 88704,
+      "Y": 81440,
+      "Z": 256,
+      "Seconds": 116.9609492
+    },
+    {
+      "X": 88704,
+      "Y": 81408,
+      "Z": 256,
+      "Seconds": 117.0109732
+    },
+    {
+      "X": 88704,
+      "Y": 81376,
+      "Z": 256,
+      "Seconds": 117.0609395
+    },
+    {
+      "X": 88704,
+      "Y": 81344,
+      "Z": 256,
+      "Seconds": 117.1109363
+    },
+    {
+      "X": 88704,
+      "Y": 81312,
+      "Z": 256,
+      "Seconds": 117.160912
+    },
+    {
+      "X": 88704,
+      "Y": 81280,
+      "Z": 256,
+      "Seconds": 117.2108235
+    },
+    {
+      "X": 88704,
+      "Y": 81248,
+      "Z": 256,
+      "Seconds": 117.2609399
+    },
+    {
+      "X": 88704,
+      "Y": 81216,
+      "Z": 256,
+      "Seconds": 117.3109924
+    },
+    {
+      "X": 88704,
+      "Y": 81184,
+      "Z": 256,
+      "Seconds": 117.3642943
+    },
+    {
+      "X": 88704,
+      "Y": 81152,
+      "Z": 256,
+      "Seconds": 117.4109687
+    },
+    {
+      "X": 88704,
+      "Y": 81120,
+      "Z": 256,
+      "Seconds": 117.4609008
+    },
+    {
+      "X": 88704,
+      "Y": 81088,
+      "Z": 256,
+      "Seconds": 117.5109127
+    },
+    {
+      "X": 88704,
+      "Y": 81056,
+      "Z": 256,
+      "Seconds": 117.5609346
+    },
+    {
+      "X": 88704,
+      "Y": 81024,
+      "Z": 256,
+      "Seconds": 117.6110045
+    },
+    {
+      "X": 88704,
+      "Y": 80992,
+      "Z": 256,
+      "Seconds": 117.6609407
+    },
+    {
+      "X": 88704,
+      "Y": 80960,
+      "Z": 256,
+      "Seconds": 117.7109242
+    },
+    {
+      "X": 88704,
+      "Y": 80928,
+      "Z": 256,
+      "Seconds": 117.7609924
+    },
+    {
+      "X": 88704,
+      "Y": 80896,
+      "Z": 256,
+      "Seconds": 117.81078
+    },
+    {
+      "X": 88704,
+      "Y": 80864,
+      "Z": 256,
+      "Seconds": 117.8609177
+    },
+    {
+      "X": 88704,
+      "Y": 80832,
+      "Z": 256,
+      "Seconds": 117.910934
+    },
+    {
+      "X": 88704,
+      "Y": 80800,
+      "Z": 256,
+      "Seconds": 117.9609375
+    },
+    {
+      "X": 88704,
+      "Y": 80768,
+      "Z": 256,
+      "Seconds": 118.010927
+    },
+    {
+      "X": 88704,
+      "Y": 80736,
+      "Z": 256,
+      "Seconds": 118.061128
+    },
+    {
+      "X": 88704,
+      "Y": 80704,
+      "Z": 256,
+      "Seconds": 118.110927
+    },
+    {
+      "X": 88704,
+      "Y": 80672,
+      "Z": 256,
+      "Seconds": 118.1609337
+    },
+    {
+      "X": 88704,
+      "Y": 80640,
+      "Z": 256,
+      "Seconds": 118.2110201
+    },
+    {
+      "X": 88704,
+      "Y": 80608,
+      "Z": 256,
+      "Seconds": 118.26109
+    },
+    {
+      "X": 88704,
+      "Y": 80576,
+      "Z": 256,
+      "Seconds": 118.3109265
+    },
+    {
+      "X": 88704,
+      "Y": 80544,
+      "Z": 256,
+      "Seconds": 118.3609245
+    },
+    {
+      "X": 88704,
+      "Y": 80512,
+      "Z": 256,
+      "Seconds": 118.4109045
+    },
+    {
+      "X": 88704,
+      "Y": 80480,
+      "Z": 256,
+      "Seconds": 118.4609683
+    },
+    {
+      "X": 88704,
+      "Y": 80448,
+      "Z": 256,
+      "Seconds": 118.5109307
+    },
+    {
+      "X": 88704,
+      "Y": 80416,
+      "Z": 256,
+      "Seconds": 119.0109417
+    },
+    {
+      "X": 88704,
+      "Y": 80384,
+      "Z": 256,
+      "Seconds": 119.060885
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 119.1109226
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 119.1608902
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 119.2109173
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 119.2525613
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 119.3109287
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 119.3609114
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 119.410943
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 119.4609241
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 119.5109
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 119.5609089
+    },
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 119.610895
+    }
+  ],
+  "Engagement": {
+    "EncounterCount": 1,
+    "Distance": 385,
+    "Reach": 400,
+    "Feet": {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256
+    },
+    "Seconds": 119.6801884
+  },
+  "Hit": {
+    "Before": 78,
+    "After": 46,
+    "ChiefHp": 800,
+    "ChiefHpAfter": 789
+  },
+  "Inspected": {
+    "Stage": "commit",
+    "Name": "Retreat",
+    "Details": "Target: To cell (346, 313), south\nCost: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 1.3 s total.",
+    "Tooltip": "Target: To cell (346, 313), south\nCost: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery\n\nCommit to the full route. Opponents act between steps; blocked ground stops you. Readiness: 0.13 s/step; 1.3 s total."
+  },
+  "Openings": [
+    {
+      "Stage": "inspect",
+      "Timing": 24,
+      "Slot": "To cell (346, 313), south",
+      "SlotBlocker": null,
+      "CanExecute": true
+    },
+    {
+      "Stage": "commit",
+      "Timing": 24,
+      "Slot": "To cell (346, 313), south",
+      "SlotBlocker": null,
+      "CanExecute": true
+    }
+  ],
+  "Positions": [
+    {
+      "X": 88704,
+      "Y": 80032,
+      "Z": 256,
+      "Seconds": 122.550215
+    },
+    {
+      "X": 88704,
+      "Y": 80064,
+      "Z": 256,
+      "Seconds": 122.6609465
+    },
+    {
+      "X": 88704,
+      "Y": 80096,
+      "Z": 256,
+      "Seconds": 122.8608947
+    },
+    {
+      "X": 88704,
+      "Y": 80128,
+      "Z": 256,
+      "Seconds": 123.0609527
+    },
+    {
+      "X": 88704,
+      "Y": 80160,
+      "Z": 256,
+      "Seconds": 123.2608934
+    },
+    {
+      "X": 88704,
+      "Y": 80192,
+      "Z": 256,
+      "Seconds": 123.5608891
+    },
+    {
+      "X": 88704,
+      "Y": 80224,
+      "Z": 256,
+      "Seconds": 123.7608656
+    },
+    {
+      "X": 88704,
+      "Y": 80256,
+      "Z": 256,
+      "Seconds": 123.9609057
+    },
+    {
+      "X": 88704,
+      "Y": 80288,
+      "Z": 256,
+      "Seconds": 124.1608049
+    },
+    {
+      "X": 88704,
+      "Y": 80320,
+      "Z": 256,
+      "Seconds": 124.3612783
+    },
+    {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256,
+      "Seconds": 124.5609516
+    }
+  ],
+  "HoldOff": {
+    "FromStep": 3182,
+    "ToStep": 3202,
+    "EncounterCount": 1
+  },
+  "Checks": [
+    "At Marla\u0027s stall one ration was asked, reviewed and bought through the panel at the exact quoted total.",
+    "Held arrow keys carried the bought ration along the outbound lane to the road cell seven cells south of the camp.",
+    "Seven cells south of the camp the chief is unobserved: no warning or detail is published.",
+    "Walking north, the chief came into view three cells away: the HUD warned before contact, with level, HP, reach and distance on inspection, and both complete sprites cleared the HUD.",
+    "Walking the lane north, the chief began the encounter itself once the player was within its reach.",
+    "Striking the level-7 chief cost the Squire 32 HP from its real attack.",
+    "The chief\u0027s encounter offers a 10-step retreat: 10 steps \u00B7 1.35 s walk \u00B7 0.13 s recovery.",
+    "Cancelling the inspected Retreat sends nothing: the player\u0027s own boundary still waits, unanswered.",
+    "The committed route was walked as 10 presented 32-subunit steps and ended the chief\u0027s encounter.",
+    "Twenty exploration steps after disengaging, the chief has not re-entered: the retreat ended contact beyond its reach.",
+    "After the real road injury and retreat, the Care wheel consumed one owned Potion for its exact healing; crafted supplies stayed intact.",
+    "A detour three cells west of the camp passed the chief outside its reach and rejoined the lane north of it.",
+    "At Kegga\u0027s stall the carried lot was shown, asked, reviewed and sold at the exact bid total.",
+    "Held-key travel returned around the chief to the original farm, with Wren\u0027s completed work and both crafted rations retained."
+  ],
+  "Images": [
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.retained-opening.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.buy-review.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.marla-bought.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.road.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.warning.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.engaged.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.hit.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.retreat-inspected.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.retreating.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.disengaged.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.care-inspection.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.treated.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.detoured.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.gearford.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.sell-review.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.sold.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.returned-work.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-6dbh9hst/keyboard.final.png"
+  ],
+  "Notice": "You broke away after 10 steps. The encounter is over; recovery continues while you explore.",
+  "Trade": {
+    "QuoteId": "5c9fafa501491f65a4af3776f09fc78b",
+    "LotId": "c505a79e13afd557d0fe798e8520219f",
+    "Total": 38,
+    "BalanceBefore": 180,
+    "BalanceAfter": 218,
+    "RationsBefore": 1,
+    "RationsAfter": 0
+  },
+  "Record": {
+    "Status": "Disengaged",
+    "Reason": "None",
+    "SamplesTaken": 10,
+    "RouteSamples": 10,
+    "ReadinessCharged": 130,
+    "WorldSequence": 3204,
+    "Final": {
+      "X": 88704,
+      "Y": 80352,
+      "Z": 256
+    },
+    "ActorId": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "CommandId": "8af7d2d66db904b40e8c4f8f4ad16b12"
+  },
+  "EncounterCount": 1,
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 83328,
+    "Z": 256
+  },
+  "FinalHp": 78,
+  "FinalBalance": 218,
+  "CarriedRations": 0
+}

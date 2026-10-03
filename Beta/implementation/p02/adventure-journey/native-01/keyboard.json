@@ -1,0 +1,313 @@
+{
+  "Kind": "native-adventure-journey-v1",
+  "Mode": "keyboard",
+  "Status": "failed",
+  "Failure": "System.TimeoutException: The operation has timed out.\n   at OpenFantasy.Client.RoadThreatPlayProbe.Capture(String label) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs:line 680\n   at OpenFantasy.Client.RoadThreatPlayProbe.BuyAndTravelToChief(CargoCorridor corridor) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs:line 447\n   at OpenFantasy.Client.RoadThreatPlayProbe.ContinueFromMarla() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.Adventure.cs:line 66\n   at OpenFantasy.Client.RoadThreatPlayProbe.Exercise(EntityId chief) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs:line 145\n   at OpenFantasy.Client.RoadThreatPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/RoadThreat/RoadThreatPlayProbe.cs:line 124",
+  "Entry": "--adventure-journey",
+  "Adventure": {
+    "CargoLot": "aa0c73aae04212db3cf9838349ab39d2",
+    "Care": null,
+    "Returned": null,
+    "PublicHash": "E61B0941AB763D47651B6E2713579F7DDEDDC2CB8C06346990679D6C8233CA43",
+    "HistoryVerified": false,
+    "Submissions": [
+      {
+        "Action": "ConfirmTrade",
+        "CommandId": "e2b57cbb97288e42aac58db81c1b1531",
+        "Command": "T0ZDAAAAAAEAAAAKAAAAEndvcmxkLmFjdG9yLWFjdGlvbgAAAAgAAAAAAAAAEQAAABDitXy7lyiOQqrFjbgcGxUxAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABDHb0aLGjX6O/giuCtm2fjEAAAAEGwkSe2XI\u002BGqGBAvGS/RpLQAAAAQEOnvgRhv6idwpnz8fWsadwAAAAgAAAAAAAACwAAAARVPRkMAAAAAAQAAAAQAAAAed29ybGQuYWN0aW9uLnNwb3QtcXVvdGUtYWNjZXB0AAAACAAAAAAAAAABAAAAy09GQwAAAAABAAAACgAAABdtYXJrZXRzLnNwb3QuYWNjZXB0YW5jZQAAAAgAAAAAAAAAAQAAABDitXy7lyiOQqrFjbgcGxUxAAAAEJCmpX\u002BUaE9mMKdTieODhasAAAAQn2pG7cfZkXDBGywPQeep4AAAABDjT0h85jI5r7YDHkttEB1DAAAAIDTTSS5hRX8ECaxehrJICYKjTXAoYrDAl8zGGYCsR5KuAAAACAAAAAAAAAABAAAACAAAAAAAAAAUAAAACAAAAAAAAAAAAAAACAAAAAAAAAAA",
+        "IsRetry": false,
+        "Receipt": {
+          "Bytes": "T0ZDAAAAAAEAAAAKAAAAFHdvcmxkLmFjdGlvbi1yZWNlaXB0AAAACAAAAAAAAAABAAAAEOK1fLuXKI5CqsWNuBwbFTEAAAAQkKalf5RoT2Ywp1OJ44OFqwAAABBsJEntlyPhqhgQLxkv0aS0AAAAEBDp74EYb\u002BoncKZ8/H1rGncAAAAgjUhpj94i178rAhxbNVCuDWdi8UebMbRhsT/QXIqi6HkAAAAIAAAAAAAAA0QAAAAIAAAAAAAAAAEAAAAIAAAAAAAAAAA=",
+          "Rejection": "None",
+          "CommitSequence": 836
+        }
+      }
+    ]
+  },
+  "OpeningSeconds": 3.176,
+  "ProbeMilliseconds": 122555,
+  "Paused": false,
+  "WindowFocusObserved": false,
+  "LogicalFocus": true,
+  "Start": "farm",
+  "Reward": 200,
+  "Purchase": {
+    "QuoteId": "e34f487ce63239afb6031e4b6d101d43",
+    "LotId": "aa0c73aae04212db3cf9838349ab39d2",
+    "Units": 1,
+    "Total": 20,
+    "BalanceBefore": 200,
+    "BalanceAfter": 180
+  },
+  "Unobserved": null,
+  "WarningObservation": null,
+  "Inputs": [
+    {
+      "Stage": "retained-opening",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "BuyMode",
+      "To": "SellMode"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "SellMode",
+      "To": "MarketLess"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketLess",
+      "To": "MarketMore"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "MarketMore",
+      "To": "AskMerchant"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "AskMerchant",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "AskMerchant",
+      "To": "CancelRequest"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Down"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Down",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "down",
+      "From": "CancelRequest",
+      "To": "ReviewOffer"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ReviewOffer",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Up"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Up",
+      "Pressed": false,
+      "Accept": false,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Navigate": "up",
+      "From": "BackFromReview",
+      "To": "ConfirmTrade"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": true,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Received": "ConfirmTrade",
+      "Event": "Enter",
+      "Pressed": false,
+      "Accept": true,
+      "Focused": true
+    },
+    {
+      "Stage": "buy",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "outbound",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "outbound",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "outbound",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "outbound",
+      "Hold": "Up"
+    }
+  ],
+  "Warning": null,
+  "WarningDetail": null,
+  "Approach": [],
+  "Engagement": null,
+  "Hit": null,
+  "Inspected": null,
+  "Openings": [],
+  "Positions": [],
+  "HoldOff": null,
+  "Checks": [
+    "At Marla\u0027s stall one ration was asked, reviewed and bought through the panel at the exact quoted total."
+  ],
+  "Images": [
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-28fpo7lo/keyboard.retained-opening.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-28fpo7lo/keyboard.buy-review.png",
+    "/var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/openfantasy-adventure-journey-28fpo7lo/keyboard.marla-bought.png"
+  ],
+  "Notice": null,
+  "Trade": null,
+  "Record": null,
+  "EncounterCount": 0,
+  "FinalFeet": {
+    "X": 88704,
+    "Y": 81536,
+    "Z": 256
+  },
+  "FinalHp": 78,
+  "FinalBalance": 180,
+  "CarriedRations": 1
+}
