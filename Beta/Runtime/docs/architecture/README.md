@@ -18,6 +18,7 @@ different kind of person.
 | [Host timing diagnostics](host-timing-diagnostics.md) | How are startup, input sampling, commit, observation and cleanup delays measured without changing authority or deadlines? |
 | [Durable character control](controller-lifecycle.md) | How do recorded disconnect, allowance expiry and safe return of control preserve character ownership, gameplay obligations and exact replay? |
 | [Controller allowance recovery](controller-recovery.md) | How do explicit recovery admission, durable measured lower bounds and fenced host segments preserve allowance across restart without offline time? |
+| [Co-player permission](control-permissions.md) | How do named offers, exact acceptance and revocation preserve ownership while separating consent from effective control? |
 | [Fresh player rosters](player-rosters.md) | How does fresh cargo admission create one to four real human characters with owned facets, finite starter tools and a complete cooperative encounter catalog? |
 | [Player message transport](player-message-transport.md) | How do bounded local and WebSocket envelopes preserve ordering, ownership and complete-message boundaries? |
 | [Player connection admission](player-admission.md) | How do scoped host-issued credentials, compatibility pins and bounded handshakes select one actual player port? |

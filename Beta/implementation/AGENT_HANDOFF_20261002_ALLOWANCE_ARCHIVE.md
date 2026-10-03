@@ -1,0 +1,570 @@
+# Current shared agent handoff
+
+Updated: 2026-10-02 UTC. This is the current-state index; evidence and failure dispositions remain in
+linked packets. The preserved specification is authoritative. Read only task-relevant contracts.
+
+## Start here
+
+1. [Implementation instructions](../AGENTS.md): ownership, stable `OpenFantasy` runtime names,
+   modular object-oriented C#, preservation, verification and shared-desktop discipline.
+2. [Runtime setup and controls](../Runtime/README.md) for builds/runs.
+3. [Full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md), [requirements](../spec-v1_1/REQUIREMENTS.json),
+   [technical design](../spec-v1_1/TECHNICAL_DESIGN.md) and
+   [baseline handoff](../spec-v1_1/IMPLEMENTATION_HANDOFF.md) for the next dependency.
+4. [Living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md) and
+   [partial coverage](ui-management/COVERAGE.json) for interface work. These refine the baseline,
+   without reprioritizing phases. Later owner naming instructions override source naming only.
+
+5. [Architecture reference](../Runtime/docs/architecture/README.md): timeless ownership, source
+   bindings and domain/design contracts. Read affected subjects, not the entire encyclopedia, for
+   an implementation task. The [maintenance hook](../AGENTS.md#architecture-reference-and-maintenance-hook)
+   requires same-change updates for architectural changes and a bounded source review at phase handoff.
+
+## Core language assessment
+
+The owner-requested [C#/C++ decision specification](CORE_LANGUAGE_CPP_ASSESSMENT.md) and
+[source inventory](CORE_LANGUAGE_CPP_EVIDENCE.json) assess execution, in-process native versus IPC,
+performance hypotheses, compatibility, effort, projected source size and conditional qualification.
+Owner decision, 2026-09-20: retain C# for the core and application for simplicity. Native alternatives
+remain research; no migration, custom native kernel or IPC worker is in the active plan. Preserve core
+decoupling and address measured costs in C#. No comparative benchmark or new language gate is accepted;
+the complete existing LANG gates remain in force. A language change requires a new owner decision.
+
+## Architecture documentation
+
+The [backfill record](architecture-reference/README.md) reconciles the reference with the retained
+runtime. It separates executable domain contracts, actual application bindings and full design
+obligations, especially history, Wait, local visibility and macro geography. Progress/evidence remain
+here and in packets; frozen specs remain preserved. Documentation coverage does not close game gates.
+Commit `2f91983`, preserved on `codex/milestone-architecture-reference`, records the reference and
+project hook. Ecosystem commit `4e83086` records the portable hook and verified five-entrypoint sync.
+All 123 reference links resolve; the bounded factual review corrections are retained in the packet.
+
+## Owner scope clarification
+
+The [equipment and vehicle upkeep roadmap](EQUIPMENT_AND_VEHICLE_UPKEEP.md) makes clothing mending,
+item/armor/weapon repair, vehicle/part wear/damage/maintenance and direct attacks on vehicles/mounts
+explicit. Mounts retain bodily injury/care; vehicles retain material/part damage and repair. Baseline RQ-093–095,
+RQ-107, RQ-111, RQ-131 and RQ-179 already cover the shared concepts. Integration remains in P04–P07,
+with P11 catalog reconciliation and P12–P14 qualification; no priority change or implementation claim.
+
+## Current work and routing
+
+Owner steering: use exact `claude-opus-5-5[1m]`, requested Max and finite limits when delegating;
+Astra retains integration. The latest direct request reached the account monthly spending limit.
+No automatic retry, fallback, account limit change or further provider request is pending.
+
+The [allowance-recovery checkpoint](p02/allowance-recovery/RESULT.md) explicitly selects storage schema
+10 for profiles 36–38 without changing canonical world bytes. A live host resumes durably measured
+elapsed time on a fresh monotonic segment; offline time and unpublished crash time are uncharged.
+Repeated crashes can extend grace. Exact episode rows, fencing, atomic lifecycle transitions,
+stop-request capture and original-history activation/replay are enforced. Schema-nine sources remain
+unchanged by create-only copy activation. The timeless architecture and operator guide are current.
+
+[Final checks](p02/allowance-recovery/FINAL_CHECKS.json): warning-free build, 933 distinct selected passes
+including 44 new, eight actual Host kills, inherited/later care archive publication and one rendered
+Godot/TLS handback on a copied schema-ten save with three inspected captures. Windows credential
+permissions remain unrun. All 726 older tests/fixtures, 23 frozen specs and exact predecessor staging
+are preserved; 1,316 architecture links resolve. Independent critique repaired post-activation expiry
+replay parity; both failed attempts remain retained. Pre-change ref preserves `2950c00c` at
+`codex/checkpoint-before-allowance-recovery-20261002T220920Z`; verified milestone is
+`codex/milestone-allowance-recovery-20261002`. No external provider request or credit-offload claim.
+
+Next: consented co-player policy. General party retreat/pursuit/rescue, automatic production admission,
+broader lived-save migration, maximum composite/disposition capacity, history latency and full
+platform/device/art/human/campaign gates remain open. Native hostile approach/loss/allowance preparation
+is not claimed by the rendered continuation. The lower-bound recovery policy does not promise exact
+crash-tail reconstruction or general world-profile migration.
+
+The [observed control-return checkpoint](p02/control-return/RESULT.md) repairs lost deliberate Resume
+after an early readiness request. Pending/restored port state is bound to its applied observation;
+stale or unbound requests, held input and focus return cannot grant consent. Godot presents pending
+work and deliberately resumed control. A complete managed hostile journey proves actual damage,
+transport loss, recorded allowance, paid autonomous retreat, safe unready restoration and exact replay.
+The native TLS continuation proves remaining accepted retreat, visible handback and explicit Resume.
+Milestone: `codex/milestone-control-return-20261002`.
+[Final checks](p02/control-return/FINAL_CHECKS.json): warning-free build, 644 distinct passing cases
+including 14 new, 12 native processes/eight rendered/21 captures, original-history authentication and
+fresh four-player/care regressions. Windows credential permissions remain unrun here. All 718 older
+tests/fixtures, 23 frozen specs and exact predecessor staging remain unchanged; 1,304 architecture links
+resolve. Independent critique and all five failed attempts remain recorded, including two editor-import
+failures before the bounded initialization adjustment. No external provider request or credit offload.
+
+That checkpoint left explicit restart reconciliation, now addressed by the opt-in policy above,
+and consented co-player policy. Saved offline time must not silently expire an allowance. General party retreat,
+pursuit/rescue, maximum composite/disposition capacity, lived-save migration, production history
+latency and full platform/device/art/human/campaign gates remain open. Native hostile approach,
+initial loss and allowance expiry are not proved by the prepared native continuation.
+
+The [care durability checkpoint](p02/care-disposition-durability/RESULT.md) proves 128 actual alternating
+cancellations/declines with finite paid recoveries, coordinated history compaction, ten injected
+transaction failures and ten actual Host process kills. Both original and archived pending-care
+fixtures pass their complete native decisions and separate reopens. Larger admitted status values
+exposed header clipping; wrapped columns and a target panel that follows the header now preserve
+complete controls. Direct inspection rejected an intermediate panel-sizing repair despite green
+automated reports; the stronger probe and final rendered runs pass. All failures remain recorded.
+Milestone: `codex/milestone-care-disposition-durability-20261002`.
+[Final checks](p02/care-disposition-durability/FINAL_CHECKS.json): warning-free build, 232 distinct
+managed passes including five new, 12 rendered processes/30 captures and exact original-history
+authentication. Dependency reuse is explicit; 710 of 712 old test/fixture files remain byte-identical,
+with two additive shared-test extractions retaining their originals and assertions. All 23 frozen
+spec files, predecessor staging and 1,294 architecture links are verified. The independent review
+and timeless architecture updates are retained; no external provider call or credit offload occurred.
+
+The control-return checkpoint above completes the bounded dependency identified by the
+[review notes](p02/care-disposition-durability/REVIEW.md#next-gameplay-dependency).
+Maximum disposition-only/composite-world capacity remains open: resource headroom triggers this
+journey's cut first. Restart/co-player policy, physical devices/OS focus, lived-save migration,
+production selection/history latency and the complete campaign remain open. These native journeys
+begin at prepared pending care and do not qualify native approach/combat or production art.
+
+The [care disposition qualification](p02/care-disposition-qualification/RESULT.md) proves actual native
+patient cancellation (keyboard/pointer), human-helper decline (controller) and three separate paused
+reopens. Exact captured commands/receipts authenticate against the original prepared history; no
+healing, medicine use or encounter acceptance is fabricated. Helper closure wording and regional
+fixture framing are corrected. Three complete-world cases prove pending/cut/cancel-or-decline/re-cut,
+full recovery and the distinction between an earlier real treatment and later closure witnesses.
+Milestone: `codex/milestone-care-disposition-qualification-20261002`.
+[Final checks](p02/care-disposition-qualification/FINAL_CHECKS.json): warning-free build,219distinct
+managed passes including10new,6rendered processes/15images and exact native journal authentication.
+Dependency reuse is explicit;707older tests/fixtures,23specs and predecessor staging remain exact;
+1,292architecture links resolve. [Independent review and failures](p02/care-disposition-qualification/REVIEW.md)
+retain corrected new-test assertions, two native fixture/probe issues and an unfunded fixture request.
+No old gate/rule/timeout changed; no provider call or external credit offload occurred.
+
+The later durability checkpoint above adds repeated gameplay pressure, transaction/process boundaries
+and native pending-after-cut. Its bounded scope does not prove maximum disposition-only or composite
+capacity. Crowded world-space labels still need polish; the remaining campaign gates stay open.
+
+The [archived quote replay checkpoint](p02/archived-quote-replay/RESULT.md) removes a duplicate complete
+replay from participant inspection. The same pass captures the exact publishing root, independently
+authenticates the retrieved archive and all later history/tables, then pairs complete terminal bytes.
+Current control, participant privacy, pinned-head and recovery-required boundaries remain intact.
+The identical two-query, 132-revision workload allocates 536,331,088 bytes versus 1,071,986,376 before
+(about 49.97% less). Milestone: `codex/milestone-archived-quote-replay-20261002`.
+[Final checks](p02/archived-quote-replay/FINAL_CHECKS.json): warning-free build; 416 distinct passes,
+including 20 new cases, history95/network265/managedServer77 with the Windows ACL skip. All 703 older
+test files, 23 specs and predecessor staging remain exact; 1,289 architecture links resolve. The
+[independent review](p02/archived-quote-replay/REVIEW.md) found no actionable defect. No provider call
+or credit offload occurred. Earlier archived-query timeouts remain unexplained; long-history latency
+is still open. No new native, multi-cut query, full Core, migration or production acceptance is claimed.
+
+The later care checkpoints above supply native decisions, pending/cut/disposition/re-cut, bounded
+pressure and crash proof. Maximum capacity and survival/restart/co-player dependencies remain open. Continue investigating
+history-query load where evidence warrants; this allocation reduction is not a production latency gate pass.
+
+The [terrain projection reuse checkpoint](p02/multiplayer-service-latency/RESULT.md) captures the
+actual third-player failure: receipt during serialized projection, first sampling at 163.3869 ms,
+after the unchanged 150 ms lease. Exact immutable-region occupancy reuse removes repeated worksite/liquid
+cell-array construction across players and publications, preserving all bytes, copying and permissions.
+The same warmed 32-view workload allocates 1,217,344 bytes versus 16,003,392 before. Its milestone is
+`codex/milestone-terrain-projection-reuse-20261002`.
+
+[Final checks](p02/multiplayer-service-latency/FINAL_CHECKS.json): warning-free build and 567 distinct
+managed passes, including 8 new. **Normal managed Server now passes 77**, with the Windows-only ACL skip;
+Networking 265, client 179, shared 26 and terrain/publication 14 also pass. All 701 old test files, 23 specs and
+unrelated predecessor staging remain exact. The [independent review](p02/multiplayer-service-latency/REVIEW.md)
+found no actionable defect. Architecture references describe weak identity-based reuse.
+The captured expiry is explained and its redundant projection work repaired; this does not identify
+the cause of every historical timeout or close production scale/latency. Earlier archived-query failures
+remain open. No new native, full Core, migration or full-campaign acceptance is claimed.
+
+The archived-query checkpoint above measures/removes duplicate replay while preserving full
+authentication; prior timeouts remain unexplained. Later care checkpoints supply bounded native and
+crash proofs; maximum capacity and survival dependencies remain open. The full campaign remains
+authoritative. No provider retry or Claude credit offload occurred.
+
+The [pending-care decisions checkpoint](p02/pending-care-disposition/RESULT.md) adds explicit profile38/
+CareV5 patient cancellation and helper decline, separate terminal history/frontiers, exact archive/replay,
+safe unready control return, scoped human-helper choices and captured wheel controls. Its preserved
+milestone is `codex/milestone-care-dispositions-20261002`; production selection remains closed.
+[Final checks](p02/pending-care-disposition/FINAL_CHECKS.json): warning-free build, 2,544 distinct cases
+with passing evidence including all69new and fullCore1,870. NewHost30, client179, care9, compatibility21,
+controller73, shared26, recovery42 and Networking265 pass; dependency-based reuse is explicit.
+**At that checkpoint, managed Server failed:** 76 pass, one unchanged five-second four-player movement observation
+failure, one Windows ACL skip. Two earlier archived-query timeouts remain unexplained despite the final
+network pass. Every old test/spec/staging pin remains exact (691tests,23specs);1,286architecture links resolve.
+The [critic](p02/pending-care-disposition/REVIEW.md) exposed real closure-projection/queue-priority defects,
+both repaired. Legacy constructor compatibility and bounded test synchronization are also corrected.
+No native/full-suite/production acceptance or Claude credit offload is claimed.
+
+The later care checkpoints above prove native profile38 decisions, complete-world pending/cut/
+closure/re-cut, repeated gameplay pressure, crash boundaries and native pending-after-cut. Maximum
+disposition-only capacity and composite frames remain open. The projection checkpoint addresses the captured roster expiry. Hostile survival, restart/
+co-player policy, authenticated lived-save migration and full production/campaign gates remain open.
+The before-change checkpoint preserves `6358c9b7`; exact scope and failures are retained in the packet.
+
+The [observation validation checkpoint](p02/multiplayer-timing/RESULT.md), preserved at
+`codex/milestone-observation-validation-20261002`, removes per-cell boxing only for sealed owned
+terrain occupancy. The fixed 131,072-cell validation allocates zero bytes versus 3,145,984 before;
+all depth/count/error-order limits, wire bytes and generic collection checks remain unchanged.
+Opt-in bounded host timing traces separate input sampling, projection, observation and cleanup.
+
+[Final checks](p02/multiplayer-timing/FINAL_CHECKS.json): warning-free build; 584 distinct cases with
+passing evidence, including 22 new. Networking 265, client 179, shared 26 and controller 73 pass.
+**At that checkpoint, normal managed Server failed**: 76 pass, one five-second four-player movement failure,
+one Windows-only skip. The same selection with tracing passes 77 plus that skip; it does not explain
+the failure. No timing gate, old test or parallelization policy changed. All 688 old test/fixture
+files, 23 specs and unrelated staging remain exact; 1,273 architecture/design links resolve.
+The [independent review](p02/multiplayer-timing/REVIEW.md) found no actionable defect and records
+diagnostic limits. No new Core/native/full-suite/production acceptance or Claude offload is claimed.
+
+The later projection checkpoint above supplies actual receipt/lease evidence for the captured movement
+failure; other historical timeouts and full load/latency acceptance remain separate. The [pending-care design review](p02/pending-care-disposition/DESIGN_REVIEW.md)
+is preserved as the proposal underlying the managed implementation above; its profile38/CareV5 are now
+explicitly selected by fresh admission.
+The initial timing checkpoint preserves `d9e6ec57`; the before-optimization WIP checkpoint preserves
+`68eac65e`. Their exact refs and verification state are in the result. Full campaign gates remain open.
+
+The [general recovery checkpoint](p02/general-recovery/RESULT.md) is preserved at
+`codex/milestone-general-recovery-20261002`. Fresh profile 37/Care V4 permit separately authorized,
+finite helper treatment after encounter completion, without depending on the latest encounter archive.
+Real later battle/cut/travel/crafting/treatment/reopen, host helper selection, transport expiry/completion
+and unready return pass. Presentation preserves current incapacity and offered-care consequences.
+Regression found and repaired a real remote query join race; exact caller tasks are now joined.
+
+[Final checks](p02/general-recovery/FINAL_CHECKS.json): warning-free build, 2,454 distinct cases with
+passing evidence, including all 53 new cases and full Core 1,831. Dependency reuse is explicit; affected
+remote/client/recovery checks are rerun. **The managed Server aggregate remains failed**: 75 pass,
+one Windows skip, one five-second four-player movement-observation failure. That unchanged journey
+passes separately; controller 73 passes on repeat. Earlier startup/disconnect/TLS timing failures remain
+unexplained, and aggregate/concurrent-load gates stay open. Old tests/specs and predecessor staging
+remain exact; 1,268 architecture links resolve. No native, full-suite, production or Claude offload claim.
+
+The pre-change checkpoint preserves `6274e3c`; the before-query-repair WIP checkpoint preserves
+`af3bfcd1` with partial verification. Pending-care cancellation/decline now has the bounded managed checkpoint above. Aggregate timing
+failures remain open, followed by hostile retreat, restart/
+co-player and fresh-observation control-return policy. Profile 37 production stays closed. The complete
+campaign remains authoritative; this bounded law is not a complete rescue or autonomous survival policy.
+
+The [autonomous aftermath checkpoint](p02/autonomous-aftermath/RESULT.md) is qualified at
+`codex/milestone-autonomous-aftermath-20261002`. Disconnected Autonomous characters can request
+currently lawful prior-agreement care through their own binding; a separate host-helper transaction
+pays the actual dose/readiness. Living characters can acknowledge outcomes, with completion at a later
+cutoff. No player helper is conscripted and no incapacitated character is automatically terminalized.
+Neutral controller wording and strict observation body version 2 preserve legacy version-1 defaults.
+[Final checks](p02/autonomous-aftermath/FINAL_CHECKS.json): warning-free build, 484 distinct passes
+(36 new), exact 674 older tests/fixtures, 23 specs and predecessor staging; 1,257 architecture links.
+Actual loss/expiry, separate care, pending-human refusal, rejoin, save/replay and delta transitions pass.
+The failed broad Client selection remains retained; its missing native manifests are not native passes.
+Independent critique and the [recovery dependency](p02/autonomous-aftermath/RECOVERY_GAP.md) explain
+why incapacitated rescue cannot be replaced by automatic acknowledgment. Profile 36 production stays
+closed. No native/full-suite/platform gate or Claude offload is claimed by this checkpoint.
+
+The [conservative encounter controller](p02/conservative-controller/RESULT.md) is qualified at
+`codex/milestone-conservative-controller-20261002`. Autonomous human actors choose ordinary legal
+retreat or paid Wait, preserving identity, required-human timing, committed choices and standing routes.
+Restoration runs first; no fresh autonomous choice occurs without a gameplay-ready port. Captured-choice
+projection waits for autonomous publications to settle. Core and production profile selection are unchanged.
+[Final checks](p02/conservative-controller/FINAL_CHECKS.json): warning-free build and 292 distinct passes
+(ten new), exact 672 older tests/fixtures, 23 specs and predecessor staging; 1,254 architecture links resolve.
+One independent source critic's zero-ready return contrast passes. New proofs cover a paid retreat sample,
+paid Wait, actual transport loss/expiry, rejoin and journal reopening; full autonomous escape under hostile
+NPC pressure and native behavior remain open. No provider request or Claude credit offload occurred.
+
+The [live controller host binding](p02/live-controller-host/RESULT.md) is qualified at
+`codex/milestone-live-controller-host-20261002`, on the durable controller foundation `7aef4971`.
+Confirmed established transport termination journals profile 36 events, a monotonic episode-bound
+30-second allowance runs even with zero ready ports, and restoration waits for accepted work while
+preserving fresh readiness. Lone-player combat/staging/care continuation, stale callbacks, request
+abort versus shutdown, and final credential validation races have executable coverage.
+
+[Final evidence](p02/live-controller-host/FINAL_CHECKS.json): corrected build, 341 distinct cases with
+passing evidence (46 new), including 55 focused controller checks, 219 networking, 26 shared/session,
+72 managed server and three native cases. Seven actual Godot processes exercise the unchanged profile
+35 native route. The broad concurrent native+managed aggregate is NOT accepted: one original
+five-second TLS observation timed out; its isolated case and the established separate managed selection
+pass. Cause/concurrent-load implications remain unqualified. Windows ACL remains unrun on macOS.
+The [review](p02/live-controller-host/REVIEW.md) retains critic findings, fixes and all failure dispositions.
+667 old tests/fixtures, 23 frozen specs, predecessor staging and Core source remain unchanged;
+1,252 architecture links resolve. Native originals are recoverable from the hashed committed archive.
+
+Next: qualify general incapacity/recovery and unavailable pending-helper disposition, complete autonomous
+retreat under hostile pressure and authorized co-player policy, explicit saved-allowance/restart
+reconciliation, pending-control presentation and fresh-observation readiness acknowledgement, then
+profile 36 native journeys and production selection. The full disconnect gate remains open. No
+production operator enables profile 36; autonomous mode alone is not survival implementation.
+The [original integration plan](p02/controller-lifecycle/PLAN.md) and new packet's remaining dependencies
+retain the whole scope. Earlier Core/journal qualification remains at the controller-journal milestone.
+No provider request occurred; native workers/critics consume Astra capacity. Roadmap additions are
+committed as `adb0893b` and preserve the existing phase sequence.
+
+The [native four-player journey](p02/native-player-roster/RESULT.md) is qualified at
+`codex/milestone-native-player-roster-20261002`, based on roster milestone `25a28d8`. Four actual
+Godot clients physically assemble, enter combat, hold for a missing required human, reconnect that
+same actor unready, make its own Wait choice, defeat the wolf, read all four outcomes and return to
+exploration. Saved history authenticates all 21 native commands/receipts, paid Wait costs, NPC
+resolution, the time hold and exact resident/control/body ownership. Separate managed journeys prove
+real funded NPC construction with four residents and automatic catalog-v2 archive/reopen with a carried offer.
+
+[Final checks](p02/native-player-roster/FINAL_CHECKS.json): build and 440 distinct selected cases pass,
+including seven successful native processes. All 658 older tests/fixtures, 23 frozen specs and the
+exact unrelated predecessor staging remain intact. Windows ACL remains unrun on macOS. Independent
+critique and a real failed native run exposed cross-client observation lag; the repaired fixture waits
+for the specific prior choice/phase before new input. No authority rule, gate or deadline changed.
+The native frames were inspected; overlapping nameplates and prototype art/UI have no human acceptance.
+The timeless player-client reference is current. No Claude request or credit offload occurred.
+
+The controller foundation above supplies the durable dependency for the 30-second disconnect policy.
+This short close/rejoin proof alone does not implement that policy. Other platforms, physical devices,
+production scale, human presentation and the full campaign remain open.
+
+The [fresh player roster](p02/player-roster/RESULT.md) is qualified at
+`codex/milestone-player-roster-20261002`, based on native-player-session milestone `4a9a2ad2`.
+One-to-four production humans have separate controls/facets and finite starter tools; existing NPCs,
+resources and solo bytes remain intact. Explicit lifecycle catalog v2 admits the twelve four-human
+opportunities within joint byte/count limits. The create-only operator refuses save replacement.
+Managed combat requires physical party assembly and each human's own Wait choice. Four actual TLS
+clients move, pause, receive fresh observations, reconnect and reopen authenticated history.
+
+[Final checks](p02/player-roster/FINAL_CHECKS.json): build and 2,768 distinct selected cases pass,
+including two fresh single-client Godot process cases; Windows ACL is unrun on macOS. Independent
+native critique led to joint capacity protection and a real paused-observation barrier. All 653 old
+tests/fixtures, 23 frozen specs and exact unrelated predecessor staging remain intact. Architecture
+docs are current. The broad exploratory Hosting run timed out; its archived-query failure passed
+unchanged in isolation and Networking, but the cause and production latency remain unproven.
+
+The native roster checkpoint above supplies its subsequent native/continuation proofs; all broader
+gates remain open. No provider request occurred. The test-family selection lesson is recorded here
+and in ecosystem commit `542c46d`, with three skill copies synced.
+
+The [native accepted-care increment](p02/native-accepted-care/RESULT.md) is qualified as
+`codex/milestone-native-accepted-care-20261002`. From an unplayed full-health production world,
+the native player walks, enters combat, incurs real defeat, acknowledges Wren's care, receives a
+separate helper-owned finite-dose treatment, continues the same episode, and later completes/reopens
+the saved outcome. Exact production genesis, journal commands/receipts, helper/dose ownership and
+recovery are authenticated. No scripted damage, grant, encounter preparation or NPC suppression occurs.
+
+Rendered review also repaired an obsolete treatment-pending HUD message: newly observed restoration
+now announces the HP increase once, without changing the sprite cue or replaying old notices on load.
+The architecture reference and README describe these presentation and evidence contracts.
+
+[Final checks](p02/native-accepted-care/FINAL_CHECKS.json) record 2,354 distinct managed cases
+(1,773 Core, 581 Hosting), covering every prior 2,348 case; fifteen fresh native processes; fresh
+care/outcome/road/retreat authentication; retained-journal authentication; and twelve actual process
+kills across both durability families. All 609 older tests/fixtures, 23 frozen spec files, protected
+artifacts and exact unrelated 19-file predecessor staging remain intact. No gate or deadline changed.
+Earlier outcome cases and prepared fixtures are inherited only by explicit dependency comparison.
+Failed assembly reproduction led to fresh authority checks, not assumed binary equivalence.
+
+The [prior outcome milestone](p02/encounter-outcome-integration/INTEGRATION_REVIEW.md), preserved at
+`codex/milestone-encounter-outcomes-20261002`, separates human reading from world completion in fresh
+profile35. Pending care holds completion; treatment resumes the same episode; injuries/resources/history
+persist. Earlier independent critique, implementation corrections and all original failures remain there.
+
+Earlier silent care/care-wheel timeouts remain unexplained; later passes do not establish their cause
+or production latency/reliability. Background/injected-input evidence is not physical-device, production
+art or human acceptance. The solo care journey has no nonempty prior readings; that contrast remains
+managed evidence only.
+
+## Delegation evidence and efficiency
+
+[Latest delivery](p02/native-accepted-care/DELIVERY_RESULT.json): verified Opus5.5/1M, requested Max,
+verified context, terminal monthly spending limit after 179.564 seconds. Only a design note was delivered;
+no runtime code/tests. The $1.7358292 client list-price estimate is not billing or savings. Astra completed
+this increment locally. Do not poll/restart terminal provider or verification sessions.
+
+Earlier bounded assignments produced useful code; recent encounter continuation/integration deliveries
+still required substantial Astra completion and repair. Net Astra credit savings remain unmeasured;
+the latest request did not offload implementation. The [result's economics assessment](p02/native-accepted-care/RESULT.md#delegation-economics)
+records the owner's question and the evidence. When access is available, prefer self-contained complete
+deliverables and compact results; avoid repeated handoff loops and do not weaken acceptance gates.
+Native Codex workers and critics also consume Astra capacity; do not report them as Claude offloading.
+
+[Upstream render-wait sync](p02/native-accepted-care/UPSTREAM_SKILL_SYNC.json) preserves bounded actual
+post-draw observation. [Upstream efficiency sync](p02/native-accepted-care/UPSTREAM_EFFICIENCY_SYNC.json)
+records source commit 9b8bcc3 and three installed targets: limit inconclusive binary reproduction work
+by the cheaper affected verification alternative. No source-equality shortcut permits evidence reuse.
+
+## Shared-player host checkpoint
+
+[Shared player sessions](p02/shared-player-sessions/RESULT.md) is qualified as
+`codex/milestone-shared-player-sessions-20261002`: up to four authenticated in-process ports share one
+clock, authority and NPC scheduler. Inputs, private views/inquiries, readiness, ordinary fairness,
+simultaneous combat, outcome readings, independent close/reconnect and saved recovery are proved.
+
+The [final checks](p02/shared-player-sessions/FINAL_CHECKS.json) cover 2,363 distinct managed cases
+(1,773 Core, 590 Hosting), including every prior 2,354 case and nine new shared-player cases; fifteen
+fresh native processes; authentication of fresh journals and all six retained families; and twelve
+actual process kills across both recovery families. Build, 26 focused, 34 outcome and 569 broad Hosting
+cases pass. Broad elapsed time is 580.861 seconds under the unchanged 600-second bound. Core reuse is
+supported by exact source and compiled-assembly identity. All 612 protected tests/fixtures, 23 frozen
+spec files and exact unrelated predecessor staging remain intact.
+
+The independent critic and unchanged compatibility tests exposed scheduling errors that the lead
+corrected: observer starvation, live-port threat selection, care priority and stale receipt boundaries.
+The original patient's matching stale offer receives at most one separate committed refusal immediately
+after acknowledgment. Its durable revision closes that window across reopening; later requests cannot
+starve the helper, and failed preflight cannot defer it. Core remains the owner of action legality.
+The [review record](p02/shared-player-sessions/CRITIC_REVIEW.md) preserves all failures and dispositions.
+The fresh rendered frame was inspected; prototype art/UI has no new human acceptance.
+
+The [architecture reference](../Runtime/docs/architecture/hosted-player-connections.md) is current.
+In-process closure grants no automatic human decision and is not a journaled network disconnect.
+Network transport, recorded disconnect handoff and native multiple-client acceptance remain open.
+No provider request was made while the account spending-limit failure holds.
+
+## Player networking work
+
+The [transport checkpoint](p02/player-networking/RESULT.md), commit `6f3a891`, supplies versioned
+bounded local/WebSocket envelopes. The [player admission checkpoint](p02/player-admission/RESULT.md)
+adds host-issued credentials and exact world/branch/profile/admission/package handshake pins, bound to
+actual human player ports. Clients cannot create control by supplying identity claims. Expiry, rotation,
+revocation, duplicate joins, bounded pending handshakes and cleanup are covered; new ports remain unready.
+
+[Final checks](p02/player-admission/FINAL_CHECKS.json): solution build, 39 network cases (18 retained
+transport + 21 admission) and all 9 prior shared-player cases pass on exact current source/binaries.
+Real loopback TCP/WebSocket admission is exercised; HTTP Upgrade/TLS is not. Two independent critic
+findings have retained red-before-green tests: transport-close failure must still close the actor port;
+a host stopped during backpressured Welcome cannot report successful admission. The affected timeless
+architecture references are current; original tests/specs and predecessor staging remain exact.
+
+Qualified scope is preserved at `codex/milestone-player-admission-20261002`. This is a bounded connection
+checkpoint, not native multiplayer or a repetition of the earlier whole-game qualification. The
+subsequent routing checkpoint below carries the next active dependency; full network delivery remains open. The full design and all earlier open gates remain authoritative.
+No provider call was made while the account spending-limit failure holds.
+
+## Gameplay message routing
+
+[Player command routing](p02/player-command-routing/RESULT.md) binds authenticated channels to real
+readiness, leased movement and world actions. Pending actions leave the receiver responsive; original
+canonical receipts are sent after commit, with separate bounded Busy/preflight refusal. Slow clients
+have bounded output/work and cannot hold the host commit path. Actual response loss followed by real
+host reopening returns the same receipt without double spending; a loopback WebSocket action is proved.
+
+[Final checks](p02/player-command-routing/FINAL_CHECKS.json): solution build and 69 affected passes,
+including all 39 previous network cases, 21 new routing cases and all 9 shared-player cases. Independent
+review led to paused-action closure, response-capacity and input-rate tests. The original fixture-cleanup
+failure and lead shutdown-ordering correction remain recorded. Current source/binaries, protected tests/
+specs, unchanged predecessor staging and architecture links are verified. Qualified scope is preserved
+at `codex/milestone-player-command-routing-20261002`; no broader/native/release acceptance is inferred.
+
+Next: participant-safe regional observations/recovery; separate authenticated trade inquiries and
+quote/proposal inspection; HTTP/TLS listener; actual Godot clients and solo envelope parity; native
+1–4-client validation and recorded disconnect/reconnect/controller handoff. The full campaign and all
+unclosed gates remain in force. No provider request was made while its spend-limit failure holds.
+
+## Player observations
+
+[Player observations](p02/player-observations/RESULT.md) is qualified as
+`codex/milestone-player-observations-20261002`: complete typed regional views and captured action terms,
+bounded visible-revision deltas/full recovery, atomic replica publication, explicit subscription and
+bounded output work. Actual host actions/receipts and regional views cross local and real loopback
+WebSocket transports without exposing private world commit counters. Default diagnostic JSON is intact.
+
+[Final checks](p02/player-observations/FINAL_CHECKS.json): solution build and 237 distinct affected cases
+pass, including 87 new observation cases, all 60 prior networking and all nine shared-player cases.
+The independent critic reproduced an admitted 4,096-lot overflow; lossless encoding now delivers that
+complete view over both transports. Wire cap remains 900 KiB; expanded JSON has a new explicit 16 MiB
+budget and bounded serialization/decompression. Maximum composite-world coverage and production
+memory/latency remain open. [Review](p02/player-observations/CRITIC_REVIEW.md) retains the red regression,
+focused follow-up and precise cadence contract. All original failures, 645 protected files, 23 specs,
+93 checked architecture links and exact predecessor staging are recorded in the packet.
+
+Pre-change checkpoint `codex/checkpoint-before-player-observations-20261002T082210Z` preserves
+`cc073fd`; WIP checkpoints `codex/checkpoint-observations-before-packing-20261002T084343Z` (`bf00a142`)
+and `codex/checkpoint-observations-before-capacity-20261002T085257Z` (`e3e74af2`) preserve successor
+edits/evidence before format adaptations. The source/binary-pinned final results claim this bounded
+boundary only; no new native/full-game/platform/human qualification or provider request is inferred.
+Next: authenticated trade inquiry/inspection replies, HTTP/TLS, actual Godot clients and solo envelope
+parity, native 1–4-player proof, and journaled disconnect/reconnect/controller handoff.
+
+## Authenticated query checkpoint
+
+[Player queries](p02/player-queries/RESULT.md) expose shopper inquiry submission/cancellation/status
+and participant-only paid-quote/material-proposal history through authenticated local/socket channels.
+Requests carry no controller claims; typed results bind scope, kind and subject. One independent
+query slot, bounded output and joined teardown preserve controls while actual history work is pending.
+Merchant offers and separate durable acceptance remain unchanged. Real archived participant/outsider
+cases and real authority-lock backpressure/closure are proved. Historical replay still serializes
+with the host; no production latency/scale claim is made.
+
+[Final checks](p02/player-queries/FINAL_CHECKS.json): current-source build and 228 distinct affected
+cases pass (188 networking, 31 retained trade/history, 9 shared), including all prior 147 networking
+cases and 41 new cases. Independent native critique found no actionable defects; initial test-fixture
+failures remain retained. All 651 protected test/spec files and the starting predecessor staging are
+unchanged. Timeless architecture references are updated. Checkpoint before edits:
+`codex/checkpoint-before-player-queries-20261002T092308Z`; verified milestone:
+`codex/milestone-player-queries-20261002`. No provider request occurred after its terminal limit.
+Next: HTTP/TLS/provisioning, actual Godot network clients and solo envelope parity, native 1–4-player
+proof, and journaled disconnect/reconnect/controller handoff. Full design and unclosed gates remain.
+
+## HTTP/TLS player hosting checkpoint
+
+[HTTP/TLS hosting](p02/player-http-host/RESULT.md) is qualified on macOS as
+`codex/milestone-player-http-host-20261002`: reusable net8 Server adapter, existing net10 dedicated
+composition, exact saved cargo admission, real package fingerprint and protected create-only player
+invitations. Actual TLS requests own their complete admitted session; joined shutdown preserves the
+world owner. Application-owned signals avoid competing ASP.NET process handlers. The operator guide
+and timeless architecture references are current; Core/Hosting/Godot remain independent of ASP.NET.
+
+[Final checks](p02/player-http-host/FINAL_CHECKS.json): build and387 distinct passes (server33,
+network188, content156 plus saved-journey audit1, shared9), with exact current source/binaries. The
+original broad content invocation stays incomplete; its one missing fixture case passed separately
+against pinned original exports. All633 earlier tests/fixtures,23 specs and exact predecessor staging
+remain unchanged. Windows inherited-permission regression is explicitly unrun on this Mac.
+Independent critique found/followed up response-timeout isolation and Windows credential protection;
+all failures and fixes remain recorded. No external provider request occurred.
+
+Pre-change ref preserves6a0d36f; review-fix WIP ref preserves7b3a105 with partial verification. The
+accepted milestone preserves this bounded scope only. Actual Godot clients/solo envelope parity,
+native1–4-player validation, recorded disconnect/reconnect/controller handoff, Godot listening-host
+export/runtime qualification, Windows/Linux and all full phase/production/human gates remain open.
+
+## Player client checkpoint
+
+[Player client](p02/player-client/RESULT.md), preserved as
+`codex/milestone-player-client-20261002`, owns validated startup/first view, default-trust TLS,
+bounded ordered input, pending-action deduplication, exact reply correlation, recovery and joined shutdown.
+Build and244 distinct affected cases pass (server56 including23 new; network188), retaining every prior
+case. Windows DACL execution remains explicitly unrun on Mac. [Final checks](p02/player-client/FINAL_CHECKS.json)
+pin source/binaries and644 old tests/fixtures,23 specs and exact predecessor staging. One native critic
+found no concrete defect; both coverage recommendations are proved. Initial compile failures remain.
+No provider call occurred. Native agents consume Astra capacity, not Claude credits.
+
+This is protocol ownership, not Godot network play. [Design](p02/player-client/DESIGN.md) records the
+next prerequisites: authoritative run status, content-bound presentation bootstrap and bounded Waiting
+inquiry refresh. Preserve captured offers and exact retry identity; no private-state or regenerated-genesis
+shortcut. Native1–4-player proof, solo envelope parity, recorded disconnect and all wider gates remain.
+Pre-change checkpoint preservesf2ec8674; work remains on `codex/runtime-foundation`.
+
+## Next dependency and remaining scope
+
+The [native participant binding](p02/native-player-session/RESULT.md) is preserved as
+`codex/milestone-native-player-session-20261002`. The ordinary Godot game joins the actual TLS host,
+receives admitted presentation/status and submits its unchanged immutable offers. Local and remote
+session owners are distinct; client closure preserves the host. Startup now reads initial window focus.
+The remote adapter refreshes inquiries with a bounded foreground priority, and pause labels state that
+other players may continue. Architecture and launch instructions are current.
+
+[Final checks](p02/native-player-session/FINAL_CHECKS.json) record 446 distinct passes, all prior 56 server,
+188 networking and 167 client cases, and five fresh Godot processes. Two prove real network walk/talk/
+close and saved receipts; the rendered route also proves unfocused startup. Three freshly prove the
+unchanged trade-boundary refusal/recovery gates. Original stale-offer/timeouts, missing-manifest runs
+and obsolete retained boundary projection-hash failure remain preserved. All 649 older test/fixture
+files, 23 specs and predecessor staging are unchanged. Windows ACL remains unrun on Mac. One native
+critic's focus finding and inquiry coverage recommendation are addressed. No external provider call.
+The pre-change checkpoint preserves ed0e590b; working branch remains `codex/runtime-foundation`.
+
+Next: concurrent native 1–4-player interaction and waiting/combat semantics, solo envelope parity,
+recorded disconnect/reconnect/controller handoff and adverse transport qualification. Single native
+connection and managed shared-player evidence do not substitute for those gates. Status and view
+remain independent publications; there is no atomic pause barrier or implicit action retry.
+
+Native accepted treatment and approach/entry are now proved by the bounded journey above. Native
+multiple-client readiness, no-survivor resolver reachability, lived profile34 migration and full
+phase/production gates remain open. Managed two-human/repeated-episode journeys do not substitute for
+native/session proofs. Follow the full plan before selecting the next unit; retain all world-composition,
+custody, campaign, frontier, content migration, 1–4-player networking, art/device and human gates.
+
+Before-change refs preserve 698778d and c74fc84; the WIP checkpoint
+`codex/checkpoint-native-care-before-notice-20261002T041616Z` preserves 7dff05f before the HUD repair.
+The new milestone is the acceptance pointer; the [result](p02/native-accepted-care/RESULT.md) links all
+checkpoint, preservation and qualification records. Work remains on `codex/runtime-foundation`.
+
+## Preserved earlier progress and full scope
+
+The [previous handoff](AGENT_HANDOFF_20261002_OUTCOME_ARCHIVE.md) preserves all earlier milestone,
+review, migration, delegation and failure records with their original relative links. It is an archive,
+not a competing current assignment. Use the full plan and requirements linked above; no campaign, phase,
+world-composition, art, device, networking or release requirement is removed by this smaller index.

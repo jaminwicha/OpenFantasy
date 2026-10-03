@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="bd394be5-a418-4285-8b66-333715bd3ad7" name="@mac 2026-10-02 18:32:39" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T18:32:39.4550670-05:00" queuing="2026-10-02T18:32:39.4550670-05:00" start="2026-10-02T18:32:33.9293040-05:00" finish="2026-10-02T18:32:51.8016760-05:00" />
+  <TestSettings name="default" id="85c8d573-17fd-4b35-b95b-8244891a89cf">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_18_32_39" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="45c36a0b-e3b7-45eb-a47e-b765f9019c72" testId="244750c0-ae24-6f14-6310-cd3ee2c13a1e" testName="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 2)" computerName="mac" duration="00:00:02.4923775" startTime="2026-10-02T18:32:44.2483670-05:00" endTime="2026-10-02T18:32:46.7434710-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="45c36a0b-e3b7-45eb-a47e-b765f9019c72">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+Actual:   typeof(System.TimeoutException)
+---- System.TimeoutException : The operation has timed out.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 38
+   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 47
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="eb4dc5fd-45d0-421a-9277-2eac9daad5bc" testId="f00cde87-75f4-a71f-2de2-fc21fa09f3a1" testName="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 0)" computerName="mac" duration="00:00:02.4770154" startTime="2026-10-02T18:32:46.7495800-05:00" endTime="2026-10-02T18:32:49.2298970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="eb4dc5fd-45d0-421a-9277-2eac9daad5bc">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+Actual:   typeof(System.TimeoutException)
+---- System.TimeoutException : The operation has timed out.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 38
+   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 47
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="114e4c96-97e6-4866-b19e-7bc9471c9f4f" testId="a8b94212-4858-e895-a3fa-9e05b2da37da" testName="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 2)" computerName="mac" duration="00:00:03.6120410" startTime="2026-10-02T18:32:35.7778480-05:00" endTime="2026-10-02T18:32:39.4151780-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="114e4c96-97e6-4866-b19e-7bc9471c9f4f">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+Actual:   typeof(System.TimeoutException)
+---- System.TimeoutException : The operation has timed out.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 38
+   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 47
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="41828d71-7535-4ae1-bc83-1aa59ff35ec6" testId="0aa70141-985b-8481-932a-e8791a1a0298" testName="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 1)" computerName="mac" duration="00:00:02.4623628" startTime="2026-10-02T18:32:49.2317320-05:00" endTime="2026-10-02T18:32:51.6961920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="41828d71-7535-4ae1-bc83-1aa59ff35ec6">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+Actual:   typeof(System.TimeoutException)
+---- System.TimeoutException : The operation has timed out.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 38
+   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 47
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="831ab3e0-bbfb-46d6-b4a2-089ebfa10010" testId="bd36162e-1b89-5a2c-9534-ee93724504da" testName="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 0)" computerName="mac" duration="00:00:02.4033376" startTime="2026-10-02T18:32:39.4193450-05:00" endTime="2026-10-02T18:32:41.8255570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="831ab3e0-bbfb-46d6-b4a2-089ebfa10010">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+Actual:   typeof(System.TimeoutException)
+---- System.TimeoutException : The operation has timed out.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 38
+   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 47
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="d0e7dbeb-5594-42a9-98ba-ec7759549835" testId="ea72c00b-125f-21eb-3a3b-57489caed520" testName="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 1)" computerName="mac" duration="00:00:02.4174477" startTime="2026-10-02T18:32:41.8272650-05:00" endTime="2026-10-02T18:32:44.2472120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0e7dbeb-5594-42a9-98ba-ec7759549835">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+Actual:   typeof(System.TimeoutException)
+---- System.TimeoutException : The operation has timed out.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 38
+   at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs:line 47
+--- End of stack trace from previous location ---
+----- Inner Stack Trace -----
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="bd36162e-1b89-5a2c-9534-ee93724504da">
+      <Execution id="831ab3e0-bbfb-46d6-b4a2-089ebfa10010" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests" name="Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f00cde87-75f4-a71f-2de2-fc21fa09f3a1">
+      <Execution id="eb4dc5fd-45d0-421a-9277-2eac9daad5bc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests" name="Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="a8b94212-4858-e895-a3fa-9e05b2da37da">
+      <Execution id="114e4c96-97e6-4866-b19e-7bc9471c9f4f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests" name="Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ea72c00b-125f-21eb-3a3b-57489caed520">
+      <Execution id="d0e7dbeb-5594-42a9-98ba-ec7759549835" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests" name="Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="244750c0-ae24-6f14-6310-cd3ee2c13a1e">
+      <Execution id="45c36a0b-e3b7-45eb-a47e-b765f9019c72" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests" name="Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0aa70141-985b-8481-932a-e8791a1a0298">
+      <Execution id="41828d71-7535-4ae1-bc83-1aa59ff35ec6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests" name="Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="244750c0-ae24-6f14-6310-cd3ee2c13a1e" executionId="45c36a0b-e3b7-45eb-a47e-b765f9019c72" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f00cde87-75f4-a71f-2de2-fc21fa09f3a1" executionId="eb4dc5fd-45d0-421a-9277-2eac9daad5bc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8b94212-4858-e895-a3fa-9e05b2da37da" executionId="114e4c96-97e6-4866-b19e-7bc9471c9f4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0aa70141-985b-8481-932a-e8791a1a0298" executionId="41828d71-7535-4ae1-bc83-1aa59ff35ec6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="bd36162e-1b89-5a2c-9534-ee93724504da" executionId="831ab3e0-bbfb-46d6-b4a2-089ebfa10010" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ea72c00b-125f-21eb-3a3b-57489caed520" executionId="d0e7dbeb-5594-42a9-98ba-ec7759549835" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="6" executed="6" passed="0" failed="6" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.57]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.16]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.32]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:05.00]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:05.00]       Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+[xUnit.net 00:00:05.00]       Actual:   typeof(System.TimeoutException)
+[xUnit.net 00:00:05.00]       ---- System.TimeoutException : The operation has timed out.
+[xUnit.net 00:00:05.00]       Stack Trace:
+[xUnit.net 00:00:05.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(38,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:05.00]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(47,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:05.00]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.00]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:05.00]         
+[xUnit.net 00:00:07.41]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:07.41]       Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+[xUnit.net 00:00:07.41]       Actual:   typeof(System.TimeoutException)
+[xUnit.net 00:00:07.41]       ---- System.TimeoutException : The operation has timed out.
+[xUnit.net 00:00:07.41]       Stack Trace:
+[xUnit.net 00:00:07.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(38,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:07.41]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(47,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:07.41]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:07.41]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:07.41]         
+[xUnit.net 00:00:09.82]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:09.82]       Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+[xUnit.net 00:00:09.82]       Actual:   typeof(System.TimeoutException)
+[xUnit.net 00:00:09.82]       ---- System.TimeoutException : The operation has timed out.
+[xUnit.net 00:00:09.82]       Stack Trace:
+[xUnit.net 00:00:09.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(38,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:09.82]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(47,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:09.82]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:09.82]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:09.82]         
+[xUnit.net 00:00:12.32]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:12.32]       Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+[xUnit.net 00:00:12.32]       Actual:   typeof(System.TimeoutException)
+[xUnit.net 00:00:12.32]       ---- System.TimeoutException : The operation has timed out.
+[xUnit.net 00:00:12.32]       Stack Trace:
+[xUnit.net 00:00:12.32]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(38,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:12.32]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(47,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:12.32]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:12.32]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:12.32]         
+[xUnit.net 00:00:14.81]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:14.81]       Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+[xUnit.net 00:00:14.81]       Actual:   typeof(System.TimeoutException)
+[xUnit.net 00:00:14.81]       ---- System.TimeoutException : The operation has timed out.
+[xUnit.net 00:00:14.81]       Stack Trace:
+[xUnit.net 00:00:14.81]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(38,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:14.81]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(47,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:14.81]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:14.81]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:14.81]         
+[xUnit.net 00:00:17.27]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:17.27]       Expected: typeof(OpenFantasy.Hosting.AuthorityDispatchException)
+[xUnit.net 00:00:17.27]       Actual:   typeof(System.TimeoutException)
+[xUnit.net 00:00:17.27]       ---- System.TimeoutException : The operation has timed out.
+[xUnit.net 00:00:17.27]       Stack Trace:
+[xUnit.net 00:00:17.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(38,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:17.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/ControllerPermissions/ControllerPermissionAdapterTests.cs(47,0): at OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(Boolean permissionProfile, Int32 operation)
+[xUnit.net 00:00:17.28]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:17.28]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:17.28]         
+[xUnit.net 00:00:17.29]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T18:32:39.4311250-05:00">
+        <Text>[xUnit.net 00:00:05.00]     OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 2) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T18:32:41.8319550-05:00">
+        <Text>[xUnit.net 00:00:07.41]     OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 0) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T18:32:44.2561620-05:00">
+        <Text>[xUnit.net 00:00:09.82]     OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 1) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T18:32:46.7514310-05:00">
+        <Text>[xUnit.net 00:00:12.32]     OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 2) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T18:32:49.2355480-05:00">
+        <Text>[xUnit.net 00:00:14.81]     OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 0) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-02T18:32:51.7043920-05:00">
+        <Text>[xUnit.net 00:00:17.27]     OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 1) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

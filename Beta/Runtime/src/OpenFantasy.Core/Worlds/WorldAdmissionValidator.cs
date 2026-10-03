@@ -53,6 +53,7 @@ public static class WorldAdmissionValidator
         admission.ReadPaidExchange();
         admission.ReadMarkets();
         admission.ReadControllers();
+        admission.ReadControlPermissions();
         return admission.Complete();
     }
 
@@ -129,6 +130,18 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed, world.EncounterLifecycle);
+
+        internal void ReadControlPermissions()
+        {
+            if (world.ControlPermissions is not { } permissions) return;
+            foreach (var slot in permissions.Slots)
+            {
+                Require(slot.OwnerActorId, WorldIdentityRole.Actor);
+                Require(slot.GranteeActorId, WorldIdentityRole.Actor);
+                if (slot.GrantCommandId is { } grant) Add(grant, WorldIdentityRole.CauseReference, unique: true);
+                if (slot.AcceptanceCommandId is { } accept) Add(accept, WorldIdentityRole.CauseReference, unique: true);
+            }
+        }
 
         internal void ReadControllers()
         {

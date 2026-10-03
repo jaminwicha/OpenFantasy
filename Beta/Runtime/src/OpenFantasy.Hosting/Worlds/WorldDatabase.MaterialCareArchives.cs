@@ -8,7 +8,7 @@ internal sealed partial class WorldDatabase
 {
     internal IEnumerable<StoredWorldMaterialCareArchive> ReadMaterialCareArchives()
     {
-        if (SchemaVersion is not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version)
+        if (SchemaVersion is not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version and not WorldDatabaseSchemaEleven.Version)
         {
             yield break;
         }
@@ -27,7 +27,7 @@ internal sealed partial class WorldDatabase
     {
         ArgumentNullException.ThrowIfNull(value);
         ArgumentNullException.ThrowIfNull(value.Reference);
-        if (SchemaVersion is not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version)
+        if (SchemaVersion is not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version and not WorldDatabaseSchemaEleven.Version)
         {
             throw new InvalidOperationException("Material and care archives require their explicit storage schema.");
         }
@@ -59,7 +59,7 @@ internal sealed partial class WorldDatabase
         {
             RequireRow(reader, "A material and care archive has no accepted world genesis.");
             WorldSnapshot world = WorldSnapshotCodec.Decode(WorldStorageBinary.ReadState(reader, 0, 1));
-            if (world.ProfileVersion is not (27 or 28 or 30 or 32 or 33 or 34 or 35 or 36 or 37 or 38) || world.WorldId != value.Reference.WorldId || world.BranchId != value.Reference.BranchId)
+            if (world.ProfileVersion is not (27 or 28 or 30 or 32 or 33 or 34 or 35 or 36 or 37 or 38 or 39) || world.WorldId != value.Reference.WorldId || world.BranchId != value.Reference.BranchId)
             {
                 throw new InvalidDataException("A material and care archive must retain the accepted world scope.");
             }

@@ -6,6 +6,8 @@ Disconnect allowance is host-observed time, distinct from simulation exposure. C
 [controller law](controller-lifecycle.md) consumes a recorded external duration; it never consults UTC,
 a socket or a process timestamp. Storage schema 10 adds explicit operational recovery for controller
 profiles 36–38 without changing their canonical world encodings or gameplay rules.
+Schema 11 retains this operational policy for fresh [co-player permission](control-permissions.md)
+worlds under profile39. Its permission decisions change no disconnect episode or measured duration.
 
 [SqliteWorldAuthority.ControllerRecovery](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.ControllerRecovery.cs)
 owns recovery records under the existing authority gate and exclusive database lease. There is no
@@ -22,7 +24,8 @@ This policy does not promise exact reconstruction of every elapsed millisecond.
 ## Admission and history
 
 `CreateRecoverable` explicitly creates a fresh schema-10 controller world. `CreateNew` retains its
-ordinary schema selection. `UpgradeControllerRecovery` copies a schema-nine source into a create-only
+ordinary schema selection for earlier profiles and selects schema11 for a fresh profile39 world.
+`UpgradeControllerRecovery` copies a schema-nine source into a create-only
 destination, preserving its exact genesis, journal, receipts, identities and canonical head. The source
 remains a recovery copy. Ordinary `OpenExisting` never performs an upgrade or restarts a timer.
 

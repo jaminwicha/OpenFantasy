@@ -19,9 +19,9 @@ The [world schema](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchema.cs) 
 | `world_checkpoints` | Canonical state at declared recovery boundaries |
 | `world_resource_segments` (schema7) | Exact closing roots, immutable scope/ordinal and atomic successor publication sequence |
 | `world_material_care_segments` (schema8) | Exact joint material/care/resource closing roots and atomic successor publication sequence |
-| `controller_recovery_activation` (schema10) | Immutable recovery policy and original activation provenance |
-| `controller_recovery_segment` (schema10) | Fenced host generation and checksum of the complete operational allowance set |
-| `controller_allowances` (schema10) | Episode-bound, durably measured host milliseconds for each outstanding disconnect allowance |
+| `controller_recovery_activation` (schemas10–11) | Immutable recovery policy and original activation provenance |
+| `controller_recovery_segment` (schemas10–11) | Fenced host generation and checksum of the complete operational allowance set |
+| `controller_allowances` (schemas10–11) | Episode-bound, durably measured host milliseconds for each outstanding disconnect allowance |
 
 [Schema three](../../src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaThree.cs) extends accepted
 commit/identity kinds for profile transitions. Schema version and snapshot profile version are
@@ -41,6 +41,11 @@ events and their operational row insertion/removal share the same transaction. I
 progress checkpoints change no world revision or gameplay time. Copy-and-activate admission retains
 original history and validates activation against its actual replayed source root; ordinary opening
 does not upgrade a save or start a clock.
+
+[Co-player permission](control-permissions.md) uses explicit profile39 and schema11. Its isolated
+actor-command boundary stores ordinary receipts and permission state in the same journal transaction.
+Schema11 retains measured allowance recovery, while admitting the new batch kind without changing
+schemas1–10. Consent is not an active controller assignment or new gameplay authorization.
 
 ## Runtime bindings: snapshot profiles
 
@@ -80,6 +85,12 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 30 | Coordinated world with separately submitted saved material proposals, exact carried grants and permanent outcome identities |
 | 32 | Saved-proposal world with paid quotes, currency-only causal fills, issuer revisions and joint archive carry |
 | 33 | Paid world with immutable market bindings, rule-priced quotes, dated actor price knowledge and seller-authored selected-lot disclosures |
+| 34 | Encounter retreat commitments with paid continuation and explicit escape boundaries |
+| 35 | Encounter outcome acknowledgment and completion with persistent character consequences |
+| 36 | Durable disconnect allowance, autonomous assignment and safe original control return |
+| 37 | Assisted incapacity recovery independent of the latest encounter |
+| 38 | Explicit patient cancellation and helper decline of pending care without fabricated treatment |
+| 39 | Named co-player permission offers, exact acceptance and revocation, separate from effective control |
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not

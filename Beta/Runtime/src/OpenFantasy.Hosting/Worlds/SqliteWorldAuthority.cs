@@ -29,7 +29,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         _state = recovered.State;
         _stateHash = recovered.StateHash;
         _usage = recovered.Usage;
-        if (database.SchemaVersion == WorldDatabaseSchemaTen.Version)
+        if (database.SchemaVersion is WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version)
         {
             _controllerRecovery = database.ReadControllerRecovery();
             _controllerRecovery.ValidateHead(_state);
@@ -48,6 +48,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         {
             27 or 28 or 30 or 32 or 33 or 34 or 35 => WorldDatabaseSchemaEight.Version,
             36 or 37 or 38 => WorldDatabaseSchemaNine.Version,
+            WorldControlPermissionAdmission.ProfileVersion => WorldDatabaseSchemaEleven.Version,
             25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,

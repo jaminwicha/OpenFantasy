@@ -151,6 +151,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 return prior;
             }
+            // Consent requires its dedicated nonadvancing boundary, which this player adapter does not select.
+            if (command.Intent is ControlPermissionIntent)
+            {
+                throw new AuthorityDispatchException("This player adapter does not select control-permission commands.");
+            }
             lock (_inputs) { EnsureControlAvailable(player); }
             WorldSnapshot state = _authority.ReadStateForHost();
             _materialProposals.Validate(state, command);

@@ -23,6 +23,8 @@ internal static class WorldGenesisAdmission
         {
             throw new ArgumentException("Fresh care requires unearned material, resource and care owners with their exact initial basis.", nameof(genesis));
         }
+        if (genesis.ControlPermissions is { } permissions && (permissions.Revision != 0 || permissions.Slots.Count != 0))
+            throw new ArgumentException("Fresh control permissions cannot import an offer, acceptance or revocation.", nameof(genesis));
         if (genesis.Revision != 0 || genesis.AdvancingSteps != 0 || genesis.HasReadingHold || genesis.PendingExcavation is not null)
         {
             throw new ArgumentException("A new local world requires unheld commit zero and step zero.", nameof(genesis));

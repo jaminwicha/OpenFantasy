@@ -176,7 +176,8 @@ that policy. The default simulation still pauses when no gameplay-ready players 
 Autonomous assignment permits the conservative encounter selector above; expiry itself chooses none.
 Aftermath behavior follows the bounded policy above; general rescue and other survival behavior need
 their own domain laws. A co-player requires explicit
-policy and authorization, not mere presence in the world. The [player client](player-client.md)
+[permission](control-permissions.md) and effective-control authorization, not mere presence in the
+world. A permission offer or acceptance changes no controller assignment. The [player client](player-client.md)
 distinguishes pending control from ordinary pause and binds explicit Resume to the restored observation.
 Returning network ports reject unbound readiness even after their first accepted Resume; subsequent
 pause/focus changes retain the same connection proof. This input contract is distinct from restart,

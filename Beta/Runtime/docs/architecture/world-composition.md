@@ -55,6 +55,12 @@ agreements retain the relevant participants and terms. A patient's permission do
 spending a helper's property. Subject matter belongs to the relevant owner, even when relation
 indexing, revision checks or expiration use shared infrastructure.
 
+[Co-player consent](control-permissions.md) applies this separation to control itself. Permanent actor
+entitlement, a named accepted permission and an effective controller assignment have different owners
+and lifetimes. Recording consent changes neither possession nor gameplay authority. Historical command
+attribution must retain the real submitting principal; a temporary grant cannot rewrite ownership or
+invalidate previously accepted work when it is revoked.
+
 Definition identity and pinned version govern interchangeability. Two admitted items can share a
 source label or payload while retaining distinct definitions and physical calibrations. A recipe's
 exact input binding does not accept another definition merely because both are called berries. Any

@@ -18,6 +18,7 @@ public static class WorldActionCodec
         ArgumentNullException.ThrowIfNull(command);
         return command.Intent switch
         {
+            ControlPermissionIntent => WorldActionCodecV22.Encode(command),
             PendingCareDispositionIntent => WorldActionCodecV21.Encode(command),
             AcknowledgeEncounterOutcomeIntent => WorldActionCodecV20.Encode(command),
             QueueEncounterRetreatIntent => WorldActionCodecV19.Encode(command),
@@ -45,6 +46,7 @@ public static class WorldActionCodec
     public static WorldActionCommand Decode(ReadOnlySpan<byte> bytes) =>
         WorldCodecVersion.Read(bytes, "world.actor-action"u8, MaximumCommandByteLength, 10) switch
         {
+            22 => WorldActionCodecV22.Decode(bytes),
             21 => WorldActionCodecV21.Decode(bytes),
             20 => WorldActionCodecV20.Decode(bytes),
             19 => WorldActionCodecV19.Decode(bytes),

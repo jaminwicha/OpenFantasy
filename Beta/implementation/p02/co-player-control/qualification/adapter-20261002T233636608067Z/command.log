@@ -1,0 +1,21 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.40]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.94]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.12]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 2) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 0) [290 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: False, operation: 1) [372 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 2) [454 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 0) [404 ms]
+[xUnit.net 00:00:05.04]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.Unbound_permission_commands_are_refused_before_queueing_without_stopping_the_player_host(permissionProfile: True, operation: 1) [404 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.ControllerPermissions.ControllerPermissionAdapterTests.A_paused_player_can_retrieve_an_exact_prior_permission_receipt_without_queuing_a_new_choice [420 ms]
+
+Test Run Successful.
+Total tests: 7
+     Passed: 7
+ Total time: 5.5379 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/co-player-control/qualification/adapter-20261002T233636608067Z/checks.trx

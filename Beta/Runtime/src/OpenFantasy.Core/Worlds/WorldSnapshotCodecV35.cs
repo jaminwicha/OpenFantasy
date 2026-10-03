@@ -33,7 +33,7 @@ public static class WorldSnapshotCodecV35
     internal static byte[] EncodeComplete(WorldSnapshot world, ushort version)
     {
         ArgumentNullException.ThrowIfNull(world);
-        if (version is not 35 and not 36 and not 37 and not 38 || world.ProfileVersion != version || world.Retreat is null || world.EncounterOutcome is null
+        if (version is not 35 and not 36 and not 37 and not 38 and not 39 || world.ProfileVersion != version || world.Retreat is null || world.EncounterOutcome is null
             || world.Coordination is not { ConsentedMaterial: { } history, Proposals: { } proposals, PaidExchange: { } paid, Markets: { } markets } coordination
             || world.Care is null || world.EncounterLifecycle is null || world.Pacing is null || world.Reservoirs is null
             || world.ReservoirSeals is null || world.LiquidCells?.Topology is null || world.Excavation is null)
@@ -44,7 +44,7 @@ public static class WorldSnapshotCodecV35
         byte[] liquidBytes = LiquidCellStateCodecV2.Encode(world.LiquidCells);
         byte[] pacingBytes = WorldPacingCodecV1.Encode(world.Pacing);
         byte[] actionBytes = EncounterLifecycleCodecV1.Encode(world.EncounterLifecycle);
-        byte[] careBytes = version == WorldCareDispositionAdmission.ProfileVersion ? CareCodecV5.Encode(world.Care)
+        byte[] careBytes = version is WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion ? CareCodecV5.Encode(world.Care)
             : version == WorldRecoveryAdmission.ProfileVersion ? CareCodecV4.Encode(world.Care)
             : anchor is null ? CareCodecV2.Encode(world.Care) : CareCodecV3.Encode(world.Care);
         byte[] coordinationBytes = CanonicalEncodingV1.Frame("world.coordinated-market-care.v1", careBytes,
@@ -64,12 +64,14 @@ public static class WorldSnapshotCodecV35
             anchor is null ? LiquidReservoirCodecV2.Encode(world.Reservoirs) : LiquidReservoirCodecV3.Encode(world.Reservoirs),
             ReservoirSealPolicyCodecV1.Encode(world.ReservoirSeals), liquidBytes, ExcavationCodecV2.Encode(world.Excavation),
             pacingBytes, actionBytes, coordinationBytes, resourceBytes, retreatBytes, outcomeBytes];
-        byte[] controllerBytes = version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion
+        byte[] controllerBytes = version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion
             ? WorldControllerCodecV1.Encode(world.Controllers!) : [];
-        if (version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion) fields.Add(controllerBytes);
-        if (version is WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion)
+        if (version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion) fields.Add(controllerBytes);
+        if (version is WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion)
             fields.Add(WorldRecoveryPolicy.RulesPin.ToByteArray());
-        if (version == WorldCareDispositionAdmission.ProfileVersion) fields.Add(WorldCareDispositionAdmission.RulesPin.ToByteArray());
+        if (version is WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion) fields.Add(WorldCareDispositionAdmission.RulesPin.ToByteArray());
+        byte[] permissionBytes = version == WorldControlPermissionAdmission.ProfileVersion ? WorldControlPermissionCodecV1.Encode(world.ControlPermissions!) : [];
+        if (version == WorldControlPermissionAdmission.ProfileVersion) fields.Add(permissionBytes);
         byte[] bytes = CanonicalEncodingV1.Frame("world.snapshot", fields.ToArray());
         if ((long)bytes.Length - liquidBytes.Length - pacingBytes.Length - actionBytes.Length - coordinationBytes.Length
             - resourceBytes.Length - retreatBytes.Length - outcomeBytes.Length
@@ -77,7 +79,8 @@ public static class WorldSnapshotCodecV35
             + EncounterLifecycleCodecV1.MaximumEncodedByteLength + MaximumCoordinationByteLength
             + WorldResourceHistoryCodec.MaximumEncodedByteLength + EncounterRetreatCodecV1.MaximumEncodedByteLength
             + EncounterOutcomeCodecV1.MaximumEncodedByteLength
-            + (version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion ? WorldControllerCodecV1.MaximumStateByteLength - controllerBytes.Length : 0)
+            + (version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion ? WorldControllerCodecV1.MaximumStateByteLength - controllerBytes.Length : 0)
+            + (version == WorldControlPermissionAdmission.ProfileVersion ? WorldControlPermissionCodecV1.MaximumStateByteLength - permissionBytes.Length : 0)
             > WorldSnapshotCodec.MaximumStateByteLength)
         {
             throw new ArgumentException("The complete outcome-continuation world exceeds its retained storage bound.", nameof(world));
@@ -93,10 +96,11 @@ public static class WorldSnapshotCodecV35
         try
         {
             var reader = new WorldFrameReader(bytes, WorldSnapshotCodec.MaximumStateByteLength,
-                version == WorldCareDispositionAdmission.ProfileVersion ? 29
+                version == WorldControlPermissionAdmission.ProfileVersion ? 30
+                : version == WorldCareDispositionAdmission.ProfileVersion ? 29
                 : version == WorldRecoveryAdmission.ProfileVersion ? 28 : version == WorldControllerAdmission.ProfileVersion ? 27 : 26);
             reader.Tag("world.snapshot"u8);
-            if (version is not 35 and not 36 and not 37 and not 38 || reader.Number() != version)
+            if (version is not 35 and not 36 and not 37 and not 38 and not 39 || reader.Number() != version)
             {
                 throw new FormatException("Unsupported complete outcome-continuation world version.");
             }
@@ -124,18 +128,20 @@ public static class WorldSnapshotCodecV35
             ReadOnlySpan<byte> resourceBytes = reader.Field(WorldResourceHistoryCodec.MaximumEncodedByteLength);
             EncounterRetreatState retreat = EncounterRetreatCodecV1.Decode(reader.Field(EncounterRetreatCodecV1.MaximumEncodedByteLength));
             EncounterOutcomeState outcome = EncounterOutcomeCodecV1.Decode(reader.Field(EncounterOutcomeCodecV1.MaximumEncodedByteLength));
-            WorldControllerState? controllers = version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion
+            WorldControllerState? controllers = version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion
                 ? WorldControllerCodecV1.Decode(reader.Field(WorldControllerCodecV1.MaximumStateByteLength)) : null;
             WorldRecoveryPolicy? recovery = null;
-            if (version is WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion)
+            if (version is WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion)
             {
                 if (!reader.Exact(32).SequenceEqual(WorldRecoveryPolicy.RulesPin.ToByteArray()))
                     throw new FormatException("The recovery root requires its exact admitted interpretation.");
                 recovery = WorldRecoveryPolicy.AssistedIncapacity;
             }
-            if (version == WorldCareDispositionAdmission.ProfileVersion
+            if (version is WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion
                 && !reader.Exact(32).SequenceEqual(WorldCareDispositionAdmission.RulesPin.ToByteArray()))
                 throw new FormatException("The care disposition root requires its exact admitted interpretation.");
+            WorldControlPermissionState? permissions = version == WorldControlPermissionAdmission.ProfileVersion
+                ? WorldControlPermissionCodecV1.Decode(reader.Field(WorldControlPermissionCodecV1.MaximumStateByteLength)) : null;
             reader.Complete();
 
             var joint = new WorldFrameReader(coordinationBytes, MaximumCoordinationByteLength, 8);
@@ -158,7 +164,7 @@ public static class WorldSnapshotCodecV35
                 : ProductionCodecV11.Decode(productionBytes, anchor.Production);
             LiquidReservoirState reservoirs = anchor is null ? LiquidReservoirCodecV2.Decode(reservoirBytes)
                 : LiquidReservoirCodecV3.Decode(reservoirBytes, anchor.Geography);
-            CareSnapshot care = version == WorldCareDispositionAdmission.ProfileVersion
+            CareSnapshot care = version is WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion
                 ? anchor is null ? CareCodecV5.Decode(careBytes) : CareCodecV5.Decode(careBytes, anchor.Care)
                 : version == WorldRecoveryAdmission.ProfileVersion
                 ? anchor is null ? CareCodecV4.Decode(careBytes) : CareCodecV4.Decode(careBytes, anchor.Care)
@@ -175,7 +181,7 @@ public static class WorldSnapshotCodecV35
                 reservoirSeals: seals, liquidCells: cells, excavation: excavation, pacing: pacing,
                 encounterLifecycle: lifecycle, care: care, resourceHistory: resources,
                 coordination: new WorldCoordinatedContinuation(sources, anchor, history, proposals, paid, markets),
-                retreat: retreat, encounterOutcome: outcome, controllers: controllers, recovery: recovery);
+                retreat: retreat, encounterOutcome: outcome, controllers: controllers, recovery: recovery, controlPermissions: permissions);
             if (!EncodeComplete(restored, version).AsSpan().SequenceEqual(bytes))
             {
                 throw new FormatException("The complete outcome-continuation world is not canonical.");
