@@ -11,8 +11,38 @@ BETA = Path(__file__).resolve().parents[1]
 
 
 def prose(text):
-    # Ignore examples containing Markdown-looking strings inside fenced code.
-    return re.sub(r"(?ms)^(`{3,}|~{3,})[^\n]*\n.*?^\1\s*$", "", text)
+    # Template comments and fenced examples cannot constitute the review. Markdown
+    # permits up to three leading spaces and a closing fence at least as long.
+    output = []
+    fence = None
+    comment = False
+    for line in text.splitlines(keepends=True):
+        if fence:
+            character, length = fence
+            if re.fullmatch(r" {0,3}" + re.escape(character) + "{" + str(length) + r",}[ \t]*\n?", line):
+                fence = None
+            output.append("\n")
+            continue
+        remaining, visible = line, ""
+        while remaining:
+            marker = "-->" if comment else "<!--"
+            position = remaining.find(marker)
+            if position < 0:
+                if not comment:
+                    visible += remaining
+                break
+            if not comment:
+                visible += remaining[:position]
+            remaining = remaining[position + len(marker):]
+            comment = not comment
+        line = visible if visible.endswith("\n") else visible + "\n"
+        opening = re.match(r"^ {0,3}(`{3,}|~{3,})([^\n]*)", line)
+        if opening and not (opening[1][0] == "`" and "`" in opening[2]):
+            fence = (opening[1][0], len(opening[1]))
+            output.append("\n")
+        else:
+            output.append(line)
+    return "".join(output)
 
 
 def check_file(path):
@@ -20,6 +50,8 @@ def check_file(path):
     if not path.is_file():
         return [f"Missing document: {path}"]
     text = prose(path.read_text())
+    # A Markdown link written as a literal code span is not a clickable reference.
+    text = re.sub(r"(?<!`)(`+)(?!`)(.*?)(?<!`)\1(?!`)", "", text, flags=re.S)
     links = re.findall(r"!?\[[^\]\n]*\]\((<[^>]+>|[^\s)]+)(?:\s+\"[^\"]*\")?\)", text)
     for link in links:
         target = link.strip("<>")
@@ -64,7 +96,7 @@ def main():
                            *[BETA / "implementation" / name for name in (
                                "CURRENT_ROADMAP.md", "AGENT_HANDOFF.md", "DOCUMENTATION_MAINTENANCE.md",
                                "PLAYER_INTERFACE_AND_NAVIGATION.md", "EQUIPMENT_AND_VEHICLE_UPKEEP.md")]]
-    files = sorted({path.resolve() for path in files})
+    files = sorted({args.work_record.resolve(), *(path.resolve() for path in files)})
     errors = check_record(args.work_record.resolve())
     for path in files:
         errors.extend(check_file(path))

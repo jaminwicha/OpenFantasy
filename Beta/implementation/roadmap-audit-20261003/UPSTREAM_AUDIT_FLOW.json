@@ -1,0 +1,21 @@
+{
+  "commit": "e229d654f7e93df829d38d7c3445ed12eee976f2",
+  "sourceBefore": "c970e00c521decc74346a2e504f0340440322e4b",
+  "checkpoint": "codex/checkpoint-before-campaign-audit-skill-20261003T1543",
+  "paths": [
+    "skills/game-verification-loop/SKILL.md",
+    "skills/game-verification-loop/references/campaign-audit.md",
+    "skills/game-technical-design/SKILL.md",
+    "skills/game-vertical-slice-planning/SKILL.md"
+  ],
+  "hashes": {
+    "skills/game-verification-loop/SKILL.md": "97a7a2dbf8c0eea9dca2ff104b8f24acf572bd84f7d42938e5db1cdc6b3edca8",
+    "skills/game-verification-loop/references/campaign-audit.md": "ea6dcdb219c7148f86941b99a09a635194d9358e29316bc70f89263dce4dae43",
+    "skills/game-technical-design/SKILL.md": "684e8a85b601278e6cd07c3b81eafe75df18fb300103cdfd42a5b9f9acc6c400",
+    "skills/game-vertical-slice-planning/SKILL.md": "149cac8ef6503037286f504f8ce8234cb9b1c5dd7aa86d9732edfc53434e4490"
+  },
+  "verifiedInstalledFiles": 11,
+  "syncBackupReceipt": "/private/tmp/openfantasy-campaign-audit-20261003.backups/receipt.json",
+  "review": "Independent PASS3_SCOPE_REVIEW.md and PASS3_PROCESS_REVIEW.md inspect accumulated maintained-source changes; zero new actionable findings within declared scope. Separate owner-mentioned orchestration report remains pending.",
+  "mechanicalChecks": "Maintained source whitespace and5document scope including work record passed. Metadata unchanged; optional skill-creator validator remains unavailable without PyYAML."
+}

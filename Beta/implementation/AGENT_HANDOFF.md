@@ -37,6 +37,13 @@ the prior narrow next-task queue was not a reliable phase-completion guide.
 
 ## Next useful assignment
 
+The [iterative audit ledger](roadmap-audit-20261003/CONVERGENCE.md) records applied corrections and
+independent pass3 reviews with zero new findings in their declared scope. Reusable checkpoint/audit
+guidance is committed upstream and synchronized. The owner additionally requests analysis of a separate
+agent-orchestration audit and immediate/medium/long-term remediation; its path/link/text is still
+needed. Resolve that added review before claiming the expanded audit complete. No phase or full
+implementation goal closes here. The implementation direction below remains the subsequent queue.
+
 Choose one explicitly admitted, ordinary development journey connecting the existing farm/work/cargo/
 danger/care/shared interfaces. Inspect actual composition dependencies before selecting its launcher;
 keep old saves/profiles and refuse unsupported migration. The ordinary launcher currently opens the

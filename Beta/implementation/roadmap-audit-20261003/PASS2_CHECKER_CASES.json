@@ -1,0 +1,19 @@
+{
+  "checkerSha256": "e017d1d9bc3845f7099878bfeb8e25b2ba97d42d5ed2b73f6ecb56fc892b6d60",
+  "cases": {
+    "valid": "passed",
+    "empty_fields": "passed",
+    "standard_fence": "passed",
+    "indented_fence": "passed",
+    "longer_closer": "passed",
+    "tilde_fence": "passed",
+    "html_comment": "passed",
+    "template_plus_real": "passed",
+    "literal_comment_in_fence": "passed",
+    "work_record_links_explicit": "passed",
+    "work_record_links_default": "passed",
+    "literal_code_spans_and_real_link": "passed",
+    "real_missing_link": "passed"
+  },
+  "scope": "13 focused positives/negatives including actual CLI omitted-evidence rejection, comments, fences and inline code. No semantic/anchor/runtime acceptance."
+}

@@ -25,7 +25,7 @@ substantial strengths. See [shared History](p02/shared-history/RESULT.md) and it
 
 The ordinary local launcher still opens the profile5 construction farm. Newer hosted cargo/control
 admissions compose many more systems, but these are explicit routes. There are 38 supported snapshot
-profile codecs, not 37 completed worlds. Preserving old meanings is necessary; the player-facing
+profile codecs, not 38 completed worlds. Preserving old meanings is necessary; the player-facing
 entry has not kept pace. The original farm is one 32×32×16 region; the cargo corridor has 14 such
 regions within a 16-region interpretation. Those proofs do not establish an effectively endless
 frontier, a 20,000-resident city, or complete NPC cognition.
@@ -48,8 +48,9 @@ and workflow cost without claiming a shipping percentage, date or provider-credi
 | Mobile completion | Later required phase | P14 actual Android/iOS/device/cross-play acceptance using the same game core |
 
 The active goal text, “continue and make significant progress,” is broad. A bounded checkpoint can
-close while that goal remains active. Neither thousands of passes nor the next recovery result means
-the game or P02 is complete.
+close while that goal remains active. Neither thousands of passes nor the completed recovery result means
+the game or P02 is complete. The bounded recovery checkpoint is now closed; its remaining broader
+obligations retain separate scopes below.
 
 ## Full phase ledger
 
@@ -85,6 +86,7 @@ its exact scope; no row is fully accepted merely because a supporting primitive 
 | LOOP — integration lead | Farm/build, cargo/threat and shared domain journeys exist | One ordinary discoverable route: notice→talk→gather/make→recruit→cooperative expedition→changed-place return, incorporating buy/haul/danger/sell and care. Declare any fresh admission or preserved migration explicitly. |
 | NPC — actor/narrative builder | Routed amble/work and common legal actions | Persistent evidence→belief/desire→commitment→feasible action→memory; bounded offscreen reconciliation, recruitment and useful companion contribution; dialogue responds to the actual outcome. |
 | STORY — narrative/level builder | Source quest/content and durable facts | Missing-cargo investigation with actual testimony/evidence and alternate clues; field-action puzzle with team and noncombat paths, real costs, readable motion and accessible alternatives. |
+| TRADE — economy/actor builder | Actual buy/haul/threat/sell with finite goods and two markets | A traveling merchant brings those real goods, with retained NPC travel routes/commitments and the bounded cargo/escort introduction. Broader caravan networks, wages and settlement economy remain P07; this early route cannot be deferred wholesale. |
 | SPACE — physical/world builder | Mining, supported construction, water and consequences in bounded routes | Occupied floor/tunnel/stairs/upper construction/support removal, with readable native consequences and restart, in the inhabited journey. |
 | ECO — world/ecology builder | Finite plants/regrowth, conserved water, specific threat | Relief/strata/river/outlet, dry and flooded caves; second liquid/reaction and ice/phase example; seasonal plant/herbivore/predator, nonautomatic hostility, source removal response and conserved growth/dispersal. |
 | COOP — host/client builder | Actual four-peer TLS/control/domain journeys | Join/reconnect during the integrated loop, zone chat/scoped notices, distinct private/NPC knowledge; full recovery matrix and unresolved reliability failures retained. |
@@ -115,18 +117,19 @@ its exact scope; no row is fully accepted merely because a supporting primitive 
 
 ## Next execution sequence
 
-1. Close the bounded recovery qualification and retain its limits. Dispose of known failures by
-   evidence, not repeated hopeful reruns. Native paid-history/paging and populated allowance/listener
-   recovery are named gaps, not reasons for an unbounded networking detour.
-2. Specify and expose one current development journey over an explicitly admitted common lineage.
+1. Specify and expose one current development journey over an explicitly admitted common lineage.
    Preserve prior saves and unsupported transition refusal. Integrate the existing farm/work/cargo/
    danger/care/shared interfaces before adding another isolated default.
-3. Build the missing NPC/recruitment/changed-place and mystery/puzzle behavior as coherent units.
+2. Build the missing NPC/recruitment/changed-place, traveling-merchant/escort and mystery/puzzle
+   behavior as coherent units.
    Run native art/motion/audio/onboarding specimens alongside their actual semantic actions. Get
    bounded human feedback early; do not wait for the whole catalog to discover an awkward interface.
-4. Complete the required P02 environment/coordination/UI introductions in that lineage and close
-   the full native/human exit. Reconcile outstanding P00/P01 foundation/export/catalog obligations.
-5. Prove P03's harder temporal/mixed-clock/world-history/package workload before broad dependent
+3. Complete the required P02 environment/coordination/UI introductions in that lineage. Reconcile
+   and satisfy its outstanding P00/P01 foundation/export/catalog prerequisites before declaring the
+   complete P02 native/human exit. The completed recovery checkpoint retains its narrow limits;
+   native paid-history/paging and populated allowance/listener recovery remain named dependencies,
+   not an unbounded networking detour. Resolve original failures by evidence, not hopeful reruns.
+4. Prove P03's harder temporal/mixed-clock/world-history/package workload before broad dependent
    expansion. Then execute P04–P14 with the original domain-completion and production gates intact.
 
 ## Risks and efficiency controls

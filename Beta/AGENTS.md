@@ -31,6 +31,17 @@ is valid; boilerplate or an automatic link pass is not a factual review. Before 
 contracts; retain unproved design obligations explicitly. Independent review covers substantial
 adaptations and complete phase handoffs, without a new ceremonial review for each small fix.
 
+Owner steering, 2026-10-03: use the maintained verification skill's
+[iterative delivery audit](../../GameDevAIEcosystem/skills/game-verification-loop/references/campaign-audit.md)
+when a deep audit is requested. Recommend it at major integration/phase checkpoints and after sustained
+multi-day goal work without whole-roadmap review, especially when the queue or default playable
+experience drifts. This recommendation follows the owner's four-day run; elapsed time is not measured
+active effort or credit cost. Preserve the declared audit scope, implement accepted current-scope
+corrections between independent passes, and continue requested convergence passes until no new
+actionable findings and no unfixed current-scope findings remain. Keep future gameplay obligations in
+their phases; do not relabel a current defect as future work to obtain a clean audit. No automatic
+paid retry, review fleet or schedule is authorized by this upkeep trigger.
+
 [Runtime/docs/architecture/](Runtime/docs/architecture/README.md) is the maintained encyclopedic
 reference. Read the affected subject before changing its architecture; use source links rather than
 reloading the research archive. Backfill newly discovered undocumented behavior as part of that work.

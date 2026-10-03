@@ -79,6 +79,14 @@ project configuration is changed by this contract.
 
 ## Efficient upkeep
 
+At major integration/phase handoffs, or after sustained multi-day work without a whole-goal review,
+recommend the maintained [iterative delivery audit](../../../GameDevAIEcosystem/skills/game-verification-loop/references/campaign-audit.md).
+Use the owner's requested scope and finite review assignments. Implement accepted corrections between
+passes and retain one finding/disposition ledger. Convergence requires an independent pass with no
+new actionable findings and every accepted current-scope finding fixed and verified. Known future
+gameplay scope remains routed, not completed. Elapsed days do not measure active work or justify a
+scheduled/paid review without the applicable authorization.
+
 Use one current roadmap and one compact handoff. Read historical packets only when their contract
 or evidence is relevant. Preserve frozen specs, archives and failed evidence. Reuse a maintained
 checker rather than creating a new packet-specific documentation verifier. Do not run runtime
