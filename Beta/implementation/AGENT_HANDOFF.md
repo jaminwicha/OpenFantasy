@@ -58,7 +58,7 @@ All1279 pinned execution dependencies match the rendered run. Original failures 
 Next connect buy/haul/danger/care/sell/return in this same save, then qualify shared participation.
 Existing separate journeys are useful prior evidence, not proof that this full joined route works.
 The graphics/HUD are provisional; no new independent critic or human acceptance is claimed.
-The continuation is WIP: its native attempt bought cargo and walked outbound, then hit the unchanged
+The continuation is WIP: its native attempt bought cargo and walked outbound, then hit the new continuation probe's
 five-second post-draw bound. Preserve `p02/adventure-journey/checks/native-01.json`; diagnose before
 claiming the full route. Pre-review WIP is `codex/checkpoint-before-efficiency-doctrine-20261003`
 (`0f38907b`), with its successful focused build and unqualified journey source.
