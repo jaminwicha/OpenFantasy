@@ -1,0 +1,630 @@
+{
+  "applicationProcessId": 55981,
+  "runtimeVersion": "10.0.12",
+  "inputs": {
+    "runtime-scheduling-55981-8159a50fd4a045df9806fd0b0717dc36.json": "c40c27f28df4d557706674bb363168f462f1b9425edd5312f2814c720e9a9551",
+    "host-timing-55981-44fe569e52dc477e80052512e63eafda.json": "319f014dd09e641ef74d48683ad3193179accd1b6aeaf571affa998ae8fbfa7b"
+  },
+  "matchedRuntimeEvents": 588,
+  "samplingMilliseconds": {
+    "sum": 3.715632,
+    "median": 0.003125,
+    "p95": 0.019,
+    "maximum": 0.136208
+  },
+  "eventToSamplingMilliseconds": {
+    "median": 0.002833,
+    "p95": 0.022417,
+    "maximum": 0.146125
+  },
+  "movements": [
+    {
+      "port": "d4be4112e1fc412c994e3150130e3935",
+      "acceptanceSequence": 160,
+      "firstSampleAgeMilliseconds": 44.9721,
+      "selectedCount": 1,
+      "acceptanceToFirstSample": {
+        "fromSequence": 160,
+        "toSequence": 167,
+        "wallMilliseconds": 44.999083,
+        "counterSamplingStartToStartMilliseconds": 45.002875,
+        "fromEventToSamplingMilliseconds": 0.0015,
+        "toEventToSamplingMilliseconds": 0.005292,
+        "processCpuMilliseconds": 2.075,
+        "gcPauseMilliseconds": 0.0,
+        "generationCollections": [
+          0,
+          0,
+          0
+        ],
+        "fromPendingWorkItems": 0,
+        "toPendingWorkItems": 0,
+        "fromThread": 15,
+        "toThread": 14
+      },
+      "host": "25ddc9f2b9fe4d1498b82be3b3a1961a",
+      "previousTickEndToNextWait": {
+        "fromSequence": 133,
+        "toSequence": 165,
+        "wallMilliseconds": 49.329417,
+        "counterSamplingStartToStartMilliseconds": 49.339209,
+        "fromEventToSamplingMilliseconds": 0.000583,
+        "toEventToSamplingMilliseconds": 0.010375,
+        "processCpuMilliseconds": 11.857,
+        "gcPauseMilliseconds": 0.0,
+        "generationCollections": [
+          0,
+          0,
+          0
+        ],
+        "fromPendingWorkItems": 0,
+        "toPendingWorkItems": 0,
+        "fromThread": 14,
+        "toThread": 14
+      }
+    },
+    {
+      "port": "67ea8e3c63f842aebe853cb7b5c4e5f7",
+      "acceptanceSequence": 234,
+      "firstSampleAgeMilliseconds": 8.3086,
+      "selectedCount": 3,
+      "acceptanceToFirstSample": {
+        "fromSequence": 234,
+        "toSequence": 239,
+        "wallMilliseconds": 8.309417,
+        "counterSamplingStartToStartMilliseconds": 8.309083,
+        "fromEventToSamplingMilliseconds": 0.000917,
+        "toEventToSamplingMilliseconds": 0.000583,
+        "processCpuMilliseconds": 2.18,
+        "gcPauseMilliseconds": 0.0,
+        "generationCollections": [
+          0,
+          0,
+          0
+        ],
+        "fromPendingWorkItems": 0,
+        "toPendingWorkItems": 0,
+        "fromThread": 5,
+        "toThread": 16
+      },
+      "host": "25ddc9f2b9fe4d1498b82be3b3a1961a",
+      "previousTickEndToNextWait": {
+        "fromSequence": 225,
+        "toSequence": 237,
+        "wallMilliseconds": 33.274,
+        "counterSamplingStartToStartMilliseconds": 33.277125,
+        "fromEventToSamplingMilliseconds": 0.001959,
+        "toEventToSamplingMilliseconds": 0.005084,
+        "processCpuMilliseconds": 25.18,
+        "gcPauseMilliseconds": 0.0,
+        "generationCollections": [
+          0,
+          0,
+          0
+        ],
+        "fromPendingWorkItems": 0,
+        "toPendingWorkItems": 0,
+        "fromThread": 14,
+        "toThread": 16
+      }
+    },
+    {
+      "port": "da1c855653724d2dbc4bac713fa8ebe9",
+      "acceptanceSequence": 347,
+      "firstSampleAgeMilliseconds": 11.976,
+      "selectedCount": 3,
+      "acceptanceToFirstSample": {
+        "fromSequence": 347,
+        "toSequence": 352,
+        "wallMilliseconds": 11.976625,
+        "counterSamplingStartToStartMilliseconds": 11.978208,
+        "fromEventToSamplingMilliseconds": 0.001334,
+        "toEventToSamplingMilliseconds": 0.002917,
+        "processCpuMilliseconds": 4.407,
+        "gcPauseMilliseconds": 0.0,
+        "generationCollections": [
+          0,
+          0,
+          0
+        ],
+        "fromPendingWorkItems": 0,
+        "toPendingWorkItems": 0,
+        "fromThread": 13,
+        "toThread": 13
+      },
+      "host": "25ddc9f2b9fe4d1498b82be3b3a1961a",
+      "previousTickEndToNextWait": {
+        "fromSequence": 339,
+        "toSequence": 350,
+        "wallMilliseconds": 38.917625,
+        "counterSamplingStartToStartMilliseconds": 38.9215,
+        "fromEventToSamplingMilliseconds": 0.000958,
+        "toEventToSamplingMilliseconds": 0.004833,
+        "processCpuMilliseconds": 36.626,
+        "gcPauseMilliseconds": 0.0,
+        "generationCollections": [
+          0,
+          0,
+          0
+        ],
+        "fromPendingWorkItems": 0,
+        "toPendingWorkItems": 0,
+        "fromThread": 13,
+        "toThread": 13
+      }
+    },
+    {
+      "port": "80fc73af04d84c2094487ddf67dd0923",
+      "acceptanceSequence": 455,
+      "firstSampleAgeMilliseconds": 27.3812,
+      "selectedCount": 3,
+      "acceptanceToFirstSample": {
+        "fromSequence": 455,
+        "toSequence": 459,
+        "wallMilliseconds": 27.384333,
+        "counterSamplingStartToStartMilliseconds": 27.384417,
+        "fromEventToSamplingMilliseconds": 0.002541,
+        "toEventToSamplingMilliseconds": 0.002625,
+        "processCpuMilliseconds": 27.211,
+        "gcPauseMilliseconds": 0.0,
+        "generationCollections": [
+          0,
+          0,
+          0
+        ],
+        "fromPendingWorkItems": 0,
+        "toPendingWorkItems": 1,
+        "fromThread": 5,
+        "toThread": 16
+      },
+      "host": "25ddc9f2b9fe4d1498b82be3b3a1961a",
+      "previousTickEndToNextWait": {
+        "fromSequence": 450,
+        "toSequence": 457,
+        "wallMilliseconds": 38.322208,
+        "counterSamplingStartToStartMilliseconds": 38.344875,
+        "fromEventToSamplingMilliseconds": 0.000958,
+        "toEventToSamplingMilliseconds": 0.023625,
+        "processCpuMilliseconds": 44.214,
+        "gcPauseMilliseconds": 0.0,
+        "generationCollections": [
+          0,
+          0,
+          0
+        ],
+        "fromPendingWorkItems": 0,
+        "toPendingWorkItems": 1,
+        "fromThread": 14,
+        "toThread": 16
+      }
+    }
+  ],
+  "longestObservationIntervals": [
+    {
+      "owner": "d4be4112e1fc412c994e3150130e3935",
+      "component": "observation",
+      "fromSequence": 18,
+      "toSequence": 28,
+      "wallMilliseconds": 132.838041,
+      "counterSamplingStartToStartMilliseconds": 132.832166,
+      "fromEventToSamplingMilliseconds": 0.0145,
+      "toEventToSamplingMilliseconds": 0.008625,
+      "processCpuMilliseconds": 130.675,
+      "gcPauseMilliseconds": 6.619,
+      "generationCollections": [
+        1,
+        1,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 9,
+      "toThread": 9
+    },
+    {
+      "owner": "f28712a08aad478d8643457dcf55066c",
+      "component": "replica",
+      "fromSequence": 483,
+      "toSequence": 493,
+      "wallMilliseconds": 43.720583,
+      "counterSamplingStartToStartMilliseconds": 43.720333,
+      "fromEventToSamplingMilliseconds": 0.006292,
+      "toEventToSamplingMilliseconds": 0.006042,
+      "processCpuMilliseconds": 65.484,
+      "gcPauseMilliseconds": 3.546,
+      "generationCollections": [
+        1,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 14,
+      "toThread": 14
+    },
+    {
+      "owner": "addaa63cfdd4454390ea2b667321d137",
+      "component": "replica",
+      "fromSequence": 525,
+      "toSequence": 531,
+      "wallMilliseconds": 33.477416,
+      "counterSamplingStartToStartMilliseconds": 33.48225,
+      "fromEventToSamplingMilliseconds": 0.015333,
+      "toEventToSamplingMilliseconds": 0.020167,
+      "processCpuMilliseconds": 52.587,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 16,
+      "toThread": 16
+    },
+    {
+      "owner": "0e1e2086228b405399b14f50019ad0c1",
+      "component": "replica",
+      "fromSequence": 487,
+      "toSequence": 492,
+      "wallMilliseconds": 33.107625,
+      "counterSamplingStartToStartMilliseconds": 33.094292,
+      "fromEventToSamplingMilliseconds": 0.01925,
+      "toEventToSamplingMilliseconds": 0.005917,
+      "processCpuMilliseconds": 53.84,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 5,
+      "toThread": 5
+    },
+    {
+      "owner": "7741f01304e94eefa57156399380f4cc",
+      "component": "replica",
+      "fromSequence": 513,
+      "toSequence": 517,
+      "wallMilliseconds": 32.893916,
+      "counterSamplingStartToStartMilliseconds": 32.923375,
+      "fromEventToSamplingMilliseconds": 0.003041,
+      "toEventToSamplingMilliseconds": 0.0325,
+      "processCpuMilliseconds": 20.024,
+      "gcPauseMilliseconds": 1.884,
+      "generationCollections": [
+        1,
+        1,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 14,
+      "toThread": 14
+    },
+    {
+      "owner": "f28712a08aad478d8643457dcf55066c",
+      "component": "replica",
+      "fromSequence": 538,
+      "toSequence": 540,
+      "wallMilliseconds": 28.715042,
+      "counterSamplingStartToStartMilliseconds": 28.717041,
+      "fromEventToSamplingMilliseconds": 0.002209,
+      "toEventToSamplingMilliseconds": 0.004208,
+      "processCpuMilliseconds": 42.759,
+      "gcPauseMilliseconds": 1.733,
+      "generationCollections": [
+        1,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 1,
+      "toPendingWorkItems": 0,
+      "fromThread": 5,
+      "toThread": 5
+    },
+    {
+      "owner": "f28712a08aad478d8643457dcf55066c",
+      "component": "replica",
+      "fromSequence": 249,
+      "toSequence": 252,
+      "wallMilliseconds": 28.701667,
+      "counterSamplingStartToStartMilliseconds": 28.706875,
+      "fromEventToSamplingMilliseconds": 0.00225,
+      "toEventToSamplingMilliseconds": 0.007458,
+      "processCpuMilliseconds": 31.24,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 5,
+      "toThread": 5
+    },
+    {
+      "owner": "addaa63cfdd4454390ea2b667321d137",
+      "component": "replica",
+      "fromSequence": 178,
+      "toSequence": 179,
+      "wallMilliseconds": 28.4515,
+      "counterSamplingStartToStartMilliseconds": 28.46225,
+      "fromEventToSamplingMilliseconds": 0.002333,
+      "toEventToSamplingMilliseconds": 0.013083,
+      "processCpuMilliseconds": 15.451,
+      "gcPauseMilliseconds": 5.264,
+      "generationCollections": [
+        1,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 14,
+      "toThread": 14
+    },
+    {
+      "owner": "7741f01304e94eefa57156399380f4cc",
+      "component": "replica",
+      "fromSequence": 548,
+      "toSequence": 550,
+      "wallMilliseconds": 26.261084,
+      "counterSamplingStartToStartMilliseconds": 26.268375,
+      "fromEventToSamplingMilliseconds": 0.006375,
+      "toEventToSamplingMilliseconds": 0.013666,
+      "processCpuMilliseconds": 43.547,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 15,
+      "toThread": 15
+    },
+    {
+      "owner": "d4be4112e1fc412c994e3150130e3935",
+      "component": "observation",
+      "fromSequence": 521,
+      "toSequence": 522,
+      "wallMilliseconds": 25.418625,
+      "counterSamplingStartToStartMilliseconds": 25.403167,
+      "fromEventToSamplingMilliseconds": 0.028833,
+      "toEventToSamplingMilliseconds": 0.013375,
+      "processCpuMilliseconds": 24.959,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 14,
+      "toThread": 14
+    },
+    {
+      "owner": "0e1e2086228b405399b14f50019ad0c1",
+      "component": "replica",
+      "fromSequence": 245,
+      "toSequence": 250,
+      "wallMilliseconds": 25.041959,
+      "counterSamplingStartToStartMilliseconds": 25.056125,
+      "fromEventToSamplingMilliseconds": 0.004084,
+      "toEventToSamplingMilliseconds": 0.01825,
+      "processCpuMilliseconds": 30.777,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 16,
+      "toThread": 16
+    },
+    {
+      "owner": "da1c855653724d2dbc4bac713fa8ebe9",
+      "component": "observation",
+      "fromSequence": 491,
+      "toSequence": 510,
+      "wallMilliseconds": 22.876541,
+      "counterSamplingStartToStartMilliseconds": 22.911125,
+      "fromEventToSamplingMilliseconds": 0.004041,
+      "toEventToSamplingMilliseconds": 0.038625,
+      "processCpuMilliseconds": 42.012,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 1,
+      "toPendingWorkItems": 0,
+      "fromThread": 16,
+      "toThread": 16
+    },
+    {
+      "owner": "80fc73af04d84c2094487ddf67dd0923",
+      "component": "observation",
+      "fromSequence": 477,
+      "toSequence": 484,
+      "wallMilliseconds": 22.874666,
+      "counterSamplingStartToStartMilliseconds": 22.901541,
+      "fromEventToSamplingMilliseconds": 0.00575,
+      "toEventToSamplingMilliseconds": 0.032625,
+      "processCpuMilliseconds": 36.315,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 1,
+      "toPendingWorkItems": 0,
+      "fromThread": 16,
+      "toThread": 16
+    },
+    {
+      "owner": "67ea8e3c63f842aebe853cb7b5c4e5f7",
+      "component": "observation",
+      "fromSequence": 526,
+      "toSequence": 533,
+      "wallMilliseconds": 22.3245,
+      "counterSamplingStartToStartMilliseconds": 22.316833,
+      "fromEventToSamplingMilliseconds": 0.011542,
+      "toEventToSamplingMilliseconds": 0.003875,
+      "processCpuMilliseconds": 51.745,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 14,
+      "toThread": 14
+    },
+    {
+      "owner": "80fc73af04d84c2094487ddf67dd0923",
+      "component": "observation",
+      "fromSequence": 527,
+      "toSequence": 532,
+      "wallMilliseconds": 22.299833,
+      "counterSamplingStartToStartMilliseconds": 22.290125,
+      "fromEventToSamplingMilliseconds": 0.017167,
+      "toEventToSamplingMilliseconds": 0.007459,
+      "processCpuMilliseconds": 51.554,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 13,
+      "toThread": 13
+    },
+    {
+      "owner": "67ea8e3c63f842aebe853cb7b5c4e5f7",
+      "component": "observation",
+      "fromSequence": 236,
+      "toSequence": 246,
+      "wallMilliseconds": 21.936708,
+      "counterSamplingStartToStartMilliseconds": 21.926958,
+      "fromEventToSamplingMilliseconds": 0.012667,
+      "toEventToSamplingMilliseconds": 0.002917,
+      "processCpuMilliseconds": 27.755,
+      "gcPauseMilliseconds": 5.422,
+      "generationCollections": [
+        1,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 14,
+      "toThread": 14
+    },
+    {
+      "owner": "da1c855653724d2dbc4bac713fa8ebe9",
+      "component": "observation",
+      "fromSequence": 349,
+      "toSequence": 354,
+      "wallMilliseconds": 21.568125,
+      "counterSamplingStartToStartMilliseconds": 21.5335,
+      "fromEventToSamplingMilliseconds": 0.038625,
+      "toEventToSamplingMilliseconds": 0.004,
+      "processCpuMilliseconds": 17.271,
+      "gcPauseMilliseconds": 2.957,
+      "generationCollections": [
+        1,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 1,
+      "toPendingWorkItems": 0,
+      "fromThread": 14,
+      "toThread": 14
+    },
+    {
+      "owner": "67ea8e3c63f842aebe853cb7b5c4e5f7",
+      "component": "observation",
+      "fromSequence": 478,
+      "toSequence": 480,
+      "wallMilliseconds": 20.609459,
+      "counterSamplingStartToStartMilliseconds": 20.615417,
+      "fromEventToSamplingMilliseconds": 0.00375,
+      "toEventToSamplingMilliseconds": 0.009708,
+      "processCpuMilliseconds": 31.907,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 14,
+      "toThread": 14
+    },
+    {
+      "owner": "addaa63cfdd4454390ea2b667321d137",
+      "component": "replica",
+      "fromSequence": 471,
+      "toSequence": 472,
+      "wallMilliseconds": 20.3555,
+      "counterSamplingStartToStartMilliseconds": 20.367125,
+      "fromEventToSamplingMilliseconds": 0.002458,
+      "toEventToSamplingMilliseconds": 0.014083,
+      "processCpuMilliseconds": 16.138,
+      "gcPauseMilliseconds": 0.0,
+      "generationCollections": [
+        0,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 5,
+      "toThread": 5
+    },
+    {
+      "owner": "d4be4112e1fc412c994e3150130e3935",
+      "component": "observation",
+      "fromSequence": 466,
+      "toSequence": 468,
+      "wallMilliseconds": 20.278833,
+      "counterSamplingStartToStartMilliseconds": 20.285959,
+      "fromEventToSamplingMilliseconds": 0.017583,
+      "toEventToSamplingMilliseconds": 0.024709,
+      "processCpuMilliseconds": 16.905,
+      "gcPauseMilliseconds": 4.18,
+      "generationCollections": [
+        1,
+        0,
+        0
+      ],
+      "fromPendingWorkItems": 0,
+      "toPendingWorkItems": 0,
+      "fromThread": 16,
+      "toThread": 16
+    }
+  ],
+  "limits": [
+    "Process-wide counters are non-atomic and may include parallel unrelated test work.",
+    "Sampling spans exclude dispatch/allocation/publication overhead; instrumentation may perturb execution.",
+    "Expired samples may be intentional in other cases; correlate the original test result and host identity.",
+    "This evidence alone does not qualify a scheduler repair or close the production timing gate."
+  ]
+}

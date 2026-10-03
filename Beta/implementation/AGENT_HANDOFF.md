@@ -19,6 +19,15 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Bounded runtime scheduling captures](p02/runtime-scheduling-diagnosis/RESULT.md) add opt-in
+test-process CPU/GC/pool counters without production changes. Two original server selections pass76
+with the expected Windows-only skip; the isolated original four-player case also passes. No failed
+sample reproduces. Captures show substantial process GC pauses in aggregate workloads, but cannot
+attribute the prior failure or justify a scheduler rewrite. The predeclared repeats are exhausted;
+resume full actor selection and retain the diagnostic for its next relevant qualification. The timing
+gate stays open. Before-change ref `codex/checkpoint-before-runtime-scheduling-20261003T030339Z`
+preserves `7ab81d44`; marker `codex/milestone-runtime-scheduling-diagnosis-20261003` records this scope.
+
 [Movement delivery diagnosis](p02/movement-delivery-diagnosis/RESULT.md) captures an actually failed
 four-player sample: accepted movement is first sampled at151.9644ms, beyond its unchanged150ms lease,
 with no selection. The424.742125ms scheduling gap precedes tick serialization; lock acquisition is
@@ -100,10 +109,10 @@ including the failed broader gates. Before-change ref:
    journey with actual paid actions, third/fourth live participants, revocation/return, archive/reopen
    and crash evidence. Native reachability remains separate from managed preparation;
    retain the [complete obligations](p02/co-player-control/DESIGN.md).
-4. The timing investigation now captures a genuinely failed sample in the actual test application.
-   Separate CPU/runtime pauses/executor scheduling around observation work and the delayed host tick
-   before choosing a repair. Component-cost averages do not establish the live scheduling cause.
-   A later pass alone is not diagnosis; do not repeat aggregates without a new purpose or change bounds.
+4. Keep the retained failed timing gate open. The bounded CPU/pause captures did not reproduce it;
+   no more unchanged diagnostic aggregates are justified. Include the opt-in counters at the next
+   relevant changed-implementation qualification, then inspect an actual failure before selecting a
+   repair. Component averages and later passes do not establish its cause; preserve every bound.
 
 Combat + traversal + recovery remains a provisional simple preset, not an owner-approved preference.
 Offers carry explicit scopes. Inventory, trade, production, conversation/quests, care disposition and

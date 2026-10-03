@@ -1,0 +1,53 @@
+{
+  "diagnosticCheckpointAccepted": true,
+  "serverTimingGateClosed": false,
+  "productionRuntimeChanged": false,
+  "preChangeCheckpoint": "codex/checkpoint-before-runtime-scheduling-20261003T030339Z",
+  "sourceHead": "7ab81d44da5c922aa24dca1147adeb8c75a301af",
+  "milestone": "codex/milestone-runtime-scheduling-diagnosis-20261003",
+  "protectedCounts": {
+    "tests": 755,
+    "specs": 23
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "build": "qualification/build-20261003T030714016736Z/report.json",
+  "reports": [
+    {
+      "report": "qualification/roster-only-20261003T031035328606Z/report.json",
+      "analysisSha256": "3f60a68e92c091a8049764379f813746f63c7917177f4c0b49682560be00115d",
+      "outcomes": {
+        "Passed": 1
+      },
+      "sampledRosterInputs": 4,
+      "retainedUnsampledInputsImmediatelyReplacedByStop": 0
+    },
+    {
+      "report": "qualification/server-compatibility-20261003T030909399048Z/report.json",
+      "analysisSha256": "2e734db43a7a80765a26936caa4b1bc7352479e5ed4f4f1ace2d95daebb5636d",
+      "outcomes": {
+        "NotExecuted": 1,
+        "Passed": 76
+      },
+      "sampledRosterInputs": 4,
+      "retainedUnsampledInputsImmediatelyReplacedByStop": 1
+    },
+    {
+      "report": "qualification/server-compatibility-20261003T030952521084Z/report.json",
+      "analysisSha256": "16444981691d840c31123bba5f671d1791863ccb356f0e3f428a4817aa889023",
+      "outcomes": {
+        "NotExecuted": 1,
+        "Passed": 76
+      },
+      "sampledRosterInputs": 4,
+      "retainedUnsampledInputsImmediatelyReplacedByStop": 1
+    }
+  ],
+  "distinctPassingCases": 76,
+  "validatedDocumentLinks": 173,
+  "runtimeVersion": "10.0.12",
+  "review": "REVIEW.md",
+  "checkerSha256": "715093c18caaaf65a1cecdca8d26e8b39693dfee99d2a188ab0582768778c982",
+  "analyzerSha256": "5b82abf8246116f25282f469b6ddbae1d5a015a050ac43a16365d3c63440ae44",
+  "scope": "Opt-in test-process diagnostic; no causal repair or full-phase acceptance",
+  "ecosystemCommit": "b37a36f7018a334d5ff9196abacbe75be83ee891"
+}

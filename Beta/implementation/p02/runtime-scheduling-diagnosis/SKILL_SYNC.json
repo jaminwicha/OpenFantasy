@@ -1,0 +1,20 @@
+{
+  "repository": "/Users/alucinor/Workspace/Projects/GameDevAIEcosystem",
+  "commit": "b37a36f7018a334d5ff9196abacbe75be83ee891",
+  "source": "skills/game-verification-loop/SKILL.md",
+  "sha256": "7b0b43294c5389f7216ddeb14af3298a425effd35cba3d6e1f63df95abbe3ff5",
+  "installedTargets": [
+    "/Users/alucinor/.codex/skills/game-verification-loop/SKILL.md",
+    "/Users/alucinor/.agents/skills/game-verification-loop/SKILL.md",
+    "/Users/alucinor/.claude/skills/game-verification-loop/SKILL.md"
+  ],
+  "backupManifest": "/Users/alucinor/.local/share/openfantasy/skill-backups/20261003T031717Z/manifest.json",
+  "checkpoint": "checkpoint/verification-measurement-context-20261003T031717Z",
+  "validation": {
+    "diffCheck": "passed",
+    "frontmatterComparedToPriorCommit": "byte-identical",
+    "installedSourceIdentity": "all three exact",
+    "builtInQuickValidator": "unavailable: PyYAML absent from both system and bundled Python; no dependency installed",
+    "reviewScope": "Eight prose lines only; no metadata, invocation, link, script or runtime changes"
+  }
+}
