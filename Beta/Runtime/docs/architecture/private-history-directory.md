@@ -80,8 +80,9 @@ creates a new generation; a late earlier page cannot populate that new selection
 return and replacement similarly invalidate the old presentation context. Presentation must also
 fence its own panel opening, page request and inspected-row lifetime.
 
-The optional directory application contract exposes `SupportsPrivateHistoryDirectory` and
-`ReadPrivateHistoryObservation()` alongside the explicitly captured page query. The owned local facade
+The optional history application contract exposes `SupportsPrivateHistoryDirectory` and
+`ReadPrivateHistoryObservation()` alongside the explicitly captured page query and the typed terminal
+quote/proposal inspection methods. The owned local facade
 captures its actual home port without requiring the broader character-control interface. The remote
 facade captures its negotiated selected observation and reports support only for the selected protocol
 profile. Support describes API availability, not a current delegated PrivateHistory grant. Both facades
@@ -89,3 +90,29 @@ retain the same request authority and selection rules; consumers never invent a 
 The remote facade uses its existing foreground query owner and never polls history automatically. A history-only interface entry point must remain independent
 of Pack's Inventory permission and Market's Trade permission. Characters remains responsible for
 permission and control management, rather than duplicating domain screens.
+
+## Native presentation ownership
+
+[`FarmHistoryModel`](../../client/scripts/FarmHistoryModel.cs) owns one transient directory page,
+one explicitly selected row and one typed historical detail. Opening and the explicit Latest control start a
+first-page request. Next submits only the returned continuation cursor, retaining the directory's
+revision ceiling. Latest deliberately begins a new traversal; the client retains no unbounded page
+cache or inferred archive total. There is no automatic history polling or retry.
+
+Every request captures the actual history observation and the current opening and page generation.
+Detail inspection also captures the selected row generation. Completion verifies current entitlement,
+world, branch, port, selection and witness, the complete requested page, and the presentation capture.
+A detail must match its displayed record's identity, participant, terminal status and publication
+sequence. Historical terms are inspection data and cannot become an executable offer.
+
+Closing, lost focus or changed selection clears the private displayed state. Reopening never reuses
+an outstanding request as that new visit's answer. Admitted work remains owned until its success or
+failure has been observed; shutdown drains it alongside session disposal. A pending old request can
+make a new visit busy, requiring explicit Latest after completion instead of an automatic retry.
+
+The scene-owned [`FarmHistoryPanel`](../../client/scripts/FarmHistoryPanel.cs) presents the selected
+character, bounded rows, typed details and explicit navigation. Its input layer neutralizes walking
+through the ordinary client path while preserving host timing. Its controls and opening do not require
+Inventory or Trade; lack of PrivateHistory remains a disclosure boundary rather than a reason to
+substitute the home character's records. Timing text distinguishes local pause from a shared world
+that other ready players can continue advancing.

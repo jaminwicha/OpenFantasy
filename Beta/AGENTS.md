@@ -163,6 +163,12 @@ resource-intensive probes. Continue lightweight independent work. Preserve timin
 a diagnostic with the same command/threshold after removing this self-imposed overlap; a later pass
 alone neither establishes contention as the cause nor closes a production latency/scale gate.
 
+For read-only UI/query proofs after live preparation, pin the actual settled pre-inspection revision
+through the host's serialization boundary. A pause indicator can precede already-admitted work.
+Reconstruct that baseline from the original genesis, require exact clock/resource continuity over the
+measured interval, and account for lawful earlier NPC activity separately. Do not compare post-action
+inspection with an untouched genesis or relax constancy to hide a mistaken baseline.
+
 For delegated timing-sensitive verification, provide the permitted heavy-check wrappers with a shared
 execution lock or scheduler slot where practical. A yielded tool handle can still own a running child;
 starting a benchmark then is overlap, not independent verification. Pin measured source contents and

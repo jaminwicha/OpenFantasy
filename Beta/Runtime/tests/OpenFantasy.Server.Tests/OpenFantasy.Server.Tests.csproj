@@ -15,5 +15,6 @@
     <Using Include="Xunit" />
     <ProjectReference Include="../../src/OpenFantasy.Server/OpenFantasy.Server.csproj" />
     <ProjectReference Include="../../src/OpenFantasy.Host/OpenFantasy.Host.csproj" />
+    <Compile Include="../../client/scripts/FarmHistoryModel.cs" Link="Client/FarmHistoryModel.cs" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,43 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.48]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.66]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.82]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:46.66]     OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return [FAIL]
+[xUnit.net 00:00:46.67]       Native roster stage=capture-history, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-history/qualification/native-history-20261003T140851165567Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0068.response.json: System.InvalidOperationException: A History control is clipped by its scroll container.
+[xUnit.net 00:00:46.67]          at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+[xUnit.net 00:00:46.67]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.CaptureHistory(String name) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.History.cs:line 147
+[xUnit.net 00:00:46.67]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.HistoryOperation(Func`1 action) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.History.cs:line 21
+[xUnit.net 00:00:46.67]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 167
+[xUnit.net 00:00:46.67]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+[xUnit.net 00:00:46.67]       Stack Trace:
+[xUnit.net 00:00:46.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(79,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds)
+[xUnit.net 00:00:46.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(53,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target)
+[xUnit.net 00:00:46.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(121,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:46.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(170,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:46.67]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(170,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:46.67]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:46.70]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return [45 s]
+  Error Message:
+   Native roster stage=capture-history, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-history/qualification/native-history-20261003T140851165567Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0068.response.json: System.InvalidOperationException: A History control is clipped by its scroll container.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.CaptureHistory(String name) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.History.cs:line 147
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.HistoryOperation(Func`1 action) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.History.cs:line 21
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 167
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 121
+   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 170
+   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 170
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 47.2762 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-history/qualification/native-history-20261003T140851165567Z/checks.trx

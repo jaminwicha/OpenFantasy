@@ -159,6 +159,12 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "care-library-confirm": await CareOperation(() => ConfirmCareLibrary(request.GetProperty("Direction").GetString() ?? "Applied")); break;
             case "care-library-close": await CareOperation(CloseCareLibrary); break;
             case "capture-care-library": await CareOperation(() => CaptureCareLibrary(request.GetProperty("Direction").GetString() ?? "care")); break;
+            case "history-open": await HistoryOperation(() => OpenHistoryLibrary(request.GetProperty("Direction").GetString() == "controller")); break;
+            case "history-select-first": await HistoryOperation(SelectHistoryRow); break;
+            case "history-inspect": await HistoryOperation(() => InspectHistoryRow(request.GetProperty("Direction").GetString() == "controller")); break;
+            case "history-close": await HistoryOperation(CloseHistoryLibrary); break;
+            case "history-observe-closed": await HistoryOperation(ObserveHistoryClosed); break;
+            case "capture-history": await HistoryOperation(() => CaptureHistory(request.GetProperty("Direction").GetString() ?? "history")); break;
             case "try-pending-resume": await TryPendingResume(); break;
             case "focus-return": await FocusReturn(); break;
             case "hold-right": SetRight(true); await _driver.Delay(0.15); break;
@@ -170,6 +176,7 @@ internal sealed partial class NativeRosterPlayProbe : Node
             || _stage.StartsWith("gift-", StringComparison.Ordinal) || _stage.StartsWith("production-", StringComparison.Ordinal)
             || _stage.StartsWith("recipe-", StringComparison.Ordinal) || _stage.StartsWith("construction-", StringComparison.Ordinal)
             || _stage.StartsWith("care-library-", StringComparison.Ordinal) || _stage == "capture-care-library"
+            || _stage.StartsWith("history-", StringComparison.Ordinal) || _stage == "capture-history"
             || _stage.StartsWith("trade-", StringComparison.Ordinal) || _stage == "capture-trade"
             || _stage is "capture-selection" or "capture-gifts" or "capture-production" or "capture-recipes" or "capture-construction")
             MarketProbeDriver.Require(requestElapsed.Elapsed < TimeSpan.FromSeconds(20), "The selected native request exceeded twenty seconds.");

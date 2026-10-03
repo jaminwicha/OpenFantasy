@@ -19,6 +19,22 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Shared participant History](p02/shared-history/RESULT.md) now binds authenticated discovery and typed
+terminal inspections to an independent home/selected History screen. HUD/wheel/H/controller entry,
+bounded pages, explicit reads and opening/page/row lifetimes preserve PrivateHistory independently of
+Inventory/Trade. Close, focus loss and owner return clear private state; late tasks remain owned and
+drained. Core/schema/wire/timing contracts are unchanged.
+
+The warning-free build and [208 distinct dependency-verified passes](p02/shared-history/FINAL_CHECKS.json)
+include22 new cases and five native cases. The actual four-peer gift-history/allowance/return route,
+real inbound delayed response and four inspected final screenshots qualify this bounded UI. Three
+native failures and their specific assertion/baseline/layout corrections remain retained. All912 prior
+inputs,23 specs and predecessor staging are verified; only two declared test-project source links are
+additive. Before-change `codex/checkpoint-before-shared-history-20261003T133826Z` preserves `bb18995e`;
+marker `codex/milestone-shared-history-20261003` records final scope. Native paging/paid-quote details,
+historical name catalogs, full crash/latency/scale, physical/human/art and campaign gates remain open.
+Ecosystem `0d062cd` preserves the serialized-baseline lesson across maintained skill entrypoints.
+
 [Authenticated private-history discovery](p02/private-history-directory/RESULT.md) now supplies bounded
 terminal quote/proposal pages across live and archived records, independently scoped to PrivateHistory.
 Stable revision/sequence/kind/identity navigation uses complete verified replay through the current head;
@@ -33,8 +49,8 @@ corrupt-tail refusal and independent review qualify this backend boundary. Three
 with import and test synchronization corrections. All 821 old inputs, 23 specs and unrelated staging stay
 pinned. Before-change ref `codex/checkpoint-before-private-history-directory-20261003T125116Z` preserves
 `d3f8ebc2`; WIP `codex/checkpoint-history-directory-api-wip-20261003T132008Z` preserves `3a9eb52a`.
-Marker `codex/milestone-private-history-directory-20261003` records the bounded final scope. Shared
-History UI/lifetimes, delayed inbound directory delivery, latency/crash/scale, physical/human/art and
+Marker `codex/milestone-private-history-directory-20261003` records the bounded final scope. That backend checkpoint did not qualify shared History UI/lifetimes or delayed inbound delivery;
+the bounded UI result above supplies those proofs. Latency/crash/scale, physical/human/art and
 campaign gates remain open. Native agents used Astra capacity; external Claude was not retried.
 
 [Shared restorative choices](p02/restorative-choices/RESULT.md) now bind the Care library to home or
@@ -320,18 +336,17 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Bind a shared independently accessible History screen to `IPrivateHistoryPlayerSession`, using its
-   real observation capture and explicit availability. Authenticated terminal discovery is now qualified
-   above; panel-opening/page/request/row lifetimes and native interaction are not. Preserve independent
-   PrivateHistory access without requiring Pack/Inventory or Market/Trade, stable page caps and exact
-   subsequent inspections. Add delayed inbound response and owner-return/revoke UI evidence. Continue
-   broader aftermath-care screen proofs against existing typed facets and readers. Shared ordinary restorative choices and
+1. Extend the remaining shared domain surfaces through coherent useful increments. The shared History
+   screen, opening/page/request/row lifetimes, delayed inbound response and ordinary owner-return UI
+   now have bounded evidence above. Complete native paging/paid-quote details and independently permitted
+   historical material names without borrowing Inventory/Trade data; retain stable page caps and exact
+   typed inspections. Continue broader aftermath-care screen proofs against existing typed facets and readers. Shared ordinary restorative choices and
    patient permission withdrawal now have bounded evidence in the restorative-choices packet. Retain current capture/confirmation
    rules, immutable home identity and explicit scopes; no withheld full-view synthesis. The native
    consent/selection/combat route is qualified above; the [client scope notes](p02/connected-player-control/CLIENT_NOTES.md)
    retain the incomplete domain surfaces. Native source-lot and produced-gift journeys have bounded passing evidence; retain the unexplained
    raw-gift reopening failure and its diagnostic. Shared selected buying/selling now has bounded evidence
-   in the selected-trading packet. Selected history screen/lifetime interactions, broader aftermath-care and medicine-catalog
+   in the selected-trading packet. Broader native history/catalog interactions, aftermath-care and medicine-catalog
    interactions, and mouse dropdown breadth remain explicit work. Atomic human construction is qualified above;
    sustained work, unobscured completed-object legibility and the clipped idle-preview HUD need their
    normal interface/presentation work. The admitted recipe library and independently

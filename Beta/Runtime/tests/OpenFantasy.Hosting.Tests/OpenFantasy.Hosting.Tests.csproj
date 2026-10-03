@@ -56,5 +56,6 @@
     <Compile Include="../../client/scripts/Cargo/CargoCameraFraming.cs" Link="Client/Cargo/CargoCameraFraming.cs" />
     <Compile Include="../../client/scripts/Retreat/RetreatOffers.cs" Link="Client/Retreat/RetreatOffers.cs" />
     <None Include="../OpenFantasy.Core.Tests/Fixtures/consented-world-formats-v1.json" Link="Fixtures/consented-world-formats-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Include="../../client/scripts/FarmHistoryModel.cs" Link="Client/FarmHistoryModel.cs" />
   </ItemGroup>
 </Project>

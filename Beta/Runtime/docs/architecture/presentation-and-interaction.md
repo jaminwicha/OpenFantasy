@@ -199,6 +199,15 @@ intent and actor pins survive inspection; a changed choice explains its blocker.
 inspection is asynchronous and displays a result only for the matching selected offer. See
 [material proposals](material-proposals.md#native-selection-and-commitment) for authority and time rules.
 
+## Runtime binding: participant History
+
+The shared [participant History screen](private-history-directory.md#native-presentation-ownership)
+discovers terminal exchanges and proposals independently of the Pack and Market. It uses a bounded
+page and explicit inspection of one selected record. Its dedicated input context, captured opening/
+page/row lifetimes and admitted-task owner prevent old replies from populating another visit or actor.
+Opening, browsing and closing submit no gameplay command; the screen displays the actual local/shared
+timing policy and cannot independently stop other participants.
+
 ## Design contract: a small immediate interface
 
 The action vocabulary can be large while the immediate surface stays small. Contextual primary

@@ -131,6 +131,7 @@ public partial class FarmGame : Node2D
         ReadyMarket();
         ReadyRecipes();
         ReadyCare();
+        ReadyHistory();
         ReadyActorSelection();
         Input.Singleton.JoyConnectionChanged += OnControllerConnectionChanged;
         GetTree().AutoAcceptQuit = false;
@@ -321,7 +322,9 @@ public partial class FarmGame : Node2D
         CompleteMarketTasks();
         CompleteControlOperations();
         CompleteGiftInspection();
+        CompleteHistory();
         Present();
+        PresentHistoryPanel();
     }
 
     private void Present()
@@ -490,6 +493,8 @@ public partial class FarmGame : Node2D
         }
         if (!_input.Permits(Situation(), action)) return;
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
+        if (action == FarmSemanticAction.OpenHistory) { OpenHistory(); return; }
+        if (action == FarmSemanticAction.CloseHistory) { CloseHistory(); return; }
         if (action == FarmSemanticAction.OpenCare) { OpenCare(); return; }
         if (action == FarmSemanticAction.CloseCare) { CloseCare(); return; }
         if (action == FarmSemanticAction.PrepareCare) { PrepareCare(); return; }
@@ -648,6 +653,7 @@ public partial class FarmGame : Node2D
         {
             _input.CaptureBoundary(Situation(), ReadWalkingInput());
             CloseControlPanel();
+            if (_input.HistoryOpen) CloseHistory();
             _inventory.InvalidateGiftHistory();
             if (_input.WheelOpen) ChangeWheel(false);
             InterruptMarketReview("Focus left the game, so the reviewed offer was set aside. Review it again to confirm.");
@@ -683,6 +689,7 @@ public partial class FarmGame : Node2D
     private void OnControllerConnectionChanged(long device, bool connected)
     {
         if (!connected) CloseControlPanel();
+        if (!connected && _input.HistoryOpen) CloseHistory();
         if (!connected && _input.WheelOpen)
         {
             _input.CaptureBoundary(Situation(), ReadWalkingInput());
@@ -732,6 +739,7 @@ public partial class FarmGame : Node2D
         if (_input.MarketOpen) CloseMarket();
         if (_input.RecipesOpen) CloseRecipes();
         if (_input.CareOpen) CloseCare();
+        if (_input.HistoryOpen) CloseHistory();
         try
         {
             if (_session?.SelectedSession is { SupportsActorSelection: true } selected && _presentedSelection is { } observed)
@@ -749,6 +757,7 @@ public partial class FarmGame : Node2D
         _input.MarkUnavailable();
         if (_input.RecipesOpen) CloseRecipes();
         if (_input.CareOpen) CloseCare();
+        if (_input.HistoryOpen) CloseHistory();
         _hud.Message("Closing the farm…");
         _closing = CloseAsync();
     }
@@ -762,8 +771,9 @@ public partial class FarmGame : Node2D
             catch { return; }
         }
         Task marketTasks = _marketQueries.DrainAsync();
+        Task historyTasks = _history.DrainAsync();
         try { if (session is not null) await session.DisposeAsync().ConfigureAwait(false); }
-        finally { await marketTasks.ConfigureAwait(false); }
+        finally { await Task.WhenAll(marketTasks, historyTasks).ConfigureAwait(false); }
     }
 
     public override void _ExitTree()

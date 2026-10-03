@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://scripts/FarmHud.cs" id="1"]
 
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" path="res://assets/ui/wait.svg" id="4"]
 [ext_resource type="Texture2D" path="res://assets/ui/leave.svg" id="5"]
 [ext_resource type="Texture2D" path="res://assets/ui/care.svg" id="6"]
+
+[ext_resource type="Texture2D" path="res://assets/ui/market-offers.svg" id="7_history"]
 
 [sub_resource type="StyleBoxFlat" id="PanelStyle"]
 bg_color = Color(0.098, 0.165, 0.180, 0.933)
@@ -89,6 +91,15 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Pack [I]"
 tooltip_text = "Inspect your own tools and supplies. I / View. The current world clock policy stays in effect."
+
+[node name="History" type="Button" parent="Root/Header/Row"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 44)
+layout_mode = 2
+icon = ExtResource("7_history")
+expand_icon = true
+theme_override_constants/icon_max_width = 28
+tooltip_text = "History · H / left-stick click. Browse this character’s completed exchanges and gifts. No goods or money move."
 
 [node name="Recipes" type="Button" parent="Root/Header/Row"]
 unique_name_in_owner = true

@@ -1,0 +1,41 @@
+{
+  "Sequence": 16,
+  "Stage": "history-select-first",
+  "Submissions": 2,
+  "History": {
+    "Open": true,
+    "IsBusy": false,
+    "State": "Ready",
+    "Notice": "Select Inspect to read this exact saved record.",
+    "ActorName": "Amber",
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Port": "9784dbfdfae398f76f1853c9e4f01c03",
+    "Generation": 0,
+    "Capabilities": null,
+    "InventoryDisclosed": true,
+    "TradeDisclosed": true,
+    "ThroughRevision": 49,
+    "Before": null,
+    "Next": null,
+    "Entries": [
+      {
+        "Kind": "MaterialProposal",
+        "Subject": "4aca67e44419113b6e9353dc16ce7f88",
+        "Counterparty": "79dddd9ea31bf745606a5473ea76ed14",
+        "ClosedAtSequence": 42,
+        "PaidQuoteStatus": null,
+        "MaterialProposalStatus": "Withdrawn"
+      }
+    ],
+    "Selected": {
+      "Kind": "MaterialProposal",
+      "Subject": "4aca67e44419113b6e9353dc16ce7f88",
+      "Counterparty": "79dddd9ea31bf745606a5473ea76ed14",
+      "ClosedAtSequence": 42,
+      "PaidQuoteStatus": null,
+      "MaterialProposalStatus": "Withdrawn"
+    },
+    "Detail": null
+  },
+  "Captures": []
+}

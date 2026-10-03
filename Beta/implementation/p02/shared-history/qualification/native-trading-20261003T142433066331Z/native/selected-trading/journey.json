@@ -1,0 +1,78 @@
+{
+  "Kind": "native-selected-trading-v1",
+  "Status": "passed",
+  "AllowanceSeconds": 30.5061784,
+  "ElapsedMilliseconds": 51272,
+  "Stages": [
+    {
+      "Stage": "trade-only-purchase-reviewed-and-filled",
+      "ElapsedMilliseconds": 40094,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Commands": 1
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "same-finite-lot-sold-back",
+      "ElapsedMilliseconds": 42293,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Commands": 5
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "owner-return-refused-unconsumed-review",
+      "ElapsedMilliseconds": 45562,
+      "Peers": [
+        {
+          "Home": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Commands": 0
+        },
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Commands": 5
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Commands": 0
+        }
+      ]
+    }
+  ],
+  "Preparation": "Owner 4073c2e750cd349c3ee91b2f7c70fb49 spoke, accepted and delivered Wren\u0027s original funded quest, then closed dialogue in four ordinary commands; balance 200.\nOwner 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 83328, Z = 256, Cell = CellCoordinate { X = 101, Y = 325, Z = 1 } } \u2192 SubunitPosition { X = 25984, Y = 85376, Z = 256, Cell = CellCoordinate { X = 101, Y = 333, Z = 1 } }, 64 ordinary movement commits; no native travel claim.\nOwner 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 85376, Z = 256, Cell = CellCoordinate { X = 101, Y = 333, Z = 1 } } \u2192 SubunitPosition { X = 25984, Y = 87424, Z = 256, Cell = CellCoordinate { X = 101, Y = 341, Z = 1 } }, 64 ordinary movement commits; no native travel claim.\nOwner 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 87424, Z = 256, Cell = CellCoordinate { X = 101, Y = 341, Z = 1 } } \u2192 SubunitPosition { X = 25984, Y = 89472, Z = 256, Cell = CellCoordinate { X = 101, Y = 349, Z = 1 } }, 64 ordinary movement commits; no native travel claim.\nOwner 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 89472, Z = 256, Cell = CellCoordinate { X = 101, Y = 349, Z = 1 } } \u2192 SubunitPosition { X = 24960, Y = 89472, Z = 256, Cell = CellCoordinate { X = 97, Y = 349, Z = 1 } }, 32 ordinary movement commits; no native travel claim.",
+  "Scope": "Trade without Inventory or PrivateHistory; actual observed quote review, explicit lot showing, purchase/sale and owner-return invalidation. No archive discovery claim."
+}

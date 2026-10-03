@@ -119,6 +119,16 @@ Alternatively, build Debug and open `client/project.godot` with the pinned .NET 
 
 Open the pack with **I**, controller **View/Select**, or the **Pack** button. Inspect actual owned tools, materials and crafted supplies with hover, arrow keys/D-pad, Tab, or item selection. Inspection never equips, consumes, crafts or transfers anything. Counts aggregate display groups while keeping source/crafted and protected stock distinct; the underlying lots are unchanged. Item names and details cover the admitted farm catalog, with an explicit unfamiliar-item fallback. Native item icons, equipment/use actions and richer management remain future work.
 
+Open **History** with **H**, controller **left-stick click**, the HUD history icon, or the wheel's
+History button. It discovers completed exchanges and gifts for the current character, including
+archived records. Choose a row and **Inspect** to read its terms; **Next** reads older records from
+the same snapshot, and **Latest** starts again with the newest records. Record references distinguish
+similar entries, with full references in tooltips. Escape/controller B closes the screen. Browsing
+does not repeat an action, move goods or pause other participants. Operated characters require the
+separate PrivateHistory permission; Inventory and Trade are not required. Changing characters,
+losing focus or returning control clears the view. An older session that lacks this API reports that
+History is unavailable.
+
 Open **Recipes** from the HUD to browse the character’s admitted crafting recipes. Inspect ingredients
 and outputs, select a recipe, choose **Prepare**, then **Confirm craft** to spend the captured materials.
 Browsing and preparation reserve nothing. Changed materials or character selection require fresh
@@ -708,7 +718,8 @@ while you read. Confirm always uses the exact reviewed quote, quantity and chara
 
 Operated Trade shows open quotes. Saved terminal outcomes require separate PrivateHistory permission;
 the screen remembers only offers observed during the current shopper/stall visit, not an archive
-directory. Cancelling a waiting inquiry does not cancel a merchant's already-issued quote.
+directory. The independent History screen supplies that directory. Cancelling a waiting inquiry does
+not cancel a merchant's already-issued quote.
 
 `NativeTradingFixtureTests` earns the reward and lets Wren finish her funded build through ordinary
 cutoffs; with `OPENFANTASY_NATIVE_TRADING_FIXTURES` naming a fresh directory it exports `save.sqlite`,

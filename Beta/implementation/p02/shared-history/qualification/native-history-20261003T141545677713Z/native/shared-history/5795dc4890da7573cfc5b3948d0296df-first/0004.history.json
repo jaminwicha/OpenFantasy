@@ -1,0 +1,149 @@
+{
+  "Sequence": 4,
+  "Stage": "capture-history",
+  "Submissions": 0,
+  "History": {
+    "Open": true,
+    "IsBusy": false,
+    "State": "Empty",
+    "Notice": "No completed exchanges or gifts are recorded in this part of history.",
+    "ActorName": "Birch",
+    "Actor": "5795dc4890da7573cfc5b3948d0296df",
+    "Port": "2044baeed16f4552ae7745d567207571",
+    "Generation": 0,
+    "Capabilities": null,
+    "InventoryDisclosed": true,
+    "TradeDisclosed": true,
+    "ThroughRevision": 19,
+    "Before": null,
+    "Next": null,
+    "Entries": [],
+    "Selected": null,
+    "Detail": null
+  },
+  "Captures": [
+    {
+      "Sequence": 4,
+      "Name": "unrelated-home-empty",
+      "Image": "0004-history-unrelated-home-empty.png",
+      "History": {
+        "Open": true,
+        "IsBusy": false,
+        "State": "Empty",
+        "Notice": "No completed exchanges or gifts are recorded in this part of history.",
+        "ActorName": "Birch",
+        "Actor": "5795dc4890da7573cfc5b3948d0296df",
+        "Port": "2044baeed16f4552ae7745d567207571",
+        "Generation": 0,
+        "Capabilities": null,
+        "InventoryDisclosed": true,
+        "TradeDisclosed": true,
+        "ThroughRevision": 19,
+        "Before": null,
+        "Next": null,
+        "Entries": [],
+        "Selected": null,
+        "Detail": null
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Controls": [
+        {
+          "Name": "HistoryTitle",
+          "Bounds": {
+            "X": 42,
+            "Y": 42,
+            "Width": 765,
+            "Height": 36
+          },
+          "Text": "History \u00B7 Birch",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "CloseHistory",
+          "Bounds": {
+            "X": 819,
+            "Y": 38,
+            "Width": 99,
+            "Height": 44
+          },
+          "Text": "Close [Esc]",
+          "Disabled": false,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "HistoryDetails",
+          "Bounds": {
+            "X": 391,
+            "Y": 164,
+            "Width": 527,
+            "Height": 113
+          },
+          "Text": "Choose a completed exchange or gift, then Inspect.\n\nBrowsing history does not move goods, spend money or change permissions.",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "HistoryNotice",
+          "Bounds": {
+            "X": 42,
+            "Y": 425,
+            "Width": 876,
+            "Height": 23
+          },
+          "Text": "No completed exchanges or gifts are recorded in this part of history.",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "RefreshHistory",
+          "Bounds": {
+            "X": 42,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Latest",
+          "Disabled": false,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "NextHistory",
+          "Bounds": {
+            "X": 338,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Next",
+          "Disabled": true,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "InspectHistory",
+          "Bounds": {
+            "X": 634,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Inspect",
+          "Disabled": true,
+          "Kind": null,
+          "Subject": null
+        }
+      ]
+    }
+  ]
+}

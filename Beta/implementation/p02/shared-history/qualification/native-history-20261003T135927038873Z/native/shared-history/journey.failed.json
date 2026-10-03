@@ -1,0 +1,35 @@
+{
+  "Kind": "native-shared-history-v1",
+  "Status": "failed",
+  "Error": "Xunit.Sdk.EqualException: Assert.Equal() Failure: Values differ\nExpected: 0:32400000\nActual:   0:32488200\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer\u00601 comparer) in /_/src/xunit.v3.assert/Asserts/EqualityAsserts.cs:line 102\n   at Xunit.Assert.Equal[T](T expected, T actual) in /_/src/xunit.v3.assert/Asserts/EqualityAsserts.cs:line 36\n   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 98",
+  "AllowanceSeconds": 0,
+  "ElapsedMilliseconds": 18057,
+  "Stages": [
+    {
+      "Stage": "native-terminal-discovered-and-explicitly-inspected",
+      "ElapsedMilliseconds": 15775,
+      "Peers": [
+        {
+          "Home": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Commands": 2
+        },
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Commands": 0
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Commands": 0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "checkpoint": "checkpoint/verification-baseline-20261003T141411Z",
+  "sourceHead": "b3cc25423c0ad7a06184a3530890cfac3a6b9d28",
+  "sourceBefore": "7b0b43294c5389f7216ddeb14af3298a425effd35cba3d6e1f63df95abbe3ff5",
+  "sourceAfter": "33bfbd0122ca36ed95fae7fbc97f8650db3800232d30dee5be0cf816b984f8a6",
+  "targetedManifest": "manifests/2026-10-03-verification-baseline.json",
+  "frontmatterUnchanged": true,
+  "targets": [
+    "/Users/alucinor/.agents/skills/game-verification-loop/SKILL.md",
+    "/Users/alucinor/.codex/skills/game-verification-loop/SKILL.md",
+    "/Users/alucinor/.claude/skills/game-verification-loop/SKILL.md"
+  ],
+  "preflightDrift": {
+    "refusedBeforeEditing": true,
+    "oldManifestHash": "6a44e1679932843a12f3d10881714b4d31e1d7d70a01092c026e519fcbf3381b",
+    "actualSourceAndAllTargets": "7b0b43294c5389f7216ddeb14af3298a425effd35cba3d6e1f63df95abbe3ff5",
+    "cause": "Manifest still named the parent of committed source update b37a36f. All installed copies exactly match the maintained committed source; targeted sync retains actual expected-before hashes."
+  },
+  "backupDirectory": "/Users/alucinor/.local/state/game-dev-skill-backups/verification-baseline-20261003T141411Z",
+  "receipt": "/Users/alucinor/.local/state/game-dev-skill-backups/verification-baseline-20261003T141411Z/receipt.json",
+  "synchronizedEntrypoints": 3,
+  "validation": "All three exact installed hashes verified; YAML frontmatter unchanged. quick_validate could not run: system Python lacks PyYAML. No dependency installed; no executable behavior changed.",
+  "restore": "Use the retained sync receipt with guarded rollback, or restore exact sourceBefore bytes from the checkpoint only after confirming each current target matches sourceAfter.",
+  "ecosystemCommit": "0d062cd18a8e0393633567460fcee5d1c0d75c9e"
+}

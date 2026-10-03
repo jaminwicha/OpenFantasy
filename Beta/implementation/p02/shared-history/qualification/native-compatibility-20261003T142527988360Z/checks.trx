@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="886b61fb-bcbc-4294-800d-34074180f709" name="@mac 2026-10-03 09:25:34" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T09:25:34.4686550-05:00" queuing="2026-10-03T09:25:34.4686550-05:00" start="2026-10-03T09:25:29.1739080-05:00" finish="2026-10-03T09:25:41.2711160-05:00" />
+  <TestSettings name="default" id="2acead59-69b9-4de4-9ba9-b7128548beff">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_09_25_34" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="dfd37d4c-b511-40eb-b30f-bd494d913d4c" testId="d7babfea-e7ee-def9-10f8-8a3e5c4e8e4c" testName="OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: False)" computerName="mac" duration="00:00:04.5473890" startTime="2026-10-03T09:25:29.8657880-05:00" endTime="2026-10-03T09:25:34.4179910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dfd37d4c-b511-40eb-b30f-bd494d913d4c" />
+    <UnitTestResult executionId="7f7acd8f-53fd-4460-b879-6146305a78a0" testId="3a719cd3-934d-321f-50d7-49d018153a2c" testName="OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: True)" computerName="mac" duration="00:00:06.7485097" startTime="2026-10-03T09:25:34.4283040-05:00" endTime="2026-10-03T09:25:41.1772030-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7f7acd8f-53fd-4460-b879-6146305a78a0" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="3a719cd3-934d-321f-50d7-49d018153a2c">
+      <Execution id="7f7acd8f-53fd-4460-b879-6146305a78a0" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativePlayerProcessTests" name="Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativePlayerProcessTests.Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts(rendered: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="d7babfea-e7ee-def9-10f8-8a3e5c4e8e4c">
+      <Execution id="dfd37d4c-b511-40eb-b30f-bd494d913d4c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativePlayerProcessTests" name="Godot_player_walks_and_talks_over_actual_tls_and_host_history_matches_its_receipts" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d7babfea-e7ee-def9-10f8-8a3e5c4e8e4c" executionId="dfd37d4c-b511-40eb-b30f-bd494d913d4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3a719cd3-934d-321f-50d7-49d018153a2c" executionId="7f7acd8f-53fd-4460-b879-6146305a78a0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.15]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.30]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.43]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:11.79]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

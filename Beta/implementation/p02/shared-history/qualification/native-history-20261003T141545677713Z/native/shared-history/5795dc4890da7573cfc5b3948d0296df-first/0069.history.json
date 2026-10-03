@@ -1,0 +1,332 @@
+{
+  "Sequence": 69,
+  "Stage": "history-close",
+  "Submissions": 0,
+  "History": {
+    "Open": false,
+    "IsBusy": false,
+    "State": "Closed",
+    "Notice": null,
+    "ActorName": "Selected character",
+    "Actor": null,
+    "Port": null,
+    "Generation": null,
+    "Capabilities": null,
+    "InventoryDisclosed": false,
+    "TradeDisclosed": false,
+    "ThroughRevision": null,
+    "Before": null,
+    "Next": null,
+    "Entries": [],
+    "Selected": null,
+    "Detail": null
+  },
+  "Captures": [
+    {
+      "Sequence": 4,
+      "Name": "unrelated-home-empty",
+      "Image": "0004-history-unrelated-home-empty.png",
+      "History": {
+        "Open": true,
+        "IsBusy": false,
+        "State": "Empty",
+        "Notice": "No completed exchanges or gifts are recorded in this part of history.",
+        "ActorName": "Birch",
+        "Actor": "5795dc4890da7573cfc5b3948d0296df",
+        "Port": "2044baeed16f4552ae7745d567207571",
+        "Generation": 0,
+        "Capabilities": null,
+        "InventoryDisclosed": true,
+        "TradeDisclosed": true,
+        "ThroughRevision": 19,
+        "Before": null,
+        "Next": null,
+        "Entries": [],
+        "Selected": null,
+        "Detail": null
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Controls": [
+        {
+          "Name": "HistoryTitle",
+          "Bounds": {
+            "X": 42,
+            "Y": 42,
+            "Width": 765,
+            "Height": 36
+          },
+          "Text": "History \u00B7 Birch",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "CloseHistory",
+          "Bounds": {
+            "X": 819,
+            "Y": 38,
+            "Width": 99,
+            "Height": 44
+          },
+          "Text": "Close [Esc]",
+          "Disabled": false,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "HistoryDetails",
+          "Bounds": {
+            "X": 391,
+            "Y": 164,
+            "Width": 527,
+            "Height": 113
+          },
+          "Text": "Choose a completed exchange or gift, then Inspect.\n\nBrowsing history does not move goods, spend money or change permissions.",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "HistoryNotice",
+          "Bounds": {
+            "X": 42,
+            "Y": 425,
+            "Width": 876,
+            "Height": 23
+          },
+          "Text": "No completed exchanges or gifts are recorded in this part of history.",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "RefreshHistory",
+          "Bounds": {
+            "X": 42,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Latest",
+          "Disabled": false,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "NextHistory",
+          "Bounds": {
+            "X": 338,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Next",
+          "Disabled": true,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "InspectHistory",
+          "Bounds": {
+            "X": 634,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Inspect",
+          "Disabled": true,
+          "Kind": null,
+          "Subject": null
+        }
+      ]
+    },
+    {
+      "Sequence": 68,
+      "Name": "history-only-delegated-detail",
+      "Image": "0068-history-history-only-delegated-detail.png",
+      "History": {
+        "Open": true,
+        "IsBusy": false,
+        "State": "Ready",
+        "Notice": "Saved terms; viewing changes nothing.",
+        "ActorName": "Amber",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Port": "2044baeed16f4552ae7745d567207571",
+        "Generation": 1,
+        "Capabilities": "PrivateHistory",
+        "InventoryDisclosed": false,
+        "TradeDisclosed": false,
+        "ThroughRevision": 24,
+        "Before": null,
+        "Next": null,
+        "Entries": [
+          {
+            "Kind": "MaterialProposal",
+            "Subject": "0ed65d53bc8ac28c225dcec6c758da47",
+            "Counterparty": "79dddd9ea31bf745606a5473ea76ed14",
+            "ClosedAtSequence": 18,
+            "PaidQuoteStatus": null,
+            "MaterialProposalStatus": "Withdrawn"
+          }
+        ],
+        "Selected": {
+          "Kind": "MaterialProposal",
+          "Subject": "0ed65d53bc8ac28c225dcec6c758da47",
+          "Counterparty": "79dddd9ea31bf745606a5473ea76ed14",
+          "ClosedAtSequence": 18,
+          "PaidQuoteStatus": null,
+          "MaterialProposalStatus": "Withdrawn"
+        },
+        "Detail": {
+          "Entry": {
+            "Kind": "MaterialProposal",
+            "Subject": "0ed65d53bc8ac28c225dcec6c758da47",
+            "Counterparty": "79dddd9ea31bf745606a5473ea76ed14",
+            "ClosedAtSequence": 18,
+            "PaidQuoteStatus": null,
+            "MaterialProposalStatus": "Withdrawn"
+          },
+          "Proposal": {
+            "Subject": "0ed65d53bc8ac28c225dcec6c758da47",
+            "Status": "Withdrawn",
+            "ClosedAtSequence": 18,
+            "ExpiresAtAdvancingStep": 1205,
+            "GrantHash": "cc53909d373eeb6ab71b3e86ed9c2e471eb1adc30b60108b2b9856000f2e05f6",
+            "Terms": {
+              "World": "00b0d467071e98cf60f8bf7708515da1",
+              "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+              "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+              "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+              "Kind": "CountedSource",
+              "Lot": "003e66ea97412e2c91fc173d8eee1565",
+              "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+              "Version": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+              "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+              "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+              "Quantity": 1,
+              "ExpectedLotRevision": 0
+            }
+          },
+          "Quote": null
+        }
+      },
+      "Viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "Controls": [
+        {
+          "Name": "HistoryTitle",
+          "Bounds": {
+            "X": 42,
+            "Y": 42,
+            "Width": 765,
+            "Height": 36
+          },
+          "Text": "History \u00B7 Amber",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "CloseHistory",
+          "Bounds": {
+            "X": 819,
+            "Y": 38,
+            "Width": 99,
+            "Height": 44
+          },
+          "Text": "Close [Esc]",
+          "Disabled": false,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "@Button@237",
+          "Bounds": {
+            "X": 42,
+            "Y": 164,
+            "Width": 329,
+            "Height": 60
+          },
+          "Text": "Gift \u00B7 Withdrawn\nCedar \u00B7 #58da47",
+          "Disabled": false,
+          "Kind": "MaterialProposal",
+          "Subject": "0ed65d53bc8ac28c225dcec6c758da47"
+        },
+        {
+          "Name": "HistoryDetails",
+          "Bounds": {
+            "X": 391,
+            "Y": 164,
+            "Width": 527,
+            "Height": 171
+          },
+          "Text": "Gift \u00B7 Withdrawn\n\nFrom Amber\nTo Cedar\n\n1 \u00D7 Unidentified material",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "HistoryNotice",
+          "Bounds": {
+            "X": 42,
+            "Y": 425,
+            "Width": 876,
+            "Height": 23
+          },
+          "Text": "Saved terms; viewing changes nothing.",
+          "Disabled": null,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "RefreshHistory",
+          "Bounds": {
+            "X": 42,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Latest",
+          "Disabled": false,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "NextHistory",
+          "Bounds": {
+            "X": 338,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Next",
+          "Disabled": true,
+          "Kind": null,
+          "Subject": null
+        },
+        {
+          "Name": "InspectHistory",
+          "Bounds": {
+            "X": 634,
+            "Y": 458,
+            "Width": 284,
+            "Height": 44
+          },
+          "Text": "Inspect",
+          "Disabled": false,
+          "Kind": null,
+          "Subject": null
+        }
+      ]
+    }
+  ]
+}

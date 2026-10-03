@@ -85,6 +85,7 @@ public partial class FarmGame
         if (_input.MarketOpen) CloseMarket();
         if (_input.RecipesOpen) CloseRecipes();
         if (_input.CareOpen) CloseCare();
+        if (_input.HistoryOpen) CloseHistory();
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
         _input.SetInventoryOpen(true);
         SendMovement(0, 0);
@@ -173,6 +174,7 @@ public partial class FarmGame
         if (_input.MarketOpen) CloseMarket();
         if (_input.RecipesOpen) CloseRecipes();
         if (_input.CareOpen) CloseCare();
+        if (_input.HistoryOpen) CloseHistory();
         _recipeLibrary.Clear();
         _careLibrary.Clear();
         _targets?.Clear();

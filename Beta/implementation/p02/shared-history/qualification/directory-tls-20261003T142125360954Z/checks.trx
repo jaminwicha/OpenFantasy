@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="5be05a17-6753-45d1-b56a-ce025b76dc42" name="@mac 2026-10-03 09:21:29" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T09:21:29.3367180-05:00" queuing="2026-10-03T09:21:29.3367180-05:00" start="2026-10-03T09:21:26.0627880-05:00" finish="2026-10-03T09:22:01.2736710-05:00" />
+  <TestSettings name="default" id="12134040-c088-4609-819f-fe28142b4fca">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_09_21_29" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="b9362029-56ad-47ac-bce0-5f2bb139667f" testId="12070737-2957-fc3d-c665-f25f6ffe1f15" testName="OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke" computerName="mac" duration="00:00:34.1986939" startTime="2026-10-03T09:21:26.7937780-05:00" endTime="2026-10-03T09:22:00.9957910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b9362029-56ad-47ac-bce0-5f2bb139667f">
+      <Output>
+        <StdOut>5795dc4890da7573cfc5b3948d0296df: protocol=WaitingForActivation; selection=5795dc4890da7573cfc5b3948d0296df/4; ready=False; control=Available; combat=; calendar=0:32416200
+4073c2e750cd349c3ee91b2f7c70fb49: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/0; ready=False; control=Restored; combat=; calendar=0:32416200
+33.373s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99580
+33.390s 5795dc4890da7573cfc5b3948d0296df receive ControlResult request=428 bytes=548
+33.392s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=429 bytes=79
+33.430s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=429 bytes=106877
+33.450s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+33.453s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=430 bytes=278
+33.733s 5795dc4890da7573cfc5b3948d0296df receive SelectionQueryResult request=430 bytes=1086
+33.747s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=431 bytes=295
+33.750s 5795dc4890da7573cfc5b3948d0296df receive Refusal request=431 bytes=1
+33.756s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=432 bytes=292
+33.759s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=432 bytes=99580
+33.764s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+33.764s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=433 bytes=79
+33.768s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=433 bytes=106878
+33.772s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+33.862s 4073c2e750cd349c3ee91b2f7c70fb49 send Hello request=1 bytes=130
+33.863s 4073c2e750cd349c3ee91b2f7c70fb49 receive Welcome request=1 bytes=146
+33.863s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionSubscribe request=2 bytes=1
+33.887s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=2 bytes=102063
+33.891s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionDelivered request=0 bytes=25
+33.892s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=3 bytes=2
+33.892s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=3 bytes=1249
+33.892s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=4 bytes=2
+33.892s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=4 bytes=300
+33.892s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=5 bytes=71
+33.892s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=5 bytes=1270
+33.893s 4073c2e750cd349c3ee91b2f7c70fb49 send ControlRequest request=6 bytes=417
+33.910s 4073c2e750cd349c3ee91b2f7c70fb49 receive ControlResult request=6 bytes=531
+33.946s 5795dc4890da7573cfc5b3948d0296df receive SelectionObservation request=0 bytes=99581
+33.951s 5795dc4890da7573cfc5b3948d0296df receive SelectionDelivered request=0 bytes=25
+33.956s 5795dc4890da7573cfc5b3948d0296df send SelectionInput request=434 bytes=278
+33.957s 5795dc4890da7573cfc5b3948d0296df receive Refusal request=434 bytes=1</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="13501672-9721-45b9-beef-3fef3683b1e9" testId="07d851dd-c928-fdc0-4152-080d08fe04d0" testName="OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryApplicationTests.Legacy_remote_profile_does_not_advertise_an_unnegotiated_directory_capture" computerName="mac" duration="00:00:02.0331964" startTime="2026-10-03T09:21:26.7937780-05:00" endTime="2026-10-03T09:21:28.8317440-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="13501672-9721-45b9-beef-3fef3683b1e9" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryApplicationTests.Legacy_remote_profile_does_not_advertise_an_unnegotiated_directory_capture" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="07d851dd-c928-fdc0-4152-080d08fe04d0">
+      <Execution id="13501672-9721-45b9-beef-3fef3683b1e9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryApplicationTests" name="Legacy_remote_profile_does_not_advertise_an_unnegotiated_directory_capture" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests.Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="12070737-2957-fc3d-c665-f25f6ffe1f15">
+      <Execution id="b9362029-56ad-47ac-bce0-5f2bb139667f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.PrivateHistoryDirectory.PrivateHistoryDirectoryTlsTests" name="Fresh_tls_session_discovers_prior_terminal_records_and_history_only_delegate_loses_queued_read_on_return_and_revoke" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="12070737-2957-fc3d-c665-f25f6ffe1f15" executionId="b9362029-56ad-47ac-bce0-5f2bb139667f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="07d851dd-c928-fdc0-4152-080d08fe04d0" executionId="13501672-9721-45b9-beef-3fef3683b1e9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="2" executed="2" passed="2" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.15]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.31]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.44]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:34.75]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

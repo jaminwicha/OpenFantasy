@@ -1,0 +1,39 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.17]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.37]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.54]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:14.19]     OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return [FAIL]
+[xUnit.net 00:00:14.19]       Assert.Equal() Failure: Strings differ
+[xUnit.net 00:00:14.19]                           ↓ (pos 8)
+[xUnit.net 00:00:14.19]       Expected: "{\n        "Kind": "MaterialProposal",\n        "Sub"···
+[xUnit.net 00:00:14.19]       Actual:   "{\n      "Kind": "MaterialProposal",\n      "Subject"···
+[xUnit.net 00:00:14.19]                           ↑ (pos 8)
+[xUnit.net 00:00:14.20]       Stack Trace:
+[xUnit.net 00:00:14.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryEvidence.cs(43,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.AssertRecord(NativeRosterProcess process, EntityId actor, EntityId counterparty, EntityId subject, ConsentedMaterialTerms terms)
+[xUnit.net 00:00:14.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(77,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:14.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(167,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:14.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(167,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:14.20]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:14.21]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return [13 s]
+  Error Message:
+   Assert.Equal() Failure: Strings differ
+                    ↓ (pos 8)
+Expected: "{\n        "Kind": "MaterialProposal",\n        "Sub"···
+Actual:   "{\n      "Kind": "MaterialProposal",\n      "Subject"···
+                    ↑ (pos 8)
+  Stack Trace:
+     at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.AssertRecord(NativeRosterProcess process, EntityId actor, EntityId counterparty, EntityId subject, ConsentedMaterialTerms terms) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryEvidence.cs:line 43
+   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 77
+   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 167
+   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 167
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 14.7941 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-history/qualification/native-history-20261003T135717421494Z/checks.trx

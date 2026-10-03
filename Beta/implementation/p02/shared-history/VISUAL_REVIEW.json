@@ -1,0 +1,67 @@
+{
+  "acceptedWithinScope": true,
+  "scope": "Four 960x540 controlled-background screenshots from the final native material-history route. Readability and cleared actor-private state only; no production art, physical device, human comfort or all-resolution acceptance.",
+  "images": [
+    {
+      "image": "Beta/implementation/p02/shared-history/qualification/native-history-20261003T141545677713Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0004-history-unrelated-home-empty.png",
+      "sha256": "aa7e3d1b4abbb2250bd7aa72b9993a932c15b06eced2ca2c47d058c436d8131c",
+      "state": "Beta/implementation/p02/shared-history/qualification/native-history-20261003T141545677713Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0004.history.json",
+      "stateSha256": "e14ad1451af9718bd693f2f09259b2951d34e9e890ff64ba3d3bdb45c8c7f8f8",
+      "viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "observation": "Birch has no terminal records; no retained row or detail is displayed.",
+      "review": "Integration lead inspected the actual PNG; scenario asserts post-draw control and clipping bounds."
+    },
+    {
+      "image": "Beta/implementation/p02/shared-history/qualification/native-history-20261003T141545677713Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0068-history-history-only-delegated-detail.png",
+      "sha256": "29044395fd4e0d5552e527229feac87bfda7ab5bdf56e4141a329ad1afa8ead9",
+      "state": "Beta/implementation/p02/shared-history/qualification/native-history-20261003T141545677713Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0068.history.json",
+      "stateSha256": "b3c27b67776a3020f205a50540890c3821aaca727d0398d6c898e7cf3637f8fc",
+      "viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "observation": "Amber has one withdrawn gift to Cedar, quantity 1. Independent PrivateHistory scope with neither Inventory nor Trade disclosed. Inspect focus is visible; all factual summary text fits.",
+      "review": "Integration lead inspected the actual PNG; scenario asserts post-draw control and clipping bounds."
+    },
+    {
+      "image": "Beta/implementation/p02/shared-history/qualification/native-history-20261003T141545677713Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0073-history-explicit-reopened-detail.png",
+      "sha256": "77872b3d0f097cece5ea3643bb29a73f620f910afcf1447e722659887cdc2c97",
+      "state": "Beta/implementation/p02/shared-history/qualification/native-history-20261003T141545677713Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0073.history.json",
+      "stateSha256": "c090ae824b7364e1efaf2d6feb63200255066bad2b4782a142a5e6f961fcc08f",
+      "viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "observation": "The same terms appear only after fresh explicit inspection following close/reopen; one distinct row and readable detail.",
+      "review": "Integration lead inspected the actual PNG; scenario asserts post-draw control and clipping bounds."
+    },
+    {
+      "image": "Beta/implementation/p02/shared-history/qualification/native-history-20261003T141545677713Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0077-history-returned-home-empty.png",
+      "sha256": "7ee390cd0459e1f9014fcc2981a98c34d516da050090d536adcf5dc786c759ad",
+      "state": "Beta/implementation/p02/shared-history/qualification/native-history-20261003T141545677713Z/native/shared-history/5795dc4890da7573cfc5b3948d0296df-first/0077.history.json",
+      "stateSha256": "cffa09620ab072fc9435474dc0a4d1d73301d2c8a643232d16a3550c831af440",
+      "viewport": {
+        "X": 0,
+        "Y": 0,
+        "Width": 960,
+        "Height": 540
+      },
+      "observation": "Owner return and revocation restore Birch with no delegated rows or details.",
+      "review": "Integration lead inspected the actual PNG; scenario asserts post-draw control and clipping bounds."
+    }
+  ],
+  "knownLimits": [
+    "Native route has one material record; paid-quote rendering and multi-page row scrolling remain unproved.",
+    "PrivateHistory-only selection has no admitted material-name catalog; Unidentified material is truthful fallback, with disclosed definition/version in the tooltip. Catalog and tooltip presentation breadth remain open.",
+    "This is functional UI, not the final icon-led production skin."
+  ]
+}

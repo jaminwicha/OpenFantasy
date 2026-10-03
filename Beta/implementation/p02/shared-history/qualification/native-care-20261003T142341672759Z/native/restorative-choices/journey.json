@@ -1,0 +1,78 @@
+{
+  "Kind": "native-restorative-choices-v1",
+  "Status": "passed",
+  "AllowanceSeconds": 30.4787422,
+  "ElapsedMilliseconds": 47971,
+  "Stages": [
+    {
+      "Stage": "patient-withdrew-exact-permission-without-medicine",
+      "ElapsedMilliseconds": 42501,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Commands": 1
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "delegated-own-dose-paid-and-healed",
+      "ElapsedMilliseconds": 43098,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Commands": 2
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "unconsumed-crafted-dose-capture-refused",
+      "ElapsedMilliseconds": 45507,
+      "Peers": [
+        {
+          "Home": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Commands": 0
+        },
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Actor": "5795dc4890da7573cfc5b3948d0296df",
+          "Commands": 2
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+          "Commands": 0
+        }
+      ]
+    }
+  ],
+  "Preparation": "Journaled ordinary travel 5795dc4890da7573cfc5b3948d0296df: SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } } \u2192 SubunitPosition { X = 25984, Y = 83584, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } }, 8 samples; no native travel claim.\nJournaled ordinary travel e1d57b89bcce6b6237bd754d53734e55: SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } } \u2192 SubunitPosition { X = 26240, Y = 83072, Z = 256, Cell = CellCoordinate { X = 102, Y = 324, Z = 1 } }, 32 samples; no native travel claim.\nSource-stat first-wolf combat: all four humans made ordinary choices and read the victory; owner HP 14/60. No health/stat edit, aftermath dose, quest reward or native-combat claim.\nJournaled ordinary travel 5795dc4890da7573cfc5b3948d0296df: SubunitPosition { X = 25984, Y = 83584, Z = 256, Cell = CellCoordinate { X = 101, Y = 326, Z = 1 } } \u2192 SubunitPosition { X = 25728, Y = 83584, Z = 256, Cell = CellCoordinate { X = 100, Y = 326, Z = 1 } }, 8 samples; no native travel claim.\nJournaled ordinary travel e1d57b89bcce6b6237bd754d53734e55: SubunitPosition { X = 26240, Y = 83072, Z = 256, Cell = CellCoordinate { X = 102, Y = 324, Z = 1 } } \u2192 SubunitPosition { X = 25472, Y = 82816, Z = 256, Cell = CellCoordinate { X = 99, Y = 323, Z = 1 } }, 32 samples; no native travel claim.\nJournaled ordinary travel 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 83328, Z = 256, Cell = CellCoordinate { X = 101, Y = 325, Z = 1 } } \u2192 SubunitPosition { X = 27008, Y = 85120, Z = 256, Cell = CellCoordinate { X = 105, Y = 332, Z = 1 } }, 88 samples; no native travel claim.\nThree source gathering choices consumed actual work effort and finite berries, then recipe ce9910134d08f3ca97157fe4d0896f9f produced one Potion ad037d910cd9acd62e97f233a8faefc8; original raw Potion remains. No native harvesting/crafting claim.\nThe injured owner remains at the berry field, outside the stocked helper\u0027s mutual reach. Native withdrawal proves exact permission/no-cost; eligible-helper suppression is a separate managed contrast.",
+  "Scope": "Two existing distinct choice kinds; exact Recovery/CareDisposition without Inventory; source-stat injury and finite raw/crafted medicine. Multiple remedy definitions and otherwise-eligible helper suppression remain separate managed contrasts."
+}

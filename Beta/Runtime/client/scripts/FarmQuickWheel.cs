@@ -14,6 +14,7 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
     private Button _confirm = null!;
     private Button _close = null!;
     private Button _nextPage = null!;
+    private Button _history = null!;
     private Control? _returnFocus;
     private bool _canConfirm;
     internal FarmQuickWheelModel? Model { get; private set; }
@@ -29,6 +30,8 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
         _confirm = GetNode<Button>("%ConfirmChoice");
         _close = GetNode<Button>("%CloseWheel");
         _nextPage = GetNode<Button>("%NextWheelPage");
+        _history = GetNode<Button>("%WheelHistory");
+        _history.Pressed += () => ActionRequested?.Invoke(FarmSemanticAction.OpenHistory);
         _disc.SelectionChanged += RefreshDetails;
         _disc.ConfirmRequested += RequestConfirmation;
         _confirm.Pressed += RequestConfirmation;
@@ -46,7 +49,7 @@ internal sealed partial class FarmQuickWheel : CanvasLayer
 
     private void SetFocusChain(bool hasPages)
     {
-        Control[] controls = hasPages ? [_disc, _confirm, _nextPage, _close] : [_disc, _confirm, _close];
+        Control[] controls = hasPages ? [_disc, _confirm, _nextPage, _history, _close] : [_disc, _confirm, _history, _close];
         for (int i = 0; i < controls.Length; i++)
         {
             controls[i].FocusNext = controls[i].GetPathTo(controls[(i + 1) % controls.Length]);

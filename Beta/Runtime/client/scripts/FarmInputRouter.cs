@@ -24,12 +24,13 @@ internal static class FarmInputActions
     internal const string ClearTarget = "clear_target";
     internal const string Inventory = "inventory";
     internal const string QuickWheel = "quick_wheel";
+    internal const string History = "history";
 
     /// <summary>
     /// Routing priority. One device event may match several names (controller B is both Cancel and
     /// Craft); the owning layer takes the first name it binds.
     /// </summary>
-    internal static readonly IReadOnlyList<string> Routed = [Pause, Cancel, QuickWheel, Inventory, Interact, Give, Gather, Craft, NextTarget, ClearTarget];
+    internal static readonly IReadOnlyList<string> Routed = [Pause, Cancel, QuickWheel, Inventory, History, Interact, Give, Gather, Craft, NextTarget, ClearTarget];
 }
 
 /// <summary>Client intentions. The host still validates the actor, target, resources and revisions.</summary>
@@ -89,6 +90,11 @@ internal enum FarmSemanticAction
     CloseCare,
     PrepareCare,
     ConfirmCare,
+    OpenHistory,
+    CloseHistory,
+    RefreshHistory,
+    NextHistory,
+    InspectHistory,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -119,6 +125,7 @@ internal enum FarmInputLayer
     /// <summary>Known recipes and a separately prepared batch own input without changing world time.</summary>
     Recipes,
     Care,
+    History,
 }
 
 /// <summary>World facts the router does not own, read from the current projection at each decision.</summary>
@@ -240,6 +247,7 @@ internal sealed class FarmInputRouter
     internal bool MarketOpen { get; private set; }
     internal bool RecipesOpen { get; private set; }
     internal bool CareOpen { get; private set; }
+    internal bool HistoryOpen { get; private set; }
     internal bool ControlPending { get; private set; }
 
     /// <summary>
@@ -253,6 +261,7 @@ internal sealed class FarmInputRouter
         if (_unavailable) return FarmInputLayer.Unavailable;
         if (!Focused) return FarmInputLayer.Unfocused;
         if (ControlPending) return FarmInputLayer.ControlReturn;
+        if (HistoryOpen) return FarmInputLayer.History;
         if (CareOpen) return FarmInputLayer.Care;
         if (RecipesOpen) return FarmInputLayer.Recipes;
         if (InventoryOpen) return FarmInputLayer.Inventory;
@@ -301,6 +310,8 @@ internal sealed class FarmInputRouter
 
     internal void SetCareOpen(bool open) => CareOpen = open;
 
+    internal void SetHistoryOpen(bool open) => HistoryOpen = open;
+
     /// <summary>Whether the owning layer accepts this semantic action right now, from any source.</summary>
     internal bool Permits(FarmInputSituation situation, FarmSemanticAction action)
     {
@@ -309,7 +320,11 @@ internal sealed class FarmInputRouter
         {
             FarmSemanticAction.None => false,
             FarmSemanticAction.TogglePause => layer is not (FarmInputLayer.Unavailable or FarmInputLayer.Unfocused
-                or FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Recipes or FarmInputLayer.Care or FarmInputLayer.ControlReturn),
+                or FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Recipes or FarmInputLayer.Care or FarmInputLayer.History or FarmInputLayer.ControlReturn),
+            FarmSemanticAction.OpenHistory => situation.SessionOpen
+                && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused or FarmInputLayer.Wheel,
+            FarmSemanticAction.CloseHistory or FarmSemanticAction.RefreshHistory
+                or FarmSemanticAction.NextHistory or FarmSemanticAction.InspectHistory => layer == FarmInputLayer.History,
             FarmSemanticAction.OpenCare => situation.SessionOpen && !situation.ReadingHold && !situation.ActionPending
                 && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused,
             FarmSemanticAction.CloseCare => layer == FarmInputLayer.Care,
@@ -458,7 +473,7 @@ internal sealed class FarmInputRouter
     /// controller A, which is Talk in ordinary play. A layer command always keeps its press.
     /// </summary>
     private static bool LeavesAcceptToControl(FarmInputLayer layer, IReadOnlyList<string> actions) =>
-        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Market or FarmInputLayer.Recipes or FarmInputLayer.Care)
+        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Market or FarmInputLayer.Recipes or FarmInputLayer.Care or FarmInputLayer.History)
         && Resolve(layer, actions) == FarmSemanticAction.None;
 
     private static FarmSemanticAction Resolve(FarmInputLayer layer, IReadOnlyList<string> actions)
@@ -478,6 +493,10 @@ internal sealed class FarmInputRouter
     /// </summary>
     private static FarmSemanticAction Bind(FarmInputLayer layer, string action) => (layer, action) switch
     {
+        (FarmInputLayer.History, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.History
+            or FarmInputActions.Inventory or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseHistory,
+        (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused or FarmInputLayer.Wheel,
+            FarmInputActions.History) => FarmSemanticAction.OpenHistory,
         (FarmInputLayer.Care, FarmInputActions.Pause or FarmInputActions.Cancel
             or FarmInputActions.Inventory or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseCare,
         (FarmInputLayer.Recipes, FarmInputActions.Pause or FarmInputActions.Cancel

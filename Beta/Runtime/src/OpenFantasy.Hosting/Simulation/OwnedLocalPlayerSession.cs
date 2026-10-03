@@ -25,5 +25,9 @@ public sealed class OwnedLocalPlayerSession(LocalWorldSession world) : IPlayerSe
     public Task<LocalSelectedQueryResult<LocalPrivateHistoryPage>> ReadSelectedPrivateHistoryAsync(
         LocalActorSelection observed, LocalPrivateHistoryPageRequest request) =>
         _world.Player.ReadSelectedPrivateHistoryAsync(observed, request);
+    public Task<LocalSelectedQueryResult<PaidQuoteView?>> InspectSelectedPaidQuoteHistoryAsync(
+        LocalActorSelection observed, EntityId subject) => _world.Player.InspectSelectedPaidQuoteHistoryAsync(observed, subject);
+    public Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedMaterialProposalHistoryAsync(
+        LocalActorSelection observed, EntityId subject) => _world.Player.InspectSelectedMaterialProposalHistoryAsync(observed, subject);
     public ValueTask DisposeAsync() => _world.DisposeAsync();
 }

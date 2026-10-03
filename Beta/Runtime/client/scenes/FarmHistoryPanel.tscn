@@ -1,0 +1,164 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/FarmHistoryPanel.cs" id="1"]
+[ext_resource type="Texture2D" path="res://assets/ui/market-offers.svg" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+bg_color = Color(0.07, 0.12, 0.14, 0.99)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.64, 0.63, 0.49, 1)
+content_margin_left = 18.0
+content_margin_right = 18.0
+content_margin_top = 14.0
+content_margin_bottom = 14.0
+
+[sub_resource type="Theme" id="Theme"]
+default_font_size = 18
+PanelContainer/styles/panel = SubResource("PanelStyle")
+Label/colors/font_color = Color(0.94, 0.91, 0.81, 1)
+
+[node name="FarmHistoryPanel" type="CanvasLayer"]
+layer = 20
+script = ExtResource("1")
+
+[node name="HistoryRoot" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme")
+
+[node name="Shade" type="ColorRect" parent="HistoryRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.025, 0.045, 0.05, 0.7)
+
+[node name="Panel" type="PanelContainer" parent="HistoryRoot"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Column" type="VBoxContainer" parent="HistoryRoot/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Header" type="HBoxContainer" parent="HistoryRoot/Panel/Column"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HistoryTitle" type="Label" parent="HistoryRoot/Panel/Column/Header"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 26
+text = "History"
+autowrap_mode = 3
+
+[node name="CloseHistory" type="Button" parent="HistoryRoot/Panel/Column/Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+text = "Close [Esc]"
+tooltip_text = "Close History. Escape / controller B. No historical action is repeated."
+
+[node name="HistoryTime" type="Label" parent="HistoryRoot/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+text = "World continuing"
+
+[node name="HistoryPage" type="Label" parent="HistoryRoot/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+text = "Completed exchanges and gifts"
+
+[node name="Body" type="HBoxContainer" parent="HistoryRoot/Panel/Column"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="HistoryListScroll" type="ScrollContainer" parent="HistoryRoot/Panel/Column/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="HistoryList" type="VBoxContainer" parent="HistoryRoot/Panel/Column/Body/HistoryListScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="HistoryDetailsScroll" type="ScrollContainer" parent="HistoryRoot/Panel/Column/Body"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 96)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.6
+horizontal_scroll_mode = 0
+focus_mode = 2
+tooltip_text = "Read-only historical terms. When focused, arrows / D-pad scroll; Tab moves to the next control."
+
+[node name="HistoryDetails" type="Label" parent="HistoryRoot/Panel/Column/Body/HistoryDetailsScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+autowrap_mode = 3
+
+[node name="HistoryNotice" type="Label" parent="HistoryRoot/Panel/Column"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+autowrap_mode = 3
+text = "Choose a record, then Inspect."
+
+[node name="Commands" type="HBoxContainer" parent="HistoryRoot/Panel/Column"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="RefreshHistory" type="Button" parent="HistoryRoot/Panel/Column/Commands"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Latest"
+custom_minimum_size = Vector2(0, 44)
+tooltip_text = "Return to the beginning and explicitly read the newest first page. This does not retry a prior action."
+
+[node name="NextHistory" type="Button" parent="HistoryRoot/Panel/Column/Commands"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next"
+tooltip_text = "Read the next page of older records from this same history snapshot."
+
+[node name="InspectHistory" type="Button" parent="HistoryRoot/Panel/Column/Commands"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Inspect"
+icon = ExtResource("2")
+expand_icon = true
+theme_override_constants/icon_max_width = 24
+tooltip_text = "Read the selected record's exact historical terms. No goods or money move."

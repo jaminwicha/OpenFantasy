@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="8883df7e-ac01-4480-94b1-c7063430470d" name="@mac 2026-10-03 09:21:00" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T09:21:00.8599840-05:00" queuing="2026-10-03T09:21:00.8599840-05:00" start="2026-10-03T09:20:56.7411170-05:00" finish="2026-10-03T09:21:00.8637900-05:00" />
+  <TestSettings name="default" id="66931ecf-cda1-41f3-85cb-0720e2054738">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_09_21_00" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="25fd37e4-a840-471a-9602-9a25d9e34c0b" testId="f468b14d-706c-36c6-9219-933f3e84c18b" testName="OpenFantasy.Server.Tests.SharedHistoryNative.SharedHistoryInboundTests.Authorized_real_tls_reply_held_inbound_cannot_populate_a_closed_and_reopened_history_visit" computerName="mac" duration="00:00:03.2491764" startTime="2026-10-03T09:20:57.5207760-05:00" endTime="2026-10-03T09:21:00.7780700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25fd37e4-a840-471a-9602-9a25d9e34c0b">
+      <Output>
+        <StdOut>Held real inbound authorized record MaterialProposal/836e3f8521b9c436dbb8892903fc7477 closed at 9; old opening discarded; exactly two explicit directory queries and two original gameplay submissions. No owner-return delivery claim.
+4073c2e750cd349c3ee91b2f7c70fb49: protocol=WaitingForActivation; selection=4073c2e750cd349c3ee91b2f7c70fb49/0; ready=False; control=Available; combat=; calendar=0:32416200
+1.984s 4073c2e750cd349c3ee91b2f7c70fb49 send Hello request=1 bytes=130
+1.988s 4073c2e750cd349c3ee91b2f7c70fb49 receive Welcome request=1 bytes=146
+1.993s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionSubscribe request=2 bytes=1
+2.131s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=2 bytes=101071
+2.176s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionDelivered request=0 bytes=25
+2.177s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=3 bytes=2
+2.192s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=3 bytes=1249
+2.194s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=4 bytes=2
+2.196s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=4 bytes=300
+2.200s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=5 bytes=87
+2.202s 4073c2e750cd349c3ee91b2f7c70fb49 receive Pong request=5 bytes=0
+2.401s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=101072
+2.424s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=6 bytes=620
+2.450s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=7 bytes=2
+2.451s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=7 bytes=300
+2.497s 4073c2e750cd349c3ee91b2f7c70fb49 receive Receipt request=6 bytes=200
+2.604s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=102062
+2.623s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=8 bytes=332
+2.639s 4073c2e750cd349c3ee91b2f7c70fb49 receive Receipt request=8 bytes=200
+2.640s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=9 bytes=63
+2.640s 4073c2e750cd349c3ee91b2f7c70fb49 receive Pong request=9 bytes=0
+2.699s 4073c2e750cd349c3ee91b2f7c70fb49 send Query request=10 bytes=2
+2.699s 4073c2e750cd349c3ee91b2f7c70fb49 receive QueryResult request=10 bytes=300
+2.800s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionObservation request=0 bytes=102060
+2.815s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=11 bytes=65
+3.005s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionQueryResult request=11 bytes=802
+3.006s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=12 bytes=65
+3.158s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionQueryResult request=12 bytes=802
+3.172s 4073c2e750cd349c3ee91b2f7c70fb49 send SelectionInput request=13 bytes=82
+3.174s 4073c2e750cd349c3ee91b2f7c70fb49 receive SelectionQueryResult request=13 bytes=1528</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.SharedHistoryNative.SharedHistoryInboundTests.Authorized_real_tls_reply_held_inbound_cannot_populate_a_closed_and_reopened_history_visit" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="f468b14d-706c-36c6-9219-933f3e84c18b">
+      <Execution id="25fd37e4-a840-471a-9602-9a25d9e34c0b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.SharedHistoryNative.SharedHistoryInboundTests" name="Authorized_real_tls_reply_held_inbound_cannot_populate_a_closed_and_reopened_history_visit" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f468b14d-706c-36c6-9219-933f3e84c18b" executionId="25fd37e4-a840-471a-9602-9a25d9e34c0b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.15]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.32]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.46]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:03.77]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

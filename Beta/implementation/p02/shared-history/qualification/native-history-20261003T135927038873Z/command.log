@@ -1,0 +1,33 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.18]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.43]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.69]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:19.87]     OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return [FAIL]
+[xUnit.net 00:00:19.87]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:19.87]       Expected: 0:32400000
+[xUnit.net 00:00:19.87]       Actual:   0:32488200
+[xUnit.net 00:00:19.87]       Stack Trace:
+[xUnit.net 00:00:19.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(98,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:19.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(167,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:19.87]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs(167,0): at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return()
+[xUnit.net 00:00:19.87]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:19.89]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return [19 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 0:32400000
+Actual:   0:32488200
+  Stack Trace:
+     at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 98
+   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 167
+   at OpenFantasy.Server.Tests.SharedHistoryNative.NativeSharedHistoryTests.Native_history_discovers_real_terms_and_history_only_delegate_loses_private_screen_on_owner_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedHistoryNative/NativeSharedHistoryTests.cs:line 167
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 20.4079 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-history/qualification/native-history-20261003T135927038873Z/checks.trx
