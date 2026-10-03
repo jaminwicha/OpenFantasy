@@ -1,0 +1,165 @@
+{
+  "sourceCommit": "6a723bed9ede06a0dbb794526a5a8ca6ad259776",
+  "report": "qualification/server-compatibility-20261003T014306918878Z/report.json",
+  "trace": "qualification/server-compatibility-20261003T014306918878Z/host-timing-23585-42b382b1641d476fa2c7d2ff5e7cbcd5.json",
+  "traceSha256": "9a790014c573d7d565e365016014f9ea291b378c6dfc57d6c31a98e8da0f4b6b",
+  "applicationProcessId": 23585,
+  "events": 4338,
+  "dropped": 0,
+  "invalid": 0,
+  "spansMilliseconds": {
+    "projection": {
+      "count": 200,
+      "max": 55.994875,
+      "median": 0.5225,
+      "total": 861.0436579999999
+    },
+    "publication.hash": {
+      "count": 390,
+      "max": 17.102417,
+      "median": 0.00075,
+      "total": 130.631574
+    },
+    "tick": {
+      "count": 357,
+      "max": 181.307,
+      "median": 0.010958,
+      "total": 792.646715
+    },
+    "attach": {
+      "count": 46,
+      "max": 7.187916,
+      "median": 0.695375,
+      "total": 58.697376
+    },
+    "session.cleanup": {
+      "count": 46,
+      "max": 36.680417,
+      "median": 0.448125,
+      "total": 104.970793
+    },
+    "client.send": {
+      "count": 129,
+      "max": 6.656167,
+      "median": 0.025667,
+      "total": 22.160826
+    },
+    "server.send": {
+      "count": 137,
+      "max": 20.201458,
+      "median": 0.048125,
+      "total": 90.447881
+    },
+    "replica": {
+      "count": 65,
+      "max": 57.902875,
+      "median": 22.369042,
+      "total": 1461.407791
+    },
+    "commit": {
+      "count": 33,
+      "max": 114.561834,
+      "median": 9.817875,
+      "total": 437.55791600000003
+    },
+    "disconnect": {
+      "count": 29,
+      "max": 4.667166,
+      "median": 0.029417,
+      "total": 7.079252
+    }
+  },
+  "movementAges": [
+    {
+      "owner": "f1ff6cc6bda647b1b17c61352806d4d5",
+      "milliseconds": 27.9601,
+      "timestamp": 184315684073000
+    },
+    {
+      "owner": "f1ff6cc6bda647b1b17c61352806d4d5",
+      "milliseconds": 252.1657,
+      "timestamp": 184315908231166
+    },
+    {
+      "owner": "f1ff6cc6bda647b1b17c61352806d4d5",
+      "milliseconds": 303.0457,
+      "timestamp": 184315959110875
+    },
+    {
+      "owner": "8698926ce6b44cc7b82f00fde03be00d",
+      "milliseconds": 22.4976,
+      "timestamp": 184316158426666
+    },
+    {
+      "owner": "8698926ce6b44cc7b82f00fde03be00d",
+      "milliseconds": 73.5141,
+      "timestamp": 184316209444416
+    },
+    {
+      "owner": "8698926ce6b44cc7b82f00fde03be00d",
+      "milliseconds": 129.1141,
+      "timestamp": 184316265043625
+    },
+    {
+      "owner": "8698926ce6b44cc7b82f00fde03be00d",
+      "milliseconds": 249.432,
+      "timestamp": 184316385361000
+    },
+    {
+      "owner": "acfc6002d1074270a1bc3eca80616016",
+      "milliseconds": 27.4645,
+      "timestamp": 184316667608250
+    },
+    {
+      "owner": "acfc6002d1074270a1bc3eca80616016",
+      "milliseconds": 85.2277,
+      "timestamp": 184316725370291
+    },
+    {
+      "owner": "acfc6002d1074270a1bc3eca80616016",
+      "milliseconds": 164.0721,
+      "timestamp": 184316804214458
+    },
+    {
+      "owner": "1edd98d18bf74f648e6d446cec722679",
+      "milliseconds": 10.2083,
+      "timestamp": 184317018211500
+    },
+    {
+      "owner": "1edd98d18bf74f648e6d446cec722679",
+      "milliseconds": 60.0868,
+      "timestamp": 184317068091291
+    },
+    {
+      "owner": "1edd98d18bf74f648e6d446cec722679",
+      "milliseconds": 110.4225,
+      "timestamp": 184317118425666
+    },
+    {
+      "owner": "1edd98d18bf74f648e6d446cec722679",
+      "milliseconds": 162.5554,
+      "timestamp": 184317170558208
+    }
+  ],
+  "finalCounters": {
+    "ThreadPoolThreads": 11,
+    "PendingWorkItems": 0,
+    "CompletedWorkItems": 3859,
+    "AvailableWorkerThreads": 32767,
+    "AvailableIoThreads": 1000,
+    "MaximumWorkerThreads": 32767,
+    "MaximumIoThreads": 1000,
+    "Generation0Collections": 1254,
+    "Generation1Collections": 449,
+    "Generation2Collections": 45,
+    "ManagedHeapBytes": 116647384,
+    "AllocatedBytes": 13295424952,
+    "WorkingSetBytes": 286670848
+  },
+  "limits": [
+    "The unchanged traced server selection passed76 with one Windows-only skip; it did not reproduce or explain the previous failures.",
+    "Timings include GC/scheduling suspension; they are not CPU attribution.",
+    "Cumulative allocation includes fixtures, diagnostics and application work, not per-player or peak usage.",
+    "The separate process-enumeration sample matched no descendant; it supplies no stall/CPU evidence. Actual test application is distinguished here by its gameplay event capture, versus two discovery captures containing only counters."
+  ]
+}
