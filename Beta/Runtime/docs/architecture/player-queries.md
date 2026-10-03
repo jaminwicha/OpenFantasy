@@ -30,6 +30,51 @@ root. The original market record therefore remains available without another rep
 Current control is checked before retrieval and participant disclosure afterward; unknown and foreign
 subjects reveal no publishing root. Corruption after the requested event still refuses the entire read.
 
+## Explicit actor-selection queries
+
+[Selected local queries](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.SelectedQueries.cs)
+are a separate internal interface. Each request captures the exact immutable selection: home actor,
+operated actor, port identity, generation and assignment witness. The port supplies its actual trusted
+delivery. Legacy query methods continue to address the home actor and are never relabeled as another
+actor's result. A selected interface does not change the existing wire operations or their bytes.
+
+| Selected operation | Required delegated capability | Information returned |
+|---|---|---|
+| Submit, cancel or read trade inquiry | Trade | The inquiry owned by that exact selection |
+| Inspect open paid quote | Trade | One current open participant quote |
+| Inspect open material proposal | Inventory | One current open participant proposal |
+| Inspect paid quote or proposal history | PrivateHistory | One actual terminal participant outcome, live or archived |
+
+PrivateHistory is independent of Trade and Inventory. It does not expose actionable open offers,
+current stock or balances. Tactical advances can make an offer due while its book remains open;
+exploration expiry closes that book through an actual terminal publication. Neither selected open
+inspection nor terminal history exposes the intervening due-but-unclosed entry. Terminal proposal inspection omits the sender-presence pin used to prepare a live decision. Unknown,
+foreign and wrong-lifecycle subjects return an absent value after authorization. Null-witness home
+reads retain permanent entitlement; inquiry mutation also requires the port's available control.
+
+The host checks the selection and capability at admission, after entering serialization and before
+publishing the result. [Typed storage readers](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.SelectedInspections.cs)
+independently check current authority under the writer gate before subject lookup and enforce the
+open/terminal distinction. Open reads use only the current root. Archived reads retain the complete
+verified replay, pinned head and exact quote publishing root described above. Neither path creates a
+cache, new journal, new grant or synthetic owner delivery.
+
+A [selected result](../../src/OpenFantasy.Hosting/Simulation/EffectiveControl/LocalSelectedQueryResult.cs)
+retains the captured world, branch, selection, operation and subject. Its `ValidateFor` method compares
+that context with the observation and request being presented. A transition that occurs after a lawful
+read completes still invalidates application of its result. Returning to the same actor does not restore
+the old generation. The result itself grants no execution authority; accepting an offer remains a
+separate command checked against current world state. Consumers must apply this validation when
+binding selected responses to presentation; the legacy network response is not a selected envelope.
+
+Selected and legacy reads share each port's existing quote/proposal inspection slots. A selected key
+includes operation, subject and the complete selection. Identical running work shares its task;
+a different operation or generation is busy until that work finishes. Switching never clears an
+active slot or abandons its worker. History work remains off the caller's thread and holds host
+serialization, so normal host selection/revocation waits for it. Shutdown joins admitted work before
+releasing storage. Expected stale or revoked requests are refusals, not host faults; damaged durable
+history still fences authority and fails the session.
+
 ## Wire values and correlation
 
 [PlayerQuery](../../src/OpenFantasy.Hosting/Networking/PlayerQuery.cs) is a closed set of typed

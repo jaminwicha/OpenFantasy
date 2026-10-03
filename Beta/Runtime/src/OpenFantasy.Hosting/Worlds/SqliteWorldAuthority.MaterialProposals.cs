@@ -98,27 +98,34 @@ public sealed partial class SqliteWorldAuthority
             {
                 throw new AuthorityDispatchException("The delivery cannot access this actor's proposals.");
             }
-            if (_state.Coordination?.Proposals is not { } live || _usage.MaterialCareArchiveCount == 0
-                || live.FindOpen(proposalId) is not null || live.FindOutcome(proposalId) is not null)
+            return ReadRecordedProposalUnderGate(proposalId, actorId, project);
+        }
+    }
+
+    // Caller holds _gate and has already authenticated this actor before any subject lookup.
+    private T ReadRecordedProposalUnderGate<T>(EntityId proposalId, EntityId actorId,
+        Func<WorldSnapshot, WorldMaterialProposalOutcome?, T> project)
+    {
+        if (_state.Coordination?.Proposals is not { } live || _usage.MaterialCareArchiveCount == 0
+            || live.FindOpen(proposalId) is not null || live.FindOutcome(proposalId) is not null)
+        {
+            return project(_state, null);
+        }
+        try
+        {
+            RecordedWorldMaterialProposalOutcome recorded =
+                new WorldJournalRecovery().ReadMaterialProposalOutcome(_database, proposalId);
+            if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
             {
-                return project(_state, null);
+                throw new InvalidDataException("Proposal retrieval does not match the pinned live head.");
             }
-            try
-            {
-                RecordedWorldMaterialProposalOutcome recorded =
-                    new WorldJournalRecovery().ReadMaterialProposalOutcome(_database, proposalId);
-                if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
-                {
-                    throw new InvalidDataException("Proposal retrieval does not match the pinned live head.");
-                }
-                WorldMaterialProposalOutcome? archived = recorded.Outcome;
-                return project(_state, archived is not null && archived.Proposal.HasParticipant(actorId) ? archived : null);
-            }
-            catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
-            {
-                _requiresRecovery = true;
-                throw;
-            }
+            WorldMaterialProposalOutcome? archived = recorded.Outcome;
+            return project(_state, archived is not null && archived.Proposal.HasParticipant(actorId) ? archived : null);
+        }
+        catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
+        {
+            _requiresRecovery = true;
+            throw;
         }
     }
 }

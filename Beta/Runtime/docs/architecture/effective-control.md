@@ -155,6 +155,10 @@ revisions, and unfinished construction project/storage/tool choices. It keeps ca
 than reading fresh authority while the player confirms them. Material selection takes larger stacks
 first with stable identity ties to respect bounded request sizes. Home and selected observations come
 from one published root.
-Recording PrivateHistory supplies no history reader. Selected asynchronous queries require their own
-captured-generation admission and response contract. TLS/Godot selection and consent interfaces need
-explicit wire and presentation bindings; internal local APIs do not establish native reachability.
+[Selected asynchronous queries](player-queries.md#explicit-actor-selection-queries) preserve the exact
+captured selection through admission, serialized reads and response validation. Trade and Inventory
+expose only their open participant offers; PrivateHistory independently permits actual terminal quote
+and proposal history through narrowly authorized storage readers. Home history remains permanently
+home-bound. Inquiry ownership includes the port and generation, so transition cleanup cannot cancel
+another selection's request. TLS/Godot selection and consent interfaces need explicit wire and
+presentation bindings; internal local APIs do not establish native reachability.

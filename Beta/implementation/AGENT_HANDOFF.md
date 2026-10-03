@@ -19,6 +19,27 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Selected participant queries](p02/selected-player-queries/RESULT.md) now bind asynchronous inspections
+and transient inquiry ownership to exact port/actor/generation/witness context. Trade and Inventory
+expose their respective open offers; PrivateHistory independently exposes terminal participant history.
+Actual tactical expiry, archive/reopen, corruption, revocation, stale responses, bounded task sharing and
+shutdown are covered. Merchant issuance preserves real attribution and custody; a separate genuine
+confrontation targets the grantee's home actor without answering its selected actor's inquiry. Full
+home-character combat decision/resolution remains open. Legacy wire operations remain home-bound.
+
+The warning-free build, 16 new checks, 78 storage regressions, full 1,885 Core checks and 76 server
+checks pass; the Windows-only ACL case is explicitly skipped on this Mac. Retained server diagnostics
+do not reproduce the earlier failed movement sample or close that timing gate.
+The affected query aggregate has 125 passes and two original socket-history timeouts. One bounded
+three-case diagnostic passes with unchanged limits, but does not explain or erase the aggregate failures.
+[Latency evidence](p02/selected-player-queries/HISTORY_LATENCY.md) and the
+[final manifest](p02/selected-player-queries/FINAL_CHECKS.json) retain exact named outcomes and limits.
+The independent source review and current architecture references accompany the implementation.
+All 759 prior tests/fixtures, 23 specs and unrelated staging are preserved. Before-change ref
+`codex/checkpoint-before-selected-player-queries-20261003T042305Z` preserves `2a885656`;
+`codex/milestone-selected-player-queries-20261003` records the bounded scope, not full regression,
+latency, TLS/Godot selection, native/crash or phase acceptance. External Claude remains terminally limited.
+
 [Local actor selection](p02/local-actor-selection/RESULT.md) now binds internal input to a separate
 selected actor, immutable home port, exact custody witness and monotonic generation. Transitions clear
 readiness/movement/inquiry/unaccepted input; stale zero/false commands cannot affect a later selection.
@@ -118,8 +139,10 @@ including the failed broader gates. Before-change ref:
 
 1. Bind the internal local selection to explicit TLS/Godot consent/selection and profile39/40 client
    startup paths. Preserve immutable home identity, scoped observations and deliberate generation-bound
-   Resume. Implement selected asynchronous query admission/response checks and separately authorized
-   private-history readers; old A→B→A responses must never become valid in a later selection.
+   Resume. Bind the implemented selected-query envelopes/readers to explicit wire requests and client
+   response validation; old A→B→A responses must never become valid in a later selection. Use the
+   [connected binding notes](p02/selected-player-queries/TLS_BINDING_NOTES.md) for actual entrypoints,
+   versioning, aggregate payload limits and the required four-human journey.
 2. Keep the grantee's own human character's ordinary decisions/holds. Autonomous owner input cannot
    compete while assigned; accepted obligations finish before safe return. Transport loss cannot
    restart the original allowance or manufacture presence. Permission is not a socket or UI selection.
@@ -134,7 +157,8 @@ including the failed broader gates. Before-change ref:
 
 Combat + traversal + recovery remains a provisional simple preset, not an owner-approved preference.
 Offers carry explicit scopes. Inventory, trade, production, conversation/quests, care disposition and
-private history remain independently scoped; recording private-history scope implements no reader.
+private history remain independently scoped. Internal selected history readers are implemented;
+their authenticated TLS and Godot binding remains required.
 No production world or lived save upgrades automatically.
 
 ## Relevant inherited behavior and evidence

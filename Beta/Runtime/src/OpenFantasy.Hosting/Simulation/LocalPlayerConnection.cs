@@ -75,6 +75,20 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
         _host.SetSelectedMovement(this, observed, dx, dy);
     internal Task<WorldActionReceipt> SubmitSelectedAction(LocalActorSelection observed, WorldActionCommand command) =>
         _host.SubmitSelectedAction(this, observed, command);
+    internal Task<LocalSelectedQueryResult<LocalTradeInquiryView>> SubmitSelectedTradeInquiryAsync(
+        LocalActorSelection observed, LocalTradeInquiry inquiry) => _host.SubmitSelectedTradeInquiryAsync(this, observed, inquiry);
+    internal Task<LocalSelectedQueryResult<LocalTradeInquiryView?>> CancelSelectedTradeInquiryAsync(LocalActorSelection observed) =>
+        _host.CancelSelectedTradeInquiryAsync(this, observed);
+    internal Task<LocalSelectedQueryResult<LocalTradeInquiryView?>> ReadSelectedTradeInquiryAsync(LocalActorSelection observed) =>
+        _host.ReadSelectedTradeInquiryAsync(this, observed);
+    internal Task<LocalSelectedQueryResult<PaidQuoteView?>> InspectSelectedOpenPaidQuoteAsync(LocalActorSelection observed, EntityId subject) =>
+        _host.InspectSelectedOpenPaidQuoteAsync(this, observed, subject);
+    internal Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedOpenMaterialProposalAsync(LocalActorSelection observed, EntityId subject) =>
+        _host.InspectSelectedOpenMaterialProposalAsync(this, observed, subject);
+    internal Task<LocalSelectedQueryResult<PaidQuoteView?>> InspectSelectedPaidQuoteHistoryAsync(LocalActorSelection observed, EntityId subject) =>
+        _host.InspectSelectedPaidQuoteHistoryAsync(this, observed, subject);
+    internal Task<LocalSelectedQueryResult<MaterialProposalView?>> InspectSelectedMaterialProposalHistoryAsync(LocalActorSelection observed, EntityId subject) =>
+        _host.InspectSelectedMaterialProposalHistoryAsync(this, observed, subject);
     internal Task<WorldControlWitness> AcquireControlAsync(LocalControlAcquisition observed) =>
         _host.AcquireControlAsync(this, observed);
     internal Task ReleaseControlAsync(WorldControlWitness observed) => _host.ReleaseControlAsync(this, observed);

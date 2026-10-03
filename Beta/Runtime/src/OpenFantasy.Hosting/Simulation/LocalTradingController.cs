@@ -47,7 +47,7 @@ internal sealed class LocalTradingController
     private readonly List<Inquiry> _waiting = [];
     private readonly Dictionary<EntityId, Attempt> _attempts = [];
     private readonly List<PlannedAnswer> _answers = [];
-    private readonly ConcurrentDictionary<EntityId, LocalTradeInquiryView> _inquiries = new();
+    private readonly ConcurrentDictionary<EntityId, PublishedInquiry> _inquiries = new();
     private ulong _sequence;
 
     internal LocalTradingController(WorldSnapshot state, EntityId playerActorId, LocalTradingConfiguration configuration)
@@ -82,38 +82,59 @@ internal sealed class LocalTradingController
 
     /// <summary>The original player's current or last inquiry, published for frame-safe reading.</summary>
     internal LocalTradeInquiryView? PlayerInquiry => ReadInquiry(_playerActorId);
-    internal LocalTradeInquiryView? ReadInquiry(EntityId actorId) => _inquiries.GetValueOrDefault(actorId);
+    internal LocalTradeInquiryView? ReadInquiry(EntityId actorId) => _inquiries.GetValueOrDefault(actorId)?.View;
+    internal LocalTradeInquiryView? ReadInquiry(EntityId actorId, LocalActorSelection? owner) =>
+        _inquiries.TryGetValue(actorId, out var inquiry) && inquiry.Owner == owner ? inquiry.View : null;
     internal void ForgetInquiry(EntityId actorId) => _inquiries.TryRemove(actorId, out _);
+
+    // Serialization required. A closing port cannot cancel or erase a replacement port's inquiry.
+    internal void ForgetPortInquiries(LocalActorSelection owner)
+    {
+        foreach (Inquiry waiting in _waiting.Where(value => value.Owner?.PortId == owner.PortId).ToArray())
+            Close(waiting, LocalTradeInquiryState.Cancelled);
+        foreach (var entry in _inquiries.Where(value => value.Value.Owner?.PortId == owner.PortId).ToArray())
+            _inquiries.TryRemove(entry.Key, out _);
+    }
 
     /// <summary>
     /// Admits one shopper's inquiry. A shopper has at most one waiting inquiry: repeating identical terms shares
     /// it and different terms are refused until it is answered, expires or is cancelled.
     /// </summary>
     internal LocalTradeInquiryView Admit(EntityId shopperActorId, EntityId requestId, LocalTradeInquiry request,
-        ulong advancingSteps)
+        ulong advancingSteps, LocalActorSelection? owner = null, TrustedCommandDelivery? delivery = null)
     {
         ArgumentNullException.ThrowIfNull(request);
+        if (owner is not null && (owner.ActorId != shopperActorId || delivery is null))
+            throw new ArgumentException("A human inquiry requires its captured actor selection and delivery.", nameof(owner));
         if (_waiting.FirstOrDefault(value => value.ShopperActorId == shopperActorId) is { } waiting)
         {
-            return waiting.Request == request ? waiting.View
+            return waiting.Owner == owner && waiting.Request == request ? waiting.View
                 : throw new AuthorityDispatchException("One trade inquiry is awaiting its answer.");
         }
         var inquiry = new Inquiry(checked(++_sequence), shopperActorId, requestId, request,
-            checked(advancingSteps + _inquiryLifetime));
+            checked(advancingSteps + _inquiryLifetime), owner, delivery);
         _waiting.Add(inquiry);
         Publish(inquiry);
         return inquiry.View;
     }
 
     /// <summary>Withdraws a waiting inquiry before any cutoff answers it; an issued quote keeps its world lifecycle.</summary>
-    internal LocalTradeInquiryView? Cancel(EntityId shopperActorId)
+    internal LocalTradeInquiryView? Cancel(EntityId shopperActorId, LocalActorSelection? owner = null)
     {
         if (_waiting.FirstOrDefault(value => value.ShopperActorId == shopperActorId) is not { } waiting)
         {
-            return ReadInquiry(shopperActorId);
+            return ReadInquiry(shopperActorId, owner);
         }
+        if (waiting.Owner != owner)
+            throw new AuthorityDispatchException("The waiting inquiry belongs to another actor selection.");
         Close(waiting, LocalTradeInquiryState.Cancelled);
         return waiting.View;
+    }
+
+    internal void CancelSelection(LocalActorSelection owner)
+    {
+        if (_waiting.FirstOrDefault(value => value.ShopperActorId == owner.ActorId && value.Owner == owner) is { } waiting)
+            Close(waiting, LocalTradeInquiryState.Cancelled);
     }
 
     /// <summary>
@@ -312,6 +333,13 @@ internal sealed class LocalTradingController
     private void Answer(Round round, Inquiry inquiry)
     {
         WorldSnapshot state = round.State;
+        if (inquiry.Owner is { } owner && (inquiry.Delivery is not { } delivery
+            || !WorldActorCommandAuthority.IsCurrentWitness(state, owner.ActorId, delivery,
+                owner.ControlWitness, WorldControlCapabilities.Trade)))
+        {
+            Close(inquiry, LocalTradeInquiryState.Cancelled);
+            return;
+        }
         // Locality first: a missing, distant, absent, unable or unconfigured market reveals nothing else.
         MarketBinding? market = WorldMarketLocality.FindAvailable(state, inquiry.ShopperActorId, inquiry.Request.MarketId);
         if (market is null || !_merchants.TryGetValue(market.MerchantActorId, out LocalMerchantPreference? preference)
@@ -447,12 +475,14 @@ internal sealed class LocalTradingController
 
     private void Publish(Inquiry inquiry)
     {
-        _inquiries[inquiry.ShopperActorId] = inquiry.View;
+        _inquiries[inquiry.ShopperActorId] = new(inquiry.Owner, inquiry.View);
     }
 
     private sealed class Inquiry(ulong sequence, EntityId shopperActorId, EntityId requestId, LocalTradeInquiry request,
-        ulong expiresAtStep)
+        ulong expiresAtStep, LocalActorSelection? owner, TrustedCommandDelivery? delivery)
     {
+        internal LocalActorSelection? Owner { get; } = owner;
+        internal TrustedCommandDelivery? Delivery { get; } = delivery;
         internal ulong Sequence { get; } = sequence;
         internal EntityId ShopperActorId { get; } = shopperActorId;
         internal EntityId RequestId { get; } = requestId;
@@ -464,6 +494,7 @@ internal sealed class LocalTradingController
     }
 
     private sealed record PlannedAnswer(EntityId CommandId, EntityId QuoteId, Inquiry Inquiry);
+    private sealed record PublishedInquiry(LocalActorSelection? Owner, LocalTradeInquiryView View);
 
     /// <summary>One host shopper attempt: the circumstances it began under, its starting step and whether it has asked.</summary>
     private sealed class Attempt(EntityId circumstances, ulong startedAtStep)

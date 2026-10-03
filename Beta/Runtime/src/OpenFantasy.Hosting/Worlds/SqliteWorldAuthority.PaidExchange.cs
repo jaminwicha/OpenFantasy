@@ -94,36 +94,43 @@ public sealed partial class SqliteWorldAuthority
             {
                 throw new AuthorityDispatchException("The delivery cannot access this actor's quotes.");
             }
-            if (_state.Coordination?.PaidExchange is not { } live || _usage.MaterialCareArchiveCount == 0
-                || live.FindOpen(quoteId) is not null || live.FindOutcome(quoteId) is not null)
+            return ReadRecordedPaidQuoteUnderGate(quoteId, actorId, project);
+        }
+    }
+
+    // Caller holds _gate and has already authenticated this actor before any subject lookup.
+    private T ReadRecordedPaidQuoteUnderGate<T>(EntityId quoteId, EntityId actorId,
+        Func<WorldSnapshot, WorldPaidQuoteOutcome?, T> project)
+    {
+        if (_state.Coordination?.PaidExchange is not { } live || _usage.MaterialCareArchiveCount == 0
+            || live.FindOpen(quoteId) is not null || live.FindOutcome(quoteId) is not null)
+        {
+            return project(_state, null);
+        }
+        try
+        {
+            RecordedWorldPaidQuoteOutcome recorded = new WorldJournalRecovery().ReadPaidQuoteOutcome(_database, quoteId);
+            if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
+            {
+                throw new InvalidDataException("Quote retrieval does not match the pinned live head.");
+            }
+            WorldPaidQuoteOutcome? archived = recorded.Outcome;
+            if (archived is null || !archived.Quote.HasParticipant(actorId))
             {
                 return project(_state, null);
             }
-            try
+            if (recorded.PublishingState is not { } publishing || publishing.Revision != archived.WorldSequence
+                || publishing.Coordination?.PaidExchange?.FindOutcome(quoteId) is not { } published
+                || published.ContentHash != archived.ContentHash)
             {
-                RecordedWorldPaidQuoteOutcome recorded = new WorldJournalRecovery().ReadPaidQuoteOutcome(_database, quoteId);
-                if (recorded.SourceHeadRevision != _state.Revision || recorded.SourceHeadHash != _stateHash)
-                {
-                    throw new InvalidDataException("Quote retrieval does not match the pinned live head.");
-                }
-                WorldPaidQuoteOutcome? archived = recorded.Outcome;
-                if (archived is null || !archived.Quote.HasParticipant(actorId))
-                {
-                    return project(_state, null);
-                }
-                if (recorded.PublishingState is not { } publishing || publishing.Revision != archived.WorldSequence
-                    || publishing.Coordination?.PaidExchange?.FindOutcome(quoteId) is not { } published
-                    || published.ContentHash != archived.ContentHash)
-                {
-                    throw new InvalidDataException("The archived quote's publishing root does not match the pinned live head.");
-                }
-                return project(publishing, archived);
+                throw new InvalidDataException("The archived quote's publishing root does not match the pinned live head.");
             }
-            catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
-            {
-                _requiresRecovery = true;
-                throw;
-            }
+            return project(publishing, archived);
+        }
+        catch (Exception error) when (error is IOException or InvalidDataException or SqliteException)
+        {
+            _requiresRecovery = true;
+            throw;
         }
     }
 }

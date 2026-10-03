@@ -231,8 +231,7 @@ public sealed partial class LocalWorldSession
             player.Pending = null;
             _players.Remove(player.ActorId);
         }
-        _trading.Cancel(player.ActorId);
-        _trading.ForgetInquiry(player.ActorId);
+        _trading.ForgetPortInquiries(player.Selection);
     }
 
     private static async Task AwaitPlayerInspectionsAsync(LocalPlayerConnection player)

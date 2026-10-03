@@ -1,0 +1,158 @@
+{
+  "localQueryBehaviorVerified": true,
+  "allSelectedRegressionsPassed": false,
+  "fullCoPlayerFeatureAccepted": false,
+  "historyLatencyGateClosed": false,
+  "movementTimingGateClosed": false,
+  "nativeSelectionQualified": false,
+  "preChangeCheckpoint": "codex/checkpoint-before-selected-player-queries-20261003T042305Z",
+  "sourceHead": "2a8856564e1fe7681907e453d15deb1159ba738d",
+  "milestone": "codex/milestone-selected-player-queries-20261003",
+  "protectedCounts": {
+    "tests": 759,
+    "specs": 23
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "acd5f9384720ad6e11287adbf391408d4ea19d2add850f75e787af2486dfceec",
+  "currentSourceAndBinariesMatchEveryNamedReport": true,
+  "distinctCasesPassingAtLeastOneRecordedFinalSourceRun": 2182,
+  "unresolvedAggregateFailures": [
+    "OpenFantasy.Hosting.Tests.Networking.PlayerQueries.PlayerProposalQueryTests.Archived_proposal_preserves_terms_and_filters_foreign_subjects_without_changing_history",
+    "OpenFantasy.Hosting.Tests.Networking.PlayerQueries.PlayerTradeQueryTests.Archived_paid_quote_is_exact_for_participant_and_absent_for_authenticated_outsider_over_sockets"
+  ],
+  "failedCasesAlsoPassFocusedDiagnostic": true,
+  "reports": {
+    "build": {
+      "report": "qualification/build-20261003T050023980634Z/report.json",
+      "sha256": "b67d6678f7aa69b539fd9b1f05218e9d6acf1f15904218d884511c5aaec0f023",
+      "accepted": true,
+      "seconds": 12.14597516701906,
+      "outcomes": null
+    },
+    "selected-queries": {
+      "report": "qualification/selected-queries-20261003T050050360764Z/report.json",
+      "sha256": "5858e9344a2b15bb457bb0300a4e2cb2bb6d4ed66282c4d03dd8c976a0681a4c",
+      "accepted": true,
+      "seconds": 36.73591366701294,
+      "outcomes": {
+        "Passed": 16
+      }
+    },
+    "query-compatibility": {
+      "report": "qualification/query-compatibility-20261003T050201519078Z/report.json",
+      "sha256": "44c411ffb1e23c5d7c734e3f5e3c7a8826e2e03bed911429d28cfe5e7a0eb043",
+      "accepted": false,
+      "seconds": 135.70329612499336,
+      "outcomes": {
+        "Failed": 2,
+        "Passed": 125
+      }
+    },
+    "history-diagnostic": {
+      "report": "qualification/history-diagnostic-20261003T051023413629Z/report.json",
+      "sha256": "b3458a485412fc75528469416ea737406ce6eccf7444ea90a6c2e336f1b6d2ef",
+      "accepted": true,
+      "seconds": 21.370431749994168,
+      "outcomes": {
+        "Passed": 3
+      }
+    },
+    "storage-compatibility": {
+      "report": "qualification/storage-compatibility-20261003T051106582509Z/report.json",
+      "sha256": "c545053684bf2fe0d103c61c3ffc1a14483309439908cecf585222bb6a35f7ef",
+      "accepted": true,
+      "seconds": 89.72304154199082,
+      "outcomes": {
+        "Passed": 78
+      }
+    },
+    "core": {
+      "report": "qualification/core-20261003T051307216108Z/report.json",
+      "sha256": "7679182316878791238ccce47428f766279d5384162f3e11d0d30029a84a2b56",
+      "accepted": true,
+      "seconds": 126.92504008300602,
+      "outcomes": {
+        "Passed": 1885
+      }
+    },
+    "server-compatibility": {
+      "report": "qualification/server-compatibility-20261003T051533267971Z/report.json",
+      "sha256": "48211fcd5445f9eb84ecf671bb9032d5454abf858afa1d8e5841b84691c5daf8",
+      "accepted": true,
+      "seconds": 30.90030808301526,
+      "outcomes": {
+        "Passed": 76,
+        "NotExecuted": 1
+      }
+    }
+  },
+  "retainedFailedAttempts": [
+    {
+      "report": "qualification/build-20261003T044939405218Z/report.json",
+      "sha256": "9adee51fbe5f8b998727929e831bd03fd79a01ff49c2088561ad1b0813b5bbef",
+      "outcomes": null,
+      "exitCode": 1
+    },
+    {
+      "report": "qualification/merchant-20261003T045033342383Z/report.json",
+      "sha256": "fe78a4f859d8b63b77497a3a1bd7b238be59d694eebfa13bcc9982ee4cea7071",
+      "outcomes": {
+        "Failed": 1
+      },
+      "exitCode": 1
+    },
+    {
+      "report": "qualification/merchant-20261003T045233764569Z/report.json",
+      "sha256": "5d948c764d9de0e200c3fee37ada13db9983e53a717bb8a9afcfb25696bd5d67",
+      "outcomes": {
+        "Failed": 1
+      },
+      "exitCode": 1
+    },
+    {
+      "report": "qualification/query-compatibility-20261003T050201519078Z/report.json",
+      "sha256": "44c411ffb1e23c5d7c734e3f5e3c7a8826e2e03bed911429d28cfe5e7a0eb043",
+      "outcomes": {
+        "Failed": 2,
+        "Passed": 125
+      },
+      "exitCode": 1
+    },
+    {
+      "report": "qualification/selected-queries-20261003T044020850834Z/report.json",
+      "sha256": "80967ac402deedc8f8ceba3b47512e82437e724720992530878d34b454d09857",
+      "outcomes": {
+        "Passed": 14,
+        "Failed": 1
+      },
+      "exitCode": 1
+    },
+    {
+      "report": "qualification/selected-queries-20261003T044454088299Z/report.json",
+      "sha256": "b33e4bc58a5abf13b590b9bd08244d887eef8f859458ebb9201dd175e5ae5c4c",
+      "outcomes": {
+        "Failed": 1,
+        "Passed": 14
+      },
+      "exitCode": 1
+    }
+  ],
+  "serverSelectionMatchesPriorCaseNames": true,
+  "serverTimingAnalysis": {
+    "path": "qualification/server-compatibility-20261003T051533267971Z/ANALYSIS.json",
+    "claim": "Actual .NET10.0.12 application process; no failed movement reproduced; timing gate remains open."
+  },
+  "openProofs": [
+    "Two original archived socket-history timeouts in the affected query aggregate; passing diagnostic does not explain failures",
+    "Earlier movement timing failure and production history/service latency reliability",
+    "TLS/Godot consent and actor selection; explicit profile39/40 client startup admission",
+    "Wire binding of selected queries and exact client response validation; native reachability",
+    "Positive delegated human-builder construction and helper treatment/decline journeys",
+    "Complete selected-home combat decision/resolution; entry alone is proven",
+    "Profile40 process-kill and complete four-human feature/archive/reopen/native qualification",
+    "Full campaign, content migration, platform, physical-device, art, human and production acceptance"
+  ],
+  "delegation": "Native bounded workers and one critic; no external provider request or external-credit savings claim.",
+  "changedDocumentLocalLinksChecked": 222,
+  "changedCsFilesNamingChecked": 16
+}

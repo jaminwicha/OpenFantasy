@@ -30,7 +30,7 @@ public sealed partial class LocalWorldSession
             {
                 throw new AuthorityDispatchException("This saved profile admits no local market inquiries.");
             }
-            return _trading.Admit(player.ActorId, NewRequestId(), inquiry, state.AdvancingSteps);
+            return _trading.Admit(player.ActorId, NewRequestId(), inquiry, state.AdvancingSteps, player.Selection, player.Delivery);
         }
         finally { _serialization.Release(); }
     }
@@ -47,7 +47,7 @@ public sealed partial class LocalWorldSession
         try
         {
             lock (_inputs) { EnsurePlayerAvailable(player); RequireUnboundHomeInput(player); }
-            return _trading.Cancel(player.ActorId);
+            return _trading.Cancel(player.ActorId, player.Selection);
         }
         finally { _serialization.Release(); }
     }

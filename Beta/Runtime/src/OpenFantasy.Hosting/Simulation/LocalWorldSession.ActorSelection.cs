@@ -124,7 +124,7 @@ public sealed partial class LocalWorldSession
     {
         ulong generation = checked(player.Selection.Generation + 1);
         ClearUnacceptedControlInput(player, state);
-        _trading.Cancel(player.ActorId);
+        _trading.CancelSelection(player.Selection);
         player.Selection = player.Selection with { ActorId = actorId, Generation = generation, ControlWitness = witness };
         player.ControlledView = null;
         player.SelectedRegions = actorId != player.ActorId && player.Regions is not null ? new LocalRegionObserver(actorId) : null;

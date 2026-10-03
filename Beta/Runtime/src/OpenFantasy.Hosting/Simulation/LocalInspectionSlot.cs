@@ -9,8 +9,8 @@ namespace OpenFantasy.Hosting.Simulation;
 /// </summary>
 internal sealed class LocalInspectionSlot<TResult>(string busyMessage)
 {
-    private EntityId _subject;
-    private Task<TResult>? _lookup;
+    private LocalInspectionKey? _key;
+    private Task? _lookup;
 
     /// <summary>The latest admitted lookup, finished or not.</summary>
     internal Task? Latest => _lookup;
@@ -18,12 +18,21 @@ internal sealed class LocalInspectionSlot<TResult>(string busyMessage)
     internal Task<TResult> Admit(EntityId subject, Func<EntityId, Task<TResult>> start)
     {
         ArgumentNullException.ThrowIfNull(start);
+        return Admit(new LocalInspectionKey(subject), () => start(subject));
+    }
+
+    internal Task<T> Admit<T>(LocalInspectionKey key, Func<Task<T>> start)
+    {
+        ArgumentNullException.ThrowIfNull(key);
+        ArgumentNullException.ThrowIfNull(start);
         if (_lookup is { IsCompleted: false } outstanding)
         {
-            return _subject == subject ? outstanding : throw new AuthorityDispatchException(busyMessage);
+            return _key == key && outstanding is Task<T> identical
+                ? identical : throw new AuthorityDispatchException(busyMessage);
         }
-        _subject = subject;
-        _lookup = start(subject);
-        return _lookup;
+        _key = key;
+        Task<T> lookup = start();
+        _lookup = lookup;
+        return lookup;
     }
 }

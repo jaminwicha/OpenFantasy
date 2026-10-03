@@ -1,0 +1,46 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.80]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.97]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.36]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:07.34]     OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedInquiryTradingTests.Merchant_answers_selected_owner_under_its_own_delivery_without_exposing_the_offer_as_history [FAIL]
+[xUnit.net 00:00:07.35]       System.InvalidOperationException : The admitted stocked host markets have no reachable in-person approach.
+[xUnit.net 00:00:07.35]       Stack Trace:
+[xUnit.net 00:00:07.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SelectedQueries/SelectedQueryTradingFixture.cs(78,0): at OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedQueryTradingFixture.FindMarketApproach(WorldSnapshot state, EntityId actor)
+[xUnit.net 00:00:07.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SelectedQueries/SelectedQueryTradingFixture.cs(34,0): at OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedQueryTradingFixture..ctor()
+[xUnit.net 00:00:07.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SelectedQueries/SelectedQueryTradingFixture.cs(83,0): at OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedQueryTradingFixture.Open()
+[xUnit.net 00:00:07.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SelectedQueries/SelectedInquiryTradingTests.cs(12,0): at OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedInquiryTradingTests.Merchant_answers_selected_owner_under_its_own_delivery_without_exposing_the_offer_as_history()
+[xUnit.net 00:00:07.35]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedInquiryTradingTests.Merchant_answers_selected_owner_under_its_own_delivery_without_exposing_the_offer_as_history [4 s]
+  Error Message:
+   System.InvalidOperationException : The admitted stocked host markets have no reachable in-person approach.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedQueryTradingFixture.FindMarketApproach(WorldSnapshot state, EntityId actor) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SelectedQueries/SelectedQueryTradingFixture.cs:line 78
+   at OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedQueryTradingFixture..ctor() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SelectedQueries/SelectedQueryTradingFixture.cs:line 34
+   at OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedQueryTradingFixture.Open() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SelectedQueries/SelectedQueryTradingFixture.cs:line 83
+   at OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedInquiryTradingTests.Merchant_answers_selected_owner_under_its_own_delivery_without_exposing_the_offer_as_history() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/SelectedQueries/SelectedInquiryTradingTests.cs:line 12
+--- End of stack trace from previous location ---
+  Passed OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedLocalQueryTests.Pending_permanent_home_can_inspect_but_cannot_mutate_while_its_actor_is_delegated [5 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedLocalQueryTests.Actor_cycle_invalidates_captured_results_and_cancels_only_the_outgoing_inquiry [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Open_inspection_requires_its_own_scope_independently(capability: Inventory) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedLocalQueryTests.Shared_slots_deduplicate_exact_requests_bound_other_kinds_and_join_on_shutdown [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Open_inspection_requires_its_own_scope_independently(capability: Trade) [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Inventory_and_trade_read_current_participant_terms_but_do_not_confer_private_history [1 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Revoked_replaced_and_foreign_deliveries_refuse_before_any_recorded_lookup [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.SelectedQueries.SelectedLocalQueryTests.Revocation_before_a_waiting_read_executes_refuses_without_failing_the_host [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Archived_capture_cannot_escape_corrupted_later_history_and_failed_read_fences_authority(quote: False) [2 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Archived_capture_cannot_escape_corrupted_later_history_and_failed_read_fences_authority(quote: True) [3 s]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Live_terminal_proposal_history_also_strips_presence_and_never_returns_open_terms [717 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Tactical_time_can_make_open_books_due_but_neither_actionable_inspection_nor_terminal_history_discloses_them [945 ms]
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Missing_and_another_participants_subjects_are_indistinguishable_and_open_reads_never_replay_history [7 s]
+[xUnit.net 00:00:36.03]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Worlds.SelectedInspections.SelectedInspectionTests.Private_history_alone_returns_archived_terminal_terms_and_original_market_after_full_original_genesis_reopen [4 s]
+
+Test Run Failed.
+Total tests: 15
+     Passed: 14
+     Failed: 1
+ Total time: 37.0672 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-player-queries/qualification/selected-queries-20261003T044454088299Z/checks.trx

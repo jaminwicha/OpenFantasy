@@ -61,6 +61,20 @@ and `FindRecordedQuote` for any controller with its own delivery. Its offer and 
 accept an already selected root, which the scheduled controller uses, so cutoff decisions and direct calls
 share one pricing and pinning path.
 
+## Selected human inquiry ownership
+
+The [explicit selected-query interface](player-queries.md#explicit-actor-selection-queries) addresses
+the operated actor while retaining the authenticated player's home identity. Human inquiries carry
+an exact selection owner: port identity, generation, actor and witness. At most one inquiry still waits
+per shopper; identical terms share it only for the same owner. Reading, cancelling or forgetting an
+inquiry for another selection does not disclose or alter that inquiry.
+
+Switching selection cancels the outgoing owner's waiting inquiry. Returning home, losing the port,
+revocation and control return do not retarget cleanup to an incoming selection. An already-issued
+quote keeps its world lifecycle. Configured host shoppers retain their own inquiry path and the same
+FIFO ordering. Merchant answers still use the merchant's actual delivery and the operated shopper as
+counterparty; a delegate never becomes the merchant or the permanent owner of that shopper.
+
 ## Participant quote view
 
 A `PaidQuoteView` is the participant-safe projection of a quote. It is produced only for the issuer or the
@@ -76,9 +90,10 @@ agreed quantity and totals. It never carries:
 
 A quote issued under a market rule names its market (`MarketId`), read from the canonical
 `MarketQuoteRecord` of the same root that holds the quote or its outcome; a bilateral paid quote names none.
-Live views use the current market book. An archived outcome no longer has a live record, so the explicit
-recorded inspection projects it against the recorded root that published the outcome (a second verified
-replay against the same pinned head), whose market book still holds the record. The record's stock basis
+Live views use the current market book. An archived outcome no longer has a live record, so one complete
+verified replay captures the exact root that published the outcome while authenticating the later head.
+Recorded inspection projects against that publishing root, whose market book still holds the record.
+The record's stock basis
 and rule version stay private. No client table or issuer-and-commodity guess supplies market identity.
 
 The issuer's presence revision is present only for the counterparty of an open quote that can actually reach
