@@ -1,0 +1,15 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.17]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.34]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.46]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:56.24]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Passed OpenFantasy.Server.Tests.SelectedGiftsNative.NativeSelectedGiftJourneyTests.Inventory_only_native_delegate_and_recipient_choose_each_raw_gift_boundary_without_changing_owner_identity [55 s]
+
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 56.6038 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-production/qualification/native-gifts-20261003T085303549414Z/checks.trx

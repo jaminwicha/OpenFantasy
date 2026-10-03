@@ -124,6 +124,11 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "gift-cancel": await CancelGift(); break;
             case "gift-snapshot": SnapshotGift(request.GetProperty("Direction").GetString()!); break;
             case "capture-gifts": await CaptureGifts(); break;
+            case "production-target": await SelectProductionTarget(RequestActor(request)); break;
+            case "production-review": await ReviewProduction(request.GetProperty("Direction").GetString()!, RequestActor(request)); break;
+            case "production-confirm": await ConfirmProduction(request.GetProperty("Direction").GetString() ?? "Applied"); break;
+            case "production-cancel": await CancelProduction(); break;
+            case "capture-production": await ObserveProductionPresentation(request.GetProperty("Direction").GetString() ?? "production", saveImage: true); break;
             case "try-pending-resume": await TryPendingResume(); break;
             case "focus-return": await FocusReturn(); break;
             case "hold-right": SetRight(true); await _driver.Delay(0.15); break;
@@ -132,7 +137,8 @@ internal sealed partial class NativeRosterPlayProbe : Node
             default: throw new InvalidDataException("Unsupported roster mailbox verb.");
         }
         if (_stage.StartsWith("control-", StringComparison.Ordinal) || _stage.StartsWith("selected-", StringComparison.Ordinal)
-            || _stage.StartsWith("gift-", StringComparison.Ordinal) || _stage is "capture-selection" or "capture-gifts")
+            || _stage.StartsWith("gift-", StringComparison.Ordinal) || _stage.StartsWith("production-", StringComparison.Ordinal)
+            || _stage is "capture-selection" or "capture-gifts" or "capture-production")
             MarketProbeDriver.Require(requestElapsed.Elapsed < TimeSpan.FromSeconds(20), "The selected native request exceeded twenty seconds.");
         return false;
     }

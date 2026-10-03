@@ -95,14 +95,9 @@ internal static class FarmSelectedActionOffers
                     questIntent is CompleteDeliveryQuestIntent ? $"{quests[0].RequiredQuantity} quest items" : FarmActionOffers.NoCost,
                     questIntent);
         }
-        if (view.Production?.CraftPreparation is { Recipes.Count: 1 } craft)
-        {
-            var recipe = craft.Recipes[0];
-            var request = craft.Prepare(recipe.RecipeId);
-            Add(FarmSemanticAction.Craft, "Craft " + recipe.Key, "Selected character's pack", null,
-                string.Join(", ", recipe.Terms.Where(term => term.Role == RecipeMaterialRole.Input)
-                    .Select(term => $"{term.Quantity} × {term.DefinitionId}")), request is null ? null : new CraftIntent(request));
-        }
+        if (view.Production is not null)
+            FarmProductionActionOffers.Add(offers, FarmProductionPresentation.From(observation), scope,
+                target, woodDefinitionId ?? default, berryDefinitionId);
         if (view.Inventory is not null)
             MaterialProposalActionOffers.Add(FarmInventoryPresentation.From(observation), scope, gifts, offers,
                 woodDefinitionId, berryDefinitionId);

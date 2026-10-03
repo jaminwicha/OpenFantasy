@@ -1,0 +1,1423 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "00b0d467071e98cf60f8bf7708515da1",
+  "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+  "Inputs": [
+    {
+      "Stage": "control-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Characters",
+      "X": 89.5,
+      "Y": 103
+    },
+    {
+      "Stage": "control-close",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Close",
+      "X": 905,
+      "Y": 111.5
+    },
+    {
+      "Stage": "resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftRecipient",
+      "To": "GiftLess"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLess",
+      "To": "GiftMore"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftMore",
+      "To": "PrepareGift"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "PrepareGift",
+      "To": "GiftOffer"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLot",
+      "X": 266,
+      "Y": 265
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftRecipient",
+      "X": 266,
+      "Y": 341
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLess",
+      "X": 77.5,
+      "Y": 383
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftMore",
+      "X": 454.5,
+      "Y": 383
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "PrepareGift",
+      "X": 266,
+      "Y": 425
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOffer",
+      "X": 686,
+      "Y": 231
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftHistory",
+      "X": 686,
+      "Y": 394
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftDraftDetails",
+      "X": 266,
+      "Y": 414.5
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "up",
+      "Toward": "GiftOfferDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOfferDetails",
+      "X": 686,
+      "Y": 278.5
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftRecipient",
+      "To": "GiftLess"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLess",
+      "To": "GiftMore"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftMore",
+      "To": "PrepareGift"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "PrepareGift",
+      "To": "GiftOffer"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLot",
+      "X": 266,
+      "Y": 265
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftRecipient",
+      "X": 266,
+      "Y": 341
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLess",
+      "X": 77.5,
+      "Y": 383
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftMore",
+      "X": 454.5,
+      "Y": 383
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "PrepareGift",
+      "X": 266,
+      "Y": 425
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOffer",
+      "X": 686,
+      "Y": 231
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftHistory",
+      "X": 686,
+      "Y": 394
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftDraftDetails",
+      "X": 266,
+      "Y": 414.5
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "up",
+      "Toward": "GiftOfferDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOfferDetails",
+      "X": 686,
+      "Y": 278.5
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadRight"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "PrepareGift",
+      "X": 266,
+      "Y": 391
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "PrepareGift",
+      "X": 266,
+      "Y": 391
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "pause",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftRecipient",
+      "To": "GiftLess"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLess",
+      "To": "GiftMore"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftMore",
+      "To": "PrepareGift"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "PrepareGift",
+      "To": "GiftOffer"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadRight"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "pause",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    }
+  ],
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000100000001097101ECE1A1F93A60699A32A97C0C91D000000102A3BF4A2D199E985D9952E1CA35156D400000010889790B637E60C2D6CD55B55EF6C32B40000001079DDDD9EA31BF745606A5473EA76ED140000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000000564F464300000000010000000300000026776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D6465636C696E6500000008000000000000000100000010677E4B65C371337D2CE29A0BFEB6D2B1",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001097101ECE1A1F93A60699A32A97C0C91D000000102A3BF4A2D199E985D9952E1CA35156D40000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020E35AD3403F45CCAD56C4365C5262C24742118525BC4F3E03593A2E5BD84346E700000008000000000000001F000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001000000010231434FC8FDD223DFAFC6213FF94802B000000102A3BF4A2D199E985D9952E1CA35156D400000010889790B637E60C2D6CD55B55EF6C32B40000001079DDDD9EA31BF745606A5473EA76ED140000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001AF4F464300000000010000000600000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D61636365707400000008000000000000000100000010C10E116F7C4C09C06E7060989D3FAB27000000206EF4B0A2436405D6F9735839D1653B8AE1E617D94F136AE50C363D4D346309D7000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000104073C2E750CD349C3EE91B2F7C70FB490000001079DDDD9EA31BF745606A5473EA76ED140000000800000000000000010000001008F30A9CE5BA1789CE277AC9145E8EAE0000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE00000010F363D2D7B9D1F8596B94191F29B8D1DF000000100EE1D51F7ABF576C0F56ABD3C81BE46A000000080000000000000001000000080000000000000000000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010231434FC8FDD223DFAFC6213FF94802B000000102A3BF4A2D199E985D9952E1CA35156D40000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020FE0BB059F0E05D2AF1DA0FA25B8CDCB370EF0B54EF6E66D82750BC8BD15870E8000000080000000000000046000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001000000010A4B1987D7B6078DBD1D1398B6653BE9A000000102A3BF4A2D199E985D9952E1CA35156D400000010889790B637E60C2D6CD55B55EF6C32B40000001079DDDD9EA31BF745606A5473EA76ED140000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001774F464300000000010000000400000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D637265617465000000080000000000000001000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000001079DDDD9EA31BF745606A5473EA76ED14000000104073C2E750CD349C3EE91B2F7C70FB490000000800000000000000010000001008F30A9CE5BA1789CE277AC9145E8EAE0000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE000000100EE1D51F7ABF576C0F56ABD3C81BE46A00000010F363D2D7B9D1F8596B94191F29B8D1DF0000000800000000000000010000000800000000000000010000000800000000000004F3",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010A4B1987D7B6078DBD1D1398B6653BE9A000000102A3BF4A2D199E985D9952E1CA35156D40000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020DEFFB3E1CF949388DBBFC434E765157CC7315E6938B4297116995C4EAC78A30F00000008000000000000004D000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000010000000106FD3CEE8572947DDE8C98F2D35707F7F000000102A3BF4A2D199E985D9952E1CA35156D400000010889790B637E60C2D6CD55B55EF6C32B40000001079DDDD9EA31BF745606A5473EA76ED140000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001774F464300000000010000000400000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D637265617465000000080000000000000001000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000001079DDDD9EA31BF745606A5473EA76ED14000000104073C2E750CD349C3EE91B2F7C70FB490000000800000000000000010000001002AC40BC065BCD8F4A7377EEFB9AB5700000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE000000100EE1D51F7ABF576C0F56ABD3C81BE46A00000010F363D2D7B9D1F8596B94191F29B8D1DF00000008000000000000000100000008000000000000000000000008000000000000050A",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000106FD3CEE8572947DDE8C98F2D35707F7F000000102A3BF4A2D199E985D9952E1CA35156D40000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000002058DEA248F3AFCEEDCD23D328B977BE4547C460DC0081A07107739964F75A04B8000000080000000000000062000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000100000001048FF5ACF7B291F368689E1A77E409426000000102A3BF4A2D199E985D9952E1CA35156D400000010889790B637E60C2D6CD55B55EF6C32B40000001079DDDD9EA31BF745606A5473EA76ED140000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001AF4F464300000000010000000600000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D61636365707400000008000000000000000100000010EE3741D42E6BF23B85499352C50F098B000000206D8A9688737FB68A72594AFDE7656475E61EFA570EA8D949929BF5A776D4D156000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000104073C2E750CD349C3EE91B2F7C70FB490000001079DDDD9EA31BF745606A5473EA76ED140000000800000000000000010000001008F30A9CE5BA1789CE277AC9145E8EAE0000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE00000010F363D2D7B9D1F8596B94191F29B8D1DF000000100EE1D51F7ABF576C0F56ABD3C81BE46A000000080000000000000001000000080000000000000002000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001048FF5ACF7B291F368689E1A77E409426000000102A3BF4A2D199E985D9952E1CA35156D40000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000002047C23AE0E55AF8F4A55B92FD724FC3AFE2DA3B57FDC85949DFDD128F7F84FC2800000008000000000000007F000000080000000000000002000000080000000000000002"
+    }
+  ],
+  "PermissionSubmissions": [],
+  "Selection": {
+    "World": "00b0d467071e98cf60f8bf7708515da1",
+    "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+    "Port": "309448f14997b71afded085cbf415c5f",
+    "HomeActor": "79dddd9ea31bf745606a5473ea76ed14",
+    "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 26240,
+      "Y": 83584,
+      "Z": 256,
+      "Cell": {
+        "X": 102,
+        "Y": 326,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 26240,
+      "Y": 83584,
+      "Z": 256,
+      "Cell": {
+        "X": 102,
+        "Y": 326,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 60,
+    "Mp": 10,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "Gifts": {
+    "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 15,
+    "OfferSelectionVersion": 18,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "02ac40bc065bcd8f4a7377eefb9ab570",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "99ce88ce657621ab3cb8ecb47e597b6e",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      }
+    ],
+    "Offers": [
+      {
+        "Proposal": "677e4b65c371337d2ce29a0bfeb6d2b1",
+        "Status": "Declined",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "b2c9ac2115478bdc666635ac15486c7dbb42a64a763eef12215ad785b55fe46c",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": false,
+        "ClosedAtSequence": 31,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Proposal": "43fb80004ad7cb850cd215df41ae3c1e",
+        "Status": "Withdrawn",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "e2e3008add56b68943a299a592915a004283aa4803aacef56a93ceed02107b7b",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": false,
+        "ClosedAtSequence": 48,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Proposal": "c10e116f7c4c09c06e7060989d3fab27",
+        "Status": "Accepted",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "6ef4b0a2436405d6f9735839d1653b8ae1e617d94f136ae50c363d4d346309d7",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": false,
+        "ClosedAtSequence": 70,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Proposal": "ce36b255455d3fb3f2adcb89b1b773bc",
+        "Status": "Accepted",
+        "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+        "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "d7e3e9b3e8de36c9b5b0328018b782ee9238476a31b7a92d735e7b6bd5599726",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": true,
+        "ClosedAtSequence": 92,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+          "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Destination": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Quantity": 1,
+          "ExpectedLotRevision": 1
+        }
+      },
+      {
+        "Proposal": "7431342bc4051295cea4930f776d2f37",
+        "Status": "Declined",
+        "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+        "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Lot": "02ac40bc065bcd8f4a7377eefb9ab570",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "11c87f96f9e665e8fc3110787a055bae52bd310284cc067011c2c73b230a92cb",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": true,
+        "ClosedAtSequence": 107,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+          "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Kind": "CountedSource",
+          "Lot": "02ac40bc065bcd8f4a7377eefb9ab570",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Destination": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Proposal": "ee3741d42e6bf23b85499352c50f098b",
+        "Status": "Withdrawn",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "6d8a9688737fb68a72594afde7656475e61efa570ea8d949929bf5a776d4d156",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": false,
+        "ClosedAtSequence": 139,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Quantity": 1,
+          "ExpectedLotRevision": 2
+        }
+      }
+    ],
+    "Draft": {
+      "Lot": "02ac40bc065bcd8f4a7377eefb9ab570",
+      "Kind": "CountedSource",
+      "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+      "Quantity": 1,
+      "SelectedOffer": "ee3741d42e6bf23b85499352c50f098b",
+      "PreparedTerms": {
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+        "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Kind": "CountedSource",
+        "Lot": "02ac40bc065bcd8f4a7377eefb9ab570",
+        "Definition": "19fd80672aee3de952edb5cb376e6b25",
+        "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+        "Source": "0ee1d51f7abf576c0f56abd3c81be46a",
+        "Destination": "f363d2d7b9d1f8596b94191f29b8d1df",
+        "Quantity": 1,
+        "ExpectedLotRevision": 0
+      },
+      "Expiry": 1290
+    },
+    "Reviewed": {
+      "Action": "AcceptMaterial",
+      "CanExecute": true,
+      "BlockingReason": null,
+      "DetailText": "1 Axe from Amber; expires as world time advances. Status: Open. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+      "CostText": "Receive 1 Axe",
+      "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+      "Principal": "2a3bf4a2d199e985d9952e1ca35156d4",
+      "Session": "889790b637e60c2d6cd55b55ef6c32b4",
+      "Generation": 0,
+      "Witness": null,
+      "ExpectedActorRevision": 0,
+      "Intent": "AcceptMaterialProposalIntent",
+      "Proposal": "ee3741d42e6bf23b85499352c50f098b",
+      "Terms": {
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Kind": "CountedSource",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Definition": "19fd80672aee3de952edb5cb376e6b25",
+        "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+        "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+        "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+        "Quantity": 1,
+        "ExpectedLotRevision": 2
+      }
+    },
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": true,
+        "BlockingReason": null,
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. To Amber. Available briefly while world time advances. Status: Prepared.",
+        "CostText": "1 Axe",
+        "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+        "Principal": "2a3bf4a2d199e985d9952e1ca35156d4",
+        "Session": "889790b637e60c2d6cd55b55ef6c32b4",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": "ProposeMaterialIntent",
+        "Proposal": null,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+          "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Kind": "CountedSource",
+          "Lot": "02ac40bc065bcd8f4a7377eefb9ab570",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Destination": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is withdrawn.",
+        "DetailText": "1 Axe from Amber; expires as world time advances. Status: Withdrawn. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive 1 Axe",
+        "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+        "Principal": "2a3bf4a2d199e985d9952e1ca35156d4",
+        "Session": "889790b637e60c2d6cd55b55ef6c32b4",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is withdrawn.",
+        "DetailText": "1 Axe from Amber; expires as world time advances. Status: Withdrawn. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+        "Principal": "2a3bf4a2d199e985d9952e1ca35156d4",
+        "Session": "889790b637e60c2d6cd55b55ef6c32b4",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is withdrawn.",
+        "DetailText": "1 Axe from Amber; expires as world time advances. Status: Withdrawn. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+        "Principal": "2a3bf4a2d199e985d9952e1ca35156d4",
+        "Session": "889790b637e60c2d6cd55b55ef6c32b4",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [
+    {
+      "Sequence": 8,
+      "Control": "GiftLot",
+      "Bounds": {
+        "X": 68,
+        "Y": 248,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0008-gift-GiftLot.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "GiftRecipient",
+      "Bounds": {
+        "X": 68,
+        "Y": 324,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0008-gift-GiftRecipient.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "GiftLess",
+      "Bounds": {
+        "X": 68,
+        "Y": 366,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0008-gift-GiftLess.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "GiftMore",
+      "Bounds": {
+        "X": 445,
+        "Y": 366,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0008-gift-GiftMore.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "PrepareGift",
+      "Bounds": {
+        "X": 68,
+        "Y": 408,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0008-gift-PrepareGift.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "GiftOffer",
+      "Bounds": {
+        "X": 488,
+        "Y": 214,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0008-gift-GiftOffer.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "GiftHistory",
+      "Bounds": {
+        "X": 488,
+        "Y": 377,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0008-gift-GiftHistory.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "ReviewGifts",
+      "Bounds": {
+        "X": 68,
+        "Y": 454,
+        "Width": 824,
+        "Height": 34
+      },
+      "Image": "0008-gift-ReviewGifts.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "GiftDraftDetails",
+      "Text": "Choose one stack, a recipient and quantity, then prepare. Nothing is sent while browsing.",
+      "Lines": 2,
+      "VisibleLines": 2,
+      "Bounds": {
+        "X": 68,
+        "Y": 387,
+        "Width": 396,
+        "Height": 55
+      },
+      "Image": "0008-gift-GiftDraftDetails.png"
+    },
+    {
+      "Sequence": 8,
+      "Control": "GiftOfferDetails",
+      "Text": "From Amber \u00B7 1 Axe\nStatus: Open\nReview the Gifts wheel to accept, decline or withdraw.",
+      "Lines": 4,
+      "VisibleLines": 4,
+      "Bounds": {
+        "X": 488,
+        "Y": 222,
+        "Width": 396,
+        "Height": 113
+      },
+      "Image": "0008-gift-GiftOfferDetails.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "GiftLot",
+      "Bounds": {
+        "X": 68,
+        "Y": 248,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0019-gift-GiftLot.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "GiftRecipient",
+      "Bounds": {
+        "X": 68,
+        "Y": 324,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0019-gift-GiftRecipient.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "GiftLess",
+      "Bounds": {
+        "X": 68,
+        "Y": 366,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0019-gift-GiftLess.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "GiftMore",
+      "Bounds": {
+        "X": 445,
+        "Y": 366,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0019-gift-GiftMore.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "PrepareGift",
+      "Bounds": {
+        "X": 68,
+        "Y": 408,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0019-gift-PrepareGift.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "GiftOffer",
+      "Bounds": {
+        "X": 488,
+        "Y": 214,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0019-gift-GiftOffer.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "GiftHistory",
+      "Bounds": {
+        "X": 488,
+        "Y": 377,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0019-gift-GiftHistory.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "ReviewGifts",
+      "Bounds": {
+        "X": 68,
+        "Y": 454,
+        "Width": 824,
+        "Height": 34
+      },
+      "Image": "0019-gift-ReviewGifts.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "GiftDraftDetails",
+      "Text": "Choose one stack, a recipient and quantity, then prepare. Nothing is sent while browsing.",
+      "Lines": 2,
+      "VisibleLines": 2,
+      "Bounds": {
+        "X": 68,
+        "Y": 387,
+        "Width": 396,
+        "Height": 55
+      },
+      "Image": "0019-gift-GiftDraftDetails.png"
+    },
+    {
+      "Sequence": 19,
+      "Control": "GiftOfferDetails",
+      "Text": "From Amber \u00B7 1 Axe\nStatus: Open\nReview the Gifts wheel to accept, decline or withdraw.",
+      "Lines": 4,
+      "VisibleLines": 4,
+      "Bounds": {
+        "X": 488,
+        "Y": 222,
+        "Width": 396,
+        "Height": 113
+      },
+      "Image": "0019-gift-GiftOfferDetails.png"
+    }
+  ],
+  "Production": {
+    "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Chop oak",
+        "TargetName": "Oak",
+        "Target": "fe4a20461dafa2765c71e084817722e9",
+        "CanExecute": true,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": null,
+        "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+        "Principal": "2a3bf4a2d199e985d9952e1ca35156d4",
+        "Session": "889790b637e60c2d6cd55b55ef6c32b4",
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "ExpectedActorRevision": 0,
+        "Port": "309448f14997b71afded085cbf415c5f",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": {
+          "Node": "fe4a20461dafa2765c71e084817722e9",
+          "ExpectedNodeRevision": 0,
+          "Tool": "02ac40bc065bcd8f4a7377eefb9ab570",
+          "ExpectedToolLotRevision": 0
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+        "Principal": "2a3bf4a2d199e985d9952e1ca35156d4",
+        "Session": "889790b637e60c2d6cd55b55ef6c32b4",
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "ExpectedActorRevision": 0,
+        "Port": "309448f14997b71afded085cbf415c5f",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 44032,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": true,
+  "Display": "macOS"
+}

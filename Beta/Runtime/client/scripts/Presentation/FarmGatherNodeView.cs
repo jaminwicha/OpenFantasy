@@ -11,7 +11,14 @@ internal partial class FarmGatherNodeView : Node2D
     private Sprite2D _sprite = null!;
     private double _animationClock;
 
-    internal void Setup(FarmGatherNodeFrame frame, FarmVisualAssets assets)
+    /// <summary>The current rendered sprite quad, including its node scale and canvas transform.</summary>
+    internal Rect2? SpriteViewportBounds => IsVisibleInTree() && _sprite is not null
+        ? _sprite.GetGlobalTransformWithCanvas() * _sprite.GetRect() : null;
+
+    internal void Setup(FarmGatherNodeFrame frame, FarmVisualAssets assets) =>
+        Setup(frame, assets, FarmCanvasCoordinates.Position(frame.Feet));
+
+    internal void Setup(FarmGatherNodeFrame frame, FarmVisualAssets assets, Vector2 position)
     {
         TextureFilter = TextureFilterEnum.Nearest;
         _sprite = new Sprite2D
@@ -21,12 +28,15 @@ internal partial class FarmGatherNodeView : Node2D
             TextureFilter = TextureFilterEnum.Nearest
         };
         AddChild(_sprite);
-        Present(frame, assets);
+        Present(frame, assets, position);
     }
 
-    internal void Present(FarmGatherNodeFrame frame, FarmVisualAssets assets)
+    internal void Present(FarmGatherNodeFrame frame, FarmVisualAssets assets) =>
+        Present(frame, assets, FarmCanvasCoordinates.Position(frame.Feet));
+
+    internal void Present(FarmGatherNodeFrame frame, FarmVisualAssets assets, Vector2 position)
     {
-        Position = FarmCanvasCoordinates.Position(frame.Feet);
+        Position = position;
         _sprite.Texture = assets.GatherNodeTexture(frame.RequiredToolKind);
         Visible = frame.Visibility != GatherNodeVisibility.Absent;
         // The predecessor uses the same dimmed sheet for the brief depleted interval, not a new stump asset.

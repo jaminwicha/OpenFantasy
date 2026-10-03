@@ -1,0 +1,13 @@
+{
+  "inspectedJourneyReport": "qualification/native-production-20261003T084401039509Z/report.json",
+  "reportSha256": "089538e3383f30bb419b8b564700d2e44edb2a71e61ac2d8af72761ad1d268ed",
+  "changedSource": [
+    "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Evidence.cs",
+    "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Gifts.cs"
+  ],
+  "changedBinaries": [
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+  ],
+  "allApplicationLayoutAssetsAndBehaviorSourceUnchanged": true,
+  "retainedClaim": "Seven inspected rendered images retain actual application layout/feedback evidence. Only passive gift-opening diagnostics and a failure-frame capture changed afterwards; the current native production journey is separately rerun against the final client binary."
+}

@@ -164,7 +164,10 @@ internal sealed partial class FarmHud : CanvasLayer
         LocalWorldView home = observation.HomeView;
         _project.Text = "Home character: " + home.Actors.Single(actor => actor.ActorId == home.PlayerActorId).DisplayName
             + (home.HasReadingHold || home.IsInEncounter ? " · requires your attention; use Characters → Select home." : " · obligations remain yours.");
-        _targetName.Text = targets.Selected is { } target ? "Target: " + target.Name : "Target: none";
+        _project.TooltipText = _project.Text;
+        PresentControlledProduction(view, targets.Selected, pending, paused);
+        _targetName.Text = targets.Selected is { } target
+            ? "Target: " + target.Name + (target.Feet is null ? " · out of sight" : "") : "Target: none";
         _nextTarget.Disabled = pending || paused || !targets.CanCycle;
         _clearTarget.Disabled = pending || paused || targets.Selected is null;
         _openPack.Disabled = pending;
@@ -179,6 +182,42 @@ internal sealed partial class FarmHud : CanvasLayer
         GetNode<Label>("Root/Footer/Column/Actions/Movement").Text =
             (view.Capabilities & OpenFantasy.Core.Worlds.WorldControlCapabilities.Traversal) != 0 ? "Move\nWASD / arrows" : "Traversal not granted";
         PresentPreview();
+    }
+
+    private void PresentControlledProduction(LocalControlledActorView view, FarmTarget? target, bool pending, bool paused)
+    {
+        if (view.Production is not { } production) return;
+        if (production.GatherEffort is { } effort)
+        {
+            _wood.Text += (_wood.Text.Length == 0 ? "" : "\n") + $"Work effort: {effort}";
+            _wood.Visible = true;
+        }
+        if (production.Worksite is not { } worksite) return;
+        long elevation = view.Actors.Single(actor => actor.ActorId == view.ActorId).Feet.Z;
+        _clock.Text += $" · Height {elevation / 256.0:0.##} m";
+        string? detail = null;
+        LocalExcavationView? site = target?.Kind == FarmTargetKind.Excavation
+            ? worksite.ExcavationTargets.FirstOrDefault(candidate => candidate.SiteId == target.Id) : null;
+        if (site is null)
+        {
+            _project.Text += view.IsResolvingConsequences || worksite.IsResolvingConsequences
+                ? "\nFinishing accepted work…"
+                : target?.Kind == FarmTargetKind.Excavation ? "\nSelected work face is no longer visible."
+                : worksite.ExcavationTargets.Count == 0 ? "\nNo work face is available."
+                : "\nQ: choose a work face · V: inspect work";
+        }
+        else
+        {
+            _offers.TryGetValue(FarmSemanticAction.Excavate, out FarmActionOffer? mine);
+            string status = view.IsResolvingConsequences || worksite.IsResolvingConsequences ? "Finishing accepted work…"
+                : pending ? "Action pending" : paused ? "Paused" : site.IsComplete ? "Complete"
+                : !worksite.CanManipulate ? "Unable to work"
+                : worksite.PlayerEffort < worksite.EffortPerWork ? "Needs rest"
+                : mine?.CanExecute == true ? "V: inspect Mine" : "Unavailable · V: inspect";
+            _project.Text += $"\nExcavation {site.CompletedWork}/{site.RequiredWork} · {status}";
+            if (mine is not null) detail = Explain(mine);
+        }
+        _project.TooltipText = _project.Text + (detail is null ? "" : "\n" + detail);
     }
 
     internal void Present(LocalWorldView view, ulong wood, ulong berries, bool pending, bool paused,
@@ -249,6 +288,7 @@ internal sealed partial class FarmHud : CanvasLayer
         }
         if (view.IsInEncounter || view.EncounterLifecycle is not null
             && targets.Selected?.Kind != FarmTargetKind.Excavation && !speaking) _project.Visible = false;
+        _project.TooltipText = _project.Text;
         _dialogue.Visible = speaking;
         if (view.Dialogue is { } dialogue)
         {

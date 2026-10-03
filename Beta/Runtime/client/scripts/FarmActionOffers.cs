@@ -1,7 +1,6 @@
 using OpenFantasy.Core;
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Authority;
-using OpenFantasy.Core.Gathering;
 using OpenFantasy.Core.Production;
 using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Worlds;
@@ -53,14 +52,8 @@ internal sealed class FarmActionOffers
             [FarmSemanticAction.Give] = view.Progression is null ? GiveWood(view, scope) : QuestOperation(view, scope),
             [FarmSemanticAction.CloseDialogue] = CloseDialogue(view, scope),
         };
-        if (view.PlayerGatherEffort.HasValue)
-        {
-            offers[FarmSemanticAction.Gather] = Gather(view, scope, selectedTarget);
-        }
-        if (view.Crafting is not null)
-        {
-            offers[FarmSemanticAction.Craft] = Craft(view, scope);
-        }
+        FarmProductionActionOffers.Add(offers, FarmProductionPresentation.From(view), scope,
+            selectedTarget, _woodDefinitionId, _berryDefinitionId);
         RestorativeActionOffers.Add(view, scope, selectedTarget, offers);
         MaterialProposalActionOffers.Add(view, scope, giftSelection, offers, _woodDefinitionId, _berryDefinitionId);
         MarketActionOffers.Add(view, scope, marketDraft, offers);
@@ -75,7 +68,6 @@ internal sealed class FarmActionOffers
                     target.Name, target.Id, NoCost, "", intent: null, reason);
             }
         }
-        WorksiteActionOffers.Add(offers, view, scope, selectedTarget);
         if (view.EncounterLifecycle is { PlayerCanAct: false })
         {
             string reason = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).IsIncapacitated
@@ -168,59 +160,4 @@ internal sealed class FarmActionOffers
             blockingReason: null, dialogue.DialogueId);
     }
 
-    /// <summary>Resolves the explicit target, or the nearest workable plant only when selection is automatic.</summary>
-    private static FarmActionOffer Gather(LocalWorldView view, FarmActionScope scope, FarmTarget? selectedTarget)
-    {
-        LocalGatherNodeView? node = selectedTarget is null ? FarmClientSession.NearestGatherNode(view)
-            : view.GatheringNodes.FirstOrDefault(candidate => candidate.NodeId == selectedTarget.Id);
-        string cost = $"{GatherRulesV1.EffortPerSwing} effort";
-        string detail = $"You have {view.PlayerGatherEffort} effort.";
-        if (node is null && selectedTarget is { } target)
-        {
-            string reason = target.Kind == FarmTargetKind.Person ? "Choose a plant to gather, or clear the selection."
-                : "The selected plant is no longer visible. Choose another target or clear the selection.";
-            return new FarmActionOffer(FarmSemanticAction.Gather, scope, "Gather", target.Name, target.Id, cost, "",
-                intent: null, reason, detailText: detail);
-        }
-        if (node is null)
-        {
-            return new FarmActionOffer(FarmSemanticAction.Gather, scope, "Gather", "No plant nearby", null, cost, "",
-                intent: null, "These plants need time to recover.", detailText: detail);
-        }
-        string label = node.RequiredTool == GatherToolKind.Axe ? "Chop oak" : "Pick berries";
-        LocalGatherToolLotView? tool = view.GatheringTools.FirstOrDefault(value => value.Kind == node.RequiredTool);
-        if (tool is null)
-        {
-            return new FarmActionOffer(FarmSemanticAction.Gather, scope, label, node.DisplayName, node.NodeId, cost, "",
-                intent: null, "You need the right tool in your pack.", detailText: detail);
-        }
-        string? blocker = node.RemainingSwings == 0 || node.Visibility != GatherNodeVisibility.Ready
-            ? "This plant needs time to recover."
-            : !FarmClientSession.CanReachGatherNode(view, node) ? $"Move closer to the {node.DisplayName}."
-            : view.PlayerGatherEffort < GatherRulesV1.EffortPerSwing ? "You are too tired to gather; rest a moment."
-            : null;
-        return new FarmActionOffer(FarmSemanticAction.Gather, scope, label, node.DisplayName, node.NodeId, cost,
-            "You gathered supplies.", new GatherIntent(node.NodeId, node.Revision, tool.LotId, tool.Revision), blocker,
-            detailText: detail);
-    }
-
-    private FarmActionOffer Craft(LocalWorldView view, FarmActionScope scope)
-    {
-        const string targetName = "Your pack";
-        LocalCraftRecipeView? recipe = FarmCrafting.RationsRecipe(view);
-        if (recipe is null)
-        {
-            return new FarmActionOffer(FarmSemanticAction.Craft, scope, "Pack rations", targetName, null, "Unknown recipe",
-                "", intent: null, FarmCrafting.MissingRecipe);
-        }
-        string cost = string.Join(", ", recipe.Terms.Where(term => term.Role == RecipeMaterialRole.Input)
-            .Select(term => $"{term.Quantity} {MaterialName(term.DefinitionId)}"));
-        FarmCraftSelection selection = FarmCrafting.SelectRations(view);
-        return new FarmActionOffer(FarmSemanticAction.Craft, scope, "Pack rations", targetName, null, cost,
-            "You packed two rations and kept the wood offcuts.",
-            selection.Request is null ? null : new CraftIntent(selection.Request), selection.BlockingReason);
-    }
-
-    private string MaterialName(EntityId definitionId) => definitionId == _woodDefinitionId ? "wood"
-        : definitionId == _berryDefinitionId ? "berries" : "material";
 }

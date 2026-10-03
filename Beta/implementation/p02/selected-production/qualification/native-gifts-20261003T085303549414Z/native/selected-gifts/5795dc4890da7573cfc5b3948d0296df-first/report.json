@@ -1,0 +1,2064 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "00b0d467071e98cf60f8bf7708515da1",
+  "Actor": "5795dc4890da7573cfc5b3948d0296df",
+  "Inputs": [
+    {
+      "Stage": "control-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Characters",
+      "X": 89.5,
+      "Y": 103
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "Close",
+      "X": 905,
+      "Y": 111.5
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "Recipient",
+      "X": 185,
+      "Y": 235.5
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@75",
+      "X": 118,
+      "Y": 270
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@76",
+      "X": 273,
+      "Y": 270
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@77",
+      "X": 118,
+      "Y": 302
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@78",
+      "X": 273,
+      "Y": 302
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@79",
+      "X": 118,
+      "Y": 334
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@80",
+      "X": 273,
+      "Y": 334
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@81",
+      "X": 118,
+      "Y": 366
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@82",
+      "X": 273,
+      "Y": 366
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@CheckBox@83",
+      "X": 118,
+      "Y": 398
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "Grant",
+      "X": 185,
+      "Y": 432.5
+    },
+    {
+      "Stage": "capture-selection",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "@Button@104",
+      "X": 644,
+      "Y": 262.5
+    },
+    {
+      "Stage": "control-accept",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "@Button@104",
+      "X": 644,
+      "Y": 262.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-refresh",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Refresh",
+      "X": 811.5,
+      "Y": 111.5
+    },
+    {
+      "Stage": "control-acquire",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "@Button@215",
+      "X": 644,
+      "Y": 262.5
+    },
+    {
+      "Stage": "control-select",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "@Button@219",
+      "X": 644,
+      "Y": 265.5
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLot",
+      "X": 266,
+      "Y": 361
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftRecipient"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftRecipient",
+      "X": 266,
+      "Y": 409
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftLess"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLess",
+      "X": 77.5,
+      "Y": 422
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftMore",
+      "X": 454.5,
+      "Y": 422
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "PrepareGift"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "PrepareGift"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "PrepareGift",
+      "X": 266,
+      "Y": 407
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "up",
+      "Toward": "GiftOffer"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOffer",
+      "X": 686,
+      "Y": 242
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftDraftDetails",
+      "X": 266,
+      "Y": 414.5
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "up",
+      "Toward": "GiftOfferDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOfferDetails",
+      "X": 686,
+      "Y": 249.5
+    },
+    {
+      "Stage": "gift-close",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ClosePack",
+      "X": 842.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "PrepareGift",
+      "X": 266,
+      "Y": 391
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "PrepareGift",
+      "X": 266,
+      "Y": 391
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "GiftLot",
+      "To": "ClosePack"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "ClosePack",
+      "To": "GiftToggle"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "GiftToggle",
+      "To": "ReviewGifts"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "ReviewGifts",
+      "To": "GiftOffer"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadLeft"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "PrepareGift",
+      "X": 266,
+      "Y": 425
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "GiftLot",
+      "To": "ClosePack"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "ClosePack",
+      "To": "GiftToggle"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "GiftToggle",
+      "To": "ReviewGifts"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "ReviewGifts",
+      "To": "GiftOffer"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLot",
+      "X": 266,
+      "Y": 265
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftRecipient",
+      "X": 266,
+      "Y": 341
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLess",
+      "X": 77.5,
+      "Y": 383
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftMore",
+      "X": 454.5,
+      "Y": 383
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "PrepareGift",
+      "X": 266,
+      "Y": 425
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOffer",
+      "X": 686,
+      "Y": 231
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftDraftDetails",
+      "X": 266,
+      "Y": 414.5
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "up",
+      "Toward": "GiftOfferDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOfferDetails",
+      "X": 686,
+      "Y": 293
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadRight"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "GiftLot",
+      "To": "ClosePack"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "ClosePack",
+      "To": "GiftToggle"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "GiftToggle",
+      "To": "ReviewGifts"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Up"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "up",
+      "From": "ReviewGifts",
+      "To": "GiftOffer"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadDown"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "PrepareGift",
+      "X": 266,
+      "Y": 425
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "pause",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "control-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Characters",
+      "X": 89.5,
+      "Y": 103
+    },
+    {
+      "Stage": "control-close",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Close",
+      "X": 905,
+      "Y": 111.5
+    }
+  ],
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000400000012776F726C642E6163746F722D616374696F6E0000000800000000000000170000022D4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000100000001012252A74D32DB54CD927FB5692C233DF00000010B593E375A99AA71FC3183FB84089983B000000100EE7B539E00719DCFF6F397BFF66189D000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001774F464300000000010000000400000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D637265617465000000080000000000000001000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000104073C2E750CD349C3EE91B2F7C70FB490000001079DDDD9EA31BF745606A5473EA76ED140000000800000000000000010000001008F30A9CE5BA1789CE277AC9145E8EAE0000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE00000010F363D2D7B9D1F8596B94191F29B8D1DF000000100EE1D51F7ABF576C0F56ABD3C81BE46A0000000800000000000000010000000800000000000000000000000800000000000004B5000000D54F464300000000010000000200000018776F726C642E636F6E74726F6C2D7769746E6573732E7631000000A9014073C2E750CD349C3EE91B2F7C70FB495795DC4890DA7573CFC5B3948D0296DFD7595C8DC5B6FD609C184E18ACFCE228619FDC103B3B63F16E87D3EFC4293609226E5C2389D095172F7C38DF0CC7A3608ED4E71E8DD3FDDB938767DE91CC3C7700000000000000020000000000000008000000000000000100000000000000050000000000000002F2E1307E70D8606C760A3B2D2E743976322F8733349B34295261C14C04423406",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001012252A74D32DB54CD927FB5692C233DF00000010B593E375A99AA71FC3183FB84089983B0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000202C0BACCFBFDABEAE1E52A81BD0D50A3802042E60D687C259A246647401CC4E5C00000008000000000000000E000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000400000012776F726C642E6163746F722D616374696F6E0000000800000000000000170000022D4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001000000010CE2FADA33B26CBE882F515553C98729000000010B593E375A99AA71FC3183FB84089983B000000100EE7B539E00719DCFF6F397BFF66189D000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001774F464300000000010000000400000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D637265617465000000080000000000000001000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000104073C2E750CD349C3EE91B2F7C70FB490000001079DDDD9EA31BF745606A5473EA76ED140000000800000000000000010000001008F30A9CE5BA1789CE277AC9145E8EAE0000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE00000010F363D2D7B9D1F8596B94191F29B8D1DF000000100EE1D51F7ABF576C0F56ABD3C81BE46A0000000800000000000000010000000800000000000000000000000800000000000004CD000000D54F464300000000010000000200000018776F726C642E636F6E74726F6C2D7769746E6573732E7631000000A9014073C2E750CD349C3EE91B2F7C70FB495795DC4890DA7573CFC5B3948D0296DFD7595C8DC5B6FD609C184E18ACFCE228619FDC103B3B63F16E87D3EFC4293609226E5C2389D095172F7C38DF0CC7A3608ED4E71E8DD3FDDB938767DE91CC3C7700000000000000020000000000000008000000000000000100000000000000050000000000000002F2E1307E70D8606C760A3B2D2E743976322F8733349B34295261C14C04423406",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010CE2FADA33B26CBE882F515553C98729000000010B593E375A99AA71FC3183FB84089983B0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000002050CF08C4AC86881852DDC7F754D152B19B9B7E89F714CAD0FCC1CF89FE260FF1000000080000000000000028000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000400000012776F726C642E6163746F722D616374696F6E0000000800000000000000170000010D4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001000000010A3F95A9A87F8B2DFC8F3C9F19657EFA000000010B593E375A99AA71FC3183FB84089983B000000100EE7B539E00719DCFF6F397BFF66189D000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000000574F464300000000010000000300000027776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D77697468647261770000000800000000000000010000001043FB80004AD7CB850CD215DF41AE3C1E000000D54F464300000000010000000200000018776F726C642E636F6E74726F6C2D7769746E6573732E7631000000A9014073C2E750CD349C3EE91B2F7C70FB495795DC4890DA7573CFC5B3948D0296DFD7595C8DC5B6FD609C184E18ACFCE228619FDC103B3B63F16E87D3EFC4293609226E5C2389D095172F7C38DF0CC7A3608ED4E71E8DD3FDDB938767DE91CC3C7700000000000000020000000000000008000000000000000100000000000000050000000000000002F2E1307E70D8606C760A3B2D2E743976322F8733349B34295261C14C04423406",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010A3F95A9A87F8B2DFC8F3C9F19657EFA000000010B593E375A99AA71FC3183FB84089983B0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020B08D1D81732ED96EF385C97EC9FD09749AE30CAF9F5F9A65043730BCBE9B82C2000000080000000000000030000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000400000012776F726C642E6163746F722D616374696F6E0000000800000000000000170000022D4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000010000000109673116B38BD561909066DA31D7FADEC00000010B593E375A99AA71FC3183FB84089983B000000100EE7B539E00719DCFF6F397BFF66189D000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001774F464300000000010000000400000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D637265617465000000080000000000000001000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000104073C2E750CD349C3EE91B2F7C70FB490000001079DDDD9EA31BF745606A5473EA76ED140000000800000000000000010000001008F30A9CE5BA1789CE277AC9145E8EAE0000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE00000010F363D2D7B9D1F8596B94191F29B8D1DF000000100EE1D51F7ABF576C0F56ABD3C81BE46A0000000800000000000000010000000800000000000000000000000800000000000004E1000000D54F464300000000010000000200000018776F726C642E636F6E74726F6C2D7769746E6573732E7631000000A9014073C2E750CD349C3EE91B2F7C70FB495795DC4890DA7573CFC5B3948D0296DFD7595C8DC5B6FD609C184E18ACFCE228619FDC103B3B63F16E87D3EFC4293609226E5C2389D095172F7C38DF0CC7A3608ED4E71E8DD3FDDB938767DE91CC3C7700000000000000020000000000000008000000000000000100000000000000050000000000000002F2E1307E70D8606C760A3B2D2E743976322F8733349B34295261C14C04423406",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000109673116B38BD561909066DA31D7FADEC00000010B593E375A99AA71FC3183FB84089983B0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020E9A1415FEB784B6CC4EF60F0D023752C45F304A97287CC52DEF24DE3C941648D000000080000000000000038000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000400000012776F726C642E6163746F722D616374696F6E000000080000000000000017000002654F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001000000010214178D96086CE72A8FE66411E5EF74500000010B593E375A99AA71FC3183FB84089983B000000100EE7B539E00719DCFF6F397BFF66189D000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001AF4F464300000000010000000600000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D61636365707400000008000000000000000100000010CE36B255455D3FB3F2ADCB89B1B773BC00000020D7E3E9B3E8DE36C9B5B0328018B782EE9238476A31B7A92D735E7B6BD5599726000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000001079DDDD9EA31BF745606A5473EA76ED14000000104073C2E750CD349C3EE91B2F7C70FB490000000800000000000000010000001008F30A9CE5BA1789CE277AC9145E8EAE0000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE000000100EE1D51F7ABF576C0F56ABD3C81BE46A00000010F363D2D7B9D1F8596B94191F29B8D1DF000000080000000000000001000000080000000000000001000000080000000000000000000000D54F464300000000010000000200000018776F726C642E636F6E74726F6C2D7769746E6573732E7631000000A9014073C2E750CD349C3EE91B2F7C70FB495795DC4890DA7573CFC5B3948D0296DFD7595C8DC5B6FD609C184E18ACFCE228619FDC103B3B63F16E87D3EFC4293609226E5C2389D095172F7C38DF0CC7A3608ED4E71E8DD3FDDB938767DE91CC3C7700000000000000020000000000000008000000000000000100000000000000050000000000000002F2E1307E70D8606C760A3B2D2E743976322F8733349B34295261C14C04423406",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010214178D96086CE72A8FE66411E5EF74500000010B593E375A99AA71FC3183FB84089983B0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020F180B02CD5BD01F730BC5D3C4D15ACE55DBAA8C81CE8789FC2A3CAB4CBF1D3D700000008000000000000005C000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000400000012776F726C642E6163746F722D616374696F6E0000000800000000000000170000010C4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000100000001058B4E6ACC057CA25F311E87B40D77D3600000010B593E375A99AA71FC3183FB84089983B000000100EE7B539E00719DCFF6F397BFF66189D000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000000564F464300000000010000000300000026776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D6465636C696E65000000080000000000000001000000107431342BC4051295CEA4930F776D2F37000000D54F464300000000010000000200000018776F726C642E636F6E74726F6C2D7769746E6573732E7631000000A9014073C2E750CD349C3EE91B2F7C70FB495795DC4890DA7573CFC5B3948D0296DFD7595C8DC5B6FD609C184E18ACFCE228619FDC103B3B63F16E87D3EFC4293609226E5C2389D095172F7C38DF0CC7A3608ED4E71E8DD3FDDB938767DE91CC3C7700000000000000020000000000000008000000000000000100000000000000050000000000000002F2E1307E70D8606C760A3B2D2E743976322F8733349B34295261C14C04423406",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001058B4E6ACC057CA25F311E87B40D77D3600000010B593E375A99AA71FC3183FB84089983B0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000206E1DC750ECF4F829E3F9AA9B5309FDF41F80C1BC24851640009CC9E2744F1B9A00000008000000000000006B000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000400000012776F726C642E6163746F722D616374696F6E0000000800000000000000170000022D4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000010000000105480ABE9DC4B25F9D6FF49832F2AE8A100000010B593E375A99AA71FC3183FB84089983B000000100EE7B539E00719DCFF6F397BFF66189D000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000001774F464300000000010000000400000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D637265617465000000080000000000000001000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D730000000800000000000000010000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000104073C2E750CD349C3EE91B2F7C70FB490000001079DDDD9EA31BF745606A5473EA76ED140000000800000000000000010000001008F30A9CE5BA1789CE277AC9145E8EAE0000001019FD80672AEE3DE952EDB5CB376E6B25000000202B1497CCB060095C9D102EC0B4D489B35566FB6B94F9B112BD277DC287A839FE00000010F363D2D7B9D1F8596B94191F29B8D1DF000000100EE1D51F7ABF576C0F56ABD3C81BE46A00000008000000000000000100000008000000000000000200000008000000000000051B000000D54F464300000000010000000200000018776F726C642E636F6E74726F6C2D7769746E6573732E7631000000A9014073C2E750CD349C3EE91B2F7C70FB495795DC4890DA7573CFC5B3948D0296DFD7595C8DC5B6FD609C184E18ACFCE228619FDC103B3B63F16E87D3EFC4293609226E5C2389D095172F7C38DF0CC7A3608ED4E71E8DD3FDDB938767DE91CC3C7700000000000000020000000000000008000000000000000100000000000000050000000000000002F2E1307E70D8606C760A3B2D2E743976322F8733349B34295261C14C04423406",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000105480ABE9DC4B25F9D6FF49832F2AE8A100000010B593E375A99AA71FC3183FB84089983B0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000205608D22DDA0F949D3F3ABA5F20D07C24E140AC1B9B42958DADF8C421B09BE68D000000080000000000000073000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "PermissionSubmissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001600000010619FDC103B3B63F16E87D3EFC429360900000010B593E375A99AA71FC3183FB84089983B000000100EE7B539E00719DCFF6F397BFF66189D000000105795DC4890DA7573CFC5B3948D0296DF0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000000864F46430000000001000000050000001E776F726C642E616374696F6E2E6163636570742D636F6E74726F6C2E7631000000104073C2E750CD349C3EE91B2F7C70FB4900000008000000000000000100000010D7595C8DC5B6FD609C184E18ACFCE22800000020F2E1307E70D8606C760A3B2D2E743976322F8733349B34295261C14C04423406",
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010619FDC103B3B63F16E87D3EFC429360900000010B593E375A99AA71FC3183FB84089983B0000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000002078CFE112B7B471282571F19D4259E92D3D871E17C09268D0FAA75847F7CF83FB000000080000000000000002000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "Selection": {
+    "World": "00b0d467071e98cf60f8bf7708515da1",
+    "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+    "Port": "e4f3a429d9ca3f4d311d9ba8e07fa214",
+    "HomeActor": "5795dc4890da7573cfc5b3948d0296df",
+    "Actor": "5795dc4890da7573cfc5b3948d0296df",
+    "Generation": 2,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 2,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 25728,
+      "Y": 83584,
+      "Z": 256,
+      "Cell": {
+        "X": 100,
+        "Y": 326,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 25728,
+      "Y": 83584,
+      "Z": 256,
+      "Cell": {
+        "X": 100,
+        "Y": 326,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 60,
+    "Mp": 10,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [
+    {
+      "Sequence": 2,
+      "Control": "Refresh",
+      "Bounds": {
+        "X": 747,
+        "Y": 96,
+        "Width": 129,
+        "Height": 31
+      },
+      "Image": "0002-control-00.png",
+      "Action": "refresh"
+    },
+    {
+      "Sequence": 2,
+      "Control": "Close",
+      "Bounds": {
+        "X": 880,
+        "Y": 96,
+        "Width": 50,
+        "Height": 31
+      },
+      "Image": "0002-control-01.png",
+      "Action": "close"
+    },
+    {
+      "Sequence": 2,
+      "Control": "Recipient",
+      "Bounds": {
+        "X": 30,
+        "Y": 220,
+        "Width": 310,
+        "Height": 31
+      },
+      "Image": "0002-control-02.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@75",
+      "Bounds": {
+        "X": 30,
+        "Y": 256,
+        "Width": 176,
+        "Height": 28
+      },
+      "Image": "0002-control-03.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@76",
+      "Bounds": {
+        "X": 210,
+        "Y": 256,
+        "Width": 126,
+        "Height": 28
+      },
+      "Image": "0002-control-04.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@77",
+      "Bounds": {
+        "X": 30,
+        "Y": 288,
+        "Width": 176,
+        "Height": 28
+      },
+      "Image": "0002-control-05.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@78",
+      "Bounds": {
+        "X": 210,
+        "Y": 288,
+        "Width": 126,
+        "Height": 28
+      },
+      "Image": "0002-control-06.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@79",
+      "Bounds": {
+        "X": 30,
+        "Y": 320,
+        "Width": 176,
+        "Height": 28
+      },
+      "Image": "0002-control-07.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@80",
+      "Bounds": {
+        "X": 210,
+        "Y": 320,
+        "Width": 126,
+        "Height": 28
+      },
+      "Image": "0002-control-08.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@81",
+      "Bounds": {
+        "X": 30,
+        "Y": 352,
+        "Width": 176,
+        "Height": 28
+      },
+      "Image": "0002-control-09.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@82",
+      "Bounds": {
+        "X": 210,
+        "Y": 352,
+        "Width": 126,
+        "Height": 28
+      },
+      "Image": "0002-control-10.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "@CheckBox@83",
+      "Bounds": {
+        "X": 30,
+        "Y": 384,
+        "Width": 176,
+        "Height": 28
+      },
+      "Image": "0002-control-11.png",
+      "Action": null
+    },
+    {
+      "Sequence": 2,
+      "Control": "Grant",
+      "Bounds": {
+        "X": 30,
+        "Y": 417,
+        "Width": 310,
+        "Height": 31
+      },
+      "Image": "0002-control-12.png",
+      "Action": "offer"
+    },
+    {
+      "Sequence": 2,
+      "Control": "@Button@104",
+      "Bounds": {
+        "X": 358,
+        "Y": 247,
+        "Width": 572,
+        "Height": 31
+      },
+      "Image": "0002-control-13.png",
+      "Action": "accept"
+    },
+    {
+      "Sequence": 2,
+      "Header": "Identity",
+      "Text": "Level 1 \u00B7 0 gil\nHP 60/60 \u00B7 MP 10/10",
+      "Lines": 2,
+      "VisibleLines": 2,
+      "Bounds": {
+        "X": 18,
+        "Y": 10,
+        "Width": 218,
+        "Height": 55
+      }
+    },
+    {
+      "Sequence": 2,
+      "Header": "Clock",
+      "Text": "Day 1 \u00B7 09:00 \u00B7 Height 1 m",
+      "Lines": 1,
+      "VisibleLines": 1,
+      "Bounds": {
+        "X": 254,
+        "Y": 25,
+        "Width": 218,
+        "Height": 26
+      }
+    },
+    {
+      "Sequence": 2,
+      "Header": "Inventory",
+      "Text": "Wood: 0 \u00B7 Berries: 0\nRations: 0 \u00B7 Offcuts: 0",
+      "Lines": 2,
+      "VisibleLines": 2,
+      "Bounds": {
+        "X": 490,
+        "Y": 10,
+        "Width": 218,
+        "Height": 55
+      }
+    }
+  ],
+  "Gifts": {
+    "Actor": "5795dc4890da7573cfc5b3948d0296df",
+    "Generation": 2,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 24,
+    "OfferSelectionVersion": 27,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "433b1386e40b4b8629e0efa0a916947d",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "bb6cce38d321164a53c641ad0a952fc8",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      }
+    ],
+    "Offers": [],
+    "Draft": {
+      "Lot": null,
+      "Kind": null,
+      "Recipient": null,
+      "Quantity": 1,
+      "SelectedOffer": null,
+      "PreparedTerms": null,
+      "Expiry": null
+    },
+    "Reviewed": {
+      "Action": "ProposeMaterial",
+      "CanExecute": true,
+      "BlockingReason": null,
+      "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. To Cedar. Available briefly while world time advances. Status: Prepared. Confirmation checks current readiness, reach, and stock.",
+      "CostText": "1 Unfamiliar item (19fd80672aee3de952edb5cb376e6b25)",
+      "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+      "Principal": "b593e375a99aa71fc3183fb84089983b",
+      "Session": "0ee7b539e00719dcff6f397bff66189d",
+      "Generation": 1,
+      "Witness": "T0ZDAAAAAAEAAAACAAAAGHdvcmxkLmNvbnRyb2wtd2l0bmVzcy52MQAAAKkBQHPC51DNNJw\u002B6RsvfHD7SVeV3EiQ2nVzz8WzlI0Clt/XWVyNxbb9YJwYThis/OIoYZ/cEDs7Y/Fuh9PvxCk2CSJuXCOJ0JUXL3w43wzHo2CO1OcejdP925OHZ96RzDx3AAAAAAAAAAIAAAAAAAAACAAAAAAAAAABAAAAAAAAAAUAAAAAAAAAAvLhMH5w2GBsdgo7LS50OXYyL4czNJs0KVJhwUwEQjQG",
+      "ExpectedActorRevision": 0,
+      "Intent": "ProposeMaterialIntent",
+      "Proposal": null,
+      "Terms": {
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Kind": "CountedSource",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Definition": "19fd80672aee3de952edb5cb376e6b25",
+        "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+        "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+        "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+        "Quantity": 1,
+        "ExpectedLotRevision": 2
+      }
+    },
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. Inspection spends nothing.",
+        "CostText": "Choose a stack and quantity",
+        "Actor": "5795dc4890da7573cfc5b3948d0296df",
+        "Principal": "b593e375a99aa71fc3183fb84089983b",
+        "Session": "0ee7b539e00719dcff6f397bff66189d",
+        "Generation": 2,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive Select an offer",
+        "Actor": "5795dc4890da7573cfc5b3948d0296df",
+        "Principal": "b593e375a99aa71fc3183fb84089983b",
+        "Session": "0ee7b539e00719dcff6f397bff66189d",
+        "Generation": 2,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "5795dc4890da7573cfc5b3948d0296df",
+        "Principal": "b593e375a99aa71fc3183fb84089983b",
+        "Session": "0ee7b539e00719dcff6f397bff66189d",
+        "Generation": 2,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "5795dc4890da7573cfc5b3948d0296df",
+        "Principal": "b593e375a99aa71fc3183fb84089983b",
+        "Session": "0ee7b539e00719dcff6f397bff66189d",
+        "Generation": 2,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [
+    {
+      "Sequence": 62,
+      "Control": "GiftLot",
+      "Bounds": {
+        "X": 68,
+        "Y": 344,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0062-gift-GiftLot.png"
+    },
+    {
+      "Sequence": 62,
+      "Control": "GiftRecipient",
+      "Bounds": {
+        "X": 68,
+        "Y": 392,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0062-gift-GiftRecipient.png"
+    },
+    {
+      "Sequence": 62,
+      "Control": "GiftLess",
+      "Bounds": {
+        "X": 68,
+        "Y": 405,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0062-gift-GiftLess.png"
+    },
+    {
+      "Sequence": 62,
+      "Control": "GiftMore",
+      "Bounds": {
+        "X": 445,
+        "Y": 405,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0062-gift-GiftMore.png"
+    },
+    {
+      "Sequence": 62,
+      "Control": "PrepareGift",
+      "Bounds": {
+        "X": 68,
+        "Y": 390,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0062-gift-PrepareGift.png"
+    },
+    {
+      "Sequence": 62,
+      "Control": "GiftOffer",
+      "Bounds": {
+        "X": 488,
+        "Y": 225,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0062-gift-GiftOffer.png"
+    },
+    {
+      "Sequence": 62,
+      "Control": "ReviewGifts",
+      "Bounds": {
+        "X": 68,
+        "Y": 454,
+        "Width": 824,
+        "Height": 34
+      },
+      "Image": "0062-gift-ReviewGifts.png"
+    },
+    {
+      "Sequence": 62,
+      "Control": "GiftDraftDetails",
+      "Text": "Choose one stack, a recipient and quantity, then prepare. Nothing is sent while browsing.",
+      "Lines": 2,
+      "VisibleLines": 2,
+      "Bounds": {
+        "X": 68,
+        "Y": 387,
+        "Width": 396,
+        "Height": 55
+      },
+      "Image": "0062-gift-GiftDraftDetails.png"
+    },
+    {
+      "Sequence": 62,
+      "Control": "GiftOfferDetails",
+      "Text": "Choose an incoming or outgoing offer to inspect it.",
+      "Lines": 2,
+      "VisibleLines": 2,
+      "Bounds": {
+        "X": 488,
+        "Y": 222,
+        "Width": 396,
+        "Height": 55
+      },
+      "Image": "0062-gift-GiftOfferDetails.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "GiftLot",
+      "Bounds": {
+        "X": 68,
+        "Y": 248,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0107-gift-GiftLot.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "GiftRecipient",
+      "Bounds": {
+        "X": 68,
+        "Y": 324,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0107-gift-GiftRecipient.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "GiftLess",
+      "Bounds": {
+        "X": 68,
+        "Y": 366,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0107-gift-GiftLess.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "GiftMore",
+      "Bounds": {
+        "X": 445,
+        "Y": 366,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0107-gift-GiftMore.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "PrepareGift",
+      "Bounds": {
+        "X": 68,
+        "Y": 408,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0107-gift-PrepareGift.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "GiftOffer",
+      "Bounds": {
+        "X": 488,
+        "Y": 214,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0107-gift-GiftOffer.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "ReviewGifts",
+      "Bounds": {
+        "X": 68,
+        "Y": 454,
+        "Width": 824,
+        "Height": 34
+      },
+      "Image": "0107-gift-ReviewGifts.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "GiftDraftDetails",
+      "Text": "The prepared choice is no longer available. Select and prepare it again.",
+      "Lines": 2,
+      "VisibleLines": 2,
+      "Bounds": {
+        "X": 68,
+        "Y": 387,
+        "Width": 396,
+        "Height": 55
+      },
+      "Image": "0107-gift-GiftDraftDetails.png"
+    },
+    {
+      "Sequence": 107,
+      "Control": "GiftOfferDetails",
+      "Text": "From Cedar \u00B7 1 Unfamiliar item (19fd80672aee3de952edb5cb376e6b25)\nStatus: Open\nReview the Gifts wheel to accept, decline or withdraw.",
+      "Lines": 5,
+      "VisibleLines": 5,
+      "Bounds": {
+        "X": 488,
+        "Y": 222,
+        "Width": 396,
+        "Height": 142
+      },
+      "Image": "0107-gift-GiftOfferDetails.png"
+    }
+  ],
+  "Production": {
+    "Actor": "5795dc4890da7573cfc5b3948d0296df",
+    "Generation": 2,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Chop oak",
+        "TargetName": "Oak",
+        "Target": "fe4a20461dafa2765c71e084817722e9",
+        "CanExecute": true,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": null,
+        "Actor": "5795dc4890da7573cfc5b3948d0296df",
+        "Principal": "b593e375a99aa71fc3183fb84089983b",
+        "Session": "0ee7b539e00719dcff6f397bff66189d",
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "ExpectedActorRevision": 0,
+        "Port": "e4f3a429d9ca3f4d311d9ba8e07fa214",
+        "Generation": 2,
+        "Witness": null,
+        "Intent": {
+          "Node": "fe4a20461dafa2765c71e084817722e9",
+          "ExpectedNodeRevision": 0,
+          "Tool": "bb6cce38d321164a53c641ad0a952fc8",
+          "ExpectedToolLotRevision": 0
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "5795dc4890da7573cfc5b3948d0296df",
+        "Principal": "b593e375a99aa71fc3183fb84089983b",
+        "Session": "0ee7b539e00719dcff6f397bff66189d",
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "ExpectedActorRevision": 0,
+        "Port": "e4f3a429d9ca3f4d311d9ba8e07fa214",
+        "Generation": 2,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 43679,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": true,
+  "Display": "macOS"
+}

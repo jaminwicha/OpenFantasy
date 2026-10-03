@@ -1,0 +1,600 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "00b0d467071e98cf60f8bf7708515da1",
+  "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+  "Inputs": [
+    {
+      "Stage": "control-revoke",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Characters",
+      "X": 89.5,
+      "Y": 103
+    },
+    {
+      "Stage": "control-revoke",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "@Button@104",
+      "X": 644,
+      "Y": 262.5
+    },
+    {
+      "Stage": "control-close",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "Close",
+      "X": 905,
+      "Y": 111.5
+    },
+    {
+      "Stage": "resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftRecipient",
+      "To": "GiftLess"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLess",
+      "To": "GiftMore"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftMore",
+      "To": "PrepareGift"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "PrepareGift",
+      "To": "GiftOffer"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadLeft"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "pause",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    }
+  ],
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000100000001081D3289ACE9CC4BE6D2732AFFC41BB32000000104BFA85ADA9AB0FB0D377F011F0025D88000000106F085FB1A0B16DFB75517BBE725BDAAA000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB5000000080000000000000000000000574F464300000000010000000300000027776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D776974686472617700000008000000000000000100000010EE3741D42E6BF23B85499352C50F098B",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001081D3289ACE9CC4BE6D2732AFFC41BB32000000104BFA85ADA9AB0FB0D377F011F0025D880000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000002006AAB93FBD1CE5A638F05269672757F5C4C7E65A3B500762D59A956621CB043C00000008000000000000008B000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "PermissionSubmissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000160000001023A254031BFA3A7F09727B5281941064000000104BFA85ADA9AB0FB0D377F011F0025D88000000106F085FB1A0B16DFB75517BBE725BDAAA000000104073C2E750CD349C3EE91B2F7C70FB490000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB50000000800000000000000000000004E4F46430000000001000000030000001E776F726C642E616374696F6E2E7265766F6B652D636F6E74726F6C2E7631000000105795DC4890DA7573CFC5B3948D0296DF000000080000000000000002",
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001023A254031BFA3A7F09727B5281941064000000104BFA85ADA9AB0FB0D377F011F0025D880000001000B0D467071E98CF60F8BF7708515DA100000010F77CF4063A985B3AEE151C7CDCB53BB500000020A7C19D3EBBB43E75AEBEDAC2008F00EDA3ACD841DE4D3225B7D970F94C42328900000008000000000000007B000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "Selection": {
+    "World": "00b0d467071e98cf60f8bf7708515da1",
+    "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+    "Port": "73faa06d1414a7145ab58fb39680908c",
+    "HomeActor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 25984,
+      "Y": 83328,
+      "Z": 256,
+      "Cell": {
+        "X": 101,
+        "Y": 325,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 25984,
+      "Y": 83328,
+      "Z": 256,
+      "Cell": {
+        "X": 101,
+        "Y": 325,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 60,
+    "Mp": 10,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "Gifts": {
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 3,
+    "OfferSelectionVersion": 4,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "003e66ea97412e2c91fc173d8eee1565",
+        "Quantity": 8,
+        "Revision": 0,
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Revision": 2,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "41796ceea98e362698dc7d32086bd2f6",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "9bb7cf68db7bc28bae131326a24697a8",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "bf937ccc8defe9ef5c1d602575b2f725"
+      }
+    ],
+    "Offers": [
+      {
+        "Proposal": "677e4b65c371337d2ce29a0bfeb6d2b1",
+        "Status": "Declined",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "b2c9ac2115478bdc666635ac15486c7dbb42a64a763eef12215ad785b55fe46c",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": true,
+        "ClosedAtSequence": 31,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Proposal": "43fb80004ad7cb850cd215df41ae3c1e",
+        "Status": "Withdrawn",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "e2e3008add56b68943a299a592915a004283aa4803aacef56a93ceed02107b7b",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": true,
+        "ClosedAtSequence": 48,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Proposal": "c10e116f7c4c09c06e7060989d3fab27",
+        "Status": "Accepted",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "6ef4b0a2436405d6f9735839d1653b8ae1e617d94f136ae50c363d4d346309d7",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": true,
+        "ClosedAtSequence": 70,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Proposal": "ce36b255455d3fb3f2adcb89b1b773bc",
+        "Status": "Accepted",
+        "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+        "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "d7e3e9b3e8de36c9b5b0328018b782ee9238476a31b7a92d735e7b6bd5599726",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": false,
+        "ClosedAtSequence": 92,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+          "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Destination": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Quantity": 1,
+          "ExpectedLotRevision": 1
+        }
+      },
+      {
+        "Proposal": "7431342bc4051295cea4930f776d2f37",
+        "Status": "Declined",
+        "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+        "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Lot": "02ac40bc065bcd8f4a7377eefb9ab570",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "11c87f96f9e665e8fc3110787a055bae52bd310284cc067011c2c73b230a92cb",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": false,
+        "ClosedAtSequence": 107,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "79dddd9ea31bf745606a5473ea76ed14",
+          "Recipient": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Kind": "CountedSource",
+          "Lot": "02ac40bc065bcd8f4a7377eefb9ab570",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Destination": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      },
+      {
+        "Proposal": "ee3741d42e6bf23b85499352c50f098b",
+        "Status": "Withdrawn",
+        "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+        "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "6d8a9688737fb68a72594afde7656475e61efa570ea8d949929bf5a776d4d156",
+        "SenderPresenceRevision": 0,
+        "ViewerIsSender": true,
+        "ClosedAtSequence": 139,
+        "Terms": {
+          "World": "00b0d467071e98cf60f8bf7708515da1",
+          "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+          "Sender": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Recipient": "79dddd9ea31bf745606a5473ea76ed14",
+          "Kind": "CountedSource",
+          "Lot": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "Definition": "19fd80672aee3de952edb5cb376e6b25",
+          "Version": "2b1497ccb060095c9d102ec0b4d489b35566fb6b94f9b112bd277dc287a839fe",
+          "Source": "f363d2d7b9d1f8596b94191f29b8d1df",
+          "Destination": "0ee1d51f7abf576c0f56abd3c81be46a",
+          "Quantity": 1,
+          "ExpectedLotRevision": 2
+        }
+      }
+    ],
+    "Draft": {
+      "Lot": null,
+      "Kind": null,
+      "Recipient": null,
+      "Quantity": 1,
+      "SelectedOffer": "ee3741d42e6bf23b85499352c50f098b",
+      "PreparedTerms": null,
+      "Expiry": null
+    },
+    "Reviewed": {
+      "Action": "WithdrawMaterial",
+      "CanExecute": true,
+      "BlockingReason": null,
+      "DetailText": "1 Axe to Cedar; expires as world time advances. Status: Open. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+      "CostText": "No cost",
+      "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+      "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+      "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+      "Generation": 0,
+      "Witness": null,
+      "ExpectedActorRevision": 0,
+      "Intent": "WithdrawMaterialProposalIntent",
+      "Proposal": "ee3741d42e6bf23b85499352c50f098b",
+      "Terms": null
+    },
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose one inventory stack in your pack.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. Inspection spends nothing.",
+        "CostText": "Choose a stack and quantity",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is withdrawn.",
+        "DetailText": "1 Axe to Cedar; expires as world time advances. Status: Withdrawn. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive 1 Axe",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is withdrawn.",
+        "DetailText": "1 Axe to Cedar; expires as world time advances. Status: Withdrawn. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is withdrawn.",
+        "DetailText": "1 Axe to Cedar; expires as world time advances. Status: Withdrawn. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 0,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [],
+  "Production": {
+    "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Chop oak",
+        "TargetName": "Oak",
+        "Target": "fe4a20461dafa2765c71e084817722e9",
+        "CanExecute": false,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": "Move closer to the Oak.",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "ExpectedActorRevision": 0,
+        "Port": "73faa06d1414a7145ab58fb39680908c",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": {
+          "Node": "fe4a20461dafa2765c71e084817722e9",
+          "ExpectedNodeRevision": 0,
+          "Tool": "08f30a9ce5ba1789ce277ac9145e8eae",
+          "ExpectedToolLotRevision": 2
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+        "Principal": "4bfa85ada9ab0fb0d377f011f0025d88",
+        "Session": "6f085fb1a0b16dfb75517bbe725bdaaa",
+        "World": "00b0d467071e98cf60f8bf7708515da1",
+        "Branch": "f77cf4063a985b3aee151c7cdcb53bb5",
+        "ExpectedActorRevision": 0,
+        "Port": "73faa06d1414a7145ab58fb39680908c",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 2312,
+  "NativeFocused": true,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": false,
+  "Display": "headless"
+}

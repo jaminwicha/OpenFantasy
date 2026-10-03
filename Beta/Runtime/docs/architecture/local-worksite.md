@@ -57,6 +57,21 @@ The captured intent includes the actual target/tool/revisions or exact traversal
 host remains the sole judge of acceptance. Wrong-floor mining, insufficient effort, absent tools and
 completed excavation have inspectable blockers. Normal stairs use ordinary walking.
 
+For [selected characters](selected-player-protocol.md), the shared
+[`FarmProductionPresentation`](../../client/scripts/FarmProductionPresentation.cs) passes only the
+operated Production worksite, feet and known conditions to the same offer builder. Excavation targets
+participate in ordinary explicit target selection. Mining permission does not grant climbing: both
+world support and the selected character's separate Traversal permission are required for that offer.
+An unsupported interpretation keeps assisted traversal absent even when Traversal is granted.
+The HUD presents operated effort and selected work progress alongside the permanent home obligation.
+
+Regional canvas frames carry the disclosed excavation targets and gathering nodes through the same
+floor/region filters as their observation. Resource sprites, work cues and the operated actor use the
+canvas's current geometry projection; fixed-farm coordinates cannot place a regional resource. Camera
+framing uses the actual unobscured field between HUD panels. Physical members remain supplied geometry;
+an unfinished project record or hidden historical record is not a substitute for public structure
+geometry. The renderer cannot borrow a different character's home observations to fill that gap.
+
 The existing four-sector wheel substitutes Mine and, where admitted, Climb for the selected worksite
 context. An unsupported traversal sector remains absent. Opening
 selects nothing; direction or pointer input inspects and explicit confirmation submits. An open slot

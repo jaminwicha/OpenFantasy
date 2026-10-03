@@ -145,6 +145,14 @@ captured action carry the complete selection lifetime; another actor or generati
 them. History controls require PrivateHistory and asynchronous results are fenced by the exact
 selection, pack opening and inspected offer. No missing facet is synthesized from home state.
 
+Production feeds the shared [field-production presentation](presentation-and-interaction.md#runtime-binding-semantic-input-and-captured-offers)
+and [worksite controls](local-worksite.md#public-geometry-and-interactions) independently of Inventory.
+Gathering retains exact target/tool revisions; crafting uses the permitted prepared input set; mining
+retains site, terrain, tool and destination revisions. Scoped wheel refresh cannot replace those
+reviewed terms or their selection lifetime. Displayed plants, effort and work progress belong to the
+operated character. Movement and assisted traversal still require their separate permission and the
+world's admitted interpretation; seeing a worksite does not confer those capabilities.
+
 The [Characters scene](../../client/scenes/FarmControlPanel.tscn) owns layout, with a grant column and
 scrollable permission/selection rows below the main header. Recipient choice is explicit; refresh and
 reopening preserve its actor identity and checked-scope draft for the same home character. Those local

@@ -1,4 +1,5 @@
 using OpenFantasy.Core.Quests;
+using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Client;
 
@@ -150,7 +151,12 @@ internal sealed class FarmWheelSlot
             && candidate.TargetId == _original.TargetId && candidate.DialogueId == _original.DialogueId
             && candidate.Scope.PrincipalId == scope.PrincipalId && candidate.Scope.SessionId == scope.SessionId
             && candidate.Scope.ActorId == scope.ActorId && candidate.Scope.WorldId == scope.WorldId
-            && candidate.Scope.BranchId == scope.BranchId;
+            && candidate.Scope.BranchId == scope.BranchId && candidate.Scope.Selection == scope.Selection;
+        // The selection protocol pins a reviewed production command, including home generation zero.
+        // Legacy unselected wheels retain their established live-preview refresh contract.
+        if (scope.Selection is not null && (Action is FarmSemanticAction.Gather or FarmSemanticAction.Craft or FarmSemanticAction.Excavate)
+            && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
+                || !SameProductionIntent(_original.Intent, candidate?.Intent))) same = false;
         if (Action == FarmSemanticAction.Traverse && (candidate?.Scope.ExpectedActorRevision != scope.ExpectedActorRevision
             || candidate?.Intent != _original.Intent))
             same = false;
@@ -168,5 +174,16 @@ internal sealed class FarmWheelSlot
         Offer = same ? candidate! : new FarmActionOffer(Action, scope, _original.Label, _original.TargetName,
             _original.TargetId, _original.CostText, "", null,
             "This choice changed or is no longer visible. Close the wheel and choose again.", detailText: _original.DetailText);
+    }
+
+    private static bool SameProductionIntent(WorldActionIntent? original, WorldActionIntent? current)
+    {
+        if (original is not CraftIntent before || current is not CraftIntent after) return original == current;
+        var left = before.Request;
+        var right = after.Request;
+        return left.RecipeId == right.RecipeId && left.RecipeVersion == right.RecipeVersion
+            && left.ExpectedProductionRevision == right.ExpectedProductionRevision
+            && left.CustodianId == right.CustodianId && left.ExpectedStorageRevision == right.ExpectedStorageRevision
+            && left.Ingredients.SequenceEqual(right.Ingredients);
     }
 }

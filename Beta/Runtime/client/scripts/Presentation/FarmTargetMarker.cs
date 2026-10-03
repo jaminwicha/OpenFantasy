@@ -5,6 +5,10 @@ namespace OpenFantasy.Client.Presentation;
 /// <summary>A field selection cue, independent of the target's art or authoritative collision.</summary>
 internal sealed partial class FarmTargetMarker : Node2D
 {
+    /// <summary>Bounds enclosing the drawn cue and its three-pixel outline in the actual canvas transform.</summary>
+    internal Rect2? ViewportBounds => IsVisibleInTree()
+        ? GetGlobalTransformWithCanvas() * new Rect2(-15, -39, 30, 46) : null;
+
     public override void _Ready()
     {
         // Selection is an interface cue, not an illuminated object in the simulated world.

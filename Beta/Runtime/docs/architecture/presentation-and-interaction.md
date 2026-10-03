@@ -99,6 +99,23 @@ costs, revision expectations and known blocker. Hover or focus inspects without 
 hotkeys submit that captured intent; the host revalidates legality and may reject stale revisions.
 Neither preview nor execution silently substitutes a target, recipe or ingredient lot.
 
+[`FarmProductionPresentation`](../../client/scripts/FarmProductionPresentation.cs) and
+[`FarmProductionActionOffers`](../../client/scripts/FarmProductionActionOffers.cs) share gathering,
+quick crafting and worksite offer construction between home and scoped operated views. Production
+does not require disclosure of the full Inventory facet. Selected craft preparation supplies exact
+eligible ingredients, custody and recipe/storage revisions; it is not reconstructed from home stock.
+The quick craft uses the known ration recipe or, for a selected character, its sole other admitted
+recipe. It never selects the first of several unrelated recipes. A complete recipe library is a
+separate interface contract. Personal readiness comes only from operated disclosures and the ordinary
+authority; shared world holds and phase may block work for everyone.
+
+The selection protocol pins reviewed production requests through the wheel, including home generation
+zero. Its full selection, actor revision, node/tool/site and recipe/ingredient fields must still match;
+equivalent newly projected craft requests compare structurally. A changed capture requires reopening,
+not a silently refreshed command. Legacy unselected wheels retain live preview refresh for their pinned
+plant while previously issued command objects stay immutable. Neither path can replace an already
+submitted command or override an authoritative stale-request refusal.
+
 [FarmQuickWheel](../../client/scripts/FarmQuickWheel.cs) and its
 [model](../../client/scripts/FarmQuickWheelModel.cs) present four stable cardinal actions: Talk,
 Gather, Craft and Give. An explicitly selected [worksite face](local-worksite.md) substitutes Mine and

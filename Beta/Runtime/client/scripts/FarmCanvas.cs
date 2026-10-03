@@ -54,6 +54,10 @@ public partial class FarmCanvas : Node2D
     internal Rect2? ActorSpriteViewportBounds(EntityId actorId) =>
         _actors.TryGetValue(actorId, out FarmActorView? view) ? view.SpriteViewportBounds : null;
 
+    /// <summary>The actual visible resource sprite quad, rather than the resource's projected feet.</summary>
+    internal Rect2? GatheringSpriteViewportBounds(EntityId nodeId) =>
+        _gatheringNodes.TryGetValue(nodeId, out FarmGatherNodeView? view) ? view.SpriteViewportBounds : null;
+
     /// <summary>The terrain the regional layer actually drew last, with its shape, revisions and column choices.</summary>
     internal Cargo.CargoDrawnTerrain? DrawnTerrain => _cargoTerrain.LastDrawn;
 
@@ -63,6 +67,9 @@ public partial class FarmCanvas : Node2D
 
     /// <summary>The target cue's canvas position while it is shown.</summary>
     internal Vector2? TargetCue => _targetMarker.Visible ? _targetMarker.Position : null;
+
+    /// <summary>The drawn cue's viewport envelope, independent of the selected resource's own appearance.</summary>
+    internal Rect2? TargetCueViewportBounds => _targetMarker.ViewportBounds;
 
     /// <summary>Whether the observed-ground layer, rather than the farm grid's fixed floor, is drawn.</summary>
     internal bool DrawsObservedGround => _cargoTerrain.Visible && !_ground.Visible;
@@ -238,13 +245,13 @@ public partial class FarmCanvas : Node2D
             if (!_gatheringNodes.TryGetValue(node.NodeId, out FarmGatherNodeView? view))
             {
                 view = new FarmGatherNodeView { Name = "Resource_" + node.NodeId };
-                view.Setup(node, _assets);
+                view.Setup(node, _assets, Project(node.Feet));
                 _actorLayer.AddChild(view);
                 _gatheringNodes.Add(node.NodeId, view);
             }
             else
             {
-                view.Present(node, _assets);
+                view.Present(node, _assets, Project(node.Feet));
             }
             view.ZIndex = frame.IsMultilevel ? WorksiteCoordinates.DepthIndex(node.Feet.Z, actor: true) : 0;
         }

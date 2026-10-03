@@ -269,16 +269,36 @@ public partial class FarmGame
             _hud.Message("The selected character's current floor cannot be shown. Return home or wait for a supported observation.");
             return;
         }
-        _canvas.Present(regional is null ? new FarmCanvasFrame(view.Calendar, actors, worksite: view.Production?.Worksite)
-            : new FarmCanvasFrame(view.Calendar, actors, regional));
+        LocalControlledProductionView? production = view.Production;
+        LocalWorksiteView? worksite = production?.Worksite;
+        var plants = production?.GatheringNodes.Where(node => regional?.Admits(node.Feet) != false)
+            .Select(node => new FarmGatherNodeFrame(node.NodeId, node.DisplayName, node.Feet,
+                node.RequiredTool, node.Visibility));
+        var structures = production?.Construction.Where(project => project.IsCompleted
+                && (regional?.Admits(project.SiteFeet) ?? worksite?.HasPhysicalConstruction != true))
+            .Select(project => new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet));
+        _canvas.Present(regional is null
+            ? new FarmCanvasFrame(view.Calendar, actors, plants, structures, worksite)
+            : new FarmCanvasFrame(view.Calendar, actors, regional, plants, structures,
+                worksite?.ExcavationTargets.Where(target =>
+                    regional.Observation.RegionAt(target.Cell.X, target.Cell.Y) is not null)));
+        Vector2 focus = _canvas.FocusPosition;
         if (regional is not null)
         {
-            _camera.LimitLeft = checked((int)Math.Floor(regional.Bounds.X));
-            _camera.LimitTop = checked((int)Math.Floor(regional.Bounds.Y));
-            _camera.LimitRight = checked((int)Math.Ceiling(regional.Bounds.Right));
-            _camera.LimitBottom = checked((int)Math.Ceiling(regional.Bounds.Bottom));
+            Rect2 viewport = GetViewport().GetVisibleRect();
+            Rect2 field = _hud.FieldViewportBounds;
+            var framing = new CargoCameraFraming(regional.Bounds,
+                new CargoCanvasRect(viewport.Position.X, viewport.Position.Y, viewport.Size.X, viewport.Size.Y),
+                new CargoCanvasRect(field.Position.X, field.Position.Y, field.Size.X, field.Size.Y),
+                new CargoCanvasPoint(_camera.Zoom.X, _camera.Zoom.Y));
+            CargoCanvasRect limits = framing.Limits;
+            _camera.LimitLeft = checked((int)Math.Floor(limits.X));
+            _camera.LimitTop = checked((int)Math.Floor(limits.Y));
+            _camera.LimitRight = checked((int)Math.Ceiling(limits.Right));
+            _camera.LimitBottom = checked((int)Math.Ceiling(limits.Bottom));
+            focus += new Vector2((float)framing.FollowOffset.X, (float)framing.FollowOffset.Y);
         }
-        _camera.Position = _canvas.FocusPosition;
+        _camera.Position = focus;
         _canvas.PresentTarget(_targets.Selected);
         _hud.PresentControlled(observation, _action is not null, _input.Paused || !_input.Focused, _presented, _targets);
         PresentControlReturn(observation.ControlStatus);

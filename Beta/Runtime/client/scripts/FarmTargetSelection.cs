@@ -28,7 +28,9 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             .Select(actor => new FarmTarget(actor.ActorId, actor.DisplayName,
                 enemies.Contains(actor.ActorId) ? FarmTargetKind.Encounter : FarmTargetKind.Person, actor.Feet))
             .Concat(view.Production?.GatheringNodes.Select(node => new FarmTarget(node.NodeId, node.DisplayName,
-                FarmTargetKind.Harvestable, node.Feet)) ?? []).OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
+                FarmTargetKind.Harvestable, node.Feet)) ?? [])
+            .Concat(ExcavationTargets(view.Production?.Worksite))
+            .OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
         if (Selected is { } selected)
             Selected = _candidates.FirstOrDefault(target => target.Id == selected.Id) ?? selected with { Feet = null };
     }
@@ -47,10 +49,7 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
             .Select(actor => new FarmTarget(actor.ActorId, actor.DisplayName, FarmTargetKind.Person, actor.Feet))
             .Concat(view.GatheringNodes.Select(node =>
                 new FarmTarget(node.NodeId, node.DisplayName, FarmTargetKind.Harvestable, node.Feet)))
-            .Concat(view.Worksite?.ExcavationTargets.Select(site => new FarmTarget(site.SiteId,
-                site.ReachMode == ExcavationReachMode.RaisedBankTop
-                    ? site.IsComplete ? "Opening" : "Bank face" : "Worksite face", FarmTargetKind.Excavation,
-                site.Stance)) ?? []).Concat(encounterTargets))
+            .Concat(ExcavationTargets(view.Worksite)).Concat(encounterTargets))
             .OrderBy(target => target.Kind).ThenBy(target => target.Id).ToArray();
         if (Selected is { } selected)
         {
@@ -81,6 +80,12 @@ internal sealed class FarmTargetSelection(EntityId speakerId)
     }
 
     internal void Clear() => Selected = null;
+
+    private static IEnumerable<FarmTarget> ExcavationTargets(LocalWorksiteView? worksite) =>
+        worksite?.ExcavationTargets.Select(site => new FarmTarget(site.SiteId,
+            site.ReachMode == ExcavationReachMode.RaisedBankTop
+                ? site.IsComplete ? "Opening" : "Bank face" : "Worksite face", FarmTargetKind.Excavation,
+            site.Stance)) ?? [];
 
     private static IEnumerable<FarmTarget> EncounterTargets(LocalWorldView view)
     {

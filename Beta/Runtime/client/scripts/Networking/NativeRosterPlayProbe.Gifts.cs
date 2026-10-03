@@ -14,6 +14,7 @@ internal sealed partial class NativeRosterPlayProbe
     private readonly List<object> _giftSnapshots = [];
     private readonly List<object> _giftCaptures = [];
     private FarmActionOffer? _reviewedGift;
+    private object? _giftOpeningLayout;
     private FarmInventoryScreen GiftPack => _game.GetNode<FarmInventoryScreen>("FarmInventoryScreen");
     private FarmGiftPanel GiftPanel => GiftPack.GetNode<FarmGiftPanel>("%Gifts");
     private FarmQuickWheel GiftWheel => _game.GetNode<FarmQuickWheel>("FarmQuickWheel");
@@ -24,6 +25,7 @@ internal sealed partial class NativeRosterPlayProbe
 
     private async Task OpenGifts()
     {
+        _giftOpeningLayout = null;
         await CloseSelectionPanel();
         MarketProbeDriver.Require(!_game.IsWheelOpen, "Cancel the current wheel before opening the gift pack.");
         var selection = Selected.Selection;
@@ -48,6 +50,13 @@ internal sealed partial class NativeRosterPlayProbe
                     Rect2 bounds = toggle.GetGlobalRect();
                     bool ready = drawn && toggle.IsVisibleInTree() && !toggle.Disabled && bounds.Size.X > 0 && bounds.Size.Y > 0
                         && GetViewport().GetVisibleRect().Encloses(bounds) && previous == bounds;
+                    _giftOpeningLayout = new
+                    {
+                        Drawn = drawn, Visible = toggle.IsVisibleInTree(), toggle.Disabled,
+                        Bounds = Bounds(bounds), Previous = previous is { } last ? Bounds(last) : null,
+                        Viewport = Bounds(GetViewport().GetVisibleRect()), Stable = previous == bounds,
+                        Minimum = toggle.GetCombinedMinimumSize(), Ready = ready
+                    };
                     previous = bounds;
                     return ready;
                 }, "The actual Gifts button did not settle inside the viewport before input.");

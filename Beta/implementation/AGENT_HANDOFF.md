@@ -19,6 +19,26 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Selected field production](p02/selected-production/RESULT.md) connects permitted gathering, quick
+crafting and excavation to the shared field/HUD/wheel. Exact reviewed scope and ingredient/tool/site
+captures remain fixed; regional resources use the actual projection and camera framing. Production
+works independently of Inventory. Two actual four-human native worlds qualify gathered berries →
+rations → a produced split gift, and three mining choices → open bank → conserved water flow.
+Owner return/revoke, exact receipts, complete identity/resource comparisons and original replay pass.
+
+The warning-free build and [final evidence](p02/selected-production/FINAL_CHECKS.json) record **2,123
+distinct passing cases**:231 managed (exact unchanged dependency reuse),2 final-build native production,
+5 existing native cases including the gift diagnostic, and fresh fullCore1,885. Eleven images were
+inspected; architecture references and independent review are retained. Marker
+`codex/milestone-selected-production-20261003` records this bounded scope, not full regression or phase
+acceptance. The retained original raw-gift regression failed at a late
+Gifts-button opening; passive predicate diagnostics then passed without reproducing or explaining it.
+Keep that reliability gate open and retain its failure. No deadline, rule or original assertion changed.
+The before-change ref `codex/checkpoint-before-selected-production-20261003T080854Z` preserves
+`3467ee2d`; 783 prior inputs, 23 specs and unrelated staging remain pinned, with two additive source
+links and an exact archived test project. Complete recipe selection, human construction and public
+completed nonphysical geometry remain obligations. External Claude remains terminally limited.
+
 [Selected material gifts](p02/selected-material-gifts/RESULT.md) now binds the shared Pack/Gifts wheel
 to permitted operated Inventory, exact preparation/selection and separate history permission. A real
 four-human native journey covers Inventory-only consent, allowance expiry, both participants' explicit
@@ -26,13 +46,13 @@ gift choices, two finite source-lot transfers and refusal after owner return/rev
 receipts, identities, care/resources and original-genesis replay are checked. Characters remains the
 control surface; the same Pack serves either character without a substitute full private view.
 
-The warning-free build and **2,111 distinct checks** pass on current dependencies:221 affected managed,
+At that checkpoint, the warning-free build and **2,111 distinct checks** passed on its dependencies:221 affected managed,
 one new native gift journey, four existing native cases and fresh fullCore1,885. Eight actual images
 were inspected. [Final evidence](p02/selected-material-gifts/FINAL_CHECKS.json) and
 [review](p02/selected-material-gifts/REVIEW.md) retain three failures and the fixes, including real
 dropdown overflow. The mixed keyboard-dropdown/pointer-button/controller route is qualified;
-mouse dropdowns, native produced gifts/full history, crash, physical/human/art and production gates
-remain open. Inventory-only readable item descriptions need a permitted public catalog rather than
+that packet did not include produced gifts, which the selected-production increment above now covers.
+Mouse dropdowns, full history, crash, physical/human/art and production gates remain open. Inventory-only readable item descriptions need a permitted public catalog rather than
 unrelated capabilities. Before-change ref `codex/checkpoint-before-selected-material-gifts-20261003T072527Z`
 preserves `8741766b`;777 prior inputs,23 specs and unrelated staging remain preserved, with one additive
 test-project link and exact archived original. Marker `codex/milestone-selected-material-gifts-20261003`
@@ -204,15 +224,16 @@ including the failed broader gates. Before-change ref:
    sell-management screens against existing typed facets and readers. Retain current capture/confirmation
    rules, immutable home identity and explicit scopes; no withheld full-view synthesis. The native
    consent/selection/combat route is qualified above; the [client scope notes](p02/connected-player-control/CLIENT_NOTES.md)
-   retain the incomplete domain surfaces. Current native source-lot gifts now pass; produced gifts,
-   selected history lifetime interactions, mouse dropdowns and permission-independent readable public
+   retain the incomplete domain surfaces. Native source-lot and produced-gift journeys have bounded passing evidence; retain the unexplained
+   raw-gift reopening failure and its diagnostic. Selected history lifetime interactions, complete recipe
+   and human-construction interfaces, mouse dropdowns and permission-independent readable public
    item names remain explicit work. Preserve the shared Pack instead of adding duplicate domain panels
    to Characters; the final icon/tooltip presentation still needs its normal production pass.
 2. Qualify full profile40 archive/reopen and actual process-kill recovery with native continuation.
    Preserve accepted obligations, permission/assignment lineage and original controller allowance;
    retain the [complete obligations](p02/co-player-control/DESIGN.md). No production world or lived save
    upgrades automatically.
-3. Keep the retained failed timing gate open. Later instrumented compatibility passes do not explain
+3. Keep the retained failed timing and raw-gift opening gates open. Later instrumented compatibility passes do not explain
    earlier original history/movement timeouts. No unchanged diagnostic reruns simply to seek green;
    use a genuine changed dependency or an actual failed trace to justify the next bounded repair.
 

@@ -1,0 +1,52 @@
+{
+  "report": "Beta/implementation/p02/selected-production/qualification/client-managed-20261003T084653225722Z/report.json",
+  "reportSha256": "1378d8fcabfd080b12b4d9f1c8148ae29d85e7c00dffc8e0acd345e3d46d354e",
+  "outcomes": {
+    "Passed": 231
+  },
+  "changedSourceOutsideManagedCompilation": [
+    "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Evidence.cs",
+    "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Gifts.cs"
+  ],
+  "changedBinariesOutsideManagedExecution": [
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll"
+  ],
+  "hostingTestProjectSha256": "2f13b6ded2f31712051f841782aa37a1d7be70573903835dc42f8f3be35581b5",
+  "directClientCompileLinks": [
+    "../../client/scripts/FarmSaveOpener.cs",
+    "../../client/scripts/FarmQuestSaveOpener.cs",
+    "../../client/scripts/FarmConstructionSaveOpener.cs",
+    "../../client/scripts/FarmQuestActions.cs",
+    "../../client/scripts/FarmInputRouter.cs",
+    "../../client/scripts/FarmProductionPresentation.cs",
+    "../../client/scripts/FarmProductionActionOffers.cs",
+    "../../client/scripts/FarmCrafting.cs",
+    "../../client/scripts/FarmActionOffer.cs",
+    "../../client/scripts/FarmTargetSelection.cs",
+    "../../client/scripts/FarmInventoryModel.cs",
+    "../../client/scripts/FarmInventoryPresentation.cs",
+    "../../client/scripts/FarmQuickWheelModel.cs",
+    "../../client/scripts/WorksiteActionOffers.cs",
+    "../../client/scripts/EncounterActionOffers.cs",
+    "../../client/scripts/EncounterOutcome/EncounterOutcomeText.cs",
+    "../../client/scripts/FarmSubmission.cs",
+    "../../client/scripts/RestorativeActionOffers.cs",
+    "../../client/scripts/FarmActionOffers.cs",
+    "../../client/scripts/FarmGiftSelection.cs",
+    "../../client/scripts/MaterialProposalActionOffers.cs",
+    "../../client/scripts/FarmClientSession.cs",
+    "../../client/scripts/FarmClientSession.ActorSelection.cs",
+    "../../client/scripts/FarmSelectedActionOffers.cs",
+    "../../client/scripts/FarmMarketDraft.cs",
+    "../../client/scripts/MarketActionOffers.cs",
+    "../../client/scripts/FarmMarketTerms.cs",
+    "../../client/scripts/Presentation/FarmHealthFeedback.cs",
+    "../../client/scripts/Cargo/CargoViewProjection.cs",
+    "../../client/scripts/Cargo/CargoStallPick.cs",
+    "../../client/scripts/Cargo/CargoPaperdollPlan.cs",
+    "../../client/scripts/Cargo/CargoCameraFraming.cs",
+    "../../client/scripts/Retreat/RetreatOffers.cs"
+  ],
+  "allOtherSourcesAndBinariesExact": true,
+  "retainedClaim": "The same 231 managed cases; both changed files are native Godot probes excluded from this test project, and all non-client binaries remain byte-identical."
+}

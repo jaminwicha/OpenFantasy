@@ -1,0 +1,125 @@
+{
+  "Kind": "native-selected-production-v1",
+  "Mode": "excavation",
+  "Status": "passed",
+  "ExpirySeconds": 30.8361976,
+  "ElapsedMilliseconds": 49781,
+  "Stages": [
+    {
+      "Stage": "selected-paused",
+      "ElapsedMilliseconds": 40200,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 60,
+          "Selected": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Generation": 1,
+          "Commands": 0
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 4,
+          "Selected": "79dddd9ea31bf745606a5473ea76ed14",
+          "Generation": 0,
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 4,
+          "Selected": "e1d57b89bcce6b6237bd754d53734e55",
+          "Generation": 0,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "opened-breach",
+      "ElapsedMilliseconds": 43214,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 73,
+          "Selected": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Generation": 1,
+          "Commands": 3
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 4,
+          "Selected": "79dddd9ea31bf745606a5473ea76ed14",
+          "Generation": 0,
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 4,
+          "Selected": "e1d57b89bcce6b6237bd754d53734e55",
+          "Generation": 0,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "production-completed",
+      "ElapsedMilliseconds": 43214,
+      "Peers": [
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 73,
+          "Selected": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Generation": 1,
+          "Commands": 3
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 4,
+          "Selected": "79dddd9ea31bf745606a5473ea76ed14",
+          "Generation": 0,
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 4,
+          "Selected": "e1d57b89bcce6b6237bd754d53734e55",
+          "Generation": 0,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Stage": "returned-revoked-paused",
+      "ElapsedMilliseconds": 46767,
+      "Peers": [
+        {
+          "Home": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Sequence": 3,
+          "Selected": "4073c2e750cd349c3ee91b2f7c70fb49",
+          "Generation": 0,
+          "Commands": 0
+        },
+        {
+          "Home": "5795dc4890da7573cfc5b3948d0296df",
+          "Sequence": 78,
+          "Selected": "5795dc4890da7573cfc5b3948d0296df",
+          "Generation": 2,
+          "Commands": 3
+        },
+        {
+          "Home": "79dddd9ea31bf745606a5473ea76ed14",
+          "Sequence": 7,
+          "Selected": "79dddd9ea31bf745606a5473ea76ed14",
+          "Generation": 0,
+          "Commands": 0
+        },
+        {
+          "Home": "e1d57b89bcce6b6237bd754d53734e55",
+          "Sequence": 7,
+          "Selected": "e1d57b89bcce6b6237bd754d53734e55",
+          "Generation": 0,
+          "Commands": 0
+        }
+      ]
+    }
+  ],
+  "Preparation": "Original-genesis journaled walking and ordinary time, not native travel or fabricated effort."
+}

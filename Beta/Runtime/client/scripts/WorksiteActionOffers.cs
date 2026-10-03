@@ -10,21 +10,27 @@ internal static class WorksiteActionOffers
     internal static void Add(IDictionary<FarmSemanticAction, FarmActionOffer> offers, LocalWorldView view,
         FarmActionScope scope, FarmTarget? selected)
     {
-        if (view.Worksite is not { } worksite || selected?.Kind != FarmTargetKind.Excavation) return;
-        LocalExcavationView? site = worksite.ExcavationTargets.FirstOrDefault(value => value.SiteId == selected.Id);
         SubunitPosition feet = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).Feet;
-        offers[FarmSemanticAction.Excavate] = Mine(worksite, scope, selected, site, feet);
-        if (worksite.SupportsAssistedTraversal)
+        Add(offers, view.Worksite, feet, scope, selected, canTraverse: true);
+    }
+
+    internal static void Add(IDictionary<FarmSemanticAction, FarmActionOffer> offers, LocalWorksiteView? worksite,
+        SubunitPosition feet, FarmActionScope scope, FarmTarget? selected, bool canTraverse, string? contextBlocker = null)
+    {
+        if (worksite is null || selected?.Kind != FarmTargetKind.Excavation) return;
+        LocalExcavationView? site = worksite.ExcavationTargets.FirstOrDefault(value => value.SiteId == selected.Id);
+        offers[FarmSemanticAction.Excavate] = Mine(worksite, scope, selected, site, feet, contextBlocker);
+        if (worksite.SupportsAssistedTraversal && canTraverse)
         {
-            offers[FarmSemanticAction.Traverse] = Traverse(worksite, scope, selected, site, feet);
+            offers[FarmSemanticAction.Traverse] = Traverse(worksite, scope, selected, site, feet, contextBlocker);
         }
     }
 
     private static FarmActionOffer Mine(LocalWorksiteView view, FarmActionScope scope, FarmTarget target,
-        LocalExcavationView? site, SubunitPosition feet)
+        LocalExcavationView? site, SubunitPosition feet, string? contextBlocker)
     {
         LocalExcavationToolView? tool = view.Tools.FirstOrDefault(value => value.DefinitionId == site?.RequiredToolDefinitionId);
-        string? blocker = CommonBlocker(view, site) ?? (site!.IsComplete ? "This face has already been excavated."
+        string? blocker = contextBlocker ?? CommonBlocker(view, site) ?? (site!.IsComplete ? "This face has already been excavated."
             : tool is null ? "You need the matching mining tool in your own pack."
             : feet.Z != site.Stance.Z ? site.ReachMode == ExcavationReachMode.RaisedBankTop
                 ? "Reach the bank work stance before mining." : "Reach the lower work stance before mining."
@@ -49,10 +55,10 @@ internal static class WorksiteActionOffers
     }
 
     private static FarmActionOffer Traverse(LocalWorksiteView view, FarmActionScope scope, FarmTarget target,
-        LocalExcavationView? site, SubunitPosition feet)
+        LocalExcavationView? site, SubunitPosition feet, string? contextBlocker)
     {
         ClimbIntent? intent = site is null ? null : SelectLedge(view, site.Stance, feet);
-        string? blocker = CommonBlocker(view, site)
+        string? blocker = contextBlocker ?? CommonBlocker(view, site)
             ?? (intent is null ? "Stand beside the lower work stance to climb in, or inside it to climb out." : null);
         string label = intent is null ? "Climb ledge" : intent.DeltaZ < 0 ? "Climb down" : "Climb out";
         return new FarmActionOffer(FarmSemanticAction.Traverse, scope, label, target.Name, target.Id,

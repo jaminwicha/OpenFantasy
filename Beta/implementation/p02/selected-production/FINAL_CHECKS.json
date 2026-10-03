@@ -1,0 +1,371 @@
+{
+  "allCurrentSelectedReportsPassed": true,
+  "fullRegressionAccepted": false,
+  "originalNativeGiftOpeningFailureExplained": false,
+  "selectedNativeProductionJourneysQualified": true,
+  "fullCoPlayerFeatureAccepted": false,
+  "fullPhaseAccepted": false,
+  "movementTimingGateClosed": false,
+  "productionHistoryLatencyGateClosed": false,
+  "profile40ProcessKillQualified": false,
+  "fullRecipeLibraryQualified": false,
+  "selectedHumanConstructionQualified": false,
+  "completedNonphysicalGeometryQualified": false,
+  "nativeProducedGiftQualified": true,
+  "nativeSelectedHistoryLifecycleQualified": false,
+  "mouseDropdownQualified": false,
+  "physicalDeviceAcceptance": false,
+  "humanUsabilityAcceptance": false,
+  "artAcceptance": false,
+  "sourceHead": "3467ee2dce86f39f6b33ab6d95ca147ab1c02ee5",
+  "preChangeCheckpoint": "codex/checkpoint-before-selected-production-20261003T080854Z",
+  "milestone": "codex/milestone-selected-production-20261003",
+  "protectedCounts": {
+    "tests": 783,
+    "specs": 23
+  },
+  "onlyExistingTestProjectChange": "Two additive FarmProductionPresentation/ActionOffers source links; exact original archived and compared.",
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "44d4004f14d98c6234af4c168f4e00eebdaf07d9b9163f8be1ca6ae37df6dd55",
+  "finalizerSha256": "c0ebaf9528a763f6f7dbbb849a970049de1d832fce53eed88fecfa3d324b7e97",
+  "distinctCasesPassingOnVerifiedDependencies": 2123,
+  "newCases": [
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionBindingTests.Actual_owned_mining_uses_exact_work_pins_and_profile40_does_not_offer_climbing(scopes: Production)",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionBindingTests.Actual_owned_mining_uses_exact_work_pins_and_profile40_does_not_offer_climbing(scopes: Traversal | Production)",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionBindingTests.Explicit_wrong_or_missing_plant_never_falls_back_to_the_reachable_berry(missing: False)",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionBindingTests.Explicit_wrong_or_missing_plant_never_falls_back_to_the_reachable_berry(missing: True)",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionBindingTests.Inventory_permission_does_not_supply_production_or_home_work_choices",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionBindingTests.Production_only_gathers_twice_and_crafts_owned_material_with_real_grantee_delivery",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionBindingTests.Returning_to_the_same_actor_does_not_reauthorize_the_old_production_offer",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionBindingTests.Revocation_refuses_an_unsubmitted_work_offer_and_returns_the_port_home_paused",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionWheelTests.Selected_craft_wheel_accepts_equal_rehydrated_requests_but_not_changed_recipe_storage_or_ingredients",
+    "OpenFantasy.Hosting.Tests.Client.SelectedProduction.SelectedProductionWheelTests.Selected_gather_wheel_refuses_changed_actor_selection_node_and_tool_pins",
+    "OpenFantasy.Server.Tests.SelectedProductionNative.NativeSelectedProductionTests.Selected_native_production_preserves_real_inputs_scope_operator_and_original_history(excavation: False)",
+    "OpenFantasy.Server.Tests.SelectedProductionNative.NativeSelectedProductionTests.Selected_native_production_preserves_real_inputs_scope_operator_and_original_history(excavation: True)"
+  ],
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T085256861271Z/report.json",
+      "sha256": "9e9acd441f4b002760a69a239385bd00098fe9e0fccf09554d28a71d84a12bb5",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesRelevantDependencies": true,
+      "inheritedClaim": null,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 5.905747416982194,
+      "tracing": false,
+      "outcomes": null,
+      "unrunCases": []
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261003T084653225722Z/report.json",
+      "sha256": "1378d8fcabfd080b12b4d9f1c8148ae29d85e7c00dffc8e0acd345e3d46d354e",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": false,
+      "matchesRelevantDependencies": true,
+      "inheritedClaim": "The same 231 managed cases; both changed files are native Godot probes excluded from this test project, and all non-client binaries remain byte-identical.",
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 102.46206983400043,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 231
+      },
+      "unrunCases": []
+    },
+    "native-production": {
+      "path": "qualification/native-production-20261003T085519129069Z/report.json",
+      "sha256": "3e940d5c39048ad37220f8a3aa28f50580891d7efd4cd0f5c761913268de0245",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesRelevantDependencies": true,
+      "inheritedClaim": null,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 90.6465208340087,
+      "tracing": true,
+      "outcomes": {
+        "Passed": 2
+      },
+      "unrunCases": []
+    },
+    "native-gifts": {
+      "path": "qualification/native-gifts-20261003T085303549414Z/report.json",
+      "sha256": "278d3482bc12163bc774c2624aaf53cfed66fb9e06de137d24d57e60006c3274",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesRelevantDependencies": true,
+      "inheritedClaim": null,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 58.62419391598087,
+      "tracing": true,
+      "outcomes": {
+        "Passed": 1
+      },
+      "unrunCases": []
+    },
+    "native-selection": {
+      "path": "qualification/native-selection-20261003T085650508156Z/report.json",
+      "sha256": "1a9c8492d9b869eaa7d4b5efe86120a86d0df22246cc77b2d77fae4d6ac6a73d",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesRelevantDependencies": true,
+      "inheritedClaim": null,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 47.155827459006105,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 1
+      },
+      "unrunCases": []
+    },
+    "native-roster": {
+      "path": "qualification/native-roster-20261003T085737898978Z/report.json",
+      "sha256": "1d47bb25c1397424cff21c28958fa5d2b3c3339feab8dc2000b12073a9d3c8c5",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesRelevantDependencies": true,
+      "inheritedClaim": null,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 77.93598624999868,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 1
+      },
+      "unrunCases": []
+    },
+    "native-compatibility": {
+      "path": "qualification/native-compatibility-20261003T085856062739Z/report.json",
+      "sha256": "30921dd2c0e77f419da5d03ce67efbb915f409ec1e3ee916e685990f9ef0a597",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesRelevantDependencies": true,
+      "inheritedClaim": null,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 13.924614582996583,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 2
+      },
+      "unrunCases": []
+    },
+    "core": {
+      "path": "qualification/core-20261003T085910374842Z/report.json",
+      "sha256": "dd481235dbc3398bc24541f3f8873af8f3e122c72790aebb659b9d9668204a1d",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "matchesRelevantDependencies": true,
+      "inheritedClaim": null,
+      "matchesCurrentCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 89.84272937499918,
+      "tracing": false,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "unrunCases": []
+    }
+  },
+  "unresolvedCurrentReportFailures": [],
+  "retainedFailedAttempts": [
+    {
+      "path": "qualification/build-20261003T082812475488Z/report.json",
+      "sha256": "114fc88d11c2c409f483ffe369dd7bb56d3c51210756292c73cc3726228ed3ab",
+      "mode": "build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/native-gifts-20261003T084836722332Z/report.json",
+      "sha256": "9cc8428c5a4204b66c317cb5066b0f56fa3dbfe7f81cfc895dc79f3bda8dabac",
+      "mode": "native-gifts",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/native-production-20261003T083819954557Z/report.json",
+      "sha256": "b72aab79e6d4ad9273cf69fc29f78787caaae21982256623e796d78a2f14f267",
+      "mode": "native-production",
+      "outcomes": {
+        "Failed": 2
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/new-managed-20261003T083232279526Z/report.json",
+      "sha256": "429b1f0d2ef134177f20924377732aa0fecaf1447b235bfb35633c8b517caee7",
+      "mode": "new-managed",
+      "outcomes": {
+        "Failed": 2,
+        "Passed": 8
+      },
+      "error": null
+    }
+  ],
+  "unexplainedEarlierFailure": {
+    "path": "qualification/native-gifts-20261003T084836722332Z/report.json",
+    "claim": "Existing raw-gift pack opening did not settle within5s. The instrumented diagnostic passed; no cause or reliability repair is established."
+  },
+  "managedDependencyComparison": "MANAGED_DEPENDENCY_COMPARISON.json",
+  "visualDependencyComparison": "VISUAL_DEPENDENCY_COMPARISON.json",
+  "journeys": {
+    "gather-craft-gift": {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/journey.json",
+      "status": "passed",
+      "elapsedMilliseconds": 46171,
+      "observedAllowanceSeconds": 30.6698715,
+      "preparation": "Original-genesis journaled walking and ordinary time, not native travel or fabricated effort."
+    },
+    "excavation": {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/journey.json",
+      "status": "passed",
+      "elapsedMilliseconds": 41450,
+      "observedAllowanceSeconds": 30.526983,
+      "preparation": "Original-genesis journaled walking and ordinary time, not native travel or fabricated effort."
+    }
+  },
+  "authenticatedNativeArtifacts": [
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/final.ofc",
+      "sha256": "45969c24399fabbddbfd77be0a63a74c2494076da358cfa63878f969f6cb93dc"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/genesis.ofc",
+      "sha256": "c692cfa5f2cc42c0e7720433dea60877ef4140dc529c414c2990835d3f83ce16"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/identities.json",
+      "sha256": "64224c6929af4d4b8fa36d07db7961da6c17e12859d54f28071128af3c2781b7"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/journal.json",
+      "sha256": "b75d8ba1fcc466e627e5bfbb1a04e51a8d056b0aedef6e47f7715317c6c6f83f"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/journey.json",
+      "sha256": "62c13718cdb0592564b2be44474aba41120cd6ff9ad2678d8ffaef76d4331bc6"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/preparation.txt",
+      "sha256": "c20b1719d1b065816ba556f35d7d06ab03c89416b4be9d7535eaeac2fc06a14f"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/prepared.ofc",
+      "sha256": "748339b2b9ab04f8f9f77bf2cc5974eb3dc29cd0d03916290dcec42e03bf8938"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/receipts.json",
+      "sha256": "3e0190f0b1a6cd17789d6b26e616cf6b3d273cfd603ae2a4b53ec8a5ebb90cf7"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/excavation/world.sqlite3",
+      "sha256": "a3739f310daabb8d63b88c049b50aff920da1d6eb22f162260c2de77eb7c897b"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/final.ofc",
+      "sha256": "caab206174d56b73e7003e04262f7b645dd79d12c09f9170779de265505ba84b"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/genesis.ofc",
+      "sha256": "c692cfa5f2cc42c0e7720433dea60877ef4140dc529c414c2990835d3f83ce16"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/identities.json",
+      "sha256": "1d16949f1a66b57ef55d0963f352dab58cc2c3261507d773949f6a48e04808f2"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/journal.json",
+      "sha256": "542331c3c69dde2dc25d5a70ddcdc18f53f9ba43e743c5c40f000f814da15ac6"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/journey.json",
+      "sha256": "2a6882fa4de1cab5086ecef98f2827b0480878a5b599094f182e781dc27349fd"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/preparation.txt",
+      "sha256": "c2da78c490c1168fbc75bd3ba92493460d411ac697de45b32e6a160f243ac809"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/prepared.ofc",
+      "sha256": "f5bddd2327987157eaa439de4243ac1eeea53071a43c46c0621e0e306ff925d7"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/receipts.json",
+      "sha256": "dfa8196042cd8a9554747648e5c85315861f40c1ed61c4fa5fa26f73b7391e8f"
+    },
+    {
+      "path": "qualification/native-production-20261003T085519129069Z/native/selected-production/gather-craft-gift/world.sqlite3",
+      "sha256": "b1b26b3befccf56c626e0aed5ad2f1b5bbe8be74a90743e1c69d90bbe8f76858"
+    }
+  ],
+  "leadInspectedImages": [
+    {
+      "path": "qualification/native-production-20261003T084401039509Z/native/selected-production/gather-craft-gift/5795dc4890da7573cfc5b3948d0296df-first/0061-production.png",
+      "sha256": "f177b94fd63a37d5117a9f65f74daa22eb2c84cf0f06e0c2edebf0e65f8e74ab"
+    },
+    {
+      "path": "qualification/native-production-20261003T084401039509Z/native/selected-production/gather-craft-gift/5795dc4890da7573cfc5b3948d0296df-first/0067-production.png",
+      "sha256": "f5f3c5963f824ca26e8b05e0a68ae803e42444a7d8b463d833bd2cf577478960"
+    },
+    {
+      "path": "qualification/native-production-20261003T084401039509Z/native/selected-production/gather-craft-gift/5795dc4890da7573cfc5b3948d0296df-first/0075.png",
+      "sha256": "1769d348802544ea7d2965ac80b00acd314ad6fe99a75b69e859aa93d7d81d57"
+    },
+    {
+      "path": "qualification/native-production-20261003T084401039509Z/native/selected-production/gather-craft-gift/79dddd9ea31bf745606a5473ea76ed14-first/0011.png",
+      "sha256": "e9e0dae659252f3a4918e3cb0dbd02eac00f0a421ed32713ef20886c2ba7dcf3"
+    },
+    {
+      "path": "qualification/native-production-20261003T084401039509Z/native/selected-production/excavation/5795dc4890da7573cfc5b3948d0296df-first/0064-production.png",
+      "sha256": "064247e2cb18aa53ae43a007e00741ea82c6d2980dccae96eb5fc00036e35903"
+    },
+    {
+      "path": "qualification/native-production-20261003T084401039509Z/native/selected-production/excavation/5795dc4890da7573cfc5b3948d0296df-first/0071-production.png",
+      "sha256": "fdb8347a71f2c16da9b280643d57f8acf2cd711433317d8a6848431cfe79a815"
+    },
+    {
+      "path": "qualification/native-production-20261003T084401039509Z/native/selected-production/excavation/5795dc4890da7573cfc5b3948d0296df-first/0073.png",
+      "sha256": "1040da4d6fd588a9759f96fa593657dd8e7a059200dcbbff4bd275023f1f6733"
+    },
+    {
+      "path": "qualification/native-selection-20261003T085650508156Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0316.png",
+      "sha256": "85c1cde559c09733a4cefd569fd010ea27d7876ff1df277cd1941fc04e82dcb0"
+    },
+    {
+      "path": "qualification/native-selection-20261003T085650508156Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0344.png",
+      "sha256": "05396a445b3cebfebf4926804ba466224063f3d5bda8b9922a0e46c388c60597"
+    },
+    {
+      "path": "qualification/native-roster-20261003T085737898978Z/native/roster/5795dc4890da7573cfc5b3948d0296df-first/0039.png",
+      "sha256": "d8f6e0cdf89ac57590c10cb38917d64dfe0b672e6dd6981dae7be4b0bb0b64b2"
+    },
+    {
+      "path": "qualification/native-compatibility-20261003T085856062739Z/native/rendered/native-player.png",
+      "sha256": "243fc53fb0800be11ce7d10d2fd9ff3ec14b74465c21b54d262012cc7322eef3"
+    }
+  ],
+  "review": "REVIEW.md",
+  "externalClaudeRequestExecuted": false,
+  "limits": [
+    "Four native TLS peers per world; grantee and gift recipient render with controlled input and no-focus configuration.",
+    "Gather/craft/gift uses actual original stock and finite source/batch intervals; excavation uses owned tools and ordinary work/flow.",
+    "Preparation walking/readiness is journaled but not native travel qualification; native production confirmations are distinct real commands.",
+    "New native journeys have tracing enabled and do not qualify production latency or explain older retained timeouts.",
+    "One uninstrumented existing native-gift opening failed. The bounded diagnostic passed without reproducing or explaining it; reliability stays open.",
+    "Managed231 evidence is retained only after exact non-client source/binary comparison; two appended native-probe diagnostics are excluded from its compilation.",
+    "Fresh Core qualification is required because actual stamped dependency binaries differed despite identical Core source.",
+    "Only named images received lead inspection; per-control bounds supplement rather than replace image inspection.",
+    "Mouse gift dropdowns, physical input, human usability and final art remain unqualified.",
+    "No complete recipe library, selected human construction, assisted climb or public completed nonphysical structure projection is claimed.",
+    "The native worlds do not exercise profile40 archive cuts/process kills or full selected-history lifecycle.",
+    "Managed Production-only evidence is separate from native permission combinations; native mining withholds Inventory.",
+    "The source review is independent of UI/shared-offer authorship; root integrates and reviews probe, tests and all terminal evidence."
+  ]
+}

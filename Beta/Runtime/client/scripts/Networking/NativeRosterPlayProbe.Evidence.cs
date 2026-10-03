@@ -25,6 +25,7 @@ internal sealed partial class NativeRosterPlayProbe
     {
         CapturePermissionSubmission();
         Directory.CreateDirectory(_directory);
+        string? failureFrame = status == "failed" ? CaptureFailureFrame() : null;
         WriteAtomic(Path.Combine(_directory, $"{_sequence:D4}.response.json"), new
         {
             Sequence = _sequence, Status = status, Failure = failure, Stage = _stage,
@@ -38,8 +39,23 @@ internal sealed partial class NativeRosterPlayProbe
             Selection = SelectionEvidence(), ControlBoard = ControlBoardEvidence(),
             ControlOperationPending = _game.ControlOperationPending, ControlOperationStatus = _game.LastControlOperationStatus,
             PermissionSubmissions = PermissionSubmissions(), SelectionCaptures = _selectionCaptures,
-            Gifts = GiftEvidence(), GiftSnapshots = _giftSnapshots, GiftCaptures = _giftCaptures
+            Gifts = GiftEvidence(), GiftSnapshots = _giftSnapshots, GiftCaptures = _giftCaptures,
+            Production = ProductionEvidence(), ProductionCaptures = _productionCaptures,
+            GiftOpeningLayout = _giftOpeningLayout, FailureFrame = failureFrame
         });
+    }
+
+    private string? CaptureFailureFrame()
+    {
+        if (DisplayServer.GetName() == "headless") return null;
+        try
+        {
+            // Retain the most recently rendered frame after failure; never wait, retry input or hide the failure.
+            string name = $"{_sequence:D4}-failure.png";
+            using Image image = GetViewport().GetTexture().GetImage();
+            return image.SavePng(Path.Combine(_directory, name)) == Error.Ok ? name : "Capture failed.";
+        }
+        catch (Exception error) { return error.GetType().Name + ": " + error.Message; }
     }
 
     private object[] Submissions() => _submissions.Select(value => (object)new
@@ -56,6 +72,8 @@ internal sealed partial class NativeRosterPlayProbe
         Inputs = _driver.Inputs, Submissions = Submissions(), PermissionSubmissions = PermissionSubmissions(),
         Selection = SelectionEvidence(), ControlBoard = ControlBoardEvidence(), SelectionCaptures = _selectionCaptures,
         Gifts = GiftEvidence(), GiftSnapshots = _giftSnapshots, GiftCaptures = _giftCaptures,
+        Production = ProductionEvidence(), ProductionCaptures = _productionCaptures,
+        GiftOpeningLayout = _giftOpeningLayout,
         ElapsedMilliseconds = _driver.ElapsedMilliseconds,
         NativeFocused = GetWindow().HasFocus(), ObservedNativeFocus = _nativeFocus,
         InitialFocusGuard = _initialFocusGuard, Unfocusable = GetWindow().Unfocusable, Display = DisplayServer.GetName()
