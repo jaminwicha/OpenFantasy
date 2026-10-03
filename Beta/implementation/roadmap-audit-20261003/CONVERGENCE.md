@@ -78,6 +78,12 @@ expanded review remains open until the report is read, its evidence evaluated an
 addressed with the same correction/review discipline. No new provider request, runtime change or
 full-game/phase acceptance is implied.
 
+The subsequent [provisional remediation plan](../ORCHESTRATION_REMEDIATION.md) separates our existing
+findings from that unavailable report, supplies immediate/medium/long-term actions, and records a
+fresh source inspection of the next ordinary-entry dependency. It is a proposal, not a new accepted
+runtime increment or a report-specific disposition. The prior bounded reviews retain their exact
+reviewed file identities; their zero-new-findings statements do not cover this later proposal.
+
 ## Documentation review
 
 - **Plan/spec:** full phase/P02 mapping refined to restore early merchant/escort routing and explicit prerequisite order; no baseline scope or gate changed. Latest owner iterative-audit/skill steering persists here and in shared project instructions.

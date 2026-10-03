@@ -117,6 +117,13 @@ its exact scope; no row is fully accepted merely because a supporting primitive 
 
 ## Next execution sequence
 
+The [provisional orchestration remediation plan](ORCHESTRATION_REMEDIATION.md) records the source-backed
+admission/entry dependency for this sequence. Ordinary cargo creation currently admits profile35;
+the explicit profile40 human-construction scenario makes Wren a human, so neither can simply be
+relabeled the intended shared inhabited journey. Compose a proper fresh admission and normal entry
+while retaining Wren's NPC role and the old saves. The separate orchestration audit report remains
+needed before its findings can change this proposed execution approach.
+
 1. Specify and expose one current development journey over an explicitly admitted common lineage.
    Preserve prior saves and unsupported transition refusal. Integrate the existing farm/work/cargo/
    danger/care/shared interfaces before adding another isolated default.

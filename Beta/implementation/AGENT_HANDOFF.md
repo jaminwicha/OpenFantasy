@@ -44,6 +44,12 @@ agent-orchestration audit and immediate/medium/long-term remediation; its path/l
 needed. Resolve that added review before claiming the expanded audit complete. No phase or full
 implementation goal closes here. The implementation direction below remains the subsequent queue.
 
+[Provisional remediation](ORCHESTRATION_REMEDIATION.md) now gives immediate/medium/long-term actions
+from our own evidence, plus the common-world delivery contract. Source inspection confirms ordinary
+cargo creation is profile35, while the explicit profile40 construction scenario makes Wren human;
+the intended integrated journey needs a fresh admission preserving her NPC role and a normal entry.
+This assessment changes no runtime law and does not substitute for the missing report.
+
 Choose one explicitly admitted, ordinary development journey connecting the existing farm/work/cargo/
 danger/care/shared interfaces. Inspect actual composition dependencies before selecting its launcher;
 keep old saves/profiles and refuse unsupported migration. The ordinary launcher currently opens the
