@@ -40,6 +40,7 @@ public partial class Bootstrap : Control
         // Only disposable probes may detach OS focus for controlled rendering. Fixture focus
         // still exercises the same readiness/cancellation policy; native OS binding is tested separately.
         bool backgroundProbe = arguments is ["--farm-wheel", _, _, "fresh" or "reopen", "--background-render"]
+            or ["--adventure-onboarding", _, _, "fresh" or "reopen", "--background-render"]
             or ["--farm-action-offers", _, _, "--background-render"]
             or ["--encounter-probe", _, _, "fresh" or "duel" or "reopen", "--background-render"]
             or ["--encounter-defeat-probe", _, _, "fresh" or "reopen", "--background-render"]
@@ -62,6 +63,29 @@ public partial class Bootstrap : Control
             arguments = arguments[..^1];
             GetWindow().Unfocusable = true;
             await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
+        }
+        if (arguments is ["--adventure-onboarding", var adventureSave, var adventureReport, var adventureMode]
+            && adventureMode is "fresh" or "reopen")
+        {
+            var adventure = new FarmGame { AdventureProfile = true, SavePathOverride = adventureSave,
+                StartPaused = true, BindWindowFocus = !backgroundProbe };
+            var probe = new OpenFantasy.Client.Cargo.CargoOnboardingPlayProbe(adventure, adventureSave, adventureReport,
+                reopening: adventureMode == "reopen");
+            AddChild(adventure);
+            AddChild(EncounterOutcomeOverlay.Create(adventure));
+            AddChild(probe);
+            return;
+        }
+        if (arguments.Length == 0 || arguments is ["--adventure"] or ["--adventure", _])
+        {
+            var adventure = new FarmGame
+            {
+                AdventureProfile = true,
+                SavePathOverride = arguments.Length == 2 ? arguments[1] : null
+            };
+            AddChild(adventure);
+            AddChild(EncounterOutcomeOverlay.Create(adventure));
+            return;
         }
         if (arguments is ["--retained-gift-probe", var retainedSave, var retainedReport, var retainedGenesis,
             var retainedMetadata, var retainedMode] && retainedMode is "keyboard" or "reopen")

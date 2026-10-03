@@ -1,5 +1,10 @@
 # Implementation instructions
 
+Owner steering, 2026-10-03: work directly for now, without agent orchestration, native subagents or
+external delegation. Continue implementation; the unavailable separate orchestration report is deferred.
+This supersedes delegation routing below while active. Preserve validation standards and distinguish
+lead review from independent review; do not invent a critic or claim an unrun gate has passed.
+
 Owner steering, 2026-09-29: delegate useful bounded work to Opus 5.5. The exact
 `claude-opus-5-5[1m]` route with requested Max has now returned verified Opus5.5/1M metadata;
 see [compatibility evidence](implementation/CLAUDE_MODEL_COMPATIBILITY.md). Retain finite limits,

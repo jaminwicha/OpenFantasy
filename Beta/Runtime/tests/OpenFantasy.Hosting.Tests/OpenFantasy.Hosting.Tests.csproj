@@ -42,6 +42,7 @@
     <Compile Include="../../client/scripts/FarmGiftSelection.cs" Link="Client/FarmGiftSelection.cs" />
     <Compile Include="../../client/scripts/MaterialProposalActionOffers.cs" Link="Client/MaterialProposalActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmClientSession.cs" Link="Client/FarmClientSession.cs" />
+    <Compile Include="../../client/scripts/FarmClientSession.Adventure.cs" Link="Client/FarmClientSession.Adventure.cs" />
     <Compile Include="../../client/scripts/FarmClientSession.ActorSelection.cs" Link="Client/FarmClientSession.ActorSelection.cs" />
     <Compile Include="../../client/scripts/FarmSelectedActionOffers.cs" Link="Client/FarmSelectedActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmMarketDraft.cs" Link="Client/FarmMarketDraft.cs" />

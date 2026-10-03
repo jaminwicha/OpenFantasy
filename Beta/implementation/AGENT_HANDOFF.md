@@ -41,19 +41,22 @@ The [iterative audit ledger](roadmap-audit-20261003/CONVERGENCE.md) records appl
 independent pass3 reviews with zero new findings in their declared scope. Reusable checkpoint/audit
 guidance is committed upstream and synchronized. The owner additionally requests analysis of a separate
 agent-orchestration audit and immediate/medium/long-term remediation; its path/link/text is still
-needed. Resolve that added review before claiming the expanded audit complete. No phase or full
-implementation goal closes here. The implementation direction below remains the subsequent queue.
+needed. Owner steering on October3 now defers orchestration and directs implementation to continue
+without native subagents or external delegation. The separate report assessment remains incomplete;
+it no longer blocks the gameplay queue. No phase or full implementation goal closes here.
 
-[Provisional remediation](ORCHESTRATION_REMEDIATION.md) now gives immediate/medium/long-term actions
-from our own evidence, plus the common-world delivery contract. Source inspection confirms ordinary
-cargo creation is profile35, while the explicit profile40 construction scenario makes Wren human;
-the intended integrated journey needs a fresh admission preserving her NPC role and a normal entry.
-This assessment changes no runtime law and does not substitute for the missing report.
+The [adventure entry](p02/adventure-entry/RESULT.md) implements the admission gap identified by
+[provisional remediation](ORCHESTRATION_REMEDIATION.md). Ordinary local launch now opens fresh
+profile40 with Wren autonomous, original resources and no grants; `--farm` keeps the old save route.
+Host `--create-adventure` and launcher `--join` expose one-to-four-human shared entry. Build and39
+focused/affected cases pass, including actual four-player TLS movement/pause/reconnect. Rendered
+native input gathers/crafts, earns Wren's reward, observes her completed construction, opens the bank
+and released water, then reaches Marla; a separate paused reopening verifies original-genesis history.
+All1279 pinned execution dependencies match the rendered run. Original failures are retained.
 
-Choose one explicitly admitted, ordinary development journey connecting the existing farm/work/cargo/
-danger/care/shared interfaces. Inspect actual composition dependencies before selecting its launcher;
-keep old saves/profiles and refuse unsupported migration. The ordinary launcher currently opens the
-older profile5 farm, while advanced hosted routes require explicit selection.
+Next connect buy/haul/danger/care/sell/return in this same save, then qualify shared participation.
+Existing separate journeys are useful prior evidence, not proof that this full joined route works.
+The graphics/HUD are provisional; no new independent critic or human acceptance is claimed.
 
 Then build the missing bounded NPC motivation/memory/offscreen-work, recruitment/cooperative action
 and changed-place return, followed by investigation/puzzle and required environment/coordination/UI

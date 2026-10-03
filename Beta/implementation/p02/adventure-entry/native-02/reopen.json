@@ -1,0 +1,38 @@
+{
+  "Kind": "native-adventure-onboarding-v1",
+  "Mode": "reopen",
+  "Route": "keyboard",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "reopen",
+  "Save": "/private/tmp/openfantasy-adventure-e8ktlvpv/adventure.sqlite",
+  "Entry": "--adventure",
+  "SeedText": "wrens-adventure",
+  "PlayerActorId": "c76f468b1a35fa3bf822b82b66d9f8c4",
+  "FinalFeet": {
+    "X": 24960,
+    "Y": 89472,
+    "Z": 256
+  },
+  "FinalBalance": 200,
+  "Checks": [
+    "A separate paused opening retained the earned reward and completed construction; original-genesis history reproduces the head."
+  ],
+  "Inputs": [],
+  "WalkInputs": [],
+  "Observations": [],
+  "Rendered": [],
+  "Images": [
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/reopen.adventure-reopen.png"
+  ],
+  "Focus": {
+    "Unfocusable": true,
+    "NativeFocused": false,
+    "ObservedNativeFocus": false,
+    "ObservedFocusTransitions": 0,
+    "FramesObserved": 548,
+    "StartupNoFocus": true
+  },
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 5014
+}

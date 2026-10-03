@@ -1,0 +1,56 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:04.39]     OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 3) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 3) [2 s]
+  Error Message:
+   Assert.Equal() Failure: Collections differ
+           ↓ (pos 0)
+Expected: [CarePermission { GrantVersion = 49239dc49941a3c9e5aced4396cfe359e77089a238799829bcec01a2b4098805, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = c76f468b1a35fa3bf822b82b66d9f8c4, PermissionId = c6566b0cb96efe9adbc2a21e566783c3, ··· }, CarePermission { GrantVersion = a59e66a08e9d7db5f96b7a38c2e27fd903fae07da93081de67aaceb9fc8fdd13, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = d8fb874274604fcaffa320d13f228fd6, PermissionId = cb60e66208009b5b8128edf4d4a5e206, ··· }, CarePermission { GrantVersion = 04b55626eba56f0d603429c92176b48205285150128635a895f61b915c2f0e1e, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = ae556e9879a2844fc6da3cde5df7f033, PermissionId = f4203807124acb29e1fb2cc6521bf103, ··· }]
+Actual:   [CarePermission { GrantVersion = 49239dc49941a3c9e5aced4396cfe359e77089a238799829bcec01a2b4098805, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = c76f468b1a35fa3bf822b82b66d9f8c4, PermissionId = c6566b0cb96efe9adbc2a21e566783c3, ··· }, CarePermission { GrantVersion = a59e66a08e9d7db5f96b7a38c2e27fd903fae07da93081de67aaceb9fc8fdd13, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = d8fb874274604fcaffa320d13f228fd6, PermissionId = cb60e66208009b5b8128edf4d4a5e206, ··· }, CarePermission { GrantVersion = 04b55626eba56f0d603429c92176b48205285150128635a895f61b915c2f0e1e, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = ae556e9879a2844fc6da3cde5df7f033, PermissionId = f4203807124acb29e1fb2cc6521bf103, ··· }]
+           ↑ (pos 0)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(Int32 count) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/AdventureWorldAdmissionTests.cs:line 40
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:06.29]     OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 4) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 4) [1 s]
+  Error Message:
+   Assert.Equal() Failure: Collections differ
+           ↓ (pos 0)
+Expected: [CarePermission { GrantVersion = 576e52051c8a32a735e3da074d964633bc3423fce0fd937adcea05a6fcf298f3, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = cbe463c510b2cd724efc9edf1931d50e, PermissionId = 0429ccbc8b6b581c79e3f1d99b9de3ef, ··· }, CarePermission { GrantVersion = 49239dc49941a3c9e5aced4396cfe359e77089a238799829bcec01a2b4098805, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = c76f468b1a35fa3bf822b82b66d9f8c4, PermissionId = c6566b0cb96efe9adbc2a21e566783c3, ··· }, CarePermission { GrantVersion = a59e66a08e9d7db5f96b7a38c2e27fd903fae07da93081de67aaceb9fc8fdd13, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = d8fb874274604fcaffa320d13f228fd6, PermissionId = cb60e66208009b5b8128edf4d4a5e206, ··· }, CarePermission { GrantVersion = 04b55626eba56f0d603429c92176b48205285150128635a895f61b915c2f0e1e, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = ae556e9879a2844fc6da3cde5df7f033, PermissionId = f4203807124acb29e1fb2cc6521bf103, ··· }]
+Actual:   [CarePermission { GrantVersion = 576e52051c8a32a735e3da074d964633bc3423fce0fd937adcea05a6fcf298f3, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = cbe463c510b2cd724efc9edf1931d50e, PermissionId = 0429ccbc8b6b581c79e3f1d99b9de3ef, ··· }, CarePermission { GrantVersion = 49239dc49941a3c9e5aced4396cfe359e77089a238799829bcec01a2b4098805, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = c76f468b1a35fa3bf822b82b66d9f8c4, PermissionId = c6566b0cb96efe9adbc2a21e566783c3, ··· }, CarePermission { GrantVersion = a59e66a08e9d7db5f96b7a38c2e27fd903fae07da93081de67aaceb9fc8fdd13, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = d8fb874274604fcaffa320d13f228fd6, PermissionId = cb60e66208009b5b8128edf4d4a5e206, ··· }, CarePermission { GrantVersion = 04b55626eba56f0d603429c92176b48205285150128635a895f61b915c2f0e1e, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = ae556e9879a2844fc6da3cde5df7f033, PermissionId = f4203807124acb29e1fb2cc6521bf103, ··· }]
+           ↑ (pos 0)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(Int32 count) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/AdventureWorldAdmissionTests.cs:line 40
+   at InvokeStub_AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:07.63]     OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 1) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 1) [1 s]
+  Error Message:
+   Assert.Equal() Failure: Collections differ
+           ↓ (pos 0)
+Expected: [CarePermission { GrantVersion = 49239dc49941a3c9e5aced4396cfe359e77089a238799829bcec01a2b4098805, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = c76f468b1a35fa3bf822b82b66d9f8c4, PermissionId = c6566b0cb96efe9adbc2a21e566783c3, ··· }]
+Actual:   [CarePermission { GrantVersion = 49239dc49941a3c9e5aced4396cfe359e77089a238799829bcec01a2b4098805, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = c76f468b1a35fa3bf822b82b66d9f8c4, PermissionId = c6566b0cb96efe9adbc2a21e566783c3, ··· }]
+           ↑ (pos 0)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(Int32 count) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/AdventureWorldAdmissionTests.cs:line 40
+   at InvokeStub_AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:08.90]     OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 2) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(count: 2) [1 s]
+  Error Message:
+   Assert.Equal() Failure: Collections differ
+           ↓ (pos 0)
+Expected: [CarePermission { GrantVersion = 49239dc49941a3c9e5aced4396cfe359e77089a238799829bcec01a2b4098805, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = c76f468b1a35fa3bf822b82b66d9f8c4, PermissionId = c6566b0cb96efe9adbc2a21e566783c3, ··· }, CarePermission { GrantVersion = a59e66a08e9d7db5f96b7a38c2e27fd903fae07da93081de67aaceb9fc8fdd13, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = d8fb874274604fcaffa320d13f228fd6, PermissionId = cb60e66208009b5b8128edf4d4a5e206, ··· }]
+Actual:   [CarePermission { GrantVersion = 49239dc49941a3c9e5aced4396cfe359e77089a238799829bcec01a2b4098805, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = c76f468b1a35fa3bf822b82b66d9f8c4, PermissionId = c6566b0cb96efe9adbc2a21e566783c3, ··· }, CarePermission { GrantVersion = a59e66a08e9d7db5f96b7a38c2e27fd903fae07da93081de67aaceb9fc8fdd13, HelperActorId = f4d2d9874bd5689a39ce11520e23e521, IsActive = True, PatientActorId = d8fb874274604fcaffa320d13f228fd6, PermissionId = cb60e66208009b5b8128edf4d4a5e206, ··· }]
+           ↑ (pos 0)
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Content.AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(Int32 count) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Content/AdventureWorldAdmissionTests.cs:line 40
+   at InvokeStub_AdventureWorldAdmissionTests.Fresh_adventure_preserves_people_resources_and_work_while_adding_cooperation_policies(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/adventure-entry/checks/adventure-managed-01.trx
+
+Failed!  - Failed:     4, Passed:     4, Skipped:     0, Total:     8, Duration: 10 s - OpenFantasy.Hosting.Tests.dll (net8.0)

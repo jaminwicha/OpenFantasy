@@ -1,4 +1,4 @@
-"""Build the pinned native farm client and open the retained local feedback world."""
+"""Build the pinned client and open the saved adventure or an explicitly selected older world."""
 import argparse
 import json
 import os
@@ -28,6 +28,8 @@ def main():
     parser.add_argument("--dotnet", help="Pinned dotnet executable; alternatively OPENFANTASY_DOTNET")
     parser.add_argument("--godot", help="Pinned Godot .NET executable; alternatively OPENFANTASY_GODOT")
     selection = parser.add_mutually_exclusive_group()
+    selection.add_argument("--farm", action="store_true", help="Continue the original construction farm and its preserved upgrade chain")
+    selection.add_argument("--join", type=Path, metavar="INVITATION", help="Join an existing hosted adventure using its protected player invitation")
     selection.add_argument("--care", action="store_true", help="Open the separate encounter journey with finite companion care")
     selection.add_argument("--restorative", action="store_true", help="Open the separate ordinary-care journey with a personal Potion and permitted companion aid")
     selection.add_argument("--gifts", action="store_true", help="Open a separate saved-gift journey with explicit companion gift preferences")
@@ -44,6 +46,10 @@ def main():
     root = Path(__file__).resolve().parents[1]
     pins = json.loads((root / "toolchain.json").read_text())
     retained = [path.expanduser().resolve() for path in args.retained_gifts] if args.retained_gifts else None
+    invitation = args.join.expanduser().resolve() if args.join else None
+    if invitation is not None and not invitation.is_file():
+        print("Joining requires an existing player invitation file.", file=sys.stderr)
+        return 1
     if retained and not all(path.is_file() for path in retained):
         print("The retained gift world requires its existing transitioned save and original genesis file.", file=sys.stderr)
         return 1
@@ -61,7 +67,7 @@ def main():
                                     capture_output=True, text=True, check=True, timeout=30)
             if result.stdout.strip() != expected:
                 raise RuntimeError(f"{tool.name} version must be {expected}; observed {result.stdout.strip()}")
-        print("Building the retained OpenFantasy farm…", flush=True)
+        print("Building OpenFantasy…", flush=True)
         subprocess.run([str(dotnet), "restore", "client/OpenFantasy.Client.csproj", "--locked-mode"],
                        cwd=root, env=env, check=True)
         subprocess.run([str(dotnet), "build", "client/OpenFantasy.Client.csproj", "--no-restore", "-c", "Debug"],
@@ -73,10 +79,14 @@ def main():
         if args.prepare_only:
             print("Pinned native client prepared. No gameplay save was opened.", flush=True)
             return 0
-        place = "retained gift world" if retained else "market" if args.markets else "gift journey" if args.gifts else "restorative journey" if args.restorative else "care journey" if args.care else "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm"
+        place = "shared adventure" if invitation else "retained gift world" if retained else "market" if args.markets else "gift journey" if args.gifts else "restorative journey" if args.restorative else "care journey" if args.care else "encounters" if args.encounters else "breach" if args.breach else "watercourse" if args.watercourse else "worksite" if args.worksite else "farm" if args.farm else "adventure"
         print(f"Opening Wren’s {place}. WASD/arrows: walk; E: talk; G: quest; F: gather; Q: target; V: actions; Esc: pause.", flush=True)
         command = [str(godot), "--path", str(root / "client")]
-        if retained:
+        if invitation:
+            command += ["res://scenes/NativePlayer.tscn", "--", "--join", str(invitation)]
+        elif args.farm:
+            command += ["--", "--farm"]
+        elif retained:
             command += ["--", "--retained-gifts", str(retained[0]), str(retained[1])]
         elif args.markets:
             # The market world has its own entry scene and save; the default bootstrap never selects it.

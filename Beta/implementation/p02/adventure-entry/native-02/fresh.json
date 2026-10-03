@@ -1,0 +1,816 @@
+{
+  "Kind": "native-adventure-onboarding-v1",
+  "Mode": "onboarding",
+  "Route": "keyboard",
+  "Status": "passed",
+  "Error": null,
+  "Stage": "pause",
+  "Save": "/private/tmp/openfantasy-adventure-e8ktlvpv/adventure.sqlite",
+  "Entry": "--adventure",
+  "SeedText": "wrens-adventure",
+  "PlayerActorId": "c76f468b1a35fa3bf822b82b66d9f8c4",
+  "FinalFeet": {
+    "X": 24960,
+    "Y": 89472,
+    "Z": 256
+  },
+  "FinalBalance": 200,
+  "Checks": [
+    "The ordinary selection created a fresh save at its disposable path: no reward, quest or quote.",
+    "Ordinary F input gathered Berry from its observed node 06ab75990fe45d9bdd732881df1bae77.",
+    "Ordinary F input gathered Oak from its observed node 666053812c93a58b0afd7652399a55f5.",
+    "Ordinary C input crafted rations from owned finite supplies before funding Wren\u0027s project.",
+    "E, G, G, E talked to Wren, accepted and delivered her quest and closed: the earned reward is 200.",
+    "Q cued the divider\u0027s own column; three wheel mining actions opened it and the regional view redrew the opening and the released water in the receiver.",
+    "Wren remained an NPC and autonomously completed the funded original construction.",
+    "Held arrow keys carried the rewarded player on to Marla\u0027s stall, now available in person."
+  ],
+  "Inputs": [
+    {
+      "Stage": "opening",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Key": "F"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Key": "F"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Key": "F"
+    },
+    {
+      "Stage": "craft-rations",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "craft-rations",
+      "Route": "keyboard",
+      "Key": "C"
+    },
+    {
+      "Stage": "wren-quest",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "wren-quest",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wren-quest",
+      "Route": "keyboard",
+      "Key": "G"
+    },
+    {
+      "Stage": "wren-quest",
+      "Route": "keyboard",
+      "Key": "E"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Q"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Right"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Right"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "V"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Right"
+    },
+    {
+      "Stage": "mine-divider",
+      "Route": "keyboard",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "pause",
+      "Route": "keyboard",
+      "Key": "Escape"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Release": "Down"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Release": "Right"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Release": "Down"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Release": "Right"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Release": "Left"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Release": "Up"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Release": "Left"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Release": "Up"
+    },
+    {
+      "Stage": "walk-to-wren",
+      "Route": "keyboard",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "walk-to-wren",
+      "Route": "keyboard",
+      "Release": "Up"
+    },
+    {
+      "Stage": "walk-to-bank",
+      "Route": "keyboard",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "walk-to-bank",
+      "Route": "keyboard",
+      "Release": "Down"
+    },
+    {
+      "Stage": "walk-to-bank",
+      "Route": "keyboard",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "walk-to-bank",
+      "Route": "keyboard",
+      "Release": "Right"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Route": "keyboard",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Route": "keyboard",
+      "Release": "Left"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Route": "keyboard",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Route": "keyboard",
+      "Release": "Up"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Route": "keyboard",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Route": "keyboard",
+      "Release": "Down"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Route": "keyboard",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "walk-to-marla",
+      "Route": "keyboard",
+      "Release": "Left"
+    }
+  ],
+  "Observations": [
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 27008,
+        "Y": 85376,
+        "Z": 256
+      },
+      "Replans": 0
+    },
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 25984,
+        "Y": 84096,
+        "Z": 256
+      },
+      "Replans": 0
+    },
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256
+      },
+      "Replans": 0
+    },
+    {
+      "Label": "reward",
+      "Reward": 200
+    },
+    {
+      "Label": "farm-to-bank",
+      "Feet": {
+        "X": 29824,
+        "Y": 84096,
+        "Z": 256
+      },
+      "Replans": 0
+    },
+    {
+      "Label": "mined",
+      "Before": {
+        "Shape": "96,320,0@1;128,320,0@0|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1,
+          0
+        ],
+        "Columns": 2048,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "CFE9D44E2990217F39E9E21E65F0D0EE0BF5352DF58EBDDE259FEDD97CBB55C1",
+        "Frame": 1618
+      },
+      "After": {
+        "Shape": "96,320,0@2;128,320,0@0|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:998000000/255;115,329:994000000/254;116,329:6000000/1;117,329:2000000/0",
+        "Revisions": [
+          2,
+          0
+        ],
+        "Columns": 2048,
+        "WaterColumns": 8,
+        "RaisedColumns": 0,
+        "OpenColumns": 5,
+        "ChoiceDigest": "99C863577EB6BF2BA3005E26A6FEC4416EBF56AC58C6B5EC9C4BE502581EEFDF",
+        "Frame": 2372
+      },
+      "Water": [
+        {
+          "CellX": 110,
+          "CellY": 329,
+          "VolumeMicrolitres": 1000000000,
+          "SurfaceSubunits": 256
+        },
+        {
+          "CellX": 111,
+          "CellY": 329,
+          "VolumeMicrolitres": 1000000000,
+          "SurfaceSubunits": 256
+        },
+        {
+          "CellX": 112,
+          "CellY": 329,
+          "VolumeMicrolitres": 1000000000,
+          "SurfaceSubunits": 256
+        },
+        {
+          "CellX": 113,
+          "CellY": 329,
+          "VolumeMicrolitres": 999000000,
+          "SurfaceSubunits": 255
+        },
+        {
+          "CellX": 114,
+          "CellY": 329,
+          "VolumeMicrolitres": 997000000,
+          "SurfaceSubunits": 255
+        },
+        {
+          "CellX": 115,
+          "CellY": 329,
+          "VolumeMicrolitres": 992000000,
+          "SurfaceSubunits": 253
+        },
+        {
+          "CellX": 116,
+          "CellY": 329,
+          "VolumeMicrolitres": 8000000,
+          "SurfaceSubunits": 2
+        },
+        {
+          "CellX": 117,
+          "CellY": 329,
+          "VolumeMicrolitres": 4000000,
+          "SurfaceSubunits": 0
+        }
+      ]
+    },
+    {
+      "Label": "bank-to-start",
+      "Feet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256
+      },
+      "Replans": 0
+    },
+    {
+      "Label": "start-to-brasshollow",
+      "Feet": {
+        "X": 24960,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Replans": 0
+    }
+  ],
+  "Rendered": [
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 27008,
+        "Y": 85376,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 304,
+        "Y": 432
+      },
+      "Projected": {
+        "X": 304,
+        "Y": 432
+      },
+      "Drawn": {
+        "Shape": "96,320,0@1;128,320,0@0|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1,
+          0
+        ],
+        "Columns": 2048,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "CFE9D44E2990217F39E9E21E65F0D0EE0BF5352DF58EBDDE259FEDD97CBB55C1",
+        "Frame": 646
+      },
+      "Pixels": {
+        "Ground": "5c9e52",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": {
+          "CellX": 110,
+          "CellY": 329,
+          "R": 0.101960786,
+          "G": 0.18039216,
+          "B": 0.19607843
+        },
+        "Padding": {
+          "X": -24,
+          "Y": 432
+        }
+      }
+    },
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 25984,
+        "Y": 84096,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 176,
+        "Y": 272
+      },
+      "Projected": {
+        "X": 176,
+        "Y": 272
+      },
+      "Drawn": {
+        "Shape": "96,320,0@1|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1
+        ],
+        "Columns": 1024,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "106ED3B24567BE2CB9D8BE76DBF5D9AB2963D5662F6221C1546CE56FEE15E619",
+        "Frame": 811
+      },
+      "Pixels": {
+        "Ground": "4b8143",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": {
+          "CellX": 110,
+          "CellY": 329,
+          "R": 0.19607843,
+          "G": 0.4,
+          "B": 0.4509804
+        },
+        "Padding": {
+          "X": -24,
+          "Y": 272
+        }
+      }
+    },
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 176,
+        "Y": 176
+      },
+      "Projected": {
+        "X": 176,
+        "Y": 176
+      },
+      "Drawn": {
+        "Shape": "96,320,0@1|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1
+        ],
+        "Columns": 1024,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "106ED3B24567BE2CB9D8BE76DBF5D9AB2963D5662F6221C1546CE56FEE15E619",
+        "Frame": 811
+      },
+      "Pixels": {
+        "Ground": "4b8143",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": {
+          "CellX": 110,
+          "CellY": 329,
+          "R": 0.101960786,
+          "G": 0.18039216,
+          "B": 0.19607843
+        },
+        "Padding": {
+          "X": -24,
+          "Y": 176
+        }
+      }
+    },
+    {
+      "Label": "farm-to-bank",
+      "Feet": {
+        "X": 29824,
+        "Y": 84096,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 656,
+        "Y": 272
+      },
+      "Projected": {
+        "X": 656,
+        "Y": 272
+      },
+      "Drawn": {
+        "Shape": "96,320,0@1;128,320,0@0|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1,
+          0
+        ],
+        "Columns": 2048,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "CFE9D44E2990217F39E9E21E65F0D0EE0BF5352DF58EBDDE259FEDD97CBB55C1",
+        "Frame": 1618
+      },
+      "Pixels": {
+        "Ground": "5c9e52",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": {
+          "CellX": 110,
+          "CellY": 329,
+          "R": 0.19607843,
+          "G": 0.4,
+          "B": 0.4509804
+        },
+        "Padding": null
+      }
+    },
+    {
+      "Label": "water",
+      "Feet": {
+        "X": 29824,
+        "Y": 84096,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 656,
+        "Y": 272
+      },
+      "Projected": {
+        "X": 656,
+        "Y": 272
+      },
+      "Drawn": {
+        "Shape": "96,320,0@2;128,320,0@0|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:998000000/255;115,329:994000000/254;116,329:6000000/1;117,329:2000000/0",
+        "Revisions": [
+          2,
+          0
+        ],
+        "Columns": 2048,
+        "WaterColumns": 8,
+        "RaisedColumns": 0,
+        "OpenColumns": 5,
+        "ChoiceDigest": "99C863577EB6BF2BA3005E26A6FEC4416EBF56AC58C6B5EC9C4BE502581EEFDF",
+        "Frame": 2372
+      },
+      "Pixels": {
+        "Ground": "5c9e52",
+        "Sprite": "e8be98",
+        "Clear": "4c4c4c",
+        "Water": {
+          "CellX": 110,
+          "CellY": 329,
+          "R": 0.19607843,
+          "G": 0.4,
+          "B": 0.4509804
+        },
+        "Padding": null
+      }
+    },
+    {
+      "Label": "bank-to-start",
+      "Feet": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 176,
+        "Y": 176
+      },
+      "Projected": {
+        "X": 176,
+        "Y": 176
+      },
+      "Drawn": {
+        "Shape": "96,320,0@2|256|110,329:860000000/220;111,329:857000000/219;112,329:855000000/218;113,329:850000000/217;114,329:845000000/216;115,329:837000000/214;116,329:12000000/3;117,329:154000000/1;118,329:151000000/-218;119,329:141000000/-220;117,330:150000000/-218;118,330:141000000/-220;119,330:147000000/-219",
+        "Revisions": [
+          2
+        ],
+        "Columns": 1024,
+        "WaterColumns": 13,
+        "RaisedColumns": 0,
+        "OpenColumns": 0,
+        "ChoiceDigest": "048594DCF764D4F8C01E143924CA8825384B672540C91E56B0DB1C97ECB3F7E0",
+        "Frame": 3695
+      },
+      "Pixels": {
+        "Ground": "4b8143",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": {
+          "CellX": 110,
+          "CellY": 329,
+          "R": 0.101960786,
+          "G": 0.18039216,
+          "B": 0.19607843
+        },
+        "Padding": {
+          "X": -24,
+          "Y": 176
+        }
+      }
+    },
+    {
+      "Label": "start-to-brasshollow",
+      "Feet": {
+        "X": 24960,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 48,
+        "Y": 944
+      },
+      "Projected": {
+        "X": 48,
+        "Y": 944
+      },
+      "Drawn": {
+        "Shape": "96,320,0@2|256|110,329:710000000/181;111,329:707000000/180;112,329:705000000/180;113,329:700000000/179;114,329:695000000/177;115,329:687000000/175;116,329:12000000/3;117,329:309000000/1;118,329:292000000/-182;119,329:297000000/-180;117,330:296000000/-181;118,330:300000000/-180;119,330:290000000/-182",
+        "Revisions": [
+          2
+        ],
+        "Columns": 1024,
+        "WaterColumns": 13,
+        "RaisedColumns": 0,
+        "OpenColumns": 0,
+        "ChoiceDigest": "024B3A9E76FAA6B7103ABC543C7DA6F2F631BBA6E30334C9C287FF180B4FF412",
+        "Frame": 5035
+      },
+      "Pixels": {
+        "Ground": "4b8143",
+        "Sprite": "e8be98",
+        "Clear": "4c4c4c",
+        "Water": null,
+        "Padding": {
+          "X": -24,
+          "Y": 944
+        }
+      }
+    },
+    {
+      "Label": "marla",
+      "Feet": {
+        "X": 24960,
+        "Y": 89472,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 48,
+        "Y": 944
+      },
+      "Projected": {
+        "X": 48,
+        "Y": 944
+      },
+      "Drawn": {
+        "Shape": "96,320,0@2|256|110,329:709000000/181;111,329:707000000/180;112,329:704000000/180;113,329:700000000/179;114,329:693000000/177;115,329:687000000/175;116,329:12000000/3;117,329:305000000/1;118,329:302000000/-179;119,329:292000000/-182;117,330:302000000/-179;118,330:290000000/-182;119,330:297000000/-180",
+        "Revisions": [
+          2
+        ],
+        "Columns": 1024,
+        "WaterColumns": 13,
+        "RaisedColumns": 0,
+        "OpenColumns": 0,
+        "ChoiceDigest": "024B3A9E76FAA6B7103ABC543C7DA6F2F631BBA6E30334C9C287FF180B4FF412",
+        "Frame": 5041
+      },
+      "Pixels": {
+        "Ground": "4b8143",
+        "Sprite": "e8be98",
+        "Clear": "4c4c4c",
+        "Water": null,
+        "Padding": {
+          "X": -24,
+          "Y": 944
+        }
+      }
+    }
+  ],
+  "Images": [
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.onboarding-start.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.farm-to-wren-sample.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.farm-to-wren-sample.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.adventure-supplies.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.farm-to-wren-sample.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.wren-reward.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.farm-to-bank-sample.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.bank.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.water-sample.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.water.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.bank-to-start-sample.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.start-to-brasshollow-sample.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.marla-sample.png",
+    "/private/tmp/openfantasy-adventure-e8ktlvpv/fresh.marla.png"
+  ],
+  "Focus": {
+    "Unfocusable": true,
+    "NativeFocused": false,
+    "ObservedNativeFocus": false,
+    "ObservedFocusTransitions": 0,
+    "FramesObserved": 5044,
+    "StartupNoFocus": true
+  },
+  "IsLocallyPaused": true,
+  "DurationMilliseconds": 42870
+}

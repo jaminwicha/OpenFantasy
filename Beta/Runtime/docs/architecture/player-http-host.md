@@ -45,6 +45,10 @@ controller, advance time or grant any outstanding human decision.
 
 ## Saved-world composition and invitations
 
+`OpenFantasy.Host --create-adventure` authors the [inhabited adventure](adventure-entry.md) with its
+explicit human roster and autonomous NPCs. Hosting opens that existing admission; it does not turn
+the older cargo creation commands into an implicit controller-policy upgrade.
+
 [CargoPlayerHost](../../src/OpenFantasy.Hosting/Networking/CargoPlayerHost.cs) opens an existing verified
 outcome-completion cargo world. It refuses missing/incompatible saves and admits one to four existing
 human controllers. It never creates, upgrades or resets a world. The composition uses the same cargo

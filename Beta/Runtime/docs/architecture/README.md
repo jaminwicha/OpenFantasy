@@ -22,6 +22,7 @@ different kind of person.
 | [Effective co-player control](effective-control.md) | How do temporary assignments authorize real commands while preserving true submitter identity, accepted work and historical outcomes? |
 | [Connected character control](selected-player-protocol.md) | How do consent, selection, scoped observations and deliberate Resume reach authenticated clients and native controls? |
 | [Fresh player rosters](player-rosters.md) | How does fresh cargo admission create one to four real human characters with owned facets, finite starter tools and a complete cooperative encounter catalog? |
+| [Adventure admission and entry](adventure-entry.md) | How do the inhabited NPC population, shared-control policies, ordinary local opening and hosted invitations compose without changing older saves? |
 | [Player message transport](player-message-transport.md) | How do bounded local and WebSocket envelopes preserve ordering, ownership and complete-message boundaries? |
 | [Player connection admission](player-admission.md) | How do scoped host-issued credentials, compatibility pins and bounded handshakes select one actual player port? |
 | [Player gameplay routing](player-command-routing.md) | How do readiness, leased movement, canonical actions and durable receipts cross authenticated channels without blocking the host? |

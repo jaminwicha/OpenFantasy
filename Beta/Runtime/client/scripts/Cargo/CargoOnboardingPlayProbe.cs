@@ -37,13 +37,15 @@ internal sealed partial class CargoOnboardingPlayProbe : Node
     private string _stage = "opening";
     private EntityId _player;
     private bool _savedBeforeOpening;
+    private readonly bool _reopening;
 
-    internal CargoOnboardingPlayProbe(FarmGame game, string savePath, string reportPath)
+    internal CargoOnboardingPlayProbe(FarmGame game, string savePath, string reportPath, bool reopening = false)
     {
         _game = game;
         _savePath = savePath;
         _reportPath = reportPath;
         _savedBeforeOpening = File.Exists(savePath);
+        _reopening = reopening;
         _driver = new MarketProbeDriver(this, game, "keyboard", () => _stage, ProbeLimitSeconds);
         _rendered = new CargoRenderedEvidence(game);
     }
@@ -58,21 +60,31 @@ internal sealed partial class CargoOnboardingPlayProbe : Node
     {
         try
         {
-            Require(!_savedBeforeOpening, "The onboarding run needs a fresh disposable save path.");
+            Require(_savedBeforeOpening == _reopening, "The probe needs its declared fresh or retained save path.");
             await _driver.Until(() => _game.CurrentView?.Markets?.Stalls.Count == 2 && _game.Canvas.Regional is not null,
                 "The production cargo world did not open.", OpeningSeconds);
             _game.InjectFixtureFocus(true);
             _player = View.PlayerActorId;
+            if (_reopening)
+            {
+                Require(_game.AdventureProfile && _game.IsLocallyPaused, "Reopening requires the paused ordinary adventure.");
+                await VerifyAdventureReopen();
+                _driver.Deadline();
+                Report("passed", null);
+                _game.RequestClose();
+                return;
+            }
             Require(File.Exists(_savePath) && View.Progression!.CurrencyBalance == 0 && View.PaidQuotes.Count == 0
                 && View.Quests.All(quest => quest.Status is null), "The production entry did not create a fresh cargo world.");
             Require(_game.IsLocallyPaused, "The onboarding run starts paused.");
-            _checks.Add("The ordinary --cargo selection created a fresh save at its disposable path: no reward, quest or quote.");
+            _checks.Add("The ordinary selection created a fresh save at its disposable path: no reward, quest or quote.");
             SubunitPosition origin = Feet;
             LocalObservedRegion farm = View.Regional!.RegionAt(Feet.Cell.X, Feet.Cell.Y)!;
             CargoCorridor corridor = CargoCorridor.CreateCircuit(farm.Bounds, NativeCargoWorld.Sources);
             await Capture("onboarding-start");
             _driver.Tap(Key.Escape);
             await _driver.Until(() => !_game.IsLocallyPaused, "Escape did not resume world time.");
+            if (_game.AdventureProfile) await GatherAdventureSupplies();
 
             _stage = "walk-to-wren";
             LocalActorView wren = View.Actors.Single(actor => actor.ActorId == _game.CompanionActorId);
@@ -101,6 +113,12 @@ internal sealed partial class CargoOnboardingPlayProbe : Node
             _stage = "mine-divider";
             await Mine();
             await Capture("water");
+            if (_game.AdventureProfile)
+            {
+                await _driver.Until(() => View.Construction.Any(project => project.IsCompleted),
+                    "Wren did not finish her funded construction while the player worked at the bank.", 40);
+                _checks.Add("Wren remained an NPC and autonomously completed the funded original construction.");
+            }
 
             _stage = "walk-to-marla";
             // Back along the north bank to the starting cell (the opened divider is now a hole), then the fixture's own lane.
@@ -275,7 +293,9 @@ internal sealed partial class CargoOnboardingPlayProbe : Node
     private async Task<Image?> Capture(string stage)
     {
         if (DisplayServer.GetName() == "headless") return null;
-        await ToSignal(RenderingServer.Singleton, RenderingServer.SignalName.FramePostDraw);
+        _driver.Deadline();
+        await AwaitDraw().WaitAsync(TimeSpan.FromSeconds(5));
+        _driver.Deadline();
         Image image = GetViewport().GetTexture().GetImage();
         string path = Path.ChangeExtension(_reportPath, null) + "." + stage + ".png";
         Require(image.SavePng(path) == Error.Ok, "Onboarding image could not be saved.");
@@ -283,13 +303,17 @@ internal sealed partial class CargoOnboardingPlayProbe : Node
         return image;
     }
 
+    private async Task AwaitDraw() => await ToSignal(RenderingServer.Singleton, RenderingServer.SignalName.FramePostDraw);
+
     private void Report(string status, string? error)
     {
         File.WriteAllText(Path.ChangeExtension(_reportPath, null) + (status == "passed" ? ".json" : ".failed.json"),
             JsonSerializer.Serialize(new
             {
-                Kind = "native-cargo-onboarding-v1", Mode = "onboarding", Route = "keyboard", Status = status, Error = error,
-                Stage = _stage, Save = _savePath, Entry = "--cargo", SeedText = NativeCargoWorld.SeedText,
+                Kind = _game.AdventureProfile ? "native-adventure-onboarding-v1" : "native-cargo-onboarding-v1",
+                Mode = _reopening ? "reopen" : "onboarding", Route = "keyboard", Status = status, Error = error,
+                Stage = _stage, Save = _savePath, Entry = _game.AdventureProfile ? "--adventure" : "--cargo",
+                SeedText = _game.AdventureProfile ? AdventureWorldAdmission.SeedText : NativeCargoWorld.SeedText,
                 PlayerActorId = _player.ToString(), FinalFeet = _game.CurrentView is null ? null : new { Feet.X, Feet.Y, Feet.Z },
                 FinalBalance = _game.CurrentView?.Progression?.CurrencyBalance, Checks = _checks, Inputs = _driver.Inputs,
                 WalkInputs = _walkInputs, Observations = _observations, Rendered = _rendered.Samples, Images = _images,

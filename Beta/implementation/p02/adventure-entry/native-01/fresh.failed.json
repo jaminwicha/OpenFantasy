@@ -1,0 +1,263 @@
+{
+  "Kind": "native-adventure-onboarding-v1",
+  "Mode": "onboarding",
+  "Route": "keyboard",
+  "Status": "failed",
+  "Error": "System.InvalidOperationException: Gathered supplies did not permit ration crafting.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.Cargo.CargoOnboardingPlayProbe.GatherAdventureSupplies() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoOnboardingPlayProbe.Adventure.cs:line 29\n   at OpenFantasy.Client.Cargo.CargoOnboardingPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Cargo/CargoOnboardingPlayProbe.cs:line 87",
+  "Stage": "craft-rations",
+  "Save": "/private/tmp/openfantasy-adventure-dr372y0o/adventure.sqlite",
+  "Entry": "--adventure",
+  "SeedText": "wrens-adventure",
+  "PlayerActorId": "c76f468b1a35fa3bf822b82b66d9f8c4",
+  "FinalFeet": {
+    "X": 25984,
+    "Y": 84096,
+    "Z": 256
+  },
+  "FinalBalance": 0,
+  "Checks": [
+    "The ordinary selection created a fresh save at its disposable path: no reward, quest or quote.",
+    "Ordinary F input gathered Berry from its observed node 06ab75990fe45d9bdd732881df1bae77.",
+    "Ordinary F input gathered Oak from its observed node 666053812c93a58b0afd7652399a55f5."
+  ],
+  "Inputs": [
+    {
+      "Stage": "opening",
+      "Route": "keyboard",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Key": "F"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Key": "R"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Key": "F"
+    },
+    {
+      "Stage": "craft-rations",
+      "Route": "keyboard",
+      "Key": "R"
+    }
+  ],
+  "WalkInputs": [
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Release": "Down"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Release": "Right"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Hold": "Down"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Release": "Down"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Hold": "Right"
+    },
+    {
+      "Stage": "gather-Berry",
+      "Route": "keyboard",
+      "Release": "Right"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Release": "Left"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Release": "Up"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Hold": "Left"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Release": "Left"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Hold": "Up"
+    },
+    {
+      "Stage": "gather-Oak",
+      "Route": "keyboard",
+      "Release": "Up"
+    }
+  ],
+  "Observations": [
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 27008,
+        "Y": 85376,
+        "Z": 256
+      },
+      "Replans": 0
+    },
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 25984,
+        "Y": 84096,
+        "Z": 256
+      },
+      "Replans": 0
+    }
+  ],
+  "Rendered": [
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 27008,
+        "Y": 85376,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 304,
+        "Y": 432
+      },
+      "Projected": {
+        "X": 304,
+        "Y": 432
+      },
+      "Drawn": {
+        "Shape": "96,320,0@1;128,320,0@0|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1,
+          0
+        ],
+        "Columns": 2048,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "CFE9D44E2990217F39E9E21E65F0D0EE0BF5352DF58EBDDE259FEDD97CBB55C1",
+        "Frame": 844
+      },
+      "Pixels": {
+        "Ground": "5c9e52",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": {
+          "CellX": 110,
+          "CellY": 329,
+          "R": 0.101960786,
+          "G": 0.18039216,
+          "B": 0.19607843
+        },
+        "Padding": {
+          "X": -24,
+          "Y": 432
+        }
+      }
+    },
+    {
+      "Label": "farm-to-wren",
+      "Feet": {
+        "X": 25984,
+        "Y": 84096,
+        "Z": 256
+      },
+      "Transform": {
+        "X": 176,
+        "Y": 272
+      },
+      "Projected": {
+        "X": 176,
+        "Y": 272
+      },
+      "Drawn": {
+        "Shape": "96,320,0@1|256|110,329:1000000000/256;111,329:1000000000/256;112,329:1000000000/256;113,329:1000000000/256;114,329:1000000000/256;115,329:1000000000/256",
+        "Revisions": [
+          1
+        ],
+        "Columns": 1024,
+        "WaterColumns": 6,
+        "RaisedColumns": 0,
+        "OpenColumns": 6,
+        "ChoiceDigest": "106ED3B24567BE2CB9D8BE76DBF5D9AB2963D5662F6221C1546CE56FEE15E619",
+        "Frame": 1006
+      },
+      "Pixels": {
+        "Ground": "4b8143",
+        "Sprite": "456cc9",
+        "Clear": "4c4c4c",
+        "Water": {
+          "CellX": 110,
+          "CellY": 329,
+          "R": 0.19607843,
+          "G": 0.4,
+          "B": 0.4509804
+        },
+        "Padding": {
+          "X": -24,
+          "Y": 272
+        }
+      }
+    }
+  ],
+  "Images": [
+    "/private/tmp/openfantasy-adventure-dr372y0o/fresh.onboarding-start.png",
+    "/private/tmp/openfantasy-adventure-dr372y0o/fresh.farm-to-wren-sample.png",
+    "/private/tmp/openfantasy-adventure-dr372y0o/fresh.farm-to-wren-sample.png"
+  ],
+  "Focus": {
+    "Unfocusable": true,
+    "NativeFocused": false,
+    "ObservedNativeFocus": false,
+    "ObservedFocusTransitions": 0,
+    "FramesObserved": 2561,
+    "StartupNoFocus": true
+  },
+  "IsLocallyPaused": false,
+  "DurationMilliseconds": 22081
+}

@@ -396,27 +396,7 @@ internal sealed partial class FarmClientSession : IAsyncDisposable
                 || (current.ProfileVersion == WorldEncounterRetreatAdmission.ProfileVersion) != (retreat && !outcomes)
                 || (current.ProfileVersion == WorldEncounterOutcomeAdmission.ProfileVersion) != outcomes)
                 throw new InvalidDataException("This save is not the selected cargo world.");
-            WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
-            WorldResident wren = QuestCompanion(current, player);
-            ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == player.ActorId);
-            var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
-            EntityId wood = current.Gathering!.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Oak)
-                .Definition.YieldDefinition.DefinitionId;
-            EntityId? berries = current.Gathering.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
-                .Definition.YieldDefinition.DefinitionId;
-            // The session publishes the regional observation with each view; frames never read the authority.
-            // The retreat world configures no NPC retreat: its wolves keep fighting exactly as in the cargo world.
-            var world = retreat || outcomes
-                ? new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
-                    NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId), LocalRetreatConfiguration.None)
-                : new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
-                    NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId));
-            return new FarmClientSession(world, delivery, wren.ActorId, wood, berries)
-            {
-                IsRegional = true,
-                RouteAdvice = new LocalRouteAdvice(authority, player.ActorId),
-                CargoStalls = NativeCargoWorld.Stalls(current)
-            };
+            return AttachCargoSession(authority, retreat || outcomes);
         }
         catch
         {
@@ -437,6 +417,32 @@ internal sealed partial class FarmClientSession : IAsyncDisposable
         catch { authority.Dispose(); throw; }
         return Attach(authority, QuestCompanion, gifts: true);
     });
+
+    private static FarmClientSession AttachCargoSession(SqliteWorldAuthority authority, bool enableRetreat)
+    {
+        WorldSnapshot current = authority.InspectForHost().State;
+        WorldResident player = current.Residents.Single(person => person.ControllerKind == ResidentControllerKind.Player);
+        WorldResident wren = QuestCompanion(current, player);
+        ActorControlBinding control = current.Inventory.Controls.Single(value => value.ActorId == player.ActorId);
+        var delivery = new TrustedCommandDelivery(control.PrincipalId, control.SessionId);
+        EntityId wood = current.Gathering!.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Oak)
+            .Definition.YieldDefinition.DefinitionId;
+        EntityId? berries = current.Gathering.Nodes.Single(node => node.Definition.Kind == GatherNodeKind.Berry)
+            .Definition.YieldDefinition.DefinitionId;
+        // The session publishes the regional observation with each view; frames never read the authority.
+        // The retreat world configures no NPC retreat: its wolves keep fighting exactly as in the cargo world.
+        var world = enableRetreat
+            ? new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
+                NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId), LocalRetreatConfiguration.None)
+            : new LocalWorldSession(authority, player.ActorId, delivery, Array.Empty<LocalMaterialGiftPolicy>(),
+                NativeCargoWorld.Configuration(current), new LocalRegionObserver(player.ActorId));
+        return new FarmClientSession(world, delivery, wren.ActorId, wood, berries)
+        {
+            IsRegional = true,
+            RouteAdvice = new LocalRouteAdvice(authority, player.ActorId),
+            CargoStalls = NativeCargoWorld.Stalls(current)
+        };
+    }
 
     /// <summary>
     /// Continues a prepared coordinated fixture from its existing save. The expected fresh genesis

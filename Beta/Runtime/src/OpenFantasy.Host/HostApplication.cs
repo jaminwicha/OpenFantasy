@@ -58,6 +58,8 @@ internal sealed class HostApplication
                     _composed.CreateCargoOutcomes(database, seed, name),
                 ["--create-cargo-roster", var database, var seed, .. var names] =>
                     _composed.CreateCargoRoster(database, seed, names),
+                ["--create-adventure", var database, var seed, .. var names] =>
+                    _composed.CreateAdventure(database, seed, names),
                 ["--create-human-construction", var database, var seed, .. var names] =>
                     _composed.CreateHumanConstruction(database, seed, names),
                 ["--inspect-encounter-timing", var path, var world, var branch, var encounter] =>
@@ -158,6 +160,7 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --create-encounter-journey <world.sqlite> <seed> <player-name>");
         _output.WriteLine("       OpenFantasy.Host --create-cargo-outcomes <world.sqlite> <seed> <player-name>");
         _output.WriteLine("       OpenFantasy.Host --create-cargo-roster <world.sqlite> <seed> <player-name> [name2] [name3] [name4]");
+        _output.WriteLine("       OpenFantasy.Host --create-adventure <new-world.sqlite> <seed> <player-name> [name2] [name3] [name4]");
         _output.WriteLine("       OpenFantasy.Host --create-human-construction <new-world.sqlite> <seed> <name1> <name2> <name3> (qualification scenario; Wren is fourth human)");
         _output.WriteLine("       OpenFantasy.Host --serve-cargo-world <private-host-settings.json>");
         _output.WriteLine("       OpenFantasy.Host --create-paced-world <world.sqlite> <profile21-genesis.bin> <encounter-id|none>");

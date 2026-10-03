@@ -34,6 +34,13 @@ internal sealed class ComposedWorldOperator
         return Report(authority);
     }
 
+    internal string CreateAdventure(string database, string seed, IReadOnlyList<string> playerNames)
+    {
+        var genesis = OpenFantasy.Hosting.Content.AdventureWorldAdmission.CreateEmbedded(seed, playerNames);
+        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(database, genesis);
+        return Report(authority);
+    }
+
     internal string CreateHumanConstruction(string database, string seed, IReadOnlyList<string> playerNames)
     {
         var genesis = OpenFantasy.Hosting.Content.HumanConstructionWorldAdmission.CreateEmbedded(seed, playerNames);

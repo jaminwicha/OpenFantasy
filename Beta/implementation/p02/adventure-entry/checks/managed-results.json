@@ -1,0 +1,42 @@
+[
+  {
+    "name": "managed-02",
+    "exitCode": 0,
+    "elapsedSeconds": 28.197148875013227,
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "-c",
+      "Debug",
+      "--filter",
+      "FullyQualifiedName~AdventureWorldAdmissionTests|FullyQualifiedName~AdventureEntryTests",
+      "--logger",
+      "trx;LogFileName=managed-02.trx",
+      "--results-directory",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/adventure-entry/checks"
+    ]
+  },
+  {
+    "name": "host-01",
+    "exitCode": 0,
+    "elapsedSeconds": 8.666342541982885,
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "test",
+      "tests/OpenFantasy.Server.Tests/OpenFantasy.Server.Tests.csproj",
+      "--no-build",
+      "--no-restore",
+      "-c",
+      "Debug",
+      "--filter",
+      "FullyQualifiedName~AdventureEntryTests",
+      "--logger",
+      "trx;LogFileName=host-01.trx",
+      "--results-directory",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/adventure-entry/checks"
+    ]
+  }
+]

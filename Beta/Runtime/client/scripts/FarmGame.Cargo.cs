@@ -24,6 +24,9 @@ public partial class FarmGame
     /// <summary>Explicit fresh cargo-world selection with its own save; never an upgrade of another world.</summary>
     internal bool CargoProfile { get; init; }
 
+    /// <summary>The inhabited adventure with its own preserved save and ordinary NPC population.</summary>
+    internal bool AdventureProfile { get; init; }
+
     /// <summary>Expected fresh genesis of an exported cargo fixture; requires its explicit existing save.</summary>
     internal string? CargoFixtureGenesisPath { get; init; }
 
@@ -68,12 +71,20 @@ public partial class FarmGame
     /// <summary>Explicit profile 38 fixture selection; its requested participant is already human in the saved world.</summary>
     internal CareDispositionFixtureSelection? CareDispositionFixture { get; init; }
 
-    private bool FramesCargoThreat => CargoThreatProfile || CargoThreatFixtureGenesisPath is not null
+    private bool FramesCargoThreat => AdventureProfile || CargoThreatProfile || CargoThreatFixtureGenesisPath is not null
         || CargoOutcomesProfile || CargoOutcomesFixtureGenesisPath is not null;
 
     /// <summary>Starts opening the cargo world when this game selects it; false for every other selection.</summary>
     private bool OpenCargo()
     {
+        if (AdventureProfile)
+        {
+            string adventurePath = SavePathOverride ?? ProjectSettings.GlobalizePath("user://worlds/openfantasy-adventure.sqlite");
+            _opening = FarmClientSession.OpenAdventureAsync(adventurePath,
+                OpenFantasy.Hosting.Content.AdventureWorldAdmission.SeedText,
+                OpenFantasy.Hosting.Content.AdventureWorldAdmission.DefaultPlayerName);
+            return true;
+        }
         if (CareDispositionFixture is { } care)
         {
             _opening = SavePathOverride is { } careSave

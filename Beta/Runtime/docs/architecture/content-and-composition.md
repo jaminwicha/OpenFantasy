@@ -33,6 +33,11 @@ records are presentation inputs only: the [native cargo binding](cargo-presentat
 same digest-pinned packet, checks them against the authenticated appearance hash and composes the copied
 predecessor layers unchanged; they are not admitted world facts.
 
+The [adventure admission](adventure-entry.md) composes these retained cargo inhabitants and their
+ordinary resources with the controller/recovery/cooperation policies. Its normal entry retains Wren's
+NPC role. It is distinct from qualification admissions that intentionally convert a builder to human
+control, and from older profiles whose saved interpretations remain unchanged.
+
 ## Design contract: preservation and packages
 
 Predecessor code, content and assets are preservation sources. Full import covers entities, species,

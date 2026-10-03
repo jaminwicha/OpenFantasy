@@ -142,7 +142,8 @@ public partial class FarmGame : Node2D
             GetWindow().FocusExited += OnFocusExited;
             _input.SetFocused(GetWindow().HasFocus());
         }
-        _hud.Message(WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
+        _hud.Message(AdventureProfile ? "Opening your adventure…"
+            : WorksiteProfile ? "Opening Wren's worksite…" : "Opening the farm…");
         if (PlayerInvitationPath is not null || NetworkFixtureOpening is not null)
         {
             _opening = NetworkFixtureOpening ?? FarmClientSession.OpenNetworkAsync(PlayerInvitationPath!);

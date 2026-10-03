@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="bf2d9bd0-ccef-4810-901b-573c8b5fa927" name="@mac 2026-10-03 11:31:55" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T11:31:55.4462330-05:00" queuing="2026-10-03T11:31:55.4462340-05:00" start="2026-10-03T11:31:51.6869840-05:00" finish="2026-10-03T11:31:57.0312060-05:00" />
+  <TestSettings name="default" id="d3660166-6080-4290-ba10-5c6a1484b204">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_11_31_55" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="0462d566-e0bf-43ba-9aad-57fe8534c476" testId="9a9865c0-575d-9ab5-5b80-61ff554bde92" testName="OpenFantasy.Server.Tests.AdventureEntryTests.Operator_creates_a_hostable_four_player_adventure_with_Wren_still_autonomous" computerName="mac" duration="00:00:02.5405486" startTime="2026-10-03T11:31:52.8322930-05:00" endTime="2026-10-03T11:31:55.3863120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0462d566-e0bf-43ba-9aad-57fe8534c476" />
+    <UnitTestResult executionId="30ec8ab8-07ae-4ca4-8b61-4af30c8cf6d2" testId="a8f6b5f2-f598-dee6-940c-d055048d75e0" testName="OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren" computerName="mac" duration="00:00:01.5429847" startTime="2026-10-03T11:31:55.4306400-05:00" endTime="2026-10-03T11:31:56.9783130-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30ec8ab8-07ae-4ca4-8b61-4af30c8cf6d2">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Capture an actor selection before changing readiness.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Networking.Client.PlayerProtocolClient.SetReady(Boolean ready) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/Client/PlayerProtocolClient.cs:line 136
+   at OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/AdventureEntryTests.cs:line 47
+   at OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/AdventureEntryTests.cs:line 78
+   at OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/AdventureEntryTests.cs:line 95
+   at OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/AdventureEntryTests.cs:line 95
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3bd247db-f775-49d9-9222-ee41d233710a" testId="4d8fc7a7-ce41-e64e-a393-e44fe0aa8850" testName="OpenFantasy.Server.Tests.AdventureEntryTests.Invalid_roster_refuses_creation(count: 5)" computerName="mac" duration="00:00:00.0008443" startTime="2026-10-03T11:31:55.4293220-05:00" endTime="2026-10-03T11:31:55.4301940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3bd247db-f775-49d9-9222-ee41d233710a" />
+    <UnitTestResult executionId="afb7d390-69b3-42d5-885c-d8c832e17e91" testId="7e14ed7d-1f6c-5c32-8426-7dc4f8452030" testName="OpenFantasy.Server.Tests.AdventureEntryTests.Invalid_roster_refuses_creation(count: 0)" computerName="mac" duration="00:00:00.0014338" startTime="2026-10-03T11:31:55.4275080-05:00" endTime="2026-10-03T11:31:55.4290880-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="afb7d390-69b3-42d5-885c-d8c832e17e91" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.AdventureEntryTests.Invalid_roster_refuses_creation(count: 5)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="4d8fc7a7-ce41-e64e-a393-e44fe0aa8850">
+      <Execution id="3bd247db-f775-49d9-9222-ee41d233710a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.AdventureEntryTests" name="Invalid_roster_refuses_creation" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.AdventureEntryTests.Operator_creates_a_hostable_four_player_adventure_with_Wren_still_autonomous" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="9a9865c0-575d-9ab5-5b80-61ff554bde92">
+      <Execution id="0462d566-e0bf-43ba-9aad-57fe8534c476" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.AdventureEntryTests" name="Operator_creates_a_hostable_four_player_adventure_with_Wren_still_autonomous" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="a8f6b5f2-f598-dee6-940c-d055048d75e0">
+      <Execution id="30ec8ab8-07ae-4ca4-8b61-4af30c8cf6d2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.AdventureEntryTests" name="Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.AdventureEntryTests.Invalid_roster_refuses_creation(count: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="7e14ed7d-1f6c-5c32-8426-7dc4f8452030">
+      <Execution id="afb7d390-69b3-42d5-885c-d8c832e17e91" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.AdventureEntryTests" name="Invalid_roster_refuses_creation" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="9a9865c0-575d-9ab5-5b80-61ff554bde92" executionId="0462d566-e0bf-43ba-9aad-57fe8534c476" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a8f6b5f2-f598-dee6-940c-d055048d75e0" executionId="30ec8ab8-07ae-4ca4-8b61-4af30c8cf6d2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4d8fc7a7-ce41-e64e-a393-e44fe0aa8850" executionId="3bd247db-f775-49d9-9222-ee41d233710a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e14ed7d-1f6c-5c32-8426-7dc4f8452030" executionId="afb7d390-69b3-42d5-885c-d8c832e17e91" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="4" executed="4" passed="3" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.43]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.62]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.76]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:04.98]       System.InvalidOperationException : Capture an actor selection before changing readiness.
+[xUnit.net 00:00:04.98]       Stack Trace:
+[xUnit.net 00:00:04.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/Client/PlayerProtocolClient.cs(136,0): at OpenFantasy.Hosting.Networking.Client.PlayerProtocolClient.SetReady(Boolean ready)
+[xUnit.net 00:00:04.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/AdventureEntryTests.cs(47,0): at OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren()
+[xUnit.net 00:00:04.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/AdventureEntryTests.cs(78,0): at OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren()
+[xUnit.net 00:00:04.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/AdventureEntryTests.cs(95,0): at OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren()
+[xUnit.net 00:00:04.98]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/AdventureEntryTests.cs(95,0): at OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren()
+[xUnit.net 00:00:04.98]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:04.99]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-03T11:31:56.9863250-05:00">
+        <Text>[xUnit.net 00:00:04.98]     OpenFantasy.Server.Tests.AdventureEntryTests.Four_adventure_players_join_over_tls_move_and_reconnect_without_converting_Wren [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
