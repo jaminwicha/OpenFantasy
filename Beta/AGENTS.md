@@ -1,9 +1,20 @@
 # Implementation instructions
 
 Owner steering, 2026-10-03: work directly for now, without agent orchestration, native subagents or
-external delegation. Continue implementation; the unavailable separate orchestration report is deferred.
+external delegation. Continue implementation; the two external efficiency reports are now reviewed
+in the linked disposition below, without resuming orchestration.
 This supersedes delegation routing below while active. Preserve validation standards and distinguish
 lead review from independent review; do not invent a critic or claim an unrun gate has passed.
+
+Apply the [efficiency audit disposition](implementation/EFFICIENCY_AUDIT_DISPOSITION.md) when selecting
+work and accepting increments. Name the player outcome and same-save journey; justify new profiles,
+panels or harnesses by a real contract rather than another milestone. Check paths, symbols and lawful
+fixture prerequisites before long runs, reuse maintained launch/evidence components, and distinguish
+production defects from fixture/tooling mistakes and unresolved reliability. Keep CURRENT_ROADMAP as
+the single living phase authority, a short handoff and immutable linked evidence. Pilot any status or
+artifact automation before requiring it. Seek bounded human feedback on the joined journey before
+prolonged related UI expansion; preserve every unrun human and full-scope gate. No new orchestration,
+provider request or acceptance shortcut follows from this efficiency policy.
 
 Owner steering, 2026-09-29: delegate useful bounded work to Opus 5.5. The exact
 `claude-opus-5-5[1m]` route with requested Max has now returned verified Opus5.5/1M metadata;
@@ -22,6 +33,13 @@ The owner's 8 September 2026 implementation authorization overrides the earlier 
 The reviewed `spec-v1_1` documents remain the design baseline. `implementation/` records current work, owner overrides, measured evidence and pending exits. Preserve reviewed snapshots and hashes; do not rewrite an unrun qualification into a pass merely because a scaffold builds.
 
 ## Architecture reference and maintenance hook
+
+Owner reaffirmation, 2026-10-03: the encyclopedic, timeless architecture reference and the living
+roadmap/specification/implementation plan remain priority deliverables regardless of efficiency
+recommendations. Update and accuracy-review both with every relevant accepted change. Compactness
+applies to duplicated status and handoff prose, not to the completeness of architectural contracts,
+cross-system explanations or requirement coverage. Do not defer documentation to save tokens or
+meet a line cap. A reasoned no-impact statement is appropriate only when the actual contract is unchanged.
 
 Owner steering, 2026-10-03: synchronize **both** the roadmap/specification/implementation plan and
 the timeless project reference in `Runtime/docs/`, with explicit accuracy/completeness review.

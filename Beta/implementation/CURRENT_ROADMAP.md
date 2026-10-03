@@ -116,15 +116,16 @@ its exact scope; no row is fully accepted merely because a supporting primitive 
 | Audio | Atmosphere and activity sounds are first-class; quiet and gentle transitions dominate ordinary play, rare epic music when warranted. Source/acoustic/native/listener and human acceptance remain P02 onward. |
 | Progressive interfaces | [Living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md): icon-led affordances, accessible tooltips/focus inspection, wheels and complete library, capability-earned menus, map layers/atlas/calendar/inventory/stats/skills/crafting/journal. Hide irrelevant systems while keeping essential costs/reasons readable. |
 | Working discipline | Commits and preserved milestones, unrelated-change protection, shared-desktop focus awareness, unchanged feasibility gates and risk-based reviews remain. Claude assignments retain exact approved routes/Max/limits/sync, no silent fallback or retry. Native agents use Astra capacity. |
-| Documentation | [Maintenance contract](DOCUMENTATION_MAINTENANCE.md) binds roadmap/spec/plan reconciliation and timeless reference accuracy to each coherent change and phase review. No new decision lives only in chat or a model-specific entrypoint. |
+| Documentation | [Maintenance contract](DOCUMENTATION_MAINTENANCE.md) binds roadmap/spec/plan reconciliation and timeless reference accuracy to each coherent change and phase review. Both remain priority deliverables regardless of efficiency recommendations; reduce duplicated status, never completeness or factual review. No new decision lives only in chat or a model-specific entrypoint. |
 
 ## Next execution sequence
 
 The [provisional remediation plan](ORCHESTRATION_REMEDIATION.md) identified the admission/entry gap.
 The [adventure entry](p02/adventure-entry/RESULT.md) now preserves Wren's NPC role in a fresh profile40
 admission and exposes local launch plus hosted creation/join. Earlier cargo and human-construction
-admissions retain their separate meanings. Owner steering now pauses orchestration: work directly;
-the unavailable separate audit report no longer blocks implementation.
+admissions retain their separate meanings. Owner steering pauses orchestration: work directly.
+The two external audits are now [reviewed](EFFICIENCY_AUDIT_DISPOSITION.md); useful delivery doctrine
+is adopted, while unsupported dates, percentages and orchestration savings remain excluded.
 
 1. Extend the qualified opening into the whole same-save buy/haul/danger/care/sell/changed-place
    return. Preserve prior saves and unsupported transition refusal. Qualify shared participation in

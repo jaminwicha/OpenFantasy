@@ -1,0 +1,24 @@
+{
+  "commit": "88bbe3f03de01edfa7d992a921df668aec4a0e6f",
+  "milestone": "codex/milestone-efficiency-doctrine-20261003",
+  "checkpoint": "codex/checkpoint-before-efficiency-doctrine-20261003",
+  "sourceBefore": "e229d654f7e93df829d38d7c3445ed12eee976f2",
+  "paths": [
+    "skills/README.md",
+    "skills/game-verification-loop/SKILL.md",
+    "skills/game-verification-loop/references/campaign-audit.md",
+    "skills/game-vertical-slice-planning/SKILL.md",
+    "skills/cross-agent-delegation/references/economics.md"
+  ],
+  "hashes": {
+    "skills/README.md": "ccda0f7b6157705d6c23bd89b6383714899f21bc679aa7c2ee31ba3d6702f69a",
+    "skills/game-verification-loop/SKILL.md": "cdea61a9d800aedecbf70fd23a48dfad44fc71f754aecd1b79c2ad545406569f",
+    "skills/game-verification-loop/references/campaign-audit.md": "3ef0ecef28f4ca63c8bb59d5c2bec36f5e26b830bd45c013b440521de3f57fa0",
+    "skills/game-vertical-slice-planning/SKILL.md": "61b270a2214981483795a4a0c1b6ae1635c9c7646a42d680130f8a924ebae368",
+    "skills/cross-agent-delegation/references/economics.md": "76e5ca918d171376dcc648c13faa1336d046d1e4afbfd8ae76d7f92f0a6a8d11"
+  },
+  "installedCopies": 12,
+  "backupReceipt": "/private/tmp/openfantasy-efficiency-doctrine-20261003.backups/receipt.json",
+  "restore": "Use tools/sync_portable_skills.py rollback --receipt with the saved receipt; guard refuses later target drift.",
+  "unrelatedChangesPreserved": true
+}

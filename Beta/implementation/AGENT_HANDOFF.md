@@ -39,11 +39,12 @@ the prior narrow next-task queue was not a reliable phase-completion guide.
 
 The [iterative audit ledger](roadmap-audit-20261003/CONVERGENCE.md) records applied corrections and
 independent pass3 reviews with zero new findings in their declared scope. Reusable checkpoint/audit
-guidance is committed upstream and synchronized. The owner additionally requests analysis of a separate
-agent-orchestration audit and immediate/medium/long-term remediation; its path/link/text is still
-needed. Owner steering on October3 now defers orchestration and directs implementation to continue
-without native subagents or external delegation. The separate report assessment remains incomplete;
-it no longer blocks the gameplay queue. No phase or full implementation goal closes here.
+guidance is committed upstream and synchronized. Both owner-identified external efficiency reports
+are now reviewed in the [disposition](EFFICIENCY_AUDIT_DISPOSITION.md), with exact retained originals.
+Useful preflight, integrated-delivery and compact-evidence rules are adopted locally and upstream;
+unsupported completion/savings forecasts and a new router-model hierarchy are rejected. Owner steering
+continues direct implementation without native subagents or external delegation. No phase or full
+implementation goal closes here.
 
 The [adventure entry](p02/adventure-entry/RESULT.md) implements the admission gap identified by
 [provisional remediation](ORCHESTRATION_REMEDIATION.md). Ordinary local launch now opens fresh
@@ -57,6 +58,10 @@ All1279 pinned execution dependencies match the rendered run. Original failures 
 Next connect buy/haul/danger/care/sell/return in this same save, then qualify shared participation.
 Existing separate journeys are useful prior evidence, not proof that this full joined route works.
 The graphics/HUD are provisional; no new independent critic or human acceptance is claimed.
+The continuation is WIP: its native attempt bought cargo and walked outbound, then hit the unchanged
+five-second post-draw bound. Preserve `p02/adventure-journey/checks/native-01.json`; diagnose before
+claiming the full route. Pre-review WIP is `codex/checkpoint-before-efficiency-doctrine-20261003`
+(`0f38907b`), with its successful focused build and unqualified journey source.
 
 Then build the missing bounded NPC motivation/memory/offscreen-work, recruitment/cooperative action
 and changed-place return, followed by investigation/puzzle and required environment/coordination/UI

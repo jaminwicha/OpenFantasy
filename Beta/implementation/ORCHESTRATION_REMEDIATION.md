@@ -1,5 +1,10 @@
 # Orchestration remediation and integration plan
 
+Status update: the owner has now identified both external reports. Their source-specific
+[assessment and adopted doctrine](EFFICIENCY_AUDIT_DISPOSITION.md) supersede the unavailable-report
+status below. The original provisional analysis is retained with its original baseline and limits.
+Direct work remains active; this update does not resume orchestration.
+
 Prepared 2026-10-03 against `a9828333`. This is a provisional response to the owner's request for
 immediate, medium-term and long-term remediation. **The separately commissioned orchestration report
 has not been supplied or located.** None of its findings is attributed here. Its analysis remains a
