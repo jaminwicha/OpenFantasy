@@ -143,7 +143,11 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    implements immutable membership/route progress and canonical restoration, with 18 new domain cases
    and 12 existing retreat/attribution cases passing. This component is not bound into the world.
    Next implement the authenticated resolver and explicit lived-save continuity before host/UI and
-   the complete shared expedition; version selection and independent architectural review remain open.
+   the complete shared expedition. [Continuity source review](p02/party-withdrawal/continuity-review/RESULT.md)
+   selects a new complete-world interpretation with a versioned retreat facet while preserving original
+   admission/history. Schema12 replay forbids an implicit upgrade; root, journal and compatibility must
+   change coherently. Numeric versions and executable transition proof remain unimplemented, and
+   independent architectural review remains open.
    A separate party-exit design is necessary before calling the solo danger/retreat route cooperative:
    roster scenarios put the humans on the same side, whereas retreat law v2 admits only a lone
    combatant on its side. Define commitments, member movement/incapacity, opponent continuity,

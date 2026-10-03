@@ -1,0 +1,78 @@
+{
+  "source_revision": "94c01c65110818e9276653962724be30150e7d54",
+  "scope": "Read-only source inspection; not executable migration qualification",
+  "files": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "sha256": "3eb039ca94cef8250e44c8f43fd1664572532f5b76eb595400a517eddbc680ac"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV1.cs",
+      "sha256": "e4bee76c6fbfc878d8d8a3fb01fb36ee2d5f775ddf00ba9e40f951c0e9794490"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV35.cs",
+      "sha256": "b73a2f59fe42eb6361a97d0c0d0cf46403002672601f8da10a5a1289c6fb78e3"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs",
+      "sha256": "127f25484a0ed97354eba33e3a239b702db45c2aa4ecb0800926e6c372496220"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceArchiveAnchor.cs",
+      "sha256": "4db6032281bb76a143f7d46a8b107b38277c0b2c43d2674d40b10483d39db260"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveAnchor.cs",
+      "sha256": "962de484300bdf899ecab5ee152fe2a82dff34d641dfb88c96235820d9211f14"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldProposalTransition.cs",
+      "sha256": "f930fd52c85490d1be0b12401e0e9edb0b5d6dfd982f6bd0ea11b3497647a6ca"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldProposalTransitionProcessor.cs",
+      "sha256": "f0dc9b1f0161d2da599e387bac79eb6b9a8367a15be0f43771612aad6217bc4d"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldEncounterRetreatAdmission.cs",
+      "sha256": "894bff1b1eca281b59b8a51fd12aaed9584c863a41d6f632525850950c305b21"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldDelegatedControlAdmission.cs",
+      "sha256": "73012edf9fcf115245fffdffa81d73a51368b9d774883f9ae281b2b8423cfff6"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldControllerBoundaries.cs",
+      "sha256": "b6cffb110a4770b7ddb788274c10468e311e8d6f777fc160bce7943c3b89bb9c"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/EffectiveControl/WorldActorCommandAuthority.cs",
+      "sha256": "76e82fd79269b1ca9824c6e8f1d5327f4201aad6f188435af7b763b353538850"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs",
+      "sha256": "84371abb40f74041fe12c3dc9fc6cbb75833a03f3b8c725fd4fc0daf81e22f4e"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldProfileMigrationReplay.cs",
+      "sha256": "5f97816ec3055d6ae079adfc882e858c257358855085f48cbe67a5faeccc9e54"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldProposalTransitionReplay.cs",
+      "sha256": "69ba5b5a550c5cc488abf39e4f0b794f82f623658303c5cbb07284241bcdddca"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldProposalTransitionUpgrade.cs",
+      "sha256": "06c706bd3181d3f0f19a13fcc6e3d27a0ab343a8f9418d83d51e8e9a89889eef"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabaseSchemaTwelve.cs",
+      "sha256": "f9a23d5b11564f1c24e9a62a932ed0268bea9eedb921c746a1a4c88f31f72776"
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Hosting/Networking/PlayerWorldCompatibility.cs",
+      "sha256": "a116b313052fa3c23dd12baa54f9f5b60b05b64d07839143228ca5b3f7bf2edf"
+    }
+  ]
+}

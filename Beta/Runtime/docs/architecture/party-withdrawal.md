@@ -72,6 +72,12 @@ The existing `encounter.retreat.v1` codec and this codec reject each other's fra
 has no implicit root-codec dispatch, save upgrade or player-protocol binding. Its decodability cannot
 be used as evidence that an old save accepts a new retreat rule.
 
+The [saved-interpretation contract](persistence-and-history.md#interpretation-and-admission-identity)
+separates original admission lineage from rule selection. Resource history and archive anchors keep
+their original identities across a lawful transition. A complete binding must version the new law,
+preserve old bytes and authenticate its explicit transition; creating fresh resource history over an
+earned world is not continuity. Component size must also fit the root's reserved capacity.
+
 ## Complete-world integration requirements
 
 A world binding must establish all of the following together:

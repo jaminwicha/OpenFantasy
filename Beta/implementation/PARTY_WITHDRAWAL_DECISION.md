@@ -46,18 +46,50 @@ it does not claim they are implemented or reduce the full specification to the s
 
 ## Versioning and lived-save continuity
 
-The preferred investigation is explicit versioning of the retreat owner/component inside the complete
-world, rather than another broad profile solely to add a route collection. This is a candidate, not a
-verified compatibility conclusion. `WorldSnapshotCodecV35` currently dispatches directly to the old
-retreat codec, validates its field bound and reserves its maximum size; all three must be reconciled.
-Structural decode alone must never expand an existing saved law's permissions.
+Source review selects an **explicit new complete-world interpretation with a versioned retreat
+facet**, retaining one retreat owner. This refines the earlier candidate of changing only the nested
+component. No new numeric profile, codec or schema is implemented or reserved by this decision.
 
-Before selecting that approach, prove unchanged old snapshot/action/step bytes and replay, explicit
-new interpretation/rules pins, forward refusal by incompatible readers, complete-state size budgets,
-protocol compatibility and an explicit journaled transition for lived worlds. Inventory, actors,
-construction, history and the earned adventure save must retain identity and state. If the current
-profile contract genuinely requires a new version, document that exact reason and implement the
-minimum explicit transition; do not accept a fresh-world-only shortcut as completed continuity.
+The reasons are concrete. `WorldSnapshotCodecV35` encodes profiles 35–40 with the legacy retreat
+codec, its 4 KiB field bound and its reserved maximum. `WorldSnapshot.WithState` preserves the retreat
+rules pin. `PlayerWorldCompatibility` compares profile and original admission but carries no separate
+withdrawal interpretation. Reinterpreting the same profile and admission would leave that check unable
+to distinguish the new law. Root selection and the nested facet must agree; structural decoding alone
+cannot grant new permissions. Do not introduce another simulation or duplicate position/readiness.
+
+The [persistence reference](../Runtime/docs/architecture/persistence-and-history.md#interpretation-and-admission-identity)
+explains the underlying contracts. The [source review](p02/party-withdrawal/continuity-review/RESULT.md)
+records the investigation and its limits.
+
+| Source constraint | Required implementation |
+| --- | --- |
+| Resource history and coordinated anchors retain `AdmissionVersion` | Preserve original admission lineage. Do not call a fresh-admission helper or recreate resource history over earned progression. The new profile, rules pin and typed transition identify the changed law separately. |
+| Proposal transition pins a lived head and preserves admission and time | Reuse its publication discipline, not its 27→30 request/processor. Withdrawal requires its own exact source/target transition; opening a save never selects it implicitly. |
+| `WorldJournalRecovery` refuses migrations in schema12 and requires its head profile to match genesis | Add explicit storage/replay authorization and exactly-one-transition lineage checks together. Schema12's SQL kind list is not replay authorization. Preserve older schema and migration meanings. |
+| Joint anchors validate capability continuity; older resource-only anchors also pin profile | Audit the actual coordinated profile40 lineage before/after cuts. Never weaken another archive family's admission or treat all anchors as interchangeable. |
+| The complete root is bounded at 16 MiB | Reconcile nested read bounds, encoder reservations and worst-case complete roots. A 200 KiB standalone party bound is not proof of root headroom; retain the total budget. |
+| Accepted control recognizes the legacy active command; safe owner return depends on its hold | Extend retained-command admission and controller return together. Arrival bookkeeping must not indefinitely retain delegated control. |
+| Host/client routes use closed profile sets | Cover batch codecs, scheduling, offers, observations, invitation compatibility and original-genesis reopening. A decodable root is not a working connection. |
+
+Use a quiet exploration boundary for the initial transition: no active/outcome encounter, legacy
+retreat continuation or pending excavation. Refuse an in-flight source instead of cancelling work.
+This transition precondition does not restrict ordinary later combat or saving active withdrawal.
+Retain the legacy terminal record, receipts and identities. Establish how live controller allowances
+and pending material/care work survive the copied operational rows before publication; never clear
+them to make an upgrade eligible. A temporarily unsupported boundary must have an explicit refusal
+and a lawful route to eligibility through ordinary play, without losing the save.
+
+Bind the request to world/branch, exact head revision/hash, advancing steps, original admission,
+existing anchor, selected rules and a historically unused cause. Publish one nonadvancing transition
+through a preserved staging copy and replay from original genesis before selecting the destination.
+Determine whether a joint cut is necessary from actual owner changes: the proposal transition needs
+one to change material/consent interpretation; copying that cut automatically for retreat is not
+justified. Prove subsequent ordinary cuts and historical reads whichever route is selected.
+
+Before activation, prove unchanged old snapshot/action/step bytes and replay, explicit new pins,
+incompatible-reader refusal, complete-state budgets and protocol compatibility. Inventory, actors,
+construction, history and the earned adventure save retain identity and state. A fresh-world-only
+implementation does not complete this continuity requirement.
 
 Do not activate a new default admission or update the client capability handshake until the complete
 world can restore, replay and reject unsupported/mismatched interpretations correctly. The original

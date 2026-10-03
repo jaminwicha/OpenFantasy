@@ -92,6 +92,12 @@ Independent architectural critique is unrun under the no-orchestration instructi
 `codex/checkpoint-before-party-withdrawal-20261003` preserves `8366b36f`; the component marker is
 `codex/milestone-withdrawal-commitments-20261003`.
 
+The [continuity source review](p02/party-withdrawal/continuity-review/RESULT.md) resolves the versioning
+direction: explicit new world interpretation plus a versioned retreat facet, retaining original
+admission and resource/archive lineage. Schema12 replay refuses a profile transition even though its
+SQL permits that commit kind. Implement the root/journal/host boundary coherently; no new numeric
+profile, migration or runtime party withdrawal is delivered by this documentation increment.
+
 Then build the missing bounded NPC motivation/memory/offscreen-work, recruitment/cooperative action
 and changed-place return, followed by investigation/puzzle and required environment/coordination/UI
 introductions. Native art/motion/audio/onboarding are concurrent dependency-bound lanes. The complete

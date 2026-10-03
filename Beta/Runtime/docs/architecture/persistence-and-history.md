@@ -395,6 +395,40 @@ the normal farm and ordinary-care startup routes and has no default save destina
 
 ## Migration and publication
 
+### Interpretation and admission identity
+
+`WorldSnapshot.ProfileVersion`, component rules pins and `AdmissionVersion` have distinct roles.
+The profile selects a complete saved interpreter; component pins select its exact laws. Admission
+identifies the world's admitted lineage. It is not a freely replaceable current-version label:
+[WorldResourceAdmission](../../src/OpenFantasy.Core/Worlds/WorldResourceAdmission.cs) requires the
+resource history's anchor admission to match it, and
+[WorldMaterialCareArchiveAnchor](../../src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveAnchor.cs)
+requires successors to retain it. The resource-only
+[WorldResourceArchiveAnchor](../../src/OpenFantasy.Core/Worlds/WorldResourceArchiveAnchor.cs) also
+requires its profile to remain exact. These archive families have different continuation contracts.
+
+The explicit proposal transition preserves original admission while changing the selected profile.
+Its request, journal entry and replay authenticate that change; a new resource baseline is not a
+substitute for lived history. Fresh-admission helpers require unplayed worlds and do not supply a
+migration path. Normal `WorldSnapshot.WithState` retains the retreat rules pin rather than silently
+selecting another retreat law.
+
+[PlayerWorldCompatibility](../../src/OpenFantasy.Hosting/Networking/PlayerWorldCompatibility.cs)
+matches world/branch, profile and admission against the world. Its public package pin describes the
+resolved content manifests; it is not an arbitrary extension-policy channel. A changed nested law
+must have an explicit supported compatibility boundary before either side accepts gameplay. Matching
+public pins does not authenticate a player or a historical command.
+
+Extending a saved interpretation requires agreement among root/component and command codecs,
+complete-world admission, archive context, storage/replay dispatch, host selection and client
+compatibility. SQL admitting a commit kind alone is insufficient: journal recovery refuses profile
+migrations outside its named schema-three and schema-eight routes. Profiles 35–40 use the shared
+[complete codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV35.cs) with a 4 KiB retreat field
+and reserved component maxima under the 16 MiB root budget. A larger standalone component must fit
+the complete reservation calculation; its own successful encoding does not prove that capacity.
+
+### Preserved-source publication
+
 [WorldProductionUpgrade](../../src/OpenFantasy.Hosting/Worlds/WorldProductionUpgrade.cs),
 [WorldQuestUpgrade](../../src/OpenFantasy.Hosting/Worlds/WorldQuestUpgrade.cs) and
 [WorldConstructionUpgrade](../../src/OpenFantasy.Hosting/Worlds/WorldConstructionUpgrade.cs)

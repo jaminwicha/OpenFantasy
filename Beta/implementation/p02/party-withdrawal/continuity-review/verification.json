@@ -1,0 +1,26 @@
+{
+  "source_revision": "94c01c65110818e9276653962724be30150e7d54",
+  "source_pins_verified": 18,
+  "runtime_and_tests_unchanged": true,
+  "frozen_specifications_unchanged": true,
+  "whitespace": "passed",
+  "unrelated_index_sha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "existing_documentation_priority_upstream_commit": "70401b8",
+  "installed_verification_skills": [
+    {
+      "path": "/Users/alucinor/.agents/skills/game-verification-loop/SKILL.md",
+      "matches_maintained_source": true
+    },
+    {
+      "path": "/Users/alucinor/.codex/skills/game-verification-loop/SKILL.md",
+      "matches_maintained_source": true
+    },
+    {
+      "path": "/Users/alucinor/.claude/skills/game-verification-loop/SKILL.md",
+      "matches_maintained_source": true
+    }
+  ],
+  "runtime_tests": "not rerun; documentation-only change",
+  "independent_review": "unrun; orchestration paused",
+  "semantic_review": "Direct source inspection; no executable migration qualification"
+}
