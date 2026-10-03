@@ -19,12 +19,30 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Native selected-character control](p02/native-selected-control/RESULT.md) now qualifies the actual
+Characters panel across four native TLS peers: explicit consent, real30s loss allowance, acquisition,
+paused selection/Resume, held movement, paid combat, each human's own Wait, owner return/revoke and
+paused handback. Exact native commands/receipts and original-genesis replay preserve real attribution.
+The panel fixes overlap, viewport fit, draft retention and stale opening/row work; the selected HUD
+shows complete permitted resources. The grantee renders with controlled focus; three peers are headless.
+
+The warning-free build and **2,103 distinct checks** pass on current source/binaries:214 affected
+managed cases,1 new native journey,3 legacy native cases and fresh fullCore1,885. Nine actual images
+were inspected. [Final evidence](p02/native-selected-control/FINAL_CHECKS.json) retains the failed
+metadata-key attempt and later functional pass whose clipped HUD images were rejected before repair.
+Independent UI/adapter review and the same-change architecture reference accompany this scope.
+Before-change ref `codex/checkpoint-before-native-selected-control-20261003T064849Z` preserves`bb3812ff`;
+all775 existing test/project/fixture files,23 specs and unrelated staging are unchanged. Marker
+`codex/milestone-native-selected-control-20261003` records this bounded route. Full selected screens,
+archive/process-kill, production timing, physical/human/art and full phase gates remain open.
+
 [Connected participant control](p02/connected-player-control/RESULT.md) now binds actual TLS consent,
 private permission boards, acquisition/selection, versioned scoped observations/input/queries and the
 remote/Godot adapter. A delivered-frame proof gates explicit Resume; stale selection and proof-pending
 input are transient refusals. The genuine four-human TLS journey covers real allowance expiry, movement,
 ordinary Strike, each home character's explicit Wait, owner return/revocation, exact old receipts and
-original-genesis replay. Native selected-character screens remain separately unqualified.
+original-genesis replay. The newer native route above supersedes this checkpoint's then-unqualified
+consent/selection/combat interface, without claiming full screen coverage.
 
 The warning-free build and **2,500 distinct checks** pass on verified dependencies: Hosting508,
 focused27, connected-server2, server76, Core1,885 and native2; the Windows-only ACL case is skipped.
@@ -163,19 +181,16 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Qualify the actual Godot selected-character journey through the shipped Characters panel: explicit
-   consent, owner loss/allowance expiry, acquisition, scoped presentation, deliberate Resume, paid actions,
-   home-character obligations, return/revoke and paused handback. Managed TLS and existing home-player
-   rendering do not substitute for that native input/visibility proof. See the
-   [client scope notes](p02/connected-player-control/CLIENT_NOTES.md) for incomplete surfaces.
-2. Complete selected material-gift, worksite/production, private-history, restorative-permission and
+1. Complete selected material-gift, worksite/production, private-history, restorative-permission and
    sell-management screens against existing typed facets and readers. Retain current capture/confirmation
-   rules, immutable home identity and explicit scopes; no withheld full-view synthesis.
-3. Qualify full profile40 archive/reopen and actual process-kill recovery with native continuation.
+   rules, immutable home identity and explicit scopes; no withheld full-view synthesis. The native
+   consent/selection/combat route is qualified above; the [client scope notes](p02/connected-player-control/CLIENT_NOTES.md)
+   retain the incomplete domain surfaces.
+2. Qualify full profile40 archive/reopen and actual process-kill recovery with native continuation.
    Preserve accepted obligations, permission/assignment lineage and original controller allowance;
    retain the [complete obligations](p02/co-player-control/DESIGN.md). No production world or lived save
    upgrades automatically.
-4. Keep the retained failed timing gate open. Later instrumented compatibility passes do not explain
+3. Keep the retained failed timing gate open. Later instrumented compatibility passes do not explain
    earlier original history/movement timeouts. No unchanged diagnostic reruns simply to seek green;
    use a genuine changed dependency or an actual failed trace to justify the next bounded repair.
 

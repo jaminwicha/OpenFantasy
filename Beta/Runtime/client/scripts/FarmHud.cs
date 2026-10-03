@@ -154,11 +154,12 @@ internal sealed partial class FarmHud : CanvasLayer
         _outcomeChoices = view.Combat?.OutcomeAcknowledgment is not null;
         string name = view.Actors.Single(actor => actor.ActorId == view.ActorId).DisplayName;
         _identity.Text = "Operating " + name;
-        if (view.Combat?.Resources is { } combat) _identity.Text += $" · HP {combat.Hp}/{combat.MaxHp} · MP {combat.Mp}/{combat.MaxMp}";
-        else if (view.Recovery?.Health is { } health) _identity.Text += $" · HP {health.Hp}/{health.MaxHp}";
+        if (view.Combat?.Resources is { } combat) _identity.Text += $"\nHP {combat.Hp}/{combat.MaxHp} · MP {combat.Mp}/{combat.MaxMp}";
+        else if (view.Recovery?.Health is { } health) _identity.Text += $"\nHP {health.Hp}/{health.MaxHp}";
         _clock.Text = $"Day {view.Calendar.Days + 1} · {view.Calendar.MillisecondsWithinDay / 3_600_000:D2}:"
             + $"{view.Calendar.MillisecondsWithinDay / 60_000 % 60:D2}";
         _wood.Text = view.Trade?.Wallet is { } wallet ? $"Selected wallet: {wallet.Balance} {wallet.Unit}" : "";
+        _wood.Visible = view.Trade?.Wallet is not null;
         _project.Visible = true;
         LocalWorldView home = observation.HomeView;
         _project.Text = "Home character: " + home.Actors.Single(actor => actor.ActorId == home.PlayerActorId).DisplayName
@@ -184,6 +185,7 @@ internal sealed partial class FarmHud : CanvasLayer
     {
         _offers = offers;
         _openPack.Text = "Pack [I]";
+        _wood.Visible = true;
         _outcomeChoices = view.EncounterOutcome is { Stage: not LocalOutcomeStage.Completed };
         int hour = view.Calendar.MillisecondsWithinDay / 3_600_000;
         int minute = view.Calendar.MillisecondsWithinDay / 60_000 % 60;

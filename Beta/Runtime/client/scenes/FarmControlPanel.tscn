@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=4 format=3]
 
 [ext_resource type="Script" path="res://scripts/FarmControlPanel.cs" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="PanelStyle"]
+bg_color = Color(0.098, 0.165, 0.180, 0.985)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.639, 0.631, 0.490, 1)
+content_margin_left = 12.0
+content_margin_top = 10.0
+content_margin_right = 12.0
+content_margin_bottom = 10.0
+
+[sub_resource type="Theme" id="Theme"]
+default_font_size = 16
+PanelContainer/styles/panel = SubResource("PanelStyle")
+Label/colors/font_color = Color(0.941, 0.910, 0.812, 1)
 
 [node name="FarmControlPanel" type="CanvasLayer"]
 layer = 8
@@ -14,27 +31,26 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+theme = SubResource("Theme")
 
 [node name="Characters" type="Button" parent="Root"]
 unique_name_in_owner = true
-layout_mode = 0
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -155.0
-offset_top = 12.0
-offset_right = -12.0
-offset_bottom = 45.0
+layout_mode = 1
+offset_left = 18.0
+offset_top = 86.0
+offset_right = 161.0
+offset_bottom = 120.0
 text = "Characters"
 
 [node name="Panel" type="PanelContainer" parent="Root"]
-layout_mode = 0
-anchor_left = 1.0
+visible = false
+layout_mode = 1
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -490.0
-offset_top = 52.0
-offset_right = -12.0
-offset_bottom = -24.0
+offset_left = 18.0
+offset_top = 86.0
+offset_right = -18.0
+offset_bottom = -18.0
 
 [node name="Column" type="VBoxContainer" parent="Root/Panel"]
 layout_mode = 2
@@ -42,6 +58,11 @@ theme_override_constants/separation = 8
 
 [node name="Header" type="HBoxContainer" parent="Root/Panel/Column"]
 layout_mode = 2
+
+[node name="Title" type="Label" parent="Root/Panel/Column/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Characters · consent and control"
 
 [node name="Refresh" type="Button" parent="Root/Panel/Column/Header"]
 unique_name_in_owner = true
@@ -57,23 +78,42 @@ text = "Close"
 unique_name_in_owner = true
 layout_mode = 2
 autowrap_mode = 3
+max_lines_visible = 3
 text = "Reading control permissions…"
 
-[node name="Recipient" type="OptionButton" parent="Root/Panel/Column"]
+[node name="Content" type="HBoxContainer" parent="Root/Panel/Column"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 18
+
+[node name="GrantColumn" type="VBoxContainer" parent="Root/Panel/Column/Content"]
+custom_minimum_size = Vector2(310, 0)
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="RecipientLabel" type="Label" parent="Root/Panel/Column/Content/GrantColumn"]
+layout_mode = 2
+text = "Offer your home character's control to:"
+
+[node name="Recipient" type="OptionButton" parent="Root/Panel/Column/Content/GrantColumn"]
 unique_name_in_owner = true
 layout_mode = 2
+text = "Choose a person"
+clip_text = true
+fit_to_longest_item = false
 
-[node name="Scopes" type="GridContainer" parent="Root/Panel/Column"]
+[node name="Scopes" type="GridContainer" parent="Root/Panel/Column/Content/GrantColumn"]
 unique_name_in_owner = true
 layout_mode = 2
 columns = 2
 
-[node name="Grant" type="Button" parent="Root/Panel/Column"]
+[node name="Grant" type="Button" parent="Root/Panel/Column/Content/GrantColumn"]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Offer checked scopes to selected person"
+text = "Offer checked scopes"
+tooltip_text = "Offer only the checked scopes to the named person. They must accept separately."
 
-[node name="Units" type="SpinBox" parent="Root/Panel/Column"]
+[node name="Units" type="SpinBox" parent="Root/Panel/Column/Content/GrantColumn"]
 unique_name_in_owner = true
 layout_mode = 2
 min_value = 1.0
@@ -81,12 +121,14 @@ max_value = 1000000.0
 value = 1.0
 prefix = "Trade units:"
 
-[node name="Scroll" type="ScrollContainer" parent="Root/Panel/Column"]
+[node name="RowsScroll" type="ScrollContainer" parent="Root/Panel/Column/Content"]
+unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="Rows" type="VBoxContainer" parent="Root/Panel/Column/Scroll"]
+[node name="Rows" type="VBoxContainer" parent="Root/Panel/Column/Content/RowsScroll"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3

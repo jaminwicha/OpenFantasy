@@ -1,0 +1,45 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.35]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.52]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.64]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:13.65]     OpenFantasy.Server.Tests.SelectedControlNative.NativeSelectedControlJourneyTests.Four_native_humans_consent_take_over_choose_paid_combat_and_return_control_over_tls [FAIL]
+[xUnit.net 00:00:13.65]       Native roster stage=control-offer, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-selected-control/qualification/native-selection-20261003T070410727064Z/native/selected-control/4073c2e750cd349c3ee91b2f7c70fb49-first/0002.response.json: System.InvalidOperationException: One actual permission click did not complete its original receipt. Last control status: 
+[xUnit.net 00:00:13.65]          at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+[xUnit.net 00:00:13.65]          at OpenFantasy.Client.MarketProbeDriver.Until(Func`1 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149
+[xUnit.net 00:00:13.65]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.SubmitPermissionButton(Button button) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Selection.cs:line 97
+[xUnit.net 00:00:13.65]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.OfferControl(EntityId target, String scopes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Selection.cs:line 76
+[xUnit.net 00:00:13.65]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 102
+[xUnit.net 00:00:13.65]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+[xUnit.net 00:00:13.65]       Stack Trace:
+[xUnit.net 00:00:13.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(79,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds)
+[xUnit.net 00:00:13.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(53,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target)
+[xUnit.net 00:00:13.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedControlNative/NativeSelectedControlJourneyTests.cs(54,0): at OpenFantasy.Server.Tests.SelectedControlNative.NativeSelectedControlJourneyTests.Four_native_humans_consent_take_over_choose_paid_combat_and_return_control_over_tls()
+[xUnit.net 00:00:13.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedControlNative/NativeSelectedControlJourneyTests.cs(212,0): at OpenFantasy.Server.Tests.SelectedControlNative.NativeSelectedControlJourneyTests.Four_native_humans_consent_take_over_choose_paid_combat_and_return_control_over_tls()
+[xUnit.net 00:00:13.65]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedControlNative/NativeSelectedControlJourneyTests.cs(212,0): at OpenFantasy.Server.Tests.SelectedControlNative.NativeSelectedControlJourneyTests.Four_native_humans_consent_take_over_choose_paid_combat_and_return_control_over_tls()
+[xUnit.net 00:00:13.65]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:13.82]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.SelectedControlNative.NativeSelectedControlJourneyTests.Four_native_humans_consent_take_over_choose_paid_combat_and_return_control_over_tls [12 s]
+  Error Message:
+   Native roster stage=control-offer, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-selected-control/qualification/native-selection-20261003T070410727064Z/native/selected-control/4073c2e750cd349c3ee91b2f7c70fb49-first/0002.response.json: System.InvalidOperationException: One actual permission click did not complete its original receipt. Last control status: 
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.MarketProbeDriver.Until(Func`1 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.SubmitPermissionButton(Button button) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Selection.cs:line 97
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.OfferControl(EntityId target, String scopes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Selection.cs:line 76
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 102
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.SelectedControlNative.NativeSelectedControlJourneyTests.Four_native_humans_consent_take_over_choose_paid_combat_and_return_control_over_tls() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedControlNative/NativeSelectedControlJourneyTests.cs:line 54
+   at OpenFantasy.Server.Tests.SelectedControlNative.NativeSelectedControlJourneyTests.Four_native_humans_consent_take_over_choose_paid_combat_and_return_control_over_tls() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedControlNative/NativeSelectedControlJourneyTests.cs:line 212
+   at OpenFantasy.Server.Tests.SelectedControlNative.NativeSelectedControlJourneyTests.Four_native_humans_consent_take_over_choose_paid_combat_and_return_control_over_tls() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedControlNative/NativeSelectedControlJourneyTests.cs:line 212
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 14.2059 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/native-selected-control/qualification/native-selection-20261003T070410727064Z/checks.trx

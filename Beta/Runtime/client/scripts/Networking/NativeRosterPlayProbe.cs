@@ -83,6 +83,7 @@ internal sealed partial class NativeRosterPlayProbe : Node
 
     private async Task<bool> Execute(JsonElement request)
     {
+        var requestElapsed = System.Diagnostics.Stopwatch.StartNew();
         switch (_stage)
         {
             case "observe": await _driver.Frame(); break;
@@ -95,6 +96,21 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "read-outcome": await ChooseWheel(FarmSemanticAction.ReleaseEncounter); break;
             case "capture": await Capture(); break;
             case "capture-control": await CaptureControl(); break;
+            case "control-open": await OpenSelectionPanel(); break;
+            case "control-refresh": await RefreshSelectionPanel(); break;
+            case "control-close": await CloseSelectionPanel(); break;
+            case "control-offer": await OfferControl(RequestActor(request), request.GetProperty("Direction").GetString()!); break;
+            case "control-accept": await PermissionControl("accept", RequestActor(request)); break;
+            case "control-revoke": await PermissionControl("revoke", RequestActor(request)); break;
+            case "control-acquire": await AssignmentControl("acquire", RequestActor(request)); break;
+            case "control-select": await SelectControl(RequestActor(request)); break;
+            case "control-home": await SelectControl(Selected.Selection.HomeActorId); break;
+            case "control-release": await AssignmentControl("release", null); break;
+            case "selected-walk": await SelectedWalk(request.GetProperty("Direction").GetString()!); break;
+            case "selected-enter": await SelectedEnter(RequestActor(request)); break;
+            case "selected-strike": await SelectedWheel(FarmSemanticAction.Strike); break;
+            case "selected-wait": await SelectedWheel(FarmSemanticAction.Wait); break;
+            case "capture-selection": await CaptureSelection(); break;
             case "try-pending-resume": await TryPendingResume(); break;
             case "focus-return": await FocusReturn(); break;
             case "hold-right": SetRight(true); await _driver.Delay(0.15); break;
@@ -102,11 +118,15 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "close": await Pause(true); return true;
             default: throw new InvalidDataException("Unsupported roster mailbox verb.");
         }
+        if (_stage.StartsWith("control-", StringComparison.Ordinal) || _stage.StartsWith("selected-", StringComparison.Ordinal)
+            || _stage == "capture-selection")
+            MarketProbeDriver.Require(requestElapsed.Elapsed < TimeSpan.FromSeconds(20), "The selected native request exceeded twenty seconds.");
         return false;
     }
 
     private async Task Pause(bool paused)
     {
+        if (_game.CurrentSelection is not null) { await SelectedPause(paused); return; }
         if (_game.IsLocallyPaused != paused) _driver.Tap(Key.Escape);
         await _driver.Until(() => _game.IsLocallyPaused == paused && (paused
             ? _game.ParticipantRunState == LocalWorldRunState.Paused

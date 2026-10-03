@@ -136,3 +136,20 @@ permission scopes, relevant board rows and supported acquisition/selection/relea
 review presents exact captured terms and confirmation submits those terms unchanged. Home human
 obligations remain represented alongside the selected character; unavailable facets do not create inert
 menus. Rendered usability, input and complete domain-screen coverage are separate acceptance obligations.
+
+The [Characters scene](../../client/scenes/FarmControlPanel.tscn) owns layout, with a grant column and
+scrollable permission/selection rows below the main header. Recipient choice is explicit; refresh and
+reopening preserve its actor identity and checked-scope draft for the same home character. Those local
+draft values confer no permission. Changing home identity clears the draft. Busy reads and mutations
+disable competing panel operations while Close remains available.
+
+Each panel opening has a distinct lifetime. An older board read, inquiry or completed mutation cannot
+populate a closed or subsequently reopened panel. Row callbacks also retain their row generation and
+must still belong to the visible tree. Closing, changing selection or editing the quantity discards
+the applicable quote review; confirmation never silently replaces its captured terms. Accepted work
+continues under the ordinary authority even when its originating panel closes.
+
+The selected HUD separates the operated character's name and permitted health/magic resources into
+readable lines. A withheld wallet creates no empty header column or zero-balance claim. Returning home
+restores the home supplies display. Full text and sprite visibility are checked after layout/drawing;
+an underlying value or an on-screen control rectangle alone does not establish readable presentation.

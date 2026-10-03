@@ -16,6 +16,19 @@ public partial class FarmGame
     private Task? _controlOperation;
     private string? _controlNotice;
     private Task<LocalSelectedQueryResult<LocalTradeInquiryView>>? _selectedInquiry;
+    private ulong _controlPanelEpoch;
+    private ulong _controlReadEpoch;
+    private ulong _controlOperationEpoch;
+    private ulong _selectedInquiryEpoch;
+    private bool _controlRefreshRequested;
+
+    // Passive probe observations of the same session and presented boundary used by ordinary input.
+    internal LocalSelectedPlayerObservation? CurrentSelection => _session?.ReadSelection();
+    internal LocalSelectedPlayerObservation? PresentedSelection => _presentedSelection;
+    internal bool ControlOperationPending => _controlOperation is not null || _selectedInquiry is not null || _controlBoardRead is not null;
+    internal string? LastControlOperationStatus { get; private set; }
+    internal WorldActionCommand? LastControlPermissionCommand { get; private set; }
+    internal Task<WorldActionReceipt>? LastControlPermissionReceipt { get; private set; }
 
     private void ReadyActorSelection()
     {
@@ -26,7 +39,13 @@ public partial class FarmGame
         _controlPanel.CloseRequested += CloseControlPanel;
         _controlPanel.RefreshRequested += RefreshControlPanel;
         _controlPanel.PermissionRequested += (board, intent) => StartControlOperation(() =>
-            _session!.SelectedSession!.SubmitControlPermissionAsync(_session.PreparePermissionCommand(board, intent)));
+        {
+            var command = _session!.PreparePermissionCommand(board, intent);
+            var receipt = _session.SelectedSession!.SubmitControlPermissionAsync(command);
+            LastControlPermissionCommand = command;
+            LastControlPermissionReceipt = receipt;
+            return receipt;
+        });
         _controlPanel.AcquisitionRequested += acquisition => StartControlOperation(() =>
             _session!.SelectedSession!.AcquireControlAsync(acquisition));
         _controlPanel.ReleaseRequested += witness => StartControlOperation(() =>
@@ -35,12 +54,18 @@ public partial class FarmGame
             _session!.SelectedSession!.SelectActorAsync(observation.Selection, actor));
         _controlPanel.InquiryRequested += (observation, inquiry) =>
         {
-            if (_selectedInquiry is not null) return;
-            try { _selectedInquiry = _session!.SelectedSession!.SubmitSelectedTradeInquiryAsync(observation.Selection, inquiry); }
+            if (ControlOperationPending || !_controlPanel.IsOpen || !_input.Focused) return;
+            try
+            {
+                _selectedInquiry = _session!.SelectedSession!.SubmitSelectedTradeInquiryAsync(observation.Selection, inquiry);
+                _selectedInquiryEpoch = _controlPanelEpoch;
+                _controlPanel.SetBusy(true);
+            }
             catch (InvalidOperationException error) { _controlPanel.Notice(error.Message); }
         };
         _controlPanel.ConfirmationRequested += offer =>
         {
+            if (!_controlPanel.IsOpen || ControlOperationPending) return;
             if (_input.Paused || !_input.Focused || _action is not null)
             { _controlPanel.Notice("Resume this character before confirming a trade."); return; }
             CloseControlPanel();
@@ -50,20 +75,34 @@ public partial class FarmGame
 
     private void StartControlOperation(Func<Task> operation)
     {
-        if (_controlOperation is not null) return;
-        try { _controlOperation = operation(); }
-        catch (InvalidOperationException error) { _controlPanel.Notice(error.Message); }
+        if (ControlOperationPending || !_controlPanel.IsOpen || !_input.Focused) return;
+        try
+        {
+            _controlOperation = operation();
+            _controlOperationEpoch = _controlPanelEpoch;
+            LastControlOperationStatus = "Waiting for the control choice to be recorded.";
+            _controlPanel.Notice(LastControlOperationStatus);
+            _controlPanel.SetBusy(true);
+        }
+        catch (InvalidOperationException error)
+        {
+            LastControlOperationStatus = "Control choice refused: " + error.Message;
+            _controlPanel.Notice(LastControlOperationStatus);
+        }
     }
 
     private void OpenControlPanel()
     {
-        if (_session?.SelectedSession is not { SupportsControlPermissions: true }) return;
+        if (_controlPanel.IsOpen || !_input.Focused
+            || _session?.SelectedSession is not { SupportsControlPermissions: true }) return;
         if (_input.WheelOpen) ChangeWheel(false);
         if (_input.InventoryOpen) ChangeInventory(false);
         if (_input.MarketOpen) CloseMarket();
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
         _input.SetInventoryOpen(true);
         SendMovement(0, 0);
+        _controlPanelEpoch++;
+        _controlNotice = null;
         _controlPanel.Open();
         RefreshControlPanel();
     }
@@ -71,6 +110,9 @@ public partial class FarmGame
     private void CloseControlPanel()
     {
         if (!_controlPanel.IsOpen) return;
+        _controlPanelEpoch++;
+        _controlRefreshRequested = false;
+        _controlNotice = null;
         _controlPanel.Close();
         _input.SetInventoryOpen(false);
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
@@ -78,8 +120,17 @@ public partial class FarmGame
 
     private void RefreshControlPanel()
     {
-        if (_controlBoardRead is not null || _session?.SelectedSession is not { SupportsControlPermissions: true } selected) return;
-        _controlBoardRead = selected.ReadControlPermissionsAsync();
+        if (!_controlPanel.IsOpen || _session?.SelectedSession is not { SupportsControlPermissions: true } selected) return;
+        if (_controlBoardRead is not null || _controlOperation is not null || _selectedInquiry is not null)
+        { _controlRefreshRequested = true; return; }
+        _controlRefreshRequested = false;
+        try
+        {
+            _controlBoardRead = selected.ReadControlPermissionsAsync();
+            _controlReadEpoch = _controlPanelEpoch;
+            _controlPanel.SetBusy(true);
+        }
+        catch (InvalidOperationException error) { _controlPanel.Notice("Permissions unavailable: " + error.Message); }
     }
 
     private void CompleteControlOperations()
@@ -88,13 +139,18 @@ public partial class FarmGame
         if (_controlOperation is { IsCompleted: true } operation)
         {
             _controlOperation = null;
-            _controlNotice = operation is Task<WorldActionReceipt> { IsCompletedSuccessfully: true } receipt
+            LastControlOperationStatus = operation is Task<WorldActionReceipt> { IsCompletedSuccessfully: true } receipt
                 ? receipt.Result.Rejection == WorldActionRejection.None ? "Control choice recorded."
                     : "Control choice refused: " + receipt.Result.Rejection
                 : operation.IsCompletedSuccessfully ? "Control choice completed."
+                    : operation.IsCanceled ? "Control choice was cancelled."
                     : "Control choice refused: " + operation.Exception?.GetBaseException().Message;
-            _controlPanel.Notice(_controlNotice);
-            RefreshControlPanel();
+            if (_controlPanel.IsOpen && _controlOperationEpoch == _controlPanelEpoch)
+            {
+                _controlNotice = LastControlOperationStatus;
+                _controlPanel.Notice(_controlNotice);
+                _controlRefreshRequested = true;
+            }
         }
         if (_selectedInquiry is { IsCompleted: true } inquiry)
         {
@@ -103,20 +159,30 @@ public partial class FarmGame
             {
                 var result = inquiry.GetAwaiter().GetResult();
                 result.ValidateFor(_session!.SelectedSession!.ReadSelectedObservation(), LocalSelectedQueryOperation.SubmitTradeInquiry);
-                _controlPanel.Notice("Request is " + result.Value.State + ". Refresh after the merchant answers; nothing is purchased yet.");
+                if (_controlPanel.IsOpen && _selectedInquiryEpoch == _controlPanelEpoch)
+                    _controlPanel.Notice("Request is " + result.Value.State + ". Refresh after the merchant answers; nothing is purchased yet.");
             }
-            catch (Exception error) { _controlPanel.Notice("Request unavailable: " + error.GetBaseException().Message); }
+            catch (Exception error)
+            {
+                if (_controlPanel.IsOpen && _selectedInquiryEpoch == _controlPanelEpoch)
+                    _controlPanel.Notice("Request unavailable: " + error.GetBaseException().Message);
+            }
         }
         if (_controlBoardRead is { IsCompleted: true } read)
         {
             _controlBoardRead = null;
-            if (read.IsCompletedSuccessfully)
+            // Observe failures even when a closed/reopened panel no longer owns this response.
+            string? failure = read.Exception?.GetBaseException().Message;
+            if (_controlPanel.IsOpen && _controlReadEpoch == _controlPanelEpoch && read.IsCompletedSuccessfully)
             {
                 _controlPanel.Present(read.Result, _session!.ReadSelection(), _session);
                 if (_controlNotice is { } notice) { _controlPanel.Notice(notice); _controlNotice = null; }
             }
-            else _controlPanel.Notice("Permissions unavailable: " + read.Exception?.GetBaseException().Message);
+            else if (_controlPanel.IsOpen && _controlReadEpoch == _controlPanelEpoch)
+                _controlPanel.Notice("Permissions unavailable: " + (failure ?? "request cancelled"));
         }
+        if (_controlRefreshRequested && !ControlOperationPending) RefreshControlPanel();
+        _controlPanel.SetBusy(ControlOperationPending);
     }
 
     private void ObserveActorSelection(LocalSelectedPlayerObservation? observation)

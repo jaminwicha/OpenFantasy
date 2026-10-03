@@ -123,9 +123,16 @@ does not alter production trust, accepts no arbitrary host and retains certifica
 
 The explicit disposable roster probe coordinates independent native processes through bounded local
 mailboxes. Each process owns one authenticated player connection. Mailbox instructions inject ordinary
-keyboard/controller events and capture that player's immutable view and exact submitted command/receipt;
+pointer/keyboard/controller events and capture that player's immutable view and exact submitted command/receipt;
 they cannot write world state, grant resources or choose for another actor. Source-based route planning
 belongs to the test coordinator and does not expose privileged route advice through the player session.
 Background capture sets no-focus before window creation in a disposable project configuration and
 records any native focus acquisition. This fixture uses controlled input/focus; normal `--join` keeps
 the production window-focus and readiness policy.
+
+Selected-character probe actions use the same visible consent controls and action wheel as play.
+Readonly selection/board observations and semantic control metadata identify the displayed subject;
+they provide no gameplay mutation interface. Before confirming a captured action, the probe compares
+its selection, operated actor revision and relevant encounter pins with both the live observation and
+the presented frame. Consent commands and their returned receipt tasks are observed passively at the
+ordinary panel submission boundary, then checked against durable history by the coordinator.

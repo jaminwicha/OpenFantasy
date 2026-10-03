@@ -1,0 +1,196 @@
+{
+  "allSelectedQualificationsPassed": true,
+  "selectedNativeJourneyQualified": true,
+  "fullCoPlayerFeatureAccepted": false,
+  "fullPhaseAccepted": false,
+  "movementTimingGateClosed": false,
+  "productionHistoryLatencyGateClosed": false,
+  "profile40ProcessKillQualified": false,
+  "physicalDeviceAcceptance": false,
+  "humanUsabilityAcceptance": false,
+  "artAcceptance": false,
+  "sourceHead": "bb3812ffb9fe7a03f2a65449c626081046997d6f",
+  "preChangeCheckpoint": "codex/checkpoint-before-native-selected-control-20261003T064849Z",
+  "milestone": "codex/milestone-native-selected-control-20261003",
+  "protectedCounts": {
+    "tests": 775,
+    "specs": 23
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "4fd10c7ebda66268818a66a2acf75cec205574d6a65eb1b15ad205a8ba254c60",
+  "finalizerSha256": "bc87767578ef1833c487e6e5e5a3bb7ecf405da4dfa49f76675a894ab9603593",
+  "distinctCasesPassingOnVerifiedDependencies": 2103,
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T071002662710Z/report.json",
+      "sha256": "8c425b37f21584d899736200aee3458f598f8c9c1e7c2c1070b4c5e1c7c7c538",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "seconds": 4.170046667015413,
+      "outcomes": null,
+      "unrunCases": []
+    },
+    "native-selection": {
+      "path": "qualification/native-selection-20261003T071106315647Z/report.json",
+      "sha256": "040433be35a1bed64129dac04c1b98a37b0117676256dcb034530e88ea96adc6",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "seconds": 50.04907487498713,
+      "outcomes": {
+        "Passed": 1
+      },
+      "unrunCases": []
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261003T071157116035Z/report.json",
+      "sha256": "5cc4349db2225078deade3b4834aaf926299dec900de6f3603e36e9de4ffbbe3",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "seconds": 45.062091583007714,
+      "outcomes": {
+        "Passed": 214
+      },
+      "unrunCases": []
+    },
+    "native-roster": {
+      "path": "qualification/native-roster-20261003T071242417431Z/report.json",
+      "sha256": "7a0c274500d039d8850c33a96597273b9dba1eb5a440c79006ce4159a8bb0316",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "seconds": 88.85975412500557,
+      "outcomes": {
+        "Passed": 1
+      },
+      "unrunCases": []
+    },
+    "native-compatibility": {
+      "path": "qualification/native-compatibility-20261003T071411536146Z/report.json",
+      "sha256": "e2afc2d68a8ad4e8b420d407a3620701494e9c8af15fdef13a2d15af6f2647ec",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "seconds": 15.816360208002152,
+      "outcomes": {
+        "Passed": 2
+      },
+      "unrunCases": []
+    },
+    "core": {
+      "path": "qualification/core-20261003T071427627272Z/report.json",
+      "sha256": "4db53f262ca9d1e93ae9f580e03fe1fdfea5447475ca3adf07dcdc5a2e7b476f",
+      "accepted": true,
+      "matchesCurrentSourceAndBinaries": true,
+      "seconds": 153.06338208401576,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "unrunCases": []
+    }
+  },
+  "unresolvedSelectedFailures": [],
+  "retainedFailedAttempts": [
+    {
+      "path": "qualification/native-selection-20261003T070410727064Z/report.json",
+      "sha256": "692035e43f5c5dd2c664dda9e6452ce8b1b2dda0c00e58401820d86dce89f8a3",
+      "mode": "native-selection",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    }
+  ],
+  "earlierFunctionalPassWithRejectedImages": "qualification/native-selection-20261003T070617382448Z/report.json",
+  "journey": {
+    "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/journey.json",
+    "status": "passed",
+    "elapsedMilliseconds": 46723,
+    "observedAllowanceSeconds": 30.8302828,
+    "preparation": "Original-genesis journaled ordinary travel; no native travel claim for preparation.",
+    "movement": "Ordinary native held input until the first observed step within five seconds, then release; exact canonical movement attribution is checked, wire packet count is not asserted."
+  },
+  "authenticatedNativeArtifacts": [
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/final.ofc",
+      "sha256": "6aceea132ad20ed173a032169e53d2d89527f89f879d7e06ec4bf9c890bd9cb8"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/genesis.ofc",
+      "sha256": "262b39f9b3b502d0575b955bf79be852e896ec2ccd94e36a3031559d1ff24d0a"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/journal.json",
+      "sha256": "6028f50584152e33c0b72f70639d9c0b342179e372463ef8949a5feffc94641e"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/journey.json",
+      "sha256": "46d2f75b64c76b05a5d5c77765173df65a1518671b8bb8b3cb94c5f6a1ba0957"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/preparation.txt",
+      "sha256": "8f5a33536d1d22b01bba03a6724b6d6b0586c88d8769e9ab7954fb6899f5e16e"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/prepared.ofc",
+      "sha256": "8294629c37534e29e2cc9deb738f4d8f098aea6b6520d3f99df980d29e07d3c6"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/public.cer",
+      "sha256": "b7b315a5ce99e4f0267cdefc73b516d9a26a10c7fdad25d5a4838822fe30769c"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/receipts.json",
+      "sha256": "cf1dd4bf1113656b60f2e2d4a35dddb3e7af7a71ed21d3cd9199db3dbf6d87e1"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/world.sqlite3",
+      "sha256": "7c523bd9324fb7372f6f29a59c4dd82a9cb3644bae121312ff9fa818fbf83de4"
+    }
+  ],
+  "leadInspectedImages": [
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0002.png",
+      "sha256": "c218cee95ec384d242483d0a14938338d7f076c6dd156b6c3e3132a274dedc9b"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0302.png",
+      "sha256": "3458ef71f8b7cfea992ab289c3dcef95599ae49d2ba2cf3fa8f28229a81b26b4"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0308.png",
+      "sha256": "3458ef71f8b7cfea992ab289c3dcef95599ae49d2ba2cf3fa8f28229a81b26b4"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0329.png",
+      "sha256": "37236cd10b03a073662612db5d32e0e35819a14b97fac78db2c3c0f2c65f99cc"
+    },
+    {
+      "path": "qualification/native-selection-20261003T071106315647Z/native/selected-control/5795dc4890da7573cfc5b3948d0296df-first/0334.png",
+      "sha256": "05396a445b3cebfebf4926804ba466224063f3d5bda8b9922a0e46c388c60597"
+    },
+    {
+      "path": "qualification/native-roster-20261003T071242417431Z/native/roster/5795dc4890da7573cfc5b3948d0296df-first/0026.png",
+      "sha256": "b3e7c1a64ba495d3f0726bbba9508706093f54d18d66939d479c166646102339"
+    },
+    {
+      "path": "qualification/native-roster-20261003T071242417431Z/native/roster/5795dc4890da7573cfc5b3948d0296df-first/0037.png",
+      "sha256": "ee42f0ad726a3bef72b1802372c94667a34231f4cd1a7ff980aeb3dbaef76876"
+    },
+    {
+      "path": "qualification/native-roster-20261003T071242417431Z/native/roster/5795dc4890da7573cfc5b3948d0296df-first/0143.png",
+      "sha256": "8d97bc51b160be4cefcba93c4eef400dee71f787de7c2f9b45cb2e5434a7a6b3"
+    },
+    {
+      "path": "qualification/native-compatibility-20261003T071411536146Z/native/rendered/native-player.png",
+      "sha256": "243fc53fb0800be11ce7d10d2fd9ff3ec14b74465c21b54d262012cc7322eef3"
+    }
+  ],
+  "review": "REVIEW.md",
+  "externalClaudeRequestExecuted": false,
+  "limits": [
+    "Four native TLS peers; only the grantee is rendered, with controlled input and no-focus configuration.",
+    "Core evidence is fresh because revision-stamped binaries differed; no inherited Core pass is claimed.",
+    "Only the listed images received manual inspection; other per-control captures have executable bounds checks.",
+    "This journey does not perform a profile40 archive cut or process kill.",
+    "Fresh passes do not explain earlier retained latency failures or establish production reliability.",
+    "Independent source review covers the UI/adapter; root integrates and reviews the separately authored probe/coordinator."
+  ]
+}
