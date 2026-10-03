@@ -19,6 +19,29 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Shared selected trading](p02/selected-trading/RESULT.md) now binds the ordinary Market wheel and
+stall panel to home or operated Trade facts, with exact lot showing/retraction, separate quote review
+and confirmation, and independent Inventory/history permissions. Scope/lifetime guards reject stale
+clicks and replies; shutdown joins admitted query wrappers. The four-human native journey buys and
+sells the exact received lot after the real allowance, then refuses an unconsumed review on owner
+return/revoke. Original-genesis replay accounts for currency, source intervals and real NPC construction.
+
+The warning-free build and [final evidence](p02/selected-trading/FINAL_CHECKS.json) record **2,313
+distinct passing cases**, including ten new cases, fresh full Core 1,885 and nine native cases. Three
+home input routes with separate reopening and three refusal/recovery routes also pass. Nine images
+were inspected; a misleading pause footer was removed and the changed shared scene requalified.
+Home command/recovery evidence uses a recorded exact footer-only comparison, with all other source
+and binaries unchanged; old footer appearance is excluded. Three failed attempts remain retained.
+Independent critique fixed stale scope, lost initial-refresh demand and unjoined asynchronous work.
+
+Before-change `codex/checkpoint-before-selected-trading-20261003T105800Z` preserves `02f295bf`;
+WIP `codex/checkpoint-selected-trading-wip-20261003T111819Z` preserves `93e41f42`. All 805 prior
+inputs, 23 specs and unrelated predecessor staging remain pinned; two additive source links subtract
+to the exact archived project. Marker `codex/milestone-selected-trading-20261003` records this scope.
+Full history discovery/independent history-only UI, restorative screens, profile40 process-kill,
+earlier unexplained reliability failures, scale, physical/human/art and complete campaign gates remain
+open. No external provider request was executed; the spending-limit failure remains terminal.
+
 [Human construction](p02/human-construction/RESULT.md) now binds explicit builder projects to exact
 home/delegated Build reviews and independently public installed geometry. A separately selected fresh
 four-human scenario retains Wren's real kit, supply contract and200-work requirement. Its native journey
@@ -260,13 +283,14 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Complete remaining selected material-gift, worksite/production, private-history, restorative-permission and
-   sell-management screens against existing typed facets and readers. Retain current capture/confirmation
+1. Extend selected-domain coverage with private-history discovery/lifetimes and restorative-permission
+   screens against existing typed facets and readers. Retain current capture/confirmation
    rules, immutable home identity and explicit scopes; no withheld full-view synthesis. The native
    consent/selection/combat route is qualified above; the [client scope notes](p02/connected-player-control/CLIENT_NOTES.md)
    retain the incomplete domain surfaces. Native source-lot and produced-gift journeys have bounded passing evidence; retain the unexplained
-   raw-gift reopening failure and its diagnostic. Selected history lifetime interactions, restorative/sell-management
-   screens and mouse dropdowns remain explicit work. Atomic human construction is qualified above;
+   raw-gift reopening failure and its diagnostic. Shared selected buying/selling now has bounded evidence
+   in the selected-trading packet. Selected history discovery/lifetime interactions, restorative screens
+   and mouse dropdown breadth remain explicit work. Atomic human construction is qualified above;
    sustained work, unobscured completed-object legibility and the clipped idle-preview HUD need their
    normal interface/presentation work. The admitted recipe library and independently
    permitted public material names are qualified above; learning and full catalog/UI breadth remain open.

@@ -1,0 +1,550 @@
+{
+  "allCurrentSelectedReportsPassed": true,
+  "sharedSelectedTradingNativeQualified": true,
+  "fullRegressionAccepted": false,
+  "fullPhaseAccepted": false,
+  "fullCoPlayerFeatureAccepted": false,
+  "originalNativeGiftOpeningFailureExplained": false,
+  "movementTimingGateClosed": false,
+  "productionHistoryLatencyGateClosed": false,
+  "profile40ProcessKillQualified": false,
+  "nativeSelectedHistoryLifecycleQualified": false,
+  "fullHistoryDiscoveryImplemented": false,
+  "physicalDeviceAcceptance": false,
+  "humanUsabilityAcceptance": false,
+  "artAcceptance": false,
+  "sourceHead": "02f295bf4e111f737815bbdea81bce3f933fed24",
+  "preChangeCheckpoint": "codex/checkpoint-before-selected-trading-20261003T105800Z",
+  "milestone": "codex/milestone-selected-trading-20261003",
+  "protectedCounts": {
+    "tests": 805,
+    "specs": 23
+  },
+  "onlyExistingTestProjectChange": "Two additive market source links; exact archived original compared byte for byte.",
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkerSha256": "4b4c4c52c312dcd78b01df9880f535d132aa37c1515d7757f2bd76fe6465dfb7",
+  "finalizerSha256": "79059572a79cc3bddbbcf166a4845a21e892c85beeffe1867136ba6f40db8dca",
+  "distinctCasesPassingOnVerifiedDependencies": 2313,
+  "newCases": [
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.A_refused_current_read_stops_refresh_until_explicit_reopen",
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Late_reply_after_reopening_does_not_consume_the_new_visits_initial_read",
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Same_actor_new_generation_and_stall_visit_are_different_query_lifetimes",
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Shutdown_waits_for_every_admitted_facade_and_observes_both_failures",
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Explicit_sell_disclosure_and_stop_showing_transfer_nothing_and_pin_the_lot",
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Returning_to_same_actor_discards_old_lot_quantity_and_review_generation",
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture",
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission",
+    "OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Withheld_trade_is_refused_and_private_history_is_not_inferred_from_trade",
+    "OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation"
+  ],
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T113458454740Z/report.json",
+      "sha256": "5b605de6798bca6f1e0afccce551f1398fc0d0030d8c1bfba9be84e8a43f577f",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 3.54261783399852,
+      "outcomes": null,
+      "dependencyFamily": "Full solution"
+    },
+    "hosting-build": {
+      "path": "qualification/hosting-build-20261003T112725467289Z/report.json",
+      "sha256": "7e60e9a36179d38c4dfdfaaccb773a2b04eddb78478a68bab04ce4e3b7665670",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 1.8269396249961574,
+      "outcomes": null,
+      "dependencyFamily": "Hosting and exact linked client files"
+    },
+    "new-managed": {
+      "path": "qualification/new-managed-20261003T112742666550Z/report.json",
+      "sha256": "39181684ffd5a15bbeb855cb96b0fa42ec055c46783b435f87a5c538788a05d0",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 8.617577416007407,
+      "outcomes": {
+        "Passed": 9
+      },
+      "dependencyFamily": "Hosting and exact linked client files"
+    },
+    "client-managed": {
+      "path": "qualification/client-managed-20261003T112923901102Z/report.json",
+      "sha256": "7919f8760851f8d6844ab14c00ac0664107f4fe2f6559bc4e1432ab511045d95",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 62.72105341698625,
+      "outcomes": {
+        "Passed": 256
+      },
+      "dependencyFamily": "Hosting and exact linked client files"
+    },
+    "codec": {
+      "path": "qualification/codec-20261003T113555877548Z/report.json",
+      "sha256": "ab9de053aaa9ad443d88f99bfaa504478ba06cbe4d90e157908e0dc3faf5ff29",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 17.65341354100383,
+      "outcomes": {
+        "Passed": 171
+      },
+      "dependencyFamily": "Hosting and exact linked client files"
+    },
+    "selected-queries": {
+      "path": "qualification/selected-queries-20261003T113613733178Z/report.json",
+      "sha256": "411860f92b717fd54daa7292107264504cdbbbd4059ef71b1d28b8c67afcbabe",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 18.38901108299615,
+      "outcomes": {
+        "Passed": 25
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "core": {
+      "path": "qualification/core-20261003T113632316153Z/report.json",
+      "sha256": "9175165639f04c53622e7ebb9382c56be0ef8bb4c5636c44f4e888f2d0061606",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 91.99671150001814,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "native-trading": {
+      "path": "qualification/native-trading-20261003T113502729394Z/report.json",
+      "sha256": "a43864446864d4ca469652d22ab166b503d87916fc5e206b1df39f49da89dce3",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 52.668199500010815,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "home-fixtures": {
+      "path": "qualification/home-fixtures-20261003T113144395319Z/report.json",
+      "sha256": "2e70d77cbb2463cc08e516e86c3638256d280085f2c20ad78bc25ecb6b4dd998",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "narrowSceneTextReuse": "FOOTER_CORRECTION.json",
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 5.5729737500078045,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "home-native": {
+      "path": "qualification/home-native-20261003T113150185597Z/report.json",
+      "sha256": "363e2c2bdd1e8f797c61f275ca4f915ff878c9399c68c885b23bc521bdd8596a",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "narrowSceneTextReuse": "FOOTER_CORRECTION.json",
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 35.10658258298645,
+      "outcomes": null,
+      "dependencyFamily": "Full solution"
+    },
+    "home-auth": {
+      "path": "qualification/home-auth-20261003T113225532233Z/report.json",
+      "sha256": "7b8b90cfd2c62e57ca260b5f6baee062ddf2db846437511a14c177087f3f1eda",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "narrowSceneTextReuse": "FOOTER_CORRECTION.json",
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 31.244727125013014,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "boundary-fixtures": {
+      "path": "qualification/boundary-fixtures-20261003T113257072198Z/report.json",
+      "sha256": "d011c0c672dc71c8fb665ded3323e3601be33274926de785f5df2eb9d5f2e022",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "narrowSceneTextReuse": "FOOTER_CORRECTION.json",
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 7.398661457991693,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "boundary-native": {
+      "path": "qualification/boundary-native-20261003T113304682921Z/report.json",
+      "sha256": "ae7c2f0fb3f505a53a081bf6b8a3ba17e1081e19ccd75860c4e7bb7e83f20a0b",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "narrowSceneTextReuse": "FOOTER_CORRECTION.json",
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 48.826231083017774,
+      "outcomes": null,
+      "dependencyFamily": "Full solution"
+    },
+    "boundary-auth": {
+      "path": "qualification/boundary-auth-20261003T113353785813Z/report.json",
+      "sha256": "93365e7adacf5c0ca3af9a05020a1fc3175f55cede830e10290f5ef2bf02394a",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": false,
+      "narrowSceneTextReuse": "FOOTER_CORRECTION.json",
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 28.130960749986116,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "native-construction": {
+      "path": "qualification/native-construction-20261003T114248742213Z/report.json",
+      "sha256": "2b09b1d955d84099683536e80cc98379635de918de0b34f11593d9fd74841ff1",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 96.16988616698654,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "native-recipes": {
+      "path": "qualification/native-recipes-20261003T114119869136Z/report.json",
+      "sha256": "c692db898c0faf717895a7eafa99dfcc1d712383879bc2a806cf6c64fb02f551",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 88.65770337497815,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "native-production": {
+      "path": "qualification/native-production-20261003T113951030046Z/report.json",
+      "sha256": "860d5559cd1afd5d55080d121a124d29fe5e6e13a918bbcbc576bfe109a946b8",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 88.6143407500058,
+      "outcomes": {
+        "Passed": 2
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "native-gifts": {
+      "path": "qualification/native-gifts-20261003T113854055304Z/report.json",
+      "sha256": "1f0961f78498ab9040311f944aee1d47e6a52bee54cf6d691fa109acfca45438",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 56.77026937500341,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "native-selection": {
+      "path": "qualification/native-selection-20261003T113804529726Z/report.json",
+      "sha256": "d55831dfcc5c773f93f0eee681111140807c7ad7fe53ab4d5a0b187c7e7d9883",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 49.31497608401696,
+      "outcomes": {
+        "Passed": 1
+      },
+      "dependencyFamily": "Full solution"
+    },
+    "native-compatibility": {
+      "path": "qualification/native-compatibility-20261003T114425121247Z/report.json",
+      "sha256": "022a82242e466df031b7da154a403326af5a363b6f7c7ca65451cb179b489e72",
+      "verified": true,
+      "matchesRelevantSourceAndBinaries": true,
+      "matchesFullRecordedSnapshot": true,
+      "narrowSceneTextReuse": null,
+      "matchesCheckerAndTool": true,
+      "expectedOutcomes": true,
+      "seconds": 12.814394332992379,
+      "outcomes": {
+        "Passed": 2
+      },
+      "dependencyFamily": "Full solution"
+    }
+  },
+  "retainedFailedAttempts": [
+    {
+      "path": "qualification/build-20261003T111451523825Z/report.json",
+      "sha256": "4e982629ee06f4d03fc9de647644e2aa9c6a11f1ccbdb7a852ee1c7ccf2506e1",
+      "mode": "build",
+      "outcomes": null,
+      "error": null
+    },
+    {
+      "path": "qualification/native-trading-20261003T112805342065Z/report.json",
+      "sha256": "3c551d846998f69d27bebaa9cfc34cc9e8dffb21729780860b41bcf8bf8b09a3",
+      "mode": "native-trading",
+      "outcomes": {
+        "Failed": 1
+      },
+      "error": null
+    },
+    {
+      "path": "qualification/new-managed-20261003T111935725451Z/report.json",
+      "sha256": "ecf65307cad996c1d4e3196fe7634270f151cf66315d0797a10b0dfa015038d6",
+      "mode": "new-managed",
+      "outcomes": {
+        "Failed": 2,
+        "Passed": 7
+      },
+      "error": null
+    }
+  ],
+  "journey": {
+    "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/journey.json",
+    "Kind": "native-selected-trading-v1",
+    "Status": "passed",
+    "AllowanceSeconds": 30.2123012,
+    "ElapsedMilliseconds": 49778,
+    "Stages": [
+      {
+        "Stage": "trade-only-purchase-reviewed-and-filled",
+        "ElapsedMilliseconds": 39115,
+        "Peers": [
+          {
+            "Home": "5795dc4890da7573cfc5b3948d0296df",
+            "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Commands": 1
+          },
+          {
+            "Home": "79dddd9ea31bf745606a5473ea76ed14",
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Commands": 0
+          },
+          {
+            "Home": "e1d57b89bcce6b6237bd754d53734e55",
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Stage": "same-finite-lot-sold-back",
+        "ElapsedMilliseconds": 41314,
+        "Peers": [
+          {
+            "Home": "5795dc4890da7573cfc5b3948d0296df",
+            "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Commands": 5
+          },
+          {
+            "Home": "79dddd9ea31bf745606a5473ea76ed14",
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Commands": 0
+          },
+          {
+            "Home": "e1d57b89bcce6b6237bd754d53734e55",
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Commands": 0
+          }
+        ]
+      },
+      {
+        "Stage": "owner-return-refused-unconsumed-review",
+        "ElapsedMilliseconds": 44381,
+        "Peers": [
+          {
+            "Home": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Actor": "4073c2e750cd349c3ee91b2f7c70fb49",
+            "Commands": 0
+          },
+          {
+            "Home": "5795dc4890da7573cfc5b3948d0296df",
+            "Actor": "5795dc4890da7573cfc5b3948d0296df",
+            "Commands": 5
+          },
+          {
+            "Home": "79dddd9ea31bf745606a5473ea76ed14",
+            "Actor": "79dddd9ea31bf745606a5473ea76ed14",
+            "Commands": 0
+          },
+          {
+            "Home": "e1d57b89bcce6b6237bd754d53734e55",
+            "Actor": "e1d57b89bcce6b6237bd754d53734e55",
+            "Commands": 0
+          }
+        ]
+      }
+    ],
+    "Preparation": "Owner 4073c2e750cd349c3ee91b2f7c70fb49 spoke, accepted and delivered Wren's original funded quest, then closed dialogue in four ordinary commands; balance 200.\nOwner 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 83328, Z = 256, Cell = CellCoordinate { X = 101, Y = 325, Z = 1 } } \u2192 SubunitPosition { X = 25984, Y = 85376, Z = 256, Cell = CellCoordinate { X = 101, Y = 333, Z = 1 } }, 64 ordinary movement commits; no native travel claim.\nOwner 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 85376, Z = 256, Cell = CellCoordinate { X = 101, Y = 333, Z = 1 } } \u2192 SubunitPosition { X = 25984, Y = 87424, Z = 256, Cell = CellCoordinate { X = 101, Y = 341, Z = 1 } }, 64 ordinary movement commits; no native travel claim.\nOwner 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 87424, Z = 256, Cell = CellCoordinate { X = 101, Y = 341, Z = 1 } } \u2192 SubunitPosition { X = 25984, Y = 89472, Z = 256, Cell = CellCoordinate { X = 101, Y = 349, Z = 1 } }, 64 ordinary movement commits; no native travel claim.\nOwner 4073c2e750cd349c3ee91b2f7c70fb49: SubunitPosition { X = 25984, Y = 89472, Z = 256, Cell = CellCoordinate { X = 101, Y = 349, Z = 1 } } \u2192 SubunitPosition { X = 24960, Y = 89472, Z = 256, Cell = CellCoordinate { X = 97, Y = 349, Z = 1 } }, 32 ordinary movement commits; no native travel claim.",
+    "Scope": "Trade without Inventory or PrivateHistory; actual observed quote review, explicit lot showing, purchase/sale and owner-return invalidation. No archive discovery claim."
+  },
+  "authenticatedNativeArtifacts": [
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/final.ofc",
+      "sha256": "c1c2017e12e96669eddc62d76dcf5675695ab127ff0fbbc1a32c57b6b7a22f62"
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/genesis.ofc",
+      "sha256": "b23501e839cc8be0fcd58c069acfc04c501de97bca6fc0bc255daa907e0da4e5"
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/journal.json",
+      "sha256": "2c1e1382a947d7fe49c324c0498ce58b2e02717d32d65463c9585b22c3941c3a"
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/journey.json",
+      "sha256": "67e13db9b361b4208f25ee589e01edb16dbbcf07ecf8081364bc1a1e023b84f3"
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/preparation.txt",
+      "sha256": "7e849fef0214d4d43ca0fa933bfa6bdcc574dc0635150aff9b011b023d211fb1"
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/prepared.ofc",
+      "sha256": "81e88880aad02412ae04fd6b8cb92fcba41da94e073c6d25b10c21d756188fe7"
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/receipts.json",
+      "sha256": "82d8b7c87fa5091b56246f9e655b57462d747d1e2b01c3769412bee8d54c4090"
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/world.sqlite3",
+      "sha256": "b95997100ae24f30b92e0fda0308c07979c7d8e643dbef45242b8fb264f72b34"
+    }
+  ],
+  "leadInspectedImages": [
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0063-trade.png",
+      "sha256": "b1a2afaab1fdeb8b82dfe80153480fa997211bc3cdc35cf651da1f1368cde690",
+      "leadObservation": "Final scene: Amber named as shopper; exact buy/sell quantity, price and post-trade purse; shared-time warning, separate Confirm/Back and corrected footer are visible. Sell lot and Stop showing are readable. Supplemental history/showing details use their visible scroll areas."
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0073-trade.png",
+      "sha256": "42abb824fd9e13cfba31516f4cc965f98db2a908208eda2c5eae5fe7e915b285",
+      "leadObservation": "Final scene: Amber named as shopper; exact buy/sell quantity, price and post-trade purse; shared-time warning, separate Confirm/Back and corrected footer are visible. Sell lot and Stop showing are readable. Supplemental history/showing details use their visible scroll areas."
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0079-trade.png",
+      "sha256": "ce904794dc406a9737d66f56ef89a696260a31e6a30d9e73b683c816c5de593b",
+      "leadObservation": "Final scene: Amber named as shopper; exact buy/sell quantity, price and post-trade purse; shared-time warning, separate Confirm/Back and corrected footer are visible. Sell lot and Stop showing are readable. Supplemental history/showing details use their visible scroll areas."
+    },
+    {
+      "path": "qualification/home-native-20261003T113150185597Z/native-trading-emtbf80_/keyboard.buy-review.png",
+      "sha256": "3d4b1f2c89efadb0686da473ab3a0ada2fc7a3caf3cfd1e43103ec3932c5c21b",
+      "leadObservation": "Retained home input-route capture: readable buy/sell terms, local pause, exact lot and saved record. Its former redundant local-pause footer is excluded by FOOTER_CORRECTION.json; all other source and binaries match."
+    },
+    {
+      "path": "qualification/home-native-20261003T113150185597Z/native-trading-emtbf80_/controller.sell-review.png",
+      "sha256": "40a3e26743e83829a908776cec8c6acefcaf45edfea14bf0e8c91e12472c455b",
+      "leadObservation": "Retained home input-route capture: readable buy/sell terms, local pause, exact lot and saved record. Its former redundant local-pause footer is excluded by FOOTER_CORRECTION.json; all other source and binaries match."
+    },
+    {
+      "path": "qualification/home-native-20261003T113150185597Z/native-trading-emtbf80_/pointer.history.png",
+      "sha256": "a8c58bb4433ad344acd36741e02ba517248426e242ba2601cc9c9930f45a417a",
+      "leadObservation": "Retained home input-route capture: readable buy/sell terms, local pause, exact lot and saved record. Its former redundant local-pause footer is excluded by FOOTER_CORRECTION.json; all other source and binaries match."
+    },
+    {
+      "path": "qualification/boundary-native-20261003T113304682921Z/native-trading-boundaries-6l7t6wmn/expired.refused.png",
+      "sha256": "dc904faef44ecb05bb20713416dc8341dc314ea9c07c9f6bb1eede42cd291603",
+      "leadObservation": "Retained home refusal capture: explicit expired/funds/moved-issuer reason and disabled Confirm with usable recovery. Former redundant footer excluded by FOOTER_CORRECTION.json; no changed command or layout contract."
+    },
+    {
+      "path": "qualification/boundary-native-20261003T113304682921Z/native-trading-boundaries-6l7t6wmn/unfunded.refused.png",
+      "sha256": "895130e5d3cfffce7610ecebd45b989e1f18feba1b4e37f6cc2bd952a72dec1a",
+      "leadObservation": "Retained home refusal capture: explicit expired/funds/moved-issuer reason and disabled Confirm with usable recovery. Former redundant footer excluded by FOOTER_CORRECTION.json; no changed command or layout contract."
+    },
+    {
+      "path": "qualification/boundary-native-20261003T113304682921Z/native-trading-boundaries-6l7t6wmn/moved.refused.png",
+      "sha256": "976da9da98cd99420ec84ff7f825a26ec2771b2e2d97449f3343515cae6cee24",
+      "leadObservation": "Retained home refusal capture: explicit expired/funds/moved-issuer reason and disabled Confirm with usable recovery. Former redundant footer excluded by FOOTER_CORRECTION.json; no changed command or layout contract."
+    }
+  ],
+  "review": "REVIEW.md",
+  "externalClaudeRequestExecuted": false,
+  "narrowSceneTextEvidenceReuse": {
+    "source": "Beta/Runtime/client/scenes/FarmMarketPanel.tscn",
+    "beforeSha256": "0e9a24af94790d65ae263af937d7a5adffcc9288c6cc863f1950cc1ebeb72e90",
+    "afterSha256": "bcc5e9d6c68cdc3e697aa00c49bacd5729f14f696be16590d19c539f00914d56",
+    "exactRemovedBytes": "Hover or focus explains. Pause to read stops the world until you resume.",
+    "replacementBytes": "Hover or focus explains.",
+    "reusedModes": [
+      "home-fixtures",
+      "home-native",
+      "home-auth",
+      "boundary-fixtures",
+      "boundary-native",
+      "boundary-auth"
+    ],
+    "reason": "Lead image review rejected the static local-pause claim in a shared world. Remove only the redundant last footer sentence. The existing dynamic button, timing label and offer card state the actual local/shared policy. Both footer versions occupy one line; no control hierarchy, sizing or behavior changes. Retained home/boundary routes authenticate identical commands, world rules, source and binaries aside from this exact scene-text removal. Their old footer appearance is not inherited; a fresh selected native run qualifies the changed scene."
+  },
+  "limits": [
+    "Actual four-human Cargo world; ordinary journaled quest funding and travel are preparation, not native gestures or substitute genesis.",
+    "Trade-only purchase, exact received-lot showing/retraction/sale, separate review and owner-return invalidation use the shared stall.",
+    "Full replay from original genesis includes genuine scheduled NPC construction; additional world changes require exact causal accounting.",
+    "Host stop/reopen replay does not claim a second native process epoch or a profile40 process-kill recovery proof.",
+    "PrivateHistory remains independent; remembered observed IDs do not implement history enumeration or an independent history-only browser.",
+    "Prior gift opening and movement/history timing failures remain unexplained; later passes do not close those reliability gates.",
+    "Controlled background rendering and injected input do not prove physical devices, OS focus, human usability, final art or other platforms.",
+    "Complete campaign, sustained work, production scale/composite maxima and broader domain coverage remain open."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "ref": "codex/checkpoint-selected-trading-wip-20261003T111819Z",
+  "revision": "93e41f423802498e1113cd2fb62a82cf6d71fb07",
+  "sourceHead": "02f295bf4e111f737815bbdea81bce3f933fed24",
+  "tree": "6b02fb1ceac3b6267fe41e3a4c7de676cb51e8e8",
+  "scope": "Successor working changes and packet at this instant, before extracting market async lifecycle ownership and completing causal NPC-work fixture verification. Predecessor staging excluded.",
+  "verification": "WIP, not acceptance. Initial pure Hosting build passed before newtests; full build currently fails with7 compilation/analyzer errors. No new tests/native run yet;3critic findings are being fixed.",
+  "indexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5"
+}

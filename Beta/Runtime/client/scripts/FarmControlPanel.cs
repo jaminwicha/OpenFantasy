@@ -16,9 +16,6 @@ internal sealed partial class FarmControlPanel : CanvasLayer
     private Label _status = null!;
     private OptionButton _recipient = null!;
     private GridContainer _scopes = null!;
-    private SpinBox _units = null!;
-    private ScrollContainer _scroll = null!;
-    private VBoxContainer? _review;
     private readonly Dictionary<WorldControlCapabilities, CheckBox> _checks = [];
     private readonly List<EntityId> _recipients = [];
     private readonly List<Button> _actionButtons = [];
@@ -37,8 +34,7 @@ internal sealed partial class FarmControlPanel : CanvasLayer
     internal event Action<LocalControlAcquisition>? AcquisitionRequested;
     internal event Action<WorldControlWitness>? ReleaseRequested;
     internal event Action<LocalSelectedPlayerObservation, EntityId>? SelectionRequested;
-    internal event Action<LocalSelectedPlayerObservation, LocalTradeInquiry>? InquiryRequested;
-    internal event Action<FarmActionOffer>? ConfirmationRequested;
+    internal event Action? MarketRequested;
 
     public override void _Ready()
     {
@@ -47,8 +43,7 @@ internal sealed partial class FarmControlPanel : CanvasLayer
         _status = GetNode<Label>("%Status");
         _recipient = GetNode<OptionButton>("%Recipient");
         _scopes = GetNode<GridContainer>("%Scopes");
-        _units = GetNode<SpinBox>("%Units");
-        _scroll = GetNode<ScrollContainer>("%RowsScroll");
+        GetNode<SpinBox>("%Units").Hide();
         GetNode<Button>("%Characters").Pressed += () => OpenRequested?.Invoke();
         GetNode<Button>("%Close").Pressed += () => CloseRequested?.Invoke();
         GetNode<Button>("%Refresh").Pressed += () => RefreshRequested?.Invoke();
@@ -57,7 +52,6 @@ internal sealed partial class FarmControlPanel : CanvasLayer
         {
             _recipientActor = index >= 0 && index < _recipients.Count ? _recipients[(int)index] : null;
         };
-        _units.ValueChanged += _ => ClearReview();
         foreach (var (name, action) in new[] { ("Characters", "open"), ("Refresh", "refresh"), ("Close", "close"), ("Grant", "offer") })
             GetNode<Button>("%" + name).SetMeta(ActionMetadata, action);
         foreach (var scope in Enum.GetValues<WorldControlCapabilities>().Where(scope => scope != 0
@@ -104,7 +98,6 @@ internal sealed partial class FarmControlPanel : CanvasLayer
         GetNode<Button>("%Refresh").Disabled = busy;
         GetNode<Button>("%Grant").Disabled = busy || _board is null;
         _recipient.Disabled = busy;
-        _units.Editable = !busy;
         foreach (var check in _checks.Values) check.Disabled = busy;
         foreach (var button in _actionButtons) if (IsInstanceValid(button)) button.Disabled = busy;
     }
@@ -155,31 +148,8 @@ internal sealed partial class FarmControlPanel : CanvasLayer
                     AddButton("Select " + Name(witness.OwnerActorId), () => SelectionRequested?.Invoke(selected, witness.OwnerActorId), "select", witness.OwnerActorId);
                 AddButton("Release borrowed control", () => ReleaseRequested?.Invoke(witness), "release", witness.OwnerActorId);
             }
-            if (selected.ControlledView?.Trade is { } trade)
-            {
-                AddText("Selected character's trade · choose the quantity at left. Requests reserve nothing.");
-                foreach (var stall in trade.Markets?.Stalls.Where(stall => stall.IsAvailableInPerson) ?? [])
-                    AddButton("Ask to buy " + stall.CommodityName + " from " + Name(stall.MerchantActorId), () =>
-                        InquiryRequested?.Invoke(selected, new LocalTradeInquiry(stall.MarketId, stall.Commodity,
-                            LocalTradeDirection.Buy, checked((ulong)_units.Value))));
-                foreach (var quote in trade.Quotes.Where(quote => !quote.ViewerIsIssuer && quote.ObservedIssuerRevision is not null))
-                    AddButton("Review offer " + quote.QuoteId, () =>
-                    {
-                        try
-                        {
-                            FarmActionOffer offer = session.ReviewSelectedQuote(selected, quote, checked((ulong)_units.Value));
-                            ClearReview();
-                            _review = new VBoxContainer { SizeFlagsHorizontal = Control.SizeFlags.ExpandFill };
-                            _rows.AddChild(_review);
-                            _rows.MoveChild(_review, 0);
-                            AddText(offer.Label + " · " + offer.CostText + "\n" + offer.DetailText, _review);
-                            AddButton("Confirm these exact terms", () => ConfirmationRequested?.Invoke(offer), parent: _review);
-                            _scroll.ScrollVertical = 0;
-                        }
-                        catch (InvalidOperationException error) { Notice(error.Message); }
-                        catch (ArgumentException error) { Notice(error.Message); }
-                    });
-            }
+            if (selected.ControlledView?.Trade is not null)
+                AddButton("Open selected character’s stall", () => MarketRequested?.Invoke());
         }
         Notice("Consent changes no ownership. Only checked scopes are granted; acquisition requires the owner's expired disconnect allowance.");
         SetBusy(_busy);
@@ -204,18 +174,10 @@ internal sealed partial class FarmControlPanel : CanvasLayer
     private void ClearRows()
     {
         _rowsGeneration++;
-        _review = null;
         _actionButtons.Clear();
         foreach (Node row in _rows.GetChildren()) { _rows.RemoveChild(row); row.QueueFree(); }
     }
-    private void ClearReview()
-    {
-        if (_review is null) return;
-        foreach (var button in _review.GetChildren().OfType<Button>()) _actionButtons.Remove(button);
-        _rows.RemoveChild(_review);
-        _review.QueueFree();
-        _review = null;
-    }
+
     private void AddText(string text, VBoxContainer? parent = null) => (parent ?? _rows).AddChild(new Label { Text = text,
         AutowrapMode = TextServer.AutowrapMode.WordSmart, SizeFlagsHorizontal = Control.SizeFlags.ExpandFill });
     private void AddButton(string text, Action action, string? controlAction = null, EntityId? actor = null,

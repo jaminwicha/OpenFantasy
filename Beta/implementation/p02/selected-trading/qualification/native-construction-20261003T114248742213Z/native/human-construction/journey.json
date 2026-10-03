@@ -1,0 +1,81 @@
+{
+  "Status": "passed",
+  "AllowanceSeconds": 30.56455,
+  "ElapsedMilliseconds": 93274,
+  "Stages": [
+    {
+      "Name": "native-funded-and-first-work",
+      "ElapsedMilliseconds": 8202,
+      "Peers": [
+        {
+          "Actor": "d644fe990d9982aa999ab41d836aee8a",
+          "Sequence": 5,
+          "Commands": 1
+        },
+        {
+          "Actor": "8c631e8b65e694d9914789ffb629da72",
+          "Sequence": 7,
+          "Commands": 4
+        },
+        {
+          "Actor": "6879f5585b0e80582f3eab149c3150b9",
+          "Sequence": 1,
+          "Commands": 0
+        },
+        {
+          "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+          "Sequence": 1,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "native-work-199-before-owner-return",
+      "ElapsedMilliseconds": 86770,
+      "Peers": [
+        {
+          "Actor": "8c631e8b65e694d9914789ffb629da72",
+          "Sequence": 7,
+          "Commands": 0
+        },
+        {
+          "Actor": "6879f5585b0e80582f3eab149c3150b9",
+          "Sequence": 75,
+          "Commands": 198
+        },
+        {
+          "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+          "Sequence": 7,
+          "Commands": 0
+        }
+      ]
+    },
+    {
+      "Name": "all200-native-work-and-public-completion",
+      "ElapsedMilliseconds": 89395,
+      "Peers": [
+        {
+          "Actor": "d644fe990d9982aa999ab41d836aee8a",
+          "Sequence": 6,
+          "Commands": 1
+        },
+        {
+          "Actor": "8c631e8b65e694d9914789ffb629da72",
+          "Sequence": 8,
+          "Commands": 0
+        },
+        {
+          "Actor": "6879f5585b0e80582f3eab149c3150b9",
+          "Sequence": 78,
+          "Commands": 198
+        },
+        {
+          "Actor": "a7341c7cbdd9e63effec9bf6f0936da4",
+          "Sequence": 10,
+          "Commands": 0
+        }
+      ]
+    }
+  ],
+  "Scope": "All 200 work commands are native; 198 delegated; completion by returning owner. Public observer is home; selected Traversal-only visibility is a separate managed proof."
+}

@@ -84,6 +84,7 @@ internal enum FarmSemanticAction
     PrepareRecipe,
     ConfirmRecipe,
     Build,
+    WithdrawTradeLot,
 }
 
 /// <summary>Who owns input, from the top of the stack down.</summary>
@@ -318,7 +319,7 @@ internal sealed class FarmInputRouter
                 && (situation.WheelChoiceOpensPanel || !Paused && !situation.ActionPending),
             FarmSemanticAction.CloseMarket => layer == FarmInputLayer.Market,
             // Stall commitments are world commands: they need running local time, as the session requires.
-            FarmSemanticAction.ShowTradeLot or FarmSemanticAction.ConfirmTrade => layer == FarmInputLayer.Market
+            FarmSemanticAction.ShowTradeLot or FarmSemanticAction.WithdrawTradeLot or FarmSemanticAction.ConfirmTrade => layer == FarmInputLayer.Market
                 && !Paused && !situation.ActionPending && !situation.ReadingHold,
             FarmSemanticAction.TradeBuy or FarmSemanticAction.TradeSell or FarmSemanticAction.TradeOffers => false,
             FarmSemanticAction.CancelCare or FarmSemanticAction.DeclineCare or FarmSemanticAction.AdministerCare =>

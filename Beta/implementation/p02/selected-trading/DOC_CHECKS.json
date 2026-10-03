@@ -1,0 +1,23 @@
+{
+  "checkedRelativeLinks": 323,
+  "missingRelativeLinks": [],
+  "baselineRequirements": 181,
+  "allCoverageStatusesUnchanged": true,
+  "timelessReferencesReviewed": [
+    "native-trading.md",
+    "player-queries.md",
+    "presentation-and-interaction.md"
+  ],
+  "files": {
+    "Beta/Runtime/docs/architecture/native-trading.md": "a70fc78110297627c270a1c42218c642fececaeba1786d6e879183d086c7a885",
+    "Beta/Runtime/docs/architecture/player-queries.md": "703c5f9f855eb1c8c01a021821db7beb4ce510af28b6cd41f50c0575ebb1d23c",
+    "Beta/Runtime/docs/architecture/presentation-and-interaction.md": "948f2e0891e0a6698505acd13b80292ef593b2f4a123a9b755b8740cef530cc9",
+    "Beta/Runtime/README.md": "89c4f4c9d6b0e798554403ac36ce8c0824127e6d8ed664de67a7fb7ad2a2a715",
+    "Beta/implementation/AGENT_HANDOFF.md": "3457f9546984a0e0c0b22f556e4cb2a9a4bf63752a098d8d15810b7707138be7",
+    "Beta/implementation/GIT_MILESTONES.md": "b25cb70c3da60d7e603807b3a775d7f729f806f87e6121213c7a9a4e2b7f51c8",
+    "Beta/implementation/p02/selected-trading/DESIGN.md": "f610b4e51a525b362d1dbef33fa2c64efdb99bd99660acdb4a0a08f45796e82d",
+    "Beta/implementation/p02/selected-trading/REVIEW.md": "d06cdadeda309d6533720f8c4e657b291a66579af542435a850f70dd91418620",
+    "Beta/implementation/p02/selected-trading/RESULT.md": "78b05925dcd1d531f5a29bbbb75c9fd610b27a08e84088c17276dd6e136cbd5e",
+    "Beta/implementation/ui-management/COVERAGE.json": "937aa33591ee5be1c3fbba8c77ee5f8e27e96b24928fc4e3e6e37403dd8085c1"
+  }
+}

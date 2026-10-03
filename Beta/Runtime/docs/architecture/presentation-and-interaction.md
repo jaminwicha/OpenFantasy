@@ -44,6 +44,15 @@ appears only as an optional hover diagnostic. Its controls form one explicit cyc
 open dropdown list owns input until a row is chosen or the list is cancelled (Escape or controller B),
 without closing the stall.
 
+The shared stall consumes a purpose-specific `FarmMarketPresentation` for the selected shopper.
+Trade discloses that actor's wallet and usable commodity lots without requiring its full Inventory
+facet. Selection scope and actor revision remain pinned through explicit review. Showing a lot,
+withdrawing its disclosure, asking for terms and accepting an offer remain separate actions.
+Saved terminal records require the independently authorized history reader; observed offer identifiers
+are not a complete archive directory. Asynchronous results carry panel/record lifetime guards so an
+old visit cannot update a different shopper's screen. Shared-world pause text describes input readiness,
+not a promise that other players stop the clock.
+
 [FarmGame](../../client/scripts/FarmGame.cs) coordinates session, input and presentation through
 named collaborators. [FarmCanvas](../../client/scripts/FarmCanvas.cs) and its
 [presentation components](../../client/scripts/Presentation) map projected state to terrain,

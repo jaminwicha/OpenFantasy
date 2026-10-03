@@ -20,11 +20,18 @@ internal sealed record FarmMarketRequest(LocalTradeInquiry? Inquiry, string? Blo
 /// </summary>
 internal static class MarketActionOffers
 {
+    internal static LocalMarketStallView? ContextStall(LocalWorldView view) => ContextStall(FarmMarketPresentation.From(view));
+    internal static LocalMarketStallView? ContextStall(LocalWorldView view, EntityId? chosen) => ContextStall(FarmMarketPresentation.From(view), chosen);
+    internal static void Add(LocalWorldView view, FarmActionScope scope, FarmMarketDraft? draft, IDictionary<FarmSemanticAction, FarmActionOffer> offers) => Add(FarmMarketPresentation.From(view), scope, draft, offers);
+    internal static FarmMarketRequest PrepareRequest(LocalWorldView view, LocalMarketStallView stall, FarmMarketDraft draft, LocalTradeInquiryView? current) => PrepareRequest(FarmMarketPresentation.From(view), stall, draft, current);
+    internal static PaidQuoteView? OpenOffer(LocalWorldView view, LocalMarketStallView stall) => OpenOffer(FarmMarketPresentation.From(view), stall);
+    internal static bool PinsOnOpening(LocalWorldView view, LocalMarketStallView stall, EntityId? chosen) => PinsOnOpening(FarmMarketPresentation.From(view), stall, chosen);
+
     internal static bool IsStallChoice(FarmSemanticAction action) =>
         action is FarmSemanticAction.TradeBuy or FarmSemanticAction.TradeSell or FarmSemanticAction.TradeOffers;
 
     /// <summary>The stall the panel addresses: the one available in person, else the first known stall.</summary>
-    internal static LocalMarketStallView? ContextStall(LocalWorldView view) =>
+    internal static LocalMarketStallView? ContextStall(FarmMarketPresentation view) =>
         view.Markets?.Stalls.FirstOrDefault(stall => stall.IsAvailableInPerson) ?? view.Markets?.Stalls.FirstOrDefault();
 
     /// <summary>
@@ -33,10 +40,10 @@ internal static class MarketActionOffers
     /// a choice the stall available in person is offered, then the first stall in identity order; that fallback is
     /// only addressed for display and is never pinned unless it is in reach (see <see cref="PinsOnOpening"/>).
     /// </summary>
-    internal static LocalMarketStallView? ContextStall(LocalWorldView view, EntityId? chosenMarketId) =>
+    internal static LocalMarketStallView? ContextStall(FarmMarketPresentation view, EntityId? chosenMarketId) =>
         chosenMarketId is { } chosen ? view.Markets?.Stalls.FirstOrDefault(stall => stall.MarketId == chosen) : ContextStall(view);
 
-    internal static void Add(LocalWorldView view, FarmActionScope scope, FarmMarketDraft? draft,
+    internal static void Add(FarmMarketPresentation view, FarmActionScope scope, FarmMarketDraft? draft,
         IDictionary<FarmSemanticAction, FarmActionOffer> offers)
     {
         if (ContextStall(view, draft?.MarketId) is not { } stall) return;
@@ -52,8 +59,13 @@ internal static class MarketActionOffers
         offers[FarmSemanticAction.TradeOffers] = FarmActionOffer.Panel(FarmSemanticAction.TradeOffers, scope, "Offers",
             merchant, stall.MerchantActorId, $"Inspect {merchant}'s answers, any open offer's timing and your saved outcomes. "
             + "Inspection spends nothing.", null);
-        if (draft?.MarketId != stall.MarketId) return;
+        if (draft?.MarketId != stall.MarketId || !draft.MatchesScope(view)) return;
         offers[FarmSemanticAction.ShowTradeLot] = Show(view, scope, stall, draft, merchant, goods, context);
+        offers[FarmSemanticAction.WithdrawTradeLot] = new(FarmSemanticAction.WithdrawTradeLot, scope, "Stop showing", merchant,
+            stall.MerchantActorId, FarmActionOffers.NoCost, "Your lot is no longer shown. Existing offers keep their own terms.",
+            context is null && stall.OwnShowing is { IsLive: true } ? new WithdrawMarketLotDisclosureIntent(stall.MarketId) : null,
+            context ?? (stall.OwnShowing is not { IsLive: true } ? "There is no active showing at this stall." : null),
+            detailText: "Ends your showing. It moves no goods and does not withdraw an offer already issued.");
         offers[FarmSemanticAction.ConfirmTrade] = Confirm(view, scope, stall, draft, merchant, goods, context);
     }
 
@@ -61,12 +73,13 @@ internal static class MarketActionOffers
     /// The player's nonbinding request from its explicit choices. It names only the stall, commodity, direction,
     /// units and, to sell, the player's own shown lot; it never names a price, a merchant lot or a quote.
     /// </summary>
-    internal static FarmMarketRequest PrepareRequest(LocalWorldView view, LocalMarketStallView stall, FarmMarketDraft draft,
+    internal static FarmMarketRequest PrepareRequest(FarmMarketPresentation view, LocalMarketStallView stall, FarmMarketDraft draft,
         LocalTradeInquiryView? current)
     {
         string merchant = FarmMarketTerms.Merchant(view, stall);
         string goods = FarmMarketTerms.Goods(view, stall);
-        string? blocker = ContextBlocker(view, stall, merchant)
+        string? blocker = !draft.MatchesScope(view) ? "The shopper changed. Reopen this stall before asking."
+            : ContextBlocker(view, stall, merchant)
             ?? (draft.MarketId != stall.MarketId ? "Open this stall to choose a request."
             : current?.State == LocalTradeInquiryState.Waiting
                 ? current.Inquiry.MarketId == stall.MarketId ? $"Your request is waiting for {merchant}'s answer. Cancel it to change it."
@@ -81,7 +94,7 @@ internal static class MarketActionOffers
     }
 
     /// <summary>The one open offer from this stall's merchant to the player, which the player may review.</summary>
-    internal static PaidQuoteView? OpenOffer(LocalWorldView view, LocalMarketStallView stall) => view.PaidQuotes
+    internal static PaidQuoteView? OpenOffer(FarmMarketPresentation view, LocalMarketStallView stall) => view.PaidQuotes
         .Where(quote => BelongsTo(stall, quote) && quote.Status == PaidQuoteStatus.Open)
         .OrderByDescending(quote => quote.IssuedAtStep).ThenBy(quote => quote.QuoteId).FirstOrDefault();
 
@@ -101,7 +114,7 @@ internal static class MarketActionOffers
         : draft.Quantity > shown.Units ? $"You showed {shown.Units} {goods}; show more before asking to sell {draft.Quantity}."
         : null;
 
-    private static FarmActionOffer Show(LocalWorldView view, FarmActionScope scope, LocalMarketStallView stall,
+    private static FarmActionOffer Show(FarmMarketPresentation view, FarmActionScope scope, LocalMarketStallView stall,
         FarmMarketDraft draft, string merchant, string goods, string? context)
     {
         ulong window = Math.Min(NativeTradingPolicy.ShowingWindowSteps, stall.MaximumWindowSteps);
@@ -121,7 +134,7 @@ internal static class MarketActionOffers
             intent, blocker, detailText: detail);
     }
 
-    private static FarmActionOffer Confirm(LocalWorldView view, FarmActionScope scope, LocalMarketStallView stall,
+    private static FarmActionOffer Confirm(FarmMarketPresentation view, FarmActionScope scope, LocalMarketStallView stall,
         FarmMarketDraft draft, string merchant, string goods, string? context)
     {
         FarmMarketReview? review = draft.Review;
@@ -129,11 +142,17 @@ internal static class MarketActionOffers
             : view.PaidQuotes.FirstOrDefault(quote => quote.QuoteId == review.Quote.QuoteId);
         bool buying = review?.Quote.Side == SpotQuoteSide.IssuerSells;
         string? blocker = context ?? ConfirmBlocker(view, stall, review, current, merchant, goods);
+        if (review is not null)
+        {
+            if (review.Scope != view.Scope) blocker ??= "The controlled character changed. Review this offer again.";
+            else if (review.ActorRevision != view.ActorRevision) blocker ??= "Your character changed since review. Review this offer again.";
+            scope = scope with { ExpectedActorRevision = review.ActorRevision };
+        }
         EntityId? commandId = blocker is null ? NewCommandId() : null;
         WorldActionIntent? intent = blocker is null
-            ? current!.PrepareAcceptance(commandId!.Value, new TrustedCommandDelivery(scope.PrincipalId, scope.SessionId), review!.Units)
+            ? review!.Quote.PrepareAcceptance(commandId!.Value, new TrustedCommandDelivery(scope.PrincipalId, scope.SessionId), review!.Units)
             : null;
-        string unit = view.Progression?.CurrencyUnit ?? "coins";
+        string unit = view.CurrencyUnit;
         string label = buying ? "Confirm purchase" : "Confirm sale";
         string cost = review is null ? "Review one offer first"
             : buying ? $"{checked(review.Payment + review.Fees)} {unit}" : FarmMarketTerms.Count(review.Units, goods);
@@ -146,13 +165,15 @@ internal static class MarketActionOffers
             completion, intent, blocker, detailText: detail, commandId: commandId);
     }
 
-    private static string? ConfirmBlocker(LocalWorldView view, LocalMarketStallView stall, FarmMarketReview? review,
+    private static string? ConfirmBlocker(FarmMarketPresentation view, LocalMarketStallView stall, FarmMarketReview? review,
         PaidQuoteView? current, string merchant, string goods)
     {
         if (review is null) return "Review one offer first; confirming restates its exact terms.";
         if (current is null) return "This offer is no longer listed. Check its saved record.";
         if (current.Status != PaidQuoteStatus.Open)
             return $"This offer is {FarmMarketTerms.StatusWord(current.Status)}. Ask {merchant} again for new terms.";
+        if (FarmMarketTerms.RemainingSteps(current, view.Markets?.AdvancingStep ?? current.IssuedAtStep) == 0)
+            return "This offer’s time is up. Wait for its recorded closure before asking again.";
         if (current.QuoteHash != review.Quote.QuoteHash || !BelongsTo(stall, current))
             return "These terms are not the ones you reviewed. Review the offer again.";
         if (current.ObservedIssuerRevision is null) return $"{merchant} is not within reach to complete the trade.";
@@ -161,8 +182,8 @@ internal static class MarketActionOffers
         if (current.Side == SpotQuoteSide.IssuerSells)
         {
             ulong total = checked(review.Payment + review.Fees);
-            ulong balance = view.Progression?.CurrencyBalance ?? 0;
-            return balance < total ? $"You need {total} {view.Progression?.CurrencyUnit}; you have {balance}." : null;
+            ulong balance = view.CurrencyBalance ?? 0;
+            return balance < total ? $"You need {total} {view.CurrencyUnit}; you have {balance}." : null;
         }
         return stall.OwnLots.FirstOrDefault(lot => lot.LotId == current.LotId) is { } own
             && own.Revision == current.ExpectedLotRevision && own.Quantity >= review.Units
@@ -173,21 +194,14 @@ internal static class MarketActionOffers
     /// Stall actions belong to ordinary unheld exploration in person. Inspecting answers and records stays
     /// possible, but requests and commitments wait for that boundary.
     /// </summary>
-    private static string? ContextBlocker(LocalWorldView view, LocalMarketStallView stall, string merchant) =>
-        view.HasReadingHold ? "Finish the current conversation before trading."
-        : view.IsResolvingConsequences ? "Wait for the current world changes to finish."
-        : view.Care?.PendingAcknowledgmentId is not null ? "The accepted recovery treatment must finish first."
-        : view.EncounterLifecycle is { } lifecycle && lifecycle.Phase != EncounterLifecyclePhase.Exploration
-            ? "Trading happens during ordinary exploration."
-        : view.EncounterLifecycle is { PlayerCanAct: false } ? "You cannot act until your current recovery ends."
-        : !stall.IsAvailableInPerson ? OutOfReach(view, stall, merchant)
-        : null;
+    private static string? ContextBlocker(FarmMarketPresentation view, LocalMarketStallView stall, string merchant) =>
+        view.ContextBlocker ?? (!stall.IsAvailableInPerson ? OutOfReach(view, stall, merchant) : null);
 
     /// <summary>
     /// Why an addressed stall cannot trade here, without retargeting it: a stall that is in reach instead is named
     /// with the explicit Offers → Stall route, and with several stalls the route to another choice is explained.
     /// </summary>
-    private static string OutOfReach(LocalWorldView view, LocalMarketStallView stall, string merchant)
+    private static string OutOfReach(FarmMarketPresentation view, LocalMarketStallView stall, string merchant)
     {
         LocalMarketStallView[] stalls = view.Markets?.Stalls.ToArray() ?? [];
         if (stalls.FirstOrDefault(other => other.MarketId != stall.MarketId && other.IsAvailableInPerson) is { } nearby)
@@ -202,7 +216,7 @@ internal static class MarketActionOffers
     /// Whether opening a stall's panel makes it the explicit choice: an existing choice stays, the stall in reach is
     /// chosen, and a world's only stall is chosen. With several stalls and none in reach nothing is pinned.
     /// </summary>
-    internal static bool PinsOnOpening(LocalWorldView view, LocalMarketStallView stall, EntityId? chosenMarketId) =>
+    internal static bool PinsOnOpening(FarmMarketPresentation view, LocalMarketStallView stall, EntityId? chosenMarketId) =>
         chosenMarketId == stall.MarketId || stall.IsAvailableInPerson || view.Markets?.Stalls.Count == 1;
 
     private static EntityId NewCommandId() => EntityId.FromBytes(RandomNumberGenerator.GetBytes(EntityId.ByteLength));

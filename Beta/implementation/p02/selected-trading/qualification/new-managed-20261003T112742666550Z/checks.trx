@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="6cd2ae98-12fd-46b7-a6dc-df282526f3b0" name="@mac 2026-10-03 06:27:45" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T06:27:45.9546420-05:00" queuing="2026-10-03T06:27:45.9546420-05:00" start="2026-10-03T06:27:44.0363740-05:00" finish="2026-10-03T06:27:51.0730470-05:00" />
+  <TestSettings name="default" id="fa993040-44f7-4fd8-b0a5-815c3afbed30">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_06_27_45" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a72f4ac5-ee3d-4b88-beaf-84704ebd7488" testId="2b15a5a3-b974-73fb-2c88-190df61a0b73" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission" computerName="mac" duration="00:00:00.6709052" startTime="2026-10-03T06:27:50.3573890-05:00" endTime="2026-10-03T06:27:51.0283490-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a72f4ac5-ee3d-4b88-beaf-84704ebd7488" />
+    <UnitTestResult executionId="c4d1f54c-38b6-478e-ad5d-1143547deee6" testId="8e203691-545a-2121-aae4-c6723fb0370c" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture" computerName="mac" duration="00:00:01.7729613" startTime="2026-10-03T06:27:47.6116500-05:00" endTime="2026-10-03T06:27:49.3848680-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c4d1f54c-38b6-478e-ad5d-1143547deee6" />
+    <UnitTestResult executionId="f5d26c2f-4c46-4746-9248-5f7244bc1b61" testId="78550d95-f1ba-4bbf-e9a7-b378fdd6f6aa" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Returning_to_same_actor_discards_old_lot_quantity_and_review_generation" computerName="mac" duration="00:00:00.8840415" startTime="2026-10-03T06:27:49.3953910-05:00" endTime="2026-10-03T06:27:50.2795010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f5d26c2f-4c46-4746-9248-5f7244bc1b61" />
+    <UnitTestResult executionId="811b82bc-f8d9-45e1-a26d-820838ea8955" testId="842d9265-c376-8f8e-d78a-9a9e7bc8550a" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Same_actor_new_generation_and_stall_visit_are_different_query_lifetimes" computerName="mac" duration="00:00:00.0001358" startTime="2026-10-03T06:27:45.6748470-05:00" endTime="2026-10-03T06:27:45.6749960-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="811b82bc-f8d9-45e1-a26d-820838ea8955" />
+    <UnitTestResult executionId="c8bc088c-62cb-4d3a-a786-61d9d8cf3c9e" testId="52786b9e-dab5-9755-f972-a2049d23135b" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Explicit_sell_disclosure_and_stop_showing_transfer_nothing_and_pin_the_lot" computerName="mac" duration="00:00:00.0762962" startTime="2026-10-03T06:27:50.2802990-05:00" endTime="2026-10-03T06:27:50.3566420-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c8bc088c-62cb-4d3a-a786-61d9d8cf3c9e" />
+    <UnitTestResult executionId="74b66480-e1d9-44d2-a682-bb1be5f5e5f3" testId="624330be-998d-e5b6-ab96-fe9797a60104" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Late_reply_after_reopening_does_not_consume_the_new_visits_initial_read" computerName="mac" duration="00:00:00.0014526" startTime="2026-10-03T06:27:45.6728230-05:00" endTime="2026-10-03T06:27:45.6743100-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="74b66480-e1d9-44d2-a682-bb1be5f5e5f3" />
+    <UnitTestResult executionId="d3493030-d8de-40b8-8b92-7fd46ca54e5e" testId="b3a5be71-e079-c93b-d934-7d916b43f625" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Withheld_trade_is_refused_and_private_history_is_not_inferred_from_trade" computerName="mac" duration="00:00:01.9562224" startTime="2026-10-03T06:27:45.6512960-05:00" endTime="2026-10-03T06:27:47.6109680-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d3493030-d8de-40b8-8b92-7fd46ca54e5e" />
+    <UnitTestResult executionId="67d5116c-4b66-4d19-8b49-5e1f55ea72a2" testId="78073945-7993-27ff-a1d2-dc7098d370a9" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Shutdown_waits_for_every_admitted_facade_and_observes_both_failures" computerName="mac" duration="00:00:00.0107185" startTime="2026-10-03T06:27:45.6512970-05:00" endTime="2026-10-03T06:27:45.6685530-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67d5116c-4b66-4d19-8b49-5e1f55ea72a2" />
+    <UnitTestResult executionId="0365a459-e360-4162-be65-ec3bcb3774b9" testId="fa383099-6b08-dbb3-d750-45aa1f186cd3" testName="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.A_refused_current_read_stops_refresh_until_explicit_reopen" computerName="mac" duration="00:00:00.0000982" startTime="2026-10-03T06:27:45.6745620-05:00" endTime="2026-10-03T06:27:45.6746820-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0365a459-e360-4162-be65-ec3bcb3774b9" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8e203691-545a-2121-aae4-c6723fb0370c">
+      <Execution id="c4d1f54c-38b6-478e-ad5d-1143547deee6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests" name="Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.A_refused_current_read_stops_refresh_until_explicit_reopen" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fa383099-6b08-dbb3-d750-45aa1f186cd3">
+      <Execution id="0365a459-e360-4162-be65-ec3bcb3774b9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests" name="A_refused_current_read_stops_refresh_until_explicit_reopen" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2b15a5a3-b974-73fb-2c88-190df61a0b73">
+      <Execution id="a72f4ac5-ee3d-4b88-beaf-84704ebd7488" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests" name="Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Withheld_trade_is_refused_and_private_history_is_not_inferred_from_trade" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b3a5be71-e079-c93b-d934-7d916b43f625">
+      <Execution id="d3493030-d8de-40b8-8b92-7fd46ca54e5e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests" name="Withheld_trade_is_refused_and_private_history_is_not_inferred_from_trade" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Explicit_sell_disclosure_and_stop_showing_transfer_nothing_and_pin_the_lot" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="52786b9e-dab5-9755-f972-a2049d23135b">
+      <Execution id="c8bc088c-62cb-4d3a-a786-61d9d8cf3c9e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests" name="Explicit_sell_disclosure_and_stop_showing_transfer_nothing_and_pin_the_lot" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Returning_to_same_actor_discards_old_lot_quantity_and_review_generation" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="78550d95-f1ba-4bbf-e9a7-b378fdd6f6aa">
+      <Execution id="f5d26c2f-4c46-4746-9248-5f7244bc1b61" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests" name="Returning_to_same_actor_discards_old_lot_quantity_and_review_generation" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Late_reply_after_reopening_does_not_consume_the_new_visits_initial_read" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="624330be-998d-e5b6-ab96-fe9797a60104">
+      <Execution id="74b66480-e1d9-44d2-a682-bb1be5f5e5f3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests" name="Late_reply_after_reopening_does_not_consume_the_new_visits_initial_read" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Shutdown_waits_for_every_admitted_facade_and_observes_both_failures" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="78073945-7993-27ff-a1d2-dc7098d370a9">
+      <Execution id="67d5116c-4b66-4d19-8b49-5e1f55ea72a2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests" name="Shutdown_waits_for_every_admitted_facade_and_observes_both_failures" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Same_actor_new_generation_and_stall_visit_are_different_query_lifetimes" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="842d9265-c376-8f8e-d78a-9a9e7bc8550a">
+      <Execution id="811b82bc-f8d9-45e1-a26d-820838ea8955" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests" name="Same_actor_new_generation_and_stall_visit_are_different_query_lifetimes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="2b15a5a3-b974-73fb-2c88-190df61a0b73" executionId="a72f4ac5-ee3d-4b88-beaf-84704ebd7488" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8e203691-545a-2121-aae4-c6723fb0370c" executionId="c4d1f54c-38b6-478e-ad5d-1143547deee6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78550d95-f1ba-4bbf-e9a7-b378fdd6f6aa" executionId="f5d26c2f-4c46-4746-9248-5f7244bc1b61" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="842d9265-c376-8f8e-d78a-9a9e7bc8550a" executionId="811b82bc-f8d9-45e1-a26d-820838ea8955" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="52786b9e-dab5-9755-f972-a2049d23135b" executionId="c8bc088c-62cb-4d3a-a786-61d9d8cf3c9e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="624330be-998d-e5b6-ab96-fe9797a60104" executionId="74b66480-e1d9-44d2-a682-bb1be5f5e5f3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b3a5be71-e079-c93b-d934-7d916b43f625" executionId="d3493030-d8de-40b8-8b92-7fd46ca54e5e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="78073945-7993-27ff-a1d2-dc7098d370a9" executionId="67d5116c-4b66-4d19-8b49-5e1f55ea72a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fa383099-6b08-dbb3-d750-45aa1f186cd3" executionId="0365a459-e360-4162-be65-ec3bcb3774b9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.41]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.96]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.15]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:06.57]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

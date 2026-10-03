@@ -682,7 +682,8 @@ her purchases are paid from her own proceeds. Her gift preference and Care work 
 **V** opens the wheel and **Q / right shoulder** turns to **Market**: Up buys, Right sells, Down shows
 offers and saved outcomes. Confirming a sector only opens the stall panel, also while paused. In the
 panel choose Buy or Sell, units and (to sell) one exact own lot; **Show this lot** lets Wren offer to
-buy it, **Ask Wren** sends a nonbinding request, **Review offer** captures her exact terms and
+buy it; **Stop showing** retracts that disclosure without transferring goods or closing an issued
+quote. **Ask Wren** sends a nonbinding request, **Review offer** captures her exact terms and
 **Confirm** accepts them. Changing a choice, **Back**, focus loss or a controller disconnect discards
 the review; nothing is ever re-asked or confirmed for you. **Esc / B / V** close the panel.
 Arrows / D-pad / Tab move focus along the panel; Enter / A open a list and choose its row, and Esc or
@@ -697,6 +698,17 @@ Offers last 1,200 advancing steps (about a minute of running time), showings 2,4
 Wren keeps one standing offer for you; ignoring it lets it close on its own. **Check saved record**
 reads the chosen outcome from the save; outcomes that exist only in archived history are not listed.
 In this local single-player session the pause is not a shared multiplayer Wait.
+
+For an authorized operated character, the same Market wheel and stall panel use that character's
+Trade permission, purse and disclosed usable trade lots. The title names the shopper. Inventory
+permission is independent; no home-character funds are substituted. Characters also links to this
+shared stall screen. Changing character, returning control or changing the stall clears the review;
+an old response cannot populate a later visit. Other ready players may keep the shared world running
+while you read. Confirm always uses the exact reviewed quote, quantity and character revision.
+
+Operated Trade shows open quotes. Saved terminal outcomes require separate PrivateHistory permission;
+the screen remembers only offers observed during the current shopper/stall visit, not an archive
+directory. Cancelling a waiting inquiry does not cancel a merchant's already-issued quote.
 
 `NativeTradingFixtureTests` earns the reward and lets Wren finish her funded build through ordinary
 cutoffs; with `OPENFANTASY_NATIVE_TRADING_FIXTURES` naming a fresh directory it exports `save.sqlite`,

@@ -214,6 +214,12 @@ icon = ExtResource("3")
 expand_icon = true
 theme_override_constants/icon_max_width = 20
 
+[node name="StopShowing" type="Button" parent="MarketRoot/Panel/Column/Body/ChoiceScroll/Choices"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Stop showing"
+
 [node name="AskMerchant" type="Button" parent="MarketRoot/Panel/Column/Body/ChoiceScroll/Choices"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -338,4 +344,4 @@ autowrap_mode = 3
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 autowrap_mode = 3
-text = "Arrows / D-pad / Tab move · Enter / A choose · Esc / B close. Hover or focus explains. Pause to read stops the world until you resume."
+text = "Arrows / D-pad / Tab move · Enter / A choose · Esc / B close. Hover or focus explains."

@@ -7,6 +7,9 @@ namespace OpenFantasy.Client;
 /// <summary>One reviewed offer: the exact participant view the player inspected and the units it chose to accept.</summary>
 internal sealed record FarmMarketReview(PaidQuoteView Quote, ulong Units)
 {
+    internal FarmMarketScope? Scope { get; init; }
+    internal ulong ActorRevision { get; init; }
+
     /// <summary>Whole currency units the buyer pays the seller for exactly these units.</summary>
     internal ulong Payment => checked(Quote.UnitPrice * Units);
 
@@ -22,7 +25,7 @@ internal sealed record FarmMarketReview(PaidQuoteView Quote, ulong Units)
 /// </summary>
 internal sealed class FarmMarketDraft
 {
-    private (EntityId World, EntityId Branch, EntityId Actor)? _scope;
+    private FarmMarketScope? _scope;
 
     /// <summary>The stall the panel addresses: an explicit choice, or a stall only being looked at (see <see cref="IsExplicit"/>).</summary>
     internal EntityId? MarketId { get; private set; }
@@ -46,13 +49,18 @@ internal sealed class FarmMarketDraft
     /// a null direction keeps the current one. A reviewed offer never survives reopening the panel.
     /// </summary>
     internal void Begin(LocalWorldView view, EntityId marketId, LocalTradeDirection? direction) =>
+        Begin(FarmMarketPresentation.From(view), marketId, direction);
+
+    internal void Begin(FarmMarketPresentation view, EntityId marketId, LocalTradeDirection? direction) =>
         Visit(view, marketId, direction, explicitChoice: true);
 
     /// <summary>
     /// Looks at one stall without choosing it, as when Offers opens while no stall is within reach. Nothing can be asked
     /// or committed there, and <see cref="ReleaseLook"/> forgets it again; an explicit choice is never downgraded.
     /// </summary>
-    internal void Look(LocalWorldView view, EntityId marketId)
+    internal void Look(LocalWorldView view, EntityId marketId) => Look(FarmMarketPresentation.From(view), marketId);
+
+    internal void Look(FarmMarketPresentation view, EntityId marketId)
     {
         if (IsExplicit) return;
         Visit(view, marketId, null, explicitChoice: false);
@@ -66,10 +74,10 @@ internal sealed class FarmMarketDraft
         Review = null;
     }
 
-    private void Visit(LocalWorldView view, EntityId marketId, LocalTradeDirection? direction, bool explicitChoice)
+    private void Visit(FarmMarketPresentation view, EntityId marketId, LocalTradeDirection? direction, bool explicitChoice)
     {
         ArgumentNullException.ThrowIfNull(view);
-        var scope = (view.WorldId, view.BranchId, view.PlayerActorId);
+        var scope = view.Scope;
         if (_scope != scope || MarketId != marketId)
         {
             _scope = scope;
@@ -126,26 +134,43 @@ internal sealed class FarmMarketDraft
     /// the player for this stall's commodity, on the chosen side, for the chosen lot when selling, covering the
     /// chosen units, and its issuer must be observable where the player stands. Anything else captures nothing.
     /// </summary>
-    internal bool CaptureReview(LocalWorldView view, LocalMarketStallView stall, PaidQuoteView quote)
+    internal bool CaptureReview(LocalWorldView view, LocalMarketStallView stall, PaidQuoteView quote) =>
+        CaptureReview(FarmMarketPresentation.From(view), stall, quote);
+
+    internal bool CaptureReview(FarmMarketPresentation view, LocalMarketStallView stall, PaidQuoteView quote)
     {
         ArgumentNullException.ThrowIfNull(view);
         ArgumentNullException.ThrowIfNull(stall);
         ArgumentNullException.ThrowIfNull(quote);
         Review = null;
         SpotQuoteSide side = Direction == LocalTradeDirection.Buy ? SpotQuoteSide.IssuerSells : SpotQuoteSide.IssuerBuys;
-        if (_scope != (view.WorldId, view.BranchId, view.PlayerActorId) || stall.MarketId != MarketId
-            || !MarketActionOffers.BelongsTo(stall, quote) || quote.Status != PaidQuoteStatus.Open
+        if (_scope != view.Scope || stall.MarketId != MarketId
+            || !MarketActionOffers.BelongsTo(stall, quote) || quote.CounterpartyActorId != view.ActorId || quote.Status != PaidQuoteStatus.Open
             || quote.ObservedIssuerRevision is null || quote.Side != side || Quantity > quote.QuantityAllowance
             || Direction == LocalTradeDirection.Sell && quote.LotId != LotId)
         {
             return false;
         }
-        Review = new FarmMarketReview(quote, Quantity);
+        Review = new FarmMarketReview(quote, Quantity) { Scope = view.Scope, ActorRevision = view.ActorRevision };
         return true;
     }
 
     /// <summary>Back, focus loss and disconnection: the reviewed offer must be explicitly reviewed again.</summary>
     internal void DiscardReview() => Review = null;
+
+    internal bool MatchesScope(FarmMarketPresentation view) => _scope == view.Scope;
+
+    internal void ObserveScope(FarmMarketPresentation view)
+    {
+        if (_scope == view.Scope) return;
+        _scope = view.Scope;
+        MarketId = null;
+        IsExplicit = false;
+        Direction = LocalTradeDirection.Buy;
+        Quantity = 1;
+        LotId = null;
+        Review = null;
+    }
 
     private void ChangeDirection(LocalTradeDirection direction)
     {

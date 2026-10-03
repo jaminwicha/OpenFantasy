@@ -1,0 +1,52 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.46]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.03]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.18]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Shutdown_waits_for_every_admitted_facade_and_observes_both_failures [11 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Late_reply_after_reopening_does_not_consume_the_new_visits_initial_read [1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.A_refused_current_read_stops_refresh_until_explicit_reopen [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedTrading.MarketQueryLifetimeTests.Same_actor_new_generation_and_stall_visit_are_different_query_lifetimes [< 1 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Withheld_trade_is_refused_and_private_history_is_not_inferred_from_trade [2 s]
+[xUnit.net 00:00:04.28]     OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture [FAIL]
+[xUnit.net 00:00:04.28]       Assert.Contains() Failure: Sub-string not found
+[xUnit.net 00:00:04.28]       String:    "You need 7 gil; you have 0."
+[xUnit.net 00:00:04.28]       Not found: "changed since review"
+[xUnit.net 00:00:04.28]       Stack Trace:
+[xUnit.net 00:00:04.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SelectedTrading/SelectedMarketPresentationTests.cs(181,0): at OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture()
+[xUnit.net 00:00:04.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SelectedTrading/SelectedMarketPresentationTests.cs(181,0): at OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture()
+[xUnit.net 00:00:04.28]         --- End of stack trace from previous location ---
+  Failed OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture [900 ms]
+  Error Message:
+   Assert.Contains() Failure: Sub-string not found
+String:    "You need 7 gil; you have 0."
+Not found: "changed since review"
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SelectedTrading/SelectedMarketPresentationTests.cs:line 181
+   at OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Review_remains_immutable_when_personal_revision_changes_and_does_not_recapture() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SelectedTrading/SelectedMarketPresentationTests.cs:line 181
+--- End of stack trace from previous location ---
+[xUnit.net 00:00:05.97]     OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission [FAIL]
+[xUnit.net 00:00:05.97]       You need 7 gil; you have 0.
+[xUnit.net 00:00:05.97]       Stack Trace:
+[xUnit.net 00:00:05.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SelectedTrading/SelectedMarketPresentationTests.cs(49,0): at OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission()
+[xUnit.net 00:00:05.97]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SelectedTrading/SelectedMarketPresentationTests.cs(59,0): at OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission()
+[xUnit.net 00:00:05.97]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:05.97]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Returning_to_same_actor_discards_old_lot_quantity_and_review_generation [845 ms]
+  Passed OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Explicit_sell_disclosure_and_stop_showing_transfer_nothing_and_pin_the_lot [176 ms]
+  Failed OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission [668 ms]
+  Error Message:
+   You need 7 gil; you have 0.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SelectedTrading/SelectedMarketPresentationTests.cs:line 49
+   at OpenFantasy.Hosting.Tests.Client.SelectedTrading.SelectedMarketPresentationTests.Selected_trade_uses_its_own_wallet_stalls_and_exact_delivery_without_inventory_permission() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SelectedTrading/SelectedMarketPresentationTests.cs:line 59
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 9
+     Passed: 7
+     Failed: 2
+ Total time: 6.9625 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-trading/qualification/new-managed-20261003T111935725451Z/checks.trx

@@ -1,0 +1,394 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "abad83ed4d52e5648ee78ed0e2db0b48",
+  "Actor": "8c631e8b65e694d9914789ffb629da72",
+  "Inputs": [
+    {
+      "Stage": "resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "construction-supplier",
+      "Route": "roster-keyboard-controller",
+      "Key": "E"
+    },
+    {
+      "Stage": "construction-supplier",
+      "Route": "roster-keyboard-controller",
+      "Key": "G"
+    },
+    {
+      "Stage": "construction-supplier",
+      "Route": "roster-keyboard-controller",
+      "Key": "G"
+    },
+    {
+      "Stage": "construction-supplier",
+      "Route": "roster-keyboard-controller",
+      "Key": "E"
+    },
+    {
+      "Stage": "pause",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    }
+  ],
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000001000000102355A2C10CE4DCB716D2B91A8908E67100000010B2044297D1D888996BC1CBFDBF283DB1000000106ED7D6B9B3DABF6C906F139333F18A5E000000108C631E8B65E694D9914789FFB629DA7200000010ABAD83ED4D52E5648EE78ED0E2DB0B48000000105FC1A84F392398A565C58BCEDE0A9D960000000800000000000000280000004E4F464300000000010000000400000012776F726C642E616374696F6E2E737065616B00000008000000000000000100000010D644FE990D9982AA999AB41D836AEE8A000000080000000000000030",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000102355A2C10CE4DCB716D2B91A8908E67100000010B2044297D1D888996BC1CBFDBF283DB100000010ABAD83ED4D52E5648EE78ED0E2DB0B48000000105FC1A84F392398A565C58BCEDE0A9D9600000020DDB8A91E98E21BBDB5C0015A77F93B909C48F309CB803F9AD884EF8E1E28383A00000008000000000000007E000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000400000010BE70C5CD745F3A60BCCA04742BE9490100000010B2044297D1D888996BC1CBFDBF283DB1000000106ED7D6B9B3DABF6C906F139333F18A5E000000108C631E8B65E694D9914789FFB629DA7200000010ABAD83ED4D52E5648EE78ED0E2DB0B48000000105FC1A84F392398A565C58BCEDE0A9D96000000080000000000000028000000AA4F464300000000010000000900000012776F726C642E616374696F6E2E717565737400000008000000000000000100000008000000000000000100000010D0F296F75A183F13C8259E6B012793460000002032DD519B6F9E44F923E8DA9DD9C5E49B661756F126B7DEF54EB19E7AD8787E0500000010D644FE990D9982AA999AB41D836AEE8A000000080000000000000030000000080000000000000000000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010BE70C5CD745F3A60BCCA04742BE9490100000010B2044297D1D888996BC1CBFDBF283DB100000010ABAD83ED4D52E5648EE78ED0E2DB0B48000000105FC1A84F392398A565C58BCEDE0A9D9600000020CC936CCD26A0E60C4090C56C40B33D2E418A5D66DE9D75489E96C29D3CBE71C200000008000000000000007F000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000400000010183BA95B9EAA8FDC85002BD2FED8512A00000010B2044297D1D888996BC1CBFDBF283DB1000000106ED7D6B9B3DABF6C906F139333F18A5E000000108C631E8B65E694D9914789FFB629DA7200000010ABAD83ED4D52E5648EE78ED0E2DB0B48000000105FC1A84F392398A565C58BCEDE0A9D96000000080000000000000028000001334F464300000000010000000B00000012776F726C642E616374696F6E2E717565737400000008000000000000000100000008000000000000000200000010D0F296F75A183F13C8259E6B012793460000002032DD519B6F9E44F923E8DA9DD9C5E49B661756F126B7DEF54EB19E7AD8787E0500000010D644FE990D9982AA999AB41D836AEE8A000000080000000000000030000000080000000000000001000000080000000000000000000000080000000000000000000000794F46430000000001000000020000001371756573742E73656C65637465642D6C6F7473000000524F46430000000001000000040000001671756573742E736F757263652D73656C656374696F6E00000010343F91B07FC1AD34F7C81A2662AA3FB5000000080000000000000000000000080000000000000006",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010183BA95B9EAA8FDC85002BD2FED8512A00000010B2044297D1D888996BC1CBFDBF283DB100000010ABAD83ED4D52E5648EE78ED0E2DB0B48000000105FC1A84F392398A565C58BCEDE0A9D9600000020F3EEE8D4FF73CE64D2934C747E475970F0E5E7931F6C898FBF381B4F35C98BB6000000080000000000000080000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000100000010F36112A47049BEF3AEFFAEC9857BD65400000010B2044297D1D888996BC1CBFDBF283DB1000000106ED7D6B9B3DABF6C906F139333F18A5E000000108C631E8B65E694D9914789FFB629DA7200000010ABAD83ED4D52E5648EE78ED0E2DB0B48000000105FC1A84F392398A565C58BCEDE0A9D960000000800000000000000280000004B4F46430000000001000000030000001B776F726C642E616374696F6E2E636C6F73652D6469616C6F677565000000080000000000000001000000107EA25E1614F338EEA9325D878BB88A68",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010F36112A47049BEF3AEFFAEC9857BD65400000010B2044297D1D888996BC1CBFDBF283DB100000010ABAD83ED4D52E5648EE78ED0E2DB0B48000000105FC1A84F392398A565C58BCEDE0A9D9600000020A0878E1E3D5992AF1D342716B874EC40C232310BF6BB37D0A94D6BFDE51657CD000000080000000000000081000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "PermissionSubmissions": [],
+  "Selection": {
+    "World": "abad83ed4d52e5648ee78ed0e2db0b48",
+    "Branch": "5fc1a84f392398a565c58bcede0a9d96",
+    "Port": "592de5bd3f07ed053f6a898e4e8c48d7",
+    "HomeActor": "8c631e8b65e694d9914789ffb629da72",
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 27008,
+      "Y": 83072,
+      "Z": 256,
+      "Cell": {
+        "X": 105,
+        "Y": 324,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 27008,
+      "Y": 83072,
+      "Z": 256,
+      "Cell": {
+        "X": 105,
+        "Y": 324,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 78,
+    "Mp": 14,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "Trading": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "TradeDisclosed": true,
+    "InventoryDisclosed": true,
+    "PrivateHistory": true,
+    "Open": false,
+    "Wallet": 200,
+    "InquiryPending": false,
+    "AskDisabled": false,
+    "Draft": {
+      "Market": null,
+      "Direction": "Buy",
+      "Quantity": 1,
+      "Lot": null,
+      "Review": null
+    },
+    "Inquiry": null,
+    "Stalls": [
+      {
+        "Market": "1aa9174aaf3e1822fa94f43313d652e8",
+        "Merchant": "7f10fe468a64f7166a90d3588ce7fe32",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      },
+      {
+        "Market": "5e6217b7f59d9ba4abf7f7a18fb335e8",
+        "Merchant": "044fa60e9af5ace8b12ad6b9397d9ab2",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      }
+    ],
+    "Quotes": [],
+    "Reviewed": null
+  },
+  "TradeCaptures": [],
+  "Gifts": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 0,
+    "OfferSelectionVersion": 0,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "2976ce7ea2bbd6ea9cf50a18bc31e61c",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "bf937ccc8defe9ef5c1d602575b2f725"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "2d92d174300c1bc42cf3e7e91a508a3c",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "2e0d26a912a8a98af7919385da290c4b",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "343f91b07fc1ad34f7c81a2662aa3fb5",
+        "Quantity": 2,
+        "Revision": 1,
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0"
+      }
+    ],
+    "Offers": [],
+    "Draft": null,
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. Inspection spends nothing.",
+        "CostText": "Choose a stack and quantity",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 40,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive Select an offer",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 40,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 40,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 40,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [],
+  "Production": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Chop oak",
+        "TargetName": "Oak",
+        "Target": "473c08a52d09cb46e28d813ce36ac47f",
+        "CanExecute": false,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": "Move closer to the Oak.",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "World": "abad83ed4d52e5648ee78ed0e2db0b48",
+        "Branch": "5fc1a84f392398a565c58bcede0a9d96",
+        "ExpectedActorRevision": 40,
+        "Port": "592de5bd3f07ed053f6a898e4e8c48d7",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": {
+          "Node": "473c08a52d09cb46e28d813ce36ac47f",
+          "ExpectedNodeRevision": 0,
+          "Tool": "2e0d26a912a8a98af7919385da290c4b",
+          "ExpectedToolLotRevision": 0
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "World": "abad83ed4d52e5648ee78ed0e2db0b48",
+        "Branch": "5fc1a84f392398a565c58bcede0a9d96",
+        "ExpectedActorRevision": 40,
+        "Port": "592de5bd3f07ed053f6a898e4e8c48d7",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "Recipes": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "Open": false,
+    "InventoryDisclosed": true,
+    "RecoveryDisclosed": true,
+    "CombatDisclosed": true,
+    "ProductionDisclosed": true,
+    "Selected": null,
+    "Notice": null,
+    "Entries": [],
+    "Prepared": null,
+    "Captured": null
+  },
+  "RecipeCaptures": [],
+  "Construction": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "ProductionDisclosed": true,
+    "InventoryDisclosed": false,
+    "RecoveryDisclosed": false,
+    "Projects": [
+      {
+        "ProjectId": {
+          "High": 9790396538752605306,
+          "Low": 9262587136388137488
+        },
+        "BuilderActorId": {
+          "High": 15439745355844518570,
+          "Low": 11068357073068289674
+        },
+        "DisplayName": "Small sapling guard",
+        "SiteFeet": {
+          "X": 27213,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "WorkFeet": {
+          "X": 27264,
+          "Y": 83328,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "CompletedWork": 1,
+        "RequiredWork": 200,
+        "IsCompleted": false
+      }
+    ],
+    "Work": [],
+    "Structures": [],
+    "Reviewed": null
+  },
+  "ConstructionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 5141,
+  "NativeFocused": true,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": false,
+  "Display": "headless"
+}

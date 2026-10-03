@@ -1,0 +1,41 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.30]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.48]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.61]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:42.19]     OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation [FAIL]
+[xUnit.net 00:00:42.20]       Native roster stage=trade-ask, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-trading/qualification/native-trading-20261003T112805342065Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0062.response.json: System.InvalidOperationException: Open a settled stall before asking.
+[xUnit.net 00:00:42.20]          at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+[xUnit.net 00:00:42.20]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.AskTrade() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Trading.cs:line 126
+[xUnit.net 00:00:42.20]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 152
+[xUnit.net 00:00:42.20]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+[xUnit.net 00:00:42.20]       Stack Trace:
+[xUnit.net 00:00:42.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(79,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds)
+[xUnit.net 00:00:42.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(53,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target)
+[xUnit.net 00:00:42.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedTradingNative/NativeSelectedTradingTests.cs(79,0): at OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation()
+[xUnit.net 00:00:42.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedTradingNative/NativeSelectedTradingTests.cs(160,0): at OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation()
+[xUnit.net 00:00:42.20]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedTradingNative/NativeSelectedTradingTests.cs(160,0): at OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation()
+[xUnit.net 00:00:42.20]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:42.22]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+  Failed OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation [41 s]
+  Error Message:
+   Native roster stage=trade-ask, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-trading/qualification/native-trading-20261003T112805342065Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0062.response.json: System.InvalidOperationException: Open a settled stall before asking.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.AskTrade() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Trading.cs:line 126
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 152
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedTradingNative/NativeSelectedTradingTests.cs:line 79
+   at OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedTradingNative/NativeSelectedTradingTests.cs:line 160
+   at OpenFantasy.Server.Tests.SelectedTradingNative.NativeSelectedTradingTests.Trade_only_native_delegate_buys_shows_and_sells_exact_stock_with_separate_review_and_return_invalidation() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SelectedTradingNative/NativeSelectedTradingTests.cs:line 160
+--- End of stack trace from previous location ---
+
+Test Run Failed.
+Total tests: 1
+     Failed: 1
+ Total time: 42.5769 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/selected-trading/qualification/native-trading-20261003T112805342065Z/checks.trx

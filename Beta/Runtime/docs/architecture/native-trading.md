@@ -54,8 +54,10 @@ Engine-free models hold the player's choices and are linked into the managed tes
 
 | Type | Responsibility |
 | --- | --- |
+| [`FarmMarketPresentation`](../../client/scripts/FarmMarketPresentation.cs) | The shopper's permitted stalls, usable trade lots, quotes and wallet, plus exact selection scope; no substitute full-world view |
 | [`FarmMarketDraft`](../../client/scripts/FarmMarketDraft.cs) | Stall, buy or sell, units and the exact own lot; one reviewed offer (`FarmMarketReview`) captured only by an explicit review |
-| [`MarketActionOffers`](../../client/scripts/MarketActionOffers.cs) | Wheel stall choices, the show and confirm offers, request preparation and their blockers |
+| [`FarmMarketQueryLifetime`](../../client/scripts/FarmMarketQueryLifetime.cs) | Scope-bound inquiry cache and bounded refresh scheduling; tracks admitted facade tasks through ordinary completion or shutdown |
+| [`MarketActionOffers`](../../client/scripts/MarketActionOffers.cs) | Wheel stall choices, showing, withdrawal and confirmation offers, request preparation and their blockers |
 | [`FarmMarketTerms`](../../client/scripts/FarmMarketTerms.cs) | Readable price, units with agreeing goods names, dues, totals, purse and shortfall, remaining running time and outcome text from participant views; the step basis only as an optional diagnostic |
 
 `MarketActionOffers.BelongsTo` defines which quotes are this stall's: the participant view's `MarketId`, read
@@ -86,11 +88,25 @@ no longer observable or its observed revision changed, the purse cannot pay, or 
 confirm offer carries the acceptance's own command identity, because a paid acceptance restates it;
 [`FarmActionOffer`](../../client/scripts/FarmActionOffer.cs) refuses any other identity for it.
 
+The same panel serves home and operated characters. A delegated shopper's presentation requires its
+Trade facet and uses that actor's wallet and disclosed usable commodity lots; Inventory permission is
+independent. The presentation keeps the complete selection, including port, generation and control
+witness. Changing selection resets the visit and its choices, including when returning to the same
+actor after an intervening selection. The title identifies whose goods and money are being traded.
+The explicit review captures the shopper revision as well as the quote and issuer revision. A later
+frame can explain a changed condition but cannot replace those captured revisions or renew consent.
+The command still passes the ordinary current-authority checks.
+
+Showing and withdrawing a showing are distinct commands. Withdrawal ends the disclosure at the
+addressed stall; it transfers nothing and does not rewrite or withdraw a merchant's issued quote.
+The merchant alone owns quote issuance/withdrawal. Cancelling the shopper's inquiry is likewise
+different from declining or closing a quote.
+
 The wheel's Market page offers Buy, Sell and Offers. These are panel choices: they carry no intent, the
 session refuses to submit them, and confirming one only opens the stall, also while the world is paused.
 The scene-owned [stall panel](../../client/scripts/FarmMarketPanel.cs) records choices in the draft and
-requests separate commands: ask, cancel, show, confirm, inspect a saved record, pause and close. Its
-inspector shows the exact terms without hover; tooltips and focus repeat them. Player text names price,
+requests separate commands: ask, cancel, show, stop showing, confirm, inspect a saved record, pause
+and close. Its inspector shows the exact terms without hover; tooltips and focus repeat them. Player text names price,
 dues, total, purse, any shortfall and the time left while the world runs; steps, revisions, save segments
 and implementation caveats stay out of the ordinary card (hovering the status line shows the step basis).
 
@@ -114,11 +130,33 @@ Inquiry, readiness, movement suppression, reading and consent are separate:
 - **Pause to read** is the player's explicit local pause. It stops this single-player world, including
   every window, and Wren cannot answer meanwhile. It is not a shared multiplayer Wait.
 - Showing a lot and confirming an offer are world commands that need running time and no pending action.
-- A merchant keeps one standing offer per shopper; asking again waits until the player accepts it or its
-  window closes. Nothing re-asks, renews or confirms for the player.
+- A merchant keeps one standing offer per shopper. The client blocks a new request while that offer
+  is open. If another caller submits one anyway, the merchant declines that inquiry at its answer
+  cutoff; it does not queue an automatic request for after the existing quote closes. Nothing
+  re-asks, renews or confirms for the player.
 
 Saved-record inspection uses the session's background `InspectPaidQuoteAsync` and never reads history in
-a frame. The panel lists outcomes of the current save segment; archived-only discovery is not surfaced.
+a frame. Home presentation lists outcomes of the current save segment; archived-only discovery is not
+surfaced. Operated Trade lists open quotes only. The panel can remember a bounded set of identifiers
+observed during its visit, with terminal inspection gated independently by PrivateHistory. An identifier
+no longer listed is not proof that its quote filled or expired. Terminal selected inspection uses the
+explicit selected query and validates the exact response context. This is not a complete saved-history
+directory, nor an independently navigable PrivateHistory-only browser.
+
+[`FarmGame.Market`](../../client/scripts/FarmGame.Market.cs) associates asynchronous work with its
+shopper scope, addressed market and panel lifetime. Saved-record work also pins the selected record
+version. Closing/reopening, changing the record, changing selection or losing permission prevents an
+old result from appearing in the new context. Pending tasks are consumed to completion even when their
+results are no longer displayable. A bounded current-inquiry refresh follows a waiting request; history
+inspection is explicit and never polled. In a shared world, pausing this player's input does not
+guarantee that other participants stop time or preserve the quote's window.
+
+User requests bind the panel's displayed scope and draft before checking the current selection; an old
+click never becomes a fresh request for the character returned to the player. Opening or changing a
+stall requests an initial inquiry read. An obsolete completion cannot consume that read or overwrite
+its scheduling state. A failed refresh stops automatic reading for that visit; explicit new action or
+reopening supplies a new request. Shutdown captures the admitted facade tasks, closes the underlying
+session and joins every wrapper without writing to the closed panel.
 
 ## Native qualification binding
 
@@ -135,12 +173,19 @@ closed real-authority saves: a refused Confirm is attempted with time running an
 met, then recovered lawfully by a new request or an explicit re-review. A refused confirmation is never
 submitted, so its reason is established from the recorded state at the attempt rather than a receipt.
 
+[`NativeRosterPlayProbe.Trading`](../../client/scripts/Networking/NativeRosterPlayProbe.Trading.cs)
+drives this same screen in an authenticated multi-player session. It observes the actual selected Trade
+facet, input readiness, exact review and submitted command; no private Inventory facet is synthesized.
+Post-draw captures retain the visible controls, labels and shopper identity. The probe records original
+command attribution and distinguishes the owner returning from a new deliberate confirmation.
+
 ## Boundaries
 
 - This `--markets` world has one stall and one commodity; the two-stall cargo world is bound natively in
   [cargo presentation](cargo-presentation.md). Lived-save migration, demand simulation and merchant routes
   remain separate obligations.
-- The windows are authored values for human reading in a single-player local session. Multiplayer timing,
-  shared Wait and network delivery need their own admitted contracts.
+- The single-player market's windows are authored values for local reading. Shared worlds apply their
+  admitted readiness and clock contracts: one shopper's input pause does not guarantee a world hold.
+  Network delivery and stale selection remain explicit authority checks, not extensions of quote time.
 - Injected native routes and background rendering do not qualify physical devices, OS focus, art, audio or
   human comprehension.

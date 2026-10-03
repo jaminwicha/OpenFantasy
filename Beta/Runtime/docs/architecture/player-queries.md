@@ -53,6 +53,13 @@ inspection nor terminal history exposes the intervening due-but-unclosed entry. 
 foreign and wrong-lifecycle subjects return an absent value after authorization. Null-witness home
 reads retain permanent entitlement; inquiry mutation also requires the port's available control.
 
+These inspection operations address an exact known identifier; they do not enumerate a participant's
+past quotes or proposals. The selected Trade projection lists open quotes only. Remembering identifiers
+already observed by a client can support revisiting those records under current permission, but it
+cannot discover records from earlier sessions or constitute a complete history directory. Any directory
+must independently enforce PrivateHistory, participant scope, bounded retrieval and authenticated
+history; it cannot expose the home actor's records as the operated actor's history.
+
 The host checks the selection and capability at admission, after entering serialization and before
 publishing the result. [Typed storage readers](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.SelectedInspections.cs)
 independently check current authority under the writer gate before subject lookup and enforce the

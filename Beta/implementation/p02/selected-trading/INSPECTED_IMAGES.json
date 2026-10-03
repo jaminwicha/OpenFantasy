@@ -1,0 +1,50 @@
+{
+  "images": [
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0063-trade.png",
+      "sha256": "b1a2afaab1fdeb8b82dfe80153480fa997211bc3cdc35cf651da1f1368cde690",
+      "leadObservation": "Final scene: Amber named as shopper; exact buy/sell quantity, price and post-trade purse; shared-time warning, separate Confirm/Back and corrected footer are visible. Sell lot and Stop showing are readable. Supplemental history/showing details use their visible scroll areas."
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0073-trade.png",
+      "sha256": "42abb824fd9e13cfba31516f4cc965f98db2a908208eda2c5eae5fe7e915b285",
+      "leadObservation": "Final scene: Amber named as shopper; exact buy/sell quantity, price and post-trade purse; shared-time warning, separate Confirm/Back and corrected footer are visible. Sell lot and Stop showing are readable. Supplemental history/showing details use their visible scroll areas."
+    },
+    {
+      "path": "qualification/native-trading-20261003T113502729394Z/native/selected-trading/5795dc4890da7573cfc5b3948d0296df-first/0079-trade.png",
+      "sha256": "ce904794dc406a9737d66f56ef89a696260a31e6a30d9e73b683c816c5de593b",
+      "leadObservation": "Final scene: Amber named as shopper; exact buy/sell quantity, price and post-trade purse; shared-time warning, separate Confirm/Back and corrected footer are visible. Sell lot and Stop showing are readable. Supplemental history/showing details use their visible scroll areas."
+    },
+    {
+      "path": "qualification/home-native-20261003T113150185597Z/native-trading-emtbf80_/keyboard.buy-review.png",
+      "sha256": "3d4b1f2c89efadb0686da473ab3a0ada2fc7a3caf3cfd1e43103ec3932c5c21b",
+      "leadObservation": "Retained home input-route capture: readable buy/sell terms, local pause, exact lot and saved record. Its former redundant local-pause footer is excluded by FOOTER_CORRECTION.json; all other source and binaries match."
+    },
+    {
+      "path": "qualification/home-native-20261003T113150185597Z/native-trading-emtbf80_/controller.sell-review.png",
+      "sha256": "40a3e26743e83829a908776cec8c6acefcaf45edfea14bf0e8c91e12472c455b",
+      "leadObservation": "Retained home input-route capture: readable buy/sell terms, local pause, exact lot and saved record. Its former redundant local-pause footer is excluded by FOOTER_CORRECTION.json; all other source and binaries match."
+    },
+    {
+      "path": "qualification/home-native-20261003T113150185597Z/native-trading-emtbf80_/pointer.history.png",
+      "sha256": "a8c58bb4433ad344acd36741e02ba517248426e242ba2601cc9c9930f45a417a",
+      "leadObservation": "Retained home input-route capture: readable buy/sell terms, local pause, exact lot and saved record. Its former redundant local-pause footer is excluded by FOOTER_CORRECTION.json; all other source and binaries match."
+    },
+    {
+      "path": "qualification/boundary-native-20261003T113304682921Z/native-trading-boundaries-6l7t6wmn/expired.refused.png",
+      "sha256": "dc904faef44ecb05bb20713416dc8341dc314ea9c07c9f6bb1eede42cd291603",
+      "leadObservation": "Retained home refusal capture: explicit expired/funds/moved-issuer reason and disabled Confirm with usable recovery. Former redundant footer excluded by FOOTER_CORRECTION.json; no changed command or layout contract."
+    },
+    {
+      "path": "qualification/boundary-native-20261003T113304682921Z/native-trading-boundaries-6l7t6wmn/unfunded.refused.png",
+      "sha256": "895130e5d3cfffce7610ecebd45b989e1f18feba1b4e37f6cc2bd952a72dec1a",
+      "leadObservation": "Retained home refusal capture: explicit expired/funds/moved-issuer reason and disabled Confirm with usable recovery. Former redundant footer excluded by FOOTER_CORRECTION.json; no changed command or layout contract."
+    },
+    {
+      "path": "qualification/boundary-native-20261003T113304682921Z/native-trading-boundaries-6l7t6wmn/moved.refused.png",
+      "sha256": "976da9da98cd99420ec84ff7f825a26ec2771b2e2d97449f3343515cae6cee24",
+      "leadObservation": "Retained home refusal capture: explicit expired/funds/moved-issuer reason and disabled Confirm with usable recovery. Former redundant footer excluded by FOOTER_CORRECTION.json; no changed command or layout contract."
+    }
+  ],
+  "limits": "Nine lead-inspected images and actual probe post-draw control checks; injected background input only. Not final art, physical-device, OS-focus, full history or human-usability acceptance. Earlier selected images revealed a misleading pause footer and were superseded by the corrected scene run."
+}

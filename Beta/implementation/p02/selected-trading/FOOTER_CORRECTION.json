@@ -1,0 +1,16 @@
+{
+  "source": "Beta/Runtime/client/scenes/FarmMarketPanel.tscn",
+  "beforeSha256": "0e9a24af94790d65ae263af937d7a5adffcc9288c6cc863f1950cc1ebeb72e90",
+  "afterSha256": "bcc5e9d6c68cdc3e697aa00c49bacd5729f14f696be16590d19c539f00914d56",
+  "exactRemovedBytes": "Hover or focus explains. Pause to read stops the world until you resume.",
+  "replacementBytes": "Hover or focus explains.",
+  "reusedModes": [
+    "home-fixtures",
+    "home-native",
+    "home-auth",
+    "boundary-fixtures",
+    "boundary-native",
+    "boundary-auth"
+  ],
+  "reason": "Lead image review rejected the static local-pause claim in a shared world. Remove only the redundant last footer sentence. The existing dynamic button, timing label and offer card state the actual local/shared policy. Both footer versions occupy one line; no control hierarchy, sizing or behavior changes. Retained home/boundary routes authenticate identical commands, world rules, source and binaries aside from this exact scene-text removal. Their old footer appearance is not inherited; a fresh selected native run qualifies the changed scene."
+}

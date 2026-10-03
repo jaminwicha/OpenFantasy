@@ -16,7 +16,7 @@ internal static class FarmSelectedActionOffers
 {
     internal static IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> Create(LocalSelectedPlayerObservation observation,
         FarmActionScope scope, FarmTarget? target, EntityId defaultSpeaker, FarmGiftSelection? gifts = null,
-        EntityId? woodDefinitionId = null, EntityId? berryDefinitionId = null)
+        EntityId? woodDefinitionId = null, EntityId? berryDefinitionId = null, FarmMarketDraft? market = null)
     {
         LocalControlledActorView view = observation.ControlledView!;
         Dictionary<FarmSemanticAction, FarmActionOffer> offers = [];
@@ -101,6 +101,8 @@ internal static class FarmSelectedActionOffers
         if (view.Inventory is not null)
             MaterialProposalActionOffers.Add(FarmInventoryPresentation.From(observation), scope, gifts, offers,
                 woodDefinitionId, berryDefinitionId);
+        if (view.Trade is not null && market is not null)
+            MarketActionOffers.Add(FarmMarketPresentation.From(observation, shared: true), scope, market, offers);
         return new ReadOnlyDictionary<FarmSemanticAction, FarmActionOffer>(offers);
     }
 

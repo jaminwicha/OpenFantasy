@@ -31,13 +31,15 @@ internal sealed partial class FarmClientSession
         FarmActionScope scope = FarmActionScope.From(_delivery, observed);
         IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers;
         if (observed.ControlledView is not null)
-            offers = FarmSelectedActionOffers.Create(observed, scope, target, WrenActorId, gifts, WoodDefinitionId, BerryDefinitionId);
+            offers = FarmSelectedActionOffers.Create(observed, scope, target, WrenActorId, gifts, WoodDefinitionId, BerryDefinitionId, market);
         else
         {
             var home = _offers.Create(observed.HomeView, target, null, market).ToDictionary(pair => pair.Key,
                 pair => pair.Value.WithScope(scope));
             MaterialProposalActionOffers.Add(FarmInventoryPresentation.From(observed), scope, gifts, home,
                 WoodDefinitionId, BerryDefinitionId);
+            if (market is not null)
+                MarketActionOffers.Add(FarmMarketPresentation.From(observed, IsRemote), scope, market, home);
             offers = home;
         }
         foreach (FarmActionOffer offer in offers.Values) _issuedOffers.Add(offer, new OfferedAction());

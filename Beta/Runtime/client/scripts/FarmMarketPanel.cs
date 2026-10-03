@@ -28,6 +28,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     private Button _less = null!;
     private Button _more = null!;
     private Button _show = null!;
+    private Button _unshow = null!;
     private Button _ask = null!;
     private Button _cancel = null!;
     private Button _review = null!;
@@ -44,8 +45,10 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     private LocalMarketStallView[] _stallRows = [];
     private string[] _shownStalls = [];
     private Control? _returnFocus;
-    private LocalWorldView? _view;
+    private FarmMarketPresentation? _view;
+    private readonly Dictionary<EntityId, PaidQuoteView> _observedQuotes = new();
     private LocalMarketStallView? _stall;
+    private EntityId? _presentedMarketId;
     private LocalMarketLotView[] _lotRows = [];
     private PaidQuoteView[] _historyRows = [];
     private string[] _shownLots = [];
@@ -59,6 +62,10 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
 
     /// <summary>Readable place names of stalls by market identity; labels only, never quote association.</summary>
     internal IReadOnlyDictionary<EntityId, string> StallPlaces { get; set; } = new Dictionary<EntityId, string>();
+    internal FarmMarketPresentation? CurrentPresentation => _view;
+    internal ulong PresentationLifetime { get; private set; }
+    internal ulong RecordSelectionVersion { get; private set; }
+    internal EntityId? SelectedRecord => _selectedRecord;
     internal bool IsOpen => _root.Visible;
     internal event Action<FarmSemanticAction>? ActionRequested;
     internal event Action? AskRequested;
@@ -69,7 +76,9 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     internal event Action<EntityId>? StallRequested;
 
     /// <summary>"Marla's stall · Brasshollow", or the merchant's stall alone where no place is named.</summary>
-    internal string StallLabel(LocalWorldView view, EntityId marketId)
+    internal string StallLabel(LocalWorldView view, EntityId marketId) => StallLabel(FarmMarketPresentation.From(view), marketId);
+
+    internal string StallLabel(FarmMarketPresentation view, EntityId marketId)
     {
         LocalMarketStallView? stall = view.Markets?.Stalls.FirstOrDefault(value => value.MarketId == marketId);
         if (stall is null) return "an unknown stall";
@@ -96,6 +105,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         _less = GetNode<Button>("%MarketLess");
         _more = GetNode<Button>("%MarketMore");
         _show = GetNode<Button>("%ShowLot");
+        _unshow = GetNode<Button>("%StopShowing");
         _ask = GetNode<Button>("%AskMerchant");
         _cancel = GetNode<Button>("%CancelRequest");
         _review = GetNode<Button>("%ReviewOffer");
@@ -116,6 +126,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         _more.Pressed += () => ChangeQuantity(1);
         _lots.ItemSelected += ChooseLot;
         _history.ItemSelected += ChooseRecord;
+        _unshow.Pressed += () => ActionRequested?.Invoke(FarmSemanticAction.WithdrawTradeLot);
         _show.Pressed += () => ActionRequested?.Invoke(FarmSemanticAction.ShowTradeLot);
         _ask.Pressed += () => AskRequested?.Invoke();
         _cancel.Pressed += () => CancelRequested?.Invoke();
@@ -140,6 +151,9 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     /// <summary>Opens on the chosen section; focus goes to that section's first choice, never to a commitment.</summary>
     internal void Open(bool offersSection)
     {
+        PresentationLifetime++;
+        RecordSelectionVersion++;
+        _observedQuotes.Clear();
         _returnFocus = GetViewport().GuiGetFocusOwner();
         _selectedRecord = null;
         _recordText = null;
@@ -152,6 +166,8 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
 
     internal void Close()
     {
+        PresentationLifetime++;
+        _observedQuotes.Clear();
         _root.Hide();
         if (IsInstanceValid(_returnFocus) && _returnFocus!.IsVisibleInTree()) _returnFocus.GrabFocus();
         _returnFocus = null;
@@ -170,16 +186,25 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         Refresh();
     }
 
-    internal void Present(LocalWorldView view, LocalWorldRunState runState, LocalTradeInquiryView? inquiry,
+    internal void Present(FarmMarketPresentation view, LocalWorldRunState runState, LocalTradeInquiryView? inquiry,
         IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, bool canCommit, bool shared = false)
     {
+        if (_view?.Scope != view.Scope || _presentedMarketId != Draft?.MarketId)
+        {
+            PresentationLifetime++;
+            RecordSelectionVersion++;
+            _observedQuotes.Clear();
+            _selectedRecord = null;
+            _recordText = null;
+        }
+        _presentedMarketId = Draft?.MarketId;
         _view = view;
         _stall = Draft?.MarketId is { } market ? view.Markets?.Stalls.FirstOrDefault(value => value.MarketId == market) : null;
         if (!IsOpen || _stall is null || Draft is null) return;
         string merchant = FarmMarketTerms.Merchant(view, _stall);
         string goods = FarmMarketTerms.Goods(view, _stall);
         bool running = runState == LocalWorldRunState.Running;
-        _title.Text = $"{StallLabel(view, _stall.MarketId)} · {goods}";
+        _title.Text = $"{StallLabel(view, _stall.MarketId)} · {goods} · {view.Name(view.ActorId)}";
         PresentStalls(view);
         _time.Text = (runState switch
         {
@@ -188,7 +213,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
             LocalWorldRunState.Waiting => shared ? "Your character is waiting" : "World waiting",
             LocalWorldRunState.Resolving => "Resolving world changes",
             _ => "World unavailable"
-        }) + $" · purse {view.Progression?.CurrencyBalance} {view.Progression?.CurrencyUnit}"
+        }) + $" · purse {view.CurrencyBalance} {view.CurrencyUnit}"
             + (_stall.IsAvailableInPerson ? "" : $" · {merchant} is not within reach");
         _time.TooltipText = FarmMarketTerms.Diagnostics(view.Markets?.AdvancingStep ?? 0);
         _pause.Text = shared ? runState == LocalWorldRunState.Paused ? "Resume my input" : "Pause my input"
@@ -207,7 +232,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     /// Several stalls: every one is listed by its stable market identity with its merchant, place and availability,
     /// and the addressed stall stays the chosen one even when it is out of reach. A single stall needs no selector.
     /// </summary>
-    private void PresentStalls(LocalWorldView view)
+    private void PresentStalls(FarmMarketPresentation view)
     {
         LocalMarketStallView[] stalls = view.Markets?.Stalls.ToArray() ?? [];
         _stallRow.Visible = stalls.Length > 1;
@@ -232,13 +257,14 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         StallRequested?.Invoke(_stallRows[index - 1].MarketId);
     }
 
-    private void PresentChoices(LocalWorldView view, string goods)
+    private void PresentChoices(FarmMarketPresentation view, string goods)
     {
         bool selling = Draft!.Direction == LocalTradeDirection.Sell;
         _buyMode.SetPressedNoSignal(!selling);
         _sellMode.SetPressedNoSignal(selling);
         _lotRow.Visible = selling;
         _show.Visible = selling;
+        _unshow.Visible = selling;
         _quantity.Text = FarmMarketTerms.Count(Draft.Quantity, goods);
         LocalMarketLotView? lot = _stall!.OwnLots.FirstOrDefault(value => value.LotId == Draft.LotId);
         ulong maximum = selling && lot is not null ? Math.Min(lot.Quantity, _stall.MaximumUnitsPerOffer) : _stall.MaximumUnitsPerOffer;
@@ -253,12 +279,14 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
             string prompt = Draft.LotId is not null && lot is null ? "Chosen lot is no longer usable" : "Choose one exact lot…";
             Fill(_lots, [prompt, .. _lotRows.Select((value, index) =>
                 $"Lot {index + 1}: {FarmMarketTerms.Count(value.Quantity, goods)}")], ref _shownLots);
+            for (int index = 0; index < _lotRows.Length; index++)
+                _lots.SetItemMetadata(index + 1, _lotRows[index].LotId.ToString());
             _lots.Select(Array.FindIndex(_lotRows, value => value.LotId == Draft.LotId) + 1);
             _updating = false;
         }
     }
 
-    private void PresentRequest(LocalWorldView view, LocalTradeInquiryView? inquiry,
+    private void PresentRequest(FarmMarketPresentation view, LocalTradeInquiryView? inquiry,
         IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, bool running, bool canCommit, string merchant, string goods)
     {
         FarmMarketRequest request = MarketActionOffers.PrepareRequest(view, _stall!, Draft!, inquiry);
@@ -269,10 +297,11 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
             + "and spends nothing; she answers while time runs.";
         _cancel.Disabled = inquiry?.State != LocalTradeInquiryState.Waiting;
         _cancel.TooltipText = "Withdraw the waiting request. An offer already made stays open for its own time.";
-        PresentCommit(_show, offers.GetValueOrDefault(FarmSemanticAction.ShowTradeLot), canCommit);
+        PresentCommit(_unshow, offers.GetValueOrDefault(FarmSemanticAction.WithdrawTradeLot), canCommit, view.SharedWorld);
+        PresentCommit(_show, offers.GetValueOrDefault(FarmSemanticAction.ShowTradeLot), canCommit, view.SharedWorld);
         // The session keeps one inquiry; it is described here only at the stall it was asked of.
         LocalTradeInquiryView? own = inquiry?.Inquiry.MarketId == _stall!.MarketId ? inquiry : null;
-        string status = FarmMarketTerms.Request(own, step, running, merchant, goods);
+        string status = FarmMarketTerms.Request(own, step, running, merchant, goods, view.SharedWorld);
         if (inquiry is not null && own is null && inquiry.State == LocalTradeInquiryState.Waiting)
             status += "\nYour request at another stall is still waiting; cancel it to ask here.";
         if (_stall!.OwnShowing is { } shown)
@@ -285,7 +314,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         _requestStatus.Text = status;
     }
 
-    private void PresentOffer(LocalWorldView view, IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers,
+    private void PresentOffer(FarmMarketPresentation view, IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers,
         bool canCommit, string merchant, string goods)
     {
         PaidQuoteView? open = MarketActionOffers.OpenOffer(view, _stall!);
@@ -308,37 +337,51 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
             // After the player's own confirmation fills the offer, the card reports the result rather than a refusal.
             _confirmText.Text = current.Status == PaidQuoteStatus.Filled
                 ? "Done: " + FarmMarketTerms.Outcome(view, current, merchant, goods) + ". Back clears this card."
-                : "You are about to: " + FarmMarketTerms.Restate(view, current, review.Units, merchant, goods)
+                : "You are about to: " + FarmMarketTerms.Restate(view, review.Quote, review.Units, merchant, goods)
                     + (confirm.BlockingReason is { } reason ? "\nCannot confirm: " + reason
-                        : canCommit ? "" : "\nResume world time to confirm.");
-            _confirmText.TooltipText = FarmMarketTerms.Describe(view, current, review.Units, merchant, goods);
+                        : canCommit ? "" : view.SharedWorld ? "\nResume your input to confirm." : "\nResume world time to confirm.");
+            _confirmText.TooltipText = FarmMarketTerms.Describe(view, review.Quote, review.Units, merchant, goods);
         }
-        PresentCommit(_confirm, confirm, canCommit && review is not null);
+        PresentCommit(_confirm, confirm, canCommit && review is not null, view.SharedWorld);
     }
 
-    private void PresentHistory(LocalWorldView view, string merchant, string goods)
+    private void PresentHistory(FarmMarketPresentation view, string merchant, string goods)
     {
+        foreach (var quote in view.PaidQuotes) _observedQuotes[quote.QuoteId] = quote;
+        foreach (var oldest in _observedQuotes.Values.OrderByDescending(quote => quote.IssuedAtStep)
+            .ThenBy(quote => quote.QuoteId).Skip(64).Select(quote => quote.QuoteId).ToArray())
+            _observedQuotes.Remove(oldest);
         if (_history.GetPopup().Visible) return;
         _updating = true;
-        _historyRows = view.PaidQuotes.Where(quote => MarketActionOffers.BelongsTo(_stall!, quote))
+        _historyRows = _observedQuotes.Values.Where(quote => MarketActionOffers.BelongsTo(_stall!, quote))
             .OrderByDescending(quote => quote.IssuedAtStep).ThenBy(quote => quote.QuoteId).ToArray();
-        Fill(_history, ["Choose an offer or outcome…", .. _historyRows.Select(quote =>
-            FarmMarketTerms.Outcome(view, quote, merchant, goods))], ref _shownHistory);
+        Fill(_history, ["Choose an observed offer…", .. _historyRows.Select(quote =>
+            view.PaidQuotes.Any(current => current.QuoteId == quote.QuoteId)
+                ? FarmMarketTerms.Outcome(view, quote, merchant, goods)
+                : "Previously observed · " + FarmMarketTerms.Count(quote.QuantityAllowance, goods))], ref _shownHistory);
+        for (int index = 0; index < _historyRows.Length; index++)
+            _history.SetItemMetadata(index + 1, _historyRows[index].QuoteId.ToString());
         _history.Select(Array.FindIndex(_historyRows, quote => quote.QuoteId == _selectedRecord) + 1);
         _updating = false;
-        PaidQuoteView? selected = _historyRows.FirstOrDefault(quote => quote.QuoteId == _selectedRecord);
-        _record.Disabled = _selectedRecord is null;
-        _historyDetails.Text = _selectedRecord is null ? $"Your recent offers from {merchant} and their outcomes are listed here."
-            : (selected is null ? "No longer listed; check its saved record." : FarmMarketTerms.Outcome(view, selected, merchant, goods))
-                + "\n" + (_recordText ?? "Check the saved record to read it from history.");
+        PaidQuoteView? selected = view.PaidQuotes.FirstOrDefault(quote => quote.QuoteId == _selectedRecord);
+        _record.Disabled = _selectedRecord is null || !view.CanReadHistory;
+        _record.TooltipText = view.CanReadHistory ? "Inspect the recorded outcome of this observed offer."
+            : "Recorded outcomes require separate Private History permission.";
+        _historyDetails.Text = _selectedRecord is null
+            ? view.IsDelegated ? "Offers observed during this visit only. This is not a complete history list."
+                : $"Your recent offers from {merchant} and their outcomes are listed here."
+            : (selected is null ? "No longer in the current trade view; no outcome is inferred."
+                : FarmMarketTerms.Outcome(view, selected, merchant, goods))
+                + "\n" + (_recordText ?? (view.CanReadHistory ? "Check the saved record for a terminal outcome."
+                    : "Private History permission is needed to inspect an outcome."));
     }
 
-    private static void PresentCommit(Button button, FarmActionOffer? offer, bool canCommit)
+    private static void PresentCommit(Button button, FarmActionOffer? offer, bool canCommit, bool shared = false)
     {
         button.Disabled = offer is null || !offer.CanExecute || !canCommit;
         button.TooltipText = offer is null ? "Unavailable here." : $"{offer.Label}: {offer.CostText}"
             + (offer.DetailText is { } detail ? "\n" + detail : "")
-            + (offer.BlockingReason is { } reason ? "\nUnavailable: " + reason : canCommit ? "" : "\nResume world time first.");
+            + (offer.BlockingReason is { } reason ? "\nUnavailable: " + reason : canCommit ? "" : shared ? "\nResume your input first." : "\nResume world time first.");
     }
 
     private void ChooseDirection(LocalTradeDirection direction)
@@ -367,6 +410,7 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
     private void ChooseRecord(long index)
     {
         if (_updating) return;
+        RecordSelectionVersion++;
         _selectedRecord = index <= 0 || index > _historyRows.Length ? null : _historyRows[index - 1].QuoteId;
         _recordText = null;
         Refresh();
@@ -404,13 +448,15 @@ internal sealed partial class FarmMarketPanel : CanvasLayer
         if (shown.SequenceEqual(labels)) return;
         control.Clear();
         foreach (string label in labels) control.AddItem(label);
+        // Popup content may shrink after a trade; release its old oversized minimum.
+        control.GetPopup().ResetSize();
         shown = labels;
     }
 
     /// <summary>Explicit cyclic focus over the visible controls, so arrows, D-pad and Tab never leave the panel.</summary>
     private void WireFocus()
     {
-        Control[] chain = new Control[] { _stalls, _buyMode, _sellMode, _lots, _less, _more, _show, _ask, _cancel, _review, _confirm,
+        Control[] chain = new Control[] { _stalls, _buyMode, _sellMode, _lots, _less, _more, _show, _unshow, _ask, _cancel, _review, _confirm,
             _back, _history, _record, _pause, _close }.Where(control => control.IsVisibleInTree()).ToArray();
         string shape = string.Join(",", chain.Select(control => control.Name.ToString()));
         if (shape == _focusShape) return;

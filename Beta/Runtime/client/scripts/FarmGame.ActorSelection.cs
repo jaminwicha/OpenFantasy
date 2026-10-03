@@ -15,17 +15,15 @@ public partial class FarmGame
     private Task<LocalControlPermissionBoard>? _controlBoardRead;
     private Task? _controlOperation;
     private string? _controlNotice;
-    private Task<LocalSelectedQueryResult<LocalTradeInquiryView>>? _selectedInquiry;
     private ulong _controlPanelEpoch;
     private ulong _controlReadEpoch;
     private ulong _controlOperationEpoch;
-    private ulong _selectedInquiryEpoch;
     private bool _controlRefreshRequested;
 
     // Passive probe observations of the same session and presented boundary used by ordinary input.
     internal LocalSelectedPlayerObservation? CurrentSelection => _session?.ReadSelection();
     internal LocalSelectedPlayerObservation? PresentedSelection => _presentedSelection;
-    internal bool ControlOperationPending => _controlOperation is not null || _selectedInquiry is not null || _controlBoardRead is not null;
+    internal bool ControlOperationPending => _controlOperation is not null || _controlBoardRead is not null;
     internal string? LastControlOperationStatus { get; private set; }
     internal WorldActionCommand? LastControlPermissionCommand { get; private set; }
     internal Task<WorldActionReceipt>? LastControlPermissionReceipt { get; private set; }
@@ -52,24 +50,11 @@ public partial class FarmGame
             _session!.SelectedSession!.ReleaseControlAsync(witness));
         _controlPanel.SelectionRequested += (observation, actor) => StartControlOperation(() =>
             _session!.SelectedSession!.SelectActorAsync(observation.Selection, actor));
-        _controlPanel.InquiryRequested += (observation, inquiry) =>
+        _controlPanel.MarketRequested += () =>
         {
-            if (ControlOperationPending || !_controlPanel.IsOpen || !_input.Focused) return;
-            try
-            {
-                _selectedInquiry = _session!.SelectedSession!.SubmitSelectedTradeInquiryAsync(observation.Selection, inquiry);
-                _selectedInquiryEpoch = _controlPanelEpoch;
-                _controlPanel.SetBusy(true);
-            }
-            catch (InvalidOperationException error) { _controlPanel.Notice(error.Message); }
-        };
-        _controlPanel.ConfirmationRequested += offer =>
-        {
-            if (!_controlPanel.IsOpen || ControlOperationPending) return;
-            if (_input.Paused || !_input.Focused || _action is not null)
-            { _controlPanel.Notice("Resume this character before confirming a trade."); return; }
+            if (!_controlPanel.IsOpen || ControlOperationPending || !_input.Focused) return;
             CloseControlPanel();
-            Submit(offer);
+            OpenMarket(FarmSemanticAction.TradeOffers);
         };
     }
 
@@ -122,7 +107,7 @@ public partial class FarmGame
     private void RefreshControlPanel()
     {
         if (!_controlPanel.IsOpen || _session?.SelectedSession is not { SupportsControlPermissions: true } selected) return;
-        if (_controlBoardRead is not null || _controlOperation is not null || _selectedInquiry is not null)
+        if (_controlBoardRead is not null || _controlOperation is not null)
         { _controlRefreshRequested = true; return; }
         _controlRefreshRequested = false;
         try
@@ -153,22 +138,6 @@ public partial class FarmGame
                 _controlRefreshRequested = true;
             }
         }
-        if (_selectedInquiry is { IsCompleted: true } inquiry)
-        {
-            _selectedInquiry = null;
-            try
-            {
-                var result = inquiry.GetAwaiter().GetResult();
-                result.ValidateFor(_session!.SelectedSession!.ReadSelectedObservation(), LocalSelectedQueryOperation.SubmitTradeInquiry);
-                if (_controlPanel.IsOpen && _selectedInquiryEpoch == _controlPanelEpoch)
-                    _controlPanel.Notice("Request is " + result.Value.State + ". Refresh after the merchant answers; nothing is purchased yet.");
-            }
-            catch (Exception error)
-            {
-                if (_controlPanel.IsOpen && _selectedInquiryEpoch == _controlPanelEpoch)
-                    _controlPanel.Notice("Request unavailable: " + error.GetBaseException().Message);
-            }
-        }
         if (_controlBoardRead is { IsCompleted: true } read)
         {
             _controlBoardRead = null;
@@ -193,6 +162,7 @@ public partial class FarmGame
         _presentedSelection = observation;
         if (!changed) return;
         _gifts.Reset();
+        if (CurrentMarketPresentation is { } market) _marketDraft.ObserveScope(market);
         _input.RequireControlResume(observation.ControlStatus.State == PlayerControlState.Pending);
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
         _input.ReconcileHeldActions(FarmInputActions.Routed.Where(action => Input.IsActionPressed(action)));
@@ -245,7 +215,7 @@ public partial class FarmGame
     {
         LocalControlledActorView view = observation.ControlledView!;
         _targets!.Refresh(view);
-        _presented = _session!.CreateOffers(observation, _targets.Selected, _gifts);
+        _presented = _session!.CreateOffers(observation, _targets.Selected, _gifts, _marketDraft);
         if (view.IsRegional && view.Regional is null)
         {
             _hud.Message("The selected character's regional observation is not available yet.");
@@ -306,11 +276,12 @@ public partial class FarmGame
         _canvas.PresentTarget(_targets.Selected);
         _hud.PresentControlled(observation, _action is not null, _input.Paused || !_input.Focused, _presented, _targets);
         PresentControlReturn(observation.ControlStatus);
+        PresentMarket(observation.HomeView);
         if (view.Inventory is not null)
             _inventory.Present(FarmInventoryPresentation.From(observation), _session.World.ReadRunState(), _session.IsRemote);
         if (_wheel.Model is { } wheel)
         {
-            wheel.Refresh(target => _session.CreateOffers(observation, target, _gifts));
+            wheel.Refresh(target => _session.CreateOffers(observation, target, _gifts, _marketDraft));
             _wheel.Present(observation.HomeView, _session.World.ReadRunState(),
                 _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel), _session.IsRemote);
         }

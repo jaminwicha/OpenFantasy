@@ -1,0 +1,798 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "abad83ed4d52e5648ee78ed0e2db0b48",
+  "Actor": "8c631e8b65e694d9914789ffb629da72",
+  "Inputs": [],
+  "Submissions": [],
+  "PermissionSubmissions": [],
+  "Selection": {
+    "World": "abad83ed4d52e5648ee78ed0e2db0b48",
+    "Branch": "5fc1a84f392398a565c58bcede0a9d96",
+    "Port": "ecd5b79cb31c58fb4c3e138b1ef9dc05",
+    "HomeActor": "8c631e8b65e694d9914789ffb629da72",
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 27008,
+      "Y": 83072,
+      "Z": 256,
+      "Cell": {
+        "X": 105,
+        "Y": 324,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 27008,
+      "Y": 83072,
+      "Z": 256,
+      "Cell": {
+        "X": 105,
+        "Y": 324,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 78,
+    "Mp": 14,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "Trading": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "TradeDisclosed": true,
+    "InventoryDisclosed": true,
+    "PrivateHistory": true,
+    "Open": false,
+    "Wallet": 200,
+    "InquiryPending": false,
+    "AskDisabled": false,
+    "Draft": {
+      "Market": null,
+      "Direction": "Buy",
+      "Quantity": 1,
+      "Lot": null,
+      "Review": null
+    },
+    "Inquiry": null,
+    "Stalls": [
+      {
+        "Market": "1aa9174aaf3e1822fa94f43313d652e8",
+        "Merchant": "7f10fe468a64f7166a90d3588ce7fe32",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      },
+      {
+        "Market": "5e6217b7f59d9ba4abf7f7a18fb335e8",
+        "Merchant": "044fa60e9af5ace8b12ad6b9397d9ab2",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      }
+    ],
+    "Quotes": [],
+    "Reviewed": null
+  },
+  "TradeCaptures": [],
+  "Gifts": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 0,
+    "OfferSelectionVersion": 0,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "2976ce7ea2bbd6ea9cf50a18bc31e61c",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "bf937ccc8defe9ef5c1d602575b2f725"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "2d92d174300c1bc42cf3e7e91a508a3c",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "2e0d26a912a8a98af7919385da290c4b",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "343f91b07fc1ad34f7c81a2662aa3fb5",
+        "Quantity": 2,
+        "Revision": 1,
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0"
+      }
+    ],
+    "Offers": [],
+    "Draft": null,
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. Inspection spends nothing.",
+        "CostText": "Choose a stack and quantity",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 40,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive Select an offer",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 40,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 40,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 40,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [],
+  "Production": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Chop oak",
+        "TargetName": "Oak",
+        "Target": "473c08a52d09cb46e28d813ce36ac47f",
+        "CanExecute": false,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": "Move closer to the Oak.",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "World": "abad83ed4d52e5648ee78ed0e2db0b48",
+        "Branch": "5fc1a84f392398a565c58bcede0a9d96",
+        "ExpectedActorRevision": 40,
+        "Port": "ecd5b79cb31c58fb4c3e138b1ef9dc05",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": {
+          "Node": "473c08a52d09cb46e28d813ce36ac47f",
+          "ExpectedNodeRevision": 0,
+          "Tool": "2e0d26a912a8a98af7919385da290c4b",
+          "ExpectedToolLotRevision": 0
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "8c631e8b65e694d9914789ffb629da72",
+        "Principal": "b2044297d1d888996bc1cbfdbf283db1",
+        "Session": "6ed7d6b9b3dabf6c906f139333f18a5e",
+        "World": "abad83ed4d52e5648ee78ed0e2db0b48",
+        "Branch": "5fc1a84f392398a565c58bcede0a9d96",
+        "ExpectedActorRevision": 40,
+        "Port": "ecd5b79cb31c58fb4c3e138b1ef9dc05",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "Recipes": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "Open": false,
+    "InventoryDisclosed": true,
+    "RecoveryDisclosed": true,
+    "CombatDisclosed": true,
+    "ProductionDisclosed": true,
+    "Selected": null,
+    "Notice": null,
+    "Entries": [],
+    "Prepared": null,
+    "Captured": null
+  },
+  "RecipeCaptures": [],
+  "Construction": {
+    "Actor": "8c631e8b65e694d9914789ffb629da72",
+    "Generation": 0,
+    "ProductionDisclosed": true,
+    "InventoryDisclosed": false,
+    "RecoveryDisclosed": false,
+    "Projects": [
+      {
+        "ProjectId": {
+          "High": 9790396538752605306,
+          "Low": 9262587136388137488
+        },
+        "BuilderActorId": {
+          "High": 15439745355844518570,
+          "Low": 11068357073068289674
+        },
+        "DisplayName": "Small sapling guard",
+        "SiteFeet": {
+          "X": 27213,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "WorkFeet": {
+          "X": 27264,
+          "Y": 83328,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "CompletedWork": 200,
+        "RequiredWork": 200,
+        "IsCompleted": true
+      }
+    ],
+    "Work": [],
+    "Structures": [
+      {
+        "Id": "33513b12a36660e1dfde620addc6a0a5",
+        "Origin": {
+          "X": 27213,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "Members": [
+          {
+            "MemberIndex": 0,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 0,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 75,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 3750
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27213,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27233,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 1,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 0,
+              "MinY": 0,
+              "MinZ": 10,
+              "MaxX": 400,
+              "MaxY": 5,
+              "MaxZ": 246,
+              "VolumeMicrolitres": 472000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27213,
+                "Y": 83072,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27316,
+                "Y": 83074,
+                "Z": 319,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 2,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": -60,
+              "MinZ": 0,
+              "MaxX": 85,
+              "MaxY": 65,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 12500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83056,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83089,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 3,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": -60,
+              "MinZ": 10,
+              "MaxX": 85,
+              "MaxY": 0,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83056,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83072,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 4,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": 5,
+              "MinZ": 10,
+              "MaxX": 85,
+              "MaxY": 65,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83073,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83089,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 5,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 85,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 315,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 11500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27234,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27294,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 6,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": -60,
+              "MinZ": 0,
+              "MaxX": 325,
+              "MaxY": 65,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 12500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83056,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83089,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 7,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": -60,
+              "MinZ": 10,
+              "MaxX": 325,
+              "MaxY": 0,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83056,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83072,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 8,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": 5,
+              "MinZ": 10,
+              "MaxX": 325,
+              "MaxY": 65,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83073,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83089,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 9,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 325,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 400,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 3750
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27296,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27316,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "Reviewed": null
+  },
+  "ConstructionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 77743,
+  "NativeFocused": true,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": false,
+  "Display": "headless"
+}

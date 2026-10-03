@@ -746,7 +746,9 @@ public partial class FarmGame : Node2D
             try { session = await opening.ConfigureAwait(false); }
             catch { return; }
         }
-        if (session is not null) await session.DisposeAsync().ConfigureAwait(false);
+        Task marketTasks = _marketQueries.DrainAsync();
+        try { if (session is not null) await session.DisposeAsync().ConfigureAwait(false); }
+        finally { await marketTasks.ConfigureAwait(false); }
     }
 
     public override void _ExitTree()

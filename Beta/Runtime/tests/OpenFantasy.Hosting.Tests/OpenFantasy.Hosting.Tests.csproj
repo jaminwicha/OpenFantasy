@@ -42,6 +42,8 @@
     <Compile Include="../../client/scripts/FarmClientSession.ActorSelection.cs" Link="Client/FarmClientSession.ActorSelection.cs" />
     <Compile Include="../../client/scripts/FarmSelectedActionOffers.cs" Link="Client/FarmSelectedActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmMarketDraft.cs" Link="Client/FarmMarketDraft.cs" />
+    <Compile Include="../../client/scripts/FarmMarketPresentation.cs" Link="Client/FarmMarketPresentation.cs" />
+    <Compile Include="../../client/scripts/FarmMarketQueryLifetime.cs" Link="Client/FarmMarketQueryLifetime.cs" />
     <Compile Include="../../client/scripts/MarketActionOffers.cs" Link="Client/MarketActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmMarketTerms.cs" Link="Client/FarmMarketTerms.cs" />
     <Compile Include="../../client/scripts/Presentation/FarmHealthFeedback.cs" Link="Client/FarmHealthFeedback.cs" />
