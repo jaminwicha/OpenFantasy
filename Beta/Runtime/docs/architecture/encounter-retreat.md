@@ -13,9 +13,11 @@ profile 34: an unplayed local-market world (profile 33) plus one root owner,
 `world.retreat-admission.v1` pins the basis hash and the retreat law
 ([EncounterRetreatRules](../../src/OpenFantasy.Core/Encounters/EncounterRetreatRules.cs), text `encounter.retreat.v2`;
 only the pinned `v2` law is admitted; a `v1` rules pin is never silently reinterpreted).
-Every older profile keeps its codecs, bytes and meaning: a retreat request in any other profile is refused when a
-batch is built or decoded, and no lived save acquires the owner. Moving a lived profile-33 world into this
-interpretation would be a separate, explicit, replayed transition.
+Profiles 34–40 admit the retreat decision and retain this same owner and pinned law. The outcome,
+controller, recovery, care-disposition, control-permission and delegated-control interpretations compose it
+without broadening its supported sides. Older profiles retain their codecs, bytes and meaning and refuse
+the intent when a batch is built or decoded. No lived save automatically acquires the owner; moving a
+lived profile-33 world into this interpretation requires a separate explicit replayed transition.
 
 [CargoRetreatWorldAdmission](../../src/OpenFantasy.Hosting/Content/Retreat/CargoRetreatWorldAdmission.cs) is the
 host composition: the two-market cargo world, unchanged, followed by the profile-34 admission.
@@ -101,7 +103,9 @@ NPC advice (an HP permille threshold per actor), resupplied on every opening and
 [LocalEncounterController](../../src/OpenFantasy.Hosting/Simulation/LocalEncounterController.cs) then submits the
 same intent through the same admission, body and readiness rules; without a preference an NPC fights as before.
 [LocalWorldSession](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs) admits the request only in
-profile 34 and selects decisions, resolutions and ticks exactly as for other encounter choices.
+the profiles admitted by
+[LocalProfileBindings.AdmitsRetreat](../../src/OpenFantasy.Hosting/Simulation/LocalProfileBindings.cs)
+(34–40), and selects decisions, resolutions and ticks exactly as for other encounter choices.
 
 ## Native binding
 
@@ -129,10 +133,16 @@ once. Actors keep the classic four-direction walk.
 
 One coordinated complete-resident episode with exactly two positive sides. The retreating actor must be the only
 combatant of its side, living or downed; a party retreat or rescue is refused rather than leaving allies behind.
-Because an episode's combatants are its authority-derived scenario's, an ally or third side can only come from an
-authored scenario. Bystanders keep side zero, bodies and identities. Opponents have no pursuit movement in this interpretation. Terrain ground only; stepped or
-construction-supported ground, independent pockets, joining/merging, outside hazards admitted during a retreat and
-multiplayer are not part of this binding.
+Combatants come from the authority-derived scenario, including scenarios composed for a
+[player roster](player-rosters.md#cooperative-encounter-membership). A shared roster's same-side
+humans therefore cannot use this lone-combatant law to escape as a party. Independent authenticated
+input or selected-character permission does not override that restriction. A party exit needs explicit
+rules for each member's commitment, movement, incapacitation, remaining opponents and episode lifetime;
+it cannot be obtained by removing the `AllyRemains` guard.
+
+Bystanders keep side zero, bodies and identities. Opponents have no pursuit movement in this
+interpretation. The retreat uses terrain ground; stepped or construction-supported ground, independent
+pockets, joining/merging and outside hazards admitted during a retreat require separate contracts.
 
 The [road threat](road-threat.md) composes this law unchanged with a host-initiated scenario. Its entry range equals
 the opponent's attack reach, which is always less than the clear-of-contact distance (reach + 256), so a completed

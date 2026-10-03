@@ -1,0 +1,74 @@
+{
+  "Status": "passed",
+  "ElapsedMilliseconds": 84795,
+  "Commands": 10,
+  "Revision": 915,
+  "Hash": "f0781754a2a2dea1304ab1ea594ba53e7d6291820f29d61154a13508b08f33e5",
+  "Stages": [
+    {
+      "Stage": "unplayed-two-person-opening",
+      "Milliseconds": 6649,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Commands": 0,
+          "Currency": 0
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Commands": 0,
+          "Currency": 0
+        }
+      ]
+    },
+    {
+      "Stage": "independent-earned-resources",
+      "Milliseconds": 38832,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Commands": 2,
+          "Currency": 0
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Commands": 1,
+          "Currency": 0
+        }
+      ]
+    },
+    {
+      "Stage": "two-independent-consents-transferred-one-earned-wood",
+      "Milliseconds": 41100,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Commands": 3,
+          "Currency": 0
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Commands": 2,
+          "Currency": 0
+        }
+      ]
+    },
+    {
+      "Stage": "earned-crafting-quest-and-shared-autonomous-construction",
+      "Milliseconds": 73483,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Commands": 8,
+          "Currency": 200
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Commands": 2,
+          "Currency": 0
+        }
+      ]
+    }
+  ],
+  "Limitations": "Two native clients; lead rendered, helper headless. Injected input, no physical device/human acceptance. No party retreat or expedition proof."
+}

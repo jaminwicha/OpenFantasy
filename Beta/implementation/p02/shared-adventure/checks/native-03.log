@@ -1,0 +1,26 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:39.73]     OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world [FAIL]
+  Failed OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world [39 s]
+  Error Message:
+   Native roster stage=home-walk, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-adventure/attempt-03/shared-adventure/c76f468b1a35fa3bf822b82b66d9f8c4/0051.response.json: System.InvalidOperationException: Native movement did not produce an observed step.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.MarketProbeDriver.Until(Func`1 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Walk(String direction, Boolean shortPress) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 219
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 93
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.<>c__DisplayClass2_0.<<Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world>g__Send|4>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 180
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.<>c__DisplayClass2_0.<<Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world>g__WalkNear|7>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 209
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 74
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 138
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 138
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 175
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-adventure/checks/native-03.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 39 s - OpenFantasy.Server.Tests.dll (net10.0)

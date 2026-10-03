@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="08245429-abb6-47eb-92e8-56e312b10537" name="@mac 2026-10-03 13:24:09" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-03T13:24:09.6976780-05:00" queuing="2026-10-03T13:24:09.6976780-05:00" start="2026-10-03T13:23:19.0439180-05:00" finish="2026-10-03T13:24:09.7048560-05:00" />
+  <TestSettings name="default" id="eb3c7023-45e1-4e3c-bbe7-819ac3052675">
+    <Deployment runDeploymentRoot="_mac_2026-10-03_13_24_09" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="daf5634a-0f7d-43e0-8b1b-715ac8f5d02f" testId="192c750a-67c9-421e-1829-12357644f02d" testName="OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world" computerName="mac" duration="00:00:49.5487554" startTime="2026-10-03T13:23:19.9967970-05:00" endTime="2026-10-03T13:24:09.5569850-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="daf5634a-0f7d-43e0-8b1b-715ac8f5d02f">
+      <Output>
+        <ErrorInfo>
+          <Message>Native roster stage=home-target, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-adventure/attempt-02/shared-adventure/c76f468b1a35fa3bf822b82b66d9f8c4/0103.response.json: System.InvalidOperationException: Native home-character target selection exceeded its bounded search.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.HomeTarget(EntityId target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.HomeActions.cs:line 24
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 94
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61</Message>
+          <StackTrace>   at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.&lt;&gt;c__DisplayClass2_0.&lt;&lt;Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world&gt;g__Send|4&gt;d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 180
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 75
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 138
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 138
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 175
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="192c750a-67c9-421e-1829-12357644f02d">
+      <Execution id="daf5634a-0f7d-43e0-8b1b-715ac8f5d02f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeSharedAdventureTests" name="Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="192c750a-67c9-421e-1829-12357644f02d" executionId="daf5634a-0f7d-43e0-8b1b-715ac8f5d02f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.35]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.53]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.67]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:50.30]       Native roster stage=home-target, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-adventure/attempt-02/shared-adventure/c76f468b1a35fa3bf822b82b66d9f8c4/0103.response.json: System.InvalidOperationException: Native home-character target selection exceeded its bounded search.
+[xUnit.net 00:00:50.30]          at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+[xUnit.net 00:00:50.30]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.HomeTarget(EntityId target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.HomeActions.cs:line 24
+[xUnit.net 00:00:50.30]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 94
+[xUnit.net 00:00:50.30]          at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+[xUnit.net 00:00:50.30]       Stack Trace:
+[xUnit.net 00:00:50.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(79,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds)
+[xUnit.net 00:00:50.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs(53,0): at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target)
+[xUnit.net 00:00:50.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs(180,0): at OpenFantasy.Server.Tests.NativeSharedAdventureTests.&lt;&gt;c__DisplayClass2_0.&lt;&lt;Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world&gt;g__Send|4&gt;d.MoveNext()
+[xUnit.net 00:00:50.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:50.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs(75,0): at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world()
+[xUnit.net 00:00:50.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs(138,0): at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world()
+[xUnit.net 00:00:50.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs(138,0): at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world()
+[xUnit.net 00:00:50.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs(175,0): at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world()
+[xUnit.net 00:00:50.30]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:50.32]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-03T13:24:09.6175490-05:00">
+        <Text>[xUnit.net 00:00:50.30]     OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

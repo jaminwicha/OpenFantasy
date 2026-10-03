@@ -43,6 +43,24 @@ authorize the same helper/remedies; treatment still consumes the helper's origin
 Existing quest definitions and funded reserves remain shared world content, with their normal
 eligibility and reservation rules.
 
+## Shared work without shared control
+
+Each participant's field input addresses their own authenticated character, tools, effort and
+inventory. The gathering nodes and their remaining yields belong to the shared world. A second
+participant does not receive another copy of the resource, task reserve or construction project.
+
+Players pool supplies through [saved material proposals](material-proposals.md): one owner offers
+an exact lot and quantity, and the recipient independently accepts those terms. Inspection alone
+does not transfer stock. Accepted supplies enter the recipient's existing inventory and can fund
+ordinary [production](production-continuation.md) and quest operations with their original provenance.
+An accepted material proposal grants no character-control or treatment permission.
+
+Wren's task and construction retain their existing owners and rules. The character who lawfully
+delivers the accepted task receives its reward; supplying another character does not implicitly
+duplicate that reward for the supplier. Funded construction is shared physical state, so every
+participant observes the same autonomous builder and completed project. General contribution-based
+rewards and party task attribution require explicit policies rather than inferred ownership changes.
+
 ## Cooperative encounter membership
 
 [Catalog composition](../../src/OpenFantasy.Hosting/Content/PlayerRoster/PlayerRosterGenesisExtension.Catalogs.cs)
@@ -53,6 +71,11 @@ twelve scenarios: two wolf entries and one chief target per human. Each human ow
 decision; connection absence or another player's choice does not waive Wait. Entry retains the normal
 requirement that every positive-side participant be in the initiating actor's actual reach and sightline.
 Players must physically gather before entering; roster membership grants no teleport or range waiver.
+
+The inherited [retreat law](encounter-retreat.md) requires the retreating actor to be the only
+combatant on its side. It therefore refuses a shared roster's party exit with `AllyRemains`.
+Party commitments, member movement or rescue, and continuation of the remaining encounter need
+their own explicit law; additional connections do not supply those semantics.
 
 Multi-human admission selects [lifecycle catalog version two](encounter-lifecycle.md), with a sixteen
 scenario count bound and the unchanged 512 KiB archive bound. The combined encoded scenario rows
@@ -73,3 +96,8 @@ original authored scenario initiator as the corridor anchor instead of assuming 
 is only one human. Its explicit-player corridor overload validates the requested saved human. Saved
 NPC itineraries and host scheduling remain single-owned. Native presentation uses each authenticated
 player's own inventory, progression, offers and observation scope.
+
+The [ordinary adventure](adventure-entry.md) composes this same fresh roster with controller,
+recovery and explicit permission policies. `--create-adventure` uses that composition for hosted
+entry. The wrapper preserves the roster's finite stock, personal reward ownership and scenario
+membership; enabling a later capability profile does not expand the encounter retreat law.

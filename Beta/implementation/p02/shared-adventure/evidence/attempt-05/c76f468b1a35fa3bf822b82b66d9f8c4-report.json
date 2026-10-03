@@ -1,0 +1,888 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Native action failed without retry: RevisionConflict\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Applied(Int32 previous) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 284\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.HomeAction(String name) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.HomeActions.cs:line 52\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 94\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61",
+  "Stage": "home-action",
+  "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+  "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+  "Inputs": [
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83456,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83584,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83680,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83808,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83872,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84000,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84096,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84192,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84288,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 329,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84384,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 329,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84480,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84576,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84736,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 25984,
+        "Y": 84832,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26080,
+        "Y": 84832,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26208,
+        "Y": 84832,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26304,
+        "Y": 84832,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26400,
+        "Y": 84832,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26496,
+        "Y": 84832,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26592,
+        "Y": 84832,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "R"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "F"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "F"
+    }
+  ],
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000200000010E0CF077384B42DA0F8D0C1DC62287B9B0000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A770000000800000000000000450000006F4F464300000000010000000600000013776F726C642E616374696F6E2E6761746865720000000800000000000000010000001006AB75990FE45D9BDD732881DF1BAE770000000800000000000000000000001051A9A253844953E508982CBC64579C0F000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010E0CF077384B42DA0F8D0C1DC62287B9B0000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000201FA695EBB4B2F07F5B0C7D325BC478816A1D50887E5FAAB491ACA2456AC36D09000000080000000000000088000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000020000001062F63BCE4D58D432215FC5DB1B7AE03E0000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A770000000800000000000000450000006F4F464300000000010000000600000013776F726C642E616374696F6E2E6761746865720000000800000000000000010000001006AB75990FE45D9BDD732881DF1BAE770000000800000000000000000000001051A9A253844953E508982CBC64579C0F000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001062F63BCE4D58D432215FC5DB1B7AE03E0000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000205B25968C78FC6F7A54E39BCB3CE82342D768E47576BDE13ABF406D2CA40F256C00000008000000000000008A000000080000000000000002000000080000000000000003"
+    }
+  ],
+  "PermissionSubmissions": [],
+  "Selection": {
+    "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+    "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+    "Port": "6c01b0c155bb9a4cd7ac154dfda3e3c3",
+    "HomeActor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": true,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 26688,
+      "Y": 84832,
+      "Z": 256,
+      "Cell": {
+        "X": 104,
+        "Y": 331,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 26688,
+      "Y": 84832,
+      "Z": 256,
+      "Cell": {
+        "X": 104,
+        "Y": 331,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 60,
+    "Mp": 10,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "CareLibrary": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Open": false,
+    "RecoveryDisclosed": true,
+    "DispositionDisclosed": true,
+    "InventoryDisclosed": true,
+    "CombatDisclosed": true,
+    "Hp": 60,
+    "Entries": [],
+    "Selected": null,
+    "Prepared": null,
+    "Captured": null,
+    "Uses": [
+      {
+        "Id": "4687be4683e912343e998b3c36e5fcbd",
+        "ItemName": "Potion",
+        "HealHitPoints": 40,
+        "ExpectedHealingHp": 0,
+        "CanUse": false,
+        "Reason": "FullHealth",
+        "Ingredient": null
+      }
+    ],
+    "Permissions": [
+      {
+        "Id": "c6566b0cb96efe9adbc2a21e566783c3",
+        "Helper": "f4d2d9874bd5689a39ce11520e23e521",
+        "HelperName": "Wren",
+        "IsActive": true,
+        "CanRevoke": true
+      }
+    ]
+  },
+  "CareLibraryCaptures": [],
+  "Trading": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "TradeDisclosed": true,
+    "InventoryDisclosed": true,
+    "PrivateHistory": true,
+    "Open": false,
+    "Wallet": 0,
+    "InquiryPending": false,
+    "AskDisabled": false,
+    "Draft": {
+      "Market": null,
+      "Direction": "Buy",
+      "Quantity": 1,
+      "Lot": null,
+      "Review": null
+    },
+    "Inquiry": null,
+    "Stalls": [
+      {
+        "Market": "5e813693aa0840644c174974aee9e0e1",
+        "Merchant": "8a022210e26654418cd4324a4ff5b7e7",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      },
+      {
+        "Market": "974ba1c50cdc1ba2afdcc8af2da47878",
+        "Merchant": "a7ad00d8bb6e473472bb1d985514e5fe",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      }
+    ],
+    "Quotes": [],
+    "Reviewed": null
+  },
+  "TradeCaptures": [],
+  "Gifts": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 0,
+    "OfferSelectionVersion": 0,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "006b84efb94fbcea71473419e13479da",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "bf937ccc8defe9ef5c1d602575b2f725"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "51a9a253844953e508982cbc64579c0f",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "855fa6570426ca4a3cc5b2efaa5c5709",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "c4b860dd62334d0e323eeb2d87d5c6bd",
+        "Quantity": 8,
+        "Revision": 0,
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0"
+      }
+    ],
+    "Offers": [],
+    "Draft": null,
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. Inspection spends nothing.",
+        "CostText": "Choose a stack and quantity",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 69,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive Select an offer",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 69,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 69,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 69,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [],
+  "Production": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Pick berries",
+        "TargetName": "Berry Bush",
+        "Target": "06ab75990fe45d9bdd732881df1bae77",
+        "CanExecute": true,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": null,
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "ExpectedActorRevision": 69,
+        "Port": "6c01b0c155bb9a4cd7ac154dfda3e3c3",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": {
+          "Node": "06ab75990fe45d9bdd732881df1bae77",
+          "ExpectedNodeRevision": 0,
+          "Tool": "51a9a253844953e508982cbc64579c0f",
+          "ExpectedToolLotRevision": 0
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "ExpectedActorRevision": 69,
+        "Port": "6c01b0c155bb9a4cd7ac154dfda3e3c3",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "Recipes": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Open": false,
+    "InventoryDisclosed": true,
+    "RecoveryDisclosed": true,
+    "CombatDisclosed": true,
+    "ProductionDisclosed": true,
+    "Selected": null,
+    "Notice": null,
+    "Entries": [],
+    "Prepared": null,
+    "Captured": null
+  },
+  "RecipeCaptures": [],
+  "Construction": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "ProductionDisclosed": true,
+    "InventoryDisclosed": false,
+    "RecoveryDisclosed": false,
+    "Projects": [],
+    "Work": [],
+    "Structures": [],
+    "Reviewed": null
+  },
+  "ConstructionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 20154,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": true,
+  "Display": "macOS"
+}

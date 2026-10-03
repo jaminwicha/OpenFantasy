@@ -69,6 +69,19 @@ alone is not that proof; the returned construction was already complete before d
 autonomous changes during the expedition are still required. Checkpoint `26d90ffa` preserves the WIP
 before the reopening correction; the accepted marker is `codex/milestone-adventure-continuation-20261003`.
 
+The [shared opening](p02/shared-adventure/RESULT.md) qualifies two native participants earning and
+exchanging supplies, crafting and funding Wren in one fresh world. Ten actions retain exact authenticated
+receipts and original-genesis replay; the 84.795-second run stays within 240 seconds. Four admission/TLS
+regressions also pass. All 1,410 execution dependencies match; no gameplay law or schema changes.
+Five native failures and two build/invocation failures remain recorded. Visuals/HUD remain provisional.
+Checkpoint `e126d9a7` preserves the earlier WIP; the accepted marker is
+`codex/milestone-shared-adventure-opening-20261003`. A material limitation is now explicit:
+roster combat assigns all humans to one side, while retreat v2 refuses to abandon any same-side ally.
+The complete cooperative expedition needs a party-exit contract, not a waived `AllyRemains` guard.
+Timeless roster/retreat/road-threat references and the roadmap record that dependency together.
+The maintained verification skill reinforces documentation priority in upstream commit `70401b8`,
+synchronized and hash-verified in all three installed copies. No orchestration resumed.
+
 Then build the missing bounded NPC motivation/memory/offscreen-work, recruitment/cooperative action
 and changed-place return, followed by investigation/puzzle and required environment/coordination/UI
 introductions. Native art/motion/audio/onboarding are concurrent dependency-bound lanes. The complete

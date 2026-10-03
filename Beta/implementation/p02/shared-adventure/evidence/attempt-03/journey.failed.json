@@ -1,0 +1,24 @@
+{
+  "Status": "failed",
+  "Stage": "forage",
+  "Error": "Xunit.Sdk.TrueException: Native roster stage=home-walk, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-adventure/attempt-03/shared-adventure/c76f468b1a35fa3bf822b82b66d9f8c4/0051.response.json: System.InvalidOperationException: Native movement did not produce an observed step.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.MarketProbeDriver.Until(Func\u00601 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Walk(String direction, Boolean shortPress) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 219\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 93\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61\n   at Xunit.Assert.True(Boolean condition, String userMessage) in /_/src/xunit.v3.assert/Asserts/BooleanAsserts.cs:line 117\n   at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79\n   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable\u00601 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53\n   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.\u003C\u003Ec__DisplayClass2_0.\u003C\u003CTwo_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world\u003Eg__Send|4\u003Ed.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 180\n--- End of stack trace from previous location ---\n   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.\u003C\u003Ec__DisplayClass2_0.\u003C\u003CTwo_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world\u003Eg__WalkNear|7\u003Ed.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 209\n--- End of stack trace from previous location ---\n   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 74\n   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 138\n   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 138",
+  "Stages": [
+    {
+      "Stage": "unplayed-two-person-opening",
+      "Milliseconds": 5718,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Commands": 0,
+          "Currency": 0
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Commands": 0,
+          "Currency": 0
+        }
+      ]
+    }
+  ],
+  "ElapsedMilliseconds": 38940
+}

@@ -126,6 +126,13 @@ without silently replacing its terms. A coordinated native test waits for the sp
 phase to be observed before preparing its next deliberate input; a frame, Pong or fixed delay alone is
 not an observation barrier.
 
+The submitting player's own live view and rendered frame can also lag its receipt. This applies to
+resource-node revisions, crafting state and quest participation as well as combat. A native sequence
+that depends on the previous action waits for that specific effect in both current and presented
+observations before selecting its next action. The receipt proves the committed result; it is not an
+observation barrier, and a stream revision is not the world's commit sequence. Stale captured terms
+remain subject to ordinary authority rejection rather than automatic replacement or retry.
+
 [NativePlayerEntry](../../client/scripts/Networking/NativePlayerEntry.cs) opens the explicit `--join`
 invitation through platform TLS validation. [FarmGame](../../client/scripts/FarmGame.cs) enables readiness
 only after first view and binding. Ordinary window focus, input cancellation, wheels and inventory use the

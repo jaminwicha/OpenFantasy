@@ -1,0 +1,1439 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+  "Actor": "d8fb874274604fcaffa320d13f228fd6",
+  "Inputs": [
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "R"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "F"
+    },
+    {
+      "Stage": "pause",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 83584,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 83712,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 83808,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 83904,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 84000,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 84128,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 84256,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 329,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 84352,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 329,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25728,
+        "Y": 84480,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 25728,
+        "Y": 84608,
+        "Z": 256,
+        "Cell": {
+          "X": 100,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 25856,
+        "Y": 84608,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 25984,
+        "Y": 84608,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26112,
+        "Y": 84608,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26240,
+        "Y": 84608,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26368,
+        "Y": 84608,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-lot",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-recipient",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "PrepareGift"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "PrepareGift"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "PrepareGift"
+    },
+    {
+      "Stage": "gift-prepare",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "PrepareGift",
+      "X": 266,
+      "Y": 407
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadUp"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "close",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    }
+  ],
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000002000000108D3BDF70D52C1F2F4B6A173B09C37D7C00000010C00B732C1973C492AC381934C38A04F600000010E298D2DD8ED40D61945CDE31E8E9EA5600000010D8FB874274604FCAFFA320D13F228FD6000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A770000000800000000000000000000006F4F464300000000010000000600000013776F726C642E616374696F6E2E67617468657200000008000000000000000100000010666053812C93A58B0AFD7652399A55F500000008000000000000000000000010B734917EC237FD03F6AC491927FBC0CA000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000108D3BDF70D52C1F2F4B6A173B09C37D7C00000010C00B732C1973C492AC381934C38A04F6000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000200A0DE0CA306B2DC6804E0EB3FB7A4320580237A4D0C934C970ABC22428E46B10000000080000000000000086000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001000000010B18948301273EDDFDA8624F79AE7BE2D00000010C00B732C1973C492AC381934C38A04F600000010E298D2DD8ED40D61945CDE31E8E9EA5600000010D8FB874274604FCAFFA320D13F228FD6000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000080000000000000038000001774F464300000000010000000400000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D637265617465000000080000000000000001000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D73000000080000000000000001000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000010D8FB874274604FCAFFA320D13F228FD600000010C76F468B1A35FA3BF822B82B66D9F8C40000000800000000000000010000001067D8476BC8161D238AAA859A24A45B7C00000010F20A24BBCF04B36EBCB90A1D04CA58C000000020C603D104FD21C40819D8DC0F6A4F5F3BC976936F7AC2C2CFE6FFEFD62820614D000000107855D5DA1062423BCB8123E55A2FD59100000010B63CE111CFDE83B7D856D124E02418C200000008000000000000000100000008000000000000000000000008000000000000059A",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010B18948301273EDDFDA8624F79AE7BE2D00000010C00B732C1973C492AC381934C38A04F6000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000208B7C4F6A5E4A04E550BBA707D3F58722022D8CB8206A7291C11C787F7BA6AF7A0000000800000000000000EE000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "PermissionSubmissions": [],
+  "Selection": {
+    "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+    "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+    "Port": "53bf81b90754a5a26b5f5ab50a2b6fff",
+    "HomeActor": "d8fb874274604fcaffa320d13f228fd6",
+    "Actor": "d8fb874274604fcaffa320d13f228fd6",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 26496,
+      "Y": 84608,
+      "Z": 256,
+      "Cell": {
+        "X": 103,
+        "Y": 330,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 26496,
+      "Y": 84608,
+      "Z": 256,
+      "Cell": {
+        "X": 103,
+        "Y": 330,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 60,
+    "Mp": 10,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "CareLibrary": {
+    "Actor": "d8fb874274604fcaffa320d13f228fd6",
+    "Generation": 0,
+    "Open": false,
+    "RecoveryDisclosed": true,
+    "DispositionDisclosed": true,
+    "InventoryDisclosed": true,
+    "CombatDisclosed": true,
+    "Hp": 60,
+    "Entries": [],
+    "Selected": null,
+    "Prepared": null,
+    "Captured": null,
+    "Uses": [
+      {
+        "Id": "4687be4683e912343e998b3c36e5fcbd",
+        "ItemName": "Potion",
+        "HealHitPoints": 40,
+        "ExpectedHealingHp": 0,
+        "CanUse": false,
+        "Reason": "FullHealth",
+        "Ingredient": null
+      }
+    ],
+    "Permissions": [
+      {
+        "Id": "cb60e66208009b5b8128edf4d4a5e206",
+        "Helper": "f4d2d9874bd5689a39ce11520e23e521",
+        "HelperName": "Wren",
+        "IsActive": true,
+        "CanRevoke": true
+      }
+    ]
+  },
+  "CareLibraryCaptures": [],
+  "Trading": {
+    "Actor": "d8fb874274604fcaffa320d13f228fd6",
+    "Generation": 0,
+    "TradeDisclosed": true,
+    "InventoryDisclosed": true,
+    "PrivateHistory": true,
+    "Open": false,
+    "Wallet": 0,
+    "InquiryPending": false,
+    "AskDisabled": false,
+    "Draft": {
+      "Market": null,
+      "Direction": "Buy",
+      "Quantity": 1,
+      "Lot": null,
+      "Review": null
+    },
+    "Inquiry": null,
+    "Stalls": [
+      {
+        "Market": "5e813693aa0840644c174974aee9e0e1",
+        "Merchant": "8a022210e26654418cd4324a4ff5b7e7",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      },
+      {
+        "Market": "974ba1c50cdc1ba2afdcc8af2da47878",
+        "Merchant": "a7ad00d8bb6e473472bb1d985514e5fe",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      }
+    ],
+    "Quotes": [],
+    "Reviewed": null
+  },
+  "TradeCaptures": [],
+  "Gifts": {
+    "Actor": "d8fb874274604fcaffa320d13f228fd6",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 3,
+    "OfferSelectionVersion": 3,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "17c6649d6a97448066bc7b26176831ca",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "b734917ec237fd03f6ac491927fbc0ca",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      }
+    ],
+    "Offers": [
+      {
+        "Proposal": "e0e890769359ff67bd97605238858294",
+        "Status": "Accepted",
+        "Sender": "d8fb874274604fcaffa320d13f228fd6",
+        "Recipient": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Lot": "67d8476bc8161d238aaa859a24a45b7c",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "8b17dd34f2effe05959a08f6bdf8741d89bf54f5c7d89846e4cbac2f6ae7edeb",
+        "SenderPresenceRevision": 56,
+        "ViewerIsSender": true,
+        "ClosedAtSequence": 266,
+        "Terms": {
+          "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+          "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+          "Sender": "d8fb874274604fcaffa320d13f228fd6",
+          "Recipient": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Kind": "CountedSource",
+          "Lot": "67d8476bc8161d238aaa859a24a45b7c",
+          "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "Version": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "Source": "7855d5da1062423bcb8123e55a2fd591",
+          "Destination": "b63ce111cfde83b7d856d124e02418c2",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      }
+    ],
+    "Draft": {
+      "Lot": "67d8476bc8161d238aaa859a24a45b7c",
+      "Kind": "CountedSource",
+      "Recipient": "c76f468b1a35fa3bf822b82b66d9f8c4",
+      "Quantity": 1,
+      "SelectedOffer": null,
+      "PreparedTerms": {
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "Sender": "d8fb874274604fcaffa320d13f228fd6",
+        "Recipient": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Kind": "CountedSource",
+        "Lot": "67d8476bc8161d238aaa859a24a45b7c",
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+        "Version": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+        "Source": "7855d5da1062423bcb8123e55a2fd591",
+        "Destination": "b63ce111cfde83b7d856d124e02418c2",
+        "Quantity": 1,
+        "ExpectedLotRevision": 0
+      },
+      "Expiry": 1434
+    },
+    "Reviewed": {
+      "Action": "ProposeMaterial",
+      "CanExecute": true,
+      "BlockingReason": null,
+      "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. To Rowan. Available briefly while world time advances. Status: Prepared.",
+      "CostText": "1 Wood",
+      "Actor": "d8fb874274604fcaffa320d13f228fd6",
+      "Principal": "c00b732c1973c492ac381934c38a04f6",
+      "Session": "e298d2dd8ed40d61945cde31e8e9ea56",
+      "Generation": 0,
+      "Witness": null,
+      "ExpectedActorRevision": 56,
+      "Intent": "ProposeMaterialIntent",
+      "Proposal": null,
+      "Terms": {
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "Sender": "d8fb874274604fcaffa320d13f228fd6",
+        "Recipient": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Kind": "CountedSource",
+        "Lot": "67d8476bc8161d238aaa859a24a45b7c",
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+        "Version": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+        "Source": "7855d5da1062423bcb8123e55a2fd591",
+        "Destination": "b63ce111cfde83b7d856d124e02418c2",
+        "Quantity": 1,
+        "ExpectedLotRevision": 0
+      }
+    },
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This exact prepared gift changed or expired. Inspect the selection and prepare it again.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. To Rowan. Available briefly while world time advances. Status: Prepared.",
+        "CostText": "1 Wood",
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Principal": "c00b732c1973c492ac381934c38a04f6",
+        "Session": "e298d2dd8ed40d61945cde31e8e9ea56",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 56,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Select one saved gift offer in your pack.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive Select an offer",
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Principal": "c00b732c1973c492ac381934c38a04f6",
+        "Session": "e298d2dd8ed40d61945cde31e8e9ea56",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 56,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Select one saved gift offer in your pack.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Principal": "c00b732c1973c492ac381934c38a04f6",
+        "Session": "e298d2dd8ed40d61945cde31e8e9ea56",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 56,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Select one saved gift offer in your pack.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Principal": "c00b732c1973c492ac381934c38a04f6",
+        "Session": "e298d2dd8ed40d61945cde31e8e9ea56",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 56,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [],
+  "Production": {
+    "Actor": "d8fb874274604fcaffa320d13f228fd6",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Chop oak",
+        "TargetName": "Oak",
+        "Target": "666053812c93a58b0afd7652399a55f5",
+        "CanExecute": false,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": "Move closer to the Oak.",
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Principal": "c00b732c1973c492ac381934c38a04f6",
+        "Session": "e298d2dd8ed40d61945cde31e8e9ea56",
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "ExpectedActorRevision": 56,
+        "Port": "53bf81b90754a5a26b5f5ab50a2b6fff",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": {
+          "Node": "666053812c93a58b0afd7652399a55f5",
+          "ExpectedNodeRevision": 1,
+          "Tool": "b734917ec237fd03f6ac491927fbc0ca",
+          "ExpectedToolLotRevision": 0
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Principal": "c00b732c1973c492ac381934c38a04f6",
+        "Session": "e298d2dd8ed40d61945cde31e8e9ea56",
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "ExpectedActorRevision": 56,
+        "Port": "53bf81b90754a5a26b5f5ab50a2b6fff",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "Recipes": {
+    "Actor": "d8fb874274604fcaffa320d13f228fd6",
+    "Generation": 0,
+    "Open": false,
+    "InventoryDisclosed": true,
+    "RecoveryDisclosed": true,
+    "CombatDisclosed": true,
+    "ProductionDisclosed": true,
+    "Selected": null,
+    "Notice": null,
+    "Entries": [],
+    "Prepared": null,
+    "Captured": null
+  },
+  "RecipeCaptures": [],
+  "Construction": {
+    "Actor": "d8fb874274604fcaffa320d13f228fd6",
+    "Generation": 0,
+    "ProductionDisclosed": true,
+    "InventoryDisclosed": false,
+    "RecoveryDisclosed": false,
+    "Projects": [
+      {
+        "ProjectId": {
+          "High": 4769591438588567364,
+          "Low": 9531811149500406226
+        },
+        "BuilderActorId": {
+          "High": 17641401865479743642,
+          "Low": 4165285749486511393
+        },
+        "DisplayName": "Small sapling guard",
+        "SiteFeet": {
+          "X": 27213,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "WorkFeet": {
+          "X": 27264,
+          "Y": 83328,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "CompletedWork": 200,
+        "RequiredWork": 200,
+        "IsCompleted": true
+      }
+    ],
+    "Work": [],
+    "Structures": [
+      {
+        "Id": "f5fa849f85b0a95d3b599b6358ba42a7",
+        "Origin": {
+          "X": 27213,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "Members": [
+          {
+            "MemberIndex": 0,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 0,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 75,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 3750
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27213,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27233,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 1,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 0,
+              "MinY": 0,
+              "MinZ": 10,
+              "MaxX": 400,
+              "MaxY": 5,
+              "MaxZ": 246,
+              "VolumeMicrolitres": 472000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27213,
+                "Y": 83072,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27316,
+                "Y": 83074,
+                "Z": 319,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 2,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": -60,
+              "MinZ": 0,
+              "MaxX": 85,
+              "MaxY": 65,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 12500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83056,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83089,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 3,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": -60,
+              "MinZ": 10,
+              "MaxX": 85,
+              "MaxY": 0,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83056,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83072,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 4,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": 5,
+              "MinZ": 10,
+              "MaxX": 85,
+              "MaxY": 65,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83073,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83089,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 5,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 85,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 315,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 11500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27234,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27294,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 6,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": -60,
+              "MinZ": 0,
+              "MaxX": 325,
+              "MaxY": 65,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 12500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83056,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83089,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 7,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": -60,
+              "MinZ": 10,
+              "MaxX": 325,
+              "MaxY": 0,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83056,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83072,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 8,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": 5,
+              "MinZ": 10,
+              "MaxX": 325,
+              "MaxY": 65,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83073,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83089,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 9,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 325,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 400,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 3750
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27296,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27316,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "Reviewed": null
+  },
+  "ConstructionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 70922,
+  "NativeFocused": true,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": false,
+  "Display": "headless"
+}

@@ -1,0 +1,2267 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "passed",
+  "Failure": null,
+  "Stage": "close",
+  "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+  "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+  "Inputs": [
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83424,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83552,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83680,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83776,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83904,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84032,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84160,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84288,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 329,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84416,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 329,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84512,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84608,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 84736,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 25984,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26080,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26176,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26304,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26464,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26592,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "R"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "F"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "F"
+    },
+    {
+      "Stage": "pause",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "resume",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "Key": "I"
+    },
+    {
+      "Stage": "gift-open",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "GiftToggle",
+      "X": 764.5,
+      "Y": 71.5
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLot",
+      "To": "GiftRecipient"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftRecipient",
+      "To": "GiftLess"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftLess",
+      "To": "GiftMore"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "GiftMore",
+      "To": "PrepareGift"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Navigate": "down",
+      "From": "PrepareGift",
+      "To": "GiftOffer"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Down"
+    },
+    {
+      "Stage": "gift-offer",
+      "Route": "roster-keyboard-controller",
+      "Key": "Enter"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLot",
+      "X": 266,
+      "Y": 265
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftRecipient",
+      "X": 266,
+      "Y": 341
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftLess",
+      "X": 77.5,
+      "Y": 383
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftMore",
+      "X": 454.5,
+      "Y": 383
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "PrepareGift",
+      "X": 266,
+      "Y": 425
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOffer",
+      "X": 686,
+      "Y": 231
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftHistory",
+      "X": 686,
+      "Y": 394
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "down",
+      "Toward": "GiftDraftDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftDraftDetails",
+      "X": 266,
+      "Y": 414.5
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "Wheel": "up",
+      "Toward": "GiftOfferDetails"
+    },
+    {
+      "Stage": "capture-gifts",
+      "Route": "roster-keyboard-controller",
+      "PointerHover": "GiftOfferDetails",
+      "X": 686,
+      "Y": 278.5
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "PointerControl": "ReviewGifts",
+      "X": 480,
+      "Y": 471
+    },
+    {
+      "Stage": "gift-review",
+      "Route": "roster-keyboard-controller",
+      "Controller": "DpadRight"
+    },
+    {
+      "Stage": "gift-confirm",
+      "Route": "roster-keyboard-controller",
+      "Controller": "A"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "C"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "left",
+      "Origin": {
+        "X": 26752,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "left",
+      "Origin": {
+        "X": 26592,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "left",
+      "Origin": {
+        "X": 26464,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26336,
+        "Y": 84864,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "left",
+      "Origin": {
+        "X": 26336,
+        "Y": 84768,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 84768,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 331,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 84672,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 84576,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 84480,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 330,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 84352,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 329,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 84224,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 329,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 84096,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 83968,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 328,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 83872,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 83776,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 327,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 26208,
+        "Y": 83680,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "left",
+      "Origin": {
+        "X": 26208,
+        "Y": 83552,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "left",
+      "Origin": {
+        "X": 26080,
+        "Y": 83552,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "walk",
+      "Direction": "up",
+      "Origin": {
+        "X": 25984,
+        "Y": 83552,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      }
+    },
+    {
+      "Stage": "walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "R"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "E"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "G"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "G"
+    },
+    {
+      "Stage": "home-action",
+      "Route": "roster-keyboard-controller",
+      "Key": "E"
+    },
+    {
+      "Stage": "close",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    }
+  ],
+  "Submissions": [
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000020000001004E7876BD4D9449D8F8CBC05CC9EFDFE0000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A770000000800000000000000480000006F4F464300000000010000000600000013776F726C642E616374696F6E2E6761746865720000000800000000000000010000001006AB75990FE45D9BDD732881DF1BAE770000000800000000000000000000001051A9A253844953E508982CBC64579C0F000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001004E7876BD4D9449D8F8CBC05CC9EFDFE0000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000020836E90FC11AD3AD50578B32C6ABED89D7BC71D8FD4B3C39755856AE72818C0E200000008000000000000007A000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000002000000100C2909540C27D0CFBDEF2D6FABF0D4FC0000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A770000000800000000000000480000006F4F464300000000010000000600000013776F726C642E616374696F6E2E6761746865720000000800000000000000010000001006AB75990FE45D9BDD732881DF1BAE770000000800000000000000010000001051A9A253844953E508982CBC64579C0F000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000100C2909540C27D0CFBDEF2D6FABF0D4FC0000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000202AE89B49246ABD0D165154303BD309589B76F73ADCBAA4F107A6F5D0C8364BC000000008000000000000007E000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000001000000010F3B2E96AD4C1381240E8B2378C1C26050000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000080000000000000048000001AF4F464300000000010000000600000025776F726C642E616374696F6E2E6D6174657269616C2D70726F706F73616C2D61636365707400000008000000000000000100000010E0E890769359FF67BD97605238858294000000208B17DD34F2EFFE05959A08F6BDF8741D89BF54F5C7D89846E4CBAC2F6AE7EDEB000001264F464300000000010000000E00000022617574686F726974792E636F6E73656E7465642D6D6174657269616C2E7465726D73000000080000000000000001000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000010D8FB874274604FCAFFA320D13F228FD600000010C76F468B1A35FA3BF822B82B66D9F8C40000000800000000000000010000001067D8476BC8161D238AAA859A24A45B7C00000010F20A24BBCF04B36EBCB90A1D04CA58C000000020C603D104FD21C40819D8DC0F6A4F5F3BC976936F7AC2C2CFE6FFEFD62820614D000000107855D5DA1062423BCB8123E55A2FD59100000010B63CE111CFDE83B7D856D124E02418C2000000080000000000000001000000080000000000000000000000080000000000000038",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010F3B2E96AD4C1381240E8B2378C1C26050000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000020C96C18D00AF0EB06BB0602FDC44E93DF6AD7F9D12BAEEAA8A3C8F5FC67A3C7A300000008000000000000010A000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000300000010F7086E65BBBAD76053F499FDB5A1FA850000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000080000000000000048000001E34F464300000000010000000800000012776F726C642E616374696F6E2E6372616674000000080000000000000001000000106DC4C74D94C42134AF6136DA86ECCAC100000020747FE3E60F887CCE01AA5D6838C60B732DD39321235BDB9BAC6A508B74C2914200000008000000000000000000000010B63CE111CFDE83B7D856D124E02418C20000000800000000000000030000014D4F464300000000010000000400000017776F726C642E63726166742E696E6772656469656E74730000005E4F464300000000010000000500000016776F726C642E63726166742E696E6772656469656E740000000800000000000000010000001067D8476BC8161D238AAA859A24A45B7C0000000800000000000000010000000800000000000000010000005E4F464300000000010000000500000016776F726C642E63726166742E696E6772656469656E7400000008000000000000000100000010705D663470B622AA528AB581EB8081A60000000800000000000000000000000800000000000000010000005E4F464300000000010000000500000016776F726C642E63726166742E696E6772656469656E7400000008000000000000000100000010CAFBDECC17A9EDEAE666AE8E6F60E6FB000000080000000000000000000000080000000000000001",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010F7086E65BBBAD76053F499FDB5A1FA850000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A770000002048AFA017365826CEA2BC1E49B4D81985CDD8B949D439128B58151CBB762CBBD800000008000000000000010F000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000001000000107889A0F23D62E53366FD96F97840DCA10000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000008000000000000008D0000004E4F464300000000010000000400000012776F726C642E616374696F6E2E737065616B00000008000000000000000100000010F4D2D9874BD5689A39CE11520E23E521000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000107889A0F23D62E53366FD96F97840DCA10000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000020D9D83ED5AA30BDE0BA7E0C7473F1A9990A682C6111184D0E28415DEAB4AAD7FE000000080000000000000281000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E000000080000000000000004000000106BCF9A1B0F0F88BC880EF7A4BBD66FB30000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000008000000000000008D000000AA4F464300000000010000000900000012776F726C642E616374696F6E2E7175657374000000080000000000000001000000080000000000000001000000100388EC805B8D8367A2DC7BB3E180572400000020605FF2EB8DD73662FC59D4181939907AB0DBB880FEC0E8FDFA533ED4F378D9AD00000010F4D2D9874BD5689A39CE11520E23E521000000080000000000000000000000080000000000000000000000080000000000000000",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D72656365697074000000080000000000000001000000106BCF9A1B0F0F88BC880EF7A4BBD66FB30000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A770000002030A7DA27C7EDC263FAAC37EFE4D52BE4330660635B42894DF5F41E04FC26609F000000080000000000000282000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E0000000800000000000000040000001098FF7E5109B08298F183F8F1376F3E090000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000008000000000000008D000001334F464300000000010000000B00000012776F726C642E616374696F6E2E7175657374000000080000000000000001000000080000000000000002000000100388EC805B8D8367A2DC7BB3E180572400000020605FF2EB8DD73662FC59D4181939907AB0DBB880FEC0E8FDFA533ED4F378D9AD00000010F4D2D9874BD5689A39CE11520E23E521000000080000000000000000000000080000000000000001000000080000000000000000000000080000000000000004000000794F46430000000001000000020000001371756573742E73656C65637465642D6C6F7473000000524F46430000000001000000040000001671756573742E736F757263652D73656C656374696F6E00000010C4B860DD62334D0E323EEB2D87D5C6BD000000080000000000000000000000080000000000000006",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D726563656970740000000800000000000000010000001098FF7E5109B08298F183F8F1376F3E090000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A77000000201E296B540927D4342452D538EB1B66C7ECBA2BD90B51344BB6EFE9B48D7DA170000000080000000000000283000000080000000000000001000000080000000000000000"
+    },
+    {
+      "Command": "4F464300000000010000000A00000012776F726C642E6163746F722D616374696F6E00000008000000000000000100000010164BF2775E6B6B070D88BE841AC307040000001090A6A57F94684F6630A75389E38385AB000000109F6A46EDC7D99170C11B2C0F41E7A9E000000010C76F468B1A35FA3BF822B82B66D9F8C4000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A7700000008000000000000008D0000004B4F46430000000001000000030000001B776F726C642E616374696F6E2E636C6F73652D6469616C6F677565000000080000000000000001000000104E41B1ED94FE59DC9615B516B6273FF3",
+      "IsRetry": false,
+      "Receipt": "4F464300000000010000000A00000014776F726C642E616374696F6E2D7265636569707400000008000000000000000100000010164BF2775E6B6B070D88BE841AC307040000001090A6A57F94684F6630A75389E38385AB000000106C2449ED9723E1AA18102F192FD1A4B40000001010E9EF81186FEA2770A67CFC7D6B1A770000002026A317B4FA8F2044E500EFCF496CD1CE86717155F1C777E8F69988A1350943A2000000080000000000000284000000080000000000000001000000080000000000000000"
+    }
+  ],
+  "PermissionSubmissions": [],
+  "Selection": {
+    "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+    "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+    "Port": "1e03b8e8f005ed64dbef673e13afb82e",
+    "HomeActor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 25984,
+      "Y": 83424,
+      "Z": 256,
+      "Cell": {
+        "X": 101,
+        "Y": 325,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 25984,
+      "Y": 83424,
+      "Z": 256,
+      "Cell": {
+        "X": 101,
+        "Y": 325,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 78,
+    "Mp": 14,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "CareLibrary": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Open": false,
+    "RecoveryDisclosed": true,
+    "DispositionDisclosed": true,
+    "InventoryDisclosed": true,
+    "CombatDisclosed": true,
+    "Hp": 78,
+    "Entries": [],
+    "Selected": null,
+    "Prepared": null,
+    "Captured": null,
+    "Uses": [
+      {
+        "Id": "4687be4683e912343e998b3c36e5fcbd",
+        "ItemName": "Potion",
+        "HealHitPoints": 40,
+        "ExpectedHealingHp": 0,
+        "CanUse": false,
+        "Reason": "FullHealth",
+        "Ingredient": null
+      }
+    ],
+    "Permissions": [
+      {
+        "Id": "c6566b0cb96efe9adbc2a21e566783c3",
+        "Helper": "f4d2d9874bd5689a39ce11520e23e521",
+        "HelperName": "Wren",
+        "IsActive": true,
+        "CanRevoke": true
+      }
+    ]
+  },
+  "CareLibraryCaptures": [],
+  "Trading": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "TradeDisclosed": true,
+    "InventoryDisclosed": true,
+    "PrivateHistory": true,
+    "Open": false,
+    "Wallet": 200,
+    "InquiryPending": false,
+    "AskDisabled": false,
+    "Draft": {
+      "Market": null,
+      "Direction": "Buy",
+      "Quantity": 1,
+      "Lot": null,
+      "Review": null
+    },
+    "Inquiry": null,
+    "Stalls": [
+      {
+        "Market": "5e813693aa0840644c174974aee9e0e1",
+        "Merchant": "8a022210e26654418cd4324a4ff5b7e7",
+        "IsAvailableInPerson": false,
+        "Lots": [
+          {
+            "Lot": "916a72c0cc4b4bbfbfe52c2a4e0d7df6",
+            "Quantity": 2,
+            "Revision": 0
+          }
+        ],
+        "Showing": null
+      },
+      {
+        "Market": "974ba1c50cdc1ba2afdcc8af2da47878",
+        "Merchant": "a7ad00d8bb6e473472bb1d985514e5fe",
+        "IsAvailableInPerson": false,
+        "Lots": [
+          {
+            "Lot": "916a72c0cc4b4bbfbfe52c2a4e0d7df6",
+            "Quantity": 2,
+            "Revision": 0
+          }
+        ],
+        "Showing": null
+      }
+    ],
+    "Quotes": [],
+    "Reviewed": null
+  },
+  "TradeCaptures": [],
+  "Gifts": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 3,
+    "OfferSelectionVersion": 4,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "006b84efb94fbcea71473419e13479da",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "bf937ccc8defe9ef5c1d602575b2f725"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "51a9a253844953e508982cbc64579c0f",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "855fa6570426ca4a3cc5b2efaa5c5709",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "c4b860dd62334d0e323eeb2d87d5c6bd",
+        "Quantity": 2,
+        "Revision": 1,
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0"
+      },
+      {
+        "Kind": "Produced",
+        "Lot": "916a72c0cc4b4bbfbfe52c2a4e0d7df6",
+        "Quantity": 2,
+        "Revision": 0,
+        "Definition": "53fd24d5841ae076dca620b5ebe41aad"
+      },
+      {
+        "Kind": "Produced",
+        "Lot": "e3b0db530e3754ff10e3a49e04ce3d8d",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "9e8e1f696cfc36ae65d80cc9f618befa"
+      }
+    ],
+    "Offers": [
+      {
+        "Proposal": "e0e890769359ff67bd97605238858294",
+        "Status": "Accepted",
+        "Sender": "d8fb874274604fcaffa320d13f228fd6",
+        "Recipient": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Lot": "67d8476bc8161d238aaa859a24a45b7c",
+        "Quantity": 1,
+        "Kind": "CountedSource",
+        "GrantHash": "8b17dd34f2effe05959a08f6bdf8741d89bf54f5c7d89846e4cbac2f6ae7edeb",
+        "SenderPresenceRevision": 56,
+        "ViewerIsSender": false,
+        "ClosedAtSequence": 266,
+        "Terms": {
+          "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+          "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+          "Sender": "d8fb874274604fcaffa320d13f228fd6",
+          "Recipient": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Kind": "CountedSource",
+          "Lot": "67d8476bc8161d238aaa859a24a45b7c",
+          "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+          "Version": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+          "Source": "7855d5da1062423bcb8123e55a2fd591",
+          "Destination": "b63ce111cfde83b7d856d124e02418c2",
+          "Quantity": 1,
+          "ExpectedLotRevision": 0
+        }
+      }
+    ],
+    "Draft": {
+      "Lot": null,
+      "Kind": null,
+      "Recipient": null,
+      "Quantity": 1,
+      "SelectedOffer": "e0e890769359ff67bd97605238858294",
+      "PreparedTerms": null,
+      "Expiry": null
+    },
+    "Reviewed": {
+      "Action": "AcceptMaterial",
+      "CanExecute": true,
+      "BlockingReason": null,
+      "DetailText": "1 Wood from Mira; expires as world time advances. Status: Open. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+      "CostText": "Receive 1 Wood",
+      "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+      "Principal": "90a6a57f94684f6630a75389e38385ab",
+      "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+      "Generation": 0,
+      "Witness": null,
+      "ExpectedActorRevision": 72,
+      "Intent": "AcceptMaterialProposalIntent",
+      "Proposal": "e0e890769359ff67bd97605238858294",
+      "Terms": {
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "Sender": "d8fb874274604fcaffa320d13f228fd6",
+        "Recipient": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Kind": "CountedSource",
+        "Lot": "67d8476bc8161d238aaa859a24a45b7c",
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0",
+        "Version": "c603d104fd21c40819d8dc0f6a4f5f3bc976936f7ac2c2cfe6ffefd62820614d",
+        "Source": "7855d5da1062423bcb8123e55a2fd591",
+        "Destination": "b63ce111cfde83b7d856d124e02418c2",
+        "Quantity": 1,
+        "ExpectedLotRevision": 0
+      }
+    },
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose one inventory stack in your pack.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. Inspection spends nothing.",
+        "CostText": "Choose a stack and quantity",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 141,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is accepted.",
+        "DetailText": "1 Wood from Mira; expires as world time advances. Status: Accepted. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive 1 Wood",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 141,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is accepted.",
+        "DetailText": "1 Wood from Mira; expires as world time advances. Status: Accepted. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 141,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "This gift is accepted.",
+        "DetailText": "1 Wood from Mira; expires as world time advances. Status: Accepted. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 141,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [
+    {
+      "Sequence": 80,
+      "Control": "GiftLot",
+      "Bounds": {
+        "X": 68,
+        "Y": 248,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0080-gift-GiftLot.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "GiftRecipient",
+      "Bounds": {
+        "X": 68,
+        "Y": 324,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0080-gift-GiftRecipient.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "GiftLess",
+      "Bounds": {
+        "X": 68,
+        "Y": 366,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0080-gift-GiftLess.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "GiftMore",
+      "Bounds": {
+        "X": 445,
+        "Y": 366,
+        "Width": 19,
+        "Height": 34
+      },
+      "Image": "0080-gift-GiftMore.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "PrepareGift",
+      "Bounds": {
+        "X": 68,
+        "Y": 408,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0080-gift-PrepareGift.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "GiftOffer",
+      "Bounds": {
+        "X": 488,
+        "Y": 214,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0080-gift-GiftOffer.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "GiftHistory",
+      "Bounds": {
+        "X": 488,
+        "Y": 377,
+        "Width": 396,
+        "Height": 34
+      },
+      "Image": "0080-gift-GiftHistory.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "ReviewGifts",
+      "Bounds": {
+        "X": 68,
+        "Y": 454,
+        "Width": 824,
+        "Height": 34
+      },
+      "Image": "0080-gift-ReviewGifts.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "GiftDraftDetails",
+      "Text": "Choose one stack, a recipient and quantity, then prepare. Nothing is sent while browsing.",
+      "Lines": 2,
+      "VisibleLines": 2,
+      "Bounds": {
+        "X": 68,
+        "Y": 387,
+        "Width": 396,
+        "Height": 55
+      },
+      "Image": "0080-gift-GiftDraftDetails.png"
+    },
+    {
+      "Sequence": 80,
+      "Control": "GiftOfferDetails",
+      "Text": "From Mira \u00B7 1 Wood\nStatus: Open\nReview the Gifts wheel to accept, decline or withdraw.",
+      "Lines": 4,
+      "VisibleLines": 4,
+      "Bounds": {
+        "X": 488,
+        "Y": 222,
+        "Width": 396,
+        "Height": 113
+      },
+      "Image": "0080-gift-GiftOfferDetails.png"
+    }
+  ],
+  "Production": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Gather",
+        "TargetName": "Wren",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": "Choose a plant to gather, or clear the selection.",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "ExpectedActorRevision": 141,
+        "Port": "1e03b8e8f005ed64dbef673e13afb82e",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "ExpectedActorRevision": 141,
+        "Port": "1e03b8e8f005ed64dbef673e13afb82e",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "Recipes": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Open": false,
+    "InventoryDisclosed": true,
+    "RecoveryDisclosed": true,
+    "CombatDisclosed": true,
+    "ProductionDisclosed": true,
+    "Selected": null,
+    "Notice": null,
+    "Entries": [],
+    "Prepared": null,
+    "Captured": null
+  },
+  "RecipeCaptures": [],
+  "Construction": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "ProductionDisclosed": true,
+    "InventoryDisclosed": false,
+    "RecoveryDisclosed": false,
+    "Projects": [
+      {
+        "ProjectId": {
+          "High": 4769591438588567364,
+          "Low": 9531811149500406226
+        },
+        "BuilderActorId": {
+          "High": 17641401865479743642,
+          "Low": 4165285749486511393
+        },
+        "DisplayName": "Small sapling guard",
+        "SiteFeet": {
+          "X": 27213,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "WorkFeet": {
+          "X": 27264,
+          "Y": 83328,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 325,
+            "Z": 1
+          }
+        },
+        "CompletedWork": 200,
+        "RequiredWork": 200,
+        "IsCompleted": true
+      }
+    ],
+    "Work": [],
+    "Structures": [
+      {
+        "Id": "f5fa849f85b0a95d3b599b6358ba42a7",
+        "Origin": {
+          "X": 27213,
+          "Y": 83072,
+          "Z": 256,
+          "Cell": {
+            "X": 106,
+            "Y": 324,
+            "Z": 1
+          }
+        },
+        "Members": [
+          {
+            "MemberIndex": 0,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 0,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 75,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 3750
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27213,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27233,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 1,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 0,
+              "MinY": 0,
+              "MinZ": 10,
+              "MaxX": 400,
+              "MaxY": 5,
+              "MaxZ": 246,
+              "VolumeMicrolitres": 472000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27213,
+                "Y": 83072,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27316,
+                "Y": 83074,
+                "Z": 319,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 2,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": -60,
+              "MinZ": 0,
+              "MaxX": 85,
+              "MaxY": 65,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 12500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83056,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83089,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 3,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": -60,
+              "MinZ": 10,
+              "MaxX": 85,
+              "MaxY": 0,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83056,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83072,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 4,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 75,
+              "MinY": 5,
+              "MinZ": 10,
+              "MaxX": 85,
+              "MaxY": 65,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27232,
+                "Y": 83073,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27235,
+                "Y": 83089,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 5,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 85,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 315,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 11500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27234,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27294,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 6,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": -60,
+              "MinZ": 0,
+              "MaxX": 325,
+              "MaxY": 65,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 12500
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83056,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83089,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 7,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": -60,
+              "MinZ": 10,
+              "MaxX": 325,
+              "MaxY": 0,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83056,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83072,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 8,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 315,
+              "MinY": 5,
+              "MinZ": 10,
+              "MaxX": 325,
+              "MaxY": 65,
+              "MaxZ": 20,
+              "VolumeMicrolitres": 6000
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27293,
+                "Y": 83073,
+                "Z": 258,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27297,
+                "Y": 83089,
+                "Z": 262,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          },
+          {
+            "MemberIndex": 9,
+            "Origin": {
+              "X": 27213,
+              "Y": 83072,
+              "Z": 256,
+              "Cell": {
+                "X": 106,
+                "Y": 324,
+                "Z": 1
+              }
+            },
+            "Geometry": {
+              "MinX": 325,
+              "MinY": 0,
+              "MinZ": 0,
+              "MaxX": 400,
+              "MaxY": 5,
+              "MaxZ": 10,
+              "VolumeMicrolitres": 3750
+            },
+            "Collision": {
+              "Minimum": {
+                "X": 27296,
+                "Y": 83072,
+                "Z": 256,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              },
+              "Maximum": {
+                "X": 27316,
+                "Y": 83074,
+                "Z": 259,
+                "Cell": {
+                  "X": 106,
+                  "Y": 324,
+                  "Z": 1
+                }
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "Reviewed": null
+  },
+  "ConstructionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 67852,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": true,
+  "Display": "macOS"
+}

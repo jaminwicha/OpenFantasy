@@ -1,0 +1,1743 @@
+{
+  "Kind": "native-four-player-roster-v1",
+  "Status": "failed",
+  "Failure": "System.InvalidOperationException: Native home-character target selection exceeded its bounded search.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.HomeTarget(EntityId target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.HomeActions.cs:line 24\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 94\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61",
+  "Stage": "home-target",
+  "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+  "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+  "Inputs": [
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83328,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83360,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83392,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 25984,
+        "Y": 83424,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 325,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 25984,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26048,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26080,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 101,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26112,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26144,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26176,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26240,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26272,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26304,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26336,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 102,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26400,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26432,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26464,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26496,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26560,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26592,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 103,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26624,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26656,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26688,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "right",
+      "Origin": {
+        "X": 26720,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83488,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83552,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83616,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83648,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83680,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 326,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83712,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 327,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83744,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 327,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83808,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 327,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83840,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 327,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83872,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 327,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83936,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 327,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 83968,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 328,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84032,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 328,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84064,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 328,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84096,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 328,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84160,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 328,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84224,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 329,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84288,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 329,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84320,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 329,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84384,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 329,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84448,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 329,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84512,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 330,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84544,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 330,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84608,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 330,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84672,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 330,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84704,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 330,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-walk",
+      "Direction": "down",
+      "Origin": {
+        "X": 26752,
+        "Y": 84736,
+        "Z": 256,
+        "Cell": {
+          "X": 104,
+          "Y": 331,
+          "Z": 1
+        }
+      },
+      "ShortPress": true
+    },
+    {
+      "Stage": "home-walk",
+      "Route": "roster-keyboard-controller",
+      "Key": "Escape"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "R"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    },
+    {
+      "Stage": "home-target",
+      "Route": "roster-keyboard-controller",
+      "Key": "Q"
+    }
+  ],
+  "Submissions": [],
+  "PermissionSubmissions": [],
+  "Selection": {
+    "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+    "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+    "Port": "a24d6c72b1db5a1bbbf0377050293794",
+    "HomeActor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Witness": null,
+    "Capabilities": null,
+    "Ready": false,
+    "PresentedGeneration": 0,
+    "PresentedMatches": true,
+    "Feet": {
+      "X": 26752,
+      "Y": 84768,
+      "Z": 256,
+      "Cell": {
+        "X": 104,
+        "Y": 331,
+        "Z": 1
+      }
+    },
+    "HomeFeet": {
+      "X": 26752,
+      "Y": 84768,
+      "Z": 256,
+      "Cell": {
+        "X": 104,
+        "Y": 331,
+        "Z": 1
+      }
+    },
+    "Phase": "Exploration",
+    "EncounterId": null,
+    "TimingRevision": null,
+    "CanWait": false,
+    "CanQueue": false,
+    "PlayerIsDue": false,
+    "Hp": 60,
+    "Mp": 10,
+    "HomeCanWait": false,
+    "HomeTimingRevision": null,
+    "EncounterActors": []
+  },
+  "ControlBoard": null,
+  "SelectionCaptures": [],
+  "CareLibrary": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Open": false,
+    "RecoveryDisclosed": true,
+    "DispositionDisclosed": true,
+    "InventoryDisclosed": true,
+    "CombatDisclosed": true,
+    "Hp": 60,
+    "Entries": [],
+    "Selected": null,
+    "Prepared": null,
+    "Captured": null,
+    "Uses": [
+      {
+        "Id": "4687be4683e912343e998b3c36e5fcbd",
+        "ItemName": "Potion",
+        "HealHitPoints": 40,
+        "ExpectedHealingHp": 0,
+        "CanUse": false,
+        "Reason": "FullHealth",
+        "Ingredient": null
+      }
+    ],
+    "Permissions": [
+      {
+        "Id": "c6566b0cb96efe9adbc2a21e566783c3",
+        "Helper": "f4d2d9874bd5689a39ce11520e23e521",
+        "HelperName": "Wren",
+        "IsActive": true,
+        "CanRevoke": true
+      }
+    ]
+  },
+  "CareLibraryCaptures": [],
+  "Trading": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "TradeDisclosed": true,
+    "InventoryDisclosed": true,
+    "PrivateHistory": true,
+    "Open": false,
+    "Wallet": 0,
+    "InquiryPending": false,
+    "AskDisabled": false,
+    "Draft": {
+      "Market": null,
+      "Direction": "Buy",
+      "Quantity": 1,
+      "Lot": null,
+      "Review": null
+    },
+    "Inquiry": null,
+    "Stalls": [
+      {
+        "Market": "5e813693aa0840644c174974aee9e0e1",
+        "Merchant": "8a022210e26654418cd4324a4ff5b7e7",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      },
+      {
+        "Market": "974ba1c50cdc1ba2afdcc8af2da47878",
+        "Merchant": "a7ad00d8bb6e473472bb1d985514e5fe",
+        "IsAvailableInPerson": false,
+        "Lots": [],
+        "Showing": null
+      }
+    ],
+    "Quotes": [],
+    "Reviewed": null
+  },
+  "TradeCaptures": [],
+  "Gifts": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "InventoryDisclosed": true,
+    "PackOpen": false,
+    "PanelVisible": false,
+    "WheelOpen": false,
+    "PanelActor": null,
+    "PanelGeneration": null,
+    "PanelLifetime": 0,
+    "OfferSelectionVersion": 0,
+    "HistoryVisible": false,
+    "Lots": [
+      {
+        "Kind": "CountedSource",
+        "Lot": "006b84efb94fbcea71473419e13479da",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "bf937ccc8defe9ef5c1d602575b2f725"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "51a9a253844953e508982cbc64579c0f",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "a64b7d9ae8f3757bfefc13c0b9fcdaf9"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "855fa6570426ca4a3cc5b2efaa5c5709",
+        "Quantity": 1,
+        "Revision": 0,
+        "Definition": "19fd80672aee3de952edb5cb376e6b25"
+      },
+      {
+        "Kind": "CountedSource",
+        "Lot": "c4b860dd62334d0e323eeb2d87d5c6bd",
+        "Quantity": 8,
+        "Revision": 0,
+        "Definition": "f20a24bbcf04b36ebcb90a1d04ca58c0"
+      }
+    ],
+    "Offers": [],
+    "Draft": null,
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "ProposeMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Creation reserves no stock. The recipient must separately accept this exact gift. Inspection spends nothing.",
+        "CostText": "Choose a stack and quantity",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 69,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "AcceptMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "Receive Select an offer",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 69,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "DeclineMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 69,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      },
+      {
+        "Action": "WithdrawMaterial",
+        "CanExecute": false,
+        "BlockingReason": "Choose and prepare gifts for the current character selection.",
+        "DetailText": "Inspection and selection spend nothing. Open gifts reserve no stock. Acceptance transfers stock; it does not heal or grant care permission.",
+        "CostText": "No cost",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "Generation": 0,
+        "Witness": null,
+        "ExpectedActorRevision": 69,
+        "Intent": null,
+        "Proposal": null,
+        "Terms": null
+      }
+    ]
+  },
+  "GiftSnapshots": [],
+  "GiftCaptures": [],
+  "Production": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Disclosed": false,
+    "InventoryDisclosed": false,
+    "Effort": null,
+    "CraftingRevision": null,
+    "Nodes": [],
+    "Tools": [],
+    "Recipes": [],
+    "Ingredients": [],
+    "Sites": [],
+    "Reviewed": null,
+    "CurrentWheel": null,
+    "Actions": [
+      {
+        "Action": "Gather",
+        "Label": "Pick berries",
+        "TargetName": "Berry Bush",
+        "Target": "06ab75990fe45d9bdd732881df1bae77",
+        "CanExecute": true,
+        "CostText": "400 effort",
+        "DetailText": "You have 1000 effort.",
+        "BlockingReason": null,
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "ExpectedActorRevision": 69,
+        "Port": "a24d6c72b1db5a1bbbf0377050293794",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": {
+          "Node": "06ab75990fe45d9bdd732881df1bae77",
+          "ExpectedNodeRevision": 0,
+          "Tool": "51a9a253844953e508982cbc64579c0f",
+          "ExpectedToolLotRevision": 0
+        }
+      },
+      {
+        "Action": "Craft",
+        "Label": "Pack rations",
+        "TargetName": "Your pack",
+        "Target": null,
+        "CanExecute": false,
+        "CostText": "1 wood, 2 berries",
+        "DetailText": null,
+        "BlockingReason": "Pack two berries and one wood to make two rations.",
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Principal": "90a6a57f94684f6630a75389e38385ab",
+        "Session": "9f6a46edc7d99170c11b2c0f41e7a9e0",
+        "World": "6c2449ed9723e1aa18102f192fd1a4b4",
+        "Branch": "10e9ef81186fea2770a67cfc7d6b1a77",
+        "ExpectedActorRevision": 69,
+        "Port": "a24d6c72b1db5a1bbbf0377050293794",
+        "Generation": 0,
+        "Witness": null,
+        "Intent": null
+      }
+    ]
+  },
+  "ProductionCaptures": [],
+  "Recipes": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "Open": false,
+    "InventoryDisclosed": true,
+    "RecoveryDisclosed": true,
+    "CombatDisclosed": true,
+    "ProductionDisclosed": true,
+    "Selected": null,
+    "Notice": null,
+    "Entries": [],
+    "Prepared": null,
+    "Captured": null
+  },
+  "RecipeCaptures": [],
+  "Construction": {
+    "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+    "Generation": 0,
+    "ProductionDisclosed": true,
+    "InventoryDisclosed": false,
+    "RecoveryDisclosed": false,
+    "Projects": [],
+    "Work": [],
+    "Structures": [],
+    "Reviewed": null
+  },
+  "ConstructionCaptures": [],
+  "GiftOpeningLayout": null,
+  "ElapsedMilliseconds": 44422,
+  "NativeFocused": false,
+  "ObservedNativeFocus": false,
+  "InitialFocusGuard": true,
+  "Unfocusable": true,
+  "Display": "macOS"
+}

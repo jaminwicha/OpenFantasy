@@ -55,7 +55,7 @@ session's player. [`LocalWorldSession`](../../src/OpenFantasy.Hosting/Simulation
 exploration cutoff after the genuine holds — pause, retained consequence, care, the player's own lifecycle choice and an
 active encounter — and before any exploration step, **whether or not an ordinary player request is waiting**. It
 proposes the ordinary `EnterEncounterIntent` under the initiator's own control binding and revisions only when the
-world is the retreat profile, the cutoff is unheld (no reading hold, retained consequence, care obligation or
+world admits the retreat capability, the cutoff is unheld (no reading hold, retained consequence, care obligation or
 encounter), the initiator is alive with zero readiness debt, every positive participant can take part, and the player
 is within the entry range on a clear centre sightline (`QueryInteraction`, the authority's own check). The authority
 re-validates; a proposal it would refuse is not committed and the ordinary step proceeds. When the entry commits, a

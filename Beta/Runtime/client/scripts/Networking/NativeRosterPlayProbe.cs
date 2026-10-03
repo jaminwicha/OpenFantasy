@@ -90,6 +90,8 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "pause": await Pause(true); break;
             case "resume": await Pause(false); break;
             case "walk": await Walk(request.GetProperty("Direction").GetString()!); break;
+            case "home-target": await HomeTarget(RequestActor(request)); break;
+            case "home-action": await HomeAction(request.GetProperty("Direction").GetString()!); break;
             case "enter": await Enter(EntityId.Parse(request.GetProperty("Target").GetString()!)); break;
             case "wait": await ChooseWait(); break;
             case "strike": await ChooseWheel(FarmSemanticAction.Strike); break;

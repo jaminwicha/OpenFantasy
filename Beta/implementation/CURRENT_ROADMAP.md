@@ -29,7 +29,9 @@ to four through explicit hosted creation. Older worlds remain separately selecta
 is silently migrated. Native gathering/crafting/quest/build/mining/water/first-merchant and paused
 reopening are qualified. The [solo adventure continuation](p02/adventure-journey/RESULT.md) connects
 that same earned save through buy/haul/danger/retreat/care/sell/return and exact paused world recovery.
-Shared participation, deeper changed-place behavior and human acceptance remain open. There are 38
+The [two-player opening](p02/shared-adventure/RESULT.md) also connects independent gathering,
+consented supplies, crafting, quest delivery and shared autonomous construction. The complete shared
+expedition, deeper changed-place behavior and human acceptance remain open. There are 38
 supported snapshot codecs, not 38 completed worlds. The original farm is one
 32×32×16 region; the cargo corridor has14 such regions within a16-region interpretation. Those proofs
 do not establish an effectively endless frontier, a20,000-resident city or complete NPC cognition.
@@ -48,6 +50,7 @@ and workflow cost without claiming a shipping percentage, date or provider-credi
 | Shared participant History | Qualified for its bounded native/managed scope and committed | Native paid-quote/paging breadth and historical-name catalogs remain separate work |
 | Delegated paid-work recovery | Qualified within the [recovery result](p02/delegated-control-recovery/RESULT.md): 95 cases, ten new, three native; exact source/build reconciliation | Bounded checkpoint complete; populated allowance rows, grantee reacquisition and listener/socket-death proofs remain. No full reliability claim |
 | Ordinary adventure entry | Qualified solo opening and same-save trade/danger/retreat/care/sale/return/reopening; separate four-player TLS movement/reconnect | Shared participation in this journey, deeper NPC/story/environment and human acceptance remain |
+| Shared adventure opening | Two native participants gather, transfer an earned lot, craft and fund Wren; ten exact authenticated receipts and original-genesis replay | Full cooperative expedition, party-exit law, four-player journey and human acceptance remain; retained failed runs are not erased |
 | Full P02 | Partial; material gameplay and presentation gaps | Every row in the P02 closure table below, integrated in one retained lineage, plus the unchanged human/native exit |
 | Complete desktop game | Broad later work remains | Complete non-mobile scope and catalogs through P11, full P12 quality/scale/campaign proof, P13 packaged desktop release |
 | Mobile completion | Later required phase | P14 actual Android/iOS/device/cross-play acceptance using the same game core |
@@ -132,6 +135,13 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
 1. Qualify shared participation in the connected buy/haul/danger/retreat/care/sell/return journey;
    four-player connection/movement/reconnect alone is not full cooperative gameplay. The solo route
    retains Wren's already-completed construction, not yet new autonomous changes during the expedition.
+   The [shared opening](p02/shared-adventure/RESULT.md) first joins independent gathering, consented
+   supplies, crafting and Wren's work in one fresh two-human world. Its bounded native run is qualified;
+   this does not complete the expedition or general shared quest attribution.
+   A separate party-exit design is necessary before calling the solo danger/retreat route cooperative:
+   roster scenarios put the humans on the same side, whereas retreat law v2 admits only a lone
+   combatant on its side. Define commitments, member movement/incapacity, opponent continuity,
+   interruption and recovery without dropping the `AllyRemains` safeguard or weakening Full Wait.
    Preserve prior saves and unsupported transition refusal. Keep the unexplained earlier post-draw
    timeout visible; a later instrumented pass does not establish its cause or production reliability.
 

@@ -1,0 +1,17 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:01:29.12]     OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world [FAIL]
+  Failed OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world [1 m 28 s]
+  Error Message:
+   Shared opening walk exceeded its native input sample bound.
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeSharedAdventureTests.<>c__DisplayClass2_0.<<Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world>g__WalkNear|7>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 194
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 74
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 138
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 138
+   at OpenFantasy.Server.Tests.NativeSharedAdventureTests.Two_adventurers_gather_share_craft_and_fund_Wrens_work_in_the_same_fresh_world() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSharedAdventureTests.cs:line 175
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/shared-adventure/checks/native-01.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 1 m 28 s - OpenFantasy.Server.Tests.dll (net10.0)
