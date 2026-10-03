@@ -1,0 +1,44 @@
+{
+  "priorComparisonInputs": "INHERITED_CORE_INPUTS.json",
+  "reason": "Core/content sources remain exact but Debug Core and Core.Tests binaries differ; current generated AssemblyInformationalVersion carries HEAD0132b308. Prior test acceptance is not inherited as binary-equivalent. Run full current Core suite.",
+  "observedCoreAssemblyInfo": "Beta/Runtime/src/OpenFantasy.Core/obj/Debug/net8.0/OpenFantasy.Core.AssemblyInfo.cs",
+  "observedVersion": "1.0.0+0132b308c0880bc2a9a11f53a2ce8d68dea99255",
+  "changedBinaries": {
+    "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "before": "d37e63e124029c244d651a78c5a470294ff7eb8bee5753dcc54a85a7d826cd1a",
+      "after": "15173d03122d805d37552643e524bce88edf5ff841850e26ffcd5c08cdfd3c3b"
+    },
+    "Beta/Runtime/src/OpenFantasy.Server/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "before": "d37e63e124029c244d651a78c5a470294ff7eb8bee5753dcc54a85a7d826cd1a",
+      "after": "15173d03122d805d37552643e524bce88edf5ff841850e26ffcd5c08cdfd3c3b"
+    },
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+      "before": "d37e63e124029c244d651a78c5a470294ff7eb8bee5753dcc54a85a7d826cd1a",
+      "after": "15173d03122d805d37552643e524bce88edf5ff841850e26ffcd5c08cdfd3c3b"
+    },
+    "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "before": "d37e63e124029c244d651a78c5a470294ff7eb8bee5753dcc54a85a7d826cd1a",
+      "after": "15173d03122d805d37552643e524bce88edf5ff841850e26ffcd5c08cdfd3c3b"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Core.dll": {
+      "before": "d37e63e124029c244d651a78c5a470294ff7eb8bee5753dcc54a85a7d826cd1a",
+      "after": "15173d03122d805d37552643e524bce88edf5ff841850e26ffcd5c08cdfd3c3b"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "before": "d37e63e124029c244d651a78c5a470294ff7eb8bee5753dcc54a85a7d826cd1a",
+      "after": "15173d03122d805d37552643e524bce88edf5ff841850e26ffcd5c08cdfd3c3b"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": {
+      "before": "1203bb41c3d0db61adc67b9253e8588a89407fc51e71df0430d332688e5a91bf",
+      "after": "6f7bf7645cd5abddbfd20340a25b898f81c945809eabfaf6d1dec898f42922e2"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "before": "d37e63e124029c244d651a78c5a470294ff7eb8bee5753dcc54a85a7d826cd1a",
+      "after": "15173d03122d805d37552643e524bce88edf5ff841850e26ffcd5c08cdfd3c3b"
+    },
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": {
+      "before": "d37e63e124029c244d651a78c5a470294ff7eb8bee5753dcc54a85a7d826cd1a",
+      "after": "15173d03122d805d37552643e524bce88edf5ff841850e26ffcd5c08cdfd3c3b"
+    }
+  }
+}

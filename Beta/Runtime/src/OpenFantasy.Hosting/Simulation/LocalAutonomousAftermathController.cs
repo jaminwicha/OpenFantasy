@@ -23,6 +23,7 @@ internal sealed class LocalAutonomousAftermathController
 
         EntityId[] actors = outcome.RequiredHumans.Where(actor =>
             state.Controllers.Get(actor).Mode == WorldControllerMode.Autonomous
+            && state.EffectiveControl?.Find(actor)?.Witness is null
             && !state.EncounterOutcome!.HasAcknowledged(actor)).Order().ToArray();
 
         // A prior agreement is permission, not treatment. Exact-defeat admission also checks the

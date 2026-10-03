@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e9850efe-bb36-4acb-91e8-f065994b8989" name="@mac 2026-10-02 21:28:49" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-02T21:28:49.5865780-05:00" queuing="2026-10-02T21:28:49.5865780-05:00" start="2026-10-02T21:28:44.6650180-05:00" finish="2026-10-02T21:28:53.9815270-05:00" />
+  <TestSettings name="default" id="8b0d119b-fb35-49bb-9d38-202bd8a8463a">
+    <Deployment runDeploymentRoot="_mac_2026-10-02_21_28_49" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="55f55796-8311-4178-9faf-5bbd42379f10" testId="d21d8ba4-bd47-ca74-bc41-69d0fe9f4fe9" testName="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Stale_port_disposal_and_transport_callback_cannot_release_a_replacement_ports_assignment" computerName="mac" duration="00:00:00.4064926" startTime="2026-10-02T21:28:52.5561220-05:00" endTime="2026-10-02T21:28:52.9621870-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="55f55796-8311-4178-9faf-5bbd42379f10" />
+    <UnitTestResult executionId="7abe7f47-881e-4b50-b20e-9f5dc4d13911" testId="1a5395a1-8ad8-c443-76c5-2885c195c636" testName="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Startup_releases_saved_possession_without_offline_gameplay_or_loss_of_permission_and_paid_work" computerName="mac" duration="00:00:01.5939043" startTime="2026-10-02T21:28:49.5582340-05:00" endTime="2026-10-02T21:28:51.1500750-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7abe7f47-881e-4b50-b20e-9f5dc4d13911" />
+    <UnitTestResult executionId="a28c00ac-0315-439d-b116-d8905b9fe2a7" testId="5cd74c89-8d2e-7076-b568-1ef8ab0d8552" testName="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Ordinary_dispose_and_actual_transport_loss_release_only_the_grantees_live_custody(transportLoss: False)" computerName="mac" duration="00:00:00.5418969" startTime="2026-10-02T21:28:51.1517210-05:00" endTime="2026-10-02T21:28:51.6930010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a28c00ac-0315-439d-b116-d8905b9fe2a7" />
+    <UnitTestResult executionId="7a35a47d-c9e4-4e51-8082-6c51abd6b5e3" testId="f520bec0-08fc-26f8-4c1c-323f65d9955f" testName="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Captured_grant_episode_and_revision_must_match_and_stale_or_foreign_release_preserves_replacement" computerName="mac" duration="00:00:00.4097458" startTime="2026-10-02T21:28:52.1460340-05:00" endTime="2026-10-02T21:28:52.5553440-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7a35a47d-c9e4-4e51-8082-6c51abd6b5e3" />
+    <UnitTestResult executionId="71c1af5a-40d1-45f5-b46c-21151730d529" testId="fb40a0ce-f5d0-c853-1fa8-e57aaadd65d8" testName="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Ordinary_dispose_and_actual_transport_loss_release_only_the_grantees_live_custody(transportLoss: True)" computerName="mac" duration="00:00:00.4517430" startTime="2026-10-02T21:28:51.6939450-05:00" endTime="2026-10-02T21:28:52.1451990-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="71c1af5a-40d1-45f5-b46c-21151730d529" />
+    <UnitTestResult executionId="990557cd-fe59-4da6-8fd0-079f468d8869" testId="c38e2d94-ee56-2189-36d0-f75498c701b9" testName="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Actual_establishment_and_measured_owner_expiry_are_required_and_acquisition_clears_unaccepted_input" computerName="mac" duration="00:00:02.3598612" startTime="2026-10-02T21:28:47.1902320-05:00" endTime="2026-10-02T21:28:49.5520080-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="990557cd-fe59-4da6-8fd0-079f468d8869" />
+    <UnitTestResult executionId="c0243d62-2aa5-498e-bbba-9b6b681a7166" testId="c7839c17-c2fe-1727-899c-3d6171d3b5ad" testName="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Owner_rejoins_before_paid_work_is_safe_and_invalidates_possession_without_erasing_the_accepted_attack" computerName="mac" duration="00:00:00.9288826" startTime="2026-10-02T21:28:52.9629860-05:00" endTime="2026-10-02T21:28:53.8908830-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c0243d62-2aa5-498e-bbba-9b6b681a7166" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Ordinary_dispose_and_actual_transport_loss_release_only_the_grantees_live_custody(transportLoss: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5cd74c89-8d2e-7076-b568-1ef8ab0d8552">
+      <Execution id="a28c00ac-0315-439d-b116-d8905b9fe2a7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests" name="Ordinary_dispose_and_actual_transport_loss_release_only_the_grantees_live_custody" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Owner_rejoins_before_paid_work_is_safe_and_invalidates_possession_without_erasing_the_accepted_attack" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c7839c17-c2fe-1727-899c-3d6171d3b5ad">
+      <Execution id="c0243d62-2aa5-498e-bbba-9b6b681a7166" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests" name="Owner_rejoins_before_paid_work_is_safe_and_invalidates_possession_without_erasing_the_accepted_attack" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Startup_releases_saved_possession_without_offline_gameplay_or_loss_of_permission_and_paid_work" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1a5395a1-8ad8-c443-76c5-2885c195c636">
+      <Execution id="7abe7f47-881e-4b50-b20e-9f5dc4d13911" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests" name="Startup_releases_saved_possession_without_offline_gameplay_or_loss_of_permission_and_paid_work" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Actual_establishment_and_measured_owner_expiry_are_required_and_acquisition_clears_unaccepted_input" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c38e2d94-ee56-2189-36d0-f75498c701b9">
+      <Execution id="990557cd-fe59-4da6-8fd0-079f468d8869" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests" name="Actual_establishment_and_measured_owner_expiry_are_required_and_acquisition_clears_unaccepted_input" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Captured_grant_episode_and_revision_must_match_and_stale_or_foreign_release_preserves_replacement" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f520bec0-08fc-26f8-4c1c-323f65d9955f">
+      <Execution id="7a35a47d-c9e4-4e51-8082-6c51abd6b5e3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests" name="Captured_grant_episode_and_revision_must_match_and_stale_or_foreign_release_preserves_replacement" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Stale_port_disposal_and_transport_callback_cannot_release_a_replacement_ports_assignment" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d21d8ba4-bd47-ca74-bc41-69d0fe9f4fe9">
+      <Execution id="55f55796-8311-4178-9faf-5bbd42379f10" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests" name="Stale_port_disposal_and_transport_callback_cannot_release_a_replacement_ports_assignment" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Ordinary_dispose_and_actual_transport_loss_release_only_the_grantees_live_custody(transportLoss: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="fb40a0ce-f5d0-c853-1fa8-e57aaadd65d8">
+      <Execution id="71c1af5a-40d1-45f5-b46c-21151730d529" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests" name="Ordinary_dispose_and_actual_transport_loss_release_only_the_grantees_live_custody" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="d21d8ba4-bd47-ca74-bc41-69d0fe9f4fe9" executionId="55f55796-8311-4178-9faf-5bbd42379f10" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1a5395a1-8ad8-c443-76c5-2885c195c636" executionId="7abe7f47-881e-4b50-b20e-9f5dc4d13911" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5cd74c89-8d2e-7076-b568-1ef8ab0d8552" executionId="a28c00ac-0315-439d-b116-d8905b9fe2a7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f520bec0-08fc-26f8-4c1c-323f65d9955f" executionId="7a35a47d-c9e4-4e51-8082-6c51abd6b5e3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="fb40a0ce-f5d0-c853-1fa8-e57aaadd65d8" executionId="71c1af5a-40d1-45f5-b46c-21151730d529" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c38e2d94-ee56-2189-36d0-f75498c701b9" executionId="990557cd-fe59-4da6-8fd0-079f468d8869" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c7839c17-c2fe-1727-899c-3d6171d3b5ad" executionId="c0243d62-2aa5-498e-bbba-9b6b681a7166" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="7" executed="7" passed="7" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.63]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.17]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.34]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:08.09]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

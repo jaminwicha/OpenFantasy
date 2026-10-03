@@ -1,0 +1,21 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.63]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.17]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.34]   Starting:    OpenFantasy.Hosting.Tests
+  Passed OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Actual_establishment_and_measured_owner_expiry_are_required_and_acquisition_clears_unaccepted_input [2 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Startup_releases_saved_possession_without_offline_gameplay_or_loss_of_permission_and_paid_work [1 s]
+  Passed OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Ordinary_dispose_and_actual_transport_loss_release_only_the_grantees_live_custody(transportLoss: False) [541 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Ordinary_dispose_and_actual_transport_loss_release_only_the_grantees_live_custody(transportLoss: True) [451 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Captured_grant_episode_and_revision_must_match_and_stale_or_foreign_release_preserves_replacement [409 ms]
+[xUnit.net 00:00:08.09]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Stale_port_disposal_and_transport_callback_cannot_release_a_replacement_ports_assignment [406 ms]
+  Passed OpenFantasy.Hosting.Tests.Simulation.EffectiveControl.LiveEffectiveControlTests.Owner_rejoins_before_paid_work_is_safe_and_invalidates_possession_without_erasing_the_accepted_attack [928 ms]
+
+Test Run Successful.
+Total tests: 7
+     Passed: 7
+ Total time: 9.3239 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/live-control-presence/qualification/presence-20261003T022836397902Z/checks.trx

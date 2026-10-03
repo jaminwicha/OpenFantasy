@@ -51,6 +51,12 @@ from overwriting a newer segment. The segment takes each persisted subtotal as a
 monotonic elapsed time from one start timestamp, capped at the 30-second threshold. It does not sum
 rounded cutoff increments. UTC changes, opening/inspection and offline duration do not enter this sum.
 
+Live host attachment also reconciles [effective co-player assignments](effective-control.md) separately
+from elapsed allowance. A saved assignment is released before play because its original live port no
+longer exists. This nonadvancing journal boundary retains consent and the original controller episode;
+it neither resets the measured allowance nor restores the absent owner. Database inspection alone
+performs neither live assignment acquisition nor cleanup.
+
 At a cutoff, the host captures one timestamp for both checkpointing and expiry selection. Readiness
 does not stop external clock observation; zero ready players still grant no simulation time or new
 autonomous action. The host checkpoints the full current allowance set before submitting an expiry.

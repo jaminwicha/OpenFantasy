@@ -189,6 +189,7 @@ public sealed partial class LocalWorldSession
         await _serialization.WaitAsync().ConfigureAwait(false);
         try
         {
+            RelinquishControlCustody(player);
             DetachPlayer(player);
         }
         finally { _serialization.Release(); }
@@ -204,6 +205,7 @@ public sealed partial class LocalWorldSession
             player.Connected = false;
             player.Ready = false;
             player.ClearMovement();
+            player.LiveControlWitness = null;
             player.Pending?.Completion.TrySetCanceled();
             player.Pending = null;
             _players.Remove(player.ActorId);

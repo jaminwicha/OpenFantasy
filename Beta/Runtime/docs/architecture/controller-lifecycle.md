@@ -67,7 +67,11 @@ at least 30 seconds have passed. Expiry neither selects an action nor earns simu
 idle actor has no timer. Episode comparison prevents an old timer from expiring a newer disconnect.
 Ordinary local disposal, unsuccessful admission, server shutdown and host failure do not start timers.
 
-After successful Welcome and final admission checks, a returning port requests restoration. At an
+After successful Welcome and final admission checks, a returning port invalidates any effective
+co-player assignment for its home character and requests restoration. Assignment release precedes
+the safe-return check: a returning owner blocks new delegated input even while an accepted obligation
+delays human restoration. The release preserves that obligation and the original disconnect episode.
+At an
 unsafe boundary it remains provisionally attached and unable to make new choices or trade inquiries;
 exact committed receipts and participant observations remain readable. The host retries the boundary
 check at its existing cutoff, without extending the handshake deadline or erasing accepted work.
@@ -94,7 +98,8 @@ Older profiles have no controller facet and retain ordinary connection closure w
 ## Conservative encounter selection
 
 [LocalAutonomousEncounterController](../../src/OpenFantasy.Hosting/Simulation/LocalAutonomousEncounterController.cs)
-selects choices only for due required-human actors whose durable assignment is Autonomous. It retains
+selects choices only for due required-human actors whose durable assignment is Autonomous and who
+have no active effective co-player assignment. It retains
 their resident identity, timing role, original principal/session entitlement, body and possessions.
 It never selects for Human or ReconnectAllowance. The host processes safe restoration before encounter
 selection and requires at least one gameplay-ready port for fresh autonomous choices. The exception
@@ -122,7 +127,8 @@ below retains distinct permission, acceptance, treatment and completion facts.
 ## Autonomous aftermath
 
 [LocalAutonomousAftermathController](../../src/OpenFantasy.Hosting/Simulation/LocalAutonomousAftermathController.cs)
-operates only at an outcome for unacknowledged Autonomous required participants, without reading,
+operates only at an outcome for unacknowledged Autonomous required participants without active
+effective co-player assignments, and without reading,
 excavation or care obligations already holding the boundary. Safe human restoration precedes selection.
 [LocalWorldSession.Aftermath](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.Aftermath.cs)
 requires a gameplay-ready port; the returning-player accepted-work exception grants no new choice.

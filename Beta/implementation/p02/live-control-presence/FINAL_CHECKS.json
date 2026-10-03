@@ -1,0 +1,128 @@
+{
+  "status": "bounded local host custody verified; uninstrumented server timing gate and full actor selection remain open",
+  "milestone": "codex/milestone-live-control-presence-20261003",
+  "checkpoint": "codex/checkpoint-before-live-control-presence-20261003T021941Z",
+  "sourceHead": "0132b308c0880bc2a9a11f53a2ce8d68dea99255",
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T022951542527Z/report.json",
+      "sha256": "fc590239d508e3f91283cbd6338d47515153eb1b9ae84ec7a35cad63703cf343",
+      "seconds": 15.380286040977808,
+      "outcomes": null,
+      "accepted": true
+    },
+    "core": {
+      "path": "qualification/core-20261003T023816968942Z/report.json",
+      "sha256": "e43403383af337ab4ad736d50caced4e40bb4308eb32168309e611f29ec4a655",
+      "seconds": 90.24750408300315,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "accepted": true
+    },
+    "presence": {
+      "path": "qualification/presence-20261003T023011880971Z/report.json",
+      "sha256": "c5c4f429c1ff70eda7da7ac78cedbcf865b947b80b22fe83fd8cc3253a5a7087",
+      "seconds": 11.688745958002983,
+      "outcomes": {
+        "Passed": 8
+      },
+      "accepted": true
+    },
+    "controllers": {
+      "path": "qualification/controllers-20261003T023024006252Z/report.json",
+      "sha256": "292e6f60bcae5bfd800942d598b217714d18a17471dd05a6e7db1d1a99f7881b",
+      "seconds": 35.05605270899832,
+      "outcomes": {
+        "Passed": 38
+      },
+      "accepted": true
+    },
+    "effective": {
+      "path": "qualification/effective-20261003T023059377085Z/report.json",
+      "sha256": "721ad882dd24589f60b34b09e0769fbfd5a5bfdea5add7b7e1e5ce7ed4c7f811",
+      "seconds": 22.05649554100819,
+      "outcomes": {
+        "Passed": 17
+      },
+      "accepted": true
+    },
+    "player-routing": {
+      "path": "qualification/player-routing-20261003T023121776238Z/report.json",
+      "sha256": "ec4d83ea01abe5ec716f022e624cd79ee1ea36a3be7ae849d947fc69cca88eaf",
+      "seconds": 34.570694624999305,
+      "outcomes": {
+        "Passed": 91
+      },
+      "accepted": true
+    },
+    "server-compatibility": {
+      "path": "qualification/server-compatibility-20261003T023304092316Z/report.json",
+      "sha256": "0ad8dd0715f25d028198426495cc97651e3c69668f87a25d3f3dc24a23644112",
+      "seconds": 32.69492379098665,
+      "outcomes": {
+        "Passed": 76,
+        "NotExecuted": 1
+      },
+      "accepted": true,
+      "claim": "instrumented diagnostic only; original uninstrumented gate remains failed"
+    }
+  },
+  "freshDistinctPassingCases": 2115,
+  "newPassingCases": 8,
+  "freshHostingPassingCases": 154,
+  "serverCompatibilityGateClosed": false,
+  "normalServerFailure": {
+    "report": "qualification/server-compatibility-20261003T023156547590Z/report.json",
+    "sha256": "68382a4276588fb2b7617e50870bda21c9e0899708fca101f5e0a6a77cfe45d4",
+    "outcomes": {
+      "Failed": 1,
+      "Passed": 75,
+      "NotExecuted": 1
+    },
+    "seconds": 34.271957166987704
+  },
+  "coreRevalidation": {
+    "priorPacket": "../host-latency-diagnosis",
+    "priorReport": "qualification/core-20261003T015723560650Z/report.json",
+    "priorReportSha256": "a871c9114230ba9bc0a47144a2b16f2057770a487ddb1c36688e66c916845dd8",
+    "passingCases": 1885,
+    "unchangedSourceFiles": 1121,
+    "changedBinaries": [
+      "Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "Beta/Runtime/src/OpenFantasy.Server/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll",
+      "Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Core.dll",
+      "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll",
+      "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+      "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll"
+    ],
+    "acceptance": "fresh current-binary Core suite; no binary-equivalence claim"
+  },
+  "protectedTestsAndFixtures": 752,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "checkedLinks": 1397,
+  "unrunCases": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "toolPins": {
+    "Beta/implementation/p02/live-control-presence/check.py": "27d3ea941c4ec6fd0335cc5e805dd6ad055cbddeb107da69a048cda12df209ac",
+    "Beta/implementation/p02/live-control-presence/finalize.py": "43e7e20d45bbff00c26718960b2f47ad07d3945a19eee6aeaf95a286dbb45b63",
+    "Beta/implementation/p02/shared-player-sessions/check.py": "cf10cae8d2918df4c5e4b4c7384a870ccf0cb41a0f3bc51d9920d07af6682f3b"
+  },
+  "retainedLocalFailures": [
+    "qualification/server-compatibility-20261003T023156547590Z/report.json"
+  ],
+  "limits": [
+    "Internal assignment API only; no public local/TLS/Godot actor-switching interface or selection generations.",
+    "Consent and accepted paid gameplay preparation use actual trusted journal commands; they do not prove selected-port input.",
+    "In-memory actual admission is not TLS/rendered/device acceptance.",
+    "Complete previous storage aggregate is retained as previous-source evidence, not relabeled a fresh aggregate.",
+    "Profile40 actual process-kill, archive-selection, native, human, full phase and production gates remain open.",
+    "Earlier timing failures remain unresolved; no deadlines, movement leases or acceptance thresholds changed.",
+    "No external provider request or claimed Claude credit saving."
+  ]
+}

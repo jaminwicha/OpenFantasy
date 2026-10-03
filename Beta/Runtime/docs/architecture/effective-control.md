@@ -87,9 +87,39 @@ permanent home entitlement. The supplied command must retain its original princi
 A fresh command still needs current authority. Receipt lookup grants no private inventory, proposal,
 quote or market-history access; those readers retain their independent authorization.
 
+## Live host assignment custody
+
+[LocalWorldSession.EffectiveControl](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.EffectiveControl.cs)
+binds acquisition and release to the current authenticated port under the sole host serialization gate.
+An immutable [LocalControlAcquisition](../../src/OpenFantasy.Hosting/Simulation/EffectiveControl/LocalControlAcquisition.cs)
+captures the accepted grant, capability terms, assignment revision and original disconnect episode.
+The host derives the grantee from the port's permanent home binding and creates the new assignment
+cause and sequence. Core still adjudicates the exact recorded prerequisites. A stale request is a
+refusal, not a new grant or an opportunity to recapture different terms.
+
+Only a current port whose final network admission completed can acquire. Saved Human state,
+possession of a credential and provisional attachment do not establish live presence. An established
+owner port prevents acquisition even while accepted work delays safe restoration. Acquisition clears
+the grantee's readiness, held movement and unaccepted queued action; its home character keeps its
+required human decisions. Neither permanent actor identity nor its observation/private readers changes.
+
+The acquiring port retains the exact witness as transient custody. Explicit release must match that
+port and assignment; an earlier witness cannot release a later acquisition. Core invalidation clears
+transient custody as the host publishes the resulting state. Successful owner admission releases the
+assignment before attempting safe restoration, so new delegated input stops while accepted work keeps
+its ordinary costs and resolution. Grantee transport loss records only that grantee's controller event;
+ordinary port disposal releases custody without fabricating any disconnect event or renewed allowance.
+
+A live host attachment releases saved active assignments through ordinary nonadvancing journal
+boundaries before starting its scheduler. Graceful shutdown relinquishes live custody. Inspection
+through `SqliteWorldAuthority.OpenExisting` alone preserves the recorded head; a saved assignment
+cannot establish a connection for a new host. Cleanup retains permission, original controller episodes,
+accepted commands and resources, charging no offline gameplay time. A failed host does not pretend its
+cleanup committed; the next attachment reconciles the persisted assignment through the same law.
+
 ## Player selection boundary
 
-The privileged durable authority implements the command contract. Player-facing possession requires
+The internal live-host acquisition API implements assignment custody. Player-facing possession requires
 a separately admitted adapter binding: authenticated live presence, explicit actor selection,
 selection generations, freshly authorized observations, cleared queued input/readiness, and deliberate
 Resume. Stale selection or readiness cannot become valid after an A-to-B-to-A switch. Saved consent

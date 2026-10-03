@@ -105,6 +105,9 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         _time = timeProvider;
         _materialGifts = new LocalMaterialGiftController(state, giftPolicies ?? []);
         _trading = new LocalTradingController(state, playerActorId, trading ?? LocalTradingConfiguration.None);
+        if (state.EffectiveControl is not null && regions is not null && regions.PlayerActorId != playerActorId)
+            throw new ArgumentException("The control session's region observer must belong to its home actor.", nameof(regions));
+        state = ReleaseAllControlAssignments(state);
         _localPlayer = new LocalPlayerConnection(this, playerActorId, delivery, ProjectView(state, playerActorId, regions), regions,
             state.Controllers is null || state.Controllers.Get(playerActorId).Mode == WorldControllerMode.Human,
             state.Controllers is not null);
@@ -870,6 +873,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     /// </summary>
     private void PublishViewIfChanged(WorldSnapshot state)
     {
+        ReconcileControlCustody(state);
         HostTimingEvents.Log.Stage(TimingOwner, "publication.hash.begin", unchecked((long)state.Revision));
         ContentHash hash = state.ContentHash;
         HostTimingEvents.Log.Stage(TimingOwner, "publication.hash.end", unchecked((long)state.Revision));
@@ -937,7 +941,13 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
                     try
                     {
                         // Capture only the admitted host lifetime, before potentially lengthy query cleanup.
-                        if (_failure is null) CheckpointControllerRecovery(_authority.ReadStateForHost());
+                        if (_failure is null)
+                        {
+                            WorldSnapshot state = _authority.ReadStateForHost();
+                            CheckpointControllerRecovery(state);
+                            state = ReleaseAllControlAssignments(state);
+                            ReconcileControlCustody(state);
+                        }
                     }
                     finally { _serialization.Release(); }
                 }

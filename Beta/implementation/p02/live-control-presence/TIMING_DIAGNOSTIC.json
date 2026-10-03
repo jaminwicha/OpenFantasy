@@ -1,0 +1,125 @@
+{
+  "report": "qualification/server-compatibility-20261003T023304092316Z/report.json",
+  "trace": "qualification/server-compatibility-20261003T023304092316Z/host-timing-46172-a05c78e3a83b4958bb64a2efd11c38a1.json",
+  "traceSha256": "90ff0c25b3932c4af17d87605c52fa8ea80d5f3a0daa4d443df355e5191babb6",
+  "applicationProcessId": 46172,
+  "processName": "OpenFantasy.Server.Tests",
+  "events": 4461,
+  "dropped": 0,
+  "invalid": 0,
+  "incomplete": 0,
+  "spansMilliseconds": {
+    "projection": {
+      "count": 225,
+      "min": 0.076041,
+      "median": 0.551959,
+      "p95": 19.918541,
+      "max": 77.4735
+    },
+    "publication.hash": {
+      "count": 400,
+      "min": 0.000416,
+      "median": 0.001375,
+      "p95": 4.102208,
+      "max": 17.803333
+    },
+    "tick": {
+      "count": 360,
+      "min": 0.002,
+      "median": 0.019042,
+      "p95": 27.351542,
+      "max": 171.135667
+    },
+    "attach": {
+      "count": 46,
+      "min": 0.240459,
+      "median": 0.6445,
+      "p95": 6.762167,
+      "max": 18.173709
+    },
+    "client.send": {
+      "count": 129,
+      "min": 0.00125,
+      "median": 0.026708,
+      "p95": 0.243041,
+      "max": 2.585375
+    },
+    "session.cleanup": {
+      "count": 46,
+      "min": 0.046,
+      "median": 0.522,
+      "p95": 18.608417,
+      "max": 45.679
+    },
+    "server.send": {
+      "count": 141,
+      "min": 0.001709,
+      "median": 0.066625,
+      "p95": 7.791791,
+      "max": 17.720916
+    },
+    "disconnect": {
+      "count": 27,
+      "min": 0.0215,
+      "median": 0.032917,
+      "p95": 0.842042,
+      "max": 1.136
+    },
+    "replica": {
+      "count": 69,
+      "min": 0.018708,
+      "median": 27.412125,
+      "p95": 51.35875,
+      "max": 60.367083
+    },
+    "commit": {
+      "count": 40,
+      "min": 2.133959,
+      "median": 13.58825,
+      "p95": 55.249,
+      "max": 114.647541
+    }
+  },
+  "movementAgesMilliseconds": {
+    "count": 17,
+    "min": 22.5145,
+    "median": 135.3702,
+    "p95": 343.2768,
+    "max": 343.2768
+  },
+  "nonzeroMovementAcceptedByPort": {
+    "c8433c064dc247da94ea2a89314db66b": 1,
+    "c64874ab15a2435abafb8e910b8d235e": 1,
+    "0fb473eb146342f4a7fd55019c50b67b": 1,
+    "0730d68efd184310883c101628d3fcba": 1,
+    "29629036f08f4caa94b0257b76e68792": 1
+  },
+  "movementSelectedByPort": {
+    "c8433c064dc247da94ea2a89314db66b": 1,
+    "c64874ab15a2435abafb8e910b8d235e": 2,
+    "0fb473eb146342f4a7fd55019c50b67b": 3,
+    "0730d68efd184310883c101628d3fcba": 3
+  },
+  "finalCounters": {
+    "ThreadPoolThreads": 10,
+    "PendingWorkItems": 0,
+    "CompletedWorkItems": 3948,
+    "AvailableWorkerThreads": 32767,
+    "AvailableIoThreads": 1000,
+    "MaximumWorkerThreads": 32767,
+    "MaximumIoThreads": 1000,
+    "Generation0Collections": 1262,
+    "Generation1Collections": 451,
+    "Generation2Collections": 48,
+    "ManagedHeapBytes": 142504392,
+    "AllocatedBytes": 13336945576,
+    "WorkingSetBytes": 253935616
+  },
+  "limits": [
+    "Instrumented selection passed; this did not capture the preceding failed movement request.",
+    "Durations pool independent hosts/tests; they do not alone identify the four-player host or a causal stall.",
+    "Expired subsequent movement-age observations can follow already selected movement; they do not prove a lost initial sample.",
+    "Trace metadata identifies the test application, not an idle dotnet/VSTest wrapper. The later ps snapshot was empty because the run had finished.",
+    "The original uninstrumented failure and all deadlines remain unchanged; production latency reliability is open."
+  ]
+}

@@ -19,6 +19,23 @@ failures and limits. The frozen complete specification remains authoritative.
 
 ## Current implementation boundary
 
+[Live host assignment custody](p02/live-control-presence/RESULT.md) binds internal acquisition to a
+current, fully admitted transport and captured permission/expiry terms. Exact per-port witnesses,
+revocation reconciliation and release on owner return/loss/disposal/startup/stop preserve home identity,
+original controller episodes and accepted paid work. Autonomous selectors exclude effective owners.
+This remains an internal prerequisite: public local/TLS/Godot input and views still address home actors.
+
+The fresh warning-free build and 154 Hosting checks pass, including eight new decisive cases.
+The uninstrumented server selection has 75 passes, one four-player movement timeout and one Windows-only
+skip. One instrumented diagnostic passes76; it did not capture the failed request and does not close
+that timing gate. [Final evidence](p02/live-control-presence/FINAL_CHECKS.json) retains both outcomes,
+fresh full Core1,885 evidence, all752 prior tests/fixtures,23 specs and staging.
+The initial inheritance check rejected changed stamped binaries despite identical Core source.
+[Independent review](p02/live-control-presence/REVIEW.md) found no concrete runtime defect; an
+established third-player custody contrast remains part of full selection qualification.
+Bounded milestone: `codex/milestone-live-control-presence-20261003`; before-change ref:
+`codex/checkpoint-before-live-control-presence-20261003T021941Z` at `0132b308`.
+
 [Effective co-player command authority](p02/effective-co-player-control/RESULT.md) explicitly admits
 fresh profile40/schema12 over the [durable consent foundation](p02/co-player-control/RESULT.md).
 Active assignment, scoped current authorization and immutable command witnesses retain the real
@@ -37,7 +54,7 @@ are internal to Core composition; standalone public planners remain owner-only. 
 The [reservation ownership increment](p02/host-latency-diagnosis/RESULT.md) removes repeated outcome-ID
 construction from profiles 16–18 forward excavation cursors, with independent decode ownership and
 unchanged complete-world validation. A fixed real continuation workload allocates 10.6508% fewer bytes
-with identical canonical roots; this is not a whole-game performance claim. Current warning-free build,
+with identical canonical roots; this is not a whole-game performance claim. Its retained warning-free build,
 Core (1,885), complete storage (489) and uninstrumented server (76, one Windows-only skip) pass.
 The storage aggregate completes in 332.081s under the unchanged 600s limit. The 17 focused co-player Hosting regressions also pass; [final checks](p02/host-latency-diagnosis/FINAL_CHECKS.json)
 record 2,467 distinct passing cases, source/binary pins and original-test/spec preservation.
@@ -60,17 +77,19 @@ including the failed broader gates. Before-change ref:
 
 ## Next dependencies
 
-1. Bind authenticated live grantee presence and explicit actor selection to the effective-control
-   contract. Separate permanent home actor from selected actor; publish authorized observations,
+1. Build explicit actor selection on the internal live-presence custody boundary. Separate permanent
+   home actor from selected actor; publish authorized observations,
    clear queued input/readiness, and require deliberate Resume against the current selection generation.
    Stale A→B→A observations, queries, inputs and readiness must never regain authority.
 2. Keep the grantee's own human character's ordinary decisions/holds. Autonomous owner input cannot
    compete while assigned; accepted obligations finish before safe return. Transport loss cannot
    restart the original allowance or manufacture presence. Permission is not a socket or UI selection.
-3. Build the local/TLS/Godot consent/selection journey with actual paid actions, revocation/return,
-   archive/reopen and crash evidence. Native reachability remains separate from managed preparation;
+3. Bind explicit profile39/40 feature/startup-control paths and the local/TLS/Godot consent/selection
+   journey with actual paid actions, third/fourth live participants, revocation/return, archive/reopen
+   and crash evidence. Native reachability remains separate from managed preparation;
    retain the [complete obligations](p02/co-player-control/DESIGN.md).
-4. Retain the intermittent timing investigation for latency qualification: capture a failed movement
+4. The fresh uninstrumented server run repeats the movement timeout; retain the timing investigation
+   for latency qualification. Capture a genuinely failed movement
    sample's receipt, lease age, selection and observation, using the actual test application descendant.
    Separate shared load, allocation/algorithm costs and live-host scheduling. A later pass alone is
    not diagnosis; do not repeat aggregates without a new purpose or change their bounds.

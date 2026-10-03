@@ -40,7 +40,8 @@ internal sealed class LocalAutonomousEncounterController
     /// <summary>Temporary control changes the selector, never the character's required-human timing role.</summary>
     internal static bool OwnsChoice(WorldSnapshot state, EncounterActorTiming actor) =>
         actor.Control == EncounterActorControl.RequiredHuman
-        && state.Controllers?.Get(actor.ActorId).Mode == WorldControllerMode.Autonomous;
+        && state.Controllers?.Get(actor.ActorId).Mode == WorldControllerMode.Autonomous
+        && state.EffectiveControl?.Find(actor.ActorId)?.Witness is null;
 
     private static QueueEncounterRetreatIntent? ChooseRetreat(WorldSnapshot state, EntityId actorId)
     {

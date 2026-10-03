@@ -59,6 +59,10 @@ public sealed class LocalPlayerConnection : IAsyncDisposable
     internal bool Ready { get; set; }
     internal bool ControlAvailable { get; set; }
     internal bool NetworkEstablished { get; set; }
+    internal WorldControlWitness? LiveControlWitness { get; set; }
+    internal Task<WorldControlWitness> AcquireControlAsync(LocalControlAcquisition observed) =>
+        _host.AcquireControlAsync(this, observed);
+    internal Task ReleaseControlAsync(WorldControlWitness observed) => _host.ReleaseControlAsync(this, observed);
     internal (LocalWorldView View, PlayerControlStatus Control) ReadObservation() => _host.ReadObservation(this);
     internal void SetLegacyNetworkReady(bool ready) => _host.SetLegacyNetworkReady(this, ready);
     internal Task CompleteNetworkAdmissionAsync(CancellationToken cancellationToken, Action validateAdmission) =>

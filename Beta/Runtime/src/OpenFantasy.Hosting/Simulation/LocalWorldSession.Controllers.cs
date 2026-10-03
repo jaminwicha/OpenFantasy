@@ -27,7 +27,11 @@ public sealed partial class LocalWorldSession
                 EnsurePlayerAvailable(player);
                 player.NetworkEstablished = true;
             }
-            try { RestorePlayerControlIfSafe(_authority.ReadStateForHost(), player); }
+            try
+            {
+                WorldSnapshot state = ReleaseReturningOwnerAssignment(_authority.ReadStateForHost(), player.ActorId);
+                RestorePlayerControlIfSafe(state, player);
+            }
             catch (Exception error) { Fail(error); throw; }
         }
         finally { _serialization.Release(); }
