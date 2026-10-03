@@ -11,6 +11,8 @@ namespace OpenFantasy.Core.Worlds;
 /// </summary>
 public sealed class PendingExcavation
 {
+    private readonly PendingExcavationReservations _reservations;
+
     internal PendingExcavation(WorldActionCommand command, EntityId triggerCauseId, ulong basisRevision,
         ContentHash basisHash, ulong continuationCount, ConstructionSettlementResolution resolution,
         ConsequenceExecutionPolicy policy)
@@ -22,21 +24,26 @@ public sealed class PendingExcavation
         ContinuationCount = continuationCount;
         Resolution = resolution;
         Policy = policy;
-        ulong continuationLimit = MaximumContinuations(policy, resolution.MaximumTotalWorkUnits);
-        var results = new List<EntityId>();
-        // Reserve both admissible outcomes at every possible terminal commit, without issuing them.
-        for (ulong offset = 2; offset <= checked(continuationLimit + 1); offset++)
+        _reservations = new PendingExcavationReservations(command, triggerCauseId, basisRevision,
+            MaximumContinuations(policy, resolution.MaximumTotalWorkUnits));
+    }
+
+    private PendingExcavation(PendingExcavation previous, ConstructionSettlementResolution resolution)
+    {
+        if (resolution.MaximumTotalWorkUnits != previous.Resolution.MaximumTotalWorkUnits)
         {
-            ulong sequence = checked(basisRevision + offset);
-            results.Add(WorldActionReceipt.Create(command, sequence, WorldActionRejection.None).ResultId);
-            results.Add(WorldActionReceipt.Create(command, sequence, WorldActionRejection.Unavailable).ResultId);
+            throw new InvalidOperationException("Forward excavation work cannot change its reserved completion interval.");
         }
-        ResultReservations = results.AsReadOnly();
-        EntityId[] identities = results.Append(ReservedSourceId).Append(command.CommandId).Append(triggerCauseId).ToArray();
-        if (command.Intent is not ExcavateIntent || identities.Distinct().Count() != identities.Length)
-        {
-            throw new ArgumentException("A pending excavation needs unique command, cause and publication identities.");
-        }
+        Command = previous.Command;
+        TriggerCauseId = previous.TriggerCauseId;
+        BasisRevision = previous.BasisRevision;
+        BasisHash = previous.BasisHash;
+        ContinuationCount = checked(previous.ContinuationCount + 1);
+        Resolution = resolution;
+        Policy = previous.Policy;
+        // The private forward path fixes every reservation input. Retain neither the previous
+        // cursor nor its world; only the immutable publication set is shared.
+        _reservations = previous._reservations;
     }
 
     public WorldActionCommand Command { get; }
@@ -45,8 +52,8 @@ public sealed class PendingExcavation
     public ContentHash BasisHash { get; }
     public ulong ContinuationCount { get; }
     public ConstructionSettlementResolution Resolution { get; }
-    public EntityId ReservedSourceId => EntityId.DeriveSpawned(Command.CommandId, 0);
-    public ReadOnlyCollection<EntityId> ResultReservations { get; }
+    public EntityId ReservedSourceId => _reservations.SourceId;
+    public ReadOnlyCollection<EntityId> ResultReservations => _reservations.Results;
     public ulong MaximumContinuationCount => MaximumContinuations(Policy, Resolution.MaximumTotalWorkUnits);
     public int MaximumTerminalOutcomesByteLength => Math.Max(
         WorldReceiptCodecV1.EncodeBatch([WorldActionReceipt.Create(Command,
@@ -82,8 +89,7 @@ public sealed class PendingExcavation
         return new(command, cause, basis.Revision, basis.ContentHash, 0, resolution, basis.ConsequencePolicy!);
     }
 
-    internal PendingExcavation Advance() => new(Command, TriggerCauseId, BasisRevision, BasisHash,
-        checked(ContinuationCount + 1), Resolution.Advance(Policy.WorkUnitsPerContinuation), Policy);
+    internal PendingExcavation Advance() => new(this, Resolution.Advance(Policy.WorkUnitsPerContinuation));
 
     internal void ValidateForWorld(WorldSnapshot world)
     {

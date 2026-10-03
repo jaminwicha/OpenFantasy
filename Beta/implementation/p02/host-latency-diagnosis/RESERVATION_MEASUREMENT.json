@@ -1,0 +1,38 @@
+{
+  "workload": "16 sibling public Decide calls on the same genuine funded pending world and exact continuation, after two warmups; not 16 consecutive transitions",
+  "baseline": {
+    "report": "qualification/reservation-20261003T015338498682Z/report.json",
+    "reportSha256": "9ae5934cea20bd2faa2bf01fe14c3681e5b2133bd71fbd940b4e85069a8f8b3c",
+    "profile": 17,
+    "warmups": 2,
+    "decisions": 16,
+    "reservations": 514,
+    "maximumWork": 256,
+    "allocatedBytes": 226050336,
+    "inputHash": "876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461",
+    "candidateHash": "d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3",
+    "inputBytes": 245730,
+    "candidateBytes": 245730
+  },
+  "optimized": {
+    "report": "qualification/reservation-20261003T015650136289Z/report.json",
+    "reportSha256": "6e5fc30024ae9631f6901903d3a3431109a203ca29667aa4ed2eecce77072533",
+    "profile": 17,
+    "warmups": 2,
+    "decisions": 16,
+    "reservations": 514,
+    "maximumWork": 256,
+    "allocatedBytes": 201974072,
+    "inputHash": "876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461",
+    "candidateHash": "d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3",
+    "inputBytes": 245730,
+    "candidateBytes": 245730
+  },
+  "allocatedBytesSaved": 24076264,
+  "reductionPercent": 10.65084194345104,
+  "limits": [
+    "Current-thread synchronous managed allocations, excluding fixture/setup/SQL/encoding/assertions/output.",
+    "Baseline expected-red reference-reuse assertion retained; canonical/collision/mutation/replay checks executed first.",
+    "No whole-game memory, latency, server-timeout-cause or production performance claim."
+  ]
+}

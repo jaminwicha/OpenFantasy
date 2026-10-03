@@ -34,42 +34,46 @@ acquisition chronology and public planner authorization widening. Authorized low
 are internal to Core composition; standalone public planners remain owner-only. The
 [timeless contract](../Runtime/docs/architecture/effective-control.md) and dependent references are current.
 
-Clean build, the full 1,885-case Core suite and all 21 new focused cases pass. Selected commerce (107),
-care/retreat (35), consent storage (23), controller sessions (38), network (272), shared sessions (26)
-and archives (14) pass. Accepted groups cover 2,420 distinct passing cases, including three separately
-selected storage cases.
-**Broader qualification is incomplete:** two storage aggregates time out at the unchanged 600s bound
-(after 482/485 console-reported passes). The server aggregate twice misses the five-second four-player
-movement-observation bound; its repeat also misses the 15s dedicated-host startup bound. Windows ACL
-is unrun on this Mac. Shared load observations do not establish the cause. No test, deadline or
-acceptance gate is relaxed, and targeted storage-tail evidence cannot replace the failed aggregate.
-The packet retains each report and the [qualification status](p02/effective-co-player-control/QUALIFICATION_STATUS.json);
-no native control-selection or profile40 process-kill proof is claimed.
+The [reservation ownership increment](p02/host-latency-diagnosis/RESULT.md) removes repeated outcome-ID
+construction from profiles 16–18 forward excavation cursors, with independent decode ownership and
+unchanged complete-world validation. A fixed real continuation workload allocates 10.6508% fewer bytes
+with identical canonical roots; this is not a whole-game performance claim. Current warning-free build,
+Core (1,885), complete storage (489) and uninstrumented server (76, one Windows-only skip) pass.
+The storage aggregate completes in 332.081s under the unchanged 600s limit. The 17 focused co-player Hosting regressions also pass; [final checks](p02/host-latency-diagnosis/FINAL_CHECKS.json)
+record 2,467 distinct passing cases, source/binary pins and original-test/spec preservation.
 
-Implementation commit: `d76f4681`; [managed checkpoint](p02/effective-co-player-control/MANAGED_CHECKPOINT.json):
+Earlier storage timeouts and server movement/startup failures remain in the effective-control packet.
+The later passes do not establish their cause or production latency reliability. The reservation change
+is outside the server fixture's world profile. No deadline, input lease or acceptance gate was relaxed;
+Windows ACL, native control-selection and profile40 process-kill proofs remain open.
+The optimization and evidence are preserved by `codex/milestone-excavation-reservation-reuse-20261003`.
+Its pre-edit expected-red baseline is `53cd1085`, preserved under
+`codex/checkpoint-before-reservation-reuse-20261003T0155Z`; the packet records exact scope and source pins.
+
+Co-player implementation commit: `d76f4681`; [managed checkpoint](p02/effective-co-player-control/MANAGED_CHECKPOINT.json):
 `codex/checkpoint-effective-control-managed-20261003T0108Z`. This is a recoverable bounded checkpoint,
 not full phase/production acceptance. The bounded milestone
-`codex/milestone-effective-control-managed-20261003` also preserves the completed evidence and this
-handoff, including the failed broader gates. Before-change ref:
+`codex/milestone-effective-control-managed-20261003` preserves its earlier evidence and handoff,
+including the failed broader gates. Before-change ref:
 `codex/checkpoint-before-effective-co-player-control-20261003T000511Z` at
 `fca8961ece87a2a4ec9e0c24682c4a97cdf2b691`. Keep work on `codex/runtime-foundation`.
 
 ## Next dependencies
 
-1. Investigate the retained storage/server timing failures with source-pinned measurements and an
-   identified test-process descendant. Separate shared load, algorithm/allocation costs and actual
-   live-host latency; do not repeatedly rerun aggregates or change bounds to obtain green output.
-   Complete the same required regressions before treating broader integration as qualified.
-2. Bind authenticated live grantee presence and explicit actor selection to the effective-control
+1. Bind authenticated live grantee presence and explicit actor selection to the effective-control
    contract. Separate permanent home actor from selected actor; publish authorized observations,
    clear queued input/readiness, and require deliberate Resume against the current selection generation.
    Stale A→B→A observations, queries, inputs and readiness must never regain authority.
-3. Keep the grantee's own human character's ordinary decisions/holds. Autonomous owner input cannot
+2. Keep the grantee's own human character's ordinary decisions/holds. Autonomous owner input cannot
    compete while assigned; accepted obligations finish before safe return. Transport loss cannot
    restart the original allowance or manufacture presence. Permission is not a socket or UI selection.
-4. Build the local/TLS/Godot consent/selection journey with actual paid actions, revocation/return,
+3. Build the local/TLS/Godot consent/selection journey with actual paid actions, revocation/return,
    archive/reopen and crash evidence. Native reachability remains separate from managed preparation;
    retain the [complete obligations](p02/co-player-control/DESIGN.md).
+4. Retain the intermittent timing investigation for latency qualification: capture a failed movement
+   sample's receipt, lease age, selection and observation, using the actual test application descendant.
+   Separate shared load, allocation/algorithm costs and live-host scheduling. A later pass alone is
+   not diagnosis; do not repeat aggregates without a new purpose or change their bounds.
 
 Combat + traversal + recovery remains a provisional simple preset, not an owner-approved preference.
 Offers carry explicit scopes. Inventory, trade, production, conversation/quests, care disposition and

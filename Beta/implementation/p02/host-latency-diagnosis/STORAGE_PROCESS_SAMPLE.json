@@ -1,0 +1,46 @@
+{
+  "utc": "2026-10-03T01:59:53.589340+00:00",
+  "load": "20:59  up 2 days, 20:37, 2 users, load averages: 6.34 9.61 12.14",
+  "descendants": [
+    {
+      "pid": 26448,
+      "ppid": 26273,
+      "cpu": "0.0",
+      "rssKiB": "5280",
+      "elapsed": "00:47",
+      "command": "/opt/homebrew/Cellar/python@3.14/3.14.7/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python Beta/implementation/p02/host-latency-diagnosis/check.py storage"
+    },
+    {
+      "pid": 26451,
+      "ppid": 26448,
+      "cpu": "0.0",
+      "rssKiB": "18176",
+      "elapsed": "00:46",
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet test /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj --no-build --no-restore --nologo --logger console;verbosity=detailed --logger trx;LogFileName=checks.trx --results-directory /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/host-latency-diagnosis/qualification/storage-20261003T015907005960Z --filter FullyQualifiedName~WorldStorage|FullyQualifiedName~Worlds.Controllers|FullyQualifiedName~Worlds.ControllerRecovery"
+    },
+    {
+      "pid": 26452,
+      "ppid": 26451,
+      "cpu": "0.0",
+      "rssKiB": "12784",
+      "elapsed": "00:46",
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet exec /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/sdk/10.0.401/vstest.console.dll --framework:.NETCoreApp,Version=v8.0 --testCaseFilter:FullyQualifiedName~WorldStorage|FullyQualifiedName~Worlds.Controllers|FullyQualifiedName~Worlds.ControllerRecovery --logger:console;verbosity=detailed --logger:trx;LogFileName=checks.trx --resultsDirectory:/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/host-latency-diagnosis/qualification/storage-20261003T015907005960Z /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll --nologo --artifactsProcessingMode-collect --testSessionCorrelationId:26451_889ebe07-a164-479a-ab67-f3cfe85702fe"
+    },
+    {
+      "pid": 26453,
+      "ppid": 26452,
+      "cpu": "0.3",
+      "rssKiB": "21200",
+      "elapsed": "00:46",
+      "command": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet exec --runtimeconfig /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.runtimeconfig.json --depsfile /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.deps.json /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/testhost.dll --port 63032 --endpoint 127.0.0.1:063032 --role client --parentprocessid 26452 --telemetryoptedin false"
+    },
+    {
+      "pid": 26456,
+      "ppid": 26453,
+      "cpu": "248.9",
+      "rssKiB": "478736",
+      "elapsed": "00:45",
+      "command": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests @@ /var/folders/np/sh0qs32n2xlf150ph1vlcvrc0000gn/T/tmpU07QoY.tmp"
+    }
+  ]
+}

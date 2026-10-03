@@ -71,6 +71,14 @@ those future IDs. Only the chosen terminal result and an actually issued lot bec
 rows. Unused possibilities retire with the pending job. Completion removes its own temporary reservations
 before applying the exact original action, while historical/genesis occupancy remains enforced.
 
+[PendingExcavationReservations](../../src/OpenFantasy.Core/Worlds/PendingExcavationReservations.cs)
+owns the immutable source/result set for that complete interval. Initial acceptance and decoded
+cursors derive the set and check internal aliases. Only the private forward-cursor path shares the
+same owner: command, cause, basis and policy are unchanged, and the geometric maximum work bound
+must match. Sharing retains neither a predecessor cursor nor a world snapshot. Exposed collections
+remain read-only. Complete-world identity admission and stable-basis validation still run for each
+candidate; reservation reuse grants no publication or historical authority and changes no saved bytes.
+
 ## Storage, recovery and host scheduling
 
 [WorldSnapshotCodecV16](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV16.cs) has a direct twenty-two-field

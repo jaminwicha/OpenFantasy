@@ -1,0 +1,20 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.49]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.03]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.17]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:07.31]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+  Passed OpenFantasy.Hosting.Tests.WorldStorage.PendingReservationReuseTests.A_real_forward_continuation_reuses_immutable_reservations_without_changing_replay_or_publication [6 s]
+  Standard Output Messages:
+ PendingReservationMeasurement profile=17 warmups=2 decisions=16 reservations=514 maximumWork=256 allocatedBytes=201974072 bytesPerDecision=12623379 elapsedMilliseconds=201.631
+ PendingReservationPins input=876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461 candidate=d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3 inputBytes=245730 candidateBytes=245730
+
+
+
+Test Run Successful.
+Total tests: 1
+     Passed: 1
+ Total time: 8.6060 Seconds
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/host-latency-diagnosis/qualification/reservation-20261003T015650136289Z/checks.trx

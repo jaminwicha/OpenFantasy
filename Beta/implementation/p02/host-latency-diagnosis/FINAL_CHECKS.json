@@ -1,0 +1,129 @@
+{
+  "status": "bounded excavation reservation ownership qualified; historical timing causes and production gates remain open",
+  "milestone": "codex/milestone-excavation-reservation-reuse-20261003",
+  "initialCheckpoint": "codex/checkpoint-before-host-latency-20261003T014306Z",
+  "initialSourceHead": "6a723bed9ede06a0dbb794526a5a8ca6ad259776",
+  "beforeRuntimeCheckpoint": "codex/checkpoint-before-reservation-reuse-20261003T0155Z",
+  "beforeRuntimeCommit": "53cd1085311fbb592dd5a1486a20dce57df3ae7f",
+  "reports": {
+    "build": {
+      "path": "qualification/build-20261003T015607646114Z/report.json",
+      "sha256": "bdd818e22037e93d94d15880e640ad3da2900aff780b1cf7fd2b5dc5af242ac7",
+      "seconds": 30.03408258300624,
+      "outcomes": null,
+      "accepted": true
+    },
+    "reservation": {
+      "path": "qualification/reservation-20261003T015650136289Z/report.json",
+      "sha256": "6e5fc30024ae9631f6901903d3a3431109a203ca29667aa4ed2eecce77072533",
+      "seconds": 10.326950833987212,
+      "outcomes": {
+        "Passed": 1
+      },
+      "accepted": true
+    },
+    "core": {
+      "path": "qualification/core-20261003T015723560650Z/report.json",
+      "sha256": "a871c9114230ba9bc0a47144a2b16f2057770a487ddb1c36688e66c916845dd8",
+      "seconds": 102.93094712501625,
+      "outcomes": {
+        "Passed": 1885
+      },
+      "accepted": true
+    },
+    "storage": {
+      "path": "qualification/storage-20261003T015907005960Z/report.json",
+      "sha256": "f4352aae9937d0be614359a9624ca551a64092be96ad77f11dbd439edf4adbad",
+      "seconds": 332.08059237498674,
+      "outcomes": {
+        "Passed": 489
+      },
+      "accepted": true
+    },
+    "server-compatibility": {
+      "path": "qualification/server-compatibility-20261003T020439306585Z/report.json",
+      "sha256": "36d321b5edd8eebf142598894796943e152741e8e3bc6988fecf08fa39f80839",
+      "seconds": 34.885045165981865,
+      "outcomes": {
+        "NotExecuted": 1,
+        "Passed": 76
+      },
+      "accepted": true
+    },
+    "effective-hosting": {
+      "path": "qualification/effective-hosting-20261003T020543298466Z/report.json",
+      "sha256": "61bac0314b31e0ffce761bc4bde801c5c6d134c08d5221a5a1cc74b5d4fa0483",
+      "seconds": 20.53589295898564,
+      "outcomes": {
+        "Passed": 17
+      },
+      "accepted": true
+    }
+  },
+  "distinctPassingCases": 2467,
+  "newPassingCases": 1,
+  "unrunCases": [
+    "OpenFantasy.Server.Tests.WindowsInvitationTests.Invitation_created_under_readable_parent_has_only_protected_owner_access"
+  ],
+  "reservationMeasurement": {
+    "workload": "16 sibling public Decide calls on the same genuine funded pending world and exact continuation, after two warmups; not 16 consecutive transitions",
+    "baseline": {
+      "report": "qualification/reservation-20261003T015338498682Z/report.json",
+      "reportSha256": "9ae5934cea20bd2faa2bf01fe14c3681e5b2133bd71fbd940b4e85069a8f8b3c",
+      "profile": 17,
+      "warmups": 2,
+      "decisions": 16,
+      "reservations": 514,
+      "maximumWork": 256,
+      "allocatedBytes": 226050336,
+      "inputHash": "876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461",
+      "candidateHash": "d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3",
+      "inputBytes": 245730,
+      "candidateBytes": 245730
+    },
+    "optimized": {
+      "report": "qualification/reservation-20261003T015650136289Z/report.json",
+      "reportSha256": "6e5fc30024ae9631f6901903d3a3431109a203ca29667aa4ed2eecce77072533",
+      "profile": 17,
+      "warmups": 2,
+      "decisions": 16,
+      "reservations": 514,
+      "maximumWork": 256,
+      "allocatedBytes": 201974072,
+      "inputHash": "876d6620c27eba81f5f50c7daf36879a00168770b23661f89b3aea87915f3461",
+      "candidateHash": "d4ef0be77be607b31f1e737801d81e52f82fa712d62536bb77933a55d68ab3f3",
+      "inputBytes": 245730,
+      "candidateBytes": 245730
+    },
+    "allocatedBytesSaved": 24076264,
+    "reductionPercent": 10.65084194345104,
+    "limits": [
+      "Current-thread synchronous managed allocations, excluding fixture/setup/SQL/encoding/assertions/output.",
+      "Baseline expected-red reference-reuse assertion retained; canonical/collision/mutation/replay checks executed first.",
+      "No whole-game memory, latency, server-timeout-cause or production performance claim."
+    ]
+  },
+  "protectedTestsAndFixtures": 751,
+  "protectedSpecs": 23,
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "sourceFiles": 2115,
+  "checkedLinks": 1391,
+  "sourceSha256": "2d54773fb17cc671b5be0f29ece702f9f125be3dbe52905969b78b45bd202a39",
+  "toolPins": {
+    "Beta/implementation/p02/host-latency-diagnosis/check.py": "22c8517d238130336be37ff23f644790a5d5ae8e393eb614f74bd2e396d6c6eb",
+    "Beta/implementation/p02/host-latency-diagnosis/finalize.py": "5c291bb76e6e09ac33e764bfb2d60df365ddceceb43ea45b871c5c9ed614117a",
+    "Beta/implementation/p02/shared-player-sessions/check.py": "cf10cae8d2918df4c5e4b4c7384a870ccf0cb41a0f3bc51d9920d07af6682f3b"
+  },
+  "retainedLocalFailures": [
+    "qualification/reservation-20261003T015338498682Z/report.json"
+  ],
+  "priorUnexplainedFailures": "../effective-co-player-control/QUALIFICATION_STATUS.json",
+  "limits": [
+    "16 sibling fixed-workload decisions, not 16 sequential world transitions; old full storage tests separately prove complete chains.",
+    "The 10.6508% allocation reduction is limited to the measured profile17 continuation, not whole-game memory or latency.",
+    "Normal server and full storage selections pass unchanged bounds now; this does not explain their earlier failures.",
+    "No movement renewal, lease extension, serialization change, validation removal or relaxed test gate.",
+    "No native, process-kill, Windows ACL, physical-device, human, full phase or production-latency acceptance claim.",
+    "No external provider request or external-credit savings."
+  ]
+}
