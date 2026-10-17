@@ -19,7 +19,7 @@ public sealed class PlayerObservationStream
         if (ReferenceEquals(view, _lastView) && !forceFull) return null;
         // An older projected observation cannot assert a complete empty structure set.
         // Keep its omitted facet while fresh Host projections publish the complete construction view.
-        byte[] current = PlayerViewCodec.EncodeWithCarePermissionDescriptions(view);
+        byte[] current = PlayerViewCodec.EncodeWithCollectiveWithdrawal(view);
         bool unchanged = _previous is not null && current.AsSpan().SequenceEqual(_previous);
         if (unchanged && !forceFull)
         {

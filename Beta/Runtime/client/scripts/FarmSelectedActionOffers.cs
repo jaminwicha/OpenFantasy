@@ -50,10 +50,8 @@ internal static class FarmSelectedActionOffers
                     new EnterEncounterIntent(entry.ScenarioId, entry.EncounterId, lifecycle.EncounterCount, entry.TargetRevision),
                     entry.CanEnter ? null : "This confrontation cannot begin from your current position or condition.");
         }
-        if (view.Retreat?.Offer is { CanQueue: true } retreat)
-            Add(FarmSemanticAction.Retreat, "Retreat", RetreatOffers.Destination(retreat.Origin, retreat.Destination), null,
-                RetreatOffers.Steps(retreat), new QueueEncounterRetreatIntent(retreat.EncounterId, retreat.TimingRevision,
-                    retreat.Destination, retreat.Route), detail: RetreatOffers.Detail + " " + RetreatOffers.Charges(retreat));
+        if (view.Combat?.Encounter is not null && view.Retreat is { } retreat)
+            offers[FarmSemanticAction.Retreat] = RetreatOffers.Create(retreat, scope);
         if (view.Recovery is { } recovery)
         {
             var choices = recovery.Care?.Offers.Where(value => target is null || value.HelperActorId == target.Id).ToArray();

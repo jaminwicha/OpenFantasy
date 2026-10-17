@@ -19,16 +19,17 @@ internal sealed class LocalAutonomousEncounterController
 
         var chosenActors = timing.Decisions.Select(choice => choice.ActorId)
             .Concat(selectedChoices.Select(choice => choice.ActorId)).ToHashSet();
-        // Retreat admission permits one standing route. Reserve that slot across this entire
-        // proposed batch as well as checking the already committed world state below.
-        bool retreatSelected = selectedChoices.Any(choice => choice.Intent is QueueEncounterRetreatIntent);
+        // Legacy retreat reserves one route across the selected batch. Collective withdrawal lets
+        // each independently controlled actor select its own route under the same Core admission.
+        bool singleRoute = state.Retreat?.Withdrawal is null;
+        bool retreatSelected = singleRoute && selectedChoices.Any(choice => choice.Intent is QueueEncounterRetreatIntent);
         foreach (EncounterActorTiming actor in WorldEncounterActions.DueActors(state).OrderBy(actor => actor.ActorId))
         {
             if (!OwnsChoice(state, actor) || chosenActors.Contains(actor.ActorId)
                 || WorldEncounterRetreats.HoldsActor(state, actor.ActorId)) continue;
 
             WorldActionIntent? intent = retreatSelected ? null : ChooseRetreat(state, actor.ActorId);
-            retreatSelected |= intent is QueueEncounterRetreatIntent;
+            retreatSelected |= singleRoute && intent is QueueEncounterRetreatIntent;
             intent ??= new QueueEncounterWaitIntent(timing.EncounterId, timing.Revision);
             var binding = state.Inventory.Controls.Single(control => control.ActorId == actor.ActorId);
             choices.Add(new WorldActionCommand(newIdentity(), binding.PrincipalId, binding.SessionId, actor.ActorId,

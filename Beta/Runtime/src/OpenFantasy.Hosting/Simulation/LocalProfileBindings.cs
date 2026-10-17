@@ -15,7 +15,8 @@ internal static class LocalProfileBindings
             or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion
             or WorldControllerAdmission.ProfileVersion
             or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion
-            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion;
+            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion
+            or WorldPartyWithdrawalAdmission.ProfileVersion;
 
     /// <summary>Ordinary self-use, patient-owned permission withdrawal and permitted helper aid.</summary>
     internal static bool AdmitsOrdinaryCare(WorldSnapshot state) =>
@@ -23,7 +24,8 @@ internal static class LocalProfileBindings
             or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion
             or WorldControllerAdmission.ProfileVersion
             or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion
-            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion;
+            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion
+            or WorldPartyWithdrawalAdmission.ProfileVersion;
 
     /// <summary>Existing ordinary and deferred excavation bindings, excluding the separate privileged paired route.</summary>
     internal static bool AdmitsExcavation(WorldSnapshot state) =>
@@ -33,27 +35,30 @@ internal static class LocalProfileBindings
             or WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion
             or WorldControllerAdmission.ProfileVersion
             or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion
-            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion;
+            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion
+            or WorldPartyWithdrawalAdmission.ProfileVersion;
 
     /// <summary>
-    /// The explicit committed-retreat interpretation and the outcome interpretation built on it unchanged; no older
-    /// profile reads a retreat request.
+    /// Explicit single-actor and collective interpretations; Core retains each saved profile's own departure law.
     /// </summary>
     internal static bool AdmitsRetreat(WorldSnapshot state) =>
         state.ProfileVersion is WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion
             or WorldControllerAdmission.ProfileVersion
             or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion
-            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion;
+            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion
+            or WorldPartyWithdrawalAdmission.ProfileVersion;
 
     /// <summary>The explicit outcome-completion interpretation: world-owned completion after required readings.</summary>
     internal static bool AdmitsOutcomeCompletion(WorldSnapshot state) =>
         state.ProfileVersion is WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion
             or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion
-            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion;
+            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion
+            or WorldPartyWithdrawalAdmission.ProfileVersion;
 
     internal static bool AdmitsCareDispositions(WorldSnapshot state) =>
         state.ProfileVersion is WorldCareDispositionAdmission.ProfileVersion
-            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion;
+            or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion
+            or WorldPartyWithdrawalAdmission.ProfileVersion;
 
     /// <summary>An advancing exploration cutoff with no reading hold, retained consequence, care obligation or encounter.</summary>
     internal static bool IsUnheldExploration(WorldSnapshot state) =>

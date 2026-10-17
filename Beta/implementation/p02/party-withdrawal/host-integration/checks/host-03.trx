@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e0563f5b-3f78-478f-92c5-06a2700a03df" name="@mac 2026-10-17 14:11:19" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T14:11:19.1370830-05:00" queuing="2026-10-17T14:11:19.1370830-05:00" start="2026-10-17T14:11:15.7566690-05:00" finish="2026-10-17T14:11:20.6446000-05:00" />
+  <TestSettings name="default" id="7dfaad1a-302f-4483-b318-758fbeca9fb4">
+    <Deployment runDeploymentRoot="_mac_2026-10-17_14_11_19" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="98dad421-89ff-4e42-bb22-6a22fba87ea6" testId="c6f3d7e6-62cd-3471-83d9-34a6b7721513" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(capabilities: Combat | Traversal)" computerName="mac" duration="00:00:00.0708909" startTime="2026-10-17T14:11:18.4202570-05:00" endTime="2026-10-17T14:11:18.4914770-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="98dad421-89ff-4e42-bb22-6a22fba87ea6">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Acquisition requires the exact expired episode, accepted grant, available grantee and safe boundary.</Message>
+          <StackTrace>   at OpenFantasy.Core.Worlds.WorldControlAssignmentProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldControlAssignmentProcessor.cs:line 24
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideSelected(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean observeMaterial) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 82
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 38
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.WithdrawalWorldFixture.Apply(WorldBatchKind kind, WorldActionCommand[] actions, WorldMovementInput[] movement, WorldControllerEvent controllerEvent, WorldControlAssignmentEvent assignmentEvent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/WithdrawalWorldFixture.cs:line 68
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(WorldControlCapabilities capabilities) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalPresentationTests.cs:line 140
+   at InvokeStub_PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1a0245c3-c21e-4c67-ac91-cb6aa8f127fb" testId="3365d25c-cf56-2b11-63ff-b8499767ff7a" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Older_worlds_keep_their_exact_shape_and_new_versions_cannot_fabricate_collective_state" computerName="mac" duration="00:00:00.0803801" startTime="2026-10-17T14:11:19.2080120-05:00" endTime="2026-10-17T14:11:19.2884320-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1a0245c3-c21e-4c67-ac91-cb6aa8f127fb" />
+    <UnitTestResult executionId="ee3135ca-6c01-4059-b837-c44e53978ca2" testId="b4481454-fb29-7181-a48d-ace653ee1df5" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.The_existing_wheel_slot_cancels_the_exact_choice_and_announces_its_end_once" computerName="mac" duration="00:00:00.1889818" startTime="2026-10-17T14:11:18.4931010-05:00" endTime="2026-10-17T14:11:18.6824350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee3135ca-6c01-4059-b837-c44e53978ca2" />
+    <UnitTestResult executionId="f8c375d4-026d-44bf-afc6-0e2d0d4d0dbc" testId="1c11b661-68dc-ac77-3bcb-4e398d2ff035" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Foreign_commands_observers_missing_members_and_downgraded_versions_are_rejected" computerName="mac" duration="00:00:00.1213925" startTime="2026-10-17T14:11:19.2892700-05:00" endTime="2026-10-17T14:11:19.4116930-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8c375d4-026d-44bf-afc6-0e2d0d4d0dbc">
+      <Output>
+        <ErrorInfo>
+          <Message>System.FormatException : An observation must use its complete canonical value encoding.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Networking.ObservationViews.PlayerViewCodec.Decode(ReadOnlySpan`1 bytes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/ObservationViews/PlayerViewCodec.cs:line 108
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Foreign_commands_observers_missing_members_and_downgraded_versions_are_rejected() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalPresentationTests.cs:line 57
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="4d0907ec-ed92-45b5-9fa8-525d46b42a98" testId="f64d3172-99fb-ca0b-ec15-80a37cf96b18" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalCapacityTests.Four_longest_routes_fit_the_complete_reserved_root_and_reopen_from_ordinary_history" computerName="mac" duration="00:00:03.3487808" startTime="2026-10-17T14:11:17.2568930-05:00" endTime="2026-10-17T14:11:20.6090960-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d0907ec-ed92-45b5-9fa8-525d46b42a98">
+      <Output>
+        <StdOut>{"HumanCount":4,"RouteSamples":[32,32,32,32],"EncodedRootBytes":109021,"RetreatBytes":2749,"ReservedCompleteBytes":10667873,"MaximumRootBytes":16777216,"RemainingReservedHeadroom":6109343}</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="6561c290-1857-4910-83bf-d7f87f7d8c4f" testId="f74f946d-9266-164f-759a-7ebfd5d82c96" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalSessionTests.Two_ports_choose_independently_and_the_first_choice_does_not_bypass_full_wait" computerName="mac" duration="00:00:01.8649666" startTime="2026-10-17T14:11:17.2568990-05:00" endTime="2026-10-17T14:11:19.1258900-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6561c290-1857-4910-83bf-d7f87f7d8c4f" />
+    <UnitTestResult executionId="90ba79f6-2151-4a33-be75-0c6931cbb1fa" testId="7a98c5c8-ffda-6acd-3440-2f36accbeaac" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalSessionTests.Cancellation_between_paid_samples_preserves_debt_and_position_and_retries_the_original_receipt" computerName="mac" duration="00:00:01.3822045" startTime="2026-10-17T14:11:19.1282030-05:00" endTime="2026-10-17T14:11:20.5104660-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="90ba79f6-2151-4a33-be75-0c6931cbb1fa" />
+    <UnitTestResult executionId="56bcabf5-6271-4ecc-857c-e896a4e1aa63" testId="1a11edeb-d539-cc20-0b95-08c16eaf4373" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(capabilities: Combat)" computerName="mac" duration="00:00:01.1433368" startTime="2026-10-17T14:11:17.2568970-05:00" endTime="2026-10-17T14:11:18.4163050-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56bcabf5-6271-4ecc-857c-e896a4e1aa63">
+      <Output>
+        <ErrorInfo>
+          <Message>System.InvalidOperationException : Acquisition requires the exact expired episode, accepted grant, available grantee and safe boundary.</Message>
+          <StackTrace>   at OpenFantasy.Core.Worlds.WorldControlAssignmentProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldControlAssignmentProcessor.cs:line 24
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideSelected(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean observeMaterial) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 82
+   at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs:line 38
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.WithdrawalWorldFixture.Apply(WorldBatchKind kind, WorldActionCommand[] actions, WorldMovementInput[] movement, WorldControllerEvent controllerEvent, WorldControlAssignmentEvent assignmentEvent) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/WithdrawalWorldFixture.cs:line 68
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(WorldControlCapabilities capabilities) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalPresentationTests.cs:line 140
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="134cd760-9474-4549-860e-54d3310406fa" testId="672396ba-bce9-c09c-0956-adb45827c465" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Each_observer_gets_only_their_exact_choice_and_complete_public_side_in_both_wire_formats" computerName="mac" duration="00:00:00.5240321" startTime="2026-10-17T14:11:18.6831800-05:00" endTime="2026-10-17T14:11:19.2072460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="134cd760-9474-4549-860e-54d3310406fa" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Older_worlds_keep_their_exact_shape_and_new_versions_cannot_fabricate_collective_state" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3365d25c-cf56-2b11-63ff-b8499767ff7a">
+      <Execution id="1a0245c3-c21e-4c67-ac91-cb6aa8f127fb" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests" name="Older_worlds_keep_their_exact_shape_and_new_versions_cannot_fabricate_collective_state" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalSessionTests.Two_ports_choose_independently_and_the_first_choice_does_not_bypass_full_wait" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f74f946d-9266-164f-759a-7ebfd5d82c96">
+      <Execution id="6561c290-1857-4910-83bf-d7f87f7d8c4f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalSessionTests" name="Two_ports_choose_independently_and_the_first_choice_does_not_bypass_full_wait" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(capabilities: Combat | Traversal)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c6f3d7e6-62cd-3471-83d9-34a6b7721513">
+      <Execution id="98dad421-89ff-4e42-bb22-6a22fba87ea6" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests" name="Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.The_existing_wheel_slot_cancels_the_exact_choice_and_announces_its_end_once" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b4481454-fb29-7181-a48d-ace653ee1df5">
+      <Execution id="ee3135ca-6c01-4059-b837-c44e53978ca2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests" name="The_existing_wheel_slot_cancels_the_exact_choice_and_announces_its_end_once" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(capabilities: Combat)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1a11edeb-d539-cc20-0b95-08c16eaf4373">
+      <Execution id="56bcabf5-6271-4ecc-857c-e896a4e1aa63" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests" name="Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Each_observer_gets_only_their_exact_choice_and_complete_public_side_in_both_wire_formats" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="672396ba-bce9-c09c-0956-adb45827c465">
+      <Execution id="134cd760-9474-4549-860e-54d3310406fa" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests" name="Each_observer_gets_only_their_exact_choice_and_complete_public_side_in_both_wire_formats" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalSessionTests.Cancellation_between_paid_samples_preserves_debt_and_position_and_retries_the_original_receipt" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7a98c5c8-ffda-6acd-3440-2f36accbeaac">
+      <Execution id="90ba79f6-2151-4a33-be75-0c6931cbb1fa" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalSessionTests" name="Cancellation_between_paid_samples_preserves_debt_and_position_and_retries_the_original_receipt" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalCapacityTests.Four_longest_routes_fit_the_complete_reserved_root_and_reopen_from_ordinary_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f64d3172-99fb-ca0b-ec15-80a37cf96b18">
+      <Execution id="4d0907ec-ed92-45b5-9fa8-525d46b42a98" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalCapacityTests" name="Four_longest_routes_fit_the_complete_reserved_root_and_reopen_from_ordinary_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Foreign_commands_observers_missing_members_and_downgraded_versions_are_rejected" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1c11b661-68dc-ac77-3bcb-4e398d2ff035">
+      <Execution id="f8c375d4-026d-44bf-afc6-0e2d0d4d0dbc" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests" name="Foreign_commands_observers_missing_members_and_downgraded_versions_are_rejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="c6f3d7e6-62cd-3471-83d9-34a6b7721513" executionId="98dad421-89ff-4e42-bb22-6a22fba87ea6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3365d25c-cf56-2b11-63ff-b8499767ff7a" executionId="1a0245c3-c21e-4c67-ac91-cb6aa8f127fb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b4481454-fb29-7181-a48d-ace653ee1df5" executionId="ee3135ca-6c01-4059-b837-c44e53978ca2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1c11b661-68dc-ac77-3bcb-4e398d2ff035" executionId="f8c375d4-026d-44bf-afc6-0e2d0d4d0dbc" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f64d3172-99fb-ca0b-ec15-80a37cf96b18" executionId="4d0907ec-ed92-45b5-9fa8-525d46b42a98" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f74f946d-9266-164f-759a-7ebfd5d82c96" executionId="6561c290-1857-4910-83bf-d7f87f7d8c4f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7a98c5c8-ffda-6acd-3440-2f36accbeaac" executionId="90ba79f6-2151-4a33-be75-0c6931cbb1fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1a11edeb-d539-cc20-0b95-08c16eaf4373" executionId="56bcabf5-6271-4ecc-857c-e896a4e1aa63" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="672396ba-bce9-c09c-0956-adb45827c465" executionId="134cd760-9474-4549-860e-54d3310406fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" passed="6" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.41]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.95]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.08]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.28]       System.InvalidOperationException : Acquisition requires the exact expired episode, accepted grant, available grantee and safe boundary.
+[xUnit.net 00:00:02.28]       Stack Trace:
+[xUnit.net 00:00:02.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldControlAssignmentProcessor.cs(24,0): at OpenFantasy.Core.Worlds.WorldControlAssignmentProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied)
+[xUnit.net 00:00:02.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(82,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideSelected(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean observeMaterial)
+[xUnit.net 00:00:02.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(38,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied)
+[xUnit.net 00:00:02.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/WithdrawalWorldFixture.cs(68,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.WithdrawalWorldFixture.Apply(WorldBatchKind kind, WorldActionCommand[] actions, WorldMovementInput[] movement, WorldControllerEvent controllerEvent, WorldControlAssignmentEvent assignmentEvent)
+[xUnit.net 00:00:02.28]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalPresentationTests.cs(140,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(WorldControlCapabilities capabilities)
+[xUnit.net 00:00:02.28]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.28]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.35]       System.InvalidOperationException : Acquisition requires the exact expired episode, accepted grant, available grantee and safe boundary.
+[xUnit.net 00:00:02.35]       Stack Trace:
+[xUnit.net 00:00:02.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldControlAssignmentProcessor.cs(24,0): at OpenFantasy.Core.Worlds.WorldControlAssignmentProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied)
+[xUnit.net 00:00:02.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(82,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.DecideSelected(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied, Boolean observeMaterial)
+[xUnit.net 00:00:02.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs(38,0): at OpenFantasy.Core.Worlds.WorldStepProcessor.Decide(WorldSnapshot state, WorldStepBatch batch, Func`2 historicallyOccupied)
+[xUnit.net 00:00:02.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/WithdrawalWorldFixture.cs(68,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.WithdrawalWorldFixture.Apply(WorldBatchKind kind, WorldActionCommand[] actions, WorldMovementInput[] movement, WorldControllerEvent controllerEvent, WorldControlAssignmentEvent assignmentEvent)
+[xUnit.net 00:00:02.35]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalPresentationTests.cs(140,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(WorldControlCapabilities capabilities)
+[xUnit.net 00:00:02.35]            at InvokeStub_PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(Object, Span`1)
+[xUnit.net 00:00:02.35]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:03.27]       System.FormatException : An observation must use its complete canonical value encoding.
+[xUnit.net 00:00:03.27]       Stack Trace:
+[xUnit.net 00:00:03.27]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Networking/ObservationViews/PlayerViewCodec.cs(108,0): at OpenFantasy.Hosting.Networking.ObservationViews.PlayerViewCodec.Decode(ReadOnlySpan`1 bytes)
+[xUnit.net 00:00:03.27]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalPresentationTests.cs(57,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Foreign_commands_observers_missing_members_and_downgraded_versions_are_rejected()
+[xUnit.net 00:00:03.27]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.27]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:04.47]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T14:11:18.4221900-05:00">
+        <Text>[xUnit.net 00:00:02.28]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(capabilities: Combat) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T14:11:18.4923400-05:00">
+        <Text>[xUnit.net 00:00:02.35]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Delegated_disclosure_requires_both_capabilities_and_never_includes_completed_history(capabilities: Combat | Traversal) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T14:11:19.4131470-05:00">
+        <Text>[xUnit.net 00:00:03.27]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalPresentationTests.Foreign_commands_observers_missing_members_and_downgraded_versions_are_rejected [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

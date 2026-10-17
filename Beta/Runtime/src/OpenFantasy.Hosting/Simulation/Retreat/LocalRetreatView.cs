@@ -23,7 +23,8 @@ public enum LocalRetreatBlockedReason
     NoClearGround,
     SearchLimit,
     Retreating,
-    PreparingChoices
+    PreparingChoices,
+    Arrived
 }
 
 /// <summary>
@@ -60,8 +61,8 @@ public sealed record LocalRetreatRecord(EntityId ActorId, EntityId CommandId, En
 
 /// <summary>
 /// Retreat observations of the explicit retreat interpretation; null in every other world. Only the observer's own
-/// route and record are projected. Another actor's retreat is visible only as an anonymous withdrawal, never with its
-/// route, destination, readiness or command identity.
+/// route and record are projected. Collective worlds also expose same-side readiness status. Another actor's
+/// route, destination, charged readiness and command identity are never disclosed.
 /// </summary>
 public sealed class LocalRetreatView
 {
@@ -69,16 +70,27 @@ public sealed class LocalRetreatView
     internal LocalRetreatView(LocalRetreatOffer? offer,
         LocalRetreatProgress? progress,
         LocalRetreatRecord? last,
-        bool otherWithdrawing)
+        bool otherWithdrawing,
+        LocalWithdrawalView? withdrawal = null)
     {
         Offer = offer;
         Progress = progress;
         Last = last;
         OtherWithdrawing = otherWithdrawing;
+        Withdrawal = withdrawal;
     }
 
     private LocalRetreatView(WorldSnapshot world, EntityId observerId, EncounterRetreatState retreat)
     {
+        if (retreat.Withdrawal is { } collective)
+        {
+            Withdrawal = LocalWithdrawalView.Project(world, observerId);
+            OtherWithdrawing = collective.Parties.SelectMany(party => party.Members)
+                .Any(member => member.ActorId != observerId && !member.HasArrived);
+            if (world.Pacing?.Encounter is { } current && world.EncounterActions is not null)
+                Offer = ProjectOffer(world, observerId, current, retreat);
+            return;
+        }
         if (retreat.Active is { } active)
         {
             if (active.ActorId == observerId)
@@ -107,8 +119,9 @@ public sealed class LocalRetreatView
     public LocalRetreatRecord? Last { get; }
     /// <summary>Another combatant is walking a committed retreat; nothing else about it is projected.</summary>
     public bool OtherWithdrawing { get; }
+    public LocalWithdrawalView? Withdrawal { get; }
     /// <summary>Whether a committed retreat currently holds the observer's choices.</summary>
-    public bool IsRetreating => Progress is not null;
+    public bool IsRetreating => Progress is not null || Withdrawal?.Choice is { HasArrived: false };
 
     internal static LocalRetreatView? Project(WorldSnapshot world, EntityId observerId) =>
         world.Retreat is { } retreat ? new LocalRetreatView(world, observerId, retreat) : null;
@@ -151,6 +164,7 @@ public sealed class LocalRetreatView
         if (world.HasReadingHold || world.PendingExcavation is not null) return LocalRetreatBlockedReason.Held;
         if (world.Progression!.GetActor(observerId).CurrentHp == 0) return LocalRetreatBlockedReason.Incapacitated;
         if (!WorldEncounterActions.CanParticipate(world, observerId)) return LocalRetreatBlockedReason.Bystander;
+        if (retreat.Withdrawal?.FindMember(observerId) is { HasArrived: true }) return LocalRetreatBlockedReason.Arrived;
         if (retreat.Holds(observerId)) return LocalRetreatBlockedReason.Retreating;
         if (retreat.Active is not null) return LocalRetreatBlockedReason.Committed;
         if (!WorldEncounterRetreats.IsSupportedSide(world, observerId)) return LocalRetreatBlockedReason.AllyRemains;

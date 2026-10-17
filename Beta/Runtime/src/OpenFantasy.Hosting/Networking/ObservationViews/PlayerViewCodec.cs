@@ -19,6 +19,7 @@ public static class PlayerViewCodec
     public const int MaterialDescriptionsVersion = 5;
     public const int ConstructionVersion = 6;
     public const int CarePermissionDescriptionsVersion = 7;
+    public const int CollectiveWithdrawalVersion = 8;
     public const int MaximumBodyBytes = 900 * 1024;
     public const int MaximumExpandedJsonBytes = 16 * 1024 * 1024;
     public const int MaximumDepth = 48;
@@ -68,6 +69,17 @@ public static class PlayerViewCodec
             : ObservationCompression.Encode(json.WrittenSpan);
     }
 
+    /// <summary>Includes collective own-choice and party readiness, retaining older worlds' exact representation.</summary>
+    public static byte[] EncodeWithCollectiveWithdrawal(LocalWorldView view)
+    {
+        ArgumentNullException.ThrowIfNull(view);
+        if (view.Retreat?.Withdrawal is null) return EncodeWithCarePermissionDescriptions(view);
+        using BoundedObservationJsonBuffer json = EncodeJson(view, includeMaterialDescriptions: true,
+            includeConstruction: true, includeCarePermissionDescriptions: true, includeCollectiveWithdrawal: true);
+        return json.WrittenSpan.Length <= MaximumBodyBytes ? json.WrittenSpan.ToArray()
+            : ObservationCompression.Encode(json.WrittenSpan);
+    }
+
     public static LocalWorldView Decode(ReadOnlySpan<byte> bytes)
     {
         try
@@ -81,7 +93,7 @@ public static class PlayerViewCodec
             Preflight(json);
             ObservationBody body = JsonSerializer.Deserialize<ObservationBody>(json, Options)
                 ?? throw new FormatException("Missing observation body.");
-            if (body.View is null || body.Version != CarePermissionDescriptionsVersion && body.Version != ConstructionVersion
+            if (body.View is null || body.Version != CollectiveWithdrawalVersion && body.Version != CarePermissionDescriptionsVersion && body.Version != ConstructionVersion
                 && body.Version != MaterialDescriptionsVersion && body.Version != VersionFor(body.View))
             {
                 throw new FormatException("Unsupported or incomplete observation body.");
@@ -89,8 +101,8 @@ public static class PlayerViewCodec
             // Canonical JSON rejects duplicate, missing, unknown and contradictory derived fields. Brotli's
             // compressed spelling may vary across implementations; only the expanded typed bytes must agree.
             using BoundedObservationJsonBuffer canonical = EncodeJson(body.View, body.Version >= MaterialDescriptionsVersion,
-                body.Version is ConstructionVersion or CarePermissionDescriptionsVersion,
-                body.Version == CarePermissionDescriptionsVersion);
+                body.Version >= ConstructionVersion,
+                body.Version >= CarePermissionDescriptionsVersion, body.Version == CollectiveWithdrawalVersion);
             if (!json.SequenceEqual(canonical.WrittenSpan))
             {
                 throw new FormatException("An observation must use its complete canonical value encoding.");
@@ -105,8 +117,9 @@ public static class PlayerViewCodec
     }
 
     private static BoundedObservationJsonBuffer EncodeJson(LocalWorldView view, bool includeMaterialDescriptions = false,
-        bool includeConstruction = false, bool includeCarePermissionDescriptions = false)
+        bool includeConstruction = false, bool includeCarePermissionDescriptions = false, bool includeCollectiveWithdrawal = false)
     {
+        WithdrawalObservationValidation.Validate(view, includeCollectiveWithdrawal);
         ObservationValidation.Validate(view);
         if (includeConstruction) ConstructionObservationValidation.Validate(view);
         if (includeMaterialDescriptions) MaterialDescriptionValidation.Validate(view);
@@ -116,7 +129,7 @@ public static class PlayerViewCodec
         {
             using (var writer = new Utf8JsonWriter(buffer))
             {
-                JsonSerializer.Serialize(writer, new ObservationBody(includeCarePermissionDescriptions ? CarePermissionDescriptionsVersion
+                JsonSerializer.Serialize(writer, new ObservationBody(includeCollectiveWithdrawal ? CollectiveWithdrawalVersion : includeCarePermissionDescriptions ? CarePermissionDescriptionsVersion
                     : includeConstruction ? ConstructionVersion : includeMaterialDescriptions ? MaterialDescriptionsVersion : VersionFor(view), view),
                     includeCarePermissionDescriptions ? CarePermissionOptions : includeConstruction ? ConstructionOptions : includeMaterialDescriptions ? DescribedOptions : Options);
                 writer.Flush();

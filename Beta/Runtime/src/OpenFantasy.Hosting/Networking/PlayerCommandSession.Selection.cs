@@ -26,7 +26,7 @@ public sealed partial class PlayerCommandSession
         ulong request = input.Message.RequestId;
         if (input.Message.Kind == PlayerMessageKind.SelectionSubscribe)
         {
-            if (_channel.ProfileVersion != WorldDelegatedControlAdmission.ProfileVersion
+            if (_channel.ProfileVersion is not (WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
                 || Volatile.Read(ref _observationRequested) != 0 || Interlocked.CompareExchange(ref _selectedMode, 1, 0) != 0)
                 throw new FormatException("Selected observations require explicit initial subscription in their supported profile.");
             PublishSelectedObservation(request, true);
@@ -35,7 +35,7 @@ public sealed partial class PlayerCommandSession
         }
         if (input.Message.Kind == PlayerMessageKind.ControlRequest)
         {
-            if (_channel.ProfileVersion is not (WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion))
+            if (_channel.ProfileVersion is not (WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion))
                 Enqueue(Refusal(request, PlayerRequestRefusal.NotAdmitted));
             else if (Interlocked.CompareExchange(ref _administrationBusy, 1, 0) != 0)
                 Enqueue(Refusal(request, PlayerRequestRefusal.Busy));
@@ -110,7 +110,7 @@ public sealed partial class PlayerCommandSession
             catch (AuthorityDispatchException) when (requestId == 0) { return false; }
             if (!force && requestId == 0 && observation == _lastSelectedObservation) return false;
             var frame = new PlayerSelectedObservation(_selectionStream, checked(++_selectionRevision), observation)
-                .WithConstruction().WithCarePermissionDescriptions();
+                .WithConstruction().WithCarePermissionDescriptions().WithCollectiveWithdrawal();
             byte[] bytes = PlayerSelectedObservationCodec.Encode(frame);
             var message = new PlayerMessage(PlayerMessageKind.SelectionObservation, requestId, bytes);
             // The response queue bounds this table to its capacity plus the one in-flight send.

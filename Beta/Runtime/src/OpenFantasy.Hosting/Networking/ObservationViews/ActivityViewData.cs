@@ -74,15 +74,18 @@ internal sealed record RetreatViewData(
     LocalRetreatOffer? Offer,
     LocalRetreatProgress? Progress,
     LocalRetreatRecord? Last,
-    bool OtherWithdrawing)
+    bool OtherWithdrawing,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    LocalWithdrawalView? Withdrawal = null)
 {
-    internal LocalRetreatView ToView() => new(Offer, Progress, Last, OtherWithdrawing);
+    internal LocalRetreatView ToView() => new(Offer, Progress, Last, OtherWithdrawing, Withdrawal);
 
     internal static RetreatViewData From(LocalRetreatView value) => new(
         value.Offer,
         value.Progress,
         value.Last,
-        value.OtherWithdrawing);
+        value.OtherWithdrawing,
+        value.Withdrawal);
 }
 
 internal sealed record InventoryViewData(

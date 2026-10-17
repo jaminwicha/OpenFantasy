@@ -22,6 +22,18 @@ public static class WorldEncounterRetreats
     /// <summary>True when a committed retreat currently holds this actor's decisions.</summary>
     public static bool HoldsActor(WorldSnapshot world, EntityId actorId) => world.Retreat?.Holds(actorId) == true;
 
+    /// <summary>Current cancellation legality for an observer; command authentication remains the authority's responsibility.</summary>
+    public static WorldActionRejection EvaluateCancellation(WorldSnapshot world, EntityId actorId,
+        CancelEncounterWithdrawalIntent intent)
+    {
+        ArgumentNullException.ThrowIfNull(world);
+        ArgumentNullException.ThrowIfNull(intent);
+        if (world.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Active || world.Pacing?.Encounter is null
+            || world.HasReadingHold || world.PendingExcavation is not null)
+            return WorldActionRejection.Unavailable;
+        return WorldPartyWithdrawalChoices.ValidateCancellation(world, world.Retreat, actorId, intent);
+    }
+
     /// <summary>Living opposing participants of an actor in the current episode, in identity order.</summary>
     public static IReadOnlyList<EncounterCombatant> LivingOpponents(WorldSnapshot world, EntityId actorId)
     {

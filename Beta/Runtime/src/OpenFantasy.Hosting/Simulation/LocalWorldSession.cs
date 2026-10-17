@@ -299,6 +299,14 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         if (state.EncounterLifecycle?.Phase is EncounterLifecyclePhase.Confrontation or EncounterLifecyclePhase.Staging
             or EncounterLifecyclePhase.Outcome)
             throw new AuthorityDispatchException("This lifecycle boundary accepts only entry or release requests.");
+        if (command.Intent is CancelEncounterWithdrawalIntent)
+        {
+            if (state.ProfileVersion != WorldPartyWithdrawalAdmission.ProfileVersion || state.Pacing?.Encounter is null)
+                throw new AuthorityDispatchException("Withdrawal cancellation requires its active collective encounter.");
+            // Cancellation can occur between paid samples. Core checks the exact retained command and
+            // current timing revision; it never refunds debt or supplies an extra combat action.
+            return;
+        }
         if (command.Intent is QueueEncounterRetreatIntent && !LocalProfileBindings.AdmitsRetreat(state))
             throw new AuthorityDispatchException("This saved profile does not admit a committed retreat.");
         if (state.Pacing?.Encounter is not null && command.Intent is not QueueEncounterWaitIntent and not QueueEncounterAbilityIntent

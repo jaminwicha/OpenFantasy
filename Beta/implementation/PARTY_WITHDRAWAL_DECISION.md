@@ -121,12 +121,15 @@ party refusal remains active while this work is incomplete.
    departure recovery, including six actual storage-process kills. Pending aftermath care belongs to
    an unresolved outcome and must refuse migration until ordinary resolution makes the save eligible;
    it is not an exploration-state facet to silently migrate or clear. The subsequent interaction checks
-   [qualify this distinction, genuine outcome and blocked-route recovery](p02/party-withdrawal/interaction-closure/RESULT.md). Complete-root capacity and
-   host/client/native integration remain distinct obligations; ordinary launcher selection is unchanged.
+   [qualify this distinction, genuine outcome and blocked-route recovery](p02/party-withdrawal/interaction-closure/RESULT.md). The [host/presentation increment](p02/party-withdrawal/host-integration/RESULT.md) measures admitted
+   four-human/32-sample complete-root capacity and binds own choices/cancellation to host and protocol.
+   City/frontier capacity and native integration remain distinct obligations; ordinary fresh launch stays40.
 3. **Host and presentation.** Own-character withdrawal offers and inspection show actual path/cost,
    party readiness and blockers without exposing another actor's private route or command. Use the
    existing wheel, confirmation/cancellation and immutable observations. Arrival, interruption and
    declined/changed choices need clear feedback. UI never supplies implicit consent or authority.
+   The host increment implements these values and the shared wheel slot with managed and authenticated
+   in-memory protocol checks; native/human readability and the full connected journey remain unproved.
 4. **Joined journey and qualification.** The ordinary two-player opening continues into the same
    saved expedition: buy/carry, gather to enter, each chooses withdrawal, genuine enemy turns occur,
    physical departure retains debts and injuries, care/sale/return follow. Then test 1–4 participants,

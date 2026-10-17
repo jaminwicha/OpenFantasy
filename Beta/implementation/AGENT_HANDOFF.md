@@ -139,10 +139,21 @@ explicit cancellation, required reading and normal completion make that same sav
 pending care survives actual cuts/restart. Genuine defeat and opposing-side withdrawal retain terminal
 identities, and a blocked sample reopens with its paid debt and arrived ally retained. The original38
 care fixture and six process-kill cases also pass. One nullability build failure remains recorded.
-Next review complete-root capacity and implement host/client selection, own-character offers/cancellation
-and the earned shared expedition, including actual commerce. Complete scale/1–4, listener/reconnect,
-independent/native/human and broader interaction combinations remain open. The marker is
-`codex/milestone-withdrawal-interactions-20261017`; no runtime rule or default launch changed.
+The marker is `codex/milestone-withdrawal-interactions-20261017`; no runtime rule or default launch
+changed in that increment.
+
+The [host/presentation increment](p02/party-withdrawal/host-integration/RESULT.md) implements explicit41
+host selectors, home observation8/selected5, own cancellation and public party readiness in the existing
+wheel.89 distinct cases pass across affected runs (13 new), including paid cancellation with exact
+receipt retry/reopening, two-port ordinary departure, scoped privacy, authenticated selected delivery
+and the retained older shared observation. The four-human/32-sample capacity diagnostic fits existing
+reservations; it is not frontier/city qualification. Host and Godot C# application builds pass without
+warnings. Three failed preparations/build checks and the subsequent UI correction are retained. The
+marker is `codex/milestone-withdrawal-host-20261017`. Next expose/select the explicit copied migration
+for the earned shared save and complete its native expedition with actual commerce and autonomous
+change on return. Ordinary fresh admission and the solo seed/name opener remain40; no implicit upgrade
+is introduced. Complete scale/1–4, listener/reconnect, independent/native/human and broader interaction
+combinations remain open.
 
 After that selected expedition, execute roadmap PLAN-STATE: one partition/version design comparison
 and measured integrated prototype, before permanent NPC cognition state. Then NPC-01 proves evidence,

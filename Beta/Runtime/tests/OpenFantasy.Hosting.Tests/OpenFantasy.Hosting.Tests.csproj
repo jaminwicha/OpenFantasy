@@ -58,5 +58,6 @@
     <Compile Include="../../client/scripts/Retreat/RetreatOffers.cs" Link="Client/Retreat/RetreatOffers.cs" />
     <None Include="../OpenFantasy.Core.Tests/Fixtures/consented-world-formats-v1.json" Link="Fixtures/consented-world-formats-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <Compile Include="../../client/scripts/FarmHistoryModel.cs" Link="Client/FarmHistoryModel.cs" />
+    <None Update="Fixtures/withdrawal-legacy-home-v4.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

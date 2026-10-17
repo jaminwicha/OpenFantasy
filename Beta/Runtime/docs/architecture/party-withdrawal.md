@@ -153,11 +153,52 @@ cancellation; the existing delegated envelope can retain it, while earlier world
 that intent. Standalone command decoding never expands an old world's action permissions.
 
 SQLite selects schema12 for profile41 and recovers either its fresh genesis or an explicitly
-transitioned profile40 lineage. Ordinary adventure admission and connected client selectors remain
-separate from that storage capability. A fresh profile41 root cannot replace lived history.
-Native preparation and observations must expose each actor's own choice, blockers and actual costs
-without revealing another participant's private command. Those adapter contracts must be implemented
-and qualified before this interpretation becomes an ordinary playable entry.
+transitioned profile40 lineage. The dedicated cargo host and connected client select profile41 through
+the same source-bound cargo composition and exact invitation compatibility as earlier profiles. The
+ordinary adventure factory still creates profile40; storage or protocol support never upgrades a save
+or substitutes a fresh profile41 root for lived history.
+
+## Host scheduling and player presentation
+
+`LocalProfileBindings` explicitly retains collective worlds' inherited proposal, care, excavation,
+outcome and retreat routes. `LocalWorldSession` authenticates the submitting port or current selected
+actor before admitting cancellation to an encounter-decision cutoff, including between paid samples.
+Core validates the exact retained command and timing revision. Exact retries use the durable original
+receipt. New requests never gain permission from a displayed offer, historical witness or shared party.
+
+Each undecided required human still holds Full Wait. The host can collect separate player routes in
+one boundary; one route does not implicitly commit the rest of the side. Autonomous people may each
+select a route only under their actual autonomous controller and without delegated custody. The
+legacy selector keeps its single-route restriction. Arrival itself supplies no automatic human Wait.
+
+[LocalWithdrawalView](../../src/OpenFantasy.Hosting/Simulation/Retreat/LocalWithdrawalView.cs) projects
+only the observer's command, origin, destination, walked count, charged readiness and latest terminal
+record. Its party list contains the complete actual same-side roster, ordered by identity, with
+NeedsChoice, Walking, Arrived or Incapacitated status. Other people's routes, destinations, costs and
+command identities are withheld. The anonymous `OtherWithdrawing` flag retains its broader meaning.
+The observer's cancellation is offered only when Core permits it and automatic choices have settled;
+its timing revision and retained command are captured once. Arrival stops holding ordinary choices,
+while a separate accepted Wait makes cancellation unavailable until that work resolves.
+
+Home observation version8 and selected version5 explicitly carry these values. Earlier encodings
+refuse collective views rather than silently dropping their state. Worlds without the collective
+owner omit the new field and retain their existing representations. Validation checks observer identity,
+complete ordered side membership, incapacity, own progress/arrival and cancellation agreement. A
+canonical view is presentation evidence, not authenticated world state or permission to publish work.
+
+Delegated retreat requires both Combat and Traversal. Its scoped view contains the selected actor's
+current choice and party status, with terminal history withheld even when PrivateHistory is granted;
+historical access uses its separate query contract. Revocation denies new selected input, while the
+Core continues already-accepted obligations under their retained attribution.
+
+[RetreatOffers](../../client/scripts/Retreat/RetreatOffers.cs) uses the existing Retreat wheel sector.
+Before commitment it explains the captured route and sample costs; after commitment the same sector
+offers Stop retreat with the exact cancellation, explaining that paid recovery remains. Party counts
+explain incomplete or incapacitated membership. An arrived actor can choose ordinary Wait when ready
+to retain arrival, or another action to end it. Terminal notices distinguish departure, changed choice,
+blocked movement, incapacity and encounter end, and suppress records already present at opening.
+Captured choices are never silently refreshed or retried after their boundary changes. Native and human
+qualification must establish that these rules remain readable and usable during actual cooperative play.
 
 ## Explicit saved-world transition
 

@@ -11,8 +11,8 @@ zero statistics or a synthetic full player view.
 
 The [remote facade](../../src/OpenFantasy.Hosting/Networking/Client/RemotePlayerSession.Selection.cs)
 implements the optional interface over the authenticated protocol client. Capability checks expose
-consent only for its admitted permission/delegation profiles and selection only for its delegated-control
-profile. The dedicated cargo host admits those explicit saved profiles through the existing source-bound
+consent for its admitted permission/delegation/collective profiles and selection for the delegated-control
+and collective-withdrawal profiles. The dedicated cargo host admits those explicit saved profiles through the existing source-bound
 cargo/threat composition. Opening a world never adds permissions, converts existing NPCs to humans or
 upgrades a lived save.
 
@@ -41,7 +41,7 @@ Delegated command witnesses never authorize onward permission administration.
 
 The TLS WebSocket uses the established `openfantasy.v1` transport. After authenticated Welcome, the
 supported client explicitly subscribes with `SelectionSubscribe` and payload version 1 before requesting
-observations. The server accepts this once in the delegated-control profile. Its first correlated full
+observations. The server accepts this once in the delegated-control or collective-withdrawal profile. Its first correlated full
 selected observation and its delivery proof complete negotiation. Legacy view/control codecs retain their original bytes and
 home semantics; the selected stream does not reinterpret a legacy observation as another actor.
 
@@ -83,6 +83,15 @@ Recovery, Inventory and PrivateHistory. The home character's terms remain home f
 omit the extension and retain their bytes; absent older descriptions do not promote a frame. Missing
 required terms and extensions smuggled under an older version are refused. Live publication applies
 construction and this conditional care extension before capturing its delivered Resume basis.
+
+`WithCollectiveWithdrawal()` selects cumulative body version5 for a collective home world. It includes
+all earlier fields and the home character's own withdrawal values. The controlled character's current
+choice, cancellation and public side status are disclosed only with both Combat and Traversal;
+terminal history is withheld. Both views share the same saved interpretation. The codec refuses
+cross-version extensions, foreign observers, incomplete side rosters and inconsistent cancellation
+terms. Live publication applies this selection before capturing its delivered Resume basis. An older
+world does not gain the new field or representation. Exact invitation profile matching remains required;
+accepting a new observation format never changes another world's rules.
 
 [Selected inputs](../../src/OpenFantasy.Hosting/Networking/Selection/PlayerSelectedInputCodec.cs) use
 an explicit binary version and exact selection. Inner world commands retain their 16 KiB cap and canonical

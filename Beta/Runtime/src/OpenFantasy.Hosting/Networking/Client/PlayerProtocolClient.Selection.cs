@@ -21,8 +21,8 @@ public sealed partial class PlayerProtocolClient
     private readonly Dictionary<ulong, LocalActorSelection> _selectedControls = [];
 
     public bool SupportsControlPermissions => Welcome.Compatibility.ProfileVersion is
-        WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion;
-    public bool SupportsActorSelection => Welcome.Compatibility.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion;
+        WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion;
+    public bool SupportsActorSelection => Welcome.Compatibility.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion;
 
     public LocalSelectedPlayerObservation ReadSelectedObservation()
     {

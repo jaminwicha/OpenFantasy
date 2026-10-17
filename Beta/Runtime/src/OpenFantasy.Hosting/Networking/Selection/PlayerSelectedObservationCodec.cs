@@ -21,6 +21,10 @@ public sealed record PlayerSelectedObservation(EntityId StreamId, ulong Revision
         PresentationVersion = PlayerSelectedObservationCodec.MaterialDescriptionsVersion
     };
 
+    public PlayerSelectedObservation WithCollectiveWithdrawal() => Observation.HomeView.Retreat?.Withdrawal is not null
+        ? this with { PresentationVersion = PlayerSelectedObservationCodec.CollectiveWithdrawalVersion }
+        : this;
+
     public PlayerSelectedObservation WithCarePermissionDescriptions() =>
         CarePermissionDescriptionValidation.HasDescriptions(Observation.HomeView)
             || CarePermissionDescriptionValidation.HasDescriptions(Observation.ControlledView)
@@ -35,6 +39,7 @@ public static class PlayerSelectedObservationCodec
     public const int MaterialDescriptionsVersion = 2;
     public const int ConstructionVersion = 3;
     public const int CarePermissionDescriptionsVersion = 4;
+    public const int CollectiveWithdrawalVersion = 5;
     public const int MaximumBodyBytes = PlayerViewCodec.MaximumBodyBytes;
     public const int MaximumExpandedJsonBytes = PlayerViewCodec.MaximumExpandedJsonBytes;
     private static readonly JsonSerializerOptions Options = SelectedObservationOptions.Create();
@@ -62,7 +67,7 @@ public static class PlayerSelectedObservationCodec
             PlayerViewCodec.Preflight(json);
             var body = JsonSerializer.Deserialize<Body>(json, Options) ?? throw new FormatException("Missing selected observation.");
             if (body.Version is not Version and not MaterialDescriptionsVersion and not ConstructionVersion
-                and not CarePermissionDescriptionsVersion || body.Value is null) throw new FormatException("Unsupported selected observation version.");
+                and not CarePermissionDescriptionsVersion and not CollectiveWithdrawalVersion || body.Value is null) throw new FormatException("Unsupported selected observation version.");
             var value = body.Value with { PresentationVersion = body.Version };
             using var canonical = EncodeJson(value);
             if (!json.SequenceEqual(canonical.WrittenSpan)) throw new FormatException("Noncanonical selected observation.");
@@ -76,10 +81,14 @@ public static class PlayerSelectedObservationCodec
     {
         SelectedObservationValidation.Validate(value);
         if (value.PresentationVersion is not Version and not MaterialDescriptionsVersion and not ConstructionVersion
-            and not CarePermissionDescriptionsVersion)
+            and not CarePermissionDescriptionsVersion and not CollectiveWithdrawalVersion)
             throw new FormatException("Unsupported selected presentation version.");
-        bool careDescriptions = value.PresentationVersion == CarePermissionDescriptionsVersion;
-        bool construction = value.PresentationVersion is ConstructionVersion or CarePermissionDescriptionsVersion;
+        bool careDescriptions = value.PresentationVersion >= CarePermissionDescriptionsVersion;
+        bool construction = value.PresentationVersion >= ConstructionVersion;
+        bool collective = value.PresentationVersion == CollectiveWithdrawalVersion;
+        WithdrawalObservationValidation.Validate(value.Observation.HomeView, collective);
+        if (value.Observation.ControlledView is { } controlledWithdrawal)
+            WithdrawalObservationValidation.Validate(controlledWithdrawal, collective);
         bool described = value.PresentationVersion >= MaterialDescriptionsVersion;
         if (construction)
         {

@@ -113,7 +113,18 @@ older field sets. Canonical decoding rejects a descriptor under an older version
 version 7 and inconsistent withdrawal identities. Repeated self-use definition identities or permission
 identities are rejected in home and selected arrays before they can become ambiguous menu keys. Views without descriptions retain the construction
 or material-only representation according to their existing structure facet; omitted older facts are
-not invented during republishing. Live publication uses this conditional cumulative encoding.
+not invented during republishing. Live publication retains these fields in its conditional cumulative encoding.
+
+### Collective withdrawal
+
+`EncodeWithCollectiveWithdrawal` selects cumulative home body version8 only when the collective
+withdrawal owner is projected. It retains material, construction and care-term validation and adds
+`Retreat.Withdrawal`: the observer's current choice, exact optional cancellation, own terminal record
+and complete same-side readiness list. Other participants' private route and command data are withheld.
+The [withdrawal contract](party-withdrawal.md#host-scheduling-and-player-presentation) defines scope,
+arrival and paid recovery. The stream calls this entrypoint; older worlds use the unchanged prior
+encoding. Older explicit encoding APIs reject collective state rather than omit it. Version8 without
+the owner, an older version carrying it, and inconsistent observer/member/cancellation fields fail.
 
 Regional data contains the observer identity and exact feet, each observed region's full bounds
 and revision, row-major ground kinds and opening depths, and each wet column's exact volume and

@@ -70,7 +70,7 @@ public static class RoadThreatWorldAdmission
         ArgumentNullException.ThrowIfNull(cargo);
         ArgumentNullException.ThrowIfNull(threat);
         if (profileVersion is not (WorldEncounterRetreatAdmission.ProfileVersion or WorldEncounterOutcomeAdmission.ProfileVersion
-                or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion)
+                or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
             || world.ProfileVersion != profileVersion || CargoWorldAdmission.Find(world, cargo) is null
             || world.EncounterLifecycle is not { } lifecycle)
         {

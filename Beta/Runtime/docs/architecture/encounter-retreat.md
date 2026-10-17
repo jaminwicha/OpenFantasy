@@ -96,7 +96,10 @@ within one search, then contact). It never encodes a root per expansion. Advice 
 offer (route, destination, per-sample and total readiness, walk time, exit recovery, opponents in reach, blocked
 reason) only at a boundary where the observer can choose, plus the observer's own progress and last record. Another
 actor's retreat is visible only as an anonymous `OtherWithdrawing` flag, never with its route, destination,
-readiness or command identity. `LocalWorldView.Retreat` is omitted from the public encoding when null.
+readiness or command identity. This describes the single-route interpretations; the
+[collective projection](party-withdrawal.md#host-scheduling-and-player-presentation) also discloses
+same-side readiness statuses under an explicit representation version. `LocalWorldView.Retreat` is
+omitted from the public encoding when null.
 
 [LocalRetreatConfiguration](../../src/OpenFantasy.Hosting/Simulation/Retreat/LocalRetreatConfiguration.cs) is opt-in
 NPC advice (an HP permille threshold per actor), resupplied on every opening and never saved.

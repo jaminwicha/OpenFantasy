@@ -171,9 +171,13 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    five new: pending aftermath care refuses migration without loss until explicit ordinary resolution;
    fresh41 pending care survives cuts; genuine defeat, opposing-side departure and a blocked sample
    retain exact terminal history/debt across restart. These are named witnesses, not all combinations.
-   Complete-root capacity, host/client selection, own-character offers/cancellation and the earned shared
-   expedition (including commerce) remain next. Preserve the full 1–4, listener/reconnect/latency,
-   interaction, independent/native/human obligations; fresh41 proof is not a lived-save native migration.
+   The [host/presentation increment](p02/party-withdrawal/host-integration/RESULT.md) qualifies the admitted
+   four-human/32-sample root capacity, separate player choices, paid cancellation, two-port departure,
+   scoped observations and authenticated selected-protocol delivery. Across affected runs89 distinct
+   cases pass (13 new); Host and Godot C# builds are warning-free. This is managed/in-memory protocol
+   evidence, not rendered expedition acceptance. Next expose/select the explicit migrated copy and
+   complete the earned shared expedition, including commerce. Preserve the full1–4, listener/reconnect/
+   latency, interaction, independent/native/human obligations; fresh41 proof is not a lived-save native migration.
    Ordinary roster scenarios still use retreat law v2, which admits only a lone combatant on its
    side. Deliver the selected party-exit law through the saved journey before calling that route
    cooperative; preserve the legacy `AllyRemains` safeguard and Full Wait throughout integration.

@@ -1,0 +1,12 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--nologo"
+  ],
+  "exitCode": 0,
+  "seconds": 6.675404875073582,
+  "deadlineSeconds": 90
+}

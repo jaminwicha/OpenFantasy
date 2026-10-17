@@ -78,7 +78,7 @@ public sealed partial class LocalWorldSession
 
     private static void RequirePermissionWorld(WorldSnapshot state, LocalPlayerConnection player)
     {
-        if (state.ProfileVersion is not (WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion)
+        if (state.ProfileVersion is not (WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
             || state.ControlPermissions is null || !state.Inventory.CanControl(player.Delivery, player.ActorId)
             || state.Controllers?.Assignments.Any(row => row.ActorId == player.ActorId) != true)
             throw new AuthorityDispatchException("This world and authenticated home actor do not admit control permissions.");

@@ -65,7 +65,9 @@ public sealed class LocalControlledActorView
                 Array.AsReadOnly(source.EncounterActors.ToArray()), resources, acknowledgment);
         }
         if (Has(WorldControlCapabilities.Combat | WorldControlCapabilities.Traversal) && source.Retreat is { } retreat)
-            Retreat = new(retreat.Offer, retreat.Progress, retreat.OtherWithdrawing);
+            Retreat = new(retreat.Offer, retreat.Progress, retreat.OtherWithdrawing,
+                retreat.Withdrawal is { } withdrawal ? new LocalWithdrawalView(withdrawal.ActorId,
+                    withdrawal.Choice, withdrawal.Cancellation, withdrawal.Members, last: null) : null);
         if (Has(WorldControlCapabilities.Recovery))
         {
             var health = source.Progression is { } current ? new LocalControlledHealth(current.Hp, current.MaxHp) : null;
@@ -176,7 +178,9 @@ public sealed record LocalControlledWallet(ulong Balance, string Unit);
 public sealed record LocalControlledCombatView(LocalEncounterView? Encounter, LocalEncounterLifecycleView? Lifecycle,
     LocalEncounterActionView? Actions, ReadOnlyCollection<LocalEncounterActorView> Actors, LocalControlledCombatResources? Resources,
     AcknowledgeEncounterOutcomeIntent? OutcomeAcknowledgment);
-public sealed record LocalControlledRetreatView(LocalRetreatOffer? Offer, LocalRetreatProgress? Progress, bool OtherWithdrawing);
+public sealed record LocalControlledRetreatView(LocalRetreatOffer? Offer, LocalRetreatProgress? Progress, bool OtherWithdrawing,
+    [property: System.Text.Json.Serialization.JsonIgnore(Condition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull)]
+    LocalWithdrawalView? Withdrawal = null);
 public sealed record LocalControlledRecoveryView(LocalControlledHealth? Health,
     ReadOnlyCollection<LocalRestorativeUseView> SelfUseOffers, LocalCareView? Care);
 public sealed record LocalControlledCareDispositionView(ReadOnlyCollection<LocalCarePermissionView> PermissionOffers,

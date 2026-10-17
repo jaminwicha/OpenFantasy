@@ -1,6 +1,7 @@
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Hosting.Simulation.Retreat;
+using OpenFantasy.Hosting.Simulation;
 
 namespace OpenFantasy.Client;
 
@@ -14,19 +15,39 @@ internal static class RetreatOffers
 {
     internal const string Detail = "Commit to the full route. Opponents act between steps; blocked ground stops you.";
 
-    internal static FarmActionOffer Create(LocalRetreatView retreat, FarmActionScope scope)
+    internal static FarmActionOffer Create(LocalControlledRetreatView retreat, FarmActionScope scope) =>
+        Create(retreat.Offer, retreat.Progress, retreat.Withdrawal, scope);
+
+    internal static FarmActionOffer Create(LocalRetreatView retreat, FarmActionScope scope) =>
+        Create(retreat.Offer, retreat.Progress, retreat.Withdrawal, scope);
+
+    private static FarmActionOffer Create(LocalRetreatOffer? offered, LocalRetreatProgress? progress,
+        LocalWithdrawalView? withdrawal, FarmActionScope scope)
     {
-        if (retreat.Progress is { } progress)
+        string detail = Detail + PartyStatus(withdrawal);
+        if (withdrawal?.Choice is { } choice)
+        {
+            string status = choice.HasArrived ? "Reached destination; waiting for the party."
+                : FormattableString.Invariant($"Step {choice.SamplesTaken} of {choice.RouteSamples} walked.");
+            return new FarmActionOffer(FarmSemanticAction.Retreat, scope, "Stop retreat",
+                Destination(choice.Origin, choice.Destination), null, "No new cost; paid recovery remains",
+                "Your withdrawal choice ended; paid recovery remains.", withdrawal.Cancellation,
+                withdrawal.Cancellation is null ? "This choice cannot be cancelled at the current boundary." : null,
+                detailText: status + PartyStatus(withdrawal)
+                    + " Stopping ends only your choice. It does not move you or refund recovery."
+                    + (choice.HasArrived ? " When ready, choose Wait to keep your arrival, or another action to end it." : ""));
+        }
+        if (progress is not null)
         {
             return new FarmActionOffer(FarmSemanticAction.Retreat, scope, "Retreat", Destination(progress.Origin, progress.Destination),
                 null, FormattableString.Invariant($"Step {progress.SamplesTaken} of {progress.RouteSamples}"), "", null,
                 FormattableString.Invariant($"Retreating: step {progress.SamplesTaken} of {progress.RouteSamples} walked."),
-                detailText: Detail);
+                detailText: detail);
         }
-        if (retreat.Offer is not { } offer)
+        if (offered is not { } offer)
         {
             return new FarmActionOffer(FarmSemanticAction.Retreat, scope, "Retreat", "No retreat", null, "Retreat unavailable", "",
-                null, "This encounter is not ready for a choice.", detailText: Detail);
+                null, "This encounter is not ready for a choice.", detailText: detail);
         }
         string? blocker = Blocker(offer);
         string reach = offer.OpponentsInReach == 0 ? "No opponent reaches you now."
@@ -37,7 +58,14 @@ internal static class RetreatOffers
             offer.CanQueue ? Steps(offer) : FormattableString.Invariant($"{Seconds(offer.SampleDelay)} s readiness per step"),
             "Your retreat was committed; each step is walked at your own turns.",
             blocker is null ? new QueueEncounterRetreatIntent(offer.EncounterId, offer.TimingRevision, offer.Destination, offer.Route) : null,
-            blocker, detailText: Detail + " " + (offer.CanQueue ? Charges(offer) : reach));
+            blocker, detailText: detail + " " + (offer.CanQueue ? Charges(offer) : reach));
+    }
+
+    private static string PartyStatus(LocalWithdrawalView? withdrawal)
+    {
+        if (withdrawal is null || withdrawal.Members.Count == 0) return "";
+        int Count(LocalWithdrawalReadiness state) => withdrawal.Members.Count(member => member.Readiness == state);
+        return FormattableString.Invariant($" Party: {Count(LocalWithdrawalReadiness.Arrived)}/{withdrawal.Members.Count} arrived, {Count(LocalWithdrawalReadiness.Walking)} walking, {Count(LocalWithdrawalReadiness.NeedsChoice)} need a route, {Count(LocalWithdrawalReadiness.Incapacitated)} incapacitated. Everyone must arrive and be clear of opponents.");
     }
 
     /// <summary>Destination named by its direction and cell offset from where the retreat starts.</summary>
@@ -72,6 +100,7 @@ internal static class RetreatOffers
         LocalRetreatBlockedReason.Recovering => "You are recovering; wait until you are ready.",
         LocalRetreatBlockedReason.DecisionQueued => "Your choice is already queued.",
         LocalRetreatBlockedReason.PreparingChoices => "Preparing this turn's choices…",
+        LocalRetreatBlockedReason.Arrived => "You reached your destination; the complete party must arrive and clear contact.",
         LocalRetreatBlockedReason.Retreating => "You are already retreating.",
         LocalRetreatBlockedReason.Committed => "Another combatant is withdrawing; only one retreat can be under way.",
         LocalRetreatBlockedReason.AllyRemains => "Retreat is only for a lone combatant against one other side; an ally would be left behind.",
@@ -88,6 +117,19 @@ internal static class RetreatOffers
         EncounterRetreatStatus.Interrupted => FormattableString.Invariant(
             $"Your retreat stopped after {record.SamplesTaken} of {record.RouteSamples} steps: {Reason(record.Reason)} Choose again."),
         _ => FormattableString.Invariant($"Your retreat ended after {record.SamplesTaken} of {record.RouteSamples} steps: {Reason(record.Reason)}")
+    };
+
+    internal static string Describe(LocalWithdrawalRecord record) => record.Reason switch
+    {
+        EncounterWithdrawalEndReason.Disengaged => "Your party broke away. Recovery continues while you explore.",
+        EncounterWithdrawalEndReason.ChoiceChanged => "Your withdrawal choice ended. Paid recovery remains.",
+        EncounterWithdrawalEndReason.Incapacitated => "Your retreat stopped because you were incapacitated; your party has not escaped.",
+        EncounterWithdrawalEndReason.EncounterEnded => "Your retreat ended with the encounter.",
+        EncounterWithdrawalEndReason.Blocked => "Your next step was blocked. Its recovery was charged; choose again when ready.",
+        EncounterWithdrawalEndReason.Unadmitted => "Your next step could not be entered. Its recovery was charged; choose again when ready.",
+        EncounterWithdrawalEndReason.NoGroundLocomotion => "Your retreat stopped because you can no longer walk.",
+        EncounterWithdrawalEndReason.ContactRemains => "Your retreat stopped because an opponent can still reach you.",
+        _ => "Your retreat ended. Already paid recovery remains."
     };
 
     private static string Reason(EncounterRetreatReason reason) => reason switch
@@ -111,7 +153,7 @@ internal sealed class RetreatOutcomeNotice
 
     internal string? Observe(LocalRetreatView? retreat)
     {
-        ulong? current = retreat?.Last?.WorldSequence;
+        ulong? current = retreat?.Withdrawal?.Last?.WorldSequence ?? retreat?.Last?.WorldSequence;
         if (_seen is null)
         {
             _seen = current ?? 0;
@@ -119,6 +161,6 @@ internal sealed class RetreatOutcomeNotice
         }
         if (current is not { } sequence || sequence == _seen) return null;
         _seen = sequence;
-        return RetreatOffers.Describe(retreat!.Last!);
+        return retreat?.Withdrawal?.Last is { } collective ? RetreatOffers.Describe(collective) : RetreatOffers.Describe(retreat!.Last!);
     }
 }

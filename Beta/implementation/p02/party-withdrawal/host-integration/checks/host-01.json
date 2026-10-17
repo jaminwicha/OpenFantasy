@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~PartyWithdrawalPresentationTests|FullyQualifiedName~PartyWithdrawalSessionTests|FullyQualifiedName~PartyWithdrawalCapacityTests",
+    "--logger",
+    "trx;LogFileName=host-01.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/host-integration/checks"
+  ],
+  "exitCode": 1,
+  "seconds": 9.82796554104425,
+  "deadlineSeconds": 180
+}
