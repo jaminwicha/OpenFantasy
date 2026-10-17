@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~AdventureEntryTests",
+    "--logger",
+    "trx;LogFileName=solo-entry-01.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/saved-expedition/checks"
+  ],
+  "exitCode": 0,
+  "seconds": 14.05178075004369,
+  "deadlineSeconds": 120
+}

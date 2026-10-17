@@ -28,6 +28,7 @@ internal sealed class HostApplication
     private readonly ComposedWorldOperator _composed = new();
     private readonly EncounterTimingOperator _encounters = new();
     private readonly ControllerRecoveryOperator _controllerRecovery = new();
+    private readonly PartyWithdrawalOperator _partyWithdrawal = new();
 
     public HostApplication(TextWriter output)
     {
@@ -43,6 +44,9 @@ internal sealed class HostApplication
             string? report = arguments switch
             {
                 ["--inspect-foundation"] => CreateFoundationReport(),
+                ["--prepare-party-withdrawal", var source, var request] => _partyWithdrawal.Prepare(source, request),
+                ["--enable-party-withdrawal", var source, var destination, var request] =>
+                    _partyWithdrawal.Apply(source, destination, request),
                 ["--create-recoverable-world", var database, var genesis] =>
                     _controllerRecovery.Create(database, genesis),
                 ["--enable-controller-recovery", var source, var destination] =>
@@ -132,6 +136,8 @@ internal sealed class HostApplication
         _output.WriteLine("       OpenFantasy.Host --inspect-command <command.bin>");
         _output.WriteLine("       OpenFantasy.Host --create-recoverable-world <new-world.sqlite> <controller-genesis.bin>");
         _output.WriteLine("       OpenFantasy.Host --enable-controller-recovery <source-world.sqlite> <new-copy.sqlite>");
+        _output.WriteLine("       OpenFantasy.Host --prepare-party-withdrawal <source-world.sqlite> <new-request.bin>");
+        _output.WriteLine("       OpenFantasy.Host --enable-party-withdrawal <source-world.sqlite> <new-copy.sqlite> <request.bin>");
         _output.WriteLine("       OpenFantasy.Host --inspect-controller-recovery <world.sqlite>");
         _output.WriteLine("       OpenFantasy.Host --inspect-encounter-timing <timing.bin> <world-id> <branch-id> <encounter-id>");
         _output.WriteLine("       OpenFantasy.Host --inspect-custody <snapshot.bin>");

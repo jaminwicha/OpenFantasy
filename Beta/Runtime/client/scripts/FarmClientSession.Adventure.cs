@@ -9,7 +9,8 @@ internal sealed partial class FarmClientSession
 {
     /// <summary>
     /// Opens the exact solo adventure selected by its seed and name. Existing worlds retain their
-    /// original genesis; no other profile or cooperative roster is substituted for this selection.
+    /// original genesis, including an explicitly recorded collective-withdrawal transition. No new roster
+    /// or fresh interpretation is substituted for this selection.
     /// </summary>
     internal static Task<FarmClientSession> OpenAdventureAsync(string savePath, string seedText,
         string playerName) => Task.Run(() =>
@@ -22,8 +23,14 @@ internal sealed partial class FarmClientSession
         try
         {
             WorldSnapshot current = authority.InspectForHost().State;
-            FarmSaveOpener.ValidateSelection(current, genesis);
-            if (current.ProfileVersion != WorldDelegatedControlAdmission.ProfileVersion
+            // OpenExisting has already replayed the exact original genesis and admitted transition.
+            // This recognizes that lineage; it never upgrades or weakens other save selectors.
+            bool transitioned = current.ProfileVersion == WorldPartyWithdrawalAdmission.ProfileVersion
+                && genesis.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+                && current.WorldId == genesis.WorldId && current.BranchId == genesis.BranchId
+                && current.AdmissionVersion == genesis.AdmissionVersion;
+            if (!transitioned) FarmSaveOpener.ValidateSelection(current, genesis);
+            if (current.ProfileVersion is not (WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
                 || !NativeCargoWorld.IsCargoWorld(current))
             {
                 throw new InvalidDataException("This save is not the selected adventure.");

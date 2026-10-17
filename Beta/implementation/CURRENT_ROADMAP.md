@@ -175,8 +175,10 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    four-human/32-sample root capacity, separate player choices, paid cancellation, two-port departure,
    scoped observations and authenticated selected-protocol delivery. Across affected runs89 distinct
    cases pass (13 new); Host and Godot C# builds are warning-free. This is managed/in-memory protocol
-   evidence, not rendered expedition acceptance. Next expose/select the explicit migrated copy and
-   complete the earned shared expedition, including commerce. Preserve the full1–4, listener/reconnect/
+   evidence, not rendered expedition acceptance. The [offline operator checkpoint](p02/party-withdrawal/saved-expedition/RESULT.md)
+   now exposes exact-head preparation and create-only copied publication, plus original-genesis solo
+   selection of an explicitly migrated save. Its focused managed checks do not qualify a native journey.
+   Next continue the earned shared expedition through that copy, including commerce. Preserve the full1–4, listener/reconnect/
    latency, interaction, independent/native/human obligations; fresh41 proof is not a lived-save native migration.
    Ordinary roster scenarios still use retreat law v2, which admits only a lone combatant on its
    side. Deliver the selected party-exit law through the saved journey before calling that route

@@ -82,6 +82,13 @@ Closing this client closes its connection; the listener owns the saved world. Pa
 input, while other ready players may continue. Native 1–4-player, reconnect and production acceptance
 remain distinct gates; a single native connection does not establish them.
 
+An eligible saved adventure can explicitly enable collective withdrawal on a verified separate copy.
+Use `--prepare-party-withdrawal <source> <new-request>` followed by
+`--enable-party-withdrawal <source> <new-copy> <request>`; see the
+[offline operator instructions](docs/player-host.md#enable-collective-withdrawal-on-a-copy).
+The request pins the original saved head. Fresh admission remains unchanged, and ordinary opening
+never upgrades a save. A migrated solo copy retains its exact original seed/name selection.
+
 ## Build and verify
 
 Use Python 3, the exact .NET SDK in `global.json`, and the .NET edition of Godot pinned in `toolchain.json`. The SDK executable must have access to the required managed runtimes. A standard non-.NET Godot editor cannot run this project.

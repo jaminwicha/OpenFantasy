@@ -1,0 +1,76 @@
+{
+  "baseRevision": "feadc2d0ccf7582776b1567b486b1e3b00fd58ce",
+  "source": {
+    "Beta/Runtime/client/scripts/FarmClientSession.Adventure.cs": "7e57b3d858f8989a9837f8eb3b6ea91299b13fd1355e79e8d6a49756b598e4f7",
+    "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Evidence.cs": "0c720d331f67c1ea5be884ef3d8b6765b5a2e22462c343c8743c1de5c531384b",
+    "Beta/Runtime/src/OpenFantasy.Host/HostApplication.cs": "c1da746afa7f7d8e05d431ac29ef7e30747a263a1c302a4b5d02cde9670d852b",
+    "Beta/Runtime/src/OpenFantasy.Hosting/LocalAuthorityFiles.cs": "83f004f0fbca527f5c7f6b7a496b0eaa81fbe4658e9087d892b992753e61878f",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/AdventureEntryTests.cs": "5f17bfa341792c011c3184f5a04953487e419917057d848cbaa02eed25d81f14",
+    "Beta/Runtime/src/OpenFantasy.Host/PartyWithdrawalOperator.cs": "15ae8b417c51746dc780b8daf1d92b749cea39c4a456a0d15c5147f1e12eb14f",
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/PartyWithdrawalOperatorTests.cs": "ac6bfa071723e087dd60f47cc2405266c1d603c3a11ba875f2e02ec273b55546"
+  },
+  "finalOnDiskBinaries": {
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "7bc5019d9039857e42eabf12536c72508511fcf65e6e3403aae0ff5f44343a84",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "4ea76a6e1b33a32d3b20a1a70f0c227adc1477562c930e016a971868f84fc0eb",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "da79c3fe2bccd4f9971cfd041f2cf5a0e0d3474e7b601ad5804f8cee746615b7",
+    "Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Server.dll": "6129b10272507822b284a0e70a929d341b5f26a859071bc095159e93a746c05a",
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "88971177259ea044dcc0c12cce9d7fdcd364026e32fae8dc15e9346c6344de20",
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "7bc5019d9039857e42eabf12536c72508511fcf65e6e3403aae0ff5f44343a84",
+    "Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "4ea76a6e1b33a32d3b20a1a70f0c227adc1477562c930e016a971868f84fc0eb"
+  },
+  "passingCases": {
+    "operator-final": [
+      "OpenFantasy.Server.Tests.PartyWithdrawalOperatorTests.A_changed_source_refuses_the_old_request_without_publishing_or_repinning_it",
+      "OpenFantasy.Server.Tests.PartyWithdrawalOperatorTests.Malformed_request_is_rejected_before_publication(length: 1025)",
+      "OpenFantasy.Server.Tests.PartyWithdrawalOperatorTests.Prepared_request_pins_the_source_and_publishes_only_a_separate_verified_copy",
+      "OpenFantasy.Server.Tests.PartyWithdrawalOperatorTests.Malformed_request_is_rejected_before_publication(length: 0)"
+    ],
+    "solo-entry-final": [
+      "OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Different_profile_or_cooperative_roster_is_refused_without_rewriting_the_save(cooperative: False)",
+      "OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Different_profile_or_cooperative_roster_is_refused_without_rewriting_the_save(cooperative: True)",
+      "OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Migrated_save_must_still_match_the_exact_original_solo_selection(difference: \"cooperative\", cooperative: True)",
+      "OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Explicitly_migrated_solo_save_reopens_its_original_lineage_without_altering_the_source",
+      "OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Migrated_save_must_still_match_the_exact_original_solo_selection(difference: \"different-name\", cooperative: False)",
+      "OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Ordinary_opening_earns_Wrens_reward_and_reopens_the_same_recorded_adventure",
+      "OpenFantasy.Hosting.Tests.Client.AdventureEntryTests.Migrated_save_must_still_match_the_exact_original_solo_selection(difference: \"different-seed\", cooperative: False)"
+    ]
+  },
+  "evidence": {
+    "checks/operator-02.log": "d70a0870652288b79beb120fa6527ae6da61d4b0d4dfdc187e858960f17a0803",
+    "checks/operator-01.trx": "dbfe35673d9541ae626d81bd616ad7f1bb97e2548df25000f9213e01a28d1191",
+    "checks/documentation-01.json": "f6d438493ebab56fc2004c9ae20ac4c413bff58cfd7212c34100a1f6f818add8",
+    "checks/operator-01.log": "9b40e5fe796beb5937552cb68a6007b43e635c9ee61b844fdd84174fd8cded1a",
+    "checks/operator-02.trx": "0c6f9e4d7f2030b77f7cd9416e20807b3794a8bc43d7e7ad0ccdd0b8539b7099",
+    "checks/operator-final.log": "6a5ad4d9f70c78c3b069af8ab77c4aa3eabf21a532a1ad7e7762edc7bf61896e",
+    "checks/operator-final.trx": "3113d748136b872145e939a8fdc589d7c9e18f5dbc9c9fcb41bd79c757f9aa2f",
+    "checks/operator-01.json": "b4996c0c0d8ae95ad023ed2c69587b78df85de0e55ffc720a62ed92963f1c583",
+    "checks/operator-final.json": "945fd4f272bd2d582b9439fc65a6e95e41d5199230b0b752aae6b74af6dc8ce5",
+    "checks/solo-entry-01.json": "698f99c8d352b780caec72f62febfd6f6a6726416c943c08f7a1c7a327b20386",
+    "checks/client-build.json": "9519fe2144ed40f341480f7a990bcb988ba8964055813d05fdaea09a4169b1df",
+    "checks/client-build.log": "14c1c09162b30f9fd82ceb25aefd9a9336a1ebdee21e220ed18e0185b6d1cdfc",
+    "checks/solo-entry-final.trx": "fce003d0906e0885d6f6b7a9c48b0c06d003e9244e98304fbd52f5acf25ab673",
+    "checks/solo-entry-final.json": "2a1d84b40672fea0e6164c7913b0964ff686a4ecf2749b9d7b402cf0c36895f7",
+    "checks/solo-entry-final.log": "429cd6a29113b1da673d8c7149772b0ed94c94bd1eba80eeaf9c9af6ff625b2a",
+    "checks/operator-02.json": "d2222abbbd02af623f45797afc41100eb93e0449bde521c3d461d52e15ac0fbf",
+    "checks/solo-entry-01.log": "08138b4289b15020c4407498342e6346a27d47f1c7c00b567b626d8328ae4bcc",
+    "checks/solo-entry-01.trx": "bd67375099828fab13f25ecdf4da61c94d4e3e14560ca35c7347b0533c2fbafd",
+    "checks/documentation.json": "33863776e878ba613bc29ca9f0af4c6e30450ae2b2edd650505847aba646e019"
+  },
+  "preservation": {
+    "predecessorStagedSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+    "originalAdvisorySha256": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+    "earnedSharedSaveSha256": "cf21a8be1d99dc39aa2b856e8be0857c0c7b01b210a45911dd9fbab93e2c7a21",
+    "frozenTrackedSpecDiff": "empty"
+  },
+  "limits": "Final on-disk hashes; no native expedition, phase or independent acceptance. No source change between each final focused check and capture.",
+  "documentation": {
+    "Beta/Runtime/README.md": "8195c4a0c9ba1b6859383b4741d960e1ed519ef752fece9b3d77cff48b1c9213",
+    "Beta/Runtime/docs/architecture/party-withdrawal.md": "ab209642a70189421326f08f5496e090226319a319d09cf05997c639b9485e58",
+    "Beta/Runtime/docs/player-host.md": "abbcd9c14e9d57cd1c54731a90f35ab5f3417045e78f13e7daf4c94b2ad2a811",
+    "Beta/implementation/AGENT_HANDOFF.md": "bcf22247ccea7d1b233b85d252fc6be7394df3beba1a8a96d38b12da0891fc09",
+    "Beta/implementation/CURRENT_ROADMAP.md": "b9fdf9fd94ebecd87ab7d3c907ae1555e080554fad3e5639d70572e40f4880ba",
+    "Beta/implementation/GIT_MILESTONES.md": "45eddf054bc45f74d2be6cf7fb840cdeb4ea93bd7ebb2f3d46c240e8289413b2",
+    "Beta/implementation/PARTY_WITHDRAWAL_DECISION.md": "7288c7d3a8c5cb815802e9353d26dfce7bcfaa46259a37cba10e150856a9a7d8",
+    "Beta/implementation/p02/party-withdrawal/saved-expedition/RESULT.md": "07d10290873b44db0bc385c1154748efd9901278f4b5967374e67cb1a1fda9d6"
+  }
+}

@@ -78,3 +78,27 @@ Ctrl+C or POSIX SIGTERM cancels network work and joins admitted requests before 
 No players being ready means no simulated-time advancement. A connection close does not itself create
 saved controller-handoff decisions. See [HTTP/TLS architecture](architecture/player-http-host.md) for
 request limits, ownership and the separate recorded-disconnect contract.
+
+## Enable collective withdrawal on a copy
+
+Stop the source world's host before preparing or applying this offline operation. The source must be
+an eligible effective-control world (profile40) in exploration, with no reading hold, active encounter
+or pending excavation continuation. Use a new request path and a new destination save path:
+
+```sh
+dotnet src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll --prepare-party-withdrawal saves/adventure.sqlite3 saves/withdrawal-request.bin
+dotnet src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll --enable-party-withdrawal saves/adventure.sqlite3 saves/adventure-withdrawal.sqlite3 saves/withdrawal-request.bin
+```
+
+Preparation reports the exact world, branch, source revision/head hash and request hash. It does not
+advance the world or hold a lease between invocations. Application rechecks that exact request against
+the source and publishes only a verified new copy; original admission, history, receipts and possessions
+are retained. Existing request/destination paths are refused. If the source advances, the old request
+fails; inspect the new state and explicitly prepare another request at a new path. No automatic retry
+or silent repinning occurs. Invalid requests or ineligible sources return a nonzero exit status.
+
+Point the listener settings' `Database` at the new copy to serve it. The original save remains intact;
+ordinary opening never performs this transition. A local solo opener can also select a migrated copy
+using its exact original seed/name identity; this does not automatically select a new default path.
+The [withdrawal reference](architecture/party-withdrawal.md#explicit-saved-world-transition) defines
+eligibility, original-history verification and collective departure semantics.

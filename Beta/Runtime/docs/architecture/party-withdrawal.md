@@ -229,6 +229,21 @@ head and any scheduled checkpoint. Earlier journal/receipt/archive rows and oper
 recovery records remain unchanged. Complete original-genesis replay verifies the staged result before
 create-only publication; failure never selects a partial copy. Ordinary opening does not upgrade.
 
+[PartyWithdrawalOperator](../../src/OpenFantasy.Host/PartyWithdrawalOperator.cs) exposes two explicit
+offline operations. Preparation opens the exclusively owned source, checks transition eligibility and
+cause availability, and writes a create-only canonical request for that precise head. It publishes no
+world change and reserves no future eligibility. Application boundedly decodes that request and invokes
+the copied-save publication owner. A changed source requires deliberate preparation of a new request;
+the operator never refreshes the request, overwrites either destination or retries automatically. See
+the [operator guide](../player-host.md#enable-collective-withdrawal-on-a-copy) for executable commands.
+
+The [solo adventure opener](../../client/scripts/FarmClientSession.Adventure.cs) constructs the exact
+original genesis from its seed and player name. Storage replays and compares that original genesis
+before the opener accepts either its original profile40 head or a recorded40→41 continuation with the
+same world, branch and admission identity. A different seed, name or cooperative roster remains a
+different selection, even after migration. Fresh solo creation still uses40. Selecting a migrated copy
+does not replace the default save path or upgrade an existing file implicitly.
+
 Joint archives retain their own closing interpretation: an inherited profile40 archive remains
 unchanged when the live root becomes41, and later ordinary continuation can seal a profile41 root
 against that same ancestry. Open material proposals and effective-control witnesses remain owned

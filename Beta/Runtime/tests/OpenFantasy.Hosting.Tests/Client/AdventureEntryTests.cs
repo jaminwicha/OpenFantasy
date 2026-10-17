@@ -49,6 +49,51 @@ public sealed class AdventureEntryTests
             RecordedWorldReader.ReadForHost(files.Path, saved.Revision).State));
     }
 
+    [Fact]
+    public async Task Explicitly_migrated_solo_save_reopens_its_original_lineage_without_altering_the_source()
+    {
+        using var files = new SessionFiles();
+        var genesis = AdventureWorldAdmission.CreateEmbedded(AdventureWorldAdmission.SeedText, [AdventureWorldAdmission.DefaultPlayerName]);
+        using (var original = SqliteWorldAuthority.CreateNew(files.Path, genesis)) { }
+        string destination = files.Path + ".withdrawal.sqlite";
+        byte[] source = File.ReadAllBytes(files.Path);
+        var request = WorldPartyWithdrawalTransition.ForHead(genesis, new(0x4144564d49475241, 1));
+        WorldSnapshot upgraded;
+        using (var authority = SqliteWorldAuthority.UpgradePartyWithdrawal(files.Path, destination, request))
+            upgraded = authority.ReadStateForHost();
+        await using (var client = await Open(destination))
+        {
+            Assert.NotNull(client.World.ReadView().Retreat!.Withdrawal);
+            Assert.Equal(genesis.Calendar, client.World.ReadView().Calendar);
+            Assert.Equal(0UL, client.World.ReadView().Progression!.CurrencyBalance);
+            Assert.True((await client.VerifyRecordedHistoryAsync().WaitAsync(TimeSpan.FromSeconds(30), TestContext.Current.CancellationToken)).ReproducesHead);
+        }
+        using var reopened = SqliteWorldAuthority.OpenExisting(destination, WorldSnapshotCodec.Encode(genesis));
+        Assert.Equal(upgraded.ContentHash, reopened.ReadStateForHost().ContentHash);
+        Assert.Equal(genesis.ContentHash, reopened.ReadRecordedStateForHost(0).State.ContentHash);
+        Assert.Equal(source, File.ReadAllBytes(files.Path));
+    }
+
+    [Theory]
+    [InlineData("different-seed", false)]
+    [InlineData("different-name", false)]
+    [InlineData("cooperative", true)]
+    public async Task Migrated_save_must_still_match_the_exact_original_solo_selection(string difference, bool cooperative)
+    {
+        using var files = new SessionFiles();
+        string seed = difference == "different-seed" ? "another-seed" : AdventureWorldAdmission.SeedText;
+        string name = difference == "different-name" ? "Another name" : AdventureWorldAdmission.DefaultPlayerName;
+        var genesis = AdventureWorldAdmission.CreateEmbedded(seed, cooperative ? [name, "Mira"] : [name]);
+        using (var original = SqliteWorldAuthority.CreateNew(files.Path, genesis)) { }
+        string destination = files.Path + ".withdrawal.sqlite";
+        var request = WorldPartyWithdrawalTransition.ForHead(genesis, new(0x4144564d49475241, 2));
+        using (var migrated = SqliteWorldAuthority.UpgradePartyWithdrawal(files.Path, destination, request)) { }
+        byte[] before = File.ReadAllBytes(destination);
+        var error = await Assert.ThrowsAsync<InvalidDataException>(async () => { await using var ignored = await Open(destination); });
+        Assert.Contains("expected genesis", error.Message);
+        Assert.Equal(before, File.ReadAllBytes(destination));
+    }
+
     [Theory]
     [InlineData(false)]
     [InlineData(true)]

@@ -149,10 +149,14 @@ receipt retry/reopening, two-port ordinary departure, scoped privacy, authentica
 and the retained older shared observation. The four-human/32-sample capacity diagnostic fits existing
 reservations; it is not frontier/city qualification. Host and Godot C# application builds pass without
 warnings. Three failed preparations/build checks and the subsequent UI correction are retained. The
-marker is `codex/milestone-withdrawal-host-20261017`. Next expose/select the explicit copied migration
-for the earned shared save and complete its native expedition with actual commerce and autonomous
-change on return. Ordinary fresh admission and the solo seed/name opener remain40; no implicit upgrade
-is introduced. Complete scale/1–4, listener/reconnect, independent/native/human and broader interaction
+marker is `codex/milestone-withdrawal-host-20261017`. The subsequent
+[offline operator checkpoint](p02/party-withdrawal/saved-expedition/RESULT.md) exposes exact-head request
+preparation and copied publication; the solo seed/name opener accepts a recorded40→41 continuation of
+its exact original genesis. Eleven focused managed cases pass, and the Godot C# build passes. The native
+runner can encode collective observations, but no new native expedition is qualified by this checkpoint.
+Its marker is `codex/milestone-withdrawal-operator-20261017`. Next continue the earned shared save's
+native expedition with actual commerce and autonomous change on return. Fresh admission remains40;
+no implicit upgrade is introduced. Complete scale/1–4, listener/reconnect, independent/native/human and broader interaction
 combinations remain open.
 
 After that selected expedition, execute roadmap PLAN-STATE: one partition/version design comparison

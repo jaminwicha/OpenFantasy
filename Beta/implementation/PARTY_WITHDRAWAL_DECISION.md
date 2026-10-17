@@ -131,6 +131,9 @@ party refusal remains active while this work is incomplete.
    The host increment implements these values and the shared wheel slot with managed and authenticated
    in-memory protocol checks; native/human readability and the full connected journey remain unproved.
 4. **Joined journey and qualification.** The ordinary two-player opening continues into the same
+   saved lineage through the [explicit offline operator](p02/party-withdrawal/saved-expedition/RESULT.md).
+   Preparation pins the exact eligible head; application publishes a verified separate copy. This
+   managed operator/opener checkpoint does not establish native continuation. Continue that same
    saved expedition: buy/carry, gather to enter, each chooses withdrawal, genuine enemy turns occur,
    physical departure retains debts and injuries, care/sale/return follow. Then test 1–4 participants,
    restart/cut/reconnect/control changes and representative latency. Inspect rendered captures and

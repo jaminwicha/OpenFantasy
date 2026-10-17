@@ -17,6 +17,9 @@ public static class LocalAuthorityFiles
     public static WorldSnapshot ReadComposedGenesis(string path) =>
         WorldSnapshotCodec.Decode(Read(path, WorldSnapshotCodec.MaximumStateByteLength));
 
+    public static WorldPartyWithdrawalTransition ReadPartyWithdrawalTransition(string path) =>
+        WorldPartyWithdrawalTransitionCodecV1.Decode(Read(path, WorldPartyWithdrawalTransitionCodecV1.MaximumByteLength));
+
     public static WorldStepBatch ReadWorldStep(string path) =>
         WorldStepCodec.Decode(Read(path, WorldStepCodec.MaximumBatchByteLength));
 

@@ -29,7 +29,8 @@ internal sealed partial class NativeRosterPlayProbe
         WriteAtomic(Path.Combine(_directory, $"{_sequence:D4}.response.json"), new
         {
             Sequence = _sequence, Status = status, Failure = failure, Stage = _stage,
-            View = _game.CurrentView is { } view ? Convert.ToBase64String(PlayerViewCodec.Encode(view)) : null,
+            View = _game.CurrentView is { } view ? Convert.ToBase64String(view.Retreat?.Withdrawal is null ? PlayerViewCodec.Encode(view)
+                : PlayerViewCodec.EncodeWithCollectiveWithdrawal(view)) : null,
             LocallyPaused = _game.IsLocallyPaused, RunState = _game.ParticipantRunState.ToString(),
             ControlState = _game.ParticipantControl.State.ToString(),
             ControlPort = _game.ParticipantControl.PortId.ToString(),
