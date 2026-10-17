@@ -43,12 +43,7 @@ public static class WorldActorCommandAuthority
     {
         ArgumentNullException.ThrowIfNull(world);
         ArgumentNullException.ThrowIfNull(delivery);
-        if (witness is null)
-            return world.Inventory.CanControl(delivery, actorId) && (world.EffectiveControl?.Find(actorId)?.Witness is null);
-        if (world.EffectiveControl is null || required == 0
-            || !ValidateRecordedEvidence(world.Inventory, actorId, delivery, witness, required)
-            || world.EffectiveControl.Find(actorId)?.Witness != witness) return false;
-        return IsEligibleAssignment(world, witness);
+        return WorldActorControlDependencies.AllowsCurrent(world, actorId, delivery, witness, required);
     }
 
     internal static bool IsEligibleAssignment(WorldSnapshot world, WorldControlWitness witness)
@@ -62,13 +57,17 @@ public static class WorldActorCommandAuthority
         var owner = controllers.Assignments.FirstOrDefault(row => row.ActorId == witness.OwnerActorId);
         var grantee = controllers.Assignments.FirstOrDefault(row => row.ActorId == witness.GranteeActorId);
         var permission = permissions.Find(witness.OwnerActorId, witness.GranteeActorId);
-        return owner is { Mode: WorldControllerMode.Autonomous } && owner.Revision == witness.OwnerControlRevision
+        return IsEligibleAssignment(owner, grantee, permission, witness);
+    }
+
+    internal static bool IsEligibleAssignment(WorldControllerAssignment? owner, WorldControllerAssignment? grantee,
+        WorldControlPermissionSlot? permission, WorldControlWitness witness) =>
+        owner is { Mode: WorldControllerMode.Autonomous } && owner.Revision == witness.OwnerControlRevision
             && owner.DisconnectId == witness.DisconnectId && grantee is { Mode: WorldControllerMode.Human }
             && permission is { Status: WorldControlPermissionStatus.Accepted }
             && permission.Revision == witness.GrantRevision && permission.GrantCommandId == witness.GrantCommandId
             && permission.AcceptanceCommandId == witness.AcceptanceCommandId && permission.TermsHash == witness.TermsHash
             && permission.Terms!.Capabilities == witness.Capabilities && permission.AcceptedSequence < witness.AcquiredSequence;
-    }
 
     public static bool ValidateRecordedEvidence(CountedAuthorityState inventory, WorldActionCommand command) =>
         command.WorldId == inventory.WorldId && command.BranchId == inventory.BranchId
@@ -81,13 +80,19 @@ public static class WorldActorCommandAuthority
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(delivery);
         if (witness is null) return inventory.CanControl(delivery, actorId);
+        return ValidateRecordedBindings(inventory.WorldId, inventory.BranchId, actorId, delivery, witness, required,
+            inventory.FindControl(actorId), inventory.FindControl(witness.GranteeActorId));
+    }
+
+    internal static bool ValidateRecordedBindings(EntityId worldId, EntityId branchId, EntityId actorId,
+        TrustedCommandDelivery delivery, WorldControlWitness witness, WorldControlCapabilities required,
+        ActorControlBinding? owner, ActorControlBinding? grantee)
+    {
         if (required == 0 || (witness.Capabilities & required) != required || witness.OwnerActorId != actorId) return false;
-        var owner = inventory.Controls.FirstOrDefault(row => row.ActorId == actorId);
-        var grantee = inventory.Controls.FirstOrDefault(row => row.ActorId == witness.GranteeActorId);
         if (owner is null || grantee is null || grantee.PrincipalId != delivery.PrincipalId || grantee.SessionId != delivery.SessionId) return false;
         try
         {
-            var terms = new WorldControlPermissionTerms(inventory.WorldId, inventory.BranchId, actorId,
+            var terms = new WorldControlPermissionTerms(worldId, branchId, actorId,
                 owner.PrincipalId, owner.SessionId, grantee.ActorId, grantee.PrincipalId, grantee.SessionId,
                 witness.GrantCommandId, witness.Capabilities);
             return terms.ContentHash == witness.TermsHash;

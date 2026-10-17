@@ -32,6 +32,30 @@ The command retains the grantee's principal/session and the owner's operated act
 passes that decision into applicable domain planners; it does not manufacture an owner delivery or
 change the standalone planners' default ownership checks.
 
+[WorldActorControlDependencies](../../src/OpenFantasy.Core/Worlds/EffectiveControl/WorldActorControlDependencies.cs)
+captures the current-control inputs for one actor, delivery, optional witness and required capability
+set. Its immutable selection contains world/branch and interpretation, the actor's permanent binding
+and effective slot, and, for a delegated witness, the grantee binding, both lifecycle assignments and
+the named permission slot. Missing rows are dependencies too: a later assignment cannot silently turn
+an earlier owner selection into current authority. The selection retains individual rows, not the
+source world, inventory, complete control roster or unrelated actors' permissions.
+
+Ordinary command and movement authority uses the same selection and eligibility rules through a
+value-type read; it does not allocate a retained dependency object for every check. Recorded historical
+evidence continues to check permanent bindings and captured terms separately from current eligibility.
+The immutable `IsAuthorized` result describes the captured selection. `ValidateCurrent` compares its
+exact selected rows against the supplied current admitted world; successful validation of a denied
+selection does not grant authority. A release and reacquisition invalidates the old selection even
+when the named grant and capabilities remain identical. Equivalent decoded rows compare by value.
+Unrelated gameplay revisions, positions and elapsed time do not alone invalidate this control read.
+
+Revalidation is neither a lock nor proof of live transport presence. The publishing authority must
+serialize it with the other dependency checks and publication, and still enforce health, readiness,
+geometry, carried loads, resource costs, holds and complete admission. Capturing from an admitted
+world does not establish a paged ownership directory. Control dependencies are internal authority
+inputs; they do not authorize exposing credentials, private permissions or rejection differences
+through a player observation.
+
 While a delegate holds an assignment, the original owner's ordinary command stream and autonomous
 controller cannot compete for fresh actor decisions. Original-owner permission administration remains
 separate. Revocation, replacement, owner return and grantee loss invalidate the assignment for new

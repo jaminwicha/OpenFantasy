@@ -1,0 +1,6 @@
+{
+  "ref": "codex/checkpoint-before-control-dependencies-20261017T224121Z",
+  "revision": "7a17010fd4f552b088f799613f6f99cfe60ea658",
+  "scope": "Clean runtime before extracting exact current actor control dependencies; unrelated predecessor staging and raw evidence excluded.",
+  "verification": "Prepared spatial read checkpoint accepted; integrated partition and full phase gates remain open."
+}

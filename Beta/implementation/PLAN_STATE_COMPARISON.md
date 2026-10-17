@@ -182,6 +182,11 @@ The first extraction should establish these concrete responsibilities, in the ex
   actors and structures from the supplied complete scene, including new arrivals, then evaluate through
   the shared ordinary query implementation. A complete action still needs authoritative directory,
   material, timing and permission dependencies; no world-level partial-residency claim follows.
+  The [control dependency boundary](p02/partition-state/control-dependencies/RESULT.md) supplies exact
+  current controller/binding/permission rows and their absence checks using the ordinary authority
+  rules. It deliberately ignores unrelated world revisions and gameplay time; those still belong
+  in the complete action transaction. Validating unchanged spatial data cannot substitute for control
+  revalidation, and historical recorded authority cannot authorize new input after revocation.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

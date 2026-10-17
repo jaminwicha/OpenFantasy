@@ -222,8 +222,11 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    by that file-backed test. [Prepared spatial reads](p02/partition-state/spatial-read/RESULT.md) now
    select relevant actors/structures from the complete supplied scene and revalidate their arrival,
    departure and exact state, using the same movement queries as the ordinary runtime.
-   This is bounded spatial preparation, not partitioned world simulation. Global directory completeness,
-   custody/time/permission closure, atomic cross-partition publication and the selected format remain
+   [Control dependency preparation](p02/partition-state/control-dependencies/RESULT.md) selects exact
+   permanent/delegated control rows and shares ordinary authority rules; unchanged geometry cannot
+   hide revoked or replaced control. Its retained authorization is historical until revalidated.
+   These are bounded dependency preparations, not partitioned world simulation. Global directory completeness,
+   custody/time/readiness and complete permission closure, atomic cross-partition publication and the selected format remain
    unproved/undecided. Record the decision, measured limits and remaining questions in the living
    plan and timeless reference. Required independent architectural review stays open while the owner
    pauses orchestration; lead inspection cannot substitute for it.

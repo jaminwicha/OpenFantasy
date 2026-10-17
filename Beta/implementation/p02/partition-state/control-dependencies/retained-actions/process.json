@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~EffectiveControlCombatTests|FullyQualifiedName~EffectiveControlContinuationTests|FullyQualifiedName~ControllerPermissionAuthorityTests",
+    "--logger",
+    "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/control-dependencies/retained-actions/tests.trx"
+  ],
+  "exitCode": 0,
+  "seconds": 6.100254458026029,
+  "deadlineSeconds": 180
+}

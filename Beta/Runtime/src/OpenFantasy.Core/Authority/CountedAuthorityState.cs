@@ -65,6 +65,8 @@ public sealed class CountedAuthorityState
             && control.PrincipalId == delivery.PrincipalId && control.SessionId == delivery.SessionId;
     }
 
+    internal ActorControlBinding? FindControl(EntityId actorId) => _controls.GetValueOrDefault(actorId);
+
     public bool ContainsIdentity(EntityId identity) => _identities.Contains(identity);
     internal bool ContainsIdentityMatching(Func<EntityId, bool> predicate) => _identities.ContainsMatching(predicate);
 
