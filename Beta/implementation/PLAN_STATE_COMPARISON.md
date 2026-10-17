@@ -6,6 +6,13 @@ result. The [complete-root baseline](p02/partition-state/RESULT.md) supplies act
 measurements; the integrated prototype and decision remain required before permanent NPC cognition state.
 The [review disposition](roadmap-review-20261017/LEAD_DISPOSITION.md) owns the rationale and sequencing.
 
+The [integrated prototype contract](PARTITION_PROTOTYPE_CONTRACT.md) now makes the investigation
+executable as a bounded implementation target: stable actor/custodian owners, separate spatial
+membership and real cross-owner cargo transfer, admitted construction dependencies, earned exposure,
+certificate invalidation, one publisher and an explicit episode/measurement matrix. Its ownership
+hypothesis is not a selected production format. Shared execution and the joined durable proof remain
+unimplemented; do not extend the geometry-helper series instead of that work.
+
 ## The problem to solve
 
 Keep a persistent frontier with widely separated players and enduring individuals without requiring
@@ -110,8 +117,10 @@ world containing relevant and irrelevant partitions. Keep the current complete-r
 as a comparison baseline, not a competing production simulator. For each candidate:
 
 1. Move a real actor with owned cargo across a boundary; retain stable actor/lot identity, quantity,
-   control, position, time and references. Include collision on the destination side and one stale
-   ownership revision. No duplicated goods or partially published movement is acceptable.
+   control, position, time and references. Stable actor/custodian owner keys need not change when spatial
+   membership changes. Include collision on the destination side and stale membership/owner revisions.
+   Then execute an actual cross-owner cargo gift to prove atomic custody transfer, distinct from walking.
+   No duplicated goods or partially published movement/transfer is acceptable.
 2. Continue an actual paid NPC work commitment while its detailed region is absent. Reintroduce a
    relevant participant, compare declared detailed/offscreen boundaries and show exact remaining work,
    resources and due ordering. No fabricated cognition or blank actor payloads count as meaningful state.

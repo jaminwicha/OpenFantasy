@@ -1,0 +1,13 @@
+{
+  "base": "7fbc9ed16c43e6eed04b469a0ed6afd9df56cc3c",
+  "ref": "codex/checkpoint-before-partition-contract-20261017",
+  "snapshot": "bbda03023391430b01a58d725b33d6e9b94510dd",
+  "scope": "Relevant concurrent language docs preserved; runtime clean at base; not acceptance. Unrelated predecessor staging, solution and research inputs excluded.",
+  "files": {
+    "Beta/AGENTS.md": "6ac421e3c7c754d005a74f5c99f5786e20a32f1d76981af4062fb91c82be363e",
+    "Beta/implementation/AGENT_HANDOFF.md": "209f95146508bb5a5e1c74216a20eeb4154926a95de6ca68aa83009041c98d79",
+    "Beta/implementation/CURRENT_ROADMAP.md": "b5c8a6071c0aa6ca1367615b383aee6f7ba9a8be5e238080e15726dad0d54110",
+    "Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md": "57f30586711a00c98aa9078e9fe1e9ccd049beb7f7aff185a056f1cda1ad8f28",
+    "Beta/implementation/CORE_LANGUAGE_RUST_EVIDENCE.json": "2695a7564293ddcf77747592b90fc5e0032e48f19d37580b1238478b9bd7a377"
+  }
+}

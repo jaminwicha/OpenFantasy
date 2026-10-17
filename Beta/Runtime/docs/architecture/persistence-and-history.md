@@ -483,6 +483,19 @@ each fact independently of its detailed representation. Actor movement across a 
 commitments, knowledge, control and chronology. Reading a neighbour's cached projection cannot confer
 rights to mutate that neighbour or transfer its cargo.
 
+Canonical owner identity, physical location and storage residency are separate. Stable actor and
+custodian owners can remain unchanged across a spatial boundary while body position and membership
+indexes commit together. Moving a bag does not reissue its lots or change their custody revisions.
+An actual gift or trade changes the relevant material owners under its own coupled transaction;
+walking alone cannot stand in for that custody-transfer contract.
+
+An admitted execution context names exact dependencies and interpretation, rather than accepting
+caller-supplied permission booleans. A cached spatial result is usable only while its complete terrain,
+occupancy, access-population and support dependencies remain current. Detached execution state cannot
+retain a full world or terrain through a hidden callback or index and still claim absent detail.
+Historical source validation, current command authorization and successful durable publication remain
+separate obligations.
+
 A transaction determines its complete read/write dependency set before publication. Coupled effects
 across partitions either commit under one authenticated commit identity or remain unpublished. Exact
 source revisions and deterministic ordering must detect stale or conflicting proposals. Missing

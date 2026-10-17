@@ -1,0 +1,70 @@
+{
+  "base": "7fbc9ed16c43e6eed04b469a0ed6afd9df56cc3c",
+  "kind": "Lead source review; no independent critique or executable feasibility result",
+  "sourceHashes": {
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActorCarriage.cs": "81d57a6a7b2594ee34bb37f338138e20eb25bc683ec3d3078caa0e851ba946de",
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionSnapshot.cs": "516726a6dd12cd4163ffa4b605c19068203bb7d5d3630b771f0b0a9e90f0d5ad",
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionProject.cs": "8624a31c20a4dc8a2fee4c04b8438e08904678137a55a9ce7e80c4142b4fe553",
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionPlanner.cs": "7c44b6a93ed5ed558f4e38085a7bc8c4473d4dd48c8e16ab33dc5fe77c6ed77a",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs": "9524ecc27a98b1f3e65d98255a1a97e5d9b940adeea3fb7735238998652ae24d",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResident.cs": "3fa605e2422c086a9d72de87765fd6104ada3782eb215a6567ccceb6fa63bbfa",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs": "96498c86a0903e4d15b747f9ea7d737a0c88dfa08238d8e05e7f3171cfbd2847",
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionSourceFrame.cs": "0b8171b0aec7737335f43fd5cd6c53b04410a5b770be3c05505af430d174f607",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs": "958be9c2c91156d8bd9c29a20962bc8d96deb0bebedfed4a26781bd92bc1a6f5",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs": "cb63defc24cc41e4b21eead89674372aae2f258ad4905ef98d6050b81aac1ec3"
+  },
+  "findings": [
+    {
+      "id": "ownership-location",
+      "source": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActorCarriage.cs",
+      "symbols": [
+        "Capture",
+        "CustodianIds",
+        "Installed"
+      ],
+      "conclusion": "Primary and builder-carried custodians are physical carriage; installed backing excluded. Carriage is a projection, not an owner or publication."
+    },
+    {
+      "id": "access-scope",
+      "source": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionSnapshot.cs",
+      "symbols": [
+        "ValidateComponents"
+      ],
+      "conclusion": "Every complete-locality actor on the site floor needs a project access witness."
+    },
+    {
+      "id": "access-budget",
+      "source": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionProject.cs",
+      "symbols": [
+        "MaximumAccessRequirements",
+        "ConstructionProject"
+      ],
+      "conclusion": "Stored count plus distinct actor/destination count <=32. At least one witness per distinct actor implies 2N<=32, hence N<=16; this is source/math analysis, not a new runtime test or changed cap."
+    },
+    {
+      "id": "time-order",
+      "source": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+      "symbols": [
+        "DecideImmediate"
+      ],
+      "conclusion": "Actions precede the advancing boundary, due processes/resident exposure and later movement. A selected advancing step still contributes once if an action opens a hold."
+    },
+    {
+      "id": "completion",
+      "source": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionPlanner.cs",
+      "symbols": [
+        "PlanQualified"
+      ],
+      "conclusion": "Stock/tool/quest/access qualification and complete material transform precede installed output and candidate space."
+    },
+    {
+      "id": "hidden-detail",
+      "source": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs",
+      "symbols": [
+        "WorldIdentityIndex",
+        "TerrainIdentityLayer"
+      ],
+      "conclusion": "TerrainIdentityLayer retains TerrainRegionSnapshot[]; retaining the world identity index does not detach detailed terrain."
+    }
+  ]
+}

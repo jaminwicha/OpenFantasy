@@ -98,6 +98,19 @@ It returns geometric status only. Neither boundary replaces `ConstructionPlanner
 admission, funding, tools, actual exposure or identity/capacity checks. Offscreen execution must join those dependencies and revalidate affected
 access after interventions; a retained reachable route is not perpetual permission to build.
 
+`ConstructionSnapshot.ValidateComponents` requires every same-floor actor in its complete supplied
+locality to appear in the project's access obligations. `ConstructionProject` bounds the stored
+requirements plus distinct actor/destination pairs to 32; one witness per distinct actor therefore
+allows at most 16 such actors. This is an admission limit of that interpretation, not a population
+limit for the game's design. A selected occupancy read cannot silently shrink the required population.
+A different protected-access-domain law requires an explicit interpretation while historical admission
+retains its original meaning.
+
+Funded work needs earned simulation exposure, actual stock and tool rights, valid actor/control state
+and complete relevant physical consequences. Retained spatial evidence may avoid repeating unchanged
+geometry only when its exact dependencies are revalidated. It cannot award elapsed wall-clock work,
+ignore a reading hold or install an object without the same material, identity and load admission.
+
 The explicit [constructed-footing composition](constructed-footing.md) derives actor-bearing surfaces
 from those same completed physical members. Actor support is exact in XY; it does not establish load
 strength or allow the construction geometry to exist before its work and material publication.
