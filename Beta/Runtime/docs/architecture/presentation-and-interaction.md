@@ -274,6 +274,20 @@ Music uses restrained adaptive layers and fades between exploration, settlement,
 contexts. Quiet crafting and travel allow space; intense battle music requires an appropriate event.
 Playback deduplication, loops and reconnection cannot replay a world action.
 
+Shelter acoustics follow the listener's enclosure, intervening materials and open or closed portals.
+Moving indoors changes the permitted mix and reverberant character while outdoor weather and world
+time continue under their own rules. Two listeners on opposite sides of the same wall can receive
+different mixes. A vessel interior follows the same boundary while retaining its motion and condition
+context. Entering, leaving or reconnecting restores ongoing ambience without replaying transient actions;
+an acoustic cue cannot disclose an otherwise unauthorized source identity. Filter and reverb algorithms
+are presentation choices, separate from authoritative perception and physical state.
+
+Autonomous action presentation connects observable preparation, commitments, actual activity and its
+consequences. Dialogue and environmental cues explain what the player may know without exposing
+private motives or inventing a causal story. Meaningful personal or cultural belongings communicate
+habitation alongside selective wear; greater surface detail is not a substitute for lived context.
+These obligations apply to routine work, defense preparation and recovery as well as dramatic events.
+
 Detailed contracts: [interface navigation](../../../implementation/PLAYER_INTERFACE_AND_NAVIGATION.md),
 [presentation](../../../spec-v1_1/PRESENTATION_CONTRACTS.md),
 [audio](../../../spec-v1_1/AUDIO_DIRECTION_AND_RUNTIME.md),

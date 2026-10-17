@@ -973,6 +973,18 @@ cannot create invisible storage, an infinite outlet or deleted overflow. Ice tra
 melting, sediment and erosion obey declared conservation/transition rules. Expensive motion can use
 bounded coarse models, but a visual flow never authorizes a separate physical transfer.
 
+Macro erosion models transport sediment through versioned relief and drainage into actual receiving
+stores, soils and habitats. A heightmap represents macro relief; it does not replace vertical terrain,
+caves, overhangs, structures or material ancestry. Local realization agrees on shared boundaries and
+preserves published geographical history. Changes to drainage propagate through declared dependencies
+rather than regenerating a lived settlement from a new map.
+
+The portable C# authority owns admitted erosion arithmetic, deterministic ordering and conservation.
+Grid/flux or droplet models are algorithm choices within that contract. Vectorization or parallel
+execution must preserve canonical results across supported runtimes and preparation order; throughput
+alone does not justify different seeded worlds. Presentation shaders may illustrate erosion but cannot
+publish authoritative terrain or material transfers.
+
 Plants and cultivated crops share growth, seasonal requirements, soil, water, harvest and provenance.
 Animals and monsters have diets, needs, habitats and predator/prey relationships; hostility is an
 actor decision rather than a universal creature flag. Bounded trait variation and dispersal alter

@@ -1,0 +1,14 @@
+{
+  "ref": "codex/checkpoint-before-research-disposition-20261017",
+  "revision": "0ad2f37a7e10012ef3284b1c3bc9c81b02148466",
+  "base": "e576cd277cd3ce84a8307dd04ef0f88ce7b244f5",
+  "scope": "WIP preservation of concurrent language documents and original advisory before review. Runtime already checkpointed; unrelated predecessor staging and solution edits excluded. Not acceptance.",
+  "files": {
+    "Beta/AGENTS.md": "6ac421e3c7c754d005a74f5c99f5786e20a32f1d76981af4062fb91c82be363e",
+    "Beta/implementation/CURRENT_ROADMAP.md": "15dcbe219df0b94be5469666807ac4686ae808bf4c87c080256057ee2b5c685c",
+    "Beta/implementation/AGENT_HANDOFF.md": "32257fbb625deba7449d939b3692ee5e6a2230c466cfeed3f7065a11673dc001",
+    "Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md": "57f30586711a00c98aa9078e9fe1e9ccd049beb7f7aff185a056f1cda1ad8f28",
+    "Beta/implementation/CORE_LANGUAGE_RUST_EVIDENCE.json": "2695a7564293ddcf77747592b90fc5e0032e48f19d37580b1238478b9bd7a377",
+    "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-17.md": "3e0277e1e8034b90838b15a95359d080095238fc1e2a30ce59616bede7a70d09"
+  }
+}

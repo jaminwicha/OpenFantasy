@@ -239,6 +239,12 @@ permission preset, not an owner-approved preference or full party rescue/retreat
 - Windows invitation ACL, real three-OS exports, physical controllers/OS-focus, human game/art/audio
   acceptance, sustained 1–4-player/city/history workloads and complete migration/campaign remain open.
 
+The [additional October17 research review](research-review-20261017/LEAD_DISPOSITION.md) is integrated
+into the roadmap: conserved erosion/soil history at ECO-01/P04 and later geography phases, readable
+NPC preparation/consequences, shelter acoustics and later vessel reuse. Unsupported speed targets,
+replacement engine/API claims and separate statistical offscreen combat are not adopted. PLAN-STATE
+remains next; the review supplies no runtime or phase acceptance.
+
 ## Current routing and documentation hook
 
 Pure C# core/application remains fixed, with typed composition and a single owner per fact. There is

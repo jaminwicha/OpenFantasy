@@ -1,0 +1,51 @@
+{
+  "base": "e576cd277cd3ce84a8307dd04ef0f88ce7b244f5",
+  "scope": "Documentation-only research disposition; no independent review or runtime acceptance",
+  "originalAndArchiveSha256": "3e0277e1e8034b90838b15a95359d080095238fc1e2a30ce59616bede7a70d09",
+  "originalAuthorPostsChecked": [
+    "https://www.reddit.com/r/proceduralgeneration/comments/1x897z7/hydraulic_erosion_planets/",
+    "https://www.reddit.com/r/gameenginedevs/comments/1x6d2mp/introducing_brutal_a_free_c_framework_that_helped/",
+    "https://www.reddit.com/r/hobbygamedev/comments/1x1mhaj/two_of_us_are_making_a_village_builder_where/",
+    "https://www.reddit.com/r/IndieDev/comments/1x4k9qp/im_trying_to_make_the_boat_feel_like_a_home_in_my/"
+  ],
+  "protectedWorktreeHashes": {
+    "Beta/AGENTS.md": "6ac421e3c7c754d005a74f5c99f5786e20a32f1d76981af4062fb91c82be363e",
+    "Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md": "57f30586711a00c98aa9078e9fe1e9ccd049beb7f7aff185a056f1cda1ad8f28",
+    "Beta/implementation/CORE_LANGUAGE_RUST_EVIDENCE.json": "2695a7564293ddcf77747592b90fc5e0032e48f19d37580b1238478b9bd7a377",
+    "OpenFantasy.sln": "470fad0e103b0087483665edd6991be0ce34e577e37e4271578c0dbcf679e9eb",
+    "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-05.md": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+    "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-17.md": "3e0277e1e8034b90838b15a95359d080095238fc1e2a30ce59616bede7a70d09"
+  },
+  "documentationChecks": {
+    "command": [
+      "python3",
+      "Beta/tools/check_documentation.py",
+      "--work-record",
+      "Beta/implementation/research-review-20261017/LEAD_DISPOSITION.md",
+      "--files",
+      "Beta/implementation/research-review-20261017/LEAD_DISPOSITION.md",
+      "Beta/implementation/CURRENT_ROADMAP.md",
+      "Beta/implementation/AGENT_HANDOFF.md",
+      "Beta/implementation/GIT_MILESTONES.md",
+      "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "Beta/Runtime/docs/architecture/presentation-and-interaction.md"
+    ],
+    "exitCode": 0,
+    "result": {
+      "accepted": true,
+      "scope": "Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance",
+      "filesChecked": 6,
+      "workRecord": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/research-review-20261017/LEAD_DISPOSITION.md",
+      "errors": []
+    }
+  },
+  "runtimeChanges": [],
+  "frozenSpecChanges": [],
+  "predecessorIndexHash": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "whitespaceCheckExitCode": 0,
+  "commitPreflight": {
+    "initialFullDiffCheckExitCode": 2,
+    "finding": "The byte-preserved advisory has a two-space Markdown line break on line 3, reported as trailing whitespace. No commit occurred.",
+    "disposition": "Retain original bytes; require clean whitespace for every authored file. Exclude only the exact archived advisory from the owned-path diff check."
+  }
+}
