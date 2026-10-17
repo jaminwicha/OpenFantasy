@@ -696,6 +696,20 @@ minimum Z/Y/X. Missing metadata is unavailable coverage, never assumed empty ter
 establish authoritative directory completeness and supply every dependency of the intended operation;
 the rectangle does not infer actor collisions, structures, permission, time or material ownership.
 
+[MovementTerrainFootprint](../../src/OpenFantasy.Core/Spatial/MovementTerrainFootprint.cs) derives that
+rectangle for a bounded ordinary cardinal move from the actual immutable actor presence and ground
+support interpretation. It uses the same body extents and ordinary step-height rule as local movement.
+The conservative envelope includes the swept body, the highest admissible stair candidate and support
+below the lowest candidate. A descending endpoint can be one step below the origin and its support
+band another step lower. Integer floor/ceiling cell conversion preserves negative coordinates and
+half-open body extents. Flat and legacy constructed-support interpretations retain their own probes.
+
+The envelope includes possible candidates even when an earlier candidate succeeds, so it is not a
+minimal-read or latency guarantee. It uses the existing local body/displacement limits; broader vehicle
+or movement interpretations require their own qualified footprints. Captured actor data is a preparation
+input, not a current-revision token. Other bodies, structures, cargo, timing and authority must still be
+included and revalidated by the complete action owner before publication.
+
 Preparation examines at most 4,096 candidate references and respects an explicitly supplied loaded-region
 budget. This is a per-preparation metadata bound, not a world size or directory limit. Requested bounds
 use the existing bounded region-volume type. `TotalLoadedCells` counts each selected region's complete

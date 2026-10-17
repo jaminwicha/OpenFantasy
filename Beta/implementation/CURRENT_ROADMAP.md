@@ -211,6 +211,9 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    physical placement and installed backing. The [terrain dependency boundary](p02/partition-state/terrain-reads/RESULT.md)
    now selects exact required archives under separate metadata/region/byte/decoded-cell budgets and
    reuses ordinary spatial collision queries; file-backed tests leave irrelevant detail unloaded.
+   The [movement footprint](p02/partition-state/movement-footprint/RESULT.md) now derives the terrain
+   request from actual body/motion/support data, including stairs and negative elevations, and is used
+   by that file-backed test. It does not yet establish other actor/structure dependency completeness.
    This is terrain-only preparation, not partitioned world simulation. Actor/structure/time closure, atomic
    cross-partition publication and the selected format remain unproved/undecided. Record the decision, measured
    limits and remaining questions in the living

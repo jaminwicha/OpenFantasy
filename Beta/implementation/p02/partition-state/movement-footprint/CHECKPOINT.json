@@ -1,0 +1,6 @@
+{
+  "ref": "codex/checkpoint-before-movement-footprint-20261017T222214Z",
+  "revision": "8bf21d887f3f1b956aa8971badbf71792459a739",
+  "scope": "Clean runtime before movement terrain footprint; unrelated predecessor staging excluded.",
+  "verification": "Pinned terrain read boundary accepted; world partition simulation remains open."
+}

@@ -1,0 +1,86 @@
+{
+  "sourceHead": "8bf21d887f3f1b956aa8971badbf71792459a739",
+  "documentationCommand": [
+    "python3",
+    "Beta/tools/check_documentation.py",
+    "--work-record",
+    "Beta/implementation/p02/partition-state/movement-footprint/RESULT.md",
+    "--files",
+    "Beta/Runtime/docs/architecture/world-and-geography.md",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md",
+    "Beta/implementation/GIT_MILESTONES.md",
+    "Beta/implementation/p02/partition-state/movement-footprint/RESULT.md"
+  ],
+  "documentation": {
+    "accepted": true,
+    "scope": "Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance",
+    "filesChecked": 6,
+    "workRecord": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/movement-footprint/RESULT.md",
+    "errors": []
+  },
+  "finalDistinctPasses": 160,
+  "newCases": 10,
+  "counters": {
+    "core": {
+      "total": "157",
+      "executed": "157",
+      "passed": "157",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "hosting": {
+      "total": "3",
+      "executed": "3",
+      "passed": "3",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "authoredWhitespace": "pass",
+  "authoredHashes": {
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/MovementTerrainFootprint.cs": "3f2a49975173825ac10abf1f508f218f4632ea130b2617e44c9d2a646bcf1b39",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialWalking.cs": "91ca69a3e7eee199eda70bc7da5ca2953c51a2921e5e997655eff7478df8cf04",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/MovementTerrainFootprintTests.cs": "dd539b6bb0270ab8a5992e24268cecf7b38b396f6c9f557a91106c59da1e7dcd",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/TerrainReadPreparationTests.cs": "b6d962834077154b23ba18486587333eff65298eae3f52ecc84d6595faa6002f",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "5874c44f9d7358f544897e60a233d80004ec5baf5b8f246dfaaa19d9c2a71c68",
+    "Beta/implementation/CURRENT_ROADMAP.md": "215165b735529c4e2cf34b98afd2bd011061a1ed534508cb452c42f447dad872",
+    "Beta/implementation/AGENT_HANDOFF.md": "c06dc4753696547e4298db49dd9e5c2192da45b7e50d246b66511f7033ee443b",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md": "94c240ad23bbd9cb0849e9ce5030d9d252bbcdc255282c2a40d6b96b7537d59a",
+    "Beta/implementation/GIT_MILESTONES.md": "914cb23bd1b3a9d3650a250ff99e78fdb023a2521c27438017cfa4f8e5efaa9f",
+    "Beta/implementation/p02/partition-state/movement-footprint/RESULT.md": "ac9bc2b2223a6b62beb8ee1df2c405aae1f757834d48d3e3f9f91dd4b022a7d7"
+  },
+  "binaryHashes": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "1d1024ad9b3a3c6759dc35dcab8ff2f5ded4c46d16ac9f52fb3409e3b5585e1e",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "fa22340125259c4c135ba4e9b3b8fbdd79b44521677224b1bd0e716fa7615515",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "962dd98a3eb1dd474fa10ff97ae2abb0f85f704136b70c0f0f71f45d2183bf78",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "1d1024ad9b3a3c6759dc35dcab8ff2f5ded4c46d16ac9f52fb3409e3b5585e1e",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "73059b7dcfdbb5925a4b200a50645e0175db226cd57f652785280984ac90c7a1"
+  },
+  "protectedIndex": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "protectedAdvisory": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "frozenSpecs": "unchanged"
+}

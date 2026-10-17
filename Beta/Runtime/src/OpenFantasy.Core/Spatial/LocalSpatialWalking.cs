@@ -4,8 +4,7 @@ public sealed partial class LocalSpatialSnapshot
 {
     public const long MaximumOrdinaryStepHeightSubunits = 64;
 
-    private static long StepHeight(ActorPresence actor) => Math.Min(MaximumOrdinaryStepHeightSubunits,
-        actor.Condition.Definition.ClearanceDimensions.HeightSubunits / 4);
+    private static long StepHeight(ActorPresence actor) => MovementTerrainFootprint.StepHeight(actor);
 
     /// <summary>Shared exact transition for ordinary movement and search; the selected endpoint is derived, never snapped.</summary>
     internal SpatialMoveResult PrepareWalkFrom(EntityId actorId, SubunitPosition from, long deltaX, long deltaY)
