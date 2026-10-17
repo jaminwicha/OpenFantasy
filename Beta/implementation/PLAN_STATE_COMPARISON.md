@@ -193,6 +193,12 @@ The first extraction should establish these concrete responsibilities, in the ex
   suppressing a selected movement when that actor performs work. A geometric candidate cannot bypass
   this ordering. The real region-crossing/replay case is not a partition-ownership transfer or partial
   simulation claim; complete step dependencies and atomic owner publication remain unproved.
+  [Paged occupancy preparation](p02/partition-state/spatial-directory/RESULT.md) adds exact bounded
+  metadata reads and selected detail loading without a complete local scene. Explicit empty page pins
+  detect arrivals; inconsistent copies and missing detail refuse. The 200-presence file fixture keeps
+  all directory metadata resident but loads only selected geometry; it establishes neither a global
+  owner nor a memory high-water budget. Directory publication/completeness, actual ownership transfer,
+  full joined world admission, absent-detail work and atomic history remain the integrated proof.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

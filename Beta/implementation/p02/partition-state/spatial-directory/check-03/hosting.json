@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~SpatialOccupancyPreparationTests|FullyQualifiedName~WorldMovementPrerequisitesTests|FullyQualifiedName~TerrainReadPreparationTests",
+    "--logger",
+    "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/spatial-directory/check-03/hosting.trx"
+  ],
+  "exitCode": 0,
+  "seconds": 9.438099916093051,
+  "deadlineSeconds": 180
+}

@@ -712,8 +712,9 @@ included and revalidated by the complete action owner before publication.
 
 [SpatialMovementDependencies](../../src/OpenFantasy.Core/Spatial/SpatialMovementDependencies.cs) selects
 the mover and every supplied actor body or structure collider intersecting that conservative cell
-volume. Bearing surfaces belong to their selected structures. Capture starts from a complete admitted
-local scene; completeness of a larger directory is the caller's obligation. It retains only selected
+volume. Bearing surfaces belong to their selected structures. `Capture` starts from a complete admitted
+local scene; `FromDirectory` accepts exact selected detail from caller-established complete occupancy
+metadata. Completeness and placement admission remain the caller's obligations. It retains only selected
 immutable bodies/structures, the footprint and terrain references, not the original scene or its distant
 detail. An initially omitted actor must still be detected if it enters the volume before publication.
 
@@ -729,8 +730,57 @@ Evaluation requires a read set resolved for the exact captured terrain-plan inst
 [walking implementation](../../src/OpenFantasy.Core/Spatial/SpatialMovementQueries.Walking.cs) retains
 the same stair candidate ordering and swept/support probes. Evaluation returns only a positional
 candidate or refusal. It does not construct a partial admitted world, validate the selected colliders'
-unrelated foundations anew, or grant an action. Their immutable source scene supplies their admission;
+unrelated foundations anew, or grant an action. The provider must supply admitted immutable detail;
 the actual transaction owner supplies authority.
+
+### Paged occupancy and selected geometric detail
+
+[SpatialOccupancyPage](../../src/OpenFantasy.Core/Spatial/SpatialOccupancyPage.cs) describes immutable
+occupancy metadata on a fixed 16-cell grid in each axis. Signed floor division preserves negative
+coordinates. Index pages are separate from terrain archive boundaries and mutable ownership. An entity
+crossing pages has identical references in each overlapping page; those copies never duplicate its owner.
+An explicit empty page is evidence of supplied emptiness. A missing page means unavailable information.
+
+Each [reference](../../src/OpenFantasy.Core/Spatial/SpatialOccupancyReference.cs) pins scope, entity kind,
+identity, conservative cell bounds and complete geometric detail. Actor pins include body definition,
+form binding/condition, position, revision and home identity; structure pins include all boxes and bearing
+surfaces. Structure envelopes can overfetch separated boxes. After exact detail resolution,
+`FromDirectory` filters structures by actual box intersection, preserving complete-scene query semantics.
+
+[SpatialOccupancyReadPlan](../../src/OpenFantasy.Core/Spatial/SpatialOccupancyReadPlan.cs) reads every
+required page once, checks overlapping reference copies, selects relevant details and retains only page
+pins and selected references. Queried empty pages participate in freshness checks, so a later arrival
+invalidates preparation. Revisions and hashes invalidate any changed queried page conservatively, even
+if a changed entity is outside the precise query; unqueried page changes need not invalidate it.
+An entity omitted from every supplied page cannot be detected by this reader. The provider must establish
+complete authoritative metadata, admitted source detail and consistent reads; publication must preserve
+that basis. Neither constructor nor hash authenticates the provider or creates a directory owner.
+
+Preparation permits at most 32 pages, 1,024 references per page, and explicitly chosen actor/structure
+budgets within the existing movement kernel limits. Requested/detail envelopes use bounded
+`TerrainRegionBounds`; oversized envelopes require another qualified representation. These are local
+preparation limits, not world population, structure-size or city acceptance claims. Exceeding a budget
+refuses preparation rather than discarding potential colliders. Missing, extra, duplicate or mismatched
+detail cannot produce a read set.
+
+[SpatialActorArchiveV1](../../src/OpenFantasy.Core/Spatial/SpatialActorArchiveV1.cs) is a self-contained
+immutable geometry archive, with a 96 KiB maximum envelope. Its scope wrapper contains the existing
+canonical actor encoding. Expected-reference decoding checks bounded bytes and hash before decoding,
+then verifies actual scope, identity, bounds and canonical reconstruction. It grants neither placement
+nor world ownership and is separate from the complete world snapshot format.
+[SpatialOccupancyReadPreparation](../../src/OpenFantasy.Hosting/Worlds/SpatialOccupancyReadPreparation.cs)
+loads only selected actor archives under a cumulative byte budget, passing the remaining per-archive
+limit to the reader. Structure providers supply bounded immutable domain objects under the selected
+count limit; the actor-byte budget does not account for structure I/O. Failures return no partial read set.
+
+`FromDirectory` joins exact footprint, scope, mover and terrain request with these loaded dependencies
+without constructing a complete or partially admitted `LocalSpatialSnapshot`. `ValidateCurrentDirectory`
+checks required page pins, terrain references and support interpretation. This provides geometric
+preparation only: the complete world processor still owns action ordering, clocks, control, custody,
+support-network admission and publication. The joined world prerequisite below still captures from
+an admitted complete world; paged geometry alone does not make that transaction partially resident.
+
+### Joined world movement prerequisites
 
 [WorldMovementPrerequisites](../../src/OpenFantasy.Core/Worlds/WorldMovementPrerequisites.cs) joins
 spatial preparation with the exact input, [current control](effective-control.md), actual

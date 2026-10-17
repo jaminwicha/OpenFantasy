@@ -229,6 +229,12 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    reads with exact carried lots, readiness and the clock/hold boundary. A real file-backed region
    crossing retains cargo through ordinary SQLite commit/replay; a same-step reading hold still suppresses
    otherwise clear movement. This is a spatial-region crossing, not a partition-owner transfer.
+   [Paged occupancy reads](p02/partition-state/spatial-directory/RESULT.md) now prepare geometry from
+   selected pinned detail without a complete local scene. A 200-presence file fixture reads four metadata
+   pages, one selected actor archive (plus a separate mover-discovery read) and one terrain archive.
+   This measures selected I/O, not NPC depth, global residency or world authority. The next integrated
+   proof must establish complete directory ownership, actual transfer with cargo, absent-detail funded
+   work and atomic recovery/history; additional isolated read helpers cannot close PLAN-STATE.
    These are bounded dependency preparations, not partitioned world simulation. Global directory completeness,
    custody/time/readiness and complete permission closure, atomic cross-partition publication and the selected format remain
    unproved/undecided. Record the decision, measured limits and remaining questions in the living

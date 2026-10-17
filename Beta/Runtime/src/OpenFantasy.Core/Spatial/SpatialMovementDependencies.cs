@@ -11,6 +11,7 @@ namespace OpenFantasy.Core.Spatial;
 public sealed class SpatialMovementDependencies
 {
     private readonly StructureSupportMode _structureSupport;
+    private readonly SpatialOccupancyReadPlan? _occupancyPlan;
 
     private SpatialMovementDependencies(LocalSpatialSnapshot source, MovementTerrainFootprint footprint,
         TerrainReadPlan terrain)
@@ -20,6 +21,20 @@ public sealed class SpatialMovementDependencies
         _structureSupport = source.StructureSupport;
         Actors = Array.AsReadOnly(RelevantActors(source, footprint.Bounds));
         Structures = Array.AsReadOnly(RelevantStructures(source, footprint.Bounds));
+    }
+
+    private SpatialMovementDependencies(MovementTerrainFootprint footprint, TerrainReadPlan terrain,
+        SpatialOccupancyReadSet occupancy, StructureSupportMode structureSupport)
+    {
+        Footprint = footprint;
+        Terrain = terrain;
+        _structureSupport = structureSupport;
+        _occupancyPlan = occupancy.Plan;
+        Actors = occupancy.Actors;
+        // Page metadata uses a conservative structure envelope. Keep only actual intersecting boxes
+        // after loading, matching the complete-scene preparation without re-admitting distant supports.
+        Structures = Array.AsReadOnly(occupancy.Structures.Where(structure =>
+            structure.Boxes.Any(box => Intersects(box.Volume, footprint.Bounds))).ToArray());
     }
 
     public MovementTerrainFootprint Footprint { get; }
@@ -40,6 +55,36 @@ public sealed class SpatialMovementDependencies
         var terrain = new TerrainReadPlan(source.Scope, footprint.Bounds,
             source.Regions.Select(TerrainRegionReference.Capture), maximumLoadedRegions);
         return new(source, footprint, terrain);
+    }
+
+    /// <summary>
+    /// Combines exact loaded detail with complete caller-established occupancy metadata. The caller
+    /// retains placement admission and directory ownership; no partial LocalSpatialSnapshot is created.
+    /// </summary>
+    public static SpatialMovementDependencies FromDirectory(MovementTerrainFootprint footprint, TerrainReadPlan terrain,
+        SpatialOccupancyReadSet occupancy, StructureSupportMode structureSupport)
+    {
+        ArgumentNullException.ThrowIfNull(footprint);
+        ArgumentNullException.ThrowIfNull(terrain);
+        ArgumentNullException.ThrowIfNull(occupancy);
+        if (!Enum.IsDefined(structureSupport) || footprint.Actor.Scope != terrain.Scope
+            || occupancy.Plan.Scope != terrain.Scope || footprint.Bounds != terrain.RequestedBounds
+            || footprint.Bounds != occupancy.Plan.Bounds
+            || occupancy.Actors.FirstOrDefault(actor => actor.ActorId == footprint.Actor.ActorId) is not { } mover
+            || !SameActor(mover, footprint.Actor))
+            throw new ArgumentException("Movement must join its exact scope, footprint and pinned mover.");
+        return new(footprint, terrain, occupancy, structureSupport);
+    }
+
+    public void ValidateCurrentDirectory(Func<SpatialOccupancyPageKey, SpatialOccupancyPage?> readPage,
+        IEnumerable<TerrainRegionReference> terrain, GroundSupportMode groundSupport, StructureSupportMode structureSupport)
+    {
+        if (_occupancyPlan is null)
+            throw new InvalidOperationException("This preparation was not captured through occupancy pages.");
+        if (groundSupport != Footprint.GroundSupport || structureSupport != _structureSupport)
+            throw new InvalidOperationException("The movement support interpretation changed.");
+        _occupancyPlan.ValidateCurrent(readPage);
+        Terrain.ValidateCurrentReferences(terrain);
     }
 
     /// <summary>Returns geometry only; call current-dependency validation inside the owning publication boundary.</summary>

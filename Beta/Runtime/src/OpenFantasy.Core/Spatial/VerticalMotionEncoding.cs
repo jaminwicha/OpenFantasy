@@ -18,7 +18,7 @@ internal static class VerticalMotionEncoding
         CanonicalEncodingV1.Frame("moving-bodies", scene.MovingBodies.Select(body =>
             (ReadOnlyMemory<byte>)(body.Structure is { } structure ? Structure(structure) : Actor(body.Actor!))).ToArray()));
 
-    private static byte[] Structure(SpatialStructure structure) => CanonicalEncodingV1.Frame("structure",
+    internal static byte[] Structure(SpatialStructure structure) => CanonicalEncodingV1.Frame("structure",
         structure.StructureId.ToByteArray(), CanonicalEncodingV1.Frame("boxes", structure.Boxes.Select(box =>
             (ReadOnlyMemory<byte>)CanonicalEncodingV1.Frame("box", Position(box.Minimum), Position(box.Maximum))).ToArray()),
         CanonicalEncodingV1.Frame("surfaces", structure.BearingSurfaces.Select(surface =>
@@ -26,7 +26,7 @@ internal static class VerticalMotionEncoding
                 SignedWide(surface.Bounds.MinV), SignedWide(surface.Bounds.MaxU), SignedWide(surface.Bounds.MaxV),
                 SignedWide(surface.TopTicks))).ToArray()));
 
-    private static byte[] Actor(ActorPresence actor) => CanonicalEncodingV1.Frame("actor",
+    internal static byte[] Actor(ActorPresence actor) => CanonicalEncodingV1.Frame("actor",
         BodyContractEncodingV1.EncodeBinding(actor.Binding), BodyContractEncodingV1.EncodeDefinition(actor.Condition.Definition),
         BodyContractEncodingV1.EncodeCondition(actor.Condition), Position(actor.Feet),
         CanonicalEncodingV1.Unsigned64(actor.Revision), actor.HomePlaceId.ToByteArray());

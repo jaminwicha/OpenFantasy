@@ -192,7 +192,10 @@ selection/revalidation and the shared ordinary movement query implementation. Th
 control rows without retaining the full world and shares the runtime's authority checks.
 [Joined movement prerequisites](p02/partition-state/movement-prerequisites/RESULT.md) now bind spatial,
 control, exact cargo, readiness and clock/hold reads; ordinary full-step admission still owns action
-ordering and publication. Complete action closure,
+ordering and publication. [Paged occupancy reads](p02/partition-state/spatial-directory/RESULT.md)
+now select geometric detail without constructing a complete scene: 180 affected tests pass, with the
+200-presence file fixture loading four pages, one selected actor archive plus mover discovery, and one
+terrain archive. This is selected-I/O evidence only. Complete action closure,
 ownership transfer, absent-detail work and atomic publication/history remain the next prototype work.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,

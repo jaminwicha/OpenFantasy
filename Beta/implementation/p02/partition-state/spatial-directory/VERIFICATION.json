@@ -1,0 +1,90 @@
+{
+  "baseRevision": "c024b315f7d1a00d0c3ffdeb993cc523030dbb55",
+  "milestone": "codex/milestone-paged-spatial-reads-20261017",
+  "tests": {
+    "core": {
+      "total": "169",
+      "executed": "169",
+      "passed": "169",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "hosting": {
+      "total": "11",
+      "executed": "11",
+      "passed": "11",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "sourceAndDocs": {
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialMovementDependencies.cs": "6789a7c189e32d93b4c3350e6062d7e5ef3ca872b23b8290891f2ec535b5dc46",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/VerticalMotionEncoding.cs": "5c21fd26d0082b5b997339e772c80ba177729cbd5f470c215f22c2cc1eb567ba",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialActorArchiveV1.cs": "8ec642870af9957081aa2b19634620251d93941fd12ceda8d962e2f30ff0bd64",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialOccupancyPage.cs": "b0db0d3fb4b96baa37eae7d4de03bc5840fe12c74acef96f251b4d8463f6d25f",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialOccupancyReadPlan.cs": "29e4e9517b0bdb300005c32ebbb17acafe38013343d8ebc56e4f303b432e2d3d",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialOccupancyReference.cs": "c442063d0c2ca5fa9e08c42d0754350657782382c4e13850e742637cceaf54b6",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SpatialOccupancyReadPreparation.cs": "6c4ae1670263a436d46e8d360bc20e2e27a4e6f32e851c7646d8fe902341b2d9",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialOccupancyReadPlanTests.cs": "7548d4fccc09aa41ca8326fe622c40e69a791444a1ec5d19dd8da5d855e1d949",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SpatialOccupancyPreparationTests.cs": "e3a968e2c0a58acfb4fb4695b82ef7f1f7357d9d732210726bd56f5d8e1fea50",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "c3fdc6dfbbab20fa367e3eab09f70e2d8df2a7d19497bd7667af5d8d6c0e2eb8",
+    "Beta/implementation/CURRENT_ROADMAP.md": "7b37016cbda621ec20563562ec2ed9526f2ab87b373021a1e58f1ce0e5406375",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md": "f27a925632a32ea1c0f02c46441ed5abd59381349e61d96801dd565a2425240b",
+    "Beta/implementation/AGENT_HANDOFF.md": "afa369b83b463d270fc14dbee63d7831250279da0959cc295b437afd5e282af1",
+    "Beta/implementation/p02/partition-state/spatial-directory/RESULT.md": "b090fbcffb3e8f0cdc5788468321f17eee817e127226a01e43ec2df272d763e3",
+    "Beta/implementation/GIT_MILESTONES.md": "b384d949093251715b2bc4272d02214152c5f021dec804b939946294f155ab4e"
+  },
+  "binaries": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "91a0fc1956ccaa7421927b7f4604316e3c9231858620532ddc2b02666ef74e0c",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "83292447fe8328948ba22f12ea7f763e2db02e5a449caf54fa9151077b837d38",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "91a0fc1956ccaa7421927b7f4604316e3c9231858620532ddc2b02666ef74e0c",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "5c941c9ef6958b7659b21e4739dc280aa855c443b4305c092a5feb4dab245d27",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "3e577701cde3465324590ebadcabbf8bacf256743fe0dd9f0d7cf0468c5ce76c"
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "advisorySha256": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "frozenTrackedSpecUnchanged": true,
+  "authoredWhitespace": "pass",
+  "independentReview": "unrun; owner orchestration pause",
+  "fullWorldPartitionGate": "open",
+  "documentation": {
+    "command": [
+      "python3",
+      "Beta/tools/check_documentation.py",
+      "--work-record",
+      "Beta/implementation/p02/partition-state/spatial-directory/RESULT.md",
+      "--files",
+      "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "Beta/implementation/CURRENT_ROADMAP.md",
+      "Beta/implementation/PLAN_STATE_COMPARISON.md",
+      "Beta/implementation/AGENT_HANDOFF.md",
+      "Beta/implementation/p02/partition-state/spatial-directory/RESULT.md",
+      "Beta/implementation/GIT_MILESTONES.md"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"accepted\": true,\n  \"scope\": \"Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance\",\n  \"filesChecked\": 6,\n  \"workRecord\": \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/spatial-directory/RESULT.md\",\n  \"errors\": []\n}\n",
+    "stderr": ""
+  }
+}
