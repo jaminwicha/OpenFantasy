@@ -181,6 +181,19 @@ head and any scheduled checkpoint. Earlier journal/receipt/archive rows and oper
 recovery records remain unchanged. Complete original-genesis replay verifies the staged result before
 create-only publication; failure never selects a partial copy. Ordinary opening does not upgrade.
 
+Joint archives retain their own closing interpretation: an inherited profile40 archive remains
+unchanged when the live root becomes41, and later ordinary continuation can seal a profile41 root
+against that same ancestry. Open material proposals and effective-control witnesses remain owned
+live state through both boundaries; neither transition nor compaction withdraws an offer, renews a
+grant or invents elapsed time. Retried submissions still return their original authenticated receipt.
+Historical reads reconstruct each closing root under its original interpreter and journal prefix.
+
+Paid movement, cancellation and collective departure use the ordinary atomic world transaction.
+Recovery selects either the entire preceding root or the entire published successor, including
+positions, route progress, readiness debts, exposure carry, receipts and occupied identities. A
+recovered before-commit batch can be submitted once; a published batch cannot execute twice. Pure
+storage reopening does not reassign controllers or manufacture a new player choice.
+
 Schema12's replay dispatch accepts exactly this transition pair once, while schema8 retains its
 different27→30 proposal transition. Fresh41 requires no migration entry. An unsupported interpreter
 must refuse the new journal/root rather than downgrade its nested state. Storage support does not

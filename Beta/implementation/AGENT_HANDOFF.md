@@ -120,10 +120,18 @@ The [save-transition increment](p02/party-withdrawal/save-transition/RESULT.md) 
 40→41 publication in schema12, retaining original admission/history and operational allowances.
 Its58 selected tests pass (12 new): the915-commit earned shared opening, retained receipt retries,
 legacy transition and five injected publication boundaries are covered;
-ordinary opening still never upgrades. Next complete inherited/next archive cuts, durable in-flight
-withdrawal/recovery and remaining outcome/interaction/capacity proofs, then host/client selection and
-the same saved shared expedition. Storage capability alone does not qualify that native journey.
-Its checkpoint and exact checks are linked in the result; independent review remains unrun.
+ordinary opening still never upgrades. Its checkpoint and exact checks are linked in the result;
+independent review remains unrun.
+
+The [durable recovery increment](p02/party-withdrawal/durable-recovery/RESULT.md) passes15 new cases:
+inherited40 and subsequent41 joint cuts retain a pending gift, active delegation, receipts and history;
+paid movement, partial arrival and collective departure survive exact reopening. Six actual Host
+storage-operator kills cover before/after movement, cancellation and departure and same-save continuation.
+Three fixture failures remain retained; production rules and schemas are unchanged. This does not prove
+live-listener death or the migrated earned save's native expedition. Next finish pending-care and
+failed-route/outcome/interaction/capacity combinations, then host/client selection and the same saved
+shared expedition. Preserve 1–4/reconnect/latency, independent, native and human gates. The milestone is
+`codex/milestone-withdrawal-durable-recovery-20261017`; the linked packet owns its exact scope.
 
 After that selected expedition, execute roadmap PLAN-STATE: one partition/version design comparison
 and measured integrated prototype, before permanent NPC cognition state. Then NPC-01 proves evidence,

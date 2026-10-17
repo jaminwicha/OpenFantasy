@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~PartyWithdrawalRecoveryTests|FullyQualifiedName~PartyWithdrawalArchiveTests",
+    "--logger",
+    "trx;LogFileName=recovery-04.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/durable-recovery/checks"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 35.449481957941316,
+  "timeout_seconds": 180
+}

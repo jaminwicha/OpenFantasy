@@ -162,9 +162,14 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    architectural review remain open.
    The [save-transition increment](p02/party-withdrawal/save-transition/RESULT.md) implements the explicit
    copied40→41 path in schema12, with exact original admission/history, retained controller allowances
-   and replay of the915-commit earned opening. Its selected proofs do not close inherited/next archive
-   cuts, process-kill recovery during withdrawal, maximum-root capacity, host compatibility or native
-   participation. Finish those named integration proofs rather than treating a fresh41 root as a migration.
+   and replay of the915-commit earned opening. The subsequent [durable recovery proof](p02/party-withdrawal/durable-recovery/RESULT.md)
+   passes15 new cases: inherited40/next41 ordinary archive cuts preserve a pending delegated gift,
+   active control and original receipts; actual paid movement/partial arrival/departure reopen exactly;
+   six Host storage-operator kills cover before/after movement, cancellation and departure with same-save
+   continuation. These are bounded two-person/storage proofs, not live-listener or native co-op acceptance.
+   Pending care, failed-route/genuine-outcome durability, complete-root capacity, host/client selection
+   and the earned shared expedition remain open. Qualify their required combinations rather than treating
+   a fresh41 root as a lived-save migration. Independent and human gates remain unchanged.
    Ordinary roster scenarios still use retreat law v2, which admits only a lone combatant on its
    side. Deliver the selected party-exit law through the saved journey before calling that route
    cooperative; preserve the legacy `AllyRemains` safeguard and Full Wait throughout integration.
