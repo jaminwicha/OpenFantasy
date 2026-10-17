@@ -14,10 +14,10 @@ it does not replace the frozen 181 requirements or their original acceptance gat
 3. [Full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md), [requirements](../spec-v1_1/REQUIREMENTS.json),
    [validation](../spec-v1_1/VALIDATION.md), living [UI](PLAYER_INTERFACE_AND_NAVIGATION.md),
    [upkeep](EQUIPMENT_AND_VEHICLE_UPKEEP.md) and [composition](WORLD_COMPOSITION_DECISION.md) decisions.
-4. **Pending lead disposition:** the owner-requested [2026-10-17 roadmap review](roadmap-review-20261017/REVIEW.md)
-   (R1–R13: world-root partitioning, facet versioning, cognition design, unscheduled P02 rows, withdrawal
-   scope, human session). Record accept/adapt/reject and fold accepted items into CURRENT_ROADMAP before
-   selecting work after the in-flight withdrawal increment. Advisory only; no gate or requirement changes.
+4. [October17 review disposition](roadmap-review-20261017/LEAD_DISPOSITION.md) resolves R1–R13 into the
+   roadmap: bounded partition/version investigation before cognition persistence; named NPC, story,
+   ecology, art/audio and catalog deliverables. No format/rewrite or phase acceptance is approved.
+   The original review and October5 advisory research are preserved; unsupported rules remain excluded.
 
 ## Latest accepted boundary
 
@@ -117,12 +117,14 @@ shared expedition. Keep all broader P02 exits intact. The Core marker is
 scope are in the packet. Unrelated staged predecessor work and the untracked October5 research
 addendum are outside this increment.
 
-Then build the missing bounded NPC motivation/memory/offscreen-work, recruitment/cooperative action
-and changed-place return, followed by investigation/puzzle and required environment/coordination/UI
-introductions. Native art/motion/audio/onboarding are concurrent dependency-bound lanes. The complete
-P02 table in CURRENT_ROADMAP is the closure authority, not this short ordering. Keep outstanding
-P00/P01 catalog/export/foundation obligations visible; P03's combined clocks/history/package and
-performance proofs precede broad dependent expansion.
+After that selected expedition, execute roadmap PLAN-STATE: one partition/version design comparison
+and measured integrated prototype, before permanent NPC cognition state. Then NPC-01 proves evidence,
+feasible work, memory/dialogue and changed-place return; STORY-01 supplies the actual clue/puzzle design.
+Recruitment/merchant work, ECO-01 and the remaining environment/coordination/UI introductions follow
+their dependencies. Art/audio authoring are unstaffed; the lead owns semantic bindings and executes
+directly while orchestration is paused. Human play feedback is requested, not scheduled or accepted.
+The complete P02 table remains the closure authority. CAT-PLAN and other P00/P01 export/foundation
+obligations stay open; P03's combined clocks/history/package and performance proofs still apply.
 
 Do not let native History paging/paid-quote/material-name catalogs, aftermath-care breadth or dropdown
 coverage become an indefinite detour. They remain required at the appropriate dependency; no permission,

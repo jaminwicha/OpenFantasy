@@ -1,0 +1,20 @@
+{
+  "ref": "refs/heads/codex/checkpoint-before-roadmap-disposition-20261017T1802Z",
+  "snapshot": "f383672ddc76efee6168c50ddb89614ed9083124",
+  "parent": "8fe31828cffa55002cff1ac6cb78253df4c21da8",
+  "scope": [
+    "Beta/implementation/roadmap-review-20261017/DOCUMENTATION_CHECKS.json",
+    "Beta/implementation/roadmap-review-20261017/DOCUMENTATION_CHECKS_REVIEW_ONLY.json",
+    "Beta/implementation/roadmap-review-20261017/METRICS.json",
+    "Beta/implementation/roadmap-review-20261017/REVIEW.md",
+    "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-05.md"
+  ],
+  "qualification": "preservation only; no runtime or review acceptance",
+  "source_sha256": {
+    "Beta/implementation/roadmap-review-20261017/DOCUMENTATION_CHECKS.json": "9f660eb37bdd70835a2fb70e18a1b689d34a1d02e2eb4c2e5ae174d82f5898ab",
+    "Beta/implementation/roadmap-review-20261017/DOCUMENTATION_CHECKS_REVIEW_ONLY.json": "6feaeea8dacfeaa264a1b0d8f5563bcd6532fbb4856c7a5ff98c4ff095d942cc",
+    "Beta/implementation/roadmap-review-20261017/METRICS.json": "87092c088ce8e43d480fa121628ffa345ff60217072c9fc2f515de95ce07cafd",
+    "Beta/implementation/roadmap-review-20261017/REVIEW.md": "761af9878569c7012490c9fb366617929a34626e432e6bf1fadc63166fbae85a",
+    "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-05.md": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0"
+  }
+}

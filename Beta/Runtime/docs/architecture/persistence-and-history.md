@@ -436,6 +436,49 @@ Profile41 explicitly substitutes the collective retreat codec and512KiB reservat
 complete frame; legacy versions retain their original codec and bound. This changes no database
 schema, host compatibility selection or existing save's rule on opening.
 
+### Design contract: partitioned persistence and version ownership
+
+The concrete `WorldSnapshot` codecs encode a complete bounded root. A terrain region, watershed
+network or material-source partition does not by itself provide independently resident world state.
+Partitioned persistence is an extension contract; it is not an alternate implemented save format.
+
+A partition is an ownership and storage boundary, not a second simulation authority. Stable
+world/branch/entity identities and a canonical ownership directory or deterministic mapping locate
+each fact independently of its detailed representation. Actor movement across a boundary preserves the person, possessions,
+commitments, knowledge, control and chronology. Reading a neighbour's cached projection cannot confer
+rights to mutate that neighbour or transfer its cargo.
+
+A transaction determines its complete read/write dependency set before publication. Coupled effects
+across partitions either commit under one authenticated commit identity or remain unpublished. Exact
+source revisions and deterministic ordering must detect stale or conflicting proposals. Missing
+residency requests bounded preparation or reports a reason to defer; it cannot omit an affected actor,
+consume twice, skip a held encounter or publish half a transfer. Global uniqueness, custody, spatial
+contact and causal-history invariants require cross-partition validation in addition to each facet's
+local validation. Partitioning does not authorize IPC or a distributed commit service.
+
+Recovery restores the ownership mapping, affected roots, command receipt and retained work as the same
+committed transaction. Replay resolves the exact partition identities and interpreters at a historical
+revision, including original admission and archive ancestry. Unloading, reloading or branching cannot
+regenerate possessions, discard obligations, change due-work order or make a previously valid historical
+address inaccessible. Spatial neighbourhood, knowledge visibility, simulation cadence and residency are
+distinct boundaries; the [frontier contract](world-and-geography.md#design-contract-finite-preparation-and-frontier-streaming)
+defines their gameplay obligations.
+
+A per-facet manifest is a candidate mechanism for selecting exact component formats and laws; it is
+not a selected runtime format. Any such manifest needs canonical ordering, content/rule identities,
+required/optional presence rules, supported combination admission, bounded encoded sizes and explicit
+unsupported-version refusal. Typed facet validators retain their own invariants; the composition owner
+validates shared identities and coupled effects. A generic manifest cannot make arbitrary combinations
+legal or remove command semantics. Root envelopes, step/action interpreters and compatibility contracts
+still need versions whenever their bytes or meaning change.
+
+Legacy read/replay interpreters remain available for every retained save and historical segment that
+references them. An explicit live-head upgrade does not retire interpreters needed for earlier history
+or time travel. Compatibility support may share implementation where semantics are identical, but cannot
+silently reinterpret old bytes or delete lived history to bound maintenance cost. Selecting a new format
+requires preserved-source publication and evidence for composed mutation, restoration and replay under
+meaningful state, not only empty-root throughput.
+
 ### Preserved-source publication
 
 [WorldProductionUpgrade](../../src/OpenFantasy.Hosting/Worlds/WorldProductionUpgrade.cs),

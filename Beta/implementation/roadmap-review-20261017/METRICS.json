@@ -1,0 +1,85 @@
+{
+  "measuredAt": "2026-10-17T12:36:24-05:00",
+  "baseline": {
+    "head": "7f63b944acf604603f5441d8561b745596223399",
+    "workingTreeOverlay": "Uncommitted party-withdrawal world binding (checkpoint ref codex/checkpoint-withdrawal-world-wip-20261017T170920Z -> 3d81011a) plus concurrent lead edits in progress; 19 staged predecessor files untouched",
+    "note": "Counts labelled workingTree include the uncommitted profile41 files; HEAD counts exclude them."
+  },
+  "sourceLines": {
+    "command": "find <dir> -name '*.cs' -not -path '*/bin/*' -not -path '*/obj/*' | xargs cat | wc -l (working tree)",
+    "Runtime/src/OpenFantasy.Core": { "files": 782, "lines": 62328 },
+    "Runtime/src/OpenFantasy.Hosting": { "files": 303, "lines": 26158 },
+    "Runtime/src/OpenFantasy.Host": { "files": 34, "lines": 1778 },
+    "Runtime/src/OpenFantasy.Server": { "files": 6, "lines": 382 },
+    "Runtime/client": { "files": 141, "lines": 27747 },
+    "Runtime/tests/OpenFantasy.Core.Tests": { "files": 243, "lines": 39009 },
+    "Runtime/tests/OpenFantasy.Hosting.Tests": { "files": 475, "lines": 82044 },
+    "Runtime/tests/OpenFantasy.Server.Tests": { "files": 65, "lines": 10672 }
+  },
+  "coreConcentration": {
+    "Core/Worlds": { "files": 277, "lines": 22976, "shareOfCoreLines": 0.369 },
+    "Core/Actors": { "files": 12, "lines": 860 },
+    "Core/Quests": { "files": 7, "lines": 598 },
+    "Core/History": { "files": 7, "lines": 365 },
+    "Core/Language": { "files": 9, "lines": 398 }
+  },
+  "versioning": {
+    "worldSnapshotCodecVersions": { "head": 38, "workingTree": 39, "highestNumber": 41, "gaps": [29, 31] },
+    "worldStepCodecVersions": { "head": 38, "workingTree": 39 },
+    "worldActionCodecVersions": { "head": 23, "workingTree": 24 },
+    "worldRootStepActionCodecLines": 5807,
+    "allCoreCodecFiles": 217,
+    "allCoreCodecLines": 16445,
+    "allCoreCodecShareOfCoreLines": 0.264,
+    "admissionClassNamesInRuntimeSrc": 59,
+    "commands": [
+      "git ls-tree --name-only HEAD Beta/Runtime/src/OpenFantasy.Core/Worlds/ | grep -cE 'WorldSnapshotCodecV[0-9]+\\.cs'",
+      "find Core -name '*Codec*.cs' | xargs cat | wc -l",
+      "grep -rhoE 'class \\w*Admission\\b' Runtime/src | sort -u | wc -l"
+    ]
+  },
+  "worldRoot": {
+    "worldSnapshotProperties": 39,
+    "worldSnapshotNullableFacets": 29,
+    "completeRootBoundMiB": 16,
+    "localSpatialSnapshotLimits": { "regions": 16, "actors": 64 },
+    "sources": [
+      "Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "Runtime/docs/architecture/world-and-geography.md (LocalSpatialSnapshot paragraph)",
+      "Runtime/docs/architecture/persistence-and-history.md (16 MiB root budget)"
+    ]
+  },
+  "largestCoreFiles": {
+    "Worlds/WorldAdmissionValidator.cs": { "head": 1038, "workingTree": 1054 },
+    "Worlds/WorldStepProcessor.cs": 757,
+    "Worlds/WorldSnapshot.cs": 490
+  },
+  "absentP02Systems": {
+    "command": "grep -rlE <pattern> Runtime/src Runtime/client/scripts --include='*.cs'",
+    "cognitionTypes": { "pattern": "class \\w*(Belief|Desire|Memory|Intention|Perception)\\w*", "matches": 0, "note": "one false positive, InMemoryPlayerTransport, excluded" },
+    "chat": { "pattern": "\\b(Chat|ZoneChat)[A-Z]?\\w*", "matches": 0 },
+    "ecology": { "pattern": "\\b(Season|Herbivore|Predator|Lava)\\w*", "matches": 0 },
+    "audioCode": { "pattern": "AudioStream", "matches": 0 },
+    "audioAssets": { "command": "find Runtime/client -iname '*.ogg' -o -iname '*.wav' -o -iname '*.mp3'", "matches": 0 },
+    "limit": "Name searches establish absence of these named types/APIs, not absence of every possible equivalent concept."
+  },
+  "deliveryActivity": {
+    "commitsByDay": { "2026-10-01": 5, "2026-10-02": 35, "2026-10-03": 22 },
+    "lastCommit": "7f63b944 2026-10-03T14:32:26-05:00",
+    "daysWithoutCommitAtReview": 14,
+    "p02PacketDirectories": 138,
+    "implementationDiskUsage": "6.5G (du -sh Beta/implementation; disk usage, not comparable with the 2026-10-03 audit's 5.92GB logical-content figure)"
+  },
+  "gates": {
+    "langWorkloads": "LANG-01..04 remain planned/unrun per p00/BENCHMARK_FIXTURES.md",
+    "productionCatalogTargets": "12 of 12 entries in p00/production-catalog-register.json have no shipping target",
+    "movementLeaseMiss": "151.9644 ms first sample vs 150 ms lease; 424.742125 ms scheduling gap (p02/movement-delivery-diagnosis/DIAGNOSIS.md), unexplained"
+  },
+  "strayResearchFile": {
+    "path": "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-05.md",
+    "gitState": "untracked",
+    "created": "2026-10-05T08:34:02-05:00",
+    "symbolsOnlyInPredecessorSrc": ["SiteGenerator", "TempleEmbedder", "SettlementGen"],
+    "symbolsFoundNowhere": ["AtmosphereSnapshot", "WaterTile", "WorldGrid", "KnockbackTiles"]
+  }
+}

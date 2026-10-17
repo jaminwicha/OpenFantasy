@@ -701,6 +701,15 @@ declared exact boundaries and deterministic continuation; activation cannot inve
 or regenerate a consumed resource. Predictive loading accounts for speed, turning, ships, airships,
 teleportation and spread-out players, with bounded preparation and visible backpressure.
 
+Spatial regions are not automatically persistence partitions. The
+[partitioned-persistence contract](persistence-and-history.md#design-contract-partitioned-persistence-and-version-ownership)
+governs canonical ownership, cross-boundary transactions and historical recovery. A geometric neighbour
+need not be resident to keep its people and obligations real; a relevant mutation must nevertheless
+prepare its complete bounded dependency set. Detailed occupancy, offscreen scheduling and retained
+historical data have separate storage and work budgets. Exact promotion/demotion boundaries must
+preserve consequences, due-work ordering and public/private knowledge rather than replace a character
+with a population count when the camera leaves.
+
 ## Design contract: geological history, liquids and ecology
 
 Continental movement, uplift, volcanic activity, erosion, shifting rivers, floods, earthquakes,

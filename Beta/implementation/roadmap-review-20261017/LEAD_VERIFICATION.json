@@ -1,0 +1,22 @@
+{
+  "baseline": "8fe31828cffa55002cff1ac6cb78253df4c21da8",
+  "scope": "Documentation disposition only; no runtime or independent acceptance",
+  "checkpoint_verified": {
+    "ref": "refs/heads/codex/checkpoint-before-roadmap-disposition-20261017T1802Z",
+    "snapshot": "f383672ddc76efee6168c50ddb89614ed9083124"
+  },
+  "preserved_input_sha256": {
+    "Beta/implementation/roadmap-review-20261017/DOCUMENTATION_CHECKS.json": "9f660eb37bdd70835a2fb70e18a1b689d34a1d02e2eb4c2e5ae174d82f5898ab",
+    "Beta/implementation/roadmap-review-20261017/DOCUMENTATION_CHECKS_REVIEW_ONLY.json": "6feaeea8dacfeaa264a1b0d8f5563bcd6532fbb4856c7a5ff98c4ff095d942cc",
+    "Beta/implementation/roadmap-review-20261017/METRICS.json": "87092c088ce8e43d480fa121628ffa345ff60217072c9fc2f515de95ce07cafd",
+    "Beta/implementation/roadmap-review-20261017/REVIEW.md": "761af9878569c7012490c9fb366617929a34626e432e6bf1fadc63166fbae85a",
+    "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-05.md": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0"
+  },
+  "advisory_archive_sha256": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "unrelated_staged_predecessor_sha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "tracked_runtime_tests_and_frozen_spec_changes": [],
+  "runtime_regressions": "Not rerun: no runtime, test or frozen-spec changes",
+  "independent_review": "Unrun; owner pauses orchestration. Original review is advisory, not a phase critic.",
+  "human_play": "Optional short session requested; no schedule or acceptance presumed.",
+  "preserved_whitespace": "Advisory archive line3 retains original two-space Markdown hard break; byte identity takes precedence over rewriting immutable input. Authored pages are checked separately."
+}

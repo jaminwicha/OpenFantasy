@@ -68,6 +68,23 @@ capability, resources, rights and commitments, then evaluate expected relief, pr
 social consequences. Personality changes thresholds and habits; experience can revise priorities.
 Plans have bounded search and persistent reasons for deferral.
 
+Cognition is persistent actor state rather than a controller's private working memory. Evidence
+records identify their source, observed event/time and permitted recipient; a belief records what the
+person infers, not an unqualified copy of world truth. Motives and preferences inform proposed plans,
+while accepted commitments reserve actual roles, resources and time through the ordinary authority.
+Dialogue projects the person's permitted knowledge, memory and reasons without manufacturing an action
+or leaking facts outside the permitted conversation. Deliberate revelation or deception follows explicit
+social rules. Memory summaries and retention rules must preserve the causal
+obligations and evidence needed for relationships, mysteries and historical reconstruction.
+
+Decision cadence, search work, resident bytes and durable bytes are distinct budgets. A distant actor
+keeps identity and meaningful state while bounded due work advances at declared reconciliation
+boundaries. Returning to detailed simulation cannot grant unearned time, complete an impossible job or learn
+unobserved events. The [partitioned-persistence contract](persistence-and-history.md#design-contract-partitioned-persistence-and-version-ownership)
+applies to cognition, relationships and commitments just as to physical custody. Fixture counts for
+memories, relationships or goals describe a measured workload; they do not define maximum character
+depth. These are design obligations, not capabilities implied by a routed amble or construction policy.
+
 Relations are directed, with trust, affection, respect, fear, grievances and obligations. Friendship,
 romance, household, party, religion, guild and nation are distinct relationships. Recruitment and
 joint actions reserve actual roles and time; one companion cannot simultaneously adventure and work
