@@ -232,7 +232,12 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    [Paged occupancy reads](p02/partition-state/spatial-directory/RESULT.md) now prepare geometry from
    selected pinned detail without a complete local scene. A 200-presence file fixture reads four metadata
    pages, one selected actor archive (plus a separate mover-discovery read) and one terrain archive.
-   This measures selected I/O, not NPC depth, global residency or world authority. The next integrated
+   This measures selected I/O, not NPC depth, global residency or world authority.
+   [Occupancy-index publication](p02/partition-state/occupancy-publication/RESULT.md) now validates
+   complete metadata catalogs and atomically replaces affected pages/identity references. Its derived
+   world adapter follows exact saved roots and reconstructs index history after before/after-commit
+   interruptions. This is immutable index publication, not canonical cross-partition ownership transfer.
+   The next integrated
    proof must establish complete directory ownership, actual transfer with cargo, absent-detail funded
    work and atomic recovery/history; additional isolated read helpers cannot close PLAN-STATE.
    These are bounded dependency preparations, not partitioned world simulation. Global directory completeness,

@@ -1,0 +1,6 @@
+{
+  "ref": "codex/checkpoint-before-occupancy-publication-20261017",
+  "revision": "f09bcc61ba79b805bb439c27e23eae0696ce0166",
+  "scope": "Clean runtime and live docs before immutable complete occupancy index and atomic updates. Unrelated staged predecessor and raw packets excluded.",
+  "verification": "Previous paged read boundary has 180 passing cases; partition authority and offscreen simulation remain open."
+}

@@ -25,7 +25,7 @@ public sealed class SpatialOccupancyPreparationTests
             SpatialOccupancyPage? ReadPage(SpatialOccupancyPageKey key)
             {
                 pageReads.Add(key);
-                return catalog.Pages.GetValueOrDefault(key);
+                return catalog.Pages.ReadPage(key);
             }
             var occupancy = new SpatialOccupancyReadPlan(mover.Scope, footprint.Bounds, ReadPage, 8, 4, 0);
             Assert.Equal(4, pageReads.Count);
@@ -58,18 +58,19 @@ public sealed class SpatialOccupancyPreparationTests
             Assert.Equal(SpatialMoveStatus.Prepared, result.Status);
             Assert.Equal(mover.Feet.Offset(-32, 0, 0), result.Candidate!.Feet);
             Assert.Single(prepared.Actors);
-            prepared.ValidateCurrentDirectory(key => catalog.Pages.GetValueOrDefault(key), catalog.Terrain,
+            prepared.ValidateCurrentDirectory(catalog.Pages.ReadPage, catalog.Terrain,
                 GroundSupportMode.TerrainOnly, StructureSupportMode.TerrainOnly);
-            // Replacing an unrelated metadata page does not invalidate this local read.
-            var unrelated = catalog.Pages.Keys.First(key => !occupancy.Pages.Any(page => page.Key == key));
-            var changed = new Dictionary<SpatialOccupancyPageKey, SpatialOccupancyPage>(catalog.Pages);
-            var prior = changed[unrelated];
-            changed[unrelated] = new(prior.Scope, prior.Key, prior.Revision + 1, prior.Entries);
-            occupancy.ValidateCurrent(key => changed.GetValueOrDefault(key));
+            // Removing a distant metadata reference changes every overlapping page atomically,
+            // without loading that actor's detailed archive or invalidating this local read.
+            var distant = catalog.Actors[^1];
+            var changed = catalog.Pages.Apply(0, [new(distant, null)]);
+            Assert.Null(changed.Find(distant.EntityId));
+            Assert.Equal(distant, catalog.Pages.Find(distant.EntityId));
+            occupancy.ValidateCurrent(changed.ReadPage);
             string? evidence = Environment.GetEnvironmentVariable("OPENFANTASY_SPATIAL_DIRECTORY_EVIDENCE");
             if (evidence is not null)
                 File.WriteAllText(evidence, JsonSerializer.Serialize(new {
-                    archivedActors = catalog.Actors.Length, directoryPages = catalog.Pages.Count,
+                    archivedActors = catalog.Actors.Length, directoryPages = catalog.Pages.RetainedPageCount,
                     metadataPagesRead = pageReads.Count, selectedActorArchivesRead = actorReads.Count,
                     moverDiscoveryReads = 1, selectedActorBytes = actorBytes, terrainArchivesRead = terrainReads,
                     scope = "Geometric population and selected I/O only; no global actor owner, deep NPC, world memory or partition simulation claim."
@@ -112,7 +113,7 @@ public sealed class SpatialOccupancyPreparationTests
     }
 
     private static (SpatialOccupancyReference[] Actors, TerrainRegionReference[] Terrain,
-        Dictionary<SpatialOccupancyPageKey, SpatialOccupancyPage> Pages) WriteCatalog(string directory, int count)
+        SpatialOccupancyDirectory Pages) WriteCatalog(string directory, int count)
     {
         var basis = WorldServiceFixture.Genesis();
         var original = basis.Space.Regions.Single();
@@ -134,7 +135,7 @@ public sealed class SpatialOccupancyPreparationTests
             File.WriteAllBytes(TerrainPath(directory, terrainReference), TerrainRegionCodecV1.Encode(region));
             actors.Add(actorReference); terrain.Add(terrainReference);
         }
-        return (actors.ToArray(), terrain.ToArray(), Pages(actors));
+        return (actors.ToArray(), terrain.ToArray(), SpatialOccupancyDirectory.Create(original.Scope, actors, count, count * 4));
     }
 
     private static Dictionary<SpatialOccupancyPageKey, SpatialOccupancyPage> Pages(IEnumerable<SpatialOccupancyReference> references)

@@ -1,0 +1,89 @@
+{
+  "baseRevision": "f09bcc61ba79b805bb439c27e23eae0696ce0166",
+  "milestone": "codex/milestone-occupancy-publication-20261017",
+  "tests": {
+    "core": {
+      "total": "175",
+      "executed": "175",
+      "passed": "175",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "hosting": {
+      "total": "15",
+      "executed": "15",
+      "passed": "15",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "sourceAndDocs": {
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialOccupancyChange.cs": "6b49a840fe251db740862ae454368b6b8c21d1359dd405a3249787eae97cf2b9",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialOccupancyDirectory.cs": "0c1d170a8bc9182fbac0d54fab73f2262d48bdbc608f08b7b05523ad54b06e9d",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSpatialOccupancyIndex.cs": "6ec7feb08ba89febca32c0ad4a02a3a36211898034ffed2042ba9c60d202695f",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialOccupancyDirectoryTests.cs": "b52c5456f8636cdda356fa34c5bdabe2211829b049da993a4cde0d7acaf0cb1c",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldSpatialOccupancyIndexTests.cs": "e41697f7a9f0d713d018e45fb91e528f3d2af69ff32be14620895a0c99948be7",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SpatialOccupancyPreparationTests.cs": "eb528940d1dd6557ad3a89c39b44e204c425e11075d2b1fdfdb9356cefd57b97",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "2223275e247c4968b0e1e76fec2ea71bfa175c1298b172331941dee132040b56",
+    "Beta/Runtime/docs/architecture/persistence-and-history.md": "6cf03a019adbb8cd1fde82ab24d24ed823d2e8946af5c552a4fadb715f4b0d8b",
+    "Beta/implementation/CURRENT_ROADMAP.md": "5796489110c6b5b90b2addd117a2af8d949f92f06d77fb87c187f4af187ff09d",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md": "4b0c697597e0e5f783721b7a7b06b34062d6839d6d9dce36d3898470424dd14f",
+    "Beta/implementation/AGENT_HANDOFF.md": "8b4e25e3444d7efc79904750bd9e6bb9be19a69c22986bdd2af38c249bd49c4d",
+    "Beta/implementation/GIT_MILESTONES.md": "ff9f639ef5cbf6c1ed378fa4d77e73f1aacc80d7190546b72ff01a58d78875f1",
+    "Beta/implementation/p02/partition-state/occupancy-publication/RESULT.md": "a8291befe6148c26886d86b7549e1e0667e5588da073ec49942c260f6fdcc438"
+  },
+  "binaries": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "a4eb31cf7fcacc9bde734af92311cd1f795979455bd56e50fde7bd64df5782c7",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "595fe70d166bfc143fdaf790e4cf78602b958315dd8582829c23a2c7d654ea75",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "a4eb31cf7fcacc9bde734af92311cd1f795979455bd56e50fde7bd64df5782c7",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "9a3c8bec3cf5f0c40bb8b0d44d4d1db2e61b957e5f299bfc73f76cf01a1e3655",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "94944cd24cb7fb42f56d99f86b4c00fba2f44ac16662c1573214d47c134d254e"
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "advisorySha256": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "frozenTrackedSpecUnchanged": true,
+  "authoredWhitespace": "pass",
+  "independentReview": "unrun; owner orchestration pause",
+  "partitionOwnerAndOffscreenWorkGate": "open",
+  "documentation": {
+    "command": [
+      "python3",
+      "Beta/tools/check_documentation.py",
+      "--work-record",
+      "Beta/implementation/p02/partition-state/occupancy-publication/RESULT.md",
+      "--files",
+      "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "Beta/Runtime/docs/architecture/persistence-and-history.md",
+      "Beta/implementation/CURRENT_ROADMAP.md",
+      "Beta/implementation/PLAN_STATE_COMPARISON.md",
+      "Beta/implementation/AGENT_HANDOFF.md",
+      "Beta/implementation/GIT_MILESTONES.md",
+      "Beta/implementation/p02/partition-state/occupancy-publication/RESULT.md"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"accepted\": true,\n  \"scope\": \"Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance\",\n  \"filesChecked\": 7,\n  \"workRecord\": \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/occupancy-publication/RESULT.md\",\n  \"errors\": []\n}\n",
+    "stderr": ""
+  }
+}

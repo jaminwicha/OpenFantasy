@@ -1,0 +1,28 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.69]     OpenFantasy.Hosting.Tests.WorldStorage.WorldSpatialOccupancyIndexTests.Index_is_rebuilt_only_from_durable_cargo_movement_and_receipt_history_after_interruption(boundaryValue: 0) [FAIL]
+[xUnit.net 00:00:02.71]     OpenFantasy.Hosting.Tests.WorldStorage.WorldSpatialOccupancyIndexTests.Index_is_rebuilt_only_from_durable_cargo_movement_and_receipt_history_after_interruption(boundaryValue: 1) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.WorldSpatialOccupancyIndexTests.Index_is_rebuilt_only_from_durable_cargo_movement_and_receipt_history_after_interruption(boundaryValue: 0) [770 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: WorldActionReceipt { BranchId = 10203040506070800000000000000002, CommandHash = 20a3eda8ea66e9f7896bc7e4fe2147be489a2690678feda37a22ca206914f450, CommandId = 102030405060708000000000000003e2, CommitSequence = 1, PrincipalId = 10203040506070800000000000000064, ··· }
+Actual:   WorldActionReceipt { BranchId = 10203040506070800000000000000002, CommandHash = 20a3eda8ea66e9f7896bc7e4fe2147be489a2690678feda37a22ca206914f450, CommandId = 102030405060708000000000000003e2, CommitSequence = 1, PrincipalId = 10203040506070800000000000000064, ··· }
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.WorldSpatialOccupancyIndexTests.Index_is_rebuilt_only_from_durable_cargo_movement_and_receipt_history_after_interruption(Int32 boundaryValue) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldSpatialOccupancyIndexTests.cs:line 101
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.WorldSpatialOccupancyIndexTests.Index_is_rebuilt_only_from_durable_cargo_movement_and_receipt_history_after_interruption(boundaryValue: 1) [25 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: WorldActionReceipt { BranchId = 10203040506070800000000000000002, CommandHash = 20a3eda8ea66e9f7896bc7e4fe2147be489a2690678feda37a22ca206914f450, CommandId = 102030405060708000000000000003e2, CommitSequence = 1, PrincipalId = 10203040506070800000000000000064, ··· }
+Actual:   WorldActionReceipt { BranchId = 10203040506070800000000000000002, CommandHash = 20a3eda8ea66e9f7896bc7e4fe2147be489a2690678feda37a22ca206914f450, CommandId = 102030405060708000000000000003e2, CommitSequence = 1, PrincipalId = 10203040506070800000000000000064, ··· }
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.WorldSpatialOccupancyIndexTests.Index_is_rebuilt_only_from_durable_cargo_movement_and_receipt_history_after_interruption(Int32 boundaryValue) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldSpatialOccupancyIndexTests.cs:line 101
+   at InvokeStub_WorldSpatialOccupancyIndexTests.Index_is_rebuilt_only_from_durable_cargo_movement_and_receipt_history_after_interruption(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/occupancy-publication/check-02/hosting.trx
+
+Failed!  - Failed:     2, Passed:    13, Skipped:     0, Total:    15, Duration: 5 s - OpenFantasy.Hosting.Tests.dll (net8.0)

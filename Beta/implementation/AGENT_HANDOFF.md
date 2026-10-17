@@ -195,7 +195,10 @@ control, exact cargo, readiness and clock/hold reads; ordinary full-step admissi
 ordering and publication. [Paged occupancy reads](p02/partition-state/spatial-directory/RESULT.md)
 now select geometric detail without constructing a complete scene: 180 affected tests pass, with the
 200-presence file fixture loading four pages, one selected actor archive plus mover discovery, and one
-terrain archive. This is selected-I/O evidence only. Complete action closure,
+terrain archive. This is selected-I/O evidence only. The
+[occupancy publication boundary](p02/partition-state/occupancy-publication/RESULT.md) now atomically
+updates complete metadata and reconciles exact ordinary saved roots, with historical reconstruction
+and before/after-commit interruption coverage. It remains a derived index; complete action closure,
 ownership transfer, absent-detail work and atomic publication/history remain the next prototype work.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,

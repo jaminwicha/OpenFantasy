@@ -451,6 +451,21 @@ Profile41 explicitly substitutes the collective retreat codec and512KiB reservat
 complete frame; legacy versions retain their original codec and bound. This changes no database
 schema, host compatibility selection or existing save's rule on opening.
 
+### Derived spatial-index history
+
+`WorldSpatialOccupancyIndex` reconciles exact admitted world roots into an immutable geometric index.
+It is derived metadata, not another persisted world owner or a new storage schema. The ordinary
+`SqliteWorldAuthority` transaction remains authoritative for movement, material changes and receipts.
+After an uncertain publication, recover that authority first and reconcile only its verified results;
+never install a predicted index successor because a candidate existed before the transaction failed.
+
+Replaying index updates from the same initial root over verified recorded world states reproduces its
+page revisions, including emptied pages. A direct capture at the live head establishes a fresh index
+lineage and cannot establish historical page revision equality. The index's source hash distinguishes
+same-revision worlds; it does not authenticate an otherwise supplied candidate's causal history. Complete
+root replay and hashing still apply. No partially resident recovery, new canonical ownership directory,
+atomic cross-partition publication or arbitrary-time travel follows from this derived reconstruction.
+
 ### Design contract: partitioned persistence and version ownership
 
 The [bounded terrain read boundary](world-and-geography.md#bounded-terrain-read-dependencies) supplies

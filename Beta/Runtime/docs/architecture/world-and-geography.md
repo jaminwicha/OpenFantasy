@@ -780,6 +780,50 @@ preparation only: the complete world processor still owns action ordering, clock
 support-network admission and publication. The joined world prerequisite below still captures from
 an admitted complete world; paged geometry alone does not make that transaction partially resident.
 
+### Complete occupancy-index updates
+
+[SpatialOccupancyDirectory](../../src/OpenFantasy.Core/Spatial/SpatialOccupancyDirectory.cs) imports a
+complete owner-established catalog into immutable identity and page maps. Each entity has one exact
+reference in the identity map and identical copies in every overlapping page. The catalog's complete
+scope makes an unlisted page known empty; this is different from a page loader that returns missing
+data. Import validates scope, identity uniqueness and finite entity/page/entry budgets. It cannot
+discover facts omitted by the supplying owner or authenticate geometric placement.
+
+A [SpatialOccupancyChange](../../src/OpenFantasy.Core/Spatial/SpatialOccupancyChange.cs) describes
+insertion, removal or exact replacement. Replacement preserves entity identity, kind and scope.
+`Apply` requires the current directory revision and exact old references, including absence for an
+insertion. It rejects duplicate changes and limits a batch to 1,024 entities. All removals precede
+insertions, so final page density determines admissibility independently of input ordering. This permits
+a full-page exchange without temporarily requiring a spare slot. It does not make overlapping physical
+bodies legal; physical admission belongs to the actual owners and movement/construction rules.
+
+The method returns one separate immutable successor only after every affected page and identity entry
+is valid. Failure leaves the source intact. Persistent maps share unaffected entries/pages; unchanged
+pages retain their pins. Changed pages use the successor directory revision. Empty pages left by removals
+remain as revision-bearing records, preventing a departure and identical return from reviving an old
+page pin. Retained empty pages consume the explicit page budget. Exhaustion refuses the update; reclaiming
+those records requires a qualified history/freshness policy rather than silent deletion.
+
+Entity/page budgets are constructor inputs; individual page and change-batch limits remain explicit.
+The complete metadata maps remain resident even when geometric detail is absent. This type neither
+provides disk-paged metadata nor publishes actor, cargo, work or history. An owner must couple its index
+successor with the real state mutation under the same authoritative commit. No actor is duplicated or
+transferred merely because its reference appears on multiple pages.
+
+[WorldSpatialOccupancyIndex](../../src/OpenFantasy.Core/Worlds/WorldSpatialOccupancyIndex.cs) is the
+complete-world reconciliation adapter. It binds a directory to an exact world hash, revision and
+interpretation without retaining the world object. `Advance` requires that exact source and an adjacent
+compatible successor, then derives every actor/structure change from the admitted roots. Geometrically
+unchanged commits share the directory but advance the source-world binding. Equal revisions alone
+cannot substitute for matching roots. Profile or realm transitions require a separate interpretation.
+
+The adapter performs complete local scans and can require canonical world hashing. It is not a bounded
+partial-world transaction or a latency optimization. Admitted adjacent roots do not prove command
+history: callers supply durable provenance. Starting from the same admitted root and replaying verified
+successors reproduces page revisions and pins. Capturing directly at a later root starts a new index
+lineage and does not reconstruct earlier page revisions. See [persistence/history](persistence-and-history.md)
+for the distinction between this derived index and canonical ownership.
+
 ### Joined world movement prerequisites
 
 [WorldMovementPrerequisites](../../src/OpenFantasy.Core/Worlds/WorldMovementPrerequisites.cs) joins

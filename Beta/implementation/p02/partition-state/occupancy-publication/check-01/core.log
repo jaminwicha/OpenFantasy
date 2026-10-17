@@ -1,0 +1,31 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Core.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.80]     OpenFantasy.Core.Tests.Spatial.SpatialOccupancyDirectoryTests.Replaying_changes_reproduces_page_history_and_limits_input_enumeration [FAIL]
+  Failed OpenFantasy.Core.Tests.Spatial.SpatialOccupancyDirectoryTests.Replaying_changes_reproduces_page_history_and_limits_input_enumeration [72 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 1025
+Actual:   191
+  Stack Trace:
+     at OpenFantasy.Core.Tests.Spatial.SpatialOccupancyDirectoryTests.Replaying_changes_reproduces_page_history_and_limits_input_enumeration() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialOccupancyDirectoryTests.cs:line 138
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.82]     OpenFantasy.Core.Tests.Spatial.SpatialOccupancyDirectoryTests.Full_page_swaps_use_final_capacity_and_failures_cannot_publish_partial_state [FAIL]
+  Failed OpenFantasy.Core.Tests.Spatial.SpatialOccupancyDirectoryTests.Full_page_swaps_use_final_capacity_and_failures_cannot_publish_partial_state [7 ms]
+  Error Message:
+   System.ArgumentException : A home place cannot alias this actor's instance identities. (Parameter 'homePlaceId')
+  Stack Trace:
+     at OpenFantasy.Core.Spatial.ActorPresence..ctor(ActorFormBinding binding, BodyConditionSnapshot condition, TerrainScope scope, SubunitPosition feet, UInt64 revision, EntityId homePlaceId) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Spatial/ActorPresence.cs:line 19
+   at OpenFantasy.Core.Tests.Spatial.SpatialFixture.Actor(UInt64 number, SubunitPosition feet, BodyDefinition body, UInt64 revision, TerrainScope scope, IEnumerable`1 injuries) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialFixture.cs:line 25
+   at OpenFantasy.Core.Tests.Spatial.SpatialOccupancyDirectoryTests.Actor(UInt64 id, Int64 x) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialOccupancyDirectoryTests.cs:line 142
+   at OpenFantasy.Core.Tests.Spatial.SpatialOccupancyDirectoryTests.<>c.<Full_page_swaps_use_final_capacity_and_failures_cannot_publish_partial_state>b__3_0(Int32 id) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialOccupancyDirectoryTests.cs:line 76
+   at System.Linq.Enumerable.SelectRangeIterator`1.Fill(Span`1 results, Int32 start, Func`2 func)
+   at System.Linq.Enumerable.SelectRangeIterator`1.ToArray()
+   at OpenFantasy.Core.Tests.Spatial.SpatialOccupancyDirectoryTests.Full_page_swaps_use_final_capacity_and_failures_cannot_publish_partial_state() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialOccupancyDirectoryTests.cs:line 76
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/occupancy-publication/check-01/core.trx
+
+Failed!  - Failed:     2, Passed:   173, Skipped:     0, Total:   175, Duration: 403 ms - OpenFantasy.Core.Tests.dll (net8.0)

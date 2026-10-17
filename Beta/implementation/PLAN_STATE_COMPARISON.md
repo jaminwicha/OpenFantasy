@@ -199,6 +199,12 @@ The first extraction should establish these concrete responsibilities, in the ex
   all directory metadata resident but loads only selected geometry; it establishes neither a global
   owner nor a memory high-water budget. Directory publication/completeness, actual ownership transfer,
   full joined world admission, absent-detail work and atomic history remain the integrated proof.
+  [Complete occupancy-index updates](p02/partition-state/occupancy-publication/RESULT.md) now keep
+  every cross-page copy and identity reference consistent in one immutable successor. A derived adapter
+  binds exact complete world roots, and saved movement/cargo/receipt history reconstructs index pins
+  through publication interruptions. This advances index mutation, not canonical owner transfer or
+  partial simulation. All metadata remains resident; empty-page history consumes the explicit budget.
+  Coupled actor/material/work roots and durable index publication still need the integrated design.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked
