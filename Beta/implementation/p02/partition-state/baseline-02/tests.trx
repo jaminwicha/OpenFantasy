@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c245365d-8169-429c-865c-d47763f1bc72" name="@mac 2026-10-17 16:54:43" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T16:54:43.0891570-05:00" queuing="2026-10-17T16:54:43.0891570-05:00" start="2026-10-17T16:54:39.5977400-05:00" finish="2026-10-17T16:54:46.9384400-05:00" />
+  <TestSettings name="default" id="11a42fcf-a2ec-4ebd-852d-f6738f8a2f8e">
+    <Deployment runDeploymentRoot="_mac_2026-10-17_16_54_43" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d93430fa-e6f9-4638-91e5-c070033ae36b" testId="0bdee6c4-cadb-df1c-24f2-5239c23f1d97" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests.Measures_real_movement_and_funded_construction_without_claiming_partition_feasibility" computerName="mac" duration="00:00:03.8549154" startTime="2026-10-17T16:54:43.0328280-05:00" endTime="2026-10-17T16:54:46.8879020-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d93430fa-e6f9-4638-91e5-c070033ae36b" />
+    <UnitTestResult executionId="d2667a1e-9da7-4a2d-bc70-b6eed03f264d" testId="2289e427-4ebf-44c0-6153-56bbcfe742f7" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests.Actual_movement_changes_space_and_time_but_preserves_custody_bytes" computerName="mac" duration="00:00:00.1065414" startTime="2026-10-17T16:54:41.5618030-05:00" endTime="2026-10-17T16:54:41.6728390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d2667a1e-9da7-4a2d-bc70-b6eed03f264d" />
+    <UnitTestResult executionId="ccc86e40-06fd-47be-94e4-de0b41f6432f" testId="ea239506-5821-52ba-38d2-743185661f12" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests.Layout_covers_all_bytes_and_does_not_treat_framing_as_payload" computerName="mac" duration="00:00:00.0124226" startTime="2026-10-17T16:54:41.6766530-05:00" endTime="2026-10-17T16:54:41.6891420-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ccc86e40-06fd-47be-94e4-de0b41f6432f" />
+    <UnitTestResult executionId="ea6f5b1d-0e9f-40c5-a8ae-ba9e3bb6c175" testId="7298a02e-5c28-ab1a-4323-78103caa5cdd" testName="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests.Comparing_unrelated_worlds_or_interpretations_refuses_positional_reuse_claims" computerName="mac" duration="00:00:01.3424375" startTime="2026-10-17T16:54:41.6894810-05:00" endTime="2026-10-17T16:54:43.0319920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ea6f5b1d-0e9f-40c5-a8ae-ba9e3bb6c175" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests.Actual_movement_changes_space_and_time_but_preserves_custody_bytes" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2289e427-4ebf-44c0-6153-56bbcfe742f7">
+      <Execution id="d2667a1e-9da7-4a2d-bc70-b6eed03f264d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests" name="Actual_movement_changes_space_and_time_but_preserves_custody_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests.Layout_covers_all_bytes_and_does_not_treat_framing_as_payload" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="ea239506-5821-52ba-38d2-743185661f12">
+      <Execution id="ccc86e40-06fd-47be-94e4-de0b41f6432f" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests" name="Layout_covers_all_bytes_and_does_not_treat_framing_as_payload" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests.Comparing_unrelated_worlds_or_interpretations_refuses_positional_reuse_claims" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7298a02e-5c28-ab1a-4323-78103caa5cdd">
+      <Execution id="ea6f5b1d-0e9f-40c5-a8ae-ba9e3bb6c175" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests" name="Comparing_unrelated_worlds_or_interpretations_refuses_positional_reuse_claims" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests.Measures_real_movement_and_funded_construction_without_claiming_partition_feasibility" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="0bdee6c4-cadb-df1c-24f2-5239c23f1d97">
+      <Execution id="d93430fa-e6f9-4638-91e5-c070033ae36b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.WorldStateLayoutTests" name="Measures_real_movement_and_funded_construction_without_claiming_partition_feasibility" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0bdee6c4-cadb-df1c-24f2-5239c23f1d97" executionId="d93430fa-e6f9-4638-91e5-c070033ae36b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2289e427-4ebf-44c0-6153-56bbcfe742f7" executionId="d2667a1e-9da7-4a2d-bc70-b6eed03f264d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ea239506-5821-52ba-38d2-743185661f12" executionId="ccc86e40-06fd-47be-94e4-de0b41f6432f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7298a02e-5c28-ab1a-4323-78103caa5cdd" executionId="ea6f5b1d-0e9f-40c5-a8ae-ba9e3bb6c175" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.60]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.28]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.49]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:06.86]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

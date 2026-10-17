@@ -1,0 +1,62 @@
+{
+  "sourceHead": "550f45694aa58aae0c3e483943ef93c02f586931",
+  "finalSourcePinsMatch": 1581,
+  "testCounters": {
+    "baseline-01": {
+      "total": "15",
+      "executed": "15",
+      "passed": "15",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "baseline-02": {
+      "total": "4",
+      "executed": "4",
+      "passed": "4",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "documentation": {
+    "accepted": true,
+    "filesChecked": 7,
+    "scope": "Observed check_documentation.py work-record/local-link pass; lead source-based review described in RESULT.md."
+  },
+  "authoredWhitespace": "passed for nine authored source/document files",
+  "preservedPredecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "preservedOctober5AdvisorySha256": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "frozenSpecsAndCoreSource": "unchanged from HEAD",
+  "authoredHashes": {
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStateLayout.cs": "3a43cc8740036287947479165653ae86dae5cdfb407b3930482daa6b42f19950",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldStateLayoutTests.cs": "a5385cfd273413659b3ea48245e935d7c757e98a7c414606435a4c6d8076c0e5",
+    "Beta/Runtime/docs/architecture/persistence-and-history.md": "f96816ee8bec0d6d1d35449b3c7eb689e6fbc53f923121955b52c6311883afce",
+    "Beta/implementation/AGENT_HANDOFF.md": "63ea70257861a4607629d465cacfc11abdc507ec126079627a4fe4f8fb47eaab",
+    "Beta/implementation/CURRENT_ROADMAP.md": "848648ab5d325cff412867159b7723d9d67d80c8685e5aca722acb8fdb4c7ef8",
+    "Beta/implementation/GIT_MILESTONES.md": "96d375d5486e26761f7d7c7d64afb85a118a50c15afb630cb8b0fe9578112914",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md": "026acd0d5a0af6063f3e90d188db32ce5254fa9c12c8abb70204d12bc8618f7c",
+    "Beta/implementation/p02/partition-state/SCOPE.md": "0f40516c54293e6bbd1feaef737f7f3fec7ec782221a1053f80c14085f55c8d6",
+    "Beta/implementation/p02/partition-state/RESULT.md": "18e87a85c4c712718a5122bcf31ed094d4a4fb468586c56b5c8731bb0b4fee71"
+  }
+}

@@ -203,8 +203,10 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
 
 2. Complete **PLAN-STATE** below before committing the permanent NPC persistence model. Produce
    one design comparison and a bounded measured prototype using actual Core state; do not start a
-   whole-engine rewrite. The [working comparison](PLAN_STATE_COMPARISON.md) is prepared; the integrated
-   prototype, measurements and selected format remain unrun/undecided. Record the decision, measured
+   whole-engine rewrite. The [working comparison](PLAN_STATE_COMPARISON.md) is prepared; the
+   [complete-root baseline](p02/partition-state/RESULT.md) now measures actual movement and funded
+   construction in legacy and current formats, with exact reopening. Partial residency, atomic
+   cross-partition publication and the selected format remain unproved/undecided. Record the decision, measured
    limits and remaining questions in the living
    plan and timeless reference. Required independent architectural review stays open while the owner
    pauses orchestration; lead inspection cannot substitute for it.

@@ -1,0 +1,11 @@
+{
+  "ref": "codex/checkpoint-state-baseline-20261017T215620Z",
+  "revision": "7ff59e74dd5894145391f2d17b5de974d8039557",
+  "parent": "550f45694aa58aae0c3e483943ef93c02f586931",
+  "scope": [
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldStateLayout.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldStateLayoutTests.cs",
+    "Beta/implementation/p02/partition-state"
+  ],
+  "verification": "15-case baseline and four final layout cases pass. Final source adds framing guard and current-adventure construction. Documentation reconciliation pending; partition prototype and decision unrun."
+}

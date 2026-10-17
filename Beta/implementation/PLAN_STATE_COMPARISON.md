@@ -2,7 +2,8 @@
 
 Working comparison for CURRENT_ROADMAP's PLAN-STATE. This is source-backed preparation, not a
 selected format, completed technical design, implemented partition owner or measured feasibility
-result. The integrated prototype and decision remain required before permanent NPC cognition state.
+result. The [complete-root baseline](p02/partition-state/RESULT.md) supplies actual byte/allocation
+measurements; the integrated prototype and decision remain required before permanent NPC cognition state.
 The [review disposition](roadmap-review-20261017/LEAD_DISPOSITION.md) owns the rationale and sequencing.
 
 ## The problem to solve
@@ -130,6 +131,58 @@ meaningful holdings/work. Report full source/binary/settings identity and instru
 The result is a reduced diagnostic. [LANG-01..04](p00/BENCHMARK_FIXTURES.md), 20,000-resident city,
 10,000-actor meaningful fixtures, sustained 1–4 players and desktop exports remain separate gates.
 
+## Measured baseline and concrete extraction boundaries
+
+The [baseline result](p02/partition-state/RESULT.md) records current-format movement and paid
+construction, legacy construction, all measured fields and original-history reopening. Current-format
+movement changes 32,427 payload bytes out of an 86,668-byte root; one paid construction step changes
+16,281 out of 80,752 bytes. These are different admitted populations, not an equal-workload benchmark.
+The legacy construction root nests its quest basis, so its near-total outer-field change says nothing
+about the fraction of individual facts that changed. Do not select aggregate boundaries from positional
+fields or conclude that a smaller legacy root is cheaper to operate.
+
+The source explains why simply storing actors in separate files is insufficient:
+
+| Actual writer or validator | Coupling that the prototype must preserve | Extraction needed for a bounded resident world |
+| --- | --- | --- |
+| `WorldStepProcessor` advancing branch | Advances calendar/pacing, each resident's experienced time, gathering, liquid flow, encounter lifecycle and due offers during an ordinary step | Explicit timing-domain and due-work ownership. Measure both preparation and the due work caused by the action; movement-only timing cannot represent the transaction. Preserve the existing Full Wait/reading rules in legacy interpretations. |
+| `WorldResident.ExperienceStep` | Recreates each resident with accumulated exposure, even without a positional change | Evaluate a canonical time basis plus exact domain membership/hold intervals before assuming actor roots remain unchanged. Materialize the same experienced time at reads and actions; joining, leaving, switching domains and interventions must not accrue it twice. This is a prototype candidate, not an admitted new clock law. |
+| `ConstructionSnapshot.ValidateComponents` | Joins completed quest funding, inventory policy, transforms, installed lots, builder time and required access; every same-floor actor in the supplied complete space must have an access witness | A project needs an explicit dependency boundary spanning stock, builder, site, funding and access. Do not discard distant actors from the existing complete-world validator to make a sliced view pass. Any narrower access contract requires its own interpretation and proof, with the old validator retained for historical roots. |
+| `ConstructionSourceFrame.ValidateSpace` | Standalone material continuation retains exact source actor/terrain bytes | Existing component continuation is not permission to substitute a partially loaded source. Reuse its material rules after supplying a deliberately admitted dependency context, not an incomplete `WorldSnapshot` cast as the original. |
+| `WorldCommitPreparation` and `WorldJournalRecovery` | One authenticated batch, complete candidate, command receipts, identity occupancy and original-history replay | Retain the single Hosting publication boundary; evolve its candidate representation to a bounded set of validated owners plus exact read revisions. All directory, custody, work and receipt updates commit in the same SQLite transaction. |
+
+Prototype the **typed aggregate plus spatial index** candidate first, while keeping whole-local
+aggregate reuse as the comparison alternative. This selects an investigation order, not a shipping
+format or an approved engine replacement. The data already rules out treating storage-only chunking
+as sufficient frontier support. Independent review and the integrated proof still precede acceptance.
+
+The first extraction should establish these concrete responsibilities, in the existing modules:
+
+- **Core ownership/admission:** identity-stable actor and custody owners, place/project owners and a
+  revisioned location directory. A bag's owner/custodian and its physical whereabouts remain different
+  facts; moving a person must not reissue the bag's lots or clone it into both locations. Immutable
+  definitions remain content-pinned. Directory entries need bounded pages, not a complete-world list
+  embedded in every action. Directory history and occupied-identity history are separate obligations.
+- **Core dependency preparation:** an action-specific read set and write set, including complete
+  swept-body/support geometry, neighbouring actors/structures, custody and actual obligations. Exact
+  source revisions belong to the plan. Missing dependencies defer/refuse before authority changes;
+  a stale plan cannot be committed after a neighbour, control or custody change. Reuse actual spatial
+  and material operations; never create a second simplified movement or construction simulator.
+- **Core time/work:** deterministic due obligations reference stable owners and the interpretation
+  needed to execute them. Absence from presentation is not permission to drop a worker or change its
+  clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked
+  at declared boundaries, including interruptions and a return before completion. Do not make the
+  distant case pass by keeping all its detailed terrain resident.
+- **Hosting persistence:** prepare through the existing authority, then atomically publish changed
+  owners, directory/due-work changes, command outcomes and commit ancestry. Record immutable owner
+  references and semantic version combinations. Original readers remain available for historical
+  addresses; explicit copied-source admission must account for every legacy facet before enabling an
+  upgraded live world. A successful profile-one experiment cannot silently migrate a lived profile41.
+
+Do not start bulk cognition state or a broad codec conversion while these boundaries are unresolved.
+The next executable milestone remains the crossing/funded-work/crash/replay proof above, including
+irrelevant detailed state that is actually absent and measured rather than merely labelled offscreen.
+
 ## Decision and rollout boundary
 
 Select an aggregate/manifest approach only after this comparison has concrete measurements and a
@@ -160,6 +213,9 @@ provides the comparison and proof scope; it does not close PLAN-STATE.
 - **Accuracy/completeness:** Reviewed WorldSnapshot, local geometry, step/commit preparation, identity
   index, durable authority/recovery and NPC controller sources. Candidate interfaces are intentionally
   not represented as existing APIs. The difficult cross-owner, clock, history, density and privacy
-  obligations are explicit rather than deferred behind a storage-only prototype.
-- **Checks:** Documentation checks are recorded with the adjoining expedition continuation. No runtime
-  benchmark or independent design acceptance is claimed; neither has run for this comparison.
+  obligations are explicit rather than deferred behind a storage-only prototype. The measured baseline
+  adds source-backed clock fan-out, nested legacy fields and construction's complete access/source
+  dependencies; none is represented as an implemented partition abstraction.
+- **Checks:** Initial documentation checks are recorded with the adjoining expedition continuation;
+  refinement and baseline checks are in the linked partition-state result. The baseline is a local
+  complete-root diagnostic, not the integrated partition benchmark or independent design acceptance.

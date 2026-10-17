@@ -174,7 +174,11 @@ and broader interaction combinations remain open. Shared verification-skill guid
 synchronized in ecosystem commit 0913ed34; no orchestration resumed.
 
 Next execute roadmap PLAN-STATE. The [source-backed comparison](PLAN_STATE_COMPARISON.md) is prepared;
-select and measure an integrated partition/version prototype before permanent NPC cognition state.
+the [measured complete-root baseline](p02/partition-state/RESULT.md) now covers current-format movement,
+legacy/current funded construction and exact reopening (15 initial cases; four final diagnostic cases).
+It shows reusable bytes and broad clock-related writes, not partial residency or partition feasibility.
+The comparison maps the actual coupled writers and next prototype responsibilities. Select and measure
+an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,
 feasible work, memory/dialogue and changed-place return; STORY-01 supplies the actual clue/puzzle design.
 Recruitment/merchant work, ECO-01 and the remaining environment/coordination/UI introductions follow

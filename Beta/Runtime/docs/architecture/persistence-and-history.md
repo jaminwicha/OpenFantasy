@@ -363,6 +363,19 @@ is retained; consumers should release completed decisions rather than accumulate
 reuse does not cache admission, authenticate history or authorize publication. Full world validation,
 actual retrieved archive decoding and complete journal replay remain required.
 
+[WorldStateLayout](../../src/OpenFantasy.Hosting/Worlds/WorldStateLayout.cs) is an internal read-only
+diagnostic over the same canonical encoder. It owns its encoded bytes, accounts separately for
+framing and top-level payloads, and compares exact payload bytes only within the same world, branch
+and root interpretation. It refuses an unsupported canonical framing version. Field hashes identify
+measured payloads; equality is checked against the bytes rather than inferred from those hashes.
+The diagnostic does not participate in admission or publication and supplies no public observation.
+
+A canonical field is not necessarily a domain owner. Some historical formats nest an earlier world
+inside a field; complete-world formats can group several domains together. Changed-field accounting
+therefore cannot establish independent validation, a bounded dependency closure or storage savings.
+It excludes hypothetical references, indexes, transactions and compression. Semantic partitioning
+requires the ownership, clocks and historical admission contracts below even when payloads are equal.
+
 ### Recovery envelopes
 
 Each complete canonical snapshot fits the existing 16 MiB bound. The network archive has its own

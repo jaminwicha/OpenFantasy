@@ -1,0 +1,1197 @@
+{
+  "Kind": "complete-root-layout-baseline",
+  "Runtime": ".NET 8.0.31",
+  "Architecture": "Arm64",
+  "OSDescription": "Darwin 24.6.0 Darwin Kernel Version 24.6.0: Mon Jul 14 11:30:51 PDT 2025; root:xnu-11417.140.69~1/RELEASE_ARM64_T8112",
+  "Processors": 8,
+  "Seconds": 3.830871,
+  "RestoredRevision": 269,
+  "RestoreMilliseconds": 301.1999,
+  "CurrentConstruction": {
+    "ProfileVersion": 40,
+    "Revision": 252,
+    "RestoreMilliseconds": 733.9782
+  },
+  "Rows": [
+    {
+      "Name": "two-player-adventure-movement",
+      "ProfileVersion": 40,
+      "BeforeRevision": 0,
+      "Revision": 1,
+      "Actors": 8,
+      "TerrainRegions": 15,
+      "CountedLots": 11,
+      "MaterialLots": 0,
+      "CompletedWork": 0,
+      "BeforeBytes": 86668,
+      "AfterBytes": 86668,
+      "FramingBytes": 136,
+      "Fields": [
+        {
+          "Index": 0,
+          "PayloadBytes": 14,
+          "ContentHash": {
+            "Value": "1ae31c0cf1a874951126984f9e50fdb088024ec50538505a4f6cba5c3804ac0d"
+          }
+        },
+        {
+          "Index": 1,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "6a339ff6defc6e73cf17dea3ea81f41e8bec092b4ced841a6c10732c0402a727"
+          }
+        },
+        {
+          "Index": 2,
+          "PayloadBytes": 7006,
+          "ContentHash": {
+            "Value": "8c23d9d4cd4da8401f5666b72bed39e73b1b28fe6aa57b0f4e697255ee374f04"
+          }
+        },
+        {
+          "Index": 3,
+          "PayloadBytes": 18869,
+          "ContentHash": {
+            "Value": "c4d4234c1f20d3a344d949790e24d81fa61f28ff7504abba16a0ea821c3779f0"
+          }
+        },
+        {
+          "Index": 4,
+          "PayloadBytes": 3607,
+          "ContentHash": {
+            "Value": "168e25eef632873cf0372fd93458cfd9178dd2898b19967f44906c8f145448ec"
+          }
+        },
+        {
+          "Index": 5,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "d0e5b343a6bd35b031bb15c3e5e10416dfd06a62105b60a945c94aa1e3e32bcc"
+          }
+        },
+        {
+          "Index": 6,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          }
+        },
+        {
+          "Index": 7,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "5e86249e82a26931a774fe4d5df2788aff4a279c331a4404cd478e03d5e5ac6c"
+          }
+        },
+        {
+          "Index": 8,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "cd2662154e6d76b2b2b92e70c0cac3ccf534f9b74eb5b89819ec509083d00a50"
+          }
+        },
+        {
+          "Index": 9,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "cd2662154e6d76b2b2b92e70c0cac3ccf534f9b74eb5b89819ec509083d00a50"
+          }
+        },
+        {
+          "Index": 10,
+          "PayloadBytes": 31,
+          "ContentHash": {
+            "Value": "7fc4ee2092fb81b4129276ed080400586ff24942cfe2e6b4a793cefb3599e1e0"
+          }
+        },
+        {
+          "Index": 11,
+          "PayloadBytes": 1924,
+          "ContentHash": {
+            "Value": "21abc00ee011a16a2828b1b003e9f21796d085d06d1b719225fa84a13c756cdc"
+          }
+        },
+        {
+          "Index": 12,
+          "PayloadBytes": 6324,
+          "ContentHash": {
+            "Value": "8ac4371676f446645fd99fe9368379c4e201f504af999be9a06f52d8f563cc9e"
+          }
+        },
+        {
+          "Index": 13,
+          "PayloadBytes": 5733,
+          "ContentHash": {
+            "Value": "113ac7d7f0b7ed6cbe51f9371f20df0dec9ba0c00d71ec100739005efa7780d6"
+          }
+        },
+        {
+          "Index": 14,
+          "PayloadBytes": 715,
+          "ContentHash": {
+            "Value": "ea9009f7055e8c620c5c24bfe8e80975a6ca335de7b4fd94a48658674b6c6e0d"
+          }
+        },
+        {
+          "Index": 15,
+          "PayloadBytes": 6629,
+          "ContentHash": {
+            "Value": "f6e1f023c82dd0a7cdd9b44dd67b5ed9e825611445168c8d37a289db75df67e5"
+          }
+        },
+        {
+          "Index": 16,
+          "PayloadBytes": 15443,
+          "ContentHash": {
+            "Value": "9a1a0776d48a5eed1708e801a2b188b4f40d910646e5884316126ef01af5a2d2"
+          }
+        },
+        {
+          "Index": 17,
+          "PayloadBytes": 274,
+          "ContentHash": {
+            "Value": "3641c1b0a60a608a582dd488facfc09639ac4fb0861f454d1705e211622bf511"
+          }
+        },
+        {
+          "Index": 18,
+          "PayloadBytes": 709,
+          "ContentHash": {
+            "Value": "0ad842f664acf279625c9374a62591ec54a2df6bdde8f6bb1164d6f7f65881b0"
+          }
+        },
+        {
+          "Index": 19,
+          "PayloadBytes": 513,
+          "ContentHash": {
+            "Value": "f6f90bdc516cbdf4d76f395467c6844015cfea4d908dfecf6790783737f0d317"
+          }
+        },
+        {
+          "Index": 20,
+          "PayloadBytes": 283,
+          "ContentHash": {
+            "Value": "6837dc31ebc59b85e39867f7c0625470877fcfb10569dbc89987b6a033976689"
+          }
+        },
+        {
+          "Index": 21,
+          "PayloadBytes": 7011,
+          "ContentHash": {
+            "Value": "009e0418c283b7ba5b5832be2b810c36eedd10ebdd1a389b1ee80d5676cf64c3"
+          }
+        },
+        {
+          "Index": 22,
+          "PayloadBytes": 4371,
+          "ContentHash": {
+            "Value": "4a3b0c008b6f8c5ba4f51a65d4c51466cafc1d6d4fcf432079bf938e0f68b833"
+          }
+        },
+        {
+          "Index": 23,
+          "PayloadBytes": 6074,
+          "ContentHash": {
+            "Value": "7ed80e8b1adc39d78c1f1ea881adf0d2b8b9879aacd4a3159843f17def6ae47a"
+          }
+        },
+        {
+          "Index": 24,
+          "PayloadBytes": 104,
+          "ContentHash": {
+            "Value": "3ab2a1589a6723d2463a0580b28cf62a6348bd8ad439a155de1a155b7b083d20"
+          }
+        },
+        {
+          "Index": 25,
+          "PayloadBytes": 156,
+          "ContentHash": {
+            "Value": "da82e59ed7fa855dd53f072af63e920946f1ae9de23d0f8577a66e14f29012ad"
+          }
+        },
+        {
+          "Index": 26,
+          "PayloadBytes": 331,
+          "ContentHash": {
+            "Value": "7c521c5d703ae656f0821de1bfc803a4910952326ed5248e4a7b8897a0a67292"
+          }
+        },
+        {
+          "Index": 27,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "9857fff23983453858d58772749f686446c560590fed03e372658ec903fc7559"
+          }
+        },
+        {
+          "Index": 28,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "76bcfe39e4ffec63ed56240f62c2c899528606ca8827affec9c1e0f7bdfc652e"
+          }
+        },
+        {
+          "Index": 29,
+          "PayloadBytes": 133,
+          "ContentHash": {
+            "Value": "e4cb82487d40750c62c38cb3dd0a66dc3cc3b2a1fe43698b6816b5e3ec802a0f"
+          }
+        },
+        {
+          "Index": 30,
+          "PayloadBytes": 142,
+          "ContentHash": {
+            "Value": "689c81e84d0e0f33b99d5f6c898c2a44461510f42d7664cdeb683fcc0589a3c0"
+          }
+        }
+      ],
+      "Reuse": {
+        "IdenticalPayloadBytes": 54105,
+        "ChangedPayloadBytes": 32427,
+        "ChangedFields": [
+          3,
+          4,
+          7,
+          8,
+          9,
+          11,
+          18,
+          20,
+          21
+        ]
+      },
+      "Iterations": 25,
+      "EncodeMilliseconds": 5.623,
+      "AllocatedBytes": 16731840,
+      "Measurement": "Warmed encoder only; layout/hash inspection and world preparation excluded. Stopwatch allocation included. Payload reuse excludes all reference/index/transaction costs."
+    },
+    {
+      "Name": "first-funded-work-step",
+      "ProfileVersion": 5,
+      "BeforeRevision": 69,
+      "Revision": 70,
+      "Actors": 2,
+      "TerrainRegions": 1,
+      "CountedLots": 5,
+      "MaterialLots": 0,
+      "CompletedWork": 1,
+      "BeforeBytes": 23934,
+      "AfterBytes": 23934,
+      "FramingBytes": 28,
+      "Fields": [
+        {
+          "Index": 0,
+          "PayloadBytes": 14,
+          "ContentHash": {
+            "Value": "1ae31c0cf1a874951126984f9e50fdb088024ec50538505a4f6cba5c3804ac0d"
+          }
+        },
+        {
+          "Index": 1,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "5dee4dd60ff8d0ba9900fe91e90e0dcf65f0570d42c431f727d0300dd70dc431"
+          }
+        },
+        {
+          "Index": 2,
+          "PayloadBytes": 18569,
+          "ContentHash": {
+            "Value": "6e29f6170ab91233051d8f45cd520fa879cfc6606bfe3304ac18f638ce2eb755"
+          }
+        },
+        {
+          "Index": 3,
+          "PayloadBytes": 5315,
+          "ContentHash": {
+            "Value": "2f826f0920b6806e8c1351a8bd82cf1f74a6bc56c418f7936d71d4ed4fd5a5c6"
+          }
+        }
+      ],
+      "Reuse": {
+        "IdenticalPayloadBytes": 22,
+        "ChangedPayloadBytes": 23884,
+        "ChangedFields": [
+          2,
+          3
+        ]
+      },
+      "Iterations": 25,
+      "EncodeMilliseconds": 20.3287,
+      "AllocatedBytes": 18816848,
+      "Measurement": "Warmed encoder only; layout/hash inspection and world preparation excluded. Stopwatch allocation included. Payload reuse excludes all reference/index/transaction costs."
+    },
+    {
+      "Name": "forty-funded-work-steps",
+      "ProfileVersion": 5,
+      "BeforeRevision": 69,
+      "Revision": 109,
+      "Actors": 2,
+      "TerrainRegions": 1,
+      "CountedLots": 5,
+      "MaterialLots": 0,
+      "CompletedWork": 40,
+      "BeforeBytes": 23934,
+      "AfterBytes": 23934,
+      "FramingBytes": 28,
+      "Fields": [
+        {
+          "Index": 0,
+          "PayloadBytes": 14,
+          "ContentHash": {
+            "Value": "1ae31c0cf1a874951126984f9e50fdb088024ec50538505a4f6cba5c3804ac0d"
+          }
+        },
+        {
+          "Index": 1,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "5dee4dd60ff8d0ba9900fe91e90e0dcf65f0570d42c431f727d0300dd70dc431"
+          }
+        },
+        {
+          "Index": 2,
+          "PayloadBytes": 18569,
+          "ContentHash": {
+            "Value": "35252eaccc12b534db319e9d467b58453eb4640c82e5921586cc7b916a3b3306"
+          }
+        },
+        {
+          "Index": 3,
+          "PayloadBytes": 5315,
+          "ContentHash": {
+            "Value": "8622b80f1ddca8ea0c3029fbe78bedc83c40780890155f5df7fa1031d0c42a4f"
+          }
+        }
+      ],
+      "Reuse": {
+        "IdenticalPayloadBytes": 22,
+        "ChangedPayloadBytes": 23884,
+        "ChangedFields": [
+          2,
+          3
+        ]
+      },
+      "Iterations": 25,
+      "EncodeMilliseconds": 20.068,
+      "AllocatedBytes": 18816848,
+      "Measurement": "Warmed encoder only; layout/hash inspection and world preparation excluded. Stopwatch allocation included. Payload reuse excludes all reference/index/transaction costs."
+    },
+    {
+      "Name": "funded-object-completion",
+      "ProfileVersion": 5,
+      "BeforeRevision": 268,
+      "Revision": 269,
+      "Actors": 2,
+      "TerrainRegions": 1,
+      "CountedLots": 4,
+      "MaterialLots": 2,
+      "CompletedWork": 200,
+      "BeforeBytes": 23934,
+      "AfterBytes": 24891,
+      "FramingBytes": 28,
+      "Fields": [
+        {
+          "Index": 0,
+          "PayloadBytes": 14,
+          "ContentHash": {
+            "Value": "1ae31c0cf1a874951126984f9e50fdb088024ec50538505a4f6cba5c3804ac0d"
+          }
+        },
+        {
+          "Index": 1,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "5dee4dd60ff8d0ba9900fe91e90e0dcf65f0570d42c431f727d0300dd70dc431"
+          }
+        },
+        {
+          "Index": 2,
+          "PayloadBytes": 19396,
+          "ContentHash": {
+            "Value": "11457268025274c500d0d8eaec66fdace0fe77e5f4fe3dd9b34add4d08de8124"
+          }
+        },
+        {
+          "Index": 3,
+          "PayloadBytes": 5445,
+          "ContentHash": {
+            "Value": "7eb1d61d5ffcbf9a6e7bcb643d0f0c196c6a948a48617cceff9ba201c647103d"
+          }
+        }
+      ],
+      "Reuse": {
+        "IdenticalPayloadBytes": 22,
+        "ChangedPayloadBytes": 24841,
+        "ChangedFields": [
+          2,
+          3
+        ]
+      },
+      "Iterations": 25,
+      "EncodeMilliseconds": 21.6547,
+      "AllocatedBytes": 19033064,
+      "Measurement": "Warmed encoder only; layout/hash inspection and world preparation excluded. Stopwatch allocation included. Payload reuse excludes all reference/index/transaction costs."
+    },
+    {
+      "Name": "adventure-first-funded-work-step",
+      "ProfileVersion": 40,
+      "BeforeRevision": 52,
+      "Revision": 53,
+      "Actors": 7,
+      "TerrainRegions": 15,
+      "CountedLots": 10,
+      "MaterialLots": 0,
+      "CompletedWork": 1,
+      "BeforeBytes": 80752,
+      "AfterBytes": 80752,
+      "FramingBytes": 136,
+      "Fields": [
+        {
+          "Index": 0,
+          "PayloadBytes": 14,
+          "ContentHash": {
+            "Value": "1ae31c0cf1a874951126984f9e50fdb088024ec50538505a4f6cba5c3804ac0d"
+          }
+        },
+        {
+          "Index": 1,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "6a339ff6defc6e73cf17dea3ea81f41e8bec092b4ced841a6c10732c0402a727"
+          }
+        },
+        {
+          "Index": 2,
+          "PayloadBytes": 6278,
+          "ContentHash": {
+            "Value": "b2348eae58070ef2b0748a75541e8eb0cbecca49409cb34407a5bb5b67e1f8a8"
+          }
+        },
+        {
+          "Index": 3,
+          "PayloadBytes": 18398,
+          "ContentHash": {
+            "Value": "b42b2de15c438b89f071849acf47afe0f025e68c619b92d8d14a9f2f259e831e"
+          }
+        },
+        {
+          "Index": 4,
+          "PayloadBytes": 3073,
+          "ContentHash": {
+            "Value": "3a6762fc88432ef93687b61af3946edfa7f0901e0ad37165c0de6f9e69c02275"
+          }
+        },
+        {
+          "Index": 5,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "2b6447c731501555651276adf5d2133490115dcfa55dd8d012fbde39d88c684f"
+          }
+        },
+        {
+          "Index": 6,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          }
+        },
+        {
+          "Index": 7,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "3627b6b819008d7c6c9f65f8a1ad337b385d49abc40f9ab683fe3cdf091f00e3"
+          }
+        },
+        {
+          "Index": 8,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "a36447e6a52a3eb0df0e9de2ff36c8617bb7df1a3f6446056a861cd483da2173"
+          }
+        },
+        {
+          "Index": 9,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "7acbf1ccd5fa5f92b2127e1b93d77c212a0f44fc6acbaba7d7b53d1904b1bf44"
+          }
+        },
+        {
+          "Index": 10,
+          "PayloadBytes": 31,
+          "ContentHash": {
+            "Value": "7fc4ee2092fb81b4129276ed080400586ff24942cfe2e6b4a793cefb3599e1e0"
+          }
+        },
+        {
+          "Index": 11,
+          "PayloadBytes": 1843,
+          "ContentHash": {
+            "Value": "af7c02061a56cedd01b5079e6c66a568ea58d51cbc0a2fac5c8e29a65c1a6e89"
+          }
+        },
+        {
+          "Index": 12,
+          "PayloadBytes": 6324,
+          "ContentHash": {
+            "Value": "8ac4371676f446645fd99fe9368379c4e201f504af999be9a06f52d8f563cc9e"
+          }
+        },
+        {
+          "Index": 13,
+          "PayloadBytes": 5365,
+          "ContentHash": {
+            "Value": "662a7571ebbe878e96d92ba36dbafa90f515e0a2633dd9e11b9c852dbe9ad8de"
+          }
+        },
+        {
+          "Index": 14,
+          "PayloadBytes": 984,
+          "ContentHash": {
+            "Value": "8b3aaa352749f3d0ec65e836b6ba81d883871709466f2c9ad3d134d4bac42a77"
+          }
+        },
+        {
+          "Index": 15,
+          "PayloadBytes": 6410,
+          "ContentHash": {
+            "Value": "aadddd46f46456642cb8ec0a5687b39c3408d104db2b3ae50e121214fd2d6173"
+          }
+        },
+        {
+          "Index": 16,
+          "PayloadBytes": 14715,
+          "ContentHash": {
+            "Value": "b86b92ac66d3b49dae8ce657054492ef020313a0954fde1f59c40dd8ed59dc06"
+          }
+        },
+        {
+          "Index": 17,
+          "PayloadBytes": 274,
+          "ContentHash": {
+            "Value": "3641c1b0a60a608a582dd488facfc09639ac4fb0861f454d1705e211622bf511"
+          }
+        },
+        {
+          "Index": 18,
+          "PayloadBytes": 709,
+          "ContentHash": {
+            "Value": "03ca8c71f885a251ac6ccbd99018448b7ed05913249d2e664b0f569a99b2e939"
+          }
+        },
+        {
+          "Index": 19,
+          "PayloadBytes": 513,
+          "ContentHash": {
+            "Value": "f6f90bdc516cbdf4d76f395467c6844015cfea4d908dfecf6790783737f0d317"
+          }
+        },
+        {
+          "Index": 20,
+          "PayloadBytes": 283,
+          "ContentHash": {
+            "Value": "86f9be35fd6f761e39da0e4adaffb8483afde052e5d164800c1888a22a9c2f62"
+          }
+        },
+        {
+          "Index": 21,
+          "PayloadBytes": 3939,
+          "ContentHash": {
+            "Value": "7fd5a57916a8920a16bd8bb530e308a0bfb8442a68f34f9ead932114c3c01268"
+          }
+        },
+        {
+          "Index": 22,
+          "PayloadBytes": 3928,
+          "ContentHash": {
+            "Value": "54ae0bb754cdf731e23d03ec00ec0acb9318274a227a0d9785dc94fcbf70fe07"
+          }
+        },
+        {
+          "Index": 23,
+          "PayloadBytes": 6631,
+          "ContentHash": {
+            "Value": "076bc79f2b7be2d54f7f26d9480b5ff80c39dbda2293e9b574fa6c6f56d21321"
+          }
+        },
+        {
+          "Index": 24,
+          "PayloadBytes": 104,
+          "ContentHash": {
+            "Value": "3ab2a1589a6723d2463a0580b28cf62a6348bd8ad439a155de1a155b7b083d20"
+          }
+        },
+        {
+          "Index": 25,
+          "PayloadBytes": 156,
+          "ContentHash": {
+            "Value": "da82e59ed7fa855dd53f072af63e920946f1ae9de23d0f8577a66e14f29012ad"
+          }
+        },
+        {
+          "Index": 26,
+          "PayloadBytes": 233,
+          "ContentHash": {
+            "Value": "0652cf5bd9743f51f376194c1e5dedbe93bd575a62d0af2e65e5ae9c2c00f721"
+          }
+        },
+        {
+          "Index": 27,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "9857fff23983453858d58772749f686446c560590fed03e372658ec903fc7559"
+          }
+        },
+        {
+          "Index": 28,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "76bcfe39e4ffec63ed56240f62c2c899528606ca8827affec9c1e0f7bdfc652e"
+          }
+        },
+        {
+          "Index": 29,
+          "PayloadBytes": 133,
+          "ContentHash": {
+            "Value": "e4cb82487d40750c62c38cb3dd0a66dc3cc3b2a1fe43698b6816b5e3ec802a0f"
+          }
+        },
+        {
+          "Index": 30,
+          "PayloadBytes": 142,
+          "ContentHash": {
+            "Value": "689c81e84d0e0f33b99d5f6c898c2a44461510f42d7664cdeb683fcc0589a3c0"
+          }
+        }
+      ],
+      "Reuse": {
+        "IdenticalPayloadBytes": 64335,
+        "ChangedPayloadBytes": 16281,
+        "ChangedFields": [
+          4,
+          7,
+          8,
+          9,
+          11,
+          15,
+          18,
+          20,
+          21
+        ]
+      },
+      "Iterations": 25,
+      "EncodeMilliseconds": 5.3582,
+      "AllocatedBytes": 15421240,
+      "Measurement": "Warmed encoder only; layout/hash inspection and world preparation excluded. Stopwatch allocation included. Payload reuse excludes all reference/index/transaction costs."
+    },
+    {
+      "Name": "adventure-forty-funded-work-steps",
+      "ProfileVersion": 40,
+      "BeforeRevision": 52,
+      "Revision": 92,
+      "Actors": 7,
+      "TerrainRegions": 15,
+      "CountedLots": 10,
+      "MaterialLots": 0,
+      "CompletedWork": 40,
+      "BeforeBytes": 80752,
+      "AfterBytes": 80752,
+      "FramingBytes": 136,
+      "Fields": [
+        {
+          "Index": 0,
+          "PayloadBytes": 14,
+          "ContentHash": {
+            "Value": "1ae31c0cf1a874951126984f9e50fdb088024ec50538505a4f6cba5c3804ac0d"
+          }
+        },
+        {
+          "Index": 1,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "6a339ff6defc6e73cf17dea3ea81f41e8bec092b4ced841a6c10732c0402a727"
+          }
+        },
+        {
+          "Index": 2,
+          "PayloadBytes": 6278,
+          "ContentHash": {
+            "Value": "b2348eae58070ef2b0748a75541e8eb0cbecca49409cb34407a5bb5b67e1f8a8"
+          }
+        },
+        {
+          "Index": 3,
+          "PayloadBytes": 18398,
+          "ContentHash": {
+            "Value": "b42b2de15c438b89f071849acf47afe0f025e68c619b92d8d14a9f2f259e831e"
+          }
+        },
+        {
+          "Index": 4,
+          "PayloadBytes": 3073,
+          "ContentHash": {
+            "Value": "42ff29579c19cd3da3e185b0b9e9c903e1c864e38d340ff4363a19a5885ddb40"
+          }
+        },
+        {
+          "Index": 5,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "2b6447c731501555651276adf5d2133490115dcfa55dd8d012fbde39d88c684f"
+          }
+        },
+        {
+          "Index": 6,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          }
+        },
+        {
+          "Index": 7,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "240f2d6548b8467f3b902e88c9d373d17bd755c9f8e586ee3eff81f6eb505f6c"
+          }
+        },
+        {
+          "Index": 8,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "7d70a6c2078bea862e0402a2ede063a3a56c2cb7ce2f2381da034651bdb766dd"
+          }
+        },
+        {
+          "Index": 9,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "9e9f4657c20e9d6c5cf79245d4e36ee6ac9f6dcaffc3de76ca2dd51aacd3ec3a"
+          }
+        },
+        {
+          "Index": 10,
+          "PayloadBytes": 31,
+          "ContentHash": {
+            "Value": "7fc4ee2092fb81b4129276ed080400586ff24942cfe2e6b4a793cefb3599e1e0"
+          }
+        },
+        {
+          "Index": 11,
+          "PayloadBytes": 1843,
+          "ContentHash": {
+            "Value": "44840b29de714948c1dd3088adf7de188810fa45aaf637b0d3e9a6d504b9cc6c"
+          }
+        },
+        {
+          "Index": 12,
+          "PayloadBytes": 6324,
+          "ContentHash": {
+            "Value": "8ac4371676f446645fd99fe9368379c4e201f504af999be9a06f52d8f563cc9e"
+          }
+        },
+        {
+          "Index": 13,
+          "PayloadBytes": 5365,
+          "ContentHash": {
+            "Value": "662a7571ebbe878e96d92ba36dbafa90f515e0a2633dd9e11b9c852dbe9ad8de"
+          }
+        },
+        {
+          "Index": 14,
+          "PayloadBytes": 984,
+          "ContentHash": {
+            "Value": "8b3aaa352749f3d0ec65e836b6ba81d883871709466f2c9ad3d134d4bac42a77"
+          }
+        },
+        {
+          "Index": 15,
+          "PayloadBytes": 6410,
+          "ContentHash": {
+            "Value": "bcc5d4ebd78310fc667d12eb73df38376696e5cb423e0afb83100eca60d512c3"
+          }
+        },
+        {
+          "Index": 16,
+          "PayloadBytes": 14715,
+          "ContentHash": {
+            "Value": "b86b92ac66d3b49dae8ce657054492ef020313a0954fde1f59c40dd8ed59dc06"
+          }
+        },
+        {
+          "Index": 17,
+          "PayloadBytes": 274,
+          "ContentHash": {
+            "Value": "3641c1b0a60a608a582dd488facfc09639ac4fb0861f454d1705e211622bf511"
+          }
+        },
+        {
+          "Index": 18,
+          "PayloadBytes": 709,
+          "ContentHash": {
+            "Value": "40a1f95d5c876185db474f4a405c18fa6ac7a066b9d1a671bd08b8050eebb16a"
+          }
+        },
+        {
+          "Index": 19,
+          "PayloadBytes": 513,
+          "ContentHash": {
+            "Value": "f6f90bdc516cbdf4d76f395467c6844015cfea4d908dfecf6790783737f0d317"
+          }
+        },
+        {
+          "Index": 20,
+          "PayloadBytes": 283,
+          "ContentHash": {
+            "Value": "030633a6c5ea39e11c6207df8003a3f451bba775532fbd7064ad8026650f2081"
+          }
+        },
+        {
+          "Index": 21,
+          "PayloadBytes": 3939,
+          "ContentHash": {
+            "Value": "407ad97897624f9140d5ce9e18f014cb3c99bd7736722e38f4d17ef9838f2ad9"
+          }
+        },
+        {
+          "Index": 22,
+          "PayloadBytes": 3928,
+          "ContentHash": {
+            "Value": "54ae0bb754cdf731e23d03ec00ec0acb9318274a227a0d9785dc94fcbf70fe07"
+          }
+        },
+        {
+          "Index": 23,
+          "PayloadBytes": 6631,
+          "ContentHash": {
+            "Value": "076bc79f2b7be2d54f7f26d9480b5ff80c39dbda2293e9b574fa6c6f56d21321"
+          }
+        },
+        {
+          "Index": 24,
+          "PayloadBytes": 104,
+          "ContentHash": {
+            "Value": "3ab2a1589a6723d2463a0580b28cf62a6348bd8ad439a155de1a155b7b083d20"
+          }
+        },
+        {
+          "Index": 25,
+          "PayloadBytes": 156,
+          "ContentHash": {
+            "Value": "da82e59ed7fa855dd53f072af63e920946f1ae9de23d0f8577a66e14f29012ad"
+          }
+        },
+        {
+          "Index": 26,
+          "PayloadBytes": 233,
+          "ContentHash": {
+            "Value": "0652cf5bd9743f51f376194c1e5dedbe93bd575a62d0af2e65e5ae9c2c00f721"
+          }
+        },
+        {
+          "Index": 27,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "9857fff23983453858d58772749f686446c560590fed03e372658ec903fc7559"
+          }
+        },
+        {
+          "Index": 28,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "76bcfe39e4ffec63ed56240f62c2c899528606ca8827affec9c1e0f7bdfc652e"
+          }
+        },
+        {
+          "Index": 29,
+          "PayloadBytes": 133,
+          "ContentHash": {
+            "Value": "e4cb82487d40750c62c38cb3dd0a66dc3cc3b2a1fe43698b6816b5e3ec802a0f"
+          }
+        },
+        {
+          "Index": 30,
+          "PayloadBytes": 142,
+          "ContentHash": {
+            "Value": "689c81e84d0e0f33b99d5f6c898c2a44461510f42d7664cdeb683fcc0589a3c0"
+          }
+        }
+      ],
+      "Reuse": {
+        "IdenticalPayloadBytes": 64335,
+        "ChangedPayloadBytes": 16281,
+        "ChangedFields": [
+          4,
+          7,
+          8,
+          9,
+          11,
+          15,
+          18,
+          20,
+          21
+        ]
+      },
+      "Iterations": 25,
+      "EncodeMilliseconds": 5.2244,
+      "AllocatedBytes": 15421240,
+      "Measurement": "Warmed encoder only; layout/hash inspection and world preparation excluded. Stopwatch allocation included. Payload reuse excludes all reference/index/transaction costs."
+    },
+    {
+      "Name": "adventure-funded-object-completion",
+      "ProfileVersion": 40,
+      "BeforeRevision": 251,
+      "Revision": 252,
+      "Actors": 7,
+      "TerrainRegions": 15,
+      "CountedLots": 9,
+      "MaterialLots": 2,
+      "CompletedWork": 200,
+      "BeforeBytes": 80752,
+      "AfterBytes": 82536,
+      "FramingBytes": 136,
+      "Fields": [
+        {
+          "Index": 0,
+          "PayloadBytes": 14,
+          "ContentHash": {
+            "Value": "1ae31c0cf1a874951126984f9e50fdb088024ec50538505a4f6cba5c3804ac0d"
+          }
+        },
+        {
+          "Index": 1,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "6a339ff6defc6e73cf17dea3ea81f41e8bec092b4ced841a6c10732c0402a727"
+          }
+        },
+        {
+          "Index": 2,
+          "PayloadBytes": 6053,
+          "ContentHash": {
+            "Value": "be8d862f43a6e480939cdf5a1f9ebcb79fa41694a5a7d4dc6158e993f19410a0"
+          }
+        },
+        {
+          "Index": 3,
+          "PayloadBytes": 18398,
+          "ContentHash": {
+            "Value": "b42b2de15c438b89f071849acf47afe0f025e68c619b92d8d14a9f2f259e831e"
+          }
+        },
+        {
+          "Index": 4,
+          "PayloadBytes": 3073,
+          "ContentHash": {
+            "Value": "d4f6dc7b240e7b62b033d3f609f4ac658d851ceb51f7b99f5922489821d9860a"
+          }
+        },
+        {
+          "Index": 5,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "2b6447c731501555651276adf5d2133490115dcfa55dd8d012fbde39d88c684f"
+          }
+        },
+        {
+          "Index": 6,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          }
+        },
+        {
+          "Index": 7,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "49213173c69f8e6479bdc9da4159d2e7bee31f829c4aac9748a56a0103e0c55d"
+          }
+        },
+        {
+          "Index": 8,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "e8cf1c64fcb9432cf011c6bbe31eb088852d89141c3526dde210570d0667ca6f"
+          }
+        },
+        {
+          "Index": 9,
+          "PayloadBytes": 8,
+          "ContentHash": {
+            "Value": "dc9684c3cd2e0715b1f151fda6d7febe3ad4ea068cbff86969631adf337ff4f5"
+          }
+        },
+        {
+          "Index": 10,
+          "PayloadBytes": 31,
+          "ContentHash": {
+            "Value": "7fc4ee2092fb81b4129276ed080400586ff24942cfe2e6b4a793cefb3599e1e0"
+          }
+        },
+        {
+          "Index": 11,
+          "PayloadBytes": 1843,
+          "ContentHash": {
+            "Value": "3b8acb8414661f9dc1b759e87900d5f83c5f96d47e7df5bbdb962c61d276a2cd"
+          }
+        },
+        {
+          "Index": 12,
+          "PayloadBytes": 7376,
+          "ContentHash": {
+            "Value": "dad7065b5328e1acf753e2bec11776b8f0c991a825aeba3348212d9445e13968"
+          }
+        },
+        {
+          "Index": 13,
+          "PayloadBytes": 5365,
+          "ContentHash": {
+            "Value": "662a7571ebbe878e96d92ba36dbafa90f515e0a2633dd9e11b9c852dbe9ad8de"
+          }
+        },
+        {
+          "Index": 14,
+          "PayloadBytes": 984,
+          "ContentHash": {
+            "Value": "8b3aaa352749f3d0ec65e836b6ba81d883871709466f2c9ad3d134d4bac42a77"
+          }
+        },
+        {
+          "Index": 15,
+          "PayloadBytes": 6540,
+          "ContentHash": {
+            "Value": "d79eeda345edafce4d0e2b5e63a3fb44b9c1578247079fd239295ba87ad754a5"
+          }
+        },
+        {
+          "Index": 16,
+          "PayloadBytes": 15542,
+          "ContentHash": {
+            "Value": "aa7960d371ebe69e4e923f03695e66449cbd4c5bcfc4775bd2d1122805fcd18c"
+          }
+        },
+        {
+          "Index": 17,
+          "PayloadBytes": 274,
+          "ContentHash": {
+            "Value": "3641c1b0a60a608a582dd488facfc09639ac4fb0861f454d1705e211622bf511"
+          }
+        },
+        {
+          "Index": 18,
+          "PayloadBytes": 709,
+          "ContentHash": {
+            "Value": "6eb38d81df8d5f84247394cc9d0cb613bca5b87e5059446b3054cb1fe8c21c6a"
+          }
+        },
+        {
+          "Index": 19,
+          "PayloadBytes": 513,
+          "ContentHash": {
+            "Value": "f6f90bdc516cbdf4d76f395467c6844015cfea4d908dfecf6790783737f0d317"
+          }
+        },
+        {
+          "Index": 20,
+          "PayloadBytes": 283,
+          "ContentHash": {
+            "Value": "01b96e2b40cb30195e1e652981660b85e723d80d3a38dde19502ce59937a6116"
+          }
+        },
+        {
+          "Index": 21,
+          "PayloadBytes": 3939,
+          "ContentHash": {
+            "Value": "078029c7045be00531a6c610b0397119969dcf1f237a6c7348d57e9e070bb9f5"
+          }
+        },
+        {
+          "Index": 22,
+          "PayloadBytes": 3928,
+          "ContentHash": {
+            "Value": "54ae0bb754cdf731e23d03ec00ec0acb9318274a227a0d9785dc94fcbf70fe07"
+          }
+        },
+        {
+          "Index": 23,
+          "PayloadBytes": 6631,
+          "ContentHash": {
+            "Value": "076bc79f2b7be2d54f7f26d9480b5ff80c39dbda2293e9b574fa6c6f56d21321"
+          }
+        },
+        {
+          "Index": 24,
+          "PayloadBytes": 104,
+          "ContentHash": {
+            "Value": "3ab2a1589a6723d2463a0580b28cf62a6348bd8ad439a155de1a155b7b083d20"
+          }
+        },
+        {
+          "Index": 25,
+          "PayloadBytes": 156,
+          "ContentHash": {
+            "Value": "da82e59ed7fa855dd53f072af63e920946f1ae9de23d0f8577a66e14f29012ad"
+          }
+        },
+        {
+          "Index": 26,
+          "PayloadBytes": 233,
+          "ContentHash": {
+            "Value": "0652cf5bd9743f51f376194c1e5dedbe93bd575a62d0af2e65e5ae9c2c00f721"
+          }
+        },
+        {
+          "Index": 27,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "9857fff23983453858d58772749f686446c560590fed03e372658ec903fc7559"
+          }
+        },
+        {
+          "Index": 28,
+          "PayloadBytes": 32,
+          "ContentHash": {
+            "Value": "76bcfe39e4ffec63ed56240f62c2c899528606ca8827affec9c1e0f7bdfc652e"
+          }
+        },
+        {
+          "Index": 29,
+          "PayloadBytes": 133,
+          "ContentHash": {
+            "Value": "e4cb82487d40750c62c38cb3dd0a66dc3cc3b2a1fe43698b6816b5e3ec802a0f"
+          }
+        },
+        {
+          "Index": 30,
+          "PayloadBytes": 142,
+          "ContentHash": {
+            "Value": "689c81e84d0e0f33b99d5f6c898c2a44461510f42d7664cdeb683fcc0589a3c0"
+          }
+        }
+      ],
+      "Reuse": {
+        "IdenticalPayloadBytes": 37018,
+        "ChangedPayloadBytes": 45382,
+        "ChangedFields": [
+          2,
+          4,
+          7,
+          8,
+          9,
+          11,
+          12,
+          15,
+          16,
+          18,
+          20,
+          21
+        ]
+      },
+      "Iterations": 25,
+      "EncodeMilliseconds": 5.2676,
+      "AllocatedBytes": 15833840,
+      "Measurement": "Warmed encoder only; layout/hash inspection and world preparation excluded. Stopwatch allocation included. Payload reuse excludes all reference/index/transaction costs."
+    }
+  ],
+  "Limits": "Complete resident roots. No partial residency, partitioned atomicity, offscreen equivalence, manifest format or production scale is proved."
+}
