@@ -1,0 +1,91 @@
+{
+  "sourceHead": "703fee6d648d3f9a65cccbf78e0b4296d557deeb",
+  "documentationCommand": [
+    "python3",
+    "Beta/tools/check_documentation.py",
+    "--work-record",
+    "Beta/implementation/p02/partition-state/terrain-reads/RESULT.md",
+    "--files",
+    "Beta/Runtime/docs/architecture/world-and-geography.md",
+    "Beta/Runtime/docs/architecture/persistence-and-history.md",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md",
+    "Beta/implementation/GIT_MILESTONES.md",
+    "Beta/implementation/p02/partition-state/terrain-reads/RESULT.md"
+  ],
+  "documentation": {
+    "accepted": true,
+    "scope": "Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance",
+    "filesChecked": 7,
+    "workRecord": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/terrain-reads/RESULT.md",
+    "errors": []
+  },
+  "finalDistinctPasses": 58,
+  "newCases": 11,
+  "counters": {
+    "core": {
+      "total": "55",
+      "executed": "55",
+      "passed": "55",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "hosting": {
+      "total": "3",
+      "executed": "3",
+      "passed": "3",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "authoredWhitespace": "pass",
+  "authoredSourceAndDocumentHashes": {
+    "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionReference.cs": "b1f8c62f32e64841fa117ff80a1e8adfbbd171dbae4886426dee7f6de918f9ae",
+    "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainReadPlan.cs": "da97b41cdf78774d94e4e4934f4928288114a485fab6610e30a8f134cfec915d",
+    "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainReadSet.cs": "f38b0896674ad567a1242d5386a7894c0a252866e20b8149ec650a3f0f66d40e",
+    "Beta/Runtime/src/OpenFantasy.Core/Terrain/TerrainRegionCodecV1.cs": "4877976431ff7cba5a616569e8eee16e133fb8a31182b6e32923b008765f067f",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/TerrainReadPreparation.cs": "676f38714fd59cbd33d48a8565d1b49a115477b4ab9046cea940a5212390f2e7",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Terrain/TerrainReadPlanTests.cs": "0fbe7b509c81072894d5bf0ce888251d3454d9eb97374172adbd2beca92455d4",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/TerrainReadPreparationTests.cs": "0831fd004821daf31d71b07c59b5131b160caa0df6f822c89570a487d3a84e9c",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "e17e548ccb29b36e7a2cbb3db33a3269a0ad9ea80ab185b0fd08e227e941c7f4",
+    "Beta/Runtime/docs/architecture/persistence-and-history.md": "73531079eb20b691fbf89bfe8ad9cb5d0a41115050f31836c5026f10bd5fe17b",
+    "Beta/implementation/CURRENT_ROADMAP.md": "2228474595e1370a382667943f78d1325d42637239327644c94866896bb2a8ee",
+    "Beta/implementation/AGENT_HANDOFF.md": "b532a4fec5a895999f02464dc23bb0032b5eb16082045585bbc71d1890060bc4",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md": "96b1296e13fedc15fdf8f9241c7d14d819f68a96fd066939a9dca4058d79c92c",
+    "Beta/implementation/GIT_MILESTONES.md": "25b7a5cd87d300a7eb4e48a855209878b204783c1ffd4a8614361f55f518347b",
+    "Beta/implementation/p02/partition-state/terrain-reads/RESULT.md": "194454ebdb908e6f3f2e3ac342d34c246c6f4a55090d6c2fa1133c141d993c3b"
+  },
+  "binaryHashes": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "ce8c258a1984944c710a1bcab2fddc86f790455ef95d7e2d67a927d025af6bd8",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "14b13385c559dbc6c05d84a67205dddef8fe96d9dcb838e07020bcde168f310c",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "073d5152fb19027bdac8ade6664eded801c50c1a2be180e7568aac1687787ff2",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "ce8c258a1984944c710a1bcab2fddc86f790455ef95d7e2d67a927d025af6bd8",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "ecf713c6456649ae1a0593fed8923cb91e2794ed33066d9d80aecc4fd8a73f11"
+  },
+  "protectedPredecessorIndex": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "protectedAdvisory": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "frozenSpecs": "unchanged"
+}

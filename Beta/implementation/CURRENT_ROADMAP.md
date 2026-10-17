@@ -208,7 +208,10 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    construction in legacy and current formats, with exact reopening. The
    [carriage extraction](p02/partition-state/carriage/RESULT.md) now gives structural loading and future
    partition preparation one typed view of actual carried material, preserving legal ownership versus
-   physical placement and installed backing. Partial residency, atomic
+   physical placement and installed backing. The [terrain dependency boundary](p02/partition-state/terrain-reads/RESULT.md)
+   now selects exact required archives under separate metadata/region/byte/decoded-cell budgets and
+   reuses ordinary spatial collision queries; file-backed tests leave irrelevant detail unloaded.
+   This is terrain-only preparation, not partitioned world simulation. Actor/structure/time closure, atomic
    cross-partition publication and the selected format remain unproved/undecided. Record the decision, measured
    limits and remaining questions in the living
    plan and timeless reference. Required independent architectural review stays open while the owner

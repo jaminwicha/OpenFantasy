@@ -1,5 +1,6 @@
 using System.Buffers.Binary;
 using System.Runtime.CompilerServices;
+using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
 
 namespace OpenFantasy.Core.Terrain;
@@ -49,16 +50,37 @@ public static class TerrainRegionCodecV1
         internal byte[] Copy() => (byte[])_bytes.Clone();
     }
 
-    public static TerrainRegionSnapshot Decode(ReadOnlySpan<byte> bytes)
+    public static TerrainRegionSnapshot Decode(ReadOnlySpan<byte> bytes) => DecodeCore(bytes, null);
+
+    /// <summary>Checks the exact byte pin and scope/bounds/revision before realizing any terrain cells.</summary>
+    public static TerrainRegionSnapshot Decode(ReadOnlySpan<byte> bytes, TerrainRegionReference expected)
+    {
+        ArgumentNullException.ThrowIfNull(expected);
+        return DecodeCore(bytes, expected);
+    }
+
+    private static TerrainRegionSnapshot DecodeCore(ReadOnlySpan<byte> bytes, TerrainRegionReference? expected)
     {
         try
         {
+            if (bytes.Length > MaximumEncodedByteLength)
+            {
+                throw new FormatException("The terrain archive exceeds its encoded byte bound.");
+            }
+            if (expected is not null && ContentHash.Compute(bytes) != expected.ContentHash)
+            {
+                throw new FormatException("The terrain archive differs from its expected content pin.");
+            }
             var reader = new CanonicalTerrainReader(bytes, MaximumEncodedByteLength, 7, "terrain.region.v1"u8);
             TerrainScope scope = ReadScope(reader.ReadField(MaximumScopeByteLength));
             EntityId seed = reader.ReadIdentity();
             StratifiedTerrainRules rules = ReadRules(reader.ReadField(MaximumRulesByteLength));
             TerrainRegionBounds bounds = ReadBounds(reader.ReadField(MaximumBoundsByteLength));
             ulong revision = reader.ReadUnsigned64();
+            if (expected is not null && (scope != expected.Scope || bounds != expected.Bounds || revision != expected.Revision))
+            {
+                throw new FormatException("The terrain archive header differs from its expected scope, bounds or revision.");
+            }
             ReadOnlySpan<byte> edits = reader.ReadField(checked(bounds.CellCount * sizeof(uint)));
             reader.Complete();
             if (edits.Length % sizeof(uint) != 0)

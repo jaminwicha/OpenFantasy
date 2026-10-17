@@ -173,6 +173,11 @@ The first extraction should establish these concrete responsibilities, in the ex
   source revisions belong to the plan. Missing dependencies defer/refuse before authority changes;
   a stale plan cannot be committed after a neighbour, control or custody change. Reuse actual spatial
   and material operations; never create a second simplified movement or construction simulator.
+  The [terrain read boundary](p02/partition-state/terrain-reads/RESULT.md) now prepares an explicitly
+  supplied volume, rejects incomplete/ambiguous references, and loads exact region archives with
+  separate byte and decoded-cell budgets. Its file-backed geometry comparison omits irrelevant detail.
+  It does not yet derive a complete action footprint, authenticate a directory or include actor,
+  structure, material and timing dependencies; no world-level partial-residency claim follows.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

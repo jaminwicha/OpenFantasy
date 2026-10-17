@@ -180,8 +180,12 @@ It shows reusable bytes and broad clock-related writes, not partial residency or
 The [carriage extraction](p02/partition-state/carriage/RESULT.md) now centralizes physical material
 selection in the real structural mass reader; 100 distinct affected cases pass, including actual
 movement/gift continuity and funded installation/reopening. It is a derived view, not a partition owner.
-The comparison maps the actual coupled writers and next prototype responsibilities. Select and measure
-an integrated partition/version prototype before permanent NPC cognition state.
+The comparison maps the actual coupled writers and next prototype responsibilities.
+The [terrain read boundary](p02/partition-state/terrain-reads/RESULT.md) supplies scoped exact plans and
+bounded archive loading to existing geometry, with missing/stale/false-header refusal. The file-backed
+case loads two required regions and leaves a third's detail unread. Complete action dependency closure,
+ownership transfer, absent-detail work and atomic publication/history remain the next prototype work.
+Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,
 feasible work, memory/dialogue and changed-place return; STORY-01 supplies the actual clue/puzzle design.
 Recruitment/merchant work, ECO-01 and the remaining environment/coordination/UI introductions follow

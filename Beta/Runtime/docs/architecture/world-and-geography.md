@@ -685,6 +685,43 @@ Explicit terrain continuation carries those rights across bounded material windo
 terrain registries to the live world, authorize extraction, supply geological profiles, authenticate
 archived history or establish global ownership across independently admitted registries.
 
+## Bounded terrain read dependencies
+
+[TerrainRegionReference](../../src/OpenFantasy.Core/Terrain/TerrainRegionReference.cs) pins an immutable
+region's world/branch/realm, bounds, revision and canonical content hash.
+[TerrainReadPlan](../../src/OpenFantasy.Core/Terrain/TerrainReadPlan.cs) selects intersecting references
+for an explicit finite rectangular query volume, including any support volume chosen by the caller.
+It requires exact, unambiguous coverage, rejects mixed scopes, and orders the selected references by
+minimum Z/Y/X. Missing metadata is unavailable coverage, never assumed empty terrain. The caller must
+establish authoritative directory completeness and supply every dependency of the intended operation;
+the rectangle does not infer actor collisions, structures, permission, time or material ownership.
+
+Preparation examines at most 4,096 candidate references and respects an explicitly supplied loaded-region
+budget. This is a per-preparation metadata bound, not a world size or directory limit. Requested bounds
+use the existing bounded region-volume type. `TotalLoadedCells` counts each selected region's complete
+decoded size, including cells outside the query rectangle. `ValidateCurrentReferences` rejects changes
+to the required references while permitting changes to unrelated regions. It does not keep a directory
+stable after the check; an authority must enforce that through publication or repeat preparation.
+
+[TerrainReadPreparation](../../src/OpenFantasy.Hosting/Worlds/TerrainReadPreparation.cs) resolves only
+the selected archives through a supplied bounded reader. It checks the decoded-cell budget before I/O,
+passes each reader the remaining encoded-byte limit, and rejects missing/oversized/malformed data.
+The expected-reference overload of `TerrainRegionCodecV1.Decode` checks the byte envelope/hash and
+actual scope/bounds/revision before realizing cells. A false small header cannot bypass the declared
+cell budget by pointing to a larger valid archive. The ordinary decoder and encoded format remain
+available for existing consumers.
+
+`Resolve` admits a [TerrainReadSet](../../src/OpenFantasy.Core/Terrain/TerrainReadSet.cs) only when every
+required region matches exactly and no extra or duplicate snapshot is supplied. The resulting immutable
+regions can feed the existing spatial queries; those queries retain their own actor, support, collision
+and capacity contracts. Partial failures return no read set. A pinned historical read remains a valid
+historical read even after the live directory changes; it is not automatically a current mutation basis.
+
+These types introduce no storage owner, mutable directory, automatic world streaming or alternative
+authority. They do not permit removing actors or facets from a `WorldSnapshot` to make admission pass.
+Directory paging/history, complete action dependency preparation, offscreen work and atomic coupled
+publication remain governed by the partition and timing contracts.
+
 ## Design contract: finite preparation and frontier streaming
 
 An almost infinite-feeling frontier is generated through bounded preparation, not an unbounded

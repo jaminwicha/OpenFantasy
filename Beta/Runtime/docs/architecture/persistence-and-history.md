@@ -453,6 +453,11 @@ schema, host compatibility selection or existing save's rule on opening.
 
 ### Design contract: partitioned persistence and version ownership
 
+The [bounded terrain read boundary](world-and-geography.md#bounded-terrain-read-dependencies) supplies
+exact region references and admitted immutable read sets to existing geometry queries. Reference
+validation and archive loading do not authenticate a mutable ownership directory or publish a world
+transaction. Historical pinned reads and current mutation dependencies retain distinct obligations.
+
 The concrete `WorldSnapshot` codecs encode a complete bounded root. A terrain region, watershed
 network or material-source partition does not by itself provide independently resident world state.
 Partitioned persistence is an extension contract; it is not an alternate implemented save format.
