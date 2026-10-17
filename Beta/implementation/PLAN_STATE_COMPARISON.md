@@ -210,6 +210,10 @@ The first extraction should establish these concrete responsibilities, in the ex
   cannot supply a detour. This addresses construction's required-access query dependency; it does not
   remove complete placement/admission or authorize time-only offscreen work. Supply, tool, control,
   exposure, site, all required access and eventual material/identity publication still form one work step.
+  [Prepared placement](p02/partition-state/prepared-placement/RESULT.md) now shares structure
+  collision/support, known spatial identity checks and prospective access routes with ordinary
+  placement. It returns geometric status without constructing a partial scene. It deliberately does
+  not certify omitted access obligations, distant identity uniqueness, strength or actual work funding.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

@@ -119,6 +119,16 @@ public sealed class SpatialRouteReadSetTests
     private static void CheckAccess(LocalSpatialSnapshot scene, ConstructionProject project)
     {
         var prepared = Read(scene, scene.Regions.Single().Bounds).Read;
+        if (!project.IsCompleted)
+        {
+            var proposed = project.Definition.CreateStructure(SpatialFixture.Id(700_000), project.SiteFeet,
+                scene.GroundSupport != GroundSupportMode.TerrainOnly);
+            var placement = new SpatialPlacementReadSet(prepared.Terrain, prepared.Occupancy,
+                scene.GroundSupport, scene.StructureSupport);
+            Assert.Equal(StructurePlacementStatus.Prepared, placement.Assess(proposed, project.RequiredAccess));
+            Assert.Equal(scene.PrepareStructurePlacement(proposed, project.RequiredAccess).Status,
+                placement.Assess(proposed, project.RequiredAccess));
+        }
         foreach (var access in project.RequiredAccess)
         {
             var route = prepared.QueryGroundRoute(access.ActorId, access.From, access.To);
@@ -127,7 +137,7 @@ public sealed class SpatialRouteReadSetTests
         }
     }
 
-    private static (SpatialRouteReadSet Read, SpatialOccupancyDirectory Directory) Read(LocalSpatialSnapshot scene, TerrainRegionBounds bounds)
+    internal static (SpatialRouteReadSet Read, SpatialOccupancyDirectory Directory) Read(LocalSpatialSnapshot scene, TerrainRegionBounds bounds)
     {
         var directory = SpatialOccupancyDirectory.Create(scene.Scope,
             scene.Actors.Select(SpatialOccupancyReference.Capture).Concat(scene.Structures.Select(value => SpatialOccupancyReference.Capture(scene.Scope, value))),

@@ -61,6 +61,14 @@ public sealed class SpatialOccupancyPreparationTests
                 .QueryGroundRoute(mover.ActorId, mover.Feet, result.Candidate.Feet);
             Assert.Equal(GroundRouteStatus.Reachable, route.Status);
             Assert.Equal(result.Candidate.Feet, route.Waypoints.Last());
+            var proposed = new SpatialStructure(WorldServiceFixture.Id(900_000),
+                [new SubunitBox(new(128, 128, 256), new(192, 192, 320))]);
+            var placement = new SpatialPlacementReadSet(terrain, detail,
+                GroundSupportMode.TerrainOnly, StructureSupportMode.TerrainOnly);
+            Assert.Equal(StructurePlacementStatus.Prepared, placement.Assess(proposed,
+                [new(mover.ActorId, mover.Feet, result.Candidate.Feet)]));
+            Assert.Empty(detail.Structures);
+            Assert.Equal(200, catalog.Pages.EntityCount);
             Assert.Single(prepared.Actors);
             prepared.ValidateCurrentDirectory(catalog.Pages.ReadPage, catalog.Terrain,
                 GroundSupportMode.TerrainOnly, StructureSupportMode.TerrainOnly);

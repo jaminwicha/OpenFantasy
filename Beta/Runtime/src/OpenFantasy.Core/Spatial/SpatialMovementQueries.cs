@@ -26,6 +26,11 @@ internal sealed partial class SpatialMovementQueries
 
     internal GroundSupportMode GroundSupport => _groundSupport;
 
+    internal SpatialMovementQueries WithStructures(IReadOnlyList<SpatialStructure> structures) =>
+        new(_terrain, _actors, _volumes, _actorList, structures, _groundSupport);
+
+    internal bool OverlapsAnyActor(BodyVolume volume) => _volumes.Values.Any(other => other.Overlaps(volume));
+
     internal ActorPresence GetActor(EntityId actorId) => _actors.TryGetValue(actorId, out ActorPresence? actor)
         ? actor : throw new ArgumentException("The actor is outside this admitted local spatial set.", nameof(actorId));
 

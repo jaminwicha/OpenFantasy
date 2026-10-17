@@ -2,6 +2,16 @@ namespace OpenFantasy.Core.Spatial;
 
 internal sealed partial class SpatialMovementQueries
 {
+    internal GroundRouteResult QueryGroundRoute(EntityId actorId, SubunitPosition from,
+        SubunitPosition destination, int maximumExpansions) =>
+        _groundSupport == GroundSupportMode.SteppedTerrainAndConstruction
+            ? QueryWalkingRoute(actorId, from, destination, maximumExpansions)
+            : new GroundRouteSearch(this, actorId, maximumExpansions).Find(from, destination);
+
+    internal GroundRouteResult QueryWalkingRoute(EntityId actorId, SubunitPosition from,
+        SubunitPosition destination, int maximumExpansions) =>
+        new WalkingRouteSearch(this, actorId, maximumExpansions).Find(from, destination);
+
     internal SpatialOccupancy QueryOccupancy(EntityId actorId, SubunitPosition feet)
     {
         ActorPresence actor = GetActor(actorId);

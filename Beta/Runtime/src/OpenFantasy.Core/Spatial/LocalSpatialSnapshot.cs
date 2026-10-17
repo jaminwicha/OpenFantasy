@@ -21,6 +21,7 @@ public sealed partial class LocalSpatialSnapshot
     private readonly Dictionary<EntityId, BodyVolume> _volumes = [];
     private readonly TerrainVolumeQueries _terrain;
     private readonly SpatialMovementQueries _movement;
+    private readonly SpatialStructureQueries _structureQueries;
 
     public LocalSpatialSnapshot(TerrainScope scope, IEnumerable<TerrainRegionSnapshot> regions,
         IEnumerable<ActorPresence> actors, IEnumerable<SpatialStructure>? structures = null,
@@ -46,6 +47,7 @@ public sealed partial class LocalSpatialSnapshot
         Actors = ReadActors(actors);
         Structures = ReadStructures(structures ?? []);
         _movement = new(_terrain, _actors, _volumes, Actors, Structures, GroundSupport);
+        _structureQueries = new(Scope, _terrain, _movement, Actors, Structures, StructureSupport);
         foreach (SpatialStructure structure in Structures)
         {
             if (QueryStructure(structure) != SpatialOccupancy.Clear)

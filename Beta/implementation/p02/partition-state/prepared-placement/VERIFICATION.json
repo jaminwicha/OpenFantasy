@@ -1,0 +1,216 @@
+{
+  "base": "173349ff9470a2def84eb3ece6cc59a030ec743f",
+  "withinBudgetDistinctPasses": 373,
+  "newCases": 11,
+  "fullCoreBoundedGate": "FAILED: two 180-second command timeouts; late TRX is outside gate",
+  "lateTrx": "1975 pass / 210.172053 seconds by timestamps; descendant execution outlived timeout wrapper; not acceptance",
+  "checks": {
+    "check-01/core.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-restore",
+        "--logger",
+        "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/prepared-placement/check-01/core.trx"
+      ],
+      "exitCode": 124,
+      "seconds": 180.03395325003657,
+      "deadlineSeconds": 180
+    },
+    "check-02/core.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-restore",
+        "--logger",
+        "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/prepared-placement/check-02/core.trx",
+        "--no-build",
+        "--logger",
+        "console;verbosity=normal"
+      ],
+      "exitCode": 124,
+      "seconds": 180.03098258306272,
+      "deadlineSeconds": 180
+    },
+    "check-02/focused.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-restore",
+        "--logger",
+        "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/prepared-placement/check-02/focused.trx",
+        "--filter",
+        "FullyQualifiedName~SpatialPlacementReadSetTests|FullyQualifiedName~SpatialRouteReadSetTests"
+      ],
+      "exitCode": 0,
+      "seconds": 16.333162000053562,
+      "deadlineSeconds": 180
+    },
+    "check-02/hosting.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~WorldSpatialOccupancyIndexTests|FullyQualifiedName~SpatialOccupancyPreparationTests|FullyQualifiedName~WorldMovementPrerequisitesTests|FullyQualifiedName~TerrainReadPreparationTests|FullyQualifiedName~ConstructionWorkRecoveryTests",
+        "--logger",
+        "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/prepared-placement/check-02/hosting.trx"
+      ],
+      "exitCode": 0,
+      "seconds": 25.09941654105205,
+      "deadlineSeconds": 180
+    },
+    "check-03/affected-core.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~OpenFantasy.Core.Tests.Spatial.|FullyQualifiedName~OpenFantasy.Core.Tests.Construction.|FullyQualifiedName~OpenFantasy.Core.Tests.Structures.",
+        "--logger",
+        "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/prepared-placement/check-03/affected-core.trx"
+      ],
+      "exitCode": 0,
+      "seconds": 33.3562825829722,
+      "deadlineSeconds": 180
+    },
+    "check-02/core.trx": {
+      "times": {
+        "creation": "2026-10-17T18:40:53.9813010-05:00",
+        "queuing": "2026-10-17T18:40:53.9813010-05:00",
+        "start": "2026-10-17T18:40:49.9842840-05:00",
+        "finish": "2026-10-17T18:44:20.1563370-05:00"
+      },
+      "counters": {
+        "total": "1975",
+        "executed": "1975",
+        "passed": "1975",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "check-02/hosting.trx": {
+      "times": {
+        "creation": "2026-10-17T18:45:15.8768450-05:00",
+        "queuing": "2026-10-17T18:45:15.8768450-05:00",
+        "start": "2026-10-17T18:45:12.2207860-05:00",
+        "finish": "2026-10-17T18:45:27.2357370-05:00"
+      },
+      "counters": {
+        "total": "18",
+        "executed": "18",
+        "passed": "18",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "check-02/focused.trx": {
+      "times": {
+        "creation": "2026-10-17T18:40:46.6172650-05:00",
+        "queuing": "2026-10-17T18:40:46.6172650-05:00",
+        "start": "2026-10-17T18:40:39.9166330-05:00",
+        "finish": "2026-10-17T18:40:47.7299190-05:00"
+      },
+      "counters": {
+        "total": "18",
+        "executed": "18",
+        "passed": "18",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "check-03/affected-core.trx": {
+      "times": {
+        "creation": "2026-10-17T18:45:20.0156530-05:00",
+        "queuing": "2026-10-17T18:45:20.0156530-05:00",
+        "start": "2026-10-17T18:45:16.8295140-05:00",
+        "finish": "2026-10-17T18:45:48.7551500-05:00"
+      },
+      "counters": {
+        "total": "355",
+        "executed": "355",
+        "passed": "355",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  },
+  "sourceHashes": {
+    "Beta/Runtime/docs/architecture/materials-and-activities.md": "cdd0c8ff0e3b019d215b52542aa64cc238e65148332be5a8bb33ed13a5c8d380",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "35b2983bef376115082f50c358d74eb2a5332aeca5be66e25791887347496e86",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialRoutes.cs": "20e7d0d94bedac724dadca0099800611f34aaa229cbf81afcc27e69591f7fcd8",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs": "ff7e2ccf70effd16ed4bbb7fbc205d66069e50fad19d76eff2f72a39549c2865",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialStructures.cs": "f8fd9bc550fe2a8fa49d53bc432e8b6db78f340a78f4a19450d2f4ab31ce8dcf",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialMovementQueries.Routes.cs": "7e3209825ade9752cd8ce8e8ba89ab8fe58f6827ec1b2261d2596b3e3fe61523",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialMovementQueries.cs": "4b4e315adc9eccf567b679348a2f6273a0897c86060a1769d9a31efe78e71178",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialRouteReadSet.cs": "b5b00768c737475ac600975f9e2b472ed8bf89ee8178076a74589b6892d22800",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialRouteReadSetTests.cs": "f9977091f4fce097630c4cfbdf9a613c0dd9d3c9820488442b54137f843db51b",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SpatialOccupancyPreparationTests.cs": "196d2605cb54135a84e05f987402684870659e3c1c20d632d5095bd79e7c7173",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialPlacementReadSet.cs": "bc7a87e60e108f1cdd8d788c0b54dcdfd445e97a48df7d3db2f810758751abb7",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialStructureQueries.cs": "e8ad5622790f271485a61f1fcf66ab19cdc00f5669e73e80770c2bd9ee239207",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialPlacementReadSetTests.cs": "7d3217956f7c9530b5e1ce29d6a2884e0522a51efd66f66baddb8a52e59438ea"
+  },
+  "binaryHashes": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "49152ec036127491a1f4f02f0c371c835c833337fc39fbe4364acfa6befebcbb",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "d4e3fc0b5eb053a211a3d467b0ad493b28565141f8887ef76ee0fa582ab281d7",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "49152ec036127491a1f4f02f0c371c835c833337fc39fbe4364acfa6befebcbb"
+  },
+  "productionCoreUnchangedSinceFixtureCorrection": true,
+  "coreAndHostingUseSameCoreBinary": true,
+  "protected": {
+    "stagedPredecessorDiff": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+    "october5Advisory": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0"
+  },
+  "documentation": "DOCUMENTATION_CHECK.json: 7 live pages, required fields/local links and whitespace pass; lead source review in RESULT.md",
+  "scope": "Geometric preparation only; independent review, full aggregate timing, absent-detail work, canonical partition ownership/publication/history and all phase/human/platform gates remain open."
+}

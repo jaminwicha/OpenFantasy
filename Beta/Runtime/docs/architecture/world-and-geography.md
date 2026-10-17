@@ -851,6 +851,37 @@ must maintain freshness through publication and separately validate every nonspa
 Complete-scene queries retain their original available terrain extent; the additional boundary applies
 only when explicitly supplied by prepared reads.
 
+### Prepared construction geometry
+
+[SpatialPlacementReadSet](../../src/OpenFantasy.Core/Spatial/SpatialPlacementReadSet.cs) evaluates one
+proposed structure against exact bounded terrain/occupancy reads, explicit ground and structure support
+interpretations, and a finite set of actor access requirements. It uses
+[SpatialStructureQueries](../../src/OpenFantasy.Core/Spatial/SpatialStructureQueries.cs), shared with
+ordinary `LocalSpatialSnapshot` placement and structure admission. The collision/support precedence,
+known spatial identity exclusions, catalog bound and route failure distinctions are shared contracts.
+
+Assessment first checks the proposed boxes against terrain, existing structures and actual actor body
+volumes, including base support. It then creates an immutable prospective query view containing the
+proposal and checks every supplied access connection with the shared ground/stair searches. The view
+changes neither the source scene nor its occupancy index. Extra terrain outside the declared read
+boundary stays unavailable for clearance, support and access detours. Required actor identities must
+be in the resolved read set; absent actors cannot acquire synthetic body definitions.
+
+A `Prepared` assessment is only geometric evidence. It returns no admitted world or local-scene
+candidate. Ordinary placement separately constructs and validates its complete `LocalSpatialSnapshot`
+candidate after assessment succeeds. Construction's actual planner still owns funded stock, tool/body
+eligibility, work position/reach, earned exposure, completion identities, capacity and material effects.
+Structural strength and global identity occupancy remain their actual owners' responsibilities. Known
+local identity checks cannot rule out a collision with an identity outside the supplied read set.
+
+The source provider must establish complete current geometry and admit its unchanged dependencies.
+The caller must supply the complete required access set for the activity; the assessor cannot infer
+missing quest/project obligations from generic connections. `ValidateCurrent` checks selected page pins,
+terrain references and both support interpretations. Arrival at a site invalidates an earlier assessment;
+reassessment includes that body's collision. The transaction owner must keep all spatial and nonspatial
+reads stable through publication. Successful placement checks do not authorize background work or
+make geometry permanently valid across later excavation, arrivals or support changes.
+
 ### Joined world movement prerequisites
 
 [WorldMovementPrerequisites](../../src/OpenFantasy.Core/Worlds/WorldMovementPrerequisites.cs) joins

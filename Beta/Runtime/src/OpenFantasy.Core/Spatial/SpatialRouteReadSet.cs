@@ -33,13 +33,11 @@ public sealed class SpatialRouteReadSet
 
     public GroundRouteResult QueryGroundRoute(EntityId actorId, SubunitPosition from, SubunitPosition destination,
         int maximumExpansions = GroundRouteSearch.MaximumExpansions) =>
-        GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction
-            ? QueryWalkingRoute(actorId, from, destination, maximumExpansions)
-            : new GroundRouteSearch(_queries, actorId, maximumExpansions).Find(from, destination);
+        _queries.QueryGroundRoute(actorId, from, destination, maximumExpansions);
 
     public GroundRouteResult QueryWalkingRoute(EntityId actorId, SubunitPosition from, SubunitPosition destination,
         int maximumExpansions = LocalSpatialSnapshot.DefaultWalkingRouteExpansions) =>
-        new WalkingRouteSearch(_queries, actorId, maximumExpansions).Find(from, destination);
+        _queries.QueryWalkingRoute(actorId, from, destination, maximumExpansions);
 
     public void ValidateCurrent(Func<SpatialOccupancyPageKey, SpatialOccupancyPage?> readPage,
         IEnumerable<TerrainRegionReference> terrain, GroundSupportMode groundSupport)

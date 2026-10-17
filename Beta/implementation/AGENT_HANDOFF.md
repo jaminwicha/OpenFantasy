@@ -201,6 +201,11 @@ updates complete metadata and reconciles exact ordinary saved roots, with histor
 and before/after-commit interruption coverage. It remains a derived index.
 [Prepared route queries](p02/partition-state/prepared-routes/RESULT.md) now share the ordinary searches
 with exact bounded reads, preserving construction-access semantics and refusing unchecked detours.
+[Prepared placement](p02/partition-state/prepared-placement/RESULT.md) then combines ordinary
+structure clearance/support and prospective access, returning status without a partial scene or any
+material/work grant. Ordinary complete candidate admission remains mandatory. Its 355 affected Core
+and18 Hosting cases pass within budget; two full-Core command timeouts remain open. A late1,975-pass
+TRX exceeded the bound and is not a successful aggregate.
 Complete action closure,
 ownership transfer, absent-detail work and atomic publication/history remain the next prototype work.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.

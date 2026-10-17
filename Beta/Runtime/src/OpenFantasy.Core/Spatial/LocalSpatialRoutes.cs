@@ -11,7 +11,7 @@ public sealed partial class LocalSpatialSnapshot
 
     public GroundRouteResult QueryWalkingRoute(EntityId actorId, SubunitPosition from, SubunitPosition destination,
         int maximumExpansions = DefaultWalkingRouteExpansions) =>
-        new WalkingRouteSearch(_movement, actorId, maximumExpansions).Find(from, destination);
+        _movement.QueryWalkingRoute(actorId, from, destination, maximumExpansions);
 
     public GroundRouteResult QueryGroundRoute(EntityId actorId, SubunitPosition destination,
         int maximumExpansions = GroundRouteSearch.MaximumExpansions) =>
@@ -23,9 +23,7 @@ public sealed partial class LocalSpatialSnapshot
     /// </summary>
     public GroundRouteResult QueryGroundRoute(EntityId actorId, SubunitPosition from, SubunitPosition destination,
         int maximumExpansions = GroundRouteSearch.MaximumExpansions) =>
-        GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction
-            ? QueryWalkingRoute(actorId, from, destination, maximumExpansions)
-            : new GroundRouteSearch(_movement, actorId, maximumExpansions).Find(from, destination);
+        _movement.QueryGroundRoute(actorId, from, destination, maximumExpansions);
 
     internal SpatialOccupancy QueryGroundSegment(EntityId actorId, SubunitPosition from, SubunitPosition to) =>
         _movement.QueryGroundSegment(actorId, from, to);

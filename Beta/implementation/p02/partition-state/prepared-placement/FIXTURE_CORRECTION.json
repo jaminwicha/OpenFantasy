@@ -1,0 +1,7 @@
+{
+  "file": "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialPlacementReadSetTests.cs",
+  "beforeSha256": "793160c65bcf4923122bfc3822bc8e29de134d0dc9a89383e27e85fd9b60913a",
+  "afterSha256": "7d3217956f7c9530b5e1ce29d6a2884e0522a51efd66f66baddb8a52e59438ea",
+  "reason": "Original BlockedTerrain case placed geometry at z=0, with missing supporting cell z=-1. Ordinary and prepared rules prioritize missing terrain. Corrected case uses an actual solid obstacle at (2,2,1) with available support at z=0; production unchanged.",
+  "firstRun": "Full Core check-01 retains the original test binary and failure; wait for terminal outcome before corrective verification."
+}
