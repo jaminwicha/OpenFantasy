@@ -31,6 +31,36 @@ internal sealed class NativeExpeditionTravel(WorldSnapshot basis, IReadOnlyDicti
             await MoveTogether(paths.Where(row => index < row.Points.Length).Select(row => (row.Actor, row.Points[index])).ToArray());
     }
 
+    internal async Task BypassCamp(EntityId lead, EntityId helper, bool outbound)
+    {
+        // Complete each shared leg before either player turns across the other's column.
+        // Distinct turning rows retain clearance even when both stops use their full envelope.
+        if (outbound)
+        {
+            await Columns(343, 341);
+            await Rows(303, 301);
+            await Columns(346, 344);
+        }
+        else
+        {
+            await Rows(303, 301);
+            await Columns(343, 341);
+            await Rows(318, 316);
+            await Columns(346, 344);
+        }
+
+        Task Columns(long leadX, long helperX) => Leg(leadX, helperX, column: true);
+        Task Rows(long leadY, long helperY) => Leg(leadY, helperY, column: false);
+        Task Leg(long leadAxis, long helperAxis, bool column) => Lanes(
+            new[] { (Actor: lead, Axis: leadAxis), (Actor: helper, Axis: helperAxis) }.Select(row =>
+            {
+                var here = Cell(Feet(row.Actor));
+                var there = column ? new CellCoordinate(row.Axis, here.Y, here.Z)
+                    : new CellCoordinate(here.X, row.Axis, here.Z);
+                return (row.Actor, new[] { here, there });
+            }).ToArray());
+    }
+
     private async Task MoveTogether((EntityId Actor, SubunitPosition Target)[] targets)
     {
         for (int iteration = 0; targets.Any(row => Distance(Feet(row.Actor), row.Target) > Envelope); iteration++)

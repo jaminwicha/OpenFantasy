@@ -1,0 +1,7 @@
+{
+  "path": "/Users/alucinor/.local/share/openfantasy/checkpoints/20261017T213935Z/expedition-complete-and-home-route-failure.tar.gz",
+  "bytes": 39111733,
+  "sha256": "742aab89fbc0b9f99715780b07ec50fd88bbbe0866d638bf0879643479c25fc0",
+  "scope": "Original failed journey-03 and complete passing journey-04; all source/dependency pins, saves, raw native mailboxes, images, process logs and TRX.",
+  "restore": "Verify SHA256, extract into an empty directory with tar -xzf ARCHIVE -C EMPTY_DIRECTORY. Paths are repository-relative. Do not overwrite the live checkout."
+}

@@ -1,0 +1,11 @@
+{
+  "ref": "codex/checkpoint-before-partition-comparison-20261017T213148Z",
+  "revision": "4b5af2d58327dd318c6eeb75f94b0a92aa1af4b2",
+  "sourceRevision": "1b87a9ae1f447bf966e7cda27e5552c9f41b12b7",
+  "scope": [
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs",
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravelTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs"
+  ],
+  "verification": "WIP only. Nine geometry cases and final build pass; full journey-04 is running. No acceptance or source change to the running test."
+}

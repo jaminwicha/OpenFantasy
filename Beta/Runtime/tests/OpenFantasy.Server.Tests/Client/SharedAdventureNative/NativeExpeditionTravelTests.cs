@@ -101,4 +101,47 @@ public sealed class NativeExpeditionTravelTests
     }
 
     private static long Distance(SubunitPosition a, SubunitPosition b) => Math.Abs(a.X - b.X) + Math.Abs(a.Y - b.Y);
+
+    [Fact]
+    public void Recorded_detour_stop_is_blocked_by_the_other_players_body()
+    {
+        var world = AdventureWorldAdmission.CreateEmbedded(AdventureWorldAdmission.SeedText, ["Rowan", "Mira"]);
+        var lead = world.Excavation!.Sites.Single().OwnerActorId;
+        var helper = world.Residents.Single(row => row.ControllerKind == OpenFantasy.Core.Worlds.ResidentControllerKind.Player
+            && row.ActorId != lead).ActorId;
+        var space = world.Space.WithActors(world.Space.Actors.Select(row => row.ActorId == lead || row.ActorId == helper
+            ? new ActorPresence(row.Binding, row.Condition, row.Scope,
+                row.ActorId == lead ? new(88000, 77760, 256) : new(87808, 77760, 256), row.Revision, row.HomePlaceId) : row));
+        Assert.NotEqual(SpatialMoveStatus.Prepared, space.PrepareMove(helper, space.GetActor(helper).Revision, 32, 0).Status);
+        var withoutBlocker = space.WithActors(space.Actors.Select(row => row.ActorId == lead
+            ? new ActorPresence(row.Binding, row.Condition, row.Scope, row.Feet.Offset(0, 512, 0), row.Revision, row.HomePlaceId) : row));
+        Assert.Equal(SpatialMoveStatus.Prepared, withoutBlocker.PrepareMove(helper, withoutBlocker.GetActor(helper).Revision, 32, 0).Status);
+    }
+
+    [Theory]
+    [InlineData(303, 301)]
+    [InlineData(318, 316)]
+    public void Separated_camp_turns_remain_clear_across_both_stop_envelopes(long leadRow, long helperRow)
+    {
+        var world = AdventureWorldAdmission.CreateEmbedded(AdventureWorldAdmission.SeedText, ["Rowan", "Mira"]);
+        var lead = world.Excavation!.Sites.Single().OwnerActorId;
+        var helper = world.Residents.Single(row => row.ControllerKind == OpenFantasy.Core.Worlds.ResidentControllerKind.Player
+            && row.ActorId != lead).ActorId;
+        foreach (long leadXOffset in new long[] { -128, 0, 128 })
+        foreach (long leadYOffset in new long[] { -128, 0, 128 })
+        foreach (long helperYOffset in new long[] { -128, 0, 128 })
+        {
+            var space = world.Space.WithActors(world.Space.Actors.Select(row => row.ActorId == lead || row.ActorId == helper
+                ? new ActorPresence(row.Binding, row.Condition, row.Scope, row.ActorId == lead
+                    ? new(343 * 256 + 128 + leadXOffset, leadRow * 256 + 128 + leadYOffset, 256)
+                    : new(341 * 256, helperRow * 256 + 128 + helperYOffset, 256), row.Revision, row.HomePlaceId) : row));
+            // Cross the waiting leader's column, including the helper's four-sample late-stop allowance.
+            while (space.GetActor(helper).Feet.X < 345 * 256)
+            {
+                var move = space.PrepareMove(helper, space.GetActor(helper).Revision, 32, 0);
+                Assert.Equal(SpatialMoveStatus.Prepared, move.Status);
+                space = space.WithActors(space.Actors.Select(row => row.ActorId == helper ? move.Candidate! : row));
+            }
+        }
+    }
 }

@@ -1,0 +1,27 @@
+{
+  "execution-before.json": {
+    "count": 1410,
+    "changes": []
+  },
+  "source-pins.json": {
+    "count": 1350,
+    "changes": []
+  },
+  "preservation": {
+    "predecessorIndex": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+    "originalEarnedSave": "cf21a8be1d99dc39aa2b856e8be0857c0c7b01b210a45911dd9fbab93e2c7a21",
+    "advisory": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0"
+  },
+  "evidence": {
+    "evidence/journey-04/native.trx": "920be4a0b68f84d80b2a4933932eefc32bd88eb1221a27969220fb943f36218d",
+    "evidence/journey-04/native.log": "26785fedd2005a98bc48ecd0b79ea1c148f069ac1c207ffa8a41bcec2ef58392",
+    "evidence/journey-04/journey.json": "be664faf6b664968bcce91e584ff4a12009fda78a737d6493b9ea81bf32f9a05",
+    "evidence/journey-04/progress.json": "3f9322c7df27f656e773777b61b8b9a78bd3c90e455b0ada8650c5f5fdacbbbb",
+    "evidence/journey-04/process.json": "812d4463966363d71df7ba5bfe0447544e3dde743229ce19d549155ce3b0ac86"
+  },
+  "rendered": {
+    "capture": "journey-04/saved-expedition/c76f468b1a35fa3bf822b82b66d9f8c4/0482.png",
+    "review": "Both player sprites and Wren are visible. HUD shows218gil/78HP/two rations but remains crowded, including MP/Characters overlap. No HUD/art/human acceptance.",
+    "sale": "0308-trade.png inspected: Kegga, exact one-ration sale for38gil, resulting218gil and shared-time warning readable."
+  }
+}

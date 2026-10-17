@@ -1,12 +1,14 @@
 # Party withdrawal: integration decision and delivery plan
 
-Recorded 2026-10-03; Core evidence updated 2026-10-17. This supplements RQ-029, RQ-079 and RQ-099 and the P02 cooperative expedition
+Recorded 2026-10-03; integration evidence updated 2026-10-17. This supplements RQ-029, RQ-079 and RQ-099 and the P02 cooperative expedition
 in the [current roadmap](CURRENT_ROADMAP.md). The frozen full spec and its gates remain intact.
 Status: component, profile41 Core and explicit copied40→41 SQLite transition are implemented;
 [world binding](p02/party-withdrawal/world-binding/RESULT.md), [save transition](p02/party-withdrawal/save-transition/RESULT.md)
 and [durable recovery](p02/party-withdrawal/durable-recovery/RESULT.md) retain their bounded evidence.
-Host/client selection, presentation, remaining capacity/interaction proofs and native/human qualification
-remain open. Opening a save never activates the new rule implicitly.
+[Host/client selection](p02/party-withdrawal/host-integration/RESULT.md) and the
+[complete original-save two-player native expedition](p02/party-withdrawal/expedition-completion/CONTINUATION.md)
+are qualified within their named scopes. Broader capacity/interaction,1–4/reconnect/listener/latency,
+independent and human qualification remain open. Opening a save never activates the new rule implicitly.
 
 ## Player outcome and selected direction
 
@@ -97,15 +99,15 @@ construction, history and the earned adventure save retain identity and state. A
 implementation does not complete this continuity requirement.
 
 Do not activate a new default admission or update the client capability handshake until the complete
-world can restore, replay and reject unsupported/mismatched interpretations correctly. The original
-party refusal remains active while this work is incomplete.
+world can restore, replay and reject unsupported/mismatched interpretations correctly. Ordinary fresh admission remains40 with its original
+party refusal; only explicit41 admission or the preserved-source40→41 transition selects the new law.
 
 ## Coherent implementation increments
 
 1. **Commitment representation — implemented, bounded checks recorded.** Immutable complete-side
    membership; independent exact commands, routes and progress; canonical restore and corruption
    rejection. This is a retained component for the intended core, not a second simulation or host.
-2. **Complete-world transaction and continuity — in progress.** The Core binds actor-command
+2. **Complete-world transaction and continuity — bounded integration qualified; broader gates open.** The Core binds actor-command
    authority, due-order paid movement, interruption/cancellation, collective exit and controller-hold
    semantics, with explicit codecs. Bounded managed scenarios cover 1–4 humans, blocked movement
    after an ally arrives, actual damage/incapacity, and revoked delegated walking with safe owner
@@ -123,20 +125,21 @@ party refusal remains active while this work is incomplete.
    it is not an exploration-state facet to silently migrate or clear. The subsequent interaction checks
    [qualify this distinction, genuine outcome and blocked-route recovery](p02/party-withdrawal/interaction-closure/RESULT.md). The [host/presentation increment](p02/party-withdrawal/host-integration/RESULT.md) measures admitted
    four-human/32-sample complete-root capacity and binds own choices/cancellation to host and protocol.
-   City/frontier capacity and native integration remain distinct obligations; ordinary fresh launch stays40.
-3. **Host and presentation.** Own-character withdrawal offers and inspection show actual path/cost,
+   City/frontier capacity remains a distinct obligation; the native evidence below qualifies only its named journey. Ordinary fresh launch stays40.
+3. **Host and presentation — bounded offers/protocol and two-player native journey qualified.** Own-character withdrawal offers and inspection show actual path/cost,
    party readiness and blockers without exposing another actor's private route or command. Use the
    existing wheel, confirmation/cancellation and immutable observations. Arrival, interruption and
    declined/changed choices need clear feedback. UI never supplies implicit consent or authority.
    The host increment implements these values and the shared wheel slot with managed and authenticated
-   in-memory protocol checks; native/human readability and the full connected journey remain unproved.
+   in-memory protocol checks. The native journey below adds connected evidence; human readability remains unproved.
 4. **Joined journey and qualification.** The ordinary two-player opening continues into the same
    saved lineage through the [explicit offline operator](p02/party-withdrawal/saved-expedition/RESULT.md).
    Preparation pins the exact eligible head; application publishes a verified separate copy. This
-   managed operator/opener checkpoint does not establish native continuation. Continue that same
-   saved expedition: buy/carry, gather to enter, each chooses withdrawal, genuine enemy turns occur,
-   physical departure retains debts and injuries, care/sale/return follow. Then test 1–4 participants,
-   restart/cut/reconnect/control changes and representative latency. Inspect rendered captures and
+   managed operator/opener checkpoint alone did not establish native continuation. The subsequent
+   [complete native run](p02/party-withdrawal/expedition-completion/CONTINUATION.md) now proves buy/carry,
+   assembled encounter, genuine enemy turns, each person's withdrawal, care/sale/return and exact
+   original-history replay in the same lineage. Its failed runs remain retained. Complete the wider
+   1–4-participant, restart/cut/reconnect/control-change and representative-latency matrix, and
    obtain human usability/Full Wait acceptance. Required independent architectural critique remains
    unrun while owner steering prohibits orchestration; do not fabricate or waive it.
 

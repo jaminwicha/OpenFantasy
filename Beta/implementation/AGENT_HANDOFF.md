@@ -68,9 +68,9 @@ the later instrumented pass is bounded evidence, not a reliability diagnosis. Th
 byte assertion and subsequent exact-row correction are preserved. Graphics/HUD remain provisional;
 no independent critic, shared-journey or human acceptance is claimed.
 
-Next qualify shared participation in this connected journey. Four-player connection/movement/reconnect
-alone is not that proof; the returned construction was already complete before departure, so new
-autonomous changes during the expedition are still required. Checkpoint `26d90ffa` preserves the WIP
+The later complete two-player expedition below now qualifies shared participation in this journey.
+Four-player connection/movement/reconnect alone did not supply that proof; the returned construction
+was already complete before departure, so new autonomous changes during the expedition are still required. Checkpoint `26d90ffa` preserves the WIP
 before the reopening correction; the accepted marker is `codex/milestone-adventure-continuation-20261003`.
 
 The [shared opening](p02/shared-adventure/RESULT.md) qualifies two native participants earning and
@@ -161,17 +161,21 @@ one owned potion and the companion's no-dose guard, exact native receipts and or
 replay. The final client continuation records seven native receipts; the older four-player wait/reconnect
 journey, five travel and three market cases also pass. Client builds are warning-free. The limited marker
 is `codex/milestone-native-withdrawal-continuation-20261017`. Original failures
-remain retained. The complete commerce/outbound/return native journey and new autonomous consequences
-are still separate obligations; do not combine successful prefixes into full acceptance. The [sale checkpoint](p02/party-withdrawal/expedition-completion/RESULT.md) qualifies the second-town
-Offers browser and exact purchased-lot sale on the retained arrival save, plus six geometry cases.
-Two complete runs remain failed: outbound overshoot, then post-care detour movement/no-progress.
-Next diagnose the retained journey-02 helper request225 and simultaneous route occupancy before
-another full run; the full return is unproved. Sale-only success cannot replace that gate. Fresh admission remains40;
-no implicit upgrade is introduced. Complete scale/1–4, listener/reconnect, independent/native/human and broader interaction
-combinations remain open.
+remain retained. The [complete saved expedition](p02/party-withdrawal/expedition-completion/CONTINUATION.md)
+now passes in 672.149 seconds: original earned head 915, explicit copied 40→41 publication, buy, both
+players' travel, genuine combat, independent paid withdrawal, one owned potion, exact cargo sale,
+return and original-genesis replay. Ten native receipts and 15,614 ordinary movement samples are checked;
+all 1,410 execution dependencies match. Nine geometry cases and the final warning-free build pass.
+The marker is `codex/milestone-shared-expedition-20261017`. Three failed full runs in that packet remain
+retained; simultaneous turn occupancy and a diagonal final home-leg fixture were corrected. New
+NPC consequences during absence are still unproved, and the HUD/art remain provisional. Fresh admission
+remains40; no implicit upgrade is introduced. Complete scale/1–4, listener/reconnect, independent/human
+and broader interaction combinations remain open. Shared verification-skill guidance is updated and
+synchronized in ecosystem commit 0913ed34; no orchestration resumed.
 
-After that selected expedition, execute roadmap PLAN-STATE: one partition/version design comparison
-and measured integrated prototype, before permanent NPC cognition state. Then NPC-01 proves evidence,
+Next execute roadmap PLAN-STATE. The [source-backed comparison](PLAN_STATE_COMPARISON.md) is prepared;
+select and measure an integrated partition/version prototype before permanent NPC cognition state.
+No new format, authority or native core is selected. Then NPC-01 proves evidence,
 feasible work, memory/dialogue and changed-place return; STORY-01 supplies the actual clue/puzzle design.
 Recruitment/merchant work, ECO-01 and the remaining environment/coordination/UI introductions follow
 their dependencies. Art/audio authoring are unstaffed; the lead owns semantic bindings and executes

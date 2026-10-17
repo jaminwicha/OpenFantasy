@@ -180,12 +180,11 @@ public sealed class NativeSavedExpeditionTests
                         .Complete(healthy);
 
                     stage = "detour-and-sale";
+                    await travel.BypassCamp(lead, helper, outbound: true);
                     await travel.Lanes(new[] { helper, lead }.Select(actor => {
                         var here = NativeExpeditionTravel.Cell(travel.Feet(actor));
-                        var rejoin = new CellCoordinate(actor == lead ? 346 : 344, 303, here.Z);
-                        return (actor, new CellCoordinate[] { here, new(actor == lead ? 343 : 341, here.Y, here.Z),
-                            new(actor == lead ? 343 : 341, 303, here.Z), rejoin,
-                            corridor.DestinationApproach.Offset(actor == lead ? 0 : -2, 0, 0) });
+                        var destination = corridor.DestinationApproach.Offset(actor == lead ? 0 : -2, 0, 0);
+                        return (actor, new CellCoordinate[] { here, new(destination.X, here.Y, here.Z), destination });
                     }).ToArray());
                 }
                 stage = "second-town-sale";
@@ -207,19 +206,19 @@ public sealed class NativeSavedExpeditionTests
                 if (!arrivalOnly)
                 {
                     stage = "return-home";
+                    await travel.BypassCamp(lead, helper, outbound: false);
                     await travel.Lanes(humans.Select(actor => {
                         var here = NativeExpeditionTravel.Cell(travel.Feet(actor));
                         long x = actor == lead ? 346 : 344;
-                        long detour = actor == lead ? 343 : 341;
-                        return (actor, new CellCoordinate[] { here, new(x, 303, here.Z), new(detour, 303, here.Z),
-                            new(detour, 318, here.Z), new(x, 318, here.Z), corridor.Corner.Offset(x - 346, actor == lead ? 0 : -2, 0),
+                        return (actor, new CellCoordinate[] { here, new(x, here.Y, here.Z),
+                            corridor.Corner.Offset(x - 346, actor == lead ? 0 : -2, 0),
                             corridor.OriginApproach.Offset(actor == lead ? 0 : -1, actor == lead ? 0 : -2, 0) });
                     }).ToArray());
                     foreach (EntityId actor in humans)
                     {
                         var home = NativeExpeditionTravel.Cell(genesis.Space.GetActor(actor).Feet);
-                        await travel.Lane(actor, NativeExpeditionTravel.Cell(travel.Feet(actor)),
-                            new(home.X, corridor.OriginApproach.Y, home.Z), home);
+                        var here = NativeExpeditionTravel.Cell(travel.Feet(actor));
+                        await travel.Lane(actor, here, new(home.X, here.Y, home.Z), home);
                     }
                 }
                 Assert.All(peers.Values, peer => Assert.True(peer.View.Construction.Single().IsCompleted));

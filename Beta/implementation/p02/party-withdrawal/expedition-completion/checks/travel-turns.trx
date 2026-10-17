@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="86d35b77-291e-4158-92e7-1e61e6986ea1" name="@mac 2026-10-17 16:16:21" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T16:16:21.6890060-05:00" queuing="2026-10-17T16:16:21.6890060-05:00" start="2026-10-17T16:16:18.4138580-05:00" finish="2026-10-17T16:16:22.8008860-05:00" />
+  <TestSettings name="default" id="b6b58295-eeec-4825-aaec-94b189af035a">
+    <Deployment runDeploymentRoot="_mac_2026-10-17_16_16_21" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="dea11dd5-0f71-48c4-945b-9a15e1b7acaf" testId="ed9539c3-447e-b771-c0ea-33f404b60140" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope(x: 24832, y: 89504)" computerName="mac" duration="00:00:00.2748897" startTime="2026-10-17T16:16:21.6687090-05:00" endTime="2026-10-17T16:16:21.9436580-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dea11dd5-0f71-48c4-945b-9a15e1b7acaf" />
+    <UnitTestResult executionId="981cec23-bae5-4f68-accd-98e963210833" testId="f72d6cd5-7205-77b8-b122-f0b4828eb412" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Rendezvous_uses_the_chiefs_real_entry_range_for_both_people" computerName="mac" duration="00:00:00.8240047" startTime="2026-10-17T16:16:19.4139330-05:00" endTime="2026-10-17T16:16:20.2418210-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="981cec23-bae5-4f68-accd-98e963210833" />
+    <UnitTestResult executionId="f2b76e57-75b8-4262-8e67-3fbfd535f6bf" testId="d8df7121-96a2-95c4-55e6-8bdf437ad1f1" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope(x: 25088, y: 89504)" computerName="mac" duration="00:00:00.3199673" startTime="2026-10-17T16:16:21.3481080-05:00" endTime="2026-10-17T16:16:21.6681320-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f2b76e57-75b8-4262-8e67-3fbfd535f6bf" />
+    <UnitTestResult executionId="ee969849-8c04-4b25-a01c-a4c9cff9a08c" testId="4de0f313-fbeb-8654-eaf8-914efb9c61f8" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Recorded_detour_stop_is_blocked_by_the_other_players_body" computerName="mac" duration="00:00:00.2756889" startTime="2026-10-17T16:16:22.4923550-05:00" endTime="2026-10-17T16:16:22.7680940-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ee969849-8c04-4b25-a01c-a4c9cff9a08c" />
+    <UnitTestResult executionId="9e45cf1b-370f-4fa2-bafc-91709732fc0b" testId="a684d5e4-cc2d-eb86-99a0-44565bdcf080" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Road_advice_allows_early_release_without_losing_safe_progress" computerName="mac" duration="00:00:00.2796528" startTime="2026-10-17T16:16:22.2120240-05:00" endTime="2026-10-17T16:16:22.4917340-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9e45cf1b-370f-4fa2-bafc-91709732fc0b" />
+    <UnitTestResult executionId="04c21333-8ccb-4592-b528-94c5a71c66c9" testId="5cbf51d5-c598-d385-5f25-c0ea10cfc71a" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Separated_camp_turns_remain_clear_across_both_stop_envelopes(leadRow: 303, helperRow: 301)" computerName="mac" duration="00:00:00.4133689" startTime="2026-10-17T16:16:20.2453000-05:00" endTime="2026-10-17T16:16:20.6587570-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04c21333-8ccb-4592-b528-94c5a71c66c9" />
+    <UnitTestResult executionId="19f7ade9-f771-455c-8f67-47f46e9093bd" testId="c152846a-99e8-c991-c470-5123cc3dcc93" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope(x: 24992, y: 89344)" computerName="mac" duration="00:00:00.3358642" startTime="2026-10-17T16:16:21.0115550-05:00" endTime="2026-10-17T16:16:21.3474700-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="19f7ade9-f771-455c-8f67-47f46e9093bd" />
+    <UnitTestResult executionId="49837564-30f9-4857-b76d-5d3aebeb6cf8" testId="9ec988bc-adb0-f0fe-3e35-c82b722e0b81" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Separated_camp_turns_remain_clear_across_both_stop_envelopes(leadRow: 318, helperRow: 316)" computerName="mac" duration="00:00:00.3512523" startTime="2026-10-17T16:16:20.6594300-05:00" endTime="2026-10-17T16:16:21.0107410-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="49837564-30f9-4857-b76d-5d3aebeb6cf8" />
+    <UnitTestResult executionId="30e9fa29-6a6d-4520-817a-3e4b6d1fed7c" testId="c5ecf9ac-5494-2d86-5124-8a4908363e40" testName="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Separated_lanes_keep_the_real_corridor_turn_clear_when_a_peer_stops" computerName="mac" duration="00:00:00.2670313" startTime="2026-10-17T16:16:21.9443330-05:00" endTime="2026-10-17T16:16:22.2114260-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="30e9fa29-6a6d-4520-817a-3e4b6d1fed7c" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Separated_camp_turns_remain_clear_across_both_stop_envelopes(leadRow: 303, helperRow: 301)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="5cbf51d5-c598-d385-5f25-c0ea10cfc71a">
+      <Execution id="04c21333-8ccb-4592-b528-94c5a71c66c9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Separated_camp_turns_remain_clear_across_both_stop_envelopes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Separated_camp_turns_remain_clear_across_both_stop_envelopes(leadRow: 318, helperRow: 316)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="9ec988bc-adb0-f0fe-3e35-c82b722e0b81">
+      <Execution id="49837564-30f9-4857-b76d-5d3aebeb6cf8" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Separated_camp_turns_remain_clear_across_both_stop_envelopes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Road_advice_allows_early_release_without_losing_safe_progress" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="a684d5e4-cc2d-eb86-99a0-44565bdcf080">
+      <Execution id="9e45cf1b-370f-4fa2-bafc-91709732fc0b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Road_advice_allows_early_release_without_losing_safe_progress" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope(x: 25088, y: 89504)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="d8df7121-96a2-95c4-55e6-8bdf437ad1f1">
+      <Execution id="f2b76e57-75b8-4262-8e67-3fbfd535f6bf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Rendezvous_uses_the_chiefs_real_entry_range_for_both_people" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="f72d6cd5-7205-77b8-b122-f0b4828eb412">
+      <Execution id="981cec23-bae5-4f68-accd-98e963210833" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Rendezvous_uses_the_chiefs_real_entry_range_for_both_people" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope(x: 24992, y: 89344)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="c152846a-99e8-c991-c470-5123cc3dcc93">
+      <Execution id="19f7ade9-f771-455c-8f67-47f46e9093bd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Recorded_detour_stop_is_blocked_by_the_other_players_body" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="4de0f313-fbeb-8654-eaf8-914efb9c61f8">
+      <Execution id="ee969849-8c04-4b25-a01c-a4c9cff9a08c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Recorded_detour_stop_is_blocked_by_the_other_players_body" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Separated_lanes_keep_the_real_corridor_turn_clear_when_a_peer_stops" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="c5ecf9ac-5494-2d86-5124-8a4908363e40">
+      <Execution id="30e9fa29-6a6d-4520-817a-3e4b6d1fed7c" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Separated_lanes_keep_the_real_corridor_turn_clear_when_a_peer_stops" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeExpeditionTravelTests.Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope(x: 24832, y: 89504)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="ed9539c3-447e-b771-c0ea-33f404b60140">
+      <Execution id="dea11dd5-0f71-48c4-945b-9a15e1b7acaf" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeExpeditionTravelTests" name="Advice_near_a_real_merchant_makes_progress_across_the_entire_release_envelope" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="ed9539c3-447e-b771-c0ea-33f404b60140" executionId="dea11dd5-0f71-48c4-945b-9a15e1b7acaf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f72d6cd5-7205-77b8-b122-f0b4828eb412" executionId="981cec23-bae5-4f68-accd-98e963210833" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d8df7121-96a2-95c4-55e6-8bdf437ad1f1" executionId="f2b76e57-75b8-4262-8e67-3fbfd535f6bf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4de0f313-fbeb-8654-eaf8-914efb9c61f8" executionId="ee969849-8c04-4b25-a01c-a4c9cff9a08c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a684d5e4-cc2d-eb86-99a0-44565bdcf080" executionId="9e45cf1b-370f-4fa2-bafc-91709732fc0b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5cbf51d5-c598-d385-5f25-c0ea10cfc71a" executionId="04c21333-8ccb-4592-b528-94c5a71c66c9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c152846a-99e8-c991-c470-5123cc3dcc93" executionId="19f7ade9-f771-455c-8f67-47f46e9093bd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9ec988bc-adb0-f0fe-3e35-c82b722e0b81" executionId="49837564-30f9-4857-b76d-5d3aebeb6cf8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c5ecf9ac-5494-2d86-5124-8a4908363e40" executionId="30e9fa29-6a6d-4520-817a-3e4b6d1fed7c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="9" executed="9" passed="9" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.38]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.55]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.68]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:04.07]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

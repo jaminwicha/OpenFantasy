@@ -1,0 +1,319 @@
+{
+  "Status": "passed",
+  "Kind": "complete-earned-expedition",
+  "Seconds": 672.1489538,
+  "BasisRevision": 916,
+  "Revision": 10250,
+  "HeadHash": "e19a4a7cd2dc9e44e0b007868c10700c81dd2ff8a1f136b3e12f9189c8cb5b0a",
+  "SourceHash": "cf21a8be1d99dc39aa2b856e8be0857c0c7b01b210a45911dd9fbab93e2c7a21",
+  "Chief": "68841f79f723466c2276e3b5460df8a3",
+  "NativeMovementSamples": 15614,
+  "HostileActions": 2,
+  "Stages": [
+    {
+      "Stage": "original-earned-state-and-explicit-transition",
+      "Seconds": 20.2720273,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 200,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 25984,
+            "Y": 83424,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 325,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 26496,
+            "Y": 84608,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 330,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "earned-purchase-retaining-crafted-supplies",
+      "Seconds": 37.0974685,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 180,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 24992,
+            "Y": 89408,
+            "Z": 256,
+            "Cell": {
+              "X": 97,
+              "Y": 349,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 26496,
+            "Y": 84608,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 330,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "both-arrived-at-road-with-owned-cargo",
+      "Seconds": 216.327467,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 180,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88640,
+            "Y": 81536,
+            "Z": 256,
+            "Cell": {
+              "X": 346,
+              "Y": 318,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88128,
+            "Y": 81600,
+            "Z": 256,
+            "Cell": {
+              "X": 344,
+              "Y": 318,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "ordinary-enemy-turn-inflicted-real-injury",
+      "Seconds": 236.133147,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 42,
+          "CurrencyBalance": 180,
+          "IsInEncounter": true,
+          "Feet": {
+            "X": 88640,
+            "Y": 79968,
+            "Z": 256,
+            "Cell": {
+              "X": 346,
+              "Y": 312,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": true,
+          "Feet": {
+            "X": 88896,
+            "Y": 79520,
+            "Z": 256,
+            "Cell": {
+              "X": 347,
+              "Y": 310,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "both-withdrew-with-independent-paid-routes",
+      "Seconds": 243.1147359,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 42,
+          "CurrencyBalance": 180,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88320,
+            "Y": 79968,
+            "Z": 256,
+            "Cell": {
+              "X": 345,
+              "Y": 312,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 22,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88896,
+            "Y": 79072,
+            "Z": 256,
+            "Cell": {
+              "X": 347,
+              "Y": 308,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "one-real-dose-treated-injury-with-no-invented-companion-supply",
+      "Seconds": 244.0894008,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 180,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88320,
+            "Y": 79968,
+            "Z": 256,
+            "Cell": {
+              "X": 345,
+              "Y": 312,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 22,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88896,
+            "Y": 79072,
+            "Z": 256,
+            "Cell": {
+              "X": 347,
+              "Y": 308,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "carried-original-purchase-sold-at-second-town",
+      "Seconds": 347.6907443,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 218,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88736,
+            "Y": 36320,
+            "Z": 256,
+            "Cell": {
+              "X": 346,
+              "Y": 141,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 22,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88192,
+            "Y": 36352,
+            "Z": 256,
+            "Cell": {
+              "X": 344,
+              "Y": 142,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "both-returned-with-earned-supplies-and-construction-retained",
+      "Seconds": 630.9401466,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 218,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 25952,
+            "Y": 83424,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 325,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 22,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 25760,
+            "Y": 83584,
+            "Z": 256,
+            "Cell": {
+              "X": 100,
+              "Y": 326,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Limitations": "Two native clients; one rendered. No physical/human/scale acceptance. Construction was already complete before departure."
+}

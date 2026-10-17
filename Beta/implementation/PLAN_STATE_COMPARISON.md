@@ -1,0 +1,165 @@
+# World partition and interpretation comparison
+
+Working comparison for CURRENT_ROADMAP's PLAN-STATE. This is source-backed preparation, not a
+selected format, completed technical design, implemented partition owner or measured feasibility
+result. The integrated prototype and decision remain required before permanent NPC cognition state.
+The [review disposition](roadmap-review-20261017/LEAD_DISPOSITION.md) owns the rationale and sequencing.
+
+## The problem to solve
+
+Keep a persistent frontier with widely separated players and enduring individuals without requiring
+all detailed state in memory or serializing the complete world for every action. Preserve exact
+seed/rules, owned goods, construction work, private knowledge, clocks and arbitrary historical reads.
+Remain pure C#, in process, with a single authority and atomic coupled effects. Partitioning must
+improve this game without replacing its domain model with a generic property bag or a second simulator.
+
+Concrete source constraints:
+
+- [WorldSnapshot](../Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) is an admitted complete
+  locality. Its residents, inventory, space and optional domain facets are validated together.
+- [LocalSpatialSnapshot](../Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs) admits at most
+  16 regions and 64 actors; every supplied body needs complete supported, unoccupied space. These are
+  local-query bounds, not shipping city or population targets.
+- [WorldSnapshotCodecV1](../Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV1.cs) declares a
+  16 MiB complete-state envelope. More chunks in a file do not remove this semantic root limit.
+- [WorldStepProcessor](../Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs) composes movement,
+  counted/material custody, work, encounters and timing through a `WorldSnapshot` candidate.
+  [WorldCommitPreparation](../Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs)
+  encodes that candidate and matches complete command/receipt identities before storage publication.
+- [SqliteWorldAuthority](../Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs) owns one
+  in-process state and dispatch boundary. [WorldJournalRecovery](../Runtime/src/OpenFantasy.Hosting/Worlds/WorldJournalRecovery.cs)
+  verifies original genesis, admitted interpretations, archives, commands and each replayed result.
+- [WorldIdentityIndex](../Runtime/src/OpenFantasy.Core/Worlds/WorldIdentityIndex.cs) indexes one local
+  root and prospective namespaces. Its membership is not a global ownership directory, authentication
+  or evidence of an absent historical cause.
+- [LocalNpcController](../Runtime/src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs) consumes
+  the local world and selects ordinary movement/construction actions. Partition residency cannot
+  silently redefine its time policy or make an unloaded worker forget a commitment.
+
+## Alternatives to compare
+
+| Alternative | What can be reused | Cost and failure risk | Evaluation |
+| --- | --- | --- | --- |
+| Storage chunks around the existing complete root | Existing admission, step processor and replay; content-addressed bytes may reduce storage duplication | Every decision still needs the complete locality and global root; semantic limits, full admission and resident scans remain. Partial file reads alone do not prove bounded simulation residency | Useful possible optimization/baseline; insufficient as the frontier architecture |
+| Whole local aggregates as spatial partitions | Current typed facets, local collision and many transaction rules can remain cohesive | Actors, cargo, encounters and construction can span boundaries; each aggregate cannot independently own a copied actor or advance a shared clock. Transfer of a large complete aggregate could be expensive. Some current facets assume a complete roster rather than a partition | Serious lower-refactor candidate; prototype must expose coupled cross-boundary ownership rather than hide it in duplicated roots |
+| Typed domain aggregates with a spatial ownership/index layer | Existing body, custody, work, clock and history rules remain typed; local spatial views can compose resident neighbours without owning their inventories | More explicit dependency closure, admission and migration work. Too-fine roots produce lookup/serialization overhead and large transactions; too-coarse roots retain the original bottleneck | Serious flexibility candidate; compare actor/household/place-sized aggregates against local aggregate reuse using the same episode |
+
+Do not decide using file count or an empty dictionary benchmark. A hybrid may be appropriate: spatial
+terrain/place aggregates, identity-stable actor aggregates, and separately owned shared encounters,
+institutions and immutable definitions. That is a hypothesis, not an instruction to implement one
+root per field, lot, actor or terrain cell. Aggregate granularity must follow coupled writes and measurements.
+
+## Contracts the chosen design must specify
+
+**Ownership and identity.** Distinguish stable entity identity, physical location, custody, partition
+address and residency. A person moving east does not acquire a new identity, inventory or clock.
+A canonical directory or deterministic mapping names the exact owner of each mutable fact, with a
+revisioned transfer if ownership moves. Spatial neighbour references and read-only projections never
+become extra owners. Shared immutable definitions use pinned content identity, not duplicate instances.
+The directory itself needs bounded pages and authenticated history; one ever-growing manifest would
+recreate the original bottleneck.
+
+**Preparation and atomic publication.** Determine the read/write dependency closure, exact revisions
+and relevant historical identities before deciding an action. A boundary move loads the terrain and
+actual occupied bodies necessary for its complete sweep, plus the actor's commitments and cargo rules.
+Missing or conflicting dependencies cause bounded preparation/deferral or a lawful refusal. They do
+not count as empty space. Publish all changed owners, location/ownership indexes, command outcomes and
+scheduled obligations together under one commit identity. Preserve the existing serialized authority;
+there is no need for an IPC bridge or distributed consensus service.
+
+**Composition and capacity.** Reuse local queries where their completeness and bounds are satisfied.
+Do not assemble only 64 convenient actors in a crowded neighbourhood and omit the rest. Dense areas,
+large bodies, vehicles, structures crossing boundaries and interacting fluids require an explicit
+bounded query/dependency strategy; exceeding a preparation budget must be visible and deterministic.
+Record which spatial, custody, encounter and cross-facet invariants need joint validation, and which
+facet validators are safely local. A generic container cannot declare arbitrary combinations legal.
+
+**Time and offscreen work.** Residency, relevance, decision cadence and timing domain are separate.
+Persist next-due obligations and their interpretation, with deterministic tie order. Reloading cannot
+restart a crop, repeat a reward, skip an encounter hold or manufacture construction progress. Reuse a
+real funded construction commitment for the first detailed/offscreen comparison. Define the admitted
+boundaries where batching equals detailed continuation; if order-sensitive contacts or interventions
+need finer work, defer or subdivide within a bounded policy. Do not infer an unimplemented global clock
+from the current locality's reading/encounter holds.
+
+**History, save and replay.** Every historical address resolves the then-current ownership map,
+partition revisions, original admission, component laws and archive ancestry. A current head upgrade
+cannot erase interpreters still referenced by older states. A global commit sequence can coordinate
+partition deltas, but a partial replay must prove its dependency closure and authenticated result;
+loading a convenient checkpoint is not independent verification. The same concerns apply to branches,
+planes, possession transfers and imported historical objects.
+
+**Version selection.** Compare a canonical facet manifest with explicit aggregate interpretations.
+Distinguish format versions, simulation law/content pins and supported combinations. Keep command,
+step, root-envelope and protocol versions whenever their meaning changes. Unknown required facets or
+unsupported combinations refuse explicitly. Optional data must have an admitted omission policy; it
+cannot be silently dropped because one client or interpreter is old. Share readers only where their
+semantics are actually identical. No version number or SQL schema is reserved by this comparison.
+
+**Player presentation and network scope.** The Godot adapter consumes permitted observations, not
+partition-store access. Ownership/loading metadata must not disclose hidden inventories, NPC memories,
+unexplored locations or secret relationships through different refusal messages. Loading does not
+revoke valid controls or reset a player's action; the host reports readiness and any deferred operation
+through ordinary contracts. Presentation visibility and collision residency need not have the same radius.
+
+## First integrated proof and measurement
+
+Use actual existing character, material custody, terrain and funded-work types, with a persisted
+world containing relevant and irrelevant partitions. Keep the current complete-root implementation
+as a comparison baseline, not a competing production simulator. For each candidate:
+
+1. Move a real actor with owned cargo across a boundary; retain stable actor/lot identity, quantity,
+   control, position, time and references. Include collision on the destination side and one stale
+   ownership revision. No duplicated goods or partially published movement is acceptable.
+2. Continue an actual paid NPC work commitment while its detailed region is absent. Reintroduce a
+   relevant participant, compare declared detailed/offscreen boundaries and show exact remaining work,
+   resources and due ordering. No fabricated cognition or blank actor payloads count as meaningful state.
+3. Interrupt publication before and after its atomic boundary; reopen and retry the exact command.
+   Verify complete old or complete new state, original receipts, ownership map, occupied identities and
+   work obligations. Fault injection is not a substitute for any later required process-kill gate.
+4. Reconstruct a historical state before and after crossing from the original admission, then replay
+   the continuation. Prove unrelated detailed partitions were not silently loaded to pass the test.
+5. Measure the identical workload: actual hardware/runtime, admitted actors/lots/work/terrain and
+   transaction counts; bytes stored and loaded, residency/high-water memory, allocated bytes, cold/warm
+   preparation, commit, replay/restore, boundary-load stalls and oldest due-work age. Record rejection
+   and missing-dependency paths as well as success. Separate setup, decoding and rule execution.
+
+Choose small initial population/partition counts from the real admitted fixture and record them before
+measurement; do not imply they are production caps. Increase one dimension at a time while keeping
+meaningful holdings/work. Report full source/binary/settings identity and instrumentation overhead.
+The result is a reduced diagnostic. [LANG-01..04](p00/BENCHMARK_FIXTURES.md), 20,000-resident city,
+10,000-actor meaningful fixtures, sustained 1–4 players and desktop exports remain separate gates.
+
+## Decision and rollout boundary
+
+Select an aggregate/manifest approach only after this comparison has concrete measurements and a
+source-based assessment of all preserved writers. Specify the actual module/API and byte contracts
+before publishing new persistent state. The first implementation must be a retained increment of the
+intended Core/Hosting architecture with real legacy/domain consumers, not an isolated toy benchmark.
+
+The rollout design must identify: explicit preserved-source upgrade; old historical readers; new
+admission and legal combinations; atomic storage/recovery; host selection and compatibility; permitted
+public views; rollback and refusal behavior. No implicit migration or destructive rewrite is approved.
+Independent architectural review remains required at the substantial adaptation boundary, and is
+currently unrun under the owner's orchestration pause. Preparation and measurement can proceed directly;
+do not invent independent acceptance. Keep all original requirements and unproved scope visible.
+
+The decisions still open are aggregate granularity, directory representation, resident dependency
+closure, due-work ownership, canonical envelope/manifest, migration interpreter and measured budgets.
+Their trigger is the integrated proof above, before permanent cognition persistence. This document
+provides the comparison and proof scope; it does not close PLAN-STATE.
+
+## Documentation review
+
+- **Plan/spec:** Preparation for the already accepted PLAN-STATE dependency. No new phase order,
+  workload threshold, format, resource grant or frozen requirement is selected. The living roadmap
+  must continue to require measured implementation and decision before permanent cognition.
+- **Reference:** Existing timeless partition/version obligations remain accurate; this comparison
+  introduces no runtime binding. Concrete source links above distinguish present ownership from
+  proposed responsibilities. Update the reference with the chosen actual contracts when implemented.
+- **Accuracy/completeness:** Reviewed WorldSnapshot, local geometry, step/commit preparation, identity
+  index, durable authority/recovery and NPC controller sources. Candidate interfaces are intentionally
+  not represented as existing APIs. The difficult cross-owner, clock, history, density and privacy
+  obligations are explicit rather than deferred behind a storage-only prototype.
+- **Checks:** Documentation checks are recorded with the adjoining expedition continuation. No runtime
+  benchmark or independent design acceptance is claimed; neither has run for this comparison.

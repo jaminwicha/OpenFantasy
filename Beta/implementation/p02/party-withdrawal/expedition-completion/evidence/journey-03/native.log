@@ -1,0 +1,7 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:09:54.75]     [FATAL ERROR] Xunit.Sdk.TestPipelineException
+[xUnit.net 00:09:54.79] Catastrophic failure: Test process crashed with exit code 1.
+No test matches the given testcase filter `FullyQualifiedName~Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return` in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/expedition-completion/journey-03/native.trx
+

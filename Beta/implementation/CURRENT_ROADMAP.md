@@ -55,9 +55,9 @@ It does not accept a new persistence format or close any gameplay, scale, indepe
 | --- | --- | --- |
 | Shared participant History | Qualified for its bounded native/managed scope and committed | Native paid-quote/paging breadth and historical-name catalogs remain separate work |
 | Delegated paid-work recovery | Qualified within the [recovery result](p02/delegated-control-recovery/RESULT.md): 95 cases, ten new, three native; exact source/build reconciliation | Bounded checkpoint complete; populated allowance rows, grantee reacquisition and listener/socket-death proofs remain. No full reliability claim |
-| Ordinary adventure entry | Qualified solo opening and same-save trade/danger/retreat/care/sale/return/reopening; separate four-player TLS movement/reconnect | Shared participation in this journey, deeper NPC/story/environment and human acceptance remain |
-| Shared adventure opening | Two native participants gather, transfer an earned lot, craft and fund Wren; ten exact authenticated receipts and original-genesis replay | Full cooperative expedition, party-exit law, four-player journey and human acceptance remain; retained failed runs are not erased |
-| Collective withdrawal | Core41, explicit copied40→41 publication, ordinary archive cuts and storage-operator recovery, bounded two-port host/observation/wheel integration, and the [offline copied-save operator](p02/party-withdrawal/saved-expedition/RESULT.md) are qualified within their linked scopes | Complete saved native expedition, live-listener recovery, sustained1–4/scale, broader interactions, independent and human acceptance remain. Storage-operator kills do not prove listener death; ordinary opening never upgrades implicitly. |
+| Ordinary adventure entry | Qualified solo opening and same-save trade/danger/retreat/care/sale/return/reopening; separate four-player TLS movement/reconnect | The two-player shared expedition is now qualified below; deeper NPC/story/environment and human acceptance remain |
+| Shared adventure opening | Two native participants gather, transfer an earned lot, craft and fund Wren; ten exact authenticated receipts and original-genesis replay | The complete two-player saved expedition and party-exit law are qualified within the linked scopes; four-player journey and human acceptance remain, with all failed runs retained |
+| Collective withdrawal | Core41, explicit copied40→41 publication, ordinary archive cuts and storage-operator recovery, bounded two-port host/observation/wheel integration, the [offline copied-save operator](p02/party-withdrawal/saved-expedition/RESULT.md) and [complete saved two-player expedition](p02/party-withdrawal/expedition-completion/CONTINUATION.md) are qualified within their linked scopes | Live-listener recovery, sustained1–4/scale, broader interactions, independent and human acceptance remain. Storage-operator kills do not prove listener death; ordinary opening never upgrades implicitly. |
 | Full P02 | Partial; material gameplay and presentation gaps | Every row in the P02 closure table below, integrated in one retained lineage, plus the unchanged human/native exit |
 | Complete desktop game | Broad later work remains | Complete non-mobile scope and catalogs through P11, full P12 quality/scale/campaign proof, P13 packaged desktop release |
 | Mobile completion | Later required phase | P14 actual Android/iOS/device/cross-play acceptance using the same game core |
@@ -98,13 +98,13 @@ its exact scope; no row is fully accepted merely because a supporting primitive 
 
 | ID / accountable role | Current boundary | Required next witness |
 | --- | --- | --- |
-| LOOP — integration lead | Ordinary profile40 solo lineage connects gathering/crafting, Wren quest/build, excavation/water, buy/haul/danger/retreat/care/sale and return; paused recovery retains exact world rows and history | One ordinary discoverable route: notice→talk→gather/make→recruit→cooperative expedition→changed-place return. Deeper autonomous change while away, shared participation and human discovery remain; no new admission or migration was needed for the continuation. |
+| LOOP — integration lead | Ordinary profile40 solo lineage connects gathering/crafting, Wren quest/build, excavation/water, buy/haul/danger/retreat/care/sale and return; paused recovery retains exact world rows and history; the original two-player earned save explicitly migrates40→41 and completes the shared expedition | One ordinary discoverable route: notice→talk→gather/make→recruit→cooperative expedition→changed-place return. Deeper autonomous change while away, recruitment/companion contribution, broader shared participation and human discovery remain. The solo continuation needed no migration; the shared withdrawal journey uses the explicit copied40→41 transition. |
 | NPC — actor/narrative builder | Routed amble/work and common legal actions | Persistent evidence→belief/desire→commitment→feasible action→memory; bounded offscreen reconciliation, recruitment and useful companion contribution; dialogue responds to the actual outcome. |
 | STORY — narrative/level builder | Source quest/content and durable facts | Missing-cargo investigation with actual testimony/evidence and alternate clues; field-action puzzle with team and noncombat paths, real costs, readable motion and accessible alternatives. |
 | TRADE — economy/actor builder | Actual buy/haul/threat/sell with finite goods and two markets | A traveling merchant brings those real goods, with retained NPC travel routes/commitments and the bounded cargo/escort introduction. Broader caravan networks, wages and settlement economy remain P07; this early route cannot be deferred wholesale. |
 | SPACE — physical/world builder | Mining, supported construction, water and consequences in bounded routes | Occupied floor/tunnel/stairs/upper construction/support removal, with readable native consequences and restart, in the inhabited journey. |
 | ECO — world/ecology builder | Finite plants/regrowth, conserved water, specific threat | Relief/strata/river/outlet, dry and flooded caves; second liquid/reaction and ice/phase example; seasonal plant/herbivore/predator, nonautomatic hostility, source removal response and conserved growth/dispersal. |
-| COOP — host/client builder | Actual four-peer TLS/control/domain journeys | Join/reconnect during the integrated loop, zone chat/scoped notices, distinct private/NPC knowledge; full recovery matrix and unresolved reliability failures retained. |
+| COOP — host/client builder | Actual four-peer TLS/control/domain journeys and the complete two-player earned-save expedition | Join/reconnect during the integrated loop, zone chat/scoped notices, distinct private/NPC knowledge; full recovery matrix and unresolved reliability failures retained. |
 | UI — client/interaction builder | Wheel, Pack, purpose-scoped Recipe/Trade/Care/History | Remapping/device/scaling; stats/equipment/known skills/journal/local explored map/calendar; customizable wheel/full-action view; earned simple/expert views of real work. Resolve crowded HUD/occlusion and comfortable sustained activity at its dependency phase. |
 | ART — dedicated artist, client integrates | Accepted restrained direction and reference scenes; provisional runtime assets | Accepted native person/creature/animal/object kits, classic restrained movement, personality/practical actions, readable variant/condition cues and unobscured interactive objects. Existing concept approval remains valid within its scope. |
 | AUDIO — audio creator, client integrates | Design/acoustic contracts | Native town→wilderness→encounter→aftermath plus cave/shelter contrast, footsteps/tools/weather/ecologically valid birds, quiet/fades and independent listeners; accepted acoustic intent. |
@@ -181,20 +181,21 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    The [native continuation checkpoint](p02/party-withdrawal/native-journey/RESULT.md) reopens the actual
    interrupted two-person expedition at Active and Staging boundaries: genuine damage, both paid withdrawals,
    one owned potion's exact use, the companion's no-dose guard and original-history replay pass.
-   The [second-town sale checkpoint](p02/party-withdrawal/expedition-completion/RESULT.md) now proves
-   explicit Offers/stall selection, sale of the purchased lot, retained crafted supplies and replay
-   from the exact arrival save. Two full runs still fail: outbound overshoot, then post-care detour
-   movement/no-progress. Diagnose simultaneous route occupancy from the retained failure before rerunning.
-   The full commerce/outbound/return journey remains separately required; successful prefixes from
-   different attempts do not establish it. Preserve the full1–4, listener/reconnect/
-   latency, interaction, independent/native/human obligations; fresh41 proof is not a lived-save native migration.
+   The subsequent [complete expedition](p02/party-withdrawal/expedition-completion/CONTINUATION.md)
+   passes as one 672.149-second native run: explicit copied40→41 continuation, purchase, both players'
+   travel, actual combat, own withdrawals, conserved care, exact cargo sale and return, ten receipts
+   and original-genesis replay. All 1,410 execution dependencies match. Three failed full attempts in
+   that packet remain retained; route choreography and a diagonal home-leg fixture were corrected,
+   with unchanged collision/time limits. New autonomous changed-place behavior remains NPC-01.
+   Preserve full1–4, listener/reconnect/latency, wider interaction, independent and human obligations.
    Ordinary roster scenarios still use retreat law v2, which admits only a lone combatant on its
-   side. Deliver the selected party-exit law through the saved journey before calling that route
-   cooperative; preserve the legacy `AllyRemains` safeguard and Full Wait throughout integration.
+   side. The explicitly migrated41 saved journey now proves the selected cooperative route;
+   preserve the legacy `AllyRemains` safeguard and Full Wait throughout integration.
    Preserve prior saves and unsupported transition refusal. Keep the unexplained earlier post-draw
    timeout visible; a later instrumented pass does not establish its cause or production reliability.
-   Stop expanding this unit after the selected law and expedition are qualified within their stated
-   scope. Incapacity still requires an explicit refusal and playable combat/recovery path. Carry,
+   The selected law and expedition are now qualified within their stated scope; move to PLAN-STATE
+   rather than expanding this unit indefinitely. Incapacity still requires an explicit refusal and playable
+   combat/recovery path. Carry,
    rescue, abandonment and surrender require separate action/outcome designs at their character,
    encounter and transport dependencies; they are not implicit escape behavior. Repeated arrival
    decisions warrant a guard-action proposal only if native/human evidence supports it. This scope
@@ -202,7 +203,9 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
 
 2. Complete **PLAN-STATE** below before committing the permanent NPC persistence model. Produce
    one design comparison and a bounded measured prototype using actual Core state; do not start a
-   whole-engine rewrite. Record the decision, measured limits and remaining questions in the living
+   whole-engine rewrite. The [working comparison](PLAN_STATE_COMPARISON.md) is prepared; the integrated
+   prototype, measurements and selected format remain unrun/undecided. Record the decision, measured
+   limits and remaining questions in the living
    plan and timeless reference. Required independent architectural review stays open while the owner
    pauses orchestration; lead inspection cannot substitute for it.
 3. Deliver **NPC-01** as the next new inhabited-world behavior. Prepare **STORY-01** content and
