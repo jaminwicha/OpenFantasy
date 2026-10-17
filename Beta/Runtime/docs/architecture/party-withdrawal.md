@@ -168,6 +168,13 @@ optional joint anchor. Its canonical codec names only40→41. The
 exploration with no reading hold, active timing/legacy route or pending excavation continuation.
 It refuses stale/foreign heads and occupied causes; it never completes or cancels work to gain eligibility.
 
+Pending aftermath care retains an incapacitation in an unresolved Outcome phase, so it cannot
+coexist with the transition's required exploration boundary. Migration refuses that source without
+altering its request or consuming a dose. The patient/helper can resolve the request through ordinary
+care or an explicit disposition; required outcome readings and world-owned completion then establish
+eligibility. Cancellation alone does not heal anyone or bypass those readings. A profile41 world can
+retain pending care through an ordinary coordinated cut and restart under the same care contracts.
+
 The candidate adds an empty collective owner and advances the world and lifecycle commit revision
 once. Calendar, exposure, tactical debt, original admission, existing retreat evidence, possessions,
 progression, care, material proposals, market state, controller assignments/permissions and all retained

@@ -218,6 +218,34 @@ public sealed class PartyWithdrawalWorldTests
     public void A_newly_occupied_route_interrupts_only_its_actor_and_charges_the_blocked_attempt()
     {
         var run = WithdrawalWorldFixture.Active();
+        QueueConvergingRoutes(run);
+        bool blocked = false;
+        for (int step = 0; step < 1200 && !blocked; step++)
+        {
+            Assert.Equal(EncounterLifecyclePhase.Active, run.State.EncounterLifecycle!.Phase);
+            run.ChooseDue(attacks: false);
+            var before = run.State;
+            run.ResolveOrTick();
+            if (run.State.Retreat!.Withdrawal!.Last is not { } last || last.WorldSequence != run.State.Revision) continue;
+            var end = Assert.Single(last.Ended);
+            Assert.Equal(EncounterWithdrawalEndReason.Blocked, end.Reason);
+            Assert.Same(before.Space, run.State.Space);
+            Assert.Equal(end.Member.SampleReadiness, end.FailedSampleCost);
+            Assert.Equal(end.Member.SampleReadiness, run.State.Pacing!.Encounter!.GetActor(end.Member.ActorId).RemainingDelay);
+            var party = Assert.Single(run.State.Retreat.Withdrawal.Parties);
+            Assert.Equal(run.Humans.Order(), party.RequiredActors);
+            Assert.True(Assert.Single(party.Members).HasArrived);
+            Assert.Null(run.State.Retreat.Withdrawal.FindMember(end.Member.ActorId));
+            Assert.False(party.AllArrived);
+            Assert.Equal(before.Calendar, run.State.Calendar);
+            run.Restore();
+            blocked = true;
+        }
+        Assert.True(blocked, "The later actor must meet the earlier arrival's actual body, not swap or teleport through it.");
+    }
+
+    internal static void QueueConvergingRoutes(WithdrawalWorldFixture run)
+    {
         var state = run.State;
         var destinations = (from actor in run.Humans
             let advised = WorldEncounterRetreatAdvisor.Advise(state, actor).Destination
@@ -251,29 +279,6 @@ public sealed class PartyWithdrawalWorldTests
         }
         Assert.NotNull(selected);
         run.Choose(run.Humans.Select((actor, index) => run.Command(actor, selected[index])).ToArray());
-        bool blocked = false;
-        for (int step = 0; step < 1200 && !blocked; step++)
-        {
-            Assert.Equal(EncounterLifecyclePhase.Active, run.State.EncounterLifecycle!.Phase);
-            run.ChooseDue(attacks: false);
-            var before = run.State;
-            run.ResolveOrTick();
-            if (run.State.Retreat!.Withdrawal!.Last is not { } last || last.WorldSequence != run.State.Revision) continue;
-            var end = Assert.Single(last.Ended);
-            Assert.Equal(EncounterWithdrawalEndReason.Blocked, end.Reason);
-            Assert.Same(before.Space, run.State.Space);
-            Assert.Equal(end.Member.SampleReadiness, end.FailedSampleCost);
-            Assert.Equal(end.Member.SampleReadiness, run.State.Pacing!.Encounter!.GetActor(end.Member.ActorId).RemainingDelay);
-            var party = Assert.Single(run.State.Retreat.Withdrawal.Parties);
-            Assert.Equal(run.Humans.Order(), party.RequiredActors);
-            Assert.True(Assert.Single(party.Members).HasArrived);
-            Assert.Null(run.State.Retreat.Withdrawal.FindMember(end.Member.ActorId));
-            Assert.False(party.AllArrived);
-            Assert.Equal(before.Calendar, run.State.Calendar);
-            run.Restore();
-            blocked = true;
-        }
-        Assert.True(blocked, "The later actor must meet the earlier arrival's actual body, not swap or teleport through it.");
     }
 
     private static bool MeetsArrivedBody(WorldSnapshot world, EntityId[] actors, QueueEncounterRetreatIntent[] routes)

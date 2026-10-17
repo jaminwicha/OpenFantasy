@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~PartyWithdrawalCareTests|FullyQualifiedName~PartyWithdrawalOutcomeTests",
+    "--logger",
+    "trx;LogFileName=interactions-02.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/interaction-closure/checks"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 46.678957083960995,
+  "timeout_seconds": 180
+}

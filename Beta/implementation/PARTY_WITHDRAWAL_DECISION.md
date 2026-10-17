@@ -2,10 +2,11 @@
 
 Recorded 2026-10-03; Core evidence updated 2026-10-17. This supplements RQ-029, RQ-079 and RQ-099 and the P02 cooperative expedition
 in the [current roadmap](CURRENT_ROADMAP.md). The frozen full spec and its gates remain intact.
-Status: component and profile41 complete-world Core binding implemented; qualification is recorded
-in the [world-binding packet](p02/party-withdrawal/world-binding/RESULT.md). SQLite migration,
-host/client selection, presentation and native/human qualification remain open. This is not approval
-to activate a new rule in an existing save.
+Status: component, profile41 Core and explicit copied40→41 SQLite transition are implemented;
+[world binding](p02/party-withdrawal/world-binding/RESULT.md), [save transition](p02/party-withdrawal/save-transition/RESULT.md)
+and [durable recovery](p02/party-withdrawal/durable-recovery/RESULT.md) retain their bounded evidence.
+Host/client selection, presentation, remaining capacity/interaction proofs and native/human qualification
+remain open. Opening a save never activates the new rule implicitly.
 
 ## Player outcome and selected direction
 
@@ -29,7 +30,7 @@ The [architecture reference](../Runtime/docs/architecture/party-withdrawal.md) d
 component from its Core command admission and complete-candidate publication. Neither is a storage
 commit or an authenticated connected-client path by itself.
 
-## Decisions to settle in the resolver increment
+## Resolver contracts before runtime activation
 
 The implementation must resolve these against executable scenarios before runtime activation:
 
@@ -69,7 +70,7 @@ records the investigation and its limits.
 | --- | --- |
 | Resource history and coordinated anchors retain `AdmissionVersion` | Preserve original admission lineage. Do not call a fresh-admission helper or recreate resource history over earned progression. The new profile, rules pin and typed transition identify the changed law separately. |
 | Proposal transition pins a lived head and preserves admission and time | Reuse its publication discipline, not its 27→30 request/processor. Withdrawal requires its own exact source/target transition; opening a save never selects it implicitly. |
-| `WorldJournalRecovery` refuses migrations in schema12 and requires its head profile to match genesis | Add explicit storage/replay authorization and exactly-one-transition lineage checks together. Schema12's SQL kind list is not replay authorization. Preserve older schema and migration meanings. |
+| Schema12 recovery admits only the explicit40→41 journal transition, once, with original admission and genesis retained | Preserve the exact source/target dispatcher and historical replay; the SQL kind list alone never authorizes another migration. Older schema and migration meanings remain distinct. |
 | Joint anchors validate capability continuity; older resource-only anchors also pin profile | Audit the actual coordinated profile40 lineage before/after cuts. Never weaken another archive family's admission or treat all anchors as interchangeable. |
 | The complete root is bounded at 16 MiB | Reconcile nested read bounds, encoder reservations and worst-case complete roots. A 200 KiB standalone party bound is not proof of root headroom; retain the total budget. |
 | Accepted control recognizes the legacy active command; safe owner return depends on its hold | Extend retained-command admission and controller return together. Arrival bookkeeping must not indefinitely retain delegated control. |
@@ -115,8 +116,13 @@ party refusal remains active while this work is incomplete.
    across intermediate movement/arrival/failed-sample boundaries, with no rule/budget waiver.
    The [saved-world transition](p02/party-withdrawal/save-transition/RESULT.md) supplies explicit
    copied40→41 publication and original-genesis replay of the earned shared opening, preserving
-   controller allowances and prior receipts. Archive-crossing and in-flight withdrawal recovery
-   remain distinct proofs before this increment closes; ordinary launcher selection is unchanged.
+   controller allowances and prior receipts. The [durable recovery increment](p02/party-withdrawal/durable-recovery/RESULT.md)
+   proves ordinary inherited/subsequent cuts, pending material proposals and paid movement/cancellation/
+   departure recovery, including six actual storage-process kills. Pending aftermath care belongs to
+   an unresolved outcome and must refuse migration until ordinary resolution makes the save eligible;
+   it is not an exploration-state facet to silently migrate or clear. The subsequent interaction checks
+   [qualify this distinction, genuine outcome and blocked-route recovery](p02/party-withdrawal/interaction-closure/RESULT.md). Complete-root capacity and
+   host/client/native integration remain distinct obligations; ordinary launcher selection is unchanged.
 3. **Host and presentation.** Own-character withdrawal offers and inspection show actual path/cost,
    party readiness and blockers without exposing another actor's private route or command. Use the
    existing wheel, confirmation/cancellation and immutable observations. Arrival, interruption and

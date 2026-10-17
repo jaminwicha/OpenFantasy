@@ -163,16 +163,17 @@ public sealed class PartyWithdrawalRecoveryTests
     }
 
     /// <summary>Publishes the ordinary Core journey through SQLite; no prepared head or synthetic receipts are installed.</summary>
-    private sealed class WithdrawalJournal : IDisposable
+    internal sealed class WithdrawalJournal : IDisposable
     {
         private readonly StorageFiles _files = new();
         private int _published;
         private readonly Dictionary<EntityId, byte[]> _receipts = [];
-        internal WithdrawalWorldFixture Run { get; } = WithdrawalWorldFixture.Active();
+        internal WithdrawalWorldFixture Run { get; }
         internal SqliteWorldAuthority Authority { get; private set; }
 
-        internal WithdrawalJournal()
+        internal WithdrawalJournal(int humans = 2)
         {
+            Run = WithdrawalWorldFixture.Active(humans);
             Authority = SqliteWorldAuthority.CreateNew(_files.Path, Run.Genesis);
             Flush();
         }

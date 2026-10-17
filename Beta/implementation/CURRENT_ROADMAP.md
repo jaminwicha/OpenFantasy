@@ -167,9 +167,13 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    active control and original receipts; actual paid movement/partial arrival/departure reopen exactly;
    six Host storage-operator kills cover before/after movement, cancellation and departure with same-save
    continuation. These are bounded two-person/storage proofs, not live-listener or native co-op acceptance.
-   Pending care, failed-route/genuine-outcome durability, complete-root capacity, host/client selection
-   and the earned shared expedition remain open. Qualify their required combinations rather than treating
-   a fresh41 root as a lived-save migration. Independent and human gates remain unchanged.
+   The [interaction increment](p02/party-withdrawal/interaction-closure/RESULT.md) passes36 selected cases,
+   five new: pending aftermath care refuses migration without loss until explicit ordinary resolution;
+   fresh41 pending care survives cuts; genuine defeat, opposing-side departure and a blocked sample
+   retain exact terminal history/debt across restart. These are named witnesses, not all combinations.
+   Complete-root capacity, host/client selection, own-character offers/cancellation and the earned shared
+   expedition (including commerce) remain next. Preserve the full 1–4, listener/reconnect/latency,
+   interaction, independent/native/human obligations; fresh41 proof is not a lived-save native migration.
    Ordinary roster scenarios still use retreat law v2, which admits only a lone combatant on its
    side. Deliver the selected party-exit law through the saved journey before calling that route
    cooperative; preserve the legacy `AllyRemains` safeguard and Full Wait throughout integration.

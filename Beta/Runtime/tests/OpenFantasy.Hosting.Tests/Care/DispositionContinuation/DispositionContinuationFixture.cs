@@ -20,10 +20,18 @@ public sealed class DispositionContinuationFixture : IDisposable
     public DispositionContinuationFixture() : this(humanHelper: false) { }
 
     /// <summary>Human control is admitted only in the original fresh calibration, before any earned history.</summary>
-    internal DispositionContinuationFixture(bool humanHelper)
+    internal DispositionContinuationFixture(bool humanHelper, ushort profileVersion = 38)
     {
         Journey = new RecoveryJournalFixture();
-        Genesis = CreateGenesis(Journey, humanHelper);
+        var basis = CreateGenesis(Journey, humanHelper);
+        Genesis = profileVersion switch
+        {
+            38 => basis,
+            40 => WorldDelegatedControlAdmission.CreateFresh(WorldControlPermissionAdmission.CreateFresh(basis)),
+            41 => WorldPartyWithdrawalAdmission.CreateFresh(
+                WorldDelegatedControlAdmission.CreateFresh(WorldControlPermissionAdmission.CreateFresh(basis))),
+            _ => throw new ArgumentOutOfRangeException(nameof(profileVersion))
+        };
         using var authority = SqliteWorldAuthority.CreateNew(_pending.Path, Genesis);
         // The ordinary-care genesis splits its two source doses between patient and helper. Earn a
         // second helper dose now so a later request can lawfully be acknowledged after the first use.

@@ -128,10 +128,21 @@ inherited40 and subsequent41 joint cuts retain a pending gift, active delegation
 paid movement, partial arrival and collective departure survive exact reopening. Six actual Host
 storage-operator kills cover before/after movement, cancellation and departure and same-save continuation.
 Three fixture failures remain retained; production rules and schemas are unchanged. This does not prove
-live-listener death or the migrated earned save's native expedition. Next finish pending-care and
-failed-route/outcome/interaction/capacity combinations, then host/client selection and the same saved
-shared expedition. Preserve 1–4/reconnect/latency, independent, native and human gates. The milestone is
+live-listener death or the migrated earned save's native expedition. The subsequent interaction
+increment below addresses named care/outcome witnesses; host/client selection and the saved shared
+expedition still require their own evidence. Preserve 1–4/reconnect/latency, independent, native and human gates. The milestone is
 `codex/milestone-withdrawal-durable-recovery-20261017`; the linked packet owns its exact scope.
+
+The [interaction increment](p02/party-withdrawal/interaction-closure/RESULT.md) then passes36 selected
+cases (five new). Pending aftermath care correctly refuses migration because its outcome is unresolved;
+explicit cancellation, required reading and normal completion make that same save eligible. Fresh41
+pending care survives actual cuts/restart. Genuine defeat and opposing-side withdrawal retain terminal
+identities, and a blocked sample reopens with its paid debt and arrived ally retained. The original38
+care fixture and six process-kill cases also pass. One nullability build failure remains recorded.
+Next review complete-root capacity and implement host/client selection, own-character offers/cancellation
+and the earned shared expedition, including actual commerce. Complete scale/1–4, listener/reconnect,
+independent/native/human and broader interaction combinations remain open. The marker is
+`codex/milestone-withdrawal-interactions-20261017`; no runtime rule or default launch changed.
 
 After that selected expedition, execute roadmap PLAN-STATE: one partition/version design comparison
 and measured integrated prototype, before permanent NPC cognition state. Then NPC-01 proves evidence,
