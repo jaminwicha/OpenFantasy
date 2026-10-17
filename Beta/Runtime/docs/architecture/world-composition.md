@@ -55,6 +55,12 @@ agreements retain the relevant participants and terms. A patient's permission do
 spending a helper's property. Subject matter belongs to the relevant owner, even when relation
 indexing, revision checks or expiration use shared infrastructure.
 
+The [physical carriage projection](structural-loads.md) applies this distinction to material location.
+Primary inventory and explicitly builder-carried stock follow their carrier under the admitted physical
+interpretation; installed backing belongs to the assembly. Legal withdrawal rights do not make every
+owned store travel with its owner. Structural loading consumes the shared projection without creating
+another custody owner or changing the source lots, reservations or transformation history.
+
 [Co-player consent](control-permissions.md) applies this separation to control itself. Permanent actor
 entitlement, a named accepted permission and an effective controller assignment have different owners
 and lifetimes. Recording consent changes neither possession nor gameplay authority. Historical command

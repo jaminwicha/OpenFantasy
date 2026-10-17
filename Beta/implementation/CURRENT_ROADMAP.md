@@ -205,7 +205,10 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    one design comparison and a bounded measured prototype using actual Core state; do not start a
    whole-engine rewrite. The [working comparison](PLAN_STATE_COMPARISON.md) is prepared; the
    [complete-root baseline](p02/partition-state/RESULT.md) now measures actual movement and funded
-   construction in legacy and current formats, with exact reopening. Partial residency, atomic
+   construction in legacy and current formats, with exact reopening. The
+   [carriage extraction](p02/partition-state/carriage/RESULT.md) now gives structural loading and future
+   partition preparation one typed view of actual carried material, preserving legal ownership versus
+   physical placement and installed backing. Partial residency, atomic
    cross-partition publication and the selected format remain unproved/undecided. Record the decision, measured
    limits and remaining questions in the living
    plan and timeless reference. Required independent architectural review stays open while the owner

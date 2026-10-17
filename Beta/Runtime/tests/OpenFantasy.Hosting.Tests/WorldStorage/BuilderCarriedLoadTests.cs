@@ -37,6 +37,10 @@ public sealed class BuilderCarriedLoadTests
         Assert.Equal(wood.Definition, relocated.Definition);
         Assert.Equal(wood.Protection, relocated.Protection);
         Assert.Equal(wood.ReservedBy, relocated.ReservedBy);
+        var carried = WorldActorCarriage.Capture(occupied, stairs.Player);
+        Assert.Equal(stairs.Player, occupied.Inventory.Policies.Single(policy => policy.CustodianId == spare).OwnerActorId);
+        Assert.DoesNotContain(spare, carried.CustodianIds);
+        Assert.DoesNotContain(carried.CountedLots, lot => lot.LotId == wood.LotId);
         byte[] thirteen = WorldSnapshotCodec.Encode(occupied);
         Assert.Equal(thirteen, WorldSnapshotCodec.Encode(WorldSnapshotCodec.Decode(thirteen)));
 

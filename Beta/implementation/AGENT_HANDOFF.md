@@ -177,6 +177,9 @@ Next execute roadmap PLAN-STATE. The [source-backed comparison](PLAN_STATE_COMPA
 the [measured complete-root baseline](p02/partition-state/RESULT.md) now covers current-format movement,
 legacy/current funded construction and exact reopening (15 initial cases; four final diagnostic cases).
 It shows reusable bytes and broad clock-related writes, not partial residency or partition feasibility.
+The [carriage extraction](p02/partition-state/carriage/RESULT.md) now centralizes physical material
+selection in the real structural mass reader; 100 distinct affected cases pass, including actual
+movement/gift continuity and funded installation/reopening. It is a derived view, not a partition owner.
 The comparison maps the actual coupled writers and next prototype responsibilities. Select and measure
 an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,

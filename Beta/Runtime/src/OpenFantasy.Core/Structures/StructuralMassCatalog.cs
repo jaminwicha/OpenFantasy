@@ -88,41 +88,16 @@ public sealed class StructuralMassCatalog
         {
             throw new ArgumentException("The actor requires an exact body mass calibration.", nameof(world));
         }
-        HashSet<EntityId> carried = [world.GetResident(actorId).InventoryCustodianId];
-        HashSet<EntityId> installedBacking = [];
-        if (world.StructuralPolicy is not null && world.Construction is { } construction)
-        {
-            foreach (ConstructionProject project in construction.Projects.Where(value => value.BuilderActorId == actorId))
-            {
-                if (project.StockLocation != ConstructionStockLocation.BuilderCarried)
-                {
-                    throw new ArgumentException("Project stock requires an explicit spatial load owner.", nameof(world));
-                }
-                carried.Add(project.ProjectCustodianId);
-                if (project.Installed is { } installed)
-                {
-                    installedBacking.Add(installed.GuardLotId);
-                }
-            }
-        }
+        WorldActorCarriage carried = WorldActorCarriage.Capture(world, actorId);
         Dictionary<EntityId, StructuralItemMass> masses = ResolveItems(world.Production?.Recipes.AsEnumerable() ?? []);
         UInt128 load = body.Mass.Value;
-        foreach (CountedSourceLot lot in world.Inventory.Custody.Lots)
+        foreach (CountedSourceLot lot in carried.CountedLots)
         {
-            if (carried.Contains(lot.CustodianId))
-            {
-                load = checked(load + LotMass(masses, lot.Definition, lot.Quantity));
-            }
+            load = checked(load + LotMass(masses, lot.Definition, lot.Quantity));
         }
-        if (world.Production is { } production)
+        foreach (TransformedLot lot in carried.ProducedLots)
         {
-            foreach (TransformedLot lot in production.Lots)
-            {
-                if (carried.Contains(lot.CustodianId) && !installedBacking.Contains(lot.LotId))
-                {
-                    load = checked(load + LotMass(masses, lot.Definition, lot.Quantity));
-                }
-            }
+            load = checked(load + LotMass(masses, lot.Definition, lot.Quantity));
         }
         return load;
     }

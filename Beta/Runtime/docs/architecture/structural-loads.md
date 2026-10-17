@@ -28,6 +28,20 @@ custody without one of these represented locations. Thus quest delivery transfer
 builder, and installation moves mass from carried goods to the assembly. Earlier diagnostic profiles
 retain their primary-inventory-only interpretation and graph bytes.
 
+[WorldActorCarriage](../../src/OpenFantasy.Core/Worlds/WorldActorCarriage.cs) centralizes this selection
+for structural loading and other physical-location readers. It captures one admitted world's actor,
+scope and revision, exact carried custodian IDs and immutable live counted/transformed lots. It retains
+their original identities, source/output intervals, reservations and equipment flags. Installed backing
+is excluded from carried transformed lots while byproducts in the same project custodian remain carried.
+The view retains no world root, material copies with new identities, or independently mutable state.
+
+Access-policy ownership alone never adds a custodian to this physical view. Legacy profiles retain
+their original primary-inventory interpretation; this reader does not infer unadmitted placement for
+their other storages. Capture again after movement, transfer or construction when reading a newer
+world: the captured revision labels its source and is not a freshness, control or publication grant.
+This projection does not prove spatial residency or permit incomplete world admission. Partition
+preparation must still resolve actual actor, material, site, timing and authorization dependencies.
+
 [ConstructionBearingTemplate](../../src/OpenFantasy.Core/Structures/ConstructionBearingTemplate.cs)
 provides complete member ordinals, capacity, maximum horizontal span and minimum surviving support count
 for one exact construction definition. A vertical bearing requires a positive overlapping horizontal

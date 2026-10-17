@@ -163,6 +163,11 @@ The first extraction should establish these concrete responsibilities, in the ex
   facts; moving a person must not reissue the bag's lots or clone it into both locations. Immutable
   definitions remain content-pinned. Directory entries need bounded pages, not a complete-world list
   embedded in every action. Directory history and occupied-identity history are separate obligations.
+  The [carriage extraction](p02/partition-state/carriage/RESULT.md) supplies the shared physical-material
+  reader now used by structural mass calculation. It selects actual carried lots without confusing
+  withdrawal ownership with physical location; it neither admits partition owners nor establishes
+  dependency completeness. Retain its installed-backing and legacy-interpretation distinctions in
+  the prototype's owner design.
 - **Core dependency preparation:** an action-specific read set and write set, including complete
   swept-body/support geometry, neighbouring actors/structures, custody and actual obligations. Exact
   source revisions belong to the plan. Missing dependencies defer/refuse before authority changes;
