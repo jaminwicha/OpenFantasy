@@ -1,0 +1,104 @@
+{
+  "baseRevision": "8c7f6f232c8e75f7a3b0a826e69855c055783b2a",
+  "milestone": "codex/milestone-prepared-access-routes-20261017",
+  "tests": {
+    "core": {
+      "total": "1964",
+      "executed": "1964",
+      "passed": "1964",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "hosting": {
+      "total": "18",
+      "executed": "18",
+      "passed": "18",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "sourceAndDocs": {
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/GroundRouteSearch.cs": "6e8d98f70b180227b5e943730e59cc579c4fb459bbd326898a40c7bcdd8a1ad8",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialRoutes.cs": "ce5023b36efa35f314b3cd11fd0a0ee0c28302e2174642b71204887c62cf9f80",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs": "a54575e9b6256a0301e329336ca4383538e3e9ecf23e910c50325fe23faf0394",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialMovementQueries.cs": "5784803b75992e1fc99fbdbbb0b8f8b1c33496f09feb254fefd84cee1eea0b7a",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/TerrainVolumeQueries.cs": "9fd876639f939f0b78345b3ea0839bcdd81d93eabde02d6aeb816fe0c70ca66b",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/WalkingRouteSearch.cs": "3b67e7f5f237ea8f8feb5cee681f7aad07fc2e1594a5c5ab2b59567b3b62f02f",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialMovementQueries.Routes.cs": "993ef07e908294c63095ed6e4c3a0fc91fd4e2305cd5ec99c6c8c8ad5e595349",
+    "Beta/Runtime/src/OpenFantasy.Core/Spatial/SpatialRouteReadSet.cs": "db041ec53aa93dbe0813de06b68a3209eceaea3779fe8b1acb99e98ac9a34202",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialRouteReadSetTests.cs": "da30ab71b48138e76a7a389dbb96e0caf8eae1957a7e557027611ada01a010c3",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SpatialOccupancyPreparationTests.cs": "362327dff017716e55fbaeae3fb47b2f98d980367d22ff3b6db24ebeb21c4d0e",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "6355e96d01aafb7e72cd6f38711ec1c908d0b8addbdd8c3c35220c6186a2728b",
+    "Beta/Runtime/docs/architecture/materials-and-activities.md": "7340b3bbbda96d23f3d186101602aba883e379e5404d496ea12f60e0897bce17",
+    "Beta/implementation/CURRENT_ROADMAP.md": "d54b2f2968f7e6633063ae526cdcb6f713e0c723864f73c0efef602addfd495e",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md": "4db7c6a8a5b2d79414b988b4375b51da359b4de7a7fe5c3f4264dfd30cc821db",
+    "Beta/implementation/AGENT_HANDOFF.md": "cd2208a7e151dc3ffc295940334e4c7edd8360b940ba8643bb698f7f3e232e92",
+    "Beta/implementation/GIT_MILESTONES.md": "0b4ff516b42ff61fa8372832edcad6392db6450da907e6ccdc7e2e8cdd20b4d4",
+    "Beta/implementation/p02/partition-state/prepared-routes/RESULT.md": "153b45efa0fb143560f80ac03199c5197eaaa0ee75f869f9a96db45f9a0024ea"
+  },
+  "binaries": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "6fdab120d3b9091a54a69583e4e34aec4871f8619bb71d0229d7bd0df14c38e1",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "01781c9837bf65463c5c2c40f2e97f4ec9b34839345266e2ad8cb175970d7ffe",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "6fdab120d3b9091a54a69583e4e34aec4871f8619bb71d0229d7bd0df14c38e1",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "9478e555b9969342d4d7d332468e26608b11f499c745fd17dca9a0d5ba140ce0",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "bf3597f6bc00b50331af9614cfb19660c34910e8ad9d911c3148a7d20f5e37b8"
+  },
+  "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "advisorySha256": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "frozenTrackedSpecUnchanged": true,
+  "authoredWhitespace": "pass",
+  "independentReview": "unrun; owner orchestration pause",
+  "offscreenWorkAndPartitionPublication": "open",
+  "nativeQualification": "not rerun; previous rendered evidence retains original source/binaries",
+  "documentation": {
+    "command": [
+      "python3",
+      "Beta/tools/check_documentation.py",
+      "--work-record",
+      "Beta/implementation/p02/partition-state/prepared-routes/RESULT.md",
+      "--files",
+      "Beta/Runtime/docs/architecture/world-and-geography.md",
+      "Beta/Runtime/docs/architecture/materials-and-activities.md",
+      "Beta/implementation/CURRENT_ROADMAP.md",
+      "Beta/implementation/PLAN_STATE_COMPARISON.md",
+      "Beta/implementation/AGENT_HANDOFF.md",
+      "Beta/implementation/GIT_MILESTONES.md",
+      "Beta/implementation/p02/partition-state/prepared-routes/RESULT.md"
+    ],
+    "exitCode": 0,
+    "stdout": "{\n  \"accepted\": true,\n  \"scope\": \"Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance\",\n  \"filesChecked\": 7,\n  \"workRecord\": \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/prepared-routes/RESULT.md\",\n  \"errors\": []\n}\n",
+    "stderr": "",
+    "preCommitLiveRecheck": {
+      "exitCode": 0,
+      "stdout": "{\n  \"accepted\": true,\n  \"scope\": \"Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance\",\n  \"filesChecked\": 7,\n  \"workRecord\": \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/prepared-routes/RESULT.md\",\n  \"errors\": []\n}\n"
+    }
+  },
+  "concurrentChanges": {
+    "scope": "Separate language-assessment roadmap/handoff sections, Beta/AGENTS.md and two new assessment/evidence files",
+    "action": "Preserve working files; private index includes only owned roadmap/handoff hunks",
+    "ownedRoadmapSha256": "d54b2f2968f7e6633063ae526cdcb6f713e0c723864f73c0efef602addfd495e",
+    "observedOtherRow": "| Pure C#, decoupled core | [Language decision](CORE_LANGUAGE_CPP_ASSESSMENT.md) retained as research; owner chose C#. No automatic Rust/C++ kernel/IPC work even where frozen P03 wording offers it. Keep measured performance gates; optimize within C# unless the owner changes the decision. Reaffirmed 2026-10-17 by the [Rust assessment](CORE_LANGUAGE_RUST_ASSESSMENT.md): fully C#, no Rust kernel, engine change or Lattice migration; reassessment is bound to its named triggers. |"
+  }
+}

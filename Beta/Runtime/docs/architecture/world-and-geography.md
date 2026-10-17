@@ -824,6 +824,33 @@ successors reproduces page revisions and pins. Capturing directly at a later roo
 lineage and does not reconstruct earlier page revisions. See [persistence/history](persistence-and-history.md)
 for the distinction between this derived index and canonical ownership.
 
+### Routes over bounded prepared reads
+
+[SpatialRouteReadSet](../../src/OpenFantasy.Core/Spatial/SpatialRouteReadSet.cs) joins resolved terrain
+and occupancy reads with the same scope and exact rectangular boundary. It selects an explicit ground
+support interpretation and retains those immutable dependencies. Actor body definitions, colliders and
+bearing surfaces come from the pinned occupancy detail; no synthetic or partially admitted local world
+is constructed. The caller supplies complete metadata and admitted detail, as for movement preparation.
+
+Both prepared and complete-scene routes use the same ground and walking search implementations over
+[SpatialMovementQueries](../../src/OpenFantasy.Core/Spatial/SpatialMovementQueries.Routes.cs). The
+algorithms retain cardinal ordering, directed stair transitions, waypoints, expansion/transition budgets
+and refusal distinctions. A returned route is geometric evidence only; it neither moves the actor nor
+grants control, work, timing, structural capacity or a construction material transaction.
+
+Prepared queries restrict terrain availability to the declared read boundary, including body, swept
+volume and support probes. Cells outside it remain unavailable even when a selected terrain archive
+contains them. Search cannot use extra decoded cells to detour through unchecked occupancy. Reaching
+the boundary may yield `Unavailable`; it does not prove that no route exists in a larger qualified read.
+Callers must choose enough space for the actor's actual body and supporting geometry. A narrow successful
+route proves its checked connections, not that it matches every route a larger search might discover.
+
+`ValidateCurrent` checks the occupancy page pins, terrain references and support interpretation.
+Arrivals, departures and relevant geometric mutations invalidate those reads. The owning transaction
+must maintain freshness through publication and separately validate every nonspatial prerequisite.
+Complete-scene queries retain their original available terrain extent; the additional boundary applies
+only when explicitly supplied by prepared reads.
+
 ### Joined world movement prerequisites
 
 [WorldMovementPrerequisites](../../src/OpenFantasy.Core/Worlds/WorldMovementPrerequisites.cs) joins

@@ -198,7 +198,10 @@ now select geometric detail without constructing a complete scene: 180 affected 
 terrain archive. This is selected-I/O evidence only. The
 [occupancy publication boundary](p02/partition-state/occupancy-publication/RESULT.md) now atomically
 updates complete metadata and reconciles exact ordinary saved roots, with historical reconstruction
-and before/after-commit interruption coverage. It remains a derived index; complete action closure,
+and before/after-commit interruption coverage. It remains a derived index.
+[Prepared route queries](p02/partition-state/prepared-routes/RESULT.md) now share the ordinary searches
+with exact bounded reads, preserving construction-access semantics and refusing unchecked detours.
+Complete action closure,
 ownership transfer, absent-detail work and atomic publication/history remain the next prototype work.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,

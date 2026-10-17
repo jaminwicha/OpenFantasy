@@ -205,6 +205,11 @@ The first extraction should establish these concrete responsibilities, in the ex
   through publication interruptions. This advances index mutation, not canonical owner transfer or
   partial simulation. All metadata remains resident; empty-page history consumes the explicit budget.
   Coupled actor/material/work roots and durable index publication still need the integrated design.
+  [Prepared route queries](p02/partition-state/prepared-routes/RESULT.md) share ordinary ground/stair
+  search with bounded selected geometry. Extra decoded terrain outside the declared occupancy boundary
+  cannot supply a detour. This addresses construction's required-access query dependency; it does not
+  remove complete placement/admission or authorize time-only offscreen work. Supply, tool, control,
+  exposure, site, all required access and eventual material/identity publication still form one work step.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

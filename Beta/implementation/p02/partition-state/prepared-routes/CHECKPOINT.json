@@ -1,0 +1,6 @@
+{
+  "ref": "codex/checkpoint-before-prepared-routes-20261017",
+  "revision": "8c7f6f232c8e75f7a3b0a826e69855c055783b2a",
+  "scope": "Clean runtime before sharing route kernels with bounded prepared reads; unrelated staging excluded.",
+  "verification": "190 affected occupancy-publication cases passed; full partition/work proof remains open."
+}

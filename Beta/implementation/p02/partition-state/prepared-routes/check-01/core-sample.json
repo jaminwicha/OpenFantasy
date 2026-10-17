@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/usr/bin/sample",
+    "98540",
+    "1",
+    "-file",
+    "Beta/implementation/p02/partition-state/prepared-routes/check-01/core-sample.txt"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "Sampling process 98540 for 1 second with 1 millisecond of run time between samples\nSampling completed, processing symbols...\nSample analysis of process 98540 written to file Beta/implementation/p02/partition-state/prepared-routes/check-01/core-sample.txt\n",
+  "seconds": 2.9263521670363843
+}

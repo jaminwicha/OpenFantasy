@@ -76,11 +76,8 @@ public sealed partial class LocalSpatialSnapshot
         ? actor : throw new ArgumentException("The actor is outside this admitted local spatial set.", nameof(actorId));
 
     /// <summary>Checks this actor's actual body at candidate feet, excluding only its own current occupancy.</summary>
-    public SpatialOccupancy QueryOccupancy(EntityId actorId, SubunitPosition feet)
-    {
-        ActorPresence actor = GetActor(actorId);
-        return QueryVolume(actorId, BodyVolume.At(feet, actor.Condition.Definition.ClearanceDimensions));
-    }
+    public SpatialOccupancy QueryOccupancy(EntityId actorId, SubunitPosition feet) =>
+        _movement.QueryOccupancy(actorId, feet);
 
     /// <summary>Prepares bounded cardinal movement under admitted contact rules; stepped worlds derive destination elevation.</summary>
     public SpatialMoveResult PrepareMove(EntityId actorId, ulong expectedRevision, long deltaX, long deltaY) =>

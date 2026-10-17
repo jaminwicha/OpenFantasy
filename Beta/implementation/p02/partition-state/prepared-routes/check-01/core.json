@@ -1,0 +1,13 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/prepared-routes/check-01/core.trx"
+  ],
+  "exitCode": 0,
+  "seconds": 175.46051975002047,
+  "deadlineSeconds": 180
+}

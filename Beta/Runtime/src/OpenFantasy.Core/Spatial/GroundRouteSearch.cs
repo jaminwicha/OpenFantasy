@@ -10,13 +10,13 @@ internal sealed class GroundRouteSearch
 {
     internal const int MaximumExpansions = 256;
     private static readonly (long X, long Y)[] Directions = [(-256, 0), (0, -256), (0, 256), (256, 0)];
-    private readonly LocalSpatialSnapshot _space;
+    private readonly SpatialMovementQueries _space;
     private readonly EntityId _actorId;
     private readonly int _budget;
     private bool _sawMissing;
     private bool _sawNumericLimit;
 
-    internal GroundRouteSearch(LocalSpatialSnapshot space, EntityId actorId, int maximumExpansions)
+    internal GroundRouteSearch(SpatialMovementQueries space, EntityId actorId, int maximumExpansions)
     {
         ValidateBudget(maximumExpansions);
         _space = space;

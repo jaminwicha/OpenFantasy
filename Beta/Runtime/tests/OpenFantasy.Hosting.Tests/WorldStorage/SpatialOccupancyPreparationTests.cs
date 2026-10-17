@@ -57,6 +57,10 @@ public sealed class SpatialOccupancyPreparationTests
             var result = prepared.Evaluate(terrain);
             Assert.Equal(SpatialMoveStatus.Prepared, result.Status);
             Assert.Equal(mover.Feet.Offset(-32, 0, 0), result.Candidate!.Feet);
+            var route = new SpatialRouteReadSet(terrain, detail, GroundSupportMode.TerrainOnly)
+                .QueryGroundRoute(mover.ActorId, mover.Feet, result.Candidate.Feet);
+            Assert.Equal(GroundRouteStatus.Reachable, route.Status);
+            Assert.Equal(result.Candidate.Feet, route.Waypoints.Last());
             Assert.Single(prepared.Actors);
             prepared.ValidateCurrentDirectory(catalog.Pages.ReadPage, catalog.Terrain,
                 GroundSupportMode.TerrainOnly, StructureSupportMode.TerrainOnly);

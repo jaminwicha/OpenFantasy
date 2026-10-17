@@ -24,7 +24,9 @@ internal sealed partial class SpatialMovementQueries
         _groundSupport = groundSupport;
     }
 
-    private ActorPresence GetActor(EntityId actorId) => _actors.TryGetValue(actorId, out ActorPresence? actor)
+    internal GroundSupportMode GroundSupport => _groundSupport;
+
+    internal ActorPresence GetActor(EntityId actorId) => _actors.TryGetValue(actorId, out ActorPresence? actor)
         ? actor : throw new ArgumentException("The actor is outside this admitted local spatial set.", nameof(actorId));
 
     internal SpatialMoveResult PrepareMove(EntityId actorId, ulong expectedRevision, long deltaX, long deltaY)

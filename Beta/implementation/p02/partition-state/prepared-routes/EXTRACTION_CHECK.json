@@ -1,0 +1,9 @@
+{
+  "base": "8c7f6f232c8e75f7a3b0a826e69855c055783b2a",
+  "checks": {
+    "GroundRouteSearch.cs": true,
+    "WalkingRouteSearch.cs": true,
+    "GroundSegmentBodyUnchanged": true
+  },
+  "scope": "Search algorithms unchanged except dependency type; ground segment body unchanged except constant qualification. Does not replace runtime verification."
+}

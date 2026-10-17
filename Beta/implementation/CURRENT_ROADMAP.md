@@ -237,6 +237,9 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    complete metadata catalogs and atomically replaces affected pages/identity references. Its derived
    world adapter follows exact saved roots and reconstructs index history after before/after-commit
    interruptions. This is immutable index publication, not canonical cross-partition ownership transfer.
+   [Prepared access routes](p02/partition-state/prepared-routes/RESULT.md) now share the ordinary flat
+   and stair search kernels without a complete local scene; queries cannot escape their declared
+   terrain/occupancy boundary. Actual funded construction retains its original access and time rules.
    The next integrated
    proof must establish complete directory ownership, actual transfer with cargo, absent-detail funded
    work and atomic recovery/history; additional isolated read helpers cannot close PLAN-STATE.

@@ -4,7 +4,7 @@ using OpenFantasy.Core.Worlds;
 namespace OpenFantasy.Core.Spatial;
 
 /// <summary>Bounded bidirectional search through validated ordinary movement edges, including derived elevation.</summary>
-internal sealed class WalkingRouteSearch(LocalSpatialSnapshot space, EntityId actorId, int maximumExpansions)
+internal sealed class WalkingRouteSearch(SpatialMovementQueries space, EntityId actorId, int maximumExpansions)
 {
     internal GroundRouteResult Find(SubunitPosition from, SubunitPosition destination)
     {

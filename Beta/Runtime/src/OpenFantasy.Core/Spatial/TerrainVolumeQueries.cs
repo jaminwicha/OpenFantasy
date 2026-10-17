@@ -3,10 +3,11 @@ using OpenFantasy.Core.Terrain;
 namespace OpenFantasy.Core.Spatial;
 
 /// <summary>Reads complete bounded full-cube volume and footprint dependencies, including region borders.</summary>
-internal sealed class TerrainVolumeQueries(IReadOnlyList<TerrainRegionSnapshot> regions)
+internal sealed class TerrainVolumeQueries(IReadOnlyList<TerrainRegionSnapshot> regions, TerrainRegionBounds? availableBounds = null)
 {
     internal TerrainCell? FindCell(CellCoordinate coordinate)
     {
+        if (availableBounds is not null && !availableBounds.Contains(coordinate)) return null;
         foreach (TerrainRegionSnapshot region in regions)
         {
             if (region.Bounds.Contains(coordinate))

@@ -88,6 +88,14 @@ a display prop plus a separately spendable item. Blocked routes, missing tools o
 defer work. Dialogue holds and unreadiness grant no work. The construction recipe is rejected by the
 ordinary instant-craft path, preventing it from bypassing required labor.
 
+Construction placement rechecks required escape connections, including connections from current actor
+positions, on every qualified paid step. A worker's absence from rendering does not waive this geometry
+or make a time-only completion lawful. The [prepared route boundary](world-and-geography.md#routes-over-bounded-prepared-reads)
+provides the shared search over exact selected geometry with an explicit availability boundary. It does
+not replace `ConstructionPlanner`, complete placement/admission, funding, tools, actual exposure or
+identity/capacity checks. Offscreen execution must join those dependencies and revalidate affected
+access after interventions; a retained reachable route is not perpetual permission to build.
+
 The explicit [constructed-footing composition](constructed-footing.md) derives actor-bearing surfaces
 from those same completed physical members. Actor support is exact in XY; it does not establish load
 strength or allow the construction geometry to exist before its work and material publication.

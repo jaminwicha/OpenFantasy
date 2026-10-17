@@ -11,7 +11,7 @@ public sealed partial class LocalSpatialSnapshot
 
     public GroundRouteResult QueryWalkingRoute(EntityId actorId, SubunitPosition from, SubunitPosition destination,
         int maximumExpansions = DefaultWalkingRouteExpansions) =>
-        new WalkingRouteSearch(this, actorId, maximumExpansions).Find(from, destination);
+        new WalkingRouteSearch(_movement, actorId, maximumExpansions).Find(from, destination);
 
     public GroundRouteResult QueryGroundRoute(EntityId actorId, SubunitPosition destination,
         int maximumExpansions = GroundRouteSearch.MaximumExpansions) =>
@@ -25,18 +25,8 @@ public sealed partial class LocalSpatialSnapshot
         int maximumExpansions = GroundRouteSearch.MaximumExpansions) =>
         GroundSupport == GroundSupportMode.SteppedTerrainAndConstruction
             ? QueryWalkingRoute(actorId, from, destination, maximumExpansions)
-            : new GroundRouteSearch(this, actorId, maximumExpansions).Find(from, destination);
+            : new GroundRouteSearch(_movement, actorId, maximumExpansions).Find(from, destination);
 
-    internal SpatialOccupancy QueryGroundSegment(EntityId actorId, SubunitPosition from, SubunitPosition to)
-    {
-        Int128 dx = (Int128)to.X - from.X;
-        Int128 dy = (Int128)to.Y - from.Y;
-        if (from.Z != to.Z || (dx == 0) == (dy == 0)
-            || Int128.Abs(dx) > MaximumMoveSubunits || Int128.Abs(dy) > MaximumMoveSubunits)
-        {
-            throw new ArgumentException("A route segment requires one bounded same-floor cardinal displacement.");
-        }
-        var dimensions = GetActor(actorId).Condition.Definition.ClearanceDimensions;
-        return QueryVolume(actorId, BodyVolume.At(from, dimensions).Union(BodyVolume.At(to, dimensions)));
-    }
+    internal SpatialOccupancy QueryGroundSegment(EntityId actorId, SubunitPosition from, SubunitPosition to) =>
+        _movement.QueryGroundSegment(actorId, from, to);
 }
