@@ -1,0 +1,45 @@
+{
+  "Stage": "buy-at-marla",
+  "Error": "Xunit.Sdk.TrueException: Native travel did not make actual route progress.\n   at Xunit.Assert.True(Boolean condition, String userMessage) in /_/src/xunit.v3.assert/Asserts/BooleanAsserts.cs:line 117\n   at OpenFantasy.Server.Tests.NativeExpeditionTravel.MoveTogether(ValueTuple\u00602[] targets) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 54\n   at OpenFantasy.Server.Tests.NativeExpeditionTravel.Move(EntityId actor, SubunitPosition target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 24\n   at OpenFantasy.Server.Tests.NativeExpeditionTravel.Lane(EntityId actor, CellCoordinate[] corners) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 19\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.\u003C\u003Ec__DisplayClass2_2.\u003C\u003CEarned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return\u003Eg__ToOrigin|33\u003Ed.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 262\n--- End of stack trace from previous location ---\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 107\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 271\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 271",
+  "Seconds": 29.543004,
+  "Stages": [
+    {
+      "Stage": "original-earned-state-and-explicit-transition",
+      "Seconds": 14.1573173,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 200,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 25984,
+            "Y": 83424,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 325,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 26496,
+            "Y": 84608,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 330,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

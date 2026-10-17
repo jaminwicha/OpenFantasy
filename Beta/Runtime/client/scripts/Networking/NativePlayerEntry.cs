@@ -20,7 +20,8 @@ public partial class NativePlayerEntry : Node
             AddChild(new FarmGame { PlayerInvitationPath = invitation });
             return;
         }
-        if (args is ["--roster-probe", var rosterInvitation, var rosterCertificate, var mailbox])
+        if (args is [var rosterMode, var rosterInvitation, var rosterCertificate, var mailbox]
+            && rosterMode is "--roster-probe" or "--roster-expedition-probe")
         {
             GetWindow().Unfocusable = true;
             var rosterGame = new FarmGame
@@ -29,7 +30,7 @@ public partial class NativePlayerEntry : Node
                 StartPaused = true, BindWindowFocus = false
             };
             AddChild(rosterGame);
-            AddChild(new NativeRosterPlayProbe(rosterGame, mailbox));
+            AddChild(new NativeRosterPlayProbe(rosterGame, mailbox, rosterMode == "--roster-expedition-probe"));
             return;
         }
         bool background = args is ["--player-probe", _, _, _, "--background-render"];

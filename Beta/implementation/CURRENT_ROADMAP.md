@@ -57,7 +57,7 @@ It does not accept a new persistence format or close any gameplay, scale, indepe
 | Delegated paid-work recovery | Qualified within the [recovery result](p02/delegated-control-recovery/RESULT.md): 95 cases, ten new, three native; exact source/build reconciliation | Bounded checkpoint complete; populated allowance rows, grantee reacquisition and listener/socket-death proofs remain. No full reliability claim |
 | Ordinary adventure entry | Qualified solo opening and same-save trade/danger/retreat/care/sale/return/reopening; separate four-player TLS movement/reconnect | Shared participation in this journey, deeper NPC/story/environment and human acceptance remain |
 | Shared adventure opening | Two native participants gather, transfer an earned lot, craft and fund Wren; ten exact authenticated receipts and original-genesis replay | Full cooperative expedition, party-exit law, four-player journey and human acceptance remain; retained failed runs are not erased |
-| Collective withdrawal | Core committed `8fe31828`; [save transition](p02/party-withdrawal/save-transition/RESULT.md) adds explicit copied40→41 publication and original-genesis replay of the earned shared opening | Archive-crossing/pressure and in-flight withdrawal recovery, host/native integration and shared expedition remain. The storage API is not ordinary-launch support; original Core evidence retains its bounded scope. |
+| Collective withdrawal | Core41, explicit copied40→41 publication, ordinary archive cuts and storage-operator recovery, bounded two-port host/observation/wheel integration, and the [offline copied-save operator](p02/party-withdrawal/saved-expedition/RESULT.md) are qualified within their linked scopes | Complete saved native expedition, live-listener recovery, sustained1–4/scale, broader interactions, independent and human acceptance remain. Storage-operator kills do not prove listener death; ordinary opening never upgrades implicitly. |
 | Full P02 | Partial; material gameplay and presentation gaps | Every row in the P02 closure table below, integrated in one retained lineage, plus the unchanged human/native exit |
 | Complete desktop game | Broad later work remains | Complete non-mobile scope and catalogs through P11, full P12 quality/scale/campaign proof, P13 packaged desktop release |
 | Mobile completion | Later required phase | P14 actual Android/iOS/device/cross-play acceptance using the same game core |
@@ -178,7 +178,11 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    evidence, not rendered expedition acceptance. The [offline operator checkpoint](p02/party-withdrawal/saved-expedition/RESULT.md)
    now exposes exact-head preparation and create-only copied publication, plus original-genesis solo
    selection of an explicitly migrated save. Its focused managed checks do not qualify a native journey.
-   Next continue the earned shared expedition through that copy, including commerce. Preserve the full1–4, listener/reconnect/
+   The [native continuation checkpoint](p02/party-withdrawal/native-journey/RESULT.md) reopens the actual
+   interrupted two-person expedition at Active and Staging boundaries: genuine damage, both paid withdrawals,
+   one owned potion's exact use, the companion's no-dose guard and original-history replay pass.
+   The full commerce/outbound/return journey remains separately required; successful prefixes from
+   different attempts do not establish it. Preserve the full1–4, listener/reconnect/
    latency, interaction, independent/native/human obligations; fresh41 proof is not a lived-save native migration.
    Ordinary roster scenarios still use retreat law v2, which admits only a lone combatant on its
    side. Deliver the selected party-exit law through the saved journey before calling that route

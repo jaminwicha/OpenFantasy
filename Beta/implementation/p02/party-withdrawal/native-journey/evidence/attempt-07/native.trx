@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e1e71c7a-a3b8-4355-a697-6332142366a7" name="@mac 2026-10-17 14:56:03" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T14:56:03.5999370-05:00" queuing="2026-10-17T14:56:03.5999380-05:00" start="2026-10-17T14:55:32.7748600-05:00" finish="2026-10-17T14:56:03.6052840-05:00" />
+  <TestSettings name="default" id="acf0b440-10d7-4f33-915b-81eb1836e669">
+    <Deployment runDeploymentRoot="_mac_2026-10-17_14_56_03" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="210eb99f-3cdb-4d81-b9b2-38ef70f20842" testId="f477cecb-b723-9edb-15f8-a995b068b44d" testName="OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return" computerName="mac" duration="00:00:29.7051145" startTime="2026-10-17T14:55:33.7428800-05:00" endTime="2026-10-17T14:56:03.4673920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="210eb99f-3cdb-4d81-b9b2-38ef70f20842">
+      <Output>
+        <ErrorInfo>
+          <Message>Native travel did not make actual route progress.</Message>
+          <StackTrace>   at OpenFantasy.Server.Tests.NativeExpeditionTravel.MoveTogether(ValueTuple`2[] targets) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 54
+   at OpenFantasy.Server.Tests.NativeExpeditionTravel.Move(EntityId actor, SubunitPosition target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 24
+   at OpenFantasy.Server.Tests.NativeExpeditionTravel.Lane(EntityId actor, CellCoordinate[] corners) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 19
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.&lt;&gt;c__DisplayClass2_2.&lt;&lt;Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return&gt;g__ToOrigin|33&gt;d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 262
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 107
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 271
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 271
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 314
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.server.tests/bin/debug/net10.0/openfantasy.server.tests.dll" id="f477cecb-b723-9edb-15f8-a995b068b44d">
+      <Execution id="210eb99f-3cdb-4d81-b9b2-38ef70f20842" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Server.Tests.NativeSavedExpeditionTests" name="Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f477cecb-b723-9edb-15f8-a995b068b44d" executionId="210eb99f-3cdb-4d81-b9b2-38ef70f20842" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.33]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.50]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.63]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:00:30.40]       Native travel did not make actual route progress.
+[xUnit.net 00:00:30.40]       Stack Trace:
+[xUnit.net 00:00:30.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs(54,0): at OpenFantasy.Server.Tests.NativeExpeditionTravel.MoveTogether(ValueTuple`2[] targets)
+[xUnit.net 00:00:30.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs(24,0): at OpenFantasy.Server.Tests.NativeExpeditionTravel.Move(EntityId actor, SubunitPosition target)
+[xUnit.net 00:00:30.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs(19,0): at OpenFantasy.Server.Tests.NativeExpeditionTravel.Lane(EntityId actor, CellCoordinate[] corners)
+[xUnit.net 00:00:30.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs(262,0): at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.&lt;&gt;c__DisplayClass2_2.&lt;&lt;Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return&gt;g__ToOrigin|33&gt;d.MoveNext()
+[xUnit.net 00:00:30.40]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:30.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs(107,0): at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return()
+[xUnit.net 00:00:30.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs(271,0): at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return()
+[xUnit.net 00:00:30.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs(271,0): at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return()
+[xUnit.net 00:00:30.40]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs(314,0): at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return()
+[xUnit.net 00:00:30.40]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:30.43]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T14:56:03.4888130-05:00">
+        <Text>[xUnit.net 00:00:30.40]     OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,45 @@
+{
+  "Stage": "buy-at-marla",
+  "Error": "Xunit.Sdk.TrueException: Native roster stage=trade-stall, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/attempt-05/saved-expedition/c76f468b1a35fa3bf822b82b66d9f8c4/0013.response.json: System.InvalidOperationException: Sequence contains no matching element\n   at System.Linq.ThrowHelper.ThrowNoMatchException()\n   at System.Linq.Enumerable.Single[TSource](IEnumerable\u00601 source, Func\u00602 predicate)\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ChooseGiftRow(OptionButton control, String identity) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Gifts.cs:line 144\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ChooseTradeStall(EntityId market) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Trading.cs:line 87\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 155\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61\n   at Xunit.Assert.True(Boolean condition, String userMessage) in /_/src/xunit.v3.assert/Asserts/BooleanAsserts.cs:line 117\n   at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79\n   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable\u00601 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.\u003C\u003Ec__DisplayClass2_0.\u003C\u003CEarned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return\u003Eg__Send|5\u003Ed.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 296\n--- End of stack trace from previous location ---\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 110\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 264\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 264",
+  "Seconds": 34.224592,
+  "Stages": [
+    {
+      "Stage": "original-earned-state-and-explicit-transition",
+      "Seconds": 19.3154847,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 200,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 25984,
+            "Y": 83424,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 325,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 26496,
+            "Y": 84608,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 330,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

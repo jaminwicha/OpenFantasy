@@ -1,0 +1,23 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:24.83]     OpenFantasy.Server.Tests.NativeRosterJourneyTests.Four_native_players_assemble_choose_wait_and_reconnect_the_missing_required_human [FAIL]
+  Failed OpenFantasy.Server.Tests.NativeRosterJourneyTests.Four_native_players_assemble_choose_wait_and_reconnect_the_missing_required_human [24 s]
+  Error Message:
+   Native roster stage=wait, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/legacy-roster-01/roster/4073c2e750cd349c3ee91b2f7c70fb49-first/0013.response.json: System.InvalidOperationException: The accepted encounter choice did not reach both the live and presented character.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.MarketProbeDriver.Until(Func`1 predicate, String failure, Double seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 149
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ChooseWheel(FarmSemanticAction action) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 271
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 98
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.NativeRosterJourneyTests.SendChoice(Dictionary`2 processes, NativeRosterProcess actor, String verb, CancellationToken token) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterJourneyTests.Verification.cs:line 18
+   at OpenFantasy.Server.Tests.NativeRosterJourneyTests.Four_native_players_assemble_choose_wait_and_reconnect_the_missing_required_human() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterJourneyTests.cs:line 91
+   at OpenFantasy.Server.Tests.NativeRosterJourneyTests.Four_native_players_assemble_choose_wait_and_reconnect_the_missing_required_human() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterJourneyTests.cs:line 125
+   at OpenFantasy.Server.Tests.NativeRosterJourneyTests.Four_native_players_assemble_choose_wait_and_reconnect_the_missing_required_human() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterJourneyTests.cs:line 125
+   at OpenFantasy.Server.Tests.NativeRosterJourneyTests.Four_native_players_assemble_choose_wait_and_reconnect_the_missing_required_human() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterJourneyTests.cs:line 145
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/legacy-roster-01/native.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 24 s - OpenFantasy.Server.Tests.dll (net10.0)

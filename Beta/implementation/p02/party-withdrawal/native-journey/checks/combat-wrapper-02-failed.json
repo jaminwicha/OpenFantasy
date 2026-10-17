@@ -1,0 +1,5 @@
+{
+  "status": "failed-before-execution",
+  "error": "Global placeholder replacement changed OPENFANTASY_SAVED_COMBAT into invalid OPENFANTASY_SAVED_combat-02; Python SyntaxError. No test or native process started.",
+  "correction": "Replace the quoted directory placeholder only."
+}

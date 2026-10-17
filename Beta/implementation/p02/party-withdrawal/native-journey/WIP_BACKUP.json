@@ -1,0 +1,17 @@
+{
+  "archive": "/Users/alucinor/.local/share/openfantasy/checkpoints/20261017T200159Z/withdrawal-native-wip.tar.gz",
+  "sha256": "cfb88c820ab6d879bdde8ff7c89f6a9838fe9f943cdc79ff232869e5959ff295",
+  "scope": [
+    "Beta/Runtime/client/scripts/Networking/NativePlayerEntry.cs",
+    "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Expedition.cs",
+    "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Trading.cs",
+    "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs",
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs",
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs",
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravelTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs",
+    "Beta/implementation/p02/party-withdrawal/native-journey"
+  ],
+  "restore": "Extract into an empty recovery directory, inspect the preserved paths, then copy selected files back. Do not overwrite unrelated work.",
+  "state": "WIP: four route/rendezvous managed cases pass; no complete native expedition; failed/interrupted attempts retained."
+}

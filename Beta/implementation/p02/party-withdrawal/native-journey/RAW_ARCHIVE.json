@@ -1,0 +1,19 @@
+{
+  "archive": "/Users/alucinor/.local/share/openfantasy/checkpoints/20261017T204948Z/withdrawal-native-evidence.tar.gz",
+  "sha256": "1b67e40fdd3239528691205945dbb6062da87c9b948bf9fe35f19d10814881ea",
+  "bytes": 68261182,
+  "scope": "Complete closed native-journey evidence through attempt-12, combat-05 and legacy-roster-02; all prior failures/stops, source/dependency pins, screenshots, mailboxes and saves. No process is running for these checks.",
+  "restore": "Verify this archive SHA256. Extract into a new empty directory. Compare paths and hashes before copying needed packet files into the checkout; do not overwrite newer work. Source code and documentation are preserved in the milestone commit, with earlier WIP refs in this packet.",
+  "reproduction": {
+    "dotnet": "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "godot": "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+    "nativeEnvironment": [
+      "OPENFANTASY_DOTNET",
+      "OPENFANTASY_GODOT",
+      "OPENFANTASY_NATIVE_PLAYER_EVIDENCE (new empty output directory)"
+    ],
+    "savedCombatInput": "OPENFANTASY_SAVED_COMBAT = restored attempt-10 or attempt-12 saved-expedition/world.sqlite3; exact input hash is enforced by the test.",
+    "fullExpeditionInput": "OPENFANTASY_EARNED_SHARED_SAVE = separately retained shared-adventure/attempt-06/shared-adventure/world.sqlite3; exact original hash is enforced.",
+    "commands": "Each evidence/<run>/process.json records the exact test selector and process bound. Native combat bound180, legacy roster240, complete expedition900 seconds; per-operation limits remain unchanged."
+  }
+}

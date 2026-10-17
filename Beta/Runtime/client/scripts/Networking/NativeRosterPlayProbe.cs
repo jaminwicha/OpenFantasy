@@ -21,11 +21,11 @@ internal sealed partial class NativeRosterPlayProbe : Node
     private bool _nativeFocus;
     private bool _initialFocusGuard;
 
-    internal NativeRosterPlayProbe(FarmGame game, string directory)
+    internal NativeRosterPlayProbe(FarmGame game, string directory, bool expedition = false)
     {
         _game = game;
         _directory = Path.GetFullPath(directory);
-        _driver = new MarketProbeDriver(this, game, "roster-keyboard-controller", () => _stage, 240);
+        _driver = new MarketProbeDriver(this, game, "roster-keyboard-controller", () => _stage, expedition ? 900 : 240);
         game.ObserveSubmissions(value => _submissions.Add(value));
     }
 
@@ -90,11 +90,15 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "pause": await Pause(true); break;
             case "resume": await Pause(false); break;
             case "walk": await Walk(request.GetProperty("Direction").GetString()!); break;
+            case "walk-to": await WalkTo(request.GetProperty("Direction").GetString()!); break;
+            case "walk-to-threat": await WalkTo(request.GetProperty("Direction").GetString()!, allowEncounter: true); break;
             case "home-target": await HomeTarget(RequestActor(request)); break;
             case "home-action": await HomeAction(request.GetProperty("Direction").GetString()!); break;
             case "enter": await Enter(EntityId.Parse(request.GetProperty("Target").GetString()!)); break;
             case "wait": await ChooseWait(); break;
             case "strike": await ChooseWheel(FarmSemanticAction.Strike); break;
+            case "retreat": await ChooseWithdrawal(cancel: false); break;
+            case "cancel-withdrawal": await ChooseWithdrawal(cancel: true); break;
             case "read-outcome": await ChooseWheel(FarmSemanticAction.ReleaseEncounter); break;
             case "capture": await Capture(); break;
             case "capture-control": await CaptureControl(); break;
@@ -146,8 +150,10 @@ internal sealed partial class NativeRosterPlayProbe : Node
             case "construction-supplier": await ConstructionSupplier(request.GetProperty("Direction").GetString()!); break;
             case "capture-construction": await CaptureConstruction(request.GetProperty("Direction").GetString() ?? "construction", RequestActor(request)); break;
             case "trade-open": await OpenTrade(); break;
+            case "trade-browse": await OpenTrade(browseStalls: true); break;
             case "trade-close": await CloseTrade(); break;
             case "trade-direction": await ChooseTradeDirection(request.GetProperty("Direction").GetString()!); break;
+            case "trade-stall": await ChooseTradeStall(RequestActor(request)); break;
             case "trade-lot": await ChooseTradeLot(RequestActor(request)); break;
             case "trade-show": await ShowTradeLot(); break;
             case "trade-stop-showing": await StopTradeShowing(); break;
@@ -259,6 +265,11 @@ internal sealed partial class NativeRosterPlayProbe : Node
             "The captured wheel terms no longer match the observed encounter boundary; no action was submitted or retried.");
         _driver.Joy(JoyButton.A);
         await Applied(before);
+        FarmSubmission accepted = _submissions[^1];
+        if (accepted.Offer.Intent is QueueEncounterWaitIntent or QueueEncounterAbilityIntent
+            or QueueEncounterRetreatIntent or CancelEncounterWithdrawalIntent)
+            await _driver.Until(() => EncounterEffectObserved(accepted),
+                "The accepted encounter choice did not reach both the live and presented character.");
     }
 
     private bool MatchesView(FarmActionOffer offer)
@@ -272,6 +283,10 @@ internal sealed partial class NativeRosterPlayProbe : Node
             QueueEncounterAbilityIntent ability => View.EncounterActions is { } actions
                 && ability.EncounterId == actions.EncounterId && ability.ExpectedTimingRevision == actions.TimingRevision,
             AcknowledgeEncounterOutcomeIntent reading => reading == View.EncounterOutcome?.Acknowledgment,
+            QueueEncounterRetreatIntent retreat => View.Retreat?.Offer is { CanQueue: true } offered
+                && retreat.EncounterId == offered.EncounterId && retreat.ExpectedTimingRevision == offered.TimingRevision
+                && retreat.Destination == offered.Destination && retreat.Route.SequenceEqual(offered.Route),
+            CancelEncounterWithdrawalIntent cancel => cancel == View.Retreat?.Withdrawal?.Cancellation,
             _ => false
         };
     }

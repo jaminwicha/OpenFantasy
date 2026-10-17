@@ -1,0 +1,31 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Server -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Server/bin/Debug/net8.0/OpenFantasy.Server.dll
+  OpenFantasy.Host -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll
+  OpenFantasy.Server.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:19.05]     OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return [FAIL]
+  Failed OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return [18 s]
+  Error Message:
+   Native roster stage=walk-to, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/attempt-03/saved-expedition/c76f468b1a35fa3bf822b82b66d9f8c4/0001.response.json: System.InvalidOperationException: Released travel input repeatedly missed its target.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.WalkTo(String coordinates, Boolean allowEncounter) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Expedition.cs:line 51
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 93
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.NativeExpeditionTravel.Send(EntityId actor, SubunitPosition target, Boolean allowEncounter) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 45
+   at OpenFantasy.Server.Tests.NativeExpeditionTravel.Move(EntityId actor, SubunitPosition target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 38
+   at OpenFantasy.Server.Tests.NativeExpeditionTravel.Lane(EntityId actor, CellCoordinate[] corners) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 18
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.<>c__DisplayClass2_1.<<Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return>g__ToOrigin|25>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 251
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 107
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 260
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 260
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 287
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/attempt-03/native.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 18 s - OpenFantasy.Server.Tests.dll (net10.0)

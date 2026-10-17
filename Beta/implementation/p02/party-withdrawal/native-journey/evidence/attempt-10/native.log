@@ -1,0 +1,25 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:03:22.67]     OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return [FAIL]
+  Failed OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return [3 m 22 s]
+  Error Message:
+   Native roster stage=wait, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/attempt-10/saved-expedition/d8fb874274604fcaffa320d13f228fd6/0115.response.json: System.InvalidOperationException: The captured wheel terms no longer match the observed encounter boundary; no action was submitted or retried.
+   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ChooseWheel(FarmSemanticAction action) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 263
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 98
+   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79
+   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable`1 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.<>c__DisplayClass2_0.<<Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return>g__Send|5>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 320
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.<>c__DisplayClass2_0.<<Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return>g__ChooseDueWaits|34>d.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 268
+--- End of stack trace from previous location ---
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 153
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 272
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 272
+   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 315
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/attempt-10/native.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 3 m 22 s - OpenFantasy.Server.Tests.dll (net10.0)

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="378d4dd4-f471-4ee7-8dd8-7553f8146abd" name="@mac 2026-10-17 15:07:53" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T15:07:53.8971740-05:00" queuing="2026-10-17T15:07:53.8971740-05:00" start="2026-10-17T15:02:22.3498670-05:00" finish="2026-10-17T15:07:53.9108710-05:00" />
+  <TestSettings name="default" id="fcc86690-6816-448e-9569-c3ef1a716086">
+    <Deployment runDeploymentRoot="_mac_2026-10-17_15_07_53" />
+  </TestSettings>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="0" executed="0" passed="0" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 10.0.12)
+[xUnit.net 00:00:00.14]   Discovering: OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.29]   Discovered:  OpenFantasy.Server.Tests
+[xUnit.net 00:00:00.41]   Starting:    OpenFantasy.Server.Tests
+[xUnit.net 00:05:31.02]       Test process crashed with exit code 1.
+[xUnit.net 00:05:31.02]   Finished:    OpenFantasy.Server.Tests (ID = 'e6ab87189ae3d2dc5e7144843859474124dd0c727b462beddda3ca1582589206')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T15:07:53.7880060-05:00">
+        <Text>[xUnit.net 00:05:31.01]     [FATAL ERROR] Xunit.Sdk.TestPipelineException</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T15:07:53.8082880-05:00">
+        <Text>[xUnit.net 00:05:31.02] Catastrophic failure: Test process crashed with exit code 1.</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Warning" timestamp="2026-10-17T15:07:53.8083200-05:00">
+        <Text>No test matches the given testcase filter `FullyQualifiedName~NativeSavedExpeditionTests` in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -23,6 +23,7 @@ public partial class FarmGame
     // Passive probe observations of the same session and presented boundary used by ordinary input.
     internal LocalSelectedPlayerObservation? CurrentSelection => _session?.ReadSelection();
     internal LocalSelectedPlayerObservation? PresentedSelection => _presentedSelection;
+    internal LocalWorldView? PresentedHomeView { get; private set; }
     internal bool ControlOperationPending => _controlOperation is not null || _controlBoardRead is not null;
     internal string? LastControlOperationStatus { get; private set; }
     internal WorldActionCommand? LastControlPermissionCommand { get; private set; }

@@ -397,6 +397,7 @@ public partial class FarmGame : Node2D
             _wheel.Present(view, _session.World.ReadRunState(), _input.Permits(Situation(), FarmSemanticAction.ConfirmWheel), _session.IsRemote);
         }
         PresentMarket(view);
+        PresentedHomeView = view;
     }
 
     public override void _PhysicsProcess(double delta)

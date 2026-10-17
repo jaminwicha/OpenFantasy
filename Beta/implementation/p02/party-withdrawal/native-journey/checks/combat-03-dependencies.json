@@ -1,0 +1,12 @@
+{
+  "dependencyCount": 1410,
+  "changedDuringDeclaredTestRebuild": [
+    {
+      "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll",
+      "before": "34671793e9213ec3f859221c44cbd9e8d8be69de8a5f0942b5621762a53c324b",
+      "after": "c347bde2f784fcdd9d5ad9b15b7443bf5998d83be035c22464ebab7d8026b54a"
+    }
+  ],
+  "sourceDifferences": [],
+  "scope": "Client dependency family is compared after the passing run. The invocation explicitly rebuilt the Server test assembly; its changed source is retained. This is not a byte-identity claim for rebuilt assemblies."
+}

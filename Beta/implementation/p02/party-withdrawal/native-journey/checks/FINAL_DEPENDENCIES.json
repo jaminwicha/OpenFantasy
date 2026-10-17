@@ -1,0 +1,27 @@
+{
+  "legacy-roster-02": {
+    "dependencyCount": 1410,
+    "binaryDifferences": [
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll",
+        "before": "594712d9dfd97f9c5d8b06679b84a06de1b1f6c589c13666c652ec5c34db0a2e",
+        "after": "8db4411622c6e8c633a19c4ac84cc7e20c2c1a1ef87235f5bfe3c78c68ba7828"
+      }
+    ],
+    "sourceDifferences": [
+      "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeEncounterObservationBarrier.cs"
+    ]
+  },
+  "combat-05": {
+    "dependencyCount": 1410,
+    "binaryDifferences": [
+      {
+        "path": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll",
+        "before": "594712d9dfd97f9c5d8b06679b84a06de1b1f6c589c13666c652ec5c34db0a2e",
+        "after": "8db4411622c6e8c633a19c4ac84cc7e20c2c1a1ef87235f5bfe3c78c68ba7828"
+      }
+    ],
+    "sourceDifferences": []
+  },
+  "review": "Both client dependency families are unchanged. combat-05 explicitly rebuilds only the Server test DLL. The intervening source edit for legacy-roster-02 is confined to NativeEncounterObservationBarrier, used by the new expedition fixtures, not NativeRosterJourneyTests or its own SendChoice barrier; shared NativeRosterProcess and legacy test/discovery code are unchanged. No broader acceptance is inherited."
+}

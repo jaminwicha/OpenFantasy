@@ -19,7 +19,7 @@ internal sealed partial class NativeRosterPlayProbe
         ? (IReadOnlyList<PaidQuoteView>?)controlled.Trade?.Quotes ?? Array.Empty<PaidQuoteView>() : Selected.HomeView.PaidQuotes;
     private Task TradeUntil(Func<bool> predicate, string message) => _driver.Until(predicate, message, 5);
 
-    private async Task OpenTrade()
+    private async Task OpenTrade(bool browseStalls = false)
     {
         await CloseSelectionPanel();
         MarketProbeDriver.Require(!_game.IsInventoryOpen && !_game.IsRecipesOpen && !_game.HasPendingAction,
@@ -29,8 +29,9 @@ internal sealed partial class NativeRosterPlayProbe
         if (!_game.IsMarketOpen)
         {
             MarketProbeDriver.Require(!_game.IsWheelOpen, "Close the previous wheel before opening trade.");
-            await TradeUntil(() => _game.CurrentOffers.ContainsKey(FarmSemanticAction.TradeBuy)
-                && _game.PresentedSelection?.Selection == selection, "The selected shopper has no presented trade choice.");
+            var opening = browseStalls ? FarmSemanticAction.TradeOffers : FarmSemanticAction.TradeBuy;
+            await TradeUntil(() => _game.CurrentOffers.GetValueOrDefault(opening)?.CanExecute == true
+                && _game.PresentedSelection?.Selection == selection, "The selected shopper has no executable presented trade choice.");
             _driver.Tap(Key.V);
             await TradeUntil(() => _game.IsWheelOpen, "The real action wheel did not open.");
             for (int pages = 0; TradeWheel.Model?.PageName != "Market"; pages++)
@@ -39,9 +40,9 @@ internal sealed partial class NativeRosterPlayProbe
                 _driver.Tap(Key.Q);
                 await _driver.Frame();
             }
-            _driver.Joy(JoyButton.DpadUp);
-            await TradeUntil(() => TradeWheel.Model?.Selected?.Action == FarmSemanticAction.TradeBuy,
-                "The Market Buy sector was not selected.");
+            _driver.Joy(browseStalls ? JoyButton.DpadDown : JoyButton.DpadUp);
+            await TradeUntil(() => TradeWheel.Model?.Selected?.Action == opening
+                && TradeWheel.Model.Selected.Offer.CanExecute, "The requested Market sector was not selected and executable.");
             _driver.Joy(JoyButton.A);
         }
         await TradeUntil(() => _game.IsMarketOpen && TradePanel.IsOpen
@@ -78,6 +79,19 @@ internal sealed partial class NativeRosterPlayProbe
         await ChooseGiftRow(TradePanel.GetNode<OptionButton>("%MarketLot"), lot.ToString());
         MarketProbeDriver.Require(_game.MarketDraft.LotId == lot && _game.MarketDraft.Review is null,
             "The real lot row did not select the exact received lot.");
+    }
+
+    private async Task ChooseTradeStall(EntityId market)
+    {
+        await OpenTrade();
+        int before = _submissions.Count;
+        int row = Array.FindIndex(TradeMarkets!.Stalls.ToArray(), stall => stall.MarketId == market) + 1;
+        MarketProbeDriver.Require(row > 0, "The requested market is absent from the actual stall rows.");
+        await _driver.Choose(TradePanel.GetNode<OptionButton>("%MarketStall"), row);
+        await TradeUntil(() => _game.MarketDraft.MarketId == market && !_game.HasMarketRequestInFlight,
+            "The actual stall selector did not settle on the requested market.");
+        MarketProbeDriver.Require(_submissions.Count == before && _game.MarketDraft.Review is null,
+            "Choosing a stall submitted work or retained another stall's reviewed terms.");
     }
 
     private async Task ShowTradeLot()

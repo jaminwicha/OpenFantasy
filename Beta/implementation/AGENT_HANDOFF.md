@@ -154,8 +154,16 @@ marker is `codex/milestone-withdrawal-host-20261017`. The subsequent
 preparation and copied publication; the solo seed/name opener accepts a recorded40→41 continuation of
 its exact original genesis. Eleven focused managed cases pass, and the Godot C# build passes. The native
 runner can encode collective observations, but no new native expedition is qualified by this checkpoint.
-Its marker is `codex/milestone-withdrawal-operator-20261017`. Next continue the earned shared save's
-native expedition with actual commerce and autonomous change on return. Fresh admission remains40;
+Its marker is `codex/milestone-withdrawal-operator-20261017`. The
+[native continuation checkpoint](p02/party-withdrawal/native-journey/RESULT.md) now qualifies reopening
+that expedition's actual Active and Staging boundaries: real enemy damage, both independent paid withdrawals,
+one owned potion and the companion's no-dose guard, exact native receipts and original-history
+replay. The final client continuation records seven native receipts; the older four-player wait/reconnect
+journey, five travel and three market cases also pass. Client builds are warning-free. The limited marker
+is `codex/milestone-native-withdrawal-continuation-20261017`. Original failures
+remain retained. The complete commerce/outbound/return native journey and new autonomous consequences
+are still separate obligations; do not combine successful prefixes into full acceptance. Next prove the
+corrected second-town Offers browser, sale and return; use its retained saved boundary for panel diagnosis. Fresh admission remains40;
 no implicit upgrade is introduced. Complete scale/1–4, listener/reconnect, independent/native/human and broader interaction
 combinations remain open.
 

@@ -21,7 +21,7 @@ internal sealed class NativeRosterProcess : IAsyncDisposable
     internal List<JsonElement> Submissions { get; } = [];
 
     internal NativeRosterProcess(string directory, string invitation, string certificate, string project,
-        bool rendered, CancellationToken token)
+        bool rendered, CancellationToken token, bool expedition = false)
     {
         DirectoryPath = directory;
         Directory.CreateDirectory(directory);
@@ -32,7 +32,7 @@ internal sealed class NativeRosterProcess : IAsyncDisposable
         };
         start.Environment["DOTNET_ROOT"] = Path.GetDirectoryName(Environment.GetEnvironmentVariable("OPENFANTASY_DOTNET"))!;
         if (!rendered) start.ArgumentList.Add("--headless");
-        foreach (string value in new[] { "--path", project, "res://scenes/NativePlayer.tscn", "--", "--roster-probe",
+        foreach (string value in new[] { "--path", project, "res://scenes/NativePlayer.tscn", "--", expedition ? "--roster-expedition-probe" : "--roster-probe",
             invitation, certificate, directory }) start.ArgumentList.Add(value);
         _process = Process.Start(start) ?? throw new InvalidOperationException("Godot did not start.");
         _stdout = _process.StandardOutput.ReadToEndAsync();

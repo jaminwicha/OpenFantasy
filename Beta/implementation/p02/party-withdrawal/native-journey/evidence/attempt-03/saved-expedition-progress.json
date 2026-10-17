@@ -1,0 +1,40 @@
+[
+  {
+    "Stage": "original-earned-state-and-explicit-transition",
+    "Seconds": 14.8088302,
+    "Players": [
+      {
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Hp": 78,
+        "CurrencyBalance": 200,
+        "IsInEncounter": false,
+        "Feet": {
+          "X": 25984,
+          "Y": 83424,
+          "Z": 256,
+          "Cell": {
+            "X": 101,
+            "Y": 325,
+            "Z": 1
+          }
+        }
+      },
+      {
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Hp": 60,
+        "CurrencyBalance": 0,
+        "IsInEncounter": false,
+        "Feet": {
+          "X": 26496,
+          "Y": 84608,
+          "Z": 256,
+          "Cell": {
+            "X": 103,
+            "Y": 330,
+            "Z": 1
+          }
+        }
+      }
+    ]
+  }
+]

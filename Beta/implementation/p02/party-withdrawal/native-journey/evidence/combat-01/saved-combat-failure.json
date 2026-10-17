@@ -1,0 +1,25 @@
+{
+  "Stage": "collective-withdrawal",
+  "Error": "Xunit.Sdk.AllException: Assert.All() Failure: 1 out of 2 items in the collection did not pass.\n[1]: Item:  NativeRosterProcess { }\n     Error: Assert.NotNull() Failure: Value is null\n   at Xunit.Assert.All[T](IEnumerable\u00601 collection, Action\u00602 action) in /_/src/xunit.v3.assert/Asserts/CollectionAsserts.cs:line 80\n   at Xunit.Assert.All[T](IEnumerable\u00601 collection, Action\u00601 action) in /_/src/xunit.v3.assert/Asserts/CollectionAsserts.cs:line 44\n   at OpenFantasy.Server.Tests.NativeExpeditionEncounter.Complete(IReadOnlyDictionary\u00602 healthy) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionEncounter.cs:line 48\n   at OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedCombatContinuationTests.cs:line 79\n   at OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedCombatContinuationTests.cs:line 83\n   at OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedCombatContinuationTests.cs:line 83",
+  "Seconds": 33.6576366,
+  "Stages": [
+    {
+      "Stage": "ordinary-enemy-turn-inflicted-real-injury",
+      "Seconds": 27.7227278,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 42,
+          "IsInEncounter": true,
+          "Withdrawal": null
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "IsInEncounter": true,
+          "Withdrawal": null
+        }
+      ]
+    }
+  ]
+}

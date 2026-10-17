@@ -1,0 +1,16 @@
+{
+  "command": [
+    "python3",
+    "Beta/tools/check_documentation.py",
+    "--work-record",
+    "Beta/implementation/p02/party-withdrawal/native-journey/RESULT.md",
+    "--files",
+    "Beta/Runtime/docs/architecture/player-client.md",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/GIT_MILESTONES.md"
+  ],
+  "exitCode": 0,
+  "stdout": "{\n  \"accepted\": true,\n  \"scope\": \"Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance\",\n  \"filesChecked\": 5,\n  \"workRecord\": \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/RESULT.md\",\n  \"errors\": []\n}\n",
+  "stderr": ""
+}

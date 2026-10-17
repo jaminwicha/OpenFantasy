@@ -1,0 +1,192 @@
+[
+  {
+    "Stage": "ordinary-enemy-turn-inflicted-real-injury",
+    "Seconds": 30.387407,
+    "Players": [
+      {
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Hp": 42,
+        "IsInEncounter": true,
+        "Withdrawal": null
+      },
+      {
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Hp": 60,
+        "IsInEncounter": true,
+        "Withdrawal": null
+      }
+    ]
+  },
+  {
+    "Stage": "both-withdrew-with-independent-paid-routes",
+    "Seconds": 36.7667893,
+    "Players": [
+      {
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Hp": 42,
+        "IsInEncounter": false,
+        "Withdrawal": {
+          "ActorId": {
+            "High": 14370782499216685627,
+            "Low": 17880055967162955972
+          },
+          "CommandId": {
+            "High": 16910805527993145071,
+            "Low": 13180262567416296766
+          },
+          "Reason": 1,
+          "Origin": {
+            "X": 88640,
+            "Y": 79968,
+            "Z": 256,
+            "Cell": {
+              "X": 346,
+              "Y": 312,
+              "Z": 1
+            }
+          },
+          "Final": {
+            "X": 88320,
+            "Y": 79968,
+            "Z": 256,
+            "Cell": {
+              "X": 345,
+              "Y": 312,
+              "Z": 1
+            }
+          },
+          "SamplesTaken": 10,
+          "RouteSamples": 10,
+          "ReadinessCharged": 130,
+          "WorldSequence": 4070
+        }
+      },
+      {
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Hp": 22,
+        "IsInEncounter": false,
+        "Withdrawal": {
+          "ActorId": {
+            "High": 15635239250836869066,
+            "Low": 18420602983954943958
+          },
+          "CommandId": {
+            "High": 1536006744895738056,
+            "Low": 14368160990199195101
+          },
+          "Reason": 1,
+          "Origin": {
+            "X": 88928,
+            "Y": 79424,
+            "Z": 256,
+            "Cell": {
+              "X": 347,
+              "Y": 310,
+              "Z": 1
+            }
+          },
+          "Final": {
+            "X": 88928,
+            "Y": 79072,
+            "Z": 256,
+            "Cell": {
+              "X": 347,
+              "Y": 308,
+              "Z": 1
+            }
+          },
+          "SamplesTaken": 11,
+          "RouteSamples": 11,
+          "ReadinessCharged": 176,
+          "WorldSequence": 4070
+        }
+      }
+    ]
+  },
+  {
+    "Stage": "one-real-dose-treated-injury-with-no-invented-companion-supply",
+    "Seconds": 38.1095361,
+    "Players": [
+      {
+        "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+        "Hp": 78,
+        "IsInEncounter": false,
+        "Withdrawal": {
+          "ActorId": {
+            "High": 14370782499216685627,
+            "Low": 17880055967162955972
+          },
+          "CommandId": {
+            "High": 16910805527993145071,
+            "Low": 13180262567416296766
+          },
+          "Reason": 1,
+          "Origin": {
+            "X": 88640,
+            "Y": 79968,
+            "Z": 256,
+            "Cell": {
+              "X": 346,
+              "Y": 312,
+              "Z": 1
+            }
+          },
+          "Final": {
+            "X": 88320,
+            "Y": 79968,
+            "Z": 256,
+            "Cell": {
+              "X": 345,
+              "Y": 312,
+              "Z": 1
+            }
+          },
+          "SamplesTaken": 10,
+          "RouteSamples": 10,
+          "ReadinessCharged": 130,
+          "WorldSequence": 4070
+        }
+      },
+      {
+        "Actor": "d8fb874274604fcaffa320d13f228fd6",
+        "Hp": 22,
+        "IsInEncounter": false,
+        "Withdrawal": {
+          "ActorId": {
+            "High": 15635239250836869066,
+            "Low": 18420602983954943958
+          },
+          "CommandId": {
+            "High": 1536006744895738056,
+            "Low": 14368160990199195101
+          },
+          "Reason": 1,
+          "Origin": {
+            "X": 88928,
+            "Y": 79424,
+            "Z": 256,
+            "Cell": {
+              "X": 347,
+              "Y": 310,
+              "Z": 1
+            }
+          },
+          "Final": {
+            "X": 88928,
+            "Y": 79072,
+            "Z": 256,
+            "Cell": {
+              "X": 347,
+              "Y": 308,
+              "Z": 1
+            }
+          },
+          "SamplesTaken": 11,
+          "RouteSamples": 11,
+          "ReadinessCharged": 176,
+          "WorldSequence": 4070
+        }
+      }
+    ]
+  }
+]

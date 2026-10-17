@@ -133,6 +133,21 @@ observations before selecting its next action. The receipt proves the committed 
 observation barrier, and a stream revision is not the world's commit sequence. Stale captured terms
 remain subject to ordinary authority rejection rather than automatic replacement or retry.
 
+[Encounter effect checks](../../client/scripts/Networking/NativeRosterPlayProbe.EncounterEffects.cs)
+wait for the same home selection's advanced encounter timing, own retained withdrawal command or
+terminal record in both current and presented views. Home-only connections use the actual current
+home observation and `FarmGame.PresentedHomeView`, the immutable snapshot retained after the home frame
+has been presented. Absence of a selected-character observation is valid for that protocol; it is not
+permission to skip the presented-state check. The test coordinator's
+[peer observation barrier](../../tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeEncounterObservationBarrier.cs)
+then waits for each participating stream to reach that public encounter boundary. Encounter identity
+and timing can already exist during staging; withdrawal membership is projected only in the active
+phase. The coordinator resumes participants normally and observes that phase and the complete expected
+actor identities before exercising party choices. Collective exit
+needs this barrier before asserting all members' terminal records: one client's return to exploration
+does not establish that another client has received it. These are bounded fixture waits, not gameplay
+retries or additional transport guarantees; successful waits must also satisfy their absolute deadline.
+
 [NativePlayerEntry](../../client/scripts/Networking/NativePlayerEntry.cs) opens the explicit `--join`
 invitation through platform TLS validation. [FarmGame](../../client/scripts/FarmGame.cs) enables readiness
 only after first view and binding. Ordinary window focus, input cancellation, wheels and inventory use the

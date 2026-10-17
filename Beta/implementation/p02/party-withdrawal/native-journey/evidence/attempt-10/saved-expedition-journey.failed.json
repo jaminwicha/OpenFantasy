@@ -1,0 +1,121 @@
+{
+  "Stage": "hostile-approach",
+  "Error": "Xunit.Sdk.TrueException: Native roster stage=wait, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/attempt-10/saved-expedition/d8fb874274604fcaffa320d13f228fd6/0115.response.json: System.InvalidOperationException: The captured wheel terms no longer match the observed encounter boundary; no action was submitted or retried.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.ChooseWheel(FarmSemanticAction action) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 263\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 98\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61\n   at Xunit.Assert.True(Boolean condition, String userMessage) in /_/src/xunit.v3.assert/Asserts/BooleanAsserts.cs:line 117\n   at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79\n   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable\u00601 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.\u003C\u003Ec__DisplayClass2_0.\u003C\u003CEarned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return\u003Eg__Send|5\u003Ed.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 320\n--- End of stack trace from previous location ---\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.\u003C\u003Ec__DisplayClass2_0.\u003C\u003CEarned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return\u003Eg__ChooseDueWaits|34\u003Ed.MoveNext() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 268\n--- End of stack trace from previous location ---\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 153\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 272\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 272",
+  "Seconds": 202.1179109,
+  "Stages": [
+    {
+      "Stage": "original-earned-state-and-explicit-transition",
+      "Seconds": 13.2762625,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 200,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 25984,
+            "Y": 83424,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 325,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 26496,
+            "Y": 84608,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 330,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "earned-purchase-retaining-crafted-supplies",
+      "Seconds": 29.1133716,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 180,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 24960,
+            "Y": 89408,
+            "Z": 256,
+            "Cell": {
+              "X": 97,
+              "Y": 349,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 26496,
+            "Y": 84608,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 330,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "both-arrived-at-road-with-owned-cargo",
+      "Seconds": 184.9543385,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 180,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88640,
+            "Y": 81536,
+            "Z": 256,
+            "Cell": {
+              "X": 346,
+              "Y": 318,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 88160,
+            "Y": 81568,
+            "Z": 256,
+            "Cell": {
+              "X": 344,
+              "Y": 318,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

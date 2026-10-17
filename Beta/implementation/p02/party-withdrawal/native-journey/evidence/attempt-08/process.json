@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Server.Tests/OpenFantasy.Server.Tests.csproj",
+    "--no-restore",
+    "--no-build",
+    "--filter",
+    "FullyQualifiedName~NativeSavedExpeditionTests",
+    "--logger",
+    "trx;LogFileName=native.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/attempt-08"
+  ],
+  "exitCode": 0,
+  "seconds": 130.49323608307168,
+  "deadlineSeconds": 960
+}

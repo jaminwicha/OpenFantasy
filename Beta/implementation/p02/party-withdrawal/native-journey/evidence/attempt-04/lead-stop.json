@@ -1,0 +1,6 @@
+{
+  "status": "intentionally-stopped",
+  "reason": "Waypoint coordinator selects each cell connector and moves players serially; regroup collinear path points and run independent player travel concurrently before spending the full expedition budget. Keep every deadline and exact arrival assertion. Short-pulse experiment remains unqualified; prior held-input evidence is not replaced.",
+  "pid": 36069,
+  "signal": "SIGTERM"
+}

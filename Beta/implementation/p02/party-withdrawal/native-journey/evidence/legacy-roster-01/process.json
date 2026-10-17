@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Server.Tests/OpenFantasy.Server.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~NativeRosterJourneyTests",
+    "--logger",
+    "trx;LogFileName=native.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/legacy-roster-01"
+  ],
+  "exitCode": 1,
+  "seconds": 26.113620582967997,
+  "deadlineSeconds": 270
+}

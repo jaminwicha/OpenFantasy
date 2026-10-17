@@ -1,0 +1,18 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll (.NETCoreApp,Version=v10.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:34.47]     OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice [FAIL]
+  Failed OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice [33 s]
+  Error Message:
+   Assert.All() Failure: 1 out of 2 items in the collection did not pass.
+[1]: Item:  NativeRosterProcess { }
+     Error: Assert.NotNull() Failure: Value is null
+  Stack Trace:
+     at OpenFantasy.Server.Tests.NativeExpeditionEncounter.Complete(IReadOnlyDictionary`2 healthy) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionEncounter.cs:line 48
+   at OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedCombatContinuationTests.cs:line 79
+   at OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedCombatContinuationTests.cs:line 83
+   at OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedCombatContinuationTests.cs:line 83
+   at OpenFantasy.Server.Tests.NativeSavedCombatContinuationTests.Interrupted_earned_expedition_reopens_and_withdraws_without_retrying_the_stale_choice() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedCombatContinuationTests.cs:line 118
+--- End of stack trace from previous location ---
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/combat-01/native.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 33 s - OpenFantasy.Server.Tests.dll (net10.0)

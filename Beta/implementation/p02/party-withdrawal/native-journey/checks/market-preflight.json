@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~MarketDraftTests",
+    "--logger",
+    "trx;LogFileName=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/native-journey/checks/market-preflight.trx"
+  ],
+  "exitCode": 0,
+  "seconds": 11.592213249998167,
+  "deadlineSeconds": 90
+}
