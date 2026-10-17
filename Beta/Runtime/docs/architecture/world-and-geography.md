@@ -732,6 +732,30 @@ candidate or refusal. It does not construct a partial admitted world, validate t
 unrelated foundations anew, or grant an action. Their immutable source scene supplies their admission;
 the actual transaction owner supplies authority.
 
+[WorldMovementPrerequisites](../../src/OpenFantasy.Core/Worlds/WorldMovementPrerequisites.cs) joins
+spatial preparation with the exact input, [current control](effective-control.md), actual
+[carriage](structural-loads.md), actor health/readiness and the exploration clock/hold boundary.
+It retains selected immutable facts and pins, not the complete source world. The clock selection
+includes calendar, advancing-step count, experienced time, pacing pin, lifecycle revision/phase/debt,
+and the presence of reading, care, excavation and tactical obligations. Structural-policy identity
+is pinned separately from carried material. Profile/world/branch identity is checked through the
+joined control and carriage reads.
+
+`CanAttempt` describes the captured boundary only. It requires current traversal permission, actor
+availability and an ordinary exploration boundary; it does not promise clear geometry or sufficient
+structural support. `Evaluate` refuses an ineligible captured attempt, otherwise using the exact
+prepared terrain plan through the shared geometry kernel. `ValidateCurrent` checks all joined reads,
+including changed time without movement, changed holds without earned time, and changed cargo or
+control without changed geometry. The authority must keep those reads stable through publication.
+
+An exploration step executes selected actions and advances time before evaluating movement. Work,
+coupled displacement or a newly opened reading hold can consume/suppress movement, and structural
+admission uses the actual resulting carried goods and occupants. Simple counted gifts retain their
+ordinary ability to accompany movement; explicitly paid work follows its own opportunity rules. These reads do
+not replace `WorldStepProcessor`, due-work execution or its complete-candidate admission. A successful
+geometric candidate must never be installed directly as a world mutation. Preparing from a complete
+admitted scene also does not prove a global directory, partition ownership or partial world admission.
+
 Preparation examines at most 4,096 candidate references and respects an explicitly supplied loaded-region
 budget. This is a per-preparation metadata bound, not a world size or directory limit. Requested bounds
 use the existing bounded region-volume type. `TotalLoadedCells` counts each selected region's complete

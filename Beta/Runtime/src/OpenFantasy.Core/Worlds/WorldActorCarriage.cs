@@ -17,6 +17,7 @@ public sealed class WorldActorCarriage
         WorldId = world.WorldId;
         BranchId = world.BranchId;
         WorldRevision = world.Revision;
+        ProfileVersion = world.ProfileVersion;
         ActorId = actorId;
         CustodianIds = Array.AsReadOnly(custodians.Order().ToArray());
         CountedLots = Array.AsReadOnly(world.Inventory.Custody.Lots
@@ -29,10 +30,30 @@ public sealed class WorldActorCarriage
     public EntityId WorldId { get; }
     public EntityId BranchId { get; }
     public ulong WorldRevision { get; }
+    public ushort ProfileVersion { get; }
     public EntityId ActorId { get; }
     public ReadOnlyCollection<EntityId> CustodianIds { get; }
     public ReadOnlyCollection<CountedSourceLot> CountedLots { get; }
     public ReadOnlyCollection<TransformedLot> ProducedLots { get; }
+
+    /// <summary>Checks exact carried material, not world freshness, access permission or support capacity.</summary>
+    public void ValidateCurrent(WorldSnapshot current)
+    {
+        ArgumentNullException.ThrowIfNull(current);
+        WorldActorCarriage actual = Capture(current, ActorId);
+        if (WorldId != actual.WorldId || BranchId != actual.BranchId || ProfileVersion != actual.ProfileVersion
+            || !CustodianIds.SequenceEqual(actual.CustodianIds) || !CountedLots.SequenceEqual(actual.CountedLots)
+            || ProducedLots.Count != actual.ProducedLots.Count
+            || ProducedLots.Where((lot, index) => !SameProducedLot(lot, actual.ProducedLots[index])).Any())
+        {
+            throw new InvalidOperationException("The prepared actor carriage changed.");
+        }
+    }
+
+    private static bool SameProducedLot(TransformedLot left, TransformedLot right) =>
+        left.LotId == right.LotId && left.CustodianId == right.CustodianId && left.Definition == right.Definition
+        && left.Output == right.Output && left.Revision == right.Revision && left.Protection == right.Protection
+        && left.ReservedBy == right.ReservedBy;
 
     /// <summary>
     /// Retains the existing physical interpretation: primary inventory in every world, plus explicit

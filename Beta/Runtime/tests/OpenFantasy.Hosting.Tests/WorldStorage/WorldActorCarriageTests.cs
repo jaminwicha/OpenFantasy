@@ -34,11 +34,13 @@ public sealed class WorldActorCarriageTests
             Assert.Equal(initial.CustodianIds, afterMove.CustodianIds);
             Assert.Same(moved.Inventory.Custody.GetLot(originalLot.LotId), Assert.Single(afterMove.CountedLots));
             Assert.Equal(AuthorityEncodingV1.Encode(genesis.Inventory), AuthorityEncodingV1.Encode(moved.Inventory));
+            initial.ValidateCurrent(moved);
 
             var gift = authority.Commit(WorldServiceFixture.Step(moved, cause: 902,
                 actions: [WorldServiceFixture.Give(moved, command: 903, quantity: 2)]));
             Assert.Equal(WorldActionRejection.None, Assert.Single(gift.Receipts).Rejection);
             final = gift.Candidate;
+            Assert.Throws<InvalidOperationException>(() => initial.ValidateCurrent(final));
             var senderCargo = WorldActorCarriage.Capture(final, actor);
             var recipientCargo = WorldActorCarriage.Capture(final, recipient);
             var retained = Assert.Single(senderCargo.CountedLots);
@@ -92,6 +94,7 @@ public sealed class WorldActorCarriageTests
         var completed = final.Construction!.Projects.Single();
         var installed = completed.Installed!;
         var after = WorldActorCarriage.Capture(final, project.BuilderActorId);
+        Assert.Throws<InvalidOperationException>(() => before.ValidateCurrent(final));
         Assert.DoesNotContain(after.CountedLots, lot => lot.CustodianId == project.ProjectCustodianId);
         Assert.DoesNotContain(after.ProducedLots, lot => lot.LotId == installed.GuardLotId);
         var offcuts = Assert.Single(after.ProducedLots);
@@ -106,6 +109,7 @@ public sealed class WorldActorCarriageTests
         using var reopened = SqliteWorldAuthority.OpenExisting(files.Path, WorldSnapshotCodec.Encode(fixture.Genesis));
         Assert.Equal(final.ContentHash, reopened.ReadStateForHost().ContentHash);
         var restored = WorldActorCarriage.Capture(reopened.ReadStateForHost(), project.BuilderActorId);
+        after.ValidateCurrent(reopened.ReadStateForHost());
         Assert.Equal(after.CustodianIds, restored.CustodianIds);
         Assert.Equal(after.ProducedLots.Select(lot => (lot.LotId, lot.CustodianId, lot.Quantity, lot.Output)),
             restored.ProducedLots.Select(lot => (lot.LotId, lot.CustodianId, lot.Quantity, lot.Output)));

@@ -225,6 +225,10 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    [Control dependency preparation](p02/partition-state/control-dependencies/RESULT.md) selects exact
    permanent/delegated control rows and shares ordinary authority rules; unchanged geometry cannot
    hide revoked or replaced control. Its retained authorization is historical until revalidated.
+   [Joined movement prerequisites](p02/partition-state/movement-prerequisites/RESULT.md) combine those
+   reads with exact carried lots, readiness and the clock/hold boundary. A real file-backed region
+   crossing retains cargo through ordinary SQLite commit/replay; a same-step reading hold still suppresses
+   otherwise clear movement. This is a spatial-region crossing, not a partition-owner transfer.
    These are bounded dependency preparations, not partitioned world simulation. Global directory completeness,
    custody/time/readiness and complete permission closure, atomic cross-partition publication and the selected format remain
    unproved/undecided. Record the decision, measured limits and remaining questions in the living

@@ -1,0 +1,95 @@
+{
+  "sourceHead": "1fd0562266b4e5f3a172d07a7d1c754015dce9b2",
+  "documentationCommand": [
+    "python3",
+    "Beta/tools/check_documentation.py",
+    "--work-record",
+    "Beta/implementation/p02/partition-state/movement-prerequisites/RESULT.md",
+    "--files",
+    "Beta/Runtime/docs/architecture/structural-loads.md",
+    "Beta/Runtime/docs/architecture/world-and-geography.md",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md",
+    "Beta/implementation/GIT_MILESTONES.md",
+    "Beta/implementation/p02/partition-state/movement-prerequisites/RESULT.md"
+  ],
+  "documentation": {
+    "accepted": true,
+    "scope": "Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance",
+    "filesChecked": 7,
+    "workRecord": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/movement-prerequisites/RESULT.md",
+    "errors": []
+  },
+  "finalDistinctPasses": 273,
+  "newCases": 6,
+  "strengthenedExistingCases": 4,
+  "counters": {
+    "hosting": {
+      "total": "21",
+      "executed": "21",
+      "passed": "21",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    },
+    "core": {
+      "total": "252",
+      "executed": "252",
+      "passed": "252",
+      "failed": "0",
+      "error": "0",
+      "timeout": "0",
+      "aborted": "0",
+      "inconclusive": "0",
+      "passedButRunAborted": "0",
+      "notRunnable": "0",
+      "notExecuted": "0",
+      "disconnected": "0",
+      "warning": "0",
+      "completed": "0",
+      "inProgress": "0",
+      "pending": "0"
+    }
+  },
+  "initialFailures": [
+    "check-01: whole-lot identity assumption",
+    "check-02: simple-gift work assumption"
+  ],
+  "authoredWhitespace": "pass",
+  "authoredHashes": {
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldActorCarriage.cs": "81d57a6a7b2594ee34bb37f338138e20eb25bc683ec3d3078caa0e851ba946de",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMovementPrerequisites.cs": "c34685b3c522f6720a6615504390df004c7bb055846407fec790aab901d2f4f6",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldMovementPrerequisitesTests.cs": "fc651e0170621e29893f4518e9aa2f2548e23ecca205bd7e781471ede3aeb7aa",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldActorCarriageTests.cs": "f8f70eccd4b5354087b071025c9919ca72484a01cda29c72dd6de6069fc27eac",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Worlds/EffectiveControl/EffectiveControlContinuationTests.cs": "11bb1c25898646e6d3e863fc47881f670fead376c143bcc4fcfb246633494b0a",
+    "Beta/Runtime/docs/architecture/structural-loads.md": "eea078880c02a0b432646cb35bf1e90b43e4541e85c5d9c720f9f3060853294f",
+    "Beta/Runtime/docs/architecture/world-and-geography.md": "ef1e1b89a9a7508e0e7ba4388b89cd5ecd42ef70527387edc15ce4c37f37059d",
+    "Beta/implementation/CURRENT_ROADMAP.md": "c0a3f6f048b357984f78524b3787c25f37a4e22a5f56560b1fcdc6b0f1ba8e9e",
+    "Beta/implementation/AGENT_HANDOFF.md": "227cf1432f9529f855d7b3eac7fc0c56ce59f26c8d56be88dd6022a4e40b312f",
+    "Beta/implementation/PLAN_STATE_COMPARISON.md": "473113e01176507cc0fbb9250282b81a153dd3e033d8b16b55264aa3ed6a8758",
+    "Beta/implementation/GIT_MILESTONES.md": "f18808e52153692051f8f187f9408d431d4569a398089c7d7ccbcd1131e8d5c4",
+    "Beta/implementation/p02/partition-state/movement-prerequisites/RESULT.md": "d333633fc301593bf4c7a040c22074b2e5417a46d8204923fd78746ac1a0d341"
+  },
+  "binaryHashes": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "2e3f3579cde6af1d9cebc2ab1cf0dd772fab05828cc313fb14925f2c83f8b4ef",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "4195c3f85a6e57b823c6a443dc0f7b1e3dd24579a5458aab3d1a263d24977d55",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "2e3f3579cde6af1d9cebc2ab1cf0dd772fab05828cc313fb14925f2c83f8b4ef",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "b34f91992c49177f6bf65ee5581435f8d0bc88ee3a5e3a3691a51762d311df5b",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "40703da00164fb0439a88ce1b177ae911908a9cbf284ef602473c2f0a3935ce1"
+  },
+  "coreBinaryMatchesBetweenFamilies": true,
+  "protectedIndex": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "protectedAdvisory": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "frozenSpecs": "unchanged"
+}

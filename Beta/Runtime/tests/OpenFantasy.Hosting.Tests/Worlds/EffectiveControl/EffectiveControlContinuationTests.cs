@@ -56,6 +56,22 @@ public sealed class EffectiveControlContinuationTests
             Assert.Equal(EncounterLifecyclePhase.Exploration, state.EncounterLifecycle.Phase);
             final = fixture.Event(authority, fixture.Owner, WorldControllerEventKind.Reconnected);
             Assert.Equal(WorldControllerMode.Human, final.Controllers!.Get(fixture.Owner).Mode);
+            var input = new WorldMovementInput(fixture.Delivery(fixture.Owner), fixture.Owner, 32, 0);
+            var recovering = WorldMovementPrerequisites.Capture(final, input, 16);
+            Assert.True(recovering.Control.IsAuthorized);
+            Assert.False(recovering.CanAttempt);
+            Assert.False(WorldActorAvailability.CanAct(final, fixture.Owner));
+            ulong recoverySteps = (sampleDelay + EncounterLifecycleSnapshot.ExplorationRecoveryUnits - 1)
+                / EncounterLifecycleSnapshot.ExplorationRecoveryUnits;
+            Assert.InRange(recoverySteps, 1UL, 16UL);
+            for (ulong step = 0; step < recoverySteps; step++)
+                final = authority.Commit(fixture.Commands.Batch(final, WorldBatchKind.AdvancingStep)).Candidate;
+            Assert.Equal(0UL, final.EncounterLifecycle!.GetDebt(fixture.Owner).RemainingDelay);
+            Assert.True(WorldMovementPrerequisites.Capture(final, input, 16).CanAttempt);
+            recovering.Control.ValidateCurrent(final);
+            recovering.Carriage.ValidateCurrent(final);
+            recovering.Spatial.ValidateCurrent(final.Space);
+            Assert.Throws<InvalidOperationException>(() => recovering.ValidateCurrent(final));
             Assert.Equal(WorldReceiptCodecV1.Encode(receipt), WorldReceiptCodecV1.Encode(
                 Assert.IsType<WorldActionReceipt>(authority.FindReceipt(command, fixture.Delivery(fixture.Grantee)))));
             Assert.Same(final, authority.ReadStateForHost());
@@ -83,6 +99,10 @@ public sealed class EffectiveControlContinuationTests
             fixture.Journey.WalkTo(authority, fixture.Other, fixture.Journey.Beside(state, fixture.Other, fixture.Owner));
             state = fixture.Journey.EnterAndFight(authority, fixture.Journey.FirstScenario, patientWaits: true);
             Assert.Equal(0, state.Progression!.GetActor(fixture.Owner).CurrentHp);
+            var incapacitated = WorldMovementPrerequisites.Capture(state,
+                new(fixture.Delivery(fixture.Owner), fixture.Owner, 32, 0), 16);
+            Assert.False(WorldActorAvailability.CanCooperate(state, fixture.Owner));
+            Assert.False(incapacitated.CanAttempt);
             fixture.LoseAndExpire(authority);
             state = fixture.Acquire(authority);
             var agreement = Assert.Single(state.Care!.Agreements);
@@ -92,6 +112,8 @@ public sealed class EffectiveControlContinuationTests
             receipt = Assert.Single(accepted.Receipts);
             Assert.Equal(WorldActionRejection.None, receipt.Rejection);
             var pending = accepted.Candidate.Care!.Pending!;
+            Assert.False(WorldMovementPrerequisites.Capture(accepted.Candidate,
+                new(fixture.Delivery(fixture.Grantee), fixture.Owner, 32, 0, request.ControlWitness), 16).CanAttempt);
             Assert.Equal(request.CommandId, pending.CommandId);
             var revoked = fixture.Revoke(authority);
             Assert.Equal(pending, revoked.Care!.Pending);

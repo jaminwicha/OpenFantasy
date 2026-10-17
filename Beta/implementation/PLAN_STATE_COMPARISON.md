@@ -187,6 +187,12 @@ The first extraction should establish these concrete responsibilities, in the ex
   rules. It deliberately ignores unrelated world revisions and gameplay time; those still belong
   in the complete action transaction. Validating unchanged spatial data cannot substitute for control
   revalidation, and historical recorded authority cannot authorize new input after revocation.
+  [Joined movement prerequisites](p02/partition-state/movement-prerequisites/RESULT.md) now combine
+  these reads with exact carriage, readiness, experienced time and clock/hold interpretation. The
+  ordinary processor remains mandatory: it applies actions and time before movement, including
+  suppressing a selected movement when that actor performs work. A geometric candidate cannot bypass
+  this ordering. The real region-crossing/replay case is not a partition-ownership transfer or partial
+  simulation claim; complete step dependencies and atomic owner publication remain unproved.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

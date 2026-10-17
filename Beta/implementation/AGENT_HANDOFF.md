@@ -189,7 +189,10 @@ from the actual actor and ground-support rules; 160 affected cases pass. The
 [prepared spatial read](p02/partition-state/spatial-read/RESULT.md) now includes relevant collider
 selection/revalidation and the shared ordinary movement query implementation. The
 [control dependency boundary](p02/partition-state/control-dependencies/RESULT.md) selects exact current
-control rows without retaining the full world and shares the runtime's authority checks. Complete action closure,
+control rows without retaining the full world and shares the runtime's authority checks.
+[Joined movement prerequisites](p02/partition-state/movement-prerequisites/RESULT.md) now bind spatial,
+control, exact cargo, readiness and clock/hold reads; ordinary full-step admission still owns action
+ordering and publication. Complete action closure,
 ownership transfer, absent-detail work and atomic publication/history remain the next prototype work.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,

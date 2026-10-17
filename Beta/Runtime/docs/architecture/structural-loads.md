@@ -42,6 +42,15 @@ world: the captured revision labels its source and is not a freshness, control o
 This projection does not prove spatial residency or permit incomplete world admission. Partition
 preparation must still resolve actual actor, material, site, timing and authorization dependencies.
 
+`ValidateCurrent` compares world/branch/interpretation, carried custodian membership and every selected
+live lot by value. Counted source intervals and transformed output intervals, item pins, identities,
+revisions, reservations and protection flags all participate. Equal quantities or unchanged total
+weight are insufficient: a whole-lot gift and return restores the amount and identity while advancing
+the lot revision; partial transfers can also replace or split lot identities.
+Equivalent decoded material compares equal, and unrelated world revisions or movement alone do not
+invalidate carriage. The check does not compare storage capacity, access policies, complete material
+history or support-network loads; those remain the responsibility of the action/publication owner.
+
 [ConstructionBearingTemplate](../../src/OpenFantasy.Core/Structures/ConstructionBearingTemplate.cs)
 provides complete member ordinals, capacity, maximum horizontal span and minimum surviving support count
 for one exact construction definition. A vertical bearing requires a positive overlapping horizontal
