@@ -1,0 +1,83 @@
+{
+  "Stage": "two-person-outbound",
+  "Error": "Xunit.Sdk.TrueException: Native roster stage=walk-to, response=/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/expedition-completion/journey-01/saved-expedition/c76f468b1a35fa3bf822b82b66d9f8c4/0067.response.json: System.InvalidOperationException: Released travel did not stay within its four-sample observation envelope.\n   at OpenFantasy.Client.MarketProbeDriver.Require(Boolean condition, String message) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/MarketProbeDriver.cs:line 172\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.WalkTo(String coordinates, Boolean allowEncounter) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Expedition.cs:line 87\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe.Execute(JsonElement request) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 93\n   at OpenFantasy.Client.Networking.NativeRosterPlayProbe._Ready() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.cs:line 61\n   at Xunit.Assert.True(Boolean condition, String userMessage) in /_/src/xunit.v3.assert/Asserts/BooleanAsserts.cs:line 117\n   at OpenFantasy.Server.Tests.NativeRosterProcess.Read(Int32 sequence, Int32 seconds) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 79\n   at OpenFantasy.Server.Tests.NativeRosterProcess.Send(String verb, String direction, Nullable\u00601 target) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/NativeRosterProcess.cs:line 53\n   at OpenFantasy.Server.Tests.NativeExpeditionTravel.MoveTogether(ValueTuple\u00602[] targets) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 49\n   at OpenFantasy.Server.Tests.NativeExpeditionTravel.Lanes(ValueTuple\u00602[] routes) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs:line 31\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Run(Boolean arrivalOnly) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 156\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Run(Boolean arrivalOnly) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 241\n   at OpenFantasy.Server.Tests.NativeSavedExpeditionTests.Run(Boolean arrivalOnly) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs:line 241",
+  "Seconds": 122.3758933,
+  "Stages": [
+    {
+      "Stage": "original-earned-state-and-explicit-transition",
+      "Seconds": 14.6501137,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 200,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 25984,
+            "Y": 83424,
+            "Z": 256,
+            "Cell": {
+              "X": 101,
+              "Y": 325,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 26496,
+            "Y": 84608,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 330,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Stage": "earned-purchase-retaining-crafted-supplies",
+      "Seconds": 30.8392392,
+      "Players": [
+        {
+          "Actor": "c76f468b1a35fa3bf822b82b66d9f8c4",
+          "Hp": 78,
+          "CurrencyBalance": 180,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 24992,
+            "Y": 89408,
+            "Z": 256,
+            "Cell": {
+              "X": 97,
+              "Y": 349,
+              "Z": 1
+            }
+          }
+        },
+        {
+          "Actor": "d8fb874274604fcaffa320d13f228fd6",
+          "Hp": 60,
+          "CurrencyBalance": 0,
+          "IsInEncounter": false,
+          "Feet": {
+            "X": 26496,
+            "Y": 84608,
+            "Z": 256,
+            "Cell": {
+              "X": 103,
+              "Y": 330,
+              "Z": 1
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

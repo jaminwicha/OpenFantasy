@@ -69,8 +69,34 @@ public sealed class NativeExpeditionTravelTests
             Assert.Equal(SpatialMoveStatus.Prepared, move.Status);
             var actual = move.Candidate!;
             space = space.WithActors(space.Actors.Select(row => row.ActorId == lead ? actual : row));
-            if (sample >= samples) Assert.True(Distance(actual.Feet, goal) < initialDistance,
+            if (sample >= Math.Max(1, samples - 3)) Assert.True(Distance(actual.Feet, goal) < initialDistance,
                 "Any admitted streamed endpoint must improve the actual destination distance.");
+        }
+    }
+
+    [Fact]
+    public void Road_advice_allows_early_release_without_losing_safe_progress()
+    {
+        var world = AdventureWorldAdmission.CreateEmbedded(AdventureWorldAdmission.SeedText, ["Rowan", "Mira"]);
+        var lead = world.Excavation!.Sites.Single().OwnerActorId;
+        var original = world.Space.GetActor(lead);
+        var from = new SubunitPosition(61824, 89408, 256);
+        var goal = new SubunitPosition(63808, 89408, 256);
+        var space = world.Space.WithActors(world.Space.Actors.Select(row => row.ActorId == lead
+            ? new ActorPresence(original.Binding, original.Condition, original.Scope, from, original.Revision, original.HomePlaceId) : row));
+        var planned = NativeExpeditionTravel.NextLeg(space, lead, goal);
+        long dx = Math.Sign(planned.X - from.X) * 32;
+        long dy = Math.Sign(planned.Y - from.Y) * 32;
+        int samples = checked((int)(Distance(from, planned) / 32));
+        Assert.InRange(samples, 1, 64);
+        for (int sample = 1; sample <= samples + 4; sample++)
+        {
+            var move = space.PrepareMove(lead, space.GetActor(lead).Revision, dx, dy);
+            Assert.Equal(SpatialMoveStatus.Prepared, move.Status);
+            var actual = move.Candidate!;
+            space = space.WithActors(space.Actors.Select(row => row.ActorId == lead ? actual : row));
+            if (sample >= Math.Max(1, samples - 3))
+                Assert.True(Distance(actual.Feet, goal) < Distance(from, goal));
         }
     }
 

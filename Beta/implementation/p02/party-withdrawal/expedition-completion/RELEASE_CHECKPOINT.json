@@ -1,0 +1,20 @@
+{
+  "ref": "refs/heads/codex/checkpoint-before-travel-release-20261017T210457Z",
+  "revision": "933fa85a770f49e102b9c11abfb21fd70cab7694",
+  "sourceRevision": "6089fd6cca39caf32aced4728e15421fba6d67d7",
+  "scope": [
+    "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeSavedExpeditionTests.cs",
+    "Beta/implementation/p02/party-withdrawal/expedition-completion/CHECKPOINT.json",
+    "Beta/implementation/p02/party-withdrawal/expedition-completion/SCOPE.md",
+    "Beta/implementation/p02/party-withdrawal/expedition-completion/RELEASE_BACKUP.json",
+    "Beta/implementation/p02/party-withdrawal/expedition-completion/checks/runner-build-01.log",
+    "Beta/implementation/p02/party-withdrawal/expedition-completion/checks/runner-build-01.json"
+  ],
+  "verification": "WIP preservation. Sale-only native case passed; complete journey failed its unchanged four-sample stopping envelope.",
+  "rawBackup": {
+    "archive": "/Users/alucinor/.local/share/openfantasy/checkpoints/20261017T210457Z/expedition-before-release.tar.gz",
+    "sha256": "4af0f0bc69e307b7fd94d1301ca045aad34a2474f563871c877c374f235473d3",
+    "bytes": 7661861,
+    "restore": "Verify SHA256 and extract into a separate directory before restoring needed packet paths. Do not overwrite newer work."
+  }
+}

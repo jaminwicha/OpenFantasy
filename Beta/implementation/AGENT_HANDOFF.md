@@ -162,8 +162,11 @@ replay. The final client continuation records seven native receipts; the older f
 journey, five travel and three market cases also pass. Client builds are warning-free. The limited marker
 is `codex/milestone-native-withdrawal-continuation-20261017`. Original failures
 remain retained. The complete commerce/outbound/return native journey and new autonomous consequences
-are still separate obligations; do not combine successful prefixes into full acceptance. Next prove the
-corrected second-town Offers browser, sale and return; use its retained saved boundary for panel diagnosis. Fresh admission remains40;
+are still separate obligations; do not combine successful prefixes into full acceptance. The [sale checkpoint](p02/party-withdrawal/expedition-completion/RESULT.md) qualifies the second-town
+Offers browser and exact purchased-lot sale on the retained arrival save, plus six geometry cases.
+Two complete runs remain failed: outbound overshoot, then post-care detour movement/no-progress.
+Next diagnose the retained journey-02 helper request225 and simultaneous route occupancy before
+another full run; the full return is unproved. Sale-only success cannot replace that gate. Fresh admission remains40;
 no implicit upgrade is introduced. Complete scale/1–4, listener/reconnect, independent/native/human and broader interaction
 combinations remain open.
 

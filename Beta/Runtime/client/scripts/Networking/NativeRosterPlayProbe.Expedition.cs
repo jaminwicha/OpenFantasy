@@ -61,7 +61,10 @@ internal sealed partial class NativeRosterPlayProbe
                 bool crossed = origin.X != target.X
                     ? Math.Sign(target.X - current.X) != Math.Sign(target.X - origin.X)
                     : Math.Sign(target.Y - current.Y) != Math.Sign(target.Y - origin.Y);
-                if (crossed) break;
+                // Leave three samples of room for observation and stop delivery, without relaxing the final envelope.
+                bool nearWaypoint = current != origin && Math.Abs(target.X - current.X) + Math.Abs(target.Y - current.Y)
+                    <= 3 * WorldMovementInput.DisplacementPerStep;
+                if (crossed || nearWaypoint) break;
                 MarketProbeDriver.Require(current.Z == origin.Z && (current.X == origin.X || current.Y == origin.Y),
                     "Travel left its requested axis.");
                 if (current != last)
@@ -76,6 +79,8 @@ internal sealed partial class NativeRosterPlayProbe
                     : target.Y > origin.Y ? Key.Down : Key.Up);
                 await _driver.Frame();
             }
+            _driver.Inputs.Add(new { Stage = _stage, ReleaseObservedFeet = Feet(), Target = target,
+                Seconds = watch.Elapsed.TotalSeconds });
             Hold(null);
             await Pause(true);
             await _driver.Delay(0.3);

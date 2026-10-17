@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Server.Tests/OpenFantasy.Server.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Earned_two_person_save_continues_through_trade_collective_withdrawal_care_and_return",
+    "--logger",
+    "trx;LogFileName=native.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/expedition-completion/journey-02"
+  ],
+  "exitCode": 1,
+  "seconds": 240.43903433310334,
+  "deadlineSeconds": 960
+}

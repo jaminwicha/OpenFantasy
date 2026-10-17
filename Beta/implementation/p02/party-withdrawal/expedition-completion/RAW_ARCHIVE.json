@@ -1,0 +1,7 @@
+{
+  "path": "/Users/alucinor/.local/share/openfantasy/checkpoints/20261017T211224Z/expedition-sale-and-failures.tar.gz",
+  "bytes": 17346081,
+  "sha256": "ad293c0629339f0dbe559c587f1f5e3e000f76e80666729985a6b4c83937aa90",
+  "scope": "Complete sale-01 pass and journey-01/journey-02 failures, pinned sources/dependencies, native mailboxes, SQLite copies, renders and checks. Original raw directories remain untouched.",
+  "restore": "Verify SHA256, then extract with tar -xzf ARCHIVE -C EMPTY_DIRECTORY; paths are repository-relative. Never overwrite the live workspace."
+}

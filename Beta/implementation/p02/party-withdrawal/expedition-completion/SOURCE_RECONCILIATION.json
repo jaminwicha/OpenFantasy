@@ -1,0 +1,44 @@
+{
+  "sale-01": {
+    "dependencyCount": 1410,
+    "changedDependencies": [
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll"
+    ],
+    "sourceCount": 1350,
+    "changedSources": [
+      "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Expedition.cs",
+      "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs",
+      "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravelTests.cs"
+    ]
+  },
+  "journey-01": {
+    "dependencyCount": 1410,
+    "changedDependencies": [
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll",
+      "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Server.Tests/bin/Debug/net10.0/OpenFantasy.Server.Tests.dll"
+    ],
+    "sourceCount": 1350,
+    "changedSources": [
+      "Beta/Runtime/client/scripts/Networking/NativeRosterPlayProbe.Expedition.cs",
+      "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravel.cs",
+      "Beta/Runtime/tests/OpenFantasy.Server.Tests/Client/SharedAdventureNative/NativeExpeditionTravelTests.cs"
+    ]
+  },
+  "journey-02": {
+    "dependencyCount": 1410,
+    "changedDependencies": [],
+    "sourceCount": 1350,
+    "changedSources": []
+  },
+  "preservation": {
+    "predecessorIndexSha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+    "advisorySha256": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+    "originalEarnedSaveSha256": "cf21a8be1d99dc39aa2b856e8be0857c0c7b01b210a45911dd9fbab93e2c7a21",
+    "originalArrivalSaveSha256": "f5a4c71631f9a1bd5549f6961364297c1dbadd294bc85188b40c2f9e2809b361"
+  }
+}

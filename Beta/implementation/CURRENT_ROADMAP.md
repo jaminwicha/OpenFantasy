@@ -181,6 +181,10 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    The [native continuation checkpoint](p02/party-withdrawal/native-journey/RESULT.md) reopens the actual
    interrupted two-person expedition at Active and Staging boundaries: genuine damage, both paid withdrawals,
    one owned potion's exact use, the companion's no-dose guard and original-history replay pass.
+   The [second-town sale checkpoint](p02/party-withdrawal/expedition-completion/RESULT.md) now proves
+   explicit Offers/stall selection, sale of the purchased lot, retained crafted supplies and replay
+   from the exact arrival save. Two full runs still fail: outbound overshoot, then post-care detour
+   movement/no-progress. Diagnose simultaneous route occupancy from the retained failure before rerunning.
    The full commerce/outbound/return journey remains separately required; successful prefixes from
    different attempts do not establish it. Preserve the full1–4, listener/reconnect/
    latency, interaction, independent/native/human obligations; fresh41 proof is not a lived-save native migration.

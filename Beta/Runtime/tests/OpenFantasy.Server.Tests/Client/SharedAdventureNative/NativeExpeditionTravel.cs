@@ -84,7 +84,9 @@ internal sealed class NativeExpeditionTravel(WorldSnapshot basis, IReadOnlyDicti
             for (int samples = 1; samples <= Math.Min(64, safe.Count - 4); samples++)
             {
                 var end = safe[samples - 1];
-                long worst = costs.Skip(samples - 1).Take(5).Max();
+                int earliest = Math.Max(0, samples - 4);
+                // Input can release up to three samples early; its final four-sample envelope stays unchanged.
+                long worst = costs.Skip(earliest).Take(samples + 4 - earliest).Max();
                 if (worst < remaining) choices.Add((end, worst));
             }
         }
