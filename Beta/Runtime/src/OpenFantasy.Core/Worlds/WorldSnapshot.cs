@@ -468,6 +468,22 @@ public sealed class WorldSnapshot
         Pacing, _standaloneEncounterActions, EncounterLifecycle?.RetainBoundary(), Care, ResourceHistory, Coordination, Retreat,
         EncounterOutcome, Controllers, Recovery, ControlPermissions, effectiveControl, IdentityIndex);
 
+    internal WorldSnapshot WithPartyWithdrawal()
+    {
+        if (ProfileVersion != WorldPartyWithdrawalTransition.SourceProfileVersion)
+        {
+            throw new InvalidOperationException("Only the effective-control interpretation can enable collective withdrawal.");
+        }
+        return new(Inventory, Space, Residents, AdmissionVersion, Calendar, checked(Revision + 1), AdvancingSteps,
+            Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
+            Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
+            Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
+            ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells,
+            Pacing, _standaloneEncounterActions, EncounterLifecycle!.RetainBoundary(), Care, ResourceHistory,
+            Coordination, Retreat!.WithWithdrawal(EncounterWithdrawalState.Empty), EncounterOutcome, Controllers,
+            Recovery, ControlPermissions, EffectiveControl, IdentityIndex);
+    }
+
     internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
         Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,

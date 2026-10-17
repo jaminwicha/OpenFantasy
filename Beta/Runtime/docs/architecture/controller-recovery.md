@@ -28,6 +28,10 @@ ordinary schema selection for earlier profiles and selects schema11 for a fresh 
 The [effective-control profile40](effective-control.md) selects schema12 with the same measured
 allowance owner and mandatory fresh-genesis provenance. Acquiring or releasing delegated control
 does not restart the original disconnect episode or manufacture additional measured time.
+The [collective withdrawal transition](party-withdrawal.md#explicit-saved-world-transition) preserves
+schema12's original activation provenance, current fenced generation and measured allowance rows.
+The copied world changes its retreat interpretation, not its recovery origin. Fresh profile41 also
+uses schema12; its own unplayed genesis supplies the activation boundary.
 `UpgradeControllerRecovery` copies a schema-nine source into a create-only
 destination, preserving its exact genesis, journal, receipts, identities and canonical head. The source
 remains a recovery copy. Ordinary `OpenExisting` never performs an upgrade or restarts a timer.

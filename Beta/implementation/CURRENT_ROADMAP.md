@@ -57,7 +57,7 @@ It does not accept a new persistence format or close any gameplay, scale, indepe
 | Delegated paid-work recovery | Qualified within the [recovery result](p02/delegated-control-recovery/RESULT.md): 95 cases, ten new, three native; exact source/build reconciliation | Bounded checkpoint complete; populated allowance rows, grantee reacquisition and listener/socket-death proofs remain. No full reliability claim |
 | Ordinary adventure entry | Qualified solo opening and same-save trade/danger/retreat/care/sale/return/reopening; separate four-player TLS movement/reconnect | Shared participation in this journey, deeper NPC/story/environment and human acceptance remain |
 | Shared adventure opening | Two native participants gather, transfer an earned lot, craft and fund Wren; ten exact authenticated receipts and original-genesis replay | Full cooperative expedition, party-exit law, four-player journey and human acceptance remain; retained failed runs are not erased |
-| Collective withdrawal Core | Committed `8fe31828`: complete-side commitments, paid movement, cancellation and departure; 1,913 Core plus 22 selected Hosting cases pass | Lived-save transition, durable recovery, host/native integration and shared expedition remain. See the [bounded result](p02/party-withdrawal/world-binding/RESULT.md); this is not ordinary-launch support. |
+| Collective withdrawal | Core committed `8fe31828`; [save transition](p02/party-withdrawal/save-transition/RESULT.md) adds explicit copied40→41 publication and original-genesis replay of the earned shared opening | Archive-crossing/pressure and in-flight withdrawal recovery, host/native integration and shared expedition remain. The storage API is not ordinary-launch support; original Core evidence retains its bounded scope. |
 | Full P02 | Partial; material gameplay and presentation gaps | Every row in the P02 closure table below, integrated in one retained lineage, plus the unchanged human/native exit |
 | Complete desktop game | Broad later work remains | Complete non-mobile scope and catalogs through P11, full P12 quality/scale/campaign proof, P13 packaged desktop release |
 | Mobile completion | Later required phase | P14 actual Android/iOS/device/cross-play acceptance using the same game core |
@@ -158,8 +158,13 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    capacity proofs, explicit lived-save continuity and durable control/recovery before host/UI and the
    shared expedition. [Continuity source review](p02/party-withdrawal/continuity-review/RESULT.md)
    requires preserved original admission/history. Schema12 replay forbids an implicit upgrade;
-   root, journal and compatibility must agree. Executable migration and independent architectural
-   review remain open.
+   root, journal and compatibility must agree. Complete migration qualification and independent
+   architectural review remain open.
+   The [save-transition increment](p02/party-withdrawal/save-transition/RESULT.md) implements the explicit
+   copied40→41 path in schema12, with exact original admission/history, retained controller allowances
+   and replay of the915-commit earned opening. Its selected proofs do not close inherited/next archive
+   cuts, process-kill recovery during withdrawal, maximum-root capacity, host compatibility or native
+   participation. Finish those named integration proofs rather than treating a fresh41 root as a migration.
    Ordinary roster scenarios still use retreat law v2, which admits only a lone combatant on its
    side. Deliver the selected party-exit law through the saved journey before calling that route
    cooperative; preserve the legacy `AllyRemains` safeguard and Full Wait throughout integration.

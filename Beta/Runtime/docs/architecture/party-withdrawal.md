@@ -152,12 +152,39 @@ control boundaries. [Action codec24](../../src/OpenFantasy.Core/Worlds/WorldActi
 cancellation; the existing delegated envelope can retain it, while earlier world profiles refuse
 that intent. Standalone command decoding never expands an old world's action permissions.
 
-These are portable Core transactions. SQLite recovery, ordinary adventure admission and connected
-client selectors do not select profile41. A lived profile40 save requires the explicit preserved-source
-transition described by the persistence contract; a fresh profile41 root cannot replace its history.
+SQLite selects schema12 for profile41 and recovers either its fresh genesis or an explicitly
+transitioned profile40 lineage. Ordinary adventure admission and connected client selectors remain
+separate from that storage capability. A fresh profile41 root cannot replace lived history.
 Native preparation and observations must expose each actor's own choice, blockers and actual costs
 without revealing another participant's private command. Those adapter contracts must be implemented
 and qualified before this interpretation becomes an ordinary playable entry.
+
+## Explicit saved-world transition
+
+[WorldPartyWithdrawalTransition](../../src/OpenFantasy.Core/Worlds/WorldPartyWithdrawalTransition.cs)
+pins the source world/branch, revision, advancing steps, complete head hash, original admission and
+optional joint anchor. Its canonical codec names only40→41. The
+[processor](../../src/OpenFantasy.Core/Worlds/WorldPartyWithdrawalTransitionProcessor.cs) requires
+exploration with no reading hold, active timing/legacy route or pending excavation continuation.
+It refuses stale/foreign heads and occupied causes; it never completes or cancels work to gain eligibility.
+
+The candidate adds an empty collective owner and advances the world and lifecycle commit revision
+once. Calendar, exposure, tactical debt, original admission, existing retreat evidence, possessions,
+progression, care, material proposals, market state, controller assignments/permissions and all retained
+archive anchors stay exact. No archive cut or fresh resource baseline is required: the joint anchor's
+capability and admission contract is unchanged. The transition itself grants no action or elapsed time.
+
+[SqliteWorldAuthority.UpgradePartyWithdrawal](../../src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.PartyWithdrawal.cs)
+holds the original lease, prepares the exact request and copies it to a private destination through
+the shared publication owner. One transaction appends the typed migration record, cause identity,
+head and any scheduled checkpoint. Earlier journal/receipt/archive rows and operational controller
+recovery records remain unchanged. Complete original-genesis replay verifies the staged result before
+create-only publication; failure never selects a partial copy. Ordinary opening does not upgrade.
+
+Schema12's replay dispatch accepts exactly this transition pair once, while schema8 retains its
+different27→30 proposal transition. Fresh41 requires no migration entry. An unsupported interpreter
+must refuse the new journal/root rather than downgrade its nested state. Storage support does not
+authorize an older host or client to advertise compatible gameplay.
 
 ## Cross-system integration requirements
 

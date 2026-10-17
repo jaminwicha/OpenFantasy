@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~RetainedTransitionTests.A_lived_world_before_its_first_cut_transitions_without_inventing_a_previous_anchor",
+    "--logger",
+    "trx;LogFileName=legacy-transition-08.trx",
+    "--results-directory",
+    "../implementation/p02/party-withdrawal/save-transition/checks"
+  ],
+  "exit_code": 0,
+  "seconds": 37.0486450829776,
+  "timeout": 180,
+  "isolated_source_origin": "Beta/implementation/p02/care-definition-digests/qualification/durable-hosting-final/final.sqlite3",
+  "source_sha256": "814f0afc093031d1c9308d3e1c89683b2afbdda0076b2c636b084d2e4fb23773",
+  "environment": "OPENFANTASY_RETAINED_PROPOSAL_SOURCE points at a verified temporary copy; original never opened by SQLite"
+}

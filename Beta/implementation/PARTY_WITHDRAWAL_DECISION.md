@@ -113,6 +113,10 @@ party refusal remains active while this work is incomplete.
    inherited-system and whole-root capacity cases with the explicit durable admission/history
    transition. Include the old earned adventure save, actual cuts, controller allowances and restart
    across intermediate movement/arrival/failed-sample boundaries, with no rule/budget waiver.
+   The [saved-world transition](p02/party-withdrawal/save-transition/RESULT.md) supplies explicit
+   copied40→41 publication and original-genesis replay of the earned shared opening, preserving
+   controller allowances and prior receipts. Archive-crossing and in-flight withdrawal recovery
+   remain distinct proofs before this increment closes; ordinary launcher selection is unchanged.
 3. **Host and presentation.** Own-character withdrawal offers and inspection show actual path/cost,
    party readiness and blockers without exposing another actor's private route or command. Use the
    existing wheel, confirmation/cancellation and immutable observations. Arrival, interruption and

@@ -26,7 +26,7 @@ internal sealed class WorldUpgradePublication
 
     internal string CreateStagingCopy(WorldDatabase original, string profile)
     {
-        if (_stagingPath is not null || profile is not "production" and not "quest" and not "construction" and not "proposal" and not "controller-recovery")
+        if (_stagingPath is not null || profile is not "production" and not "quest" and not "construction" and not "proposal" and not "controller-recovery" and not "party-withdrawal")
         {
             throw new InvalidOperationException("This publication requires one explicitly selected staging copy.");
         }

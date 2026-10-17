@@ -101,10 +101,11 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 40 | Explicit effective co-player assignment, scoped gameplay authority and immutable command attribution over the complete permission world |
 | 41 | Collective withdrawal Core: independent side commitments, paid movement, cancellation and whole-side departure over the effective-control world |
 
-Profile41 has explicit Core root/step codecs and complete-world transactions; SQLite recovery and
-ordinary client admission do not select it. Its fresh factory cannot migrate a lived profile40 world.
-The [party-withdrawal reference](party-withdrawal.md) separates those executable Core contracts from
-the required preserved-source transition and connected/native adapter contracts.
+Profile41 has explicit Core root/step codecs and complete-world transactions, with schema12 storage
+for fresh roots or a single replayed40→41 transition. Its fresh factory cannot migrate a lived world;
+the explicit upgrade preserves original admission and history. Ordinary client admission remains a
+separate boundary. The [party-withdrawal reference](party-withdrawal.md) describes the Core/storage
+bindings and the connected/native adapter obligations.
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
@@ -138,7 +139,7 @@ against complete replay. Neither opening a lived profile26 save nor supplying a 
 selects this interpretation. The embedded ordinary-care factory retains its own profile26 admission.
 
 Profiles 28, 30, 32 and 33 use the same schema-eight physical layout with explicitly selected world
-semantics. Profiles 29 and 31 remain unassigned and refused. The sole lived interpretation change is
+semantics. Profiles 29 and 31 remain unassigned and refused. This layout's lived interpretation change is
 the privileged [27-to-30 proposal transition](coordinated-world-continuation.md#explicit-proposal-transition).
 [Paid profile 32](world-paid-exchange.md) has fresh admission; reopening another profile never enables
 trading. Its single-command Host boundary checks independently supplied delivery before receipt
@@ -428,7 +429,8 @@ public pins does not authenticate a player or a historical command.
 Extending a saved interpretation requires agreement among root/component and command codecs,
 complete-world admission, archive context, storage/replay dispatch, host selection and client
 compatibility. SQL admitting a commit kind alone is insufficient: journal recovery refuses profile
-migrations outside its named schema-three and schema-eight routes. Profiles 35–40 use the shared
+migrations outside its named schema-three, schema-eight and schema-twelve routes. The last route is
+the closed40→41 withdrawal transition, not a generic permission to change profiles. Profiles 35–40 use the shared
 [complete codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV35.cs) with a 4 KiB retreat field
 and reserved component maxima under the 16 MiB root budget. A larger standalone component must fit
 the complete reservation calculation; its own successful encoding does not prove that capacity.

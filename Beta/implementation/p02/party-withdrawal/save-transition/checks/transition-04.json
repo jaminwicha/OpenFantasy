@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~PartyWithdrawalTransitionTests",
+    "--logger",
+    "trx;LogFileName=transition-04.trx",
+    "--results-directory",
+    "../implementation/p02/party-withdrawal/save-transition/checks"
+  ],
+  "exit_code": 0,
+  "seconds": 35.467135500046425,
+  "timeout": 180
+}

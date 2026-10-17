@@ -107,15 +107,23 @@ Core implementation and its exact tests/failures: complete-side admission, indep
 Full Wait, cancellation, collective departure, canonical roots and replay from original genesis.
 Final source passes1,913 Core and22 selected world/legacy/control cases (23 new); documentation
 checks cover12 affected pages. Bounded Core scenarios cover 1–4 humans, actual collision/incapacity, exact terminal debt/carry and
-revoked delegated walking followed by owner return at arrival while an ally remains walking. It does
-not enable a SQLite journal, ordinary launch, connected client or lived-save upgrade for41. The next
-coherent increment is the explicit preserved-source transition and durable recovery, including the
-remaining outcome/interaction/capacity proofs, then host/native presentation and the same saved
-shared expedition. Keep all broader P02 exits intact. The Core marker is
+revoked delegated walking followed by owner return at arrival while an ally remains walking. It did
+not include a SQLite journal, ordinary launch, connected client or lived-save upgrade for41.
+The subsequent storage increment below supplies the explicit transition; remaining qualification
+and host/native work still precede the same saved shared expedition. Keep all broader P02 exits intact. The Core marker is
 `codex/milestone-party-withdrawal-core-20261017`; this is not full feature/phase acceptance. Pre-change
 `codex/checkpoint-before-withdrawal-world-20261003T193348Z` preserves `7f63b944`; the later WIP ref and
 scope are in the packet. Unrelated staged predecessor work and the untracked October5 research
 addendum are outside this increment.
+
+The [save-transition increment](p02/party-withdrawal/save-transition/RESULT.md) adds explicit copied
+40→41 publication in schema12, retaining original admission/history and operational allowances.
+Its58 selected tests pass (12 new): the915-commit earned shared opening, retained receipt retries,
+legacy transition and five injected publication boundaries are covered;
+ordinary opening still never upgrades. Next complete inherited/next archive cuts, durable in-flight
+withdrawal/recovery and remaining outcome/interaction/capacity proofs, then host/client selection and
+the same saved shared expedition. Storage capability alone does not qualify that native journey.
+Its checkpoint and exact checks are linked in the result; independent review remains unrun.
 
 After that selected expedition, execute roadmap PLAN-STATE: one partition/version design comparison
 and measured integrated prototype, before permanent NPC cognition state. Then NPC-01 proves evidence,

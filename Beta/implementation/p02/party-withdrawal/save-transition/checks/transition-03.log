@@ -1,0 +1,92 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:09.53]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 4) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 4) [1 s]
+  Error Message:
+   System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.
+  Stack Trace:
+     at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack& state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T& rootValue, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T& rootValue, Object rootValueBoxed)
+   at System.Text.Json.JsonSerializer.WriteString[TValue](TValue& value, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 211
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(Int32 point) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 80
+   at InvokeStub_PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+----- Inner Stack Trace -----
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+   at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+[xUnit.net 00:00:12.96]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Transition_preserves_every_other_facet_and_operational_allowance_through_replay [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Transition_preserves_every_other_facet_and_operational_allowance_through_replay [1 s]
+  Error Message:
+   System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.
+  Stack Trace:
+     at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack& state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T& rootValue, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T& rootValue, Object rootValueBoxed)
+   at System.Text.Json.JsonSerializer.WriteString[TValue](TValue& value, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 211
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Transition_preserves_every_other_facet_and_operational_allowance_through_replay() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 44
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+   at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+[xUnit.net 00:00:21.96]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction [8 s]
+  Error Message:
+   System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.
+  Stack Trace:
+     at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack& state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T& rootValue, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T& rootValue, Object rootValueBoxed)
+   at System.Text.Json.JsonSerializer.WriteString[TValue](TValue& value, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 211
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 189
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+   at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack& state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T& value, JsonSerializerOptions options, WriteStack& state)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/save-transition/checks/transition-03.trx
+
+Failed!  - Failed:     3, Passed:     8, Skipped:     0, Total:    11, Duration: 20 s - OpenFantasy.Hosting.Tests.dll (net8.0)

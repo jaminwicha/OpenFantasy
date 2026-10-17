@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="9ab4c0a5-95db-4a33-9a67-92739336a65a" name="@mac 2026-10-17 13:17:20" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T13:17:20.2783140-05:00" queuing="2026-10-17T13:17:20.2783140-05:00" start="2026-10-17T13:17:15.3774420-05:00" finish="2026-10-17T13:17:38.0064800-05:00" />
+  <TestSettings name="default" id="eacf43a5-fdcb-42f9-97cf-c77a9810688a">
+    <Deployment runDeploymentRoot="_mac_2026-10-17_13_17_20" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="1728b1f8-634f-41da-bd22-dcc95b964081" testId="b70f152f-5be0-5ec0-d661-0632f6ecd35c" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 4)" computerName="mac" duration="00:00:01.8745037" startTime="2026-10-17T13:17:23.5892420-05:00" endTime="2026-10-17T13:17:25.4728060-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1728b1f8-634f-41da-bd22-dcc95b964081">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.</Message>
+          <StackTrace>   at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack&amp; state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+   at System.Text.Json.JsonSerializer.WriteString[TValue](TValue&amp; value, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 211
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(Int32 point) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 80
+   at InvokeStub_PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+----- Inner Stack Trace -----
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+   at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack&amp; state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="a58ab1b7-b442-4559-a22e-f5570f67f760" testId="7b7f45d0-bd3c-fb6a-3f30-8783162341e1" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 2)" computerName="mac" duration="00:00:01.0183867" startTime="2026-10-17T13:17:21.2858110-05:00" endTime="2026-10-17T13:17:22.3042490-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a58ab1b7-b442-4559-a22e-f5570f67f760" />
+    <UnitTestResult executionId="87ace628-2de4-4885-afc5-8afdbaafda07" testId="c7fe49ae-528b-7d61-eedd-b91655f50aec" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction" computerName="mac" duration="00:00:08.9999604" startTime="2026-10-17T13:17:28.9120930-05:00" endTime="2026-10-17T13:17:37.9125550-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="87ace628-2de4-4885-afc5-8afdbaafda07">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.</Message>
+          <StackTrace>   at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack&amp; state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+   at System.Text.Json.JsonSerializer.WriteString[TValue](TValue&amp; value, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 211
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 189
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+   at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack&amp; state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="1e98c100-a9db-4cfe-8088-c03d8c241910" testId="9752ab6a-2231-f95b-8a22-8a88e8e1e250" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 0)" computerName="mac" duration="00:00:02.4664384" startTime="2026-10-17T13:17:17.7603160-05:00" endTime="2026-10-17T13:17:20.2319580-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1e98c100-a9db-4cfe-8088-c03d8c241910" />
+    <UnitTestResult executionId="08488300-d000-401d-b95b-8cfd2c7b8cd3" testId="354fa7a2-a94e-dfdb-0a0f-09f5fa8a549f" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Transition_preserves_every_other_facet_and_operational_allowance_through_replay" computerName="mac" duration="00:00:01.6161284" startTime="2026-10-17T13:17:27.2941260-05:00" endTime="2026-10-17T13:17:28.9108350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="08488300-d000-401d-b95b-8cfd2c7b8cd3">
+      <Output>
+        <ErrorInfo>
+          <Message>System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.</Message>
+          <StackTrace>   at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack&amp; state, NotSupportedException ex)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+   at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+   at System.Text.Json.JsonSerializer.WriteString[TValue](TValue&amp; value, JsonTypeInfo`1 jsonTypeInfo)
+   at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 211
+   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Transition_preserves_every_other_facet_and_operational_allowance_through_replay() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs:line 44
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+   at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack&amp; state, Utf8JsonWriter writer)
+   at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+   at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f31b59a0-85a3-432d-b032-77af4435caae" testId="4ece8b65-64ae-f3f1-f55c-be4cf03b43b4" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 3)" computerName="mac" duration="00:00:01.2832855" startTime="2026-10-17T13:17:22.3050550-05:00" endTime="2026-10-17T13:17:23.5883910-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f31b59a0-85a3-432d-b032-77af4435caae" />
+    <UnitTestResult executionId="6fa212fc-9f85-4a77-982b-b95e66b3ffd4" testId="4fe2c11b-3e4a-4e5f-6926-6dd8bff3354b" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.A_real_active_legacy_encounter_cannot_be_cleared_to_make_transition_eligible" computerName="mac" duration="00:00:00.0614526" startTime="2026-10-17T13:17:27.2321670-05:00" endTime="2026-10-17T13:17:27.2936640-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6fa212fc-9f85-4a77-982b-b95e66b3ffd4" />
+    <UnitTestResult executionId="c7a250f8-8bbc-4a99-822c-b0c1720481c4" testId="9682568b-e4e5-98dd-266b-3f75f638560a" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 1)" computerName="mac" duration="00:00:01.0472950" startTime="2026-10-17T13:17:20.2373940-05:00" endTime="2026-10-17T13:17:21.2848300-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c7a250f8-8bbc-4a99-822c-b0c1720481c4" />
+    <UnitTestResult executionId="fda2057f-835d-4d84-97b6-7281bb8b0691" testId="7c2524d3-ae21-1b38-0479-665659a22958" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Request_codec_is_canonical_and_rejects_other_interpretation_pairs_and_extra_bytes" computerName="mac" duration="00:00:00.0012202" startTime="2026-10-17T13:17:25.4773010-05:00" endTime="2026-10-17T13:17:25.4785590-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fda2057f-835d-4d84-97b6-7281bb8b0691" />
+    <UnitTestResult executionId="8b9bfd24-83fb-4384-9f91-97d85154083a" testId="5b6b709a-c3fc-5ee2-1139-5c99042f5b1a" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Tampered_migration_receipt_is_rejected_and_existing_destination_is_never_overwritten" computerName="mac" duration="00:00:01.3747723" startTime="2026-10-17T13:17:25.8565460-05:00" endTime="2026-10-17T13:17:27.2313510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8b9bfd24-83fb-4384-9f91-97d85154083a" />
+    <UnitTestResult executionId="67afa0b8-d7ab-4834-bb5e-2e8f416eac90" testId="d80e211b-8c8b-1324-b9b0-40a75802b98f" testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Stale_head_foreign_scope_admission_anchor_and_occupied_cause_are_refused" computerName="mac" duration="00:00:00.3769823" startTime="2026-10-17T13:17:25.4788290-05:00" endTime="2026-10-17T13:17:25.8558520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="67afa0b8-d7ab-4834-bb5e-2e8f416eac90" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c7fe49ae-528b-7d61-eedd-b91655f50aec">
+      <Execution id="87ace628-2de4-4885-afc5-8afdbaafda07" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Stale_head_foreign_scope_admission_anchor_and_occupied_cause_are_refused" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d80e211b-8c8b-1324-b9b0-40a75802b98f">
+      <Execution id="67afa0b8-d7ab-4834-bb5e-2e8f416eac90" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Stale_head_foreign_scope_admission_anchor_and_occupied_cause_are_refused" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9752ab6a-2231-f95b-8a22-8a88e8e1e250">
+      <Execution id="1e98c100-a9db-4cfe-8088-c03d8c241910" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 3)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4ece8b65-64ae-f3f1-f55c-be4cf03b43b4">
+      <Execution id="f31b59a0-85a3-432d-b032-77af4435caae" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.A_real_active_legacy_encounter_cannot_be_cleared_to_make_transition_eligible" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4fe2c11b-3e4a-4e5f-6926-6dd8bff3354b">
+      <Execution id="6fa212fc-9f85-4a77-982b-b95e66b3ffd4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="A_real_active_legacy_encounter_cannot_be_cleared_to_make_transition_eligible" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 4)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b70f152f-5be0-5ec0-d661-0632f6ecd35c">
+      <Execution id="1728b1f8-634f-41da-bd22-dcc95b964081" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Tampered_migration_receipt_is_rejected_and_existing_destination_is_never_overwritten" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="5b6b709a-c3fc-5ee2-1139-5c99042f5b1a">
+      <Execution id="8b9bfd24-83fb-4384-9f91-97d85154083a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Tampered_migration_receipt_is_rejected_and_existing_destination_is_never_overwritten" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Request_codec_is_canonical_and_rejects_other_interpretation_pairs_and_extra_bytes" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7c2524d3-ae21-1b38-0479-665659a22958">
+      <Execution id="fda2057f-835d-4d84-97b6-7281bb8b0691" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Request_codec_is_canonical_and_rejects_other_interpretation_pairs_and_extra_bytes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9682568b-e4e5-98dd-266b-3f75f638560a">
+      <Execution id="c7a250f8-8bbc-4a99-822c-b0c1720481c4" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7b7f45d0-bd3c-fb6a-3f30-8783162341e1">
+      <Execution id="a58ab1b7-b442-4559-a22e-f5570f67f760" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Transition_preserves_every_other_facet_and_operational_allowance_through_replay" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="354fa7a2-a94e-dfdb-0a0f-09f5fa8a549f">
+      <Execution id="08488300-d000-401d-b95b-8cfd2c7b8cd3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests" name="Transition_preserves_every_other_facet_and_operational_allowance_through_replay" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b70f152f-5be0-5ec0-d661-0632f6ecd35c" executionId="1728b1f8-634f-41da-bd22-dcc95b964081" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7b7f45d0-bd3c-fb6a-3f30-8783162341e1" executionId="a58ab1b7-b442-4559-a22e-f5570f67f760" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c7fe49ae-528b-7d61-eedd-b91655f50aec" executionId="87ace628-2de4-4885-afc5-8afdbaafda07" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9752ab6a-2231-f95b-8a22-8a88e8e1e250" executionId="1e98c100-a9db-4cfe-8088-c03d8c241910" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="354fa7a2-a94e-dfdb-0a0f-09f5fa8a549f" executionId="08488300-d000-401d-b95b-8cfd2c7b8cd3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4ece8b65-64ae-f3f1-f55c-be4cf03b43b4" executionId="f31b59a0-85a3-432d-b032-77af4435caae" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4fe2c11b-3e4a-4e5f-6926-6dd8bff3354b" executionId="6fa212fc-9f85-4a77-982b-b95e66b3ffd4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9682568b-e4e5-98dd-266b-3f75f638560a" executionId="c7a250f8-8bbc-4a99-822c-b0c1720481c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7c2524d3-ae21-1b38-0479-665659a22958" executionId="fda2057f-835d-4d84-97b6-7281bb8b0691" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5b6b709a-c3fc-5ee2-1139-5c99042f5b1a" executionId="8b9bfd24-83fb-4384-9f91-97d85154083a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d80e211b-8c8b-1324-b9b0-40a75802b98f" executionId="67afa0b8-d7ab-4834-bb5e-2e8f416eac90" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="11" executed="11" passed="8" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.54]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.58]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.78]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:09.53]       System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+[xUnit.net 00:00:09.53]       ---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.
+[xUnit.net 00:00:09.53]       Stack Trace:
+[xUnit.net 00:00:09.53]            at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack&amp; state, NotSupportedException ex)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+[xUnit.net 00:00:09.53]            at System.Text.Json.JsonSerializer.WriteString[TValue](TValue&amp; value, JsonTypeInfo`1 jsonTypeInfo)
+[xUnit.net 00:00:09.53]            at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+[xUnit.net 00:00:09.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs(211,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after)
+[xUnit.net 00:00:09.53]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs(80,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(Int32 point)
+[xUnit.net 00:00:09.53]            at InvokeStub_PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(Object, Span`1)
+[xUnit.net 00:00:09.53]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:00:09.53]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:09.53]            at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack&amp; state, Utf8JsonWriter writer)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:09.53]            at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:12.96]       System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+[xUnit.net 00:00:12.96]       ---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.
+[xUnit.net 00:00:12.96]       Stack Trace:
+[xUnit.net 00:00:12.96]            at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack&amp; state, NotSupportedException ex)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+[xUnit.net 00:00:12.96]            at System.Text.Json.JsonSerializer.WriteString[TValue](TValue&amp; value, JsonTypeInfo`1 jsonTypeInfo)
+[xUnit.net 00:00:12.96]            at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+[xUnit.net 00:00:12.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs(211,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after)
+[xUnit.net 00:00:12.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs(44,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Transition_preserves_every_other_facet_and_operational_allowance_through_replay()
+[xUnit.net 00:00:12.96]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:12.96]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:12.96]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:12.96]            at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack&amp; state, Utf8JsonWriter writer)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:12.96]            at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:21.96]       System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'. The unsupported member type is located on type 'System.UInt64'. Path: $.Quantities.
+[xUnit.net 00:00:21.96]       ---- System.NotSupportedException : The type 'OpenFantasy.Core.Geography.LiquidCellKey' is not a supported dictionary key using converter of type 'System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1[OpenFantasy.Core.Geography.LiquidCellKey]'.
+[xUnit.net 00:00:21.96]       Stack Trace:
+[xUnit.net 00:00:21.96]            at System.Text.Json.ThrowHelper.ThrowNotSupportedException(WriteStack&amp; state, NotSupportedException ex)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.SerializeAsObject(Utf8JsonWriter writer, Object rootValue)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.Metadata.JsonTypeInfo`1.Serialize(Utf8JsonWriter writer, T&amp; rootValue, Object rootValueBoxed)
+[xUnit.net 00:00:21.96]            at System.Text.Json.JsonSerializer.WriteString[TValue](TValue&amp; value, JsonTypeInfo`1 jsonTypeInfo)
+[xUnit.net 00:00:21.96]            at System.Text.Json.JsonSerializer.Serialize[TValue](TValue value, JsonSerializerOptions options)
+[xUnit.net 00:00:21.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs(211,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.AssertFacts(WorldSnapshot before, WorldSnapshot after)
+[xUnit.net 00:00:21.96]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalTransitionTests.cs(189,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction()
+[xUnit.net 00:00:21.96]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:21.96]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:21.96]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:21.96]            at System.Text.Json.ThrowHelper.ThrowNotSupportedException_DictionaryKeyTypeNotSupported(Type keyType, JsonConverter converter)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyName(Utf8JsonWriter writer, T value, JsonSerializerOptions options)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.JsonConverter`1.WriteAsPropertyNameCore(Utf8JsonWriter writer, T value, JsonSerializerOptions options, Boolean isWritingExtensionDataProperty)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.Converters.DictionaryDefaultConverter`3.OnWriteResume(Utf8JsonWriter writer, TDictionary value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.JsonDictionaryConverter`3.OnTryWrite(Utf8JsonWriter writer, TDictionary dictionary, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.Metadata.JsonPropertyInfo`1.GetMemberAndWriteJson(Object obj, WriteStack&amp; state, Utf8JsonWriter writer)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.Converters.ObjectDefaultConverter`1.OnTryWrite(Utf8JsonWriter writer, T value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.JsonConverter`1.TryWrite(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:21.96]            at System.Text.Json.Serialization.JsonConverter`1.WriteCore(Utf8JsonWriter writer, T&amp; value, JsonSerializerOptions options, WriteStack&amp; state)
+[xUnit.net 00:00:22.00]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T13:17:25.4801960-05:00">
+        <Text>[xUnit.net 00:00:09.53]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Interrupted_publication_preserves_source_and_exposes_only_a_fully_verified_destination(point: 4) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T13:17:28.9125950-05:00">
+        <Text>[xUnit.net 00:00:12.96]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Transition_preserves_every_other_facet_and_operational_allowance_through_replay [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-17T13:17:37.9165350-05:00">
+        <Text>[xUnit.net 00:00:21.96]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalTransitionTests.Earned_two_person_adventure_keeps_original_genesis_receipts_and_completed_construction [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

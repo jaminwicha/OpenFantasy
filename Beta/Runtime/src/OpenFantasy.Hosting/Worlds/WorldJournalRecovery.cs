@@ -119,7 +119,7 @@ internal sealed class WorldJournalRecovery
             throw new InvalidDataException("The controller world and its exclusive session-event schema disagree.");
         if ((genesis.ProfileVersion == WorldControlPermissionAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaEleven.Version))
             throw new InvalidDataException("The permission world and its exclusive recovery schema disagree.");
-        if ((genesis.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaTwelve.Version))
+        if ((genesis.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaTwelve.Version))
             throw new InvalidDataException("The effective-control world and its exclusive recovery schema disagree.");
         if ((genesis.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
@@ -161,7 +161,7 @@ internal sealed class WorldJournalRecovery
             ExpectedJournalEntry expected = PrepareEntry(database.SchemaVersion, stored, state,
                 genesis.IdentityIndex, stateHash, identities.ContainsKey, steps, migrations, transitions,
                 stored.Sequence == selectedMaterialSequence);
-            if (stored.Kind == WorldCommitKind.ProfileMigration && database.SchemaVersion == WorldDatabaseSchemaEight.Version)
+            if (stored.Kind == WorldCommitKind.ProfileMigration && database.SchemaVersion is WorldDatabaseSchemaEight.Version or WorldDatabaseSchemaTwelve.Version)
             {
                 transitionCount = checked(transitionCount + 1);
             }
@@ -248,17 +248,22 @@ internal sealed class WorldJournalRecovery
             throw new InvalidDataException("The controller world and its exclusive session-event schema disagree.");
         if ((state.ProfileVersion == WorldControlPermissionAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaEleven.Version))
             throw new InvalidDataException("The permission world and its exclusive recovery schema disagree.");
-        if ((state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaTwelve.Version))
+        if ((state.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion) != (database.SchemaVersion == WorldDatabaseSchemaTwelve.Version))
             throw new InvalidDataException("The effective-control world and its exclusive recovery schema disagree.");
         if ((state.ProfileVersion is 27 or 28 or 30 or 32 or 33 or 34 or 35) != (database.SchemaVersion == WorldDatabaseSchemaEight.Version))
         {
             throw new InvalidDataException("The coordinated world and its exclusive archive schema disagree.");
         }
         // The shared layout never converts one interpretation into another implicitly. A root keeps the
-        // interpretation its genesis selected, except a lived coordinated genesis continued by exactly
-        // one replayed explicit proposal transition; that commit's processor admits only 27 to 30.
-        bool transitioned = genesis.ProfileVersion == WorldProposalTransition.SourceProfileVersion
-            && state.ProfileVersion == WorldProposalTransition.TargetProfileVersion && transitionCount == 1;
+        // interpretation its genesis selected, except one explicitly replayed transition in its named
+        // schema: coordinated proposals (27 to 30), or collective withdrawal (40 to 41).
+        bool transitioned = transitionCount == 1 && (
+            database.SchemaVersion == WorldDatabaseSchemaEight.Version
+                && genesis.ProfileVersion == WorldProposalTransition.SourceProfileVersion
+                && state.ProfileVersion == WorldProposalTransition.TargetProfileVersion
+            || database.SchemaVersion == WorldDatabaseSchemaTwelve.Version
+                && genesis.ProfileVersion == WorldPartyWithdrawalTransition.SourceProfileVersion
+                && state.ProfileVersion == WorldPartyWithdrawalTransition.TargetProfileVersion);
         if (database.SchemaVersion is WorldDatabaseSchemaEight.Version or WorldDatabaseSchemaNine.Version or WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version or WorldDatabaseSchemaTwelve.Version
             && (state.ProfileVersion != genesis.ProfileVersion || transitionCount != 0) && !transitioned)
         {
@@ -289,6 +294,11 @@ internal sealed class WorldJournalRecovery
         {
             if (captureMaterialEvidence)
                 throw new InvalidDataException("Profile migrations have no live material observation interpretation.");
+            if (schemaVersion == WorldDatabaseSchemaTwelve.Version)
+            {
+                return new WorldPartyWithdrawalTransitionPreparation().Replay(stored, state, genesisIdentities,
+                    stateHash, historicallyOccupied);
+            }
             if (schemaVersion == WorldDatabaseSchemaEight.Version)
             {
                 return transitions.Prepare(stored, state, genesisIdentities, stateHash, historicallyOccupied);

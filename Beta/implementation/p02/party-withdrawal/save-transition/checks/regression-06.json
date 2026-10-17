@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~PartyWithdrawalTransitionTests|FullyQualifiedName~PartyWithdrawalWorldTests|FullyQualifiedName~ControllerRecoveryStorageTests|FullyQualifiedName~RetreatQueuedChoiceBytesTests|FullyQualifiedName~RetreatCompleteAdmissionTests",
+    "--logger",
+    "trx;LogFileName=regression-06.trx",
+    "--results-directory",
+    "../implementation/p02/party-withdrawal/save-transition/checks"
+  ],
+  "exit_code": 0,
+  "seconds": 102.87670504197013,
+  "timeout": 180
+}
