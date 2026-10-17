@@ -1,0 +1,6 @@
+{
+  "ref": "codex/checkpoint-before-spatial-read-20261017T222933Z",
+  "revision": "8fc4586b397ce59f4d8265f27caa49dd9feca86b",
+  "scope": "Clean runtime before sharing movement queries and preparing complete spatial reads. Unrelated staging and raw evidence excluded.",
+  "verification": "Movement terrain footprint accepted; world ownership/timing/publication still open."
+}

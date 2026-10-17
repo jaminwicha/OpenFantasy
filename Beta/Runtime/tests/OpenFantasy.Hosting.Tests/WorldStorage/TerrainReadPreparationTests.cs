@@ -18,9 +18,9 @@ public sealed class TerrainReadPreparationTests
         var distant = generator.Generate(basis.Scope, basis.Seed, basis.Rules, new(new(100, -2, -1), 4, 4, 5));
         TerrainRegionSnapshot[] regions = [left, right, distant];
         var actor = world.Space.GetActor(WorldServiceFixture.Id(10));
-        var footprint = MovementTerrainFootprint.Create(actor, world.Space.GroundSupport, -32, 0);
-        var plan = new TerrainReadPlan(basis.Scope, footprint.Bounds,
-            regions.Select(TerrainRegionReference.Capture), 2);
+        var complete = new LocalSpatialSnapshot(basis.Scope, regions, world.Space.Actors);
+        var prepared = SpatialMovementDependencies.Capture(complete, actor.ActorId, actor.Revision, -32, 0, 2);
+        var plan = prepared.Terrain;
         var directory = Directory.CreateTempSubdirectory("openfantasy-terrain-read-");
         try
         {
@@ -38,10 +38,10 @@ public sealed class TerrainReadPreparationTests
                 left.Bounds.CellCount + right.Bounds.CellCount);
             Assert.Equal(plan.References.Select(reference => reference.ContentHash), reads);
             Assert.DoesNotContain(distant.ComputeContentHash(), reads);
-            var complete = new LocalSpatialSnapshot(basis.Scope, regions, world.Space.Actors);
-            var local = new LocalSpatialSnapshot(basis.Scope, loaded.Regions, world.Space.Actors);
             var expected = complete.PrepareMove(actor.ActorId, actor.Revision, -32, 0);
-            var actual = local.PrepareMove(actor.ActorId, actor.Revision, -32, 0);
+            var actual = prepared.Evaluate(loaded);
+            prepared.ValidateCurrent(complete);
+            Assert.Single(prepared.Actors);
             Assert.Equal(SpatialMoveStatus.Prepared, actual.Status);
             Assert.Equal(expected.Status, actual.Status);
             Assert.Equal(expected.Candidate!.Feet, actual.Candidate!.Feet);

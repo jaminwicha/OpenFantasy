@@ -1,0 +1,11 @@
+{
+  "basis": "8fc4586b397ce59f4d8265f27caa49dd9feca86b",
+  "result": "Exact original method bodies after declared field-name, visibility and constant-qualification substitutions. Constructor wiring reviewed separately.",
+  "bodies": [
+    "PrepareMove",
+    "QueryVolume",
+    "QueryClearance",
+    "complete walking methods"
+  ],
+  "gate": "Source extraction check supplements behavioral tests; not independent acceptance."
+}

@@ -178,8 +178,10 @@ The first extraction should establish these concrete responsibilities, in the ex
   separate byte and decoded-cell budgets. Its file-backed geometry comparison omits irrelevant detail.
   The [movement footprint](p02/partition-state/movement-footprint/RESULT.md) now derives ordinary
   cardinal terrain/support coverage from the actual actor, including the full stair probe envelope.
-  It does not yet derive a complete action dependency set, authenticate a directory or include other actor,
-  structure, material and timing dependencies; no world-level partial-residency claim follows.
+  [Prepared spatial reads](p02/partition-state/spatial-read/RESULT.md) now select and revalidate relevant
+  actors and structures from the supplied complete scene, including new arrivals, then evaluate through
+  the shared ordinary query implementation. A complete action still needs authoritative directory,
+  material, timing and permission dependencies; no world-level partial-residency claim follows.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

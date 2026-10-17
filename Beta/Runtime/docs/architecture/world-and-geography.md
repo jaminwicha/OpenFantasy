@@ -710,6 +710,28 @@ or movement interpretations require their own qualified footprints. Captured act
 input, not a current-revision token. Other bodies, structures, cargo, timing and authority must still be
 included and revalidated by the complete action owner before publication.
 
+[SpatialMovementDependencies](../../src/OpenFantasy.Core/Spatial/SpatialMovementDependencies.cs) selects
+the mover and every supplied actor body or structure collider intersecting that conservative cell
+volume. Bearing surfaces belong to their selected structures. Capture starts from a complete admitted
+local scene; completeness of a larger directory is the caller's obligation. It retains only selected
+immutable bodies/structures, the footprint and terrain references, not the original scene or its distant
+detail. An initially omitted actor must still be detected if it enters the volume before publication.
+
+`ValidateCurrent` re-enumerates relevant colliders, compares exact actor binding/condition bytes and
+position/revision, compares structure boxes and bearing surfaces, and revalidates terrain pins and
+support interpretations. Unrelated distant changes can agree; required arrivals, departures or changes
+refuse. The check is neither a lock nor authentication: the owner must keep dependencies stable through
+publication and validate custody, clocks, commitments and rights separately.
+
+Evaluation requires a read set resolved for the exact captured terrain-plan instance. It invokes
+[SpatialMovementQueries](../../src/OpenFantasy.Core/Spatial/SpatialMovementQueries.cs), also used by
+`LocalSpatialSnapshot` for ordinary movement, clearance and route transitions. The shared
+[walking implementation](../../src/OpenFantasy.Core/Spatial/SpatialMovementQueries.Walking.cs) retains
+the same stair candidate ordering and swept/support probes. Evaluation returns only a positional
+candidate or refusal. It does not construct a partial admitted world, validate the selected colliders'
+unrelated foundations anew, or grant an action. Their immutable source scene supplies their admission;
+the actual transaction owner supplies authority.
+
 Preparation examines at most 4,096 candidate references and respects an explicitly supplied loaded-region
 budget. This is a per-preparation metadata bound, not a world size or directory limit. Requested bounds
 use the existing bounded region-volume type. `TotalLoadedCells` counts each selected region's complete

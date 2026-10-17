@@ -48,6 +48,12 @@ The [October17 review disposition](roadmap-review-20261017/LEAD_DISPOSITION.md) 
 world-partitioning/versioning investigation before permanent NPC cognition state, names the first
 NPC/story/ecology/audio deliverables, and narrows withdrawal integration to the selected expedition.
 It does not accept a new persistence format or close any gameplay, scale, independent or human gate.
+Reconciliation at the prepared-spatial-read checkpoint: R5's selected saved expedition is now
+qualified within its linked evidence; R1/R2/R7 have a measured baseline and preparation components,
+but still require the integrated ownership/publication/offscreen prototype and format decision.
+R3/R4/R6 remain NPC-01, STORY-01, ECO-01 and presentation deliverables; R8's catalog targets and
+R9's structured human playtest remain unresolved. R10–R13's preservation and efficiency dispositions
+remain in force. The original advisory report is preserved at its historical source boundary.
 
 ## Current checkpoint versus phase completion
 
@@ -213,10 +219,12 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    reuses ordinary spatial collision queries; file-backed tests leave irrelevant detail unloaded.
    The [movement footprint](p02/partition-state/movement-footprint/RESULT.md) now derives the terrain
    request from actual body/motion/support data, including stairs and negative elevations, and is used
-   by that file-backed test. It does not yet establish other actor/structure dependency completeness.
-   This is terrain-only preparation, not partitioned world simulation. Actor/structure/time closure, atomic
-   cross-partition publication and the selected format remain unproved/undecided. Record the decision, measured
-   limits and remaining questions in the living
+   by that file-backed test. [Prepared spatial reads](p02/partition-state/spatial-read/RESULT.md) now
+   select relevant actors/structures from the complete supplied scene and revalidate their arrival,
+   departure and exact state, using the same movement queries as the ordinary runtime.
+   This is bounded spatial preparation, not partitioned world simulation. Global directory completeness,
+   custody/time/permission closure, atomic cross-partition publication and the selected format remain
+   unproved/undecided. Record the decision, measured limits and remaining questions in the living
    plan and timeless reference. Required independent architectural review stays open while the owner
    pauses orchestration; lead inspection cannot substitute for it.
 3. Deliver **NPC-01** as the next new inhabited-world behavior. Prepare **STORY-01** content and

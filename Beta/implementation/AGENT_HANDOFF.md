@@ -185,7 +185,9 @@ The [terrain read boundary](p02/partition-state/terrain-reads/RESULT.md) supplie
 bounded archive loading to existing geometry, with missing/stale/false-header refusal. The file-backed
 case loads two required regions and leaves a third's detail unread.
 The [movement terrain footprint](p02/partition-state/movement-footprint/RESULT.md) derives its request
-from the actual actor and ground-support rules; 160 affected cases pass. Complete action closure,
+from the actual actor and ground-support rules; 160 affected cases pass. The
+[prepared spatial read](p02/partition-state/spatial-read/RESULT.md) now includes relevant collider
+selection/revalidation and the shared ordinary movement query implementation. Complete action closure,
 ownership transfer, absent-detail work and atomic publication/history remain the next prototype work.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,
