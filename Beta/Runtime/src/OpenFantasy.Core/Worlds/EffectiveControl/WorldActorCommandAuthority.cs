@@ -99,7 +99,9 @@ public static class WorldActorCommandAuthority
     internal static WorldActorAuthorization? AuthorizeAccepted(WorldSnapshot world, WorldActionCommand command)
     {
         bool retained = world.EncounterActions?.Pending.Any(value => value.CommandId == command.CommandId && value.ContentHash == command.ContentHash) == true
-            || world.Retreat?.Active is { } retreat && retreat.Command.CommandId == command.CommandId && retreat.Command.ContentHash == command.ContentHash;
+            || world.Retreat?.Active is { } retreat && retreat.Command.CommandId == command.CommandId && retreat.Command.ContentHash == command.ContentHash
+            || world.Retreat?.Withdrawal?.FindMember(command.ActorId) is { } member
+                && member.Command.CommandId == command.CommandId && member.Command.ContentHash == command.ContentHash;
         if (!retained || !ValidateRecordedEvidence(world.Inventory, command)) return null;
         return new(command.ActorId, new(command.PrincipalId, command.OriginSessionId), command.CommandId,
             command.ContentHash, command.ControlWitness, RequiredCapabilities(command.Intent));
@@ -110,7 +112,7 @@ public static class WorldActorCommandAuthority
         ControlPermissionIntent => 0,
         PendingCareDispositionIntent or RevokeCarePermissionIntent => WorldControlCapabilities.CareDisposition,
         AcknowledgeCareIntent or AdministerRemedyIntent or UseRestorativeItemIntent => WorldControlCapabilities.Recovery,
-        QueueEncounterRetreatIntent => WorldControlCapabilities.Combat | WorldControlCapabilities.Traversal,
+        QueueEncounterRetreatIntent or CancelEncounterWithdrawalIntent => WorldControlCapabilities.Combat | WorldControlCapabilities.Traversal,
         QueueEncounterWaitIntent or QueueEncounterAbilityIntent or EnterEncounterIntent or ReleaseEncounterIntent
             or AcknowledgeEncounterOutcomeIntent => WorldControlCapabilities.Combat,
         SpeakToActorIntent or CloseDialogueIntent or DeliveryQuestIntent => WorldControlCapabilities.ConversationAndQuests,

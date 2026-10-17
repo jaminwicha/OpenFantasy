@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+    "-list",
+    "tests",
+    "-class",
+    "*PartyWithdrawalWorldTests",
+    "-noColor"
+  ],
+  "exit": 0,
+  "seconds": 0.7776607499690726,
+  "scope": "Direct xUnit discovery diagnostic, no scenarios executed"
+}

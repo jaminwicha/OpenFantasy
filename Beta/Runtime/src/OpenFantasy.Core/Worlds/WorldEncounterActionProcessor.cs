@@ -48,11 +48,27 @@ internal static class WorldEncounterActionProcessor
                 WorldActionRejection rejection = ValidateChoice(world, basis, command, retreat);
                 if (rejection == WorldActionRejection.None)
                 {
-                    var kind = command.Intent is QueueEncounterWaitIntent ? EncounterDecisionKind.Wait : EncounterDecisionKind.Action;
-                    timing = timing.QueueDecision(timing.Revision, new(command.ActorId, command.CommandId, kind, command.ContentHash));
-                    if (command.Intent is QueueEncounterAbilityIntent) pending.Add(command);
-                    // The committed route is retained by the retreat owner; its origin is pinned by the actor revision.
-                    if (command.Intent is QueueEncounterRetreatIntent) retreat = retreat!.Commit(command, world.Space.GetActor(command.ActorId).Feet);
+                    if (command.Intent is CancelEncounterWithdrawalIntent)
+                    {
+                        retreat = WorldPartyWithdrawalChoices.Cancel(retreat!, command.ActorId, revision);
+                        timing = new EncounterTimingSnapshot(timing.Scope, checked(timing.Revision + 1), timing.ElapsedTacticalUnits,
+                            timing.Actors, timing.Decisions.Where(value => value.ActorId != command.ActorId));
+                    }
+                    else
+                    {
+                        var kind = command.Intent is QueueEncounterWaitIntent ? EncounterDecisionKind.Wait : EncounterDecisionKind.Action;
+                        timing = timing.QueueDecision(timing.Revision, new(command.ActorId, command.CommandId, kind, command.ContentHash));
+                        if (command.Intent is QueueEncounterAbilityIntent)
+                        {
+                            pending.Add(command);
+                            if (retreat?.Withdrawal?.FindMember(command.ActorId) is not null)
+                                retreat = WorldPartyWithdrawalChoices.Cancel(retreat, command.ActorId, revision);
+                        }
+                        // The committed route is retained by the retreat owner; its origin is pinned by the actor revision.
+                        if (command.Intent is QueueEncounterRetreatIntent) retreat = retreat!.Withdrawal is not null
+                            ? WorldPartyWithdrawalChoices.Accept(world, retreat, command)
+                            : retreat.Commit(command, world.Space.GetActor(command.ActorId).Feet);
+                    }
                 }
                 var receipt = WorldActionReceipt.Create(command, revision, rejection);
                 Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
@@ -62,6 +78,9 @@ internal static class WorldEncounterActionProcessor
         }
         else if (batch.Kind == WorldBatchKind.EncounterResolution)
         {
+            if (retreat?.Withdrawal is { } withdrawal && WorldEncounterActions.DueActors(world) is { Count: > 0 } actors
+                && withdrawal.FindMember(actors[0].ActorId) is { HasArrived: false } member)
+                return WorldPartyWithdrawalResolver.Resolve(world, member, revision, receipts, identities);
             if (retreat?.Active is { } committed && WorldEncounterActions.DueActors(world) is { Count: > 0 } due
                 && due[0].ActorId == committed.ActorId)
             {
@@ -112,6 +131,8 @@ internal static class WorldEncounterActionProcessor
     private static EncounterRetreatState? CancelInterruptedRetreat(WorldSnapshot world, EncounterRetreatState? retreat,
         EncounterActionSnapshot actions, ProgressionSnapshot progression, ulong sequence)
     {
+        if (retreat?.Withdrawal is not null)
+            return WorldPartyWithdrawalChoices.ObserveCombat(world, retreat, actions, progression, sequence);
         if (retreat?.Active is not { } active) return retreat;
         bool incapacitated = progression.GetActor(active.ActorId).CurrentHp == 0;
         bool outcome = actions.Combatants.Where(actor => actor.Side != 0 && progression.GetActor(actor.ActorId).CurrentHp > 0)
@@ -130,6 +151,8 @@ internal static class WorldEncounterActionProcessor
             return WorldActionRejection.NotAuthorized;
         if (world.Space.GetActor(command.ActorId).Revision != command.ExpectedActorRevision)
             return WorldActionRejection.RevisionConflict;
+        if (command.Intent is CancelEncounterWithdrawalIntent cancellation)
+            return WorldPartyWithdrawalChoices.ValidateCancellation(world, running, command.ActorId, cancellation);
         // A committed retreat is the actor's standing decision; nothing else can be queued while it holds.
         if (!WorldEncounterActions.CanParticipate(world, command.ActorId) || !basis.GetActor(command.ActorId).IsDue
             || basis.Decisions.Any(decision => decision.ActorId == command.ActorId) || running?.Holds(command.ActorId) == true)

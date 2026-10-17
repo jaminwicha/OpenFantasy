@@ -1,0 +1,13 @@
+xUnit.net v3 In-Process Runner v3.2.2+728c1dce01 (64-bit .NET 8.0.31)
+  Discovering: OpenFantasy.Hosting.Tests (method display = ClassAndMethod, method display options = None)
+  Discovered:  OpenFantasy.Hosting.Tests (1 test case to be run)
+  Starting:    OpenFantasy.Hosting.Tests (parallel test collections = on [8 threads], stop on fail = off, explicit = off, seed = 1799745030)
+    OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.A_newly_occupied_route_interrupts_only_its_actor_and_charges_the_blocked_attempt [FAIL]
+      Assert.NotNull() Failure: Value is null
+      Stack Trace:
+        tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalWorldTests.cs(72,0): at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.A_newly_occupied_route_interrupts_only_its_actor_and_charges_the_blocked_attempt()
+           at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+           at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+  Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+=== TEST EXECUTION SUMMARY ===
+   OpenFantasy.Hosting.Tests  Total: 1, Errors: 0, Failed: 1, Skipped: 0, Not Run: 0, Time: 3.705s

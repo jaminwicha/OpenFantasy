@@ -256,6 +256,7 @@ public sealed class WorldSnapshot
         WorldEncounterActionAdmission.Validate(this);
         WorldEncounterLifecycleAdmission.Validate(this);
         WorldEncounterRetreatAdmission.Validate(this);
+        WorldPartyWithdrawalAdmission.Validate(this);
         WorldEncounterOutcomeAdmission.Validate(this);
         WorldControllerAdmission.Validate(this);
         WorldRecoveryAdmission.Validate(this);
@@ -330,7 +331,7 @@ public sealed class WorldSnapshot
     public EncounterActionSnapshot? EncounterActions => EncounterLifecycle is { } lifecycle
         ? lifecycle.HasEncounter ? lifecycle.Actions : null : _standaloneEncounterActions;
     public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
-    public ushort ProfileVersion => EffectiveControl is not null ? WorldDelegatedControlAdmission.ProfileVersion : ControlPermissions is not null ? WorldControlPermissionAdmission.ProfileVersion : Care?.SupportsDispositions == true ? WorldCareDispositionAdmission.ProfileVersion : Recovery is not null ? WorldRecoveryAdmission.ProfileVersion : Controllers is not null ? WorldControllerAdmission.ProfileVersion : Coordination?.Markets is not null
+    public ushort ProfileVersion => Retreat?.Withdrawal is not null ? WorldPartyWithdrawalAdmission.ProfileVersion : EffectiveControl is not null ? WorldDelegatedControlAdmission.ProfileVersion : ControlPermissions is not null ? WorldControlPermissionAdmission.ProfileVersion : Care?.SupportsDispositions == true ? WorldCareDispositionAdmission.ProfileVersion : Recovery is not null ? WorldRecoveryAdmission.ProfileVersion : Controllers is not null ? WorldControllerAdmission.ProfileVersion : Coordination?.Markets is not null
         ? Retreat is not null
             ? EncounterOutcome is not null ? WorldEncounterOutcomeAdmission.ProfileVersion : WorldEncounterRetreatAdmission.ProfileVersion
             : WorldMarketAdmission.ProfileVersion
@@ -431,7 +432,7 @@ public sealed class WorldSnapshot
             throw new ArgumentException("A successor must retain its care owner.");
         if (care is not null && !ReferenceEquals(care, Care)) Care!.ValidateSuccessor(care);
         retreat ??= Retreat;
-        if ((retreat is null) != (Retreat is null) || retreat is not null && retreat.RulesPin != Retreat!.RulesPin)
+        if ((retreat is null) != (Retreat is null) || retreat is not null && (retreat.RulesPin != Retreat!.RulesPin || (retreat.Withdrawal is null) != (Retreat.Withdrawal is null)))
             throw new ArgumentException("A successor must retain its exact retreat interpretation.");
         encounterOutcome ??= EncounterOutcome;
         if ((encounterOutcome is null) != (EncounterOutcome is null)

@@ -54,7 +54,7 @@ public static class WorldRestorativeActions
         EntityId actorId, EntityId recipientActorId, EntityId definitionId, EntityId? permissionId,
         UseRestorativeItemIntent? captured, bool readingHold)
     {
-        if (basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 and not 39 and not 40 || care.Ordinary is not { } ordinary)
+        if (basis.ProfileVersion is not 26 and not 27 and not 28 and not 30 and not 32 and not 33 and not 34 and not 35 and not 36 and not 37 and not 38 and not 39 and not 40 and not 41 || care.Ordinary is not { } ordinary)
             return Blocked(RestorativeAvailabilityReason.UnsupportedProfile);
         if (care.Pending is not null) return Blocked(RestorativeAvailabilityReason.PendingAftermathCare);
         if (basis.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Exploration)

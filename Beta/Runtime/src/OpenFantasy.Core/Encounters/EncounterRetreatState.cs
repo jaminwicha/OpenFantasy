@@ -126,17 +126,19 @@ public sealed record EncounterRetreatOutcome
 }
 
 /// <summary>
-/// Root owner of the explicit retreat interpretation (profile 34): its pinned law, the number of accepted retreats,
-/// at most one committed continuation and the latest terminal record. The world owns legality and publication.
+/// One retreat owner: legacy law, acceptance count and terminal evidence, plus either its lone continuation
+/// or an explicitly selected collective interpretation. The world owns legality and publication.
 /// </summary>
 public sealed class EncounterRetreatState
 {
     public const int MaximumCommandByteLength = 1_024;
 
     public EncounterRetreatState(ContentHash rulesPin, ulong acceptedCount, EncounterRetreatContinuation? active,
-        EncounterRetreatOutcome? last)
+        EncounterRetreatOutcome? last, EncounterWithdrawalState? withdrawal = null)
     {
         ArgumentNullException.ThrowIfNull(rulesPin);
+        if (withdrawal is not null && active is not null)
+            throw new ArgumentException("Legacy and collective retreat cannot execute together.");
         if (rulesPin != EncounterRetreatRules.Pin || active is not null && acceptedCount == 0
             || last is not null && acceptedCount == 0 || active is not null && last?.CommandId == active.Command.CommandId)
         {
@@ -146,21 +148,26 @@ public sealed class EncounterRetreatState
         AcceptedCount = acceptedCount;
         Active = active;
         Last = last;
+        Withdrawal = withdrawal;
     }
 
     public ContentHash RulesPin { get; }
     public ulong AcceptedCount { get; }
     public EncounterRetreatContinuation? Active { get; }
     public EncounterRetreatOutcome? Last { get; }
-    public ContentHash ContentHash => ContentHash.Compute(EncounterRetreatCodecV1.Encode(this));
+    public EncounterWithdrawalState? Withdrawal { get; }
+    public ContentHash ContentHash => ContentHash.Compute(Withdrawal is null
+        ? EncounterRetreatCodecV1.Encode(this) : EncounterRetreatCodecV2.Encode(this));
 
     public static EncounterRetreatState Fresh() => new(EncounterRetreatRules.Pin, 0, null, null);
 
-    public bool Holds(EntityId actorId) => Active?.ActorId == actorId;
+    public bool Holds(EntityId actorId) => Withdrawal?.Holds(actorId) ?? (Active?.ActorId == actorId);
+
+    internal EncounterRetreatState WithWithdrawal(EncounterWithdrawalState value) => new(RulesPin, AcceptedCount, Active, Last, value);
 
     internal EncounterRetreatState Commit(WorldActionCommand command, SubunitPosition origin)
     {
-        if (Active is not null)
+        if (Active is not null || Withdrawal is not null)
         {
             throw new InvalidOperationException("Only one committed retreat can be in flight.");
         }

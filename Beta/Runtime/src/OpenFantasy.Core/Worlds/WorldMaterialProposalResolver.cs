@@ -33,7 +33,7 @@ internal static class WorldMaterialProposalResolver
             new(inventory, production, book, reason, [], null, null);
 
         var delivery = new TrustedCommandDelivery(action.PrincipalId, action.OriginSessionId);
-        bool delegatedProfile = state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion;
+        bool delegatedProfile = state.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion;
         WorldActorAuthorization? authorization = delegatedProfile ? WorldActorCommandAuthority.AuthorizeSelection(state, action) : null;
         if (action.WorldId != state.WorldId || action.BranchId != state.BranchId
             || (delegatedProfile ? authorization is null : !inventory.CanControl(delivery, action.ActorId)))
@@ -109,12 +109,12 @@ internal static class WorldMaterialProposalResolver
         bool withdraws = kind == WorldMaterialProposalOutcomeKind.Withdrawn;
         if (proposal is null || proposal.IsDue(state.AdvancingSteps) || !book.CanClose
             || (withdraws ? proposal.Terms.SenderActorId : proposal.Terms.RecipientActorId) != action.ActorId
-            || withdraws && state.ProfileVersion != WorldDelegatedControlAdmission.ProfileVersion
+            || withdraws && state.ProfileVersion is not WorldDelegatedControlAdmission.ProfileVersion and not WorldPartyWithdrawalAdmission.ProfileVersion
                 && proposal.Grant.PrincipalId != action.PrincipalId)
         {
             return refuse(WorldActionRejection.Unavailable);
         }
-        WorldMaterialProposalTermination? termination = state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+        WorldMaterialProposalTermination? termination = state.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion
             ? new(action.CommandId, new(action.PrincipalId, action.OriginSessionId), action.ControlWitness) : null;
         return new(inventory, production, book.Close(new(proposal, kind, sequence, action.CommandId, null, termination)),
             WorldActionRejection.None, [], null, null);
@@ -142,10 +142,10 @@ internal static class WorldMaterialProposalResolver
         // The saved grant stays valid only while its named principal's recorded binding still
         // controls the source actor. It is compared with current control, never treated as a delivery.
         EntityId senderId = terms.SenderActorId;
-        WorldActorAuthorization? senderAuthorization = state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+        WorldActorAuthorization? senderAuthorization = state.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion
             ? WorldActorCommandAuthority.AuthorizeRetainedOffer(state, senderId, proposal.SenderDelivery,
                 proposal.ControlWitness, proposal.CreationCommandId, WorldControlCapabilities.Inventory) : null;
-        if ((state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+        if ((state.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion
                 ? senderAuthorization is null : !inventory.CanControl(proposal.SenderDelivery, senderId))
             || batch.Actions.Any(other => other.ActorId == senderId)
             || worked.Contains(senderId) || worked.Contains(action.ActorId)

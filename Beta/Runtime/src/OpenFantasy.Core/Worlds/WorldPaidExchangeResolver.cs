@@ -40,7 +40,7 @@ internal static class WorldPaidExchangeResolver
 
         var delivery = new TrustedCommandDelivery(action.PrincipalId, action.OriginSessionId);
         if (action.WorldId != state.WorldId || action.BranchId != state.BranchId
-            || (state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+            || (state.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion
                 ? WorldActorCommandAuthority.AuthorizeSelection(state, action) is null
                 : !inventory.CanControl(delivery, action.ActorId)))
         {
@@ -163,7 +163,7 @@ internal static class WorldPaidExchangeResolver
         // The issuer submits no command of its own in the settling step. Its recorded delivery stays valid
         // only while it is the issuer's current control binding.
         EntityId issuerId = quote.IssuerActorId;
-        if (!(state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+        if (!(state.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion
                 ? WorldActorCommandAuthority.IsCurrentWitness(state, issuerId, open.IssuerDelivery,
                     open.ControlWitness, WorldControlCapabilities.Trade)
                 : inventory.CanControl(open.IssuerDelivery, issuerId))

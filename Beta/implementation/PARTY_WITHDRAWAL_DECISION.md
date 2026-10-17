@@ -1,9 +1,11 @@
 # Party withdrawal: integration decision and delivery plan
 
-Recorded 2026-10-03. This supplements RQ-029, RQ-079 and RQ-099 and the P02 cooperative expedition
+Recorded 2026-10-03; Core evidence updated 2026-10-17. This supplements RQ-029, RQ-079 and RQ-099 and the P02 cooperative expedition
 in the [current roadmap](CURRENT_ROADMAP.md). The frozen full spec and its gates remain intact.
-Status: component contract implemented; runtime law, migration, presentation and native/human
-qualification remain open. This is not approval to activate a new rule in an existing save.
+Status: component and profile41 complete-world Core binding implemented; qualification is recorded
+in the [world-binding packet](p02/party-withdrawal/world-binding/RESULT.md). SQLite migration,
+host/client selection, presentation and native/human qualification remain open. This is not approval
+to activate a new rule in an existing save.
 
 ## Player outcome and selected direction
 
@@ -23,8 +25,9 @@ ends the entire episode when that actor clears contact. Reusing that terminal be
 would abandon allies and cancel their fight. Do not teleport the party after unanimous voting, add
 a wall-clock escape timer, convert other humans to NPCs, or reinterpret saved v2 commands.
 
-The [standalone component reference](../Runtime/docs/architecture/party-withdrawal.md) records the
-implemented model. It contains neither actor authorization nor a complete-world publication path.
+The [architecture reference](../Runtime/docs/architecture/party-withdrawal.md) distinguishes the domain
+component from its Core command admission and complete-candidate publication. Neither is a storage
+commit or an authenticated connected-client path by itself.
 
 ## Decisions to settle in the resolver increment
 
@@ -48,7 +51,8 @@ it does not claim they are implemented or reduce the full specification to the s
 
 Source review selects an **explicit new complete-world interpretation with a versioned retreat
 facet**, retaining one retreat owner. This refines the earlier candidate of changing only the nested
-component. No new numeric profile, codec or schema is implemented or reserved by this decision.
+component. The Core binding selects profile41, retreat codecV2 and cancellation action codec24.
+No SQLite schema or lived transition is selected merely by these format additions.
 
 The reasons are concrete. `WorldSnapshotCodecV35` encodes profiles 35–40 with the legacy retreat
 codec, its 4 KiB field bound and its reserved maximum. `WorldSnapshot.WithState` preserves the retreat
@@ -100,11 +104,15 @@ party refusal remains active while this work is incomplete.
 1. **Commitment representation — implemented, bounded checks recorded.** Immutable complete-side
    membership; independent exact commands, routes and progress; canonical restore and corruption
    rejection. This is a retained component for the intended core, not a second simulation or host.
-2. **Complete-world transaction and continuity — next.** Wire the component to authenticated action
-   admission, due-order resolver, interruption/cancellation, collective exit and existing controller
-   handoff. Resolve the table above. Add the chosen explicit codec/admission/history transition and
-   prove replay through every intermediate movement/arrival/failed-sample boundary. Include the old
-   earned adventure save, downed/blocking allies and permission changes, with no rule/budget waiver.
+2. **Complete-world transaction and continuity — in progress.** The Core binds actor-command
+   authority, due-order paid movement, interruption/cancellation, collective exit and controller-hold
+   semantics, with explicit codecs. Bounded managed scenarios cover 1–4 humans, blocked movement
+   after an ally arrives, actual damage/incapacity, and revoked delegated walking with safe owner
+   return before the other route finishes. Two-person original-genesis replay restores every walked
+   boundary. These are Core proofs, not SQLite or network approval. Complete remaining genuine-outcome,
+   inherited-system and whole-root capacity cases with the explicit durable admission/history
+   transition. Include the old earned adventure save, actual cuts, controller allowances and restart
+   across intermediate movement/arrival/failed-sample boundaries, with no rule/budget waiver.
 3. **Host and presentation.** Own-character withdrawal offers and inspection show actual path/cost,
    party readiness and blockers without exposing another actor's private route or command. Use the
    existing wheel, confirmation/cancellation and immutable observations. Arrival, interruption and

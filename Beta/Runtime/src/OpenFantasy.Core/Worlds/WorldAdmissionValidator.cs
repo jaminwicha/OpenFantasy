@@ -56,6 +56,7 @@ public static class WorldAdmissionValidator
         admission.ReadControlPermissions();
         admission.ReadEffectiveControl();
         admission.ReadRetainedControlWitnesses();
+        admission.ReadWithdrawalReferences();
         return admission.Complete();
     }
 
@@ -133,6 +134,16 @@ public static class WorldAdmissionValidator
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed, world.EncounterLifecycle);
 
+        internal void ReadWithdrawalReferences()
+        {
+            if (world.Retreat?.Withdrawal is not { } withdrawal) return;
+            foreach (var member in withdrawal.Parties.SelectMany(party => party.Members))
+                Add(member.Command.CommandId, WorldIdentityRole.CauseReference);
+            if (withdrawal.Last is not { } last) return;
+            foreach (var end in last.Ended) Add(end.Member.Command.CommandId, WorldIdentityRole.CauseReference);
+            foreach (var identity in last.CancelledDecisions) Add(identity, WorldIdentityRole.CauseReference);
+        }
+
         internal void ReadEffectiveControl()
         {
             if (world.EffectiveControl is not { } effective) return;
@@ -163,6 +174,11 @@ public static class WorldAdmissionValidator
             }
             foreach (var command in world.EncounterActions?.Pending.AsEnumerable() ?? []) Read(command.ControlWitness);
             Read(world.Retreat?.Active?.Command.ControlWitness);
+            if (world.Retreat?.Withdrawal is { } withdrawal)
+            {
+                foreach (var member in withdrawal.Parties.SelectMany(party => party.Members)) Read(member.Command.ControlWitness);
+                foreach (var end in withdrawal.Last?.Ended.AsEnumerable() ?? []) Read(end.Member.Command.ControlWitness);
+            }
             foreach (var evidence in world.ResourceHistory?.Evidence.AsEnumerable() ?? [])
             {
                 if (evidence is WorldEncounterResourceEvidence attack) Read(attack.Request.ControlWitness);

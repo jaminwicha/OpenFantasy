@@ -51,6 +51,12 @@ pending request is retained by the retreat owner rather than the action queue, a
 committed retreat holds the actor without any decision; while it holds, Wait and abilities are refused and offered
 as blocked (`Retreating`) ([encounter-retreat](encounter-retreat.md)).
 
+In profile41 Core, [collective withdrawal](party-withdrawal.md) applies that standing decision to
+each uncompleted route independently. Arrival restores ordinary due decisions while retaining the
+party commitment. Wait keeps that commitment and pays its usual cost; an accepted ability cancels
+it. Explicit route cancellation is a nonadvancing decision boundary, including between movement
+samples, and preserves previously paid debt. It never queues a free replacement action.
+
 Resolution is a separate system boundary. All required human choices must be present before the first
 eligible due actor resolves in canonical order. Legality is checked again against the actual world.
 A legal physical action spends its MP, updates the actual target's HP, advances its damage stream and

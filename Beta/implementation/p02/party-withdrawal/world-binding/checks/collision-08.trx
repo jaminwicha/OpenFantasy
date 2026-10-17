@@ -1,0 +1,32 @@
+<TestRun id="4cfe097c-280e-41fd-8cb3-fe7fe6d52426" name="alucinor@unknown 2026-10-17T12:27:41.4092780-05:00" runUser="alucinor" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T12:27:41.4092780-05:00" queuing="2026-10-17T12:27:41.4092780-05:00" start="2026-10-17T12:27:41.4092780-05:00" finish="2026-10-17T17:27:45.1057660+00:00" />
+  <TestSettings name="default" id="6c4d5628-128d-4c3b-a1a4-ab366a4594ad" />
+  <Results>
+    <UnitTestResult testName="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.A_newly_occupied_route_interrupts_only_its_actor_and_charges_the_blocked_attempt" outcome="Failed" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" testId="1fcac17f-df42-47b7-a9cb-acba78bd05fe" executionId="1fcac17f-df42-47b7-a9cb-acba78bd05fe" computerName="unknown" duration="00:00:03.5844983" startTime="2026-10-17T17:27:41.4650800+00:00" endTime="2026-10-17T17:27:45.1057660+00:00">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.NotNull() Failure: Value is null</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.A_newly_occupied_route_interrupts_only_its_actor_and_charges_the_blocked_attempt() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalWorldTests.cs:line 72
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.A_newly_occupied_route_interrupts_only_its_actor_and_charges_the_blocked_attempt" id="1fcac17f-df42-47b7-a9cb-acba78bd05fe" storage="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll">
+      <Execution id="1fcac17f-df42-47b7-a9cb-acba78bd05fe" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" className="OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests" name="A_newly_occupied_route_interrupts_only_its_actor_and_charges_the_blocked_attempt" adapterTypeName="executor://4cfe097c-280e-41fd-8cb3-fe7fe6d52426/xunit.v3/3.2.2" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" testId="1fcac17f-df42-47b7-a9cb-acba78bd05fe" executionId="1fcac17f-df42-47b7-a9cb-acba78bd05fe" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>

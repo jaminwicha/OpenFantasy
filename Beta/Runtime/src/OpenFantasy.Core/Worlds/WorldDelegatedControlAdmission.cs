@@ -36,6 +36,11 @@ public static class WorldDelegatedControlAdmission
         {
             retained = retained.Append(retreat.Command);
         }
+        if (world.Retreat?.Withdrawal is { } withdrawal)
+        {
+            retained = retained.Concat(withdrawal.Parties.SelectMany(party => party.Members).Select(member => member.Command));
+            if (withdrawal.Last is { } last) retained = retained.Concat(last.Ended.Select(end => end.Member.Command));
+        }
         foreach (var command in retained)
         {
             if (command.ControlWitness is { } witness && (world.EffectiveControl is null || witness.AcquiredSequence >= world.Revision

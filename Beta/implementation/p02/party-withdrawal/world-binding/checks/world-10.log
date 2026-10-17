@@ -1,0 +1,38 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+  OpenFantasy.Hosting.Tests -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.63]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(humanCount: 1) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(humanCount: 1) [1 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: ExposureProgress { CompletedUnits = 1, Elapsed = LocalExposureDuration { Days = 0, MillisecondsWithinDay = 3000, TotalMilliseconds = 3000 }, Rate = ExposureRate { OutputUnitId = 776f726c642e706163696e672e763100, RulesVersion = acb2efaf2d15884be5df34e6a95862ede1d5df921267d3db31eebd1876dc35d1, Numerator = 1, Denominator = 1800 }, Remainder = 1200, SubjectId = fe73c56ef68403ee7cedb93ee6308a85 }
+Actual:   ExposureProgress { CompletedUnits = 1, Elapsed = LocalExposureDuration { Days = 0, MillisecondsWithinDay = 3000, TotalMilliseconds = 3000 }, Rate = ExposureRate { OutputUnitId = 776f726c642e706163696e672e763100, RulesVersion = acb2efaf2d15884be5df34e6a95862ede1d5df921267d3db31eebd1876dc35d1, Numerator = 1, Denominator = 1800 }, Remainder = 1200, SubjectId = fe73c56ef68403ee7cedb93ee6308a85 }
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(Int32 humanCount) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalWorldTests.cs:line 39
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.34]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(humanCount: 3) [FAIL]
+[xUnit.net 00:00:04.03]     OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(humanCount: 4) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(humanCount: 3) [711 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: ExposureProgress { CompletedUnits = 1, Elapsed = LocalExposureDuration { Days = 0, MillisecondsWithinDay = 3400, TotalMilliseconds = 3400 }, Rate = ExposureRate { OutputUnitId = 776f726c642e706163696e672e763100, RulesVersion = acb2efaf2d15884be5df34e6a95862ede1d5df921267d3db31eebd1876dc35d1, Numerator = 1, Denominator = 1800 }, Remainder = 1600, SubjectId = fe73c56ef68403ee7cedb93ee6308a85 }
+Actual:   ExposureProgress { CompletedUnits = 1, Elapsed = LocalExposureDuration { Days = 0, MillisecondsWithinDay = 3400, TotalMilliseconds = 3400 }, Rate = ExposureRate { OutputUnitId = 776f726c642e706163696e672e763100, RulesVersion = acb2efaf2d15884be5df34e6a95862ede1d5df921267d3db31eebd1876dc35d1, Numerator = 1, Denominator = 1800 }, Remainder = 1600, SubjectId = fe73c56ef68403ee7cedb93ee6308a85 }
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(Int32 humanCount) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalWorldTests.cs:line 39
+   at InvokeStub_PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+  Failed OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(humanCount: 4) [687 ms]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: ExposureProgress { CompletedUnits = 17, Elapsed = LocalExposureDuration { Days = 0, MillisecondsWithinDay = 32200, TotalMilliseconds = 32200 }, Rate = ExposureRate { OutputUnitId = 776f726c642e706163696e672e763100, RulesVersion = acb2efaf2d15884be5df34e6a95862ede1d5df921267d3db31eebd1876dc35d1, Numerator = 1, Denominator = 1800 }, Remainder = 1600, SubjectId = fe73c56ef68403ee7cedb93ee6308a85 }
+Actual:   ExposureProgress { CompletedUnits = 17, Elapsed = LocalExposureDuration { Days = 0, MillisecondsWithinDay = 32200, TotalMilliseconds = 32200 }, Rate = ExposureRate { OutputUnitId = 776f726c642e706163696e672e763100, RulesVersion = acb2efaf2d15884be5df34e6a95862ede1d5df921267d3db31eebd1876dc35d1, Numerator = 1, Denominator = 1800 }, Remainder = 1600, SubjectId = fe73c56ef68403ee7cedb93ee6308a85 }
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.PartyWithdrawal.PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(Int32 humanCount) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/PartyWithdrawal/PartyWithdrawalWorldTests.cs:line 39
+   at InvokeStub_PartyWithdrawalWorldTests.Complete_side_withdrawal_preserves_all_people_and_debt_for_supported_human_counts(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/party-withdrawal/world-binding/checks/world-10.trx
+
+Failed!  - Failed:     3, Passed:     8, Skipped:     0, Total:    11, Duration: 20 s - OpenFantasy.Hosting.Tests.dll (net8.0)

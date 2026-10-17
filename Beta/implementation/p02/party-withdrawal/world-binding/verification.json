@@ -1,0 +1,63 @@
+{
+  "recorded_utc": "2026-10-17T17:55:45.513287+00:00",
+  "runs": [
+    {
+      "name": "core-14",
+      "counters": {
+        "total": "1913",
+        "executed": "1913",
+        "passed": "1913",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "terminal_exit": 0,
+      "elapsed_seconds": 121.94026091706473,
+      "limit_seconds": 240,
+      "runtime_dependencies_verified": 166
+    },
+    {
+      "name": "world-regression-15",
+      "counters": {
+        "total": "22",
+        "executed": "22",
+        "passed": "22",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      },
+      "terminal_exit": 0,
+      "elapsed_seconds": 33.51194241596386,
+      "limit_seconds": 180,
+      "runtime_dependencies_verified": 145
+    }
+  ],
+  "distinct_tests_passed": 1935,
+  "new_tests": 23,
+  "source_inputs_verified": 2217,
+  "frozen_tracked_spec_unchanged": true,
+  "unrelated_staged_diff_sha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "excluded_untracked_research_sha256": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+  "review": "direct lead source/reference review; independent review unrun",
+  "acceptance": "bounded portable Core; no SQLite migration, native, human or phase closure"
+}

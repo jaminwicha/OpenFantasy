@@ -140,9 +140,10 @@ input or selected-character permission does not override that restriction. A par
 rules for each member's commitment, movement, incapacitation, remaining opponents and episode lifetime;
 it cannot be obtained by removing the `AllyRemains` guard.
 
-The standalone [party withdrawal commitment component](party-withdrawal.md) represents multiple
-independent choices and complete side membership. It has no complete-world binding and does not
-alter this law, its owner, its codecs or the `AllyRemains` refusal.
+The [party withdrawal binding](party-withdrawal.md) composes multiple independent choices and complete
+side membership in profile41 Core with a separate nested codec. Profiles34–40 retain the law on this
+page and its `AllyRemains` refusal. The new Core binding is not an implicit save migration or an
+ordinary host/client selection.
 
 Bystanders keep side zero, bodies and identities. Opponents have no pursuit movement in this
 interpretation. The retreat uses terrain ground; stepped or construction-supported ground, independent

@@ -1,6 +1,6 @@
 # Current shared agent handoff
 
-Updated: 2026-10-03 UTC. The [living roadmap](CURRENT_ROADMAP.md) owns current phase status,
+Updated: 2026-10-17 UTC. The [living roadmap](CURRENT_ROADMAP.md) owns current phase status,
 binding later decisions and the complete P02 closure checklist. This index selects the next work;
 it does not replace the frozen 181 requirements or their original acceptance gates.
 
@@ -14,6 +14,10 @@ it does not replace the frozen 181 requirements or their original acceptance gat
 3. [Full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md), [requirements](../spec-v1_1/REQUIREMENTS.json),
    [validation](../spec-v1_1/VALIDATION.md), living [UI](PLAYER_INTERFACE_AND_NAVIGATION.md),
    [upkeep](EQUIPMENT_AND_VEHICLE_UPKEEP.md) and [composition](WORLD_COMPOSITION_DECISION.md) decisions.
+4. **Pending lead disposition:** the owner-requested [2026-10-17 roadmap review](roadmap-review-20261017/REVIEW.md)
+   (R1–R13: world-root partitioning, facet versioning, cognition design, unscheduled P02 rows, withdrawal
+   scope, human session). Record accept/adapt/reject and fold accepted items into CURRENT_ROADMAP before
+   selecting work after the in-flight withdrawal increment. Advisory only; no gate or requirement changes.
 
 ## Latest accepted boundary
 
@@ -97,6 +101,21 @@ direction: explicit new world interpretation plus a versioned retreat facet, ret
 admission and resource/archive lineage. Schema12 replay refuses a profile transition even though its
 SQL permits that commit kind. Implement the root/journal/host boundary coherently; no new numeric
 profile, migration or runtime party withdrawal is delivered by this documentation increment.
+
+The subsequent [world-binding packet](p02/party-withdrawal/world-binding/RESULT.md) records profile41
+Core implementation and its exact tests/failures: complete-side admission, independent paid samples,
+Full Wait, cancellation, collective departure, canonical roots and replay from original genesis.
+Final source passes1,913 Core and22 selected world/legacy/control cases (23 new); documentation
+checks cover12 affected pages. Bounded Core scenarios cover 1–4 humans, actual collision/incapacity, exact terminal debt/carry and
+revoked delegated walking followed by owner return at arrival while an ally remains walking. It does
+not enable a SQLite journal, ordinary launch, connected client or lived-save upgrade for41. The next
+coherent increment is the explicit preserved-source transition and durable recovery, including the
+remaining outcome/interaction/capacity proofs, then host/native presentation and the same saved
+shared expedition. Keep all broader P02 exits intact. The Core marker is
+`codex/milestone-party-withdrawal-core-20261017`; this is not full feature/phase acceptance. Pre-change
+`codex/checkpoint-before-withdrawal-world-20261003T193348Z` preserves `7f63b944`; the later WIP ref and
+scope are in the packet. Unrelated staged predecessor work and the untracked October5 research
+addendum are outside this increment.
 
 Then build the missing bounded NPC motivation/memory/offscreen-work, recruitment/cooperative action
 and changed-place return, followed by investigation/puzzle and required environment/coordination/UI

@@ -76,7 +76,7 @@ public static class WorldMaterialProposalAdmission
     private static void ValidateProposal(WorldSnapshot world, WorldMaterialProposal proposal)
     {
         ConsentedMaterialTerms terms = proposal.Terms;
-        if (world.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion)
+        if (world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
             RequireRecorded(world, terms.SenderActorId, proposal.SenderDelivery, proposal.ControlWitness, proposal.CreatedSequence);
         else if (proposal.ControlWitness is not null)
             throw new ArgumentException("Delegated material provenance requires its explicit world profile.");
@@ -111,7 +111,7 @@ public static class WorldMaterialProposalAdmission
     private static bool IsSettledByAdmittedParticipants(WorldSnapshot world, WorldMaterialProposal proposal,
         WorldMaterialProposalSettlement settlement)
     {
-        if (world.ProfileVersion != WorldDelegatedControlAdmission.ProfileVersion)
+        if (world.ProfileVersion is not WorldDelegatedControlAdmission.ProfileVersion and not WorldPartyWithdrawalAdmission.ProfileVersion)
             return settlement.ControlWitness is null && new ConsentedMaterialApproval(proposal.Grant, proposal.SenderDelivery,
                 settlement.Acceptance, settlement.RecipientDelivery).IsApprovedByBothParticipants(world.Inventory);
         return WorldActorCommandAuthority.ValidateRecordedEvidence(world.Inventory, proposal.Terms.SenderActorId,
@@ -122,7 +122,7 @@ public static class WorldMaterialProposalAdmission
 
     private static void ValidateTerminalOperator(WorldSnapshot world, WorldMaterialProposalOutcome outcome)
     {
-        if (world.ProfileVersion != WorldDelegatedControlAdmission.ProfileVersion)
+        if (world.ProfileVersion is not WorldDelegatedControlAdmission.ProfileVersion and not WorldPartyWithdrawalAdmission.ProfileVersion)
         {
             if (outcome.Termination is not null || outcome.Settlement?.ControlWitness is not null)
                 throw new ArgumentException("Delegated terminal provenance requires its explicit world profile.");

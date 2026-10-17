@@ -1,0 +1,16 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+    "-method",
+    "*A_newly_occupied_route*",
+    "-noColor",
+    "-diagnostics",
+    "-trx",
+    "../implementation/p02/party-withdrawal/world-binding/checks/collision-08.trx"
+  ],
+  "exit": 1,
+  "seconds": 4.302439542021602,
+  "limit_seconds": 180,
+  "runner": "direct xUnit; discovery failure investigated separately"
+}

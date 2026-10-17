@@ -99,6 +99,12 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 38 | Explicit patient cancellation and helper decline of pending care without fabricated treatment |
 | 39 | Named co-player permission offers, exact acceptance and revocation, separate from effective control |
 | 40 | Explicit effective co-player assignment, scoped gameplay authority and immutable command attribution over the complete permission world |
+| 41 | Collective withdrawal Core: independent side commitments, paid movement, cancellation and whole-side departure over the effective-control world |
+
+Profile41 has explicit Core root/step codecs and complete-world transactions; SQLite recovery and
+ordinary client admission do not select it. Its fresh factory cannot migrate a lived profile40 world.
+The [party-withdrawal reference](party-withdrawal.md) separates those executable Core contracts from
+the required preserved-source transition and connected/native adapter contracts.
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
@@ -426,6 +432,9 @@ migrations outside its named schema-three and schema-eight routes. Profiles 35â€
 [complete codec](../../src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV35.cs) with a 4 KiB retreat field
 and reserved component maxima under the 16 MiB root budget. A larger standalone component must fit
 the complete reservation calculation; its own successful encoding does not prove that capacity.
+Profile41 explicitly substitutes the collective retreat codec and512KiB reservation in that shared
+complete frame; legacy versions retain their original codec and bound. This changes no database
+schema, host compatibility selection or existing save's rule on opening.
 
 ### Preserved-source publication
 

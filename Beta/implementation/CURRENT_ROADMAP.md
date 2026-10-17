@@ -141,17 +141,19 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    The [party withdrawal decision](PARTY_WITHDRAWAL_DECISION.md) selects independent actor commitments
    with a collective departure condition. Its [component checkpoint](p02/party-withdrawal/RESULT.md)
    implements immutable membership/route progress and canonical restoration, with 18 new domain cases
-   and 12 existing retreat/attribution cases passing. This component is not bound into the world.
-   Next implement the authenticated resolver and explicit lived-save continuity before host/UI and
-   the complete shared expedition. [Continuity source review](p02/party-withdrawal/continuity-review/RESULT.md)
-   selects a new complete-world interpretation with a versioned retreat facet while preserving original
-   admission/history. Schema12 replay forbids an implicit upgrade; root, journal and compatibility must
-   change coherently. Numeric versions and executable transition proof remain unimplemented, and
-   independent architectural review remains open.
-   A separate party-exit design is necessary before calling the solo danger/retreat route cooperative:
-   roster scenarios put the humans on the same side, whereas retreat law v2 admits only a lone
-   combatant on its side. Define commitments, member movement/incapacity, opponent continuity,
-   interruption and recovery without dropping the `AllyRemains` safeguard or weakening Full Wait.
+   and 12 existing retreat/attribution cases passing. The [world binding](p02/party-withdrawal/world-binding/RESULT.md)
+   then composes profile41 Core with paid independent movement, Full Wait, cancellation and collective
+   departure. Bounded Core scenarios cover 1–4 humans, an arrived ally blocking a later route, actual
+   incapacity with retained membership, and revoked delegated walking with owner return at arrival.
+   These do not activate the profile in ordinary saves or clients. Complete outcome/interaction and
+   capacity proofs, explicit lived-save continuity and durable control/recovery before host/UI and the
+   shared expedition. [Continuity source review](p02/party-withdrawal/continuity-review/RESULT.md)
+   requires preserved original admission/history. Schema12 replay forbids an implicit upgrade;
+   root, journal and compatibility must agree. Executable migration and independent architectural
+   review remain open.
+   Ordinary roster scenarios still use retreat law v2, which admits only a lone combatant on its
+   side. Deliver the selected party-exit law through the saved journey before calling that route
+   cooperative; preserve the legacy `AllyRemains` safeguard and Full Wait throughout integration.
    Preserve prior saves and unsupported transition refusal. Keep the unexplained earlier post-draw
    timeout visible; a later instrumented pass does not establish its cause or production reliability.
 

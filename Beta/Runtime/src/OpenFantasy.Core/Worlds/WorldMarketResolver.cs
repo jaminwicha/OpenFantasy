@@ -28,7 +28,7 @@ internal static class WorldMarketResolver
 
         var delivery = new TrustedCommandDelivery(action.PrincipalId, action.OriginSessionId);
         if (action.WorldId != state.WorldId || action.BranchId != state.BranchId
-            || (state.ProfileVersion == WorldDelegatedControlAdmission.ProfileVersion
+            || (state.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion
                 ? WorldActorCommandAuthority.AuthorizeSelection(state, action) is null
                 : !inventory.CanControl(delivery, action.ActorId)))
         {

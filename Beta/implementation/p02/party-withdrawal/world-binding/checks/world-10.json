@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~PartyWithdrawalWorldTests",
+    "--logger",
+    "trx;LogFileName=world-10.trx",
+    "--results-directory",
+    "../implementation/p02/party-withdrawal/world-binding/checks"
+  ],
+  "exit": 1,
+  "seconds": 37.94607325003017,
+  "limit_seconds": 180
+}

@@ -18,6 +18,7 @@ public static class EncounterRetreatCodecV1
     public static byte[] Encode(EncounterRetreatState state)
     {
         ArgumentNullException.ThrowIfNull(state);
+        if (state.Withdrawal is not null) throw new ArgumentException("Collective retreat requires its own codec.", nameof(state));
         byte[] active = state.Active is { } continuation ? CanonicalEncodingV1.Frame("encounter.retreat-continuation.v1",
             WorldActionCodec.Encode(continuation.Command), Position(continuation.Origin),
             CanonicalEncodingV1.Unsigned64((ulong)continuation.SamplesTaken),

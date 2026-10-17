@@ -46,6 +46,12 @@ authority from that actual obligation, including its command hash; callers canno
 still checks every movement sample and charges its normal readiness. Body, geometry and encounter
 interruptions retain their ordinary meaning. Owner return waits for the established safe boundary.
 
+The profile41 [collective withdrawal Core](party-withdrawal.md) recognizes each exact retained member
+command as accepted work. Walking holds return; arrival bookkeeping does not. Cancellation requires
+current Combat and Traversal permission, names the exact route and cannot refund its paid readiness.
+Terminal rows preserve the original witness even after assignment loss. These Core rules do not
+expand the profiles accepted by SQLite recovery, host invitations or connected-client selection.
+
 Care acknowledgment creates a patient request, not a treatment. Revoking delegated control does not
 withdraw that request or consume a dose. Treatment is a separate helper action requiring its own
 authority and finite medicine. Cancellation/decline requires the separate care-disposition capability.

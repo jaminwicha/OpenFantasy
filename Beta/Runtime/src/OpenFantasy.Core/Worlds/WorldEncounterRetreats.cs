@@ -32,11 +32,13 @@ public static class WorldEncounterRetreats
     }
 
     /// <summary>
-    /// The supported interpretation: exactly two positive sides take part and the actor is the only combatant of its
-    /// side, living or downed, so no ally is ever left behind and no third-party fight is ended by someone else's exit.
+    /// Exactly two positive sides participate. Legacy retreat requires the actor to be its side's only member,
+    /// living or downed. Collective withdrawal retains the full side; no third-party fight ends through this exit.
     /// </summary>
     public static bool IsSupportedSide(WorldSnapshot world, EntityId actorId) =>
-        EncounterRetreatRules.IsSupportedScope(world.EncounterActions!.Combatants, actorId);
+        world.Retreat?.Withdrawal is null ? EncounterRetreatRules.IsSupportedScope(world.EncounterActions!.Combatants, actorId)
+        : world.EncounterActions!.GetCombatant(actorId).Side != 0
+            && world.EncounterActions.Combatants.Where(actor => actor.Side != 0).Select(actor => actor.Side).Distinct().Count() == 2;
 
     /// <summary>The contact radius of one opponent: its longest granted ability range plus one full cell.</summary>
     public static long ContactRadius(WorldSnapshot world, EntityId opponentId)
@@ -152,6 +154,7 @@ public static class WorldEncounterRetreats
         ArgumentNullException.ThrowIfNull(intent);
         if (world.Retreat is not { } retreat || world.EncounterActions is null
             || world.EncounterLifecycle?.Phase != EncounterLifecyclePhase.Active || retreat.Active is not null
+            || retreat.Withdrawal?.FindMember(actorId) is not null
             || !WorldEncounterActions.CanParticipate(world, actorId) || LivingOpponents(world, actorId).Count == 0
             || !IsSupportedSide(world, actorId))
         {

@@ -7,7 +7,7 @@ namespace OpenFantasy.Core.Encounters;
 public static class EncounterWithdrawalCodecV1
 {
     public const int MaximumEncodedByteLength = 200 * 1024;
-    private const int MaximumMemberByteLength = EncounterRetreatState.MaximumCommandByteLength + 512;
+    internal const int MaximumMemberByteLength = EncounterRetreatState.MaximumCommandByteLength + 512;
 
     public static byte[] Encode(EncounterWithdrawalParty party)
     {
@@ -57,11 +57,11 @@ public static class EncounterWithdrawalCodecV1
         }
     }
 
-    private static byte[] EncodeMember(EncounterWithdrawalMember member) => CanonicalEncodingV1.Frame(
+    internal static byte[] EncodeMember(EncounterWithdrawalMember member) => CanonicalEncodingV1.Frame(
         "encounter.withdrawal-member.v1", WorldActionCodec.Encode(member.Command), EncounterRetreatCodecV1.Position(member.Origin),
         CanonicalEncodingV1.Unsigned64(member.NormalizedSpeed), CanonicalEncodingV1.Unsigned64((ulong)member.SamplesWalked));
 
-    private static EncounterWithdrawalMember DecodeMember(ReadOnlySpan<byte> bytes)
+    internal static EncounterWithdrawalMember DecodeMember(ReadOnlySpan<byte> bytes)
     {
         var reader = new WorldFrameReader(bytes, MaximumMemberByteLength, 5);
         reader.Tag("encounter.withdrawal-member.v1"u8);

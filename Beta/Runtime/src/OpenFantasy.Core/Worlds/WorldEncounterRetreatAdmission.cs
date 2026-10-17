@@ -82,5 +82,7 @@ public static class WorldEncounterRetreatAdmission
     /// <summary>The exact queued, not yet started, retreat timing choice, if any.</summary>
     internal static bool IsQueuedRetreatChoice(WorldSnapshot world, EncounterDecision decision) =>
         world.Retreat?.Active is { HasStarted: false } active && decision.ActorId == active.ActorId
-        && decision.DecisionId == active.Command.CommandId && decision.ActionPin == active.Command.ContentHash;
+        && decision.DecisionId == active.Command.CommandId && decision.ActionPin == active.Command.ContentHash
+        || world.Retreat?.Withdrawal?.FindMember(decision.ActorId) is { } member
+            && WorldPartyWithdrawalAdmission.IsQueuedChoice(member, decision);
 }

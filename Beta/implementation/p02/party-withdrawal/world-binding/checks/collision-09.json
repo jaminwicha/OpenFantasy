@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~A_newly_occupied_route",
+    "--logger",
+    "trx;LogFileName=collision-09.trx",
+    "--results-directory",
+    "../implementation/p02/party-withdrawal/world-binding/checks"
+  ],
+  "exit": 0,
+  "seconds": 16.69970816699788,
+  "limit_seconds": 180
+}

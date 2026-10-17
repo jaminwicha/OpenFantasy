@@ -17,7 +17,7 @@ archive or changing an external controller cannot implicitly reset that debt.
 | --- | --- | --- |
 | `QueueDecision` | Exact expected revision; uniquely named due actor and pending decision identity; pins an external action definition/payload | Zero |
 | `TryAdvance` | No due actor; increments revision and elapsed units, subtracts five from delays with zero saturation | Five tactical units, 50 ms |
-| `TryConfirmNext` | Every due required-human actor has a retained choice; first due actor in identity order also has a choice. In the explicit retreat world (profile 34) a committed retreat is its actor's standing choice: that actor needs no timing row after its first sample, never counts as an undecided human, and its sample resolves at its own boundary ([encounter-retreat](encounter-retreat.md)) | Zero |
+| `TryConfirmNext` | Every due required-human actor has a retained choice; first due actor in identity order also has a choice. This component confirms timing choices; complete-world movement uses the standing-choice bindings described below. | Zero |
 | Blocked request | Returns the identical snapshot and explicit missing-choice/action-boundary status | Zero |
 
 Confirmation removes that actor's pending choice and charges `ceil(10000 / normalizedSpeed)` units.
@@ -31,6 +31,15 @@ Every accepted queue, confirmation or tick increments the timing revision. Elaps
 whole five-unit ticks and cannot exceed five times the revision. Exact expected revisions reject stale
 requests. Arithmetic exhaustion throws before publishing a new immutable snapshot. The component has
 no wall-clock input, timeout or accumulated missed-step queue.
+
+The complete-world [lone retreat](encounter-retreat.md) and [collective withdrawal](party-withdrawal.md)
+bindings retain a walking actor's accepted command outside the clock after its initial sample. The
+world resolver treats that finite route as the actor's standing choice and publishes each actual
+sample with its own readiness cost. It never exempts another undecided human from Full Wait. A
+collective arrival ends the walking hold: subsequent due choices are ordinary explicit Wait or
+actions. Cancellation grants no time or readiness; departure retains every actor's remaining debt
+and the exact exposure progress, including fractional carry. These are world-authority contracts,
+not additional behavior in the independent `TryConfirmNext` component.
 
 ## Bounds and canonical recovery
 

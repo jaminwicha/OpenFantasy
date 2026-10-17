@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Revoked_delegated_route",
+    "--logger",
+    "trx;LogFileName=control-13.trx",
+    "--results-directory",
+    "../implementation/p02/party-withdrawal/world-binding/checks"
+  ],
+  "exit": 0,
+  "seconds": 9.364790500025265,
+  "limit_seconds": 180
+}
