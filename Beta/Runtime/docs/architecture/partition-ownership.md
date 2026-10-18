@@ -16,6 +16,9 @@ complete occupancy metadata and complete original-history replay. See
 [persistence and history](persistence-and-history.md#design-contract-partitioned-persistence-and-version-ownership)
 for its narrower implemented boundary.
 
+The [dependency reference](partition-dependencies.md) distinguishes current facts, immutable definitions,
+derived views and historical witnesses, including control, coordinated archives and due-process closure.
+
 ## Stable owners and spatial membership
 
 Use typed aggregates that follow coupled gameplay facts, rather than one root per field or one root

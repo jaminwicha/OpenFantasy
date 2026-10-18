@@ -258,3 +258,18 @@ locality; this decoder loads every required owner and terrain region. Remaining 
 operation-specific loading cohort with authenticated dependency closure. Due fairness, richer-profile
 nested mapping/migration, checkpoint boundaries, cold/scale/platform measurements and independent
 review remain required before the corresponding production/PLAN-STATE exits.
+
+## Current-profile dependency constraint on selective loading
+
+The [current40/41 map](PLAN_STATE_CURRENT_PROFILE_MAP.md) covers the complete outer frame and critical
+nested material/care/archive/control/withdrawal/economy groups. The source inventory is a review aid,
+not exhaustive nested migration acceptance. A selected construction cohort must preserve reservation-
+wide stock completeness, required-access actors and full due gathering/resident exposure. Read,
+write and due-process sets differ; a two-owner builder/project view is insufficient.
+
+Next extract common work qualification from completion material mutation using source-bound stock,
+access and identity dependencies, then bind stored-owner loading under the sole writer. Keep all
+currently required actor updates; prove actual absence of unrelated custodian/closed-history detail,
+not just fewer requested hashes. The map names stale/missing/foreign/global-reservation/access/control/
+due-boundary/fault contrasts. No new format, implicit current-profile migration or weaker admission
+is authorized. Final installation uses its larger complete material/geometry admission cohort.

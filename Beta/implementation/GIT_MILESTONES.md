@@ -570,3 +570,15 @@ is preserved separately and claims no implemented rule or reserved profile versi
   compiler-preflight failures with their corrections. No changed deadline, acceptance shortcut or
   independent review. Selective loading, migration, fairness, checkpoint/scale and full gates remain.
 - Timeless architecture, living plans/roadmap and compact handoff are updated in the same increment.
+
+## Current-profile ownership and dependency preparation — 2026-10-18
+
+- Before-change WIP checkpoint `codex/checkpoint-before-profile-dependencies-20261018` resolves to
+  `f6236b4913ccebc1f36570d98c5a48dd9ad73680`, from6606db30. Concurrent/predecessor protections are in the packet CHECKPOINT.json.
+- Verified document increment pointer: `codex/milestone-profile-dependencies-20261018`, created at
+  the owned commit without switching. Includes current40/41 complete outer-frame mapping, nested
+  ownership/witness dependencies and concrete selective-construction read/write/due closure.
+- [Result](p02/partition-state/current-profile-dependencies/RESULT.md) distinguishes source review and
+  document checks from runtime migration/loading or independent acceptance. Runtime bytes/tests are
+  unchanged; no new test, throughput or feasibility pass is claimed. All PLAN-STATE/P02 gates remain.
+- The timeless dependency reference and live plan/roadmap/handoff are synchronized together.

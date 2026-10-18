@@ -403,3 +403,17 @@ This fulfills complete stored-payload reconstruction, not selective loading or i
 recovery. Next prove a real operation-specific loading cohort and authenticated dependency closure
 without omitting due work or cross-owner invariants. Full P02, P00–P14/181 requirements, migration,
 fairness, checkpoint, cold/platform/scale and independent/human gates remain unchanged and open.
+
+### PLAN-STATE current-profile dependency preparation
+
+The [current40/41 ownership map](PLAN_STATE_CURRENT_PROFILE_MAP.md) accounts for all30semantic fields
+of the current outer frame and reviews critical nested continuation, care, trade, control and party-
+withdrawal ownership. It distinguishes historical witnesses from current mutable facts. Exact
+nested byte migration, checkpoint/cut coverage and independent acceptance remain open.
+
+The next selective-loading implementation must share existing work qualification, bind stock/access/
+identity dependencies to an admitted interval and include the complete due-process closure. Current
+actor exposure means a builder/project-only loader would omit actual updates. Prove that unrelated
+custodian/closed-provenance detail is absent while preserving all required updates; final completion
+loads its larger material/geometry cohort. This refines preparation order without changing the full
+P02 closure table, phase scope, gates or deadlines. [Review record](p02/partition-state/current-profile-dependencies/RESULT.md).

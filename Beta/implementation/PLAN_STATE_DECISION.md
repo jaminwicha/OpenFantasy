@@ -169,3 +169,16 @@ limits are experimental storage stops, not accepted shipping limits or reduced c
   root-level allocation is explicitly distinct from the required nested-field migration audit.
 - **Checks:** Two matched execution orders and17 existing storage/publication cases pass; documentation
   checks cover links/work-record structure, not independent architecture or human acceptance.
+
+## Current-profile dependency review
+
+[The current-profile map](PLAN_STATE_CURRENT_PROFILE_MAP.md) resolves an important selective-loading
+ambiguity: command-local reads, published writes and mandatory due processes have different closures.
+Current actor images carry resident exposure; partial construction still checks global reservation
+stock and required-access actors. The next extraction must share existing qualification, retain
+source-bound completeness/freshness evidence, and load the larger cohort for material completion.
+
+The map also records coordinated archive witnesses, pending care, private market knowledge,
+controller/permission/effective-assignment distinctions and profile41 party withdrawal. These prevent
+prematurely freezing legacy5 owner boundaries for the full game. This is a concrete preparation result,
+not a completed nested migration or independent review; all existing PLAN-STATE/P02 exits remain.

@@ -43,6 +43,12 @@ dependency closure and all due obligations; do not substitute another whole-worl
 helper. General paging/fairness, noninitial checkpoints and current40/41 nested migration remain open.
 Keep actual owner/storage/history costs explicit; no performance or credit saving is inferred.
 
+Before selective-loading edits, use the [current40/41 dependency map](PLAN_STATE_CURRENT_PROFILE_MAP.md):
+read/write/due closures differ; keep reservation-wide stock/access checks and all actor exposure.
+Extract shared work qualification before binding an actual smaller stored cohort. The map also retains
+joint archive witnesses, pending care, private markets and profile41 withdrawal/control dependencies.
+It is preparation, not an implemented partial loader or completed nested migration.
+
 After the PLAN-STATE decision/review exit, NPC-01 is the next new inhabited-world behavior. STORY-01,
 AUDIO-01/ART-01, recruitment/cooperative work and the traveling-merchant/cargo investigation retain
 their dependencies. ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain

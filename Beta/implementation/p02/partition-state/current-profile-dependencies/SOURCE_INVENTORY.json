@@ -1,0 +1,2573 @@
+{
+  "revision": "6606db303816c36f6a36c44720d20882bcc8c9d7",
+  "scope": "Pinned files and member declaration excerpts for lead navigation/review; not a compiler or exhaustive nested serializer verifier. Some expression-bodied/private members require direct source review.",
+  "files": [
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Authority/CountedAuthorityState.cs",
+      "sha256": "d715bb79898ba69dbba92969204562e9eabd55c20e29329ed517fd8bb8e83793",
+      "member_declaration_excerpt": [
+        {
+          "line": 49,
+          "text": "public CustodySnapshot Custody { get; }"
+        },
+        {
+          "line": 52,
+          "text": "public ulong AdmittedUnitCapacity { get; }"
+        },
+        {
+          "line": 53,
+          "text": "public ReadOnlyCollection<EntityId> Actors { get; }"
+        },
+        {
+          "line": 54,
+          "text": "public ReadOnlyCollection<ActorControlBinding> Controls { get; }"
+        },
+        {
+          "line": 55,
+          "text": "public ReadOnlyCollection<CustodianAccessPolicy> Policies { get; }"
+        },
+        {
+          "line": 56,
+          "text": "public ReadOnlyCollection<AdmittedCountedSource> Sources { get; }"
+        },
+        {
+          "line": 57,
+          "text": "public ReadOnlyCollection<EntityId> ReservationIds { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/CareAcknowledgment.cs",
+      "sha256": "ce6dee87fa8c566037ad4d0ccc5761f31dbb509b987e434d1a2f882e5a94dd70",
+      "member_declaration_excerpt": [
+        {
+          "line": 29,
+          "text": "public EntityId AcknowledgmentId { get; }"
+        },
+        {
+          "line": 30,
+          "text": "public EntityId CommandId { get; }"
+        },
+        {
+          "line": 31,
+          "text": "public EntityId AgreementId { get; }"
+        },
+        {
+          "line": 32,
+          "text": "public EntityId EncounterId { get; }"
+        },
+        {
+          "line": 33,
+          "text": "public ulong WorldSequence { get; }"
+        },
+        {
+          "line": 34,
+          "text": "public ContentHash ActionHash { get; }"
+        },
+        {
+          "line": 35,
+          "text": "public ContentHash TimingHash { get; }"
+        },
+        {
+          "line": 36,
+          "text": "public EncounterActionResolution Defeat { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/CareCodecV5.cs",
+      "sha256": "13b90ba93ee729b4c0363d3df07fe2003cf7ad21287d1bc3978ced88f955c31e",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/CareContinuationContext.cs",
+      "sha256": "e03a04e57ecd2310f7360f628e4acdd6753a036eafb2f5ed147763a2a9ffcffe",
+      "member_declaration_excerpt": [
+        {
+          "line": 47,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 48,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 50,
+          "text": "public ulong Ordinal { get; }"
+        },
+        {
+          "line": 51,
+          "text": "public ContentHash ClosingCareHash { get; }"
+        },
+        {
+          "line": 52,
+          "text": "public ulong ClosingRevision { get; }"
+        },
+        {
+          "line": 53,
+          "text": "public ulong ArchivedAcknowledgments { get; }"
+        },
+        {
+          "line": 54,
+          "text": "public ulong ArchivedTreatments { get; }"
+        },
+        {
+          "line": 55,
+          "text": "public ulong ArchivedDispositions { get; }"
+        },
+        {
+          "line": 56,
+          "text": "public bool SupportsDispositions { get; }"
+        },
+        {
+          "line": 57,
+          "text": "public ReadOnlyCollection<CareClosedDefeatWitness> ClosedDefeatWitnesses { get; }"
+        },
+        {
+          "line": 58,
+          "text": "public ulong ArchivedOrdinaryUses { get; }"
+        },
+        {
+          "line": 59,
+          "text": "public CareContinuationPosition Frontier { get; }"
+        },
+        {
+          "line": 61,
+          "text": "public CareAcknowledgment? Pending { get; }"
+        },
+        {
+          "line": 62,
+          "text": "public ReadOnlyCollection<CarePatientWitness> PatientWitnesses { get; }"
+        },
+        {
+          "line": 63,
+          "text": "public ContentHash ContentHash { get; }"
+        },
+        {
+          "line": 65,
+          "text": "internal ReadOnlyCollection<RestorativeRemedyDefinition> Remedies { get; }"
+        },
+        {
+          "line": 66,
+          "text": "internal ReadOnlyCollection<CareAgreement> Agreements { get; }"
+        },
+        {
+          "line": 67,
+          "text": "internal ReadOnlyCollection<RestorativeUseDefinition>? Definitions { get; }"
+        },
+        {
+          "line": 68,
+          "text": "internal ReadOnlyCollection<CarePermission>? Permissions { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/CareDisposition.cs",
+      "sha256": "ad3bb2839fdb124b4a0772ca2d2aa8a898d5bfa9b067705ec081dfa3fd6c30b5",
+      "member_declaration_excerpt": [
+        {
+          "line": 26,
+          "text": "public EntityId DispositionId { get; }"
+        },
+        {
+          "line": 27,
+          "text": "public EntityId CommandId { get; }"
+        },
+        {
+          "line": 28,
+          "text": "public EntityId AcknowledgmentId { get; }"
+        },
+        {
+          "line": 29,
+          "text": "public EntityId DecidingActorId { get; }"
+        },
+        {
+          "line": 30,
+          "text": "public CareDispositionKind Kind { get; }"
+        },
+        {
+          "line": 31,
+          "text": "public ulong WorldSequence { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/CareSnapshot.cs",
+      "sha256": "c0a336ab8bb2bff80e3f36e862830231db7a7b659f2230930db41435f81112f6",
+      "member_declaration_excerpt": [
+        {
+          "line": 95,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 96,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 97,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 98,
+          "text": "public ReadOnlyCollection<RestorativeRemedyDefinition> Remedies { get; }"
+        },
+        {
+          "line": 99,
+          "text": "public ReadOnlyCollection<CareAgreement> Agreements { get; }"
+        },
+        {
+          "line": 100,
+          "text": "public ReadOnlyCollection<CareAcknowledgment> Acknowledgments { get; }"
+        },
+        {
+          "line": 101,
+          "text": "public ReadOnlyCollection<CareTreatment> Treatments { get; }"
+        },
+        {
+          "line": 102,
+          "text": "public bool SupportsDispositions { get; }"
+        },
+        {
+          "line": 103,
+          "text": "public ReadOnlyCollection<CareDisposition> Dispositions { get; }"
+        },
+        {
+          "line": 104,
+          "text": "public CareAcknowledgment? Pending { get; }"
+        },
+        {
+          "line": 105,
+          "text": "public OrdinaryCareSnapshot? Ordinary { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/CareTreatment.cs",
+      "sha256": "9efec0db98d06c61e64aa600707009c4f5ff75662df7658ae5b49898c63c552b",
+      "member_declaration_excerpt": [
+        {
+          "line": 28,
+          "text": "public EntityId TreatmentId { get; }"
+        },
+        {
+          "line": 29,
+          "text": "public EntityId CommandId { get; }"
+        },
+        {
+          "line": 30,
+          "text": "public EntityId AcknowledgmentId { get; }"
+        },
+        {
+          "line": 31,
+          "text": "public EntityId ConsumptionId { get; }"
+        },
+        {
+          "line": 32,
+          "text": "public ulong WorldSequence { get; }"
+        },
+        {
+          "line": 33,
+          "text": "public ulong TimingRevision { get; }"
+        },
+        {
+          "line": 34,
+          "text": "public ulong PatientRevisionBefore { get; }"
+        },
+        {
+          "line": 36,
+          "text": "public int MaximumHp { get; }"
+        },
+        {
+          "line": 37,
+          "text": "public int HpAfter { get; }"
+        },
+        {
+          "line": 38,
+          "text": "public uint HelperNormalizedSpeed { get; }"
+        },
+        {
+          "line": 39,
+          "text": "public ulong HelperDelay { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Care/OrdinaryCareSnapshot.cs",
+      "sha256": "a38d18fc5ccf438657322d29b274199fc596a5f6a0d6754f185e7b2036f7101f",
+      "member_declaration_excerpt": [
+        {
+          "line": 73,
+          "text": "public CareContinuationContext? Continuation { get; }"
+        },
+        {
+          "line": 75,
+          "text": "public ReadOnlyCollection<RestorativeUseDefinition> Definitions { get; }"
+        },
+        {
+          "line": 76,
+          "text": "public ReadOnlyCollection<CarePermission> Permissions { get; }"
+        },
+        {
+          "line": 77,
+          "text": "public ReadOnlyCollection<RestorativeUse> Uses { get; }"
+        },
+        {
+          "line": 78,
+          "text": "public ulong Revision { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionLocalitySource.cs",
+      "sha256": "649fa046ce91c6fed2342c36734f6e88abecb834f133c8467c86b284ddcb2cb1",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionLocalityState.cs",
+      "sha256": "1a8b3a79974d19a2a5fe899c962fae100c6a051d4b2651cdb2c2f5a55f886e19",
+      "member_declaration_excerpt": [
+        {
+          "line": 92,
+          "text": "public ContentHash SourceWorldHash { get; }"
+        },
+        {
+          "line": 93,
+          "text": "public ulong SourceRevision { get; }"
+        },
+        {
+          "line": 94,
+          "text": "public ContentHash AdmissionVersion { get; }"
+        },
+        {
+          "line": 95,
+          "text": "public EntityId ProjectId { get; }"
+        },
+        {
+          "line": 96,
+          "text": "public CountedAuthorityState Inventory { get; }"
+        },
+        {
+          "line": 97,
+          "text": "public ProductionSnapshot Production { get; }"
+        },
+        {
+          "line": 98,
+          "text": "public ConstructionSnapshot Construction { get; }"
+        },
+        {
+          "line": 99,
+          "text": "public ProgressionSnapshot Progression { get; }"
+        },
+        {
+          "line": 100,
+          "text": "public QuestSnapshot Quests { get; }"
+        },
+        {
+          "line": 101,
+          "text": "public GatheringSnapshot? Gathering { get; }"
+        },
+        {
+          "line": 103,
+          "text": "public ReadOnlyCollection<DialogueSession> Dialogues { get; }"
+        },
+        {
+          "line": 104,
+          "text": "public ReadOnlyCollection<ActorPresence> Actors { get; }"
+        },
+        {
+          "line": 105,
+          "text": "public ReadOnlyCollection<TerrainRegionReference> Terrain { get; }"
+        },
+        {
+          "line": 106,
+          "text": "public SpatialOccupancyDirectory Occupancy { get; }"
+        },
+        {
+          "line": 107,
+          "text": "public WorldInstant Calendar { get; }"
+        },
+        {
+          "line": 108,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 109,
+          "text": "public ulong AdvancingSteps { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionSnapshot.cs",
+      "sha256": "516726a6dd12cd4163ffa4b605c19068203bb7d5d3630b771f0b0a9e90f0d5ad",
+      "member_declaration_excerpt": [
+        {
+          "line": 44,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 45,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 46,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 47,
+          "text": "public ReadOnlyCollection<ConstructionDefinition> Definitions { get; }"
+        },
+        {
+          "line": 48,
+          "text": "public ReadOnlyCollection<ConstructionProject> Projects { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionWorkKernel.cs",
+      "sha256": "c8ed141ecf984865a4b566095b64cdaf523d783e9b54a789a6e99923306cf005",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Custody/CustodySnapshot.cs",
+      "sha256": "54cb6923f7da74edeb364591b2e839c0eea497f8d2a4b8932d7102e8fbd9747e",
+      "member_declaration_excerpt": [
+        {
+          "line": 60,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 61,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 62,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 63,
+          "text": "public ReadOnlyCollection<CustodianStorage> Storages { get; }"
+        },
+        {
+          "line": 64,
+          "text": "public ReadOnlyCollection<CountedSourceLot> Lots { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterActionSnapshot.cs",
+      "sha256": "5b761142705168ce5046275deec47f9fa64defec90103c70803e8043caa4d3e4",
+      "member_declaration_excerpt": [
+        {
+          "line": 18,
+          "text": "public static ContentHash RulesPin { get; } = ContentHash.Compute(CanonicalEncodingV1.Text("
+        },
+        {
+          "line": 69,
+          "text": "public EncounterTimingScope Scope { get; }"
+        },
+        {
+          "line": 70,
+          "text": "public EntityId Seed { get; }"
+        },
+        {
+          "line": 71,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 72,
+          "text": "public ReadOnlyCollection<EncounterAbilityDefinition> Abilities { get; }"
+        },
+        {
+          "line": 73,
+          "text": "public ReadOnlyCollection<EncounterCombatant> Combatants { get; }"
+        },
+        {
+          "line": 74,
+          "text": "public ReadOnlyCollection<WorldActionCommand> Pending { get; }"
+        },
+        {
+          "line": 75,
+          "text": "public RandomCounterState Random { get; }"
+        },
+        {
+          "line": 76,
+          "text": "public EncounterActionResolution? LastResolution { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterLifecycleSnapshot.cs",
+      "sha256": "d6003bbbd962d08e555045924d7a5a02694a593c1c8a7988ed157909c97610ce",
+      "member_declaration_excerpt": [
+        {
+          "line": 108,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 109,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 110,
+          "text": "public EntityId Seed { get; }"
+        },
+        {
+          "line": 111,
+          "text": "public int CatalogVersion { get; }"
+        },
+        {
+          "line": 112,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 113,
+          "text": "public ulong ExplorationSteps { get; }"
+        },
+        {
+          "line": 114,
+          "text": "public ulong TacticalTicks { get; }"
+        },
+        {
+          "line": 115,
+          "text": "public ulong EntryTacticalTicks { get; }"
+        },
+        {
+          "line": 116,
+          "text": "public ulong EncounterCount { get; }"
+        },
+        {
+          "line": 117,
+          "text": "public EncounterLifecyclePhase Phase { get; }"
+        },
+        {
+          "line": 118,
+          "text": "public ReadOnlyCollection<EncounterAbilityDefinition> Abilities { get; }"
+        },
+        {
+          "line": 119,
+          "text": "public ReadOnlyCollection<EncounterScenarioDefinition> Scenarios { get; }"
+        },
+        {
+          "line": 120,
+          "text": "public ReadOnlyCollection<EncounterReadinessDebt> Debts { get; }"
+        },
+        {
+          "line": 121,
+          "text": "public EntityId? ScenarioId { get; }"
+        },
+        {
+          "line": 122,
+          "text": "public EncounterActionSnapshot? Actions { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterOutcomeState.cs",
+      "sha256": "334a780281f61f774fea97841dc7e9d9050de2d5da575619db08e326bd1d7f8e",
+      "member_declaration_excerpt": [
+        {
+          "line": 13,
+          "text": "public sealed record EncounterOutcomeAcknowledgment(EntityId ActorId, EntityId CommandId, EntityId EncounterId,"
+        },
+        {
+          "line": 42,
+          "text": "public EntityId EncounterId { get; }"
+        },
+        {
+          "line": 43,
+          "text": "public ContentHash ActionHash { get; }"
+        },
+        {
+          "line": 44,
+          "text": "public EncounterOutcomeResult Result { get; }"
+        },
+        {
+          "line": 46,
+          "text": "public int StandingSide { get; }"
+        },
+        {
+          "line": 47,
+          "text": "public ulong WorldSequence { get; }"
+        },
+        {
+          "line": 48,
+          "text": "public ReadOnlyCollection<EntityId> AcknowledgedActorIds { get; }"
+        },
+        {
+          "line": 65,
+          "text": "public static ContentHash Pin { get; } = ContentHash.Compute(CanonicalEncodingV1.Text(RulesText, nameof(RulesText)));"
+        },
+        {
+          "line": 93,
+          "text": "public ContentHash RulesPin { get; }"
+        },
+        {
+          "line": 94,
+          "text": "public ulong FinalizedCount { get; }"
+        },
+        {
+          "line": 95,
+          "text": "public ReadOnlyCollection<EncounterOutcomeAcknowledgment> Acknowledgments { get; }"
+        },
+        {
+          "line": 96,
+          "text": "public EncounterOutcomeRecord? Last { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterRetreatState.cs",
+      "sha256": "4bc39bc33c48331b7b1521bb1db9fb879a4093814b5ed03e49a4adfb77200d19",
+      "member_declaration_excerpt": [
+        {
+          "line": 54,
+          "text": "public WorldActionCommand Command { get; }"
+        },
+        {
+          "line": 55,
+          "text": "public QueueEncounterRetreatIntent Intent { get; }"
+        },
+        {
+          "line": 56,
+          "text": "public SubunitPosition Origin { get; }"
+        },
+        {
+          "line": 57,
+          "text": "public int SamplesTaken { get; }"
+        },
+        {
+          "line": 58,
+          "text": "public ulong ReadinessCharged { get; }"
+        },
+        {
+          "line": 71,
+          "text": "public sealed record EncounterRetreatOutcome"
+        },
+        {
+          "line": 113,
+          "text": "public EntityId ActorId { get; }"
+        },
+        {
+          "line": 114,
+          "text": "public EntityId CommandId { get; }"
+        },
+        {
+          "line": 115,
+          "text": "public EntityId EncounterId { get; }"
+        },
+        {
+          "line": 116,
+          "text": "public SubunitPosition Origin { get; }"
+        },
+        {
+          "line": 117,
+          "text": "public SubunitPosition Final { get; }"
+        },
+        {
+          "line": 118,
+          "text": "public int SamplesTaken { get; }"
+        },
+        {
+          "line": 119,
+          "text": "public int RouteSamples { get; }"
+        },
+        {
+          "line": 120,
+          "text": "public ulong ReadinessCharged { get; }"
+        },
+        {
+          "line": 121,
+          "text": "public EncounterRetreatStatus Status { get; }"
+        },
+        {
+          "line": 122,
+          "text": "public EncounterRetreatReason Reason { get; }"
+        },
+        {
+          "line": 123,
+          "text": "public ulong WorldSequence { get; }"
+        },
+        {
+          "line": 125,
+          "text": "public IReadOnlyList<EntityId> CancelledDecisionIds { get; }"
+        },
+        {
+          "line": 154,
+          "text": "public ContentHash RulesPin { get; }"
+        },
+        {
+          "line": 155,
+          "text": "public ulong AcceptedCount { get; }"
+        },
+        {
+          "line": 156,
+          "text": "public EncounterRetreatContinuation? Active { get; }"
+        },
+        {
+          "line": 157,
+          "text": "public EncounterRetreatOutcome? Last { get; }"
+        },
+        {
+          "line": 158,
+          "text": "public EncounterWithdrawalState? Withdrawal { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/EncounterTimingSnapshot.cs",
+      "sha256": "beb82176bee524dd50170c84e646b80fd3ae265c70cde7d4caceb900fd409054",
+      "member_declaration_excerpt": [
+        {
+          "line": 89,
+          "text": "public EncounterTimingScope Scope { get; }"
+        },
+        {
+          "line": 93,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 94,
+          "text": "public ulong ElapsedTacticalUnits { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/Withdrawal/EncounterWithdrawalMember.cs",
+      "sha256": "98ebc58367beb6c26d33f721154cc190bf348bafc01a05e9ed3e32d33cdf450c",
+      "member_declaration_excerpt": [
+        {
+          "line": 31,
+          "text": "public WorldActionCommand Command { get; }"
+        },
+        {
+          "line": 32,
+          "text": "public QueueEncounterRetreatIntent Intent { get; }"
+        },
+        {
+          "line": 34,
+          "text": "public SubunitPosition Origin { get; }"
+        },
+        {
+          "line": 35,
+          "text": "public uint NormalizedSpeed { get; }"
+        },
+        {
+          "line": 36,
+          "text": "public int SamplesWalked { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/Withdrawal/EncounterWithdrawalParty.cs",
+      "sha256": "7610ecf1334ba50264fa126167ff112c65f55b2c485108515bc4c309c08e567a",
+      "member_declaration_excerpt": [
+        {
+          "line": 19,
+          "text": "public static ContentHash RulesPin { get; } = ContentHash.Compute(CanonicalEncodingV1.Text(RulesText, nameof(RulesText)));"
+        },
+        {
+          "line": 66,
+          "text": "public EncounterTimingScope Scope { get; }"
+        },
+        {
+          "line": 67,
+          "text": "public ushort Side { get; }"
+        },
+        {
+          "line": 68,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 69,
+          "text": "public ReadOnlyCollection<EntityId> RequiredActors { get; }"
+        },
+        {
+          "line": 70,
+          "text": "public ReadOnlyCollection<EncounterWithdrawalMember> Members { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Encounters/Withdrawal/EncounterWithdrawalState.cs",
+      "sha256": "44853aa6ca48a44fca7355c6c2146d765a7898796469ae7d102a000baef7b22a",
+      "member_declaration_excerpt": [
+        {
+          "line": 20,
+          "text": "public sealed record EncounterWithdrawalEnd"
+        },
+        {
+          "line": 39,
+          "text": "public EncounterWithdrawalMember Member { get; }"
+        },
+        {
+          "line": 40,
+          "text": "public EncounterWithdrawalEndReason Reason { get; }"
+        },
+        {
+          "line": 41,
+          "text": "public ulong FailedSampleCost { get; }"
+        },
+        {
+          "line": 75,
+          "text": "public ulong WorldSequence { get; }"
+        },
+        {
+          "line": 76,
+          "text": "public ReadOnlyCollection<EncounterWithdrawalEnd> Ended { get; }"
+        },
+        {
+          "line": 77,
+          "text": "public ReadOnlyCollection<EntityId> CancelledDecisions { get; }"
+        },
+        {
+          "line": 87,
+          "text": "public static ContentHash RulesPin { get; } = ContentHash.Compute(CanonicalEncodingV1.Text(RulesText, nameof(RulesText)));"
+        },
+        {
+          "line": 114,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 115,
+          "text": "public ReadOnlyCollection<EncounterWithdrawalParty> Parties { get; }"
+        },
+        {
+          "line": 116,
+          "text": "public EncounterWithdrawalResolution? Last { get; }"
+        },
+        {
+          "line": 117,
+          "text": "public static EncounterWithdrawalState Empty { get; } = new(0, []);"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Gathering/GatheringSnapshot.cs",
+      "sha256": "6986c42fd32e67ff0f8abe816468931d619e6db1b7cbb034741da03e98aba556",
+      "member_declaration_excerpt": [
+        {
+          "line": 79,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 80,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 81,
+          "text": "public ulong AdvancingStep { get; }"
+        },
+        {
+          "line": 82,
+          "text": "public ReadOnlyCollection<GatherNodeState> Nodes { get; }"
+        },
+        {
+          "line": 83,
+          "text": "public ReadOnlyCollection<GatherToolDefinition> Tools { get; }"
+        },
+        {
+          "line": 84,
+          "text": "public ReadOnlyCollection<GatherActorWork> Actors { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Geography/LiquidCellState.cs",
+      "sha256": "3c007fa80a68fbd5ce0c43f0a403e05939c787482a7aa0bf0dc49d7449559d22",
+      "member_declaration_excerpt": [
+        {
+          "line": 64,
+          "text": "public ContentHash ReservoirHash { get; }"
+        },
+        {
+          "line": 65,
+          "text": "public LiquidFlowProfile Profile { get; }"
+        },
+        {
+          "line": 66,
+          "text": "public TerrainLiquidTopology? Topology { get; }"
+        },
+        {
+          "line": 67,
+          "text": "public WorldInstant Boundary { get; }"
+        },
+        {
+          "line": 68,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 69,
+          "text": "public ReadOnlyCollection<LiquidCellPortion> Portions { get; }"
+        },
+        {
+          "line": 70,
+          "text": "public ReadOnlyCollection<LiquidCellKey> DomainCells { get; }"
+        },
+        {
+          "line": 71,
+          "text": "public IReadOnlyDictionary<LiquidCellKey, ulong> Quantities { get; }"
+        },
+        {
+          "line": 72,
+          "text": "public ulong UnitsPerCell { get; }"
+        },
+        {
+          "line": 73,
+          "text": "public VolumeMicrolitres VolumePerUnit { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Geography/LiquidReservoirState.cs",
+      "sha256": "e5fbb9d3234427d1078c2667a584528913c3b5d01a494a8bd9160bad12f2a1a8",
+      "member_declaration_excerpt": [
+        {
+          "line": 6,
+          "text": "public sealed record ReservoirStorageProjection(ReservoirGeometry Geometry, ulong ExistingUnits,"
+        },
+        {
+          "line": 44,
+          "text": "public WatershedRunoffCapacityState Capacity { get; }"
+        },
+        {
+          "line": 45,
+          "text": "public ReadOnlyCollection<ReservoirGeometry> Geometries { get; }"
+        },
+        {
+          "line": 46,
+          "text": "public ReadOnlyCollection<ReservoirStorageProjection> Projections { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Geography/ReservoirSealPolicy.cs",
+      "sha256": "310e43778d84a38cc79a5ae452ccc5cf2ab07d426cd21a7234291e367e2c3d26",
+      "member_declaration_excerpt": [
+        {
+          "line": 8,
+          "text": "public sealed record ReservoirSealRule"
+        },
+        {
+          "line": 21,
+          "text": "public CountedItemDefinition Material { get; }"
+        },
+        {
+          "line": 22,
+          "text": "public uint MinimumThicknessMillimetres { get; }"
+        },
+        {
+          "line": 46,
+          "text": "public CountedItemDefinition Liquid { get; }"
+        },
+        {
+          "line": 47,
+          "text": "public ReadOnlyCollection<ReservoirSealRule> Rules { get; }"
+        },
+        {
+          "line": 48,
+          "text": "public ContentHash Version { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Markets/MarketBinding.cs",
+      "sha256": "eff9b5db1475979ba4164cd6d6a8af08bf25c4b2374d5ce3622ed384608de2d1",
+      "member_declaration_excerpt": [
+        {
+          "line": 37,
+          "text": "public EntityId MarketId { get; }"
+        },
+        {
+          "line": 38,
+          "text": "public EntityId MerchantActorId { get; }"
+        },
+        {
+          "line": 39,
+          "text": "public EntityId CustodianId { get; }"
+        },
+        {
+          "line": 40,
+          "text": "public EntityId AccountId { get; }"
+        },
+        {
+          "line": 41,
+          "text": "public CountedItemDefinition Commodity { get; }"
+        },
+        {
+          "line": 48,
+          "text": "public EntityId HomePlaceId { get; }"
+        },
+        {
+          "line": 49,
+          "text": "public MarketPricePolicy Policy { get; }"
+        },
+        {
+          "line": 50,
+          "text": "public ContentHash ContentHash { get; }"
+        },
+        {
+          "line": 97,
+          "text": "public sealed record MarketPostedTerms(ulong? AskUnitPrice, ulong? BidUnitPrice, ulong UnitFee);"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Markets/MarketLotDisclosure.cs",
+      "sha256": "b5620a2ca3ffd1db28710a938ac4520a2127152ef583ef1c1397782267c3c4ab",
+      "member_declaration_excerpt": [
+        {
+          "line": 53,
+          "text": "public EntityId SellerActorId { get; }"
+        },
+        {
+          "line": 54,
+          "text": "public EntityId MarketId { get; }"
+        },
+        {
+          "line": 57,
+          "text": "public EntityId MerchantActorId { get; }"
+        },
+        {
+          "line": 58,
+          "text": "public SpotLotKind LotKind { get; }"
+        },
+        {
+          "line": 59,
+          "text": "public EntityId LotId { get; }"
+        },
+        {
+          "line": 60,
+          "text": "public CountedItemDefinition Definition { get; }"
+        },
+        {
+          "line": 63,
+          "text": "public ulong LotRevision { get; }"
+        },
+        {
+          "line": 66,
+          "text": "public ulong Quantity { get; }"
+        },
+        {
+          "line": 67,
+          "text": "public EntityId SellerCustodianId { get; }"
+        },
+        {
+          "line": 70,
+          "text": "public EntityId SellerAccountId { get; }"
+        },
+        {
+          "line": 73,
+          "text": "public ulong DisclosedSequence { get; }"
+        },
+        {
+          "line": 76,
+          "text": "public ulong DisclosedAtStep { get; }"
+        },
+        {
+          "line": 79,
+          "text": "public ulong ExpiresAtStep { get; }"
+        },
+        {
+          "line": 82,
+          "text": "public EntityId CauseCommandId { get; }"
+        },
+        {
+          "line": 83,
+          "text": "public uint CauseActionIndex { get; }"
+        },
+        {
+          "line": 84,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Observations/MarketPriceObservation.cs",
+      "sha256": "b6b49671538ee84410d963762e4838f62d6e594e1f750c92490691bf9feeb86c",
+      "member_declaration_excerpt": [
+        {
+          "line": 44,
+          "text": "public EntityId ObserverActorId { get; }"
+        },
+        {
+          "line": 45,
+          "text": "public EntityId MarketId { get; }"
+        },
+        {
+          "line": 48,
+          "text": "public EntityId MerchantActorId { get; }"
+        },
+        {
+          "line": 49,
+          "text": "public CountedItemDefinition Commodity { get; }"
+        },
+        {
+          "line": 50,
+          "text": "public ContentHash PolicyVersion { get; }"
+        },
+        {
+          "line": 51,
+          "text": "public ulong? AskUnitPrice { get; }"
+        },
+        {
+          "line": 52,
+          "text": "public ulong? BidUnitPrice { get; }"
+        },
+        {
+          "line": 53,
+          "text": "public ulong UnitFee { get; }"
+        },
+        {
+          "line": 56,
+          "text": "public ulong ObservedSequence { get; }"
+        },
+        {
+          "line": 59,
+          "text": "public ulong ObservedAdvancingStep { get; }"
+        },
+        {
+          "line": 62,
+          "text": "public EntityId CauseCommandId { get; }"
+        },
+        {
+          "line": 63,
+          "text": "public uint CauseActionIndex { get; }"
+        },
+        {
+          "line": 64,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/Continuation/MaterialOperationHistory.cs",
+      "sha256": "6ea2dd4bd51df537247c20448f0c5306d829ec6408bdee5137f0244ff6804064",
+      "member_declaration_excerpt": [
+        {
+          "line": 67,
+          "text": "public ReadOnlyCollection<MaterialOperation> Operations { get; }"
+        },
+        {
+          "line": 68,
+          "text": "public GatheringSnapshot? Gathering { get; }"
+        },
+        {
+          "line": 69,
+          "text": "public TerrainRepresentationBoundary? TerrainRepresentation { get; }"
+        },
+        {
+          "line": 70,
+          "text": "public ExcavationMaterialBoundary? Excavation { get; }"
+        },
+        {
+          "line": 71,
+          "text": "public ReadOnlyCollection<ExcavationWorkEvidence> ExcavationEvidence { get; }"
+        },
+        {
+          "line": 72,
+          "text": "public ReadOnlyCollection<ReservoirTransportEvidence> TransportEvidence { get; }"
+        },
+        {
+          "line": 73,
+          "text": "public ReadOnlyCollection<TerrainRepresentationEvidence> TerrainEvidence { get; }"
+        },
+        {
+          "line": 74,
+          "text": "public ReadOnlyCollection<ConstructionCompletionEvidence> ConstructionEvidence { get; }"
+        },
+        {
+          "line": 75,
+          "text": "public ReadOnlyCollection<GatherIssueEvidence> GatherEvidence { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/Continuation/ProductionContinuationContext.cs",
+      "sha256": "bc271096e6d8dea453865e625b83fa0867cf75d63e3a91a19f5a36c072c05d16",
+      "member_declaration_excerpt": [
+        {
+          "line": 146,
+          "text": "public ProductionContinuationBasis Basis { get; }"
+        },
+        {
+          "line": 147,
+          "text": "public ulong Ordinal { get; }"
+        },
+        {
+          "line": 148,
+          "text": "public ulong BaseProductionRevision { get; }"
+        },
+        {
+          "line": 149,
+          "text": "public ulong BaseBatchCount { get; }"
+        },
+        {
+          "line": 150,
+          "text": "public ulong BaseConsumedItemCount { get; }"
+        },
+        {
+          "line": 151,
+          "text": "public bool SupportsConsumption { get; }"
+        },
+        {
+          "line": 152,
+          "text": "public bool SupportsMaterialOperations { get; }"
+        },
+        {
+          "line": 153,
+          "text": "public bool SupportsConstruction { get; }"
+        },
+        {
+          "line": 158,
+          "text": "public bool SupportsCompleteWorld { get; }"
+        },
+        {
+          "line": 160,
+          "text": "public bool SupportsConsentedWorld { get; }"
+        },
+        {
+          "line": 165,
+          "text": "public bool SupportsConsentedTransfer { get; }"
+        },
+        {
+          "line": 167,
+          "text": "public bool SupportsSpotExchange { get; }"
+        },
+        {
+          "line": 169,
+          "text": "public ExcavationMaterialBoundary? Excavation { get; }"
+        },
+        {
+          "line": 171,
+          "text": "public TransportMaterialBoundary? ReservedTransport { get; }"
+        },
+        {
+          "line": 173,
+          "text": "public TerrainRepresentationBoundary? TerrainRepresentation { get; }"
+        },
+        {
+          "line": 174,
+          "text": "public ReadOnlyCollection<EntityId> ConstructionRecipeIds { get; }"
+        },
+        {
+          "line": 175,
+          "text": "public ReadOnlyCollection<ProductionBatch> ConstructionBatches { get; }"
+        },
+        {
+          "line": 176,
+          "text": "public ulong BaseMaterialOperationCount { get; }"
+        },
+        {
+          "line": 177,
+          "text": "public GatheringSnapshot? GatheringBaseline { get; }"
+        },
+        {
+          "line": 178,
+          "text": "public ReadOnlyCollection<CraftRecipeDefinition> Recipes { get; }"
+        },
+        {
+          "line": 179,
+          "text": "public ReadOnlyCollection<CustodianStorage> Storages { get; }"
+        },
+        {
+          "line": 180,
+          "text": "public ContentHash AuthorityAdmissionHash { get; }"
+        },
+        {
+          "line": 181,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Production/ProductionSnapshot.cs",
+      "sha256": "41d5f68838444c7d5a3a89a649f859d2c2d9548d78ad92a8c6d7937a357a5cb8",
+      "member_declaration_excerpt": [
+        {
+          "line": 52,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 53,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 54,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 55,
+          "text": "public ReadOnlyCollection<CraftRecipeDefinition> Recipes { get; }"
+        },
+        {
+          "line": 56,
+          "text": "public ReadOnlyCollection<ProductionBatch> Batches { get; }"
+        },
+        {
+          "line": 57,
+          "text": "public ReadOnlyCollection<TransformedLot> Lots { get; }"
+        },
+        {
+          "line": 58,
+          "text": "public bool SupportsConsumption { get; }"
+        },
+        {
+          "line": 59,
+          "text": "public ReadOnlyCollection<ConsumedItemClaim> ConsumedItems { get; }"
+        },
+        {
+          "line": 60,
+          "text": "public ProductionContinuationContext? Continuation { get; }"
+        },
+        {
+          "line": 62,
+          "text": "public MaterialOperationHistory? MaterialHistory { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Progression/ProgressionSnapshot.cs",
+      "sha256": "52158d3cc95d30de8ebab571387efa9b90b4f4b46164841fd3e7fda2f3da75a8",
+      "member_declaration_excerpt": [
+        {
+          "line": 72,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 73,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 74,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 75,
+          "text": "public ReadOnlyCollection<ActorStatProfileDefinition> Profiles { get; }"
+        },
+        {
+          "line": 76,
+          "text": "public ReadOnlyCollection<LevelProgressionDefinition> Curves { get; }"
+        },
+        {
+          "line": 77,
+          "text": "public ReadOnlyCollection<ActorProgressionState> Actors { get; }"
+        },
+        {
+          "line": 78,
+          "text": "public CurrencyLedger Currency { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Quests/QuestSnapshot.cs",
+      "sha256": "3baf5b9b667461440b67b54e8b18d4d4cd9453cc4a442c19dd40bde31224de5d",
+      "member_declaration_excerpt": [
+        {
+          "line": 59,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 60,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 61,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 62,
+          "text": "public ReadOnlyCollection<DeliveryQuestDefinition> Definitions { get; }"
+        },
+        {
+          "line": 63,
+          "text": "public ReadOnlyCollection<ActorQuestState> Participations { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Terrain/ExcavationSnapshot.cs",
+      "sha256": "389dc8ee68ca563e2bf94ecf252630654ae681a5a5b6e6f485fa3dc392c07b9a",
+      "member_declaration_excerpt": [
+        {
+          "line": 41,
+          "text": "public ReadOnlyCollection<ExcavationSite> Sites { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/ControllerPermissions/WorldControlPermission.cs",
+      "sha256": "e1ff6a59a9ae9246164b4d71207bb1ea739e1279af1bedcd2fb00ed3d83205f3",
+      "member_declaration_excerpt": [
+        {
+          "line": 15,
+          "text": "public sealed record WorldControlPermissionTerms"
+        },
+        {
+          "line": 32,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 33,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 34,
+          "text": "public EntityId OwnerActorId { get; }"
+        },
+        {
+          "line": 35,
+          "text": "public EntityId OwnerPrincipalId { get; }"
+        },
+        {
+          "line": 36,
+          "text": "public EntityId OwnerSessionId { get; }"
+        },
+        {
+          "line": 37,
+          "text": "public EntityId GranteeActorId { get; }"
+        },
+        {
+          "line": 38,
+          "text": "public EntityId GranteePrincipalId { get; }"
+        },
+        {
+          "line": 39,
+          "text": "public EntityId GranteeSessionId { get; }"
+        },
+        {
+          "line": 40,
+          "text": "public EntityId GrantCommandId { get; }"
+        },
+        {
+          "line": 41,
+          "text": "public WorldControlCapabilities Capabilities { get; }"
+        },
+        {
+          "line": 54,
+          "text": "public sealed record WorldControlPermissionSlot"
+        },
+        {
+          "line": 75,
+          "text": "public EntityId OwnerActorId { get; }"
+        },
+        {
+          "line": 76,
+          "text": "public EntityId GranteeActorId { get; }"
+        },
+        {
+          "line": 77,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 78,
+          "text": "public ulong ChangedSequence { get; }"
+        },
+        {
+          "line": 79,
+          "text": "public WorldControlPermissionTerms? Terms { get; }"
+        },
+        {
+          "line": 80,
+          "text": "public ulong OfferedSequence { get; }"
+        },
+        {
+          "line": 81,
+          "text": "public EntityId? AcceptanceCommandId { get; }"
+        },
+        {
+          "line": 82,
+          "text": "public ulong AcceptedSequence { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/ControllerPermissions/WorldControlPermissionState.cs",
+      "sha256": "077985bf1e1d804172c6d4cac001bcb0e948a11b950c1b801f70313ce5030f9b",
+      "member_declaration_excerpt": [
+        {
+          "line": 16,
+          "text": "public static ContentHash RulesPin { get; } = ContentHash.Compute(CanonicalEncodingV1.Text(RulesText, nameof(RulesText)));"
+        },
+        {
+          "line": 17,
+          "text": "public static WorldControlPermissionState Empty { get; } = new([]);"
+        },
+        {
+          "line": 60,
+          "text": "public ReadOnlyCollection<WorldControlPermissionSlot> Slots { get; }"
+        },
+        {
+          "line": 61,
+          "text": "public ulong Revision { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/Controllers/WorldControllerAssignment.cs",
+      "sha256": "d70af216795f4b7e154ed5b26378532007a10f9d1e7fe6726a55049555fdb4ff",
+      "member_declaration_excerpt": [
+        {
+          "line": 6,
+          "text": "public sealed record WorldControllerAssignment"
+        },
+        {
+          "line": 22,
+          "text": "public EntityId ActorId { get; }"
+        },
+        {
+          "line": 23,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 24,
+          "text": "public WorldControllerMode Mode { get; }"
+        },
+        {
+          "line": 25,
+          "text": "public EntityId? DisconnectId { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/Controllers/WorldControllerState.cs",
+      "sha256": "815edb651232aa261395949df517c504dcf80575eee9ccebfefcb49d1458f87a",
+      "member_declaration_excerpt": [
+        {
+          "line": 22,
+          "text": "public static ContentHash RulesPin { get; } = ContentHash.Compute(CanonicalEncodingV1.Text(RulesText, nameof(RulesText)));"
+        },
+        {
+          "line": 44,
+          "text": "public ReadOnlyCollection<WorldControllerAssignment> Assignments { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/EffectiveControl/WorldControlWitness.cs",
+      "sha256": "2d63d6b420486b48759021f9414f627ad6736a3d188e568dffdaaf3b7d2bf692",
+      "member_declaration_excerpt": [
+        {
+          "line": 6,
+          "text": "public sealed record WorldControlWitness"
+        },
+        {
+          "line": 35,
+          "text": "public EntityId OwnerActorId { get; }"
+        },
+        {
+          "line": 36,
+          "text": "public EntityId GranteeActorId { get; }"
+        },
+        {
+          "line": 37,
+          "text": "public EntityId GrantCommandId { get; }"
+        },
+        {
+          "line": 38,
+          "text": "public EntityId AcceptanceCommandId { get; }"
+        },
+        {
+          "line": 39,
+          "text": "public ulong GrantRevision { get; }"
+        },
+        {
+          "line": 40,
+          "text": "public WorldControlCapabilities Capabilities { get; }"
+        },
+        {
+          "line": 41,
+          "text": "public ContentHash TermsHash { get; }"
+        },
+        {
+          "line": 42,
+          "text": "public EntityId AssignmentId { get; }"
+        },
+        {
+          "line": 43,
+          "text": "public ulong AssignmentRevision { get; }"
+        },
+        {
+          "line": 44,
+          "text": "public ulong AcquiredSequence { get; }"
+        },
+        {
+          "line": 45,
+          "text": "public EntityId DisconnectId { get; }"
+        },
+        {
+          "line": 46,
+          "text": "public ulong OwnerControlRevision { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/EffectiveControl/WorldEffectiveControlState.cs",
+      "sha256": "14b80c1ba944a1f5ec6a0f254da638defb2c0d7ec83216c420890b236b4d342b",
+      "member_declaration_excerpt": [
+        {
+          "line": 6,
+          "text": "public sealed record WorldEffectiveControlSlot"
+        },
+        {
+          "line": 20,
+          "text": "public EntityId ActorId { get; }"
+        },
+        {
+          "line": 21,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 22,
+          "text": "public ulong ChangedSequence { get; }"
+        },
+        {
+          "line": 23,
+          "text": "public WorldControlWitness? Witness { get; }"
+        },
+        {
+          "line": 33,
+          "text": "public static ContentHash RulesPin { get; } = ContentHash.Compute(CanonicalEncodingV1.Text(RulesText, nameof(RulesText)));"
+        },
+        {
+          "line": 34,
+          "text": "public static WorldEffectiveControlState Empty { get; } = new(0, []);"
+        },
+        {
+          "line": 71,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 72,
+          "text": "public ReadOnlyCollection<WorldEffectiveControlSlot> Slots { get; }"
+        },
+        {
+          "line": 93,
+          "text": "public sealed record WorldControlAssignmentEvent"
+        },
+        {
+          "line": 108,
+          "text": "public EntityId ActorId { get; }"
+        },
+        {
+          "line": 109,
+          "text": "public WorldControlAssignmentEventKind Kind { get; }"
+        },
+        {
+          "line": 110,
+          "text": "public ulong ExpectedAssignmentRevision { get; }"
+        },
+        {
+          "line": 111,
+          "text": "public WorldControlWitness? Witness { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCareAdmission.cs",
+      "sha256": "fb5f9e669a53544e4e3603b2c81c5526fbc0c2e5997f6fbb928756a67836c79a",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldConsentedMaterialHistory.cs",
+      "sha256": "10771c5000efa41ddaea6a9b845b6b9cbefff38dcaabb59475c858abbccccf48",
+      "member_declaration_excerpt": [
+        {
+          "line": 46,
+          "text": "public ReadOnlyCollection<WorldConsentedTransferEvidence> Transfers { get; }"
+        },
+        {
+          "line": 47,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldConsentedTransferEvidence.cs",
+      "sha256": "a7187d9e4b80c84cab4d972ac09243f74a003f60148985fb9c47456c5b674ab7",
+      "member_declaration_excerpt": [
+        {
+          "line": 55,
+          "text": "public ulong WorldSequence { get; }"
+        },
+        {
+          "line": 56,
+          "text": "public uint OfferActionIndex { get; }"
+        },
+        {
+          "line": 57,
+          "text": "public uint AcceptanceActionIndex { get; }"
+        },
+        {
+          "line": 58,
+          "text": "public ConsentedMaterialApproval Approval { get; }"
+        },
+        {
+          "line": 63,
+          "text": "public EntityId MovedLotId { get; }"
+        },
+        {
+          "line": 66,
+          "text": "public EntityId RightsOwnerId { get; }"
+        },
+        {
+          "line": 67,
+          "text": "public uint OutputIndex { get; }"
+        },
+        {
+          "line": 68,
+          "text": "public ulong MovedStart { get; }"
+        },
+        {
+          "line": 69,
+          "text": "public ulong MovedEnd { get; }"
+        },
+        {
+          "line": 70,
+          "text": "public ContentHash OriginalInventoryHash { get; }"
+        },
+        {
+          "line": 71,
+          "text": "public ContentHash OriginalProductionHash { get; }"
+        },
+        {
+          "line": 72,
+          "text": "public ContentHash CandidateInventoryHash { get; }"
+        },
+        {
+          "line": 73,
+          "text": "public ContentHash CandidateProductionHash { get; }"
+        },
+        {
+          "line": 74,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldControlPermissionAdmission.cs",
+      "sha256": "1312f9bfed4a3a022ab3d52937334722d56eb4e7016e37c9d5489ca0c16a81c0",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCoordinatedAdmission.cs",
+      "sha256": "96e9e40f1af9911f7b590e5dae07d2fca8e5ada72affa6041a5d9d0e7a9c21f3",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldCoordinatedContinuation.cs",
+      "sha256": "4d432fb03ff90d0680d1b97c90b462eab55f965a2248b6e4308955262ac6f329",
+      "member_declaration_excerpt": [
+        {
+          "line": 59,
+          "text": "public WorldSourceIssuanceBaseline Sources { get; }"
+        },
+        {
+          "line": 62,
+          "text": "public WorldMaterialCareArchiveAnchor? Anchor { get; }"
+        },
+        {
+          "line": 64,
+          "text": "public WorldConsentedMaterialHistory? ConsentedMaterial { get; }"
+        },
+        {
+          "line": 66,
+          "text": "public WorldMaterialProposalBook? Proposals { get; }"
+        },
+        {
+          "line": 68,
+          "text": "public WorldPaidExchangeBook? PaidExchange { get; }"
+        },
+        {
+          "line": 71,
+          "text": "public WorldMarketBook? Markets { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldDelegatedControlAdmission.cs",
+      "sha256": "a5397e18b337d410d626687eefb5e9f64eda9e21ec29227185d4a16c24281ced",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMarketBook.cs",
+      "sha256": "e8d88b029db237ea90764304c2de2574c03fb8ebdccc03b8b41915898b207697",
+      "member_declaration_excerpt": [
+        {
+          "line": 30,
+          "text": "public EntityId QuoteId { get; }"
+        },
+        {
+          "line": 31,
+          "text": "public EntityId MarketId { get; }"
+        },
+        {
+          "line": 32,
+          "text": "public ContentHash PolicyVersion { get; }"
+        },
+        {
+          "line": 35,
+          "text": "public ulong StockBasis { get; }"
+        },
+        {
+          "line": 130,
+          "text": "public ReadOnlyCollection<MarketBinding> Markets { get; }"
+        },
+        {
+          "line": 131,
+          "text": "public ReadOnlyCollection<MarketQuoteRecord> Quotes { get; }"
+        },
+        {
+          "line": 132,
+          "text": "public ReadOnlyCollection<MarketPriceObservation> Knowledge { get; }"
+        },
+        {
+          "line": 135,
+          "text": "public ReadOnlyCollection<MarketLotDisclosure> Disclosures { get; }"
+        },
+        {
+          "line": 136,
+          "text": "public ContentHash ContentHash { get; }"
+        },
+        {
+          "line": 245,
+          "text": "public WorldMarketBook Carried { get; }"
+        },
+        {
+          "line": 246,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveAnchor.cs",
+      "sha256": "962de484300bdf899ecab5ee152fe2a82dff34d641dfb88c96235820d9211f14",
+      "member_declaration_excerpt": [
+        {
+          "line": 99,
+          "text": "public ContentHash? TransitionHash { get; }"
+        },
+        {
+          "line": 101,
+          "text": "public WorldMaterialCareArchiveReference Reference { get; }"
+        },
+        {
+          "line": 102,
+          "text": "public ContentHash AdmissionVersion { get; }"
+        },
+        {
+          "line": 110,
+          "text": "public ProductionContinuationContext Production { get; }"
+        },
+        {
+          "line": 111,
+          "text": "public CareContinuationContext Care { get; }"
+        },
+        {
+          "line": 114,
+          "text": "public ProgressionSnapshot Progression { get; }"
+        },
+        {
+          "line": 115,
+          "text": "public ContentHash SourceBaselineHash { get; }"
+        },
+        {
+          "line": 118,
+          "text": "public WorldMaterialProposalContinuationContext? Proposals { get; }"
+        },
+        {
+          "line": 121,
+          "text": "public WorldPaidExchangeContinuationContext? PaidExchange { get; }"
+        },
+        {
+          "line": 124,
+          "text": "public WorldMarketContinuationContext? Markets { get; }"
+        },
+        {
+          "line": 125,
+          "text": "public ContentHash ContentHash { get; }"
+        },
+        {
+          "line": 126,
+          "text": "internal QuestSnapshot Quests { get; }"
+        },
+        {
+          "line": 127,
+          "text": "internal EncounterLifecycleSnapshot Lifecycle { get; }"
+        },
+        {
+          "line": 128,
+          "text": "internal GeographyProductionDependencies Geography { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMaterialCareArchiveReference.cs",
+      "sha256": "37d13e1158c3c74c7ac6ca5739dca70e38388eb13dbf6c7c3d47e33668def442",
+      "member_declaration_excerpt": [
+        {
+          "line": 9,
+          "text": "public sealed record WorldMaterialCareArchiveReference"
+        },
+        {
+          "line": 26,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 27,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 28,
+          "text": "public ulong Ordinal { get; }"
+        },
+        {
+          "line": 29,
+          "text": "public ulong BoundarySequence { get; }"
+        },
+        {
+          "line": 30,
+          "text": "public ContentHash BoundaryHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMaterialProposal.cs",
+      "sha256": "bfd32331c39c07a39e54ff9e336a47cc32446ec7a826b46b02d34037b64a18db",
+      "member_declaration_excerpt": [
+        {
+          "line": 54,
+          "text": "public EntityId ProposalId { get; }"
+        },
+        {
+          "line": 55,
+          "text": "public ConsentedMaterialCommand Grant { get; }"
+        },
+        {
+          "line": 58,
+          "text": "public CommandContentHash GrantHash { get; }"
+        },
+        {
+          "line": 59,
+          "text": "public TrustedCommandDelivery SenderDelivery { get; }"
+        },
+        {
+          "line": 60,
+          "text": "public WorldControlWitness? ControlWitness { get; }"
+        },
+        {
+          "line": 63,
+          "text": "public ulong CreatedSequence { get; }"
+        },
+        {
+          "line": 66,
+          "text": "public ulong CreatedAdvancingStep { get; }"
+        },
+        {
+          "line": 69,
+          "text": "public ulong ExpiresAtAdvancingStep { get; }"
+        },
+        {
+          "line": 73,
+          "text": "public ContentHash ContentHash { get; }"
+        },
+        {
+          "line": 129,
+          "text": "public uint AcceptanceActionIndex { get; }"
+        },
+        {
+          "line": 130,
+          "text": "public ConsentedMaterialAcceptance Acceptance { get; }"
+        },
+        {
+          "line": 131,
+          "text": "public TrustedCommandDelivery RecipientDelivery { get; }"
+        },
+        {
+          "line": 132,
+          "text": "public WorldControlWitness? ControlWitness { get; }"
+        },
+        {
+          "line": 133,
+          "text": "public EntityId MovedLotId { get; }"
+        },
+        {
+          "line": 136,
+          "text": "public EntityId RightsOwnerId { get; }"
+        },
+        {
+          "line": 137,
+          "text": "public uint OutputIndex { get; }"
+        },
+        {
+          "line": 138,
+          "text": "public ulong MovedStart { get; }"
+        },
+        {
+          "line": 139,
+          "text": "public ulong MovedEnd { get; }"
+        },
+        {
+          "line": 140,
+          "text": "public ContentHash OriginalInventoryHash { get; }"
+        },
+        {
+          "line": 141,
+          "text": "public ContentHash OriginalProductionHash { get; }"
+        },
+        {
+          "line": 142,
+          "text": "public ContentHash CandidateInventoryHash { get; }"
+        },
+        {
+          "line": 143,
+          "text": "public ContentHash CandidateProductionHash { get; }"
+        },
+        {
+          "line": 212,
+          "text": "public WorldMaterialProposal Proposal { get; }"
+        },
+        {
+          "line": 213,
+          "text": "public WorldMaterialProposalOutcomeKind Kind { get; }"
+        },
+        {
+          "line": 216,
+          "text": "public ulong WorldSequence { get; }"
+        },
+        {
+          "line": 219,
+          "text": "public EntityId? TerminalCommandId { get; }"
+        },
+        {
+          "line": 220,
+          "text": "public WorldMaterialProposalSettlement? Settlement { get; }"
+        },
+        {
+          "line": 221,
+          "text": "public WorldMaterialProposalTermination? Termination { get; }"
+        },
+        {
+          "line": 222,
+          "text": "public ContentHash ContentHash { get; }"
+        },
+        {
+          "line": 234,
+          "text": "internal readonly record struct WorldCustodyWitness(bool Produced, ContentHash OriginalInventoryHash,"
+        },
+        {
+          "line": 246,
+          "text": "public EntityId CommandId { get; }"
+        },
+        {
+          "line": 247,
+          "text": "public TrustedCommandDelivery Delivery { get; }"
+        },
+        {
+          "line": 248,
+          "text": "public WorldControlWitness? ControlWitness { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldMaterialProposalBook.cs",
+      "sha256": "e6247a4979d06d2b0432b3d3838eedf023eb779c175874a5493a7ae53bd90511",
+      "member_declaration_excerpt": [
+        {
+          "line": 66,
+          "text": "public ReadOnlyCollection<WorldMaterialProposal> Open { get; }"
+        },
+        {
+          "line": 67,
+          "text": "public ReadOnlyCollection<WorldMaterialProposalOutcome> Outcomes { get; }"
+        },
+        {
+          "line": 68,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPacingState.cs",
+      "sha256": "48b233d592e011a507e5bf44cd86fbab6ff36eb0ee82243edfff794c283a671b",
+      "member_declaration_excerpt": [
+        {
+          "line": 14,
+          "text": "public static ExposureRate ProcessRate { get; } = new("
+        },
+        {
+          "line": 53,
+          "text": "public EntityId WorldId { get; }"
+        },
+        {
+          "line": 54,
+          "text": "public EntityId BranchId { get; }"
+        },
+        {
+          "line": 55,
+          "text": "public WorldInstant OriginCalendar { get; }"
+        },
+        {
+          "line": 56,
+          "text": "public ExposureProgress Progress { get; }"
+        },
+        {
+          "line": 57,
+          "text": "public EncounterTimingSnapshot? Encounter { get; }"
+        },
+        {
+          "line": 58,
+          "text": "public LocalExposureDuration? EncounterOriginExposure { get; }"
+        },
+        {
+          "line": 59,
+          "text": "public WorldInstant Calendar { get; }"
+        },
+        {
+          "line": 61,
+          "text": "public WorldInstant ProcessBoundary { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPaidExchangeBook.cs",
+      "sha256": "57741cfcca9b17713bdf4578c5edc4767e644a9e39e1e4c739d39dcc58c57fde",
+      "member_declaration_excerpt": [
+        {
+          "line": 113,
+          "text": "public static WorldPaidExchangeBook Empty { get; } = new([], [], []);"
+        },
+        {
+          "line": 115,
+          "text": "public ReadOnlyCollection<WorldPaidQuote> Open { get; }"
+        },
+        {
+          "line": 116,
+          "text": "public ReadOnlyCollection<WorldPaidQuoteOutcome> Outcomes { get; }"
+        },
+        {
+          "line": 117,
+          "text": "public ReadOnlyCollection<KeyValuePair<EntityId, ulong>> IssuerRevisions { get; }"
+        },
+        {
+          "line": 118,
+          "text": "public ContentHash ContentHash { get; }"
+        },
+        {
+          "line": 289,
+          "text": "public ReadOnlyCollection<WorldPaidQuote> Carried { get; }"
+        },
+        {
+          "line": 290,
+          "text": "public ReadOnlyCollection<KeyValuePair<EntityId, ulong>> IssuerRevisions { get; }"
+        },
+        {
+          "line": 291,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPaidQuote.cs",
+      "sha256": "8b4f6db648f563605ef6d217655d4558335aeea39ba765e850f1d9e37e38f474",
+      "member_declaration_excerpt": [
+        {
+          "line": 52,
+          "text": "public EntityId CreationCommandId { get; }"
+        },
+        {
+          "line": 53,
+          "text": "public WorldControlWitness? ControlWitness { get; }"
+        },
+        {
+          "line": 54,
+          "text": "public SpotQuote Quote { get; }"
+        },
+        {
+          "line": 60,
+          "text": "public ulong CreatedSequence { get; }"
+        },
+        {
+          "line": 72,
+          "text": "public ContentHash ContentHash { get; }"
+        },
+        {
+          "line": 114,
+          "text": "public uint ActionIndex { get; }"
+        },
+        {
+          "line": 115,
+          "text": "public SpotAcceptance Acceptance { get; }"
+        },
+        {
+          "line": 116,
+          "text": "public WorldControlWitness? ControlWitness { get; }"
+        },
+        {
+          "line": 118,
+          "text": "public EntityId MovedLotId { get; }"
+        },
+        {
+          "line": 121,
+          "text": "public EntityId RightsOwnerId { get; }"
+        },
+        {
+          "line": 122,
+          "text": "public uint OutputIndex { get; }"
+        },
+        {
+          "line": 123,
+          "text": "public ulong MovedStart { get; }"
+        },
+        {
+          "line": 124,
+          "text": "public ulong MovedEnd { get; }"
+        },
+        {
+          "line": 156,
+          "text": "public EntityId AcceptanceId { get; }"
+        },
+        {
+          "line": 159,
+          "text": "public EntityId FilledQuoteId { get; }"
+        },
+        {
+          "line": 187,
+          "text": "public EntityId CommandId { get; }"
+        },
+        {
+          "line": 188,
+          "text": "public TrustedCommandDelivery Delivery { get; }"
+        },
+        {
+          "line": 189,
+          "text": "public WorldControlWitness? ControlWitness { get; }"
+        },
+        {
+          "line": 192,
+          "text": "public uint ActionIndex { get; }"
+        },
+        {
+          "line": 269,
+          "text": "public WorldPaidQuote Quote { get; }"
+        },
+        {
+          "line": 270,
+          "text": "public WorldPaidQuoteOutcomeKind Kind { get; }"
+        },
+        {
+          "line": 273,
+          "text": "public ulong WorldSequence { get; }"
+        },
+        {
+          "line": 274,
+          "text": "public WorldPaidSettlement? Settlement { get; }"
+        },
+        {
+          "line": 275,
+          "text": "public WorldPaidSupersession? Supersession { get; }"
+        },
+        {
+          "line": 276,
+          "text": "public WorldPaidWithdrawal? Withdrawal { get; }"
+        },
+        {
+          "line": 277,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldPartyWithdrawalAdmission.cs",
+      "sha256": "53be730745bdeab295a1bff3292c2687e4bffca4b057e4dd50e6017ac2a9bb5f",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResident.cs",
+      "sha256": "3fa605e2422c086a9d72de87765fd6104ada3782eb215a6567ccceb6fa63bbfa",
+      "member_declaration_excerpt": [
+        {
+          "line": 28,
+          "text": "public EntityId DefinitionId { get; }"
+        },
+        {
+          "line": 29,
+          "text": "public LanguageChannelKey Channel { get; }"
+        },
+        {
+          "line": 30,
+          "text": "public ContentHash ChannelVersion { get; }"
+        },
+        {
+          "line": 31,
+          "text": "public string Text { get; }"
+        },
+        {
+          "line": 61,
+          "text": "public EntityId ActorId { get; }"
+        },
+        {
+          "line": 62,
+          "text": "public EntityId InventoryCustodianId { get; }"
+        },
+        {
+          "line": 63,
+          "text": "public string DisplayName { get; }"
+        },
+        {
+          "line": 64,
+          "text": "public ResidentControllerKind ControllerKind { get; }"
+        },
+        {
+          "line": 65,
+          "text": "public SubunitPosition HomeFeet { get; }"
+        },
+        {
+          "line": 66,
+          "text": "public int WanderRadiusCells { get; }"
+        },
+        {
+          "line": 67,
+          "text": "public ActorComprehensionProfile Comprehension { get; }"
+        },
+        {
+          "line": 68,
+          "text": "public LocalExposureDuration ExperiencedTime { get; }"
+        },
+        {
+          "line": 69,
+          "text": "public ResidentUtterance? OpeningUtterance { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldResourceHistory.cs",
+      "sha256": "79c77404f9d4fa726cd86a39f768bd2f403ea72ee1adb21473ecdeedbfa4aad1",
+      "member_declaration_excerpt": [
+        {
+          "line": 50,
+          "text": "public WorldMaterialCareArchiveAnchor? CoordinatedAnchor { get; }"
+        },
+        {
+          "line": 52,
+          "text": "public ContentHash AnchorAdmission { get; }"
+        },
+        {
+          "line": 53,
+          "text": "public ActorResourceHistory History { get; }"
+        },
+        {
+          "line": 54,
+          "text": "public ReadOnlyCollection<WorldResourceEvidence> Evidence { get; }"
+        },
+        {
+          "line": 55,
+          "text": "public WorldResourceArchiveAnchor? ArchiveAnchor { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshot.cs",
+      "sha256": "40a2cee0dd8cb3af5e9bc6b69d0251f1f0d1df509867cebba5a7a97b805957a8",
+      "member_declaration_excerpt": [
+        {
+          "line": 283,
+          "text": "public CountedAuthorityState Inventory { get; }"
+        },
+        {
+          "line": 284,
+          "text": "public LocalSpatialSnapshot Space { get; }"
+        },
+        {
+          "line": 285,
+          "text": "public ContentHash AdmissionVersion { get; }"
+        },
+        {
+          "line": 286,
+          "text": "public WorldInstant Calendar { get; }"
+        },
+        {
+          "line": 287,
+          "text": "public ulong Revision { get; }"
+        },
+        {
+          "line": 293,
+          "text": "public ulong AdvancingSteps { get; }"
+        },
+        {
+          "line": 294,
+          "text": "public ReadOnlyCollection<WorldResident> Residents { get; }"
+        },
+        {
+          "line": 295,
+          "text": "public ReadOnlyCollection<DialogueSession> Dialogues { get; }"
+        },
+        {
+          "line": 296,
+          "text": "public GatheringSnapshot? Gathering { get; }"
+        },
+        {
+          "line": 297,
+          "text": "public ProductionSnapshot? Production { get; }"
+        },
+        {
+          "line": 298,
+          "text": "public ProgressionSnapshot? Progression { get; }"
+        },
+        {
+          "line": 299,
+          "text": "public QuestSnapshot? Quests { get; }"
+        },
+        {
+          "line": 300,
+          "text": "public ConstructionSnapshot? Construction { get; }"
+        },
+        {
+          "line": 301,
+          "text": "public PreparedWatershed? Watershed { get; }"
+        },
+        {
+          "line": 302,
+          "text": "public PreparedWatershedNetwork? WatershedNetwork { get; }"
+        },
+        {
+          "line": 303,
+          "text": "public LiquidReservoirState? Reservoirs { get; }"
+        },
+        {
+          "line": 304,
+          "text": "public ReservoirTransportState? Transport { get; }"
+        },
+        {
+          "line": 305,
+          "text": "public ReservoirSealPolicy? ReservoirSeals { get; }"
+        },
+        {
+          "line": 306,
+          "text": "public LiquidCellState? LiquidCells { get; }"
+        },
+        {
+          "line": 307,
+          "text": "public ExcavationSnapshot? Excavation { get; }"
+        },
+        {
+          "line": 308,
+          "text": "public ConstructionPhysicalSnapshot? ConstructionPhysical { get; }"
+        },
+        {
+          "line": 309,
+          "text": "public ConstructionLoadPolicy? StructuralPolicy { get; }"
+        },
+        {
+          "line": 310,
+          "text": "public StructuralSettlementPolicy? StructuralSettlementPolicy { get; }"
+        },
+        {
+          "line": 311,
+          "text": "public ConsequenceExecutionPolicy? ConsequencePolicy { get; }"
+        },
+        {
+          "line": 312,
+          "text": "public PendingExcavation? PendingExcavation { get; }"
+        },
+        {
+          "line": 313,
+          "text": "public CoupledSettlementPolicy? CoupledSettlementPolicy { get; }"
+        },
+        {
+          "line": 314,
+          "text": "public ConstructionDescentMode DescentMode { get; }"
+        },
+        {
+          "line": 315,
+          "text": "public WorldPacingState? Pacing { get; }"
+        },
+        {
+          "line": 316,
+          "text": "public CareSnapshot? Care { get; }"
+        },
+        {
+          "line": 317,
+          "text": "public WorldResourceHistory? ResourceHistory { get; }"
+        },
+        {
+          "line": 319,
+          "text": "public WorldCoordinatedContinuation? Coordination { get; }"
+        },
+        {
+          "line": 320,
+          "text": "public EncounterLifecycleSnapshot? EncounterLifecycle { get; }"
+        },
+        {
+          "line": 322,
+          "text": "public EncounterRetreatState? Retreat { get; }"
+        },
+        {
+          "line": 324,
+          "text": "public EncounterOutcomeState? EncounterOutcome { get; }"
+        },
+        {
+          "line": 326,
+          "text": "public WorldControllerState? Controllers { get; }"
+        },
+        {
+          "line": 328,
+          "text": "public WorldRecoveryPolicy? Recovery { get; }"
+        },
+        {
+          "line": 329,
+          "text": "public WorldControlPermissionState? ControlPermissions { get; }"
+        },
+        {
+          "line": 330,
+          "text": "public WorldEffectiveControlState? EffectiveControl { get; }"
+        },
+        {
+          "line": 349,
+          "text": "public WorldIdentityIndex IdentityIndex { get; }"
+        }
+      ]
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV35.cs",
+      "sha256": "d7e0112b0f9690a63591f186dedad11d6f207d65e88b9689750267694200a084",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV40.cs",
+      "sha256": "94a01434e247f914a0a6ea3cd66f664063858a8351ca5b1f544d35f38d8204ce",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSnapshotCodecV41.cs",
+      "sha256": "736b480d64de877715de373041ef6eea09b28f1864f684331d491a42b4aedae6",
+      "member_declaration_excerpt": []
+    },
+    {
+      "path": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldSourceIssuanceBaseline.cs",
+      "sha256": "c3e5777422086c6be134fcb6e5ab69ef1ef0cc11e982f995bfe43a3510eeedd0",
+      "member_declaration_excerpt": [
+        {
+          "line": 9,
+          "text": "public sealed record WorldSourceCursor(EntityId NodeId, EntityId SourceId, ulong NextUnissuedUnit);"
+        },
+        {
+          "line": 48,
+          "text": "public ReadOnlyCollection<SourceInterval> Allocations { get; }"
+        },
+        {
+          "line": 49,
+          "text": "public ReadOnlyCollection<WorldSourceCursor> Cursors { get; }"
+        },
+        {
+          "line": 50,
+          "text": "public ReadOnlyCollection<EntityId> ExtractedSources { get; }"
+        },
+        {
+          "line": 51,
+          "text": "public ContentHash ContentHash { get; }"
+        }
+      ]
+    }
+  ]
+}

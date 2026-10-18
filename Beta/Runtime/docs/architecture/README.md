@@ -15,6 +15,7 @@ different kind of person.
 | [Identity and determinism](identity-and-determinism.md) | Which bytes, numbers, random streams and orderings define the same world? |
 | [Persistence and history](persistence-and-history.md) | What is stored, replayed, migrated and addressed through history? |
 | [Partition ownership](partition-ownership.md) | How do stable typed owners, complete admission cohorts, residency and earned scheduling remain separate? |
+| [Partition dependencies](partition-dependencies.md) | Which current facts, historical witnesses and due obligations must remain coupled when detail is loaded selectively? |
 | [Hosted player connections](hosted-player-connections.md) | How do up to four authenticated player ports share one clock, input cutoff, authority and NPC scheduler while retaining separate readiness, views and queries? |
 | [Host timing diagnostics](host-timing-diagnostics.md) | How are startup, input sampling, commit, observation and cleanup delays measured without changing authority or deadlines? |
 | [Durable character control](controller-lifecycle.md) | How do recorded disconnect, allowance expiry and safe return of control preserve character ownership, gameplay obligations and exact replay? |
