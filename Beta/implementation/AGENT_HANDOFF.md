@@ -46,8 +46,10 @@ Keep actual owner/storage/history costs explicit; no performance or credit savin
 Before selective-loading edits, use the [current40/41 dependency map](PLAN_STATE_CURRENT_PROFILE_MAP.md):
 read/write/due closures differ; keep reservation-wide stock/access checks and all actor exposure.
 [Shared qualification](p02/partition-state/work-qualification/RESULT.md) is extracted and used by live,
-detached and locality work, with unchanged complete input owners and publication obligations. Next bind
-source-established dependency completeness/freshness to an actual smaller stored cohort. The map also
+detached and locality work. [Selected stored assessment](p02/partition-state/stored-work-cohort/RESULT.md)
+now reads an exact source-bound subset without unrelated inventory/production/terrain detail, retaining
+complete site actor/structure geometry. It is read-only and invalidates on any commit. Next prove actual
+partial-work publication, dependency renewal and complete due gathering/resident updates. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
 Neither extraction nor the map is a partial loader or completed nested migration.
 

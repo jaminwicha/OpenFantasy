@@ -176,8 +176,11 @@ limits are experimental storage stops, not accepted shipping limits or reduced c
 ambiguity: command-local reads, published writes and mandatory due processes have different closures.
 Current actor images carry resident exposure; partial construction still checks global reservation
 stock and required-access actors. [Shared qualification](p02/partition-state/work-qualification/RESULT.md)
-is extracted without changing the guards. The next loading binding must retain source-established
-completeness/freshness evidence and load the larger cohort for material completion.
+is extracted without changing the guards. [Selected stored assessment](p02/partition-state/stored-work-cohort/RESULT.md)
+now uses complete source-established reservation membership and exact directory freshness. It does not
+publish work or advance due processes, and retains complete site actor/structure geometry. The next
+publication binding must renew those witnesses, preserve complete due closure and load the larger
+cohort for material completion; read qualification alone does not close the residency gate.
 
 The map also records coordinated archive witnesses, pending care, private market knowledge,
 controller/permission/effective-assignment distinctions and profile41 party withdrawal. These prevent

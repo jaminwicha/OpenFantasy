@@ -429,3 +429,16 @@ Next bind source-established stock/access/identity completeness and freshness to
 stored cohort; an interface or dependency list alone is not residency evidence. This fulfills the
 qualification extraction in the current-profile preparation, not selective loading, migration,
 fairness, checkpoint/scale or the unchanged complete PLAN-STATE/P02 gates.
+
+### PLAN-STATE selected stored work assessment
+
+[The stored work cohort](p02/partition-state/stored-work-cohort/RESULT.md) binds actual selected payload
+reads to an admitted source, complete reservation membership and exact current directory. It uses
+shared qualification and a serialized read-only Host boundary. Unrelated inventory/production/terrain
+detail need not remain in the cohort; complete actor/structure site geometry still does.
+
+The result is proposed qualification only: no clock, due update, material transformation, receipt or
+publication. Any commit invalidates the capture. Next prove dependency renewal, actual partial-work
+publication and complete gathering/resident due closure, with larger final admission and exact
+original history/fault checks. Current-profile migration, fairness, checkpoint/cold/platform/scale,
+independent/human and full PLAN-STATE/P02 gates remain unchanged.

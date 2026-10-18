@@ -44,7 +44,7 @@ internal sealed partial class WorldDatabase
         return ConstructionOwnerReconstruction.Decode(directory, expectedHash, ReadOwner, reference => ReadTerrain(reference));
     }
 
-    private byte[] ReadOwner(ContentHash hash)
+    internal byte[] ReadOwner(ContentHash hash)
     {
         using var command = _lease.CreateCommand("SELECT state FROM world_owners WHERE hash=$hash", null,
             ("$hash", hash.ToByteArray()));

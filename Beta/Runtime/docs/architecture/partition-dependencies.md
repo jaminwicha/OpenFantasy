@@ -51,8 +51,12 @@ work. It checks placement before partial progress as well as completion. Its typ
 object does not itself advance time or publish a structure.
 [ConstructionWorkKernel](../../src/OpenFantasy.Core/Construction/ConstructionWorkKernel.cs) uses this
 same qualification, retaining partial work or admitting spawned identities, finite transformation,
-combined capacity and installed material backing on completion. The input owners remain complete;
-a typed result does not by itself authenticate a selectively loaded dependency set.
+combined capacity and installed material backing. Ordinary publication retains complete input owners.
+The [stored work cohort](construction-locality.md#selected-stored-owner-qualification) supplies selected
+qualification reads only after full source admission establishes an exact directory-bound dependency
+set and reservation completeness. The directory must remain current throughout those reads. It retains
+complete site geometry and does not itself run due processes or publish a work step; a typed result
+alone never authenticates a selectively loaded dependency set.
 
 A selective loader must establish the complete read dependency set for those checks. A positive
 reservation lookup does not prove that no conflicting stock exists elsewhere. Any absence or global

@@ -19,13 +19,17 @@ internal sealed record ConstructionWorkQualification(WorldActionRejection Reject
 {
     internal static ConstructionWorkQualification Evaluate(ConstructionDecisionSource world,
         CountedAuthorityState inventory, ProductionSnapshot production, ConstructionSnapshot construction,
-        IConstructionGeometry space, WorldActionCommand command, bool isAdvancingStep, bool held)
+        IConstructionGeometry space, WorldActionCommand command, bool isAdvancingStep, bool held) =>
+        Evaluate(world, new CompleteConstructionWorkOwners(inventory, production, construction),
+            space, command, isAdvancingStep, held);
+
+    internal static ConstructionWorkQualification Evaluate(ConstructionDecisionSource world,
+        IConstructionWorkOwners owners, IConstructionGeometry space, WorldActionCommand command,
+        bool isAdvancingStep, bool held)
     {
         ConstructionWorkQualification Reject(WorldActionRejection rejection) => new(rejection, null);
         if (command.WorldId != world.WorldId || command.BranchId != world.BranchId
-            || inventory.WorldId != world.WorldId || inventory.BranchId != world.BranchId
-            || construction.WorldId != world.WorldId || construction.BranchId != world.BranchId
-            || production.WorldId != world.WorldId || production.BranchId != world.BranchId
+            || !owners.BelongsTo(world.WorldId, world.BranchId)
             || space.Scope.WorldId != world.WorldId || space.Scope.BranchId != world.BranchId
             || !world.Authorizes(command))
         {
@@ -35,10 +39,10 @@ internal sealed record ConstructionWorkQualification(WorldActionRejection Reject
         {
             throw new ArgumentException("This planner interprets construction work only.", nameof(command));
         }
-        ConstructionProject? project = construction.FindProject(intent.ProjectId);
+        ConstructionProject? project = owners.FindProject(intent.ProjectId);
         if (project is null || project.BuilderActorId != command.ActorId
             || project.OwnerActorId != command.ActorId
-            || !inventory.Policies.Any(value => value.CustodianId == project.ProjectCustodianId && value.OwnerActorId == command.ActorId))
+            || !owners.OwnsCustodian(project.ProjectCustodianId, command.ActorId))
         {
             return Reject(WorldActionRejection.NotAuthorized);
         }
@@ -62,14 +66,14 @@ internal sealed record ConstructionWorkQualification(WorldActionRejection Reject
         {
             return Reject(WorldActionRejection.OutOfReach);
         }
-        CountedSourceLot? tool = inventory.Custody.Lots.FirstOrDefault(value => value.LotId == intent.ToolLotId);
+        CountedSourceLot? tool = owners.FindLot(intent.ToolLotId);
         EntityId primaryInventory = world.InventoryCustodian(command.ActorId);
         if (tool is null || tool.CustodianId != primaryInventory || tool.Definition != project.Definition.RequiredTool.Item
             || tool.Quantity != 1 || tool.ReservedBy is not null || tool.Protection != LotProtection.None)
         {
             return Reject(WorldActionRejection.Unavailable);
         }
-        CustodianStorage storage = inventory.Custody.GetStorage(project.ProjectCustodianId);
+        CustodianStorage storage = owners.GetStorage(project.ProjectCustodianId);
         if (tool.Revision != intent.ExpectedToolLotRevision || storage.Revision != intent.ExpectedProjectStorageRevision)
         {
             return Reject(WorldActionRejection.RevisionConflict);
@@ -78,7 +82,7 @@ internal sealed record ConstructionWorkQualification(WorldActionRejection Reject
         {
             CraftRecipeDefinition recipe = project.Definition.MaterialTransform;
             CountedItemDefinition input = recipe.ItemFor(recipe.Inputs.Single());
-            CountedSourceLot[] stock = inventory.Custody.Lots.Where(value => value.ReservedBy == project.ReservationId).ToArray();
+            CountedSourceLot[] stock = owners.ReservedStock(project.ReservationId);
             if (stock.Length is 0 or > MaterialRecipeDefinition.MaximumTermCount || stock.Any(value =>
                     value.CustodianId != project.ProjectCustodianId || value.Definition != input || value.Protection != LotProtection.None)
                 || stock.Aggregate(0UL, (sum, value) => checked(sum + value.Quantity)) != recipe.Inputs[0].Count)

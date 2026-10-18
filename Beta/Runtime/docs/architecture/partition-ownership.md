@@ -220,3 +220,15 @@ finite development-storage limits, not shipping population/world-size targets. N
 selective payload loading, current-profile migration, general due-work fairness and frontier-scale
 history remain separate qualification obligations. Complete-cohort decoding does not establish a
 partial-admission proof or a cold-load/performance budget.
+
+### Selected qualification reads
+
+The [stored construction cohort](construction-locality.md#selected-stored-owner-qualification) binds
+selected payload hashes to a complete admitted source and current directory. It can reconstruct work
+qualification after unrelated custody/production and terrain detail is released, while retaining the
+site's complete actor/structure geometry and source-established reservation membership. The read-only
+Host binding serializes freshness and reads; no cached source survives a changed directory implicitly.
+This does not change schema14 publication, full original-history recovery, actual due obligations or
+final completion admission. Qualification's smaller read set is not the entire simulation step's
+required residency. Capture cost, complete geometry witness and shared-facet read granularity remain
+part of any future memory/I/O measurement.

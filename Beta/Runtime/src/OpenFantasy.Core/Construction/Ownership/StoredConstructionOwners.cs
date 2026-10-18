@@ -51,20 +51,26 @@ internal sealed class StoredConstructionOwners
             byte[] payload = readOwner(hash) ?? throw new FormatException("A referenced owner is missing.");
             bytes = checked(bytes + payload.Length);
             if (payload.Length > ConstructionOwnerDirectory.MaximumOwnerPayloadByteLength
-                || bytes > ConstructionOwnerDirectory.MaximumTotalPayloadByteLength
-                || ContentHash.Compute(payload) != hash)
+                || bytes > ConstructionOwnerDirectory.MaximumTotalPayloadByteLength)
                 throw new FormatException("An owner image violates its hash or byte envelope.");
-            var owner = new WorldFrameReader(payload, ConstructionOwnerDirectory.MaximumOwnerPayloadByteLength, 12);
-            owner.Tag("world.construction-owner.v1"u8);
-            owner.Version();
-            if (owner.Number() != (ulong)key.Kind || owner.Identity() != Scope.WorldId
-                || owner.Identity() != Scope.BranchId || owner.Identity() != key.SubjectId)
-                throw new FormatException("Owner role, identity or scope differs from its directory entry.");
-            List<byte[]> fields = [];
-            while (owner.Remaining != 0) fields.Add(owner.Field(ConstructionOwnerDirectory.MaximumOwnerPayloadByteLength).ToArray());
-            owner.Complete();
-            _fields.Add(key, fields.ToArray());
+            _fields.Add(key, ReadFields(payload, key, Scope, hash));
         }
+    }
+
+    internal static byte[][] ReadFields(byte[] payload, ConstructionOwnerKey key, TerrainScope scope, ContentHash hash)
+    {
+        if (payload.Length > ConstructionOwnerDirectory.MaximumOwnerPayloadByteLength || ContentHash.Compute(payload) != hash)
+            throw new FormatException("A selected owner violates its hash or byte envelope.");
+        var owner = new WorldFrameReader(payload, ConstructionOwnerDirectory.MaximumOwnerPayloadByteLength, 12);
+        owner.Tag("world.construction-owner.v1"u8);
+        owner.Version();
+        if (owner.Number() != (ulong)key.Kind || owner.Identity() != scope.WorldId
+            || owner.Identity() != scope.BranchId || owner.Identity() != key.SubjectId)
+            throw new FormatException("Owner role, identity or scope differs from its directory entry.");
+        List<byte[]> fields = [];
+        while (owner.Remaining != 0) fields.Add(owner.Field(ConstructionOwnerDirectory.MaximumOwnerPayloadByteLength).ToArray());
+        owner.Complete();
+        return fields.ToArray();
     }
 
     internal TerrainScope Scope { get; }

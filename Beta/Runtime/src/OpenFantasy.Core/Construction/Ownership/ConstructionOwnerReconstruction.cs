@@ -109,7 +109,7 @@ public static class ConstructionOwnerReconstruction
             Collection("construction.definitions", owners.Owners(ConstructionOwnerKind.ConstructionDefinition, 1).Select(value => value.Fields[0])),
             Collection("construction.projects", owners.Owners(ConstructionOwnerKind.Project, 1).Select(value => value.Fields[0]))));
 
-    private static EntityId CountedLotIdentity(byte[] bytes)
+    internal static EntityId CountedLotIdentity(byte[] bytes)
     {
         var reader = new WorldFrameReader(bytes, CustodyEncodingV1.MaximumSnapshotByteLength, 11);
         reader.Tag("custody.source-lot.v1"u8);

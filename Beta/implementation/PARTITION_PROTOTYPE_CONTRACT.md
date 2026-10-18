@@ -283,3 +283,16 @@ admission. Rejection order, reservation-wide stock/access and final material/ide
 The inputs are still complete owners. Next supply source-established dependency completeness and
 freshness, then prove an actual smaller stored cohort with full due-process closure. No selective
 residency, current-profile migration, scheduling or PLAN-STATE/P02 acceptance follows from extraction.
+
+## Selected stored qualification binding
+
+[The work cohort](p02/partition-state/stored-work-cohort/RESULT.md) captures an admitted exact directory,
+complete reservation membership and site witness, then reads only selected holder/project/control/
+actor and shared quest/progression/dialogue payloads. It runs the same guards without retaining the
+source's inventory/production/terrain detail. Complete actor/structure geometry remains. Host capture
+and assessment use the sole authority lock; any directory change invalidates capture before reads.
+
+This is read-only assessment, not a published partial-work interval. Ordinary publication still uses
+complete nonterrain owners. Next preserve authenticated dependency renewal and all actual due
+processes while publishing from the smaller cohort, widen for final material/geometry/identity
+admission, and retain original-history and fault evidence. No later-profile or phase gate closes.

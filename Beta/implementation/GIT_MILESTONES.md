@@ -594,3 +594,15 @@ is preserved separately and claims no implemented rule or reserved profile versi
   behavior checks and retained compiler/runner failures. Complete owner inputs remain; no selective
   loading, migration, independent review or PLAN-STATE/P02 acceptance follows.
 - Timeless construction/dependency references and living decision/map/plan/roadmap/handoff are current.
+
+## Selected stored construction assessment — 2026-10-18
+
+- Before-change WIP checkpoint `codex/checkpoint-before-stored-work-cohort-20261018` resolves to
+  `1743d69f2aba06cc3f34b48d7cd2e4292419d0e5`, from8fad3fc4; concurrent/predecessor protection is in CHECKPOINT.json.
+- Verified increment pointer: `codex/milestone-stored-work-cohort-20261018`, created at the owned commit
+  without switching. Includes source-bound selected payload qualification, shared owner-read boundary,
+  exact-head serialized Host assessment and retained-detail/read measurements.
+- [Result](p02/partition-state/stored-work-cohort/RESULT.md) records terminal tests and bounded claims.
+  Assessment does not publish a step or run due processes, and the site retains complete actor/structure
+  geometry. Partial publication, witness renewal, migration/fairness/scale and full gates remain open.
+- Timeless ownership/dependency/construction references and living plans/roadmap/handoff stay current.

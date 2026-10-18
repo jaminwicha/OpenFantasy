@@ -51,8 +51,11 @@ admission witness, reusable authorization, clock advancement or published struct
 same qualification for live, detached and locality paths. It retains partial work or performs the
 existing final identity/capacity/material mutation and installed-backing checks. The caller still owns
 earned time, complete-world admission and publication. Qualification keeps ordinary rejection order;
-material completion uses the exact structure identity derived by qualification. Both paths still read
-complete inventory/production/construction inputs; this separation is not selective-loading evidence.
+material completion uses the exact structure identity derived by qualification. Ordinary publication
+still reads complete inventory/production/construction inputs. Qualification also accepts an internal
+`IConstructionWorkOwners` boundary: the complete adapter reads those original owners, while the
+stored-cohort adapter supplies exact selected holders/project under a captured admitted source.
+That read-only binding is separate from work publication and due-process advancement.
 The legacy control adapter uses actual counted authority and cannot interpret delegated control or
 infer eligibility from an unloaded region.
 
@@ -220,3 +223,32 @@ The internal `ReadOwnersForHost` diagnostic checks current owner bytes against t
 hash without forcing terrain hydration; it is not a player knowledge projection or a loading API.
 See [typed ownership](partition-ownership.md#runtime-binding-legacy-typed-owner-storage) for precise
 payload responsibilities, storage bounds, historical verification and unsupported scope.
+
+## Selected stored-owner qualification
+
+[ConstructionWorkCohort](../../src/OpenFantasy.Core/Construction/Ownership/ConstructionWorkCohort.cs)
+captures a profile-five work command from a complete admitted world. It retains the exact world and
+directory hashes, source revision, required owner descriptors, complete reservation lot membership,
+necessary source revisions and the existing site evidence. It retains no inventory, production,
+resident collection, complete world/scene, terrain detail or owner payload byte arrays. Site evidence
+still contains complete actor/structure geometry; this is not independent actor-detail residency.
+
+Required stored records are the command actor/control, project/definition, project and actor inventory
+holders plus every holder containing that reservation, and shared progression/quest/dialogue owners.
+The source establishes reservation completeness across all holders; selected data cannot assert
+absence on its own. Every payload read must match its captured hash, key, role, world/branch and field
+shape. Existing custody/construction/progression/quest/dialogue codecs decode the work facts. The
+selected reservation identities must exactly match the captured complete-source membership.
+
+`CaptureStoredWorkCohort` runs under the Host lock and checks the captured directory against its current
+committed head. `AssessStoredWorkCohort` serializes head comparison and selected reads with every writer.
+Any changed directory, including an unrelated commit, invalidates the capture before payload reads.
+Storage/format failures fence the Host for recovery. The Core reader by itself authenticates no journal;
+its caller owns the trust in the admitted source and serialization of freshness with reads.
+
+Assessment calls the same qualification guards and returns proposed progress/rejection only. It does
+not advance calendar/gathering/resident exposure, reserve command identities, mutate materials, issue
+a receipt or publish geometry. `RequiresCompletion` requires the larger final material/identity/geometry
+cohort and may still fail its later checks. Ordinary work publication continues through the complete
+existing pipeline. A reusable partial-work interval needs a separately qualified update of dependency
+witnesses and complete due-process closure; this capture expires on the very next committed change.

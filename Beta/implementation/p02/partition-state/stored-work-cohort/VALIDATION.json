@@ -1,0 +1,32 @@
+{
+  "accepted_scope": "Selected stored-owner qualification only; no partial publication or phase acceptance",
+  "distinct_passes": 556,
+  "new_cases": 11,
+  "runs": {
+    "core": {
+      "passed": 420,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 25.039010790991597,
+      "bound_seconds": 180,
+      "record": "core-check/core.trx"
+    },
+    "hosting": {
+      "passed": 136,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 86.65676604199689,
+      "bound_seconds": 180,
+      "record": "hosting-check/hosting.trx"
+    }
+  },
+  "preflight": "preflight-01",
+  "pins": 1955,
+  "failed_builds_or_tests": 0,
+  "documentation_friction": "DOCUMENTATION_FRICTION.json",
+  "long_runs_exceeding_focused_budget": 0,
+  "api_calls": null,
+  "average_input_context_tokens": null,
+  "independent_review": false,
+  "native_or_human_acceptance": false
+}
