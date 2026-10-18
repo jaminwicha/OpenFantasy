@@ -1,0 +1,42 @@
+{
+  "distinct_passes": 13,
+  "new_cases": 4,
+  "runs": [
+    {
+      "path": "geometry-01/geometry.json",
+      "cases": 1,
+      "seconds": 15.814528499962762,
+      "bound_seconds": 180,
+      "exit_code": 0,
+      "failure_classification": null
+    },
+    {
+      "path": "hosting-01/hosting.json",
+      "cases": 13,
+      "seconds": 28.184797832975164,
+      "bound_seconds": 180,
+      "exit_code": 0,
+      "failure_classification": null
+    }
+  ],
+  "failed_runs": 0,
+  "native_runs": 0,
+  "api_calls": null,
+  "average_input_context_tokens": null,
+  "usage_note": "Full packet rollout telemetry not exposed; no efficiency saving inferred.",
+  "passed_cases": [
+    "OpenFantasy.Hosting.Tests.WorldStorage.JoinedProcessBoundaryTests.Lawful_harvest_route_and_original_regrowth_delay_join_the_existing_water_due_boundary",
+    "OpenFantasy.Hosting.Tests.WorldStorage.JoinedProcessBoundaryTests.Regrowth_delivery_exposure_and_refused_action_recover_as_one_boundary(faultValue: 0)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.JoinedProcessBoundaryTests.Regrowth_delivery_exposure_and_refused_action_recover_as_one_boundary(faultValue: 1)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.JoinedProcessBoundaryTests.Regrowth_delivery_exposure_and_refused_action_recover_as_one_boundary(faultValue: null)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ProcessDiscoveryWorldTests.Due_cancellation_uses_post_action_transport_and_still_recovers_gathering_and_every_resident",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ProcessDiscoveryWorldTests.Existing_transport_fixture_admits_both_process_owners_without_new_geometry_or_law",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.ActualDueTransferSurvivesReadingPauseCommitRecoveryAndExactHistoricalQueries",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.CancellationAtTheDueBoundaryWinsBeforeAutomaticDeliveryAndRetainsStock",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.CurrentMaterialActionsOrOutletSillsCanBlockAStageWithoutLosingItsPromise(sill: False)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.CurrentMaterialActionsOrOutletSillsCanBlockAStageWithoutLosingItsPromise(sill: True)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.FreshProfileAdmissionRejectsForeignHistoryDoubleOwnershipAndClockMismatch",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.UnauthorizedAndStaleScheduleRequestsCannotCreateStages(stale: False)",
+    "OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.UnauthorizedAndStaleScheduleRequestsCannotCreateStages(stale: True)"
+  ]
+}

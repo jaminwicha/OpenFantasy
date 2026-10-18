@@ -1,0 +1,47 @@
+[
+  {
+    "path": "Beta/Runtime/artifacts/joined-process-boundary-20261018-attempt01/databases/openfantasy-storage-19ea9b78c57a4dc5aa04e4be2d9e7e04/joined.json",
+    "Fault": "AfterCommit",
+    "PrefixCommits": 859,
+    "Residents": 2,
+    "DueStep": 860,
+    "DepletedAt": 160,
+    "Calendar": {
+      "Days": 0,
+      "MillisecondsWithinDay": 33948000
+    },
+    "ReceiptsChecked": 6,
+    "BeforeHash": "dfddfe46f4b8bb92c4a72c7559e0b7e2f0373dfa071564fd4d57ef8c29e448be",
+    "AfterHash": "d3b8459ce9911c82e5fad704ce138989b5a59a13bf0a0862842d871e4ae37fff"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/joined-process-boundary-20261018-attempt01/databases/openfantasy-storage-9b6b96bdba7d404182c12320af92e059/joined.json",
+    "Fault": "BeforeCommit",
+    "PrefixCommits": 859,
+    "Residents": 2,
+    "DueStep": 860,
+    "DepletedAt": 160,
+    "Calendar": {
+      "Days": 0,
+      "MillisecondsWithinDay": 33948000
+    },
+    "ReceiptsChecked": 6,
+    "BeforeHash": "dfddfe46f4b8bb92c4a72c7559e0b7e2f0373dfa071564fd4d57ef8c29e448be",
+    "AfterHash": "d3b8459ce9911c82e5fad704ce138989b5a59a13bf0a0862842d871e4ae37fff"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/joined-process-boundary-20261018-attempt01/databases/openfantasy-storage-c52206c824b342b8aed43bfdf69ef996/joined.json",
+    "Fault": null,
+    "PrefixCommits": 859,
+    "Residents": 2,
+    "DueStep": 860,
+    "DepletedAt": 160,
+    "Calendar": {
+      "Days": 0,
+      "MillisecondsWithinDay": 33948000
+    },
+    "ReceiptsChecked": 6,
+    "BeforeHash": "dfddfe46f4b8bb92c4a72c7559e0b7e2f0373dfa071564fd4d57ef8c29e448be",
+    "AfterHash": "d3b8459ce9911c82e5fad704ce138989b5a59a13bf0a0862842d871e4ae37fff"
+  }
+]

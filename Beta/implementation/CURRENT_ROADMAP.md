@@ -597,3 +597,13 @@ cancellation and affected history/pacing checks. This advances PLAN-STATE prepar
 process contract keeps joined regrowth/delivery history, authenticated partial membership, fairness,
 current-profile migration and independent review explicit. P02's full closure table and subsequent
 NPC/story/ecology/art/audio dependencies remain unchanged.
+
+
+## Joined saved process boundary — 2026-10-18
+
+[Qualification](p02/partition-state/joined-process-boundary/RESULT.md) joins real harvested regrowth,
+funded water delivery, all-resident exposure and a refused action in one existing profile9 lineage,
+including before/after publication recovery and original receipts/history. Test/fixture changes only;
+no production law or architecture format changes. PLAN-STATE still needs authenticated membership,
+partial loading/current-profile coverage, scheduling/scale and independent review. All P02 closure
+rows,181 requirements and scheduled NPC/story/ecology/art/audio dependencies remain unchanged.

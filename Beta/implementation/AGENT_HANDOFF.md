@@ -73,9 +73,11 @@ owners cost more than coarse terrain separation in this small cohort; keep the r
 conditional, the default unchanged and capture/final/replay costs visible. The
 [regrowth/transport discovery binding](p02/partition-state/domain-process-discovery/RESULT.md) now feeds
 the real domain executors and verifies post-action cancellation in the existing profile9 world.
-The [process contract](PLAN_STATE_PROCESS_DISCOVERY.md) retains the next missing proofs: joined actual
-regrowth/delivery history, authenticated membership/partial loading and scheduling/fairness. Complete-source
-queries do not close those exits. Projection and cold/platform/scale/review obligations remain; avoid
+The [joined saved boundary](p02/partition-state/joined-process-boundary/RESULT.md) now proves actual
+harvested regrowth and water delivery together with all-resident exposure, refused receipt and atomic
+history/recovery. The [process contract](PLAN_STATE_PROCESS_DISCOVERY.md) retains the next missing proofs:
+authenticated membership/absence, partial loading and scheduling/fairness. Complete-source queries and
+this profile9 witness do not close those exits. Projection and cold/platform/scale/review obligations remain; avoid
 repeating already qualified legacy slices. General current-profile
 checkpoint/migration proof remains. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.

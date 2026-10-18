@@ -300,3 +300,9 @@ this is preparation, not a saved queue/format decision or a replacement for inde
 gathering and transport operations without new persistence or time law. Complete-source reference affinity
 and post-action invocation are explicit; this does not replace authenticated membership for a future
 partial owner index. Keep the storage recommendation conditional and all remaining qualification exits.
+
+
+The [joined process qualification](p02/partition-state/joined-process-boundary/RESULT.md) extends concrete
+mandatory-effect evidence to real regrowth and water delivery in one original saved lineage. All effects,
+refused receipt and history recover atomically. It changes no runtime/default/format and does not certify
+general partially resident discovery or current40/41 membership. The conditional recommendation stands.

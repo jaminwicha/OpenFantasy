@@ -99,3 +99,18 @@ harvested-node regrowth and transport delivery in a single new retained journey,
 membership, partially resident current40/41 execution, multi-domain oldest-age/fairness or a new storage
 format. Existing domain, pacing and saved-transport checks retain only their named scope. Those remaining
 witnesses and independent review stay open; do not treat query APIs as a general scheduler exit.
+
+
+## Joined saved process boundary — 2026-10-18
+
+The [joined boundary qualification](p02/partition-state/joined-process-boundary/RESULT.md) adds the
+missing same-lineage contrast: ordinary cardinal travel and actual berry harvesting, unchanged regrowth
+delay, a funded600-unit water stage due on that exact step, all-resident exposure and an ordinary refused
+schedule action. Before/after SQLite publication recovery retains either the complete old boundary or
+the complete new one, with original genesis and every prefix action receipt. Existing profile9 and
+runtime rules remain unchanged; this is scripted authoritative preparation, not native player acceptance.
+
+The remaining preparation concerns are authenticated discovery membership/absence, partial owner loading
+and current40/41 composition, scheduling/fairness, projection/scale and independent review. This witness
+neither adds a persisted index nor resolves those gates. Do not repeat the already qualified regrowth/
+transport lineage as a substitute for those distinct questions.

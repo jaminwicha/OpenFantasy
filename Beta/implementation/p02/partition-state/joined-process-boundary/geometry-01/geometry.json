@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Lawful_harvest_route_and_original_regrowth_delay_join_the_existing_water_due_boundary",
+    "--logger",
+    "trx;LogFileName=geometry.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/joined-process-boundary/geometry-01"
+  ],
+  "exit_code": 0,
+  "seconds": 15.814528499962762,
+  "bound_seconds": 180
+}

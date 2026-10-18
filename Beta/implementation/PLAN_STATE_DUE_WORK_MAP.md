@@ -144,3 +144,9 @@ The [typed domain binding](p02/partition-state/domain-process-discovery/RESULT.m
 regrowth/transport queries used by their real executors, with exact source affinity, canonical discovery,
 stock eligibility and retained blocked identities. The living process contract distinguishes qualified
 component/current-profile limits and remaining joined-history/index/fairness evidence. No phase gate closes.
+
+
+The [joined saved boundary](p02/partition-state/joined-process-boundary/RESULT.md) now qualifies actual
+harvested regrowth and due transport together, all retained residents, refused-action semantics and
+before/after SQLite recovery from the original genesis. This is profile9 full-owner execution; complete
+membership/partial loading and current-profile scheduling remain separate obligations.

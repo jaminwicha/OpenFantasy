@@ -14,9 +14,9 @@ internal sealed class ReservoirTransportWorldFixture
     internal EntityId Player => Transport.Reservoirs.Capacity.Domain.OwnerActorId;
     internal EntityId Other => Basis.Residents.Single(r => r.ActorId != Player).ActorId;
 
-    internal ReservoirTransportWorldFixture(bool nearby = true, ulong incomingSupply = 0, long sill = 0)
+    internal ReservoirTransportWorldFixture(bool nearby = true, ulong incomingSupply = 0, long sill = 0, bool primaryReceiver = true)
     {
-        Materials = new ReservoirWorldFixture(primaryReceiver: true, incomingSupply: incomingSupply);
+        Materials = new ReservoirWorldFixture(primaryReceiver: primaryReceiver, incomingSupply: incomingSupply);
         var basis = Materials.Basis;
         var space = basis.Space;
         if (nearby)

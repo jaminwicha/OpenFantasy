@@ -1,0 +1,11 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+The following Tests are available:
+    OpenFantasy.Core.Tests.Geography.TransportDiscoveryTests.Scheduling_and_cancellation_require_the_effective_owner_and_discovery_moves_no_stock
+    OpenFantasy.Core.Tests.Geography.TransportDiscoveryTests.Holds_and_shared_throughput_keep_the_same_due_stage_until_a_later_lawful_completion
+    OpenFantasy.Core.Tests.Geography.TransportDiscoveryTests.Blocked_head_remains_due_without_losing_its_reservation_or_earning_extra_throughput
+    OpenFantasy.Core.Tests.Geography.TransportDiscoveryTests.Reordered_owner_enumeration_keeps_the_exact_due_order_and_transport_bytes
+    OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Empty_due_set_does_not_skip_actor_effort_or_advance_on_inspection
+    OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Actual_harvest_changes_discovery_without_resetting_the_finite_cursor
+    OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Due_stock_shortage_is_visible_and_uses_the_strongest_admitted_tool(power: 1, eligible: True)
+    OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Due_stock_shortage_is_visible_and_uses_the_strongest_admitted_tool(power: 3, eligible: False)
+    OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Canonical_discovery_survives_input_order_and_elapsed_recovery_matches_each_interval

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~JoinedProcessBoundaryTests|FullyQualifiedName~ProcessDiscoveryWorldTests|FullyQualifiedName~ReservoirTransportWorldTests",
+    "--logger",
+    "trx;LogFileName=hosting.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/joined-process-boundary/hosting-01"
+  ],
+  "exit_code": 0,
+  "seconds": 28.184797832975164,
+  "bound_seconds": 180
+}

@@ -730,3 +730,13 @@ Verified increment: `codex/milestone-domain-process-discovery-20261018`, at the 
 without switching. [Result](p02/partition-state/domain-process-discovery/RESULT.md) retains exact checks,
 fixture build failures, source review and remaining limits. Domain queries feed existing operations;
 no persistent index/current migration or phase acceptance follows. Concurrent/predecessor edits excluded.
+
+
+## Joined saved process boundary — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-joined-process-boundary-20261018`
+(`38919feb70bde7c6c936fc8805b763912e0518a8`, parent `d6d66fabe67503850dd869edc2d2a01b381c046c`).
+Verified milestone: `codex/milestone-joined-process-boundary-20261018`, created at the scoped commit
+without switching. [Result](p02/partition-state/joined-process-boundary/RESULT.md) retains preflight,
+original saved-lineage/fault evidence and explicit full-owner/profile9 limits. Production unchanged;
+no independent, partial-residency, phase or human acceptance. Concurrent/predecessor work excluded.

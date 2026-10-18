@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~Lawful_harvest_route_and_original_regrowth_delay_join_the_existing_water_due_boundary"
+  ],
+  "exit_code": 0,
+  "seconds": 3.550503500038758,
+  "bound_seconds": 180
+}
