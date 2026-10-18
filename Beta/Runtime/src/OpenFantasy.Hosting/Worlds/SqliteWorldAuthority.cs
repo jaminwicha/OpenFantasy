@@ -2,6 +2,7 @@ using Microsoft.Data.Sqlite;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Hosting.Worlds;
@@ -16,6 +17,9 @@ public sealed partial class SqliteWorldAuthority : IDisposable
     private readonly WorldDatabase _database;
     private readonly WorldIdentityIndex _genesisIdentities;
     private readonly WorldCommitPreparation _preparation = new();
+    private ConstructionLocalityState? _constructionLocality;
+    private ContentHash? _constructionLocalityHash;
+    private int _constructionMetadataPages;
     private WorldSnapshot _state;
     private ContentHash _stateHash;
     private WorldJournalUsage _usage;
@@ -230,15 +234,41 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         }
     }
 
-    internal WorldStepDecision Commit(WorldStepBatch batch, Action<AuthorityCommitBoundary>? fault)
+    internal WorldStepDecision Commit(WorldStepBatch batch, Action<AuthorityCommitBoundary>? fault) =>
+        CommitSelected(batch, fault, null, 0);
+
+    /// <summary>
+    /// Privileged construction execution using retained nonterrain owners at this exact durable head.
+    /// Complete terrain admission and ordinary storage rows remain required at publication.
+    /// </summary>
+    internal WorldStepDecision CommitConstructionLocality(WorldStepBatch batch, EntityId projectId,
+        int maximumMetadataPages, Action<AuthorityCommitBoundary>? fault = null) =>
+        CommitSelected(batch, fault, projectId, maximumMetadataPages);
+
+    private WorldStepDecision CommitSelected(WorldStepBatch batch, Action<AuthorityCommitBoundary>? fault,
+        EntityId? constructionProject, int maximumMetadataPages)
     {
         ArgumentNullException.ThrowIfNull(batch);
         lock (_gate)
         {
             EnsureAvailable();
             using SqliteTransaction transaction = _database.BeginWrite();
-            PreparedWorldCommit prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
-                batch, identity => _database.ContainsIdentity(identity, transaction));
+            PreparedWorldCommit prepared;
+            ConstructionLocalityState? continuation = null;
+            if (constructionProject is { } projectId)
+            {
+                var retained = _constructionLocalityHash == _stateHash
+                    && _constructionLocality?.ProjectId == projectId && _constructionMetadataPages == maximumMetadataPages
+                    ? _constructionLocality : null;
+                (prepared, continuation) = _preparation.PrepareConstruction(_state, _genesisIdentities, _stateHash,
+                    batch, projectId, maximumMetadataPages, retained,
+                    identity => _database.ContainsIdentity(identity, transaction));
+            }
+            else
+            {
+                prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
+                    batch, identity => _database.ContainsIdentity(identity, transaction));
+            }
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence,
                 prepared.Stored.AdvancingSteps, (ulong)prepared.Commands.Count,
                 (ulong)prepared.Stored.AcceptedBatch.Length, (ulong)prepared.Stored.Outcomes.Length,
@@ -279,6 +309,9 @@ public sealed partial class SqliteWorldAuthority : IDisposable
                 fault?.Invoke(AuthorityCommitBoundary.AfterCommit);
                 _state = prepared.Decision.Candidate;
                 _stateHash = prepared.Stored.AfterHash;
+                _constructionLocality = continuation;
+                _constructionLocalityHash = continuation is null ? null : _stateHash;
+                _constructionMetadataPages = maximumMetadataPages;
                 _usage = advance.Usage;
                 _controllerRecovery = controllerRecovery;
                 return prepared.Decision;

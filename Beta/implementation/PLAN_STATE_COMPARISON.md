@@ -238,6 +238,11 @@ The first extraction should establish these concrete responsibilities, in the ex
   comparisons address sequential execution, not merely one detached candidate. It remains a complete
   locality aggregate; stable per-owner partitioning, movement/gift, current-profile coverage and durable
   owner publication remain open. Profile40/41 refusal prevents silent facet loss.
+  [Construction publication](p02/partition-state/construction-publication/RESULT.md) establishes the
+  complete-locality durable baseline: the sole writer publishes these selected decisions, joined to
+  real carried movement/gift and intervened work in one original history. Ordinary replay agrees at
+  every selected work step and after partial/final reopening and commit faults. Complete root residency
+  and encoding remain mandatory; this is not the typed-owner or absent-detail publication candidate.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

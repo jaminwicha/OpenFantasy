@@ -184,6 +184,12 @@ evidence, not 10,000-actor/20,000-resident, four-player endurance, desktop or fu
    source terrain absent throughout 200 steps and exact reconstruction afterward. This qualifies a
    legacy whole-locality aggregate execution hypothesis. It does not supply a per-actor/custodian split,
    later-profile interpretation, earned durable publication or the joined movement/gift episode.
+   [Construction publication](p02/partition-state/construction-publication/RESULT.md) supplies the
+   ordinary-storage baseline for that episode: carried movement, real gift, intervened work, return
+   before completion and exact first/final commit recovery share original genesis and ordinary replay.
+   This internal binding still retains and encodes the complete root at every commit. It does not
+   satisfy absent-detail publication or canonical owner partitioning; do not relabel the baseline as
+   the integrated partition candidate.
 2. **Joined owner transaction.** Integrate those decisions with stable actor/material/project owners,
    membership, time and the single durable publisher. Run the entire episode, including actual gift,
    absent-detail work, final material publication and historical recovery. Wire exact admission and

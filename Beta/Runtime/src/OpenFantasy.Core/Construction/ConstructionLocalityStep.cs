@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Core.Terrain;
 
 namespace OpenFantasy.Core.Construction;
 
@@ -17,6 +18,13 @@ public sealed class ConstructionLocalityStep
         Receipt = receipt;
         Identities = Array.AsReadOnly(identities.OrderBy(value => value.Identity).ToArray());
     }
+
+    /// <summary>
+    /// Reconstructs the complete admitted candidate and its proposed outcomes. The caller must still
+    /// establish exact source ownership, current history and selected input before durable publication.
+    /// </summary>
+    public WorldStepDecision Rehydrate(IEnumerable<TerrainRegionSnapshot> regions) =>
+        new(Candidate.Rehydrate(regions), [Receipt], Identities);
 
     public ConstructionLocalityState Source { get; }
     public ConstructionLocalityState Candidate { get; }

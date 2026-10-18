@@ -295,6 +295,14 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
 5. Prove P03's harder temporal/mixed-clock/world-history/package workload before broad dependent
    expansion. Then execute P04–P14 with the original domain-completion and production gates intact.
 
+The [construction publication binding](p02/partition-state/construction-publication/RESULT.md) connects
+legacy locality execution to the sole ordinary SQLite writer. The same original-genesis save covers
+carried movement, a real cross-owner gift, work, an intervening actor move, partial return/reopen and
+completion; before/after-commit fault checks cover first and final work. All selected locality outputs
+must equal ordinary replay. This is the complete-locality publication baseline, not the partitioned
+candidate: complete terrain remains resident and encoded, current40/41 refuse, and per-owner residency,
+partial history/recovery, cost comparison and independent review remain open. No P02 row closes.
+
 ### Named preparation and delivery units
 
 These are finite next deliverables, not replacement acceptance criteria. Each retains its parent

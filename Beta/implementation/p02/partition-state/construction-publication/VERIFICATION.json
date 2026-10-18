@@ -1,0 +1,139 @@
+{
+  "base": "9efa44c294bb9e8eb9201185eb1250986c45b362",
+  "distinct_affected_passes": 98,
+  "new_cases": 8,
+  "checks": {
+    "check-01/focused.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~ConstructionPublicationTests",
+        "--logger",
+        "trx;LogFileName=focused.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-publication/check-01"
+      ],
+      "exit_code": 0,
+      "seconds": 26.448515124968253,
+      "bound_seconds": 180,
+      "counts": {
+        "total": "8",
+        "executed": "8",
+        "passed": "8",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "check-02/core.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~ConstructionLocalityTests|FullyQualifiedName~ConstructionAuthorityTests",
+        "--logger",
+        "trx;LogFileName=core.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-publication/check-02"
+      ],
+      "exit_code": 0,
+      "seconds": 3.5512554169399664,
+      "bound_seconds": 180,
+      "counts": {
+        "total": "16",
+        "executed": "16",
+        "passed": "16",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "check-02/hosting.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~ConstructionPublicationTests|FullyQualifiedName~ConstructionWorkRecoveryTests|FullyQualifiedName~ConstructionPreviewRecoveryTests|FullyQualifiedName~WorldAuthorityServiceTests|FullyQualifiedName~WorldCanonicalFrameTests|FullyQualifiedName~WorldDatabaseTests|FullyQualifiedName~ConstructionUpgradeTests|FullyQualifiedName~WorldActorCarriageTests|FullyQualifiedName~WorldStateLayoutTests|FullyQualifiedName~PartyWithdrawalWorldTests|FullyQualifiedName~ExcavationRecoveryTests",
+        "--logger",
+        "trx;LogFileName=hosting.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-publication/check-02"
+      ],
+      "exit_code": 0,
+      "seconds": 39.79136287502479,
+      "bound_seconds": 180,
+      "counts": {
+        "total": "82",
+        "executed": "82",
+        "passed": "82",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  },
+  "preflight_inputs": 1927,
+  "source_binary_pins_match": true,
+  "row_writer_extraction": "EXTRACTION_CHECK.json",
+  "documentation": {
+    "accepted": true,
+    "scope": "Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance",
+    "filesChecked": 8,
+    "workRecord": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-publication/RESULT.md",
+    "errors": []
+  },
+  "api_calls": null,
+  "average_input_context": null,
+  "telemetry_reason": "Packet-level API/context totals not exposed by current tools",
+  "runs_exceeding_180_second_focused_budget": 0,
+  "native_or_expedition_runs": 0,
+  "test_failure_classification": {
+    "fixture": 0,
+    "runner": 0,
+    "production": 0
+  },
+  "observations": [
+    "Original exec process handle missing after steering interruption; terminal successful JSON/log/TRX recovered without restarting."
+  ],
+  "predecessor_staging_sha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "concurrent_edits_preserved": true
+}

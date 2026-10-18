@@ -471,7 +471,10 @@ nonterrain owners and selected work/time candidates for its complete legacy inte
 hash pins initial admission, but the continuation has no canonical partition journal or persisted owner
 manifest. Proposed receipts remain private until complete admission and one durable publication. Exact
 terrain reconstruction is available; it does not supply partial historical recovery or admission of
-later profiles by omission.
+later profiles by omission. The internal construction-locality entry point binds selected decisions to
+the sole SQLite writer using current dispatch, permanent identity history and an exact committed-head
+cache. It reconstructs and encodes a complete candidate before ordinary atomic publication; the cache
+is not a saved owner map or an alternate journal interpreter. Ordinary commits invalidate the cache.
 
 ### Design contract: partitioned persistence and version ownership
 

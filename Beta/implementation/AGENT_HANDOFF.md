@@ -263,6 +263,13 @@ NPC preparation/consequences, shelter acoustics and later vessel reuse. Unsuppor
 replacement engine/API claims and separate statistical offscreen combat are not adopted. PLAN-STATE
 remains next; the review supplies no runtime or phase acceptance.
 
+The [construction publication result](p02/partition-state/construction-publication/RESULT.md) binds
+legacy locality work to the ordinary serialized writer, retaining exact history across carried gift,
+intervening movement, partial reopen and final construction. Commit faults/retries remain atomic. The
+complete root still resides and encodes at publication; this does not close absent-detail persistence
+or current40/41 coverage. Next PLAN-STATE work remains the canonical owner/publication boundary and
+comparison against this baseline, before permanent cognition. Gates and earlier timeout failures stay open.
+
 ## Current routing and documentation hook
 
 Pure C# core/application remains fixed, with typed composition and a single owner per fact. There is

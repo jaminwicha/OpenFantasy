@@ -68,7 +68,9 @@ The completed project cannot manufacture another output on a subsequent selectio
 [ConstructionLocalityStep](../../src/OpenFantasy.Core/Construction/ConstructionLocalityStep.cs) contains
 the exact immutable source, candidate, proposed receipt and identity claims. They are unpublished
 transition data. A preview does not create a durable outcome, earn authoritative world time or make
-that receipt eligible for delivery. The state has no storage writer or independent simulation loop.
+that receipt eligible for delivery. The state has no storage writer or independent simulation loop. `ConstructionLocalityStep.Rehydrate`
+performs candidate reconstruction and packages these same proposed outcomes as a `WorldStepDecision`;
+that conversion does not establish source freshness or authorize delivery.
 
 `Rehydrate` requires every exact pinned terrain region, reconstructs derived installed geometry and
 runs ordinary complete `WorldSnapshot` admission with all retained owners. Missing, edited, duplicate
@@ -86,3 +88,29 @@ one durable transaction. This responsibility is described in
 See [construction execution](construction-execution.md) for ordinary runtime scheduling, cached geometry
 and detached one-action evaluation. Keeping these boundaries distinct prevents a geometry result or
 an uncommitted continuation from becoming an alternative world authority.
+
+## Serialized publication binding
+
+The internal `SqliteWorldAuthority.CommitConstructionLocality` entry point accepts a host-selected batch,
+project and metadata budget, never a caller-supplied speculative decision. Under the ordinary authority
+lock and SQLite write transaction, it validates current dispatch and uses actual genesis plus durable
+identity history. A single retained locality is reusable only for its exact committed world hash,
+project and metadata budget. Any ordinary commit clears it; a changed project or budget recaptures from
+the actual complete world. Reopening rebuilds from verified ordinary history, with no persisted cache.
+
+The shared construction kernel evaluates each selected command. The result reloads the authority's exact
+terrain into complete admission and enters the same canonical row preparation, journal policy, identity
+reservations, command receipts, head and checkpoint transaction as ordinary work. No client-facing
+submission or default scheduler selects this internal binding. Source profiles outside its admitted
+legacy law refuse; they cannot fall back to a reduced set of owners.
+
+Only successful database publication installs the candidate and retained locality in memory. A fault
+before or after the database commit requires reopening, using the existing recovery fence. The cache
+cannot turn a rollback into earned work, bypass stale-batch checks or release a speculative receipt.
+Ordinary journal replay remains the interpreter, so saved commands, hashes, outcomes and identities
+must agree with ordinary execution. There is no new schema, codec or historical interpretation.
+
+This binding retains a complete authoritative world and encodes it at each publication. Nonterrain
+rule evaluation is separable, but durable publication is not terrain-free. It does not provide a
+canonical partition directory, independently resident actor/material owners, partial recovery or
+migration of the richer expedition interpretations. Those remain distinct persistence obligations.

@@ -1,6 +1,7 @@
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Terrain;
 using OpenFantasy.Core.Worlds;
 
@@ -27,6 +28,35 @@ internal sealed class WorldCommitPreparation
         {
             throw new AuthorityDispatchException("The selected batch cannot be committed in the current world.");
         }
+        return PrepareRows(state, beforeHash, batch, decision);
+    }
+
+    internal (PreparedWorldCommit Commit, ConstructionLocalityState Locality) PrepareConstruction(
+        WorldSnapshot state, WorldIdentityIndex genesisIdentities, ContentHash beforeHash, WorldStepBatch batch,
+        EntityId projectId, int maximumMetadataPages, ConstructionLocalityState? exactHeadLocality,
+        Func<EntityId, bool> historicallyOccupied)
+    {
+        ValidateDispatch(state, batch);
+        ConstructionLocalityStep step;
+        WorldStepDecision decision;
+        try
+        {
+            // Only the serialized authority supplies a retained continuation, pinned to this exact head.
+            var source = exactHeadLocality ?? ConstructionLocalityState.Capture(state, projectId, maximumMetadataPages);
+            bool Occupied(EntityId identity) => genesisIdentities.ContainsEntity(identity) || historicallyOccupied(identity);
+            step = source.PrepareStep(batch, source.Occupancy, source.Terrain, Occupied);
+            decision = step.Rehydrate(state.Space.Regions);
+        }
+        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
+        {
+            throw new AuthorityDispatchException("The selected construction interval cannot be committed in the current world.");
+        }
+        return (PrepareRows(state, beforeHash, batch, decision), step.Candidate);
+    }
+
+    private static PreparedWorldCommit PrepareRows(WorldSnapshot state, ContentHash beforeHash,
+        WorldStepBatch batch, WorldStepDecision decision)
+    {
         WorldCanonicalFrame? frame = decision.CandidateFrame;
         if (frame is not null && !frame.IsBoundTo(decision.Candidate))
         {
