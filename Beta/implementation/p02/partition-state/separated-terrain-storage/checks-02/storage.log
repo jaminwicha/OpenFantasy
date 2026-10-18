@@ -1,0 +1,32 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:03.30]     OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space [1 s]
+  Error Message:
+   Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(System.IO.InvalidDataException)
+Actual:   typeof(Microsoft.Data.Sqlite.SqliteException)
+---- Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SeparatedTerrainStorageTests.cs:line 115
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at Microsoft.Data.Sqlite.SqliteConnectionExtensions.ExecuteNonQuery(SqliteConnection connection, String commandText, SqliteParameter[] parameters)
+   at Microsoft.Data.Sqlite.SqliteTransaction..ctor(SqliteConnection connection, IsolationLevel isolationLevel, Boolean deferred)
+   at Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction(IsolationLevel isolationLevel, Boolean deferred)
+   at Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction(Boolean deferred)
+   at OpenFantasy.Hosting.SqliteConnectionLease.BeginWrite() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 111
+   at OpenFantasy.Hosting.SqliteConnectionLease.Open(String path, Boolean create, Int32 applicationId, Int32 schemaVersion, IReadOnlyList`1 supportedVersions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 85
+   at OpenFantasy.Hosting.SqliteConnectionLease.OpenSupportedWorld(String path) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 32
+   at OpenFantasy.Hosting.Worlds.WorldDatabase.Open(String path, Boolean create, Int32 schemaVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs:line 31
+   at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.OpenExisting(String path) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs:line 88
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.<>c__DisplayClass4_0.<Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space>b__0() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SeparatedTerrainStorageTests.cs:line 115
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/separated-terrain-storage/checks-02/storage.trx
+
+Failed!  - Failed:     1, Passed:     6, Skipped:     0, Total:     7, Duration: 7 s - OpenFantasy.Hosting.Tests.dll (net8.0)

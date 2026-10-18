@@ -81,8 +81,9 @@ that conversion does not establish source freshness or authorize delivery.
 
 `Rehydrate` requires every exact pinned terrain region, reconstructs derived installed geometry and
 runs ordinary complete `WorldSnapshot` admission with all retained owners. Missing, edited, duplicate
-or unrelated regions refuse. Canonical encoding and its complete storage envelope remain mandatory
-before persistence. Reconstruction neither authenticates the candidate's ancestry nor writes a save.
+or unrelated regions refuse. The complete canonical storage envelope remains mandatory before persistence. The explicit
+terrain-separated binding below can enforce that envelope from its admitted byte-length difference;
+ordinary publication reconstructs and encodes the complete root. Reconstruction neither authenticates the candidate's ancestry nor writes a save.
 
 The domain binding does not handle movement, gifts, conversations, control changes, care, encounters,
 structural settlement, liquid processes or their later-profile histories. Those facts cannot be dropped
@@ -115,7 +116,7 @@ Only successful database publication installs the candidate and retained localit
 before or after the database commit requires reopening, using the existing recovery fence. The cache
 cannot turn a rollback into earned work, bypass stale-batch checks or release a speculative receipt.
 Ordinary journal replay remains the interpreter, so saved commands, hashes, outcomes and identities
-must agree with ordinary execution. There is no new schema, codec or historical interpretation.
+must agree with ordinary execution. This complete-root entry point introduces no schema, codec or historical interpretation.
 
 This binding retains a complete authoritative world and encodes it at each publication. Nonterrain
 rule evaluation is separable, but durable publication is not terrain-free. It does not provide a
@@ -140,3 +141,47 @@ Complete-world publication materializes and serializes every resident, as requir
 format. Deferring resident copies reduces per-step owner rewrites only while consumers can retain the
 basis without requesting complete resident snapshots on every step. It does not reduce the current
 canonical journal's write set or prove a production memory/throughput benefit.
+
+## Explicit terrain-separated storage binding
+
+`SqliteWorldAuthority.CreateWithSeparatedTerrain` is an internal, fresh-only profile-five binding to
+storage schema13. It is distinct from gameplay profile13. Default creation and existing saves retain
+their named schemas; neither an implicit upgrade nor a reduced interpretation of profiles40/41 is
+permitted. The ordinary profile-five interpreter remains authoritative for every saved command.
+
+`ConstructionLocalityEncoding` encodes all supported nonterrain owners in canonical order: inventory,
+actor bodies/presences, resident metadata/exposure, admission, calendar, revision, advancing ordinal,
+dialogues, gathering, production, progression, quests and construction. Installed geometry is derived
+from the exact construction definitions/output bindings, as in the complete profile-five codec. Each
+terrain reference retains scope, bounds, revision and canonical content hash. The encoding supplies
+no independent decoder or admission of untrusted owner fragments.
+
+The original full genesis remains unchanged. `world_terrain` stores its immutable canonical regions
+by hash. Head and checkpoints store the locality image; journal before/after hashes digest that image,
+not the full `WorldSnapshot` encoding. Recovery verifies the terrain directory against genesis and
+replays the complete original history, comparing every image, outcome and identity before readiness.
+Historical world reads still return complete admitted roots. This is complete replay with a different
+storage image, not partial authenticated recovery or a per-actor persistence directory.
+
+`EvictConstructionTerrain` captures the exact committed locality and releases the authoritative full
+world, scene, terrain and terrain-backed identity index. Genesis entity reservations are copied as
+identities. The admitted difference between full-world and locality-image lengths is retained: both
+encodings share exact component bytes and fixed-width framing, and selected work cannot mutate terrain.
+Each candidate checks the resulting full-envelope length against the unchanged16MiB bound. Ordinals,
+resident exposure and due gathering remain part of each selected advancing boundary.
+
+`CommitWithoutTerrain` accepts one current selected work batch under the same authority lock. It
+checks actual controller authorization and durable identity history, uses the shared construction
+kernel, validates its receipt and enters the existing journal policy and SQLite write transaction.
+Partial work reads no terrain archives. Final installation loads exact geometry, performs complete
+admission and verifies the full length against the retained envelope before publication. The new
+head, command outcome, identities and any due checkpoint commit atomically. Only then is the in-memory
+locality replaced. Publication faults require reopening; terrain restoration/final-admission failures
+also fence the authority without releasing a speculative receipt.
+
+An ordinary action or host read restores the full current world through exact terrain references.
+Ordinary commits invalidate the locality interval; explicit recapture is required before further
+unloaded work. No default scheduler or public API enables this experiment. It retains a whole locality
+of nonterrain owners, complete occupancy metadata and growing identity reservations; it does not claim
+independent actor/custodian residency, reduced resident serialization, scalable frontier scheduling,
+current-profile migration, a cold-load budget or production checkpoint qualification.

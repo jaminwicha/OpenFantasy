@@ -476,6 +476,29 @@ the sole SQLite writer using current dispatch, permanent identity history and an
 cache. It reconstructs and encodes a complete candidate before ordinary atomic publication; the cache
 is not a saved owner map or an alternate journal interpreter. Ordinary commits invalidate the cache.
 
+### Explicit terrain-separated construction storage
+
+The internal fresh profile-five binding uses schema13, independently of gameplay profile13. It retains
+the complete original genesis and an exact immutable `world_terrain` archive directory. Its head and
+checkpoints contain `ConstructionLocalityEncoding` images; journal hashes bind those images. Ordinary
+world digests still refer to complete `WorldSnapshot` bytes. Callers must not substitute one digest
+for the other. Existing schemas and default creation retain their original byte and hash meanings.
+
+Recovery checks archive membership, canonical hashes and exact admitted references against genesis,
+then performs full ordinary replay and compares every retained image, receipt, identity and checkpoint.
+The image has no standalone admission decoder. Missing/edited terrain refuses readiness; a stored
+image cannot authorize filling missing cells with empty terrain. The same `SqliteWorldAuthority`
+transaction writer publishes commands, identity reservations, head and checkpoints. No separate
+writer, partial historical replay, implicit migration or facet omission is admitted.
+
+During an explicitly evicted construction interval, the authority retains all profile-five nonterrain
+owners and copied genesis entity reservations. It can publish partial work without reading terrain.
+A host return/ordinary intervention restores exact geometry; final physical installation requires
+complete admission. The full16MiB envelope is preserved by the captured fixed framing/terrain length
+difference and checked again against full encoding on final installation. Terrain or publication
+failures fence the authority for recovery. See [construction locality](construction-locality.md#explicit-terrain-separated-storage-binding)
+for the supported actions, byte ownership and residency boundaries.
+
 ### Design contract: partitioned persistence and version ownership
 
 The [bounded terrain read boundary](world-and-geography.md#bounded-terrain-read-dependencies) supplies

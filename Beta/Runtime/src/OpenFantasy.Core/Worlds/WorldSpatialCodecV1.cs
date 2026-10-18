@@ -26,16 +26,30 @@ internal static class WorldSpatialCodecV1
         {
             throw new ArgumentException("Spatial component versions must retain their admitted construction support interpretation.", nameof(space));
         }
-        BodyDefinition[] definitions = space.Actors.Select(actor => actor.Condition.Definition)
+        return EncodeComponents(space.Scope, space.Actors, CanonicalEncodingV1.Frame("world.regions",
+            space.Regions.Select(region => (ReadOnlyMemory<byte>)TerrainRegionCodecV1.Encode(region)).ToArray()), version);
+    }
+
+    internal static byte[] EncodeReferencedComponents(TerrainScope scope, IEnumerable<ActorPresence> actors,
+        IEnumerable<TerrainRegionReference> terrain)
+    {
+        var references = terrain.Select(value => (ReadOnlyMemory<byte>)CanonicalEncodingV1.Frame("world.terrain-reference.v1",
+            Signed(value.Bounds.Minimum.X), Signed(value.Bounds.Minimum.Y), Signed(value.Bounds.Minimum.Z),
+            Number((ulong)value.Bounds.Width), Number((ulong)value.Bounds.Depth), Number((ulong)value.Bounds.Height),
+            Number(value.Revision), value.ContentHash.ToByteArray())).ToArray();
+        return EncodeComponents(scope, actors, CanonicalEncodingV1.Frame("world.terrain-references.v1", references), 1);
+    }
+
+    private static byte[] EncodeComponents(TerrainScope scope, IEnumerable<ActorPresence> actors, byte[] regions, ulong version)
+    {
+        BodyDefinition[] definitions = actors.Select(actor => actor.Condition.Definition)
             .GroupBy(definition => definition.DefinitionId).Select(group => group.First())
             .OrderBy(definition => definition.DefinitionId).ToArray();
-        return CanonicalEncodingV1.Frame("world.spatial", Number(version), space.Scope.WorldId.ToByteArray(),
-            space.Scope.BranchId.ToByteArray(), space.Scope.RealmId.ToByteArray(),
-            CanonicalEncodingV1.Frame("world.regions", space.Regions.Select(region =>
-                (ReadOnlyMemory<byte>)TerrainRegionCodecV1.Encode(region)).ToArray()),
+        return CanonicalEncodingV1.Frame("world.spatial", Number(version), scope.WorldId.ToByteArray(),
+            scope.BranchId.ToByteArray(), scope.RealmId.ToByteArray(), regions,
             CanonicalEncodingV1.Frame("world.bodies", definitions.Select(definition =>
                 (ReadOnlyMemory<byte>)BodyContractEncodingV1.EncodeDefinition(definition)).ToArray()),
-            CanonicalEncodingV1.Frame("world.presences", space.Actors.Select(actor =>
+            CanonicalEncodingV1.Frame("world.presences", actors.Select(actor =>
                 (ReadOnlyMemory<byte>)EncodeActor(actor)).ToArray()));
     }
 

@@ -354,3 +354,14 @@ reuse in one bounded tooling unit before relying on it. Never weaken gates or de
 Keep one current roadmap and a short handoff; source-based documentation review is part of the same
 change. Delegate coherent independent work only when expected benefit exceeds setup/integration
 cost; do not claim subscription savings from list-price estimates or native-agent parallelism.
+
+### PLAN-STATE terrain-separated storage preparation
+
+The [explicit storage experiment](p02/partition-state/separated-terrain-storage/RESULT.md) connects the
+legacy joined cargo/gift/construction episode to the existing writer with full original genesis and
+terrain-separated locality images. It is a comparison candidate, not a phase exit or a default game
+format. P02's closure table and P00–P14/181-requirement scope remain unchanged. Complete replay,
+current40/41 preservation/migration, finer owner granularity, noninitial checkpoint qualification,
+due-work/fairness measurements, platform/scale evidence and independent architectural review remain
+open. Continue the PLAN-STATE comparison before permanent NPC cognition persistence; do not promote
+this internal profile-five experiment into the main game merely because its focused tests pass.

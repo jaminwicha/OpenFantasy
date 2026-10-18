@@ -15,12 +15,18 @@ public sealed partial class SqliteWorldAuthority : IDisposable
 {
     private readonly object _gate = new();
     private readonly WorldDatabase _database;
-    private readonly WorldIdentityIndex _genesisIdentities;
+    private readonly WorldIdentityIndex? _genesisIdentities;
+    private readonly HashSet<EntityId> _detachedGenesisIdentities;
     private readonly WorldCommitPreparation _preparation = new();
     private ConstructionLocalityState? _constructionLocality;
     private ContentHash? _constructionLocalityHash;
     private int _constructionMetadataPages;
-    private WorldSnapshot _state;
+    private WorldSnapshot? _residentState;
+    private WorldSnapshot _state
+    {
+        get => _residentState ??= RestoreTerrain();
+        set => _residentState = value;
+    }
     private ContentHash _stateHash;
     private WorldJournalUsage _usage;
     private bool _disposed;
@@ -29,7 +35,9 @@ public sealed partial class SqliteWorldAuthority : IDisposable
     private SqliteWorldAuthority(WorldDatabase database, RecoveredWorld recovered)
     {
         _database = database;
-        _genesisIdentities = recovered.Genesis.IdentityIndex;
+        _genesisIdentities = database.SeparatesTerrain ? null : recovered.Genesis.IdentityIndex;
+        _detachedGenesisIdentities = database.SeparatesTerrain
+            ? recovered.Genesis.IdentityIndex.CopyEntityReservations().ToHashSet() : [];
         _state = recovered.State;
         _stateHash = recovered.StateHash;
         _usage = recovered.Usage;
@@ -192,7 +200,8 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         {
             EnsureAvailable();
             PreparedWorldCommit prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
-                batch, identity => _database.ContainsIdentity(identity));
+                batch, identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity),
+                separateTerrain: _database.SeparatesTerrain);
             WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence, prepared.Stored.AdvancingSteps,
                 (ulong)prepared.Commands.Count, (ulong)prepared.Stored.AcceptedBatch.Length,
                 (ulong)prepared.Stored.Outcomes.Length,
@@ -209,7 +218,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         lock (_gate)
         {
             EnsureAvailable();
-            return _state.IdentityIndex.Contains(identity) || _genesisIdentities.Contains(identity)
+            return _state.IdentityIndex.Contains(identity) || _genesisIdentities?.Contains(identity) == true || _detachedGenesisIdentities.Contains(identity)
                 || _database.ContainsIdentity(identity);
         }
     }
@@ -252,6 +261,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         lock (_gate)
         {
             EnsureAvailable();
+            _ = _state; // Hydrate before opening a write transaction for ordinary complete-world execution.
             using SqliteTransaction transaction = _database.BeginWrite();
             PreparedWorldCommit prepared;
             ConstructionLocalityState? continuation = null;
@@ -262,12 +272,14 @@ public sealed partial class SqliteWorldAuthority : IDisposable
                     ? _constructionLocality : null;
                 (prepared, continuation) = _preparation.PrepareConstruction(_state, _genesisIdentities, _stateHash,
                     batch, projectId, maximumMetadataPages, retained,
-                    identity => _database.ContainsIdentity(identity, transaction));
+                    identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity, transaction),
+                    separateTerrain: _database.SeparatesTerrain);
             }
             else
             {
                 prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
-                    batch, identity => _database.ContainsIdentity(identity, transaction));
+                    batch, identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity, transaction),
+                    separateTerrain: _database.SeparatesTerrain);
             }
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence,
                 prepared.Stored.AdvancingSteps, (ulong)prepared.Commands.Count,
@@ -278,35 +290,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
             ControllerRecoveryState? controllerRecovery = _controllerRecovery?.AfterCommit(prepared.Decision.Candidate, batch);
             try
             {
-                if (controllerRecovery is not null && !ReferenceEquals(controllerRecovery, _controllerRecovery))
-                    _database.WriteControllerRecovery(controllerRecovery, transaction);
-                _database.WriteCommit(prepared.Stored, transaction);
-                if (prepared.ResourceArchive is { } archive)
-                {
-                    _database.WriteResourceArchive(archive, transaction);
-                }
-                if (prepared.MaterialCareArchive is { } materialCareArchive)
-                {
-                    _database.WriteMaterialCareArchive(materialCareArchive, transaction);
-                }
-                foreach (StoredWorldCommandOutcome command in prepared.Commands)
-                {
-                    _database.WriteCommandOutcome(command, transaction);
-                }
-                foreach (StoredWorldIdentity identity in prepared.Identities)
-                {
-                    _database.ReserveIdentity(identity, transaction);
-                }
-                _database.WriteHead(prepared.Stored.Sequence, prepared.Stored.AdvancingSteps,
-                    prepared.CandidateBytes, transaction);
-                if (advance.WriteCheckpoint)
-                {
-                    _database.WriteCheckpoint(new(prepared.Stored.Sequence, prepared.Stored.AdvancingSteps,
-                        prepared.CandidateBytes), transaction);
-                }
-                fault?.Invoke(AuthorityCommitBoundary.BeforeCommit);
-                transaction.Commit();
-                fault?.Invoke(AuthorityCommitBoundary.AfterCommit);
+                PublishWrites(prepared.Writes, advance, controllerRecovery, transaction, fault);
                 _state = prepared.Decision.Candidate;
                 _stateHash = prepared.Stored.AfterHash;
                 _constructionLocality = continuation;
@@ -322,6 +306,40 @@ public sealed partial class SqliteWorldAuthority : IDisposable
                 throw;
             }
         }
+    }
+
+    private void PublishWrites(WorldCommitWriteSet writes, WorldJournalAdvance advance,
+        ControllerRecoveryState? controllerRecovery, SqliteTransaction transaction, Action<AuthorityCommitBoundary>? fault)
+    {
+        if (controllerRecovery is not null && !ReferenceEquals(controllerRecovery, _controllerRecovery))
+            _database.WriteControllerRecovery(controllerRecovery, transaction);
+        _database.WriteCommit(writes.Stored, transaction);
+        if (writes.ResourceArchive is { } archive)
+        {
+            _database.WriteResourceArchive(archive, transaction);
+        }
+        if (writes.MaterialCareArchive is { } materialCareArchive)
+        {
+            _database.WriteMaterialCareArchive(materialCareArchive, transaction);
+        }
+        foreach (StoredWorldCommandOutcome command in writes.Commands)
+        {
+            _database.WriteCommandOutcome(command, transaction);
+        }
+        foreach (StoredWorldIdentity identity in writes.Identities)
+        {
+            _database.ReserveIdentity(identity, transaction);
+        }
+        _database.WriteHead(writes.Stored.Sequence, writes.Stored.AdvancingSteps,
+            writes.CandidateBytes, transaction);
+        if (advance.WriteCheckpoint)
+        {
+            _database.WriteCheckpoint(new(writes.Stored.Sequence, writes.Stored.AdvancingSteps,
+                writes.CandidateBytes), transaction);
+        }
+        fault?.Invoke(AuthorityCommitBoundary.BeforeCommit);
+        transaction.Commit();
+        fault?.Invoke(AuthorityCommitBoundary.AfterCommit);
     }
 
     /// <summary>

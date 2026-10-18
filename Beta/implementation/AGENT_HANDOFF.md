@@ -296,3 +296,12 @@ with [its identity](roadmap-audit-20261003/HANDOFF_ARCHIVE.json), including olde
 Audit checkpoint `codex/checkpoint-before-roadmap-audit-20261003T150149Z` preserves WIP `12497e33`;
 pre-hook checkpoint `codex/checkpoint-before-documentation-hooks-20261003T1522` preserves WIP `8134c788`.
 Checkpoints do not claim acceptance. Current result packets and milestone refs define accepted scope.
+
+The [terrain-separated storage packet](p02/partition-state/separated-terrain-storage/RESULT.md) is the
+latest PLAN-STATE preparation. Its internal fresh schema13 retains full profile-five genesis but stores
+nonterrain head images and immutable terrain archives through the same SQLite writer. Consult the
+packet result for terminal checks/failures and source pins. Default game creation and profiles40/41 are
+unchanged. Next compare coarse locality storage with typed actor/custodian owners; retain complete
+replay, noninitial checkpoint, richer-profile migration, due-work/fairness and independent-review gaps.
+The P02 closure table remains authoritative. Owner Oct17/18 packet-read/preflight/telemetry discipline
+applies; do not reload entry documents within a packet unless changed, or infer credit savings.

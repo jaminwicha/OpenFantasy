@@ -36,9 +36,11 @@ internal sealed class ConstructionUpgradeFixture
             WorldConstructionMigration.ComputeTargetAdmissionVersion(world.AdmissionVersion, admission), admission);
     }
 
-    internal WorldSnapshot CreateSource(string path, bool completeQuest = false, WorldSnapshot? genesis = null)
+    internal WorldSnapshot CreateSource(string path, bool completeQuest = false, WorldSnapshot? genesis = null,
+        Func<string, WorldSnapshot, SqliteWorldAuthority>? create = null)
     {
-        using SqliteWorldAuthority authority = SqliteWorldAuthority.CreateNew(path, genesis ?? QuestGenesis());
+        var selected = genesis ?? QuestGenesis();
+        using SqliteWorldAuthority authority = create is null ? SqliteWorldAuthority.CreateNew(path, selected) : create(path, selected);
         WorldSnapshot world = authority.InspectForHost().State;
         if (!completeQuest)
         {

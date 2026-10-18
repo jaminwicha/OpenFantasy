@@ -95,7 +95,11 @@ internal sealed class WorldJournalRecovery
         byte[] genesisBytes = database.ReadGenesis();
         WorldSnapshot genesis = WorldSnapshotCodec.Decode(genesisBytes);
         WorldGenesisAdmission.Validate(genesis);
-        if (genesis.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 19 or 20 or 21 && database.SchemaVersion != WorldDatabaseSchemaThree.Version)
+        if (database.SeparatesTerrain && genesis.ProfileVersion != 5)
+            throw new InvalidDataException("Separated terrain storage requires its exact legacy construction interpretation.");
+        database.VerifyTerrain(genesis);
+        if (genesis.ProfileVersion is 3 or 4 or 5 or 6 or 7 or 8 or 9 or 10 or 11 or 12 or 13 or 14 or 15 or 19 or 20 or 21 && database.SchemaVersion != WorldDatabaseSchemaThree.Version
+            && !(database.SeparatesTerrain && genesis.ProfileVersion == 5))
         {
             throw new InvalidDataException("A production, quest or construction genesis requires its declared world schema.");
         }
@@ -133,7 +137,7 @@ internal sealed class WorldJournalRecovery
         WorldPaidQuoteReplaySelection? quoteSelection = selectedQuoteId is { } quoteId
             ? new WorldPaidQuoteReplaySelection(quoteId) : null;
         SelectedMaterialObservation? selectedMaterial = null;
-        byte[] stateBytes = genesisBytes;
+        byte[] stateBytes = database.EncodeHead(genesis);
         ContentHash stateHash = ContentHash.Compute(stateBytes);
         var usage = new WorldJournalUsage(0, 0, 0, 0, 0);
         Dictionary<EntityId, StoredWorldIdentity> identities = [];
@@ -150,7 +154,7 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The world is missing its genesis checkpoint.");
         }
-        VerifyCheckpoint(checkpoints.Current, 0, 0, genesisBytes);
+        VerifyCheckpoint(checkpoints.Current, 0, 0, stateBytes);
         bool hasCheckpoint = checkpoints.MoveNext();
         foreach (StoredWorldCommit stored in database.ReadJournal())
         {
@@ -269,6 +273,8 @@ internal sealed class WorldJournalRecovery
         {
             throw new InvalidDataException("The coordinated world departed from its genesis-selected interpretation.");
         }
+        if (database.SeparatesTerrain && (state.ProfileVersion != 5 || transitionCount != 0))
+            throw new InvalidDataException("Separated terrain storage cannot change its admitted gameplay interpretation.");
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps
             || !head.State.AsSpan().SequenceEqual(stateBytes))
@@ -311,7 +317,7 @@ internal sealed class WorldJournalRecovery
         }
         WorldStepBatch batch = WorldStepCodec.Decode(stored.AcceptedBatch);
         PreparedWorldCommit step = steps.Prepare(state, genesisIdentities,
-            stateHash, batch, historicallyOccupied, captureMaterialEvidence);
+            stateHash, batch, historicallyOccupied, captureMaterialEvidence, schemaVersion == WorldDatabaseSchemaThirteen.Version);
         return new(step.Decision.Candidate, step.CandidateBytes, step.Stored, step.Commands, step.Identities,
             step.Decision.SealedResourceSegment, captureMaterialEvidence ? step.Decision.MaterialEvidence : null,
             step.Decision.SealedMaterialCareSegment);

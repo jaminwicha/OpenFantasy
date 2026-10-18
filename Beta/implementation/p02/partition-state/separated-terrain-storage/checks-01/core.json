@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~ConstructionLocalityTests|FullyQualifiedName~ConstructionAuthorityTests|FullyQualifiedName~WorldIdentity|FullyQualifiedName~WorldCodec",
+    "--logger",
+    "trx;LogFileName=core.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/separated-terrain-storage/checks-01"
+  ],
+  "exit_code": 0,
+  "seconds": 3.344361082999967,
+  "bound_seconds": 180
+}

@@ -24,7 +24,7 @@ public sealed class ConstructionLocalityTests(ITestOutputHelper output)
         var initialHash = state.SourceWorldHash;
         int initialIdentities = state.RetainedIdentityCount;
         long preparedBytes = 0, preparedTicks = 0, ordinaryBytes = 0, ordinaryTicks = 0;
-        List<(WorldStepBatch Batch, ContentHash Owners, byte[] Receipt, WorldCommittedIdentity[] Identities)> observed = [];
+        List<(WorldStepBatch Batch, ContentHash Owners, byte[] Image, byte[] Receipt, WorldCommittedIdentity[] Identities)> observed = [];
         for (ulong step = 0; step < 200; step++)
         {
             var batch = Batch(state, step);
@@ -36,7 +36,7 @@ public sealed class ConstructionLocalityTests(ITestOutputHelper output)
             Assert.Same(state, prepared.Source);
             Assert.Equal(WorldActionRejection.None, prepared.Receipt.Rejection);
             Assert.Equal(step + 1, prepared.Candidate.Construction.Projects.Single().Progress.CompletedUnits);
-            observed.Add((batch, OwnerHash(prepared.Candidate), WorldReceiptCodecV1.Encode(prepared.Receipt), prepared.Identities.ToArray()));
+            observed.Add((batch, OwnerHash(prepared.Candidate), ConstructionLocalityEncoding.Encode(prepared.Candidate), WorldReceiptCodecV1.Encode(prepared.Receipt), prepared.Identities.ToArray()));
             state = prepared.Candidate;
         }
         Assert.All(references, reference => Assert.False(reference.IsAlive));
@@ -49,6 +49,7 @@ public sealed class ConstructionLocalityTests(ITestOutputHelper output)
         var ordinary = Create();
         Assert.Equal(initialHash, ordinary.ContentHash);
         var terrain = ordinary.Space.Regions;
+        int overhead = WorldSnapshotCodec.Encode(ordinary).Length - ConstructionLocalityEncoding.Encode(ordinary).Length;
         var processor = new WorldStepProcessor();
         HashSet<EntityId> history = [];
         foreach (var item in observed)
@@ -59,6 +60,8 @@ public sealed class ConstructionLocalityTests(ITestOutputHelper output)
             ordinaryTicks += Stopwatch.GetTimestamp() - startTicks;
             ordinaryBytes += GC.GetAllocatedBytesForCurrentThread() - startBytes;
             Assert.Equal(item.Owners, OwnerHash(next.Candidate));
+            Assert.Equal(item.Image, ConstructionLocalityEncoding.Encode(next.Candidate));
+            Assert.Equal(overhead, WorldSnapshotCodec.Encode(next.Candidate).Length - item.Image.Length);
             Assert.Equal(item.Receipt, WorldReceiptCodecV1.Encode(Assert.Single(next.Receipts)));
             Assert.Equal(item.Identities, next.Identities);
             history.UnionWith(next.Identities.Select(value => value.Identity));

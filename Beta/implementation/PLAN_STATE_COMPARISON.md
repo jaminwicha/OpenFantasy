@@ -306,3 +306,15 @@ This identifies a representation requirement, not a storage-format decision: the
 still materializes every resident. Per-actor persisted roots would only avoid exposure write fan-out
 if the timing-domain basis is itself admitted and persisted with membership/history. That dependency
 remains part of the integrated owner prototype, with current-profile and full scale gates open.
+
+## Terrain-separated aggregate candidate
+
+The [storage prototype](p02/partition-state/separated-terrain-storage/RESULT.md) implements a deliberately
+coarse alternative: one complete nonterrain locality image plus immutable terrain archives, retaining
+original full genesis and complete replay. It reuses the existing SQLite authority/writer and ordinary
+profile-five interpreter. It does not select the final typed actor/custodian owner layout. Compare its
+actual residency, image/write bytes and recovery costs against the finer proposed owner design before
+freezing a persistent cognition model. Every later-profile owner and historical interpreter remains
+required; profile40/41 migration, directory granularity, scheduled-work fairness, cold loads and the
+unchanged independent review are still open. Production checkpoint-interval qualification is separate
+from the initial-checkpoint and short-history prototype evidence.

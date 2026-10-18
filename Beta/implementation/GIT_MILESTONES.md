@@ -511,3 +511,21 @@ the WIP checkpoint before optimization preserves 68eac65e. Exact refs, scope, fa
 critique and source/binary pins are in [the result](p02/multiplayer-timing/RESULT.md). Work stays on
 `codex/runtime-foundation`; no branch switch, push or merge. The pending-care disposition proposal
 is preserved separately and claims no implemented rule or reserved profile version.
+
+## Terrain-separated locality storage preparation — 2026-10-18
+
+- Before-change checkpoint `codex/checkpoint-before-separated-terrain-storage-20261018` resolves to
+  `4fc4d2e1287de7840021589b6239123fd03c548d`, preserving relevant WIP from source
+  `e1c26a48f886db50bae40de28e2f51aab3d66532`; concurrent/predecessor scope is recorded in
+  [CHECKPOINT.json](p02/partition-state/separated-terrain-storage/CHECKPOINT.json).
+- Verified increment pointer: `codex/milestone-separated-terrain-storage-20261018`, created at the
+  owned commit without switching the working checkout. Includes the explicit internal schema13
+  profile-five storage candidate, shared publisher, full replay/refusal tests, architecture/plan
+  updates and retained evidence. Default creation/current gameplay profiles remain unchanged.
+- Evidence:400 distinct current-source cases pass (303 Core,97 Hosting), all within180-second bounds.
+  One production schema failure and one fixture pooling failure are retained; a runner path bug
+  overwrote earlier successful preflight records and is disclosed, not retroactively certified.
+  Full-Core prior timeouts, noninitial checkpoint qualification, richer-profile migration, typed
+  owner comparison, scheduling and independent review remain open. No PLAN-STATE/P02 closure.
+- [Result and documentation review](p02/partition-state/separated-terrain-storage/RESULT.md) distinguishes
+  exact byte/residency evidence from throughput, platform, production or credit-saving claims.

@@ -24,7 +24,7 @@ internal sealed partial class WorldDatabase : IDisposable
         if (schemaVersion is not WorldDatabaseSchema.Version and not WorldDatabaseSchemaThree.Version
             and not WorldDatabaseSchemaFour.Version and not WorldDatabaseSchemaFive.Version
             and not WorldDatabaseSchemaSix.Version and not WorldDatabaseSchemaSeven.Version
-            and not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version and not WorldDatabaseSchemaEleven.Version and not WorldDatabaseSchemaTwelve.Version)
+            and not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version and not WorldDatabaseSchemaEleven.Version and not WorldDatabaseSchemaTwelve.Version and not WorldDatabaseSchemaThirteen.Version)
         {
             throw new ArgumentOutOfRangeException(nameof(schemaVersion));
         }
@@ -71,10 +71,17 @@ internal sealed partial class WorldDatabase : IDisposable
         byte[] hash = ContentHash.Compute(genesis).ToByteArray();
         ChangeExactlyOne("INSERT INTO world_genesis VALUES(1,$state,$hash)", transaction,
             ("$state", genesis), ("$hash", hash));
+        byte[] head = genesis;
+        if (SeparatesTerrain)
+        {
+            var world = OpenFantasy.Core.Worlds.WorldSnapshotCodec.Decode(genesis);
+            head = EncodeHead(world);
+            InitializeTerrain(world, transaction);
+        }
         ChangeExactlyOne("INSERT INTO world_head VALUES(1,$sequence,$steps,$state,$hash)", transaction,
             ("$sequence", WorldStorageBinary.Number(0)), ("$steps", WorldStorageBinary.Number(0)),
-            ("$state", genesis), ("$hash", hash));
-        WriteCheckpoint(new(0, 0, genesis), transaction);
+            ("$state", head), ("$hash", ContentHash.Compute(head).ToByteArray()));
+        WriteCheckpoint(new(0, 0, head), transaction);
         if (SchemaVersion is WorldDatabaseSchemaTen.Version or WorldDatabaseSchemaEleven.Version or WorldDatabaseSchemaTwelve.Version)
             InitializeControllerRecovery(OpenFantasy.Core.Worlds.WorldSnapshotCodec.Decode(genesis), false, transaction);
         transaction.Commit();
@@ -95,6 +102,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaTen.Version => WorldDatabaseSchemaTen.Tables,
         WorldDatabaseSchemaEleven.Version => WorldDatabaseSchemaEleven.Tables,
         WorldDatabaseSchemaTwelve.Version => WorldDatabaseSchemaTwelve.Tables,
+        WorldDatabaseSchemaThirteen.Version => WorldDatabaseSchemaThirteen.Tables,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 
@@ -111,6 +119,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaTen.Version => WorldDatabaseSchemaTen.Indexes,
         WorldDatabaseSchemaEleven.Version => WorldDatabaseSchemaEleven.Indexes,
         WorldDatabaseSchemaTwelve.Version => WorldDatabaseSchemaTwelve.Indexes,
+        WorldDatabaseSchemaThirteen.Version => WorldDatabaseSchemaThirteen.Indexes,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 

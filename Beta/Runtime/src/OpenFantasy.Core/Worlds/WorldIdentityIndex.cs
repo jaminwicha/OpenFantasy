@@ -34,6 +34,9 @@ public sealed class WorldIdentityIndex
         (_dynamicRoles.Keys.Concat(Terrain.Identities).Concat(Watershed.Identities).Distinct().Order().ToArray(),
             _encounterFamilies.Order().ToArray());
 
+    /// <summary>Copies actual entity reservations without retaining terrain detail or prospective episode families.</summary>
+    public IReadOnlyCollection<EntityId> CopyEntityReservations() => Array.AsReadOnly(CaptureReservations().Identities);
+
     public bool Contains(EntityId identity) => _encounterFamilies.Contains(identity.High) || ContainsEntity(identity);
 
     /// <summary>Actual admitted entities/references, excluding prospective episode namespace reservations.</summary>

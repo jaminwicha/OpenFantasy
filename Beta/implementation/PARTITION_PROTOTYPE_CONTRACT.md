@@ -208,3 +208,19 @@ evidence, not 10,000-actor/20,000-resident, four-player endurance, desktop or fu
 If a candidate needs all terrain or all deep actor state for every step, record the failed hypothesis
 and revise the boundary. Do not relax admission, redefine absent detail, expand deadlines or reclassify
 an unchanged dependency helper as the integrated proof. Keep the full requirements and P00–P14 exits.
+
+## Aggregate storage experiment and remaining comparison
+
+The [terrain-separated storage experiment](p02/partition-state/separated-terrain-storage/RESULT.md)
+binds the legacy integrated episode to the original full genesis, canonical nonterrain images,
+immutable terrain archives and the sole SQLite writer. Partial work can release terrain residency;
+final installation and recovery retain complete admission/replay. This supplies an aggregate candidate
+for the prescribed comparison, not the permanent typed-owner format or a new gameplay interpreter.
+The explicit internal fresh storage schema13 is scoped to profile5; all other numbered formats keep
+their meanings. No migration of lived profile41 saves is implied.
+
+Next compare this concrete coarse image with the typed owner/directory hypothesis, account for resident
+materialization and identity/occupancy metadata, and define actual due-work discovery and fairness.
+Qualify noninitial checkpoint boundaries and richer-profile admission before production rollout.
+Preserve the integrated episode's original history and refusal/fault evidence; no raised limits,
+synthetic progress, skipped due processes or second writer may stand in for the remaining proof.

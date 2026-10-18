@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="5b993c17-3e2f-447b-a1dc-0d98504f3e99" name="@mac 2026-10-18 14:02:32" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-18T14:02:32.4300440-05:00" queuing="2026-10-18T14:02:32.4300440-05:00" start="2026-10-18T14:02:28.5962230-05:00" finish="2026-10-18T14:02:38.4233120-05:00" />
+  <TestSettings name="default" id="bf08cfdd-7d94-4804-b43e-36b1c5fc0f90">
+    <Deployment runDeploymentRoot="_mac_2026-10-18_14_02_32" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2a65d4ed-582f-422e-a705-09cce3609220" testId="23bd8f35-ec05-2094-647d-e0de9db853f4" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Richer_profiles_cannot_enter_the_legacy_storage_binding" computerName="mac" duration="00:00:00.9476347" startTime="2026-10-18T14:02:32.3963080-05:00" endTime="2026-10-18T14:02:33.3447170-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a65d4ed-582f-422e-a705-09cce3609220" />
+    <UnitTestResult executionId="453821bd-2ca4-4fc8-85be-9ffdd9227f79" testId="8a12d3c5-c724-8d54-4daa-ce268f59e6c0" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 1)" computerName="mac" duration="00:00:00.3881579" startTime="2026-10-18T14:02:35.9325140-05:00" endTime="2026-10-18T14:02:36.3207400-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="453821bd-2ca4-4fc8-85be-9ffdd9227f79" />
+    <UnitTestResult executionId="656cbe7e-53e5-4d1d-b47d-7fee0b8df8fd" testId="f849f57b-50d8-86a6-9e32-50b94ef5e829" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 0)" computerName="mac" duration="00:00:01.3400703" startTime="2026-10-18T14:02:33.3464650-05:00" endTime="2026-10-18T14:02:34.6865980-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="656cbe7e-53e5-4d1d-b47d-7fee0b8df8fd" />
+    <UnitTestResult executionId="a3e98fa4-7bb1-403a-815a-df34f358fbf7" testId="9f161821-7b1c-08d7-47b2-6201693ae49a" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 0)" computerName="mac" duration="00:00:00.4109182" startTime="2026-10-18T14:02:35.5205690-05:00" endTime="2026-10-18T14:02:35.9315820-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a3e98fa4-7bb1-403a-815a-df34f358fbf7" />
+    <UnitTestResult executionId="7ec81906-f7a5-4863-a4b8-97ec77a4c1fa" testId="7de60cd7-11f5-5d78-4442-9280ca8a9eb9" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space" computerName="mac" duration="00:00:01.9323695" startTime="2026-10-18T14:02:30.4171300-05:00" endTime="2026-10-18T14:02:32.3923460-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7ec81906-f7a5-4863-a4b8-97ec77a4c1fa">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(System.IO.InvalidDataException)
+Actual:   typeof(Microsoft.Data.Sqlite.SqliteException)
+---- Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SeparatedTerrainStorageTests.cs:line 115
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at Microsoft.Data.Sqlite.SqliteConnectionExtensions.ExecuteNonQuery(SqliteConnection connection, String commandText, SqliteParameter[] parameters)
+   at Microsoft.Data.Sqlite.SqliteTransaction..ctor(SqliteConnection connection, IsolationLevel isolationLevel, Boolean deferred)
+   at Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction(IsolationLevel isolationLevel, Boolean deferred)
+   at Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction(Boolean deferred)
+   at OpenFantasy.Hosting.SqliteConnectionLease.BeginWrite() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 111
+   at OpenFantasy.Hosting.SqliteConnectionLease.Open(String path, Boolean create, Int32 applicationId, Int32 schemaVersion, IReadOnlyList`1 supportedVersions) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 85
+   at OpenFantasy.Hosting.SqliteConnectionLease.OpenSupportedWorld(String path) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs:line 32
+   at OpenFantasy.Hosting.Worlds.WorldDatabase.Open(String path, Boolean create, Int32 schemaVersion) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs:line 31
+   at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.OpenExisting(String path) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs:line 88
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.&lt;&gt;c__DisplayClass4_0.&lt;Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space&gt;b__0() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SeparatedTerrainStorageTests.cs:line 115</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="fbfe14cc-660c-436f-9f46-c01defae1da2" testId="75ffacfe-b010-52b1-743a-9bf02911f1d2" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Actual_gift_work_return_intervention_and_installation_share_history_without_resident_terrain" computerName="mac" duration="00:00:02.0325673" startTime="2026-10-18T14:02:36.3218130-05:00" endTime="2026-10-18T14:02:38.3544520-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fbfe14cc-660c-436f-9f46-c01defae1da2">
+      <Output>
+        <StdOut>First40 actual SQLite work commits: 12502736 managed allocated bytes, 17.271 ms, zero terrain reads; original world/scene/index/terrain collected. Full ordinary recovery and final geometry admission remain required.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="533233a3-2620-477c-893b-9572bb509033" testId="33da36ca-8be1-5825-188e-a204eae55d2d" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 1)" computerName="mac" duration="00:00:00.8316455" startTime="2026-10-18T14:02:34.6877900-05:00" endTime="2026-10-18T14:02:35.5195230-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="533233a3-2620-477c-893b-9572bb509033" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="33da36ca-8be1-5825-188e-a204eae55d2d">
+      <Execution id="533233a3-2620-477c-893b-9572bb509033" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Actual_gift_work_return_intervention_and_installation_share_history_without_resident_terrain" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="75ffacfe-b010-52b1-743a-9bf02911f1d2">
+      <Execution id="fbfe14cc-660c-436f-9f46-c01defae1da2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Actual_gift_work_return_intervention_and_installation_share_history_without_resident_terrain" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Richer_profiles_cannot_enter_the_legacy_storage_binding" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="23bd8f35-ec05-2094-647d-e0de9db853f4">
+      <Execution id="2a65d4ed-582f-422e-a705-09cce3609220" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Richer_profiles_cannot_enter_the_legacy_storage_binding" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f849f57b-50d8-86a6-9e32-50b94ef5e829">
+      <Execution id="656cbe7e-53e5-4d1d-b47d-7fee0b8df8fd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7de60cd7-11f5-5d78-4442-9280ca8a9eb9">
+      <Execution id="7ec81906-f7a5-4863-a4b8-97ec77a4c1fa" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="8a12d3c5-c724-8d54-4daa-ce268f59e6c0">
+      <Execution id="453821bd-2ca4-4fc8-85be-9ffdd9227f79" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9f161821-7b1c-08d7-47b2-6201693ae49a">
+      <Execution id="a3e98fa4-7bb1-403a-815a-df34f358fbf7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="23bd8f35-ec05-2094-647d-e0de9db853f4" executionId="2a65d4ed-582f-422e-a705-09cce3609220" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8a12d3c5-c724-8d54-4daa-ce268f59e6c0" executionId="453821bd-2ca4-4fc8-85be-9ffdd9227f79" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f849f57b-50d8-86a6-9e32-50b94ef5e829" executionId="656cbe7e-53e5-4d1d-b47d-7fee0b8df8fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9f161821-7b1c-08d7-47b2-6201693ae49a" executionId="a3e98fa4-7bb1-403a-815a-df34f358fbf7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7de60cd7-11f5-5d78-4442-9280ca8a9eb9" executionId="7ec81906-f7a5-4863-a4b8-97ec77a4c1fa" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75ffacfe-b010-52b1-743a-9bf02911f1d2" executionId="fbfe14cc-660c-436f-9f46-c01defae1da2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33da36ca-8be1-5825-188e-a204eae55d2d" executionId="533233a3-2620-477c-893b-9572bb509033" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="7" executed="7" passed="6" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.30]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.09]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.28]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:03.30]       Assert.Throws() Failure: Exception type was not an exact match
+[xUnit.net 00:00:03.30]       Expected: typeof(System.IO.InvalidDataException)
+[xUnit.net 00:00:03.30]       Actual:   typeof(Microsoft.Data.Sqlite.SqliteException)
+[xUnit.net 00:00:03.30]       ---- Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:00:03.30]       Stack Trace:
+[xUnit.net 00:00:03.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SeparatedTerrainStorageTests.cs(115,0): at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space()
+[xUnit.net 00:00:03.30]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:03.30]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:03.30]         ----- Inner Stack Trace -----
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader()
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteConnectionExtensions.ExecuteNonQuery(SqliteConnection connection, String commandText, SqliteParameter[] parameters)
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteTransaction..ctor(SqliteConnection connection, IsolationLevel isolationLevel, Boolean deferred)
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction(IsolationLevel isolationLevel, Boolean deferred)
+[xUnit.net 00:00:03.30]            at Microsoft.Data.Sqlite.SqliteConnection.BeginTransaction(Boolean deferred)
+[xUnit.net 00:00:03.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs(111,0): at OpenFantasy.Hosting.SqliteConnectionLease.BeginWrite()
+[xUnit.net 00:00:03.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs(85,0): at OpenFantasy.Hosting.SqliteConnectionLease.Open(String path, Boolean create, Int32 applicationId, Int32 schemaVersion, IReadOnlyList`1 supportedVersions)
+[xUnit.net 00:00:03.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/SqliteConnectionLease.cs(32,0): at OpenFantasy.Hosting.SqliteConnectionLease.OpenSupportedWorld(String path)
+[xUnit.net 00:00:03.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.cs(31,0): at OpenFantasy.Hosting.Worlds.WorldDatabase.Open(String path, Boolean create, Int32 schemaVersion)
+[xUnit.net 00:00:03.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs(88,0): at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.OpenExisting(String path)
+[xUnit.net 00:00:03.30]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SeparatedTerrainStorageTests.cs(115,0): at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.&lt;&gt;c__DisplayClass4_0.&lt;Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space&gt;b__0()
+[xUnit.net 00:00:09.27]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-18T14:02:32.3983690-05:00">
+        <Text>[xUnit.net 00:00:03.30]     OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>
