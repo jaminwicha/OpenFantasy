@@ -250,8 +250,11 @@ funded work, ordinary intervention, completion and history. Before/after faults 
 final work; missing, changed and extra historical images refuse recovery. Complete resident metadata
 and all original supported due processes remain present. No later-profile facets can be dropped.
 
-Remaining work is actual stored-owner reconstruction/loading with authenticated complete dependencies,
-not another detached geometry helper. The private runtime continuation is still a complete nonterrain
-locality; directory capture is not an independently admitted decoder. Due fairness, richer-profile
+[Stored-owner reconstruction](p02/partition-state/stored-owner-reconstruction/RESULT.md) binds actual
+payload reads to the replay-selected head, existing complete admission and exact replay comparison.
+The returned recovery head uses reconstructed owners. Partial-project reopen and continued installation
+remain the same saved episode. The private runtime continuation still holds the complete nonterrain
+locality; this decoder loads every required owner and terrain region. Remaining work is a qualified
+operation-specific loading cohort with authenticated dependency closure. Due fairness, richer-profile
 nested mapping/migration, checkpoint boundaries, cold/scale/platform measurements and independent
 review remain required before the corresponding production/PLAN-STATE exits.

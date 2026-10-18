@@ -1,0 +1,17 @@
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(55,49): error CS0118: 'OpenFantasy.Core.Gathering' is a namespace but is used like a variable [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(61,60): error CS0118: 'OpenFantasy.Core.Progression' is a namespace but is used like a variable [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(62,54): error CS0118: 'OpenFantasy.Core.Quests' is a namespace but is used like a variable [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(103,60): error CS0229: Ambiguity between 'ConstructionOwnerKind.ProductionBatch' and 'ProductionBatch' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(110,66): error CS0119: 'ConstructionDefinition' is a type, which is not valid in the given context [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(55,49): error CS0118: 'OpenFantasy.Core.Gathering' is a namespace but is used like a variable [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(61,60): error CS0118: 'OpenFantasy.Core.Progression' is a namespace but is used like a variable [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(62,54): error CS0118: 'OpenFantasy.Core.Quests' is a namespace but is used like a variable [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(103,60): error CS0229: Ambiguity between 'ConstructionOwnerKind.ProductionBatch' and 'ProductionBatch' [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs(110,66): error CS0119: 'ConstructionDefinition' is a type, which is not valid in the given context [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj]
+    0 Warning(s)
+    5 Error(s)
+
+Time Elapsed 00:00:03.81

@@ -335,5 +335,9 @@ The authority still retains the whole nonterrain locality, visits/encodes every 
 replays full original history. Reused owner rows are read and verified; this is not selective I/O or
 independent owner residency. Actor exposure still changes actor payloads on each advancing step.
 The archive retains historical versions under explicit experimental count/byte limits, so directory
-separation is not a net space-saving claim. General stored-owner reconstruction/loading, fairness,
-current-profile migration, noninitial checkpoints and independent review remain open.
+separation is not a net space-saving claim.
+[Stored-owner reconstruction](p02/partition-state/stored-owner-reconstruction/RESULT.md) adds complete
+cohort admission from actual payloads after replay authenticates the selected head. Recovery returns
+that reconstructed world after exact replay comparison. This adds a validation/read stage, not a
+measured performance improvement. Selective loading, fairness, current-profile migration, noninitial
+checkpoints and independent review remain open.

@@ -510,8 +510,13 @@ their previous byte/hash contracts. Schema14 does not mean gameplay profile14.
 All owner inserts, accepted input, identities, command outcomes and directory head/checkpoints share
 `PublishWrites` and the existing SQLite transaction. Unchanged hashes reuse exact immutable bytes;
 all current owners are still visited. Full original-history replay verifies each historical payload
-and rejects missing, altered or extra archives before readiness. Owner images have no independent
-admission/loading decoder, and replay still reconstructs the complete original world. See
+and rejects missing, altered or extra archives before readiness. Once the head and command/identity
+tables match replay, recovery loads that directory's actual stored payloads and terrain through
+`ConstructionOwnerReconstruction`, admits the complete world and requires exact equality with replay.
+The recovered head uses the reconstructed owners. Directory/payload structure, scope, canonical
+membership and complete-world admission are checked independently of journal interpretation; full
+replay still supplies the history binding. Every required owner/terrain is loaded, with no selective
+residency or shortened-history claim. See
 [the typed-owner binding](partition-ownership.md#runtime-binding-legacy-typed-owner-storage) for the
 single-owner fact map, concrete byte/archive limits, exposure behavior and extension obligations.
 

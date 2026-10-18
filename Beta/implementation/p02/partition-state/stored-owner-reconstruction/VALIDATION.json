@@ -1,0 +1,31 @@
+{
+  "accepted_scope": "Complete schema14 stored-owner reconstruction after full replay, existing complete admission and exact canonical comparison; not PLAN-STATE/P02 acceptance",
+  "distinct_passes": 539,
+  "new_cases": 19,
+  "runs": {
+    "core": {
+      "passed": 406,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 15.85989699990023,
+      "bound_seconds": 180,
+      "record": "core-check/core.trx"
+    },
+    "hosting": {
+      "passed": 133,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 79.9470479170559,
+      "bound_seconds": 180,
+      "record": "hosting-check/hosting.trx"
+    }
+  },
+  "failed_preflights": "FAILURES.json",
+  "long_runs_exceeding_focused_budget": 0,
+  "api_calls": null,
+  "average_input_context_tokens": null,
+  "telemetry_note": "Per-packet rollout metrics unavailable; no efficiency or credit claim.",
+  "preflight": "preflight-03",
+  "independent_review": false,
+  "native_or_human_acceptance": false
+}

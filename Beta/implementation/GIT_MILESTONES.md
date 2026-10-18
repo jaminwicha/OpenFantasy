@@ -557,3 +557,16 @@ is preserved separately and claims no implemented rule or reserved profile versi
   checkpoint/scale/fairness/migration and PLAN-STATE/P02 acceptance remain open.
 - [Result](p02/partition-state/typed-owner-storage/RESULT.md), measured payload/archive facts and
   retained handoff source distinguish bounded publication from independent stored-owner loading.
+
+## Complete stored-owner reconstruction — 2026-10-18
+
+- Before-change WIP checkpoint `codex/checkpoint-before-owner-reconstruction-20261018` resolves to
+  `0baffd22aa9d6caac24b145e9335f5797235a1ad`, from0cd76d51. Protected concurrent/predecessor scope
+  is recorded in the packet CHECKPOINT.json.
+- Verified increment pointer: `codex/milestone-owner-reconstruction-20261018`, created at the owned
+  commit without switching. Complete schema14 owner/terrain decoding uses existing admission and
+  exact full-replay comparison; returned recovered owners can continue the same partial project.
+- [Result](p02/partition-state/stored-owner-reconstruction/RESULT.md) retains terminal checks and two
+  compiler-preflight failures with their corrections. No changed deadline, acceptance shortcut or
+  independent review. Selective loading, migration, fairness, checkpoint/scale and full gates remain.
+- Timeless architecture, living plans/roadmap and compact handoff are updated in the same increment.

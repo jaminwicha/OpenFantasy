@@ -1,0 +1,24 @@
+[
+  {
+    "run": "preflight-01",
+    "classification": "production",
+    "failure": "Core build: five enum member/type or namespace ambiguities in the new reconstruction file.",
+    "correction": "Qualified all ConstructionOwnerKind arguments; no byte or gameplay change.",
+    "retained": [
+      "preflight-01/core-build.log",
+      "preflight-01/core-build.json"
+    ],
+    "decision": "Deliberate preflight-02 after compilation correction; no test had started."
+  },
+  {
+    "run": "preflight-02",
+    "classification": "fixture",
+    "failure": "Hosting test build referenced Core-internal CanonicalEncodingV1 from Hosting tests. Core build and406-case discovery passed.",
+    "correction": "Use test-local fixed frame/number writer for adversarial bytes; no production visibility expansion.",
+    "retained": [
+      "preflight-02/hosting-build.log",
+      "preflight-02/hosting-build.json"
+    ],
+    "decision": "Deliberate preflight-03 after test compiler correction; no test run yet."
+  }
+]

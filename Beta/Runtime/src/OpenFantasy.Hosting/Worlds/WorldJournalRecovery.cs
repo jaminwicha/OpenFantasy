@@ -290,6 +290,13 @@ internal sealed class WorldJournalRecovery
         VerifyCommandTable(database, commands);
         VerifyIdentityTable(database, identities);
         controllerRecovery?.Complete(state);
+        if (database.SeparatesOwners)
+        {
+            var reconstructed = database.ReconstructOwners(head.State, stateHash);
+            if (!WorldSnapshotCodec.Encode(reconstructed).AsSpan().SequenceEqual(WorldSnapshotCodec.Encode(state)))
+                throw new InvalidDataException("Stored owner reconstruction differs from complete original-history replay.");
+            state = reconstructed;
+        }
         return new ReplayedWorld(new RecoveredWorld(genesis, state, stateHash, usage), selected,
             archives.Selected, archives.SelectedPublicationSequence, selectedMaterial,
             materialCareArchives.Selected, materialCareArchives.SelectedPublicationSequence,

@@ -34,12 +34,14 @@ original history, first/final work and cross-owner gift faults, corruption/refus
 Read the result for terminal checks, source pins, measurements and remaining limits; no phase exit
 or current-game migration is implied.
 
-The binding still retains the complete nonterrain locality in memory, encodes/visits every current
-owner and performs complete original replay. General directory paging, independent stored-owner
-reconstruction/loading, due-work fairness, noninitial checkpoints and current40/41 nested facet
-migration remain open. Next bind actual stored owner reads/reconstruction to this same original-history
-episode and exact admission cohorts; do not substitute another geometry-only helper or an unearned
-simulation. Keep owner and storage-byte costs explicit, including actor exposure and retained history.
+[Stored-owner reconstruction](p02/partition-state/stored-owner-reconstruction/RESULT.md) now loads
+actual payloads under the replay-selected head, admits the complete cohort and returns reconstructed
+owners after exact replay comparison. Partial work can reopen and complete the same saved project.
+It still reads all required owners and terrain, retains complete nonterrain continuation state and
+performs full original replay. Next prove an operation-specific loading cohort with authenticated
+dependency closure and all due obligations; do not substitute another whole-world wrapper or geometry
+helper. General paging/fairness, noninitial checkpoints and current40/41 nested migration remain open.
+Keep actual owner/storage/history costs explicit; no performance or credit saving is inferred.
 
 After the PLAN-STATE decision/review exit, NPC-01 is the next new inhabited-world behavior. STORY-01,
 AUDIO-01/ART-01, recruitment/cooperative work and the traveling-merchant/cargo investigation retain

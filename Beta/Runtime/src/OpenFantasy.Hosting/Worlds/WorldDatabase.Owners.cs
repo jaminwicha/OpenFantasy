@@ -1,5 +1,7 @@
 using Microsoft.Data.Sqlite;
 using OpenFantasy.Core.Construction.Ownership;
+using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Worlds;
 
 namespace OpenFantasy.Hosting.Worlds;
 
@@ -34,6 +36,21 @@ internal sealed partial class WorldDatabase
         byte[] bytes = WorldStorageBinary.ReadBlob(reader, 0, 1, ConstructionOwnerDirectory.MaximumOwnerPayloadByteLength);
         if (!bytes.AsSpan().SequenceEqual(owner.CopyBytes()))
             throw new InvalidDataException("A typed owner image differs from its exact ordinary-history interpretation.");
+    }
+
+    internal WorldSnapshot ReconstructOwners(byte[] directory, ContentHash expectedHash)
+    {
+        if (!SeparatesOwners) throw new InvalidOperationException("This schema does not store typed owners.");
+        return ConstructionOwnerReconstruction.Decode(directory, expectedHash, ReadOwner, reference => ReadTerrain(reference));
+    }
+
+    private byte[] ReadOwner(ContentHash hash)
+    {
+        using var command = _lease.CreateCommand("SELECT state FROM world_owners WHERE hash=$hash", null,
+            ("$hash", hash.ToByteArray()));
+        using var reader = command.ExecuteReader();
+        RequireRow(reader, "A referenced typed owner image is missing.");
+        return WorldStorageBinary.ReadBlob(reader, 0, 1, ConstructionOwnerDirectory.MaximumOwnerPayloadByteLength);
     }
 
     internal (long Count, long Bytes) ReadOwnerUsage(SqliteTransaction? transaction = null)

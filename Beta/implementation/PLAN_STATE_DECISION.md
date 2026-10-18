@@ -148,9 +148,13 @@ both forms of custodian holdings, immutable provenance/definitions, actor/reside
 and every supported shared facet. Original history and cross-owner/first/final fault cases are retained.
 
 This fulfills the bounded publication part of the next candidate, not the complete recommendation.
-The authority still keeps the nonterrain locality resident and visits every current owner. Next bind
-actual stored owner reads/reconstruction to complete directory/history dependencies in the same
-saved episode; do not mistake re-encoding an admitted world for independent payload admission.
+The authority still keeps the nonterrain locality resident and visits every current owner.
+[Stored owner reconstruction](p02/partition-state/stored-owner-reconstruction/RESULT.md) now consumes
+actual stored payloads under the replay-selected head, reconstructs and admits the complete cohort,
+requires exact replay equality and supplies the recovered head. It is a complete-cohort decoder,
+not selective residency or a substitute for ordinary history. The next proof must isolate a real
+operation-specific loading cohort with authenticated dependency closure, retaining all due work and
+cross-owner invariants; more whole-world serialization wrappers would not establish that boundary.
 General due discovery/fairness, nested current-profile coverage/migration, noninitial checkpoints,
 cold/platform/scale evidence and independent architecture review remain open. The finite owner archive
 limits are experimental storage stops, not accepted shipping limits or reduced campaign requirements.

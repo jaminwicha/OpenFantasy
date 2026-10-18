@@ -390,3 +390,16 @@ Next consume actual stored owner payloads through exact directory/history bindin
 admission cohorts in that same episode. Measure full metadata and actual payload I/O; keep general
 due-work fairness, current40/41 nested migration, noninitial checkpoints, cold/platform/scale and
 independent review open. The P02 closure table and full P00–P14/181-requirement scope remain unchanged.
+
+### PLAN-STATE stored-owner reconstruction
+
+[The complete-cohort decoder](p02/partition-state/stored-owner-reconstruction/RESULT.md) reads actual
+schema14 owner and terrain records after full replay verifies the selected directory. Existing domain
+codecs and whole-world admission validate the result; exact canonical equality with replay is required
+before returning the reconstructed head. Partial construction reopens and completes the same saved
+project. Rehashed structural/semantic corruption and stale scope/history references are checked.
+
+This fulfills complete stored-payload reconstruction, not selective loading or independent-history
+recovery. Next prove a real operation-specific loading cohort and authenticated dependency closure
+without omitting due work or cross-owner invariants. Full P02, P00–P14/181 requirements, migration,
+fairness, checkpoint, cold/platform/scale and independent/human gates remain unchanged and open.

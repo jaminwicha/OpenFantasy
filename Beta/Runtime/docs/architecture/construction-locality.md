@@ -202,6 +202,10 @@ exposure is still materialized into actor images on each advancing boundary. Thi
 independently loaded actors or a persisted general exposure-basis law.
 
 Complete replay verifies every historical payload and exact archive membership before readiness.
+Recovery then reconstructs a complete admitted world from the stored head's actual owner payloads and
+terrain, compares its canonical bytes with replay and returns that reconstructed head. Reopening a
+partial project can recapture a construction interval and continue the same earned work. This loads
+all required owners and terrain; it does not preserve detached residency across restart or skip history.
 The internal `ReadOwnersForHost` diagnostic checks current owner bytes against the committed directory
 hash without forcing terrain hydration; it is not a player knowledge projection or a loading API.
 See [typed ownership](partition-ownership.md#runtime-binding-legacy-typed-owner-storage) for precise

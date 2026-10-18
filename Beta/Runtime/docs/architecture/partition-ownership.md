@@ -170,10 +170,12 @@ installed backing. Unsupported consumption, continuation or richer material-hist
 refuse instead of becoming empty facets.
 
 The directory and payloads own immutable encoded bytes and export defensive copies. Capture accepts
-admitted `WorldSnapshot` or `ConstructionLocalityState`; it supplies no standalone decoder for an
-untrusted directory and does not authenticate its history. The authority's private construction
-continuation still retains the complete nonterrain locality. Shared progression/quest/process facets
-are not independently resident actor roots merely because other payloads have stable keys.
+admitted `WorldSnapshot` or `ConstructionLocalityState`. The separate
+[ConstructionOwnerReconstruction](../../src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs)
+decoder consumes stored directory bytes, a selected directory hash and owner/terrain readers. It
+reconstructs the complete admission cohort; it does not authenticate history by itself. The authority's
+private construction continuation still retains the complete nonterrain locality. Shared progression/
+quest/process facets are not independently resident actor roots merely because payloads have stable keys.
 
 `WorldStateImage` selects complete-root, terrain-separated-image or typed-directory storage explicitly.
 Head and checkpoints hold directory bytes for schema14; `world_owners` stores immutable payloads keyed
@@ -190,14 +192,28 @@ work or installation; a fault cannot leave only one custodian credited or releas
 
 `WorldOwnerArchiveReplay` verifies every unique historical payload against ordinary original-history
 replay and then checks exact archive count/byte membership. Missing, changed and extra historical
-payloads refuse readiness. Original full genesis and commands reconstruct the complete world before
-readiness; stored owner fragments do not independently reconstruct a partial world. There is no implicit
-migration, history truncation or alternative simulator.
+payloads refuse readiness. After the stored head matches replay and the command/identity tables pass,
+`WorldDatabase.ReconstructOwners` loads that head's actual payloads and exact terrain. Recovery compares
+the resulting complete world bytes with ordinary replay and returns the reconstructed world. Original
+full replay remains mandatory; no implicit migration, history truncation or alternative simulator exists.
+
+The decoder bounds the directory before reading payloads and requires its exact selected hash. Entries
+have supported roles and strictly increasing unique role/subject keys. Each payload must match its
+content hash, world/branch, subject, role, version and exact field count within individual and aggregate
+byte bounds. Actor realm and loaded terrain scope/bounds/revision/hash must match the directory.
+Custodian holdings are combined in canonical lot order; existing custody/authority, production,
+construction and spatial codecs validate their domain data. The ordinary world constructor admits
+cross-owner relationships and derived installed structures, and the complete canonical encoding keeps
+the existing world byte limit. Recapturing the admitted world must reproduce the exact input directory:
+this also rejects omitted, extra, mislabeled or contradictory memberships and noncanonical payloads.
+Structural validity or a caller-supplied self-consistent hash grants no command or historical authority.
+The binding reads every required owner and terrain region, not an independently paged subset.
 
 The experimental envelope permits at most1MiB of directory metadata,16MiB per payload and32MiB of
 current payloads, while retaining the separate full-world16MiB admission check. Retained owner archives
 are bounded by100,000 unique payloads and256MiB. Exceeding the write envelope rolls back publication
 and stops the authority for recovery; exceeding it on read refuses readiness. These are explicit
 finite development-storage limits, not shipping population/world-size targets. Noninitial checkpoints,
-independent payload reconstruction/loading, current-profile migration, general due-work fairness and
-frontier-scale history remain separate qualification obligations.
+selective payload loading, current-profile migration, general due-work fairness and frontier-scale
+history remain separate qualification obligations. Complete-cohort decoding does not establish a
+partial-admission proof or a cold-load/performance budget.
