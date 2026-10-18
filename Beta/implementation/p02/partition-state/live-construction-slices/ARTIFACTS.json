@@ -1,0 +1,167 @@
+[
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/AfterCommit/after.ofc",
+    "bytes": 42111,
+    "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/AfterCommit/before.ofc",
+    "bytes": 42119,
+    "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/AfterCommit/genesis.ofc",
+    "bytes": 40496,
+    "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/AfterCommit/measurement.json",
+    "bytes": 460,
+    "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/AfterCommit/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/BeforeCommit/after.ofc",
+    "bytes": 42111,
+    "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/BeforeCommit/before.ofc",
+    "bytes": 42119,
+    "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/BeforeCommit/genesis.ofc",
+    "bytes": 40496,
+    "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/BeforeCommit/measurement.json",
+    "bytes": 460,
+    "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/BeforeCommit/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "634e38a7a0e677dd58f6f67c266d3a54afaa4a7c329b3035d8c1a4f03f071a8c"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-cancel-False/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "cde0236a4662ec335cc0ff4600eece4b3ab9a0415358ad745b75dcc0e801dc31"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-cancel-True/world.sqlite3",
+    "bytes": 10629120,
+    "sha256": "3d24fbf02111c32ebd2be672f334e10f522708363f85424a2b7a3f40bf969ba5"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-coherent-view/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "f9b7b7fb49f3221d2af45f44d9c255b67d331a300fd697761052724231ce25dc"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-intervention/world.sqlite3",
+    "bytes": 10657792,
+    "sha256": "d3d127289f4eda372cbdb8602cdaa8ed0d849188ff6cebf0538bc9148be70689"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-movement-False/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "0cf898d68623faf2e7726dec54881e1dc55346d5e35872d2843117073d982fd7"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-movement-True/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "6e640013c4a49e1b20635dc7ddaf09fd97b9671b76942ad0d0027f1ba243d8ba"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-option-False/world.sqlite3",
+    "bytes": 159744,
+    "sha256": "13d4859f600e33d4f91bc0dba34dcb1825d462aa3577463e50bd7540f6ff4100"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-option-True/world.sqlite3",
+    "bytes": 172032,
+    "sha256": "3930b41b22c6d7bde072113d40f8e04cf99178e045499cb16bd4b6c9deea4acb"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/live-queued-request/world.sqlite3",
+    "bytes": 10674176,
+    "sha256": "45e114a443846df70980a7cdb672d5c658ff024e1e3430f1b0164bbb895ae276"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/ordinary/after.ofc",
+    "bytes": 42111,
+    "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/ordinary/before.ofc",
+    "bytes": 42119,
+    "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/ordinary/genesis.ofc",
+    "bytes": 40496,
+    "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/ordinary/measurement.json",
+    "bytes": 460,
+    "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/ordinary/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/yielded-cancelled/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/yielded-complete/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/yielded-fault-0/world.sqlite3",
+    "bytes": 10629120,
+    "sha256": "3d24fbf02111c32ebd2be672f334e10f522708363f85424a2b7a3f40bf969ba5"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/yielded-fault-1/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/yielded-intervened-False/world.sqlite3",
+    "bytes": 10657792,
+    "sha256": "98a902f6c6aa20e34f8de4f4f3abbe5445dfb24bc0725a6345b23cf65ec06290"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/yielded-intervened-True/world.sqlite3",
+    "bytes": 10657792,
+    "sha256": "98a902f6c6aa20e34f8de4f4f3abbe5445dfb24bc0725a6345b23cf65ec06290"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/yielded-other-authority/world.sqlite3",
+    "bytes": 10629120,
+    "sha256": "3d24fbf02111c32ebd2be672f334e10f522708363f85424a2b7a3f40bf969ba5"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt01/yielded-read-failure/world.sqlite3",
+    "bytes": 10629120,
+    "sha256": "3d24fbf02111c32ebd2be672f334e10f522708363f85424a2b7a3f40bf969ba5"
+  },
+  {
+    "path": "Beta/Runtime/artifacts/live-construction-slices-20261018-attempt02/live-coherent-view/world.sqlite3",
+    "bytes": 10645504,
+    "sha256": "573bec849147381c36785b2b421f12d54199a951b44d10941f111ebcebeb603d"
+  }
+]

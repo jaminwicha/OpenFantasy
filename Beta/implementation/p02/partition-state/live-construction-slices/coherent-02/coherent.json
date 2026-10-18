@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Live_read_slices_keep_one_old_view_until_the_complete_work_and_due_boundary",
+    "--logger",
+    "trx;LogFileName=coherent.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/live-construction-slices/coherent-02"
+  ],
+  "exit_code": 0,
+  "seconds": 48.669716999982484,
+  "bound_seconds": 180
+}

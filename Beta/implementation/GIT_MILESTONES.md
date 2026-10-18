@@ -698,3 +698,15 @@ reads, source/authority affinity, cancellation/invalidation and full atomic publ
 The transaction body is unchanged; ordinary live-loop integration and all wider gates stay open.
 Timeless architecture and living plans updated together. Concurrent steering and staged predecessor
 work remain excluded; prior failures retained, no new failed run or extended deadline.
+
+
+## Live stored-construction preparation — 2026-10-18
+
+Before-change checkpoint: `codex/checkpoint-before-live-construction-slices-20261018`
+(`1bed3a84546e40dad86f2eb0bb275c9c6a9e9455`, parent `6d6fd5b56189ae2c036d5eaaa79608ce869c402f`).
+Verified milestone: `codex/milestone-live-construction-slices-20261018`, created at the owned commit
+without switching. [Result](p02/partition-state/live-construction-slices/RESULT.md) records terminal
+checks, retained failures and explicit opt-in legacy scope. The existing session loop now owns
+sliced preparation, readiness cancellation, queued input and coherent publication observation.
+Default/current profiles, all broader gates and the original P02 closure table remain unchanged.
+Timeless and living docs are updated together; concurrent steering and staged predecessor work stay excluded.

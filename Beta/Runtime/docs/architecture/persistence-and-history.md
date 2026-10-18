@@ -528,6 +528,13 @@ spans those calls. The handle cannot cross authorities or restart, and changed c
 recapture invalidates it. Cancellation publishes nothing; storage-read failure retires it and fences
 the authority. Final evaluation and the complete write set still execute under the sole writer gate.
 No preparation cursor, speculative receipt or partly advanced boundary is written to the save.
+An explicit internal profile-five `LocalWorldSession` option retains this handle across its existing
+ticks for movement-free NPC work. Pause or stop between slices discards unpublished reads; restart
+recovers only accepted history. A real intervening head change invalidates selection before a later
+fresh cutoff. Receipt observation and complete view reconstruction happen only after publication;
+newly queued player input waits for the next cutoff. The
+[session scheduling contract](due-work-and-scheduling.md#runtime-binding-stored-construction) owns
+readiness, source validation and input leases; none of these transient choices changes journal bytes.
 
 A scheduled schema14 checkpoint contains the exact directory at that accepted boundary, including
 partial construction progress and every due actor/gathering update. It shares the work transaction;

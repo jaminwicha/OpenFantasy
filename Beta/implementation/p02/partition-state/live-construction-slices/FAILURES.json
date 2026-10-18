@@ -1,0 +1,20 @@
+[
+  {
+    "run": "preflight-01/hosting-build.json",
+    "classification": "fixture",
+    "cause": "Two xUnit expectations use int for the LocalGatherNodeView uint RemainingSwings field; generic Equal overload resolution fails. Production Hosting compiled.",
+    "failed_source": "FAILED_SOURCE_01.txt",
+    "sha256": "aa9847682af05bbb126184101124605537cf103f0df1224c7c1751def6dafe5b",
+    "correction": "Use0U and checked uint conversion of the admitted maximum. No expected values, semantics or deadline changed.",
+    "rerun": "Deliberate corrected build/discovery, then exact geometry before storage/session tests."
+  },
+  {
+    "run": "combined-01/combined.json",
+    "classification": "fixture",
+    "cause": "The original view intentionally omits a depleted node whose VisibilityAt returns Absent. The fixture incorrectly required a visible zero-swing node. All22 other cases passed; source and failed SQLite artifacts retained.",
+    "failed_source": "FAILED_SOURCE_02.txt",
+    "sha256": "5a7ef7662f4b1a9ecdbe5c0c5552e5ddaf6c048c2bd1064601e095d236096bf7",
+    "correction": "Assert node absent before the boundary and present with full swings afterward. Cheap preflight now verifies both actual view memberships through an ordinary advancing boundary. Production projection/rules/deadlines unchanged.",
+    "rerun": "Deliberate corrected-case-only verification after updated build, exact discovery and geometry. Retain22 unaffected passes with explicit dependency comparison."
+  }
+]

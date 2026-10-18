@@ -60,15 +60,19 @@ SQLite history/fault recovery. [Stored-batch preparation](p02/partition-state/st
 now adds exact-head owner-read slices, complete selected multi-actor batches and one atomic passive
 boundary in the existing profile-five prototype. The [yielded authority API](p02/partition-state/yielded-publication/RESULT.md)
 now releases the gate between bounded read calls and refuses cancelled/foreign/intervened handles.
-Its synchronous wrapper still drains under one lock; the actual session tick/projection path has not
-been bound to yielded preparation. Final installation and the legacy aggregate limit use ordinary full admission. The
+Its synchronous wrapper still drains under one lock. The [live construction binding](p02/partition-state/live-construction-slices/RESULT.md)
+now consumes a handle across existing session ticks under an internal profile-five/schema14 option.
+It preserves the selected NPC batch, queued input, readiness cancellation and coherent old/new views;
+default/current40/41 sessions remain unchanged. Capture/preview and final full projection remain.
+Final installation and the legacy aggregate limit use ordinary full admission. The
 [combined due-boundary proof](p02/partition-state/combined-due-boundary/RESULT.md) now joins real node
 depletion/regrowth, two funded builders and exposure for all five retained/admitted residents, including
 an unrelated observer, with sliced preparation and SQLite fault/history recovery. The
 [matched cost comparison](p02/partition-state/owner-cost-comparison/RESULT.md) now shows selected typed
 owners cost more than coarse terrain separation in this small cohort; keep the recommendation
-conditional, the default unchanged and capture/final/replay costs visible. Next resolve live scheduling,
-due discovery and remaining cold/platform/scale/review obligations; general current-profile
+conditional, the default unchanged and capture/final/replay costs visible. Next resolve general due
+discovery/membership and scheduling/fairness, projection cost and remaining cold/platform/scale/review
+obligations; avoid repeating already qualified legacy slices. General current-profile
 checkpoint/migration proof remains. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
 Neither extraction nor the map is a partial loader or completed nested migration.

@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Live_cutoff_fixture_has_no_npc_movement_and_a_lawful_player_step",
+    "--logger",
+    "trx;LogFileName=geometry.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/live-construction-slices/geometry-02"
+  ],
+  "exit_code": 0,
+  "seconds": 7.653588291956112,
+  "bound_seconds": 180
+}

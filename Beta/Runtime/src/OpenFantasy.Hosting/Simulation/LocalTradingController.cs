@@ -171,9 +171,15 @@ internal sealed class LocalTradingController
     internal void Observe(WorldStepDecision decision)
     {
         ArgumentNullException.ThrowIfNull(decision);
+        ObserveReceipts(decision.Receipts);
+    }
+
+    internal void ObserveReceipts(IReadOnlyList<WorldActionReceipt> receipts)
+    {
+        ArgumentNullException.ThrowIfNull(receipts);
         foreach (PlannedAnswer planned in _answers)
         {
-            WorldActionReceipt? receipt = decision.Receipts.FirstOrDefault(value => value.CommandId == planned.CommandId);
+            WorldActionReceipt? receipt = receipts.FirstOrDefault(value => value.CommandId == planned.CommandId);
             if (receipt is null || planned.Inquiry.State != LocalTradeInquiryState.Waiting)
             {
                 // Not part of the committed batch: the inquiry keeps its place and its one answer identity.

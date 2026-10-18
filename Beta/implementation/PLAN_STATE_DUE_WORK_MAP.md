@@ -85,13 +85,13 @@ decoded from its own canonical payload, preserving its revision separately from 
 Final installation and crossing the legacy aggregate bound return the whole batch to ordinary admission.
 This is an extension of the existing typed-owner prototype, not another full-world wrapper or a new format.
 
-The remaining witness includes live session yielding and any durable preparation continuation.
+Live session yielding is now qualified within the explicit legacy binding below; durable preparation
+continuation remains a separate unimplemented contract.
 [Yielded authority publication](p02/partition-state/yielded-publication/RESULT.md) now exposes bounded
 read calls that release the authority gate, with exact originating-authority/interval/head checks,
 cancellation, one complete publication and recovery fencing. The synchronous wrapper drains the same
-path under its outer lock. LocalWorldSession does not consume the handle between ticks: its TickAsync
-and CommitSelectedBatch still need full-world reads, preview/projection and the ordinary decision.
-Owner-count slicing does not bound
+path under its outer lock. The opt-in live consumer below retains a handle between ticks; its selection,
+preview and final projection still need complete-world reads. Owner-count slicing does not bound
 final rule-evaluation CPU time, persist domain membership, or establish starvation limits. The
 [combined due-boundary proof](p02/partition-state/combined-due-boundary/RESULT.md) now supplies the
 missing combined contrast: two actual funded builders, a newly admitted unrelated observer, all four
@@ -109,12 +109,23 @@ this review neither reruns it nor broadens its scope. No queue limit becomes a g
 
 ## Live session integration boundary
 
-The [authority-handle proof](p02/partition-state/yielded-publication/RESULT.md) removes the requirement
-to drain all owner reads in one authority call. It does not select a different input cutoff or bypass
-preview, trading observation, player readiness or view consistency. Before binding it into the live
-session, specify pending selected-batch ownership, how pause/stop and new player input are handled,
-when a changed dependency invalidates selection, and how one coherent view is produced without
-calling full-world reconstruction during every read slice. Preserve complete selected commands and
-all mandatory effects; do not hide a discarded action as a budget decision. Full final evaluation
-remains synchronous. A persistent preparation cursor would be a separate state/recovery contract.
-The existing mandatory/proposal/preparation distinction and unknown general oldest-due age remain.
+The [live construction packet](p02/partition-state/live-construction-slices/RESULT.md) binds the authority
+handle to the existing serialized LocalWorldSession loop through an explicit internal positive
+owner-count option for profile-five/schema14. Default creation and current40/41 remain unchanged.
+Only movement-free NPC construction with no awaiting player action qualifies. Ordinary admission
+preview selects the complete batch first; preparation retains it across ticks and charges all work,
+regrowth and every resident's exposure once. Newly queued actions wait for the next cutoff; movement
+leases are not extended. Each read slice preserves the previous immutable view.
+
+Pause/stop between slices cancels unpublished selection without earning time. Resume selects fresh.
+Readiness sampled before an in-flight final opportunity does not promise immediate rollback. A real
+intervening head change discards stale selection, refreshes the view and ends that tick; no automatic
+replay is attempted. Same-source semantic errors and storage failures propagate. Committed receipts
+and full-world projection use the shared ordinary observer. New tests cover original-genesis recovery,
+queued receipt identity, coherent regrowth/work/exposure, ordinary movement, cancellation and intervention.
+
+Complete selection/capture, possible input reads, final evaluation/fallback and projection remain
+synchronous/full-cohort work. This is not selective live residency, a final CPU bound or a throughput
+claim. Durable cursors, general obligation discovery/membership, oldest-due age/fairness, current40/41
+migration, scale/platform measurements and independent review remain open. Preserve the complete
+P02 table and scheduled next gameplay work; another wrapper or repeated proof cannot replace these exits.

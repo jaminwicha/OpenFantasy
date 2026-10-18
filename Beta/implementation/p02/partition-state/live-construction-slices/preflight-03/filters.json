@@ -1,0 +1,8 @@
+{
+  "core": "FullyQualifiedName~StoredConstructionIntervalTests",
+  "hosting": "FullyQualifiedName~CombinedStoredDueTests",
+  "hosting-geometry": "FullyQualifiedName~Live_cutoff_fixture_has_no_npc_movement_and_a_lawful_player_step",
+  "hosting-session": "FullyQualifiedName~LocalWorldSessionTests",
+  "hosting-trading": "FullyQualifiedName~ScheduledTradingSessionTests|FullyQualifiedName~ScheduledNpcTradingTests|FullyQualifiedName~ScheduledTradingCompositionTests",
+  "hosting-coherent": "FullyQualifiedName~Live_read_slices_keep_one_old_view_until_the_complete_work_and_due_boundary"
+}

@@ -88,13 +88,21 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
     internal LocalWorldSession(SqliteWorldAuthority authority, EntityId playerActorId,
         TrustedCommandDelivery delivery, TimeProvider timeProvider, IEnumerable<LocalMaterialGiftPolicy>? giftPolicies = null,
         LocalTradingConfiguration? trading = null, CargoPresentation.LocalRegionObserver? regions = null,
-        Retreat.LocalRetreatConfiguration? retreat = null)
+        Retreat.LocalRetreatConfiguration? retreat = null, int? storedConstructionOwnersPerSlice = null)
     {
         ArgumentNullException.ThrowIfNull(authority);
         ArgumentNullException.ThrowIfNull(delivery);
         ArgumentNullException.ThrowIfNull(timeProvider);
         _retreat = retreat ?? Retreat.LocalRetreatConfiguration.None;
         WorldSnapshot state = authority.ReadStateForHost();
+        if (storedConstructionOwnersPerSlice is { } ownerBudget)
+        {
+            if (ownerBudget < 1)
+                throw new ArgumentOutOfRangeException(nameof(storedConstructionOwnersPerSlice));
+            if (state.ProfileVersion != 5 || !authority.UsesTypedOwnerStorage)
+                throw new ArgumentException("Sliced construction requires explicit typed-owner profile-five storage.", nameof(storedConstructionOwnersPerSlice));
+        }
+        _storedConstructionOwnersPerSlice = storedConstructionOwnersPerSlice;
         if (HostTimingEvents.Log.IsEnabled()) HostTimingEvents.Log.Bind(TimingOwner, state.WorldId.ToString());
         if (!state.Inventory.CanControl(delivery, playerActorId)
             || state.GetResident(playerActorId).ControllerKind != ResidentControllerKind.Player)
@@ -364,6 +372,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         catch (Exception error) { Fail(error); throw; }
         finally
         {
+            CancelStoredConstruction();
             lock (_inputs)
             {
                 foreach (LocalPlayerConnection player in _players.Values)
@@ -390,6 +399,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 if (_stopRequested) { return; }
             }
+            if (ContinueStoredConstruction()) { return; }
             WorldSnapshot state = TickControllers(_authority.ReadStateForHost());
             PublishViewIfChanged(state);
             if (state.PendingExcavation is not null)
@@ -478,7 +488,10 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 return;
             }
-            CommitSelectedBatch(batch, pending);
+            if (!BeginStoredConstruction(batch, pending))
+            {
+                CommitSelectedBatch(batch, pending);
+            }
         }
         finally
         {
@@ -695,9 +708,15 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         HostTimingEvents.Log.Stage(TimingOwner, "commit.begin");
         WorldStepDecision decision = _authority.Commit(batch);
         HostTimingEvents.Log.Stage(TimingOwner, "commit.end", unchecked((long)decision.Candidate.Revision));
-        _trading.Observe(decision);
-        PublishViewIfChanged(decision.Candidate);
-        if (decision.Candidate.PendingExcavation is { } pending)
+        ObserveCommittedBatch(decision.Candidate, decision.Receipts, awaiting);
+    }
+
+    private void ObserveCommittedBatch(WorldSnapshot candidate, IReadOnlyList<WorldActionReceipt> receipts,
+        IReadOnlyList<PendingLocalAction> awaiting)
+    {
+        _trading.ObserveReceipts(receipts);
+        PublishViewIfChanged(candidate);
+        if (candidate.PendingExcavation is { } pending)
         {
             ClearMovement();
             if (awaiting.Count > 1 || awaiting.Count == 1
@@ -708,7 +727,7 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
         {
             foreach (PendingLocalAction request in awaiting)
             {
-                WorldActionReceipt receipt = decision.Receipts.Single(value => value.CommandId == request.Command.CommandId);
+                WorldActionReceipt receipt = receipts.Single(value => value.CommandId == request.Command.CommandId);
                 CompletePending(request, receipt, null);
             }
         }

@@ -1,0 +1,6 @@
+{
+  "baseline": "6d6fd5b56189ae2c036d5eaaa79608ce869c402f",
+  "postcommit_body_identical_after_parameter_substitution_and_whitespace": true,
+  "trading_observer_body_identical_after_receipt_parameter_substitution": true,
+  "scope": "Existing decision callers use the same candidate and exact receipts. New stored path supplies committed state/receipts directly without fabricating a WorldStepDecision. Receipt matching remains by command identity, independent of list order. Full projection/recovery remains; no performance claim."
+}

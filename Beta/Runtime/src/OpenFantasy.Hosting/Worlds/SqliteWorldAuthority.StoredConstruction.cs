@@ -10,6 +10,7 @@ public sealed partial class SqliteWorldAuthority
 {
     private StoredConstructionInterval? _storedConstruction;
     private HashSet<EntityId>? _storedConstructionIdentities;
+    internal bool UsesTypedOwnerStorage => _database.SeparatesOwners;
     internal int OwnerArchiveReads => _database.OwnerArchiveReads;
     internal Action<ContentHash>? BeforeOwnerRead { get => _database.BeforeOwnerRead; set => _database.BeforeOwnerRead = value; }
 
@@ -137,6 +138,18 @@ public sealed partial class SqliteWorldAuthority
             // No candidate, identity or receipt has been published. The normal interpreter owns completion.
             if (step is null) return Commit(publication.Batch, fault).Receipts;
             return PublishStoredConstructionStep(publication.Batch, step, fault);
+        }
+    }
+
+    internal bool IsStoredConstructionSourceCurrent(StoredConstructionPublication publication)
+    {
+        ArgumentNullException.ThrowIfNull(publication);
+        lock (_gate)
+        {
+            EnsureAvailable();
+            return ReferenceEquals(publication.Authority, this)
+                && ReferenceEquals(_storedConstruction, publication.Source)
+                && publication.Source.DirectoryHash == _stateHash;
         }
     }
 

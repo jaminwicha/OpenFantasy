@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~CombinedStoredDueTests",
+    "--logger",
+    "trx;LogFileName=combined.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/live-construction-slices/combined-01"
+  ],
+  "exit_code": 1,
+  "seconds": 120.72212766599841,
+  "bound_seconds": 180
+}

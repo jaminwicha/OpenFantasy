@@ -1,0 +1,19 @@
+{
+  "production_sha256": {
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.cs": "7c3d1e610e88e1999b90f22d48ba0951c2780d4713be534e16dda9c1c5d0b972",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalWorldSession.StoredConstruction.cs": "ab4a1df164b8a75bed3ecdf8f6bd8f73408993ee236b4642dd3f8bdaab9b4d00",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Simulation/LocalTradingController.cs": "ab3de0d4580198aa3bc09e7a5eccc9cf27d898b23f32668b746c5f7a7df627f3",
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.StoredConstruction.cs": "709a85bbe664b078ad4296b039ac563f4e154bff80d73528307cb91945097d56"
+  },
+  "reviewer": "integration lead; orchestration paused; not independent review",
+  "findings": [
+    "Internal option is null by default and rejects invalid budgets or non-profile-five/schema14 before starting the loop.",
+    "Only a selected advancing NPC construction batch with no movement or awaiting player action enters preparation. Complete action set remains owned by the session.",
+    "The existing serialized tick is the only consumer; no timer, writer, durable cursor or canonical owner is added.",
+    "Readiness/stop between slices cancels; final in-flight opportunity retains ordinary readiness race semantics. New input waits; movement lease is unchanged.",
+    "Authority source check distinguishes changed interval/head from same-source semantic failure. Catch covers read/publication only, not postcommit observer errors.",
+    "Storage failures propagate and existing authority fencing remains. Cancel accepts an owned retired handle without requiring an available authority, allowing cleanup after failure.",
+    "Committed view/receipt observation body preserves existing identity matching and trading behavior (OBSERVER_REVIEW.json). All final projection remains complete.",
+    "Final/aggregate-limit fallback remains in the unchanged publisher; this packet adds no distinct live final-installation proof or new performance qualification."
+  ]
+}

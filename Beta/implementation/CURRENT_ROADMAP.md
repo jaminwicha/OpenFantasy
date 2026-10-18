@@ -558,3 +558,21 @@ The ordinary LocalWorldSession still uses full-state preview/projection and sync
 readiness/input-cutoff and coherent-view integration is the next binding gap, alongside due discovery
 and the remaining measurement/review exits. This does not close general scheduling or P02; the full
 closure table,181 requirements and P00–P14 scope remain unchanged.
+
+
+## Live stored-construction preparation — 2026-10-18
+
+The [live construction packet](p02/partition-state/live-construction-slices/RESULT.md) binds yielded
+owner reads to existing LocalWorldSession ticks through an explicit internal profile-five/schema14
+option. One selected NPC-only movement-free batch retains its complete work/due boundary across
+slices. Pause/stop cancels unpublished selection, queued actions wait for the next cutoff, source
+intervention invalidates stale selection and the prior immutable view remains until full publication.
+Default/public/current40/41 behavior remains unchanged. Full capture/preview, final admission and
+view reconstruction remain synchronous; this is neither a live-residency nor a performance exit.
+
+The result retains the failed compiler preflight and absent-node fixture assertion, their corrections,
+exact source/binary/discovery records and the original failed storage run. Timeless scheduling,
+construction, ownership and persistence references are synchronized. PLAN-STATE remains preparation:
+general due discovery/membership, fairness/projection, current-profile migration, cold/platform/scale
+and independent review remain open. All P02 closure rows,181 requirements and P00–P14 gates remain;
+NPC-01 and the scheduled story/ecology/art/audio work follow the decision/review exit unchanged.

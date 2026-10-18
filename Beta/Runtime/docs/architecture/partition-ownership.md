@@ -259,3 +259,11 @@ receipt. Final publication reacquires the same sole-writer gate and commits the 
 boundary. Cancellation and storage-read failure retire that handle; a storage-read failure also fences
 the authority. Foreign handles cannot be acted on. Restart retains only committed world history,
 requiring fresh preparation; no persisted discovery frontier or timing membership is implied.
+
+The optional internal profile-five [local-session consumer](due-work-and-scheduling.md#runtime-binding-stored-construction)
+owns one unpublished handle across serialized ticks. It does not create another fact owner, writer or
+clock. The previous view remains stable during dependency reads, and all committed owners are restored
+for the next coherent view. New input remains outside that selected boundary. Cancellation between
+slices or an intervening source change discards only preparation, not earned world state. This binding
+retains complete source capture and projection; independently resident live views require their own
+admission and knowledge contracts.

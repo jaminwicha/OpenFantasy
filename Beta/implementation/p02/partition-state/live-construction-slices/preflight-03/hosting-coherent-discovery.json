@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~Live_read_slices_keep_one_old_view_until_the_complete_work_and_due_boundary"
+  ],
+  "exit_code": 0,
+  "seconds": 4.419837333960459,
+  "bound_seconds": 180
+}

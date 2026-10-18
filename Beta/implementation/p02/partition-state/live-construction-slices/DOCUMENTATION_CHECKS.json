@@ -1,0 +1,24 @@
+{
+  "command": [
+    "python3",
+    "Beta/tools/check_documentation.py",
+    "--work-record",
+    "Beta/implementation/p02/partition-state/live-construction-slices/RESULT.md",
+    "--files",
+    "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+    "Beta/Runtime/docs/architecture/construction-locality.md",
+    "Beta/Runtime/docs/architecture/partition-ownership.md",
+    "Beta/Runtime/docs/architecture/persistence-and-history.md",
+    "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+    "Beta/implementation/PLAN_STATE_DECISION.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/GIT_MILESTONES.md",
+    "Beta/implementation/p02/partition-state/live-construction-slices/RESULT.md"
+  ],
+  "exit_code": 0,
+  "output": "{\n  \"accepted\": true,\n  \"scope\": \"Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance\",\n  \"filesChecked\": 10,\n  \"workRecord\": \"/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/live-construction-slices/RESULT.md\",\n  \"errors\": []\n}\n",
+  "scoped_diff_exit_code": 0,
+  "scoped_diff_output": "",
+  "accepted": true
+}

@@ -1,0 +1,15 @@
+{
+  "owner_direction": "2026-10-18: instructions read once per packet; bounded batched reads; lawful geometry, exact nonzero discovery, source/binary pins before long runs; classify failures before deliberate reruns; all gates, deadlines, retained failures and same-change docs unchanged.",
+  "session_context": "Continued from freshly compacted handoff. No callable fresh-session/compaction API is exposed.",
+  "friction": [
+    "Initial combined entry read exceeded the tool output budget and was truncated; missing sections were recovered in bounded reads. This did cause repeated retrieval; no efficiency saving is claimed.",
+    "Previous preflight process handle no longer existed after compaction; terminal saved build/discovery/pin records recovered instead of rerunning it.",
+    "Early polling used short waits unnecessarily; subsequent ongoing-process observation uses30-second waits."
+  ],
+  "usage": {
+    "api_calls": null,
+    "average_input_context_tokens": null,
+    "reason": "Packet-wide rollout usage/context telemetry is not exposed by the available execution tools. Partial visible tool-call counting would not be the requested metric."
+  },
+  "performance_claim": "None. Owner-provided daily telemetry is evidence for process doctrine, not a measured saving for this packet."
+}

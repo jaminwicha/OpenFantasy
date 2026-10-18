@@ -1,0 +1,810 @@
+Analysis of sampling dotnet (pid 67123) every 1 millisecond
+Process:         dotnet [67123]
+Path:            /Users/USER/*/dotnet
+Load Address:    0x102370000
+Identifier:      dotnet
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  dotnet [67109]
+Target Type:     live task
+
+Date/Time:       2026-10-18 17:56:37.691 -0500
+Launch Time:     2026-10-18 17:55:06.423 -0500
+OS Version:      macOS 15.6.1 (24G90)
+Report Version:  7
+Analysis Tool:   /usr/bin/sample
+
+Physical footprint:         121.1M
+Physical footprint (peak):  121.1M
+Idle exit:                  untracked
+----
+
+Call graph:
+    1712 Thread_28551939   DispatchQueue_1: com.apple.main-thread  (serial)
+    + 1712 start  (in dyld) + 6076  [0x18c356b98]
+    +   1712 main  (in dotnet) + 184  [0x102371c78]
+    +     1712 exe_start(int, char const**)  (in dotnet) + 1068  [0x102371a10]
+    +       1712 hostfxr_main_startupinfo  (in libhostfxr.dylib) + 128  [0x10244edfc]
+    +         1712 fx_muxer_t::execute(std::basic_string<char>, int, char const**, host_startup_info_t const&, char*, int, int*)  (in libhostfxr.dylib) + 968  [0x1024533d0]
+    +           1712 fx_muxer_t::handle_exec_host_command(std::basic_string<char> const&, host_startup_info_t const&, std::basic_string<char> const&, std::unordered_map<known_options, std::vector<std::basic_string<char>>, known_options_hash> const&, int, char const**, int, host_mode_t, bool, char*, int, int*)  (in libhostfxr.dylib) + 1268  [0x1024545d0]
+    +             1712 corehost_main  (in libhostpolicy.dylib) + 348  [0x102534cec]
+    +               1712 run_app_for_context(hostpolicy_context_t const&, int, char const**)  (in libhostpolicy.dylib) + 1068  [0x102533edc]
+    +                 1712 coreclr_execute_assembly  (in libcoreclr.dylib) + 232  [0x102d5fcf8]
+    +                   1712 CorHost2::ExecuteAssembly(unsigned int, char16_t const*, int, char16_t const**, unsigned int*)  (in libcoreclr.dylib) + 648  [0x102d99344]
+    +                     1712 Assembly::ExecuteMainMethod(PtrArray**, int)  (in libcoreclr.dylib) + 264  [0x102d71fd8]
+    +                       1712 RunMain(MethodDesc*, short, int*, PtrArray**)  (in libcoreclr.dylib) + 620  [0x102d71c8c]
+    +                         1712 MethodDescCallSite::CallTargetWorker(unsigned long long const*, unsigned long long*, int)  (in libcoreclr.dylib) + 796  [0x102e67fb4]
+    +                           1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                             1712 ???  (in <unknown binary>)  [0x106ce19d4]
+    +                               1712 ???  (in <unknown binary>)  [0x106ce2cc8]
+    +                                 1712 ???  (in <unknown binary>)  [0x106ce34b0]
+    +                                   1712 ???  (in <unknown binary>)  [0x106ced0b0]
+    +                                     1712 ???  (in <unknown binary>)  [0x106088b90]
+    +                                       1712 ???  (in <unknown binary>)  [0x106088d30]
+    +                                         1712 ???  (in <unknown binary>)  [0x106089368]
+    +                                           1712 ???  (in <unknown binary>)  [0x1060896f8]
+    +                                             1712 ???  (in <unknown binary>)  [0x106069094]
+    +                                               1712 ???  (in <unknown binary>)  [0x106058b18]
+    +                                                 1712 ObjectNative::WaitTimeout(int, Object*)  (in libcoreclr.dylib) + 160  [0x1030b0c2c]
+    +                                                   1712 SyncBlock::Wait(int)  (in libcoreclr.dylib) + 444  [0x102e31d0c]
+    +                                                     1712 Thread::Block(int, PendingSync*)  (in libcoreclr.dylib) + 32  [0x102e38a74]
+    +                                                       1712 Thread::DoAppropriateWait(int, void**, int, unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 120  [0x102e332fc]
+    +                                                         1712 Thread::DoAppropriateWaitWorker(int, void**, int, unsigned int, WaitMode)  (in libcoreclr.dylib) + 1016  [0x102e37e18]
+    +                                                           1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                                                             1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                                                               1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 116  [0x102d4f970]
+    +                                                                 1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                                                                   1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551943
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 SEHExceptionThread(void*)  (in libcoreclr.dylib) + 156  [0x102d5cd38]
+    +       1712 MachMessage::Receive(unsigned int)  (in libcoreclr.dylib) + 80  [0x102d5d994]
+    +         1712 mach_msg  (in libsystem_kernel.dylib) + 24  [0x18c6b5fa8]
+    +           1712 mach_msg_overwrite  (in libsystem_kernel.dylib) + 484  [0x18c6be764]
+    +             1712 mach_msg2_internal  (in libsystem_kernel.dylib) + 76  [0x18c6c83a0]
+    +               1712 mach_msg2_trap  (in libsystem_kernel.dylib) + 8  [0x18c6b5c34]
+    1712 Thread_28551944: .NET SynchManager
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 CorUnix::CPalSynchronizationManager::WorkerThread(void*)  (in libcoreclr.dylib) + 156  [0x102d514a4]
+    +         1712 CorUnix::CPalSynchronizationManager::ReadBytesFromProcessPipe(int, unsigned char*, int)  (in libcoreclr.dylib) + 472  [0x102d51d9c]
+    +           1712 kevent  (in libsystem_kernel.dylib) + 8  [0x18c6bbd04]
+    1712 Thread_28551945: .NET EventPipe
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 server_thread(void*)  (in libcoreclr.dylib) + 364  [0x1030f5f64]
+    +         1712 ds_ipc_stream_factory_get_next_available_stream(void (*)(char const*, unsigned int))  (in libcoreclr.dylib) + 796  [0x1030f80c4]
+    +           1712 ds_ipc_poll(_DiagnosticsIpcPollHandle*, unsigned long, unsigned int, void (*)(char const*, unsigned int))  (in libcoreclr.dylib) + 180  [0x10304b2b8]
+    +             1712 poll  (in libsystem_kernel.dylib) + 8  [0x18c6be498]
+    1712 Thread_28551946: .NET DebugPipe
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 DbgTransportSession::TransportWorkerStatic(void*)  (in libcoreclr.dylib) + 40  [0x1030455dc]
+    +         1712 DbgTransportSession::TransportWorker()  (in libcoreclr.dylib) + 196  [0x103046530]
+    +           1712 TwoWayPipe::WaitForConnection()  (in libcoreclr.dylib) + 40  [0x10304be74]
+    +             1712 open  (in libsystem_kernel.dylib) + 64  [0x18c6c16a4]
+    +               1712 __open  (in libsystem_kernel.dylib) + 8  [0x18c6b6678]
+    1712 Thread_28551947: .NET Debugger
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 DebuggerRCThread::ThreadProcStatic(void*)  (in libcoreclr.dylib) + 56  [0x103043a50]
+    +         1712 DebuggerRCThread::ThreadProc()  (in libcoreclr.dylib) + 256  [0x103043c9c]
+    +           1712 DebuggerRCThread::MainLoop()  (in libcoreclr.dylib) + 220  [0x103043de0]
+    +             1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +               1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                 1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 116  [0x102d4f970]
+    +                   1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                     1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551948
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 FinalizerThread::FinalizerThreadStart(void*)  (in libcoreclr.dylib) + 88  [0x102e9d62c]
+    +         1712 ManagedThreadBase::FinalizerBase(void (*)(void*))  (in libcoreclr.dylib) + 36  [0x102e3b2f8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 FinalizerThread::FinalizerThreadWorker(void*)  (in libcoreclr.dylib) + 264  [0x102e9d4b0]
+    +               1354 FinalizerThread::WaitForFinalizerEvent(CLREvent*)  (in libcoreclr.dylib) + 240  [0x102e9d350]
+    +               ! 1354 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +               !   1354 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +               !     1354 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 116  [0x102d4f970]
+    +               !       1354 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +               !         1354 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    +               358 FinalizerThread::WaitForFinalizerEvent(CLREvent*)  (in libcoreclr.dylib) + 48  [0x102e9d290]
+    +                 358 CLREventBase::WaitEx(unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 188  [0x102f20c8c]
+    +                   358 WaitForSingleObjectEx  (in libcoreclr.dylib) + 80  [0x102d53d30]
+    +                     358 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                       358 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                         358 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+    +                           358 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                             358 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551974
+    + 1712 start_wqthread  (in libsystem_pthread.dylib) + 8  [0x18c6f2b74]
+    +   1712 _pthread_wqthread  (in libsystem_pthread.dylib) + 368  [0x18c6f3eb0]
+    +     1712 __workq_kernreturn  (in libsystem_kernel.dylib) + 8  [0x18c6b78b0]
+    1712 Thread_28551976
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x106059658]
+    +                     1712 ???  (in <unknown binary>)  [0x1060880d0]
+    +                       1712 ???  (in <unknown binary>)  [0x10606656c]
+    +                         1712 ???  (in <unknown binary>)  [0x106cebb44]
+    +                           1712 ???  (in <unknown binary>)  [0x106cec1c0]
+    +                             1712 ???  (in <unknown binary>)  [0x106d45cf8]
+    +                               1712 ???  (in <unknown binary>)  [0x106d45dfc]
+    +                                 1712 ???  (in <unknown binary>)  [0x1097d61cc]
+    +                                   1712 ???  (in <unknown binary>)  [0x1097d7364]
+    +                                     1712 ???  (in <unknown binary>)  [0x1097ff300]
+    +                                       1712 ???  (in <unknown binary>)  [0x1097ff92c]
+    +                                         1712 ???  (in <unknown binary>)  [0x10980e5b4]
+    +                                           1712 ???  (in <unknown binary>)  [0x109810840]
+    +                                             1712 ???  (in <unknown binary>)  [0x109810944]
+    +                                               1712 ???  (in <unknown binary>)  [0x1098117d8]
+    +                                                 1712 ???  (in <unknown binary>)  [0x10981856c]
+    +                                                   1712 ???  (in <unknown binary>)  [0x1098185d0]
+    +                                                     1712 ???  (in <unknown binary>)  [0x1098186c0]
+    +                                                       1712 ???  (in <unknown binary>)  [0x109819028]
+    +                                                         1712 ???  (in <unknown binary>)  [0x106394f34]
+    +                                                           1712 ???  (in <unknown binary>)  [0x109840ec8]
+    +                                                             1712 ???  (in <unknown binary>)  [0x10605de6c]
+    +                                                               1712 WaitHandleNative::CorWaitOneNative(void*, int)  (in libcoreclr.dylib) + 160  [0x102e827d0]
+    +                                                                 1712 Thread::DoAppropriateWait(int, void**, int, unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 120  [0x102e332fc]
+    +                                                                   1712 Thread::DoAppropriateWaitWorker(int, void**, int, unsigned int, WaitMode)  (in libcoreclr.dylib) + 708  [0x102e37ce4]
+    +                                                                     1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                                                                       1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                                                                         1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 116  [0x102d4f970]
+    +                                                                           1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                                                                             1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551977: .NET TP Worker
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x1060595e0]
+    +                     1712 ???  (in <unknown binary>)  [0x1060808b4]
+    +                       1712 ???  (in <unknown binary>)  [0x106073fc0]
+    +                         1712 ???  (in <unknown binary>)  [0x1060880a0]
+    +                           1712 ???  (in <unknown binary>)  [0x106066774]
+    +                             1712 ???  (in <unknown binary>)  [0x106372d80]
+    +                               1712 ???  (in <unknown binary>)  [0x106cf6510]
+    +                                 1712 ???  (in <unknown binary>)  [0x106cf6c5c]
+    +                                   1712 ???  (in <unknown binary>)  [0x10abec090]
+    +                                     1712 ???  (in <unknown binary>)  [0x10abec238]
+    +                                       1712 ???  (in <unknown binary>)  [0x10abec424]
+    +                                         1712 SystemNative_Poll  (in libSystem.Native.dylib) + 392  [0x1024b3cfc]
+    +                                           1712 poll  (in libsystem_kernel.dylib) + 8  [0x18c6be498]
+    1712 Thread_28551978
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x1060595e0]
+    +                     1712 ???  (in <unknown binary>)  [0x10607d0b4]
+    +                       1712 ???  (in <unknown binary>)  [0x10aa9ee6c]
+    +                         1712 WaitHandleNative::CorWaitOneNative(void*, int)  (in libcoreclr.dylib) + 160  [0x102e827d0]
+    +                           1712 Thread::DoAppropriateWait(int, void**, int, unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 120  [0x102e332fc]
+    +                             1712 Thread::DoAppropriateWaitWorker(int, void**, int, unsigned int, WaitMode)  (in libcoreclr.dylib) + 708  [0x102e37ce4]
+    +                               1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                                 1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                                   1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+    +                                     1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                                       1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551979
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x1060595e0]
+    +                     1712 ???  (in <unknown binary>)  [0x10607f5c8]
+    +                       1712 ???  (in <unknown binary>)  [0x10605eba8]
+    +                         1712 WaitHandleNative::CorWaitMultipleNative(void**, int, bool, int)  (in libcoreclr.dylib) + 168  [0x102e82ab8]
+    +                           1712 Thread::DoAppropriateWait(int, void**, int, unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 120  [0x102e332fc]
+    +                             1712 Thread::DoAppropriateWaitWorker(int, void**, int, unsigned int, WaitMode)  (in libcoreclr.dylib) + 1016  [0x102e37e18]
+    +                               1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                                 1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                                   1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 116  [0x102d4f970]
+    +                                     1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                                       1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551980: .NET TP Worker
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x1060595e0]
+    +                     1712 ???  (in <unknown binary>)  [0x106080904]
+    +                       1712 ???  (in <unknown binary>)  [0x10aa9ed3c]
+    +                         1712 ???  (in <unknown binary>)  [0x10aa9fdc8]
+    +                           1712 ???  (in <unknown binary>)  [0x10aa9fb24]
+    +                             1712 WaitHandle_CorWaitOnePrioritizedNative  (in libcoreclr.dylib) + 80  [0x102e82944]
+    +                               1712 PAL_WaitForSingleObjectPrioritized  (in libcoreclr.dylib) + 76  [0x102d53cd0]
+    +                                 1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                                   1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                                     1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+    +                                       1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                                         1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551981
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x1060595e0]
+    +                     1712 ???  (in <unknown binary>)  [0x106077f98]
+    +                       1712 ???  (in <unknown binary>)  [0x10aa9ee6c]
+    +                         1712 WaitHandleNative::CorWaitOneNative(void*, int)  (in libcoreclr.dylib) + 160  [0x102e827d0]
+    +                           1712 Thread::DoAppropriateWait(int, void**, int, unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 120  [0x102e332fc]
+    +                             1711 Thread::DoAppropriateWaitWorker(int, void**, int, unsigned int, WaitMode)  (in libcoreclr.dylib) + 708  [0x102e37ce4]
+    +                             ! 1711 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                             !   1711 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                             !     1711 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+    +                             !       1711 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                             !         1711 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    +                             1 Thread::DoAppropriateWaitWorker(int, void**, int, unsigned int, WaitMode)  (in libcoreclr.dylib) + 708  [0x102e37ce4]
+    1712 Thread_28551982
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x106059658]
+    +                     1712 ???  (in <unknown binary>)  [0x1075b976c]
+    +                       1712 ???  (in <unknown binary>)  [0x107581ed0]
+    +                         1712 SystemNative_WaitForSocketEvents  (in libSystem.Native.dylib) + 80  [0x1024b9830]
+    +                           1712 kevent  (in libsystem_kernel.dylib) + 8  [0x18c6bbd04]
+    1712 Thread_28551984
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x106059658]
+    +                     1712 ???  (in <unknown binary>)  [0x1060880d0]
+    +                       1712 ???  (in <unknown binary>)  [0x10606656c]
+    +                         1712 ???  (in <unknown binary>)  [0x106cf5aa8]
+    +                           1712 ???  (in <unknown binary>)  [0x106cf6030]
+    +                             1712 ???  (in <unknown binary>)  [0x106068c80]
+    +                               1712 ???  (in <unknown binary>)  [0x106069094]
+    +                                 1712 ???  (in <unknown binary>)  [0x106058b18]
+    +                                   1712 ObjectNative::WaitTimeout(int, Object*)  (in libcoreclr.dylib) + 160  [0x1030b0c2c]
+    +                                     1712 SyncBlock::Wait(int)  (in libcoreclr.dylib) + 444  [0x102e31d0c]
+    +                                       1712 Thread::Block(int, PendingSync*)  (in libcoreclr.dylib) + 32  [0x102e38a74]
+    +                                         1712 Thread::DoAppropriateWait(int, void**, int, unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 120  [0x102e332fc]
+    +                                           1712 Thread::DoAppropriateWaitWorker(int, void**, int, unsigned int, WaitMode)  (in libcoreclr.dylib) + 1016  [0x102e37e18]
+    +                                             1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                                               1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                                                 1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 116  [0x102d4f970]
+    +                                                   1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                                                     1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551985: .NET TP Worker
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x1060595e0]
+    +                     1712 ???  (in <unknown binary>)  [0x1060808b4]
+    +                       1712 ???  (in <unknown binary>)  [0x106073dac]
+    +                         1712 ???  (in <unknown binary>)  [0x10984113c]
+    +                           1712 ???  (in <unknown binary>)  [0x109841188]
+    +                             1712 ???  (in <unknown binary>)  [0x109841234]
+    +                               1712 ???  (in <unknown binary>)  [0x109841380]
+    +                                 1712 ???  (in <unknown binary>)  [0x109841630]
+    +                                   1712 ???  (in <unknown binary>)  [0x109841690]
+    +                                     1712 ???  (in <unknown binary>)  [0x1098417b0]
+    +                                       1712 ???  (in <unknown binary>)  [0x1098438b4]
+    +                                         1712 ???  (in <unknown binary>)  [0x10a52eba8]
+    +                                           1712 ???  (in <unknown binary>)  [0x10a52ed64]
+    +                                             1712 ???  (in <unknown binary>)  [0x10984b82c]
+    +                                               1712 ???  (in <unknown binary>)  [0x106ec1194]
+    +                                                 1712 ???  (in <unknown binary>)  [0x106ec25b8]
+    +                                                   1712 ???  (in <unknown binary>)  [0x106ecad88]
+    +                                                     1712 ???  (in <unknown binary>)  [0x10605dda8]
+    +                                                       1712 ???  (in <unknown binary>)  [0x10605de6c]
+    +                                                         1712 WaitHandleNative::CorWaitOneNative(void*, int)  (in libcoreclr.dylib) + 160  [0x102e827d0]
+    +                                                           1712 Thread::DoAppropriateWait(int, void**, int, unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 120  [0x102e332fc]
+    +                                                             1712 Thread::DoAppropriateWaitWorker(int, void**, int, unsigned int, WaitMode)  (in libcoreclr.dylib) + 708  [0x102e37ce4]
+    +                                                               1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                                                                 1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                                                                   1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+    +                                                                     1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                                                                       1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28551988: .NET SigHandler
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 SignalHandlerLoop  (in libSystem.Native.dylib) + 92  [0x1024bb1d4]
+    +       1712 read  (in libsystem_kernel.dylib) + 8  [0x18c6b67dc]
+    1712 Thread_28553014: .NET TP Worker
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x1060595e0]
+    +                     1712 ???  (in <unknown binary>)  [0x106080904]
+    +                       1704 ???  (in <unknown binary>)  [0x10aa9ed3c]
+    +                       ! 1704 ???  (in <unknown binary>)  [0x10aa9fdc8]
+    +                       !   1704 ???  (in <unknown binary>)  [0x10aa9fb24]
+    +                       !     1704 WaitHandle_CorWaitOnePrioritizedNative  (in libcoreclr.dylib) + 80  [0x102e82944]
+    +                       !       1704 PAL_WaitForSingleObjectPrioritized  (in libcoreclr.dylib) + 76  [0x102d53cd0]
+    +                       !         1704 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                       !           1704 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                       !             1704 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+    +                       !               1704 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                       !                 1704 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    +                       7 ???  (in <unknown binary>)  [0x10aa9ec80]
+    +                       ! 7 ThreadNative_YieldThread  (in libcoreclr.dylib) + 80  [0x102e7ca64]
+    +                       !   7 SwitchToThread  (in libcoreclr.dylib) + 12  [0x102d5a130]
+    +                       !     7 cthread_yield  (in libsystem_pthread.dylib) + 36  [0x18c6f4bdc]
+    +                       !       7 swtch_pri  (in libsystem_kernel.dylib) + 8  [0x18c6b5c88]
+    +                       1 ???  (in <unknown binary>)  [0x10aa9ebb4]
+    +                         1 ThreadNative::SpinWait(int)  (in libcoreclr.dylib) + 76  [0x102e7c794]
+    +                           1 YieldProcessorNormalization::ScheduleMeasurementIfNecessary()  (in libcoreclr.dylib) + 32  [0x102f28860]
+    +                             1 GetTickCount  (in libcoreclr.dylib) + 16  [0x102d40bdc]
+    +                               1 clock_gettime_nsec_np  (in libsystem_c.dylib) + 240  [0x18c5890d8]
+    1712 Thread_28553373: .NET TP Worker
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+    +               1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+    +                 1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+    +                   1712 ???  (in <unknown binary>)  [0x1060595e0]
+    +                     1712 ???  (in <unknown binary>)  [0x106080904]
+    +                       1712 ???  (in <unknown binary>)  [0x10aa9ed3c]
+    +                         1712 ???  (in <unknown binary>)  [0x10aa9fdc8]
+    +                           1712 ???  (in <unknown binary>)  [0x10aa9fb24]
+    +                             1712 WaitHandle_CorWaitOnePrioritizedNative  (in libcoreclr.dylib) + 80  [0x102e82944]
+    +                               1712 PAL_WaitForSingleObjectPrioritized  (in libcoreclr.dylib) + 76  [0x102d53cd0]
+    +                                 1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                                   1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                                     1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+    +                                       1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                                         1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28554199
+    + 1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+    +   1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+    +     1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+    +       1712 TieredCompilationManager::BackgroundWorkerBootstrapper0(void*)  (in libcoreclr.dylib) + 40  [0x102e3e084]
+    +         1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+    +           1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+    +             1712 TieredCompilationManager::BackgroundWorkerBootstrapper1(void*)  (in libcoreclr.dylib) + 116  [0x102e3e188]
+    +               1712 TieredCompilationManager::BackgroundWorkerStart()  (in libcoreclr.dylib) + 324  [0x102e3e350]
+    +                 1712 CLREventBase::WaitEx(unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 188  [0x102f20c8c]
+    +                   1712 WaitForSingleObjectEx  (in libcoreclr.dylib) + 80  [0x102d53d30]
+    +                     1712 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+    +                       1712 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+    +                         1712 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+    +                           1712 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+    +                             1712 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+    1712 Thread_28554200: .NET TP Worker
+      1712 thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+        1712 _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+          1712 CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+            1712 ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+              1712 ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+                1712 ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+                  1712 ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+                    1712 DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+                      1712 CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+                        1712 ???  (in <unknown binary>)  [0x1060595e0]
+                          1712 ???  (in <unknown binary>)  [0x106080904]
+                            1707 ???  (in <unknown binary>)  [0x10aa9ed3c]
+                            ! 1707 ???  (in <unknown binary>)  [0x10aa9fdc8]
+                            !   1707 ???  (in <unknown binary>)  [0x10aa9fb24]
+                            !     1707 WaitHandle_CorWaitOnePrioritizedNative  (in libcoreclr.dylib) + 80  [0x102e82944]
+                            !       1707 PAL_WaitForSingleObjectPrioritized  (in libcoreclr.dylib) + 76  [0x102d53cd0]
+                            !         1707 CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+                            !           1707 CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+                            !             1707 CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+                            !               1707 _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+                            !                 1707 __psynch_cvwait  (in libsystem_kernel.dylib) + 8  [0x18c6b93cc]
+                            5 ???  (in <unknown binary>)  [0x10aa9ec80]
+                              5 ThreadNative_YieldThread  (in libcoreclr.dylib) + 80  [0x102e7ca64]
+                                5 SwitchToThread  (in libcoreclr.dylib) + 12  [0x102d5a130]
+                                  5 cthread_yield  (in libsystem_pthread.dylib) + 36  [0x18c6f4bdc]
+                                    5 swtch_pri  (in libsystem_kernel.dylib) + 8  [0x18c6b5c88]
+
+Total number in stack (recursive counted multiple, when >=5):
+        20       _pthread_start  (in libsystem_pthread.dylib) + 136  [0x18c6f7c0c]
+        20       thread_start  (in libsystem_pthread.dylib) + 8  [0x18c6f2b80]
+        18       CorUnix::CPalThread::ThreadEntry(void*)  (in libcoreclr.dylib) + 352  [0x102d5a8dc]
+        15       CorUnix::CPalSynchronizationManager::BlockThread(CorUnix::CPalThread*, unsigned int, bool, bool, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 372  [0x102d4f6d8]
+        15       CorUnix::InternalWaitForMultipleObjectsEx(CorUnix::CPalThread*, unsigned int, void* const*, int, unsigned int, int, int)  (in libcoreclr.dylib) + 1532  [0x102d53aec]
+        15       __psynch_cvwait  (in libsystem_kernel.dylib) + 0  [0x18c6b93c4]
+        15       _pthread_cond_wait  (in libsystem_pthread.dylib) + 984  [0x18c6f80e0]
+        14       ManagedThreadBase_DispatchOuter(ManagedThreadCallState*)  (in libcoreclr.dylib) + 256  [0x102e3afac]
+        13       CallDescrWorkerInternal  (in libcoreclr.dylib) + 132  [0x102fea4c4]
+        13       ManagedThreadBase::KickOff(void (*)(void*), void*)  (in libcoreclr.dylib) + 32  [0x102e3b2c8]
+        12       DispatchCallSimple(unsigned long*, unsigned int, unsigned long long, unsigned int)  (in libcoreclr.dylib) + 280  [0x102e67c2c]
+        12       ThreadNative::KickOffThread(void*)  (in libcoreclr.dylib) + 176  [0x102e7a0e0]
+        12       ThreadNative::KickOffThread_Worker(void*)  (in libcoreclr.dylib) + 148  [0x102e7a004]
+        9       ???  (in <unknown binary>)  [0x1060595e0]
+        9       CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 340  [0x102d4fa50]
+        7       Thread::DoAppropriateWait(int, void**, int, unsigned int, WaitMode, PendingSync*)  (in libcoreclr.dylib) + 120  [0x102e332fc]
+        6       CorUnix::CPalSynchronizationManager::ThreadNativeWait(CorUnix::_ThreadNativeWaitData*, unsigned int, CorUnix::ThreadWakeupReason*, unsigned int*)  (in libcoreclr.dylib) + 116  [0x102d4f970]
+
+Sort by top of stack, same collapsed (when >= 5):
+        __psynch_cvwait  (in libsystem_kernel.dylib)        23954
+        kevent  (in libsystem_kernel.dylib)        3424
+        poll  (in libsystem_kernel.dylib)        3424
+        __open  (in libsystem_kernel.dylib)        1712
+        __workq_kernreturn  (in libsystem_kernel.dylib)        1712
+        mach_msg2_trap  (in libsystem_kernel.dylib)        1712
+        read  (in libsystem_kernel.dylib)        1712
+        swtch_pri  (in libsystem_kernel.dylib)        12
+
+Binary Images:
+       0x102370000 -        0x10237b5a3 +dotnet (0) <A0D520F1-074F-3510-83EE-213D52BEE083> /Users/*/dotnet
+       0x102448000 -        0x10248658f +libhostfxr.dylib (0) <30D1D861-4A3B-3EBE-B273-5E6512BF3DCF> /Users/*/libhostfxr.dylib
+       0x1024b0000 -        0x1024be313 +libSystem.Native.dylib (0) <DD46A356-0F17-39E1-92D8-F3EAFBC628BC> /Users/*/libSystem.Native.dylib
+       0x10251c000 -        0x102554daf +libhostpolicy.dylib (0) <B6FD69DA-B6D5-395F-86FB-420302FB1985> /Users/*/libhostpolicy.dylib
+       0x102d28000 -        0x103198807 +libcoreclr.dylib (0) <58729DE5-7896-3800-8A97-EB3FF3E127BB> /Users/*/libcoreclr.dylib
+       0x104384000 -        0x104586577 +libclrjit.dylib (0) <642F6579-6D49-33DE-80BC-AA97B460AF04> /Users/*/libclrjit.dylib
+       0x127404000 -        0x12741121b +libSystem.Security.Cryptography.Native.Apple.dylib (0) <A4F55B01-82F8-38BD-BFD5-440564E79518> /Users/*/libSystem.Security.Cryptography.Native.Apple.dylib
+       0x18c2fc000 -        0x18c34f893  libobjc.A.dylib (940.4) <8CA52E4D-F699-3D14-8061-EEA9D4366538> /usr/lib/libobjc.A.dylib
+       0x18c350000 -        0x18c3eb577  dyld (1.0.0 - 1286.10) <3247E185-CED2-36FF-9E29-47A77C23E004> /usr/lib/dyld
+       0x18c3ec000 -        0x18c3ef168  libsystem_blocks.dylib (96) <BA8F0C40-B12D-3D8B-8396-FC3F8A733C27> /usr/lib/system/libsystem_blocks.dylib
+       0x18c3f0000 -        0x18c43a8ff  libxpc.dylib (2894.140.12) <1B8951EB-68DB-37BA-9581-240B796AA872> /usr/lib/system/libxpc.dylib
+       0x18c43b000 -        0x18c4567ff  libsystem_trace.dylib (1643.120.5) <AC8466B8-AF1D-3895-876B-228151F0DF1D> /usr/lib/system/libsystem_trace.dylib
+       0x18c457000 -        0x18c4f53b7  libcorecrypto.dylib (1736.140.2) <7254F3F1-A46F-30B6-934A-511B730A8FC7> /usr/lib/system/libcorecrypto.dylib
+       0x18c4f6000 -        0x18c53d06f  libsystem_malloc.dylib (715.140.5) <85947F4E-385D-3B6D-9BF5-844EFE876D53> /usr/lib/system/libsystem_malloc.dylib
+       0x18c53e000 -        0x18c58475f  libdispatch.dylib (1521.140.2) <24CE0D89-4114-30C2-A81A-3DB1F5931CFF> /usr/lib/system/libdispatch.dylib
+       0x18c585000 -        0x18c587d1b  libsystem_featureflags.dylib (97) <856DB4EF-8C67-3842-970C-6FA814B07749> /usr/lib/system/libsystem_featureflags.dylib
+       0x18c588000 -        0x18c609243  libsystem_c.dylib (1698.140.3) <DFEA8794-80CE-37C3-8F6A-108AA1D0B1B0> /usr/lib/system/libsystem_c.dylib
+       0x18c60a000 -        0x18c696ff7  libc++.1.dylib (1900.181) <643ED232-CE19-3F63-8015-0AEE768C002F> /usr/lib/libc++.1.dylib
+       0x18c697000 -        0x18c6b4fff  libc++abi.dylib (1900.181) <776A4AFB-71EE-32AB-B2EE-E6FF80818654> /usr/lib/libc++abi.dylib
+       0x18c6b5000 -        0x18c6f0653  libsystem_kernel.dylib (11417.140.69) <6E4A96AD-04B8-3E8A-B91D-087E62306246> /usr/lib/system/libsystem_kernel.dylib
+       0x18c6f1000 -        0x18c6fda47  libsystem_pthread.dylib (536) <D6494BA9-171E-39FC-B1AA-28ECF87975D1> /usr/lib/system/libsystem_pthread.dylib
+       0x18c6fe000 -        0x18c72dba3  libdyld.dylib (1286.10) <01BCB3F7-AB89-30BD-87EE-91B291EADAE8> /usr/lib/system/libdyld.dylib
+       0x18c72e000 -        0x18c735e0b  libsystem_platform.dylib (349.140.6) <FD19A599-8750-31F9-924F-C2810C938371> /usr/lib/system/libsystem_platform.dylib
+       0x18c736000 -        0x18c7656f7  libsystem_info.dylib (597) <9720B57E-A0DF-3BDD-8149-0801054B5D00> /usr/lib/system/libsystem_info.dylib
+       0x18c766000 -        0x18cca4fff  com.apple.CoreFoundation (6.9 - 3603) <8D45BAEE-6CC0-3B89-93FD-EA1C8E15C6D7> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+       0x18cca5000 -        0x18cf9713f  com.apple.LaunchServices (1141.1 - 1141.1) <1E58A116-8211-3368-8F5A-5DF00D6F8971> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/LaunchServices
+       0x18cf98000 -        0x18d11c57f  com.apple.gpusw.MetalTools (1.0 - 1) <E103DE28-45B8-3C05-AED8-E4074910C914> /System/Library/PrivateFrameworks/MetalTools.framework/Versions/A/MetalTools
+       0x18d11d000 -        0x18d7b072f  libBLAS.dylib (1545) <5C972072-BCC3-3AA1-B54F-B535C56734FE> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib
+       0x18d7b1000 -        0x18d8bd2df  com.apple.Lexicon-framework (1.0 - 173.9) <30FE75B5-1104-3EA2-889F-7E11206A8D1A> /System/Library/PrivateFrameworks/Lexicon.framework/Versions/A/Lexicon
+       0x18d8be000 -        0x18d9b9bd7  libSparse.dylib (127.120.9) <D4B61818-B40F-39D7-A2F4-837D2E2382A5> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparse.dylib
+       0x18d9ba000 -        0x18da4d87f  com.apple.SystemConfiguration (1.21 - 1.21) <22C01CFC-8196-38E7-B6D6-65AF1C8D5227> /System/Library/Frameworks/SystemConfiguration.framework/Versions/A/SystemConfiguration
+       0x18da4e000 -        0x18da82bb7  libCRFSuite.dylib (55) <E02C68C0-C106-3F70-A870-3037766722D2> /usr/lib/libCRFSuite.dylib
+       0x18dd57000 -        0x18eb4059f  com.apple.Foundation (6.9 - 3603) <B9A92060-F21E-3ECF-9DED-94A65C68A6F4> /System/Library/Frameworks/Foundation.framework/Versions/C/Foundation
+       0x18ecfc000 -        0x18ee1c75f  com.apple.CoreDisplay (288 - 288) <AE76A642-22B6-31C9-9EBC-BE4E48DAA0D9> /System/Library/Frameworks/CoreDisplay.framework/Versions/A/CoreDisplay
+       0x18ee1d000 -        0x18f1d437f  com.apple.audio.AudioToolboxCore (1.0 - 1456.703) <3F69ED5D-9D77-3A65-B8A6-2F631B87A864> /System/Library/PrivateFrameworks/AudioToolboxCore.framework/Versions/A/AudioToolboxCore
+       0x18f1d5000 -        0x18f3f3c9f  com.apple.CoreText (844.6.0.4 - 844.6.0.4) <0C195180-47F8-31AC-A951-B00B3C5D4477> /System/Library/Frameworks/CoreText.framework/Versions/A/CoreText
+       0x18f3f4000 -        0x18fb2539f  com.apple.audio.CoreAudio (5.0 - 5.0) <52C7F0A2-F403-391B-9B0D-CE498EFF4D7E> /System/Library/Frameworks/CoreAudio.framework/Versions/A/CoreAudio
+       0x18fb26000 -        0x18ff2f45f  com.apple.security (7.0 - 61439.140.12) <3F615FD7-8463-355F-84A0-6660A238FDBD> /System/Library/Frameworks/Security.framework/Versions/A/Security
+       0x18ff30000 -        0x1901fbbeb  libicucore.A.dylib (76104.4) <5F93C461-2895-3D41-8459-560D35F81694> /usr/lib/libicucore.A.dylib
+       0x1901fc000 -        0x190206387  libsystem_darwin.dylib (1698.140.3) <8E58BBDB-E560-3AB4-8A1D-849AB83CBFC5> /usr/lib/system/libsystem_darwin.dylib
+       0x190207000 -        0x1904f9cbf  com.apple.CoreServices.CarbonCore (1333 - 1333) <18084480-B19D-3142-ADBE-40F2AA328977> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/CarbonCore.framework/Versions/A/CarbonCore
+       0x1904fa000 -        0x19053984b  com.apple.CoreServicesInternal (505 - 505) <059EC98D-B718-3028-B844-6CB1590B2E2A> /System/Library/PrivateFrameworks/CoreServicesInternal.framework/Versions/A/CoreServicesInternal
+       0x19053a000 -        0x19057a4df  com.apple.CSStore (1141.1 - 1141.1) <E5453CD6-3EFB-3F00-8E26-94A52D2C9898> /System/Library/PrivateFrameworks/CoreServicesStore.framework/Versions/A/CoreServicesStore
+       0x19057b000 -        0x19065d33f  com.apple.framework.IOKit (2.0.2 - 100150.120.2) <1B056404-8B47-31A9-B1F3-ED0693EE9684> /System/Library/Frameworks/IOKit.framework/Versions/A/IOKit
+       0x19065e000 -        0x19066ffeb  libsystem_notify.dylib (342) <6A411086-A1A2-349F-B9CA-348F9DCBB415> /usr/lib/system/libsystem_notify.dylib
+       0x191d0e000 -        0x191d23d1f  com.apple.UniformTypeIdentifiers (709 - 709) <8945E326-399B-3721-9A74-A51665F73A57> /System/Library/Frameworks/UniformTypeIdentifiers.framework/Versions/A/UniformTypeIdentifiers
+       0x1921c5000 -        0x19229565f  libboringssl.dylib (486.140.6) <1BE1E0DF-67B5-3220-B66D-095F18E35495> /usr/lib/libboringssl.dylib
+       0x192296000 -        0x1922963cf  libnetwork.dylib (4277.140.33) <E37CC7D2-5DC0-38DF-AE7E-5DB18C677544> /usr/lib/libnetwork.dylib
+       0x192297000 -        0x192660a5f  com.apple.CFNetwork (1.0 - 3826.600.41) <45AD6442-531D-3E9A-967E-B3AA0D01F24F> /System/Library/Frameworks/CFNetwork.framework/Versions/A/CFNetwork
+       0x192661000 -        0x19267be8f  libsystem_networkextension.dylib (2063.140.6) <8183B684-71EB-3FB1-8378-EB830CADAE7D> /usr/lib/system/libsystem_networkextension.dylib
+       0x19267c000 -        0x19267d067  libenergytrace.dylib (23) <2487E659-CD52-3A6B-84D5-7811A4439F36> /usr/lib/libenergytrace.dylib
+       0x19267e000 -        0x1926f7e5f  libMobileGestalt.dylib (1414.140.6) <234C5EB8-CAC8-3473-9B99-5AA439E7ACF7> /usr/lib/libMobileGestalt.dylib
+       0x1926f8000 -        0x19270ffdb  libsystem_asl.dylib (402) <FE29D1E8-D286-33F9-81CB-822E632D1571> /usr/lib/system/libsystem_asl.dylib
+       0x192710000 -        0x192732113  com.apple.TCC (1.0 - 1) <E5524421-C789-3387-9FDD-DFEA68E1BC95> /System/Library/PrivateFrameworks/TCC.framework/Versions/A/TCC
+       0x192733000 -        0x192c5905f  com.apple.SkyLight (1.600.0 - 891.7) <4E052846-80C2-38AF-85BF-1482E070A32B> /System/Library/PrivateFrameworks/SkyLight.framework/Versions/A/SkyLight
+       0x192c5a000 -        0x19338a13f  com.apple.CoreGraphics (2.0 - 1889.6.3) <47E7F717-751C-344A-8EF9-3A1358F30C82> /System/Library/Frameworks/CoreGraphics.framework/Versions/A/CoreGraphics
+       0x19338b000 -        0x193540d97  com.apple.ColorSync (4.13.0 - 3777.4.1) <1B6741D3-11C2-3515-B06B-A76812B15722> /System/Library/Frameworks/ColorSync.framework/Versions/A/ColorSync
+       0x1939bb000 -        0x193e15e3f  com.apple.CoreData (120 - 1448.1) <57715E60-EA5F-3CEF-9D42-304DAC8554EE> /System/Library/Frameworks/CoreData.framework/Versions/A/CoreData
+       0x193e16000 -        0x193e300ff  com.apple.ProtocolBuffer (1 - 303.26.4.18.1) <271D62A0-451E-31E3-8945-FDF99C31D2BA> /System/Library/PrivateFrameworks/ProtocolBuffer.framework/Versions/A/ProtocolBuffer
+       0x193e31000 -        0x193fe5c67  libsqlite3.dylib (360.3) <5F82B5CA-C186-361E-AEB3-38B2FE056EDE> /usr/lib/libsqlite3.dylib
+       0x194082000 -        0x194166a7f  com.apple.BaseBoard (694.5.5 - 694.5.5) <95B09ECC-6E62-3545-BA9B-5E99838C3432> /System/Library/PrivateFrameworks/BaseBoard.framework/Versions/A/BaseBoard
+       0x194167000 -        0x1941cf1ff  com.apple.RunningBoardServices (1.0 - 961.100.17) <11D50C81-655E-3347-95C9-F860406D4DEC> /System/Library/PrivateFrameworks/RunningBoardServices.framework/Versions/A/RunningBoardServices
+       0x1941d0000 -        0x194243787  com.apple.AE (944 - 944) <C410F3F4-79C0-3066-92BD-3B8AB89ADE37> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/AE.framework/Versions/A/AE
+       0x194244000 -        0x194254247  libdns_services.dylib (2600.140.3) <4CBFDD3C-8E13-341A-8800-996AC749DA1D> /usr/lib/libdns_services.dylib
+       0x194255000 -        0x19425d3a7  libsystem_symptoms.dylib (2022.140.4) <AABA26A2-74BC-3219-BAA3-ACC8D81D8589> /usr/lib/system/libsystem_symptoms.dylib
+       0x19425e000 -        0x195306cdf  com.apple.Network (1.0 - 4277.140.33) <D8C3869A-81C8-3DFB-B2D1-9C24E87075C0> /System/Library/Frameworks/Network.framework/Versions/A/Network
+       0x195307000 -        0x1953372ff  com.apple.analyticsd (1.0 - 1) <6A01B49E-F0AE-3467-97DE-DB27D3082903> /System/Library/PrivateFrameworks/CoreAnalytics.framework/Versions/A/CoreAnalytics
+       0x195338000 -        0x1953398d3  libDiagnosticMessagesClient.dylib (113) <C01F158F-1CF1-38B8-94B2-243FE62D82DF> /usr/lib/libDiagnosticMessagesClient.dylib
+       0x19533a000 -        0x19539aeff  com.apple.spotlight.metadata.utilities (1.0 - 2333.57.1) <40AA2EE8-3059-3AAF-82E2-FC466C8BBAFF> /System/Library/PrivateFrameworks/MetadataUtilities.framework/Versions/A/MetadataUtilities
+       0x19539b000 -        0x1954251df  com.apple.Metadata (15.6 - 2333.57.1) <3CC474C7-EFFA-3C6C-BB2B-9F9CA08C6B61> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/Metadata.framework/Versions/A/Metadata
+       0x195426000 -        0x19542e95b  com.apple.DiskArbitration (2.7 - 2.7) <936806C4-7267-3C10-BC06-42EAFB593A11> /System/Library/Frameworks/DiskArbitration.framework/Versions/A/DiskArbitration
+       0x19542f000 -        0x19583e633  com.apple.vImage (8.1 - 611.140.2) <E00EB66B-7890-31C3-A594-F8F36F608BEE> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vImage.framework/Versions/A/vImage
+       0x19583f000 -        0x195c12c7f  com.apple.QuartzCore (1.11 - 1156.18) <31921699-8990-3ACE-8D83-16E7BE814C6F> /System/Library/Frameworks/QuartzCore.framework/Versions/A/QuartzCore
+       0x195c13000 -        0x195c64adf  libFontRegistry.dylib (391.6.0.1) <6A18A25C-8E29-38A5-BC96-81C4035CD854> /System/Library/Frameworks/ApplicationServices.framework/Versions/A/Frameworks/ATS.framework/Versions/A/Resources/libFontRegistry.dylib
+       0x195ef9000 -        0x195f06a7f  com.apple.OpenDirectory (15.6 - 643) <21D9B5E4-5D90-3380-B07A-F4EBF10C2151> /System/Library/Frameworks/OpenDirectory.framework/Versions/A/OpenDirectory
+       0x195f07000 -        0x195f25053  com.apple.CFOpenDirectory (15.6 - 643) <2B023818-EF71-3CF5-BF26-8C27B0A807DA> /System/Library/Frameworks/OpenDirectory.framework/Versions/A/Frameworks/CFOpenDirectory.framework/Versions/A/CFOpenDirectory
+       0x195f26000 -        0x195f3383b  com.apple.CoreServices.FSEvents (1400.100.1 - 1400.100.1) <B39570B0-DBCA-3E28-A650-00E07668AE67> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/FSEvents.framework/Versions/A/FSEvents
+       0x195f34000 -        0x195f5d83f  com.apple.coreservices.SharedFileList (225 - 225) <930922F8-7DDF-3A45-ACC9-43ED445E6C10> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SharedFileList.framework/Versions/A/SharedFileList
+       0x195f5e000 -        0x195f610af  libapp_launch_measurement.dylib (17) <6560472A-BBC1-3712-B74D-B11AA2AB6F57> /usr/lib/libapp_launch_measurement.dylib
+       0x195f62000 -        0x195fab55f  com.apple.CoreAutoLayout (1.0 - 33) <F4722B74-B54F-32B4-9794-402B2608DA60> /System/Library/PrivateFrameworks/CoreAutoLayout.framework/Versions/A/CoreAutoLayout
+       0x195fac000 -        0x196095c9b  libxml2.2.dylib (38.15) <4412586C-E119-3A27-908B-D4466DD26621> /usr/lib/libxml2.2.dylib
+       0x196096000 -        0x1960f6d5f  com.apple.CoreVideo (1.8 - 692.1) <09D2CFD2-78BE-3AB9-BD62-81ADFB485FCC> /System/Library/Frameworks/CoreVideo.framework/Versions/A/CoreVideo
+       0x1960f7000 -        0x1960f9e7f  com.apple.loginsupport (3.0 - 259.5.1) <D4668654-0726-35E5-87E6-F614FD9EC9C0> /System/Library/PrivateFrameworks/login.framework/Versions/A/Frameworks/loginsupport.framework/Versions/A/loginsupport
+       0x196137000 -        0x19616157f  com.apple.UserManagement (1.0 - 1) <F5EEDB3F-49E3-3CAF-8963-47D8FB9D8633> /System/Library/PrivateFrameworks/UserManagement.framework/Versions/A/UserManagement
+       0x197aa2000 -        0x197ad238f  libsystem_containermanager.dylib (689.100.6) <24EE4AC1-5C9F-3EE0-8B4E-9D060EBCBD41> /usr/lib/system/libsystem_containermanager.dylib
+       0x197ad3000 -        0x197aebedf  com.apple.IOSurface (372.5.2 - 372.5.2) <B681DAE8-0089-38F1-98E0-FAC680608E1F> /System/Library/Frameworks/IOSurface.framework/Versions/A/IOSurface
+       0x197aec000 -        0x197af5e9f  com.apple.IOAccelerator (485 - 485) <8C396EF6-B4DC-312F-8A1C-4E588832AC53> /System/Library/PrivateFrameworks/IOAccelerator.framework/Versions/A/IOAccelerator
+       0x197af6000 -        0x197d68a1f  com.apple.Metal (368.52 - 368.52) <F83EE1A6-49CC-3A46-80AF-1B8B07EE0322> /System/Library/Frameworks/Metal.framework/Versions/A/Metal
+       0x197d69000 -        0x197d90ddf  com.apple.audio.caulk (1.0 - 181.700) <42085F32-42E2-3F11-B0B4-0343137B5F72> /System/Library/PrivateFrameworks/caulk.framework/Versions/A/caulk
+       0x197d91000 -        0x197eeca7f  com.apple.CoreMedia (1.0 - 3235.14.1) <B58190F1-836A-3043-9003-AEED46970E59> /System/Library/Frameworks/CoreMedia.framework/Versions/A/CoreMedia
+       0x197eed000 -        0x1981bf27f  libFontParser.dylib (423.6.0.2) <EC125789-35EC-3DA0-AEFA-8FB606B96F80> /System/Library/PrivateFrameworks/FontServices.framework/libFontParser.dylib
+       0x19851d000 -        0x19889bf9f  com.apple.ImageIO (3.3.0 - 2661.6.2) <6C7096CE-FEFA-3420-9FAE-4567DFEC4DCA> /System/Library/Frameworks/ImageIO.framework/Versions/A/ImageIO
+       0x19889c000 -        0x198c5697f  com.apple.CoreImage (19.0.0 - 1510.140.2) <D42177F0-3B0C-39CD-85C1-5620DEE9B5CF> /System/Library/Frameworks/CoreImage.framework/Versions/A/CoreImage
+       0x198c57000 -        0x198d06ddf  com.apple.MetalPerformanceShaders.MPSCore (1.0 - 1) <D921BBB7-3E7E-3E06-8567-65051E1DCE7A> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSCore.framework/Versions/A/MPSCore
+       0x198d07000 -        0x198d0b5df  libsystem_configuration.dylib (1351.140.5) <B1ADB810-702B-3646-8B66-EB2C288FE51A> /usr/lib/system/libsystem_configuration.dylib
+       0x198d0c000 -        0x198d1247f  libsystem_sandbox.dylib (2401.140.15) <B86C6D35-683E-3156-BAB2-A422F5AFF2BD> /usr/lib/system/libsystem_sandbox.dylib
+       0x198d13000 -        0x198d1417f  com.apple.AggregateDictionary (1.0 - 1) <372DB354-1857-3580-8EF9-ED51E93B94FD> /System/Library/PrivateFrameworks/AggregateDictionary.framework/Versions/A/AggregateDictionary
+       0x198d15000 -        0x198d1959b  com.apple.AppleSystemInfo (3.1.5 - 3.1.5) <715E55BA-3640-3069-959F-C72A0CB1E8AB> /System/Library/PrivateFrameworks/AppleSystemInfo.framework/Versions/A/AppleSystemInfo
+       0x198d1a000 -        0x198d1b44f  liblangid.dylib (140) <177E6F2C-552D-3918-B0FA-E41D3994D594> /usr/lib/liblangid.dylib
+       0x198d1c000 -        0x198e38fbf  com.apple.CoreNLP (1.0 - 313) <43BE2651-24A0-3DFF-B1CB-F5230E883875> /System/Library/PrivateFrameworks/CoreNLP.framework/Versions/A/CoreNLP
+       0x198e39000 -        0x198e3f55f  com.apple.LinguisticData (1.0 - 483.10) <B176FCC7-BFA1-3A88-BE8F-21CA30A60F3D> /System/Library/PrivateFrameworks/LinguisticData.framework/Versions/A/LinguisticData
+       0x198e40000 -        0x1998ecbb7  libBNNS.dylib (1497.120.5) <794CFDA3-BA8D-33FA-9FB4-2AB42EABF3A8> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBNNS.dylib
+       0x1998ed000 -        0x1999decff  libvDSP.dylib (1068.100.12) <4A17CD0E-0460-333B-8347-C11B0BEDEE2F> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvDSP.dylib
+       0x199a12000 -        0x199a227e7  com.apple.IOMobileFramebuffer (343.0.0 - 343.0.0) <6DE81CE6-C629-3194-AD6A-B0E8A02A3937> /System/Library/PrivateFrameworks/IOMobileFramebuffer.framework/Versions/A/IOMobileFramebuffer
+       0x199c22000 -        0x199c3eddf  com.apple.MobileKeyBag (2.0 - 1.0) <6A8A1EBF-2700-3033-B7B5-6D05EFAA12EC> /System/Library/PrivateFrameworks/MobileKeyBag.framework/Versions/A/MobileKeyBag
+       0x199c3f000 -        0x199c4d15f  com.apple.AssertionServices (1.0 - 961.100.17) <45F6BFCA-44CC-339B-AD77-6422A999B5C6> /System/Library/PrivateFrameworks/AssertionServices.framework/Versions/A/AssertionServices
+       0x199c4e000 -        0x199cdc9df  com.apple.securityfoundation (6.0 - 55290) <F1E5AC83-C3D0-3CC9-B4F2-74682268D7E2> /System/Library/Frameworks/SecurityFoundation.framework/Versions/A/SecurityFoundation
+       0x199cdd000 -        0x199d0bc7f  com.apple.coreservices.BackgroundTaskManagement (1.0 - 104) <7D03C736-510B-30E4-91AF-30CAE864EEFF> /System/Library/PrivateFrameworks/BackgroundTaskManagement.framework/Versions/A/BackgroundTaskManagement
+       0x199d17000 -        0x199d19fe3  libquarantine.dylib (181.120.2) <8CE8DAD0-52D6-3F46-98EF-161E1397FB48> /usr/lib/system/libquarantine.dylib
+       0x199d1a000 -        0x199d25323  libCheckFix.dylib (33) <97583C83-D04E-33FE-85B3-F29C7663AD24> /usr/lib/libCheckFix.dylib
+       0x199d26000 -        0x199d3d44f  libcoretls.dylib (186) <EDFD57F9-1580-3CBD-B37E-FB507B9202F4> /usr/lib/libcoretls.dylib
+       0x199d3e000 -        0x199d4f26b  libbsm.0.dylib (89) <FA3678AC-02BA-3D6A-917C-AC6241E8F9F1> /usr/lib/libbsm.0.dylib
+       0x199d50000 -        0x199daf81f  libmecab.dylib (1093.502) <626F850B-833D-383B-8247-089C476B50AA> /usr/lib/libmecab.dylib
+       0x199db0000 -        0x199db244b  libgermantok.dylib (31) <ADC70CB8-B2EF-3A6D-BD4B-31ACC79BA474> /usr/lib/libgermantok.dylib
+       0x199db3000 -        0x199dc7a5f  libLinearAlgebra.dylib (1545) <9F530DCD-2D1A-39F9-8205-8052AD7BB661> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLinearAlgebra.dylib
+       0x199dc8000 -        0x19a01331f  com.apple.MetalPerformanceShaders.MPSNeuralNetwork (1.0 - 1) <B081231B-0721-3E8F-AE92-C38FCEDA7348> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSNeuralNetwork.framework/Versions/A/MPSNeuralNetwork
+       0x19a014000 -        0x19a0687df  com.apple.MetalPerformanceShaders.MPSRayIntersector (1.0 - 1) <18E6F25E-A7D2-3383-AF17-A3DDF2630DAE> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSRayIntersector.framework/Versions/A/MPSRayIntersector
+       0x19a1ff000 -        0x19a23023f  com.apple.MetalPerformanceShaders.MPSMatrix (1.0 - 1) <0D54A81B-B9CD-34CC-AFF1-1ADA0D8F27D6> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSMatrix.framework/Versions/A/MPSMatrix
+       0x19a231000 -        0x19a37ed7f  com.apple.MetalPerformanceShaders.MPSNDArray (1.0 - 1) <D6066B0F-8147-36A6-81FA-744E9A58C368> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSNDArray.framework/Versions/A/MPSNDArray
+       0x19a37f000 -        0x19a41315f  com.apple.MetalPerformanceShaders.MPSImage (1.0 - 1) <638755FF-884D-3731-8F7A-DA71D31BAC32> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSImage.framework/Versions/A/MPSImage
+       0x19a414000 -        0x19a41f193  com.apple.AppleFSCompression (170 - 1.0) <785F1EB7-768B-322A-8F2B-D9AA35595A61> /System/Library/PrivateFrameworks/AppleFSCompression.framework/Versions/A/AppleFSCompression
+       0x19a420000 -        0x19a42c56b  libbz2.1.0.dylib (46) <BB0834D5-06A1-35D4-9437-47FF94DDBDB8> /usr/lib/libbz2.1.0.dylib
+       0x19a42d000 -        0x19a434033  libsystem_coreservices.dylib (178.6.1) <A4E84D5A-8D0E-3692-B888-89B9EEF8753D> /usr/lib/system/libsystem_coreservices.dylib
+       0x19a435000 -        0x19a46729f  com.apple.CoreServices.OSServices (1141.1 - 1141.1) <C95E9290-6ED3-32EB-93CC-3BEDB5FF90CD> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/OSServices.framework/Versions/A/OSServices
+       0x19a89d000 -        0x19a8abe97  libz.1.dylib (98) <FD078C6F-B196-3EF4-A464-36D3F6DBF918> /usr/lib/libz.1.dylib
+       0x19a8ac000 -        0x19a8e92b7  libsystem_m.dylib (3291.100.4) <0D060230-BD2F-3C8E-ACB9-8A79F5CD8EDE> /usr/lib/system/libsystem_m.dylib
+       0x19a8ea000 -        0x19a8eac9b  libcharset.1.dylib (109.100.2) <5517E59D-AA69-3422-9AFE-4E3CA7307050> /usr/lib/libcharset.1.dylib
+       0x19a8eb000 -        0x19a8ee4e7  libmacho.dylib (1024.3) <87AB4EEF-3A18-3399-A767-C6BF4ECEDCEB> /usr/lib/system/libmacho.dylib
+       0x19a8ef000 -        0x19a907dfb  libkxld.dylib (11417.140.69) <30C6B4F5-421A-374C-89BF-0F86D7C74FB0> /usr/lib/system/libkxld.dylib
+       0x19a908000 -        0x19a9155ef  libcommonCrypto.dylib (600035) <E6BC26C2-DED7-3C04-A670-AEDB150BDB1F> /usr/lib/system/libcommonCrypto.dylib
+       0x19a916000 -        0x19a91fad7  libunwind.dylib (1900.125) <F753CC2B-775B-3567-B0C6-D2989CA9EBF4> /usr/lib/system/libunwind.dylib
+       0x19a920000 -        0x19a927109  liboah.dylib (349) <4EE80AAC-8204-3BD0-AB75-EDD23DE67E2F> /usr/lib/liboah.dylib
+       0x19a928000 -        0x19a93269f  libcopyfile.dylib (224) <213FA18D-6145-3615-8DB5-906B6863EAB9> /usr/lib/system/libcopyfile.dylib
+       0x19a933000 -        0x19a93698f  libcompiler_rt.dylib (103.3) <F0F65700-8E9D-35F3-AC32-952D363190BC> /usr/lib/system/libcompiler_rt.dylib
+       0x19a937000 -        0x19a93ba1b  libsystem_collections.dylib (1698.140.3) <B77BE835-646C-3F05-BDBD-7703DE140F6A> /usr/lib/system/libsystem_collections.dylib
+       0x19a93c000 -        0x19a93f2c7  libsystem_secinit.dylib (153.140.2) <D15B45AD-1345-34BF-B8E3-05336C4046A0> /usr/lib/system/libsystem_secinit.dylib
+       0x19a940000 -        0x19a942b6f  libremovefile.dylib (81) <9BCF9A24-BECB-3DED-A78E-3A3ECD1B1757> /usr/lib/system/libremovefile.dylib
+       0x19a943000 -        0x19a943f27  libkeymgr.dylib (31) <B20C6921-D5BE-3BB5-B68C-32D90D629E39> /usr/lib/system/libkeymgr.dylib
+       0x19a944000 -        0x19a94cd57  libsystem_dnssd.dylib (2600.140.3) <61F023F3-E2C5-3F19-BA1B-B02D7564ACC4> /usr/lib/system/libsystem_dnssd.dylib
+       0x19a94d000 -        0x19a9520b3  libcache.dylib (95) <2B900F8F-9EDE-3208-AB17-BD1385B5546A> /usr/lib/system/libcache.dylib
+       0x19a953000 -        0x19a954ca3  libSystem.B.dylib (1351) <072C7C60-2B6C-3E07-AA56-FD1750EADC2F> /usr/lib/libSystem.B.dylib
+       0x19a955000 -        0x19a95703f  libfakelink.dylib (5) <4306B95C-F250-3D6D-8F27-47AB568FC36B> /usr/lib/libfakelink.dylib
+       0x19a958000 -        0x19a958a63  com.apple.SoftLinking (1.0 - 65) <794A11DB-27AC-3F0B-9035-D7109AE09F12> /System/Library/PrivateFrameworks/SoftLinking.framework/Versions/A/SoftLinking
+       0x19a98f000 -        0x19a9961eb  libiconv.2.dylib (109.100.2) <621F2C06-2AF7-3EA8-AEDC-C922075CB67B> /usr/lib/libiconv.2.dylib
+       0x19a9aa000 -        0x19aaa15cf  libarchive.2.dylib (151.140.2) <71EEF1EB-4098-3E0D-92F8-5CE8BE58928F> /usr/lib/libarchive.2.dylib
+       0x19aaa2000 -        0x19ab0957f  com.apple.SearchKit (1.4.2 - 1.4.2) <DAF96486-1362-3A68-9329-5CC6BCB83970> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/SearchKit.framework/Versions/A/SearchKit
+       0x19ab0a000 -        0x19ab1209f  libThaiTokenizer.dylib (28) <137CF9AD-D5ED-39AD-902C-6039EE0E24EA> /usr/lib/libThaiTokenizer.dylib
+       0x19ab13000 -        0x19ab37187  com.apple.applesauce (1.0 - 16.62) <A20CA568-BBC1-34A4-A324-4374C0A0C6A7> /System/Library/PrivateFrameworks/AppleSauce.framework/Versions/A/AppleSauce
+       0x19ab38000 -        0x19ab519ff  libapple_nghttp2.dylib (29) <E52CBCF0-8814-35A1-901F-73550FCE667D> /usr/lib/libapple_nghttp2.dylib
+       0x19ab52000 -        0x19ab78ac3  libSparseBLAS.dylib (1545) <133526B0-B0BC-359C-AA89-337B9230FC26> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libSparseBLAS.dylib
+       0x19ab79000 -        0x19ab7a59f  com.apple.MetalPerformanceShaders.MetalPerformanceShaders (1.0 - 1) <3B79D590-616A-3753-BB30-719FF80CE7B7> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/MetalPerformanceShaders
+       0x19ab7b000 -        0x19ab80f7f  libpam.2.dylib (34) <5B5E5276-679D-30AC-B2BA-08B3B0C841B4> /usr/lib/libpam.2.dylib
+       0x19ab81000 -        0x19ac5184f  libcompression.dylib (181.100.1) <BC7B578D-54F3-3504-A67B-CC46F43A8478> /usr/lib/libcompression.dylib
+       0x19ac52000 -        0x19ac561e7  libQuadrature.dylib (8) <4F62F3C9-E470-30B9-8B3D-AE8A17C62B0F> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libQuadrature.dylib
+       0x19ac57000 -        0x19beb82df  libLAPACK.dylib (1545) <82C02762-17B0-370D-B760-9413D38F49AC> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libLAPACK.dylib
+       0x19beb9000 -        0x19bf0f31f  com.apple.DictionaryServices (1.2 - 368.203) <9DD35110-DFA6-34A1-94A0-408BC95FAE2B> /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/DictionaryServices.framework/Versions/A/DictionaryServices
+       0x19bf10000 -        0x19bf2e8bf  liblzma.5.dylib (20) <3BF01D85-5D8A-3631-A421-3987D83CBF3B> /usr/lib/liblzma.5.dylib
+       0x19bf2f000 -        0x19bf30867  libcoretls_cfhelpers.dylib (186) <7EDDF8E1-C6EF-3D7C-832A-D158EDF1F6D1> /usr/lib/libcoretls_cfhelpers.dylib
+       0x19bf31000 -        0x19bfa27cb  com.apple.APFS (2332.140.13 - 2332.140.13) <86C1D3EF-1C0D-3326-A14A-0E1A7F6CBAA4> /System/Library/PrivateFrameworks/APFS.framework/Versions/A/APFS
+       0x19bfa3000 -        0x19bfb168b  libxar.1.dylib (501) <A33DCA22-6997-3F85-A7B3-4ACDC88F64B0> /usr/lib/libxar.1.dylib
+       0x19bfb2000 -        0x19bfb57fb  libutil.dylib (72) <A1063365-F998-3B4D-8F2E-363BBA169472> /usr/lib/libutil.dylib
+       0x19bfb6000 -        0x19bfe178f  libxslt.1.dylib (21.11) <83F120D8-DC7D-39E6-BAC5-1DD10E6B82E0> /usr/lib/libxslt.1.dylib
+       0x19bfea000 -        0x19c0637c7  libvMisc.dylib (1068.100.12) <9F8D55C6-728A-3B13-97F9-3D8E178F22AE> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libvMisc.dylib
+       0x19c064000 -        0x19c0f43bf  libate.dylib (3.0.9) <6CF8BB06-F870-39D9-9C70-8DF764B0C8AF> /usr/lib/libate.dylib
+       0x19c0fe000 -        0x19c11191f  com.apple.CrashReporterSupport (10.13 - 15131) <A3AF81B2-8970-3B02-9716-277363F5E424> /System/Library/PrivateFrameworks/CrashReporterSupport.framework/Versions/A/CrashReporterSupport
+       0x19c252000 -        0x19c2934bf  com.apple.pluginkit.framework (1.0 - 1) <D3681B49-43DF-3CED-80F7-7D6F3446C47B> /System/Library/PrivateFrameworks/PlugInKit.framework/Versions/A/PlugInKit
+       0x19c30a000 -        0x19c352ef7  com.apple.AppleVAFramework (6.2.10 - 6.2.10) <F29D894B-DD6C-38F4-BD36-0F526771CA34> /System/Library/PrivateFrameworks/AppleVA.framework/Versions/A/AppleVA
+       0x19c353000 -        0x19c36d2a7  libexpat.1.dylib (43) <4D5F1B49-1ECE-3392-B90E-BA826A4CAE37> /usr/lib/libexpat.1.dylib
+       0x19c36e000 -        0x19c377bab  libheimdal-asn1.dylib (693.140.2) <39990E7A-0118-3168-B716-5FA192E0E4E6> /usr/lib/libheimdal-asn1.dylib
+       0x19c458000 -        0x19c4fe7ff  com.apple.MediaExperience (1.0 - 1) <20DDB5F5-3D6B-33A9-AF13-A9059147A09C> /System/Library/PrivateFrameworks/MediaExperience.framework/Versions/A/MediaExperience
+       0x19c52b000 -        0x19c536eff  com.apple.GraphVisualizer (1.0 - 120.1) <40B192AF-71D9-37F3-96EA-F76CB29BF343> /System/Library/PrivateFrameworks/GraphVisualizer.framework/Versions/A/GraphVisualizer
+       0x19c537000 -        0x19c57779f  com.apple.OTSVG (1.0 - 844.6.0.4) <A2A2003F-A40B-3476-98A2-77EA5E2DEE1D> /System/Library/PrivateFrameworks/OTSVG.framework/Versions/A/OTSVG
+       0x19c578000 -        0x19c581a9f  com.apple.xpc.AppServerSupport (1.0 - 2894.140.12) <7D6D34E4-C7E3-3226-BF8E-7421E2E6BF0B> /System/Library/PrivateFrameworks/AppServerSupport.framework/Versions/A/AppServerSupport
+       0x19c582000 -        0x19c58867f  libspindump.dylib (383.17) <10205D3C-4FBE-33FD-A05D-1CB1BA17F66B> /usr/lib/libspindump.dylib
+       0x19c589000 -        0x19c649c7f  com.apple.Heimdal (4.0 - 2.0) <AF4E59A2-E134-3646-B09F-7B9A213C71AA> /System/Library/PrivateFrameworks/Heimdal.framework/Versions/A/Heimdal
+       0x19c8b2000 -        0x19c8f737f  com.apple.AppleJPEG (1.0 - 1) <6FCE7323-BA18-3941-A41A-4A5FE7250C40> /System/Library/PrivateFrameworks/AppleJPEG.framework/Versions/A/AppleJPEG
+       0x19c8f8000 -        0x19c9e825f  libJP2.dylib (2661.6.2) <55A9F8FD-1B1A-3E3C-9FBC-5B55806C2778> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJP2.dylib
+       0x19c9e9000 -        0x19c9ead53  com.apple.WatchdogClient.framework (1.0 - 299.140.5) <9A14A61F-4052-33E6-8896-5B67E01E071B> /System/Library/PrivateFrameworks/WatchdogClient.framework/Versions/A/WatchdogClient
+       0x19c9eb000 -        0x19ca3029f  com.apple.MultitouchSupport.framework (8440.1 - 8440.1) <202E0EFF-A57D-3D80-A56E-155F80FE08F3> /System/Library/PrivateFrameworks/MultitouchSupport.framework/Versions/A/MultitouchSupport
+       0x19ca31000 -        0x19cea739f  com.apple.VideoToolbox (1.0 - 3235.14.1) <6885D61E-6EAB-35AA-B279-212D0947CC9B> /System/Library/Frameworks/VideoToolbox.framework/Versions/A/VideoToolbox
+       0x19cea8000 -        0x19cedd63f  libAudioToolboxUtility.dylib (1456.703) <03319E37-4127-3701-95EF-1AFE937C7FC1> /usr/lib/libAudioToolboxUtility.dylib
+       0x19cede000 -        0x19cf084c7  libPng.dylib (2661.6.2) <1CF7E330-7F0D-3D9D-A79D-CFAAD04AB91E> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libPng.dylib
+       0x19cf09000 -        0x19cf6b12f  libTIFF.dylib (2661.6.2) <40220114-B389-3915-B9E1-DDEA6080B1DD> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libTIFF.dylib
+       0x19cf6c000 -        0x19cf8b983  com.apple.IOPresentment (67 - 67) <D99C7E44-9C52-304A-A888-D25081915FA3> /System/Library/PrivateFrameworks/IOPresentment.framework/Versions/A/IOPresentment
+       0x19cf8c000 -        0x19cf907e3  com.apple.GPUWrangler (8.1.10 - 8.1.10) <D7A31D1D-DDA3-320D-9E12-C9B911ECD752> /System/Library/PrivateFrameworks/GPUWrangler.framework/Versions/A/GPUWrangler
+       0x19cf91000 -        0x19cf9394b  libRadiance.dylib (2661.6.2) <55A571F9-19F4-3052-BA4D-B9A179B0DAF1> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libRadiance.dylib
+       0x19cf94000 -        0x19cf9964f  com.apple.DSExternalDisplay (3.1 - 380) <34B9CC3D-CFFA-3B98-8CA7-BF0EC6842A1F> /System/Library/PrivateFrameworks/DSExternalDisplay.framework/Versions/A/DSExternalDisplay
+       0x19cf9a000 -        0x19cfc4e87  libJPEG.dylib (2661.6.2) <25ACB188-2F92-371F-967D-9408FB352F97> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libJPEG.dylib
+       0x19cff3000 -        0x19cff87a3  libGIF.dylib (2661.6.2) <868FC504-1C26-306A-B6AF-540D36B43A7C> /System/Library/Frameworks/ImageIO.framework/Versions/A/Resources/libGIF.dylib
+       0x19cff9000 -        0x19d007d1f  com.apple.CMCaptureCore (1.0 - 587.140.11.0.1) <0EC748BE-CDD6-3D68-A44D-9766B44AE214> /System/Library/PrivateFrameworks/CMCaptureCore.framework/Versions/A/CMCaptureCore
+       0x19de23000 -        0x19de93753  libusrtcp.dylib (4277.140.33) <9320597F-D1C4-3306-9EF1-FF61429C8A8D> /usr/lib/libusrtcp.dylib
+       0x19de94000 -        0x19e402f3f  libswiftCore.dylib (6.1.2 - 6.1.2.1.101) <7186C5C8-2A46-3F35-B27F-F7F6923F7186> /usr/lib/swift/libswiftCore.dylib
+       0x19e4b8000 -        0x19e4fee5f  libSessionUtility.dylib (321.702) <109116D0-2D5E-3DC8-92A3-164CDD5D4AD0> /System/Library/PrivateFrameworks/AudioSession.framework/libSessionUtility.dylib
+       0x19e4ff000 -        0x19e6a945f  com.apple.audio.toolbox.AudioToolbox (1.14 - 1.14) <36E6E4C6-232D-3188-96D5-4C7FC3726DFB> /System/Library/Frameworks/AudioToolbox.framework/Versions/A/AudioToolbox
+       0x19e6aa000 -        0x19e707d7f  com.apple.audio.AudioSession (1.0 - 321.702) <199EACBB-C237-305F-8CFE-E29EF9558488> /System/Library/PrivateFrameworks/AudioSession.framework/Versions/A/AudioSession
+       0x19e708000 -        0x19e72089f  libAudioStatistics.dylib (235.601) <0DF10E87-E2C5-3FC4-BB4F-7F6D151F260C> /usr/lib/libAudioStatistics.dylib
+       0x19e7cd000 -        0x19e7e9003  libresolv.9.dylib (91) <E3C88F79-60F8-34AC-8DB1-0512C9404F78> /usr/lib/libresolv.9.dylib
+       0x19e7ea000 -        0x19e7fc6e7  libsasl2.2.dylib (215) <BE12C1B8-7004-34C7-9BD3-92BC5809C600> /usr/lib/libsasl2.2.dylib
+       0x19e9ec000 -        0x19eacca0f  libSMC.dylib (38) <D4A4ACEC-771A-3A09-A6AD-77BE3CD088D6> /usr/lib/libSMC.dylib
+       0x19eb2c000 -        0x19eb38a17  com.apple.NetAuth (6.2 - 6.2) <06EA9EBB-1F8E-30E3-921F-220B383149D7> /System/Library/PrivateFrameworks/NetAuth.framework/Versions/A/NetAuth
+       0x19eb4b000 -        0x19eb5849f  com.apple.perfdata (1.0 - 121) <721F7C91-AC36-3671-ACEE-26E14A9CB595> /System/Library/PrivateFrameworks/perfdata.framework/Versions/A/perfdata
+       0x19eb59000 -        0x19eb66cdf  libperfcheck.dylib (46) <A6A48167-3F5F-30F9-B5F7-5EAC32BABFB9> /usr/lib/libperfcheck.dylib
+       0x19eb67000 -        0x19eb77fbf  com.apple.Kerberos (3.0 - 1) <37C143BE-E694-3012-BEF9-31AA87703AC8> /System/Library/Frameworks/Kerberos.framework/Versions/A/Kerberos
+       0x19eb78000 -        0x19ebc9a17  com.apple.GSS (4.0 - 2.0) <D096B8E6-9053-35D7-8C3A-C13211A54364> /System/Library/Frameworks/GSS.framework/Versions/A/GSS
+       0x19ebca000 -        0x19ebdada7  com.apple.CommonAuth (4.0 - 2.0) <21CD953E-4336-3EA4-95C6-E94F51D9BFD7> /System/Library/PrivateFrameworks/CommonAuth.framework/Versions/A/CommonAuth
+       0x1a027b000 -        0x1a0392537  com.apple.combine (1.0 - 3022) <C42A6603-325A-3681-B42E-B99F53555F04> /System/Library/Frameworks/Combine.framework/Versions/A/Combine
+       0x1a235b000 -        0x1a235b86f  com.apple.Accelerate.vecLib (3.11 - vecLib 3.11) <9E5CC1C0-A5F8-395F-B84A-96D532A98712> /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/vecLib
+       0x1a2380000 -        0x1a238098f  com.apple.CoreServices (1226 - 1226) <1125F05C-0D0F-310D-A951-4BE5E3EA0B89> /System/Library/Frameworks/CoreServices.framework/Versions/A/CoreServices
+       0x1a262c000 -        0x1a262c417  com.apple.Accelerate (1.11 - Accelerate 1.11) <907AA97D-7ADF-3A9E-8A47-4CF51E9253E4> /System/Library/Frameworks/Accelerate.framework/Versions/A/Accelerate
+       0x1a2cab000 -        0x1a2cab3ef  libswiftFoundation.dylib (2000) <AB08911A-A525-3ABA-91DB-AC91D5DD9BC6> /usr/lib/swift/libswiftFoundation.dylib
+       0x1a333a000 -        0x1a336887f  com.apple.PowerLog (1.0 - 1) <3E8FD162-29BC-3C1B-8E2A-62495321AC75> /System/Library/PrivateFrameworks/PowerLog.framework/Versions/A/PowerLog
+       0x1a3376000 -        0x1a342a31f  com.apple.DiscRecording (9.0.3 - 9030.4.5) <3B57AC05-3937-33E2-8E4D-308B13051C69> /System/Library/Frameworks/DiscRecording.framework/Versions/A/DiscRecording
+       0x1a342b000 -        0x1a345c25f  com.apple.MediaKit (16 - 938) <B01DD3DE-8949-365E-B938-53BDC6B75035> /System/Library/PrivateFrameworks/MediaKit.framework/Versions/A/MediaKit
+       0x1a3e79000 -        0x1a3e8faf8  libswiftDispatch.dylib (54) <DD8B3C94-A6A9-30CB-98D0-0EBDD5B3AB66> /usr/lib/swift/libswiftDispatch.dylib
+       0x1a41de000 -        0x1a424cabf  com.apple.BoardServices (1.0 - 694.5.5) <5B304A06-94BE-3B3C-8EF6-B7CB09AC8189> /System/Library/PrivateFrameworks/BoardServices.framework/Versions/A/BoardServices
+       0x1a429d000 -        0x1a430031f  com.apple.CryptoTokenKit (1.0 - 1) <149D5DD3-E509-3A74-A174-475CC2D93177> /System/Library/Frameworks/CryptoTokenKit.framework/Versions/A/CryptoTokenKit
+       0x1a4301000 -        0x1a435595f  com.apple.LocalAuthentication (1.0 - 1656.140.4) <3FB1F5B0-5E5F-332F-8C71-52906D371585> /System/Library/Frameworks/LocalAuthentication.framework/Versions/A/LocalAuthentication
+       0x1a4356000 -        0x1a438283f  com.apple.CoreAuthentication.SharedUtils (1.0 - 1656.140.4) <50B95159-E723-3C38-B4C6-DD3128A90515> /System/Library/Frameworks/LocalAuthentication.framework/Support/SharedUtils.framework/Versions/A/SharedUtils
+       0x1a45eb000 -        0x1a460e721  com.apple.DebugSymbols (216 - 217) <061CC5D4-9B48-339B-9F7E-28F44F166266> /System/Library/PrivateFrameworks/DebugSymbols.framework/Versions/A/DebugSymbols
+       0x1a460f000 -        0x1a471bea3  com.apple.CoreSymbolication (16.0 - 64570.35.1) <66107D0A-7C53-314C-82CF-E2C64E0CC2F5> /System/Library/PrivateFrameworks/CoreSymbolication.framework/Versions/A/CoreSymbolication
+       0x1a471c000 -        0x1a472617f  com.apple.CoreTime (334.0.4.1) <04AF580A-8231-3417-B47E-8876103FB681> /System/Library/PrivateFrameworks/CoreTime.framework/Versions/A/CoreTime
+       0x1a5e8a000 -        0x1a5ec5967  com.apple.LDAPFramework (2.4.28 - 194.5) <5C678210-2715-345A-85AC-72C3E24C9CB3> /System/Library/Frameworks/LDAP.framework/Versions/A/LDAP
+       0x1a5ec6000 -        0x1a5ec77a7  com.apple.TrustEvaluationAgent (2.0 - 38) <4030FCD6-C647-3FBB-833F-DE0988AF8E4F> /System/Library/PrivateFrameworks/TrustEvaluationAgent.framework/Versions/A/TrustEvaluationAgent
+       0x1a5ff4000 -        0x1a60b199f  com.apple.DiskImagesFramework (671.140.2 - 671.140.2) <3872319F-0AEA-3B04-A166-E1F2A980A193> /System/Library/PrivateFrameworks/DiskImages.framework/Versions/A/DiskImages
+       0x1a61b2000 -        0x1a6233157  libcurl.4.dylib (160) <A1891A92-4BE8-3B76-9CC0-5A10299C91C0> /usr/lib/libcurl.4.dylib
+       0x1a6a4e000 -        0x1a6a51d1f  com.apple.security.CryptoKit-C-Bridging (1.0 - 1) <A3CD7EB6-2A7A-3154-9B38-C62FE5EA9D0E> /System/Library/PrivateFrameworks/CryptoKitCBridging.framework/Versions/A/CryptoKitCBridging
+       0x1a6a52000 -        0x1a6a523f7  libHeimdalProxy.dylib (87.100.1) <1503CC2C-3561-34F8-92CB-238AC537FA51> /System/Library/Frameworks/Kerberos.framework/Versions/A/Libraries/libHeimdalProxy.dylib
+       0x1a6afb000 -        0x1a6afebdd  libswiftObjectiveC.dylib (940.4) <9CA5A29C-BDB6-3D63-AA8A-0ABC8A9D608D> /usr/lib/swift/libswiftObjectiveC.dylib
+       0x1a6aff000 -        0x1a6b181ff  libswiftos.dylib (1062.100.1) <786A3581-D02F-3BF2-BEB5-4E74B7D8E8D6> /usr/lib/swift/libswiftos.dylib
+       0x1a7c3e000 -        0x1a7c73fff  com.apple.ASEProcessing (1.41.51 - 1.41.51) <BCAF95BF-815A-34DF-ABD5-59FA39B11048> /System/Library/PrivateFrameworks/ASEProcessing.framework/Versions/A/ASEProcessing
+       0x1a8d48000 -        0x1a8e02d1f  com.apple.audio.midi.CoreMIDI (2.0 - 88) <504D9A4A-F0A7-348F-A7BC-13FD26B48D99> /System/Library/Frameworks/CoreMIDI.framework/Versions/A/CoreMIDI
+       0x1a9826000 -        0x1a982a547  com.apple.IOSurfaceAccelerator (1.0.0 - 1.0.0) <976B7271-DCBD-3433-8693-71E8834057B0> /System/Library/PrivateFrameworks/IOSurfaceAccelerator.framework/Versions/A/IOSurfaceAccelerator
+       0x1ae20c000 -        0x1ae21cdbf  com.apple.HID (1.0 - 1) <502EA20E-1554-3A3A-9807-122C37B7FF00> /System/Library/PrivateFrameworks/HID.framework/Versions/A/HID
+       0x1b24fd000 -        0x1b250c53f  com.apple.NetFS (6.0 - 4.0) <EA81278B-8281-3413-BB0E-7A98CBBD101F> /System/Library/Frameworks/NetFS.framework/Versions/A/NetFS
+       0x1b29d4000 -        0x1b29d5d3b  libswiftDarwin.dylib (310.100.8.0.1) <69DA8436-3AF9-337A-B186-0D9F72326B0D> /usr/lib/swift/libswiftDarwin.dylib
+       0x1b4705000 -        0x1b47f34df  libquic.dylib (4277.140.33) <98A7CCD6-84FF-33E8-AAC5-8723B44B9341> /usr/lib/libquic.dylib
+       0x1b47fe000 -        0x1b48233ff  com.apple.private.SystemPolicy (1.0 - 1) <2C546714-FC56-3BF4-BE42-E1E9C0D758D0> /System/Library/PrivateFrameworks/SystemPolicy.framework/Versions/A/SystemPolicy
+       0x1b5556000 -        0x1b55de5ff  com.apple.LoggingSupport (1.0 - 1643.120.5) <3A3864AF-99BE-37D4-A4B1-70BE44C2C714> /System/Library/PrivateFrameworks/LoggingSupport.framework/Versions/A/LoggingSupport
+       0x1b55df000 -        0x1b55eb62b  com.apple.MallocStackLogging (1.0 - 64570.58.1) <440CA2E7-CBC1-3DBA-902C-E3F98B54A267> /System/Library/PrivateFrameworks/MallocStackLogging.framework/Versions/A/MallocStackLogging
+       0x1b5611000 -        0x1b564547f  libmis.dylib (436.100.18) <D794BA6C-5CA3-3135-B6B3-99C573EE90AC> /usr/lib/libmis.dylib
+       0x1b5646000 -        0x1b5649c7f  com.apple.gpusw.GPURawCounter (34 - 34) <0868254A-D17B-37C5-8F15-3C301507B6B5> /System/Library/PrivateFrameworks/GPURawCounter.framework/Versions/A/GPURawCounter
+       0x1b566b000 -        0x1b5671fff  libswiftCoreFoundation.dylib (2401) <14125A42-FDBF-3E76-B72A-360E057C2F29> /usr/lib/swift/libswiftCoreFoundation.dylib
+       0x1b567d000 -        0x1b56c46da  libswiftXPC.dylib (69.120.3) <2266E375-73D0-3FAF-8DA1-16C34CD3C7BE> /usr/lib/swift/libswiftXPC.dylib
+       0x1b56c6000 -        0x1b56c6ab3  libswiftIOKit.dylib (1) <845B7138-7C18-3F26-B364-2B4EDE7A9933> /usr/lib/swift/libswiftIOKit.dylib
+       0x1b8f1f000 -        0x1b8f36a4b  libswiftsimd.dylib (21) <51BB28D1-EF2E-35C4-A0FE-CDDB2B5EDE5B> /usr/lib/swift/libswiftsimd.dylib
+       0x1ba2c8000 -        0x1ba2d129f  com.apple.IOAccelMemoryInfo (1.0 - 1) <687C8C09-F5C9-32B3-974D-3CD46C9CDEDB> /System/Library/PrivateFrameworks/IOAccelMemoryInfo.framework/Versions/A/IOAccelMemoryInfo
+       0x1c2230000 -        0x1c22373b8  libswiftMetal.dylib (368.52) <34BE65B2-3609-3A4A-BF7E-DD4A821C5D4F> /usr/lib/swift/libswiftMetal.dylib
+       0x1c6206000 -        0x1c6263d1f  com.apple.osanalytics.OSAnalytics (1.0 - 1) <1422F546-9320-3DDD-9D89-14CCE8432731> /System/Library/PrivateFrameworks/OSAnalytics.framework/Versions/A/OSAnalytics
+       0x1c75cf000 -        0x1c75d0e25  libswiftQuartzCore.dylib (4) <FEAF25A9-D673-3D99-9E21-B9DBDB1749E6> /usr/lib/swift/libswiftQuartzCore.dylib
+       0x1c79c4000 -        0x1c79c9967  com.apple.kperf (1.0 - 1) <73FBFFF3-D364-3F63-8B65-997C39CBC9DF> /System/Library/PrivateFrameworks/kperf.framework/Versions/A/kperf
+       0x1c7ace000 -        0x1c7ad345f  com.apple.MobileSystemServices (1.0 - 1) <693296D2-17BA-3078-AC4C-9D60788E5846> /System/Library/PrivateFrameworks/MobileSystemServices.framework/Versions/A/MobileSystemServices
+       0x1cbc2a000 -        0x1cbc38815  libswiftUniformTypeIdentifiers.dylib (840.8) <E7BE1DAE-7200-3E29-8858-5A92A6C95805> /usr/lib/swift/libswiftUniformTypeIdentifiers.dylib
+       0x1cf98e000 -        0x1cf98fb66  libswiftCryptoTokenKit.dylib (738.100.34) <C2CA7FC2-95B7-3B3F-93DA-93CACD62D679> /usr/lib/swift/libswiftCryptoTokenKit.dylib
+       0x1d11d1000 -        0x1d11d2d8b  libswiftOSLog.dylib (8) <652469EF-4AB1-3BAC-B734-95BCAE271663> /usr/lib/swift/libswiftOSLog.dylib
+       0x1d4d0f000 -        0x1d4e0bbdf  com.apple.Symbolication (16.0 - 64570.58.1) <53FE7B05-915A-387A-BD77-6677DA4A98BC> /System/Library/PrivateFrameworks/Symbolication.framework/Versions/A/Symbolication
+       0x1d8e0d000 -        0x1d8e1d21f  com.apple.OSLog (1.0 - 1643.120.5) <0BA0151F-829E-310C-AF22-805F4479AEB8> /System/Library/Frameworks/OSLog.framework/Versions/A/OSLog
+       0x1d9046000 -        0x1d914f7dc  com.apple.InternalSwiftProtobuf (1.0 - 1.26.0) <3D0160BE-6CF5-3938-8069-F712E5E45C76> /System/Library/PrivateFrameworks/InternalSwiftProtobuf.framework/Versions/A/InternalSwiftProtobuf
+       0x1d9214000 -        0x1d921f2ff  com.apple.HIDDisplay (1.0 - 1) <1C4ED25E-429B-3872-8544-9F8EFADEFB16> /System/Library/PrivateFrameworks/HIDDisplay.framework/Versions/A/HIDDisplay
+       0x1db739000 -        0x1db7ad932  com.apple.security.CryptoKit (1.0 - 1) <78C89B50-5A75-3C0D-973F-883AF502091B> /System/Library/Frameworks/CryptoKit.framework/Versions/A/CryptoKit
+       0x1e037c000 -        0x1e037cc5b  com.apple.FeatureFlags (1.0 - 97) <0414B0A9-C26E-33A4-89B6-F7DB46A4DE36> /System/Library/PrivateFrameworks/FeatureFlags.framework/Versions/A/FeatureFlags
+       0x1e9c1c000 -        0x1e9c1e65f  com.apple.ConfigProfileHelper (17.1 - 1722) <4A7052C7-9527-341E-94F9-9E6B71DA40B2> /System/Library/PrivateFrameworks/ConfigProfileHelper.framework/Versions/A/ConfigProfileHelper
+       0x1ecbc0000 -        0x1ecbc72f7  libCoreFSCache.dylib (301) <A2D8A355-802C-3624-86AC-4D8B349A3FC8> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreFSCache.dylib
+       0x1ecbc8000 -        0x1ecbcd907  libCoreVMClient.dylib (301) <EB205CBC-BD0A-3F61-A715-C2255DF73A78> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCoreVMClient.dylib
+       0x1ecbce000 -        0x1ecbde277  com.apple.opengl (21.1.1 - 21.1.1) <B7FB8397-67BB-3A39-AB27-B78079EB02BA> /System/Library/Frameworks/OpenGL.framework/Versions/A/OpenGL
+       0x1ecbdf000 -        0x1ecbe17af  libCVMSPluginSupport.dylib (21.1.2) <29B3D4D7-C716-3B50-8BDB-73D0A3852EBE> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libCVMSPluginSupport.dylib
+       0x1ecbe2000 -        0x1ecbea6bf  libGFXShared.dylib (21.1.2) <6A31ADEE-A1F3-393E-9DA8-FDDF94453E69> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGFXShared.dylib
+       0x1ecbeb000 -        0x1ecc1dce3  libGLImage.dylib (21.1.2) <202EBBC2-6332-3F72-A721-35171ED8989C> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLImage.dylib
+       0x1ecc1e000 -        0x1ecc5832f  libGLU.dylib (21.1.2) <B1BFDFB3-91A6-38EF-A671-12D70F6BE387> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGLU.dylib
+       0x1ecdaa000 -        0x1ecdb3bcf  libGL.dylib (21.1.2) <884FD2BC-9F1C-3AA5-8590-025FB88C55DC> /System/Library/Frameworks/OpenGL.framework/Versions/A/Libraries/libGL.dylib
+       0x1ee7ef000 -        0x1ee8b907f  com.apple.ExtensionFoundation (97 - 97) <50633427-3001-3CCC-8011-77CCC9BE1053> /System/Library/Frameworks/ExtensionFoundation.framework/Versions/A/ExtensionFoundation
+       0x1f04a2000 -        0x1f04bf09f  com.apple.MPSBenchmarkLoop (1.0 - 1) <FA36F8B7-C1A5-3739-A3DB-4F0F8DC43CC7> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSBenchmarkLoop.framework/Versions/A/MPSBenchmarkLoop
+       0x1f04c0000 -        0x1f04d41bf  com.apple.MPSFunctions (1.0 - 1) <CA6CE94E-6351-3B59-9A66-2A55C3DE77B2> /System/Library/Frameworks/MetalPerformanceShaders.framework/Versions/A/Frameworks/MPSFunctions.framework/Versions/A/MPSFunctions
+       0x1f30d2000 -        0x1f320c022  com.apple.SwiftData (1.0 - 98.1) <C2A307A9-407E-372D-BAAA-6D1C5A7FEDD7> /System/Library/Frameworks/SwiftData.framework/Versions/A/SwiftData
+       0x236595000 -        0x2365eb20f  com.apple.AppleKeyStore (1.0 - 1.0) <33F3452C-1002-3DE6-8D60-8887B9FE6EC3> /System/Library/PrivateFrameworks/AppleKeyStore.framework/Versions/A/AppleKeyStore
+       0x236d23000 -        0x236d3bc5f  com.apple.private.AppleMobileFileIntegrity-fmk (1.0 - 1) <A04725C4-C001-3242-985C-B79A4DFB2F8B> /System/Library/PrivateFrameworks/AppleMobileFileIntegrity.framework/Versions/A/AppleMobileFileIntegrity
+       0x237113000 -        0x23714157f  com.apple.imgaudio.AudioAnalytics (1.0 - 1) <F8F266B4-B07E-35F0-8B17-4F52C0B14B41> /System/Library/PrivateFrameworks/AudioAnalytics.framework/Versions/A/AudioAnalytics
+       0x23a80e000 -        0x23a951297  com.apple.CollectionsInternal (1.1.0 - 103.5) <B42360F3-3579-371F-922E-EB453B1A0F2D> /System/Library/PrivateFrameworks/CollectionsInternal.framework/Versions/A/CollectionsInternal
+       0x240a65000 -        0x240a656e3  com.apple.FontServices (1.0 - 1) <CDC993A6-B1B4-3F03-ACE6-62BC2CF425A1> /System/Library/PrivateFrameworks/FontServices.framework/Versions/A/FontServices
+       0x240a66000 -        0x240b2edef  libXTFontStaticRegistryData.dylib (309.6.0.2) <C3F24150-4860-35F3-8F8E-4BF5EBDAA6F6> /System/Library/PrivateFrameworks/FontServices.framework/libXTFontStaticRegistryData.dylib
+       0x240b30000 -        0x240b3bfdf  com.apple.FramePacing (1.0 - 1) <4274A591-284D-3F26-99FC-010D602D172C> /System/Library/PrivateFrameworks/FramePacing.framework/Versions/A/FramePacing
+       0x2416a5000 -        0x2416aa747  libGPUCompilerUtils.dylib (32023.622) <2F123CA9-D284-3341-AE21-7A92789ED26F> /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/32023/Libraries/libGPUCompilerUtils.dylib
+       0x245734000 -        0x24577401f  libllvm-flatbuffers.dylib (32023.622) <B3D0267C-66A6-3C28-9471-C4A48AB55E14> /System/Library/PrivateFrameworks/GPUCompiler.framework/Versions/32023/Libraries/libllvm-flatbuffers.dylib
+       0x24a284000 -        0x24a368c3f  com.apple.InstalledContentLibrary (1.0 - 1.0) <9D5D2A2E-CC34-316E-AF24-942B499577BC> /System/Library/PrivateFrameworks/InstalledContentLibrary.framework/Versions/A/InstalledContentLibrary
+       0x24e796000 -        0x24e8b3fbf  com.apple.LocalAuthenticationCore (1656.140.4) <567045B9-6D5C-3370-A570-07AE53B00158> /System/Library/PrivateFrameworks/LocalAuthenticationCore.framework/Versions/A/LocalAuthenticationCore
+       0x24ea4f000 -        0x24f0e07cf  com.apple.MIL (3405.2 - 3405.2.1) <F7D03EF9-C62C-338F-A832-044058C56772> /System/Library/PrivateFrameworks/MIL.framework/Versions/A/MIL
+       0x251660000 -        0x2516b5c3f  com.apple.MessageSecurity (1.0 - 115.100.9) <F57140EC-5899-33BC-929A-3454D831C112> /System/Library/PrivateFrameworks/MessageSecurity.framework/Versions/A/MessageSecurity
+       0x255904000 -        0x255a237af  com.apple.ParsingInternal (0.0.1 - 103.5) <ED54149F-0A9A-37C3-B89B-94024B30A681> /System/Library/PrivateFrameworks/ParsingInternal.framework/Versions/A/ParsingInternal
+       0x258b6b000 -        0x258b8a67f  com.apple.accessibility.PhotosensitivityProcessing (1.0 - 1) <3C3E0096-B0B8-3CBB-8BB5-DC454C843B60> /System/Library/PrivateFrameworks/PhotosensitivityProcessing.framework/Versions/A/PhotosensitivityProcessing
+       0x2599fe000 -        0x259a8147f  com.apple.ProDisplayLibrary (9.4.6 - 9.4.6) <44F0A589-2A78-3F21-A464-3204AFE76831> /System/Library/PrivateFrameworks/ProDisplayLibrary.framework/Versions/A/ProDisplayLibrary
+       0x25a6c0000 -        0x25a6c8efb  com.apple.ReflectionInternal (1.0.0 - 103.5) <077A2310-D596-374B-A0A6-B211AA70B70D> /System/Library/PrivateFrameworks/ReflectionInternal.framework/Versions/A/ReflectionInternal
+       0x25b397000 -        0x25b3aba87  com.apple.RuntimeInternal (1.0.0 - 103.5) <59C620F9-15F4-31AA-BD57-8FE22C86D534> /System/Library/PrivateFrameworks/RuntimeInternal.framework/Versions/A/RuntimeInternal
+       0x264923000 -        0x26494f00f  com.apple.security.SwiftASN1Internal (1.0 - 1) <52F78B56-77F7-361E-9E57-81E3944506E0> /System/Library/PrivateFrameworks/SwiftASN1Internal.framework/Versions/A/SwiftASN1Internal
+       0x26ac29000 -        0x26ac2a197  com.apple.VideoToolboxParavirtualizationSupport (40.7.1 - 40.7.1) <E3D2B701-A052-3B0D-978E-25BA1137BF49> /System/Library/PrivateFrameworks/VideoToolboxParavirtualizationSupport.framework/Versions/A/VideoToolboxParavirtualizationSupport
+       0x273b57000 -        0x273befc27  libAppleArchive.dylib (423.100.6) <0E6A8DD6-851E-365A-82F0-D4E23D1B8BF4> /usr/lib/libAppleArchive.dylib
+       0x273c8c000 -        0x273c966df  libCoreEntitlements.dylib (69.100.2) <32D93AAD-F537-3F8B-91A7-2A345A8BC46D> /usr/lib/libCoreEntitlements.dylib
+       0x273e34000 -        0x273e3b109  libRosetta.dylib (349) <4EE80AAC-8204-3BD0-AB75-EDD23DE67E2F> /usr/lib/libRosetta.dylib
+       0x273e97000 -        0x273ea041f  libTLE.dylib (69.100.2) <4D92D884-07DE-3229-8DCD-01DB7AB1F885> /usr/lib/libTLE.dylib
+       0x2740cb000 -        0x2741db4b7  libcrypto.46.dylib (107) <EDA6D5D9-4E62-3C7E-97A6-9B600B3D0682> /usr/lib/libcrypto.46.dylib
+       0x274219000 -        0x274234567  libhvf.dylib (9) <8AE2E2A9-1EDF-37C3-A803-59EA1875FE12> /usr/lib/libhvf.dylib
+       0x274bf5000 -        0x274c2d1d7  libssl.48.dylib (107) <E652A685-648E-3029-BAEE-2F0198004B7C> /usr/lib/libssl.48.dylib
+       0x274e18000 -        0x274e2ca7f  libswiftDistributed.dylib (6.1.2 - 6.1.2.1.101) <82A85240-141B-3964-8833-65CDAC5E052E> /usr/lib/swift/libswiftDistributed.dylib
+       0x274e44000 -        0x274e51e97  libswiftObservation.dylib (6.1.2 - 6.1.2.1.101) <FA0C6C15-2754-31B3-A41F-2C8FD298CFB1> /usr/lib/swift/libswiftObservation.dylib
+       0x274e61000 -        0x274e6d847  libswiftRegexBuilder.dylib (6.1.2 - 6.1.2.1.101) <7C8BCF65-594E-3D82-B5E2-3903BE9EFE12> /usr/lib/swift/libswiftRegexBuilder.dylib
+       0x274eb1000 -        0x274eba97f  libswiftSynchronization.dylib (6.1.2 - 6.1.2.1.101) <8497FE13-91B1-3A3B-926E-324A14CDE11C> /usr/lib/swift/libswiftSynchronization.dylib
+       0x274ebb000 -        0x274ed56f7  libswiftSystem.dylib (64) <07B721E1-3431-3467-B5C7-B404DABEF3C5> /usr/lib/swift/libswiftSystem.dylib
+       0x274f2a000 -        0x274f2c7ef  libswift_Builtin_float.dylib (6.1.2 - 6.1.2.1.101) <03D0A1F4-BF98-39AE-8776-8E69D5711ED0> /usr/lib/swift/libswift_Builtin_float.dylib
+       0x274f2d000 -        0x274fadc63  libswift_Concurrency.dylib (6.1.2 - 6.1.2.1.101) <33017264-73FF-36D0-B876-2B45899474E2> /usr/lib/swift/libswift_Concurrency.dylib
+       0x274fe9000 -        0x27508b2cf  libswift_RegexParser.dylib (6.1.2 - 6.1.2.1.101) <C440C1F0-D56E-3C2C-BDC2-3DC394FE8DA5> /usr/lib/swift/libswift_RegexParser.dylib
+       0x27508c000 -        0x27511be57  libswift_StringProcessing.dylib (6.1.2 - 6.1.2.1.101) <2566B4EF-A771-327C-9201-90D29956BBFA> /usr/lib/swift/libswift_StringProcessing.dylib
+       0x27511f000 -        0x275120497  libswift_errno.dylib (310.100.8.0.1) <D41C076F-BDAD-35CD-9C5D-6E2D964C2249> /usr/lib/swift/libswift_errno.dylib
+       0x275121000 -        0x27512377f  libswift_math.dylib (310.100.8.0.1) <DE0364A8-5368-3AE6-A17F-199447A96059> /usr/lib/swift/libswift_math.dylib
+       0x275124000 -        0x275124565  libswift_signal.dylib (310.100.8.0.1) <6A943F54-D50D-3D25-BCCE-0ECE1EEED5AA> /usr/lib/swift/libswift_signal.dylib
+       0x275125000 -        0x275125dcf  libswift_stdio.dylib (310.100.8.0.1) <CF7EEC05-B0DF-36F7-B113-DB80FAE5ABCA> /usr/lib/swift/libswift_stdio.dylib
+       0x275126000 -        0x2751267c7  libswift_time.dylib (310.100.8.0.1) <F13769AF-C154-363F-A10B-119CDB3D0273> /usr/lib/swift/libswift_time.dylib
+       0x275127000 -        0x275127737  libswiftsys_time.dylib (310.100.8.0.1) <89FE4D79-D655-3935-9A3A-FD4DB442946A> /usr/lib/swift/libswiftsys_time.dylib
+       0x275128000 -        0x27512898f  libswiftunistd.dylib (310.100.8.0.1) <5B1696DE-91D6-33EC-B0E4-207DD00976AC> /usr/lib/swift/libswiftunistd.dylib
+       0x27525f000 -        0x275262deb  libsystem_darwindirectory.dylib (122) <277D32FB-F49A-3949-97A4-B190A3DF89E8> /usr/lib/system/libsystem_darwindirectory.dylib
+       0x275263000 -        0x27526a523  libsystem_eligibility.dylib (181.140.5) <27E48AAA-644F-394A-9F62-49CEFB813716> /usr/lib/system/libsystem_eligibility.dylib
+       0x27526b000 -        0x2752706c5  libsystem_sanitizers.dylib (19) <FB86D2F7-4501-38E4-9D9A-83F960D7D7BA> /usr/lib/system/libsystem_sanitizers.dylib

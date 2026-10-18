@@ -276,9 +276,11 @@ all effects through the same transaction. The synchronous wrapper uses that path
 final/legacy-limit fallback remains ordinary. Seven new and28 related cases pass. No new format,
 interpreter, default or second writer is introduced; the prior cost comparison keeps its original pins.
 
-This is a prerequisite for live yielding, not a completed LocalWorldSession scheduler. The ordinary
-loop's full-state preview/projection and readiness/input-cutoff policy require explicit integration;
-see the due-work map before adding a timer or silently deferring/dropping selected actions. General
+This authority packet alone is a prerequisite, not a completed general scheduler. The subsequent
+[live construction binding](p02/partition-state/live-construction-slices/RESULT.md) supplies an explicit
+internal profile-five/schema14 consumer: one selected NPC batch across ticks, readiness cancellation,
+queued input, changed-source invalidation and shared committed observation. Complete preview/capture
+and final projection remain, and public/default/current40/41 behavior is unchanged. General
 obligation discovery/membership, oldest-due age, durable preparation, current-profile migration,
 cold/platform/scale and independent review remain open. The conditional typed-owner recommendation
 and all P02/production gates stand.

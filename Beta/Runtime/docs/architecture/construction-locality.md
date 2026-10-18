@@ -309,9 +309,15 @@ is idempotent and does not undo any completed commit. Original command identitie
 until actual publication; an explicit new preparation still obeys normal historical identity rules.
 
 The complete candidate and fallback remain synchronous under the owning gate. No persistent cursor,
-second writer or automatic retry is added. The ordinary local session uses synchronous publication and does not consume the yielded
-API between ticks. Read-count slicing does not bound final rule-evaluation latency or establish
-NPC fairness; live readiness/input arbitration requires its own complete policy and verification.
+second writer or automatic retry is added. An explicit internal `LocalWorldSession` owner-count option
+consumes the handle between existing ticks for movement-free NPC-only work in typed-owner profile-five
+storage. Default sessions and mixed/player-action batches retain ordinary publication. The selected
+batch is fixed until publication or invalidation; newly submitted input waits for the next cutoff.
+No-ready/stop between slices cancels it, and an intervening head change ends that opportunity without
+replaying old commands. The [session policy](due-work-and-scheduling.md#runtime-binding-stored-construction)
+details readiness races, failures and receipt observation. The previous immutable view remains until
+publication, followed by complete reconstruction. Read-count slicing does not bound final evaluation,
+avoid complete selection/projection reads, establish NPC fairness or change an input lease.
 
 A qualifying final work step, or a batch crossing the legacy aggregate construction revision bound,
 returns the whole batch to ordinary full-world execution before publication. Earlier prepared actions

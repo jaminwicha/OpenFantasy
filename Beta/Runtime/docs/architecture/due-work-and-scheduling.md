@@ -84,9 +84,27 @@ earns no time and creates no receipt; it does not roll back an already published
 uses the same complete write set and transaction as synchronous work, including ordinary full-admission
 fallback. Reopening requires fresh capture: handles are transient, not saved continuations.
 
-`LocalWorldSession` still selects and commits through the ordinary synchronous path; it does not consume
-these handles between live ticks. The yielded authority boundary enables that integration but does not
-supply its readiness/input-cutoff policy, a final-evaluation CPU budget or a fairness guarantee.
+The internal `LocalWorldSession` constructor accepts an optional positive
+`storedConstructionOwnersPerSlice` budget only with explicit profile-five typed-owner storage.
+The public/default path uses ordinary synchronous publication. The
+[live preparation binding](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.StoredConstruction.cs)
+qualifies only advancing, movement-free NPC construction batches with no awaiting player action.
+Selection and ordinary admission preview happen before capture. One private handle owns the complete
+selected command set across the existing serialized host ticks; each tick reads at most the configured
+number of owners. Newly queued player actions wait for the next cutoff and receive no early receipt.
+Movement samples retain their ordinary lease; preparation does not extend an input's lifetime.
+
+Between slices, no ready player or a stop request cancels unpublished preparation. Resumption selects
+a fresh batch; elapsed wall time does not earn catch-up time. Readiness is sampled at the start of an
+opportunity, so an already admitted final opportunity can finish if pause races with it. A changed
+source invalidates the selection, refreshes the committed view and ends that tick; a later tick may
+select fresh commands. A semantic failure with the same source propagates instead of being hidden
+as intervention. Storage errors retain recovery fencing and fail the session.
+
+Read slices keep the previous immutable view. Successful publication reconstructs the complete world
+and uses the same receipt/trading observation and view publication as ordinary commits. Selection,
+input submission and final projection can still require full-world reads. Owner-count slicing supplies
+no final-evaluation CPU budget, selective projection, durable cursor or fairness guarantee.
 
 Splitting an ordinary multi-actor batch into one advancing commit per actor would change both exposure
 and opportunities to work. Bounded preparation must instead preserve the complete selected boundary,
