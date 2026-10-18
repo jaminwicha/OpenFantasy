@@ -15,6 +15,8 @@ The [WorldInstant](../../src/OpenFantasy.Core/WorldInstant.cs) representation an
 [Exposure](../../src/OpenFantasy.Core/Exposure) arithmetic are portable domain contracts. The
 [Scheduling](../../src/OpenFantasy.Core/Scheduling) types represent due work, scoped clock coordinates
 and deterministic selection. Their presence does not bind every world process to a universal queue.
+The [due-work and scheduling reference](due-work-and-scheduling.md) distinguishes mandatory boundary
+effects, autonomous proposals and preparation, including their actual runtime bindings and limits.
 
 ## Runtime binding: local session pacing
 

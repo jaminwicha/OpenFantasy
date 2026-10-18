@@ -629,3 +629,13 @@ historical tamper refusal. Runtime source/policy unchanged; test fixture, exact-
 and documentation only. Retained SQLite artifacts/restore instructions are linked from the result.
 General scheduling/current-profile/performance and phase gates remain open; concurrent steering and
 staged predecessor files remain excluded.
+
+## Due-work discovery preparation review — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-due-work-discovery-20261018`
+(`8cbc814667f25956b1f77fac0c794c504518321b`, parent `9e567ab777b221f2d4898858064a172458feefa0`).
+Verified documentation checkpoint: `codex/milestone-due-work-discovery-20261018`, created at the owned
+commit without switching. [Result](p02/partition-state/due-work-discovery/RESULT.md) pins the actual
+selection, boundary and standalone-queue sources, records documentation validation and retains all
+runtime/fairness/phase obligations. No runtime edits or test execution are claimed. Concurrent
+steering and unrelated staged predecessor work remain excluded.

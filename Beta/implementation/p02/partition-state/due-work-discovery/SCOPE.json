@@ -1,0 +1,9 @@
+{
+  "scope": "Source-backed due discovery and cutoff/fairness preparation; no runtime change",
+  "source": "9e567ab777b221f2d4898858064a172458feefa0",
+  "p02_closure_sha256": "05da175e9d80ea4b804dd150e7cb68a79ab665f03e3acad9ef1a9c98577bbdc3",
+  "long_runs": 0,
+  "api_calls": null,
+  "average_input_tokens": null,
+  "telemetry_note": "No per-packet rollout telemetry exposed by available tools; no savings claim."
+}

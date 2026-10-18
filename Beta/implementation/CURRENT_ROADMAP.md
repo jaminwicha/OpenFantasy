@@ -472,3 +472,15 @@ establish checkpoint-tail recovery, archive truncation, the commit-only trigger 
 profile migration, arbitrary due-work fairness, cold/cache/platform/scale or independent acceptance.
 Due discovery/fairness and the remaining PLAN-STATE comparison measurements/review are next. The
 P02 closure table and full phase/requirement scope remain unchanged; no runtime law was modified.
+
+## Due-work preparation reconciliation — 2026-10-18
+
+The [source-backed due-work map](PLAN_STATE_DUE_WORK_MAP.md) distinguishes mandatory boundary
+effects, autonomous proposals and preparation. Existing host selection can propose several builders
+at one cutoff; selected stored work accepts one action. The next PLAN-STATE witness must preserve
+the whole ordinary cutoff, not advance time once per actor. The calendar queue remains standalone;
+its generic phase convention cannot replace existing post-action expiry semantics. This is lead
+preparation only. No executable fairness, timing-domain persistence, current40/41 migration,
+independent review or phase exit is claimed. The complete P02 closure table and later schedule remain
+unchanged. [Packet result](p02/partition-state/due-work-discovery/RESULT.md) retains source pins,
+verification and the observed entry-read friction under the owner's measured-efficiency direction.

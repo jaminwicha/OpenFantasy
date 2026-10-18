@@ -197,3 +197,13 @@ loss refuse. This is legacy5/schema14 qualification of the existing publisher/re
 checkpoint or interpreter design. No general/current-profile/cold/scale or independent exit closes.
 Proceed to due discovery/fairness and remaining measurement/review obligations while preserving the
 complete production and migration scope. Timings are local diagnostics, not a shipping budget result.
+
+## Due-work discovery disposition — 2026-10-18
+
+Use the [due-work/cutoff map](PLAN_STATE_DUE_WORK_MAP.md) before extending stored execution. A single
+selected builder is not a proof of multi-actor scheduling. Preserve command selection, canonical
+execution order and all mandatory effects in one logical advancing boundary; preparation slices do
+not earn time. The existing calendar queue is a standalone component, not a bound world scheduler.
+Its transition phase cannot silently move existing expiries before actions. The next executable
+contrast and remaining fairness/domain/migration/review exits are explicit in that map. This source
+review adds no runtime format, policy, acceptance or production-performance claim.

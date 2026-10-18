@@ -38,9 +38,9 @@ or current-game migration is implied.
 actual payloads under the replay-selected head, admits the complete cohort and returns reconstructed
 owners after exact replay comparison. Partial work can reopen and complete the same saved project.
 It still reads all required owners and terrain, retains complete nonterrain continuation state and
-performs full original replay. Next prove an operation-specific loading cohort with authenticated
-dependency closure and all due obligations; do not substitute another whole-world wrapper or geometry
-helper. General paging/fairness, noninitial checkpoints and current40/41 nested migration remain open.
+performs full original replay. The stored partial-publication and checkpoint qualifications below extend
+this baseline; do not substitute another whole-world wrapper or geometry helper. General paging/fairness
+and current40/41 nested migration remain open.
 Keep actual owner/storage/history costs explicit; no performance or credit saving is inferred.
 
 Before selective-loading edits, use the [current40/41 dependency map](PLAN_STATE_CURRENT_PROFILE_MAP.md):
@@ -51,7 +51,9 @@ now reads an exact source-bound subset. [Stored partial publication](p02/partiti
 renewed dependencies and complete due gathering/resident updates, retaining site geometry and all-actor
 exposure reads. Final installation and intervening actions restore complete admission. The
 [stored checkpoint qualification](p02/partition-state/stored-checkpoint/RESULT.md) proves the first normal6000-step checkpoint inside partial work, continuation,
-atomic faults and historical refusal. Next address due discovery/fairness and the remaining
+atomic faults and historical refusal. The [due-work map](PLAN_STATE_DUE_WORK_MAP.md) now distinguishes
+mandatory effects, autonomous proposals and preparation; next qualify a complete multi-actor cutoff
+without adding time per actor or binding the standalone calendar queue blindly. Retain the remaining
 PLAN-STATE measurement/review exits; general current-profile checkpoint/migration proof remains. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
 Neither extraction nor the map is a partial loader or completed nested migration.

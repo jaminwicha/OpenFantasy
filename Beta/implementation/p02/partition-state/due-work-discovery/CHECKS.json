@@ -1,0 +1,50 @@
+{
+  "source_pins_match": 13,
+  "p02_closure_unchanged": true,
+  "calendar_queue_consumers": [
+    "Beta/Runtime/src/OpenFantasy.Core/Scheduling/CalendarQueueCodecV1.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Scheduling/DueWorkQueueSnapshot.cs"
+  ],
+  "runtime_tests_run": 0,
+  "long_runs": [],
+  "accepted": true,
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "Beta/tools/check_documentation.py",
+        "--work-record",
+        "Beta/implementation/p02/partition-state/due-work-discovery/RESULT.md",
+        "--files",
+        "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+        "Beta/Runtime/docs/architecture/time-and-encounters.md",
+        "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+        "Beta/implementation/AGENT_HANDOFF.md",
+        "Beta/implementation/CURRENT_ROADMAP.md",
+        "Beta/implementation/PLAN_STATE_DECISION.md",
+        "Beta/implementation/GIT_MILESTONES.md",
+        "Beta/implementation/p02/partition-state/due-work-discovery/RESULT.md"
+      ],
+      "exit_code": 0,
+      "log": "check-01.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+        "Beta/Runtime/docs/architecture/time-and-encounters.md",
+        "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+        "Beta/implementation/AGENT_HANDOFF.md",
+        "Beta/implementation/CURRENT_ROADMAP.md",
+        "Beta/implementation/PLAN_STATE_DECISION.md",
+        "Beta/implementation/GIT_MILESTONES.md",
+        "Beta/implementation/p02/partition-state/due-work-discovery/RESULT.md"
+      ],
+      "exit_code": 0,
+      "log": "check-02.log"
+    }
+  ]
+}
