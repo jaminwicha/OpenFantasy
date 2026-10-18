@@ -44,11 +44,15 @@ controller does not automatically authorize a different actor.
 
 ## Construction qualification and due closure
 
-[ConstructionWorkKernel](../../src/OpenFantasy.Core/Construction/ConstructionWorkKernel.cs) checks
-builder/control/ownership, project and custodian policy, actor capability/HP, quest completion, tool,
-exact revisions, location/reach, reservation-wide stock and required-access actors before awarding
-work. It checks placement before partial progress as well as completion. Completion also admits
-spawned identities, finite transformation, combined capacity and installed material backing.
+[ConstructionWorkQualification](../../src/OpenFantasy.Core/Construction/ConstructionWorkQualification.cs)
+checks builder/control/ownership, project and custodian policy, actor capability/HP, quest completion,
+tool, exact revisions, location/reach, reservation-wide stock and required-access actors before proposing
+work. It checks placement before partial progress as well as completion. Its typed dependency/result
+object does not itself advance time or publish a structure.
+[ConstructionWorkKernel](../../src/OpenFantasy.Core/Construction/ConstructionWorkKernel.cs) uses this
+same qualification, retaining partial work or admitting spawned identities, finite transformation,
+combined capacity and installed material backing on completion. The input owners remain complete;
+a typed result does not by itself authenticate a selectively loaded dependency set.
 
 A selective loader must establish the complete read dependency set for those checks. A positive
 reservation lookup does not prove that no conflicting stock exists elsewhere. Any absence or global

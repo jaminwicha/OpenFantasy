@@ -107,9 +107,11 @@ Therefore a two-payload loader is incorrect, and skipping those actors is not a 
 An immutable history witness may prove unchanged global facts only within a serialized admitted interval;
 any intervening action that changes a dependency must invalidate/rebuild it before another step.
 
-The next implementation should extract the *existing* common work qualification from the completion
-material mutation, with explicit source-bound stock/access/identity dependencies. Then bind a selected
-stored-owner cohort to that qualification and the complete due-process closure under the sole writer.
+[Shared work qualification](p02/partition-state/work-qualification/RESULT.md) extracts the existing
+common guards and typed work dependencies from completion material mutation, preserving the original
+rule order. It still consumes complete input owners and supplies no persisted freshness proof.
+Next bind source-established stock/access/identity dependencies and a selected stored-owner cohort to
+that same qualification and the complete due-process closure under the sole writer.
 Prove that unrelated custodian detail and immutable closed provenance can be absent, while actual due
 actor/gathering updates remain present. Do not claim actor-detail savings until the representation can
 support them without changing exposure law. Final completion loads its larger material/geometry cohort

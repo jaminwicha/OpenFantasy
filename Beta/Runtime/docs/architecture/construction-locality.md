@@ -40,11 +40,21 @@ obligations. Changed dependencies require actual preparation from current admitt
 old directory again cannot establish that it is still authoritative. Source freshness and publication
 serialize at the owner.
 
-[ConstructionWorkKernel](../../src/OpenFantasy.Core/Construction/ConstructionWorkKernel.cs) evaluates
-current retained control, HP, funding, tool/stock/revisions, geometry, work and material completion.
-The legacy control adapter uses the actual counted authority; it does not infer eligibility from an
-unloaded region. It cannot interpret delegated control. The kernel preserves its ordinary rejection
-precedence and exact output identities.
+[ConstructionWorkQualification](../../src/OpenFantasy.Core/Construction/ConstructionWorkQualification.cs)
+checks current control, ownership, HP/capability, quest funding, exact tool/storage/project revisions,
+reservation-wide stock, actual required-access actors and placement before proposing earned work.
+Its typed result names the project, actor, tool, storage, reserved stock, access requirements, recipe,
+proposed progress and structure/placement. The result is ephemeral evaluation data, not a durable
+admission witness, reusable authorization, clock advancement or published structure.
+
+[ConstructionWorkKernel](../../src/OpenFantasy.Core/Construction/ConstructionWorkKernel.cs) calls this
+same qualification for live, detached and locality paths. It retains partial work or performs the
+existing final identity/capacity/material mutation and installed-backing checks. The caller still owns
+earned time, complete-world admission and publication. Qualification keeps ordinary rejection order;
+material completion uses the exact structure identity derived by qualification. Both paths still read
+complete inventory/production/construction inputs; this separation is not selective-loading evidence.
+The legacy control adapter uses actual counted authority and cannot interpret delegated control or
+infer eligibility from an unloaded region.
 
 [WorldStepIdentityReservations](../../src/OpenFantasy.Core/Worlds/WorldStepIdentityReservations.cs)
 is shared with ordinary world execution. Cause and command identities are reserved before action

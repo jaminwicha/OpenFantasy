@@ -1,0 +1,11 @@
+{
+  "parent": "f430d69651b8a5fdc009571639796d209d9c1857",
+  "original_kernel": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionWorkKernel.cs",
+  "qualification": "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionWorkQualification.cs",
+  "guard_body_exact_after_rejection_container_rename": true,
+  "completion_tail_exact": true,
+  "qualification_input_guard_sha256": "cd5ca6361b453512bf30c667199b00192e5523c6600fabc2f9e464ee9845f33a",
+  "completion_tail_sha256": "8207cacf1296262d3f2de0244237d2495a5e233464fabcce66b5d1472e14a23e",
+  "identity_bridge": "Completion reads StructureId from the qualified proposed structure; its original derivation remains in qualification.",
+  "scope": "Source-move comparison only; actual tests and admission gates remain required."
+}

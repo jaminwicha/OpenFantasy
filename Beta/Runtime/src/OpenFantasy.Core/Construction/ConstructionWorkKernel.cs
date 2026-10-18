@@ -18,82 +18,21 @@ internal static class ConstructionWorkKernel
         Func<ConstructionCompletionRequest, ConstructionCompletionEvidence>? completionEvidence)
     {
         ConstructionWorkResult Reject(WorldActionRejection rejection) => new(inventory, production, construction, rejection, []);
-        if (command.WorldId != world.WorldId || command.BranchId != world.BranchId
-            || inventory.WorldId != world.WorldId || inventory.BranchId != world.BranchId
-            || construction.WorldId != world.WorldId || construction.BranchId != world.BranchId
-            || production.WorldId != world.WorldId || production.BranchId != world.BranchId
-            || space.Scope.WorldId != world.WorldId || space.Scope.BranchId != world.BranchId
-            || !world.Authorizes(command))
-        {
-            return Reject(WorldActionRejection.NotAuthorized);
-        }
-        if (command.Intent is not WorkConstructionIntent intent)
-        {
-            throw new ArgumentException("This planner interprets construction work only.", nameof(command));
-        }
-        ConstructionProject? project = construction.FindProject(intent.ProjectId);
-        if (project is null || project.BuilderActorId != command.ActorId
-            || project.OwnerActorId != command.ActorId
-            || !inventory.Policies.Any(value => value.CustodianId == project.ProjectCustodianId && value.OwnerActorId == command.ActorId))
-        {
-            return Reject(WorldActionRejection.NotAuthorized);
-        }
-        if (!isAdvancingStep || held || world.HasReadingHold || project.IsCompleted || !world.HasProgressionAndQuests)
-        {
-            return Reject(WorldActionRejection.Unavailable);
-        }
-        ActorPresence actor = space.GetActor(command.ActorId);
-        if (actor.Revision != command.ExpectedActorRevision || project.Revision != intent.ExpectedProjectRevision)
-        {
-            return Reject(WorldActionRejection.RevisionConflict);
-        }
-        if (actor.Binding.Kind != ActorFormKind.Corporeal || !actor.Condition.SupportsFunction(BodyFunction.Manipulation)
-            || !actor.Condition.CanLocomote(LocomotionMode.Ground) || world.CurrentHp(command.ActorId) == 0
-            || !world.QuestCompleted(project.QuestId))
-        {
-            return Reject(WorldActionRejection.Unavailable);
-        }
-        if (actor.Feet != project.WorkFeet
-            || space.QueryPointInteraction(actor.ActorId, project.SiteFeet, ConstructionDefinition.WorkReachSubunits) != SpatialInteraction.Reachable)
-        {
-            return Reject(WorldActionRejection.OutOfReach);
-        }
-        CountedSourceLot? tool = inventory.Custody.Lots.FirstOrDefault(value => value.LotId == intent.ToolLotId);
-        EntityId primaryInventory = world.InventoryCustodian(command.ActorId);
-        if (tool is null || tool.CustodianId != primaryInventory || tool.Definition != project.Definition.RequiredTool.Item
-            || tool.Quantity != 1 || tool.ReservedBy is not null || tool.Protection != LotProtection.None)
-        {
-            return Reject(WorldActionRejection.Unavailable);
-        }
-        CustodianStorage storage = inventory.Custody.GetStorage(project.ProjectCustodianId);
-        if (tool.Revision != intent.ExpectedToolLotRevision || storage.Revision != intent.ExpectedProjectStorageRevision)
-        {
-            return Reject(WorldActionRejection.RevisionConflict);
-        }
+        var qualification = ConstructionWorkQualification.Evaluate(world, inventory, production, construction,
+            space, command, isAdvancingStep, held);
+        if (qualification.Work is not { } work) return Reject(qualification.Rejection);
+
+        var project = work.Project;
+        var actor = work.Actor;
+        var storage = work.Storage;
+        var stock = work.ReservedStock;
+        var recipe = work.Recipe;
+        var progress = work.Progress;
+        var proposed = work.Structure;
+        var structureId = proposed.StructureId;
+        var placement = work.Placement;
         try
         {
-            CraftRecipeDefinition recipe = project.Definition.MaterialTransform;
-            CountedItemDefinition input = recipe.ItemFor(recipe.Inputs.Single());
-            CountedSourceLot[] stock = inventory.Custody.Lots.Where(value => value.ReservedBy == project.ReservationId).ToArray();
-            if (stock.Length is 0 or > MaterialRecipeDefinition.MaximumTermCount || stock.Any(value =>
-                    value.CustodianId != project.ProjectCustodianId || value.Definition != input || value.Protection != LotProtection.None)
-                || stock.Aggregate(0UL, (sum, value) => checked(sum + value.Quantity)) != recipe.Inputs[0].Count)
-            {
-                return Reject(WorldActionRejection.Unavailable);
-            }
-            ulong structureOrdinal = checked((ulong)recipe.Outputs.Count + 1);
-            EntityId structureId = EntityId.DeriveSpawned(command.CommandId, structureOrdinal);
-            var access = project.RequiredAccess.Concat(project.RequiredAccess.Select(value =>
-                new GroundAccessRequirement(value.ActorId, space.GetActor(value.ActorId).Feet, value.To))).Distinct().ToArray();
-            SpatialStructure proposed = project.Definition.CreateStructure(structureId, project.SiteFeet,
-                space.GroundSupport != GroundSupportMode.TerrainOnly);
-            StructurePlacementResult placement = space.PrepareStructurePlacement(proposed, access);
-            if (placement.Status != StructurePlacementStatus.Prepared)
-            {
-                return Reject(WorldActionRejection.Unavailable);
-            }
-            ExposureProgress progress = ExposureProgress.Restore(project.Progress, project.Definition.WorkRate)
-                .Advance(LocalExposureDuration.FromMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep));
             if (progress.CompletedUnits < project.Definition.RequiredWork.Value)
             {
                 return new ConstructionWorkResult(inventory, production, construction.WithProject(project.WithProgress(progress, null)),

@@ -45,9 +45,11 @@ Keep actual owner/storage/history costs explicit; no performance or credit savin
 
 Before selective-loading edits, use the [current40/41 dependency map](PLAN_STATE_CURRENT_PROFILE_MAP.md):
 read/write/due closures differ; keep reservation-wide stock/access checks and all actor exposure.
-Extract shared work qualification before binding an actual smaller stored cohort. The map also retains
-joint archive witnesses, pending care, private markets and profile41 withdrawal/control dependencies.
-It is preparation, not an implemented partial loader or completed nested migration.
+[Shared qualification](p02/partition-state/work-qualification/RESULT.md) is extracted and used by live,
+detached and locality work, with unchanged complete input owners and publication obligations. Next bind
+source-established dependency completeness/freshness to an actual smaller stored cohort. The map also
+retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
+Neither extraction nor the map is a partial loader or completed nested migration.
 
 After the PLAN-STATE decision/review exit, NPC-01 is the next new inhabited-world behavior. STORY-01,
 AUDIO-01/ART-01, recruitment/cooperative work and the traveling-merchant/cargo investigation retain

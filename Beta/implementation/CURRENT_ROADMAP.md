@@ -417,3 +417,15 @@ actor exposure means a builder/project-only loader would omit actual updates. Pr
 custodian/closed-provenance detail is absent while preserving all required updates; final completion
 loads its larger material/geometry cohort. This refines preparation order without changing the full
 P02 closure table, phase scope, gates or deadlines. [Review record](p02/partition-state/current-profile-dependencies/RESULT.md).
+
+### PLAN-STATE shared construction qualification
+
+[The shared guard boundary](p02/partition-state/work-qualification/RESULT.md) now separates work
+qualification/proposed progress from final material mutation. Ordinary, detached and locality execution
+call the same implementation. The result does not advance clocks or publish geometry. Complete-owner
+inputs, actual due updates, final admission and history remain unchanged.
+
+Next bind source-established stock/access/identity completeness and freshness to a genuinely selective
+stored cohort; an interface or dependency list alone is not residency evidence. This fulfills the
+qualification extraction in the current-profile preparation, not selective loading, migration,
+fairness, checkpoint/scale or the unchanged complete PLAN-STATE/P02 gates.

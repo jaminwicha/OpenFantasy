@@ -175,8 +175,9 @@ limits are experimental storage stops, not accepted shipping limits or reduced c
 [The current-profile map](PLAN_STATE_CURRENT_PROFILE_MAP.md) resolves an important selective-loading
 ambiguity: command-local reads, published writes and mandatory due processes have different closures.
 Current actor images carry resident exposure; partial construction still checks global reservation
-stock and required-access actors. The next extraction must share existing qualification, retain
-source-bound completeness/freshness evidence, and load the larger cohort for material completion.
+stock and required-access actors. [Shared qualification](p02/partition-state/work-qualification/RESULT.md)
+is extracted without changing the guards. The next loading binding must retain source-established
+completeness/freshness evidence and load the larger cohort for material completion.
 
 The map also records coordinated archive witnesses, pending care, private market knowledge,
 controller/permission/effective-assignment distinctions and profile41 party withdrawal. These prevent

@@ -1,0 +1,13 @@
+[
+  {
+    "run": "preflight-01",
+    "classification": "production",
+    "failure": "Extraction left completion referring to local structureId that moved into qualification. Core compiler caught the missing variable; no tests launched.",
+    "correction": "Use StructureId from the exact qualified proposed structure; preserve the original derived identity and completion algorithm.",
+    "retained": [
+      "preflight-01/core-build.log",
+      "preflight-01/core-build.json"
+    ],
+    "decision": "Deliberate preflight-02 after identified compilation fix; no automatic retry or bound change."
+  }
+]

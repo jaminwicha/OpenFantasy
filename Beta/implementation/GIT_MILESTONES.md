@@ -582,3 +582,15 @@ is preserved separately and claims no implemented rule or reserved profile versi
   document checks from runtime migration/loading or independent acceptance. Runtime bytes/tests are
   unchanged; no new test, throughput or feasibility pass is claimed. All PLAN-STATE/P02 gates remain.
 - The timeless dependency reference and live plan/roadmap/handoff are synchronized together.
+
+## Shared construction qualification — 2026-10-18
+
+- Before-change WIP checkpoint `codex/checkpoint-before-work-qualification-20261018` resolves to
+  `2029c3ebcd6193cccbc757532f611319c9f6d1cf`, fromf430d696. Concurrent/predecessor scope remains in CHECKPOINT.json.
+- Verified increment pointer: `codex/milestone-work-qualification-20261018`, at the owned commit
+  without switching. Existing work guards/progress are shared separately from final material mutation;
+  ordinary, detached and locality paths retain the same rule body and completion algorithm.
+- [Result](p02/partition-state/work-qualification/RESULT.md) records exact source extraction, terminal
+  behavior checks and retained compiler/runner failures. Complete owner inputs remain; no selective
+  loading, migration, independent review or PLAN-STATE/P02 acceptance follows.
+- Timeless construction/dependency references and living decision/map/plan/roadmap/handoff are current.

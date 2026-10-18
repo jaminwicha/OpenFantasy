@@ -273,3 +273,13 @@ currently required actor updates; prove actual absence of unrelated custodian/cl
 not just fewer requested hashes. The map names stale/missing/foreign/global-reservation/access/control/
 due-boundary/fault contrasts. No new format, implicit current-profile migration or weaker admission
 is authorized. Final installation uses its larger complete material/geometry admission cohort.
+
+## Shared qualification binding
+
+[Work qualification](p02/partition-state/work-qualification/RESULT.md) separates the existing guard/
+progress evaluation from the kernel's completion material mutation. Live, detached and locality work
+use that same guard implementation; qualification alone cannot earn time, publish geometry or bypass
+admission. Rejection order, reservation-wide stock/access and final material/identity checks remain.
+The inputs are still complete owners. Next supply source-established dependency completeness and
+freshness, then prove an actual smaller stored cohort with full due-process closure. No selective
+residency, current-profile migration, scheduling or PLAN-STATE/P02 acceptance follows from extraction.

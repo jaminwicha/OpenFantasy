@@ -1,0 +1,7 @@
+{
+  "classification": "runner",
+  "failure": "functions.exec wrapper SyntaxError: missing ) after argument list",
+  "scope": "Tool input was rejected before command execution; no build/test or file mutation began.",
+  "correction": "Use a simple const result = await tool(...); text(result) wrapper after identifying the syntax error; no test rerun.",
+  "occurrences": 2
+}

@@ -1,0 +1,32 @@
+{
+  "accepted_scope": "Shared original work qualification; no selective residency or phase acceptance",
+  "distinct_passes": 545,
+  "new_cases": 6,
+  "runs": {
+    "core": {
+      "passed": 412,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 15.87876683298964,
+      "bound_seconds": 180,
+      "record": "core-check/core.trx"
+    },
+    "hosting": {
+      "passed": 133,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 90.19842208304908,
+      "bound_seconds": 180,
+      "record": "hosting-check/hosting.trx"
+    }
+  },
+  "preflight": "preflight-02",
+  "pins": 1948,
+  "failed_preflight": "FAILURES.json",
+  "source_move_comparison": "EXTRACTION_COMPARISON.json",
+  "long_runs_exceeding_focused_budget": 0,
+  "api_calls": null,
+  "average_input_context_tokens": null,
+  "independent_review": false,
+  "native_or_human_acceptance": false
+}
