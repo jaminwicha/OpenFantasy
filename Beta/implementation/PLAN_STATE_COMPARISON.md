@@ -223,6 +223,11 @@ The first extraction should establish these concrete responsibilities, in the ex
   collision/support, known spatial identity checks and prospective access routes with ordinary
   placement. It returns geometric status without constructing a partial scene. It deliberately does
   not certify omitted access obligations, distant identity uniqueness, strength or actual work funding.
+  [Shared construction execution](p02/partition-state/construction-execution/RESULT.md) now evaluates
+  coupled material/project candidates through the ordinary rule kernel, using exact detached source
+  facts and reusable site evidence. The final candidate can execute after source world/scene/index/
+  terrain collection. Whole-world capture/freshness and unsupported terrain-retaining material contexts
+  remain explicit; this is not an admitted partially resident world or a durable offscreen scheduler.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

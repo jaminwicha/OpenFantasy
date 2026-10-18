@@ -1,0 +1,55 @@
+{
+  "base": "996cf809a18d47cb6171aee118fcacad06dd517e",
+  "decisionBodyMatchesAfterExplicitAdapterAndResultSubstitutions": true,
+  "substitutions": [
+    {
+      "before": "ConstructionPlan Reject(WorldActionRejection rejection) => new(inventory, production, construction, space, rejection, []);",
+      "after": "ConstructionWorkResult Reject(WorldActionRejection rejection) => new(inventory, production, construction, rejection, []);"
+    },
+    {
+      "before": "        var delivery = new TrustedCommandDelivery(command.PrincipalId, command.OriginSessionId);\n",
+      "after": ""
+    },
+    {
+      "before": "WorldActorCommandAuthority.AuthorizeSelection(world, command) is null",
+      "after": "!world.Authorizes(command)"
+    },
+    {
+      "before": "world.Progression is null || world.Quests is null",
+      "after": "!world.HasProgressionAndQuests"
+    },
+    {
+      "before": "world.Progression.GetActor(command.ActorId).CurrentHp",
+      "after": "world.CurrentHp(command.ActorId)"
+    },
+    {
+      "before": "!world.Quests.Participations.Any(value => value.QuestId == project.QuestId && value.Status == ActorQuestStatus.Completed)",
+      "after": "!world.QuestCompleted(project.QuestId)"
+    },
+    {
+      "before": "world.GetResident(command.ActorId).InventoryCustodianId",
+      "after": "world.InventoryCustodian(command.ActorId)"
+    },
+    {
+      "before": "world.IdentityIndex.Contains(id)",
+      "after": "world.ContainsIdentity(id)"
+    },
+    {
+      "before": "new ConstructionPlan(inventory, production, construction.WithProject(project.WithProgress(progress, null)),\n                    space, WorldActionRejection.None, [])",
+      "after": "new ConstructionWorkResult(inventory, production, construction.WithProject(project.WithProgress(progress, null)),\n                    WorldActionRejection.None, [])"
+    },
+    {
+      "before": "            StructurePlacementResult placement = space.PrepareStructurePlacement(\n                project.Definition.CreateStructure(structureId, project.SiteFeet,\n                    space.GroundSupport != GroundSupportMode.TerrainOnly), access);",
+      "after": "            SpatialStructure proposed = project.Definition.CreateStructure(structureId, project.SiteFeet,\n                space.GroundSupport != GroundSupportMode.TerrainOnly);\n            StructurePlacementResult placement = space.PrepareStructurePlacement(proposed, access);"
+    },
+    {
+      "before": "continued ? (batch, candidateInventory) => evidence = new ConstructionCompletionEvidence(world, space, command,\n                    inventory, candidateInventory, production, construction, completed, completedProject, batch) : null",
+      "after": "continued ? (batch, candidateInventory) => evidence = completionEvidence!(\n                    new(candidateInventory, completed, completedProject, batch)) : null"
+    },
+    {
+      "before": "return new ConstructionPlan(material.CandidateInventory, material.CandidateProduction, completed,\n                placement.Candidate!, WorldActionRejection.None, created, evidence);",
+      "after": "return new ConstructionWorkResult(material.CandidateInventory, material.CandidateProduction, completed,\n                WorldActionRejection.None, created, proposed, placement.Candidate, evidence);"
+    }
+  ],
+  "scope": "Lead source comparison, not independent review. Live adapter methods separately reviewed against original world facts; runtime and legacy behavior checked by affected tests."
+}

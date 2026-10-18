@@ -54,6 +54,7 @@ internal sealed class WatershedIdentityLayer
 
     internal bool Matches(PreparedWatershed? watershed, PreparedWatershedNetwork? network, TerrainIdentityLayer terrain) =>
         ReferenceEquals(_watershed, watershed) && ReferenceEquals(_network, network) && ReferenceEquals(_terrain, terrain);
+    internal IEnumerable<EntityId> Identities => _roles.Keys;
     internal bool Contains(EntityId identity) => _roles.ContainsKey(identity);
     internal bool ContainsPrefix(ulong prefix) => _identityPrefixes.Value.Contains(prefix);
 

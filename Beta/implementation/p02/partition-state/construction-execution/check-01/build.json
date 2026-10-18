@@ -1,0 +1,11 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "build",
+    "src/OpenFantasy.Core/OpenFantasy.Core.csproj",
+    "--no-restore"
+  ],
+  "exitCode": 0,
+  "seconds": 4.932459291885607,
+  "deadlineSeconds": 180
+}

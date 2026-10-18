@@ -30,6 +30,10 @@ public sealed class WorldIdentityIndex
 
     internal WatershedIdentityLayer Watershed { get; }
 
+    internal (EntityId[] Identities, ulong[] Families) CaptureReservations() =>
+        (_dynamicRoles.Keys.Concat(Terrain.Identities).Concat(Watershed.Identities).Distinct().Order().ToArray(),
+            _encounterFamilies.Order().ToArray());
+
     public bool Contains(EntityId identity) => _encounterFamilies.Contains(identity.High) || ContainsEntity(identity);
 
     /// <summary>Actual admitted entities/references, excluding prospective episode namespace reservations.</summary>
@@ -82,6 +86,8 @@ internal sealed class TerrainIdentityLayer
         }
         return true;
     }
+
+    internal IEnumerable<EntityId> Identities => _roles.Keys;
 
     internal bool Contains(EntityId identity) => _roles.ContainsKey(identity);
 

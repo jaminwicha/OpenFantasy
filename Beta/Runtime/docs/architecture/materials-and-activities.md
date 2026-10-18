@@ -92,6 +92,10 @@ Construction placement rechecks required escape connections, including connectio
 positions, on every qualified paid step. A worker's absence from rendering does not waive this geometry
 or make a time-only completion lawful. The [prepared route boundary](world-and-geography.md#routes-over-bounded-prepared-reads)
 provides the shared search over exact selected geometry with an explicit availability boundary.
+[Shared construction execution](construction-execution.md) runs those work and material rules through
+live adapters or an exact detached preparation. Retained site evidence can avoid repeating unchanged
+geometry; it is not an admitted world, earned clock, physical-load result or durable work receipt.
+
 [Prepared placement](world-and-geography.md#prepared-construction-geometry) combines prospective
 structure clearance/support with those required routes, using the same ordinary placement queries.
 It returns geometric status only. Neither boundary replaces `ConstructionPlanner`, complete candidate

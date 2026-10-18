@@ -1,0 +1,13 @@
+{
+  "base": "996cf809a18d47cb6171aee118fcacad06dd517e",
+  "ref": "codex/checkpoint-before-construction-execution-20261017",
+  "snapshot": "9571e7217086d0cf004302f8b29ab3e6c80051fa",
+  "scope": "Runtime clean at base; relevant concurrent language docs included for recovery only. Unrelated predecessor and solution edits excluded.",
+  "files": {
+    "Beta/AGENTS.md": "6ac421e3c7c754d005a74f5c99f5786e20a32f1d76981af4062fb91c82be363e",
+    "Beta/implementation/AGENT_HANDOFF.md": "6b1b3ee440d82185ed2e4375e0d0ef31478b03944e6cbf96850f3191e8c3158d",
+    "Beta/implementation/CURRENT_ROADMAP.md": "ec96668a08c520419536e58cd19d982050e1a06f50cad4d4891102d8945425ac",
+    "Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md": "57f30586711a00c98aa9078e9fe1e9ccd049beb7f7aff185a056f1cda1ad8f28",
+    "Beta/implementation/CORE_LANGUAGE_RUST_EVIDENCE.json": "2695a7564293ddcf77747592b90fc5e0032e48f19d37580b1238478b9bd7a377"
+  }
+}

@@ -171,7 +171,10 @@ evidence, not 10,000-actor/20,000-resident, four-player endurance, desktop or fu
    paid progress and real completion with detached dependencies, exact ordinary equivalence and stale
    rejection. Include certificate invalidation and actor/cargo boundaries in this unit; avoid another
    free-standing geometry-only packet. The source-backed design above is ready; this executable unit
-   remains unimplemented.
+   is partially supplied by [shared construction execution](p02/partition-state/construction-execution/RESULT.md):
+   ordinary and detached candidate evaluation share rules, including real material completion and site
+   invalidation. Whole-source capture/freshness, terrain-retaining material contexts, earned scheduling
+   and admitted owner inputs still need integration; this does not close the offscreen authority proof.
 2. **Joined owner transaction.** Integrate those decisions with stable actor/material/project owners,
    membership, time and the single durable publisher. Run the entire episode, including actual gift,
    absent-detail work, final material publication and historical recovery. Wire exact admission and

@@ -57,6 +57,7 @@ different kind of person.
 | [Coupled intact settlement](coupled-settlement.md) | How do separately backed assemblies share support and publish a bounded common descent with their riders? |
 | [Event-ordered descent](event-descent.md) | How do unequal landing events retain stopped obstacles, actual mass and explicit impact-response boundaries? |
 | [Consequence continuation](consequence-continuation.md) | How do accepted physical changes resume after restart and publish once without spending extra time? |
+| [Construction execution](construction-execution.md) | How do ordinary and detached work share the same rules, retain exact site evidence and preserve the complete publication boundary? |
 | [Physical construction](construction-physical.md) | How do member condition and placement retain completed work, material ownership and atomic persistence? |
 | [Reservoir transport](reservoir-transport.md) | How do scheduled gates move actual water, preserve provenance and share time/capacity? |
 | [Reservoir boundaries](reservoir-boundaries.md) | What proves floors and walls against actual terrain and completed material, including narrow gaps? |

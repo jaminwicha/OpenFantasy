@@ -251,13 +251,20 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    [Prepared placement](p02/partition-state/prepared-placement/RESULT.md) now combines shared structure
    clearance/support and escape-route checks over those reads. Ordinary placement retains full candidate
    admission; this geometric status cannot spend stock, award work or publish an installed object.
+   [Shared construction execution](p02/partition-state/construction-execution/RESULT.md) now reuses
+   one rule kernel for ordinary work and detached material/project candidates. Site evidence survives
+   unchanged work progress; 200 steps and completion agree, and final candidate evaluation survives
+   collection of the source world/scene/index/terrain. Capture and freshness still require the complete
+   source, some terrain-retaining material continuations are explicitly unsupported, and physical/time/
+   durable publication remain outside the detached result. This is not an offscreen world authority.
    The [integrated prototype contract](PARTITION_PROTOTYPE_CONTRACT.md) specifies the next unit:
    shared admitted construction execution, stable actor/custodian owners and separate spatial membership,
    real cross-owner cargo transfer, earned exposure and invalidated geometry/access evidence. Construction's
    current complete-locality access population must be preserved; slicing it is not lawful admission.
    The next integrated proof must establish complete directory ownership, movement with cargo plus actual
    custody transfer, absent-detail funded work/completion and atomic recovery/history. Additional isolated
-   read helpers cannot close PLAN-STATE. The contract is prepared; executable integration remains open.
+   read helpers cannot close PLAN-STATE. The contract and shared candidate kernel are prepared; joined
+   owner/scheduler/publication integration remains open.
    These are bounded dependency preparations, not partitioned world simulation. Global directory completeness,
    custody/time/readiness and complete permission closure, atomic cross-partition publication and the selected format remain
    unproved/undecided. Record the decision, measured limits and remaining questions in the living

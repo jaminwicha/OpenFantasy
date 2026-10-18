@@ -211,9 +211,13 @@ ownership transfer, absent-detail work and atomic publication/history remain the
 The [prototype contract](PARTITION_PROTOTYPE_CONTRACT.md) now specifies stable actor/custodian owners,
 separate membership, real cargo transfer, complete access-population evidence and earned-work execution.
 Its source audit finds construction's effective 16-distinct-actor access ceiling and a terrain-retaining
-identity index; neither can be bypassed by partial loading. Next implement shared admitted execution
-and the joined durable episode, not another geometry-only wrapper. The design is prepared; integration,
-measurements and independent acceptance remain unrun.
+identity index; neither can be bypassed by partial loading. The
+[shared work kernel](p02/partition-state/construction-execution/RESULT.md) now qualifies detached
+material/project candidates against ordinary 200-step completion, including source/terrain collection;
+393 Core and 18 Hosting cases pass. Capture/freshness still need the complete source and terrain-retaining
+material contexts explicitly refuse. Next integrate admitted owner inputs, earned scheduling and the
+joined durable episode; candidate evaluation is not offscreen world publication. Integrated measurements
+and independent acceptance remain unrun.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,
 feasible work, memory/dialogue and changed-place return; STORY-01 supplies the actual clue/puzzle design.
