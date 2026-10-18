@@ -129,3 +129,12 @@ synchronous/full-cohort work. This is not selective live residency, a final CPU 
 claim. Durable cursors, general obligation discovery/membership, oldest-due age/fairness, current40/41
 migration, scale/platform measurements and independent review remain open. Preserve the complete
 P02 table and scheduled next gameplay work; another wrapper or repeated proof cannot replace these exits.
+
+
+## General process discovery follow-on
+
+The [process discovery contract](PLAN_STATE_PROCESS_DISCOVERY.md) source-checks three constraints for
+the next executable unit: effective post-action owners, distinct timing domains, and lawful blocked
+outcomes versus missing evaluation. Its next contrast uses actual regrowth and reserved transport,
+including authentic admission limits and historical interpreters. It does not implement an index or
+close any general scheduling, migration or review gate. Avoid another construction-only wrapper.

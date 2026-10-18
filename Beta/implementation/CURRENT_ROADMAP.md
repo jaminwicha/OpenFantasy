@@ -576,3 +576,13 @@ construction, ownership and persistence references are synchronized. PLAN-STATE 
 general due discovery/membership, fairness/projection, current-profile migration, cold/platform/scale
 and independent review remain open. All P02 closure rows,181 requirements and P00–P14 gates remain;
 NPC-01 and the scheduled story/ecology/art/audio work follow the decision/review exit unchanged.
+
+
+## Process discovery preparation — 2026-10-18
+
+The [follow-on contract](PLAN_STATE_PROCESS_DISCOVERY.md) makes the next PLAN-STATE unit concrete:
+actual regrowth/transport occurrence discovery against post-action owners, domain clocks, conserved
+blocked outcomes and authenticated membership. [Source review](p02/partition-state/process-discovery-contract/RESULT.md)
+distinguishes existing behavior from unimplemented discovery/index and current-profile integration.
+No runtime change or test pass is claimed. Preserve the conditional architecture decision, independent
+review, complete P02 closure table and scheduled gameplay dependencies; no new phase or format is added.

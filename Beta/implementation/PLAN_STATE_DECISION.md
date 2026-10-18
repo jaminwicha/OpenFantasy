@@ -284,3 +284,13 @@ and final projection remain, and public/default/current40/41 behavior is unchang
 obligation discovery/membership, oldest-due age, durable preparation, current-profile migration,
 cold/platform/scale and independent review remain open. The conditional typed-owner recommendation
 and all P02/production gates stand.
+
+
+## Process discovery preparation — 2026-10-18
+
+The [source-checked follow-on contract](PLAN_STATE_PROCESS_DISCOVERY.md) requires discovery from
+post-action owners and the selected interpreter's clock. A blocked transport outcome is evaluated
+mandatory work, not permission to discard an obligation or freeze all time until successful delivery.
+Authenticated membership must distinguish missing owners from empty due sets. The next executable
+contrast is regrowth plus reserved transport using their actual domain operations and lawful profiles;
+this is preparation, not a saved queue/format decision or a replacement for independent review.

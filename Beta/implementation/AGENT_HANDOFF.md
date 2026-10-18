@@ -70,9 +70,11 @@ depletion/regrowth, two funded builders and exposure for all five retained/admit
 an unrelated observer, with sliced preparation and SQLite fault/history recovery. The
 [matched cost comparison](p02/partition-state/owner-cost-comparison/RESULT.md) now shows selected typed
 owners cost more than coarse terrain separation in this small cohort; keep the recommendation
-conditional, the default unchanged and capture/final/replay costs visible. Next resolve general due
-discovery/membership and scheduling/fairness, projection cost and remaining cold/platform/scale/review
-obligations; avoid repeating already qualified legacy slices. General current-profile
+conditional, the default unchanged and capture/final/replay costs visible. The next executable unit is
+[source-bound regrowth/transport discovery](PLAN_STATE_PROCESS_DISCOVERY.md): use post-action owners,
+actual clock domains and lawful blocked outcomes; qualify an existing admitted fixture first.
+General discovery/membership, scheduling/fairness, projection and cold/platform/scale/review obligations
+remain; avoid repeating already qualified legacy slices. General current-profile
 checkpoint/migration proof remains. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
 Neither extraction nor the map is a partial loader or completed nested migration.

@@ -135,7 +135,9 @@ state; a derived discovery index must authenticate completeness and freshness ag
 An unloaded owner is not an empty owner, and discovering only the player's vicinity is insufficient.
 
 A preparation budget can suspend candidate construction, but cannot advance shared time beyond an
-unprocessed mandatory effect. Publish the complete logical boundary through the sole writer. A separate
+unevaluated mandatory effect. A lawful blocked outcome is evaluated work: it retains the original
+obligation and its resources under that interpreter's rules. It does not require successful completion
+before the clock can advance. Publish the complete logical boundary through the sole writer. A separate
 durable preparation continuation needs explicit admission, recovery and cancellation semantics; the
 existence of a queue or a reserved excavation continuation does not provide those semantics generally.
 
@@ -143,3 +145,65 @@ Measure mandatory backlog in its own timing domain. Report eligible proposal def
 preparation stalls separately. Include missing/invalidated dependencies, lawful holds, repeated competing
 work and restart in fairness qualification. Stable iteration order alone proves no starvation bound,
 and a one-builder completion cannot establish fairness across actors, domains or places.
+
+
+## Discovery depends on the selected interpreter and post-action state
+
+An authenticated source directory establishes the starting owners, not the final process read set.
+In `WorldStepProcessor.DecideImmediate`, selected actions can change gathering, coordination, inventory,
+reservoirs, transport, liquid placement and dialogues before the advancing boundary. Process discovery
+must see those admitted tentative replacements. A source-bound index can identify candidates, but
+cannot authorize applying an old owner's result after an action replaces it. Earlier processes can
+also change inputs of later ones: transport replaces reservoir-backed inventory before the complete
+candidate is admitted. Missing dependencies abort preparation; they are never equivalent to an empty
+owner or a lawful blocked stage.
+
+| Boundary responsibility | Actual discovery and evaluation input | Timing and outcome contract |
+| --- | --- | --- |
+| Material proposals and paid quotes | Post-action coordination books, including settlements, closures and newly retained offers | `ExpireDue` uses the selected advancing-step count and records outcomes at the world sequence, after actions. A world sequence is not an expiry clock. |
+| Reservoir transport | Post-action pending stages, reservations, connections, physical reservoirs, material history and occupied identities | `ReservoirTransportPlanner` selects pending stages by due calendar instant then stage identity, sharing connection throughput across that selected boundary. Held evaluation retains stages; blocked head/material/throughput retains the uncompleted obligation and conserved stock. |
+| Gathering recovery | Post-action node depletion/cursor and admitted tool powers, plus every gathering actor's effort | `GatheringSnapshot.AdvanceStep` uses process intervals where pacing exists, otherwise advancing steps. Due regrowth also requires enough unissued capacity for a full cycle. A due timestamp alone grants no new stock; effort recovery still applies when no node regrows. |
+| Personal exposure | Every retained resident, regardless of camera, work eligibility or controller | Ordinary exploration applies one `ExperienceStep`; tactical advancement applies its actual exposure duration. Non-time decisions do not earn another interval. |
+| Detailed liquids | The reconciled post-action liquid owner, exact source portions/cells and effective reading hold | `LiquidCellPlanner` uses the next exact physical process boundary. A held plan advances its boundary without moving liquid; an invalid bounded plan aborts the step. Transfers use starting quantities, not repeated within-step propagation. |
+
+Transport blocking is not NPC proposal exclusion or missing data. Its planner records
+`BlockedByThroughput`, `BlockedByHead` or `BlockedByMaterial` while advancing its own boundary; due
+pending stages remain candidates for a later lawful opportunity. Reading holds preserve the stages.
+Gathering can likewise retain a depleted node whose finite source cannot fund another complete cycle.
+Report eligible work, evaluated blocking, exhausted stock and absent dependencies separately. An age
+metric that counts every old timestamp as skipped mandatory execution misrepresents these rules.
+
+### Clock and interpreter boundaries
+
+The ordinary processor's dispatch owns which law runs. An active encounter does not execute the
+ordinary post-action process sequence. `WorldEncounterActionProcessor` and `WorldEncounterProcessor`
+observe tactical timing; gathering and liquids advance only when the pacing accumulator earns its
+next process interval. Personal exposure uses the actual tactical duration. Decision and resolution
+boundaries must not be multiplied into exploration intervals. Withdrawal resolvers retain their own
+paid-action contracts; a discovery adapter must not add ambient time for the same opportunity.
+
+Encounter lifecycle transitions reconstruct the complete admitted world while retaining its calendar,
+advancing count, gathering and resident exposure. Care updates its selected treatment/consent facts
+and readiness through its own processor; it is not an ordinary advancing boundary. Controller,
+permission and assignment boundaries also dispatch separately. A process owner present in the world
+does not imply its ordinary advancing rule runs at every commit.
+
+`WorldConsequenceProcessor` illustrates a distinct persisted continuation: accepted excavation retains
+its command and reserved outcome across geometric work. Intermediate commits do not earn its reserved
+interval; terminal publication returns the accepted command to `DecideImmediate` exactly once. An
+unpublished construction read handle has no equivalent saved contract. Neither mechanism authorizes
+reusing a calendar queue for unrelated continuations.
+
+### Completeness and derived indices
+
+A general discovery adapter must identify the interpreter, owner scope, source revision/hash, timing
+domain and actual occurrence or continuation. Discovery coverage includes owners with no due item:
+otherwise omitting an owner could look like an empty result. Any derived index needs an authenticated
+membership claim plus invalidation when actions, earlier processes, control/phase changes or migration
+change its dependencies. A partially loaded index cannot certify absence.
+
+These are extension obligations, not a saved general discovery index. The construction binding knows
+its explicitly captured work set and mandatory legacy owner union. It does not enumerate all current
+profile obligations or supply timing-domain membership. Preserve existing semantic order and complete
+original-history validation while adding typed domain adapters; use existing operation owners rather
+than an alternative simulation of their effects.

@@ -710,3 +710,13 @@ checks, retained failures and explicit opt-in legacy scope. The existing session
 sliced preparation, readiness cancellation, queued input and coherent publication observation.
 Default/current profiles, all broader gates and the original P02 closure table remain unchanged.
 Timeless and living docs are updated together; concurrent steering and staged predecessor work stay excluded.
+
+
+## Process discovery contract — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-process-discovery-contract-20261018`
+(`339b32b99284c51d89f2d07b2265ee847834f8cd`, parent `29e89f6b68ec5644716996fcf8c383cbb5de1fdf`).
+Documentation checkpoint: `codex/milestone-process-discovery-contract-20261018`, created at the scoped
+commit without switching. [Result](p02/partition-state/process-discovery-contract/RESULT.md) pins reviewed
+sources, post-action/clock/blocking contracts and the next executable contrast. Documentation checks
+only; no runtime, independent, phase or performance acceptance. Concurrent/predecessor edits excluded.
