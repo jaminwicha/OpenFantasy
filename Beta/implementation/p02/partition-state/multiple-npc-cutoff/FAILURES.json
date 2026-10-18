@@ -1,0 +1,16 @@
+[
+  {
+    "run": "preflight-01/hosting-build",
+    "classification": "fixture",
+    "issue": "Public xUnit method exposed internal AuthorityCommitBoundary nullable parameter (CS0051).",
+    "correction": "Use nullable integer test parameter and explicit internal enum conversion, matching existing fault fixtures.",
+    "rerun": "Deliberate preflight-02 after source correction; no automatic retry; no runtime changes."
+  },
+  {
+    "run": "preflight-02/hosting-build",
+    "classification": "fixture",
+    "issue": "Test command copy used SessionId instead of the actual OriginSessionId property (CS1061).",
+    "correction": "Read the command API and use the exact origin session.",
+    "rerun": "Deliberate preflight-03 after correction; no runtime changes."
+  }
+]

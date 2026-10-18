@@ -1,0 +1,5 @@
+{
+  "core": "FullyQualifiedName~StoredConstructionIntervalTests",
+  "hosting": "FullyQualifiedName~MultipleNpcCutoffTests|FullyQualifiedName~CoordinatedConcurrentConstructionTests|FullyQualifiedName~ConstructionControllerCriticTests|FullyQualifiedName~LocalNpcControllerTests|FullyQualifiedName~CoordinatedWorldContinuationTests",
+  "hosting-geometry": "FullyQualifiedName~MultipleNpcCutoffTests.Funded_two_host_builder_geometry_is_lawful_before_durable_runs"
+}

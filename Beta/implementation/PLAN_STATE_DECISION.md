@@ -207,3 +207,13 @@ not earn time. The existing calendar queue is a standalone component, not a boun
 Its transition phase cannot silently move existing expiries before actions. The next executable
 contrast and remaining fairness/domain/migration/review exits are explicit in that map. This source
 review adds no runtime format, policy, acceptance or production-performance claim.
+
+## Ordinary multi-actor reference qualified — 2026-10-18
+
+The [two-host-builder proof](p02/partition-state/multiple-npc-cutoff/RESULT.md) qualifies ordinary
+selection and complete-boundary effects/recovery before a partition preparation extension. Existing
+legacy aggregate revision bounds differ from coordinated operation bounds; preserve both rather
+than lifting a profile-five limit for a scheduling fixture. The next comparison still needs bounded
+partial-residency preparation, actual due discovery and the remaining [map](PLAN_STATE_DUE_WORK_MAP.md)
+contrasts. Twenty-two selected passes do not close general fairness, migration, scale or independent
+review. No production source, format or rule changed in this qualification.

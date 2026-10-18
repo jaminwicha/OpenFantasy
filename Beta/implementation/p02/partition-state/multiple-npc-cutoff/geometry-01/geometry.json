@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~MultipleNpcCutoffTests.Funded_two_host_builder_geometry_is_lawful_before_durable_runs",
+    "--logger",
+    "trx;LogFileName=geometry.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/multiple-npc-cutoff/geometry-01"
+  ],
+  "exit_code": 0,
+  "seconds": 3.0812205839902163,
+  "bound_seconds": 180
+}

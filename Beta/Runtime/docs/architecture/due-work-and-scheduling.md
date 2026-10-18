@@ -42,6 +42,12 @@ selection order. That order determines participation exclusions; it is not the f
 order. [WorldStepBatch](../../src/OpenFantasy.Core/Worlds/WorldStepBatch.cs) canonicalizes selected actions
 by actor identity. The executor then rechecks their coupled effects in that canonical order.
 
+[WorldSnapshot](../../src/OpenFantasy.Core/Worlds/WorldSnapshot.cs) distinguishes domain operation
+revisions from world batch revisions. Legacy interpretations retain their aggregate revision bound;
+coordinated interpretations admit the bounded per-actor action count. Multiple successful operations
+do not imply multiple elapsed intervals. A storage or scheduling adaptation must preserve the selected
+interpretation's bound, including its refusals, rather than enlarging it to accommodate a fixture.
+
 If the proposed batch's preview throws `AuthorityDispatchException`, `SelectAdmissibleBatch` can rebuild
 it without NPC actions to preserve a valid player request. This fallback omits autonomous proposals;
 the ordinary advancing interpreter still owns mandatory passive effects. It establishes no finite

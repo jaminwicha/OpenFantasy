@@ -1,0 +1,44 @@
+{
+  "accepted": true,
+  "current_source_binary_pins": 1961,
+  "p02_closure_unchanged": true,
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "Beta/tools/check_documentation.py",
+        "--work-record",
+        "Beta/implementation/p02/partition-state/multiple-npc-cutoff/RESULT.md",
+        "--files",
+        "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+        "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+        "Beta/implementation/PLAN_STATE_DECISION.md",
+        "Beta/implementation/AGENT_HANDOFF.md",
+        "Beta/implementation/CURRENT_ROADMAP.md",
+        "Beta/implementation/GIT_MILESTONES.md",
+        "Beta/implementation/p02/partition-state/multiple-npc-cutoff/RESULT.md"
+      ],
+      "exit_code": 0,
+      "log": "documents.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+        "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+        "Beta/implementation/PLAN_STATE_DECISION.md",
+        "Beta/implementation/AGENT_HANDOFF.md",
+        "Beta/implementation/CURRENT_ROADMAP.md",
+        "Beta/implementation/GIT_MILESTONES.md",
+        "Beta/implementation/p02/partition-state/multiple-npc-cutoff/RESULT.md",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedConstructionJourney.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/MultipleNpcCutoffTests.cs"
+      ],
+      "exit_code": 0,
+      "log": "diff.log"
+    }
+  ]
+}

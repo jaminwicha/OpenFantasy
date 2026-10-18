@@ -67,7 +67,17 @@ retry automatically. Match the maintained runners; no new testing framework is n
 
 ## Remaining exit boundaries
 
-This is a preparation map, not executable qualification of the witness above. General obligation
+The [ordinary multiple-NPC reference](p02/partition-state/multiple-npc-cutoff/RESULT.md) now qualifies
+two actual host builders in the existing coordinated profile27: real deliveries/routes, shared
+cutoffs, holds/exclusions/refusals and complete SQLite original-history/fault recovery. Nine new
+cases and thirteen affected existing cases pass. This is the ordinary reference only: it retains
+complete world state, selects construction policy directly rather than exercising a ready-player
+session, and does not test an unrelated third resident or newly due depleted node. No partial-residency
+preparation budget, persisted discovery frontier or multi-domain fairness is established. The existing
+legacy26 versus coordinated27 aggregate-bound contrast also passes unchanged; never weaken that bound
+to make a multi-actor profile-five extension pass. The frozen current40/41 migration obligations remain.
+
+The budgeted partition witness above is still required. General obligation
 discovery, multi-actor fairness, persistence of timing membership, current40/41 nested migration,
 cold/platform/scale measurements and independent PLAN-STATE review remain open. Retain the complete
 P02 closure table and scheduled NPC-01/story/ecology/art/audio work after the decision/review exit.

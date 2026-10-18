@@ -1,0 +1,54 @@
+{
+  "root": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/multiple-npc-cutoff-20261018-attempt01",
+  "files": {
+    "ordinary/before.ofc": {
+      "bytes": 64764,
+      "sha256": "f825985bfb71e7a2a81f53fc17d17d50f00f100d3a5fa65ab1f7292f926251ae"
+    },
+    "ordinary/after.ofc": {
+      "bytes": 64764,
+      "sha256": "75c2f8cae38fdd2fe49206104ba1f75245ca0e74f31db4a5a16ea5a00ecf008d"
+    },
+    "ordinary/world.sqlite3": {
+      "bytes": 335872,
+      "sha256": "93208084c8779e72f144a1521f5a020622b2757b1d219f3d76b97353eb44b99c"
+    },
+    "ordinary/genesis.ofc": {
+      "bytes": 61894,
+      "sha256": "1f4b14b9209cd7eeb33f8858000e607aa243bc4ab62b33b88a9844b50ad73771"
+    },
+    "AfterCommit/before.ofc": {
+      "bytes": 64764,
+      "sha256": "f825985bfb71e7a2a81f53fc17d17d50f00f100d3a5fa65ab1f7292f926251ae"
+    },
+    "AfterCommit/after.ofc": {
+      "bytes": 64764,
+      "sha256": "75c2f8cae38fdd2fe49206104ba1f75245ca0e74f31db4a5a16ea5a00ecf008d"
+    },
+    "AfterCommit/world.sqlite3": {
+      "bytes": 335872,
+      "sha256": "93208084c8779e72f144a1521f5a020622b2757b1d219f3d76b97353eb44b99c"
+    },
+    "AfterCommit/genesis.ofc": {
+      "bytes": 61894,
+      "sha256": "1f4b14b9209cd7eeb33f8858000e607aa243bc4ab62b33b88a9844b50ad73771"
+    },
+    "BeforeCommit/before.ofc": {
+      "bytes": 64764,
+      "sha256": "f825985bfb71e7a2a81f53fc17d17d50f00f100d3a5fa65ab1f7292f926251ae"
+    },
+    "BeforeCommit/after.ofc": {
+      "bytes": 64764,
+      "sha256": "75c2f8cae38fdd2fe49206104ba1f75245ca0e74f31db4a5a16ea5a00ecf008d"
+    },
+    "BeforeCommit/world.sqlite3": {
+      "bytes": 335872,
+      "sha256": "93208084c8779e72f144a1521f5a020622b2757b1d219f3d76b97353eb44b99c"
+    },
+    "BeforeCommit/genesis.ofc": {
+      "bytes": 61894,
+      "sha256": "1f4b14b9209cd7eeb33f8858000e607aa243bc4ab62b33b88a9844b50ad73771"
+    }
+  },
+  "note": "Retained actual SQLite worlds and exact genesis/before/after canonical bytes for ordinary, before-commit and after-commit cases. Open copies for inspection; no process-kill proof."
+}

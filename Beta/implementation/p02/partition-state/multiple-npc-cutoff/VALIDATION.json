@@ -1,0 +1,34 @@
+{
+  "source": "010175aca7d611b53d8c926fd697d91170bf72ab",
+  "new_passed": 9,
+  "distinct_selected_passed": 22,
+  "skipped": 0,
+  "failed_test_cases": 0,
+  "geometry_seconds": 3.0812205839902163,
+  "managed_selected_seconds": 7.506243166979402,
+  "bound_seconds": 180,
+  "new_cases": [
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Participation_exclusion_defers_only_that_builder_and_not_its_passive_exposure(excludeHelper: True)",
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Participation_exclusion_defers_only_that_builder_and_not_its_passive_exposure(excludeHelper: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Original_funded_history_and_both_work_receipts_survive_atomic_recovery(faultValue: null)",
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Original_funded_history_and_both_work_receipts_survive_atomic_recovery(faultValue: 1)",
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Original_funded_history_and_both_work_receipts_survive_atomic_recovery(faultValue: 0)",
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Funded_two_host_builder_geometry_is_lawful_before_durable_runs",
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Real_dialogue_holds_both_builders_and_release_earns_no_work_or_exposure",
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Both_selected_builders_work_at_each_shared_cutoff_with_one_exposure_increment",
+    "OpenFantasy.Hosting.Tests.Simulation.MultipleNpcCutoffTests.Ordinary_stale_work_refusal_does_not_drop_the_other_action_or_any_resident_exposure"
+  ],
+  "preflight": "preflight-03",
+  "compile_failures": "FAILURES.json",
+  "storage_execution_batches": 1,
+  "storage_cases": 3,
+  "native_runs": 0,
+  "storage_failure_classification": {
+    "fixture": 0,
+    "runner": 0,
+    "production": 0
+  },
+  "api_calls": null,
+  "average_input_context": null,
+  "telemetry_note": "Not exposed; no savings claim."
+}

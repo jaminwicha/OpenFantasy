@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~MultipleNpcCutoffTests|FullyQualifiedName~CoordinatedConcurrentConstructionTests|FullyQualifiedName~ConstructionControllerCriticTests|FullyQualifiedName~LocalNpcControllerTests|FullyQualifiedName~CoordinatedWorldContinuationTests",
+    "--logger",
+    "trx;LogFileName=hosting.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/multiple-npc-cutoff/hosting-01"
+  ],
+  "exit_code": 0,
+  "seconds": 7.506243166979402,
+  "bound_seconds": 180
+}

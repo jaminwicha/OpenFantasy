@@ -1,0 +1,11 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+  OpenFantasy.Hosting -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/bin/Debug/net8.0/OpenFantasy.Hosting.dll
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/MultipleNpcCutoffTests.cs(117,97): error CS1061: 'WorldActionCommand' does not contain a definition for 'SessionId' and no accessible extension method 'SessionId' accepting a first argument of type 'WorldActionCommand' could be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/MultipleNpcCutoffTests.cs(117,97): error CS1061: 'WorldActionCommand' does not contain a definition for 'SessionId' and no accessible extension method 'SessionId' accepting a first argument of type 'WorldActionCommand' could be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:05.84

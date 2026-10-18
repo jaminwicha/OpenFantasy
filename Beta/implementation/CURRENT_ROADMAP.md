@@ -484,3 +484,17 @@ preparation only. No executable fairness, timing-domain persistence, current40/4
 independent review or phase exit is claimed. The complete P02 closure table and later schedule remain
 unchanged. [Packet result](p02/partition-state/due-work-discovery/RESULT.md) retains source pins,
 verification and the observed entry-read friction under the owner's measured-efficiency direction.
+
+## Multiple-NPC ordinary cutoff qualification — 2026-10-18
+
+[Twenty-two passing selected cases](p02/partition-state/multiple-npc-cutoff/RESULT.md), including nine
+new, qualify the ordinary two-builder reference for PLAN-STATE: actual quest deliveries and lawful
+routes, autonomous construction proposals at one cutoff, single exposure increments, canonical
+ordering, participation exclusions, real dialogue hold/release, stale-action refusal and original
+SQLite history through before/after publication faults. The existing legacy/coordinated aggregate
+revision-bound contrast remains passing. This explicit fresh coordinated27 fixture retains full
+state; it does not establish partial-residency preparation, a current40/41 migration, native ready-player
+scheduling or a finite starvation bound. The next work is the budgeted complete-cutoff comparison
+in the [due-work map](PLAN_STATE_DUE_WORK_MAP.md), retaining depleted-node/third-resident and all
+remaining domain, performance and review obligations. The P02 closure table and phase schedule stay
+unchanged. No new runtime profile or gameplay law is introduced.

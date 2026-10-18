@@ -52,8 +52,12 @@ renewed dependencies and complete due gathering/resident updates, retaining site
 exposure reads. Final installation and intervening actions restore complete admission. The
 [stored checkpoint qualification](p02/partition-state/stored-checkpoint/RESULT.md) proves the first normal6000-step checkpoint inside partial work, continuation,
 atomic faults and historical refusal. The [due-work map](PLAN_STATE_DUE_WORK_MAP.md) now distinguishes
-mandatory effects, autonomous proposals and preparation; next qualify a complete multi-actor cutoff
-without adding time per actor or binding the standalone calendar queue blindly. Retain the remaining
+mandatory effects, autonomous proposals and preparation; preserve complete multi-actor cutoffs
+without adding time per actor or binding the standalone calendar queue blindly.
+The [multiple-NPC cutoff proof](p02/partition-state/multiple-npc-cutoff/RESULT.md) now qualifies that
+ordinary reference for two genuinely funded host builders, holds/exclusions/refusals and original
+SQLite history/fault recovery. Next extend bounded partition preparation against that reference;
+it is not yet a partial-residency, multi-domain or starvation-bound proof. Retain the remaining
 PLAN-STATE measurement/review exits; general current-profile checkpoint/migration proof remains. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
 Neither extraction nor the map is a partial loader or completed nested migration.

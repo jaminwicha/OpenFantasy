@@ -639,3 +639,14 @@ commit without switching. [Result](p02/partition-state/due-work-discovery/RESULT
 selection, boundary and standalone-queue sources, records documentation validation and retains all
 runtime/fairness/phase obligations. No runtime edits or test execution are claimed. Concurrent
 steering and unrelated staged predecessor work remain excluded.
+
+## Multiple-NPC ordinary cutoff proof — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-multiple-npc-cutoff-20261018`
+(`30dc1f6dbd81651cdeec9022c820b7ebc7876885`, parent `010175aca7d611b53d8c926fd697d91170bf72ab`).
+Verified milestone: `codex/milestone-multiple-npc-cutoff-20261018`, created at the accepted owned commit
+without switching. [Result](p02/partition-state/multiple-npc-cutoff/RESULT.md): nine new plus thirteen
+existing cases pass; two real funded host builders, one ordinary cutoff, holds/exclusions/refusals
+and three retained SQLite publication/recovery cases. Two fixture compilation failures are retained.
+Runtime source and legacy laws unchanged; partial-residency scheduling, full fairness and phase gates
+remain open. Concurrent steering and staged predecessor changes remain excluded.

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~MultipleNpcCutoffTests.Funded_two_host_builder_geometry_is_lawful_before_durable_runs"
+  ],
+  "exit_code": 0,
+  "seconds": 2.025990040972829,
+  "bound_seconds": 180
+}

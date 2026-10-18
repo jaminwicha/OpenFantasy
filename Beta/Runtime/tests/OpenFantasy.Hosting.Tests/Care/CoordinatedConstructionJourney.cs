@@ -22,7 +22,7 @@ internal sealed class CoordinatedConstructionJourney
     private readonly ConstructionUpgradeFixture _commands = new();
     private CareWorldSession _session;
 
-    internal CoordinatedConstructionJourney(bool coordinated)
+    internal CoordinatedConstructionJourney(bool coordinated, bool hostBuilders = false)
     {
         var source = RestorativeJourneyAdmission.CreateEmbedded("coordinated-concurrent-construction", "Traveler");
         Assert.Equal((ushort)26, source.ProfileVersion);
@@ -79,12 +79,17 @@ internal sealed class CoordinatedConstructionJourney
             originalProgression.Profiles, originalProgression.Curves, originalProgression.Actors, currency);
         var utterance = source.GetResident(Helper).OpeningUtterance!;
         var residents = source.Residents.Select(resident => resident.ActorId != Player ? resident : new WorldResident(
-            resident.ActorId, resident.InventoryCustodianId, resident.DisplayName, resident.ControllerKind,
+            resident.ActorId, resident.InventoryCustodianId, resident.DisplayName,
+            hostBuilders ? ResidentControllerKind.Host : resident.ControllerKind,
             resident.HomeFeet, resident.WanderRadiusCells, resident.Comprehension, resident.ExperiencedTime,
             new ResidentUtterance(Id(10), utterance.Channel, utterance.ChannelVersion, "Please bring wood for my guard.")));
         var production = new ProductionSnapshot(source.WorldId, source.BranchId, 0, source.Production!.Recipes, [], []);
         var admission = ContentHash.Compute(source.ContentHash.ToByteArray().Concat(construction.ContentHash.ToByteArray())
             .Concat(quests.ContentHash.ToByteArray()).Concat(inventory.ContentHash.ToByteArray()).ToArray());
+        if (hostBuilders)
+        {
+            admission = ContentHash.Compute(admission.ToByteArray().Concat("two-host-builders-v1"u8.ToArray()).ToArray());
+        }
         var basis = new WorldSnapshot(inventory, source.Space, residents, admission, source.Calendar, 0, 0,
             gathering: source.Gathering, production: production, progression: progression, quests: quests, construction: construction);
 
@@ -128,6 +133,10 @@ internal sealed class CoordinatedConstructionJourney
     internal EntityId Helper { get; }
     internal WorldSnapshot World => _session.ReadStateForHost();
     internal IEnumerable<EntityId> OccupiedIdentities => _session.OccupiedIdentities;
+    internal IReadOnlyList<WorldStepBatch> Batches => _session.Batches;
+    internal EntityId NextIdentity() => _commands.NextIdentity();
+    internal WorldStepBatch Batch(IEnumerable<WorldActionCommand> commands) => _commands.Batch(World, commands, []);
+    internal WorldStepDecision Commit(WorldStepBatch batch) => _session.Commit(batch);
 
     internal void SupplyAndPositionBuilders()
     {
@@ -183,7 +192,7 @@ internal sealed class CoordinatedConstructionJourney
         return retrieved;
     }
 
-    private WorldActionCommand Command(EntityId actor, WorldActionIntent intent)
+    internal WorldActionCommand Command(EntityId actor, WorldActionIntent intent)
     {
         var delivery = ConstructionUpgradeFixture.Delivery(World, actor);
         return new(_commands.NextIdentity(), delivery.PrincipalId, delivery.SessionId, actor,
