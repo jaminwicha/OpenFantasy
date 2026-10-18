@@ -1,0 +1,65 @@
+{
+  "root": "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01",
+  "files": {
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/runner-output/runner-CompleteRoot.log": {
+      "bytes": 1105,
+      "sha256": "fbff187b2d31361e79eafea5e83bdf1703f5c63a7e7b46cb2f694ec32869ffa3"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/runner-output/runner-StoredOwners.log": {
+      "bytes": 1105,
+      "sha256": "c4b47a903388bea0bbd02e490509957b514a5e0f4144191a9f595cb98cfd8f36"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/runner-output/runner-TerrainSeparated.log": {
+      "bytes": 1113,
+      "sha256": "394648ef5fa6f0082d8535a0f2007707d01ca385546453e8c1c00e9d755107f9"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/StoredOwners/final.ofc": {
+      "bytes": 25100,
+      "sha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/StoredOwners/cold-open.json": {
+      "bytes": 1047,
+      "sha256": "1a0d8264185a0808765e9fbb15ee18321814848ddc5003fde4237effd6801fdb"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/StoredOwners/measurement.json": {
+      "bytes": 1223,
+      "sha256": "1e2cd813aabc6bd11c729e317bf3ed8a81bbb9c2c39c78e56ec0fa4e5aee7633"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/StoredOwners/world.sqlite3": {
+      "bytes": 2813952,
+      "sha256": "b6c3ed209c093a581135bf760f768bffd89d835c897906887a920c43908aafee"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/CompleteRoot/final.ofc": {
+      "bytes": 25100,
+      "sha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/CompleteRoot/cold-open.json": {
+      "bytes": 1047,
+      "sha256": "ddcd0be60de2d4023f8e5b7c4c6ead89cb9fbe9ae83e6856ab37eed4a6bce678"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/CompleteRoot/measurement.json": {
+      "bytes": 1196,
+      "sha256": "752bac9833b60fa1ebbf44ad7d6be99e5385d3e024dafd5483a9e30528a7feb1"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/CompleteRoot/world.sqlite3": {
+      "bytes": 585728,
+      "sha256": "64fa2ae99ab01ff4e567dd9ca7e7cb4ec1bc451bb00246434eac57f9622402b5"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/TerrainSeparated/final.ofc": {
+      "bytes": 25100,
+      "sha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/TerrainSeparated/cold-open.json": {
+      "bytes": 1051,
+      "sha256": "a0373eda524efd131195277b3e31824f268fa9d48d9f5ddcaa912f736382a792"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/TerrainSeparated/measurement.json": {
+      "bytes": 1216,
+      "sha256": "6bdea267a0d9abe2dee38ae27be101bbbbd18cb21b3d29d7e49e4f61a518ef12"
+    },
+    "Beta/Runtime/artifacts/membership-cold-load-20261018-attempt01/TerrainSeparated/world.sqlite3": {
+      "bytes": 593920,
+      "sha256": "4dea8f60636da968cba367875748df48802badb7d6fb7a3aca20453384a2705d"
+    }
+  }
+}

@@ -118,3 +118,14 @@ The remaining preparation concerns are authenticated discovery membership/absenc
 and current40/41 composition, scheduling/fairness, projection/scale and independent review. This witness
 neither adds a persisted index nor resolves those gates. Do not repeat the already qualified regrowth/
 transport lineage as a substitute for those distinct questions.
+
+
+## Membership and first-open preparation — 2026-10-18
+
+The [membership/service contract](PLAN_STATE_PROCESS_MEMBERSHIP.md) fixes the required completeness,
+absence, candidate-order and clock semantics without adding an index or format. Current40/41 cannot
+silently inherit profile9 transport through optional composition. The [first-open diagnostic](p02/partition-state/membership-cold-load/RESULT.md)
+adds fresh-process and repeated-open measurements of retained original episodes; OS caches are warmed,
+one sample per candidate is not a ranking, and retained-memory/scale/platform/oldest-age acceptance
+remains open. Keep the recommendation conditional and resolve current-profile representation/rollout
+before enabling partial discovery. Independent review and all existing phase gates remain unrun/open.

@@ -1,0 +1,7 @@
+[
+  "OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Empty_due_set_does_not_skip_actor_effort_or_advance_on_inspection",
+  "OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Actual_harvest_changes_discovery_without_resetting_the_finite_cursor",
+  "OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Due_stock_shortage_is_visible_and_uses_the_strongest_admitted_tool(power: 1, eligible: True)",
+  "OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Due_stock_shortage_is_visible_and_uses_the_strongest_admitted_tool(power: 3, eligible: False)",
+  "OpenFantasy.Core.Tests.Gathering.GatheringDiscoveryTests.Canonical_discovery_survives_input_order_and_elapsed_recovery_matches_each_interval"
+]

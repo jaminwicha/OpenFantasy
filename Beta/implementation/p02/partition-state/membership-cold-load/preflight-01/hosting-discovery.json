@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~StoredOwnerColdOpenTests.Fresh_process_and_repeated_open_preserve_the_pinned_original_episode"
+  ],
+  "exit_code": 0,
+  "seconds": 5.189617792028002,
+  "bound_seconds": 180
+}

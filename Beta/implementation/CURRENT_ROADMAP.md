@@ -558,3 +558,17 @@ including before/after publication recovery and original receipts/history. Test/
 no production law or architecture format changes. PLAN-STATE still needs authenticated membership,
 partial loading/current-profile coverage, scheduling/scale and independent review. All P02 closure
 rows,181 requirements and scheduled NPC/story/ecology/art/audio dependencies remain unchanged.
+
+
+### PLAN-STATE membership contract and fresh-process loading
+
+The [source-backed membership/service contract](PLAN_STATE_PROCESS_MEMBERSHIP.md) distinguishes complete
+source coverage, required/optional/forbidden owners, authenticated absence, empty/blocked/suppressed
+work and post-action dependencies. Current40/41's sealed/terrain-liquid composition excludes the profile9
+transport owner; its joined witness is not a lawful plug-in upgrade. No new index or format is implemented.
+The [measurement packet](p02/partition-state/membership-cold-load/RESULT.md) reopens the same retained
+286-commit episode in three fresh test processes. First authority opens take1.996–2.524seconds and repeat
+opens0.620–0.803seconds on named hardware; one observation per candidate, OS caches warmed, not a ranking
+or production latency claim. Exact final/original genesis and full replay remain. Resolve current-profile
+membership representation and preserved-source rollout next; general partial loading, age/fairness,
+retained-memory/OS-cold/scale/platform, migration and independent review remain open. All P02 gates persist.

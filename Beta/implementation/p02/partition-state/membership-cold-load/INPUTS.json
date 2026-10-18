@@ -1,0 +1,12 @@
+{
+  "original_manifest": "Beta/implementation/p02/partition-state/owner-cost-comparison/ARTIFACTS.json",
+  "original_manifest_sha256": "c65b0130920522ff71bc5685d5070840051ec2b11360177ee20991755ba4bfd6",
+  "inputs": [
+    "Beta/implementation/p02/partition-state/membership-cold-load/input-CompleteRoot.json",
+    "Beta/implementation/p02/partition-state/membership-cold-load/input-TerrainSeparated.json",
+    "Beta/implementation/p02/partition-state/membership-cold-load/input-StoredOwners.json"
+  ],
+  "source_artifacts_verified": true,
+  "geometry": "No new movement or authored route; replay exact retained earned episode. Original route proof retained at owner-cost-comparison. Full original replay occurs in each timed open.",
+  "fresh_process": "Run only the exact new fact once per dotnet test process; three candidates use different invocations."
+}

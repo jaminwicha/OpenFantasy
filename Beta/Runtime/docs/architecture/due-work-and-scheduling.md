@@ -221,3 +221,31 @@ event counter. Both retain complete source owners and use reference affinity. Ne
 absent owners, persists a discovery index, substitutes for host selection or establishes fairness.
 The ordinary world invokes them through the effective post-action gathering/transport owner; queries
 against a source snapshot cannot be transferred silently to its successor.
+
+## Design contract: complete process membership and service evidence
+
+A partial process reader requires a complete membership statement bound to the selected world,
+branch, historical head, admission and semantic interpreter. Exact payload hashes establish leaf
+identity; they do not alone prove complete coverage or the absence of another mandatory owner.
+Required, optional and forbidden facets follow the selected composition law. Missing required data
+fails preparation; authenticated optional absence and a present owner with no due occurrences are
+separate cases. Directory/page coverage and every reference must belong to the same source.
+
+Discovery uses effective post-action owners and renews dependencies changed by earlier processes.
+A stale pre-action list cannot authorize publication merely because its original source was valid.
+Present-but-blocked work retains its domain outcome and causal identity; lawful hold suppression is
+separate from a failed read. All mandatory effects publish with their time, membership, identities
+and receipts through the sole writer, or none of that boundary publishes. Loading slices earn no time.
+
+Service measurements retain their units and meanings. Regrowth uses process intervals, transport uses
+its admitted calendar boundary, expiries use advancing count, and exposure follows the selected law.
+An old delivery/regrowth date does not prove missing evaluation after a lawful blocked outcome.
+A hold-suppressed transport boundary does not prove physical evaluation of every stage. Optional NPC
+proposal age requires its own eligibility episode; it cannot be inferred from a project revision.
+Report preparation wall latency separately. Unavailable membership/service evidence is not zero debt.
+
+The complete admitted construction directory and exact interval provide the bounded legacy membership
+binding described above; source-bound gathering/transport queries retain complete immutable owners.
+A general authenticated partial process index requires the full contract in this section. The
+[composition and dependency reference](partition-dependencies.md) governs richer owners; independent
+facet combination is not inferred from the existence of their codecs or standalone operations.

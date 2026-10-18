@@ -1,0 +1,68 @@
+[
+  {
+    "Kind": "CompleteRoot",
+    "ProcessId": 11010,
+    "Runtime": "8.0.31",
+    "DatabaseSha256": "64fa2ae99ab01ff4e567dd9ca7e7cb4ec1bc451bb00246434eac57f9622402b5",
+    "FinalWorldSha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6",
+    "GenesisHash": "8298aa67ed0ef864899e1cd52c531b0b39a087bd9350336f7cd7d6a8870647cb",
+    "ExpectedRevision": 286,
+    "Observations": [
+      {
+        "Phase": "FirstAuthorityOpen",
+        "Milliseconds": 2523.889833,
+        "AllocatedBytes": 267683208
+      },
+      {
+        "Phase": "RepeatedAuthorityOpen",
+        "Milliseconds": 653.874167,
+        "AllocatedBytes": 267583616
+      }
+    ],
+    "Scope": "One selected fact in a fresh test process; first authority open and a repeated open of the same scratch copy. Both include full original replay and ReadStateForHost. Testhost startup, hash checks, assertions and disposal are outside timing. OS file caches are warmed by validation/copying. Managed calling-thread allocation, not retained memory, RSS, native allocation, statistical or platform acceptance."
+  },
+  {
+    "Kind": "TerrainSeparated",
+    "ProcessId": 11097,
+    "Runtime": "8.0.31",
+    "DatabaseSha256": "4dea8f60636da968cba367875748df48802badb7d6fb7a3aca20453384a2705d",
+    "FinalWorldSha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6",
+    "GenesisHash": "8298aa67ed0ef864899e1cd52c531b0b39a087bd9350336f7cd7d6a8870647cb",
+    "ExpectedRevision": 286,
+    "Observations": [
+      {
+        "Phase": "FirstAuthorityOpen",
+        "Milliseconds": 2215.237875,
+        "AllocatedBytes": 331471632
+      },
+      {
+        "Phase": "RepeatedAuthorityOpen",
+        "Milliseconds": 619.869708,
+        "AllocatedBytes": 331376304
+      }
+    ],
+    "Scope": "One selected fact in a fresh test process; first authority open and a repeated open of the same scratch copy. Both include full original replay and ReadStateForHost. Testhost startup, hash checks, assertions and disposal are outside timing. OS file caches are warmed by validation/copying. Managed calling-thread allocation, not retained memory, RSS, native allocation, statistical or platform acceptance."
+  },
+  {
+    "Kind": "StoredOwners",
+    "ProcessId": 11222,
+    "Runtime": "8.0.31",
+    "DatabaseSha256": "b6c3ed209c093a581135bf760f768bffd89d835c897906887a920c43908aafee",
+    "FinalWorldSha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6",
+    "GenesisHash": "8298aa67ed0ef864899e1cd52c531b0b39a087bd9350336f7cd7d6a8870647cb",
+    "ExpectedRevision": 286,
+    "Observations": [
+      {
+        "Phase": "FirstAuthorityOpen",
+        "Milliseconds": 1996.447209,
+        "AllocatedBytes": 364623184
+      },
+      {
+        "Phase": "RepeatedAuthorityOpen",
+        "Milliseconds": 803.040125,
+        "AllocatedBytes": 364493232
+      }
+    ],
+    "Scope": "One selected fact in a fresh test process; first authority open and a repeated open of the same scratch copy. Both include full original replay and ReadStateForHost. Testhost startup, hash checks, assertions and disposal are outside timing. OS file caches are warmed by validation/copying. Managed calling-thread allocation, not retained memory, RSS, native allocation, statistical or platform acceptance."
+  }
+]

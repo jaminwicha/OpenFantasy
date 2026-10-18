@@ -32,10 +32,15 @@ noninitial checkpoint, multi-actor sliced preparation and internal live host con
 proofs. Real regrowth and funded water delivery also recover in one saved profile9 boundary.
 Do not repeat these legacy episodes to fill general loading or scheduling gaps.
 
-**Next:** prepare authenticated membership/absence and due-service semantics against actual owners,
-post-action dependencies and interpreter clocks, as scoped in the exit reconciliation and
-[process contract](PLAN_STATE_PROCESS_DISCOVERY.md). General partial/current-profile loading,
-scheduling/fairness, full capture/final projection costs, cold/platform/scale and no-loss migration
+The [membership/service contract](PLAN_STATE_PROCESS_MEMBERSHIP.md) now defines complete source coverage,
+absence versus missing/empty/blocked/suppressed work and per-interpreter age. The sealed current40/41
+composition excludes profile9 transport; do not attach that witness as an optional component.
+[Fresh-process load evidence](p02/partition-state/membership-cold-load/RESULT.md) covers first and repeated
+opens of the retained episode, with warmed OS caches; it is no scale/ranking/retained-memory acceptance.
+
+**Next:** resolve the current-profile owner/absence representation and preserved-source rollout against
+that contract before implementing a partial index or extending storage. General partial loading,
+scheduling/fairness/oldest age, full capture/final projection costs, scale/platform and no-loss migration
 remain open. Required independent architectural review remains unrun while orchestration is paused;
 the prepared scope is not dispatched. No permanent NPC persistence before the decision/review exit.
 

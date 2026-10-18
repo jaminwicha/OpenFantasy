@@ -30,7 +30,7 @@ Internal legacy profile5/schema14 is not a shipping format decision or a current
 | Atomic coupled publication and original history | [Typed publication](p02/partition-state/typed-owner-storage/RESULT.md), [noninitial checkpoint](p02/partition-state/stored-checkpoint/RESULT.md), [joined process boundary](p02/partition-state/joined-process-boundary/RESULT.md) | Before/after faults, exact original history and refusal evidence retain their named profiles. General current-profile checkpoint/migration and partial authenticated replay remain open. |
 | Real host selection and earned timing | [Live sliced preparation](p02/partition-state/live-construction-slices/RESULT.md), [combined due effects](p02/partition-state/combined-due-boundary/RESULT.md) | Internal option consumes one selected batch across ticks with no time per read. No general NPC fairness, starvation or bounded final-projection guarantee. |
 | Actual process discovery, not a diagnostic queue | [Domain consumers](p02/partition-state/domain-process-discovery/RESULT.md), [joined regrowth/delivery](p02/partition-state/joined-process-boundary/RESULT.md) | Source affinity is complete immutable-object identity. Authenticated membership/absence and partial current-profile discovery remain open. A blocked evaluated stage is not undiscovered work. |
-| Bytes, allocations, load/commit/replay and oldest due age on named hardware | [Measurements and host](p02/partition-state/owner-cost-comparison/RESULT.md) separate capture, partial publication, intervention, final admission and replay | Warm local diagnostic only. Cold load, retained detail/peak residency, boundary stalls, meaningful scale/platform work and authoritative multi-domain oldest-due age remain unqualified; age is unavailable, not zero. |
+| Bytes, allocations, load/commit/replay and oldest due age on named hardware | [Measurements and host](p02/partition-state/owner-cost-comparison/RESULT.md) separate capture, partial publication, intervention, final admission and replay | Warm comparison plus [fresh-process first/repeated open](p02/partition-state/membership-cold-load/RESULT.md). OS-cache-cold I/O, retained detail/peak residency, boundary stalls, meaningful scale/platform work and authoritative multi-domain oldest-due age remain unqualified; age is unavailable, not zero. |
 | Legal composition, historical versions and preserved-source rollout | [Current-profile dependency map](PLAN_STATE_CURRENT_PROFILE_MAP.md), [prototype contract](PARTITION_PROTOTYPE_CONTRACT.md), [decision](PLAN_STATE_DECISION.md) | Root/dependency mapping is preparation. Exhaustive nested source-to-target mapping, legal combinations, migration/refusal/rollback and public compatibility need qualification before those capabilities are enabled. |
 | Independent architectural decision review | Concrete bounded scope below | Unrun under the owner's pause. Lead inspection cannot close it. No external request or native subagent is authorized by this document. |
 
@@ -39,9 +39,9 @@ none of these tests ran again for this reconciliation. Full P00/P01/P02 and late
 open exactly where the roadmap records them. No row above reassigns an existing prerequisite to a later
 phase or permits permanent cognition persistence while the PLAN-STATE exit remains open.
 
-## Next preparation packet: membership and due-service boundary
+## Membership and due-service preparation contract
 
-Continue the existing process-discovery assignment rather than add another legacy episode. First specify
+The [source-backed membership/service contract](PLAN_STATE_PROCESS_MEMBERSHIP.md) now specifies the following boundary; its partial index and current-profile rollout are not implemented. Continue that assignment rather than add another legacy episode. Require
 the complete source-bound membership/absence statement and its relationship to the current directory,
 post-action owners and interpreter clocks. Reuse the source owners and existing writer; do not introduce
 a second canonical queue or a new saved format merely to enumerate work.

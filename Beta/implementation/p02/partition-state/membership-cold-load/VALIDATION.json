@@ -1,0 +1,34 @@
+{
+  "distinct_test_methods": 1,
+  "passing_invocations": 3,
+  "skips": 0,
+  "failures": 0,
+  "new_test_methods": 1,
+  "core_built_discovered_not_run": 5,
+  "runs": [
+    {
+      "candidate": "CompleteRoot",
+      "seconds": 9.668615750037134,
+      "bound_seconds": 180,
+      "exit_code": 0,
+      "outcome": "Passed",
+      "case": "OpenFantasy.Hosting.Tests.WorldStorage.StoredOwnerColdOpenTests.Fresh_process_and_repeated_open_preserve_the_pinned_original_episode"
+    },
+    {
+      "candidate": "TerrainSeparated",
+      "seconds": 9.954471249948256,
+      "bound_seconds": 180,
+      "exit_code": 0,
+      "outcome": "Passed",
+      "case": "OpenFantasy.Hosting.Tests.WorldStorage.StoredOwnerColdOpenTests.Fresh_process_and_repeated_open_preserve_the_pinned_original_episode"
+    },
+    {
+      "candidate": "StoredOwners",
+      "seconds": 9.038687749998644,
+      "bound_seconds": 180,
+      "exit_code": 0,
+      "outcome": "Passed",
+      "case": "OpenFantasy.Hosting.Tests.WorldStorage.StoredOwnerColdOpenTests.Fresh_process_and_repeated_open_preserve_the_pinned_original_episode"
+    }
+  ]
+}

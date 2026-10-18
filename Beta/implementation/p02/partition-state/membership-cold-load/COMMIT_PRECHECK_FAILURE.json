@@ -1,0 +1,14 @@
+{
+  "classification": "runner/pre-commit evidence packaging",
+  "command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check"
+  ],
+  "exit_code": 2,
+  "stdout": "Beta/implementation/p02/partition-state/membership-cold-load/runner-CompleteRoot.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/membership-cold-load/runner-StoredOwners.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/membership-cold-load/runner-TerrainSeparated.log:7: new blank line at EOF.\n",
+  "stderr": "",
+  "commit_not_created": true,
+  "resolution": "Retain exact raw wrapper output in Runtime/artifacts/membership-cold-load-20261018-attempt01/runner-output, pinned in ARTIFACTS.json; test logs and TRX remain in the packet. No assertion or whitespace check weakened."
+}
