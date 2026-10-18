@@ -128,3 +128,12 @@ from this contract. NPC-01 remains the next new inhabited behavior after PLAN-ST
   current frame requirements and the prohibition on profile9 transport in the sealed current composition.
 - **Checks:** [packet evidence](p02/partition-state/membership-cold-load/RESULT.md); no implementation of
   this future partial index or independent acceptance is claimed.
+
+
+## Current-profile rollout preparation — 2026-10-18
+
+The [preserved-source rollout proposal](PLAN_STATE_CURRENT_PROFILE_ROLLOUT.md) now defines ownership
+coverage, exact joint-anchor reconstruction, storage-versus-semantic transition, copied-file publication,
+operational recovery and post-play rollback limits. This is source-backed preparation for review, not
+an enabled migration or exhaustive executable nested-field proof. Keep the conditional decision and
+all unrun loading/scheduling/migration/measurement/independent gates explicit.

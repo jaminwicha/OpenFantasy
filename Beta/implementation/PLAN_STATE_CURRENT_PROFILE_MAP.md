@@ -132,3 +132,12 @@ This resolves the ambiguity about what the first selective cohort must include a
 current-profile migration risks. It does not close the nested-format migration gate, approve a new
 format, relax original complete admission or waive review/fairness/cold/platform/scale/checkpoint work.
 The full P02 closure table and P00–P14/181-requirement scope remain authoritative and unchanged.
+
+
+## Current-profile rollout preparation — 2026-10-18
+
+The [preserved-source rollout proposal](PLAN_STATE_CURRENT_PROFILE_ROLLOUT.md) now defines ownership
+coverage, exact joint-anchor reconstruction, storage-versus-semantic transition, copied-file publication,
+operational recovery and post-play rollback limits. This is source-backed preparation for review, not
+an enabled migration or exhaustive executable nested-field proof. Keep the conditional decision and
+all unrun loading/scheduling/migration/measurement/independent gates explicit.

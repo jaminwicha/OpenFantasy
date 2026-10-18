@@ -451,6 +451,36 @@ Profile41 explicitly substitutes the collective retreat codec and512KiB reservat
 complete frame; legacy versions retain their original codec and bound. This changes no database
 schema, host compatibility selection or existing save's rule on opening.
 
+### Storage representation and preserved-source conversion
+
+Storage representation and gameplay interpretation have separate versions. A storage-only conversion
+preserves the admitted world/profile, original admission, canonical world bytes/hash, gameplay revision,
+clocks and command outcomes at the selected head. It does not earn time or append a fictitious gameplay
+action. Changing a supported composition or law requires its own semantic migration and historical
+interpreter; the existing40→41 transition is not a general profile-upgrade mechanism.
+
+[WorldUpgradePublication](../../src/OpenFantasy.Hosting/Worlds/WorldUpgradePublication.cs) owns private
+consistent backup and unused-destination publication for its explicitly admitted upgrade kinds.
+[WorldBackupComparison](../../src/OpenFantasy.Hosting/Worlds/WorldBackupComparison.cs) compares genesis,
+head, journal, receipts, historical identities, checkpoints and resource/material-care archive rows.
+The [withdrawal upgrade](../../src/OpenFantasy.Hosting/Worlds/WorldPartyWithdrawalUpgrade.cs) separately
+checks operational controller recovery and activation provenance. Exact world reconstruction alone
+cannot substitute for those operational-state checks. A new representation needs explicit preparation,
+format dispatch and equivalent recovery qualification before this machinery can publish it.
+
+Continued current frames require the actual matched joint anchor for production, geography, care and
+resource decoding. A binding hash without retrievable context is insufficient. Derived colliders and
+liquid topology reconstruct from their canonical owners; they are not independently editable copies.
+Every chosen owner split must reconstruct the original admitted canonical bytes and preserve exact
+historical readers, rather than recoding the past into a new format and calling it unchanged.
+
+Private staging is diagnostic until complete reopen/verification and publication. A nonempty WAL
+prevents publication of the database file alone; failed private copies are not automatically selected.
+Before new target gameplay, the preserved source provides recovery to the original state. After new
+accepted gameplay, selecting that older source loses progress and is not a lossless rollback. A safe
+downgrade requires explicit reverse export with preserved outcomes/history or continued support for
+the new save; a backup alone supplies no such guarantee.
+
 ### Derived spatial-index history
 
 `WorldSpatialOccupancyIndex` reconciles exact admitted world roots into an immutable geometric index.

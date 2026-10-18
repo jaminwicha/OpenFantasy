@@ -321,3 +321,12 @@ adds fresh-process and repeated-open measurements of retained original episodes;
 one sample per candidate is not a ranking, and retained-memory/scale/platform/oldest-age acceptance
 remains open. Keep the recommendation conditional and resolve current-profile representation/rollout
 before enabling partial discovery. Independent review and all existing phase gates remain unrun/open.
+
+
+## Current-profile rollout preparation — 2026-10-18
+
+The [preserved-source rollout proposal](PLAN_STATE_CURRENT_PROFILE_ROLLOUT.md) now defines ownership
+coverage, exact joint-anchor reconstruction, storage-versus-semantic transition, copied-file publication,
+operational recovery and post-play rollback limits. This is source-backed preparation for review, not
+an enabled migration or exhaustive executable nested-field proof. Keep the conditional decision and
+all unrun loading/scheduling/migration/measurement/independent gates explicit.

@@ -572,3 +572,15 @@ opens0.620–0.803seconds on named hardware; one observation per candidate, OS c
 or production latency claim. Exact final/original genesis and full replay remain. Resolve current-profile
 membership representation and preserved-source rollout next; general partial loading, age/fairness,
 retained-memory/OS-cold/scale/platform, migration and independent review remain open. All P02 gates persist.
+
+
+### PLAN-STATE current-profile rollout proposal
+
+The [current40/41 rollout](PLAN_STATE_CURRENT_PROFILE_ROLLOUT.md) maps canonical responsibilities,
+requires exact complete-frame/anchor reconstruction and separates storage-only conversion from semantic
+migration. Existing copied-save publication and generic backup comparison must be paired with explicit
+operational controller-recovery preservation. It specifies atomic staging, original history, refusal/
+fault cases and the limit that an older backup is not a lossless rollback after new accepted gameplay.
+No schema/profile is allocated and no current save is migrated. Independent decision review remains
+unrun under the orchestration pause; direct NPC-01 causal design may proceed without permanent persistence.
+All original PLAN-STATE measurements, P02 closure rows,181 requirements and P00–P14 gates remain unchanged.

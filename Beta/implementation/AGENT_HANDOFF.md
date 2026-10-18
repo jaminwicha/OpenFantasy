@@ -38,11 +38,17 @@ composition excludes profile9 transport; do not attach that witness as an option
 [Fresh-process load evidence](p02/partition-state/membership-cold-load/RESULT.md) covers first and repeated
 opens of the retained episode, with warmed OS caches; it is no scale/ranking/retained-memory acceptance.
 
-**Next:** resolve the current-profile owner/absence representation and preserved-source rollout against
-that contract before implementing a partial index or extending storage. General partial loading,
-scheduling/fairness/oldest age, full capture/final projection costs, scale/platform and no-loss migration
-remain open. Required independent architectural review remains unrun while orchestration is paused;
-the prepared scope is not dispatched. No permanent NPC persistence before the decision/review exit.
+The [current40/41 ownership/rollout proposal](PLAN_STATE_CURRENT_PROFILE_ROLLOUT.md) now separates
+storage-only conversion from semantic migration, maps canonical responsibilities and specifies
+private-copy validation/publication, joint archives, operational recovery and rollback-after-play limits.
+It is design preparation, not an implemented current-profile loader or approved format.
+
+**Next:** take the existing bounded comparison and this concrete proposal through the required decision/
+independent-review gate before permanent NPC persistence or production promotion. Orchestration remains
+paused; do not dispatch the prepared critic or substitute lead inspection. Direct work may prepare the
+NPC-01 causal episode and source-backed dependency/acceptance cases without freezing its persistence.
+General partial loading, due age/fairness, retained residency/scale/platform, projection and full migration
+remain open. Do not produce another generic rollout memo or repeat the completed legacy episode.
 
 After that exit, NPC-01 is the next new inhabited-world behavior. STORY-01, AUDIO-01/ART-01,
 recruitment/cooperative work and the traveling-merchant/cargo investigation retain their dependencies.
