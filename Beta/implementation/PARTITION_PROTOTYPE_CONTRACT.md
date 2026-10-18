@@ -1,5 +1,9 @@
 # Integrated partition prototype contract
 
+Current evidence and next preparation: [PLAN-STATE exit reconciliation](PLAN_STATE_EXIT_REVIEW.md).
+The dated implementation sections below retain their original scopes; completed legacy witnesses
+are not assignments to repeat them. Unproved obligations and independent review remain open.
+
 This is the implementation target for PLAN-STATE, refining the [comparison](PLAN_STATE_COMPARISON.md).
 It specifies the next integrated experiment; it does not select a production save format, introduce
 a new world interpretation or claim independent architectural acceptance. Source boundary: `7fbc9ed1`.

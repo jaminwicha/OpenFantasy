@@ -21,72 +21,28 @@ it does not replace the frozen 181 requirements or their original acceptance gat
 
 ## Current preparation and next work
 
-Continue CURRENT_ROADMAP's PLAN-STATE before permanent NPC cognition persistence. The lead's
-[typed-owner/admission-cohort recommendation](PLAN_STATE_DECISION.md) is supported by the original
-joined saved journey and matched publication comparison. It has not passed independent architectural
-review; orchestration remains paused by owner direction.
+Continue CURRENT_ROADMAP's PLAN-STATE before permanent NPC cognition persistence. Use the
+[exit reconciliation](PLAN_STATE_EXIT_REVIEW.md) for the original obligations, linked executable
+proofs, remaining measurements and prepared review scope. The typed-owner/admission-cohort
+recommendation remains conditional: measured small-cohort cost favors coarse terrain separation.
+Internal profile5/schema14 does not change public/default current40/41 saves or authorize migration.
 
-The [typed-owner storage packet](p02/partition-state/typed-owner-storage/RESULT.md) adds an explicit
-internal fresh profile-five schema14. Stable actor/control/custodian/project and other typed images,
-immutable provenance/definitions and the complete directory publish through the sole SQLite writer.
-Tests cover carried custody, a real gift, actual work, a return/intervention, final installation,
-original history, first/final work and cross-owner gift faults, corruption/refusal and terrain collection.
-Read the result for terminal checks, source pins, measurements and remaining limits; no phase exit
-or current-game migration is implied.
+The joined movement/gift/funded-work episode, selected atomic publication, original-history recovery,
+noninitial checkpoint, multi-actor sliced preparation and internal live host consumer have scoped
+proofs. Real regrowth and funded water delivery also recover in one saved profile9 boundary.
+Do not repeat these legacy episodes to fill general loading or scheduling gaps.
 
-[Stored-owner reconstruction](p02/partition-state/stored-owner-reconstruction/RESULT.md) now loads
-actual payloads under the replay-selected head, admits the complete cohort and returns reconstructed
-owners after exact replay comparison. Partial work can reopen and complete the same saved project.
-It still reads all required owners and terrain, retains complete nonterrain continuation state and
-performs full original replay. The stored partial-publication and checkpoint qualifications below extend
-this baseline; do not substitute another whole-world wrapper or geometry helper. General paging/fairness
-and current40/41 nested migration remain open.
-Keep actual owner/storage/history costs explicit; no performance or credit saving is inferred.
+**Next:** prepare authenticated membership/absence and due-service semantics against actual owners,
+post-action dependencies and interpreter clocks, as scoped in the exit reconciliation and
+[process contract](PLAN_STATE_PROCESS_DISCOVERY.md). General partial/current-profile loading,
+scheduling/fairness, full capture/final projection costs, cold/platform/scale and no-loss migration
+remain open. Required independent architectural review remains unrun while orchestration is paused;
+the prepared scope is not dispatched. No permanent NPC persistence before the decision/review exit.
 
-Before selective-loading edits, use the [current40/41 dependency map](PLAN_STATE_CURRENT_PROFILE_MAP.md):
-read/write/due closures differ; keep reservation-wide stock/access checks and all actor exposure.
-[Shared qualification](p02/partition-state/work-qualification/RESULT.md) is extracted and used by live,
-detached and locality work. [Selected stored assessment](p02/partition-state/stored-work-cohort/RESULT.md)
-now reads an exact source-bound subset. [Stored partial publication](p02/partition-state/stored-work-publication/RESULT.md) extends it to actual journal commits,
-renewed dependencies and complete due gathering/resident updates, retaining site geometry and all-actor
-exposure reads. Final installation and intervening actions restore complete admission. The
-[stored checkpoint qualification](p02/partition-state/stored-checkpoint/RESULT.md) proves the first normal6000-step checkpoint inside partial work, continuation,
-atomic faults and historical refusal. The [due-work map](PLAN_STATE_DUE_WORK_MAP.md) now distinguishes
-mandatory effects, autonomous proposals and preparation; preserve complete multi-actor cutoffs
-without adding time per actor or binding the standalone calendar queue blindly.
-The [multiple-NPC cutoff proof](p02/partition-state/multiple-npc-cutoff/RESULT.md) now qualifies that
-ordinary reference for two genuinely funded host builders, holds/exclusions/refusals and original
-SQLite history/fault recovery. [Stored-batch preparation](p02/partition-state/stored-batch-preparation/RESULT.md)
-now adds exact-head owner-read slices, complete selected multi-actor batches and one atomic passive
-boundary in the existing profile-five prototype. The [yielded authority API](p02/partition-state/yielded-publication/RESULT.md)
-now releases the gate between bounded read calls and refuses cancelled/foreign/intervened handles.
-Its synchronous wrapper still drains under one lock. The [live construction binding](p02/partition-state/live-construction-slices/RESULT.md)
-now consumes a handle across existing session ticks under an internal profile-five/schema14 option.
-It preserves the selected NPC batch, queued input, readiness cancellation and coherent old/new views;
-default/current40/41 sessions remain unchanged. Capture/preview and final full projection remain.
-Final installation and the legacy aggregate limit use ordinary full admission. The
-[combined due-boundary proof](p02/partition-state/combined-due-boundary/RESULT.md) now joins real node
-depletion/regrowth, two funded builders and exposure for all five retained/admitted residents, including
-an unrelated observer, with sliced preparation and SQLite fault/history recovery. The
-[matched cost comparison](p02/partition-state/owner-cost-comparison/RESULT.md) now shows selected typed
-owners cost more than coarse terrain separation in this small cohort; keep the recommendation
-conditional, the default unchanged and capture/final/replay costs visible. The
-[regrowth/transport discovery binding](p02/partition-state/domain-process-discovery/RESULT.md) now feeds
-the real domain executors and verifies post-action cancellation in the existing profile9 world.
-The [joined saved boundary](p02/partition-state/joined-process-boundary/RESULT.md) now proves actual
-harvested regrowth and water delivery together with all-resident exposure, refused receipt and atomic
-history/recovery. The [process contract](PLAN_STATE_PROCESS_DISCOVERY.md) retains the next missing proofs:
-authenticated membership/absence, partial loading and scheduling/fairness. Complete-source queries and
-this profile9 witness do not close those exits. Projection and cold/platform/scale/review obligations remain; avoid
-repeating already qualified legacy slices. General current-profile
-checkpoint/migration proof remains. The map also
-retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
-Neither extraction nor the map is a partial loader or completed nested migration.
-
-After the PLAN-STATE decision/review exit, NPC-01 is the next new inhabited-world behavior. STORY-01,
-AUDIO-01/ART-01, recruitment/cooperative work and the traveling-merchant/cargo investigation retain
-their dependencies. ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain
-required before complete P02 exit. Then prove P03 before the broader P04–P14 expansion.
+After that exit, NPC-01 is the next new inhabited-world behavior. STORY-01, AUDIO-01/ART-01,
+recruitment/cooperative work and the traveling-merchant/cargo investigation retain their dependencies.
+ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain required before full
+P02 acceptance. Then prove P03 before broader P04–P14 expansion. The full P02 table remains in the roadmap.
 
 ## Acceptance and preserved limits
 

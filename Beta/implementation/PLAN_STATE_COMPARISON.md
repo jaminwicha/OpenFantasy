@@ -1,5 +1,9 @@
 # World partition and interpretation comparison
 
+Current evidence and next preparation: [PLAN-STATE exit reconciliation](PLAN_STATE_EXIT_REVIEW.md).
+The dated implementation sections below retain their original scopes; completed legacy witnesses
+are not assignments to repeat them. Unproved obligations and independent review remain open.
+
 Working comparison for CURRENT_ROADMAP's PLAN-STATE. The [lead recommendation](PLAN_STATE_DECISION.md)
 selects typed owners with complete admission cohorts for the next integrated candidate, supported by
 a matched actual publication/replay comparison. Production-format selection and independent review

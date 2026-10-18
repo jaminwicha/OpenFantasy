@@ -1,5 +1,9 @@
 # PLAN-STATE lead recommendation: typed owners with complete admission cohorts
 
+Current evidence and next preparation: [PLAN-STATE exit reconciliation](PLAN_STATE_EXIT_REVIEW.md).
+The dated implementation sections below retain their original scopes; completed legacy witnesses
+are not assignments to repeat them. Unproved obligations and independent review remain open.
+
 **Recommend a hybrid:** persist meaningful typed actor, custodian, project/place, interaction and
 timing owners under one directory and one SQLite authority; validate an action against its complete
 **admission cohort**. Keep the existing domain operations and historical interpreters. Spatial

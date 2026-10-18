@@ -215,72 +215,23 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    decisions warrant a guard-action proposal only if native/human evidence supports it. This scope
    boundary does not waive 1–4-player, restart, Full Wait, independent or human acceptance.
 
-2. Complete **PLAN-STATE** below before committing the permanent NPC persistence model. Produce
-   one design comparison and a bounded measured prototype using actual Core state; do not start a
-   whole-engine rewrite. The [working comparison](PLAN_STATE_COMPARISON.md) is prepared; the
-   [complete-root baseline](p02/partition-state/RESULT.md) now measures actual movement and funded
-   construction in legacy and current formats, with exact reopening. The
-   [carriage extraction](p02/partition-state/carriage/RESULT.md) now gives structural loading and future
-   partition preparation one typed view of actual carried material, preserving legal ownership versus
-   physical placement and installed backing. The [terrain dependency boundary](p02/partition-state/terrain-reads/RESULT.md)
-   now selects exact required archives under separate metadata/region/byte/decoded-cell budgets and
-   reuses ordinary spatial collision queries; file-backed tests leave irrelevant detail unloaded.
-   The [movement footprint](p02/partition-state/movement-footprint/RESULT.md) now derives the terrain
-   request from actual body/motion/support data, including stairs and negative elevations, and is used
-   by that file-backed test. [Prepared spatial reads](p02/partition-state/spatial-read/RESULT.md) now
-   select relevant actors/structures from the complete supplied scene and revalidate their arrival,
-   departure and exact state, using the same movement queries as the ordinary runtime.
-   [Control dependency preparation](p02/partition-state/control-dependencies/RESULT.md) selects exact
-   permanent/delegated control rows and shares ordinary authority rules; unchanged geometry cannot
-   hide revoked or replaced control. Its retained authorization is historical until revalidated.
-   [Joined movement prerequisites](p02/partition-state/movement-prerequisites/RESULT.md) combine those
-   reads with exact carried lots, readiness and the clock/hold boundary. A real file-backed region
-   crossing retains cargo through ordinary SQLite commit/replay; a same-step reading hold still suppresses
-   otherwise clear movement. This is a spatial-region crossing, not a partition-owner transfer.
-   [Paged occupancy reads](p02/partition-state/spatial-directory/RESULT.md) now prepare geometry from
-   selected pinned detail without a complete local scene. A 200-presence file fixture reads four metadata
-   pages, one selected actor archive (plus a separate mover-discovery read) and one terrain archive.
-   This measures selected I/O, not NPC depth, global residency or world authority.
-   [Occupancy-index publication](p02/partition-state/occupancy-publication/RESULT.md) now validates
-   complete metadata catalogs and atomically replaces affected pages/identity references. Its derived
-   world adapter follows exact saved roots and reconstructs index history after before/after-commit
-   interruptions. This is immutable index publication, not canonical cross-partition ownership transfer.
-   [Prepared access routes](p02/partition-state/prepared-routes/RESULT.md) now share the ordinary flat
-   and stair search kernels without a complete local scene; queries cannot escape their declared
-   terrain/occupancy boundary. Actual funded construction retains its original access and time rules.
-   [Prepared placement](p02/partition-state/prepared-placement/RESULT.md) now combines shared structure
-   clearance/support and escape-route checks over those reads. Ordinary placement retains full candidate
-   admission; this geometric status cannot spend stock, award work or publish an installed object.
-   [Construction authority integration](p02/partition-state/construction-authority/RESULT.md) puts
-   reusable site qualification inside ordinary selected batches and the SQLite publisher. Revalidation,
-   live tools/material, holds, earned time, physical admission and receipt/recovery remain mandatory.
-   The complete-world equivalence and preview/commit interruption checks qualify this adapter; whole
-   roots are still resident and encoded. This is not partition ownership or offscreen publication.
-   [Shared construction execution](p02/partition-state/construction-execution/RESULT.md) now reuses
-   one rule kernel for ordinary work and detached material/project candidates. Site evidence survives
-   unchanged work progress; 200 steps and completion agree, and final candidate evaluation survives
-   collection of the source world/scene/index/terrain. Capture and freshness still require the complete
-   source, some terrain-retaining material continuations are explicitly unsupported, and physical/time/
-   durable publication remain outside the detached result. This is not an offscreen world authority.
-   [Construction locality continuation](p02/partition-state/construction-locality/RESULT.md) now retains
-   every nonterrain owner of its supported profile5 source and executes 200 successive selected work
-   candidates after source/scene/index/terrain collection. Due gathering and resident exposure remain
-   real; final reconstruction, material outputs, per-step owner state and outcomes match ordinary
-   execution. Profile40/41 sources explicitly refuse. No canonical owner split, movement/gift interval,
-   durable partial publication or new format is supplied by this domain proof.
-   The [integrated prototype contract](PARTITION_PROTOTYPE_CONTRACT.md) specifies the next unit:
-   shared admitted construction execution, stable actor/custodian owners and separate spatial membership,
-   real cross-owner cargo transfer, earned exposure and invalidated geometry/access evidence. Construction's
-   current complete-locality access population must be preserved; slicing it is not lawful admission.
-   The next integrated proof must establish complete directory ownership, movement with cargo plus actual
-   custody transfer, absent-detail funded work/completion and atomic recovery/history. Additional isolated
-   read helpers cannot close PLAN-STATE. The contract and shared candidate kernel are prepared; joined
-   owner/scheduler/publication integration remains open.
-   These are bounded dependency preparations, not partitioned world simulation. Global directory completeness,
-   custody/time/readiness and complete permission closure, atomic cross-partition publication and the selected format remain
-   unproved/undecided. Record the decision, measured limits and remaining questions in the living
-   plan and timeless reference. Required independent architectural review stays open while the owner
-   pauses orchestration; lead inspection cannot substitute for it.
+2. Complete **PLAN-STATE** below before committing the permanent NPC persistence model. The
+   [exit reconciliation](PLAN_STATE_EXIT_REVIEW.md) maps the original bounded comparison/prototype
+   to its evidence and outstanding obligations; it replaces stale next-step wording, not any gate.
+   The [conditional decision](PLAN_STATE_DECISION.md) favors stable typed owners/admission cohorts
+   for residency, while the [matched measurements](p02/partition-state/owner-cost-comparison/RESULT.md)
+   show the coarse terrain-separated path is cheaper for the measured small cohort. No production
+   format, default-game migration or general speed claim follows.
+   The joined crossing/cargo gift/funded-work/history episode, selected atomic publication, noninitial
+   checkpoint, multi-actor sliced preparation and internal live host binding now have scoped evidence.
+   Real regrowth and water delivery are also joined in an original profile9 history. These do not
+   establish general current40/41 loading, directory/due membership, fairness or migration.
+   Next prepare authenticated membership/absence and interpreter-specific due-service semantics;
+   retain current-profile nested coverage, cold/warm/retained-detail/commit/replay/oldest-age measurement,
+   projection, scheduling/scale and all remaining rollout obligations. The matrix links existing proof
+   rather than assigning duplicate legacy demonstrations. Required independent architectural review
+   remains unrun under the orchestration pause; its concrete scope is prepared, not dispatched.
+   Keep timeless ownership/scheduling/persistence documentation synchronized with every changed contract.
 3. Deliver **NPC-01** as the next new inhabited-world behavior. Prepare **STORY-01** content and
    **AUDIO-01/ART-01** semantic production contracts alongside their dependency design, then build
    recruitment/cooperative work and the traveling merchant/cargo investigation. These are dependency

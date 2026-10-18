@@ -1,5 +1,9 @@
 # PLAN-STATE process discovery integration contract
 
+Current evidence and next preparation: [PLAN-STATE exit reconciliation](PLAN_STATE_EXIT_REVIEW.md).
+The dated implementation sections below retain their original scopes; completed legacy witnesses
+are not assignments to repeat them. Unproved obligations and independent review remain open.
+
 Source boundary:29e89f6b68ec5644716996fcf8c383cbb5de1fdf. This lead preparation review refines
 [the due-work map](PLAN_STATE_DUE_WORK_MAP.md) and [conditional decision](PLAN_STATE_DECISION.md).
 [Source pins and result](p02/partition-state/process-discovery-contract/RESULT.md) establish the reviewed
