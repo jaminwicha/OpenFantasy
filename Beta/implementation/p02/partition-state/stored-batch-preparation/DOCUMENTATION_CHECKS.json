@@ -1,0 +1,77 @@
+{
+  "accepted": true,
+  "current_source_binary_pins": 1963,
+  "p02_closure_unchanged": true,
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "Beta/tools/check_documentation.py",
+        "--work-record",
+        "Beta/implementation/p02/partition-state/stored-batch-preparation/RESULT.md",
+        "--files",
+        "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+        "Beta/Runtime/docs/architecture/construction-locality.md",
+        "Beta/Runtime/docs/architecture/partition-dependencies.md",
+        "Beta/Runtime/docs/architecture/partition-ownership.md",
+        "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+        "Beta/implementation/PLAN_STATE_DECISION.md",
+        "Beta/implementation/AGENT_HANDOFF.md",
+        "Beta/implementation/CURRENT_ROADMAP.md",
+        "Beta/implementation/GIT_MILESTONES.md",
+        "Beta/implementation/p02/partition-state/stored-batch-preparation/RESULT.md"
+      ],
+      "exit_code": 0,
+      "log": "documents.log"
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--check",
+        "--",
+        "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+        "Beta/Runtime/docs/architecture/construction-locality.md",
+        "Beta/Runtime/docs/architecture/partition-dependencies.md",
+        "Beta/Runtime/docs/architecture/partition-ownership.md",
+        "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+        "Beta/implementation/PLAN_STATE_DECISION.md",
+        "Beta/implementation/AGENT_HANDOFF.md",
+        "Beta/implementation/CURRENT_ROADMAP.md",
+        "Beta/implementation/GIT_MILESTONES.md",
+        "Beta/implementation/p02/partition-state/stored-batch-preparation/RESULT.md",
+        "Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/StoredConstructionInterval.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/StoredConstructionPreparation.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/StoredConstructionWorkOwners.cs",
+        "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionCodecV1.cs",
+        "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.StoredConstruction.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedConstructionJourney.cs",
+        "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/StoredBatchConstructionTests.cs"
+      ],
+      "exit_code": 0,
+      "log": "diff.log"
+    },
+    {
+      "argv": [
+        "python3",
+        "Beta/tools/check_documentation.py",
+        "--work-record",
+        "Beta/implementation/p02/partition-state/stored-batch-preparation/RESULT.md",
+        "--files",
+        "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+        "Beta/Runtime/docs/architecture/construction-locality.md",
+        "Beta/Runtime/docs/architecture/partition-dependencies.md",
+        "Beta/Runtime/docs/architecture/partition-ownership.md",
+        "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+        "Beta/implementation/PLAN_STATE_DECISION.md",
+        "Beta/implementation/AGENT_HANDOFF.md",
+        "Beta/implementation/CURRENT_ROADMAP.md",
+        "Beta/implementation/GIT_MILESTONES.md",
+        "Beta/implementation/p02/partition-state/stored-batch-preparation/RESULT.md"
+      ],
+      "exit_code": 0,
+      "log": "documents-final.log",
+      "reason": "Result now links exact preserved display-log originals."
+    }
+  ]
+}

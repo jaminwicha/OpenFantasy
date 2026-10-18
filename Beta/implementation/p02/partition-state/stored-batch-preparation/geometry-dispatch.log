@@ -1,0 +1,6 @@
+{"command": ["/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet", "test", "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj", "--no-build", "--no-restore", "--filter", "FullyQualifiedName~StoredBatchConstructionTests.Legacy_two_builder_funding_and_routes_are_valid_before_storage_execution", "--logger", "trx;LogFileName=geometry.trx", "--results-directory", "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/stored-batch-preparation/geometry-01"], "exit_code": 0, "seconds": 4.039764750050381, "bound_seconds": 180}
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/stored-batch-preparation/geometry-01/geometry.trx
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 916 ms - OpenFantasy.Hosting.Tests.dll (net8.0)

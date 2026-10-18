@@ -1,0 +1,12 @@
+[
+  {
+    "run": "hosting-01",
+    "classification": "production",
+    "passed": 169,
+    "failed": 6,
+    "seconds": 91.42039774998557,
+    "cause": "StoredConstructionWorkOwners decoded one selected project as a complete ConstructionSnapshot with the global catalog revision; constructor correctly requires sum(project revisions) == catalog revision. Multiple-project progress violates that miniature root.",
+    "correction": "Reuse the existing canonical project decoder directly, validate exact definition/project identity and own revision against admitted catalog, retain complete catalog admission elsewhere. No aggregate invariant relaxed. Added explicit asymmetric single-project regression.",
+    "next": "Deliberate preflight-03, current Core/Hosting rerun after source correction. Failed artifact root and reports retained; no automatic retry."
+  }
+]

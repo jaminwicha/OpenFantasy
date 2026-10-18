@@ -57,11 +57,21 @@ has a cyclic service cursor with care-priority rules; that is not evidence of fa
 ## Runtime binding: stored construction
 
 [StoredConstructionInterval](../../src/OpenFantasy.Core/Construction/Ownership/StoredConstructionInterval.cs)
-accepts only the supported profile-five interval, one action and no movement. Its dependency set includes
-all resident actor owners, timing and gathering as well as the selected work cohort. An advancing partial
-publication updates every resident's exposure and gathering through the ordinary laws. Missing required
-payloads refuse preparation. Final installation returns to complete admission. These are explicit limits,
-not a general multi-actor or multi-domain scheduler.
+accepts only the supported profile-five interval and no movement. Capture names a bounded set of
+actor/project work cohorts; selected batches may use those actors or contain no actions. Their
+dependency union includes all resident actor owners, timing and gathering. Canonically ordered work
+produces one receipt per selected action, followed by one ordinary exposure/gathering boundary.
+Missing required payloads refuse preparation. Final installation and a legacy aggregate-limit crossing
+return the entire batch to complete admission before any publication. This preserves the old law;
+it does not introduce the coordinated interpretation or a general multi-domain scheduler.
+
+[StoredConstructionPreparation](../../src/OpenFantasy.Core/Construction/Ownership/StoredConstructionPreparation.cs)
+can read the exact dependencies in owner-count-bounded slices. Every slice and completion require the
+same admitted directory. Incomplete loading cannot complete a candidate; a read failure or stale
+directory permanently invalidates that preparation. Completion evaluates all selected work and due
+effects synchronously. No slice publishes time, receipts or partial work. The Host's stored-batch
+entrypoint drains preparation under its existing lock; it does not persist a cursor or yield between
+live ticks. These are bounded dependency reads, not a CPU-time budget or fairness guarantee.
 
 Splitting an ordinary multi-actor batch into one advancing commit per actor would change both exposure
 and opportunities to work. Bounded preparation must instead preserve the complete selected boundary,

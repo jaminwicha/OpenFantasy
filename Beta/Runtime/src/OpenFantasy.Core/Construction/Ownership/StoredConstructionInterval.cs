@@ -14,7 +14,7 @@ namespace OpenFantasy.Core.Construction.Ownership;
 /// </summary>
 public sealed class StoredConstructionInterval
 {
-    private readonly ConstructionWorkCohort _work;
+    private readonly Dictionary<EntityId, ConstructionWorkCohort> _work;
     private readonly TerrainScope _scope;
     private readonly TerrainRegionReference[] _terrain;
     private readonly Dictionary<ConstructionOwnerKey, OwnerImageReference> _owners;
@@ -22,15 +22,20 @@ public sealed class StoredConstructionInterval
     private readonly int _completeByteLength;
     private readonly byte[] _directory;
 
-    private StoredConstructionInterval(WorldSnapshot world, WorldActionCommand command)
+    private StoredConstructionInterval(WorldSnapshot world, IEnumerable<WorldActionCommand> commands)
     {
-        _work = ConstructionWorkCohort.Capture(world, command);
+        ArgumentNullException.ThrowIfNull(commands);
+        var selected = commands.Take(WorldStepBatch.MaximumActorsPerBatch + 1).ToArray();
+        if (selected.Length is 0 or > WorldStepBatch.MaximumActorsPerBatch
+            || selected.Select(command => command.ActorId).Distinct().Count() != selected.Length)
+            throw new ArgumentException("Capture requires a bounded unique actor/project selection.", nameof(commands));
+        _work = selected.ToDictionary(command => command.ActorId, command => ConstructionWorkCohort.Capture(world, command));
         var directory = ConstructionOwnerDirectory.Capture(world);
         _scope = directory.Scope;
         _terrain = world.Space.Regions.Select(TerrainRegionReference.Capture).ToArray();
         _owners = directory.Owners.ToDictionary(owner => owner.Key,
             owner => new OwnerImageReference(owner.Hash, owner.ByteLength));
-        _required = _work.RequiredOwners.Select(owner => owner.Key).ToHashSet();
+        _required = _work.Values.SelectMany(work => work.RequiredOwners).Select(owner => owner.Key).ToHashSet();
         foreach (var key in _owners.Keys.Where(key => key.Kind is ConstructionOwnerKind.Actor
             or ConstructionOwnerKind.Timing or ConstructionOwnerKind.Gathering or ConstructionOwnerKind.ConstructionCatalog))
             _required.Add(key);
@@ -77,7 +82,8 @@ public sealed class StoredConstructionInterval
     public int CompleteOwnerCount => _owners.Count;
     public int RequiredOwnerCount => _required.Count;
     public byte[] CopyDirectory() => _directory.ToArray();
-    public static StoredConstructionInterval Capture(WorldSnapshot world, WorldActionCommand command) => new(world, command);
+    public static StoredConstructionInterval Capture(WorldSnapshot world, WorldActionCommand command) => new(world, [command]);
+    public static StoredConstructionInterval Capture(WorldSnapshot world, IEnumerable<WorldActionCommand> commands) => new(world, commands);
 
     /// <summary>
     /// Prepares one exact selected step. Null requires complete material/geometry admission before any
@@ -86,21 +92,46 @@ public sealed class StoredConstructionInterval
     public StoredConstructionStep? Prepare(WorldStepBatch batch, ContentHash currentDirectory,
         Func<ContentHash, byte[]> readOwner, Func<EntityId, bool> historicallyOccupied)
     {
+        var preparation = BeginPreparation(batch, currentDirectory, historicallyOccupied);
+        preparation.ReadNext(currentDirectory, RequiredOwnerCount, readOwner);
+        return preparation.Complete(currentDirectory);
+    }
+
+    /// <summary>Starts unpublished dependency loading; each slice and completion recheck the exact directory.</summary>
+    public StoredConstructionPreparation BeginPreparation(WorldStepBatch batch, ContentHash currentDirectory,
+        Func<EntityId, bool> historicallyOccupied)
+    {
         ArgumentNullException.ThrowIfNull(batch);
-        ArgumentNullException.ThrowIfNull(readOwner);
         ArgumentNullException.ThrowIfNull(historicallyOccupied);
         if (currentDirectory != DirectoryHash || batch.ProfileVersion != 5
             || batch.WorldId != _scope.WorldId || batch.BranchId != _scope.BranchId
             || batch.ExpectedRevision != Revision || batch.ExpectedAdvancingSteps != AdvancingSteps
-            || batch.Movement.Count != 0 || batch.Actions.Count != 1
+            || batch.Movement.Count != 0
             || batch.Kind is not WorldBatchKind.AdvancingStep and not WorldBatchKind.HeldInteraction)
             throw new InvalidOperationException("Selected work requires the exact current admitted interval.");
-        var command = batch.Actions[0];
-        _work.ValidateCommand(command);
-        var fields = ReadFields(readOwner);
-        var source = new StoredConstructionDecisionSource(_scope, command, fields);
-        if (!source.Authorizes(command) || (batch.Kind == WorldBatchKind.HeldInteraction) != source.HasReadingHold)
-            throw new InvalidOperationException("Selected work requires its current controller and hold.");
+        foreach (var command in batch.Actions)
+        {
+            if (!_work.TryGetValue(command.ActorId, out var work))
+                throw new InvalidOperationException("Actor is outside the captured work interval.");
+            work.ValidateCommand(command);
+        }
+        var reads = _required.OrderBy(key => key.Kind).ThenBy(key => key.SubjectId)
+            .Select(key => new StoredConstructionOwnerRead(key, _owners[key].Hash, _owners[key].ByteLength)).ToArray();
+        return new(this, batch, _scope, reads, historicallyOccupied);
+    }
+
+    internal StoredConstructionStep? PrepareLoaded(WorldStepBatch batch,
+        Dictionary<ConstructionOwnerKey, byte[][]> fields, Func<EntityId, bool> historicallyOccupied)
+    {
+        bool held = WorldSnapshotCodecV1.DecodeDialogues(Get(fields,
+            new(ConstructionOwnerKind.Dialogues, _scope.WorldId), 1)[0]).Count != 0;
+        if ((batch.Kind == WorldBatchKind.HeldInteraction) != held)
+            throw new InvalidOperationException("Selected work requires its current hold.");
+        foreach (var command in batch.Actions)
+        {
+            if (!new StoredConstructionDecisionSource(_scope, command, fields).Authorizes(command))
+                throw new InvalidOperationException("Selected work requires its current controller.");
+        }
         var timingKey = new ConstructionOwnerKey(ConstructionOwnerKind.Timing, _scope.WorldId);
         var timing = Get(fields, timingKey, 3);
         if (StoredConstructionOwners.Number(timing[2]) != AdvancingSteps)
@@ -108,36 +139,54 @@ public sealed class StoredConstructionInterval
         var catalogKey = new ConstructionOwnerKey(ConstructionOwnerKind.ConstructionCatalog, _scope.WorldId);
         var catalog = Get(fields, catalogKey, 2);
         ulong constructionRevision = StoredConstructionOwners.Number(catalog[0]);
+        ulong sequence = checked(Revision + 1);
         var reservations = new WorldStepIdentityReservations(historicallyOccupied);
         reservations.Reserve(batch.CauseId, WorldCommittedIdentityKind.CommitCause);
-        reservations.Reserve(command.CommandId, WorldCommittedIdentityKind.Command);
-        var qualification = _work.Qualify(fields, command, constructionRevision,
-            batch.Kind == WorldBatchKind.AdvancingStep, source.HasReadingHold);
-        if (qualification.Work is { } finishing
-            && finishing.Progress.CompletedUnits >= finishing.Project.Definition.RequiredWork.Value)
-            return null;
-
-        List<ConstructionOwnerPayload> changed = [];
+        foreach (var command in batch.Actions) reservations.Reserve(command.CommandId, WorldCommittedIdentityKind.Command);
+        Dictionary<ConstructionOwnerKey, ConstructionOwnerPayload> changed = [];
         void Replace(ConstructionOwnerKey key, params byte[][] values)
         {
             var payload = ConstructionOwnerPayload.Create(key, _scope, values);
-            if (payload.Hash != _owners[key].Hash) changed.Add(payload);
+            fields[key] = values;
+            if (payload.Hash != _owners[key].Hash) changed[key] = payload;
+            else changed.Remove(key);
         }
-        var rejection = qualification.Rejection;
-        if (qualification.Work is { } work)
+        List<WorldActionReceipt> receipts = [];
+        foreach (var command in batch.Actions)
         {
-            try
+            var qualification = _work[command.ActorId].Qualify(fields, command, constructionRevision,
+                batch.Kind == WorldBatchKind.AdvancingStep, held);
+            if (qualification.Work is { } finishing
+                && finishing.Progress.CompletedUnits >= finishing.Project.Definition.RequiredWork.Value)
+                return null;
+            var rejection = qualification.Rejection;
+            if (qualification.Work is { } work)
             {
-                var project = work.Project.WithProgress(work.Progress, null);
-                ulong nextConstructionRevision = checked(constructionRevision + 1);
-                Replace(new(ConstructionOwnerKind.Project, project.ProjectId), ConstructionCodecV1.EncodeProject(project));
-                Replace(catalogKey, Unsigned64(nextConstructionRevision), catalog[1]);
+                byte[]? projectBytes = null;
+                ulong nextConstructionRevision = constructionRevision;
+                try
+                {
+                    var project = work.Project.WithProgress(work.Progress, null);
+                    nextConstructionRevision = checked(constructionRevision + 1);
+                    // Profile five retains the aggregate operation bound. Ordinary admission owns
+                    // the whole batch's refusal; do not invent per-actor refusals or extra time.
+                    if (nextConstructionRevision > sequence) return null;
+                    projectBytes = ConstructionCodecV1.EncodeProject(project);
+                }
+                catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
+                {
+                    rejection = WorldActionRejection.Unavailable;
+                }
+                if (projectBytes is not null)
+                {
+                    Replace(new(ConstructionOwnerKind.Project, work.Project.ProjectId), projectBytes);
+                    Replace(catalogKey, Unsigned64(nextConstructionRevision), catalog[1]);
+                    constructionRevision = nextConstructionRevision;
+                }
             }
-            catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
-            {
-                changed.Clear();
-                rejection = WorldActionRejection.Unavailable;
-            }
+            var receipt = WorldActionReceipt.Create(command, sequence, rejection);
+            reservations.Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
+            receipts.Add(receipt);
         }
         ulong steps = AdvancingSteps;
         if (batch.Kind == WorldBatchKind.AdvancingStep)
@@ -151,33 +200,16 @@ public sealed class StoredConstructionInterval
             var gathering = Get(fields, gatheringKey, 1)[0];
             if (gathering.Length != 0)
                 Replace(gatheringKey, GatheringCodecV1.Encode(GatheringCodecV1.Decode(gathering).AdvanceStep(steps)));
-            foreach (var pair in fields.Where(pair => pair.Key.Kind == ConstructionOwnerKind.Actor))
+            foreach (var key in fields.Keys.Where(key => key.Kind == ConstructionOwnerKind.Actor).ToArray())
             {
-                var actor = Get(fields, pair.Key, 3);
+                var actor = Get(fields, key, 3);
                 var residents = WorldSnapshotCodecV1.DecodeResidents(actor[2]);
                 var exposure = new WorldResidentExposureBasis(residents.AsReadOnly(), AdvancingSteps).AdvanceTo(steps);
-                Replace(pair.Key, actor[0], actor[1], WorldSnapshotCodecV1.EncodeResidents(exposure.Materialize()));
+                Replace(key, actor[0], actor[1], WorldSnapshotCodecV1.EncodeResidents(exposure.Materialize()));
             }
         }
-        var receipt = WorldActionReceipt.Create(command, checked(Revision + 1), rejection);
-        reservations.Reserve(receipt.ResultId, WorldCommittedIdentityKind.Result);
-        return new(new(this, steps, changed), receipt, changed, reservations.Identities);
-    }
-
-    private Dictionary<ConstructionOwnerKey, byte[][]> ReadFields(Func<ContentHash, byte[]> readOwner)
-    {
-        Dictionary<ConstructionOwnerKey, byte[][]> fields = [];
-        long bytes = 0;
-        foreach (var key in _required.OrderBy(key => key.Kind).ThenBy(key => key.SubjectId))
-        {
-            var owner = _owners[key];
-            byte[] payload = readOwner(owner.Hash) ?? throw new FormatException("A required work owner is missing.");
-            bytes = checked(bytes + payload.Length);
-            if (payload.Length != owner.ByteLength || bytes > ConstructionOwnerDirectory.MaximumTotalPayloadByteLength)
-                throw new FormatException("Required work owners differ from their admitted byte envelope.");
-            fields.Add(key, StoredConstructionOwners.ReadFields(payload, key, _scope, owner.Hash));
-        }
-        return fields;
+        var payloads = changed.Values.OrderBy(owner => owner.Key.Kind).ThenBy(owner => owner.Key.SubjectId).ToArray();
+        return new(new(this, steps, payloads), receipts, payloads, reservations.Identities);
     }
 
     private sealed record OwnerImageReference(ContentHash Hash, int ByteLength);
@@ -186,16 +218,17 @@ public sealed class StoredConstructionInterval
 /// <summary>An unpublished directory update and its changed payloads, never a second durable writer.</summary>
 public sealed class StoredConstructionStep
 {
-    internal StoredConstructionStep(StoredConstructionInterval candidate, WorldActionReceipt receipt,
+    internal StoredConstructionStep(StoredConstructionInterval candidate, IEnumerable<WorldActionReceipt> receipts,
         IEnumerable<ConstructionOwnerPayload> changed, IEnumerable<WorldCommittedIdentity> identities)
     {
         Candidate = candidate;
-        Receipt = receipt;
+        Receipts = Array.AsReadOnly(receipts.ToArray());
         ChangedOwners = Array.AsReadOnly(changed.ToArray());
         Identities = Array.AsReadOnly(identities.OrderBy(value => value.Identity).ToArray());
     }
     public StoredConstructionInterval Candidate { get; }
-    public WorldActionReceipt Receipt { get; }
+    public WorldActionReceipt Receipt => Receipts.Single();
+    public ReadOnlyCollection<WorldActionReceipt> Receipts { get; }
     public ReadOnlyCollection<ConstructionOwnerPayload> ChangedOwners { get; }
     public ReadOnlyCollection<WorldCommittedIdentity> Identities { get; }
 }

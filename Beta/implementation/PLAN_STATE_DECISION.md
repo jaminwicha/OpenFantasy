@@ -217,3 +217,15 @@ than lifting a profile-five limit for a scheduling fixture. The next comparison 
 partial-residency preparation, actual due discovery and the remaining [map](PLAN_STATE_DUE_WORK_MAP.md)
 contrasts. Twenty-two selected passes do not close general fairness, migration, scale or independent
 review. No production source, format or rule changed in this qualification.
+
+## Selected batches and preparation slices — 2026-10-18
+
+[Stored-batch preparation](p02/partition-state/stored-batch-preparation/RESULT.md) extends the existing
+profile-five owner interval to complete selected multi-actor batches. Dependency reads are sliced by
+owner count and invalidated by a changed directory or failed read. Final evaluation and all due effects
+remain one logical boundary, published atomically by the sole writer. It retains legacy aggregate
+limits through whole-batch ordinary fallback. A selected project's canonical payload is decoded directly;
+its revision must not be confused with the catalog's sum across projects. No new saved format or rule
+is selected.611current passes include13new and fresh real-checkpoint recovery; retained production
+failures and the narrower synchronous Host binding are explicit. General scheduling/current-profile
+migration/measurement and independent review remain open.

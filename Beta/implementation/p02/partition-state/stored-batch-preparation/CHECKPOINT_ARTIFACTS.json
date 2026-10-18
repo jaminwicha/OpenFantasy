@@ -1,0 +1,5 @@
+{
+  "root": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/stored-batch-checkpoint-20261018-attempt01",
+  "retention": "Full SQLite prefixes, original snapshots, manifest and case databases retained here under ignored Runtime/artifacts. Reproduce using explicit environment and source-pinned cases; never overwrite this attempt. Manifest binds exact files and Core/Hosting assemblies.",
+  "restore": "Read manifest.json and verify each hash. Copy before.sqlite3 or checkpoint.sqlite3 into a fresh output, then OpenExisting; do not copy any live WAL database."
+}

@@ -1,0 +1,129 @@
+{
+  "source": "873766d33c443af453c168745d6132e56ac6ce8c",
+  "current_source_pins": "preflight-03/pins.json",
+  "core_passed": 428,
+  "hosting_passed": 176,
+  "checkpoint_passed": 7,
+  "distinct_current_passed": 611,
+  "new_passed": 13,
+  "new_cases": [
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Empty_held_and_refused_batches_keep_the_complete_ordinary_boundary(mode: \"empty\")",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.A_selected_project_keeps_its_revision_distinct_from_other_projects_in_the_catalog",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Stored_two_actor_publication_reopens_all_original_history_and_atomic_receipts(faultValue: null)",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.A_changed_directory_invalidates_loaded_slices_before_read_or_completion(atCompletion: True)",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Stored_two_actor_publication_reopens_all_original_history_and_atomic_receipts(faultValue: 0)",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Empty_held_and_refused_batches_keep_the_complete_ordinary_boundary(mode: \"held\")",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Stored_two_actor_publication_reopens_all_original_history_and_atomic_receipts(faultValue: 1)",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.A_changed_directory_invalidates_loaded_slices_before_read_or_completion(atCompletion: False)",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Legacy_aggregate_limit_returns_the_whole_batch_to_ordinary_admission",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Empty_held_and_refused_batches_keep_the_complete_ordinary_boundary(mode: \"refused\")",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Failed_owner_read_cannot_resume_or_complete_a_boundary",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.One_owner_slices_prepare_both_actions_and_all_due_effects_without_earning_intermediate_time",
+    "OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Legacy_two_builder_funding_and_routes_are_valid_before_storage_execution"
+  ],
+  "skipped": 0,
+  "current_failures": 0,
+  "retained_failure": "hosting-01: 169 passed, 6 production failures; fixed without relaxing catalog invariant",
+  "runs": [
+    {
+      "record": "geometry-01/geometry.json",
+      "seconds": 4.039764750050381,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "core-01/core.json",
+      "seconds": 26.72732041706331,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "hosting-01/hosting.json",
+      "seconds": 91.42039774998557,
+      "exit_code": 1,
+      "bound_seconds": 180,
+      "failure_classification": "production"
+    },
+    {
+      "record": "geometry-02/geometry.json",
+      "seconds": 3.652756249997765,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "core-02/core.json",
+      "seconds": 21.409816792001948,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "hosting-02/hosting.json",
+      "seconds": 94.31676995905582,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "checkpoint/after/after.json",
+      "seconds": 18.477985125035048,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "checkpoint/before/before.json",
+      "seconds": 18.44503533304669,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "checkpoint/continue/continue.json",
+      "seconds": 43.115218707942404,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "checkpoint/earlier-owner/earlier-owner.json",
+      "seconds": 3.416925707948394,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "checkpoint/missing/missing.json",
+      "seconds": 11.230404625064693,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "checkpoint/prepare/prepare.json",
+      "seconds": 53.84573483292479,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    },
+    {
+      "record": "checkpoint/substitute/substitute.json",
+      "seconds": 11.093142500030808,
+      "exit_code": 0,
+      "bound_seconds": 180,
+      "failure_classification": null
+    }
+  ],
+  "storage_bearing_invocations": 9,
+  "storage_failure_classification": {
+    "production": 1,
+    "fixture": 0,
+    "runner": 0
+  },
+  "api_calls": null,
+  "average_input_context": null,
+  "telemetry_note": "Unavailable from exposed rollout metadata; no efficiency saving claimed."
+}

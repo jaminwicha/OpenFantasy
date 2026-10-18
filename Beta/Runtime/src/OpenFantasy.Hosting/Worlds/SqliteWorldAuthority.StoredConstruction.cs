@@ -15,13 +15,16 @@ public sealed partial class SqliteWorldAuthority
 
     /// <summary>Admits exact dependency metadata, then releases complete inventory/production/terrain residency.</summary>
     internal StoredConstructionInterval EvictForStoredConstruction(WorldActionCommand command)
+        => EvictForStoredConstruction([command]);
+
+    internal StoredConstructionInterval EvictForStoredConstruction(IEnumerable<WorldActionCommand> commands)
     {
         lock (_gate)
         {
             EnsureAvailable();
             if (!_database.SeparatesOwners) throw new InvalidOperationException("Typed owner storage is required.");
             var world = _state;
-            var interval = StoredConstructionInterval.Capture(world, command);
+            var interval = StoredConstructionInterval.Capture(world, commands);
             if (interval.DirectoryHash != _stateHash) throw new InvalidDataException("Work differs from the committed owners.");
             // Profile five has no prospective encounter families; keep actual entity reservations only.
             var identities = world.IdentityIndex.CopyEntityReservations();
@@ -36,6 +39,13 @@ public sealed partial class SqliteWorldAuthority
 
     /// <summary>Publishes selected partial work with every due update; final installation uses ordinary full admission.</summary>
     internal WorldActionReceipt CommitStoredConstruction(WorldStepBatch batch, Action<AuthorityCommitBoundary>? fault = null)
+    {
+        if (batch.Actions.Count != 1) throw new AuthorityDispatchException("A single receipt requires one selected action.");
+        return CommitStoredConstructionBatch(batch, fault).Single();
+    }
+
+    internal IReadOnlyList<WorldActionReceipt> CommitStoredConstructionBatch(WorldStepBatch batch,
+        Action<AuthorityCommitBoundary>? fault = null)
     {
         lock (_gate)
         {
@@ -59,16 +69,16 @@ public sealed partial class SqliteWorldAuthority
                 throw new AuthorityDispatchException("Selected work does not match the current stored interval.");
             }
             // No candidate, identity or receipt has been published. The normal interpreter owns completion.
-            if (step is null) return Commit(batch, fault).Receipts.Single();
-            var command = batch.Actions.Single();
+            if (step is null) return Commit(batch, fault).Receipts;
             var candidate = step.Candidate;
             var stored = new StoredWorldCommit(candidate.Revision,
                 batch.Kind == WorldBatchKind.AdvancingStep ? WorldCommitKind.AdvancingStep : WorldCommitKind.HeldInteraction,
                 batch.CauseId, candidate.AdvancingSteps, WorldStepCodec.Encode(batch),
-                WorldReceiptCodecV1.EncodeBatch([step.Receipt]), _stateHash, candidate.DirectoryHash);
+                WorldReceiptCodecV1.EncodeBatch(step.Receipts), _stateHash, candidate.DirectoryHash);
             var writes = new WorldCommitWriteSet(candidate.CopyDirectory(), stored,
-                [new(command.PrincipalId, command.CommandId, candidate.Revision,
-                    WorldActionCodec.Encode(command), WorldReceiptCodecV1.Encode(step.Receipt))],
+                batch.Actions.Zip(step.Receipts, (command, receipt) => new StoredWorldCommandOutcome(command.PrincipalId,
+                    command.CommandId, candidate.Revision, WorldActionCodec.Encode(command),
+                    WorldReceiptCodecV1.Encode(receipt))).ToArray(),
                 step.Identities.Select(value => new StoredWorldIdentity(value.Identity, candidate.Revision, value.Kind switch
                 {
                     WorldCommittedIdentityKind.CommitCause => WorldIdentityKind.CommitCause,
@@ -76,7 +86,7 @@ public sealed partial class SqliteWorldAuthority
                     WorldCommittedIdentityKind.Result => WorldIdentityKind.Result,
                     _ => throw new InvalidDataException("Partial work cannot create a material identity.")
                 })).ToArray(), ChangedOwners: step.ChangedOwners);
-            var advance = WorldJournalPolicy.Advance(_usage, stored.Sequence, stored.AdvancingSteps, 1,
+            var advance = WorldJournalPolicy.Advance(_usage, stored.Sequence, stored.AdvancingSteps, (ulong)batch.Actions.Count,
                 (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length, profileVersion: 5);
             using var transaction = _database.BeginWrite();
             try
@@ -86,7 +96,7 @@ public sealed partial class SqliteWorldAuthority
                 _stateHash = candidate.DirectoryHash;
                 _residentState = null;
                 _usage = advance.Usage;
-                return step.Receipt;
+                return step.Receipts;
             }
             catch { _requiresRecovery = true; throw; }
         }

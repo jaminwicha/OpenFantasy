@@ -1,0 +1,136 @@
+{
+  "roots": [
+    {
+      "root": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/stored-batch-preparation-20261018-attempt01",
+      "files": {
+        "ordinary/world.sqlite3": {
+          "bytes": 1183744,
+          "sha256": "4673334e50623c8301eb937e15e6dffe5729a6e52ace6351a689227a5712999e"
+        },
+        "AfterCommit/world.sqlite3": {
+          "bytes": 1183744,
+          "sha256": "4673334e50623c8301eb937e15e6dffe5729a6e52ace6351a689227a5712999e"
+        },
+        "BeforeCommit/world.sqlite3": {
+          "bytes": 1183744,
+          "sha256": "4673334e50623c8301eb937e15e6dffe5729a6e52ace6351a689227a5712999e"
+        }
+      }
+    },
+    {
+      "root": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/stored-batch-preparation-20261018-attempt02",
+      "files": {
+        "ordinary/before.ofc": {
+          "bytes": 38426,
+          "sha256": "144b1d16846320f933ee568a55712a59e35376c912a90306af68c4aa19ad519e"
+        },
+        "ordinary/after.ofc": {
+          "bytes": 38426,
+          "sha256": "8e12b08221c37ab60b5d64020e0eee5c7a4d6f601284761ff1d11599227741a3"
+        },
+        "ordinary/world.sqlite3": {
+          "bytes": 1196032,
+          "sha256": "21f49426c5318f2978206071b907fd5994621e38735debcd93d58e07cc427923"
+        },
+        "ordinary/genesis.ofc": {
+          "bytes": 37647,
+          "sha256": "62285bbd17d801969a4e8cbe12cd76ded6323026a81db741ad7e4c80a1df3b8e"
+        },
+        "AfterCommit/before.ofc": {
+          "bytes": 38426,
+          "sha256": "144b1d16846320f933ee568a55712a59e35376c912a90306af68c4aa19ad519e"
+        },
+        "AfterCommit/after.ofc": {
+          "bytes": 38426,
+          "sha256": "8e12b08221c37ab60b5d64020e0eee5c7a4d6f601284761ff1d11599227741a3"
+        },
+        "AfterCommit/world.sqlite3": {
+          "bytes": 1196032,
+          "sha256": "21f49426c5318f2978206071b907fd5994621e38735debcd93d58e07cc427923"
+        },
+        "AfterCommit/genesis.ofc": {
+          "bytes": 37647,
+          "sha256": "62285bbd17d801969a4e8cbe12cd76ded6323026a81db741ad7e4c80a1df3b8e"
+        },
+        "BeforeCommit/before.ofc": {
+          "bytes": 38426,
+          "sha256": "144b1d16846320f933ee568a55712a59e35376c912a90306af68c4aa19ad519e"
+        },
+        "BeforeCommit/after.ofc": {
+          "bytes": 38426,
+          "sha256": "8e12b08221c37ab60b5d64020e0eee5c7a4d6f601284761ff1d11599227741a3"
+        },
+        "BeforeCommit/world.sqlite3": {
+          "bytes": 1196032,
+          "sha256": "a29c5d45ce38bb68c3584675e5320fa7d00dd55b2e0c32fa0b2d6364ec1185d0"
+        },
+        "BeforeCommit/genesis.ofc": {
+          "bytes": 37647,
+          "sha256": "62285bbd17d801969a4e8cbe12cd76ded6323026a81db741ad7e4c80a1df3b8e"
+        }
+      }
+    },
+    {
+      "root": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/artifacts/stored-batch-checkpoint-20261018-attempt01",
+      "files": {
+        "before.ofc": {
+          "bytes": 24143,
+          "sha256": "1566bb6a5734c928805bf6da248be30d45efd1ad4199909bbd457beffaf36fee"
+        },
+        "checkpoint.ofc": {
+          "bytes": 24143,
+          "sha256": "bb0c99a47956b8a1b23cc8960269087969cbd45795982a6056622505ce441456"
+        },
+        "selected.ofc": {
+          "bytes": 532,
+          "sha256": "68c025159be4ca69c890bf89c862a4e4472f1b1ff47fedb5bf82f23b7e6d9f7c"
+        },
+        "checkpoint.sqlite3": {
+          "bytes": 41066496,
+          "sha256": "0fca003e8d32f32bd697e5d6194a3d1b51cf8a30617ffa5a1a256d918a29bffd"
+        },
+        "work.sqlite3": {
+          "bytes": 41066496,
+          "sha256": "0fca003e8d32f32bd697e5d6194a3d1b51cf8a30617ffa5a1a256d918a29bffd"
+        },
+        "before.sqlite3": {
+          "bytes": 41050112,
+          "sha256": "550c05ce03d685875e9117787bd247cc8206f5de4c59760a808c2f3b66f5c182"
+        },
+        "manifest.json": {
+          "bytes": 967,
+          "sha256": "c0e8903937af1e3ea5cd2cbea887566823910cfc024a4dea06815873f361e2a6"
+        },
+        "cases/AfterCommit/world.sqlite3": {
+          "bytes": 41066496,
+          "sha256": "0fca003e8d32f32bd697e5d6194a3d1b51cf8a30617ffa5a1a256d918a29bffd"
+        },
+        "cases/missing-checkpoint/world.sqlite3": {
+          "bytes": 41066496,
+          "sha256": "1eed12fab3811e4117f32bfa8d26a82fa33c4380250e2ed56e44b162811dba76"
+        },
+        "cases/missing-earlier-owner/world.sqlite3": {
+          "bytes": 41066496,
+          "sha256": "672905bb5145f078887ed6564c1ae3891391fe78bb64117069ae0a7d626f462b"
+        },
+        "cases/substituted-checkpoint/world.sqlite3": {
+          "bytes": 41066496,
+          "sha256": "b7729a1df9d2a7cbbef6851aeb0af9170a480a60c35c9d363020766e8380ed59"
+        },
+        "cases/continuation/retained-prefix.sqlite3": {
+          "bytes": 41066496,
+          "sha256": "0fca003e8d32f32bd697e5d6194a3d1b51cf8a30617ffa5a1a256d918a29bffd"
+        },
+        "cases/continuation/world.sqlite3": {
+          "bytes": 43130880,
+          "sha256": "832b989fb224d20d9d17f8dcc5705c839ed37d47363f9b7b77cb73cf4f9327d9"
+        },
+        "cases/BeforeCommit/world.sqlite3": {
+          "bytes": 41066496,
+          "sha256": "0fca003e8d32f32bd697e5d6194a3d1b51cf8a30617ffa5a1a256d918a29bffd"
+        }
+      }
+    }
+  ],
+  "retention": "Both failed and corrected SQLite cases and full checkpoint fixtures retained. Inspect copies; do not copy live WAL databases."
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "case": "prepare",
+    "seconds": 53.84573483292479,
+    "status": "passed",
+    "record": "checkpoint/prepare/prepare.trx"
+  },
+  {
+    "case": "continue",
+    "seconds": 43.115218707942404,
+    "status": "passed",
+    "record": "checkpoint/continue/continue.trx"
+  },
+  {
+    "case": "before",
+    "seconds": 18.44503533304669,
+    "status": "passed",
+    "record": "checkpoint/before/before.trx"
+  },
+  {
+    "case": "after",
+    "seconds": 18.477985125035048,
+    "status": "passed",
+    "record": "checkpoint/after/after.trx"
+  },
+  {
+    "case": "missing",
+    "seconds": 11.230404625064693,
+    "status": "passed",
+    "record": "checkpoint/missing/missing.trx"
+  },
+  {
+    "case": "substitute",
+    "seconds": 11.093142500030808,
+    "status": "passed",
+    "record": "checkpoint/substitute/substitute.trx"
+  },
+  {
+    "case": "earlier-owner",
+    "seconds": 3.416925707948394,
+    "status": "passed",
+    "record": "checkpoint/earlier-owner/earlier-owner.trx"
+  }
+]

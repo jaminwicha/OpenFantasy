@@ -56,8 +56,11 @@ mandatory effects, autonomous proposals and preparation; preserve complete multi
 without adding time per actor or binding the standalone calendar queue blindly.
 The [multiple-NPC cutoff proof](p02/partition-state/multiple-npc-cutoff/RESULT.md) now qualifies that
 ordinary reference for two genuinely funded host builders, holds/exclusions/refusals and original
-SQLite history/fault recovery. Next extend bounded partition preparation against that reference;
-it is not yet a partial-residency, multi-domain or starvation-bound proof. Retain the remaining
+SQLite history/fault recovery. [Stored-batch preparation](p02/partition-state/stored-batch-preparation/RESULT.md)
+now adds exact-head owner-read slices, complete selected multi-actor batches and one atomic passive
+boundary in the existing profile-five prototype. The Host still drains synchronously; final installation
+and the legacy aggregate limit use ordinary full admission. Next resolve the remaining live scheduling,
+due discovery and measurement/review obligations, retaining all richer-profile closures. Retain the remaining
 PLAN-STATE measurement/review exits; general current-profile checkpoint/migration proof remains. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
 Neither extraction nor the map is a partial loader or completed nested migration.

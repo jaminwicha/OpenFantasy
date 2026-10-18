@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~StoredBatchConstructionTests.Legacy_two_builder_funding_and_routes_are_valid_before_storage_execution"
+  ],
+  "exit_code": 0,
+  "seconds": 2.165830166894011,
+  "bound_seconds": 180
+}

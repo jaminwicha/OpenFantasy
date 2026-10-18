@@ -1,0 +1,8 @@
+{
+  "prior_comparison": {
+    "identical_preflight_01_and_02_pins": 1963,
+    "reuse": "Core 428 and geometry 1 execution remain current because every pinned source/content/project/binary input matches exactly. Other historical results are not promoted to fresh passes."
+  },
+  "current": "preflight-03 source/binaries supersede preflight01/02 after the production correction; fresh geometry/core/hosting-02 and seven checkpoint runs provide current execution evidence.",
+  "current_pins": 1963
+}

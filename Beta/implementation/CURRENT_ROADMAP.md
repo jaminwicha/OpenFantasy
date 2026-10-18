@@ -498,3 +498,20 @@ scheduling or a finite starvation bound. The next work is the budgeted complete-
 in the [due-work map](PLAN_STATE_DUE_WORK_MAP.md), retaining depleted-node/third-resident and all
 remaining domain, performance and review obligations. The P02 closure table and phase schedule stay
 unchanged. No new runtime profile or gameplay law is introduced.
+
+## Stored complete-batch preparation — 2026-10-18
+
+The existing typed-owner prototype now captures a bounded actor/project set, reads its exact dependency
+union in owner-count slices and prepares a whole canonical batch before applying passive effects once.
+The existing SQLite writer atomically publishes all receipts, changed owners and the complete directory.
+[Current evidence](p02/partition-state/stored-batch-preparation/RESULT.md):611distinct passes including13new,
+actual two-builder funding/routes, stored-versus-ordinary bytes/identity/due equivalence, invalidation,
+legacy aggregate refusal, multi-action publication faults and a fresh real6000-step checkpoint with
+full-history continuation/refusal checks. The retained169-pass/six-failure run found and fixed a selected
+project decoder that incorrectly treated one project as the complete catalog; no aggregate invariant changed.
+
+Scope stays explicit profile5/schema14. Final installation and aggregate-limit crossings use complete
+ordinary admission. The Host drains synchronously; no durable cursor, general fair scheduler, richer
+profile migration, CPU latency budget or platform/scale claim follows. The [due-work map](PLAN_STATE_DUE_WORK_MAP.md)
+retains live scheduling, combined bystander/newly due-node contrasts, current40/41 closures and the
+remaining measurement/independent-review exits before NPC-01. P02 and the full phase ledger remain open.

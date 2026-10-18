@@ -22,7 +22,7 @@ internal sealed class CoordinatedConstructionJourney
     private readonly ConstructionUpgradeFixture _commands = new();
     private CareWorldSession _session;
 
-    internal CoordinatedConstructionJourney(bool coordinated, bool hostBuilders = false)
+    internal CoordinatedConstructionJourney(bool coordinated, bool hostBuilders = false, bool constructionOnly = false)
     {
         var source = RestorativeJourneyAdmission.CreateEmbedded("coordinated-concurrent-construction", "Traveler");
         Assert.Equal((ushort)26, source.ProfileVersion);
@@ -92,6 +92,14 @@ internal sealed class CoordinatedConstructionJourney
         }
         var basis = new WorldSnapshot(inventory, source.Space, residents, admission, source.Calendar, 0, 0,
             gathering: source.Gathering, production: production, progression: progression, quests: quests, construction: construction);
+        if (constructionOnly)
+        {
+            Assert.False(coordinated);
+            Assert.Equal((ushort)5, basis.ProfileVersion);
+            Genesis = basis;
+            _session = new(Genesis);
+            return;
+        }
 
         // Rebind the exact fresh reservoir and liquid distribution to the extended finite custody.
         var oldCapacity = source.Reservoirs!.Capacity;

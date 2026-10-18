@@ -1,0 +1,6 @@
+{"command": ["/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet", "test", "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj", "--no-build", "--no-restore", "--filter", "FullyQualifiedName~OpenFantasy.Core.Tests.Construction.|FullyQualifiedName~OpenFantasy.Core.Tests.Spatial.|FullyQualifiedName~OpenFantasy.Core.Tests.Authority.|FullyQualifiedName~OpenFantasy.Core.Tests.Custody.|FullyQualifiedName~WorldResidentExposureBasisTests|FullyQualifiedName~WorldCodecDispatchTests|FullyQualifiedName~SnapshotCodecTests|FullyQualifiedName~WorldIdentity", "--logger", "trx;LogFileName=core.trx", "--results-directory", "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/stored-batch-preparation/core-01"], "exit_code": 0, "seconds": 26.72732041706331, "bound_seconds": 180}
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/stored-batch-preparation/core-01/core.trx
+
+Passed!  - Failed:     0, Passed:   428, Skipped:     0, Total:   428, Duration: 23 s - OpenFantasy.Core.Tests.dll (net8.0)

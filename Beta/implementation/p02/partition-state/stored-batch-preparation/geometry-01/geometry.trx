@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="401bdb4e-24a4-4893-9700-db118d97ea43" name="@mac 2026-10-18 16:47:48" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-18T16:47:48.7173160-05:00" queuing="2026-10-18T16:47:48.7173160-05:00" start="2026-10-18T16:47:45.6000310-05:00" finish="2026-10-18T16:47:48.7202610-05:00" />
+  <TestSettings name="default" id="7bc055ff-a52d-4797-8446-1218efe86471">
+    <Deployment runDeploymentRoot="_mac_2026-10-18_16_47_48" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="0f49e5e1-e34e-4535-bc27-3de037778ae2" testId="3f4d095e-fbd2-e1e0-8948-7380b27fedb9" testName="OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Legacy_two_builder_funding_and_routes_are_valid_before_storage_execution" computerName="mac" duration="00:00:00.9102178" startTime="2026-10-18T16:47:47.7313520-05:00" endTime="2026-10-18T16:47:48.6478440-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f49e5e1-e34e-4535-bc27-3de037778ae2" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests.Legacy_two_builder_funding_and_routes_are_valid_before_storage_execution" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3f4d095e-fbd2-e1e0-8948-7380b27fedb9">
+      <Execution id="0f49e5e1-e34e-4535-bc27-3de037778ae2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.StoredBatchConstructionTests" name="Legacy_two_builder_funding_and_routes_are_valid_before_storage_execution" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="3f4d095e-fbd2-e1e0-8948-7380b27fedb9" executionId="0f49e5e1-e34e-4535-bc27-3de037778ae2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.35]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.28]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.48]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.46]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

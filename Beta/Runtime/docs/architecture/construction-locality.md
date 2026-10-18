@@ -258,18 +258,31 @@ committed change.
 
 [StoredConstructionInterval](../../src/OpenFantasy.Core/Construction/Ownership/StoredConstructionInterval.cs)
 captures the exact admitted profile-five directory, owner hashes/lengths, terrain references and the
-work cohort's complete reservation/geometry witness. It retains no inventory, production, terrain or
+captured actor/project cohorts' complete reservation/geometry witnesses. It retains no inventory, production, terrain or
 complete resident collection. Complete actor/structure geometry, directory metadata and copied source
 identity reservations still remain resident. The interval is private execution preparation, not a
 new persistent gameplay format or an independently authenticated historical snapshot.
 
-Each selected boundary loads the work qualification dependencies plus timing, construction catalog,
+Each selected boundary loads the union of work qualification dependencies plus timing, construction catalog,
 gathering and **every actor image**. Their exact hashes, lengths, scope, roles and field counts bind
 them to the admitted directory. Shared qualification and the project's progress operation handle the
 work; the existing exploration boundary, gathering process and resident exposure law supply all due
 effects in ordinary order. Rejected advancing work still advances these effects; held work preserves
 them. Unrelated custodian contents and production history remain in storage. This is not a claim that
 unselected residents can skip time, that all actor detail is unloaded, or that general scheduling is solved.
+
+`BeginPreparation` returns a [stored preparation](../../src/OpenFantasy.Core/Construction/Ownership/StoredConstructionPreparation.cs)
+that reads at most the requested owner count per slice. The exact head is required again at every
+slice and completion; failed or invalidated preparations cannot resume. Until all dependencies are
+present there is no candidate, receipt or earned interval. Completion processes the entire selected
+batch synchronously, in ordinary actor order, before applying passive effects once. Empty selections
+retain the same passive rules. The captured source and any published head remain unchanged by loading.
+
+Selected project decoding uses the project's canonical payload and exact definition pin. It does not
+construct a miniature catalog with the full catalog revision: that revision is the sum of all projects'
+work and is not generally equal to the selected project's revision. Complete source admission and
+the interval's own transitions retain the aggregate invariant. Partial qualification grants no authority
+to admit an arbitrary independently assembled directory.
 
 The interval produces changed payloads and a complete new directory, preserving unchanged owner
 references. Only its own accepted steps renew the metadata and project/catalog revisions. Changed
@@ -279,14 +292,19 @@ complete-world limits remain enforced. It neither changes a historical interpret
 saved exposure basis.
 
 `EvictForStoredConstruction` captures under the authority lock, checks the actual committed directory
-and releases the complete resident world and locality. `CommitStoredConstruction` checks current
+and releases the complete resident world and locality. `CommitStoredConstructionBatch` checks current
 head/dispatch/controller/hold and original identity history, then publishes changed payloads, the
-complete directory, input, receipt, reserved identities and any due checkpoint through `PublishWrites`
+complete directory, input, all command receipts, reserved identities and any due checkpoint through `PublishWrites`
 in one SQLite transaction. Only after commit does the admitted interval advance. Format/storage and
 publication failures fence the authority; an unsupported/stale dispatch cannot consume a command.
 Archive accounting still scans retained lengths; the complete directory is still encoded each step.
+`CommitStoredConstruction` remains the one-action/one-receipt wrapper. The batch entrypoint completes
+preparation synchronously under the existing lock; no persistent cursor or asynchronous world writer
+is added. Per-slice loading does not imply a bound on final rule-evaluation latency.
 
-A qualifying final work step returns control to ordinary full-world execution before publication.
+A qualifying final work step, or a batch crossing the legacy aggregate construction revision bound,
+returns the whole batch to ordinary full-world execution before publication. Earlier prepared actions
+in that batch are not independently committed or converted into invented refusals.
 The Host reconstructs all current owners and exact terrain, then the normal kernel applies combined
 capacity, material provenance, spawned identity and physical installation admission. Full host reads
 also reconstruct the current admitted world; ordinary commits invalidate the stored interval. Switching

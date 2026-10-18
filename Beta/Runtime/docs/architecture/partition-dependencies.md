@@ -91,11 +91,14 @@ not disposable merely because current work does not read all of it.
 
 ## Stored partial-work closure
 
-The [stored interval](construction-locality.md#selected-stored-owner-publication) loads work facts
+The [stored interval](construction-locality.md#selected-stored-owner-publication) loads the selected cohorts' union of work facts
 plus all due actor images, timing, gathering and the construction revision catalog. Reservation and
 site completeness originate in full admission; the exact directory evolves only through this
 interval's own atomic partial steps. Shared work qualification and existing project/exposure/gathering
 operations determine changed payloads. An advancing rejection still runs due processes; a held
-boundary does not. Unsupported dispatch refuses before dependency reads. Final material completion
+boundary does not. Owner-count slices remain unpublished and recheck the same admitted directory;
+incomplete, failed or invalidated preparation cannot complete a boundary. Canonical actions share one
+passive boundary and one atomic publication. Unsupported dispatch refuses before dependency reads. Final material completion
 and ordinary intervening operations load their complete cohort and end the selectively resident
-interval. Full history and identity exclusion remain the sole Host's obligations.
+interval. A legacy aggregate revision crossing also returns the entire batch to ordinary admission.
+Full history and identity exclusion remain the sole Host's obligations.

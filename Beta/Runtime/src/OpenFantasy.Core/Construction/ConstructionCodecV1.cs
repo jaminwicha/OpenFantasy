@@ -133,7 +133,7 @@ public static class ConstructionCodecV1
             Id(installed.CompletionCommandId)) : Array.Empty<byte>(),
         Number((ulong)project.StockLocation)), MaximumProjectByteLength);
 
-    private static ConstructionProject DecodeProject(ReadOnlySpan<byte> bytes, IReadOnlyList<ConstructionDefinition> definitions)
+    internal static ConstructionProject DecodeProject(ReadOnlySpan<byte> bytes, IReadOnlyList<ConstructionDefinition> definitions)
     {
         var reader = new WorldFrameReader(bytes, MaximumProjectByteLength, 17);
         reader.Tag("construction.project"u8);

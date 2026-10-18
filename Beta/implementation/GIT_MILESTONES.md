@@ -650,3 +650,15 @@ existing cases pass; two real funded host builders, one ordinary cutoff, holds/e
 and three retained SQLite publication/recovery cases. Two fixture compilation failures are retained.
 Runtime source and legacy laws unchanged; partial-residency scheduling, full fairness and phase gates
 remain open. Concurrent steering and staged predecessor changes remain excluded.
+
+## Stored complete-batch preparation — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-stored-batch-preparation-20261018`
+(`22962129f6f865cca3c3568e54559bc9ef9e2932`, parent `873766d33c443af453c168745d6132e56ac6ce8c`).
+Verified milestone: `codex/milestone-stored-batch-preparation-20261018`, created at the owned commit
+without switching. [Evidence](p02/partition-state/stored-batch-preparation/RESULT.md) records611distinct
+passes including13new, whole multi-actor stored publication, resumable exact-head owner reads and
+fresh6000-step checkpoint recovery. The failed six-case production run, exact changed failure sources
+and databases remain retained. Pure C#, same schema/profile laws, full history and all broader gates
+remain; synchronous preparation is not a general scheduling or fairness exit. Protected concurrent
+steering and all19staged predecessor files remain excluded.

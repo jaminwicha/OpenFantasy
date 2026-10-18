@@ -11,7 +11,7 @@ internal sealed class StoredConstructionWorkOwners : IConstructionWorkOwners
 {
     private readonly TerrainScope _scope;
     private readonly CustodySnapshot _custody;
-    private readonly ConstructionSnapshot _construction;
+    private readonly ConstructionProject _project;
     private readonly CustodianAccessPolicy[] _policies;
 
     internal StoredConstructionWorkOwners(TerrainScope scope, ulong custodyRevision, ulong constructionRevision,
@@ -32,14 +32,20 @@ internal sealed class StoredConstructionWorkOwners : IConstructionWorkOwners
         if (!_custody.Lots.Where(value => value.ReservedBy == reservationId).Select(value => value.LotId).Order()
             .SequenceEqual(expectedReservedLots))
             throw new FormatException("Selected holders do not contain the source's complete reserved stock.");
-        _construction = ConstructionCodecV1.Decode(Frame("construction.snapshot", Unsigned64(1), scope.WorldId.ToByteArray(),
-            scope.BranchId.ToByteArray(), Unsigned64(constructionRevision),
-            Collection("construction.definitions", [Get(fields, new(ConstructionOwnerKind.ConstructionDefinition, definitionId), 1)[0]]),
-            Collection("construction.projects", [Get(fields, new(ConstructionOwnerKind.Project, projectId), 1)[0]])));
+        var definition = ConstructionCodecV1.DecodeDefinition(
+            Get(fields, new(ConstructionOwnerKind.ConstructionDefinition, definitionId), 1)[0]);
+        var projectBytes = Get(fields, new(ConstructionOwnerKind.Project, projectId), 1)[0];
+        _project = ConstructionCodecV1.DecodeProject(projectBytes, [definition]);
+        // The catalog revision counts all projects. A selected project is not a miniature catalog;
+        // its own revision may be smaller. Complete admission and interval renewal own the sum.
+        if (definition.DefinitionId != definitionId || _project.ProjectId != projectId
+            || _project.Revision > constructionRevision
+            || !ConstructionCodecV1.EncodeProject(_project).AsSpan().SequenceEqual(projectBytes))
+            throw new FormatException("Selected project differs from its admitted identity, revision or canonical bytes.");
     }
 
     public bool BelongsTo(EntityId worldId, EntityId branchId) => _scope.WorldId == worldId && _scope.BranchId == branchId;
-    public ConstructionProject? FindProject(EntityId projectId) => _construction.FindProject(projectId);
+    public ConstructionProject? FindProject(EntityId projectId) => _project.ProjectId == projectId ? _project : null;
     public bool OwnsCustodian(EntityId custodianId, EntityId actorId) => _policies.Any(value =>
         value.CustodianId == custodianId && value.OwnerActorId == actorId);
     public CountedSourceLot? FindLot(EntityId lotId) => _custody.Lots.FirstOrDefault(value => value.LotId == lotId);

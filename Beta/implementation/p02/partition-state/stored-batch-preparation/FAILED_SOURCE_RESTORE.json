@@ -1,0 +1,9 @@
+{
+  "source_pin_record": "preflight-02/pins.json",
+  "files": {
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionCodecV1.cs": "failed-source/ConstructionCodecV1.cs",
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/StoredConstructionWorkOwners.cs": "failed-source/StoredConstructionWorkOwners.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/StoredBatchConstructionTests.cs": "failed-source/StoredBatchConstructionTests.cs"
+  },
+  "restore": "In an isolated copy of the accepted source, replace these three files with the retained pre-correction versions; every other pinned handwritten source is unchanged. Rebuild using the recorded commands. Do not overwrite this live checkout. Raw failure logs/TRX and old source/binary hashes remain retained."
+}

@@ -235,7 +235,7 @@ part of any future memory/I/O measurement.
 
 ### Stored interval and due owners
 
-The selected construction publication binding extends the read cohort with timing, gathering,
+The selected construction publication binding extends the union of captured work cohorts with timing, gathering,
 construction catalog and all actor payloads. The source-bound reservation and geometry witnesses
 remain valid only across its own partial-work transitions. Changed project/catalog, timing,
 gathering and resident images replace their references atomically; unrelated custody/production
@@ -243,3 +243,9 @@ payloads are not loaded or rewritten by that preparation. All resident exposure 
 Final completion and intervening actions restore complete admission. The complete directory and
 identity metadata remain resident, and recovery retains full history authentication. No general
 paging, absent-history trust or offscreen scheduling policy follows from this one interval.
+
+Dependency reads may be sliced without publishing the boundary. All selected action receipts,
+changed project/catalog owners and mandatory passive effects still publish together. The selected
+project's revision remains distinct from the whole catalog's revision; canonical project decoding
+does not fabricate a complete catalog from a subset. Missing or stale owner facts cannot be skipped
+to finish a read budget, and a preparation cursor is not persisted timing-domain membership.

@@ -9,7 +9,7 @@ not independent architectural acceptance or a new scheduler implementation.
 
 | Finding | Consequence for the next implementation |
 | --- | --- |
-| The ordinary host may select several NPC work commands; the stored interval accepts one | Preserve the whole selected cutoff. Do not simulate fairness by giving each actor a separate advancing step. |
+| The ordinary host may select several NPC work commands; the original stored interval accepted one | The stored-batch extension now preserves a captured actor/project set and one cutoff. Do not simulate fairness by giving each actor a separate advancing step; richer profiles still require their complete closures. |
 | Action selection order and canonical actor execution order differ | Preserve participation exclusions, exact selected identities and canonical order, including conflicts revealed by earlier actions. |
 | Passive effects are not NPC proposals | Mandatory gathering/exposure/expiry/physical processes must complete even when a legal advancing batch has a refused action or no NPC work. |
 | A preview dispatch exception can remove all NPC proposals from the fallback batch | There is no demonstrated NPC starvation bound. Diagnose actual deferral reasons; do not treat every exclusion as missed mandatory work or claim starvation has been reproduced. |
@@ -77,7 +77,19 @@ preparation budget, persisted discovery frontier or multi-domain fairness is est
 legacy26 versus coordinated27 aggregate-bound contrast also passes unchanged; never weaken that bound
 to make a multi-actor profile-five extension pass. The frozen current40/41 migration obligations remain.
 
-The budgeted partition witness above is still required. General obligation
+The [stored-batch preparation](p02/partition-state/stored-batch-preparation/RESULT.md) adds exact-head,
+owner-count-bounded read slices over the union of captured work dependencies, followed by one canonical
+batch and one passive boundary. Its explicit profile-five two-builder admission reuses real deliveries
+and routes. The sole SQLite writer publishes all receipts and changed owners atomically. A project is
+decoded from its own canonical payload, preserving its revision separately from the catalog total.
+Final installation and crossing the legacy aggregate bound return the whole batch to ordinary admission.
+This is an extension of the existing typed-owner prototype, not another full-world wrapper or a new format.
+
+The remaining witness includes live host yielding and any durable preparation continuation: the
+current Host still drains preparation synchronously under its lock. Owner-count slicing does not bound
+final rule-evaluation CPU time, persist domain membership, or establish starvation limits. A third
+unrelated resident and an actually newly due depleted node in the multi-actor fixture remain separate
+contrasts; retained single-work regressions do not silently count as that combined proof. General obligation
 discovery, multi-actor fairness, persistence of timing membership, current40/41 nested migration,
 cold/platform/scale measurements and independent PLAN-STATE review remain open. Retain the complete
 P02 closure table and scheduled NPC-01/story/ecology/art/audio work after the decision/review exit.
