@@ -1,0 +1,26 @@
+{
+  "core": {
+    "FullyQualifiedName~OpenFantasy.Core.Tests.Construction.": 116,
+    "FullyQualifiedName~OpenFantasy.Core.Tests.Spatial.": 193,
+    "FullyQualifiedName~OpenFantasy.Core.Tests.Authority.": 73,
+    "FullyQualifiedName~OpenFantasy.Core.Tests.Custody.": 30,
+    "FullyQualifiedName~WorldResidentExposureBasisTests": 7,
+    "FullyQualifiedName~WorldCodecDispatchTests": 4,
+    "FullyQualifiedName~SnapshotCodecTests": 4,
+    "FullyQualifiedName~WorldIdentity": 1
+  },
+  "hosting": {
+    "FullyQualifiedName~SeparatedTerrainStorageTests": 50,
+    "FullyQualifiedName~ConstructionPublicationTests": 8,
+    "FullyQualifiedName~ConstructionLocalityCoverageTests": 2,
+    "FullyQualifiedName~ConstructionUpgradeTests": 12,
+    "FullyQualifiedName~ConstructionWorkRecoveryTests": 3,
+    "FullyQualifiedName~WorldAuthorityServiceTests": 16,
+    "FullyQualifiedName~WorldDatabaseTests": 13,
+    "FullyQualifiedName~WorldCanonicalFrameTests": 8,
+    "FullyQualifiedName~ExcavationRecoveryTests": 1,
+    "FullyQualifiedName~PhysicalConstructionWorldTests": 4,
+    "FullyQualifiedName~PartyWithdrawalWorldTests": 13,
+    "FullyQualifiedName~PartyWithdrawalTransitionTests": 12
+  }
+}

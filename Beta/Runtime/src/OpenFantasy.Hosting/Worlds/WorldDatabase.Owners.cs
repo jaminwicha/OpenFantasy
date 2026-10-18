@@ -13,9 +13,12 @@ internal sealed partial class WorldDatabase
     internal WorldStateEncoding StateEncoding => WorldStateImage.EncodingFor(SchemaVersion);
 
     internal void WriteOwners(ConstructionOwnerDirectory owners, SqliteTransaction transaction)
+        => WriteOwners(owners.Owners, transaction);
+
+    internal void WriteOwners(IEnumerable<ConstructionOwnerPayload> owners, SqliteTransaction transaction)
     {
         if (!SeparatesOwners) throw new InvalidOperationException("This schema does not store typed owner images.");
-        foreach (var owner in owners.Owners)
+        foreach (var owner in owners)
         {
             byte[] bytes = owner.CopyBytes();
             using var command = _lease.CreateCommand("INSERT OR IGNORE INTO world_owners VALUES($hash,$state)", transaction,
@@ -44,8 +47,13 @@ internal sealed partial class WorldDatabase
         return ConstructionOwnerReconstruction.Decode(directory, expectedHash, ReadOwner, reference => ReadTerrain(reference));
     }
 
+    internal int OwnerArchiveReads { get; private set; }
+    internal Action<ContentHash>? BeforeOwnerRead { get; set; }
+
     internal byte[] ReadOwner(ContentHash hash)
     {
+        BeforeOwnerRead?.Invoke(hash);
+        OwnerArchiveReads++;
         using var command = _lease.CreateCommand("SELECT state FROM world_owners WHERE hash=$hash", null,
             ("$hash", hash.ToByteArray()));
         using var reader = command.ExecuteReader();

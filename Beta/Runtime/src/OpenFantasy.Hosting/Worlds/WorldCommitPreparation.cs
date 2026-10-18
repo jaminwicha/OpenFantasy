@@ -244,4 +244,4 @@ internal sealed record PreparedWorldCommit(WorldStepDecision Decision, byte[] Ca
 internal sealed record WorldCommitWriteSet(byte[] CandidateBytes, StoredWorldCommit Stored,
     IReadOnlyList<StoredWorldCommandOutcome> Commands, IReadOnlyList<StoredWorldIdentity> Identities,
     StoredWorldResourceArchive? ResourceArchive = null, StoredWorldMaterialCareArchive? MaterialCareArchive = null,
-    ConstructionOwnerDirectory? Owners = null);
+    ConstructionOwnerDirectory? Owners = null, IReadOnlyList<ConstructionOwnerPayload>? ChangedOwners = null);

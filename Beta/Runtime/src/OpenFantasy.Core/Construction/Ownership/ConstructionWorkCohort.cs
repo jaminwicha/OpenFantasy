@@ -91,11 +91,7 @@ public sealed class ConstructionWorkCohort
                     throw new FormatException("Selected work owners exceed their aggregate byte envelope.");
                 fields.Add(reference.Key, StoredConstructionOwners.ReadFields(payload, reference.Key, _scope, reference.Hash));
             }
-            var owners = new StoredConstructionWorkOwners(_scope, _custodyRevision, _constructionRevision,
-                _projectId, _definitionId, _reservationId, _reservedLots, fields);
-            var source = new StoredConstructionDecisionSource(_scope, _command, fields);
-            _site.ValidateProject(owners.FindProject(_projectId)!);
-            var result = ConstructionWorkQualification.Evaluate(source, owners, _site, _command, true, false);
+            var result = Qualify(fields, _command, _constructionRevision, true, false);
             return new(SourceWorldHash, SourceRevision, _command.CommandId, result.Rejection,
                 result.Work?.Progress.Capture(), result.Work is { } work
                     && work.Progress.CompletedUnits >= work.Project.Definition.RequiredWork.Value);
@@ -105,6 +101,24 @@ public sealed class ConstructionWorkCohort
             throw new FormatException("Stored work dependencies violate their admitted source.", error);
         }
     }
+    internal void ValidateCommand(WorldActionCommand command)
+    {
+        if (command.ActorId != _command.ActorId || command.Intent is not WorkConstructionIntent intent
+            || intent.ProjectId != _projectId)
+            throw new InvalidOperationException("Work is outside the captured actor/project interval.");
+    }
+
+    internal ConstructionWorkQualification Qualify(IReadOnlyDictionary<ConstructionOwnerKey, byte[][]> fields,
+        WorldActionCommand command, ulong constructionRevision, bool advancing, bool held)
+    {
+        ValidateCommand(command);
+        var owners = new StoredConstructionWorkOwners(_scope, _custodyRevision, constructionRevision,
+            _projectId, _definitionId, _reservationId, _reservedLots, fields);
+        var source = new StoredConstructionDecisionSource(_scope, command, fields);
+        _site.ValidateProject(owners.FindProject(_projectId)!);
+        return ConstructionWorkQualification.Evaluate(source, owners, _site, command, advancing, held);
+    }
+
 }
 
 /// <summary>Proposed qualification only. RequiresCompletion means a larger material cohort is still necessary.</summary>

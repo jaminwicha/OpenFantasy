@@ -1,0 +1,10 @@
+  OpenFantasy.Core -> /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/bin/Debug/net8.0/OpenFantasy.Core.dll
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.StoredConstruction.cs(26,50): error CS1061: 'WorldIdentityIndex' does not contain a definition for 'CaptureReservations' and no accessible extension method 'CaptureReservations' accepting a first argument of type 'WorldIdentityIndex' could be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj]
+
+Build FAILED.
+
+/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.StoredConstruction.cs(26,50): error CS1061: 'WorldIdentityIndex' does not contain a definition for 'CaptureReservations' and no accessible extension method 'CaptureReservations' accepting a first argument of type 'WorldIdentityIndex' could be found (are you missing a using directive or an assembly reference?) [/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/OpenFantasy.Hosting.csproj]
+    0 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:02.72

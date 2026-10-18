@@ -113,10 +113,9 @@ rule order. It still consumes complete input owners and supplies no persisted fr
 [Stored work qualification](p02/partition-state/stored-work-cohort/RESULT.md) now binds a selected
 payload set to complete source admission, reservation membership and the current directory, then
 uses that same qualification. It retains all site actor/structure geometry and expires on any commit.
-Next extend this to actual work publication with renewed source-established stock/access/identity
-dependencies and complete due-process closure under the sole writer; assessment alone is not execution.
-Prove that unrelated custodian detail and immutable closed provenance can be absent, while actual due
-actor/gathering updates remain present. Do not claim actor-detail savings until the representation can
+The separate [selected stored publication](p02/partition-state/stored-work-publication/RESULT.md) now renews that bounded interval through actual atomic work and all
+due actor/gathering updates. Unrelated custodian and production detail can remain in storage; full
+site geometry, all actor exposure images and exact identity metadata still participate. Do not claim actor-detail savings until the representation can
 support them without changing exposure law. Final completion loads its larger material/geometry cohort
 and performs full original admission; a missing/stale dependency fences before publishing anything.
 

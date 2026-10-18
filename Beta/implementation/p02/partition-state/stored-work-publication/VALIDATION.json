@@ -1,0 +1,54 @@
+{
+  "accepted_scope": "Selected stored partial-work publication in explicit legacy5/schema14 only; no phase acceptance",
+  "distinct_passes": 574,
+  "new_cases": 18,
+  "runs": {
+    "core": {
+      "passed": 428,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 18.0414002079051,
+      "bound_seconds": 180,
+      "record": "core-check/core.trx"
+    },
+    "hosting": {
+      "passed": 146,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 65.73609295790084,
+      "bound_seconds": 180,
+      "record": "hosting-final/hosting.trx"
+    }
+  },
+  "core_reuse": "CORE_FINAL_REUSE.json",
+  "preflight": "preflight-08",
+  "pins": 1959,
+  "failed_builds": 3,
+  "failed_test_runs": 2,
+  "retained_failures": "FAILURES.json",
+  "managed_test_runs": [
+    {
+      "record": "core-check/core.json",
+      "classification": "passed"
+    },
+    {
+      "record": "hosting-check/hosting.json",
+      "classification": "fixture",
+      "failed_cases": 2
+    },
+    {
+      "record": "hosting-corrected/hosting.json",
+      "classification": "production",
+      "failed_cases": 1
+    },
+    {
+      "record": "hosting-final/hosting.json",
+      "classification": "passed"
+    }
+  ],
+  "long_runs_exceeding_focused_budget": 0,
+  "api_calls": null,
+  "average_input_context_tokens": null,
+  "independent_review": false,
+  "native_or_human_acceptance": false
+}

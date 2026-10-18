@@ -1,0 +1,54 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+The following Tests are available:
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Same_earned_episode_compares_publication_and_replay_without_changing_outcomes(separatedFirst: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Same_earned_episode_compares_publication_and_replay_without_changing_outcomes(separatedFirst: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Actual_gift_work_return_intervention_and_installation_share_history_without_resident_terrain
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 0, typed: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 1, typed: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 0, typed: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 1, typed: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 0, typed: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 1, typed: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 0, typed: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 1, typed: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Failed_terrain_read_fences_return_or_final_installation_without_publishing(atInstallation: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Failed_terrain_read_fences_return_or_final_installation_without_publishing(atInstallation: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Richer_profiles_cannot_enter_the_legacy_storage_binding
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Selected_stored_publication_completes_the_original_saved_project_after_collection_and_intervention
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Selected_stored_publication_fault_retains_exact_old_or_new_boundary(target: 1, boundary: 0)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Selected_stored_publication_fault_retains_exact_old_or_new_boundary(target: 1, boundary: 1)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Selected_stored_publication_fault_retains_exact_old_or_new_boundary(target: 200, boundary: 0)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Selected_stored_publication_fault_retains_exact_old_or_new_boundary(target: 200, boundary: 1)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Injected_owner_read_failure_fences_work_without_consuming_the_command(sqliteFailure: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Injected_owner_read_failure_fences_work_without_consuming_the_command(sqliteFailure: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Switching_to_complete_locality_eviction_discards_stored_interval_metadata
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_owners_reopen_partial_work_then_complete_the_same_saved_project
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "missing-owner")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "duplicate-entry")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "reordered-entries")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "unknown-role")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "unsupported-profile")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "wrong-world")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "wrong-branch")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "wrong-subject")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "wrong-role")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "extra-payload-field")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "wrong-realm")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "missing-resident")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "construction-membership")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "invalid-capacity")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "invalid-time")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rehashed_owner_mutations_cannot_bypass_complete_admission(mutation: "payload-hash")
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Directory_binding_refuses_stale_history_before_reading_any_payload
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Loaded_terrain_must_match_the_directory_scope_and_hash
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Actual_stored_work_cohort_qualifies_after_unrelated_detail_is_collected
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Host_serializes_read_only_assessment_and_rejects_it_after_real_work
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Rich_current_profiles_cannot_be_reduced_to_stored_work_cohort
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Typed_owners_keep_carried_custody_stable_and_publish_gift_work_return_and_history
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Typed_cross_owner_gift_fault_recovers_both_custodians_and_one_receipt(boundary: 0)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Typed_cross_owner_gift_fault_recovers_both_custodians_and_one_receipt(boundary: 1)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_corrupt_or_extra_historical_owner_images_refuse_recovery(mutation: "DELETE FROM world_owners WHERE hash=(SELECT hash F"···)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_corrupt_or_extra_historical_owner_images_refuse_recovery(mutation: "UPDATE world_owners SET state=zeroblob(length(stat"···)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_corrupt_or_extra_historical_owner_images_refuse_recovery(mutation: "INSERT INTO world_owners VALUES(zeroblob(32),X'01'"···)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Typed_owner_storage_cannot_drop_current_profile_facets

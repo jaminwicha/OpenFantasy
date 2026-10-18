@@ -4,6 +4,9 @@ root=Path(__file__).resolve().parents[6]; runtime=root/'Beta/Runtime'
 out=Path(sys.argv[1]).resolve();out.mkdir(parents=True,exist_ok=False)
 dotnet='/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet'
 filters={'core':'|'.join('FullyQualifiedName~'+n for n in ['OpenFantasy.Core.Tests.Construction.','OpenFantasy.Core.Tests.Spatial.','OpenFantasy.Core.Tests.Authority.','OpenFantasy.Core.Tests.Custody.','WorldResidentExposureBasisTests','WorldCodecDispatchTests','SnapshotCodecTests','WorldIdentity']), 'hosting':'|'.join('FullyQualifiedName~'+n for n in ['SeparatedTerrainStorageTests','ConstructionPublicationTests','ConstructionLocalityCoverageTests','ConstructionUpgradeTests','ConstructionWorkRecoveryTests','WorldAuthorityServiceTests','WorldDatabaseTests','WorldCanonicalFrameTests','ExcavationRecoveryTests','PhysicalConstructionWorldTests','PartyWithdrawalWorldTests','PartyWithdrawalTransitionTests'])}
+if len(sys.argv) > 2:
+ filters=json.loads(Path(sys.argv[2]).read_text())
+ assert set(filters)=={'core','hosting'} and all(isinstance(value,str) and value.strip() for value in filters.values()), 'Two explicit nonempty test filters required'
 def run(name,cmd):
  start=time.monotonic()
  with (out/(name+'.log')).open('w') as log:

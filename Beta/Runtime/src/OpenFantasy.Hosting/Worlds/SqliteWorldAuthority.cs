@@ -25,7 +25,12 @@ public sealed partial class SqliteWorldAuthority : IDisposable
     private WorldSnapshot _state
     {
         get => _residentState ??= RestoreTerrain();
-        set => _residentState = value;
+        set
+        {
+            _residentState = value;
+            _storedConstruction = null;
+            _storedConstructionIdentities = null;
+        }
     }
     private ContentHash _stateHash;
     private WorldJournalUsage _usage;
@@ -315,6 +320,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
             _database.WriteControllerRecovery(controllerRecovery, transaction);
         _database.WriteCommit(writes.Stored, transaction);
         if (writes.Owners is { } owners) _database.WriteOwners(owners, transaction);
+        if (writes.ChangedOwners is { } changed) _database.WriteOwners(changed, transaction);
         if (writes.ResourceArchive is { } archive)
         {
             _database.WriteResourceArchive(archive, transaction);

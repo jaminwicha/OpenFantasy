@@ -27,7 +27,7 @@ public sealed partial class SqliteWorldAuthority
             EnsureAvailable();
             if (!_database.SeparatesOwners) throw new InvalidOperationException("This save does not separate work owners.");
             try { return cohort.Assess(_stateHash, _database.ReadOwner); }
-            catch (Exception error) when (error is FormatException or IOException)
+            catch (Exception error) when (error is FormatException or InvalidDataException or IOException or Microsoft.Data.Sqlite.SqliteException)
             {
                 _requiresRecovery = true;
                 throw;

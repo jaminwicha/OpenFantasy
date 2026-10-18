@@ -442,3 +442,18 @@ publication. Any commit invalidates the capture. Next prove dependency renewal, 
 publication and complete gathering/resident due closure, with larger final admission and exact
 original history/fault checks. Current-profile migration, fairness, checkpoint/cold/platform/scale,
 independent/human and full PLAN-STATE/P02 gates remain unchanged.
+
+### PLAN-STATE selected stored partial publication
+
+[Stored partial publication](p02/partition-state/stored-work-publication/RESULT.md) advances actual project progress, timing, gathering and all resident exposure
+from the selected stored cohort through the existing SQLite writer. Exact directory renewal preserves
+unchanged custody/production references. Final material/identity/geometry admission uses ordinary
+complete execution; an intervening action invalidates the interval and requires fresh capture.
+The packet retains exact ordinary-output, genuine due-regrowth, collection, saved-history and fault
+checks. This is the legacy5/schema14 diagnostic binding, not current40/41 migration or a default change.
+
+The next preparation remains noninitial checkpoint and general due/fairness boundaries, complete
+current-profile nested migration coverage and the named cold/warm/scale measurements and independent
+review. Complete actor geometry, all-actor exposure reads, full directory/identity metadata and full
+original replay remain costs. No shipping performance, credit saving or PLAN-STATE/P02 closure follows;
+the complete closure table and P00–P14 requirements remain unchanged.

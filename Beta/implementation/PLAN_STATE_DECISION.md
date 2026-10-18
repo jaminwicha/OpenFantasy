@@ -152,9 +152,10 @@ The authority still keeps the nonterrain locality resident and visits every curr
 [Stored owner reconstruction](p02/partition-state/stored-owner-reconstruction/RESULT.md) now consumes
 actual stored payloads under the replay-selected head, reconstructs and admits the complete cohort,
 requires exact replay equality and supplies the recovered head. It is a complete-cohort decoder,
-not selective residency or a substitute for ordinary history. The next proof must isolate a real
-operation-specific loading cohort with authenticated dependency closure, retaining all due work and
-cross-owner invariants; more whole-world serialization wrappers would not establish that boundary.
+not selective residency or a substitute for ordinary history. The separate [selected stored publication](p02/partition-state/stored-work-publication/RESULT.md)
+binds the operation-specific work and full due cohort to the admitted directory and sole writer.
+It retains cross-owner invariants, full final admission and original history; general loading is
+not established by this legacy interval.
 General due discovery/fairness, nested current-profile coverage/migration, noninitial checkpoints,
 cold/platform/scale evidence and independent architecture review remain open. The finite owner archive
 limits are experimental storage stops, not accepted shipping limits or reduced campaign requirements.
@@ -178,9 +179,9 @@ Current actor images carry resident exposure; partial construction still checks 
 stock and required-access actors. [Shared qualification](p02/partition-state/work-qualification/RESULT.md)
 is extracted without changing the guards. [Selected stored assessment](p02/partition-state/stored-work-cohort/RESULT.md)
 now uses complete source-established reservation membership and exact directory freshness. It does not
-publish work or advance due processes, and retains complete site actor/structure geometry. The next
-publication binding must renew those witnesses, preserve complete due closure and load the larger
-cohort for material completion; read qualification alone does not close the residency gate.
+publish work or advance due processes, and retains complete site actor/structure geometry. [Stored partial publication](p02/partition-state/stored-work-publication/RESULT.md) supplies the bounded partial-work publisher, complete due closure and exact witness
+renewal, widening to complete ordinary admission for final material work. The read-only qualification
+remains distinct; general paging/fairness/migration and independent review are still open.
 
 The map also records coordinated archive witnesses, pending care, private market knowledge,
 controller/permission/effective-assignment distinctions and profile41 party withdrawal. These prevent

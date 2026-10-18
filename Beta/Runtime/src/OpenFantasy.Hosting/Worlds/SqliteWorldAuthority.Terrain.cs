@@ -41,6 +41,7 @@ public sealed partial class SqliteWorldAuthority
             EnsureAvailable();
             if (!_database.SeparatesOwners) throw new InvalidOperationException("This save has no typed owner directory.");
             var directory = _residentState is { } world ? ConstructionOwnerDirectory.Capture(world)
+                : _storedConstruction is not null ? ConstructionOwnerDirectory.Capture(_state)
                 : ConstructionOwnerDirectory.Capture(_constructionLocality ?? throw new InvalidOperationException("No admitted owners are resident."));
             if (directory.Hash != _stateHash) throw new InvalidDataException("Resident owners do not match the committed head.");
             return directory;
@@ -62,6 +63,8 @@ public sealed partial class SqliteWorldAuthority
             byte[] image = ConstructionLocalityEncoding.Encode(locality);
             if (ContentHash.Compute(WorldStateImage.Capture(locality, _database.StateEncoding).Bytes) != _stateHash) throw new InvalidDataException("Locality does not match the committed image.");
             _completeEncodingOverhead = checked(WorldSnapshotCodec.Encode(current).Length - image.Length);
+            _storedConstruction = null;
+            _storedConstructionIdentities = null;
             _constructionLocality = locality;
             _constructionLocalityHash = _stateHash;
             _constructionMetadataPages = maximumMetadataPages;
@@ -74,6 +77,12 @@ public sealed partial class SqliteWorldAuthority
     {
         try
         {
+            if (_storedConstruction is { } stored)
+            {
+                if (stored.DirectoryHash != _stateHash)
+                    throw new InvalidDataException("Stored construction differs from the current head.");
+                return _database.ReconstructOwners(stored.CopyDirectory(), _stateHash);
+            }
             var locality = _constructionLocality ?? throw new InvalidOperationException("No admitted locality is resident.");
             return LoadTerrain(locality);
         }

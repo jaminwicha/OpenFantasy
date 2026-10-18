@@ -36,17 +36,25 @@ public sealed class ConstructionOwnerDirectory
             || Owners.Any(owner => owner.ByteLength > MaximumOwnerPayloadByteLength)
             || Owners.Sum(owner => (long)owner.ByteLength) > MaximumTotalPayloadByteLength)
             throw new ArgumentException("Owner images exceed their exact-key or byte envelope.", nameof(owners));
+        _bytes = EncodeReferences(scope, revision, terrain,
+            Owners.Select(owner => new ConstructionOwnerReference(owner.Key, owner.Hash)));
+        Hash = ContentHash.Compute(_bytes);
+    }
+
+    internal static byte[] EncodeReferences(TerrainScope scope, ulong revision,
+        IEnumerable<TerrainRegionReference> terrain, IEnumerable<ConstructionOwnerReference> owners)
+    {
         var references = terrain.Select(value => Frame("world.owner-terrain.v1",
             Signed(value.Bounds.Minimum.X), Signed(value.Bounds.Minimum.Y), Signed(value.Bounds.Minimum.Z),
             Number((ulong)value.Bounds.Width), Number((ulong)value.Bounds.Depth), Number((ulong)value.Bounds.Height),
             Number(value.Revision), value.ContentHash.ToByteArray()));
-        _bytes = Frame("world.construction-owners.v1", Number(1), Number(5), Id(scope.WorldId), Id(scope.BranchId),
+        byte[] bytes = Frame("world.construction-owners.v1", Number(1), Number(5), Id(scope.WorldId), Id(scope.BranchId),
             Id(scope.RealmId), Number(revision), Collection("world.owner-terrain", references),
-            Collection("world.owner-entries", Owners.Select(owner => Frame("world.owner-entry.v1",
+            Collection("world.owner-entries", owners.Select(owner => Frame("world.owner-entry.v1",
                 Number((ulong)owner.Key.Kind), Id(owner.Key.SubjectId), owner.Hash.ToByteArray()))));
-        if (_bytes.Length > MaximumDirectoryByteLength)
+        if (bytes.Length > MaximumDirectoryByteLength)
             throw new ArgumentException("Owner directory exceeds its retained metadata envelope.", nameof(owners));
-        Hash = ContentHash.Compute(_bytes);
+        return bytes;
     }
 
     public TerrainScope Scope { get; }

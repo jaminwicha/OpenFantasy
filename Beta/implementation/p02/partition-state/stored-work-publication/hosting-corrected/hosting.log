@@ -1,0 +1,26 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:13.16]     OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Injected_owner_read_failure_fences_work_without_consuming_the_command(sqliteFailure: False) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Injected_owner_read_failure_fences_work_without_consuming_the_command(sqliteFailure: False) [320 ms]
+  Error Message:
+   Assert.Throws() Failure: Exception type was not an exact match
+Expected: typeof(System.InvalidOperationException)
+Actual:   typeof(System.IO.InvalidDataException)
+---- System.IO.InvalidDataException : Injected missing owner read
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Injected_owner_read_failure_fences_work_without_consuming_the_command(Boolean sqliteFailure) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredConstructionPublicationTests.cs:line 122
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+----- Inner Stack Trace -----
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.<>c__DisplayClass21_0.<Injected_owner_read_failure_fences_work_without_consuming_the_command>b__0(ContentHash _) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredConstructionPublicationTests.cs:line 118
+   at OpenFantasy.Hosting.Worlds.WorldDatabase.ReadOwner(ContentHash hash) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.Owners.cs:line 55
+   at OpenFantasy.Core.Construction.Ownership.StoredConstructionOwners..ctor(Byte[] directory, ContentHash expectedHash, Func`2 readOwner) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/StoredConstructionOwners.cs:line 51
+   at OpenFantasy.Core.Construction.Ownership.ConstructionOwnerReconstruction.Decode(ReadOnlySpan`1 directory, ContentHash expectedHash, Func`2 readOwner, Func`2 readTerrain) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs:line 30
+   at OpenFantasy.Hosting.Worlds.WorldDatabase.ReconstructOwners(Byte[] directory, ContentHash expectedHash) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.Owners.cs:line 47
+   at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.RestoreTerrain() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.Terrain.cs:line 84
+   at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.get__state() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs:line 27
+   at OpenFantasy.Hosting.Worlds.SqliteWorldAuthority.ReadStateForHost() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs:line 237
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.<>c__DisplayClass21_0.<Injected_owner_read_failure_fences_work_without_consuming_the_command>b__3() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredConstructionPublicationTests.cs:line 122
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/stored-work-publication/hosting-corrected/hosting.trx
+
+Failed!  - Failed:     1, Passed:    51, Skipped:     0, Total:    52, Duration: 24 s - OpenFantasy.Hosting.Tests.dll (net8.0)

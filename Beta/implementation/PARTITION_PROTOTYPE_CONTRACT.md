@@ -230,9 +230,9 @@ synthetic progress, skipped due processes or second writer may stand in for the 
 The [matched comparison and lead decision](PLAN_STATE_DECISION.md) recommend stable typed owners
 with complete operation-specific admission cohorts. The coarse terrain-separated image reduces
 selected publication allocation in the measured fixture but increases replay allocation and observed
-database size; neither result establishes scale. The next unit is the coupled actor/custodian/project
-ownership-directory candidate in the same saved episode, including cross-owner fault/retry and true
-due obligations. Keep shared ordinary rules and exact original history. Independent review, nested
+database size; neither result establishes scale. The coupled actor/custodian/project directory and
+selected stored partial-work bindings below retain the same episode, atomic faults and true due
+obligations. Keep shared ordinary rules and exact original history. Independent review, nested
 current-profile field coverage, noninitial checkpoint qualification and fairness/cold/scale evidence
 remain open; the recommendation does not close PLAN-STATE or allocate a production format.
 
@@ -253,9 +253,8 @@ and all original supported due processes remain present. No later-profile facets
 [Stored-owner reconstruction](p02/partition-state/stored-owner-reconstruction/RESULT.md) binds actual
 payload reads to the replay-selected head, existing complete admission and exact replay comparison.
 The returned recovery head uses reconstructed owners. Partial-project reopen and continued installation
-remain the same saved episode. The private runtime continuation still holds the complete nonterrain
-locality; this decoder loads every required owner and terrain region. Remaining work is a qualified
-operation-specific loading cohort with authenticated dependency closure. Due fairness, richer-profile
+remain the same saved episode. This recovery decoder loads every required owner and terrain region;
+the selected runtime interval below supplies the separate bounded loading/publication cohort. Due fairness, richer-profile
 nested mapping/migration, checkpoint boundaries, cold/scale/platform measurements and independent
 review remain required before the corresponding production/PLAN-STATE exits.
 
@@ -267,10 +266,9 @@ not exhaustive nested migration acceptance. A selected construction cohort must 
 wide stock completeness, required-access actors and full due gathering/resident exposure. Read,
 write and due-process sets differ; a two-owner builder/project view is insufficient.
 
-Next extract common work qualification from completion material mutation using source-bound stock,
-access and identity dependencies, then bind stored-owner loading under the sole writer. Keep all
-currently required actor updates; prove actual absence of unrelated custodian/closed-history detail,
-not just fewer requested hashes. The map names stale/missing/foreign/global-reservation/access/control/
+Common work qualification and the stored interval below preserve source-bound stock, access and
+identity dependencies under the sole writer. All required actor updates remain; actual absence of
+unrelated custodian/production detail is checked alongside requested hashes. The map names stale/missing/foreign/global-reservation/access/control/
 due-boundary/fault contrasts. No new format, implicit current-profile migration or weaker admission
 is authorized. Final installation uses its larger complete material/geometry admission cohort.
 
@@ -280,9 +278,9 @@ is authorized. Final installation uses its larger complete material/geometry adm
 progress evaluation from the kernel's completion material mutation. Live, detached and locality work
 use that same guard implementation; qualification alone cannot earn time, publish geometry or bypass
 admission. Rejection order, reservation-wide stock/access and final material/identity checks remain.
-The inputs are still complete owners. Next supply source-established dependency completeness and
-freshness, then prove an actual smaller stored cohort with full due-process closure. No selective
-residency, current-profile migration, scheduling or PLAN-STATE/P02 acceptance follows from extraction.
+The ordinary adapter consumes complete owners; the selected adapter uses source-established
+completeness and freshness. The separate publication interval below adds full due-process closure.
+Extraction alone supplies no residency, migration, scheduling or PLAN-STATE/P02 acceptance.
 
 ## Selected stored qualification binding
 
@@ -292,7 +290,7 @@ actor and shared quest/progression/dialogue payloads. It runs the same guards wi
 source's inventory/production/terrain detail. Complete actor/structure geometry remains. Host capture
 and assessment use the sole authority lock; any directory change invalidates capture before reads.
 
-This is read-only assessment, not a published partial-work interval. Ordinary publication still uses
-complete nonterrain owners. Next preserve authenticated dependency renewal and all actual due
-processes while publishing from the smaller cohort, widen for final material/geometry/identity
-admission, and retain original-history and fault evidence. No later-profile or phase gate closes.
+The assessment itself remains read-only. [Stored partial publication](p02/partition-state/stored-work-publication/RESULT.md) adds the distinct internal interval that
+renews exact dependencies, runs all due gathering/resident effects and publishes changed payloads
+through the sole writer. Final work and intervening actions restore the full cohort. Original-history
+and fault proofs remain mandatory; no later-profile, scheduling, scale or phase gate closes.

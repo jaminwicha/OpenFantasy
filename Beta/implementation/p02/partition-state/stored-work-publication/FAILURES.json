@@ -1,0 +1,37 @@
+[
+  {
+    "attempt": "preflight-01",
+    "classification": "production",
+    "error": "Core compile CS1503: decoded residents List passed to ReadOnlyCollection exposure basis.",
+    "resolution": "Adapt existing decoded list with AsReadOnly; no rule/API widening. Also source review corrected test receipt identity comparison to canonical bytes before execution.",
+    "rerun": "Deliberate new preflight-02 after source correction; original attempt retained."
+  },
+  {
+    "attempt": "preflight-02",
+    "classification": "fixture",
+    "error": "Test compile: terrain hash is a captured reference, not a region property; missing Construction namespace.",
+    "resolution": "Use TerrainRegionReference.Capture and actual intent namespace. Source review also found and fixed stored-to-locality eviction invalidation; added cross-path and genuine due-regrowth tests.",
+    "rerun": "Deliberate preflight-03 after correction; both earlier attempts retained."
+  },
+  {
+    "attempt": "preflight-03",
+    "classification": "production",
+    "error": "Hosting referenced Core-internal CaptureReservations.",
+    "resolution": "Use existing public CopyEntityReservations; profile-five admission excludes later encounter families. No public API widened.",
+    "rerun": "Deliberate preflight-04; Core discovery427 succeeded in attempt03, no tests yet run."
+  },
+  {
+    "attempt": "hosting-check",
+    "classification": "fixture",
+    "error": "Two external mutation fixtures hit SQLite exclusive-lease lock before tested path, each waited30s;140 cases passed and2 failed in129.645s.",
+    "resolution": "Inject InvalidDataException/SqliteException through existing owner-read seam; explicitly label simulated faults. Reopen original unmodified save and prove no receipt/head change. Core actual missing/corrupt payload and historical-storage corruption tests remain.",
+    "rerun": "Deliberate affected SeparatedTerrainStorageTests only after changed fixture preflight; earlier run retained. Also add first/final before/after fault coverage."
+  },
+  {
+    "attempt": "hosting-corrected",
+    "classification": "production",
+    "error": "51cases passed; injected InvalidDataException escaped without immediately setting recovery fence because InvalidDataException is not IOException. Subsequent read reached decoder again.",
+    "resolution": "Explicitly catch InvalidDataException in new stored publisher and existing stored assessment; include SqliteException in both. Add assessment fault cases.",
+    "rerun": "Deliberate preflight08 and coherent affected Host integration sweep after production failure-boundary change; prior51pass result retained including final first/last atomic faults. Core unaffected."
+  }
+]

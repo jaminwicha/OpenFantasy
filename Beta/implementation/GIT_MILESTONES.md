@@ -606,3 +606,14 @@ is preserved separately and claims no implemented rule or reserved profile versi
   Assessment does not publish a step or run due processes, and the site retains complete actor/structure
   geometry. Partial publication, witness renewal, migration/fairness/scale and full gates remain open.
 - Timeless ownership/dependency/construction references and living plans/roadmap/handoff stay current.
+
+## Selected stored partial-work publication — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-stored-work-publication-20261018`
+(`be81c44893031448bfbb9b7752fd8bd24c6d2fdf`, parent768b8bfd). The verified increment is preserved by
+`codex/milestone-stored-work-publication-20261018` without switching the checkout; see
+[packet evidence](p02/partition-state/stored-work-publication/RESULT.md) for terminal validation.
+Scope: selected stored work and all due exposure/gathering, exact directory renewal, sole-writer atomic
+publication, full final/intervening admission and original history. Complete geometry/metadata and
+full replay remain; no current40/41 migration, scheduling/scale or phase acceptance. Unrelated staged
+predecessor work and concurrent steering remain excluded.

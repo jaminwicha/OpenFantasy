@@ -1,0 +1,33 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:01:30.97]     OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_due_owner_or_sqlite_failure_fences_work_without_consuming_the_command(missingTable: True) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_due_owner_or_sqlite_failure_fences_work_without_consuming_the_command(missingTable: True) [30 s]
+  Error Message:
+   Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+  Stack Trace:
+     at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_due_owner_or_sqlite_failure_fences_work_without_consuming_the_command(Boolean missingTable) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredConstructionPublicationTests.cs:line 116
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:02:01.41]     OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_due_owner_or_sqlite_failure_fences_work_without_consuming_the_command(missingTable: False) [FAIL]
+  Failed OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_due_owner_or_sqlite_failure_fences_work_without_consuming_the_command(missingTable: False) [30 s]
+  Error Message:
+   Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+  Stack Trace:
+     at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteNonQuery()
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_due_owner_or_sqlite_failure_fences_work_without_consuming_the_command(Boolean missingTable) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredConstructionPublicationTests.cs:line 121
+   at InvokeStub_SeparatedTerrainStorageTests.Missing_due_owner_or_sqlite_failure_fences_work_without_consuming_the_command(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/stored-work-publication/hosting-check/hosting.trx
+
+Failed!  - Failed:     2, Passed:   140, Skipped:     0, Total:   142, Duration: 2 m 7 s - OpenFantasy.Hosting.Tests.dll (net8.0)

@@ -220,7 +220,8 @@ terrain, compares its canonical bytes with replay and returns that reconstructed
 partial project can recapture a construction interval and continue the same earned work. This loads
 all required owners and terrain; it does not preserve detached residency across restart or skip history.
 The internal `ReadOwnersForHost` diagnostic checks current owner bytes against the committed directory
-hash without forcing terrain hydration; it is not a player knowledge projection or a loading API.
+hash. A complete nonterrain locality can supply these bytes without terrain; a selectively resident
+interval restores the complete cohort for this diagnostic. It is not a player knowledge projection.
 See [typed ownership](partition-ownership.md#runtime-binding-legacy-typed-owner-storage) for precise
 payload responsibilities, storage bounds, historical verification and unsupported scope.
 
@@ -249,6 +250,51 @@ its caller owns the trust in the admitted source and serialization of freshness 
 Assessment calls the same qualification guards and returns proposed progress/rejection only. It does
 not advance calendar/gathering/resident exposure, reserve command identities, mutate materials, issue
 a receipt or publish geometry. `RequiresCompletion` requires the larger final material/identity/geometry
-cohort and may still fail its later checks. Ordinary work publication continues through the complete
-existing pipeline. A reusable partial-work interval needs a separately qualified update of dependency
-witnesses and complete due-process closure; this capture expires on the very next committed change.
+cohort and may still fail its later checks. Ordinary work publication retains its complete pipeline. The separate stored interval below supplies
+partial publication and due-process closure; this read-only capture itself expires on the very next
+committed change.
+
+## Selected stored-owner publication
+
+[StoredConstructionInterval](../../src/OpenFantasy.Core/Construction/Ownership/StoredConstructionInterval.cs)
+captures the exact admitted profile-five directory, owner hashes/lengths, terrain references and the
+work cohort's complete reservation/geometry witness. It retains no inventory, production, terrain or
+complete resident collection. Complete actor/structure geometry, directory metadata and copied source
+identity reservations still remain resident. The interval is private execution preparation, not a
+new persistent gameplay format or an independently authenticated historical snapshot.
+
+Each selected boundary loads the work qualification dependencies plus timing, construction catalog,
+gathering and **every actor image**. Their exact hashes, lengths, scope, roles and field counts bind
+them to the admitted directory. Shared qualification and the project's progress operation handle the
+work; the existing exploration boundary, gathering process and resident exposure law supply all due
+effects in ordinary order. Rejected advancing work still advances these effects; held work preserves
+them. Unrelated custodian contents and production history remain in storage. This is not a claim that
+unselected residents can skip time, that all actor detail is unloaded, or that general scheduling is solved.
+
+The interval produces changed payloads and a complete new directory, preserving unchanged owner
+references. Only its own accepted steps renew the metadata and project/catalog revisions. Changed
+field sizes update the retained full-world byte envelope: these fields occur once in the profile-five
+frame and revision/framing widths stay fixed. Individual payload, aggregate payload, directory and
+complete-world limits remain enforced. It neither changes a historical interpreter nor adds a new
+saved exposure basis.
+
+`EvictForStoredConstruction` captures under the authority lock, checks the actual committed directory
+and releases the complete resident world and locality. `CommitStoredConstruction` checks current
+head/dispatch/controller/hold and original identity history, then publishes changed payloads, the
+complete directory, input, receipt, reserved identities and any due checkpoint through `PublishWrites`
+in one SQLite transaction. Only after commit does the admitted interval advance. Format/storage and
+publication failures fence the authority; an unsupported/stale dispatch cannot consume a command.
+Archive accounting still scans retained lengths; the complete directory is still encoded each step.
+
+A qualifying final work step returns control to ordinary full-world execution before publication.
+The Host reconstructs all current owners and exact terrain, then the normal kernel applies combined
+capacity, material provenance, spawned identity and physical installation admission. Full host reads
+also reconstruct the current admitted world; ordinary commits invalidate the stored interval. Switching
+back to complete nonterrain eviction discards its metadata. Intervening movement, gifts or other
+operations require explicit fresh capture before selective work resumes. No receipt from speculative
+preparation escapes, and repeated input still obeys the original identity rules.
+
+Reopening verifies original complete history and every retained owner before reconstructing the full
+head. Selective residency is not persisted across restart. Current-profile migration, arbitrary due-work
+selection/fairness, paged directories, cold loading and production-scale performance remain separate
+contracts. The internal binding does not change the default game or its scheduler.

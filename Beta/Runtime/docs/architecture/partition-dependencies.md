@@ -88,3 +88,14 @@ results/receipts, full original history, due-process completeness and atomic fau
 list, interface extraction or lower allocation in an isolated helper alone does not establish that
 contract. Full directory, witness/index and archival costs belong in measurement; closed history is
 not disposable merely because current work does not read all of it.
+
+## Stored partial-work closure
+
+The [stored interval](construction-locality.md#selected-stored-owner-publication) loads work facts
+plus all due actor images, timing, gathering and the construction revision catalog. Reservation and
+site completeness originate in full admission; the exact directory evolves only through this
+interval's own atomic partial steps. Shared work qualification and existing project/exposure/gathering
+operations determine changed payloads. An advancing rejection still runs due processes; a held
+boundary does not. Unsupported dispatch refuses before dependency reads. Final material completion
+and ordinary intervening operations load their complete cohort and end the selectively resident
+interval. Full history and identity exclusion remain the sole Host's obligations.

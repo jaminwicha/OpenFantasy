@@ -1,0 +1,15 @@
+[
+  "Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerDirectory.cs",
+  "Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerPayload.cs",
+  "Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/ConstructionWorkCohort.cs",
+  "Beta/Runtime/src/OpenFantasy.Core/Construction/Ownership/StoredConstructionInterval.cs",
+  "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.Owners.cs",
+  "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.StoredConstruction.cs",
+  "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.Terrain.cs",
+  "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.cs",
+  "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldCommitPreparation.cs",
+  "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/WorldDatabase.Owners.cs",
+  "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/StoredConstructionIntervalTests.cs",
+  "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredConstructionPublicationTests.cs",
+  "Beta/implementation/p02/partition-state/typed-owner-storage/tooling/preflight.py"
+]

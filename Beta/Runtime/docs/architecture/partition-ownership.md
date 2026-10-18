@@ -176,8 +176,8 @@ The directory and payloads own immutable encoded bytes and export defensive copi
 admitted `WorldSnapshot` or `ConstructionLocalityState`. The separate
 [ConstructionOwnerReconstruction](../../src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerReconstruction.cs)
 decoder consumes stored directory bytes, a selected directory hash and owner/terrain readers. It
-reconstructs the complete admission cohort; it does not authenticate history by itself. The authority's
-private construction continuation still retains the complete nonterrain locality. Shared progression/
+reconstructs the complete admission cohort; it does not authenticate history by itself. The authority can retain either a complete nonterrain locality or the separately admitted
+[selected work interval](construction-locality.md#selected-stored-owner-publication). Shared progression/
 quest/process facets are not independently resident actor roots merely because payloads have stable keys.
 
 `WorldStateImage` selects complete-root, terrain-separated-image or typed-directory storage explicitly.
@@ -188,8 +188,9 @@ work retains the exact flat-image/full-world length relation and complete final 
 
 `PublishWrites` writes the accepted journal record, owner payloads, identities, outcomes, head and any
 due checkpoint in one SQLite transaction. Existing identical payloads are verified byte-for-byte and
-reused; only new hashes add archive rows. Every current owner is still encoded/visited, so this is not
-a selective read/write preparation algorithm. Archive accounting also scans retained row lengths
+reused; only new hashes add archive rows. Complete-world/locality preparation encodes and visits every current owner. The selected stored
+interval instead loads its work and complete due cohort and supplies only changed payloads to the
+same writer; it still rebuilds the complete directory. Archive accounting also scans retained row lengths
 after publication preparation; its cost must be included in measurements. The complete directory advances atomically with a gift,
 work or installation; a fault cannot leave only one custodian credited or release an uncommitted receipt.
 
@@ -216,9 +217,8 @@ The experimental envelope permits at most1MiB of directory metadata,16MiB per pa
 current payloads, while retaining the separate full-world16MiB admission check. Retained owner archives
 are bounded by100,000 unique payloads and256MiB. Exceeding the write envelope rolls back publication
 and stops the authority for recovery; exceeding it on read refuses readiness. These are explicit
-finite development-storage limits, not shipping population/world-size targets. Noninitial checkpoints,
-selective payload loading, current-profile migration, general due-work fairness and frontier-scale
-history remain separate qualification obligations. Complete-cohort decoding does not establish a
+finite development-storage limits, not shipping population/world-size targets. Noninitial checkpoints, general selective loading beyond the admitted construction interval,
+current-profile migration, due-work fairness and frontier-scale history remain separate obligations. Complete-cohort decoding does not establish a
 partial-admission proof or a cold-load/performance budget.
 
 ### Selected qualification reads
@@ -232,3 +232,14 @@ This does not change schema14 publication, full original-history recovery, actua
 final completion admission. Qualification's smaller read set is not the entire simulation step's
 required residency. Capture cost, complete geometry witness and shared-facet read granularity remain
 part of any future memory/I/O measurement.
+
+### Stored interval and due owners
+
+The selected construction publication binding extends the read cohort with timing, gathering,
+construction catalog and all actor payloads. The source-bound reservation and geometry witnesses
+remain valid only across its own partial-work transitions. Changed project/catalog, timing,
+gathering and resident images replace their references atomically; unrelated custody/production
+payloads are not loaded or rewritten by that preparation. All resident exposure is still materialized.
+Final completion and intervening actions restore complete admission. The complete directory and
+identity metadata remain resident, and recovery retains full history authentication. No general
+paging, absent-history trust or offscreen scheduling policy follows from this one interval.
