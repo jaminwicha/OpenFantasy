@@ -662,3 +662,15 @@ fresh6000-step checkpoint recovery. The failed six-case production run, exact ch
 and databases remain retained. Pure C#, same schema/profile laws, full history and all broader gates
 remain; synchronous preparation is not a general scheduling or fairness exit. Protected concurrent
 steering and all19staged predecessor files remain excluded.
+
+
+## Combined stored due-boundary qualification — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-combined-due-boundary-20261018`
+(`1cab143436543da610f778b1175130d867a14c92`, parent `f54f16b66c430a51c3fb5621ecd2188afb77bcd1`).
+Verified milestone: `codex/milestone-combined-due-boundary-20261018`, created at the owned commit
+without switching. [Result](p02/partition-state/combined-due-boundary/RESULT.md):30 affected cases pass,
+six new, with real regrowth/two-builder work/all-resident exposure, sliced preparation and retained
+SQLite atomic fault/history proof. Test-only increment; the cheap population-preflight failure is
+retained, all production laws and broader gates unchanged. Protected concurrent steering and all19
+staged predecessor files remain excluded. Timeless architecture accuracy reviewed; live plans updated.

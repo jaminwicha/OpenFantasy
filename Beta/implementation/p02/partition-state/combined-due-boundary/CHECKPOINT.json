@@ -1,0 +1,52 @@
+{
+  "parent": "f54f16b66c430a51c3fb5621ecd2188afb77bcd1",
+  "ref": "codex/checkpoint-before-combined-due-boundary-20261018",
+  "snapshot": "1cab143436543da610f778b1175130d867a14c92",
+  "protected": {
+    "Beta/AGENTS.md": "2668bb6ea3ee530a8b05bc4e0686086650fec27a873e99267391c41a5e325e30",
+    "Beta/implementation/EFFICIENCY_AUDIT_DISPOSITION.md": "561c998e77517ab4c1f8424d2b872c29c0797dec603c9faa2bb9b3bdbdf01a9f",
+    "Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md": "57f30586711a00c98aa9078e9fe1e9ccd049beb7f7aff185a056f1cda1ad8f28",
+    "Beta/implementation/CORE_LANGUAGE_RUST_EVIDENCE.json": "2695a7564293ddcf77747592b90fc5e0032e48f19d37580b1238478b9bd7a377",
+    "Beta/implementation/efficiency-levers-20261017/RESULT.md": "9ac8c87146756fa6016914dee1264d0d5946b8b86828c6ecde4fba770c07dff4",
+    "Beta/implementation/efficiency-levers-20261017/measurements.json": "726d1f8103e7784c6ba060e9517eee3775738da50348f5682899d896426f9017",
+    "Beta/implementation/efficiency-levers-20261017/ASTRA_PROMPT.md": "5870bab79b8d422c2dfa15c68f612d4bf0a1e2def0a02e1fc077e6f900bb8243",
+    "OpenFantasy.sln": "470fad0e103b0087483665edd6991be0ce34e577e37e4271578c0dbcf679e9eb"
+  },
+  "concurrent_document_diffs": {
+    "Beta/implementation/AGENT_HANDOFF.md": "diff --git a/Beta/implementation/AGENT_HANDOFF.md b/Beta/implementation/AGENT_HANDOFF.md\nindex 3e87fb76..a5317066 100644\n--- a/Beta/implementation/AGENT_HANDOFF.md\n+++ b/Beta/implementation/AGENT_HANDOFF.md\n@@ -8,12 +8,15 @@ it does not replace the frozen 181 requirements or their original acceptance gat\n \n 1. [Implementation instructions](../AGENTS.md), [documentation maintenance](DOCUMENTATION_MAINTENANCE.md)\n    and [Git milestone discipline](GIT_MILESTONES.md). Work on `codex/runtime-foundation`; preserve the\n-   unrelated 19 staged predecessor files. Integration lead owns checkpoints and commits.\n+   unrelated 19 staged predecessor files. Integration lead owns checkpoints and commits. Apply the\n+   [measured efficiency levers](efficiency-levers-20261017/RESULT.md): fresh or compacted session per packet,\n+   instructions read once, cheap preflight before long runs, no reduction of any gate or documentation duty.\n 2. [Runtime controls](../Runtime/README.md) and affected subjects in the timeless\n    [architecture reference](../Runtime/docs/architecture/README.md).\n 3. [Full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md), [requirements](../spec-v1_1/REQUIREMENTS.json),\n    [validation](../spec-v1_1/VALIDATION.md), living [UI](PLAYER_INTERFACE_AND_NAVIGATION.md),\n-   [upkeep](EQUIPMENT_AND_VEHICLE_UPKEEP.md) and [composition](WORLD_COMPOSITION_DECISION.md) decisions.\n+   [upkeep](EQUIPMENT_AND_VEHICLE_UPKEEP.md), [composition](WORLD_COMPOSITION_DECISION.md) and\n+   [language](CORE_LANGUAGE_RUST_ASSESSMENT.md) decisions.\n 4. [October17 review disposition](roadmap-review-20261017/LEAD_DISPOSITION.md) resolves R1\u2013R13 into the\n    roadmap: bounded partition/version investigation before cognition persistence; named NPC, story,\n    ecology, art/audio and catalog deliverables. No format/rewrite or phase acceptance is approved.\n",
+    "Beta/implementation/CURRENT_ROADMAP.md": "diff --git a/Beta/implementation/CURRENT_ROADMAP.md b/Beta/implementation/CURRENT_ROADMAP.md\nindex 113f8029..13b725f3 100644\n--- a/Beta/implementation/CURRENT_ROADMAP.md\n+++ b/Beta/implementation/CURRENT_ROADMAP.md\n@@ -129,7 +129,7 @@ its exact scope; no row is fully accepted merely because a supporting primitive\n | Direction | Current authority / disposition |\n | --- | --- |\n | Runtime naming | Stable OpenFantasy in code/project/runtime. Historical Beta planning paths/specs stay preserved; old RQ-168 naming text is superseded by the owner override in [instructions](../AGENTS.md). |\n-| Pure C#, decoupled core | [Language decision](CORE_LANGUAGE_CPP_ASSESSMENT.md) retained as research; owner chose C#. No automatic Rust/C++ kernel/IPC work even where frozen P03 wording offers it. Keep measured performance gates; optimize within C# unless the owner changes the decision. |\n+| Pure C#, decoupled core | [Language decision](CORE_LANGUAGE_CPP_ASSESSMENT.md) retained as research; owner chose C#. No automatic Rust/C++ kernel/IPC work even where frozen P03 wording offers it. Keep measured performance gates; optimize within C# unless the owner changes the decision. Reaffirmed 2026-10-17 by the [Rust assessment](CORE_LANGUAGE_RUST_ASSESSMENT.md): fully C#, no Rust kernel, engine change or Lattice migration; reassessment is bound to its named triggers. |\n | Godot platforms and multiplayer | Desktop Windows/macOS/Linux and 1\u20134 players first; mobile later, still required. Declared counts are targets, not completed platform evidence. |\n | Atomic and meaningful domain composition | [World composition](WORLD_COMPOSITION_DECISION.md), [reference](../Runtime/docs/architecture/world-composition.md): typed facets/relations/operations, one canonical owner, atomic coupled effects, meaningful high-level concepts. No universal property bag or parallel authority. Healing, consent, assistance and appreciation remain distinct. |\n | World partitioning and versioning investigation | PLAN-STATE below precedes permanent cognition persistence and informs P01/P03 scale work. Compare bounded partition roots/dependency closure and a facet manifest using actual owners and history. Pure C#, one authority and atomic coupled effects remain fixed. No format or rewrite is selected; a manifest cannot replace semantic command versions, legal-composition admission or historical interpreters. |\n@@ -142,7 +142,7 @@ its exact scope; no row is fully accepted merely because a supporting primitive\n | Presentation | Restrained detailed16-bit-plus accepted direction, visible accumulated history, variant discipline, classic motion, semantic choreography/emotions/actions and meaningful condition/weather changes. Dedicated native artists; concepts do not waive actual asset/motion acceptance. |\n | Audio | Atmosphere and activity sounds are first-class; quiet and gentle transitions dominate ordinary play, rare epic music when warranted. Source/acoustic/native/listener and human acceptance remain P02 onward. |\n | Progressive interfaces | [Living UI supplement](PLAYER_INTERFACE_AND_NAVIGATION.md): icon-led affordances, accessible tooltips/focus inspection, wheels and complete library, capability-earned menus, map layers/atlas/calendar/inventory/stats/skills/crafting/journal. Hide irrelevant systems while keeping essential costs/reasons readable. |\n-| Working discipline | Commits and preserved milestones, unrelated-change protection, shared-desktop focus awareness, unchanged feasibility gates and risk-based reviews remain. Claude assignments retain exact approved routes/Max/limits/sync, no silent fallback or retry. Native agents use Astra capacity. |\n+| Working discipline | Commits and preserved milestones, unrelated-change protection, shared-desktop focus awareness, unchanged feasibility gates and risk-based reviews remain. Claude assignments retain exact approved routes/Max/limits/sync, no silent fallback or retry. Native agents use Astra capacity. The [2026-10-17 measured levers](efficiency-levers-20261017/RESULT.md) govern session context, instruction re-reads and long-run preflight without reducing any gate or documentation duty. |\n | Documentation | [Maintenance contract](DOCUMENTATION_MAINTENANCE.md) binds roadmap/spec/plan reconciliation and timeless reference accuracy to each coherent change and phase review. Both remain priority deliverables regardless of efficiency recommendations; reduce duplicated status, never completeness or factual review. No new decision lives only in chat or a model-specific entrypoint. |\n | October5 research note | The untracked file in the frozen-spec directory is advisory, not a ratified addendum. Its [preserved copy and disposition](roadmap-review-20261017/LEAD_DISPOSITION.md#october5-research-disposition) retain ideas without adopting nonexistent APIs, predecessor bindings or unsupported numeric rules. Frozen requirements are unchanged. |\n \n"
+  },
+  "predecessor_staging_sha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "included_paths": [
+    "Beta/AGENTS.md",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md",
+    "Beta/implementation/CORE_LANGUAGE_RUST_EVIDENCE.json",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/EFFICIENCY_AUDIT_DISPOSITION.md",
+    "Beta/implementation/efficiency-levers-20261017/ASTRA_PROMPT.md",
+    "Beta/implementation/efficiency-levers-20261017/RESULT.md",
+    "Beta/implementation/efficiency-levers-20261017/measurements.json",
+    "OpenFantasy.sln",
+    "README.md",
+    "docs/MILESTONE_8.md",
+    "src/Client/GameController.cs",
+    "src/Client/GameWindows.cs",
+    "src/Net/Protocol.cs",
+    "src/Net/ServerNode.cs",
+    "src/Sim/FrontierGen.cs",
+    "src/Sim/SelfTest.cs",
+    "src/Sim/SettlementGen.cs",
+    "src/Sim/SimConstants.cs",
+    "src/Sim/SiteGen/RoomScatterEmbedder.cs",
+    "src/Sim/SiteGen/SiteFloor.cs",
+    "src/Sim/SiteGen/SiteGenerator.cs",
+    "src/Sim/SiteGen/SiteRecipe.cs",
+    "src/Sim/SiteGen/SiteValidator.cs",
+    "src/Sim/SiteGen/TempleEmbedder.cs",
+    "src/Sim/World.Instances.cs",
+    "src/Sim/World.Settlements.cs",
+    "src/Sim/World.cs"
+  ],
+  "verification": "WIP preservation only; no runtime checks or acceptance implied"
+}

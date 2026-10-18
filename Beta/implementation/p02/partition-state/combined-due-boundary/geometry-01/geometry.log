@@ -1,0 +1,15 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:02.64]     OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary [1 s]
+  Error Message:
+   Assert.Equal() Failure: Values differ
+Expected: 3
+Actual:   5
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CombinedStoredDueTests.cs:line 29
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/combined-due-boundary/geometry-01/geometry.trx
+
+Failed!  - Failed:     1, Passed:     0, Skipped:     0, Total:     1, Duration: 1 s - OpenFantasy.Hosting.Tests.dll (net8.0)

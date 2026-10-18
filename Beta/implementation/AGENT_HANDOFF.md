@@ -59,8 +59,11 @@ ordinary reference for two genuinely funded host builders, holds/exclusions/refu
 SQLite history/fault recovery. [Stored-batch preparation](p02/partition-state/stored-batch-preparation/RESULT.md)
 now adds exact-head owner-read slices, complete selected multi-actor batches and one atomic passive
 boundary in the existing profile-five prototype. The Host still drains synchronously; final installation
-and the legacy aggregate limit use ordinary full admission. Next resolve the remaining live scheduling,
-due discovery and measurement/review obligations, retaining all richer-profile closures. Retain the remaining
+and the legacy aggregate limit use ordinary full admission. The
+[combined due-boundary proof](p02/partition-state/combined-due-boundary/RESULT.md) now joins real node
+depletion/regrowth, two funded builders and exposure for all five retained/admitted residents, including
+an unrelated observer, with sliced preparation and SQLite fault/history recovery. Next resolve the
+remaining live scheduling, due discovery and measurement/review obligations, retaining all richer-profile closures. Retain the remaining
 PLAN-STATE measurement/review exits; general current-profile checkpoint/migration proof remains. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
 Neither extraction nor the map is a partial loader or completed nested migration.

@@ -1,0 +1,131 @@
+{
+  "checks": {
+    "geometry-01": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary",
+        "--logger",
+        "trx;LogFileName=geometry.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/combined-due-boundary/geometry-01"
+      ],
+      "exit_code": 1,
+      "seconds": 4.592327750055119,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "1",
+        "executed": "1",
+        "passed": "0",
+        "failed": "1",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "geometry-02": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~CombinedStoredDueTests.Actual_resident_roster_harvest_and_work_prefix_reaches_the_unshortened_due_boundary",
+        "--logger",
+        "trx;LogFileName=geometry.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/combined-due-boundary/geometry-02"
+      ],
+      "exit_code": 0,
+      "seconds": 4.17036483308766,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "hosting-01": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~CombinedStoredDueTests|FullyQualifiedName~StoredBatchConstructionTests|FullyQualifiedName~MultipleNpcCutoffTests|FullyQualifiedName~CoordinatedConcurrentConstructionTests",
+        "--logger",
+        "trx;LogFileName=hosting.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/combined-due-boundary/hosting-01"
+      ],
+      "exit_code": 0,
+      "seconds": 37.57878854207229,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "30",
+        "executed": "30",
+        "passed": "30",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  },
+  "distinct_current_passes": 30,
+  "new_cases": 6,
+  "current_preflight": "preflight-02",
+  "classification": {
+    "geometry-01": "fixture failure; population assertion, retained",
+    "geometry-02": "passed geometry/real-prefix preflight",
+    "hosting-01": "passed storage/affected-family suite; intentional injected faults are assertions, not failed runs"
+  },
+  "run_counts": {
+    "native": 0,
+    "storage_suite": 1,
+    "preflight_fixture": 2,
+    "runs_exceeding_180_second_bound": 0
+  },
+  "telemetry": {
+    "api_calls": null,
+    "average_input_tokens": null,
+    "reason": "Packet rollout usage and per-call input-token accounting are not exposed by the available execution tools. This continuation began after compaction; no saving is inferred."
+  }
+}

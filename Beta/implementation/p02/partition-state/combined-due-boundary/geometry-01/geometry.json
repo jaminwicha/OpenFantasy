@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary",
+    "--logger",
+    "trx;LogFileName=geometry.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/combined-due-boundary/geometry-01"
+  ],
+  "exit_code": 1,
+  "seconds": 4.592327750055119,
+  "bound_seconds": 180
+}

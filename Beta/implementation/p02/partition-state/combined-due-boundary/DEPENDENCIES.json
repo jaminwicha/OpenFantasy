@@ -1,0 +1,37 @@
+{
+  "baseline": "f54f16b66c430a51c3fb5621ecd2188afb77bcd1",
+  "prior_pins": "Beta/implementation/p02/partition-state/stored-batch-preparation/preflight-03/pins.json",
+  "current_pins": "preflight-02/pins.json",
+  "changed_inputs": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": {
+      "previous": "f035706054c879dbc8aba829f4deceb959c2a3e315b75195dfee667e028b37a6",
+      "current": "b66f076f14e3d27147e5d536f6b595cbccdf970ec175a2c0a092eab2191c0332"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "previous": "444e9f2b66ae2b917cc291ae2159f2d8131fff8a7effa62573003ae47a451d2e",
+      "current": "ec2fd5a49ac22d293fa73ec0109695deb65b895381a0c90a50c283fe9ab2656f"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Care/CoordinatedConstructionJourney.cs": {
+      "previous": "78d1e566b74301434fd8055b4360f7e7297d51c0bb645f750d8a5c55b52f3b0b",
+      "current": "3ead80b7b328e46ded998d29cc28104b028ded64f3016d163c1fcc5a83775e4a"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CombinedStoredDueTests.cs": {
+      "previous": null,
+      "current": "fe86d917f16dbb745374a9bc3d505479f40ede47296272c84b975febc2c46b01"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "previous": "444e9f2b66ae2b917cc291ae2159f2d8131fff8a7effa62573003ae47a451d2e",
+      "current": "ec2fd5a49ac22d293fa73ec0109695deb65b895381a0c90a50c283fe9ab2656f"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": {
+      "previous": "b59c0a3d98ae52d85c1b693fd88a78fa61714868a31ad9fec9611d35417e9217",
+      "current": "428b3dfb665d4c9f8b789cf158073956a0035e31150195b3aeef5e295663ad42"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": {
+      "previous": "fdfc52abbd94d9530ea78e4d9b0fc01a6467ba3b59b89cf10497b513af77a588",
+      "current": "e0cc4cb6e67bb68f9c78bf9d4e2ee6a067bb8ff5a8f2fe79f192915a053d290a"
+    }
+  },
+  "production_sources_unchanged": true,
+  "inherited_claim": "Earlier source-pinned evidence retains its original scope. No prior test totals are claimed as current-binary executions; the new fixture and all consumers of its optional constructor are in the 30-case affected selection."
+}

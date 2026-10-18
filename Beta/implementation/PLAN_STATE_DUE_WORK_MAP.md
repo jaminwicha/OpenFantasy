@@ -87,9 +87,14 @@ This is an extension of the existing typed-owner prototype, not another full-wor
 
 The remaining witness includes live host yielding and any durable preparation continuation: the
 current Host still drains preparation synchronously under its lock. Owner-count slicing does not bound
-final rule-evaluation CPU time, persist domain membership, or establish starvation limits. A third
-unrelated resident and an actually newly due depleted node in the multi-actor fixture remain separate
-contrasts; retained single-work regressions do not silently count as that combined proof. General obligation
+final rule-evaluation CPU time, persist domain membership, or establish starvation limits. The
+[combined due-boundary proof](p02/partition-state/combined-due-boundary/RESULT.md) now supplies the
+missing combined contrast: two actual funded builders, a newly admitted unrelated observer, all four
+original residents retained (five total), and a node depleted through real harvesting becoming due
+at its unchanged regrowth delay. Sliced preparation matches ordinary execution, refuses a missing
+bystander actor and publishes all work/regrowth/exposure together with retained original SQLite history
+and before/after fault recovery. This is scripted authoritative preparation, not a live ready-player
+session or a general obligation discovery algorithm. General obligation
 discovery, multi-actor fairness, persistence of timing membership, current40/41 nested migration,
 cold/platform/scale measurements and independent PLAN-STATE review remain open. Retain the complete
 P02 closure table and scheduled NPC-01/story/ecology/art/audio work after the decision/review exit.

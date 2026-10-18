@@ -515,3 +515,18 @@ ordinary admission. The Host drains synchronously; no durable cursor, general fa
 profile migration, CPU latency budget or platform/scale claim follows. The [due-work map](PLAN_STATE_DUE_WORK_MAP.md)
 retains live scheduling, combined bystander/newly due-node contrasts, current40/41 closures and the
 remaining measurement/independent-review exits before NPC-01. P02 and the full phase ledger remain open.
+
+
+### PLAN-STATE combined mandatory effects and multi-actor work
+
+[The combined due-boundary packet](p02/partition-state/combined-due-boundary/RESULT.md) qualifies
+real regrowth alongside two actual funded builders and exposure for all five residents in the explicit
+profile-five storage prototype. Real harvesting and lawful routes reach the original700-step delay;
+20 of35 stored owners are read, with no terrain fetch during partial work. Eight sliced boundaries
+match complete ordinary state/receipts/identities; a missing unrelated actor refuses preparation.
+Three SQLite cases preserve original history and atomic before/after fault recovery. Thirty affected
+cases pass, six new; the mistaken population assertion caught by preflight remains retained.
+No production law or source changed. Synchronous Host draining, general discovery/fairness,
+current40/41 migration, remaining comparison measurements and independent review stay open.
+The complete P02 closure table, P00–P14/181-requirement scope and scheduled NPC/story/ecology/art/audio
+work remain unchanged. This combined proof does not establish a live ready-player scheduling exit.

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="a1196548-9ddf-497c-8580-77c20edccf6e" name="@mac 2026-10-18 17:13:45" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-18T17:13:45.6046520-05:00" queuing="2026-10-18T17:13:45.6046520-05:00" start="2026-10-18T17:13:42.2454640-05:00" finish="2026-10-18T17:13:45.6083970-05:00" />
+  <TestSettings name="default" id="809474ee-435b-444a-a9fd-f66190fd6a66">
+    <Deployment runDeploymentRoot="_mac_2026-10-18_17_13_45" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d569ce3a-33bd-4b6a-9c1b-ea908a8e4042" testId="960d6456-e8b3-f987-3caa-ca6b7af4ac2e" testName="OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary" computerName="mac" duration="00:00:01.2698448" startTime="2026-10-18T17:13:44.2188340-05:00" endTime="2026-10-18T17:13:45.5412390-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d569ce3a-33bd-4b6a-9c1b-ea908a8e4042">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Values differ
+Expected: 3
+Actual:   5</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CombinedStoredDueTests.cs:line 29
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="960d6456-e8b3-f987-3caa-ca6b7af4ac2e">
+      <Execution id="d569ce3a-33bd-4b6a-9c1b-ea908a8e4042" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests" name="Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="960d6456-e8b3-f987-3caa-ca6b7af4ac2e" executionId="d569ce3a-33bd-4b6a-9c1b-ea908a8e4042" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.34]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.09]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.27]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:02.64]       Assert.Equal() Failure: Values differ
+[xUnit.net 00:00:02.64]       Expected: 3
+[xUnit.net 00:00:02.64]       Actual:   5
+[xUnit.net 00:00:02.64]       Stack Trace:
+[xUnit.net 00:00:02.64]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CombinedStoredDueTests.cs(29,0): at OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary()
+[xUnit.net 00:00:02.64]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:02.64]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.65]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-18T17:13:45.5476760-05:00">
+        <Text>[xUnit.net 00:00:02.64]     OpenFantasy.Hosting.Tests.Simulation.CombinedStoredDueTests.Actual_three_resident_harvest_and_work_prefix_reaches_the_unshortened_due_boundary [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

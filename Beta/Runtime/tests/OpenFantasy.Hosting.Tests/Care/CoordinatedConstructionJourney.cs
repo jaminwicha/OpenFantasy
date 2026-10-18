@@ -12,6 +12,7 @@ using OpenFantasy.Core.Quests;
 using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Content;
+using OpenFantasy.Hosting.Content.PlayerRoster;
 using OpenFantasy.Hosting.Tests.WorldStorage;
 
 namespace OpenFantasy.Hosting.Tests.Care;
@@ -22,11 +23,18 @@ internal sealed class CoordinatedConstructionJourney
     private readonly ConstructionUpgradeFixture _commands = new();
     private CareWorldSession _session;
 
-    internal CoordinatedConstructionJourney(bool coordinated, bool hostBuilders = false, bool constructionOnly = false)
+    internal CoordinatedConstructionJourney(bool coordinated, bool hostBuilders = false, bool constructionOnly = false,
+        bool withBystander = false)
     {
         var source = RestorativeJourneyAdmission.CreateEmbedded("coordinated-concurrent-construction", "Traveler");
         Assert.Equal((ushort)26, source.ProfileVersion);
-        Player = source.Residents.Single(value => value.ControllerKind == ResidentControllerKind.Player).ActorId;
+        if (withBystander)
+        {
+            Assert.True(constructionOnly);
+            source = new PlayerRosterGenesisExtension(source, new PlayerRosterDefinition(["Traveler", "Observer"])).Build();
+        }
+        Player = source.Residents.Single(value => value.ControllerKind == ResidentControllerKind.Player
+            && value.DisplayName == "Traveler").ActorId;
         var originalQuest = Assert.Single(source.Quests!.Definitions);
         Helper = originalQuest.GiverActorId;
         var originalProject = Assert.Single(source.Construction!.Projects);
@@ -216,7 +224,7 @@ internal sealed class CoordinatedConstructionJourney
         Assert.Equal(WorldActionRejection.None, receipt.Rejection);
     }
 
-    private void Walk(EntityId actor, SubunitPosition target)
+    internal void Walk(EntityId actor, SubunitPosition target)
     {
         for (int step = 0; World.Space.GetActor(actor).Feet != target; step++)
         {

@@ -1,0 +1,116 @@
+{
+  "root": "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01",
+  "files": {
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/AfterCommit/after.ofc": {
+      "bytes": 42111,
+      "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/AfterCommit/before.ofc": {
+      "bytes": 42119,
+      "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/AfterCommit/genesis.ofc": {
+      "bytes": 40496,
+      "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/AfterCommit/measurement.json": {
+      "bytes": 460,
+      "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/AfterCommit/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/BeforeCommit/after.ofc": {
+      "bytes": 42111,
+      "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/BeforeCommit/before.ofc": {
+      "bytes": 42119,
+      "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/BeforeCommit/genesis.ofc": {
+      "bytes": 40496,
+      "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/BeforeCommit/measurement.json": {
+      "bytes": 460,
+      "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/BeforeCommit/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "634e38a7a0e677dd58f6f67c266d3a54afaa4a7c329b3035d8c1a4f03f071a8c"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/ordinary/after.ofc": {
+      "bytes": 42111,
+      "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/ordinary/before.ofc": {
+      "bytes": 42119,
+      "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/ordinary/genesis.ofc": {
+      "bytes": 40496,
+      "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/ordinary/measurement.json": {
+      "bytes": 460,
+      "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+    },
+    "Beta/Runtime/artifacts/combined-due-boundary-20261018-attempt01/ordinary/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+    }
+  },
+  "cases": {
+    "AfterCommit": {
+      "Residents": 5,
+      "Builders": 2,
+      "PrefixCommits": 865,
+      "DueStep": 860,
+      "DepletedAtStep": 160,
+      "RegrowthDelay": 700,
+      "IssuedUnits": 4,
+      "SelectedOwnerReads": 20,
+      "CompleteOwnerCount": 35,
+      "TerrainReadsDuringPartialWork": 0,
+      "SourceSequence": 865,
+      "ResultSequence": 866,
+      "SourceHash": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a",
+      "ResultHash": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    },
+    "BeforeCommit": {
+      "Residents": 5,
+      "Builders": 2,
+      "PrefixCommits": 865,
+      "DueStep": 860,
+      "DepletedAtStep": 160,
+      "RegrowthDelay": 700,
+      "IssuedUnits": 4,
+      "SelectedOwnerReads": 20,
+      "CompleteOwnerCount": 35,
+      "TerrainReadsDuringPartialWork": 0,
+      "SourceSequence": 865,
+      "ResultSequence": 866,
+      "SourceHash": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a",
+      "ResultHash": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    },
+    "ordinary": {
+      "Residents": 5,
+      "Builders": 2,
+      "PrefixCommits": 865,
+      "DueStep": 860,
+      "DepletedAtStep": 160,
+      "RegrowthDelay": 700,
+      "IssuedUnits": 4,
+      "SelectedOwnerReads": 20,
+      "CompleteOwnerCount": 35,
+      "TerrainReadsDuringPartialWork": 0,
+      "SourceSequence": 865,
+      "ResultSequence": 866,
+      "SourceHash": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a",
+      "ResultHash": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    }
+  },
+  "restore": "Keep original artifacts immutable. Copy a complete case directory to a fresh scratch directory before opening its world.sqlite3. genesis.ofc, before.ofc and after.ofc retain full snapshot bytes. Original commands/history are in each database; tests reopen from the original genesis and compare the prepublication revision. Verify these hashes before use. Do not substitute any derived snapshot for the original genesis."
+}

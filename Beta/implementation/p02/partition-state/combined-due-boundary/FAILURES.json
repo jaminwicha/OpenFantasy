@@ -1,0 +1,11 @@
+[
+  {
+    "run": "geometry-01/geometry.json",
+    "classification": "fixture",
+    "cause": "Hardcoded three residents overlooked the four retained source residents; actual roster admission adds Observer for five total. Geometry and real prefix completed before population assertion.",
+    "correction": "Preserve the complete original resident identity set plus Observer; assert five and all exposures. No production, population, routing or timing law change.",
+    "failed_source": "Beta/implementation/p02/partition-state/combined-due-boundary/failed-source-01/CombinedStoredDueTests.cs",
+    "sha256": "5b3dc70e7799e6825856937063449b44fc763b6146b3cebc5bf1b7308fa4eedd",
+    "rerun": "Deliberate new preflight and geometry attempt after correction; no storage run until geometry passes."
+  }
+]
