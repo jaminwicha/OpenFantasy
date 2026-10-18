@@ -305,3 +305,10 @@ unchanged. Next compare coarse locality storage with typed actor/custodian owner
 replay, noninitial checkpoint, richer-profile migration, due-work/fairness and independent-review gaps.
 The P02 closure table remains authoritative. Owner Oct17/18 packet-read/preflight/telemetry discipline
 applies; do not reload entry documents within a packet unless changed, or infer credit savings.
+
+Latest PLAN-STATE selection: [typed owners with admission cohorts](PLAN_STATE_DECISION.md), supported
+by the [matched comparison packet](p02/partition-state/partition-decision/RESULT.md). Next implement
+one coupled actor/custodian/project ownership-directory candidate in the same actual saved episode;
+reuse the existing writer and rule kernels, include cross-owner gift faults and real due obligations.
+This is a lead recommendation, not independent review or a production-format selection. Retain
+current-profile nested facet mapping, checkpoint/fairness/cold/scale gaps and the full P02 closure table.

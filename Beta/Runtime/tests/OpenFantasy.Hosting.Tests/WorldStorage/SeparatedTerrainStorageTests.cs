@@ -6,13 +6,14 @@ using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Worlds;
+using OpenFantasy.Core.Spatial;
 using OpenFantasy.Hosting.Content;
 using OpenFantasy.Hosting.Simulation;
 using OpenFantasy.Hosting.Worlds;
 
 namespace OpenFantasy.Hosting.Tests.WorldStorage;
 
-public sealed class SeparatedTerrainStorageTests(ITestOutputHelper output)
+public sealed partial class SeparatedTerrainStorageTests(ITestOutputHelper output)
 {
     [Fact]
     public void Actual_gift_work_return_intervention_and_installation_share_history_without_resident_terrain()
@@ -154,12 +155,12 @@ public sealed class SeparatedTerrainStorageTests(ITestOutputHelper output)
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    private static Ready Start(string path)
+    private static Ready Start(string path, bool separated = true)
     {
         var fixture = new ConstructionUpgradeFixture();
         var genesis = ConstructionFarmAdmission.CreateGenesis(fixture.QuestGenesis());
         var funded = fixture.CreateSource(path, completeQuest: true, genesis: genesis,
-            create: SqliteWorldAuthority.CreateWithSeparatedTerrain);
+            create: separated ? SqliteWorldAuthority.CreateWithSeparatedTerrain : SqliteWorldAuthority.CreateNew);
         var authority = SqliteWorldAuthority.OpenExisting(path);
         try
         {
@@ -187,7 +188,9 @@ public sealed class SeparatedTerrainStorageTests(ITestOutputHelper output)
                 if (batch.Actions.Any(value => value.Intent is WorkConstructionIntent)) break;
                 world = authority.Commit(batch).Candidate;
             }
-            var locality = authority.EvictConstructionTerrain(world.Construction!.Projects.Single().ProjectId, 512);
+            var locality = separated
+                ? authority.EvictConstructionTerrain(world.Construction!.Projects.Single().ProjectId, 512)
+                : ConstructionLocalityState.Capture(world, world.Construction!.Projects.Single().ProjectId, 512);
             WeakReference[] references = [new(genesis), new(funded), new(world), new(world.Space), new(world.IdentityIndex),
                 .. world.Space.Regions.Select(value => new WeakReference(value))];
             return new(authority, fixture, locality, references, genesis.ContentHash);
@@ -209,18 +212,22 @@ public sealed class SeparatedTerrainStorageTests(ITestOutputHelper output)
         return (locality, [new(world), new(world.Space), new(world.IdentityIndex), .. world.Space.Regions.Select(value => new WeakReference(value))]);
     }
 
-    private static WorldStepBatch Batch(ConstructionLocalityState state, ConstructionUpgradeFixture fixture)
+    private static WorldStepBatch Batch(ConstructionLocalityState state, ConstructionUpgradeFixture fixture) =>
+        Batch(state.Inventory, state.Actors, state.Construction, state.Revision, state.AdvancingSteps, fixture);
+
+    private static WorldStepBatch Batch(CountedAuthorityState inventory, IEnumerable<ActorPresence> actors,
+        ConstructionSnapshot construction, ulong revision, ulong steps, ConstructionUpgradeFixture fixture)
     {
-        var project = state.Construction.Projects.Single();
-        var actor = state.Actors.Single(value => value.ActorId == project.BuilderActorId);
-        var control = state.Inventory.Controls.Single(value => value.ActorId == actor.ActorId);
-        var tool = state.Inventory.Custody.Lots.Single(value => value.Definition == project.Definition.RequiredTool.Item);
+        var project = construction.Projects.Single();
+        var actor = actors.Single(value => value.ActorId == project.BuilderActorId);
+        var control = inventory.Controls.Single(value => value.ActorId == actor.ActorId);
+        var tool = inventory.Custody.Lots.Single(value => value.Definition == project.Definition.RequiredTool.Item);
         var command = new WorldActionCommand(fixture.NextIdentity(), control.PrincipalId, control.SessionId,
-            actor.ActorId, state.Inventory.WorldId, state.Inventory.BranchId, actor.Revision,
+            actor.ActorId, inventory.WorldId, inventory.BranchId, actor.Revision,
             new WorkConstructionIntent(project.ProjectId, project.Revision,
-                state.Inventory.Custody.GetStorage(project.ProjectCustodianId).Revision, tool.LotId, tool.Revision));
-        return new(fixture.NextIdentity(), state.Inventory.WorldId, state.Inventory.BranchId, state.Revision,
-            state.AdvancingSteps, WorldBatchKind.AdvancingStep, [], [command], 5);
+                inventory.Custody.GetStorage(project.ProjectCustodianId).Revision, tool.LotId, tool.Revision));
+        return new(fixture.NextIdentity(), inventory.WorldId, inventory.BranchId, revision,
+            steps, WorldBatchKind.AdvancingStep, [], [command], 5);
     }
 
     private static ConstructionLocalityStep Work(SqliteWorldAuthority authority, ConstructionUpgradeFixture fixture, ConstructionLocalityState state)

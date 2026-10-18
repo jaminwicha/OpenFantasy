@@ -1,0 +1,21 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+The following Tests are available:
+    OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Carried_gift_and_intervened_work_share_one_original_history_and_recover_exactly
+    OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Interrupted_work_publishes_exactly_one_whole_transition(target: 1, boundaryValue: 0)
+    OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Interrupted_work_publishes_exactly_one_whole_transition(target: 1, boundaryValue: 1)
+    OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Interrupted_work_publishes_exactly_one_whole_transition(target: 200, boundaryValue: 0)
+    OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Interrupted_work_publishes_exactly_one_whole_transition(target: 200, boundaryValue: 1)
+    OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.History_and_changed_metadata_budget_refuse_without_poisoning_or_earning_work
+    OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Current_expedition_interpretations_refuse_without_losing_facets(withdrawal: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Current_expedition_interpretations_refuse_without_losing_facets(withdrawal: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Same_earned_episode_compares_publication_and_replay_without_changing_outcomes(separatedFirst: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Same_earned_episode_compares_publication_and_replay_without_changing_outcomes(separatedFirst: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Actual_gift_work_return_intervention_and_installation_share_history_without_resident_terrain
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 0)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 1, boundaryValue: 1)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 0)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(target: 200, boundaryValue: 1)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Missing_pinned_terrain_refuses_recovery_instead_of_becoming_empty_space
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Failed_terrain_read_fences_return_or_final_installation_without_publishing(atInstallation: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Failed_terrain_read_fences_return_or_final_installation_without_publishing(atInstallation: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Richer_profiles_cannot_enter_the_legacy_storage_binding

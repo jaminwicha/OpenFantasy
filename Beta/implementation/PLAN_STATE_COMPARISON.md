@@ -1,8 +1,9 @@
 # World partition and interpretation comparison
 
-Working comparison for CURRENT_ROADMAP's PLAN-STATE. This is source-backed preparation, not a
-selected format, completed technical design, implemented partition owner or measured feasibility
-result. The [complete-root baseline](p02/partition-state/RESULT.md) supplies actual byte/allocation
+Working comparison for CURRENT_ROADMAP's PLAN-STATE. The [lead recommendation](PLAN_STATE_DECISION.md)
+selects typed owners with complete admission cohorts for the next integrated candidate, supported by
+a matched actual publication/replay comparison. Production-format selection and independent review
+remain open. The [complete-root baseline](p02/partition-state/RESULT.md) supplies actual byte/allocation
 measurements; the integrated prototype and decision remain required before permanent NPC cognition state.
 The [review disposition](roadmap-review-20261017/LEAD_DISPOSITION.md) owns the rationale and sequencing.
 
@@ -10,8 +11,9 @@ The [integrated prototype contract](PARTITION_PROTOTYPE_CONTRACT.md) now makes t
 executable as a bounded implementation target: stable actor/custodian owners, separate spatial
 membership and real cross-owner cargo transfer, admitted construction dependencies, earned exposure,
 certificate invalidation, one publisher and an explicit episode/measurement matrix. Its ownership
-hypothesis is not a selected production format. Shared execution and the joined durable proof remain
-unimplemented; do not extend the geometry-helper series instead of that work.
+hypothesis is not a selected production format. Shared execution and the joined coarse durable proof are implemented within their explicit legacy
+boundary. Typed directory/owner publication, due scheduling and current-profile migration remain open;
+do not extend the geometry-helper series instead of that work.
 
 ## The problem to solve
 

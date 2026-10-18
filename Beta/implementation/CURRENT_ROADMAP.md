@@ -365,3 +365,14 @@ current40/41 preservation/migration, finer owner granularity, noninitial checkpo
 due-work/fairness measurements, platform/scale evidence and independent architectural review remain
 open. Continue the PLAN-STATE comparison before permanent NPC cognition persistence; do not promote
 this internal profile-five experiment into the main game merely because its focused tests pass.
+
+### PLAN-STATE lead recommendation and matched comparison
+
+[The lead decision](PLAN_STATE_DECISION.md) recommends typed stable owners with complete admission
+cohorts, retaining the existing authority and domain operations. Its matched same-save200-work-step
+comparison proves identical outcomes in both execution orders; reduced publication allocation comes
+with higher complete-replay allocation and a larger observed database. This is preparation for the
+next integrated actor/custodian/project ownership-directory candidate, not production selection.
+The complete P02 closure table is unchanged. Permanent NPC persistence still requires the PLAN-STATE
+review/decision exit; current-profile nested migration, scheduling/fairness, noninitial checkpoint,
+cold/platform/scale and independent-review obligations remain explicitly open.

@@ -40,7 +40,7 @@ responsibilities, not existing classes or finalized serialized tags.
 
 | Owner | Facts it owns | Facts it references, without copying ownership |
 | --- | --- | --- |
-| Actor aggregate, keyed by stable actor identity in branch/realm scope | Body/form and presence, actor-local state, resident behavior/language, personal exposure basis, current commitments | Primary inventory custodian, control assignments, project/encounter participation and definitions |
+| Actor aggregate, keyed by stable actor identity in its world/branch; realm is physical membership | Body/form and presence, actor-local state, resident behavior/language, personal exposure basis, current commitments | Primary inventory custodian, control assignments, project/encounter participation and definitions |
 | Material aggregate, keyed by custodian identity | Exact source/transformed holdings, storage capacity/revision and relevant access policy | Actor/institution owner, immutable source/recipe pins, historical producer witnesses and reservations |
 | Project/site aggregate | Project progress, funding/reservation links, definition pin, work/site coordinates, required-access contract, installed backing and physical members | Builder, supplied stock, affected terrain, neighboring assemblies and completed quest funding evidence |
 | Terrain/place aggregate | Admitted terrain cells/edits, local physical and geographical owners according to their actual coupling | Macro geography, boundary flux obligations and semantic locations; no duplicate actor inventory |
@@ -224,3 +224,14 @@ materialization and identity/occupancy metadata, and define actual due-work disc
 Qualify noninitial checkpoint boundaries and richer-profile admission before production rollout.
 Preserve the integrated episode's original history and refusal/fault evidence; no raised limits,
 synthetic progress, skipped due processes or second writer may stand in for the remaining proof.
+
+## Lead recommendation and next integrated candidate
+
+The [matched comparison and lead decision](PLAN_STATE_DECISION.md) recommend stable typed owners
+with complete operation-specific admission cohorts. The coarse terrain-separated image reduces
+selected publication allocation in the measured fixture but increases replay allocation and observed
+database size; neither result establishes scale. The next unit is the coupled actor/custodian/project
+ownership-directory candidate in the same saved episode, including cross-owner fault/retry and true
+due obligations. Keep shared ordinary rules and exact original history. Independent review, nested
+current-profile field coverage, noninitial checkpoint qualification and fairness/cold/scale evidence
+remain open; the recommendation does not close PLAN-STATE or allocate a production format.

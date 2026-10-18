@@ -529,3 +529,16 @@ is preserved separately and claims no implemented rule or reserved profile versi
   owner comparison, scheduling and independent review remain open. No PLAN-STATE/P02 closure.
 - [Result and documentation review](p02/partition-state/separated-terrain-storage/RESULT.md) distinguishes
   exact byte/residency evidence from throughput, platform, production or credit-saving claims.
+
+## Matched partition comparison and lead recommendation — 2026-10-18
+
+- Before-change WIP checkpoint `codex/checkpoint-before-partition-decision-20261018` resolves to
+  `0bb1cc76e404b1dc0d4f7707d9444ffa288d5fa2`, from source5b21fbcb; concurrent scope is retained
+  in the packet CHECKPOINT.json. No predecessor or concurrent-doc changes enter the owned commit.
+- Verified increment pointer: `codex/milestone-partition-decision-20261018`, created at the owned
+  commit without switching checkout. Includes two matched actual storage/publication comparisons,
+  a lead typed-owner/admission-cohort recommendation and synchronized timeless/living documentation.
+-19 focused cases pass in14.442 seconds; no test or production source gate was weakened. Prior400
+  passes retain their original pins; rebuilt metadata is disclosed. No independent, human, scale,
+  complete-Core or PLAN-STATE/P02 acceptance follows. Migration, scheduling, checkpoint and review
+  gaps remain explicit in [the result](p02/partition-state/partition-decision/RESULT.md).

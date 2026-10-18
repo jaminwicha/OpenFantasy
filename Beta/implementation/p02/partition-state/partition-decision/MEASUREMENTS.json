@@ -1,0 +1,64 @@
+{
+  "source": "checks/comparison.trx",
+  "observations": [
+    {
+      "SeparatedFirst": false,
+      "First": {
+        "SeparatedTerrain": false,
+        "SelectedWorkCommits": 200,
+        "PublicationAllocatedBytes": 276784272,
+        "PublicationMilliseconds": 488.827578,
+        "ReplayAllocatedBytes": 267430136,
+        "ReplayMilliseconds": 407.153209,
+        "FullWorldBytes": 25100,
+        "LocalityImageBytes": 24511,
+        "SqliteFileBytesIncludingWal": 618496
+      },
+      "Second": {
+        "SeparatedTerrain": true,
+        "SelectedWorkCommits": 200,
+        "PublicationAllocatedBytes": 69779272,
+        "PublicationMilliseconds": 114.57908,
+        "ReplayAllocatedBytes": 331261656,
+        "ReplayMilliseconds": 405.355959,
+        "FullWorldBytes": 25100,
+        "LocalityImageBytes": 24511,
+        "SqliteFileBytesIncludingWal": 626688
+      },
+      "Scope": "Same selected 200 work commits with an ordinary intervening move after40; excludes setup, selection, assertions, intervention and final encoding from publication timing. Reopen uses full original history. Two execution orders are diagnostics, not statistical or cold-cache qualification."
+    },
+    {
+      "SeparatedFirst": true,
+      "First": {
+        "SeparatedTerrain": true,
+        "SelectedWorkCommits": 200,
+        "PublicationAllocatedBytes": 69781560,
+        "PublicationMilliseconds": 118.687955,
+        "ReplayAllocatedBytes": 331210176,
+        "ReplayMilliseconds": 393.303083,
+        "FullWorldBytes": 25100,
+        "LocalityImageBytes": 24511,
+        "SqliteFileBytesIncludingWal": 626688
+      },
+      "Second": {
+        "SeparatedTerrain": false,
+        "SelectedWorkCommits": 200,
+        "PublicationAllocatedBytes": 276628288,
+        "PublicationMilliseconds": 553.413081,
+        "ReplayAllocatedBytes": 267435488,
+        "ReplayMilliseconds": 479.415833,
+        "FullWorldBytes": 25100,
+        "LocalityImageBytes": 24511,
+        "SqliteFileBytesIncludingWal": 618496
+      },
+      "Scope": "Same selected 200 work commits with an ordinary intervening move after40; excludes setup, selection, assertions, intervention and final encoding from publication timing. Reopen uses full original history. Two execution orders are diagnostics, not statistical or cold-cache qualification."
+    }
+  ],
+  "limits": [
+    "warm managed process, not OS cold cache",
+    "two deterministic execution orders, not statistical performance qualification",
+    "publication excludes setup/selection/assertions/intervention/final encoding",
+    "allocated bytes are not resident memory",
+    "SQLite sizes include observed main/WAL/SHM files, not a semantic storage-byte estimate"
+  ]
+}

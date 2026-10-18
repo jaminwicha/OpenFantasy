@@ -501,6 +501,10 @@ for the supported actions, byte ownership and residency boundaries.
 
 ### Design contract: partitioned persistence and version ownership
 
+The [typed ownership and admission-cohort contract](partition-ownership.md) defines stable owner keys,
+complete operation dependencies, timing obligations and atomic revision/history boundaries. Those
+design responsibilities are distinct from the coarse terrain-separated runtime binding above.
+
 The [bounded terrain read boundary](world-and-geography.md#bounded-terrain-read-dependencies) supplies
 exact region references and admitted immutable read sets to existing geometry queries. Reference
 validation and archive loading do not authenticate a mutable ownership directory or publish a world

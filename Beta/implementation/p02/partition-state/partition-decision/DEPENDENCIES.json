@@ -1,0 +1,18 @@
+{
+  "source_revision": "5b21fbcb69f00e5897d0b84066b2d1803b8943fd",
+  "changed_pins": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SeparatedTerrainStorageTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll"
+  ],
+  "new_pins": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SeparatedTerrainStorageComparisonTests.cs"
+  ],
+  "inherited_claim": "Production C# and project/content inputs are unchanged. Previous400-case result remains historical evidence on its own pins; this packet claims19 current-binary cases, not a fresh400-case aggregate. The changed test class and partial comparison are covered in full.",
+  "generated_revision_metadata": {
+    "OpenFantasy.Core": "[assembly: System.Reflection.AssemblyInformationalVersionAttribute(\"1.0.0+5b21fbcb69f00e5897d0b84066b2d1803b8943fd\")]",
+    "OpenFantasy.Hosting": "[assembly: System.Reflection.AssemblyInformationalVersionAttribute(\"1.0.0+5b21fbcb69f00e5897d0b84066b2d1803b8943fd\")]"
+  },
+  "older_core_copy_contains_previous_build_revision": true
+}
