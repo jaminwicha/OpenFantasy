@@ -1,0 +1,8 @@
+{
+  "implementation_commit": "c56895df5573c618407269307f29c6279f3cd77b",
+  "milestone": "codex/milestone-construction-publication-20261018",
+  "post_commit_check": "Initial exact git-diff text comparison failed because committing our additions changed the index blob headers of mixed documents. All preserved diff payloads and hunk locations match after excluding only index hash headers. No content recovery or test rerun was needed.",
+  "classification": "verification bookkeeping, not fixture, runner or production test failure",
+  "concurrent_payloads_exact": true,
+  "predecessor_staging_exact": true
+}
