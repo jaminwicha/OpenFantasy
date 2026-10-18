@@ -138,6 +138,23 @@ NPC-01's causal behavior design can be prepared against the ownership contract, 
 as a completed deep-NPC implementation or used to skip that review. The P02 closure table and P00–P14
 scope remain unchanged.
 
+## Implemented bounded candidate and next proof
+
+The [typed-owner storage packet](p02/partition-state/typed-owner-storage/RESULT.md) supplies stable
+scoped owner images and atomic directory publication for the legacy integrated episode. Its explicit
+internal fresh schema14 preserves existing format meanings, full admission and original-history
+replay; it does not change the default game or migrate40/41. The published payload roles include
+both forms of custodian holdings, immutable provenance/definitions, actor/resident/control, projects
+and every supported shared facet. Original history and cross-owner/first/final fault cases are retained.
+
+This fulfills the bounded publication part of the next candidate, not the complete recommendation.
+The authority still keeps the nonterrain locality resident and visits every current owner. Next bind
+actual stored owner reads/reconstruction to complete directory/history dependencies in the same
+saved episode; do not mistake re-encoding an admitted world for independent payload admission.
+General due discovery/fairness, nested current-profile coverage/migration, noninitial checkpoints,
+cold/platform/scale evidence and independent architecture review remain open. The finite owner archive
+limits are experimental storage stops, not accepted shipping limits or reduced campaign requirements.
+
 ## Documentation review
 
 - **Plan/spec:** Replaces the unselected alternatives list with a lead recommendation and one concrete

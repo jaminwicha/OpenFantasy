@@ -24,7 +24,7 @@ internal sealed partial class WorldDatabase : IDisposable
         if (schemaVersion is not WorldDatabaseSchema.Version and not WorldDatabaseSchemaThree.Version
             and not WorldDatabaseSchemaFour.Version and not WorldDatabaseSchemaFive.Version
             and not WorldDatabaseSchemaSix.Version and not WorldDatabaseSchemaSeven.Version
-            and not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version and not WorldDatabaseSchemaEleven.Version and not WorldDatabaseSchemaTwelve.Version and not WorldDatabaseSchemaThirteen.Version)
+            and not WorldDatabaseSchemaEight.Version and not WorldDatabaseSchemaNine.Version and not WorldDatabaseSchemaTen.Version and not WorldDatabaseSchemaEleven.Version and not WorldDatabaseSchemaTwelve.Version and not WorldDatabaseSchemaThirteen.Version and not WorldDatabaseSchemaFourteen.Version)
         {
             throw new ArgumentOutOfRangeException(nameof(schemaVersion));
         }
@@ -77,6 +77,7 @@ internal sealed partial class WorldDatabase : IDisposable
             var world = OpenFantasy.Core.Worlds.WorldSnapshotCodec.Decode(genesis);
             head = EncodeHead(world);
             InitializeTerrain(world, transaction);
+            if (SeparatesOwners) WriteOwners(OpenFantasy.Core.Construction.Ownership.ConstructionOwnerDirectory.Capture(world), transaction);
         }
         ChangeExactlyOne("INSERT INTO world_head VALUES(1,$sequence,$steps,$state,$hash)", transaction,
             ("$sequence", WorldStorageBinary.Number(0)), ("$steps", WorldStorageBinary.Number(0)),
@@ -103,6 +104,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaEleven.Version => WorldDatabaseSchemaEleven.Tables,
         WorldDatabaseSchemaTwelve.Version => WorldDatabaseSchemaTwelve.Tables,
         WorldDatabaseSchemaThirteen.Version => WorldDatabaseSchemaThirteen.Tables,
+        WorldDatabaseSchemaFourteen.Version => WorldDatabaseSchemaFourteen.Tables,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 
@@ -120,6 +122,7 @@ internal sealed partial class WorldDatabase : IDisposable
         WorldDatabaseSchemaEleven.Version => WorldDatabaseSchemaEleven.Indexes,
         WorldDatabaseSchemaTwelve.Version => WorldDatabaseSchemaTwelve.Indexes,
         WorldDatabaseSchemaThirteen.Version => WorldDatabaseSchemaThirteen.Indexes,
+        WorldDatabaseSchemaFourteen.Version => WorldDatabaseSchemaFourteen.Indexes,
         _ => throw new InvalidDataException("The world database schema is unsupported.")
     };
 

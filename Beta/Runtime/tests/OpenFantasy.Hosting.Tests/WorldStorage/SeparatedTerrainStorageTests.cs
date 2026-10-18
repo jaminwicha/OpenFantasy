@@ -62,14 +62,18 @@ public sealed partial class SeparatedTerrainStorageTests(ITestOutputHelper outpu
     }
 
     [Theory]
-    [InlineData(1, (int)AuthorityCommitBoundary.BeforeCommit)]
-    [InlineData(1, (int)AuthorityCommitBoundary.AfterCommit)]
-    [InlineData(200, (int)AuthorityCommitBoundary.BeforeCommit)]
-    [InlineData(200, (int)AuthorityCommitBoundary.AfterCommit)]
-    public void Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(int target, int boundaryValue)
+    [InlineData(1, (int)AuthorityCommitBoundary.BeforeCommit, false)]
+    [InlineData(1, (int)AuthorityCommitBoundary.AfterCommit, false)]
+    [InlineData(200, (int)AuthorityCommitBoundary.BeforeCommit, false)]
+    [InlineData(200, (int)AuthorityCommitBoundary.AfterCommit, false)]
+    [InlineData(1, (int)AuthorityCommitBoundary.BeforeCommit, true)]
+    [InlineData(1, (int)AuthorityCommitBoundary.AfterCommit, true)]
+    [InlineData(200, (int)AuthorityCommitBoundary.BeforeCommit, true)]
+    [InlineData(200, (int)AuthorityCommitBoundary.AfterCommit, true)]
+    public void Faulted_unloaded_publication_recovers_one_complete_old_or_new_boundary(int target, int boundaryValue, bool typed)
     {
         using var files = new StorageFiles();
-        var ready = Start(files.Path);
+        var ready = Start(files.Path, typed: typed);
         WorldStepBatch selected;
         byte[] beforeImage, expectedImage, expectedReceipt;
         using (var authority = ready.Authority)
@@ -155,12 +159,14 @@ public sealed partial class SeparatedTerrainStorageTests(ITestOutputHelper outpu
     }
 
     [MethodImpl(MethodImplOptions.NoInlining)]
-    private static Ready Start(string path, bool separated = true)
+    private static Ready Start(string path, bool separated = true, bool typed = false,
+        Action<WorldSnapshot, WorldSnapshot, string>? observe = null)
     {
         var fixture = new ConstructionUpgradeFixture();
         var genesis = ConstructionFarmAdmission.CreateGenesis(fixture.QuestGenesis());
         var funded = fixture.CreateSource(path, completeQuest: true, genesis: genesis,
-            create: separated ? SqliteWorldAuthority.CreateWithSeparatedTerrain : SqliteWorldAuthority.CreateNew);
+            create: typed ? SqliteWorldAuthority.CreateWithTypedOwners
+                : separated ? SqliteWorldAuthority.CreateWithSeparatedTerrain : SqliteWorldAuthority.CreateNew);
         var authority = SqliteWorldAuthority.OpenExisting(path);
         try
         {
@@ -168,18 +174,22 @@ public sealed partial class SeparatedTerrainStorageTests(ITestOutputHelper outpu
             var world = fixture.Act(authority, funded, player, new CloseDialogueIntent(funded.Dialogues.Single().DialogueId));
             var initialFeet = world.Space.GetActor(player).Feet;
             var inventory = AuthorityEncodingV1.Encode(world.Inventory);
+            var beforeMovement = world;
             for (int i = 0; i < 8; i++) world = authority.Commit(fixture.Batch(world, [], [new(ConstructionUpgradeFixture.Delivery(world, player), player, -32, 0)])).Candidate;
             Assert.NotEqual(initialFeet.Cell, world.Space.GetActor(player).Feet.Cell);
             Assert.Equal(inventory, AuthorityEncodingV1.Encode(world.Inventory));
+            observe?.Invoke(beforeMovement, world, "movement");
             for (int i = 0; i < 8; i++) world = authority.Commit(fixture.Batch(world, [], [new(ConstructionUpgradeFixture.Delivery(world, player), player, 32, 0)])).Candidate;
             Assert.Equal(initialFeet, world.Space.GetActor(player).Feet);
             var builder = world.Construction!.Projects.Single().BuilderActorId;
             var bag = world.GetResident(player).InventoryCustodianId;
             var wood = world.Inventory.Custody.Lots.Single(value => value.CustodianId == bag && value.Definition == world.Quests!.Definitions.Single().Item);
             Assert.Equal(2UL, wood.Quantity);
+            var beforeGift = world;
             world = fixture.Act(authority, world, player, new GiveItemIntent(builder, world.Space.GetActor(builder).Revision,
                 wood.LotId, wood.Revision, bag, world.Inventory.Custody.GetStorage(bag).Revision, 1));
             Assert.Equal(1UL, world.Inventory.Custody.GetLot(wood.LotId).Quantity);
+            observe?.Invoke(beforeGift, world, "gift");
             var controller = new LocalNpcController();
             for (int i = 0; ; i++)
             {

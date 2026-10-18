@@ -235,3 +235,23 @@ ownership-directory candidate in the same saved episode, including cross-owner f
 due obligations. Keep shared ordinary rules and exact original history. Independent review, nested
 current-profile field coverage, noninitial checkpoint qualification and fairness/cold/scale evidence
 remain open; the recommendation does not close PLAN-STATE or allocate a production format.
+
+## Concrete bounded owner publication
+
+The [typed-owner storage candidate](p02/partition-state/typed-owner-storage/RESULT.md) supplies the
+legacy scoped actor/control/custodian/project and shared-facet directory through internal schema14.
+Its current head holds directory references; immutable owner images retain one current canonical
+owner per encoded fact, plus historical versions required by original-history verification. Default
+schemas and schema13 retain their meanings. Full16MiB world admission is not replaced by a smaller
+head, and new finite archive limits apply only to this explicitly selected development experiment.
+
+The integrated trace checks stable carried custody, real two-custodian gift publication, absent-terrain
+funded work, ordinary intervention, completion and history. Before/after faults cover gifts and first/
+final work; missing, changed and extra historical images refuse recovery. Complete resident metadata
+and all original supported due processes remain present. No later-profile facets can be dropped.
+
+Remaining work is actual stored-owner reconstruction/loading with authenticated complete dependencies,
+not another detached geometry helper. The private runtime continuation is still a complete nonterrain
+locality; directory capture is not an independently admitted decoder. Due fairness, richer-profile
+nested mapping/migration, checkpoint boundaries, cold/scale/platform measurements and independent
+review remain required before the corresponding production/PLAN-STATE exits.

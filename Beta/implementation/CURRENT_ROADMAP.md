@@ -376,3 +376,17 @@ next integrated actor/custodian/project ownership-directory candidate, not produ
 The complete P02 closure table is unchanged. Permanent NPC persistence still requires the PLAN-STATE
 review/decision exit; current-profile nested migration, scheduling/fairness, noninitial checkpoint,
 cold/platform/scale and independent-review obligations remain explicitly open.
+
+### PLAN-STATE bounded typed-owner publication
+
+The [typed-owner storage candidate](p02/partition-state/typed-owner-storage/RESULT.md) implements
+stable scoped owner keys and atomic immutable-payload/directory publication in the existing authority.
+The same legacy saved episode covers actual movement/custody/gift/work/intervention/completion and
+original-history recovery; cross-owner gift and first/final work faults are explicit. This is fresh
+internal schema14 for gameplay profile5, with unchanged default/current game formats and full-world
+admission. It is not the production directory, general independent owner loading or NPC persistence.
+
+Next consume actual stored owner payloads through exact directory/history bindings and complete
+admission cohorts in that same episode. Measure full metadata and actual payload I/O; keep general
+due-work fairness, current40/41 nested migration, noninitial checkpoints, cold/platform/scale and
+independent review open. The P02 closure table and full P00–P14/181-requirement scope remain unchanged.

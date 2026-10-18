@@ -499,6 +499,22 @@ difference and checked again against full encoding on final installation. Terrai
 failures fence the authority for recovery. See [construction locality](construction-locality.md#explicit-terrain-separated-storage-binding)
 for the supported actions, byte ownership and residency boundaries.
 
+### Explicit typed-owner construction storage
+
+Schema14 extends the fresh legacy construction storage binding with `world_owners`, immutable
+canonical payloads addressed by hash. Head/checkpoints hold a complete `ConstructionOwnerDirectory`.
+World/branch/role/subject owner identity is separate from actor position and terrain membership.
+`WorldStateImage` selects the exact storage interpretation; ordinary schemas and schema13 retain
+their previous byte/hash contracts. Schema14 does not mean gameplay profile14.
+
+All owner inserts, accepted input, identities, command outcomes and directory head/checkpoints share
+`PublishWrites` and the existing SQLite transaction. Unchanged hashes reuse exact immutable bytes;
+all current owners are still visited. Full original-history replay verifies each historical payload
+and rejects missing, altered or extra archives before readiness. Owner images have no independent
+admission/loading decoder, and replay still reconstructs the complete original world. See
+[the typed-owner binding](partition-ownership.md#runtime-binding-legacy-typed-owner-storage) for the
+single-owner fact map, concrete byte/archive limits, exposure behavior and extension obligations.
+
 ### Design contract: partitioned persistence and version ownership
 
 The [typed ownership and admission-cohort contract](partition-ownership.md) defines stable owner keys,

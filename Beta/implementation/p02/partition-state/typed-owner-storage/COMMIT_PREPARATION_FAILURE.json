@@ -1,0 +1,19 @@
+{
+  "classification": "runner",
+  "stage": "private-index concurrent-document protection",
+  "original_attempt": "No commit or milestone; original output unavailable after compaction. No process remained.",
+  "diagnostic": {
+    "exit_code": 1,
+    "stderr": [
+      "error: patch failed: Beta/implementation/CURRENT_ROADMAP.md:129",
+      "error: Beta/implementation/CURRENT_ROADMAP.md: patch does not apply"
+    ],
+    "head_matches": true,
+    "protected_hashes_match": true,
+    "source_binary_pins_match": true,
+    "predecessor_staging_matches": true,
+    "handoff_concurrent_patch_matches": true
+  },
+  "correction": "Removed only owned insertion of word production beside concurrent roadmap hunk; retained full typed-owner status section.",
+  "rerun": "Deliberate protected commit preparation after identifying context conflict; no test rerun or relaxed protection."
+}

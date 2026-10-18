@@ -12,7 +12,8 @@ executable as a bounded implementation target: stable actor/custodian owners, se
 membership and real cross-owner cargo transfer, admitted construction dependencies, earned exposure,
 certificate invalidation, one publisher and an explicit episode/measurement matrix. Its ownership
 hypothesis is not a selected production format. Shared execution and the joined coarse durable proof are implemented within their explicit legacy
-boundary. Typed directory/owner publication, due scheduling and current-profile migration remain open;
+boundary. Bounded typed directory/owner publication is supplied by the linked implementation below; general
+owner loading, due scheduling and current-profile migration remain open;
 do not extend the geometry-helper series instead of that work.
 
 ## The problem to solve
@@ -320,3 +321,19 @@ freezing a persistent cognition model. Every later-profile owner and historical 
 required; profile40/41 migration, directory granularity, scheduled-work fairness, cold loads and the
 unchanged independent review are still open. Production checkpoint-interval qualification is separate
 from the initial-checkpoint and short-history prototype evidence.
+
+## Bounded typed-owner candidate
+
+[Typed owner storage](p02/partition-state/typed-owner-storage/RESULT.md) persists a complete scoped
+directory and immutable typed images through the same writer, without storing a second mutable flat
+world image. Original full genesis and ordinary complete replay remain. Custodian payloads contain
+both counted and transformed holdings; shared provenance/definitions are separate immutable owners.
+Actual gifts and final installation publish their coupled changed owners together. Stable owner keys
+survive movement, and unchanged holdings retain exact payload hashes during partial work.
+
+The authority still retains the whole nonterrain locality, visits/encodes every current owner and
+replays full original history. Reused owner rows are read and verified; this is not selective I/O or
+independent owner residency. Actor exposure still changes actor payloads on each advancing step.
+The archive retains historical versions under explicit experimental count/byte limits, so directory
+separation is not a net space-saving claim. General stored-owner reconstruction/loading, fairness,
+current-profile migration, noninitial checkpoints and independent review remain open.

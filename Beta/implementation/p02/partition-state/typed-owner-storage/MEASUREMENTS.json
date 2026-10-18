@@ -1,0 +1,19 @@
+{
+  "source": "hosting-check/hosting.trx",
+  "observation": "After40 earned work commits: 6 changed current owners, 6138 changed-current-payload bytes; cumulative archive bytes are measured separately. Unchanged custodian images retain exact hashes.\nTyped directory: 22 current owners, 2756 directory bytes, 26379 current payload bytes; full world 25100 bytes. Actor exposure still changes actor images on advancing work. No independent-detail loading or scale claim.\nComplete retained typed archive: 1567 unique payloads, 1619368 payload bytes; directory/head/journal/SQLite overhead excluded. All historical payloads must be verified during reopen.",
+  "current_directory_owners": 22,
+  "directory_bytes": 2756,
+  "current_payload_bytes": 26379,
+  "full_world_bytes": 25100,
+  "changed_current_owners_after_40": 6,
+  "changed_current_payload_bytes_after_40": 6138,
+  "retained_archive_unique_payloads": 1567,
+  "retained_archive_payload_bytes": 1619368,
+  "limits": [
+    "changed-current sizes are not cumulative writes",
+    "archive bytes exclude directory/head/journal/SQLite overhead",
+    "complete metadata/nonterrain locality remains resident",
+    "every current owner encoded/visited; existing rows verified; usage accounting scans retained archive",
+    "no RSS, selective I/O, cold-cache, population-scale or credit claim"
+  ]
+}

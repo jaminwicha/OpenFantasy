@@ -1,3 +1,4 @@
+using OpenFantasy.Core.Construction.Ownership;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Construction;
@@ -11,20 +12,39 @@ public sealed partial class SqliteWorldAuthority
     private int _completeEncodingOverhead;
 
     /// <summary>Explicit internal storage experiment; never a default creation or implicit migration.</summary>
-    internal static SqliteWorldAuthority CreateWithSeparatedTerrain(string path, WorldSnapshot genesis)
+    internal static SqliteWorldAuthority CreateWithSeparatedTerrain(string path, WorldSnapshot genesis) =>
+        CreateSeparated(path, genesis, WorldDatabaseSchemaThirteen.Version);
+
+    internal static SqliteWorldAuthority CreateWithTypedOwners(string path, WorldSnapshot genesis) =>
+        CreateSeparated(path, genesis, WorldDatabaseSchemaFourteen.Version);
+
+    private static SqliteWorldAuthority CreateSeparated(string path, WorldSnapshot genesis, int schemaVersion)
     {
         ArgumentNullException.ThrowIfNull(genesis);
         if (genesis.ProfileVersion != 5) throw new ArgumentException("Separated terrain requires profile five.", nameof(genesis));
         WorldGenesisAdmission.Validate(genesis);
         byte[] original = WorldSnapshotCodec.Encode(genesis);
         var accepted = WorldSnapshotCodec.Decode(original);
-        var database = WorldDatabase.Open(path, true, WorldDatabaseSchemaThirteen.Version);
+        var database = WorldDatabase.Open(path, true, schemaVersion);
         try
         {
             database.Initialize(original);
             return new(database, new(accepted, accepted, ContentHash.Compute(database.EncodeHead(accepted)), new(0, 0, 0, 0, 0)));
         }
         catch { database.Dispose(); throw; }
+    }
+
+    internal ConstructionOwnerDirectory ReadOwnersForHost()
+    {
+        lock (_gate)
+        {
+            EnsureAvailable();
+            if (!_database.SeparatesOwners) throw new InvalidOperationException("This save has no typed owner directory.");
+            var directory = _residentState is { } world ? ConstructionOwnerDirectory.Capture(world)
+                : ConstructionOwnerDirectory.Capture(_constructionLocality ?? throw new InvalidOperationException("No admitted owners are resident."));
+            if (directory.Hash != _stateHash) throw new InvalidDataException("Resident owners do not match the committed head.");
+            return directory;
+        }
     }
 
     internal int TerrainArchiveReads => _database.TerrainArchiveReads;
@@ -40,7 +60,7 @@ public sealed partial class SqliteWorldAuthority
             var current = _state;
             var locality = ConstructionLocalityState.Capture(current, projectId, maximumMetadataPages);
             byte[] image = ConstructionLocalityEncoding.Encode(locality);
-            if (ContentHash.Compute(image) != _stateHash) throw new InvalidDataException("Locality does not match the committed image.");
+            if (ContentHash.Compute(WorldStateImage.Capture(locality, _database.StateEncoding).Bytes) != _stateHash) throw new InvalidDataException("Locality does not match the committed image.");
             _completeEncodingOverhead = checked(WorldSnapshotCodec.Encode(current).Length - image.Length);
             _constructionLocality = locality;
             _constructionLocalityHash = _stateHash;
@@ -110,7 +130,8 @@ public sealed partial class SqliteWorldAuthority
                 }
                 catch { _requiresRecovery = true; throw; }
             }
-            var writes = WorldCommitPreparation.PrepareLocality(_stateHash, batch, step, after);
+            var image = _database.SeparatesOwners ? WorldStateImage.Capture(step.Candidate, _database.StateEncoding) : new WorldStateImage(after);
+            var writes = WorldCommitPreparation.PrepareLocality(_stateHash, batch, step, image);
             var stored = writes.Stored;
             var advance = WorldJournalPolicy.Advance(_usage, stored.Sequence, step.Candidate.AdvancingSteps, 1,
                 (ulong)stored.AcceptedBatch.Length, (ulong)stored.Outcomes.Length, profileVersion: 5);

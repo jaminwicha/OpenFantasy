@@ -542,3 +542,18 @@ is preserved separately and claims no implemented rule or reserved profile versi
   passes retain their original pins; rebuilt metadata is disclosed. No independent, human, scale,
   complete-Core or PLAN-STATE/P02 acceptance follows. Migration, scheduling, checkpoint and review
   gaps remain explicit in [the result](p02/partition-state/partition-decision/RESULT.md).
+
+## Typed owner directory publication — 2026-10-18
+
+- Before-change WIP checkpoint `codex/checkpoint-before-typed-owner-storage-20261018` resolves to
+  `5ab02064c9e74ec61c7b0215e8c48aa48552d01a`, from3311564c. Concurrent/predecessor protections
+  are retained in the packet CHECKPOINT.json.
+- Verified increment pointer: `codex/milestone-typed-owner-storage-20261018`, created at the owned
+  commit without switching checkout. Includes explicit internal legacy schema14, immutable scoped
+  owner directory/payloads, shared atomic publisher and complete-history verification, with updated
+  timeless/living documentation and compact handoff. Default/current game formats stay unchanged.
+- 520 distinct affected cases pass (406 Core,114 Hosting),11 new; no failed test/build run or extended
+  deadline. The earlier30-case pass overlaps and is not added again. Full-Core, independent/human,
+  checkpoint/scale/fairness/migration and PLAN-STATE/P02 acceptance remain open.
+- [Result](p02/partition-state/typed-owner-storage/RESULT.md), measured payload/archive facts and
+  retained handoff source distinguish bounded publication from independent stored-owner loading.

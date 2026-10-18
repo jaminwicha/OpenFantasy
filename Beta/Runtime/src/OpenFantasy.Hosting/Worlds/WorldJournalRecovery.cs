@@ -1,3 +1,4 @@
+using OpenFantasy.Core.Construction.Ownership;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Worlds;
@@ -137,7 +138,10 @@ internal sealed class WorldJournalRecovery
         WorldPaidQuoteReplaySelection? quoteSelection = selectedQuoteId is { } quoteId
             ? new WorldPaidQuoteReplaySelection(quoteId) : null;
         SelectedMaterialObservation? selectedMaterial = null;
-        byte[] stateBytes = database.EncodeHead(genesis);
+        var initialImage = WorldStateImage.Capture(genesis, database.StateEncoding);
+        byte[] stateBytes = initialImage.Bytes;
+        var ownerArchives = new WorldOwnerArchiveReplay(database);
+        ownerArchives.Observe(initialImage.Owners);
         ContentHash stateHash = ContentHash.Compute(stateBytes);
         var usage = new WorldJournalUsage(0, 0, 0, 0, 0);
         Dictionary<EntityId, StoredWorldIdentity> identities = [];
@@ -175,6 +179,7 @@ internal sealed class WorldJournalRecovery
                 state.ProfileVersion, (ulong)(expected.ResourceArchive?.Encode().Length ?? 0),
                 (ulong)(expected.MaterialCareArchive?.Encode().Length ?? 0));
             VerifyCommit(stored, expected.Stored);
+            ownerArchives.Observe(expected.Owners);
             controllerRecovery?.ValidateEvent(stored);
             if (stored.Sequence == selectedMaterialSequence)
             {
@@ -275,6 +280,7 @@ internal sealed class WorldJournalRecovery
         }
         if (database.SeparatesTerrain && (state.ProfileVersion != 5 || transitionCount != 0))
             throw new InvalidDataException("Separated terrain storage cannot change its admitted gameplay interpretation.");
+        ownerArchives.Complete();
         StoredWorldHead head = database.ReadHead();
         if (head.Sequence != state.Revision || head.AdvancingSteps != state.AdvancingSteps
             || !head.State.AsSpan().SequenceEqual(stateBytes))
@@ -317,10 +323,10 @@ internal sealed class WorldJournalRecovery
         }
         WorldStepBatch batch = WorldStepCodec.Decode(stored.AcceptedBatch);
         PreparedWorldCommit step = steps.Prepare(state, genesisIdentities,
-            stateHash, batch, historicallyOccupied, captureMaterialEvidence, schemaVersion == WorldDatabaseSchemaThirteen.Version);
+            stateHash, batch, historicallyOccupied, captureMaterialEvidence, WorldStateImage.EncodingFor(schemaVersion));
         return new(step.Decision.Candidate, step.CandidateBytes, step.Stored, step.Commands, step.Identities,
             step.Decision.SealedResourceSegment, captureMaterialEvidence ? step.Decision.MaterialEvidence : null,
-            step.Decision.SealedMaterialCareSegment);
+            step.Decision.SealedMaterialCareSegment, step.Owners);
     }
 
     private static void VerifyCommit(StoredWorldCommit stored, StoredWorldCommit expected)
@@ -392,7 +398,7 @@ internal sealed class WorldJournalRecovery
 internal sealed record ExpectedJournalEntry(WorldSnapshot Candidate, byte[] CandidateBytes, StoredWorldCommit Stored,
     IReadOnlyList<StoredWorldCommandOutcome> Commands, IReadOnlyList<StoredWorldIdentity> Identities,
     WorldResourceArchiveSegment? ResourceArchive = null, IReadOnlyList<WorldMaterialActionEvidence>? MaterialEvidence = null,
-    WorldMaterialCareArchiveSegment? MaterialCareArchive = null);
+    WorldMaterialCareArchiveSegment? MaterialCareArchive = null, ConstructionOwnerDirectory? Owners = null);
 
 internal sealed record RecoveredWorld(WorldSnapshot Genesis, WorldSnapshot State, ContentHash StateHash, WorldJournalUsage Usage);
 

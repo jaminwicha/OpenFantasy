@@ -1,3 +1,4 @@
+using OpenFantasy.Core.Construction.Ownership;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
@@ -13,7 +14,7 @@ internal sealed class WorldCommitPreparation
     private readonly WorldStepProcessor _processor = new();
 
     internal PreparedWorldCommit Prepare(WorldSnapshot state, WorldIdentityIndex? genesisIdentities,
-        ContentHash beforeHash, WorldStepBatch batch, Func<EntityId, bool> historicallyOccupied, bool captureMaterialEvidence = false, bool separateTerrain = false)
+        ContentHash beforeHash, WorldStepBatch batch, Func<EntityId, bool> historicallyOccupied, bool captureMaterialEvidence = false, WorldStateEncoding encoding = WorldStateEncoding.Complete)
     {
         ValidateDispatch(state, batch);
         WorldStepDecision decision;
@@ -28,13 +29,13 @@ internal sealed class WorldCommitPreparation
         {
             throw new AuthorityDispatchException("The selected batch cannot be committed in the current world.");
         }
-        return PrepareRows(state, beforeHash, batch, decision, separateTerrain);
+        return PrepareRows(state, beforeHash, batch, decision, encoding);
     }
 
     internal (PreparedWorldCommit Commit, ConstructionLocalityState Locality) PrepareConstruction(
         WorldSnapshot state, WorldIdentityIndex? genesisIdentities, ContentHash beforeHash, WorldStepBatch batch,
         EntityId projectId, int maximumMetadataPages, ConstructionLocalityState? exactHeadLocality,
-        Func<EntityId, bool> historicallyOccupied, bool separateTerrain = false)
+        Func<EntityId, bool> historicallyOccupied, WorldStateEncoding encoding = WorldStateEncoding.Complete)
     {
         ValidateDispatch(state, batch);
         ConstructionLocalityStep step;
@@ -51,11 +52,11 @@ internal sealed class WorldCommitPreparation
         {
             throw new AuthorityDispatchException("The selected construction interval cannot be committed in the current world.");
         }
-        return (PrepareRows(state, beforeHash, batch, decision, separateTerrain), step.Candidate);
+        return (PrepareRows(state, beforeHash, batch, decision, encoding), step.Candidate);
     }
 
     private static PreparedWorldCommit PrepareRows(WorldSnapshot state, ContentHash beforeHash,
-        WorldStepBatch batch, WorldStepDecision decision, bool separateTerrain)
+        WorldStepBatch batch, WorldStepDecision decision, WorldStateEncoding encoding)
     {
         WorldCanonicalFrame? frame = decision.CandidateFrame;
         if (frame is not null && !frame.IsBoundTo(decision.Candidate))
@@ -65,7 +66,8 @@ internal sealed class WorldCommitPreparation
         // Preparation that already encoded this exact root supplies its bytes; a candidate that
         // carries no frame is encoded here, where it always was. The stored row owns its own copy.
         byte[] complete = frame is null ? WorldSnapshotCodec.Encode(decision.Candidate) : frame.ToArray();
-        byte[] after = separateTerrain ? ConstructionLocalityEncoding.Encode(decision.Candidate) : complete;
+        var image = WorldStateImage.Capture(decision.Candidate, encoding, complete);
+        byte[] after = image.Bytes;
         byte[] acceptedBatch = WorldStepCodec.Encode(batch);
         byte[] outcomes = WorldReceiptCodecV1.EncodeBatch(decision.Receipts);
         ulong sequence = decision.Candidate.Revision;
@@ -96,12 +98,12 @@ internal sealed class WorldCommitPreparation
             value.Identity, sequence, Map(value.Kind))).ToArray();
         return new PreparedWorldCommit(decision, after,
             new StoredWorldCommit(sequence, Map(batch.Kind), batch.CauseId, decision.Candidate.AdvancingSteps,
-                acceptedBatch, outcomes, beforeHash, separateTerrain ? ContentHash.Compute(after) : frame?.ContentHash ?? ContentHash.Compute(after)),
-            commands.AsReadOnly(), identities);
+                acceptedBatch, outcomes, beforeHash, encoding != WorldStateEncoding.Complete ? ContentHash.Compute(after) : frame?.ContentHash ?? ContentHash.Compute(after)),
+            commands.AsReadOnly(), identities, image.Owners);
     }
 
     internal static WorldCommitWriteSet PrepareLocality(ContentHash beforeHash, WorldStepBatch batch,
-        ConstructionLocalityStep step, byte[] after)
+        ConstructionLocalityStep step, WorldStateImage image)
     {
         var command = batch.Actions.Single();
         var receipt = step.Receipt;
@@ -111,12 +113,13 @@ internal sealed class WorldCommitPreparation
             || receipt.WorldId != step.Source.Inventory.WorldId || receipt.BranchId != step.Source.Inventory.BranchId
             || receipt.CommitSequence != sequence || receipt.CommandHash != command.ContentHash)
             throw new InvalidDataException("A prepared locality receipt does not match its exact command and boundary.");
-        return new(after,
+        return new(image.Bytes,
             new(sequence, Map(batch.Kind), batch.CauseId, step.Candidate.AdvancingSteps,
-                WorldStepCodec.Encode(batch), WorldReceiptCodecV1.EncodeBatch([receipt]), beforeHash, ContentHash.Compute(after)),
+                WorldStepCodec.Encode(batch), WorldReceiptCodecV1.EncodeBatch([receipt]), beforeHash, ContentHash.Compute(image.Bytes)),
             [new(receipt.PrincipalId, receipt.CommandId, sequence,
                 WorldActionCodec.Encode(command), WorldReceiptCodecV1.Encode(receipt))],
-            step.Identities.Select(value => new StoredWorldIdentity(value.Identity, sequence, Map(value.Kind))).ToArray());
+            step.Identities.Select(value => new StoredWorldIdentity(value.Identity, sequence, Map(value.Kind))).ToArray(),
+            Owners: image.Owners);
     }
 
     private static void ValidateDispatch(WorldSnapshot state, WorldStepBatch batch)
@@ -227,9 +230,9 @@ internal sealed class WorldCommitPreparation
 
 internal sealed record PreparedWorldCommit(WorldStepDecision Decision, byte[] CandidateBytes,
     StoredWorldCommit Stored, IReadOnlyList<StoredWorldCommandOutcome> Commands,
-    IReadOnlyList<StoredWorldIdentity> Identities)
+    IReadOnlyList<StoredWorldIdentity> Identities, ConstructionOwnerDirectory? Owners = null)
 {
-    internal WorldCommitWriteSet Writes => new(CandidateBytes, Stored, Commands, Identities, ResourceArchive, MaterialCareArchive);
+    internal WorldCommitWriteSet Writes => new(CandidateBytes, Stored, Commands, Identities, ResourceArchive, MaterialCareArchive, Owners);
 
     internal StoredWorldResourceArchive? ResourceArchive { get; } = Decision.SealedResourceSegment is { } segment
         ? new(segment.Reference, Stored.Sequence, segment.Encode()) : null;
@@ -240,4 +243,5 @@ internal sealed record PreparedWorldCommit(WorldStepDecision Decision, byte[] Ca
 
 internal sealed record WorldCommitWriteSet(byte[] CandidateBytes, StoredWorldCommit Stored,
     IReadOnlyList<StoredWorldCommandOutcome> Commands, IReadOnlyList<StoredWorldIdentity> Identities,
-    StoredWorldResourceArchive? ResourceArchive = null, StoredWorldMaterialCareArchive? MaterialCareArchive = null);
+    StoredWorldResourceArchive? ResourceArchive = null, StoredWorldMaterialCareArchive? MaterialCareArchive = null,
+    ConstructionOwnerDirectory? Owners = null);

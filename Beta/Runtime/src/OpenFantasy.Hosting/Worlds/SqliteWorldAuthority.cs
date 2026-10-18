@@ -201,7 +201,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
             EnsureAvailable();
             PreparedWorldCommit prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
                 batch, identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity),
-                separateTerrain: _database.SeparatesTerrain);
+                encoding: _database.StateEncoding);
             WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence, prepared.Stored.AdvancingSteps,
                 (ulong)prepared.Commands.Count, (ulong)prepared.Stored.AcceptedBatch.Length,
                 (ulong)prepared.Stored.Outcomes.Length,
@@ -248,7 +248,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
 
     /// <summary>
     /// Privileged construction execution using retained nonterrain owners at this exact durable head.
-    /// Complete terrain admission and ordinary storage rows remain required at publication.
+    /// Complete terrain admission and the explicit storage interpretation remain required at publication.
     /// </summary>
     internal WorldStepDecision CommitConstructionLocality(WorldStepBatch batch, EntityId projectId,
         int maximumMetadataPages, Action<AuthorityCommitBoundary>? fault = null) =>
@@ -273,13 +273,13 @@ public sealed partial class SqliteWorldAuthority : IDisposable
                 (prepared, continuation) = _preparation.PrepareConstruction(_state, _genesisIdentities, _stateHash,
                     batch, projectId, maximumMetadataPages, retained,
                     identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity, transaction),
-                    separateTerrain: _database.SeparatesTerrain);
+                    encoding: _database.StateEncoding);
             }
             else
             {
                 prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
                     batch, identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity, transaction),
-                    separateTerrain: _database.SeparatesTerrain);
+                    encoding: _database.StateEncoding);
             }
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence,
                 prepared.Stored.AdvancingSteps, (ulong)prepared.Commands.Count,
@@ -314,6 +314,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         if (controllerRecovery is not null && !ReferenceEquals(controllerRecovery, _controllerRecovery))
             _database.WriteControllerRecovery(controllerRecovery, transaction);
         _database.WriteCommit(writes.Stored, transaction);
+        if (writes.Owners is { } owners) _database.WriteOwners(owners, transaction);
         if (writes.ResourceArchive is { } archive)
         {
             _database.WriteResourceArchive(archive, transaction);

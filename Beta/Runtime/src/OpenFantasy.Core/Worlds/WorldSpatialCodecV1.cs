@@ -108,7 +108,7 @@ internal static class WorldSpatialCodecV1
         return (scope, regions, actors);
     }
 
-    private static byte[] EncodeActor(ActorPresence actor) => CanonicalEncodingV1.Frame("world.presence",
+    internal static byte[] EncodeActor(ActorPresence actor) => CanonicalEncodingV1.Frame("world.presence",
         actor.Binding.DefinitionId.ToByteArray(), BodyContractEncodingV1.EncodeBinding(actor.Binding),
         BodyContractEncodingV1.EncodeCondition(actor.Condition), Signed(actor.Feet.X), Signed(actor.Feet.Y),
         Signed(actor.Feet.Z), Number(actor.Revision), actor.HomePlaceId.ToByteArray());

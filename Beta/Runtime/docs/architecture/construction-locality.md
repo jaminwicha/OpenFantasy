@@ -185,3 +185,24 @@ unloaded work. No default scheduler or public API enables this experiment. It re
 of nonterrain owners, complete occupancy metadata and growing identity reservations; it does not claim
 independent actor/custodian residency, reduced resident serialization, scalable frontier scheduling,
 current-profile migration, a cold-load budget or production checkpoint qualification.
+
+## Typed-owner storage binding
+
+`CreateWithTypedOwners` selects fresh profile-five schema14, retaining the same domain continuation,
+terrain eviction, controller authorization, historical identity checks and shared SQLite publisher.
+`WorldStateImage` encodes a complete typed owner directory rather than the schema13 flat nonterrain
+image. The current directory and all new immutable owner payloads publish with receipts and the head.
+An ordinary intervening action still invalidates the interval; final installation requires exact
+terrain and complete physical/material admission.
+
+Custodian images contain both counted and transformed holdings. Project progress, construction
+catalog revision, clocks and actor resident exposure retain their actual owners. Work that only advances
+progress can preserve custody hashes; completion changes actual material/provenance owners. Common
+exposure is still materialized into actor images on each advancing boundary. This does not imply
+independently loaded actors or a persisted general exposure-basis law.
+
+Complete replay verifies every historical payload and exact archive membership before readiness.
+The internal `ReadOwnersForHost` diagnostic checks current owner bytes against the committed directory
+hash without forcing terrain hydration; it is not a player knowledge projection or a loading API.
+See [typed ownership](partition-ownership.md#runtime-binding-legacy-typed-owner-storage) for precise
+payload responsibilities, storage bounds, historical verification and unsupported scope.

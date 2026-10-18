@@ -121,7 +121,7 @@ public static class ConstructionCodecV1
         return new ConstructionToolDefinition(id, item, operation);
     }
 
-    private static byte[] EncodeProject(ConstructionProject project) => Bounded(Frame("construction.project", Number(1),
+    internal static byte[] EncodeProject(ConstructionProject project) => Bounded(Frame("construction.project", Number(1),
         Id(project.ProjectId), Id(project.Definition.DefinitionId), project.Definition.Version.ToByteArray(),
         Id(project.OwnerActorId), Id(project.BuilderActorId), Id(project.QuestId), Id(project.ProjectCustodianId),
         Id(project.ReservationId), Position(project.SiteFeet), Position(project.WorkFeet),

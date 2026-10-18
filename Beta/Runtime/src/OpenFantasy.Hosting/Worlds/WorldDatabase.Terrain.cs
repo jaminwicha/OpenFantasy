@@ -8,12 +8,11 @@ namespace OpenFantasy.Hosting.Worlds;
 
 internal sealed partial class WorldDatabase
 {
-    internal bool SeparatesTerrain => SchemaVersion == WorldDatabaseSchemaThirteen.Version;
+    internal bool SeparatesTerrain => SchemaVersion is WorldDatabaseSchemaThirteen.Version or WorldDatabaseSchemaFourteen.Version;
     internal int TerrainArchiveReads { get; private set; }
     internal Action? BeforeTerrainRead { get; set; }
 
-    internal byte[] EncodeHead(WorldSnapshot world) => SeparatesTerrain
-        ? ConstructionLocalityEncoding.Encode(world) : WorldSnapshotCodec.Encode(world);
+    internal byte[] EncodeHead(WorldSnapshot world) => WorldStateImage.Capture(world, StateEncoding).Bytes;
 
     private void InitializeTerrain(WorldSnapshot genesis, SqliteTransaction transaction)
     {

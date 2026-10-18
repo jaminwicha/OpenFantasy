@@ -7,9 +7,10 @@ A canonical owner is responsible for a fact's identity, revision and durable rep
 action. A cohort is a read dependency set, not another persistent copy of those facts. Residency is
 whether those owners' detail is loaded; it neither confers control nor awards time.
 
-These contracts describe the partition extension to the portable C# authority. They do not imply an
-implemented typed-owner database. The concrete `WorldSnapshot` remains a complete admitted locality.
-The internal profile-five terrain-separated binding retains a single nonterrain locality image,
+These contracts describe the partition extension to the portable C# authority. The bounded typed-image
+storage binding below implements durable owner separation for one legacy interpretation; general
+owner loading and scheduling remain separate contracts. `WorldSnapshot` is still a complete admitted locality.
+The internal profile-five schema13 binding retains a single nonterrain locality image,
 complete occupancy metadata and complete original-history replay. See
 [construction locality](construction-locality.md#explicit-terrain-separated-storage-binding) and
 [persistence and history](persistence-and-history.md#design-contract-partitioned-persistence-and-version-ownership)
@@ -131,3 +132,72 @@ stored in an unversioned AI sidecar. Temporary execution views may reference tho
 owning another copy. A permanent persistence model requires complete ownership/dependency coverage,
 original-history migration/recovery and a qualified offscreen scheduling policy. A generic dictionary
 or a coarse terrain-separated image alone does not establish those contracts.
+
+## Runtime binding: legacy typed-owner storage
+
+`SqliteWorldAuthority.CreateWithTypedOwners` admits a fresh profile-five world into explicit storage
+schema14. Schema14 is not gameplay profile14; normal game creation and existing saves keep their
+named formats. The binding preserves full original genesis, immutable terrain and the ordinary
+profile-five interpreter. It cannot import later profiles by dropping their owners.
+
+[ConstructionOwnerDirectory](../../src/OpenFantasy.Core/Construction/Ownership/ConstructionOwnerDirectory.cs)
+contains the complete bounded current directory. Its envelope binds world/branch/realm, global commit
+revision and exact terrain references; entries map typed role plus stable subject identity to an
+immutable payload hash. The same actor/custodian key survives movement and work. An owner hash is a
+storage revision; the existing actor, storage, project and global commit counters retain their own laws.
+
+| Typed image | Encoded facts |
+| --- | --- |
+| Inventory basis | Original admission pin, finite capacity, admitted actor/reservation identities and counted-source definitions/capacities |
+| Inventory ledger | Exact global custody revision |
+| Timing | Calendar and earned advancing ordinal |
+| Actor | Physical realm, exact body/form/condition/presence/home binding and all resident metadata/exposure for that actor |
+| Body definition | Shared immutable body definition |
+| Control | Exact principal/session binding for its actor |
+| Custodian | Storage/revision, owner/deposit policy, counted lots and transformed lots, including source/output/protection/reservation facts |
+| Recipe / production batch | Exact immutable recipe or batch/provenance record |
+| Production history | Global production revision and exact recipe/batch membership |
+| Construction definition | Shared immutable blueprint, tool/access and material rules |
+| Construction catalog | Global construction revision and definition membership |
+| Project | Funding/builder/owner/quest/site/work/access/progress/stock-location and installed output binding |
+| Gathering / progression / quests / dialogues | Complete existing typed facet encodings; these facets retain their shared aggregate scope |
+
+World/branch identity scopes every payload. A realm is physical membership for an actor; it does not
+become part of the stable actor key. Lot records belong to exactly one custodian image; production
+history references their immutable producer ancestry rather than owning another mutable holding.
+Derived installed geometry remains reconstructible from the admitted construction definition and
+installed backing. Unsupported consumption, continuation or richer material-history interpretations
+refuse instead of becoming empty facets.
+
+The directory and payloads own immutable encoded bytes and export defensive copies. Capture accepts
+admitted `WorldSnapshot` or `ConstructionLocalityState`; it supplies no standalone decoder for an
+untrusted directory and does not authenticate its history. The authority's private construction
+continuation still retains the complete nonterrain locality. Shared progression/quest/process facets
+are not independently resident actor roots merely because other payloads have stable keys.
+
+`WorldStateImage` selects complete-root, terrain-separated-image or typed-directory storage explicitly.
+Head and checkpoints hold directory bytes for schema14; `world_owners` stores immutable payloads keyed
+by hash. The journal's before/after digests bind directory images. Full-world content hashes retain their
+existing meaning. The ordinary preparation path still checks the full16MiB canonical envelope; evicted
+work retains the exact flat-image/full-world length relation and complete final physical admission.
+
+`PublishWrites` writes the accepted journal record, owner payloads, identities, outcomes, head and any
+due checkpoint in one SQLite transaction. Existing identical payloads are verified byte-for-byte and
+reused; only new hashes add archive rows. Every current owner is still encoded/visited, so this is not
+a selective read/write preparation algorithm. Archive accounting also scans retained row lengths
+after publication preparation; its cost must be included in measurements. The complete directory advances atomically with a gift,
+work or installation; a fault cannot leave only one custodian credited or release an uncommitted receipt.
+
+`WorldOwnerArchiveReplay` verifies every unique historical payload against ordinary original-history
+replay and then checks exact archive count/byte membership. Missing, changed and extra historical
+payloads refuse readiness. Original full genesis and commands reconstruct the complete world before
+readiness; stored owner fragments do not independently reconstruct a partial world. There is no implicit
+migration, history truncation or alternative simulator.
+
+The experimental envelope permits at most1MiB of directory metadata,16MiB per payload and32MiB of
+current payloads, while retaining the separate full-world16MiB admission check. Retained owner archives
+are bounded by100,000 unique payloads and256MiB. Exceeding the write envelope rolls back publication
+and stops the authority for recovery; exceeding it on read refuses readiness. These are explicit
+finite development-storage limits, not shipping population/world-size targets. Noninitial checkpoints,
+independent payload reconstruction/loading, current-profile migration, general due-work fairness and
+frontier-scale history remain separate qualification obligations.
