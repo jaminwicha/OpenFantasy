@@ -52,6 +52,9 @@ public sealed class ConstructionSiteEvidence : IConstructionGeometry
     public GroundSupportMode GroundSupport { get; }
     public StructureSupportMode StructureSupport { get; }
 
+    internal static ConstructionSiteEvidence Capture(LocalSpatialSnapshot space, ConstructionProject project,
+        EntityId structureId) => new(space, project, structureId);
+
     public static ConstructionSiteEvidence Capture(WorldSnapshot world, WorldActionCommand command)
     {
         ArgumentNullException.ThrowIfNull(world);

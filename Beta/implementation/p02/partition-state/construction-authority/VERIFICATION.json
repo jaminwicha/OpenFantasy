@@ -1,0 +1,156 @@
+{
+  "base": "25085494d16219f16a113ffb0ed62df37ae04280",
+  "distinct_passes": 480,
+  "new_cases": 9,
+  "checks": {
+    "check-01/focused.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~ConstructionAuthorityTests",
+        "--logger",
+        "trx;LogFileName=focused.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-authority/check-01"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 13.880222541978583,
+      "bound_seconds": 180,
+      "counts": {
+        "total": "6",
+        "executed": "6",
+        "passed": "6",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "check-02/core.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~Construction|FullyQualifiedName~Spatial|FullyQualifiedName~Structures|FullyQualifiedName~StepBehaviorTests|FullyQualifiedName~StepCustodyTests|FullyQualifiedName~WorldPacingTests|FullyQualifiedName~AdmissionTests|FullyQualifiedName~ConsentedWorldMaterialTests",
+        "--logger",
+        "trx;LogFileName=core.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-authority/check-02"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 23.15793012501672,
+      "bound_seconds": 180,
+      "counts": {
+        "total": "465",
+        "executed": "465",
+        "passed": "465",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "check-02/hosting.json": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~ConstructionPreviewRecoveryTests|FullyQualifiedName~ConstructionWorkRecoveryTests|FullyQualifiedName~WorldActorCarriageTests|FullyQualifiedName~WorldStateLayoutTests|FullyQualifiedName~WorldSpatialOccupancyIndexTests",
+        "--logger",
+        "trx;LogFileName=hosting.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-authority/check-02"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 18.561501541989855,
+      "bound_seconds": 180,
+      "counts": {
+        "total": "15",
+        "executed": "15",
+        "passed": "15",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  },
+  "source_sha256": {
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionPlanner.cs": "fe2ab99f20c857ddb7173957be67caf4d96452bb730753b3e42c507b8feb7d39",
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionSiteEvidence.cs": "311803387b64e06954a0797f43f85397c68863c476aafd9078f567b91e0d2226",
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/ConstructionSiteCache.cs": "4a4bc80f91f39e0e158ca3a89304ab584bbb55feafc1ec6906ac00cab87344b1",
+    "Beta/Runtime/src/OpenFantasy.Core/Construction/IConstructionGeometry.cs": "e80b63d6dba8258f514c2e067b389eee49c532f26d999a219c90625418445bbe",
+    "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs": "bfde1b01a8124a09c0ae31f28e27dccd394358bf012b8c247bd059f67a084d09",
+    "Beta/Runtime/src/OpenFantasy.Core/OpenFantasy.Core.csproj": "6a0bc07bd51919320c96ba8b8bba735c4822c9d12f5dee03da137addf5f514e3",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/Construction/ConstructionAuthorityTests.cs": "6cbb5102f7bdc98215d9840f58fa6061ed043ddaed1a2e88f6b7da36c04858e1",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/ConstructionPreviewRecoveryTests.cs": "be4b90c74898a443bdc428d0e35ce84b1f5718fe9999e784f9676241e50c70c6"
+  },
+  "binary_sha256": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "a0588785bb33fa8f4c02a5576f56a5e4078d1dc6ba7091f34bcf1eb23bc34717",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": "b5e889a8170922bdd2cd5364e399e5b1dde511decc569ca900fd48470ee85d53",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": "a0588785bb33fa8f4c02a5576f56a5e4078d1dc6ba7091f34bcf1eb23bc34717",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": "af92052d2a57a7ae070f450d4d2259e98a1bc802f30b7faf045cd90d89d5095c",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": "69629493d35812cacffce4718cf2166b2e3f693a828ace382b7a8d859025240d"
+  },
+  "post_check_source_change": "ConstructionSiteCache comment clarifies placement/access rather than reach/access; no executable source changed after final checks.",
+  "hardware": "Apple M2",
+  "os": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "runtime": ".NET 8.0.31 arm64; SDK 10.0.401",
+  "documentation": {
+    "accepted": true,
+    "filesChecked": 8,
+    "scope": "fields/local file links plus separately recorded lead source review"
+  },
+  "whitespace": "owned tracked diff passed; private-index complete owned diff checked before commit",
+  "protected_inputs_unchanged": true,
+  "protected_hashes": {
+    "Beta/AGENTS.md": "6ac421e3c7c754d005a74f5c99f5786e20a32f1d76981af4062fb91c82be363e",
+    "OpenFantasy.sln": "470fad0e103b0087483665edd6991be0ce34e577e37e4271578c0dbcf679e9eb",
+    "Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md": "57f30586711a00c98aa9078e9fe1e9ccd049beb7f7aff185a056f1cda1ad8f28",
+    "Beta/implementation/CORE_LANGUAGE_RUST_EVIDENCE.json": "2695a7564293ddcf77747592b90fc5e0032e48f19d37580b1238478b9bd7a377",
+    "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-05.md": "7f1e1dccd2ee1a0539990bd8aed764b3999245dfc300045668754e1cb26291a0",
+    "Beta/spec-v1_1/RESEARCH_SPEC_PASS_2026-10-17.md": "3e0277e1e8034b90838b15a95359d080095238fc1e2a30ce59616bede7a70d09"
+  },
+  "predecessor_staging_sha256": "356898fb582b34244aa92b10c322e076422877ccba97e3ccc68b4fd6aa253aa5",
+  "unrun": [
+    "full Core aggregate (earlier timeouts remain unresolved)",
+    "independent review (orchestration paused)",
+    "new native/human acceptance",
+    "partially resident owner publication and full PLAN-STATE",
+    "full P02/production/platform/scale"
+  ]
+}

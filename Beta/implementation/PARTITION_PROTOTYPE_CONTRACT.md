@@ -175,6 +175,10 @@ evidence, not 10,000-actor/20,000-resident, four-player endurance, desktop or fu
    ordinary and detached candidate evaluation share rules, including real material completion and site
    invalidation. Whole-source capture/freshness, terrain-retaining material contexts, earned scheduling
    and admitted owner inputs still need integration; this does not close the offscreen authority proof.
+   [Authority integration](p02/partition-state/construction-authority/RESULT.md) binds reusable geometry
+   to the existing selected-batch executor and durable publisher, preserving clock/action ordering and
+   complete admission. The publisher still holds and encodes the complete world: this qualifies the
+   execution adapter, not absent-detail commits or typed partition ownership.
 2. **Joined owner transaction.** Integrate those decisions with stable actor/material/project owners,
    membership, time and the single durable publisher. Run the entire episode, including actual gift,
    absent-detail work, final material publication and historical recovery. Wire exact admission and

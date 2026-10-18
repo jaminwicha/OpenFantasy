@@ -228,6 +228,10 @@ The first extraction should establish these concrete responsibilities, in the ex
   facts and reusable site evidence. The final candidate can execute after source world/scene/index/
   terrain collection. Whole-world capture/freshness and unsupported terrain-retaining material contexts
   remain explicit; this is not an admitted partially resident world or a durable offscreen scheduler.
+  [Authority integration](p02/partition-state/construction-authority/RESULT.md) now reuses site evidence
+  within ordinary selected batches and SQLite publication. Full candidate/receipt/identity equivalence,
+  hold ordering, stale dependencies and preview/commit recovery are tested. This removes repeated route
+  qualification without substituting a work scheduler; full world residency and encoding remain.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

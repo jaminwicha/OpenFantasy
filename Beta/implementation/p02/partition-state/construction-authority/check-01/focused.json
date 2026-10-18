@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~ConstructionAuthorityTests",
+    "--logger",
+    "trx;LogFileName=focused.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-authority/check-01"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 13.880222541978583,
+  "bound_seconds": 180
+}

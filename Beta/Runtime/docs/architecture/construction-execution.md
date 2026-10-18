@@ -22,6 +22,38 @@ provides the exact nonspatial facts the rule consumes;
 actual actors, point reach and proposed placement. A live adapter retains its world/scene only for
 ordinary evaluation. A detached source copies decision facts and identity reservations instead.
 
+## Runtime binding: reuse inside selected world execution
+
+`WorldStepProcessor` owns one bounded [ConstructionSiteCache](../../src/OpenFantasy.Core/Construction/ConstructionSiteCache.cs)
+through its construction planner. The cache retains one immutable site qualification. At the placement
+operation, it checks the actual running scene and project, including changes made by earlier actions
+in the selected batch. Changed terrain, occupancy, body, structure, support law or project access
+replaces the qualification using the ordinary complete geometry operation. Both success and refusal
+may be reused only while those dependencies remain exact. Every command-derived structure identity
+still passes the spatial catalog check, and a successful placement still constructs and admits its
+complete spatial candidate. Point interaction remains a live query.
+
+This cache supplies geometry, not an alternative work executor. The processor still selects the batch
+against the current world revision, reading hold and interpretation, routes care and encounter work,
+checks readiness, and evaluates commands in their original order. Live inventory, project revisions,
+tools, funding, identity reservations and complete physical reconciliation remain mandatory. Accepted
+work suppresses that actor's subsequent movement. An already-selected advancing step contributes time
+once even if an earlier action opens a reading hold; a held closing interaction contributes no work or
+time. Reused geometry cannot change those rules.
+
+The ordinary Hosting preparation and SQLite publisher use this processor. A preview can warm geometry
+without earning work, spending a command or publishing a receipt. Commit re-evaluates against current
+state under the serialized authority; heads, material changes, work and outcomes remain one transaction.
+The cache is neither persisted nor trusted during reopening. Historical replay reconstructs it from
+actual admitted scenes, and discarding it changes no canonical bytes or outcomes. The standalone
+`ConstructionPlanner` also retains its uncached complete-geometry path.
+
+Only detached scene metadata is retained in the cache. It keeps no world, terrain cells, identity index,
+complete spatial candidate or material owner. Lookup/replacement is synchronized; evidence is immutable,
+so concurrent independent decisions cannot turn another source's qualification into permission. Complete
+world residency and encoding remain requirements of this runtime binding. See
+[persistence and history](persistence-and-history.md) for the durable authority contract.
+
 ## Domain binding: detached work preparation
 
 [ConstructionWorkPreparation](../../src/OpenFantasy.Core/Construction/ConstructionWorkPreparation.cs)

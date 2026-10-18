@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Construction|FullyQualifiedName~Spatial|FullyQualifiedName~Structures|FullyQualifiedName~StepBehaviorTests|FullyQualifiedName~StepCustodyTests|FullyQualifiedName~WorldPacingTests|FullyQualifiedName~AdmissionTests|FullyQualifiedName~ConsentedWorldMaterialTests",
+    "--logger",
+    "trx;LogFileName=core.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-authority/check-02"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 23.15793012501672,
+  "bound_seconds": 180
+}

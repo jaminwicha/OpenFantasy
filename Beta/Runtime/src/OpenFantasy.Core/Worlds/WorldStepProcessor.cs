@@ -28,10 +28,16 @@ public sealed class WorldStepProcessor
     private readonly GatherPlanner _gathering = new();
     private readonly WorldCraftResolver _crafting = new();
     private readonly DeliveryQuestPlanner _quests = new();
-    private readonly ConstructionPlanner _construction = new();
+    private readonly ConstructionPlanner _construction;
     private readonly WorldRunoffResolver _runoff = new();
     private readonly WorldTransportResolver _transport = new();
     private readonly LiquidCellPlanner _liquidFlow = new();
+
+    public WorldStepProcessor() : this(new ConstructionSiteCache()) { }
+
+    // The uncached path remains available to same-assembly verification as the complete-rule oracle.
+    internal WorldStepProcessor(ConstructionSiteCache? constructionSites) => _construction = constructionSites is null
+        ? new ConstructionPlanner() : new ConstructionPlanner(constructionSites);
 
     public WorldStepDecision Decide(WorldSnapshot state, WorldStepBatch batch,
         Func<EntityId, bool>? historicallyOccupied = null) =>

@@ -12,6 +12,12 @@ namespace OpenFantasy.Core.Construction;
 /// <summary>Qualifies one present builder's work, retaining or committing the complete physical candidate atomically.</summary>
 public sealed class ConstructionPlanner
 {
+    private readonly ConstructionSiteCache? _siteCache;
+
+    public ConstructionPlanner() { }
+
+    internal ConstructionPlanner(ConstructionSiteCache siteCache) => _siteCache = siteCache;
+
     public ConstructionPlan Plan(WorldSnapshot world, CountedAuthorityState inventory, ProductionSnapshot production,
         ConstructionSnapshot construction, LocalSpatialSnapshot space, WorldActionCommand command,
         bool isAdvancingStep, bool held, Func<EntityId, bool>? occupied = null)
@@ -34,12 +40,13 @@ public sealed class ConstructionPlanner
         bool isAdvancingStep, bool held, Func<EntityId, bool> occupied) =>
         PlanQualified(world, inventory, production, construction, space, command, isAdvancingStep, held, occupied, true);
 
-    private static ConstructionPlan PlanQualified(WorldSnapshot world, CountedAuthorityState inventory, ProductionSnapshot production,
+    private ConstructionPlan PlanQualified(WorldSnapshot world, CountedAuthorityState inventory, ProductionSnapshot production,
         ConstructionSnapshot construction, LocalSpatialSnapshot space, WorldActionCommand command,
         bool isAdvancingStep, bool held, Func<EntityId, bool>? occupied, bool continued)
     {
+        var project = command.Intent is WorkConstructionIntent work ? construction.FindProject(work.ProjectId) : null;
         ConstructionWorkResult result = ConstructionWorkKernel.Plan(new LiveConstructionDecisionSource(world),
-            inventory, production, construction, new LiveConstructionGeometry(space), command,
+            inventory, production, construction, new LiveConstructionGeometry(space, _siteCache, project), command,
             isAdvancingStep, held, occupied, continued, continued ? request => new ConstructionCompletionEvidence(
                 world, space, command, inventory, request.AfterInventory, production, construction,
                 request.Completed, request.Project, request.Batch) : null);

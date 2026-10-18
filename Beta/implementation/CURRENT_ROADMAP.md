@@ -251,6 +251,11 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    [Prepared placement](p02/partition-state/prepared-placement/RESULT.md) now combines shared structure
    clearance/support and escape-route checks over those reads. Ordinary placement retains full candidate
    admission; this geometric status cannot spend stock, award work or publish an installed object.
+   [Construction authority integration](p02/partition-state/construction-authority/RESULT.md) puts
+   reusable site qualification inside ordinary selected batches and the SQLite publisher. Revalidation,
+   live tools/material, holds, earned time, physical admission and receipt/recovery remain mandatory.
+   The complete-world equivalence and preview/commit interruption checks qualify this adapter; whole
+   roots are still resident and encoded. This is not partition ownership or offscreen publication.
    [Shared construction execution](p02/partition-state/construction-execution/RESULT.md) now reuses
    one rule kernel for ordinary work and detached material/project candidates. Site evidence survives
    unchanged work progress; 200 steps and completion agree, and final candidate evaluation survives

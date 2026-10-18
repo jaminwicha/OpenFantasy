@@ -12,7 +12,8 @@ internal interface IConstructionGeometry
     StructurePlacementResult PrepareStructurePlacement(SpatialStructure proposed, IEnumerable<GroundAccessRequirement> access);
 }
 
-internal sealed class LiveConstructionGeometry(LocalSpatialSnapshot space) : IConstructionGeometry
+internal sealed class LiveConstructionGeometry(LocalSpatialSnapshot space,
+    ConstructionSiteCache? cache = null, ConstructionProject? project = null) : IConstructionGeometry
 {
     public TerrainScope Scope => space.Scope;
     public GroundSupportMode GroundSupport => space.GroundSupport;
@@ -20,5 +21,6 @@ internal sealed class LiveConstructionGeometry(LocalSpatialSnapshot space) : ICo
     public SpatialInteraction QueryPointInteraction(EntityId actorId, SubunitPosition target, long maximumRangeSubunits) =>
         space.QueryPointInteraction(actorId, target, maximumRangeSubunits);
     public StructurePlacementResult PrepareStructurePlacement(SpatialStructure proposed, IEnumerable<GroundAccessRequirement> access) =>
-        space.PrepareStructurePlacement(proposed, access);
+        cache is not null && project is not null ? cache.Prepare(space, project, proposed, access)
+            : space.PrepareStructurePlacement(proposed, access);
 }

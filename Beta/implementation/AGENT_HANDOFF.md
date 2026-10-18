@@ -216,8 +216,11 @@ identity index; neither can be bypassed by partial loading. The
 material/project candidates against ordinary 200-step completion, including source/terrain collection;
 393 Core and 18 Hosting cases pass. Capture/freshness still need the complete source and terrain-retaining
 material contexts explicitly refuse. Next integrate admitted owner inputs, earned scheduling and the
-joined durable episode; candidate evaluation is not offscreen world publication. Integrated measurements
-and independent acceptance remain unrun.
+joined durable episode; candidate evaluation is not offscreen world publication. The
+[authority integration](p02/partition-state/construction-authority/RESULT.md) now reuses geometry in
+ordinary selected batches and SQLite publication, including actual holds/time, stale invalidation and
+preview/interrupted-commit recovery. Full world residency/encoding still applies. Integrated partition
+measurements and independent acceptance remain unrun.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,
 feasible work, memory/dialogue and changed-place return; STORY-01 supplies the actual clue/puzzle design.
