@@ -1,0 +1,54 @@
+{
+  "root": "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01",
+  "files": {
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-0-CompleteRoot/final.ofc": {
+      "bytes": 25100,
+      "sha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-0-CompleteRoot/measurement.json": {
+      "bytes": 1192,
+      "sha256": "273496e69b78f492ef621e35335f22506b01e5311687ce0c8d06a0921ab437c1"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-0-CompleteRoot/world.sqlite3": {
+      "bytes": 585728,
+      "sha256": "64fa2ae99ab01ff4e567dd9ca7e7cb4ec1bc451bb00246434eac57f9622402b5"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-0-StoredOwners/world.sqlite3": {
+      "bytes": 2813952,
+      "sha256": "b6c3ed209c093a581135bf760f768bffd89d835c897906887a920c43908aafee"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-0-TerrainSeparated/final.ofc": {
+      "bytes": 25100,
+      "sha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-0-TerrainSeparated/measurement.json": {
+      "bytes": 1219,
+      "sha256": "af0b43f9118abd68d99138e22f1e7a7bf312670b651d711962187b74264df93b"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-0-TerrainSeparated/world.sqlite3": {
+      "bytes": 593920,
+      "sha256": "4dea8f60636da968cba367875748df48802badb7d6fb7a3aca20453384a2705d"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-1-StoredOwners/world.sqlite3": {
+      "bytes": 2813952,
+      "sha256": "b6c3ed209c093a581135bf760f768bffd89d835c897906887a920c43908aafee"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-1-TerrainSeparated/final.ofc": {
+      "bytes": 25100,
+      "sha256": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-1-TerrainSeparated/measurement.json": {
+      "bytes": 1207,
+      "sha256": "206a3e69e7ab809efb966119993c1fb6980dacbb1fa7efa7653822ca3a14c70c"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-1-TerrainSeparated/world.sqlite3": {
+      "bytes": 593920,
+      "sha256": "4dea8f60636da968cba367875748df48802badb7d6fb7a3aca20453384a2705d"
+    },
+    "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01/order-2-StoredOwners/world.sqlite3": {
+      "bytes": 2813952,
+      "sha256": "b6c3ed209c093a581135bf760f768bffd89d835c897906887a920c43908aafee"
+    }
+  },
+  "status": "Failed three-case comparison retained. Partial measurement files are not a completed three-way comparison. Closed databases and original source/logs preserve the failure; use copies for any diagnostic reopening."
+}

@@ -1,0 +1,206 @@
+{
+  "checks": {
+    "geometry-01": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move",
+        "--logger",
+        "trx;LogFileName=geometry.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/owner-cost-comparison/geometry-01"
+      ],
+      "exit_code": 0,
+      "seconds": 4.430369082954712,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "comparison-01": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~Three_storage_candidates_measure_the_same_earned_episode_and_original_history",
+        "--logger",
+        "trx;LogFileName=comparison.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/owner-cost-comparison/comparison-01"
+      ],
+      "exit_code": 1,
+      "seconds": 112.30233279208187,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "3",
+        "executed": "3",
+        "passed": "0",
+        "failed": "3",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "geometry-02": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move",
+        "--logger",
+        "trx;LogFileName=geometry.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/owner-cost-comparison/geometry-02"
+      ],
+      "exit_code": 0,
+      "seconds": 4.374741209088825,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "comparison-02": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~Three_storage_candidates_measure_the_same_earned_episode_and_original_history",
+        "--logger",
+        "trx;LogFileName=comparison.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/owner-cost-comparison/comparison-02"
+      ],
+      "exit_code": 0,
+      "seconds": 22.052834292058833,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "3",
+        "executed": "3",
+        "passed": "3",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "related-01": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move|FullyQualifiedName~Same_earned_episode_compares_publication_and_replay_without_changing_outcomes|FullyQualifiedName~Selected_stored_publication_completes_the_original_saved_project_after_collection_and_intervention|FullyQualifiedName~Typed_owners_keep_carried_custody_stable_and_publish_gift_work_return_and_history",
+        "--logger",
+        "trx;LogFileName=related.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/owner-cost-comparison/related-01"
+      ],
+      "exit_code": 0,
+      "seconds": 13.461540541029535,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "5",
+        "executed": "5",
+        "passed": "5",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  },
+  "distinct_current_passes": 8,
+  "new_cases": 4,
+  "current_preflight": "preflight-03",
+  "classification": {
+    "comparison-01": "fixture failure: external archive SELECT while authority held exclusive lease; all 3 cases failed",
+    "comparison-02": "pass: 3 orders, 9 complete episodes",
+    "related-01": "pass: 5 exact geometry/related episode cases",
+    "geometry-01": "pass on pre-correction source; did not cover external diagnostic lease",
+    "geometry-02": "pass: lawful route/work/intervention and closed archive diagnostic"
+  },
+  "run_inventory": {
+    "native": 0,
+    "comparison_suites": 2,
+    "related_suite": 1,
+    "cheap_preflight": 2,
+    "over_180_seconds": 0
+  },
+  "telemetry": {
+    "api_calls": null,
+    "mean_input_tokens": null,
+    "reason": "Full packet rollout and input-token accounting are not exposed by available tools; no savings inferred."
+  }
+}

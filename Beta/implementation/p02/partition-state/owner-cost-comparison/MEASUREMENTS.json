@@ -1,0 +1,756 @@
+{
+  "cases": {
+    "order-0-CompleteRoot": {
+      "Kind": "CompleteRoot",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 129232120,
+        "Milliseconds": 320.07691700000004
+      },
+      "Capture": {
+        "Calls": 0,
+        "AllocatedBytes": 0,
+        "Milliseconds": 0
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 275059600,
+        "Milliseconds": 564.9777809999997
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 1522760,
+        "Milliseconds": 1.8615
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 2369568,
+        "Milliseconds": 2.689875
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 267524480,
+        "Milliseconds": 324.40175
+      },
+      "RequiredOwners": 0,
+      "CompleteOwners": 0,
+      "PartialOwnerReads": 0,
+      "FinalOwnerReads": 0,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 0,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 0,
+      "RetainedOwnerArchiveBytes": 0,
+      "SqliteFileBytesIncludingWal": 618496,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "order-0-StoredOwners": {
+      "Kind": "StoredOwners",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 203503592,
+        "Milliseconds": 406.958875
+      },
+      "Capture": {
+        "Calls": 2,
+        "AllocatedBytes": 4387832,
+        "Milliseconds": 5.22975
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 102793632,
+        "Milliseconds": 288.3352049999999
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 14201248,
+        "Milliseconds": 22.246709
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 15017552,
+        "Milliseconds": 23.743542
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 364421224,
+        "Milliseconds": 502.899459
+      },
+      "RequiredOwners": 13,
+      "CompleteOwners": 21,
+      "PartialOwnerReads": 2587,
+      "FinalOwnerReads": 34,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 1,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 1567,
+      "RetainedOwnerArchiveBytes": 1619368,
+      "SqliteFileBytesIncludingWal": 2846720,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "order-0-TerrainSeparated": {
+      "Kind": "TerrainSeparated",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 173137656,
+        "Milliseconds": 280.93054099999995
+      },
+      "Capture": {
+        "Calls": 2,
+        "AllocatedBytes": 4457872,
+        "Milliseconds": 6.6835
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 61899856,
+        "Milliseconds": 121.21790799999998
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 7945776,
+        "Milliseconds": 14.091709
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 9273920,
+        "Milliseconds": 17.398042
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 331291200,
+        "Milliseconds": 407.471125
+      },
+      "RequiredOwners": 0,
+      "CompleteOwners": 0,
+      "PartialOwnerReads": 0,
+      "FinalOwnerReads": 0,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 1,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 0,
+      "RetainedOwnerArchiveBytes": 0,
+      "SqliteFileBytesIncludingWal": 626688,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "order-1-CompleteRoot": {
+      "Kind": "CompleteRoot",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 129225872,
+        "Milliseconds": 222.803791
+      },
+      "Capture": {
+        "Calls": 0,
+        "AllocatedBytes": 0,
+        "Milliseconds": 0
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 275076328,
+        "Milliseconds": 507.7861679999999
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 1523984,
+        "Milliseconds": 3.04575
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 2369568,
+        "Milliseconds": 5.484916
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 267523720,
+        "Milliseconds": 357.155125
+      },
+      "RequiredOwners": 0,
+      "CompleteOwners": 0,
+      "PartialOwnerReads": 0,
+      "FinalOwnerReads": 0,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 0,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 0,
+      "RetainedOwnerArchiveBytes": 0,
+      "SqliteFileBytesIncludingWal": 618496,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "order-1-StoredOwners": {
+      "Kind": "StoredOwners",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 204558760,
+        "Milliseconds": 363.544833
+      },
+      "Capture": {
+        "Calls": 2,
+        "AllocatedBytes": 4388536,
+        "Milliseconds": 5.807499999999999
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 102790592,
+        "Milliseconds": 238.3574140000001
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 14201248,
+        "Milliseconds": 20.475875
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 15017944,
+        "Milliseconds": 21.971916
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 364415480,
+        "Milliseconds": 432.165833
+      },
+      "RequiredOwners": 13,
+      "CompleteOwners": 21,
+      "PartialOwnerReads": 2587,
+      "FinalOwnerReads": 34,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 1,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 1567,
+      "RetainedOwnerArchiveBytes": 1619368,
+      "SqliteFileBytesIncludingWal": 2846720,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "order-1-TerrainSeparated": {
+      "Kind": "TerrainSeparated",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 172076808,
+        "Milliseconds": 338.441875
+      },
+      "Capture": {
+        "Calls": 2,
+        "AllocatedBytes": 4458576,
+        "Milliseconds": 7.7855
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 61898416,
+        "Milliseconds": 101.82313200000002
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 7946224,
+        "Milliseconds": 13.935542
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 9272952,
+        "Milliseconds": 10.605584
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 331302760,
+        "Milliseconds": 378.337417
+      },
+      "RequiredOwners": 0,
+      "CompleteOwners": 0,
+      "PartialOwnerReads": 0,
+      "FinalOwnerReads": 0,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 1,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 0,
+      "RetainedOwnerArchiveBytes": 0,
+      "SqliteFileBytesIncludingWal": 626688,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "order-2-CompleteRoot": {
+      "Kind": "CompleteRoot",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 129238768,
+        "Milliseconds": 329.644916
+      },
+      "Capture": {
+        "Calls": 0,
+        "AllocatedBytes": 0,
+        "Milliseconds": 0
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 275059912,
+        "Milliseconds": 459.4811230000001
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 1523280,
+        "Milliseconds": 7.283458
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 2369568,
+        "Milliseconds": 2.38325
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 267523688,
+        "Milliseconds": 340.360833
+      },
+      "RequiredOwners": 0,
+      "CompleteOwners": 0,
+      "PartialOwnerReads": 0,
+      "FinalOwnerReads": 0,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 0,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 0,
+      "RetainedOwnerArchiveBytes": 0,
+      "SqliteFileBytesIncludingWal": 618496,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "order-2-StoredOwners": {
+      "Kind": "StoredOwners",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 204538824,
+        "Milliseconds": 1056.5462909999999
+      },
+      "Capture": {
+        "Calls": 2,
+        "AllocatedBytes": 4388696,
+        "Milliseconds": 18.337083
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 103088784,
+        "Milliseconds": 385.56575499999997
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 14205808,
+        "Milliseconds": 29.274625
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 15020832,
+        "Milliseconds": 34.9465
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 364398112,
+        "Milliseconds": 449.217708
+      },
+      "RequiredOwners": 13,
+      "CompleteOwners": 21,
+      "PartialOwnerReads": 2587,
+      "FinalOwnerReads": 34,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 1,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 1567,
+      "RetainedOwnerArchiveBytes": 1619368,
+      "SqliteFileBytesIncludingWal": 2846720,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    },
+    "order-2-TerrainSeparated": {
+      "Kind": "TerrainSeparated",
+      "Runtime": "8.0.31",
+      "WorkCommits": 200,
+      "PartialCommits": 199,
+      "Setup": {
+        "Calls": 2,
+        "AllocatedBytes": 172096864,
+        "Milliseconds": 376.166666
+      },
+      "Capture": {
+        "Calls": 2,
+        "AllocatedBytes": 4456920,
+        "Milliseconds": 5.6012070000000005
+      },
+      "PartialPublication": {
+        "Calls": 199,
+        "AllocatedBytes": 61899856,
+        "Milliseconds": 96.52254399999995
+      },
+      "FinalPublication": {
+        "Calls": 1,
+        "AllocatedBytes": 7945072,
+        "Milliseconds": 9.362209
+      },
+      "Intervention": {
+        "Calls": 1,
+        "AllocatedBytes": 9273472,
+        "Milliseconds": 13.837167
+      },
+      "OriginalHistoryReopen": {
+        "Calls": 1,
+        "AllocatedBytes": 331299104,
+        "Milliseconds": 402.513875
+      },
+      "RequiredOwners": 0,
+      "CompleteOwners": 0,
+      "PartialOwnerReads": 0,
+      "FinalOwnerReads": 0,
+      "PartialTerrainReads": 0,
+      "FinalTerrainReads": 1,
+      "FullWorldBytes": 25100,
+      "CurrentOwnerCount": 22,
+      "ProjectedDirectoryBytes": 2756,
+      "ProjectedCurrentPayloadBytes": 26379,
+      "RetainedOwnerArchiveCount": 0,
+      "RetainedOwnerArchiveBytes": 0,
+      "SqliteFileBytesIncludingWal": 626688,
+      "FinalHash": "cdacc09a8e758b04b97362a751d2c2be54334a6161bd586730c0e5dd9a48c5d6"
+    }
+  },
+  "ranges": {
+    "CompleteRoot": {
+      "Setup": {
+        "AllocatedBytes": [
+          129225872,
+          129238768
+        ],
+        "Milliseconds": [
+          222.803791,
+          329.644916
+        ]
+      },
+      "Capture": {
+        "AllocatedBytes": [
+          0,
+          0
+        ],
+        "Milliseconds": [
+          0,
+          0
+        ]
+      },
+      "PartialPublication": {
+        "AllocatedBytes": [
+          275059600,
+          275076328
+        ],
+        "Milliseconds": [
+          459.4811230000001,
+          564.9777809999997
+        ]
+      },
+      "FinalPublication": {
+        "AllocatedBytes": [
+          1522760,
+          1523984
+        ],
+        "Milliseconds": [
+          1.8615,
+          7.283458
+        ]
+      },
+      "Intervention": {
+        "AllocatedBytes": [
+          2369568,
+          2369568
+        ],
+        "Milliseconds": [
+          2.38325,
+          5.484916
+        ]
+      },
+      "OriginalHistoryReopen": {
+        "AllocatedBytes": [
+          267523688,
+          267524480
+        ],
+        "Milliseconds": [
+          324.40175,
+          357.155125
+        ]
+      },
+      "RequiredOwners": [
+        0
+      ],
+      "CompleteOwners": [
+        0
+      ],
+      "PartialOwnerReads": [
+        0
+      ],
+      "FinalOwnerReads": [
+        0
+      ],
+      "PartialTerrainReads": [
+        0
+      ],
+      "FinalTerrainReads": [
+        0
+      ],
+      "FullWorldBytes": [
+        25100
+      ],
+      "ProjectedDirectoryBytes": [
+        2756
+      ],
+      "ProjectedCurrentPayloadBytes": [
+        26379
+      ],
+      "RetainedOwnerArchiveCount": [
+        0
+      ],
+      "RetainedOwnerArchiveBytes": [
+        0
+      ],
+      "SqliteFileBytesIncludingWal": [
+        618496
+      ]
+    },
+    "TerrainSeparated": {
+      "Setup": {
+        "AllocatedBytes": [
+          172076808,
+          173137656
+        ],
+        "Milliseconds": [
+          280.93054099999995,
+          376.166666
+        ]
+      },
+      "Capture": {
+        "AllocatedBytes": [
+          4456920,
+          4458576
+        ],
+        "Milliseconds": [
+          5.6012070000000005,
+          7.7855
+        ]
+      },
+      "PartialPublication": {
+        "AllocatedBytes": [
+          61898416,
+          61899856
+        ],
+        "Milliseconds": [
+          96.52254399999995,
+          121.21790799999998
+        ]
+      },
+      "FinalPublication": {
+        "AllocatedBytes": [
+          7945072,
+          7946224
+        ],
+        "Milliseconds": [
+          9.362209,
+          14.091709
+        ]
+      },
+      "Intervention": {
+        "AllocatedBytes": [
+          9272952,
+          9273920
+        ],
+        "Milliseconds": [
+          10.605584,
+          17.398042
+        ]
+      },
+      "OriginalHistoryReopen": {
+        "AllocatedBytes": [
+          331291200,
+          331302760
+        ],
+        "Milliseconds": [
+          378.337417,
+          407.471125
+        ]
+      },
+      "RequiredOwners": [
+        0
+      ],
+      "CompleteOwners": [
+        0
+      ],
+      "PartialOwnerReads": [
+        0
+      ],
+      "FinalOwnerReads": [
+        0
+      ],
+      "PartialTerrainReads": [
+        0
+      ],
+      "FinalTerrainReads": [
+        1
+      ],
+      "FullWorldBytes": [
+        25100
+      ],
+      "ProjectedDirectoryBytes": [
+        2756
+      ],
+      "ProjectedCurrentPayloadBytes": [
+        26379
+      ],
+      "RetainedOwnerArchiveCount": [
+        0
+      ],
+      "RetainedOwnerArchiveBytes": [
+        0
+      ],
+      "SqliteFileBytesIncludingWal": [
+        626688
+      ]
+    },
+    "StoredOwners": {
+      "Setup": {
+        "AllocatedBytes": [
+          203503592,
+          204558760
+        ],
+        "Milliseconds": [
+          363.544833,
+          1056.5462909999999
+        ]
+      },
+      "Capture": {
+        "AllocatedBytes": [
+          4387832,
+          4388696
+        ],
+        "Milliseconds": [
+          5.22975,
+          18.337083
+        ]
+      },
+      "PartialPublication": {
+        "AllocatedBytes": [
+          102790592,
+          103088784
+        ],
+        "Milliseconds": [
+          238.3574140000001,
+          385.56575499999997
+        ]
+      },
+      "FinalPublication": {
+        "AllocatedBytes": [
+          14201248,
+          14205808
+        ],
+        "Milliseconds": [
+          20.475875,
+          29.274625
+        ]
+      },
+      "Intervention": {
+        "AllocatedBytes": [
+          15017552,
+          15020832
+        ],
+        "Milliseconds": [
+          21.971916,
+          34.9465
+        ]
+      },
+      "OriginalHistoryReopen": {
+        "AllocatedBytes": [
+          364398112,
+          364421224
+        ],
+        "Milliseconds": [
+          432.165833,
+          502.899459
+        ]
+      },
+      "RequiredOwners": [
+        13
+      ],
+      "CompleteOwners": [
+        21
+      ],
+      "PartialOwnerReads": [
+        2587
+      ],
+      "FinalOwnerReads": [
+        34
+      ],
+      "PartialTerrainReads": [
+        0
+      ],
+      "FinalTerrainReads": [
+        1
+      ],
+      "FullWorldBytes": [
+        25100
+      ],
+      "ProjectedDirectoryBytes": [
+        2756
+      ],
+      "ProjectedCurrentPayloadBytes": [
+        26379
+      ],
+      "RetainedOwnerArchiveCount": [
+        1567
+      ],
+      "RetainedOwnerArchiveBytes": [
+        1619368
+      ],
+      "SqliteFileBytesIncludingWal": [
+        2846720
+      ]
+    }
+  },
+  "host": "HOST.json",
+  "runtime": [
+    "8.0.31"
+  ],
+  "scope": "Warm three rotating orders. Same earned episode; managed allocation on synchronous calling thread only; no cold-cache/RSS/native/scale/statistical claim. Setup/intervention include fixture validation, publication excludes oracle/selection/assertions. Owner projected bytes apply to all layouts for comparison; only StoredOwners persists those images. SQLite lengths observed with recovered handle open; archive SQL read after disposal.",
+  "mandatory_due_age": "Unavailable as a general measure: no authoritative multi-domain obligation/membership binding. This workload does not establish scheduler fairness."
+}

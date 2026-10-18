@@ -113,9 +113,11 @@ revision/clock policy, required read cohort, legal absence, visibility, replay a
 Computed projections must be identified as derived. A checkbox for the parent property cannot certify
 that private knowledge, a pending future consequence or a historical producer was retained.
 
-## Next bounded implementation unit
+## Integrated candidate obligations
 
-Implement a **typed ownership-directory and coupled-write candidate for this same integrated episode**.
+Qualify a **typed ownership-directory and coupled-write candidate for this same integrated episode**.
+The publication and selected-work portions are implemented below; this list retains their complete
+comparison/migration obligations rather than assigning a duplicate implementation.
 Do not start another series of isolated terrain-read helpers or a replacement save service.
 
 - Specify stable actor/custodian/project keys, immutable exact owner revisions and complete bounded
@@ -229,3 +231,37 @@ its revision must not be confused with the catalog's sum across projects. No new
 is selected.611current passes include13new and fresh real-checkpoint recovery; retained production
 failures and the narrower synchronous Host binding are explicit. General scheduling/current-profile
 migration/measurement and independent review remain open.
+
+
+## Matched three-candidate cost disposition — 2026-10-18
+
+[The owner-cost comparison](p02/partition-state/owner-cost-comparison/RESULT.md) now executes the
+same earned200-step build, carried gift, intervention, completion and original-history recovery through
+complete-root, terrain-separated and selected typed-owner paths in three rotating orders. All command
+bytes, receipts and final worlds match. This is warm local evidence on AppleM2/.NET8.0.31, not cold,
+statistical, platform or scale qualification; capture/intervention/final/replay costs are explicit.
+
+| Metric | Complete root | Terrain-separated locality | Selected typed owners |
+| --- | ---: | ---: | ---: |
+| 199 partial commits, managed MB | 275.06–275.08 | 61.90–61.90 | 102.79–103.09 |
+| 199 partial commits, ms | 459.5–565.0 | 96.5–121.2 | 238.4–385.6 |
+| Two captures, managed MB | 0.00–0.00 | 4.46–4.46 | 4.39–4.39 |
+| Final installation, managed MB | 1.52–1.52 | 7.95–7.95 | 14.20–14.21 |
+| Original-history reopen, managed MB | 267.52–267.52 | 331.29–331.30 | 364.40–364.42 |
+| Original-history reopen, ms | 324.4–357.2 | 378.3–407.5 | 432.2–502.9 |
+| Observed SQLite bytes including WAL/SHM | 618,496 | 626,688 | 2,846,720 |
+
+The current typed implementation is more expensive than the coarse alternative for this small cohort.
+Its independent owner-loading capability supports the architecture's residency goal; it does not
+justify a general speed or space claim. Keep the recommendation conditional and the default unchanged.
+Typed storage retains1,567 payloads/1,619,368 archive bytes here, while its current directory and payloads
+are2,756/26,379bytes. Full ordinary world bytes are25,100. General oldest-due age is unavailable without
+authoritative obligation/membership binding, not assumed zero.
+
+Do not promote this candidate or add speculative caches to make the comparison attractive. Existing
+source exposes complete-directory rebuilds, archive accounting, repeated selected reads, actor exposure
+writes and full replay; profiling must attribute costs before optimizing them. Preserve exact history,
+complete cohorts and final-admission work in any follow-up. The [combined due proof](p02/partition-state/combined-due-boundary/RESULT.md)
+and noninitial-checkpoint qualification stand within their scopes. Live scheduling/discovery, current40/41
+migration, remaining cold/platform/scale measurements and independent review still precede full acceptance.
+The failed external-diagnostic lease attempt is retained as a fixture defect; no production law changed.

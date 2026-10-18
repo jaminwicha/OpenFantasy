@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~Three_storage_candidates_measure_the_same_earned_episode_and_original_history"
+  ],
+  "exit_code": 0,
+  "seconds": 2.1539877919713035,
+  "bound_seconds": 180
+}

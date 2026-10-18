@@ -1,0 +1,14 @@
+[
+  {
+    "run": "comparison-01/comparison.json",
+    "classification": "fixture",
+    "failed_cases": 3,
+    "seconds": 112.30233279208187,
+    "cause": "Diagnostic raw SQLite SELECT attempted a second connection while the restored authority still owned its exclusive lease. All failures occur at archive measurement, after that candidate completed publication and reopened.",
+    "correction": "Dispose the recovered authority before external archive inspection; retain observed open-handle file lengths separately. Add closed-archive inspection to the cheap geometry preflight. Preserve production lease policy and 180-second bound.",
+    "failed_source": "FAILED_SOURCE_01.txt",
+    "source_sha256": "daa87c4c528d89e2fe401048d28b967de9b15e932ec19fb08f2c21ea717b14e3",
+    "artifacts": "Beta/Runtime/artifacts/owner-cost-comparison-20261018-attempt01",
+    "rerun": "Explicit corrected preflight followed by a new comparison run only if that passes; never reuse failed artifacts."
+  }
+]

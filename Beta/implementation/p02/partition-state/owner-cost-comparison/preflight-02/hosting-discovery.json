@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move|FullyQualifiedName~Same_earned_episode_compares_publication_and_replay_without_changing_outcomes|FullyQualifiedName~Selected_stored_publication_completes_the_original_saved_project_after_collection_and_intervention|FullyQualifiedName~Typed_owners_keep_carried_custody_stable_and_publish_gift_work_return_and_history"
+  ],
+  "exit_code": 0,
+  "seconds": 3.489248082973063,
+  "bound_seconds": 180
+}

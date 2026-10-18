@@ -1,0 +1,32 @@
+{
+  "baseline": "6d3b03ab827e25658aad427aa45a4026366c8ff0",
+  "changed": {
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": {
+      "previous": "b66f076f14e3d27147e5d536f6b595cbccdf970ec175a2c0a092eab2191c0332",
+      "current": "c6951b322bd84df62df683494eeca31d71f408580075688a3c89593c77b1ba31"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "previous": "ec2fd5a49ac22d293fa73ec0109695deb65b895381a0c90a50c283fe9ab2656f",
+      "current": "3098133f33d98a0a42824ec9499bedd5403b297c01640e65cb4332c999d9ba1a"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs": {
+      "previous": null,
+      "current": "b06a3b0fb66e0bc853501ec286ef9bdf05ffe113308f182a8f56e459104241a5"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "previous": "ec2fd5a49ac22d293fa73ec0109695deb65b895381a0c90a50c283fe9ab2656f",
+      "current": "3098133f33d98a0a42824ec9499bedd5403b297c01640e65cb4332c999d9ba1a"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": {
+      "previous": "428b3dfb665d4c9f8b789cf158073956a0035e31150195b3aeef5e295663ad42",
+      "current": "3bb107a671f986387a43b7aa795250c882ee3b1e927524a27c944e7b0c145b4f"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": {
+      "previous": "e0cc4cb6e67bb68f9c78bf9d4e2ee6a067bb8ff5a8f2fe79f192915a053d290a",
+      "current": "72b7f189d4f1fe5a7b893cb706b085d0e945df25b06e4453ff3c7eefff94c37b"
+    }
+  },
+  "production_source_unchanged": true,
+  "reuse": "Previous 30-case combined due-boundary evidence remains on original pins; this packet does not claim a new execution of those or prior 611 cases. Existing fixture and comparison sources are unchanged; new tests exercise the same actual storage entrypoints. Rebuilt metadata is not binary identity.",
+  "current_pins": "preflight-03/pins.json"
+}

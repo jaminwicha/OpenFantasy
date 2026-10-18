@@ -331,13 +331,31 @@ both counted and transformed holdings; shared provenance/definitions are separat
 Actual gifts and final installation publish their coupled changed owners together. Stable owner keys
 survive movement, and unchanged holdings retain exact payload hashes during partial work.
 
-The authority still retains the whole nonterrain locality, visits/encodes every current owner and
-replays full original history. Reused owner rows are read and verified; this is not selective I/O or
+The original whole-cohort publication path retains the whole nonterrain locality, visits/encodes
+every current owner and replays full original history. Reused owner rows are read and verified; this is not selective I/O or
 independent owner residency. Actor exposure still changes actor payloads on each advancing step.
 The archive retains historical versions under explicit experimental count/byte limits, so directory
 separation is not a net space-saving claim.
 [Stored-owner reconstruction](p02/partition-state/stored-owner-reconstruction/RESULT.md) adds complete
 cohort admission from actual payloads after replay authenticates the selected head. Recovery returns
 that reconstructed world after exact replay comparison. This adds a validation/read stage, not a
-measured performance improvement. Selective loading, fairness, current-profile migration, noninitial
-checkpoints and independent review remain open.
+measured performance improvement. General selective loading, fairness, current-profile migration, general/current-profile checkpoints
+and independent review remain open; later bounded selected-work/checkpoint proofs are linked below.
+
+
+## Matched selected-owner cost qualification
+
+[Three-candidate measurements](p02/partition-state/owner-cost-comparison/RESULT.md) compare the same
+actual saved episode and commands in three rotating orders, including full completion and recovery.
+Selected stored work reads13 of21 payloads for each partial step, but still rebuilds the complete
+directory and retains historical images. Its199 partial publications allocate102.79–103.09MB versus
+61.90MB for the coarse terrain-separated path and275.06–275.08MB for complete-root publication.
+Full replay and final admission remain additional measured costs; see the result for exact phase ranges.
+Observed SQLite footprint is2,846,720bytes versus626,688 coarse and618,496 complete-root bytes.
+
+This closes the missing matched warm cost comparison for the bounded typed candidate. It does not
+close independent design review, production/cold/platform/scale or general fairness. The recommendation
+is conditional on ownership/residency needs, not blanket performance superiority. The [combined due
+boundary](p02/partition-state/combined-due-boundary/RESULT.md) and [real checkpoint](p02/partition-state/stored-checkpoint/RESULT.md)
+qualify their exact legacy scopes. Current40/41 interpretation, all nested migration obligations and
+the full P02 table remain. No second publisher, format migration or new default is selected.

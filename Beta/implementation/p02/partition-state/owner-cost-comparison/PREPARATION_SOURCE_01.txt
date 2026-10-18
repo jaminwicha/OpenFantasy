@@ -1,0 +1,235 @@
+using System.Diagnostics;
+using System.Text.Json;
+using Microsoft.Data.Sqlite;
+using OpenFantasy.Core.Construction.Ownership;
+using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Worlds;
+using OpenFantasy.Hosting.Worlds;
+
+namespace OpenFantasy.Hosting.Tests.WorldStorage;
+
+public sealed partial class SeparatedTerrainStorageTests
+{
+    [Fact]
+    public void Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move()
+    {
+        using var files = new CostFiles("geometry");
+        var ready = Start(files.Path, typed: true);
+        using var authority = ready.Authority;
+        var world = authority.ReadStateForHost();
+        Assert.Equal(0UL, world.Construction!.Projects.Single().Progress.CompletedUnits);
+        for (int i = 0; i < 40; i++)
+        {
+            var batch = Batch(world.Inventory, world.Space.Actors, world.Construction!, world.Revision,
+                world.AdvancingSteps, ready.Fixture);
+            var decision = authority.Commit(batch);
+            Assert.Equal(WorldActionRejection.None, Assert.Single(decision.Receipts).Rejection);
+            world = decision.Candidate;
+        }
+        Assert.Equal(40UL, world.Construction!.Projects.Single().Progress.CompletedUnits);
+        _ = CostIntervention(authority, ready.Fixture, world);
+    }
+
+    [Theory]
+    [InlineData(0)]
+    [InlineData(1)]
+    [InlineData(2)]
+    public void Three_storage_candidates_measure_the_same_earned_episode_and_original_history(int first)
+    {
+        var observations = new List<OwnerCostEpisode>();
+        for (int offset = 0; offset < 3; offset++)
+        {
+            var kind = (CostStorageKind)((first + offset) % 3);
+            using var files = new CostFiles($"order-{first}-{kind}");
+            observations.Add(MeasureOwnerEpisode(files.Path, kind));
+        }
+        foreach (var next in observations.Skip(1))
+        {
+            Assert.Equal(observations[0].Genesis, next.Genesis);
+            Assert.Equal(observations[0].Start, next.Start);
+            Assert.Equal(observations[0].FinalWorld, next.FinalWorld);
+            Assert.Equal(observations[0].Commands.Count, next.Commands.Count);
+            for (int i = 0; i < next.Commands.Count; i++)
+            {
+                Assert.Equal(observations[0].Commands[i], next.Commands[i]);
+                Assert.Equal(observations[0].Receipts[i], next.Receipts[i]);
+            }
+        }
+        output.WriteLine("OwnerCostComparison " + JsonSerializer.Serialize(new
+        {
+            First = first,
+            Cases = observations.Select(observation => observation.Measurement),
+            Scope = "Three rotated orders; same actual 200 work commits, gift/carry prefix, intervention after40, completion and original history. Warm managed-thread diagnostics only. Ordinary oracle, selection and assertions are outside samples. Capture and intervention costs are reported separately; replay includes OpenExisting and ReadStateForHost. No native allocation, RSS, cold-cache, fairness, scale or statistical claim."
+        }));
+    }
+
+    private static OwnerCostEpisode MeasureOwnerEpisode(string path, CostStorageKind kind)
+    {
+        var setup = new CostSample();
+        var ready = setup.Measure(() => Start(path, separated: kind != CostStorageKind.CompleteRoot,
+            typed: kind == CostStorageKind.StoredOwners));
+        var capture = new CostSample();
+        var partial = new CostSample();
+        var final = new CostSample();
+        var intervention = new CostSample();
+        var replay = new CostSample();
+        var receipts = new List<byte[]>();
+        var commands = new List<byte[]>();
+        int partialOwnerReads = 0, finalOwnerReads = 0, partialTerrainReads = 0, finalTerrainReads = 0;
+        int requiredOwners = 0, completeOwners = 0;
+        byte[] finalWorld;
+        ContentHash start;
+        ConstructionOwnerDirectory directory;
+        using (var authority = ready.Authority)
+        {
+            var world = setup.Measure(authority.ReadStateForHost);
+            start = world.ContentHash;
+            var locality = ready.Locality;
+            for (int i = 0; i < 200; i++)
+            {
+                var batch = Batch(world.Inventory, world.Space.Actors, world.Construction!, world.Revision,
+                    world.AdvancingSteps, ready.Fixture);
+                if (i is 0 or 40)
+                {
+                    if (kind == CostStorageKind.StoredOwners)
+                    {
+                        var interval = capture.Measure(() => authority.EvictForStoredConstruction(batch.Actions.Single()));
+                        requiredOwners = interval.RequiredOwnerCount;
+                        completeOwners = interval.CompleteOwnerCount;
+                    }
+                    else if (kind == CostStorageKind.TerrainSeparated)
+                        locality = capture.Measure(() => authority.EvictConstructionTerrain(locality.ProjectId, 512));
+                }
+                var expected = new WorldStepProcessor().Decide(world, batch);
+                int ownersBefore = authority.OwnerArchiveReads, terrainBefore = authority.TerrainArchiveReads;
+                var sample = i == 199 ? final : partial;
+                WorldActionReceipt receipt = sample.Measure(() => kind switch
+                {
+                    CostStorageKind.CompleteRoot => authority.CommitConstructionLocality(batch, locality.ProjectId, 512).Receipts.Single(),
+                    CostStorageKind.TerrainSeparated => authority.CommitWithoutTerrain(batch).Receipt,
+                    CostStorageKind.StoredOwners => authority.CommitStoredConstruction(batch),
+                    _ => throw new InvalidOperationException()
+                });
+                int ownerReads = authority.OwnerArchiveReads - ownersBefore;
+                int terrainReads = authority.TerrainArchiveReads - terrainBefore;
+                if (i < 199)
+                {
+                    partialOwnerReads += ownerReads;
+                    partialTerrainReads += terrainReads;
+                    Assert.Equal(0, terrainReads);
+                    if (kind == CostStorageKind.StoredOwners) Assert.Equal(requiredOwners, ownerReads);
+                }
+                else { finalOwnerReads = ownerReads; finalTerrainReads = terrainReads; }
+                Assert.Equal(WorldActionRejection.None, receipt.Rejection);
+                Assert.Equal(WorldReceiptCodecV1.Encode(expected.Receipts.Single()), WorldReceiptCodecV1.Encode(receipt));
+                receipts.Add(WorldReceiptCodecV1.Encode(receipt));
+                commands.Add(WorldStepCodec.Encode(batch));
+                world = expected.Candidate;
+                if (i == 39)
+                    world = intervention.Measure(() => CostIntervention(authority, ready.Fixture, world));
+            }
+            var actual = authority.ReadStateForHost();
+            AssertCompleted(actual);
+            Assert.Equal(WorldSnapshotCodec.Encode(world), WorldSnapshotCodec.Encode(actual));
+            finalWorld = WorldSnapshotCodec.Encode(actual);
+            directory = ConstructionOwnerDirectory.Capture(actual);
+            Assert.Equal(ready.GenesisHash, authority.ReadRecordedStateForHost(0).State.ContentHash);
+        }
+        SqliteWorldAuthority? reopened = null;
+        try
+        {
+            var restored = replay.Measure(() =>
+            {
+                reopened = SqliteWorldAuthority.OpenExisting(path);
+                return reopened.ReadStateForHost();
+            });
+            Assert.Equal(finalWorld, WorldSnapshotCodec.Encode(restored));
+            Assert.Equal(ready.GenesisHash, reopened!.ReadRecordedStateForHost(0).State.ContentHash);
+            long sqliteBytes = new[] { path, path + "-wal", path + "-shm" }.Where(File.Exists)
+                .Sum(file => new FileInfo(file).Length);
+            long archiveCount = 0, archiveBytes = 0;
+            if (kind == CostStorageKind.StoredOwners)
+            {
+                using var connection = new SqliteConnection(new SqliteConnectionStringBuilder
+                    { DataSource = path, Mode = SqliteOpenMode.ReadOnly, Pooling = false }.ToString());
+                connection.Open();
+                using var query = connection.CreateCommand();
+                query.CommandText = "SELECT COUNT(*),SUM(length(state)) FROM world_owners";
+                using var reader = query.ExecuteReader();
+                Assert.True(reader.Read());
+                archiveCount = reader.GetInt64(0);
+                archiveBytes = reader.GetInt64(1);
+            }
+            var measurement = new
+            {
+                Kind = kind.ToString(), WorkCommits = 200, PartialCommits = 199,
+                Setup = setup, Capture = capture, PartialPublication = partial, FinalPublication = final,
+                Intervention = intervention, OriginalHistoryReopen = replay,
+                RequiredOwners = requiredOwners, CompleteOwners = completeOwners,
+                PartialOwnerReads = partialOwnerReads, FinalOwnerReads = finalOwnerReads,
+                PartialTerrainReads = partialTerrainReads, FinalTerrainReads = finalTerrainReads,
+                FullWorldBytes = finalWorld.Length, CurrentOwnerCount = directory.Owners.Count,
+                ProjectedDirectoryBytes = directory.CopyBytes().Length,
+                ProjectedCurrentPayloadBytes = directory.Owners.Sum(owner => owner.ByteLength),
+                RetainedOwnerArchiveCount = archiveCount, RetainedOwnerArchiveBytes = archiveBytes,
+                SqliteFileBytesIncludingWal = sqliteBytes, FinalHash = restored.ContentHash.ToString()
+            };
+            File.WriteAllBytes(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(path)!, "final.ofc"), finalWorld);
+            File.WriteAllText(System.IO.Path.Combine(System.IO.Path.GetDirectoryName(path)!, "measurement.json"),
+                JsonSerializer.Serialize(measurement, new JsonSerializerOptions { WriteIndented = true }));
+            return new(ready.GenesisHash, start, finalWorld, commands, receipts, measurement);
+        }
+        finally { reopened?.Dispose(); }
+    }
+
+    private static WorldSnapshot CostIntervention(SqliteWorldAuthority authority,
+        ConstructionUpgradeFixture fixture, WorldSnapshot expected)
+    {
+        var world = authority.ReadStateForHost();
+        Assert.Equal(WorldSnapshotCodec.Encode(expected), WorldSnapshotCodec.Encode(world));
+        var player = world.Residents.Single(value => value.ControllerKind == ResidentControllerKind.Player).ActorId;
+        var feet = world.Space.GetActor(player).Feet;
+        var batch = fixture.Batch(world, [], [new(ConstructionUpgradeFixture.Delivery(world, player), player, -32, 0)]);
+        var next = authority.Commit(batch).Candidate;
+        Assert.Equal(feet.Offset(-32, 0, 0), next.Space.GetActor(player).Feet);
+        Assert.Equal(world.Inventory.ContentHash, next.Inventory.ContentHash);
+        return next;
+    }
+
+    private enum CostStorageKind { CompleteRoot, TerrainSeparated, StoredOwners }
+    private sealed record OwnerCostEpisode(ContentHash Genesis, ContentHash Start, byte[] FinalWorld,
+        IReadOnlyList<byte[]> Commands, IReadOnlyList<byte[]> Receipts, object Measurement);
+    private sealed class CostSample
+    {
+        public int Calls { get; private set; }
+        public long AllocatedBytes { get; private set; }
+        public double Milliseconds { get; private set; }
+        internal T Measure<T>(Func<T> action)
+        {
+            long bytes = GC.GetAllocatedBytesForCurrentThread(), ticks = Stopwatch.GetTimestamp();
+            T result = action();
+            long elapsed = Stopwatch.GetTimestamp() - ticks;
+            AllocatedBytes += GC.GetAllocatedBytesForCurrentThread() - bytes;
+            Milliseconds += elapsed * 1000.0 / Stopwatch.Frequency;
+            Calls++;
+            return result;
+        }
+    }
+    private sealed class CostFiles : IDisposable
+    {
+        private readonly bool _retained;
+        private readonly string _directory;
+        internal CostFiles(string name)
+        {
+            string? root = Environment.GetEnvironmentVariable("OPENFANTASY_OWNER_COST_ARTIFACTS");
+            _retained = !string.IsNullOrWhiteSpace(root);
+            _directory = _retained ? System.IO.Path.Combine(root!, name) : System.IO.Path.Combine(
+                System.IO.Path.GetTempPath(), "openfantasy-owner-cost-" + Guid.NewGuid().ToString("N"));
+            Assert.False(Directory.Exists(_directory), "Owner-cost artifacts need a fresh directory.");
+            Directory.CreateDirectory(_directory);
+            Path = System.IO.Path.Combine(_directory, "world.sqlite3");
+        }
+        internal string Path { get; }
+        public void Dispose() { if (!_retained) Directory.Delete(_directory, recursive: true); }
+    }
+}

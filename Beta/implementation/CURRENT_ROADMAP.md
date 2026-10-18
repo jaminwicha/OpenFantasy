@@ -530,3 +530,17 @@ No production law or source changed. Synchronous Host draining, general discover
 current40/41 migration, remaining comparison measurements and independent review stay open.
 The complete P02 closure table, P00–P14/181-requirement scope and scheduled NPC/story/ecology/art/audio
 work remain unchanged. This combined proof does not establish a live ready-player scheduling exit.
+
+
+### PLAN-STATE matched owner-cost disposition
+
+[The matched comparison](p02/partition-state/owner-cost-comparison/RESULT.md) qualifies identical actual
+commands/receipts/final state across complete-root, coarse terrain-separated and selected typed-owner
+storage, in three rotating orders. Eight current cases pass, four new. Selected typed owners allocate
+about103MB versus62MB for coarse partial publication and retain an observed2.85MB versus0.63MB SQLite
+footprint here. Capture, final admission, intervention and full replay are separately recorded.
+This supports independent residency as a capability, not a blanket performance win or default promotion.
+The initial diagnostic's exclusive-lease failure remains retained; production source/laws are unchanged.
+The conditional decision, remaining scheduling/discovery/current-profile/cold/platform/scale/review
+exits, complete P02 table and full phase/requirement scope remain intact. This bounded comparison is
+complete; do not repeat it or build another storage candidate without a concrete unresolved contract.

@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move"
+  ],
+  "exit_code": 0,
+  "seconds": 2.0628695000195876,
+  "bound_seconds": 180
+}

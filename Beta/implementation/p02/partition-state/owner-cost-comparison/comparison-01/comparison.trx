@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="1f8d74c1-84e2-4337-b0fe-5a4a406987b3" name="@mac 2026-10-18 17:24:14" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-18T17:24:14.2341240-05:00" queuing="2026-10-18T17:24:14.2341240-05:00" start="2026-10-18T17:23:34.8571660-05:00" finish="2026-10-18T17:25:26.1070790-05:00" />
+  <TestSettings name="default" id="6a7b311e-3a9a-4483-a977-d18b896a85f7">
+    <Deployment runDeploymentRoot="_mac_2026-10-18_17_24_14" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="708f7ba4-1815-4ec2-a18f-d9101a35bb3e" testId="81532766-e1f0-e24c-5e42-a1c87f90f79e" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 1)" computerName="mac" duration="00:00:34.0338609" startTime="2026-10-18T17:24:51.9369670-05:00" endTime="2026-10-18T17:25:25.9734950-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="708f7ba4-1815-4ec2-a18f-d9101a35bb3e">
+      <Output>
+        <ErrorInfo>
+          <Message>Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.MeasureOwnerEpisode(String path, CostStorageKind kind) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs:line 158
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Int32 first) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs:line 44
+   at InvokeStub_SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b1706638-0fe7-4223-9c53-ed9471e5291e" testId="7f9dceff-dc69-818f-99ee-c5d79a5a0f20" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 0)" computerName="mac" duration="00:00:37.8804444" startTime="2026-10-18T17:24:14.0382720-05:00" endTime="2026-10-18T17:24:51.9233620-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b1706638-0fe7-4223-9c53-ed9471e5291e">
+      <Output>
+        <ErrorInfo>
+          <Message>Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.MeasureOwnerEpisode(String path, CostStorageKind kind) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs:line 158
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Int32 first) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs:line 44
+   at InvokeStub_SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Object, Span`1)
+   at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="9d4d0dde-e039-4c1c-bb9a-b3f9d5fd8c50" testId="30c11ddf-380b-7846-b338-843b632710e6" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 2)" computerName="mac" duration="00:00:35.7362593" startTime="2026-10-18T17:23:38.2435510-05:00" endTime="2026-10-18T17:24:14.0301120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9d4d0dde-e039-4c1c-bb9a-b3f9d5fd8c50">
+      <Output>
+        <ErrorInfo>
+          <Message>Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.</Message>
+          <StackTrace>   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.MeasureOwnerEpisode(String path, CostStorageKind kind) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs:line 158
+   at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Int32 first) in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs:line 44
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="30c11ddf-380b-7846-b338-843b632710e6">
+      <Execution id="9d4d0dde-e039-4c1c-bb9a-b3f9d5fd8c50" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Three_storage_candidates_measure_the_same_earned_episode_and_original_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="81532766-e1f0-e24c-5e42-a1c87f90f79e">
+      <Execution id="708f7ba4-1815-4ec2-a18f-d9101a35bb3e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Three_storage_candidates_measure_the_same_earned_episode_and_original_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 0)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7f9dceff-dc69-818f-99ee-c5d79a5a0f20">
+      <Execution id="b1706638-0fe7-4223-9c53-ed9471e5291e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Three_storage_candidates_measure_the_same_earned_episode_and_original_history" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="81532766-e1f0-e24c-5e42-a1c87f90f79e" executionId="708f7ba4-1815-4ec2-a18f-d9101a35bb3e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7f9dceff-dc69-818f-99ee-c5d79a5a0f20" executionId="b1706638-0fe7-4223-9c53-ed9471e5291e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="30c11ddf-380b-7846-b338-843b632710e6" executionId="9d4d0dde-e039-4c1c-bb9a-b3f9d5fd8c50" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="0" failed="3" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.45]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.39]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.64]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:37.54]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:00:37.54]       Stack Trace:
+[xUnit.net 00:00:37.55]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:00:37.55]            at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+[xUnit.net 00:00:37.55]            at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+[xUnit.net 00:00:37.55]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:00:37.55]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:00:37.55]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs(158,0): at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.MeasureOwnerEpisode(String path, CostStorageKind kind)
+[xUnit.net 00:00:37.55]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs(44,0): at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Int32 first)
+[xUnit.net 00:00:37.55]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:37.55]            at System.Reflection.MethodBaseInvoker.InvokeDirectByRefWithFewArgs(Object obj, Span`1 copyOfArgs, BindingFlags invokeAttr)
+[xUnit.net 00:01:15.39]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:01:15.39]       Stack Trace:
+[xUnit.net 00:01:15.39]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:01:15.39]            at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+[xUnit.net 00:01:15.39]            at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+[xUnit.net 00:01:15.39]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:01:15.39]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:01:15.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs(158,0): at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.MeasureOwnerEpisode(String path, CostStorageKind kind)
+[xUnit.net 00:01:15.39]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs(44,0): at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Int32 first)
+[xUnit.net 00:01:15.39]            at InvokeStub_SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Object, Span`1)
+[xUnit.net 00:01:15.39]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:01:49.43]       Microsoft.Data.Sqlite.SqliteException : SQLite Error 5: 'database is locked'.
+[xUnit.net 00:01:49.43]       Stack Trace:
+[xUnit.net 00:01:49.43]            at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+[xUnit.net 00:01:49.43]            at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+[xUnit.net 00:01:49.43]            at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+[xUnit.net 00:01:49.43]            at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+[xUnit.net 00:01:49.43]            at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+[xUnit.net 00:01:49.43]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs(158,0): at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.MeasureOwnerEpisode(String path, CostStorageKind kind)
+[xUnit.net 00:01:49.43]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredOwnerCostComparisonTests.cs(44,0): at OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Int32 first)
+[xUnit.net 00:01:49.43]            at InvokeStub_SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(Object, Span`1)
+[xUnit.net 00:01:49.43]            at System.Reflection.MethodBaseInvoker.InvokeWithOneArg(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+[xUnit.net 00:01:49.45]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-18T17:24:14.1189930-05:00">
+        <Text>[xUnit.net 00:00:37.53]     OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 2) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-18T17:24:51.9520740-05:00">
+        <Text>[xUnit.net 00:01:15.39]     OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 0) [FAIL]</Text>
+      </RunInfo>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-18T17:25:25.9835850-05:00">
+        <Text>[xUnit.net 00:01:49.42]     OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Three_storage_candidates_measure_the_same_earned_episode_and_original_history(first: 1) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

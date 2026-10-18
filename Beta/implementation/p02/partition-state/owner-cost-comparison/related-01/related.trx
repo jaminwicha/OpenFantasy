@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="6db27829-1159-4d7b-a425-4c9d309cee86" name="@mac 2026-10-18 17:27:18" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-18T17:27:18.1838600-05:00" queuing="2026-10-18T17:27:18.1838600-05:00" start="2026-10-18T17:27:13.1965600-05:00" finish="2026-10-18T17:27:25.4682270-05:00" />
+  <TestSettings name="default" id="d2c2a316-75ff-43fa-b738-a423ffb90501">
+    <Deployment runDeploymentRoot="_mac_2026-10-18_17_27_18" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a8a905e9-4c81-4fb8-8a9c-6c06daa254b2" testId="be76c8ee-64ac-53a7-9320-8cbd115ab36f" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Same_earned_episode_compares_publication_and_replay_without_changing_outcomes(separatedFirst: False)" computerName="mac" duration="00:00:02.1128608" startTime="2026-10-18T17:27:18.1517000-05:00" endTime="2026-10-18T17:27:20.2646980-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a8a905e9-4c81-4fb8-8a9c-6c06daa254b2">
+      <Output>
+        <StdOut>{"SeparatedFirst":false,"First":{"SeparatedTerrain":false,"SelectedWorkCommits":200,"PublicationAllocatedBytes":276696496,"PublicationMilliseconds":582.599242,"ReplayAllocatedBytes":267566224,"ReplayMilliseconds":343.416875,"FullWorldBytes":25100,"LocalityImageBytes":24511,"SqliteFileBytesIncludingWal":618496},"Second":{"SeparatedTerrain":true,"SelectedWorkCommits":200,"PublicationAllocatedBytes":69846920,"PublicationMilliseconds":114.955709,"ReplayAllocatedBytes":331300920,"ReplayMilliseconds":371.065875,"FullWorldBytes":25100,"LocalityImageBytes":24511,"SqliteFileBytesIncludingWal":626688},"Scope":"Same selected 200 work commits with an ordinary intervening move after40; excludes setup, selection, assertions, intervention and final encoding from publication timing. Reopen uses full original history. Two execution orders are diagnostics, not statistical or cold-cache qualification."}</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e5e4a9ea-d5fb-4b29-a86f-830947230bbb" testId="58f326b9-a0bb-839f-4478-a11227a71d26" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Typed_owners_keep_carried_custody_stable_and_publish_gift_work_return_and_history" computerName="mac" duration="00:00:02.4965642" startTime="2026-10-18T17:27:22.4695640-05:00" endTime="2026-10-18T17:27:24.9662610-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e5e4a9ea-d5fb-4b29-a86f-830947230bbb">
+      <Output>
+        <StdOut>After40 earned work commits: 6 changed current owners, 6138 changed-current-payload bytes; cumulative archive bytes are measured separately. Unchanged custodian images retain exact hashes.
+Typed directory: 22 current owners, 2756 directory bytes, 26379 current payload bytes; full world 25100 bytes. Actor exposure still changes actor images on advancing work. No independent-detail loading or scale claim.
+Complete retained typed archive: 1567 unique payloads, 1619368 payload bytes; directory/head/journal/SQLite overhead excluded. All historical payloads must be verified during reopen.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="f70bbbef-1c3b-4598-b54a-c35afada761a" testId="4170ac46-d84d-e232-926f-107407b0a577" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Same_earned_episode_compares_publication_and_replay_without_changing_outcomes(separatedFirst: True)" computerName="mac" duration="00:00:02.2020445" startTime="2026-10-18T17:27:20.2660470-05:00" endTime="2026-10-18T17:27:22.4682250-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f70bbbef-1c3b-4598-b54a-c35afada761a">
+      <Output>
+        <StdOut>{"SeparatedFirst":true,"First":{"SeparatedTerrain":true,"SelectedWorkCommits":200,"PublicationAllocatedBytes":69849936,"PublicationMilliseconds":183.724459,"ReplayAllocatedBytes":331297680,"ReplayMilliseconds":486.0365,"FullWorldBytes":25100,"LocalityImageBytes":24511,"SqliteFileBytesIncludingWal":626688},"Second":{"SeparatedTerrain":false,"SelectedWorkCommits":200,"PublicationAllocatedBytes":276683736,"PublicationMilliseconds":527.247456,"ReplayAllocatedBytes":267541072,"ReplayMilliseconds":370.824084,"FullWorldBytes":25100,"LocalityImageBytes":24511,"SqliteFileBytesIncludingWal":618496},"Scope":"Same selected 200 work commits with an ordinary intervening move after40; excludes setup, selection, assertions, intervention and final encoding from publication timing. Reopen uses full original history. Two execution orders are diagnostics, not statistical or cold-cache qualification."}</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="cbfb8138-d111-4eed-8679-1d7e3523e872" testId="3ba8b39f-2cf5-de36-4806-5662b4ddc849" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Selected_stored_publication_completes_the_original_saved_project_after_collection_and_intervention" computerName="mac" duration="00:00:03.2892537" startTime="2026-10-18T17:27:14.8517590-05:00" endTime="2026-10-18T17:27:18.1465660-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cbfb8138-d111-4eed-8679-1d7e3523e872">
+      <Output>
+        <StdOut>Stored partial publication: 13/21 owner payload reads per partial step; all resident exposure and due gathering retained, zero terrain reads for partial steps; full final admission and intervening action included.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="ef8077b7-c551-4478-b89f-5bfc027ecff1" testId="461f1fca-e98a-f4a6-bc0b-81fed58853df" testName="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move" computerName="mac" duration="00:00:00.4280853" startTime="2026-10-18T17:27:24.9675890-05:00" endTime="2026-10-18T17:27:25.3957630-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ef8077b7-c551-4478-b89f-5bfc027ecff1" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Selected_stored_publication_completes_the_original_saved_project_after_collection_and_intervention" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="3ba8b39f-2cf5-de36-4806-5662b4ddc849">
+      <Execution id="cbfb8138-d111-4eed-8679-1d7e3523e872" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Selected_stored_publication_completes_the_original_saved_project_after_collection_and_intervention" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="461f1fca-e98a-f4a6-bc0b-81fed58853df">
+      <Execution id="ef8077b7-c551-4478-b89f-5bfc027ecff1" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Matched_owner_cost_fixture_preflights_actual_routes_and_the_intervening_move" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Typed_owners_keep_carried_custody_stable_and_publish_gift_work_return_and_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="58f326b9-a0bb-839f-4478-a11227a71d26">
+      <Execution id="e5e4a9ea-d5fb-4b29-a86f-830947230bbb" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Typed_owners_keep_carried_custody_stable_and_publish_gift_work_return_and_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Same_earned_episode_compares_publication_and_replay_without_changing_outcomes(separatedFirst: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="4170ac46-d84d-e232-926f-107407b0a577">
+      <Execution id="f70bbbef-1c3b-4598-b54a-c35afada761a" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Same_earned_episode_compares_publication_and_replay_without_changing_outcomes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Same_earned_episode_compares_publication_and_replay_without_changing_outcomes(separatedFirst: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="be76c8ee-64ac-53a7-9320-8cbd115ab36f">
+      <Execution id="a8a905e9-4c81-4fb8-8a9c-6c06daa254b2" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests" name="Same_earned_episode_compares_publication_and_replay_without_changing_outcomes" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="be76c8ee-64ac-53a7-9320-8cbd115ab36f" executionId="a8a905e9-4c81-4fb8-8a9c-6c06daa254b2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="58f326b9-a0bb-839f-4478-a11227a71d26" executionId="e5e4a9ea-d5fb-4b29-a86f-830947230bbb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4170ac46-d84d-e232-926f-107407b0a577" executionId="f70bbbef-1c3b-4598-b54a-c35afada761a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ba8b39f-2cf5-de36-4806-5662b4ddc849" executionId="cbfb8138-d111-4eed-8679-1d7e3523e872" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="461f1fca-e98a-f4a6-bc0b-81fed58853df" executionId="ef8077b7-c551-4478-b89f-5bfc027ecff1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="5" executed="5" passed="5" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.26]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:00.96]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.14]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:11.74]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

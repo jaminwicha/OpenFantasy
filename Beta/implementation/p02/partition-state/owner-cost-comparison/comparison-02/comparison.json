@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Three_storage_candidates_measure_the_same_earned_episode_and_original_history",
+    "--logger",
+    "trx;LogFileName=comparison.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/owner-cost-comparison/comparison-02"
+  ],
+  "exit_code": 0,
+  "seconds": 22.052834292058833,
+  "bound_seconds": 180
+}

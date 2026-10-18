@@ -1,0 +1,43 @@
+[
+  {
+    "command": [
+      "uname",
+      "-m"
+    ],
+    "exit_code": 0,
+    "output": "arm64\n"
+  },
+  {
+    "command": [
+      "sw_vers"
+    ],
+    "exit_code": 0,
+    "output": "ProductName:\t\tmacOS\nProductVersion:\t\t15.6.1\nBuildVersion:\t\t24G90\n"
+  },
+  {
+    "command": [
+      "sysctl",
+      "-n",
+      "machdep.cpu.brand_string"
+    ],
+    "exit_code": 0,
+    "output": "Apple M2\n"
+  },
+  {
+    "command": [
+      "sysctl",
+      "-n",
+      "hw.memsize"
+    ],
+    "exit_code": 0,
+    "output": "8589934592\n"
+  },
+  {
+    "command": [
+      "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+      "--list-runtimes"
+    ],
+    "exit_code": 0,
+    "output": "Microsoft.AspNetCore.App 10.0.12 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.AspNetCore.App]\nMicrosoft.NETCore.App 8.0.31 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App]\nMicrosoft.NETCore.App 10.0.12 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App]\n"
+  }
+]

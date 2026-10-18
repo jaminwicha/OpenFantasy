@@ -674,3 +674,15 @@ six new, with real regrowth/two-builder work/all-resident exposure, sliced prepa
 SQLite atomic fault/history proof. Test-only increment; the cheap population-preflight failure is
 retained, all production laws and broader gates unchanged. Protected concurrent steering and all19
 staged predecessor files remain excluded. Timeless architecture accuracy reviewed; live plans updated.
+
+
+## Matched owner-cost qualification — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-owner-cost-comparison-20261018`
+(`d8579d1c5f2e14764c4b28249bf8480180495d0f`, parent `6d3b03ab827e25658aad427aa45a4026366c8ff0`).
+Verified milestone: `codex/milestone-owner-cost-comparison-20261018`, at the owned commit without
+switching. [Result](p02/partition-state/owner-cost-comparison/RESULT.md):8 affected cases pass,4 new,
+with three rotating matched storage orders, actual full-history equivalence, retained measurements
+and a candid coarse-versus-typed cost disposition. The112.302-second fixture diagnostic failure and
+original databases/source are retained. No production law/default/gate changes. Timeless architecture
+reviewed, living plans updated; protected concurrent/predecessor work remains excluded.
