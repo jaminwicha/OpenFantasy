@@ -1,0 +1,12 @@
+{
+  "core": "FullyQualifiedName~OpenFantasy.Core.Tests.Construction.|FullyQualifiedName~OpenFantasy.Core.Tests.Spatial.|FullyQualifiedName~OpenFantasy.Core.Tests.Authority.|FullyQualifiedName~OpenFantasy.Core.Tests.Custody.|FullyQualifiedName~WorldResidentExposureBasisTests|FullyQualifiedName~WorldCodecDispatchTests|FullyQualifiedName~SnapshotCodecTests|FullyQualifiedName~WorldIdentity",
+  "hosting": "FullyQualifiedName~Stored_checkpoint|FullyQualifiedName~Prepare_real_stored_checkpoint_history",
+  "hosting-cheap": "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_preparation_uses_lawful_ordinary_idle_and_selected_work",
+  "hosting-prepare": "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Prepare_real_stored_checkpoint_history",
+  "hosting-continue": "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_reopens_continues_and_preserves_original_history",
+  "hosting-before": "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_before_commit_fault_preserves_prior_boundary",
+  "hosting-after": "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_after_commit_fault_preserves_complete_boundary",
+  "hosting-missing": "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_missing_row_refuses_recovery",
+  "hosting-substitute": "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_substituted_valid_directory_refuses_recovery",
+  "hosting-earlier-owner": "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_missing_earlier_owner_refuses_recovery"
+}

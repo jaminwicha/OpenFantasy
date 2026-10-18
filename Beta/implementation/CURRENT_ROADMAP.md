@@ -457,3 +457,18 @@ current-profile nested migration coverage and the named cold/warm/scale measurem
 review. Complete actor geometry, all-actor exposure reads, full directory/identity metadata and full
 original replay remain costs. No shipping performance, credit saving or PLAN-STATE/P02 closure follows;
 the complete closure table and P00–P14 requirements remain unchanged.
+
+### PLAN-STATE real noninitial stored checkpoint
+
+The [stored checkpoint qualification](p02/partition-state/stored-checkpoint/RESULT.md) reaches6000actual advancing steps through the unchanged journal policy,
+with the checkpoint at commit6003 while the funded project has1of200work units. Reopening recaptures
+actual owners and completes the same project. Original journal/outcome/identity rows, historical
+snapshots and receipt identity remain; before/after checkpoint-publication faults recover the complete
+old/new boundary. Missing checkpoint, self-consistent older-directory substitution and missing earlier
+owner payload all refuse readiness. Eight explicit cases pass with unchanged180-second process bounds.
+
+This closes the bounded first advancing-step checkpoint witness for legacy5/schema14. It does not
+establish checkpoint-tail recovery, archive truncation, the commit-only trigger under load, richer
+profile migration, arbitrary due-work fairness, cold/cache/platform/scale or independent acceptance.
+Due discovery/fairness and the remaining PLAN-STATE comparison measurements/review are next. The
+P02 closure table and full phase/requirement scope remain unchanged; no runtime law was modified.

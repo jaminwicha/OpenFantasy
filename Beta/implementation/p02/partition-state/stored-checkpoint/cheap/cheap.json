@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_preparation_uses_lawful_ordinary_idle_and_selected_work",
+    "--logger",
+    "trx;LogFileName=cheap.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/stored-checkpoint/cheap"
+  ],
+  "exit_code": 0,
+  "seconds": 4.144623999949545,
+  "bound_seconds": 180
+}

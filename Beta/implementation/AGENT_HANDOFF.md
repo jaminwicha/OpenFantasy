@@ -49,8 +49,10 @@ read/write/due closures differ; keep reservation-wide stock/access checks and al
 detached and locality work. [Selected stored assessment](p02/partition-state/stored-work-cohort/RESULT.md)
 now reads an exact source-bound subset. [Stored partial publication](p02/partition-state/stored-work-publication/RESULT.md) extends it to actual journal commits,
 renewed dependencies and complete due gathering/resident updates, retaining site geometry and all-actor
-exposure reads. Final installation and intervening actions restore complete admission. Next qualify
-noninitial checkpoint/fairness boundaries and the remaining PLAN-STATE measurement/review exits. The map also
+exposure reads. Final installation and intervening actions restore complete admission. The
+[stored checkpoint qualification](p02/partition-state/stored-checkpoint/RESULT.md) proves the first normal6000-step checkpoint inside partial work, continuation,
+atomic faults and historical refusal. Next address due discovery/fairness and the remaining
+PLAN-STATE measurement/review exits; general current-profile checkpoint/migration proof remains. The map also
 retains joint archives, pending care, private markets and profile41 withdrawal/control dependencies.
 Neither extraction nor the map is a partial loader or completed nested migration.
 

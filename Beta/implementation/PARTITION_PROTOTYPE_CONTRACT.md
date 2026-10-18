@@ -294,3 +294,13 @@ The assessment itself remains read-only. [Stored partial publication](p02/partit
 renews exact dependencies, runs all due gathering/resident effects and publishes changed payloads
 through the sole writer. Final work and intervening actions restore the full cohort. Original-history
 and fault proofs remain mandatory; no later-profile, scheduling, scale or phase gate closes.
+
+## First stored checkpoint witness
+
+The [stored checkpoint qualification](p02/partition-state/stored-checkpoint/RESULT.md) executes the unchanged6000-advancing-step policy at a real partial-work
+boundary, recovers the exact directory, finishes the same project and retains the original prefix.
+Rollback/committed-reply interruption, a missing checkpoint, a validly encoded wrong-boundary directory
+and a missing pre-checkpoint owner are covered. The checkpoint is not an archive cut and does not
+allow recovery to skip the prefix. Full history, general due/fairness, richer-profile migration,
+cold/platform/scale and independent-review obligations remain. The diagnostic trace is retained with
+source/binary and file hashes; it does not authorize widening prototype caps or lowering deadlines.

@@ -1,0 +1,105 @@
+{
+  "passed": 8,
+  "failed": 0,
+  "skipped": 0,
+  "new_cases": 8,
+  "runs": [
+    {
+      "case": "cheap",
+      "seconds": 4.144623999949545,
+      "status": "passed",
+      "record": "cheap/cheap.trx"
+    },
+    {
+      "case": "prepare",
+      "seconds": 46.74009254190605,
+      "status": "passed",
+      "record": "prepare/prepare.trx"
+    },
+    {
+      "case": "continue",
+      "seconds": 35.851481750025414,
+      "status": "passed",
+      "record": "continue/continue.trx"
+    },
+    {
+      "case": "before",
+      "seconds": 14.869408958009444,
+      "status": "passed",
+      "record": "before/before.trx"
+    },
+    {
+      "case": "after",
+      "seconds": 15.008930750074796,
+      "status": "passed",
+      "record": "after/after.trx"
+    },
+    {
+      "case": "missing",
+      "seconds": 11.21137666690629,
+      "status": "passed",
+      "record": "missing/missing.trx"
+    },
+    {
+      "case": "substitute",
+      "seconds": 8.910266333958134,
+      "status": "passed",
+      "record": "substitute/substitute.trx"
+    },
+    {
+      "case": "earlier-owner",
+      "seconds": 2.9112021250184625,
+      "status": "passed",
+      "record": "earlier-owner/earlier-owner.trx"
+    }
+  ],
+  "retained_failures": [],
+  "process_group_bound_seconds": 180,
+  "api_calls": null,
+  "average_input_context_tokens": null,
+  "long_run_classification": [
+    {
+      "case": "cheap",
+      "classification": "passed",
+      "seconds": 4.144623999949545
+    },
+    {
+      "case": "prepare",
+      "classification": "passed",
+      "seconds": 46.74009254190605
+    },
+    {
+      "case": "continue",
+      "classification": "passed",
+      "seconds": 35.851481750025414
+    },
+    {
+      "case": "before",
+      "classification": "passed",
+      "seconds": 14.869408958009444
+    },
+    {
+      "case": "after",
+      "classification": "passed",
+      "seconds": 15.008930750074796
+    },
+    {
+      "case": "missing",
+      "classification": "passed",
+      "seconds": 11.21137666690629
+    },
+    {
+      "case": "substitute",
+      "classification": "passed",
+      "seconds": 8.910266333958134
+    },
+    {
+      "case": "earlier-owner",
+      "classification": "passed",
+      "seconds": 2.9112021250184625
+    }
+  ],
+  "independent_review": false,
+  "native_or_human_acceptance": false,
+  "scope": "Actual first noninitial advancing-step checkpoint in legacy5/schema14; no general scheduling/current-profile/cold/scale acceptance."
+}

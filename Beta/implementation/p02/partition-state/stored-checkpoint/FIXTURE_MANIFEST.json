@@ -1,0 +1,18 @@
+{
+  "GenesisHash": "8298aa67ed0ef864899e1cd52c531b0b39a087bd9350336f7cd7d6a8870647cb",
+  "BeforeSequence": 6002,
+  "CheckpointSequence": 6003,
+  "RetiredOwnerHash": "4bfbca3e17f0d120328ee05867f68d56b999dc62ec673895e207c920627edcdd",
+  "CoreAssembly": "d037b7f304ae40d0553754739483b68ace07ff9d816b6a64756776445f646064",
+  "HostingAssembly": "e794c7834c1253b30bd96dcc835a9c1311bad8a70b886d1de069b60bef334415",
+  "Files": {
+    "before.sqlite3": "550c05ce03d685875e9117787bd247cc8206f5de4c59760a808c2f3b66f5c182",
+    "checkpoint.sqlite3": "fc98915cefb5a5b4d46ace8fe40f5c30ed6c32fdce4844538f72811b24bd7ef2",
+    "before.ofc": "1566bb6a5734c928805bf6da248be30d45efd1ad4199909bbd457beffaf36fee",
+    "checkpoint.ofc": "bb0c99a47956b8a1b23cc8960269087969cbd45795982a6056622505ce441456",
+    "selected.ofc": "68c025159be4ca69c890bf89c862a4e4472f1b1ff47fedb5bf82f23b7e6d9f7c"
+  },
+  "PrefixSeconds": 35.9092538,
+  "CheckpointSeconds": 5.8462305,
+  "DatabaseBytes": 41066496
+}

@@ -1,0 +1,15 @@
+{
+  "prior_commit": "9100315f686236cdb0bdf41d5ace3e2bc6768f9a",
+  "unchanged_production_source_inputs": 1156,
+  "changed_pins": [
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll"
+  ],
+  "added_pins": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/StoredConstructionCheckpointTests.cs"
+  ],
+  "claim": "No runtime source changed. New tests and current build are qualified by eight current integration cases; prior574case total is historical evidence, not a new execution or byte-identical assembly claim."
+}

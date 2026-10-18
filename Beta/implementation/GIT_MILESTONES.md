@@ -617,3 +617,15 @@ Scope: selected stored work and all due exposure/gathering, exact directory rene
 publication, full final/intervening admission and original history. Complete geometry/metadata and
 full replay remain; no current40/41 migration, scheduling/scale or phase acceptance. Unrelated staged
 predecessor work and concurrent steering remain excluded.
+
+## Stored-work noninitial checkpoint qualification — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-stored-checkpoint-20261018`
+(`2dc524f82a682bc6d8403ef9608d93774c7f6b62`, parent9100315f).
+Verified milestone: `codex/milestone-stored-checkpoint-20261018`, created at the owned commit without
+switching. [Eight-case evidence](p02/partition-state/stored-checkpoint/RESULT.md) qualifies the actual
+6000-step checkpoint during partial construction, original-history continuation, atomic faults and
+historical tamper refusal. Runtime source/policy unchanged; test fixture, exact-case preflight support
+and documentation only. Retained SQLite artifacts/restore instructions are linked from the result.
+General scheduling/current-profile/performance and phase gates remain open; concurrent steering and
+staged predecessor files remain excluded.

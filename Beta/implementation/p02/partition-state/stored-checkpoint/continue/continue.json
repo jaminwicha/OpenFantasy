@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName=OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_reopens_continues_and_preserves_original_history",
+    "--logger",
+    "trx;LogFileName=continue.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/stored-checkpoint/continue"
+  ],
+  "exit_code": 0,
+  "seconds": 35.851481750025414,
+  "bound_seconds": 180
+}

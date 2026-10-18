@@ -1,0 +1,10 @@
+[
+  "OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_preparation_uses_lawful_ordinary_idle_and_selected_work",
+  "OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Prepare_real_stored_checkpoint_history",
+  "OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_reopens_continues_and_preserves_original_history",
+  "OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_before_commit_fault_preserves_prior_boundary",
+  "OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_after_commit_fault_preserves_complete_boundary",
+  "OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_missing_row_refuses_recovery",
+  "OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_substituted_valid_directory_refuses_recovery",
+  "OpenFantasy.Hosting.Tests.WorldStorage.SeparatedTerrainStorageTests.Stored_checkpoint_missing_earlier_owner_refuses_recovery"
+]

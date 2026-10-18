@@ -508,8 +508,10 @@ World/branch/role/subject owner identity is separate from actor position and ter
 their previous byte/hash contracts. Schema14 does not mean gameplay profile14.
 
 All owner inserts, accepted input, identities, command outcomes and directory head/checkpoints share
-`PublishWrites` and the existing SQLite transaction. Unchanged hashes reuse exact immutable bytes;
-all current owners are still visited. Full original-history replay verifies each historical payload
+`PublishWrites` and the existing SQLite transaction. Unchanged hashes reuse exact immutable bytes.
+Complete-world/locality preparation visits all current owners; the selected stored-work interval
+supplies only its changed payloads while still encoding the complete directory. Full original-history
+replay verifies each historical payload
 and rejects missing, altered or extra archives before readiness. Once the head and command/identity
 tables match replay, recovery loads that directory's actual stored payloads and terrain through
 `ConstructionOwnerReconstruction`, admits the complete world and requires exact equality with replay.
@@ -519,6 +521,19 @@ replay still supplies the history binding. Every required owner/terrain is loade
 residency or shortened-history claim. See
 [the typed-owner binding](partition-ownership.md#runtime-binding-legacy-typed-owner-storage) for the
 single-owner fact map, concrete byte/archive limits, exposure behavior and extension obligations.
+
+A scheduled schema14 checkpoint contains the exact directory at that accepted boundary, including
+partial construction progress and every due actor/gathering update. It shares the work transaction;
+rollback retains the prior checkpoint set, while an interrupted reply after commit retains the
+complete new directory, receipt and identity claims. The ordinary step/commit checkpoint intervals
+remain in force. Checkpoints do not compact the journal or discard earlier owner payloads.
+
+Reopening compares every scheduled checkpoint against original replay before rebuilding the head.
+A validly encoded older directory with a matching self-hash cannot replace the directory at another
+boundary. Missing checkpoints or historical payloads refuse readiness even when the current head's
+payloads are present. Partial work can recapture dependencies from the fully recovered current head
+and continue; a persisted directory does not persist the transient site's admission witness or
+independently authorize an action. Recovery cost remains full-history cost, not checkpoint-tail cost.
 
 ### Design contract: partitioned persistence and version ownership
 

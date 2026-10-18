@@ -1,0 +1,7 @@
+{
+  "classification": "runner",
+  "command": "git diff --cached --check (private index)",
+  "exit_code": 2,
+  "output": "Beta/implementation/p02/partition-state/stored-checkpoint/after-dispatch.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/stored-checkpoint/before-dispatch.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/stored-checkpoint/cheap-dispatch.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/stored-checkpoint/continue-dispatch.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/stored-checkpoint/earlier-owner-dispatch.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/stored-checkpoint/missing-dispatch.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/stored-checkpoint/prepare-dispatch.log:7: new blank line at EOF.\nBeta/implementation/p02/partition-state/stored-checkpoint/substitute-dispatch.log:7: new blank line at EOF.\n",
+  "commit_created": false
+}

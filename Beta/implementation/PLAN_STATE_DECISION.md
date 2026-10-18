@@ -187,3 +187,13 @@ The map also records coordinated archive witnesses, pending care, private market
 controller/permission/effective-assignment distinctions and profile41 party withdrawal. These prevent
 prematurely freezing legacy5 owner boundaries for the full game. This is a concrete preparation result,
 not a completed nested migration or independent review; all existing PLAN-STATE/P02 exits remain.
+
+## Noninitial checkpoint evidence
+
+The [stored checkpoint qualification](p02/partition-state/stored-checkpoint/RESULT.md) supplies a real first advancing-step checkpoint during incomplete work,
+followed by reopened owner recapture, completion and exact original-history preservation. Atomic
+before/after faults include the due checkpoint row; altered/missing checkpoints and historical owner
+loss refuse. This is legacy5/schema14 qualification of the existing publisher/recovery, not a new
+checkpoint or interpreter design. No general/current-profile/cold/scale or independent exit closes.
+Proceed to due discovery/fairness and remaining measurement/review obligations while preserving the
+complete production and migration scope. Timings are local diagnostics, not a shipping budget result.
