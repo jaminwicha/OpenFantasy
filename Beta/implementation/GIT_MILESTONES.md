@@ -686,3 +686,15 @@ with three rotating matched storage orders, actual full-history equivalence, ret
 and a candid coarse-versus-typed cost disposition. The112.302-second fixture diagnostic failure and
 original databases/source are retained. No production law/default/gate changes. Timeless architecture
 reviewed, living plans updated; protected concurrent/predecessor work remains excluded.
+
+
+## Yielded authority publication — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-yielded-publication-20261018`
+(`4204c9dad1ee813ea6d38ed7e48625c55c50b26c`, parent `1c552c6755e378d466b92fdce63c59c5ddedf49a`).
+Verified milestone: `codex/milestone-yielded-publication-20261018`, at the owned commit without switching.
+[Result](p02/partition-state/yielded-publication/RESULT.md):35 affected passes,7 new; bounded gate-releasing
+reads, source/authority affinity, cancellation/invalidation and full atomic publication/recovery.
+The transaction body is unchanged; ordinary live-loop integration and all wider gates stay open.
+Timeless architecture and living plans updated together. Concurrent steering and staged predecessor
+work remain excluded; prior failures retained, no new failed run or extended deadline.

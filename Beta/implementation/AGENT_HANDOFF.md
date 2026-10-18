@@ -58,8 +58,10 @@ The [multiple-NPC cutoff proof](p02/partition-state/multiple-npc-cutoff/RESULT.m
 ordinary reference for two genuinely funded host builders, holds/exclusions/refusals and original
 SQLite history/fault recovery. [Stored-batch preparation](p02/partition-state/stored-batch-preparation/RESULT.md)
 now adds exact-head owner-read slices, complete selected multi-actor batches and one atomic passive
-boundary in the existing profile-five prototype. The Host still drains synchronously; final installation
-and the legacy aggregate limit use ordinary full admission. The
+boundary in the existing profile-five prototype. The [yielded authority API](p02/partition-state/yielded-publication/RESULT.md)
+now releases the gate between bounded read calls and refuses cancelled/foreign/intervened handles.
+Its synchronous wrapper still drains under one lock; the actual session tick/projection path has not
+been bound to yielded preparation. Final installation and the legacy aggregate limit use ordinary full admission. The
 [combined due-boundary proof](p02/partition-state/combined-due-boundary/RESULT.md) now joins real node
 depletion/regrowth, two funded builders and exposure for all five retained/admitted residents, including
 an unrelated observer, with sliced preparation and SQLite fault/history recovery. The

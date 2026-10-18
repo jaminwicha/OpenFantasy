@@ -544,3 +544,17 @@ The initial diagnostic's exclusive-lease failure remains retained; production so
 The conditional decision, remaining scheduling/discovery/current-profile/cold/platform/scale/review
 exits, complete P02 table and full phase/requirement scope remain intact. This bounded comparison is
 complete; do not repeat it or build another storage candidate without a concrete unresolved contract.
+
+
+### PLAN-STATE yielded authority preparation
+
+[Yielded publication](p02/partition-state/yielded-publication/RESULT.md) adds an authority-affine,
+source-bound handle for separate bounded owner reads and one complete atomic publication. Cross-thread
+reads release the gate; incomplete, cancelled, foreign or intervened preparation cannot publish.
+Read failures fence recovery, and before/after commit faults retain complete old/new original history.
+The same synchronous wrapper and unchanged transaction body retain full-final/legacy-limit admission.
+Thirty-five affected cases pass, seven new; no production format, default selection or gate changes.
+The ordinary LocalWorldSession still uses full-state preview/projection and synchronous commits. Its
+readiness/input-cutoff and coherent-view integration is the next binding gap, alongside due discovery
+and the remaining measurement/review exits. This does not close general scheduling or P02; the full
+closure table,181 requirements and P00–P14 scope remain unchanged.

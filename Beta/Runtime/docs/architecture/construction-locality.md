@@ -298,9 +298,20 @@ complete directory, input, all command receipts, reserved identities and any due
 in one SQLite transaction. Only after commit does the admitted interval advance. Format/storage and
 publication failures fence the authority; an unsupported/stale dispatch cannot consume a command.
 Archive accounting still scans retained lengths; the complete directory is still encoded each step.
-`CommitStoredConstruction` remains the one-action/one-receipt wrapper. The batch entrypoint completes
-preparation synchronously under the existing lock; no persistent cursor or asynchronous world writer
-is added. Per-slice loading does not imply a bound on final rule-evaluation latency.
+`CommitStoredConstruction` remains the one-action/one-receipt wrapper. The batch entrypoint drains the
+same authority-owned preparation handle synchronously under its outer lock. Hosts may instead call
+`BeginStoredConstruction`, then bounded `ReadStoredConstruction` calls, then `PublishStoredConstruction`.
+Each separate read releases the authority gate; it retains no open SQLite transaction. The handle is
+affine to one authority and captured interval. A foreign authority, changed head, new interval,
+cancellation or prior consumption cannot publish it. Missing owner reads fence the authority; an
+incomplete publication refuses without consuming otherwise valid preparation. `CancelStoredConstruction`
+is idempotent and does not undo any completed commit. Original command identities remain unconsumed
+until actual publication; an explicit new preparation still obeys normal historical identity rules.
+
+The complete candidate and fallback remain synchronous under the owning gate. No persistent cursor,
+second writer or automatic retry is added. The ordinary local session uses synchronous publication and does not consume the yielded
+API between ticks. Read-count slicing does not bound final rule-evaluation latency or establish
+NPC fairness; live readiness/input arbitration requires its own complete policy and verification.
 
 A qualifying final work step, or a batch crossing the legacy aggregate construction revision bound,
 returns the whole batch to ordinary full-world execution before publication. Earlier prepared actions

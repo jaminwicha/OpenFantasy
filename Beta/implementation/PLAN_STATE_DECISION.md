@@ -265,3 +265,20 @@ complete cohorts and final-admission work in any follow-up. The [combined due pr
 and noninitial-checkpoint qualification stand within their scopes. Live scheduling/discovery, current40/41
 migration, remaining cold/platform/scale measurements and independent review still precede full acceptance.
 The failed external-diagnostic lease attempt is retained as a fixture defect; no production law changed.
+
+
+## Yielded authority preparation — 2026-10-18
+
+[The yielded publication packet](p02/partition-state/yielded-publication/RESULT.md) makes stored
+preparation usable across separate authority calls. The handle retains the selected batch and source
+interval, releases the gate between bounded reads, refuses stale/foreign/cancelled use and publishes
+all effects through the same transaction. The synchronous wrapper uses that path under its outer lock;
+final/legacy-limit fallback remains ordinary. Seven new and28 related cases pass. No new format,
+interpreter, default or second writer is introduced; the prior cost comparison keeps its original pins.
+
+This is a prerequisite for live yielding, not a completed LocalWorldSession scheduler. The ordinary
+loop's full-state preview/projection and readiness/input-cutoff policy require explicit integration;
+see the due-work map before adding a timer or silently deferring/dropping selected actions. General
+obligation discovery/membership, oldest-due age, durable preparation, current-profile migration,
+cold/platform/scale and independent review remain open. The conditional typed-owner recommendation
+and all P02/production gates stand.

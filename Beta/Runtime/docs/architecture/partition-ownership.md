@@ -249,3 +249,13 @@ changed project/catalog owners and mandatory passive effects still publish toget
 project's revision remains distinct from the whole catalog's revision; canonical project decoding
 does not fabricate a complete catalog from a subset. Missing or stale owner facts cannot be skipped
 to finish a read budget, and a preparation cursor is not persisted timing-domain membership.
+
+
+The Host can retain an authority-affine [publication handle](../../src/OpenFantasy.Hosting/Worlds/StoredConstructionPublication.cs)
+between owner-read calls. A handle is private preparation metadata, not another canonical owner or a
+saved obligation. It binds the exact selected batch to one captured interval and head; an intervening
+commit or recapture invalidates it. Read slices release the gate without publishing any owner, time or
+receipt. Final publication reacquires the same sole-writer gate and commits the complete coupled
+boundary. Cancellation and storage-read failure retire that handle; a storage-read failure also fences
+the authority. Foreign handles cannot be acted on. Restart retains only committed world history,
+requiring fresh preparation; no persisted discovery frontier or timing membership is implied.

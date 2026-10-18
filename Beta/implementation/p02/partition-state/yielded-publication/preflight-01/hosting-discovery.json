@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~CombinedStoredDueTests|FullyQualifiedName~StoredBatchConstructionTests|FullyQualifiedName~Selected_stored_publication_completes_the_original_saved_project_after_collection_and_intervention|FullyQualifiedName~Selected_stored_publication_fault_retains_exact_old_or_new_boundary|FullyQualifiedName~Injected_owner_read_failure_fences_work_without_consuming_the_command|FullyQualifiedName~Switching_to_complete_locality_eviction_discards_stored_interval_metadata|FullyQualifiedName~Stored_checkpoint_preparation_uses_lawful_ordinary_idle_and_selected_work"
+  ],
+  "exit_code": 0,
+  "seconds": 3.014238667092286,
+  "bound_seconds": 180
+}

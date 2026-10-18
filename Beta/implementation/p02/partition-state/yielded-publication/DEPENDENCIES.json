@@ -1,0 +1,44 @@
+{
+  "baseline": "1c552c6755e378d466b92fdce63c59c5ddedf49a",
+  "current_pins": "preflight-02/pins.json",
+  "changed": {
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/SqliteWorldAuthority.StoredConstruction.cs": {
+      "previous": "8e04e763ec879bb9560733a34aab9dec24a8c0f88e81a20052e5ad4ecef0c27a",
+      "current": "946da475ac1347ef3de679e53048f83e5810901a42edba03eb509b1a0b150598"
+    },
+    "Beta/Runtime/src/OpenFantasy.Hosting/Worlds/StoredConstructionPublication.cs": {
+      "previous": null,
+      "current": "d7a7aa6e1a1be85b1f8257a087473a7dbb179dc75c35948b645c0194a0ac06aa"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll": {
+      "previous": "c6951b322bd84df62df683494eeca31d71f408580075688a3c89593c77b1ba31",
+      "current": "55be6e3f9739b9c426d96566fb9da5f20c3aacacb05f4dee23348b1a95e455c2"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "previous": "3098133f33d98a0a42824ec9499bedd5403b297c01640e65cb4332c999d9ba1a",
+      "current": "5863d76f5df52b4a0c4e1569746cd8a6c0e600ab0c2eb57b3e2e5f725bba521b"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/CombinedStoredDueTests.cs": {
+      "previous": "fe86d917f16dbb745374a9bc3d505479f40ede47296272c84b975febc2c46b01",
+      "current": "33cf9e679510caf19daf1831ba2dd848a99a5fb482eaf4f3ce56457afa345224"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Simulation/YieldedStoredPublicationTests.cs": {
+      "previous": null,
+      "current": "79a711dc6a988dd084d3d4051a91c5d8d48e3210ee05deab7d66d33376d2ab7f"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Core.dll": {
+      "previous": "3098133f33d98a0a42824ec9499bedd5403b297c01640e65cb4332c999d9ba1a",
+      "current": "5863d76f5df52b4a0c4e1569746cd8a6c0e600ab0c2eb57b3e2e5f725bba521b"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll": {
+      "previous": "3bb107a671f986387a43b7aa795250c882ee3b1e927524a27c944e7b0c145b4f",
+      "current": "c52c34036c4c31e687b079a08700b070519e956b8e00c0be84f82f3be2b8b1bf"
+    },
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.dll": {
+      "previous": "72b7f189d4f1fe5a7b893cb706b085d0e945df25b06e4453ff3c7eefff94c37b",
+      "current": "20680623897d62f94a2bba80a33b4297cbe7ade7091bc69dd1fa6ed8a9bec911"
+    }
+  },
+  "core_source_unchanged": true,
+  "inherited": "Earlier actual6000-step checkpoint, broader611 cases and cost comparison retain original pins/scope. No fresh execution of those totals or current-performance equivalence is claimed. Publisher transaction/journal/checkpoint body is unchanged as recorded in PUBLISHER_REVIEW.json; current tests cover new handle lifecycle, synchronous/final fallback and immediate faults."
+}

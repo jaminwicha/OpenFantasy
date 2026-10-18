@@ -14,7 +14,7 @@ using OpenFantasy.Hosting.Worlds;
 
 namespace OpenFantasy.Hosting.Tests.Simulation;
 
-public sealed class CombinedStoredDueTests
+public sealed partial class CombinedStoredDueTests
 {
     private static readonly Lazy<DueFixture> Fixture = new(Prepare);
     private ulong _identity = 96_000_000;

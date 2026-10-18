@@ -1,0 +1,6 @@
+{
+  "baseline": "1c552c6755e378d466b92fdce63c59c5ddedf49a",
+  "unchanged_publication_body_after_whitespace_normalization": true,
+  "body_sha256": "c354beaaaa2dad3b0a481f7e6a89ba9f77387bfcc09f2c824cffc44db6731763",
+  "scope": "The transaction/write-set/journal/checkpoint publisher body is moved unchanged into a private method called under the authority gate. Begin/read/complete now share a handle path; synchronous wrapper retains the full outer lock. New tests cover changed lifecycle, existing final/fault tests cover fallback; prior actual6000 checkpoint evidence retains original pins, not claimed as a fresh current execution."
+}

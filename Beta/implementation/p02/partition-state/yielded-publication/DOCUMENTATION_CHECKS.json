@@ -1,0 +1,23 @@
+{
+  "command": [
+    "python3",
+    "Beta/tools/check_documentation.py",
+    "--work-record",
+    "Beta/implementation/p02/partition-state/yielded-publication/RESULT.md",
+    "--files",
+    "Beta/implementation/AGENT_HANDOFF.md",
+    "Beta/implementation/CURRENT_ROADMAP.md",
+    "Beta/implementation/GIT_MILESTONES.md",
+    "Beta/implementation/PLAN_STATE_DUE_WORK_MAP.md",
+    "Beta/implementation/PLAN_STATE_DECISION.md",
+    "Beta/Runtime/docs/architecture/due-work-and-scheduling.md",
+    "Beta/Runtime/docs/architecture/construction-locality.md",
+    "Beta/Runtime/docs/architecture/partition-ownership.md",
+    "Beta/Runtime/docs/architecture/persistence-and-history.md",
+    "Beta/implementation/p02/partition-state/yielded-publication/RESULT.md"
+  ],
+  "exit_code": 0,
+  "diff_check_exit_code": 0,
+  "build_warning_error_summary_verified": true,
+  "accepted": true
+}

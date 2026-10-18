@@ -522,6 +522,13 @@ residency or shortened-history claim. See
 [the typed-owner binding](partition-ownership.md#runtime-binding-legacy-typed-owner-storage) for the
 single-owner fact map, concrete byte/archive limits, exposure behavior and extension obligations.
 
+An authority-bound [stored publication handle](construction-locality.md#selected-stored-owner-publication)
+may retain unpublished dependency reads between Host calls. No SQLite transaction or authority lock
+spans those calls. The handle cannot cross authorities or restart, and changed committed state or
+recapture invalidates it. Cancellation publishes nothing; storage-read failure retires it and fences
+the authority. Final evaluation and the complete write set still execute under the sole writer gate.
+No preparation cursor, speculative receipt or partly advanced boundary is written to the save.
+
 A scheduled schema14 checkpoint contains the exact directory at that accepted boundary, including
 partial construction progress and every due actor/gathering update. It shares the work transaction;
 rollback retains the prior checkpoint set, while an interrupted reply after commit retains the

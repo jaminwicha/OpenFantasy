@@ -1,0 +1,91 @@
+{
+  "checks": {
+    "geometry-01": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~CombinedStoredDueTests.Actual_resident_roster_harvest_and_work_prefix_reaches_the_unshortened_due_boundary",
+        "--logger",
+        "trx;LogFileName=geometry.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/yielded-publication/geometry-01"
+      ],
+      "exit_code": 0,
+      "seconds": 5.966316459001973,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "1",
+        "executed": "1",
+        "passed": "1",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    },
+    "hosting-01": {
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "test",
+        "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+        "--no-build",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~CombinedStoredDueTests|FullyQualifiedName~StoredBatchConstructionTests|FullyQualifiedName~Selected_stored_publication_completes_the_original_saved_project_after_collection_and_intervention|FullyQualifiedName~Selected_stored_publication_fault_retains_exact_old_or_new_boundary|FullyQualifiedName~Injected_owner_read_failure_fences_work_without_consuming_the_command|FullyQualifiedName~Switching_to_complete_locality_eviction_discards_stored_interval_metadata|FullyQualifiedName~Stored_checkpoint_preparation_uses_lawful_ordinary_idle_and_selected_work",
+        "--logger",
+        "trx;LogFileName=hosting.trx",
+        "--results-directory",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/yielded-publication/hosting-01"
+      ],
+      "exit_code": 0,
+      "seconds": 66.66895712504629,
+      "bound_seconds": 180,
+      "counters": {
+        "total": "35",
+        "executed": "35",
+        "passed": "35",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  },
+  "distinct_current_passes": 35,
+  "new_cases": 7,
+  "preflight": "preflight-02",
+  "failures": [],
+  "run_counts": {
+    "native": 0,
+    "storage_affected_suite": 1,
+    "geometry_preflight": 1,
+    "over_180_seconds": 0
+  },
+  "telemetry": {
+    "api_calls": null,
+    "mean_input_tokens": null,
+    "reason": "Packet rollout/token accounting unavailable through exposed tools; no saving inferred."
+  }
+}

@@ -85,8 +85,13 @@ decoded from its own canonical payload, preserving its revision separately from 
 Final installation and crossing the legacy aggregate bound return the whole batch to ordinary admission.
 This is an extension of the existing typed-owner prototype, not another full-world wrapper or a new format.
 
-The remaining witness includes live host yielding and any durable preparation continuation: the
-current Host still drains preparation synchronously under its lock. Owner-count slicing does not bound
+The remaining witness includes live session yielding and any durable preparation continuation.
+[Yielded authority publication](p02/partition-state/yielded-publication/RESULT.md) now exposes bounded
+read calls that release the authority gate, with exact originating-authority/interval/head checks,
+cancellation, one complete publication and recovery fencing. The synchronous wrapper drains the same
+path under its outer lock. LocalWorldSession does not consume the handle between ticks: its TickAsync
+and CommitSelectedBatch still need full-world reads, preview/projection and the ordinary decision.
+Owner-count slicing does not bound
 final rule-evaluation CPU time, persist domain membership, or establish starvation limits. The
 [combined due-boundary proof](p02/partition-state/combined-due-boundary/RESULT.md) now supplies the
 missing combined contrast: two actual funded builders, a newly admitted unrelated observer, all four
@@ -100,3 +105,16 @@ cold/platform/scale measurements and independent PLAN-STATE review remain open. 
 P02 closure table and scheduled NPC-01/story/ecology/art/audio work after the decision/review exit.
 The previously qualified noninitial profile-five checkpoint remains valid within its own evidence;
 this review neither reruns it nor broadens its scope. No queue limit becomes a gameplay cap.
+
+
+## Live session integration boundary
+
+The [authority-handle proof](p02/partition-state/yielded-publication/RESULT.md) removes the requirement
+to drain all owner reads in one authority call. It does not select a different input cutoff or bypass
+preview, trading observation, player readiness or view consistency. Before binding it into the live
+session, specify pending selected-batch ownership, how pause/stop and new player input are handled,
+when a changed dependency invalidates selection, and how one coherent view is produced without
+calling full-world reconstruction during every read slice. Preserve complete selected commands and
+all mandatory effects; do not hide a discarded action as a budget decision. Full final evaluation
+remains synchronous. A persistent preparation cursor would be a separate state/recovery contract.
+The existing mandatory/proposal/preparation distinction and unknown general oldest-due age remain.

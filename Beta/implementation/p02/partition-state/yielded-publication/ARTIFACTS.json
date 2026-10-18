@@ -1,0 +1,98 @@
+{
+  "root": "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01",
+  "files": {
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/AfterCommit/after.ofc": {
+      "bytes": 42111,
+      "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/AfterCommit/before.ofc": {
+      "bytes": 42119,
+      "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/AfterCommit/genesis.ofc": {
+      "bytes": 40496,
+      "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/AfterCommit/measurement.json": {
+      "bytes": 460,
+      "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/AfterCommit/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/BeforeCommit/after.ofc": {
+      "bytes": 42111,
+      "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/BeforeCommit/before.ofc": {
+      "bytes": 42119,
+      "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/BeforeCommit/genesis.ofc": {
+      "bytes": 40496,
+      "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/BeforeCommit/measurement.json": {
+      "bytes": 460,
+      "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/BeforeCommit/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "634e38a7a0e677dd58f6f67c266d3a54afaa4a7c329b3035d8c1a4f03f071a8c"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/ordinary/after.ofc": {
+      "bytes": 42111,
+      "sha256": "668a8439d39a63a48b59e94c3b23b20c74143fe752b3e8332e523f5aa76f0149"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/ordinary/before.ofc": {
+      "bytes": 42119,
+      "sha256": "fb28d3aa4d77442d75b6e627d387526617a7fcea8d78f09ee8f062412d23001a"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/ordinary/genesis.ofc": {
+      "bytes": 40496,
+      "sha256": "b220c490b0c88656b2fd0fc91155a26ae13893e379d91c0889ac65b7e662434e"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/ordinary/measurement.json": {
+      "bytes": 460,
+      "sha256": "e5e4b5c98fbac3f6d00150271bdab60b9944cb20c5fa6ea9bd098a351794f817"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/ordinary/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/yielded-cancelled/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/yielded-complete/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/yielded-fault-0/world.sqlite3": {
+      "bytes": 10629120,
+      "sha256": "3d24fbf02111c32ebd2be672f334e10f522708363f85424a2b7a3f40bf969ba5"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/yielded-fault-1/world.sqlite3": {
+      "bytes": 10645504,
+      "sha256": "7e70a1c2b08471b4a567816e7b8565964f6fc1b81e20504b4b2aa8c3368f5945"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/yielded-intervened-False/world.sqlite3": {
+      "bytes": 10657792,
+      "sha256": "98a902f6c6aa20e34f8de4f4f3abbe5445dfb24bc0725a6345b23cf65ec06290"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/yielded-intervened-True/world.sqlite3": {
+      "bytes": 10657792,
+      "sha256": "98a902f6c6aa20e34f8de4f4f3abbe5445dfb24bc0725a6345b23cf65ec06290"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/yielded-other-authority/world.sqlite3": {
+      "bytes": 10629120,
+      "sha256": "3d24fbf02111c32ebd2be672f334e10f522708363f85424a2b7a3f40bf969ba5"
+    },
+    "Beta/Runtime/artifacts/yielded-publication-20261018-attempt01/yielded-read-failure/world.sqlite3": {
+      "bytes": 10629120,
+      "sha256": "3d24fbf02111c32ebd2be672f334e10f522708363f85424a2b7a3f40bf969ba5"
+    }
+  },
+  "restore": "Keep originals immutable. Verify hashes and copy a whole case directory before opening world.sqlite3. Each database contains the original admitted genesis and real865-commit prefix; injected faults retain the exact old/new committed state asserted by tests. Preparation handles are intentionally not saved."
+}

@@ -70,8 +70,23 @@ can read the exact dependencies in owner-count-bounded slices. Every slice and c
 same admitted directory. Incomplete loading cannot complete a candidate; a read failure or stale
 directory permanently invalidates that preparation. Completion evaluates all selected work and due
 effects synchronously. No slice publishes time, receipts or partial work. The Host's stored-batch
-entrypoint drains preparation under its existing lock; it does not persist a cursor or yield between
-live ticks. These are bounded dependency reads, not a CPU-time budget or fairness guarantee.
+entrypoint drains preparation under its existing outer lock. The authority also exposes an
+[unpublished publication handle](../../src/OpenFantasy.Hosting/Worlds/StoredConstructionPublication.cs)
+through `BeginStoredConstruction`, `ReadStoredConstruction` and `PublishStoredConstruction`. Each
+bounded read call releases the authority gate before returning; no transaction spans calls. Completion
+requires the originating authority, the same captured interval and committed directory, and every
+required owner. Cancellation, consumption or a changed head makes that handle unusable. An incomplete
+publication attempt refuses without consuming the handle, so loading can continue explicitly.
+
+Storage/read failures fence the authority and retire the preparation; semantic dispatch failures cannot
+publish it. A foreign authority cannot load, publish or cancel another authority's handle. Cancellation
+earns no time and creates no receipt; it does not roll back an already published boundary. Publication
+uses the same complete write set and transaction as synchronous work, including ordinary full-admission
+fallback. Reopening requires fresh capture: handles are transient, not saved continuations.
+
+`LocalWorldSession` still selects and commits through the ordinary synchronous path; it does not consume
+these handles between live ticks. The yielded authority boundary enables that integration but does not
+supply its readiness/input-cutoff policy, a final-evaluation CPU budget or a fairness guarantee.
 
 Splitting an ordinary multi-actor batch into one advancing commit per actor would change both exposure
 and opportunities to work. Bounded preparation must instead preserve the complete selected boundary,
