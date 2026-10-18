@@ -1,0 +1,20 @@
+[
+  {
+    "run": "preflight-01/core-build.json",
+    "classification": "fixture",
+    "cause": "New gathering tests omitted Custody and Worlds namespace imports; production Core compiled.",
+    "failed_source": "FAILED_SOURCE_01.txt",
+    "sha256": "a67cb1cb0b1197c2572db91ec31ba71bb992884695bb29221739fdadbf242b9c",
+    "correction": "Add the two existing namespaces. No production, assertion, threshold or clock change.",
+    "rerun": "Deliberate corrected build/discovery, then lawful admission preflight and affected tests."
+  },
+  {
+    "run": "preflight-02/hosting-build.json",
+    "classification": "fixture",
+    "cause": "Host test attempted to call Core-internal WorldResident.ExperienceStep. Core tests and production Hosting compiled.",
+    "failed_source": "FAILED_SOURCE_02.txt",
+    "sha256": "40ab0408d5ac0dd0e5a88a6cd85260aa81870922dc7408a8e1e98ed7241341f3",
+    "correction": "Assert the public exposure value plus the unchanged1800ms interval instead; keep all actor identities.",
+    "rerun": "Deliberate corrected build/discovery before behavior checks."
+  }
+]

@@ -26,7 +26,7 @@ internal sealed class ReservoirTransportPlanner
         List<EntityId> created = [];
         if (!readingHold)
         {
-            foreach (var stage in basis.Stages.Where(s => s.IsPending && s.DueAt <= boundary).OrderBy(s => s.DueAt).ThenBy(s => s.StageId))
+            foreach (var stage in basis.DiscoverDue(boundary).Stages)
             {
                 var current = new ReservoirTransportState(physical, basis.Connections, journal.Values, basis.Revision, boundary, basis.ContinuationQualification);
                 var runoff = physical.Capacity.Pending.Single(p => p.Request.ReservationId == stage.ReservationId);

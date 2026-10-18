@@ -125,6 +125,21 @@ A reading hold opened earlier in that batch suppresses all transfers while retai
 boundary. Held-interaction batches do not advance the clock at all. Closing a hold never catches up water
 from paused steps. Movement follows this due-work stage under the same held-state policy.
 
+`ReservoirTransportState.DiscoverDue` returns an immutable
+[ReservoirTransportDiscovery](../../src/OpenFantasy.Core/Geography/ReservoirTransportDiscovery.cs)
+for the owner's current or next exact boundary. It lists pending stages in due-instant/identity order,
+including previously blocked stages, and excludes canceled/completed stages. The planner consumes
+this same list after its existing clock and hold checks; each stage still evaluates against the
+physical/material changes and shared gate throughput left by earlier stages. Discovery itself moves
+no stock and consumes no throughput. A query at the current boundary can report pending work but
+cannot override the planner's idempotent no-advance behavior.
+
+The discovery retains the complete immutable source. `IsFor` is reference affinity, not historical
+or permission authentication. A cancellation or material replacement requires discovery from the
+changed owner; retaining an old list never authorizes its use against a new source. Full physical
+admission and plan source-hash validation remain responsible for execution. No persistent event IDs,
+durable cursor, independent timing membership or paged completeness proof is added by this query.
+
 The complete journal, actual material, physical fills, new fragment identities and world head publish in
 one existing schema-three transaction. Preview and replay run the same pure planner. Recovery reproduces
 both blocked and completed stages; historical inspection cannot execute an arrival in the live head.

@@ -83,3 +83,19 @@ Do not keep expanding the legacy construction witness for coverage it cannot pro
 existing results. After the decision/review exit, NPC-01 remains the next inhabited behavior, followed
 by the scheduled story/ecology/presentation work; all P02 rows and181 requirements remain intact.
 Independent review is still unrun under the owner's orchestration pause. This review does not waive it.
+
+
+## Executable domain binding — 2026-10-18
+
+The [domain discovery packet](p02/partition-state/domain-process-discovery/RESULT.md) implements
+`GatheringSnapshot.DiscoverRegrowth` and `ReservoirTransportState.DiscoverDue`; the actual recovery and
+transport executors consume them. Source affinity is in-memory reference identity over complete immutable
+owners, not a saved hash-authenticated index. Due regrowth exposes finite-stock eligibility, and blocked
+transport retains the original stage/funding identity. The existing profile9 fixture admits both domains;
+its new cancellation witness checks effective post-action transport alongside gathering/exposure.
+
+This advances the typed discovery/evaluation part of the assignment above. It does not prove simultaneous
+harvested-node regrowth and transport delivery in a single new retained journey, general persisted owner
+membership, partially resident current40/41 execution, multi-domain oldest-age/fairness or a new storage
+format. Existing domain, pacing and saved-transport checks retain only their named scope. Those remaining
+witnesses and independent review stay open; do not treat query APIs as a general scheduler exit.

@@ -1,0 +1,7 @@
+{
+  "changed_pins_after_admission_preflight": [
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/WorldDatabaseTests.cs",
+    "Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll"
+  ],
+  "claim": "Existing admission preflight uses the unchanged in-memory ReservoirTransportWorldFixture and ProcessDiscoveryWorldTests; it does not instantiate StorageFiles. All production and these fixture sources are unchanged; only optional cleanup and Hosting test assembly changed. Exact final discovery and pins are refreshed. Full selected Hosting checks include that same admission case on current binaries."
+}

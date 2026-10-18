@@ -138,3 +138,9 @@ the next executable unit: effective post-action owners, distinct timing domains,
 outcomes versus missing evaluation. Its next contrast uses actual regrowth and reserved transport,
 including authentic admission limits and historical interpreters. It does not implement an index or
 close any general scheduling, migration or review gate. Avoid another construction-only wrapper.
+
+
+The [typed domain binding](p02/partition-state/domain-process-discovery/RESULT.md) now implements the
+regrowth/transport queries used by their real executors, with exact source affinity, canonical discovery,
+stock eligibility and retained blocked identities. The living process contract distinguishes qualified
+component/current-profile limits and remaining joined-history/index/fairness evidence. No phase gate closes.

@@ -586,3 +586,14 @@ blocked outcomes and authenticated membership. [Source review](p02/partition-sta
 distinguishes existing behavior from unimplemented discovery/index and current-profile integration.
 No runtime change or test pass is claimed. Preserve the conditional architecture decision, independent
 review, complete P02 closure table and scheduled gameplay dependencies; no new phase or format is added.
+
+
+## Integrated domain-process discovery — 2026-10-18
+
+The [packet result](p02/partition-state/domain-process-discovery/RESULT.md) records immutable typed
+regrowth and reserved-transport discovery consumed by the existing executors, without schema or clock
+changes. It retains complete owners, actual finite-stock and blocked-stage semantics, post-action
+cancellation and affected history/pacing checks. This advances PLAN-STATE preparation; the living
+process contract keeps joined regrowth/delivery history, authenticated partial membership, fairness,
+current-profile migration and independent review explicit. P02's full closure table and subsequent
+NPC/story/ecology/art/audio dependencies remain unchanged.

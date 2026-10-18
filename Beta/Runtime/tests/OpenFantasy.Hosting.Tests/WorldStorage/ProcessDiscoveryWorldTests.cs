@@ -1,0 +1,42 @@
+using OpenFantasy.Core.Exposure;
+using OpenFantasy.Core.Gathering;
+using OpenFantasy.Core.Geography;
+using OpenFantasy.Core.Worlds;
+
+namespace OpenFantasy.Hosting.Tests.WorldStorage;
+
+public sealed class ProcessDiscoveryWorldTests
+{
+    [Fact]
+    public void Existing_transport_fixture_admits_both_process_owners_without_new_geometry_or_law()
+    {
+        var f = new ReservoirTransportWorldFixture(nearby: false);
+        var world = f.Genesis;
+        Assert.Equal((ushort)9, world.ProfileVersion);
+        Assert.NotNull(world.Gathering);
+        Assert.Equal(world.Calendar, world.Transport!.Boundary);
+        Assert.Equal(world.ProcessIntervals, world.Gathering.AdvancingStep);
+        Assert.Empty(world.Transport.DiscoverDue(world.Calendar).Stages);
+        Assert.Equal(world.Inventory.Actors.Order(), world.Gathering.Actors.Select(x => x.ActorId).Order());
+    }
+
+    [Fact]
+    public void Due_cancellation_uses_post_action_transport_and_still_recovers_gathering_and_every_resident()
+    {
+        var f = new ReservoirTransportWorldFixture(nearby: false);
+        var before = f.Step(f.Genesis, f.Schedule(f.Genesis)).Candidate;
+        var discovered = before.Transport!.DiscoverDue(before.Calendar.AddMilliseconds(1800));
+        Assert.Single(discovered.Stages);
+        var decision = f.Step(before, RunoffCommandPolicyTests.Cancel(before));
+        Assert.Equal(WorldActionRejection.None, Assert.Single(decision.Receipts).Rejection);
+        var after = decision.Candidate;
+        Assert.False(discovered.IsFor(after.Transport!));
+        Assert.Empty(after.Transport!.DiscoverDue(after.Calendar).Stages);
+        Assert.Equal(RunoffTransportStatus.Canceled, Assert.Single(after.Transport.Stages).Status);
+        Assert.Equal(before.Inventory.ContentHash, after.Inventory.ContentHash);
+        Assert.Equal(GatheringCodecV1.Encode(before.Gathering!.AdvanceStep(before.ProcessIntervals + 1)),
+            GatheringCodecV1.Encode(after.Gathering!));
+        Assert.Equal(before.Residents.Select(x => (x.ActorId, x.ExperiencedTime.Add(LocalExposureDuration.FromMilliseconds(1800)))),
+            after.Residents.Select(x => (x.ActorId, x.ExperiencedTime)));
+    }
+}

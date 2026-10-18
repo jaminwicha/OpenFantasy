@@ -207,3 +207,17 @@ its explicitly captured work set and mandatory legacy owner union. It does not e
 profile obligations or supply timing-domain membership. Preserve existing semantic order and complete
 original-history validation while adding typed domain adapters; use existing operation owners rather
 than an alternative simulation of their effects.
+
+
+## Runtime binding: typed process discovery
+
+Gathering and reserved transport expose derived immutable discovery objects consumed by their existing
+operations. [Regrowth discovery](materials-and-activities.md#source-bound-regrowth-discovery) reports
+actual due node occurrences and finite-stock eligibility; both exact-step and idle gathering recovery
+consume it while retaining complete actor effort. [Transport discovery](reservoir-transport.md#runtime-binding-action-clock-and-commit-order)
+retains stage identity and due ordering across lawful blocking; the planner still owns pressure,
+throughput, custody and created identities. These are separate timing-domain contracts, not one generic
+event counter. Both retain complete source owners and use reference affinity. Neither authenticates
+absent owners, persists a discovery index, substitutes for host selection or establishes fairness.
+The ordinary world invokes them through the effective post-action gathering/transport owner; queries
+against a source snapshot cannot be transferred silently to its successor.

@@ -273,10 +273,15 @@ public sealed class WorldDatabaseTests
 
 internal sealed class StorageFiles : IDisposable
 {
-    private readonly string _directory = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "openfantasy-storage-" + Guid.NewGuid().ToString("N"));
+    private readonly string _directory;
+    private readonly bool _retain;
 
     internal StorageFiles()
     {
+        string? retainedRoot = Environment.GetEnvironmentVariable("OPENFANTASY_STORAGE_ARTIFACTS");
+        _retain = !string.IsNullOrWhiteSpace(retainedRoot);
+        _directory = System.IO.Path.Combine(_retain ? retainedRoot! : System.IO.Path.GetTempPath(),
+            "openfantasy-storage-" + Guid.NewGuid().ToString("N"));
         Directory.CreateDirectory(_directory);
         Path = System.IO.Path.Combine(_directory, "world.sqlite3");
     }
@@ -295,5 +300,8 @@ internal sealed class StorageFiles : IDisposable
         command.ExecuteNonQuery();
     }
 
-    public void Dispose() => Directory.Delete(_directory, recursive: true);
+    public void Dispose()
+    {
+        if (!_retain) Directory.Delete(_directory, recursive: true);
+    }
 }

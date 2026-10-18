@@ -294,3 +294,9 @@ mandatory work, not permission to discard an obligation or freeze all time until
 Authenticated membership must distinguish missing owners from empty due sets. The next executable
 contrast is regrowth plus reserved transport using their actual domain operations and lawful profiles;
 this is preparation, not a saved queue/format decision or a replacement for independent review.
+
+
+[Typed domain discovery](p02/partition-state/domain-process-discovery/RESULT.md) now joins the existing
+gathering and transport operations without new persistence or time law. Complete-source reference affinity
+and post-action invocation are explicit; this does not replace authenticated membership for a future
+partial owner index. Keep the storage recommendation conditional and all remaining qualification exits.

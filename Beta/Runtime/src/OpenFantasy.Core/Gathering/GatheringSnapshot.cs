@@ -88,19 +88,16 @@ public sealed class GatheringSnapshot
     public GatherActorWork GetActorWork(EntityId actorId) => Actors.FirstOrDefault(actor => actor.ActorId == actorId)
         ?? throw new ArgumentException("The actor has no admitted gathering work state.", nameof(actorId));
 
+    /// <summary>Finds due nodes and finite-stock eligibility without advancing time or restoring swings.</summary>
+    public GatheringRegrowthDiscovery DiscoverRegrowth(ulong throughInterval) => new(this, throughInterval);
+
     public GatheringSnapshot AdvanceStep(ulong nextOrdinal)
     {
         if (nextOrdinal != checked(AdvancingStep + 1))
         {
             throw new ArgumentException("Gathering advances exactly once per committed advancing world step.", nameof(nextOrdinal));
         }
-        var nodes = Nodes.Select(node =>
-        {
-            uint maximumPower = Tools.Where(tool => tool.Kind == node.Definition.RequiredToolKind).Max(tool => tool.Power);
-            ulong fullCycle = checked((ulong)node.Definition.MaxSwings * maximumPower);
-            return node.RespawnAtAdvancingStep is { } due && due <= nextOrdinal
-                && node.UnitCapacity - node.NextUnissuedUnit >= fullCycle ? node.Regrow() : node;
-        });
+        var nodes = DiscoverRegrowth(nextOrdinal).RegrowNodes(this);
         return new GatheringSnapshot(WorldId, BranchId, nextOrdinal, nodes, Tools, Actors.Select(actor => actor.Advance()));
     }
 
@@ -111,13 +108,7 @@ public sealed class GatheringSnapshot
             throw new ArgumentOutOfRangeException(nameof(nextOrdinal), "Gathering cannot reverse its committed process clock.");
         if (nextOrdinal == AdvancingStep) return this;
         ulong elapsed = nextOrdinal - AdvancingStep;
-        var nodes = Nodes.Select(node =>
-        {
-            uint power = Tools.Where(tool => tool.Kind == node.Definition.RequiredToolKind).Max(tool => tool.Power);
-            ulong fullCycle = checked((ulong)node.Definition.MaxSwings * power);
-            return node.RespawnAtAdvancingStep is { } due && due <= nextOrdinal
-                && node.UnitCapacity - node.NextUnissuedUnit >= fullCycle ? node.Regrow() : node;
-        });
+        var nodes = DiscoverRegrowth(nextOrdinal).RegrowNodes(this);
         return new(WorldId, BranchId, nextOrdinal, nodes, Tools, Actors.Select(actor =>
             new GatherActorWork(actor.ActorId, (uint)UInt128.Min(GatherRulesV1.MaximumEffort,
                 (UInt128)actor.Effort + (UInt128)elapsed * GatherRulesV1.EffortPerAdvancingStep))));

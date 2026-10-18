@@ -720,3 +720,13 @@ Documentation checkpoint: `codex/milestone-process-discovery-contract-20261018`,
 commit without switching. [Result](p02/partition-state/process-discovery-contract/RESULT.md) pins reviewed
 sources, post-action/clock/blocking contracts and the next executable contrast. Documentation checks
 only; no runtime, independent, phase or performance acceptance. Concurrent/predecessor edits excluded.
+
+
+## Typed domain-process discovery — 2026-10-18
+
+Before-change WIP checkpoint: `codex/checkpoint-before-domain-process-discovery-20261018`
+(`9abc2451ae6ab05242d380bdd9fe30f814d09ecc`, parent `74ae01c47610840377be7bbb9b694f30cea381d9`).
+Verified increment: `codex/milestone-domain-process-discovery-20261018`, at the scoped accepted commit
+without switching. [Result](p02/partition-state/domain-process-discovery/RESULT.md) retains exact checks,
+fixture build failures, source review and remaining limits. Domain queries feed existing operations;
+no persistent index/current migration or phase acceptance follows. Concurrent/predecessor edits excluded.

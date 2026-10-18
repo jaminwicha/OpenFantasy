@@ -245,6 +245,24 @@ This is an idle transition, not a substitute for recorded harvesting, climbing o
 The material continuation bridge compares this reconstruction with the actual supplied gathering
 owner and refuses unrepresented changes. Advancing to a time cannot overwrite actual spending.
 
+### Source-bound regrowth discovery
+
+`GatheringSnapshot.DiscoverRegrowth` returns an immutable
+[GatheringRegrowthDiscovery](../../src/OpenFantasy.Core/Gathering/GatheringRegrowthDiscovery.cs) for a
+specified process interval at or after that owner's current interval. Occurrences are ordered by due
+interval and node identity. Each names the actual node revision, due interval, unissued units and the
+full-cycle requirement at the strongest admitted tool power. Due nodes without enough stock remain
+visible as ineligible occurrences; discovery never resets a cursor or grants stock.
+
+Both `AdvanceStep` and `AdvanceTo` consume this discovery, retaining their own exact-one-step versus
+idle-elapsed admission and unchanged actor-effort recovery. Eligible nodes regrow in the owner's
+canonical node order through the existing node operation. An empty occurrence set does not skip
+actor recovery. Discovery is read-only and retains the complete immutable source; `IsFor` tests object
+reference affinity, not canonical hash equality or authorization. Changed or decoded owners require
+fresh discovery, even if their bytes compare equal. This is a derived query, not a persisted queue or
+proof that a partially loaded world's owner membership is complete. Inspecting a future interval does
+not authorize advancing to it.
+
 ## Quoted goods and payment
 
 [Atomic spot exchange](spot-exchange.md) is a standalone domain joining the existing inventory,

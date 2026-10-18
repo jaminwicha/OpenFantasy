@@ -1,0 +1,85 @@
+using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Content;
+using OpenFantasy.Core.Gathering;
+using static OpenFantasy.Core.Tests.Gathering.GatheringFixture;
+using static OpenFantasy.Core.Tests.Worlds.AdmissionFixture;
+
+namespace OpenFantasy.Core.Tests.Gathering;
+
+public sealed class GatheringDiscoveryTests
+{
+    [Fact]
+    public void Empty_due_set_does_not_skip_actor_effort_or_advance_on_inspection()
+    {
+        var source = Create(effort: 0).Gathering!;
+        byte[] before = GatheringCodecV1.Encode(source);
+        var discovery = source.DiscoverRegrowth(1);
+        Assert.True(discovery.IsFor(source));
+        Assert.Empty(discovery.Occurrences);
+        Assert.Equal(before, GatheringCodecV1.Encode(source));
+        var next = source.AdvanceStep(1);
+        Assert.All(next.Actors, actor => Assert.Equal(GatherRulesV1.EffortPerAdvancingStep, actor.Effort));
+        Assert.False(discovery.IsFor(next));
+        Assert.Equal(1UL, next.AdvancingStep);
+    }
+
+    [Fact]
+    public void Actual_harvest_changes_discovery_without_resetting_the_finite_cursor()
+    {
+        var world = Create(cursor: 4, swings: 1, step: 10);
+        var before = world.Gathering!;
+        var harvested = Plan(world);
+        Assert.Equal(WorldActionRejection.None, harvested.Rejection);
+        Assert.Empty(before.DiscoverRegrowth(910).Occurrences);
+        var after = harvested.CandidateGathering;
+        var discovery = after.DiscoverRegrowth(910);
+        var occurrence = Assert.Single(discovery.Occurrences);
+        Assert.Equal(Node, occurrence.NodeId);
+        Assert.Equal(910UL, occurrence.DueInterval);
+        Assert.Equal(after.GetNode(Node).Revision, occurrence.NodeRevision);
+        Assert.True(occurrence.CanRegrow);
+        Assert.False(discovery.IsFor(before));
+        Assert.Throws<InvalidOperationException>(() => discovery.RegrowNodes(before));
+        var restored = after.AdvanceTo(910);
+        Assert.Equal(5UL, restored.GetNode(Node).NextUnissuedUnit);
+        Assert.Equal(5, restored.GetNode(Node).RemainingSwings);
+        Assert.Empty(restored.DiscoverRegrowth(910).Occurrences);
+    }
+
+    [Theory]
+    [InlineData(1U, true)]
+    [InlineData(3U, false)]
+    public void Due_stock_shortage_is_visible_and_uses_the_strongest_admitted_tool(uint power, bool eligible)
+    {
+        var source = Create(sourceCapacity: 19, cursor: 5, swings: 0, step: 899, depletedAt: 0).Gathering!;
+        var tool = new GatherToolDefinition(new CountedItemDefinition(Id(209), ContentHash.Compute("strong"u8)), GatherToolKind.Axe, power);
+        var actual = new GatheringSnapshot(source.WorldId, source.BranchId, source.AdvancingStep,
+            source.Nodes, [.. source.Tools, tool], source.Actors);
+        var due = Assert.Single(actual.DiscoverRegrowth(900).Occurrences);
+        Assert.Equal(14UL, due.UnissuedUnits);
+        Assert.Equal(5UL * power, due.RequiredUnits);
+        Assert.Equal(eligible, due.CanRegrow);
+        var next = actual.AdvanceStep(900);
+        Assert.Equal(eligible ? 5 : 0, next.GetNode(Node).RemainingSwings);
+        Assert.Equal(5UL, next.GetNode(Node).NextUnissuedUnit);
+        if (!eligible) Assert.Equal(due, Assert.Single(next.DiscoverRegrowth(901).Occurrences));
+    }
+
+    [Fact]
+    public void Canonical_discovery_survives_input_order_and_elapsed_recovery_matches_each_interval()
+    {
+        var source = Create(effort: 0, sourceCapacity: 20, cursor: 5, swings: 0, step: 899, depletedAt: 0).Gathering!;
+        var original = source.GetNode(Node);
+        var later = new GatherNodeState(Id(301), original.Definition, Id(302), 20, original.Feet, 0, 5, 0, 1);
+        GatheringSnapshot With(IEnumerable<GatherNodeState> nodes) => new(source.WorldId, source.BranchId, 899,
+            nodes, source.Tools.Reverse(), source.Actors.Reverse());
+        var forward = With([original, later]);
+        var reverse = With([later, original]);
+        Assert.Equal(forward.DiscoverRegrowth(901).Occurrences, reverse.DiscoverRegrowth(901).Occurrences);
+        Assert.Equal(new[] { Node, later.NodeId }, forward.DiscoverRegrowth(901).Occurrences.Select(x => x.NodeId));
+        Assert.Equal(GatheringCodecV1.Encode(forward.AdvanceStep(900).AdvanceStep(901)),
+            GatheringCodecV1.Encode(reverse.AdvanceTo(901)));
+        Assert.False(forward.DiscoverRegrowth(901).IsFor(reverse));
+        Assert.Throws<ArgumentOutOfRangeException>(() => source.DiscoverRegrowth(898));
+    }
+}

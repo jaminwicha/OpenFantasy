@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~Existing_transport_fixture_admits_both_process_owners_without_new_geometry_or_law"
+  ],
+  "exit_code": 0,
+  "seconds": 2.317263124976307,
+  "bound_seconds": 180
+}

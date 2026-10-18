@@ -1,0 +1,14 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+The following Tests are available:
+    OpenFantasy.Hosting.Tests.WorldStorage.ProcessDiscoveryWorldTests.Existing_transport_fixture_admits_both_process_owners_without_new_geometry_or_law
+    OpenFantasy.Hosting.Tests.WorldStorage.ProcessDiscoveryWorldTests.Due_cancellation_uses_post_action_transport_and_still_recovers_gathering_and_every_resident
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportTamperTests.IndependentlyValidGateSubstitutionWithMatchingStoredHashStillFailsJournalReplay(table: "world_genesis")
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportTamperTests.IndependentlyValidGateSubstitutionWithMatchingStoredHashStillFailsJournalReplay(table: "world_checkpoints")
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportTamperTests.IndependentlyValidGateSubstitutionWithMatchingStoredHashStillFailsJournalReplay(table: "world_head")
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.ActualDueTransferSurvivesReadingPauseCommitRecoveryAndExactHistoricalQueries
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.CancellationAtTheDueBoundaryWinsBeforeAutomaticDeliveryAndRetainsStock
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.CurrentMaterialActionsOrOutletSillsCanBlockAStageWithoutLosingItsPromise(sill: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.CurrentMaterialActionsOrOutletSillsCanBlockAStageWithoutLosingItsPromise(sill: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.UnauthorizedAndStaleScheduleRequestsCannotCreateStages(stale: False)
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.UnauthorizedAndStaleScheduleRequestsCannotCreateStages(stale: True)
+    OpenFantasy.Hosting.Tests.WorldStorage.ReservoirTransportWorldTests.FreshProfileAdmissionRejectsForeignHistoryDoubleOwnershipAndClockMismatch

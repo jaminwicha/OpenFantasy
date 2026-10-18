@@ -1,0 +1,14 @@
+{
+  "baseline": "74ae01c47610840377be7bbb9b694f30cea381d9",
+  "transport_execution_body_identical_except_discovery_selector": true,
+  "source_review": [
+    "New discovery classes retain immutable complete source objects; IsFor is reference affinity, not authentication or stored content-hash identity.",
+    "Transport discovery copies the exact prior pending/due/order predicate. Existing equality/next-boundary, continuation callback, hold and per-stage physical rules remain in place.",
+    "Gathering discovery uses the same strongest admitted tool and full-cycle stock predicate. It reports ineligible due occurrences without regrowing them.",
+    "RegrowNodes applies to source.Nodes in original canonical order via unchanged Regrow. Exact-step and elapsed recovery retain their clock guards and actor recovery arithmetic.",
+    "Only due nodes calculate the tool maximum now. Constructor admission guarantees a matching tool; bounded MaxSwings/uint power makes this multiplication representable. Invalid-owner construction is not newly allowed.",
+    "The host fixture uses existing lawful profile9 with both owners; cancellation executes before transport, and gathering/exposure still advance once. This is not simultaneous regrowth/delivery or current40/41 partial loading.",
+    "Shared StorageFiles adds only opt-in directory retention; default cleanup unchanged. Tests run with an explicit fresh retained root."
+  ],
+  "independent_review": "Not run: owner orchestration pause remains active."
+}

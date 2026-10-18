@@ -141,6 +141,9 @@ public sealed class ReservoirTransportState
         return new(this, new(physical, Connections, journal, checked(Revision + 1), Boundary, ContinuationQualification));
     }
 
+    /// <summary>Discovers pending due stages without moving stock, consuming throughput or advancing time.</summary>
+    public ReservoirTransportDiscovery DiscoverDue(WorldInstant boundary) => new(this, boundary);
+
     public ReservoirTransportPlan PlanAdvance(WorldInstant boundary, bool readingHold = false,
         Func<EntityId, bool>? historicallyOccupied = null) =>
         new ReservoirTransportPlanner().Advance(this, boundary, readingHold, historicallyOccupied);
