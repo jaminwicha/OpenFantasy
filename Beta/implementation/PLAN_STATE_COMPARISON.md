@@ -232,6 +232,12 @@ The first extraction should establish these concrete responsibilities, in the ex
   within ordinary selected batches and SQLite publication. Full candidate/receipt/identity equivalence,
   hold ordering, stale dependencies and preview/commit recovery are tested. This removes repeated route
   qualification without substituting a work scheduler; full world residency and encoding remain.
+  [Locality continuation](p02/partition-state/construction-locality/RESULT.md) now composes actual
+  profile5 nonterrain owners with selected work, shared identity/time rules, due gathering and all
+  resident exposure across an interval without retained terrain. Exact reconstruction and outcome
+  comparisons address sequential execution, not merely one detached candidate. It remains a complete
+  locality aggregate; stable per-owner partitioning, movement/gift, current-profile coverage and durable
+  owner publication remain open. Profile40/41 refusal prevents silent facet loss.
 - **Core time/work:** deterministic due obligations reference stable owners and the interpretation
   needed to execute them. Absence from presentation is not permission to drop a worker or change its
   clock. Start with the actual funded construction case; detailed/offscreen equivalence is checked

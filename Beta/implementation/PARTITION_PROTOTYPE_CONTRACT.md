@@ -179,6 +179,11 @@ evidence, not 10,000-actor/20,000-resident, four-player endurance, desktop or fu
    to the existing selected-batch executor and durable publisher, preserving clock/action ordering and
    complete admission. The publisher still holds and encodes the complete world: this qualifies the
    execution adapter, not absent-detail commits or typed partition ownership.
+   [Locality continuation](p02/partition-state/construction-locality/RESULT.md) then supplies sequential
+   selected work/time/due-process candidates from the complete nonterrain owners of profile5, with
+   source terrain absent throughout 200 steps and exact reconstruction afterward. This qualifies a
+   legacy whole-locality aggregate execution hypothesis. It does not supply a per-actor/custodian split,
+   later-profile interpretation, earned durable publication or the joined movement/gift episode.
 2. **Joined owner transaction.** Integrate those decisions with stable actor/material/project owners,
    membership, time and the single durable publisher. Run the entire episode, including actual gift,
    absent-detail work, final material publication and historical recovery. Wire exact admission and

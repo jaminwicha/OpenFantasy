@@ -150,19 +150,10 @@ public sealed class WorldStepProcessor
         WorldActionCommand? acceptedCommand = null, WorldMaterialEvidenceCollector? materialEvidence = null)
     {
         ulong sequence = checked(state.Revision + 1);
-        HashSet<EntityId> reserved = [];
-        List<WorldCommittedIdentity> identities = [];
-        bool Occupied(EntityId identity) => reserved.Contains(identity) || state.IdentityIndex.Contains(identity)
-            || historicallyOccupied?.Invoke(identity) == true;
-        void Reserve(EntityId identity, WorldCommittedIdentityKind kind)
-        {
-            if (Occupied(identity))
-            {
-                throw new InvalidOperationException("A committed identity is already occupied.");
-            }
-            reserved.Add(identity);
-            identities.Add(new WorldCommittedIdentity(identity, kind));
-        }
+        var reservations = new WorldStepIdentityReservations(identity => state.IdentityIndex.Contains(identity)
+            || historicallyOccupied?.Invoke(identity) == true);
+        bool Occupied(EntityId identity) => reservations.Contains(identity);
+        void Reserve(EntityId identity, WorldCommittedIdentityKind kind) => reservations.Reserve(identity, kind);
 
         Reserve(batch.CauseId, WorldCommittedIdentityKind.CommitCause);
         foreach (WorldActionCommand action in batch.Actions)
@@ -641,10 +632,11 @@ public sealed class WorldStepProcessor
         if (batch.Kind == WorldBatchKind.AdvancingStep)
         {
             // The already selected step contributes once, including when an action opens a hold.
-            pacing = pacing?.AdvanceExploration();
-            lifecycle = state.EncounterLifecycle?.AdvanceExploration();
-            calendar = pacing?.Calendar ?? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep);
-            advancingSteps = checked(advancingSteps + 1);
+            var boundary = new WorldExplorationBoundary(calendar, advancingSteps, pacing, state.EncounterLifecycle);
+            pacing = boundary.Pacing;
+            lifecycle = boundary.Lifecycle;
+            calendar = boundary.Calendar;
+            advancingSteps = boundary.AdvancingSteps;
             if (coordination?.Proposals is { } pendingProposals)
             {
                 // Every action of this step preceded the boundary; offers due at the new count close here.
@@ -715,7 +707,7 @@ public sealed class WorldStepProcessor
             // A reused movement candidate already passed this exact encoding boundary.
             candidateFrame = WorldCanonicalFrame.Capture(candidate);
         }
-        return new WorldStepDecision(candidate, receipts, identities, materialEvidence: materialEvidence?.Snapshot(),
+        return new WorldStepDecision(candidate, receipts, reservations.Identities, materialEvidence: materialEvidence?.Snapshot(),
             candidateFrame: candidateFrame);
     }
 

@@ -262,6 +262,12 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    collection of the source world/scene/index/terrain. Capture and freshness still require the complete
    source, some terrain-retaining material continuations are explicitly unsupported, and physical/time/
    durable publication remain outside the detached result. This is not an offscreen world authority.
+   [Construction locality continuation](p02/partition-state/construction-locality/RESULT.md) now retains
+   every nonterrain owner of its supported profile5 source and executes 200 successive selected work
+   candidates after source/scene/index/terrain collection. Due gathering and resident exposure remain
+   real; final reconstruction, material outputs, per-step owner state and outcomes match ordinary
+   execution. Profile40/41 sources explicitly refuse. No canonical owner split, movement/gift interval,
+   durable partial publication or new format is supplied by this domain proof.
    The [integrated prototype contract](PARTITION_PROTOTYPE_CONTRACT.md) specifies the next unit:
    shared admitted construction execution, stable actor/custodian owners and separate spatial membership,
    real cross-owner cargo transfer, earned exposure and invalidated geometry/access evidence. Construction's

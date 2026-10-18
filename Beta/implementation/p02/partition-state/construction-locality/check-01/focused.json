@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Core.Tests/OpenFantasy.Core.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~ConstructionLocalityTests",
+    "--logger",
+    "trx;LogFileName=focused.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-locality/check-01"
+  ],
+  "exit_code": 0,
+  "seconds": 12.810543666011654,
+  "bound_seconds": 180
+}

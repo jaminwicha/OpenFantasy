@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~ConstructionLocalityCoverageTests|FullyQualifiedName~ConstructionPreviewRecoveryTests|FullyQualifiedName~ConstructionWorkRecoveryTests|FullyQualifiedName~WorldActorCarriageTests|FullyQualifiedName~WorldStateLayoutTests|FullyQualifiedName~PartyWithdrawalWorldTests",
+    "--logger",
+    "trx;LogFileName=hosting.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/construction-locality/check-02"
+  ],
+  "exit_code": 0,
+  "seconds": 37.83666470902972,
+  "bound_seconds": 180
+}

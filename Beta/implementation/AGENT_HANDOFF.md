@@ -221,6 +221,11 @@ joined durable episode; candidate evaluation is not offscreen world publication.
 ordinary selected batches and SQLite publication, including actual holds/time, stale invalidation and
 preview/interrupted-commit recovery. Full world residency/encoding still applies. Integrated partition
 measurements and independent acceptance remain unrun.
+The [locality continuation](p02/partition-state/construction-locality/RESULT.md) now runs 200 successive
+selected work candidates with the source world/scene/index/terrain collected, preserving all supported
+profile5 nonterrain owners, due regrowth, time and exact reconstructed output. Profile40/41 explicitly
+refuse; this is not a saved partial world. Next join movement/custody and typed owner publication under
+the existing authority; preserve higher-profile facets and all complete phase/history gates.
 Select and measure an integrated partition/version prototype before permanent NPC cognition state.
 No new format, authority or native core is selected. Then NPC-01 proves evidence,
 feasible work, memory/dialogue and changed-place return; STORY-01 supplies the actual clue/puzzle design.

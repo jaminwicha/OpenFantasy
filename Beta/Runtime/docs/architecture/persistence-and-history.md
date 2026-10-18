@@ -466,6 +466,13 @@ same-revision worlds; it does not authenticate an otherwise supplied candidate's
 root replay and hashing still apply. No partially resident recovery, new canonical ownership directory,
 atomic cross-partition publication or arbitrary-time travel follows from this derived reconstruction.
 
+The [construction locality continuation](construction-locality.md) retains a different boundary: actual
+nonterrain owners and selected work/time candidates for its complete legacy interpretation. Its source
+hash pins initial admission, but the continuation has no canonical partition journal or persisted owner
+manifest. Proposed receipts remain private until complete admission and one durable publication. Exact
+terrain reconstruction is available; it does not supply partial historical recovery or admission of
+later profiles by omission.
+
 ### Design contract: partitioned persistence and version ownership
 
 The [bounded terrain read boundary](world-and-geography.md#bounded-terrain-read-dependencies) supplies

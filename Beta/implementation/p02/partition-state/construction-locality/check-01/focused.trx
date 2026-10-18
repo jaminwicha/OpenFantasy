@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="62d6ad79-1dff-46a5-9c84-686347fce460" name="@mac 2026-10-17 19:34:12" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-17T19:34:12.4814880-05:00" queuing="2026-10-17T19:34:12.4814880-05:00" start="2026-10-17T19:34:09.7051020-05:00" finish="2026-10-17T19:34:12.4844170-05:00" />
+  <TestSettings name="default" id="cb5c1fa1-170a-44c5-9b50-79521b531929">
+    <Deployment runDeploymentRoot="_mac_2026-10-17_19_34_12" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="473e9309-2c4f-48cf-9a24-472c9bf7cd4b" testId="a41fdfd6-99cc-7897-457f-a3da5b82452b" testName="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Holds_and_unfunded_work_preserve_ordinary_clock_and_refusal_semantics(funded: True, held: True)" computerName="mac" duration="00:00:00.0071959" startTime="2026-10-17T19:34:12.1629330-05:00" endTime="2026-10-17T19:34:12.1701650-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="473e9309-2c4f-48cf-9a24-472c9bf7cd4b" />
+    <UnitTestResult executionId="a2fc2d0d-b988-43c9-b1ef-165ab54157da" testId="15b3fd7a-ef1f-6db2-d4bc-6cdffee790c7" testName="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.A_genuinely_depleted_node_regrows_on_its_due_step_during_the_same_work_interval" computerName="mac" duration="00:00:00.1093698" startTime="2026-10-17T19:34:12.3096170-05:00" endTime="2026-10-17T19:34:12.4190380-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2fc2d0d-b988-43c9-b1ef-165ab54157da" />
+    <UnitTestResult executionId="93ecb3bd-5403-40c0-a442-2ec082b9d426" testId="8243062b-82c8-5c7f-d458-e777afd13553" testName="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Changed_population_or_terrain_requires_actual_readmission_before_continuing" computerName="mac" duration="00:00:00.2538701" startTime="2026-10-17T19:34:11.8335590-05:00" endTime="2026-10-17T19:34:12.0926220-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93ecb3bd-5403-40c0-a442-2ec082b9d426" />
+    <UnitTestResult executionId="b54579eb-157c-4e50-99e9-8c08eeae2beb" testId="406271e7-8111-24d2-c499-9f4c43e98983" testName="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Unsupported_source_profiles_movement_and_other_actions_are_explicit_preparation_refusals" computerName="mac" duration="00:00:00.0113429" startTime="2026-10-17T19:34:12.4195000-05:00" endTime="2026-10-17T19:34:12.4309120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b54579eb-157c-4e50-99e9-8c08eeae2beb" />
+    <UnitTestResult executionId="f01abcad-e813-4032-a00f-140a9ed1cfa9" testId="4be7ea5e-f1b1-f97e-64ca-661322c325fd" testName="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Final_identity_conflict_keeps_work_and_material_then_a_new_selection_completes_once" computerName="mac" duration="00:00:00.0514394" startTime="2026-10-17T19:34:12.0967940-05:00" endTime="2026-10-17T19:34:12.1483120-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f01abcad-e813-4032-a00f-140a9ed1cfa9" />
+    <UnitTestResult executionId="fe083fe0-aa6e-48e0-818e-1d36a0801148" testId="a876b8bd-abfd-44e5-0e49-2bd4eb490fa5" testName="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Holds_and_unfunded_work_preserve_ordinary_clock_and_refusal_semantics(funded: False, held: False)" computerName="mac" duration="00:00:00.0050746" startTime="2026-10-17T19:34:12.1576470-05:00" endTime="2026-10-17T19:34:12.1627480-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fe083fe0-aa6e-48e0-818e-1d36a0801148" />
+    <UnitTestResult executionId="cbcec3e4-2abc-4bb9-a2f9-82c398aab3fd" testId="622686ff-f2c1-bafa-9cb7-7e95bc8c97a4" testName="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Preparation_is_repeatable_but_old_batches_and_reused_command_identities_cannot_earn_more_work" computerName="mac" duration="00:00:00.0075493" startTime="2026-10-17T19:34:12.1493060-05:00" endTime="2026-10-17T19:34:12.1568980-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cbcec3e4-2abc-4bb9-a2f9-82c398aab3fd" />
+    <UnitTestResult executionId="519c0897-7557-4488-b7bc-f724240b518d" testId="5c712a9f-c982-f816-3bb1-1e6fd88ca856" testName="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.All_200_selected_steps_complete_after_source_world_and_terrain_collection_then_reconstruct_exact_history" computerName="mac" duration="00:00:00.1379935" startTime="2026-10-17T19:34:12.1708840-05:00" endTime="2026-10-17T19:34:12.3089180-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="519c0897-7557-4488-b7bc-f724240b518d">
+      <Output>
+        <StdOut>Terrain-free interval: 200 selected steps, 2 actors, 1 terrain references, 4 occupancy pages, 313-&gt;917 retained identities; no source/scene/index/terrain references alive before or after execution.</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Final_identity_conflict_keeps_work_and_material_then_a_new_selection_completes_once" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="4be7ea5e-f1b1-f97e-64ca-661322c325fd">
+      <Execution id="f01abcad-e813-4032-a00f-140a9ed1cfa9" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests" name="Final_identity_conflict_keeps_work_and_material_then_a_new_selection_completes_once" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.All_200_selected_steps_complete_after_source_world_and_terrain_collection_then_reconstruct_exact_history" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="5c712a9f-c982-f816-3bb1-1e6fd88ca856">
+      <Execution id="519c0897-7557-4488-b7bc-f724240b518d" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests" name="All_200_selected_steps_complete_after_source_world_and_terrain_collection_then_reconstruct_exact_history" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Unsupported_source_profiles_movement_and_other_actions_are_explicit_preparation_refusals" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="406271e7-8111-24d2-c499-9f4c43e98983">
+      <Execution id="b54579eb-157c-4e50-99e9-8c08eeae2beb" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests" name="Unsupported_source_profiles_movement_and_other_actions_are_explicit_preparation_refusals" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Preparation_is_repeatable_but_old_batches_and_reused_command_identities_cannot_earn_more_work" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="622686ff-f2c1-bafa-9cb7-7e95bc8c97a4">
+      <Execution id="cbcec3e4-2abc-4bb9-a2f9-82c398aab3fd" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests" name="Preparation_is_repeatable_but_old_batches_and_reused_command_identities_cannot_earn_more_work" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Changed_population_or_terrain_requires_actual_readmission_before_continuing" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="8243062b-82c8-5c7f-d458-e777afd13553">
+      <Execution id="93ecb3bd-5403-40c0-a442-2ec082b9d426" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests" name="Changed_population_or_terrain_requires_actual_readmission_before_continuing" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.A_genuinely_depleted_node_regrows_on_its_due_step_during_the_same_work_interval" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="15b3fd7a-ef1f-6db2-d4bc-6cdffee790c7">
+      <Execution id="a2fc2d0d-b988-43c9-b1ef-165ab54157da" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests" name="A_genuinely_depleted_node_regrows_on_its_due_step_during_the_same_work_interval" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Holds_and_unfunded_work_preserve_ordinary_clock_and_refusal_semantics(funded: True, held: True)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="a41fdfd6-99cc-7897-457f-a3da5b82452b">
+      <Execution id="473e9309-2c4f-48cf-9a24-472c9bf7cd4b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests" name="Holds_and_unfunded_work_preserve_ordinary_clock_and_refusal_semantics" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests.Holds_and_unfunded_work_preserve_ordinary_clock_and_refusal_semantics(funded: False, held: False)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.core.tests/bin/debug/net8.0/openfantasy.core.tests.dll" id="a876b8bd-abfd-44e5-0e49-2bd4eb490fa5">
+      <Execution id="fe083fe0-aa6e-48e0-818e-1d36a0801148" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Core.Tests/bin/Debug/net8.0/OpenFantasy.Core.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Core.Tests.Construction.ConstructionLocalityTests" name="Holds_and_unfunded_work_preserve_ordinary_clock_and_refusal_semantics" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="a41fdfd6-99cc-7897-457f-a3da5b82452b" executionId="473e9309-2c4f-48cf-9a24-472c9bf7cd4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="15b3fd7a-ef1f-6db2-d4bc-6cdffee790c7" executionId="a2fc2d0d-b988-43c9-b1ef-165ab54157da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8243062b-82c8-5c7f-d458-e777afd13553" executionId="93ecb3bd-5403-40c0-a442-2ec082b9d426" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="406271e7-8111-24d2-c499-9f4c43e98983" executionId="b54579eb-157c-4e50-99e9-8c08eeae2beb" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4be7ea5e-f1b1-f97e-64ca-661322c325fd" executionId="f01abcad-e813-4032-a00f-140a9ed1cfa9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a876b8bd-abfd-44e5-0e49-2bd4eb490fa5" executionId="fe083fe0-aa6e-48e0-818e-1d36a0801148" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="622686ff-f2c1-bafa-9cb7-7e95bc8c97a4" executionId="cbcec3e4-2abc-4bb9-a2f9-82c398aab3fd" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5c712a9f-c982-f816-3bb1-1e6fd88ca856" executionId="519c0897-7557-4488-b7bc-f724240b518d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="8" executed="8" passed="8" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.70]   Discovering: OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.43]   Discovered:  OpenFantasy.Core.Tests
+[xUnit.net 00:00:01.61]   Starting:    OpenFantasy.Core.Tests
+[xUnit.net 00:00:02.25]   Finished:    OpenFantasy.Core.Tests (ID = '66afe16150f5783301fe8d5b8ae63da52e05805b4696ea84845308df025238ef')
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

@@ -29,6 +29,14 @@ Thirty-five tactical ticks retain 1,750 ms of carry. The next tick earns one int
 that carry and boundary. Choices, resolution, focus loss, waiting for a human and host stalls never
 become retrospective elapsed time. `AdvanceExploration` rejects an active encounter.
 
+[WorldExplorationBoundary](../../src/OpenFantasy.Core/Worlds/WorldExplorationBoundary.cs) computes the
+already-selected exploration transition shared by ordinary execution and the explicitly supported
+[construction locality continuation](construction-locality.md). It preserves pacing, lifecycle,
+calendar and advancing-counter order; it does not select a step or run due processes by itself.
+The invoking owner applies action effects first and then its actual due processes and resident exposure.
+The terrain-free construction binding accepts only its unpaced legacy interpretation; it cannot
+substitute a calendar subtraction for tactical carry or omit encounter debt from a later profile.
+
 ## Complete admission and actions
 
 [WorldPacingAdmission.CreateFresh](../../src/OpenFantasy.Core/Worlds/WorldPacingAdmission.cs) accepts an

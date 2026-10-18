@@ -1,0 +1,21 @@
+{
+  "base": "3064d3d68f73bb7c985bfb3aa4b9b88b9ef8eace",
+  "file": "Beta/Runtime/src/OpenFantasy.Core/Worlds/WorldStepProcessor.cs",
+  "exact_transformed_source_matches": true,
+  "substitutions": [
+    {
+      "before": "        HashSet<EntityId> reserved = [];\n        List<WorldCommittedIdentity> identities = [];\n        bool Occupied(EntityId identity) => reserved.Contains(identity) || state.IdentityIndex.Contains(identity)\n            || historicallyOccupied?.Invoke(identity) == true;\n        void Reserve(EntityId identity, WorldCommittedIdentityKind kind)\n        {\n            if (Occupied(identity))\n            {\n                throw new InvalidOperationException(\"A committed identity is already occupied.\");\n            }\n            reserved.Add(identity);\n            identities.Add(new WorldCommittedIdentity(identity, kind));\n        }",
+      "after": "        var reservations = new WorldStepIdentityReservations(identity => state.IdentityIndex.Contains(identity)\n            || historicallyOccupied?.Invoke(identity) == true);\n        bool Occupied(EntityId identity) => reservations.Contains(identity);\n        void Reserve(EntityId identity, WorldCommittedIdentityKind kind) => reservations.Reserve(identity, kind);"
+    },
+    {
+      "before": "            pacing = pacing?.AdvanceExploration();\n            lifecycle = state.EncounterLifecycle?.AdvanceExploration();\n            calendar = pacing?.Calendar ?? calendar.AddMilliseconds(ExposurePacingV1.ExplorationMillisecondsPerStep);\n            advancingSteps = checked(advancingSteps + 1);",
+      "after": "            var boundary = new WorldExplorationBoundary(calendar, advancingSteps, pacing, state.EncounterLifecycle);\n            pacing = boundary.Pacing;\n            lifecycle = boundary.Lifecycle;\n            calendar = boundary.Calendar;\n            advancingSteps = boundary.AdvancingSteps;"
+    },
+    {
+      "before": "return new WorldStepDecision(candidate, receipts, identities, materialEvidence: materialEvidence?.Snapshot(),",
+      "after": "return new WorldStepDecision(candidate, receipts, reservations.Identities, materialEvidence: materialEvidence?.Snapshot(),"
+    }
+  ],
+  "current_sha256": "1e88e53a9dc7f400b94ef18d3a2c8f1eb069c07d2022d17c65d816910b7be5e2",
+  "scope": "Exact remainder of ordinary processor unchanged; lead separately reviewed shared helper bodies and execution order."
+}

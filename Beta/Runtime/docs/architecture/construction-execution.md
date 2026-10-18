@@ -124,3 +124,9 @@ A detached candidate can execute without its source terrain objects. That fact a
 an offscreen scheduler, actor/cargo owners, atomic directory updates, crash recovery or historical
 partition reconstruction. These remain responsibilities of the integrated authority. In particular,
 loading a full world to refresh every prepared input must not be described as bounded world residency.
+
+The [construction locality continuation](construction-locality.md) composes these rules with selected
+batch identity, ordinary exploration boundaries, due gathering and resident exposure for its explicitly
+supported complete legacy interpretation. It can prepare successive states without recapturing the
+world or retaining terrain. Its outputs still require exact source freshness, complete reconstruction
+and the real durable publisher; it does not expand the ordinary runtime's supported save interpretation.

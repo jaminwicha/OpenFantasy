@@ -1,0 +1,88 @@
+# Construction locality continuation
+
+## Domain binding and supported interpretation
+
+[ConstructionLocalityState](../../src/OpenFantasy.Core/Construction/ConstructionLocalityState.cs) retains
+all nonterrain owners of a complete admitted profile-five world during one project's selected work
+interval. Capture requires inline production, terrain-only actor/structure support, an existing project
+and actual quest/progression owners. It pins the original canonical world hash, revision and admission.
+Other source profiles refuse; the type cannot import a later world by dropping its additional owners.
+It selects no new saved profile, serializer, database schema or migration.
+
+The state retains actual inventory/production/construction, progression, quests, optional gathering,
+residents, dialogues, actor bodies/presence, calendar and advancing/commit counters. It copies complete
+terrain references and identity reservations and creates a complete geometric occupancy directory.
+Its site evidence records the original ordinary reach, placement and complete-population access result.
+There is no retained `WorldSnapshot`, `LocalSpatialSnapshot`, terrain detail, encoded terrain archive,
+terrain-retaining identity index or callback over the source world. Actor and custodian identities
+remain stable; material and actor collections are still complete locality aggregates, not separately
+paged canonical owners.
+
+The caller provides the metadata-page budget at capture. Exceeding a preparation budget is a refusal,
+not permission to omit people or truncate access obligations. All supplied geometry metadata remains
+resident. Identity reservations also retain this interval's proposed command/outcome identities; their
+size grows with selected steps. Neither collection is a bounded global frontier representation.
+
+## Selected work and shared rules
+
+`PrepareStep` accepts a `WorldStepBatch` for the exact world/branch, profile, revision and advancing-step
+count. The operation contains exactly one work command for the captured project, no movement, and the
+advancing or held interaction kind consistent with retained dialogue state. Other actions and timing
+owners require their own execution path. A batch or encoded delivery is not transport authentication
+or proof that a host selected its cutoff.
+
+Current owner-established occupancy and terrain references are explicit inputs. The complete actor
+and structure population, terrain pins and support interpretation must remain exact. An arriving actor,
+changed body/position, edited region or installed neighboring structure cannot disappear from the access
+obligations. Changed dependencies require actual preparation from current admitted owners; passing an
+old directory again cannot establish that it is still authoritative. Source freshness and publication
+serialize at the owner.
+
+[ConstructionWorkKernel](../../src/OpenFantasy.Core/Construction/ConstructionWorkKernel.cs) evaluates
+current retained control, HP, funding, tool/stock/revisions, geometry, work and material completion.
+The legacy control adapter uses the actual counted authority; it does not infer eligibility from an
+unloaded region. It cannot interpret delegated control. The kernel preserves its ordinary rejection
+precedence and exact output identities.
+
+[WorldStepIdentityReservations](../../src/OpenFantasy.Core/Worlds/WorldStepIdentityReservations.cs)
+is shared with ordinary world execution. Cause and command identities are reserved before action
+execution; the exact outcome and any spawned identities follow. Local reservations and the mandatory
+external historical lookup both participate. Captured local identities do not cover all prior commands
+or absent world history. Retrying a preparation on the same immutable source produces the same
+candidate. Submitting its old batch to the successor cannot earn another step.
+
+[WorldExplorationBoundary](../../src/OpenFantasy.Core/Worlds/WorldExplorationBoundary.cs) is also shared
+with ordinary execution. After work, an advancing selection contributes one existing exploration
+increment; due gathering/regrowth runs and every resident receives its existing experienced-time
+increment. A refused action still consumes its already-selected advancing boundary. A held work
+selection refuses without advancing calendar, gathering or resident exposure. Construction is not
+completed by subtracting wall-clock timestamps or multiplying work by an absence duration.
+
+Completion retains coupled input retirement, installed reserved output, offcuts, producer ancestry,
+project progress and the new structure reference. The occupancy successor and material/project/time
+successors belong to the same private candidate. A metadata-capacity failure publishes none of them.
+The completed project cannot manufacture another output on a subsequent selection.
+
+## Reconstruction and publication boundary
+
+[ConstructionLocalityStep](../../src/OpenFantasy.Core/Construction/ConstructionLocalityStep.cs) contains
+the exact immutable source, candidate, proposed receipt and identity claims. They are unpublished
+transition data. A preview does not create a durable outcome, earn authoritative world time or make
+that receipt eligible for delivery. The state has no storage writer or independent simulation loop.
+
+`Rehydrate` requires every exact pinned terrain region, reconstructs derived installed geometry and
+runs ordinary complete `WorldSnapshot` admission with all retained owners. Missing, edited, duplicate
+or unrelated regions refuse. Canonical encoding and its complete storage envelope remain mandatory
+before persistence. Reconstruction neither authenticates the candidate's ancestry nor writes a save.
+
+The domain binding does not handle movement, gifts, conversations, control changes, care, encounters,
+structural settlement, liquid processes or their later-profile histories. Those facts cannot be dropped
+to enter this binding. Complete state must be admitted again when the supported interval changes;
+interventions must preserve actual work and material, not restart the project. The single serialized
+publisher must eventually bind exact owner dependencies, due state, receipts and original history in
+one durable transaction. This responsibility is described in
+[persistence and history](persistence-and-history.md#design-contract-partitioned-persistence-and-version-ownership).
+
+See [construction execution](construction-execution.md) for ordinary runtime scheduling, cached geometry
+and detached one-action evaluation. Keeping these boundaries distinct prevents a geometry result or
+an uncommitted continuation from becoming an alternative world authority.

@@ -58,6 +58,7 @@ different kind of person.
 | [Event-ordered descent](event-descent.md) | How do unequal landing events retain stopped obstacles, actual mass and explicit impact-response boundaries? |
 | [Consequence continuation](consequence-continuation.md) | How do accepted physical changes resume after restart and publish once without spending extra time? |
 | [Construction execution](construction-execution.md) | How do ordinary and detached work share the same rules, retain exact site evidence and preserve the complete publication boundary? |
+| [Construction locality](construction-locality.md) | How can selected work retain all supported nonterrain owners, time and due processes while terrain detail is absent, and what still requires complete admission/publication? |
 | [Physical construction](construction-physical.md) | How do member condition and placement retain completed work, material ownership and atomic persistence? |
 | [Reservoir transport](reservoir-transport.md) | How do scheduled gates move actual water, preserve provenance and share time/capacity? |
 | [Reservoir boundaries](reservoir-boundaries.md) | What proves floors and walls against actual terrain and completed material, including narrow gaps? |
