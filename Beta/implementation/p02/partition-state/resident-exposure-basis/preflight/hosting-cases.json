@@ -1,0 +1,17 @@
+[
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionLocalityCoverageTests.Complete_adventure_profiles_cannot_be_imported_by_dropping_their_other_owners(collectiveWithdrawal: False)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionLocalityCoverageTests.Complete_adventure_profiles_cannot_be_imported_by_dropping_their_other_owners(collectiveWithdrawal: True)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPreviewRecoveryTests.Warm_preview_is_unearned_until_the_same_current_world_transaction_commits(boundaryValue: 0)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPreviewRecoveryTests.Warm_preview_is_unearned_until_the_same_current_world_transaction_commits(boundaryValue: 1)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Carried_gift_and_intervened_work_share_one_original_history_and_recover_exactly",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Interrupted_work_publishes_exactly_one_whole_transition(target: 1, boundaryValue: 0)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Interrupted_work_publishes_exactly_one_whole_transition(target: 1, boundaryValue: 1)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Interrupted_work_publishes_exactly_one_whole_transition(target: 200, boundaryValue: 0)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Interrupted_work_publishes_exactly_one_whole_transition(target: 200, boundaryValue: 1)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.History_and_changed_metadata_budget_refuse_without_poisoning_or_earning_work",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Current_expedition_interpretations_refuse_without_losing_facets(withdrawal: False)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionPublicationTests.Current_expedition_interpretations_refuse_without_losing_facets(withdrawal: True)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionWorkRecoveryTests.Ordinary_work_reopens_at_the_exact_partial_step_and_installs_one_funded_object",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionWorkRecoveryTests.Interrupted_final_work_step_recovers_all_material_geometry_and_work_together(boundaryValue: 0)",
+  "OpenFantasy.Hosting.Tests.WorldStorage.ConstructionWorkRecoveryTests.Interrupted_final_work_step_recovers_all_material_geometry_and_work_together(boundaryValue: 1)"
+]

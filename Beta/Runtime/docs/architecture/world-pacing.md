@@ -144,3 +144,18 @@ admission; it neither migrates a lived save nor changes the normal game launch.
 The [full Wait design](time-and-encounters.md#design-contract-wait-encounters) also governs dependency
 closure, independent co-op, outside hazards, controllers, bounded continuation and safe release. This
 coordinated complete-resident clock is one explicit interpretation within that design.
+
+## Transient exploration exposure basis
+
+The [construction locality binding](construction-locality.md#resident-exposure-segment-boundary) can
+represent its unchanged resident membership using base personal exposure plus exactly earned common
+exploration exposure. This is an internal representation of the existing law: one selected ordinal,
+one exploration increment, no wall-clock catch-up and no advancement for a hold. It checks the maximum
+resident's representable exposure during selection, so a deferred read cannot postpone overflow.
+
+Materialized residents use the ordinary `WorldResident.Experience` operation and retain every non-time
+field. Admission after an intervention starts a new basis from those actual durations and current
+ordinal. Due gathering and work keep their ordinary order and still execute on every selected boundary.
+The basis changes neither encounter pacing nor any other profile's resident law. Complete-world storage
+continues to encode materialized residents; a persisted timing-domain owner requires its own qualified
+composition, transition and history contract.

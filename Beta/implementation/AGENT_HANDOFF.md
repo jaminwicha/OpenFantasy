@@ -263,12 +263,14 @@ NPC preparation/consequences, shelter acoustics and later vessel reuse. Unsuppor
 replacement engine/API claims and separate statistical offscreen combat are not adopted. PLAN-STATE
 remains next; the review supplies no runtime or phase acceptance.
 
-The [construction publication result](p02/partition-state/construction-publication/RESULT.md) binds
-legacy locality work to the ordinary serialized writer, retaining exact history across carried gift,
-intervening movement, partial reopen and final construction. Commit faults/retries remain atomic. The
-complete root still resides and encodes at publication; this does not close absent-detail persistence
-or current40/41 coverage. Next PLAN-STATE work remains the canonical owner/publication boundary and
-comparison against this baseline, before permanent cognition. Gates and earlier timeout failures stay open.
+The [construction publication baseline](p02/partition-state/construction-publication/RESULT.md) binds
+legacy locality work to the sole writer across actual carried gift, intervening movement, partial reopen,
+completion and commit faults. The [exposure experiment](p02/partition-state/resident-exposure-basis/RESULT.md)
+adds exact personal time through a transient common basis; ordinary resident bytes/history remain exact.
+Its measured benefit requires deferred reads; materializing every step costs more. Complete roots still
+reside/encode at publication, and richer profiles40/41 remain unsupported by this binding. Next work is
+canonical owner/publication integration and comparison, before permanent cognition; no partial-persistence
+or phase gate closes. All earlier unresolved failures and independent-review obligations remain open.
 
 ## Current routing and documentation hook
 

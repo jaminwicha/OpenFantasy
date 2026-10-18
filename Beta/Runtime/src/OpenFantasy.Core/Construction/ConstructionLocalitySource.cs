@@ -13,7 +13,7 @@ internal sealed class ConstructionLocalitySource(ConstructionLocalityState state
         && state.Inventory.CanControl(new(command.PrincipalId, command.OriginSessionId), command.ActorId);
     internal override int CurrentHp(EntityId actorId) => state.Progression.GetActor(actorId).CurrentHp;
     internal override EntityId InventoryCustodian(EntityId actorId) =>
-        state.Residents.Single(value => value.ActorId == actorId).InventoryCustodianId;
+        state.InventoryCustodian(actorId);
     internal override bool QuestCompleted(EntityId questId) => state.Quests.Participations.Any(value =>
         value.QuestId == questId && value.Status == OpenFantasy.Core.Quests.ActorQuestStatus.Completed);
     internal override bool ContainsIdentity(EntityId identity) => state.ContainsIdentity(identity);

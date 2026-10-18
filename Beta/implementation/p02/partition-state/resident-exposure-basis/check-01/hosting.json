@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~ConstructionPublicationTests|FullyQualifiedName~ConstructionWorkRecoveryTests|FullyQualifiedName~ConstructionPreviewRecoveryTests|FullyQualifiedName~ConstructionLocalityCoverageTests",
+    "--logger",
+    "trx;LogFileName=hosting.trx",
+    "--results-directory",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/partition-state/resident-exposure-basis/check-01"
+  ],
+  "exit_code": 0,
+  "seconds": 13.38428479200229,
+  "bound_seconds": 180
+}

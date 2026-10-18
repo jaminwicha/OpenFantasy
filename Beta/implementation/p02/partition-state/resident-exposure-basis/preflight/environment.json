@@ -1,0 +1,7 @@
+{
+  "system": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "processor": "Apple M2",
+  "dotnet": ".NET SDK:\n Version:           10.0.401\n Commit:            e34a38d2ae\n Workload version:  10.0.400-manifests.63b36e85\n MSBuild version:   18.9.11+e34a38d2a\n\nRuntime Environment:\n OS Name:     Mac OS X\n OS Version:  15.6\n OS Platform: Darwin\n RID:         osx-arm64\n Base Path:   /Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/sdk/10.0.401/\n\n.NET workloads installed:\nThere are no installed workloads to display.\nConfigured to use workload sets when installing new manifests.\nNo workload sets are installed. Run \"dotnet workload restore\" to install a workload set.\n\nHost:\n  Version:      10.0.12\n  Architecture: arm64\n  Commit:       95017c711e\n\n.NET SDKs installed:\n  10.0.401 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/sdk]\n\n.NET runtimes installed:\n  Microsoft.AspNetCore.App 10.0.12 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.AspNetCore.App]\n  Microsoft.NETCore.App 8.0.31 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App]\n  Microsoft.NETCore.App 10.0.12 [/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/shared/Microsoft.NETCore.App]\n\nOther architectures found:\n  None\n\nEnvironment variables:\n  Not set\n\nglobal.json file:\n  Not found\n\nLearn more:\n  https://aka.ms/dotnet/info\n\nDownload .NET:\n  https://aka.ms/dotnet/download\n",
+  "pins_checked": 1929
+}

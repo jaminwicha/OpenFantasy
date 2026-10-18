@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+    "test",
+    "tests/OpenFantasy.Hosting.Tests/OpenFantasy.Hosting.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--list-tests",
+    "--filter",
+    "FullyQualifiedName~ConstructionPublicationTests|FullyQualifiedName~ConstructionWorkRecoveryTests|FullyQualifiedName~ConstructionPreviewRecoveryTests|FullyQualifiedName~ConstructionLocalityCoverageTests"
+  ],
+  "exit_code": 0,
+  "seconds": 1.844183582928963,
+  "bound_seconds": 180
+}

@@ -21,6 +21,7 @@ public sealed class ConstructionLocalityState
 {
     private readonly ConstructionSiteEvidence _site;
     private readonly ImmutableHashSet<EntityId> _identities;
+    private readonly WorldResidentExposureBasis _residentExposure;
 
     private ConstructionLocalityState(WorldSnapshot world, EntityId projectId, int maximumMetadataPages)
     {
@@ -42,7 +43,7 @@ public sealed class ConstructionLocalityState
         Progression = world.Progression;
         Quests = world.Quests;
         Gathering = world.Gathering;
-        Residents = world.Residents;
+        _residentExposure = new(world.Residents, world.AdvancingSteps);
         Dialogues = world.Dialogues;
         Calendar = world.Calendar;
         Revision = world.Revision;
@@ -79,7 +80,7 @@ public sealed class ConstructionLocalityState
         AdvancingSteps = boundary?.AdvancingSteps ?? source.AdvancingSteps;
         // Same due/process order as the profile-five world interpreter: work, gathering, residents.
         Gathering = boundary is null ? source.Gathering : source.Gathering?.AdvanceStep(AdvancingSteps);
-        Residents = boundary is null ? source.Residents : Array.AsReadOnly(source.Residents.Select(value => value.ExperienceStep()).ToArray());
+        _residentExposure = boundary is null ? source._residentExposure : source._residentExposure.AdvanceTo(AdvancingSteps);
         Actors = source.Actors;
         Terrain = source.Terrain;
         Occupancy = work.CandidateStructure is null ? source.Occupancy : source.Occupancy.Apply(source.Occupancy.Revision,
@@ -98,7 +99,7 @@ public sealed class ConstructionLocalityState
     public ProgressionSnapshot Progression { get; }
     public QuestSnapshot Quests { get; }
     public GatheringSnapshot? Gathering { get; }
-    public ReadOnlyCollection<WorldResident> Residents { get; }
+    public ReadOnlyCollection<WorldResident> Residents => _residentExposure.Materialize();
     public ReadOnlyCollection<DialogueSession> Dialogues { get; }
     public ReadOnlyCollection<ActorPresence> Actors { get; }
     public ReadOnlyCollection<TerrainRegionReference> Terrain { get; }
@@ -167,6 +168,8 @@ public sealed class ConstructionLocalityState
         return new(Inventory, space, Residents, AdmissionVersion, Calendar, Revision, AdvancingSteps,
             Dialogues, Gathering, Production, Progression, Quests, Construction);
     }
+
+    internal EntityId InventoryCustodian(EntityId actorId) => _residentExposure.InventoryCustodian(actorId);
 
     internal bool ContainsIdentity(EntityId identity) => _identities.Contains(identity);
 

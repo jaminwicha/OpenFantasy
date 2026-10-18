@@ -117,6 +117,12 @@ Do not add sleep acceleration, offline catch-up or a new encounter clock to obta
 Even if exposure writes can be deferred, actual due actions and passive processes still run in their
 declared deterministic order. The experiment must report those costs, not just movement arithmetic.
 
+The [resident exposure experiment](p02/partition-state/resident-exposure-basis/RESULT.md) supplies the
+transient common-exploration basis within actual construction locality execution. Saved ordinary history
+still uses materialized residents. It does not persist a timing owner or implement different personal
+rates; those remain required before reducing canonical per-actor write sets. The measured comparison
+includes final-read and every-step-read consumers so deferral cost is not hidden.
+
 ## Atomic persistence and historical recovery
 
 Use the existing Hosting serialized authority and SQLite transaction mechanism. The prototype's

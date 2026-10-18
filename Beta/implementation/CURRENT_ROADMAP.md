@@ -303,6 +303,12 @@ must equal ordinary replay. This is the complete-locality publication baseline, 
 candidate: complete terrain remains resident and encoded, current40/41 refuse, and per-owner residency,
 partial history/recovery, cost comparison and independent review remain open. No P02 row closes.
 
+The [resident exposure experiment](p02/partition-state/resident-exposure-basis/RESULT.md) implements the
+PLAN-STATE common exploration basis in legacy locality continuation, with exact resident materialization,
+overflow and saved-history checks. Ordinary publication still serializes all residents; persisted timing
+ownership, membership transitions, current-profile coverage and the integrated partition decision remain
+open. The comparison explicitly includes consumers that materialize every step.
+
 ### Named preparation and delivery units
 
 These are finite next deliverables, not replacement acceptance criteria. Each retains its parent

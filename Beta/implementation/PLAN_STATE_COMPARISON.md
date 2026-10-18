@@ -294,3 +294,15 @@ provides the comparison and proof scope; it does not close PLAN-STATE.
 - **Checks:** Initial documentation checks are recorded with the adjoining expedition continuation;
   refinement and baseline checks are in the linked partition-state result. The baseline is a local
   complete-root diagnostic, not the integrated partition benchmark or independent design acceptance.
+
+## Resident exposure representation experiment
+
+[Exact exposure basis](p02/partition-state/resident-exposure-basis/RESULT.md) integrates common earned
+exploration exposure into legacy locality execution instead of rewriting each resident per selected
+step. It preserves different personal starting ages, same-boundary overflow refusal, holds and due
+processes; materialized ordinary state and saved history remain the oracle. Compare explicit copies,
+one final materialization and materialization on every step on the same actual resident population.
+This identifies a representation requirement, not a storage-format decision: the current publisher
+still materializes every resident. Per-actor persisted roots would only avoid exposure write fan-out
+if the timing-domain basis is itself admitted and persisted with membership/history. That dependency
+remains part of the integrated owner prototype, with current-profile and full scale gates open.

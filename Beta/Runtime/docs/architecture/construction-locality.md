@@ -10,7 +10,9 @@ Other source profiles refuse; the type cannot import a later world by dropping i
 It selects no new saved profile, serializer, database schema or migration.
 
 The state retains actual inventory/production/construction, progression, quests, optional gathering,
-residents, dialogues, actor bodies/presence, calendar and advancing/commit counters. It copies complete
+resident metadata with an exact earned-exposure basis, dialogues, actor bodies/presence, calendar and
+advancing/commit counters. Reading `Residents` materializes the actual experienced durations; inventory
+custodian lookup uses unchanged resident metadata without constructing exposure-updated copies. It copies complete
 terrain references and identity reservations and creates a complete geometric occupancy directory.
 Its site evidence records the original ordinary reach, placement and complete-population access result.
 There is no retained `WorldSnapshot`, `LocalSpatialSnapshot`, terrain detail, encoded terrain archive,
@@ -53,8 +55,13 @@ candidate. Submitting its old batch to the successor cannot earn another step.
 
 [WorldExplorationBoundary](../../src/OpenFantasy.Core/Worlds/WorldExplorationBoundary.cs) is also shared
 with ordinary execution. After work, an advancing selection contributes one existing exploration
-increment; due gathering/regrowth runs and every resident receives its existing experienced-time
-increment. A refused action still consumes its already-selected advancing boundary. A held work
+increment; due gathering/regrowth runs and every resident earns its existing experienced-time
+increment. [WorldResidentExposureBasis](../../src/OpenFantasy.Core/Worlds/WorldResidentExposureBasis.cs)
+retains the admitted membership and personal ages at the segment basis plus the exactly earned common
+exploration exposure. Each successor requires the next selected ordinal and validates the oldest
+resident's representable duration before returning. Overflow therefore refuses at selection, not at a
+later read. Materialization uses the same `WorldResident.Experience` operation as ordinary execution.
+It preserves every other resident field and does not derive exposure from calendar position. A refused action still consumes its already-selected advancing boundary. A held work
 selection refuses without advancing calendar, gathering or resident exposure. Construction is not
 completed by subtracting wall-clock timestamps or multiplying work by an absence duration.
 
@@ -114,3 +121,22 @@ This binding retains a complete authoritative world and encodes it at each publi
 rule evaluation is separable, but durable publication is not terrain-free. It does not provide a
 canonical partition directory, independently resident actor/material owners, partial recovery or
 migration of the richer expedition interpretations. Those remain distinct persistence obligations.
+
+## Resident exposure segment boundary
+
+The exposure basis is transient and internal to the supported locality interpretation. It is not a
+saved facet, shared global clock, permission to skip due processes or a model for different personal
+rates. A hold retains the same basis without advancing it. Repeated reads and repeated preparation
+from the same immutable source do not award additional time. Each immutable successor shares the
+unchanged basis metadata rather than retaining a chain of intermediate resident copies.
+
+An ordinary intervening action clears the publication cache. Recapture uses the current admitted
+residents with all earned exposure already materialized and pins the current advancing ordinal; it
+cannot charge the previous segment again. Changes to membership, personal modifiers or timing domain
+must close and rebase their segment through admitted owners. The locality cannot interpret those
+additional laws by treating them as its existing common exploration rate.
+
+Complete-world publication materializes and serializes every resident, as required by its unchanged
+format. Deferring resident copies reduces per-step owner rewrites only while consumers can retain the
+basis without requesting complete resident snapshots on every step. It does not reduce the current
+canonical journal's write set or prove a production memory/throughput benefit.
