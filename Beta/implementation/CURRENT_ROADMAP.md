@@ -584,3 +584,14 @@ fault cases and the limit that an older backup is not a lossless rollback after 
 No schema/profile is allocated and no current save is migrated. Independent decision review remains
 unrun under the orchestration pause; direct NPC-01 causal design may proceed without permanent persistence.
 All original PLAN-STATE measurements, P02 closure rows,181 requirements and P00–P14 gates remain unchanged.
+
+
+### NPC-01 causal design preparation
+
+The [source-backed NPC-01 design](NPC_01_CAUSAL_EPISODE.md) specifies Wren's delayed-supply response,
+optional actual tool gift, feasible personal gathering and evidence-driven return to funded guard work.
+Joinery kit is not an axe; Wren's zero personal gil is distinct from the quest reserve; gifting is not
+borrowing. Original quest/material/reward rules persist. Fixed opening speech and transient host policy
+memory need explicit extensions for enduring evidence/belief/commitment/memory and permitted explanations.
+This is design preparation only, not a new save field, running policy, full NPC or P02 acceptance.
+Permanent persistence still follows PLAN-STATE decision/review; no orchestration exception is presumed.

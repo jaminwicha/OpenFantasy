@@ -45,8 +45,9 @@ It is design preparation, not an implemented current-profile loader or approved 
 
 **Next:** take the existing bounded comparison and this concrete proposal through the required decision/
 independent-review gate before permanent NPC persistence or production promotion. Orchestration remains
-paused; do not dispatch the prepared critic or substitute lead inspection. Direct work may prepare the
-NPC-01 causal episode and source-backed dependency/acceptance cases without freezing its persistence.
+paused; do not dispatch the prepared critic or substitute lead inspection. The [NPC-01 causal design](NPC_01_CAUSAL_EPISODE.md) now specifies Wren’s delayed-supply episode,
+actual tool/resource prerequisites, evidence/knowledge boundaries, feasible replanning, dialogue and
+same-save/offscreen acceptance. It freezes no persistence layout and claims no new running NPC behavior.
 General partial loading, due age/fairness, retained residency/scale/platform, projection and full migration
 remain open. Do not produce another generic rollout memo or repeat the completed legacy episode.
 

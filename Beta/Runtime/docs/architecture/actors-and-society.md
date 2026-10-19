@@ -36,6 +36,19 @@ adjudicates those proposals under the same body, movement and resource rules as 
 Committed samples are replayed without rerunning controllers. These policies do not model complete
 desires, relationships or institutions.
 
+## Runtime binding: speech and host policy memory
+
+[WorldActionResolver](../../src/OpenFantasy.Core/Worlds/WorldActionResolver.cs) resolves addressed speech
+from the target resident's `OpeningUtterance`. Reach, functional vocalization/hearing and conversational
+comprehension govern admission; the resulting [DialogueSession](../../src/OpenFantasy.Core/Worlds/DialogueSession.cs)
+binds the utterance definition, participants, cause and shared reading hold. This fixed opening binding
+is not a general evidence-dependent dialogue or persistent cognition system.
+
+[LocalTradingController](../../src/OpenFantasy.Hosting/Simulation/LocalTradingController.cs) uses configured
+host preferences, own holdings/balance and in-person inquiries. Its attempt bookkeeping is session
+memory; it is not a saved belief/goal history. Ordinary world commands still authorize and commit every
+material or monetary effect. Reopening does not turn transient policy advice into a persistent person facet.
+
 ## Design contract: one person, several forms of control
 
 The [world composition contract](world-composition.md) distinguishes facets, capabilities, typed
@@ -141,3 +154,24 @@ divine action is not unrestricted administrator mutation.
 
 The [technical design](../../../spec-v1_1/TECHNICAL_DESIGN.md) and
 [language and afterlife contract](../../../spec-v1_1/LANGUAGE_AND_AFTERLIFE.md) own the detailed rules.
+
+## Design contract: causal plans and explanations
+
+Evidence acquisition, belief revision, proposed intention and accepted commitment have distinct meaning.
+A source event affects a person's knowledge only through lawful acquisition; a complete world snapshot
+is not that person's knowledge. Self-owned facts and directly received outcomes differ from testimony,
+remote truth and inferred belief. Rejection reasons reveal only information permitted to the actor.
+Dynamic explanation preserves those distinctions and cannot create a resource, grant consent or expose
+private motives merely because a planner used them internally.
+
+A proposed alternative must satisfy actual capability, tool, stock, effort, custody, route and control
+requirements. A joinery tool does not confer gathering capability, and a quest reward reserve is not
+the giver's personal purse. Existing item gifts transfer custody under their actual rules; describing
+one as a loan requires a separately represented and admitted return obligation. Accepted funded work
+and paid in-flight actions cannot be discarded merely because an optional intention becomes attractive.
+
+Reconsideration follows versioned simulation policy and relevant acquired evidence; rendered frames
+and wall-clock time do not award opportunities. Meaningful cognition persists under the chosen authority
+and history contracts, while disposable search/route caches do not become a second person model.
+Offscreen reconciliation preserves actual knowledge, rights, resources, commitments and exposure;
+forgetting an obligation or knowing an undisclosed event is not a valid simplification.
