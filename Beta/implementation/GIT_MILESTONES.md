@@ -744,3 +744,12 @@ Verified milestone: `codex/milestone-joined-process-boundary-20261018`, created 
 without switching. [Result](p02/partition-state/joined-process-boundary/RESULT.md) retains preflight,
 original saved-lineage/fault evidence and explicit full-owner/profile9 limits. Production unchanged;
 no independent, partial-residency, phase or human acceptance. Concurrent/predecessor work excluded.
+
+## Semantic sound binding — 2026-10-19
+
+Before-change checkpoint: `codex/checkpoint-before-semantic-audio-20261019` (`863d844829cb5fd7c7d286f92bcd2720595ce687`).
+Verified milestone: `codex/milestone-semantic-audio-binding-20261019`, created at `4c88c15b6dadde23750b0da418c5bc6df011842b` without switching.
+[Result](p02/semantic-audio/RESULT.md) retains focused and client-family managed results, native farm,
+encounter and four-player control evidence, the failed first native and focused runs with their
+classification, and the pre-existing launcher import failure. No assets, listening, independent, phase or
+human acceptance. Predecessor staging and unrelated untracked evidence excluded.
