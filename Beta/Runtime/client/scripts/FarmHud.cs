@@ -38,6 +38,7 @@ internal sealed partial class FarmHud : CanvasLayer
     private Button _recipes = null!;
     private Button _history = null!;
     private Button _settings = null!;
+    private Button _journal = null!;
     private readonly Dictionary<FarmSemanticAction, Button> _buttons = [];
     private IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> _offers =
         new Dictionary<FarmSemanticAction, FarmActionOffer>();
@@ -104,6 +105,8 @@ internal sealed partial class FarmHud : CanvasLayer
         _history.Pressed += () => Request(FarmSemanticAction.OpenHistory);
         _settings = GetNode<Button>("%Settings");
         _settings.Pressed += () => Request(FarmSemanticAction.OpenSettings);
+        _journal = GetNode<Button>("%Journal");
+        _journal.Pressed += () => Request(FarmSemanticAction.OpenJournal);
         _recipes = GetNode<Button>("%Recipes");
         _recipes.Pressed += () => Request(FarmSemanticAction.OpenRecipes);
         _nextTarget.Pressed += () => Request(FarmSemanticAction.NextTarget);
@@ -453,6 +456,7 @@ internal sealed partial class FarmHud : CanvasLayer
     {
         FarmKeyHints keys = FarmKeyHints.Current;
         _settings.Text = $"Settings [{keys.Settings}]";
+        _journal.Text = $"Journal [{keys.Journal}]";
         _nextTarget.Text = $"Next [{keys.NextTarget}]";
         _clearTarget.Text = $"Clear [{keys.ClearTarget}]";
         _openWheel.Text = $"Actions [{keys.Wheel}]";

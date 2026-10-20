@@ -24,6 +24,8 @@ internal static class FarmInputMap
         Button(FarmInputActions.History, Primary(FarmInputActions.History), JoyButton.LeftStick);
         // Controllers without a share/capture button reach settings through the HUD's Settings control.
         Button(FarmInputActions.Settings, Primary(FarmInputActions.Settings), JoyButton.Misc1);
+        // Controllers reach the journal through the HUD's Journal control.
+        KeyboardButton(FarmInputActions.Journal, Primary(FarmInputActions.Journal));
         // Controller B also names Cancel; the router lets it unwind a modal layer and craft in ordinary play.
         JoypadButton(FarmInputActions.Cancel, JoyButton.B);
         // Built-in UI defaults can be keyboard-only. Install the controller equivalent for every
@@ -70,6 +72,13 @@ internal static class FarmInputMap
         InputMap.AddAction(name);
         InputMap.ActionAddEvent(name, new InputEventKey { PhysicalKeycode = key });
         InputMap.ActionAddEvent(name, new InputEventJoypadButton { ButtonIndex = button });
+    }
+
+    private static void KeyboardButton(string name, Key key)
+    {
+        if (InputMap.HasAction(name)) return;
+        InputMap.AddAction(name);
+        InputMap.ActionAddEvent(name, new InputEventKey { PhysicalKeycode = key });
     }
 
     private static void JoypadButton(string name, JoyButton button)

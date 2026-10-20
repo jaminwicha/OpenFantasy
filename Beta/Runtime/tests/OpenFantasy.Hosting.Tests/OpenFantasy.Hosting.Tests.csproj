@@ -34,6 +34,7 @@
     <Compile Include="../../client/scripts/EncounterActionOffers.cs" Link="Client/EncounterActionOffers.cs" />
     <Compile Include="../../client/scripts/EncounterOutcome/EncounterOutcomeText.cs" Link="Client/EncounterOutcome/EncounterOutcomeText.cs" />
     <Compile Include="../../client/scripts/FarmKeyHints.cs" Link="Client/FarmKeyHints.cs" />
+    <Compile Include="../../client/scripts/FarmJournalModel.cs" Link="Client/FarmJournalModel.cs" />
     <Compile Include="../../client/scripts/FarmSubmission.cs" Link="Client/FarmSubmission.cs" />
     <Compile Include="../../client/scripts/RestorativeActionOffers.cs" Link="Client/RestorativeActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmCarePresentation.cs" Link="Client/FarmCarePresentation.cs" />

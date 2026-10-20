@@ -1,0 +1,13 @@
+{
+  "packet": "Journal: character stats and known quests",
+  "checkpointRef": "codex/checkpoint-before-journal-20261020",
+  "checkpointCommit": "dc5cf00a36d39b55a42ffe6e972a15168b7b0e9c",
+  "predecessorStagedFiles": 19,
+  "predecessorStagedNamesSha256": "ea5dbfd4842dea1e8469a81883d9819822358a024292245a02e4c107b1bf196b",
+  "toolchain": {
+    "sdk": "10.0.401",
+    "godot": "4.6.stable.mono.official.89cea1439"
+  },
+  "documentationChecks": "DOCUMENTATION_CHECKS.json",
+  "rawEvidenceNotCommitted": "native-selected-control-01/evidence (hashed in EVIDENCE_MANIFEST.json)"
+}

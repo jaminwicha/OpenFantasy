@@ -34,6 +34,7 @@ internal sealed class KeyBindings
         new("quick_wheel", "Action wheel", 'V'),
         new("history", "History", 'H'),
         new("settings", "Settings", 'O'),
+        new("journal", "Journal", 'J'),
     }.AsReadOnly();
 
     internal static IReadOnlySet<long> Reserved { get; } = new HashSet<long> { Escape, Tab, Enter, KeypadEnter, Left, Up, Right, Down, Space };

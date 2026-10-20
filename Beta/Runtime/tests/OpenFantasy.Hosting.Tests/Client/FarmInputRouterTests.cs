@@ -286,6 +286,33 @@ public sealed class FarmInputRouterTests
     }
 
     [Fact]
+    public void JournalOpensDuringPlayAndConversationOwnsInputAndCanReachSettings()
+    {
+        foreach (FarmInputSituation situation in new[] { World, Dialogue })
+        {
+            var router = new FarmInputRouter();
+            Assert.Equal(FarmSemanticAction.OpenJournal, router.Route(situation, FarmInputSignal.Press(FarmInputActions.Journal)).Action);
+        }
+        Assert.False(new FarmInputRouter().Permits(Opening, FarmSemanticAction.OpenJournal));
+        var open = new FarmInputRouter();
+        open.SetJournalOpen(true);
+        Assert.Equal(FarmInputLayer.Journal, open.Layer(World));
+        Assert.True(open.WorldShouldRun);
+        Assert.True(open.Movement(World, Right).IsNeutral);
+        Assert.False(open.Permits(World, FarmSemanticAction.TogglePause));
+        Assert.False(open.Permits(World, FarmSemanticAction.Gather));
+        foreach (string key in new[] { FarmInputActions.Journal, FarmInputActions.Pause, FarmInputActions.Cancel })
+        {
+            var closing = new FarmInputRouter();
+            closing.SetJournalOpen(true);
+            Assert.Equal(FarmSemanticAction.CloseJournal, closing.Route(World, FarmInputSignal.Press(key)).Action);
+        }
+        Assert.Equal(FarmSemanticAction.OpenSettings, open.Route(World, FarmInputSignal.Press(FarmInputActions.Settings)).Action);
+        open.SetSettingsOpen(true);
+        Assert.Equal(FarmInputLayer.Settings, open.Layer(World));
+    }
+
+    [Fact]
     public void UnroutedEventsAndUntrackedReleasesPropagate()
     {
         var router = new FarmInputRouter();

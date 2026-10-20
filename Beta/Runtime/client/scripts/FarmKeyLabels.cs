@@ -13,7 +13,8 @@ internal static class FarmKeyLabels
         Primary(FarmInputActions.Inventory), Primary(FarmInputActions.QuickWheel), Primary(FarmInputActions.History),
         Primary(FarmInputActions.Settings),
         Primary(FarmInputActions.WalkUp) + Primary(FarmInputActions.WalkLeft) + Primary(FarmInputActions.WalkDown)
-            + Primary(FarmInputActions.WalkRight));
+            + Primary(FarmInputActions.WalkRight),
+        Primary(FarmInputActions.Journal));
 
     private static string Primary(string action)
     {

@@ -102,6 +102,12 @@ theme_override_constants/icon_max_width = 28
 tooltip_text = "History · H / left-stick click. Browse this character’s completed exchanges and gifts. No goods or money move."
 
 
+[node name="Journal" type="Button" parent="Root/Header/Row"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Journal [J]"
+tooltip_text = "Your character and quests, as you know them. J. Reading the journal never pauses the world."
+
 [node name="Settings" type="Button" parent="Root/Header/Row"]
 unique_name_in_owner = true
 layout_mode = 2

@@ -18,7 +18,7 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
     private enum Stage
     {
         Opening, Recovering, Resuming, OutsideQuestContext, Harvesting, Crafting, Approaching, Talking,
-        ReadingOffer, Accepting, Completing, Repeating, ClosingDialogue, Moving, Settling, Paused, Done
+        ReadingOffer, Accepting, Completing, Journal, JournalClosing, Repeating, ClosingDialogue, Moving, Settling, Paused, Done
     }
 
     private readonly Stopwatch _timeout = Stopwatch.StartNew();
@@ -81,6 +81,8 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
                 case Stage.ReadingOffer: ReadOffer(view); break;
                 case Stage.Accepting: ObserveAcceptance(view); break;
                 case Stage.Completing: ObserveCompletion(view); break;
+                case Stage.Journal: ObserveJournal(view); break;
+                case Stage.JournalClosing: ObserveJournalClosed(view); break;
                 case Stage.Repeating: ObserveRepeat(view); break;
                 case Stage.ClosingDialogue: ObserveClose(view); break;
                 case Stage.Moving: ObserveMovement(view); break;
@@ -382,6 +384,37 @@ internal sealed partial class FarmQuestProbe(FarmGame game, string reportPath, s
         }
         VerifyReward(view);
         _checks.Add("Second G delivered six current wood once: level 3, XP 38, HP 78/78, MP 14/14 and 200 gil while still held.");
+        Press("journal");
+        Enter(Stage.Journal);
+    }
+
+    /// <summary>The journal reads the completed quest and new standing during the held conversation without changing it.</summary>
+    private void ObserveJournal(LocalWorldView view)
+    {
+        Require(HoldSnapshot(view) == _reading, "Reading the journal advanced time or changed held world state.");
+        if (!game.IsJournalOpen)
+        {
+            Require(_stageTime.ElapsedMilliseconds < 2_000, "The journal key did not open the journal during the conversation.");
+            return;
+        }
+        Require(game.JournalPanel.QuestTexts.Any(text => text.StartsWith("Wren's Saplings — Completed", StringComparison.Ordinal)),
+            "The journal did not show Wren's Saplings as completed: " + string.Join(" | ", game.JournalPanel.QuestTexts));
+        Require(game.JournalPanel.CharacterText.Contains("Level 3", StringComparison.Ordinal)
+            && game.JournalPanel.CharacterText.Contains("200 gil", StringComparison.Ordinal),
+            "The journal did not show the earned level and gil: " + game.JournalPanel.CharacterText);
+        _checks.Add("J opened the journal in the held conversation: Wren's Saplings completed, level 3 and 200 gil, with nothing advanced.");
+        Press("journal");
+        Enter(Stage.JournalClosing);
+    }
+
+    private void ObserveJournalClosed(LocalWorldView view)
+    {
+        Require(HoldSnapshot(view) == _reading, "Closing the journal changed held world state.");
+        if (game.IsJournalOpen)
+        {
+            Require(_stageTime.ElapsedMilliseconds < 2_000, "The journal key did not close the journal.");
+            return;
+        }
         BeginPause();
     }
 

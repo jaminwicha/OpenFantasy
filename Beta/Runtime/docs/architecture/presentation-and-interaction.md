@@ -286,6 +286,18 @@ a creator asset is mapped. Sources withheld from the presented frame are never c
 refreshes rather than stacks, at most three lines show and each fades after a short lifetime. Captions follow
 the same derivation as sound, so reopening or reconnecting never replays an earlier caption.
 
+## Runtime binding: journal
+
+[JournalPage](../../client/scripts/FarmJournalModel.cs) projects the player's own permitted view into a read-only
+journal: name, profile, level, experience, HP, MP and currency from the progression view, and each quest the view
+exposes. An offer appears only while the view addresses it in a conversation; accepted and completed quests persist
+as the world keeps them, with ready-versus-required progress and the funded reward. Nothing absent is invented: a
+world without progression shows no character, and equipment and known skills, which have no projection yet, are
+stated as not shown. The scene-owned [journal panel](../../client/scenes/FarmJournalPanel.tscn) opens with J (a
+remappable key) or the HUD's Journal control during play, encounters, pause or a conversation, follows the world
+while open, suppresses walking and refuses world actions, and never pauses the world. Settings can open above it.
+J, Escape, Start or Cancel closes it, and a control-return boundary closes it like other panels.
+
 ## Design contract: a small immediate interface
 
 The action vocabulary can be large while the immediate surface stays small. Contextual primary

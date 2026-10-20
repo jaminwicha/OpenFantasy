@@ -138,6 +138,7 @@ public partial class FarmGame : Node2D
         ReadyCare();
         ReadyHistory();
         ReadySettings();
+        ReadyJournal();
         ReadyActorSelection();
         Input.Singleton.JoyConnectionChanged += OnControllerConnectionChanged;
         GetTree().AutoAcceptQuit = false;
@@ -335,6 +336,7 @@ public partial class FarmGame : Node2D
         _soundscape.Advance(delta);
         Present();
         PresentCaptions();
+        PresentJournal();
         PresentHistoryPanel();
     }
 
@@ -512,6 +514,8 @@ public partial class FarmGame : Node2D
         }
         if (!_input.Permits(Situation(), action)) return;
         _input.CaptureBoundary(Situation(), ReadWalkingInput());
+        if (action == FarmSemanticAction.OpenJournal) { OpenJournal(); return; }
+        if (action == FarmSemanticAction.CloseJournal) { CloseJournal(); return; }
         if (action == FarmSemanticAction.OpenSettings) { OpenSettings(); return; }
         if (action == FarmSemanticAction.CloseSettings) { CloseSettings(); return; }
         if (action == FarmSemanticAction.OpenHistory) { OpenHistory(); return; }

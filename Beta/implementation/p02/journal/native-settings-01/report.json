@@ -1,0 +1,173 @@
+{
+  "startedUtc": "2026-10-20T05:37:07.576712+00:00",
+  "scope": "Native settings key, controls, suppressed walking, saved file and second-process restoration",
+  "status": "passed",
+  "runs": [
+    {
+      "stage": "change",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--settings-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/journal/native-settings-01/native-settings-84ae857249924892970a07a35cf2bf15/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/journal/native-settings-01/native-settings-84ae857249924892970a07a35cf2bf15/settings.cfg",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/journal/native-settings-01/native-settings-84ae857249924892970a07a35cf2bf15/settings.json",
+        "change"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative settings probe passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/journal/native-settings-01/native-settings-84ae857249924892970a07a35cf2bf15/settings.json\n",
+      "stderr": ""
+    },
+    {
+      "stage": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--settings-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/journal/native-settings-01/native-settings-84ae857249924892970a07a35cf2bf15/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/journal/native-settings-01/native-settings-84ae857249924892970a07a35cf2bf15/settings.cfg",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/journal/native-settings-01/native-settings-84ae857249924892970a07a35cf2bf15/settings.json",
+        "reopen"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative settings probe passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/journal/native-settings-01/native-settings-84ae857249924892970a07a35cf2bf15/settings.json\n",
+      "stderr": ""
+    }
+  ],
+  "change": {
+    "Kind": "native-settings-v1",
+    "Stage": "change",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "ProbeStage": 3,
+    "Settings": {
+      "accessibility.captions": "true",
+      "format": "1",
+      "keys.clear_target": "82",
+      "keys.craft_rations": "67",
+      "keys.gather": "71",
+      "keys.give_wood": "70",
+      "keys.history": "72",
+      "keys.inventory": "73",
+      "keys.journal": "74",
+      "keys.next_target": "81",
+      "keys.quick_wheel": "86",
+      "keys.settings": "79",
+      "keys.talk": "84",
+      "keys.walk_down": "83",
+      "keys.walk_left": "65",
+      "keys.walk_right": "68",
+      "keys.walk_up": "87",
+      "sound.Ambience": "1",
+      "sound.Effects": "0",
+      "sound.Master": "1",
+      "sound.Music": "0.35",
+      "sound.Voice": "1"
+    },
+    "SettingsFileExists": true,
+    "Buses": {
+      "Master": {
+        "VolumeDb": 0,
+        "Muted": false
+      },
+      "Music": {
+        "VolumeDb": -9.118638,
+        "Muted": false
+      },
+      "Ambience": {
+        "VolumeDb": 0,
+        "Muted": false
+      },
+      "Effects": {
+        "VolumeDb": 0,
+        "Muted": true
+      },
+      "Voice": {
+        "VolumeDb": 0,
+        "Muted": false
+      }
+    },
+    "Checks": [
+      "Settings opened by key, focused their first control, suppressed walking and left the world unpaused.",
+      "The actual controls set Music to 35%, muted Effects and enabled captions immediately.",
+      "Capture mode rebound Talk to T and moved Gather onto Give's G, swapping Give to F, without leaking either press.",
+      "Cancel closed settings and wrote exactly the applied preferences to the fixture file."
+    ],
+    "DurationMilliseconds": 776
+  },
+  "reopen": {
+    "Kind": "native-settings-v1",
+    "Stage": "reopen",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "ProbeStage": 0,
+    "Settings": {
+      "accessibility.captions": "true",
+      "format": "1",
+      "keys.clear_target": "82",
+      "keys.craft_rations": "67",
+      "keys.gather": "71",
+      "keys.give_wood": "70",
+      "keys.history": "72",
+      "keys.inventory": "73",
+      "keys.journal": "74",
+      "keys.next_target": "81",
+      "keys.quick_wheel": "86",
+      "keys.settings": "79",
+      "keys.talk": "84",
+      "keys.walk_down": "83",
+      "keys.walk_left": "65",
+      "keys.walk_right": "68",
+      "keys.walk_up": "87",
+      "sound.Ambience": "1",
+      "sound.Effects": "0",
+      "sound.Master": "1",
+      "sound.Music": "0.35",
+      "sound.Voice": "1"
+    },
+    "SettingsFileExists": true,
+    "Buses": {
+      "Master": {
+        "VolumeDb": 0,
+        "Muted": false
+      },
+      "Music": {
+        "VolumeDb": -9.118638,
+        "Muted": false
+      },
+      "Ambience": {
+        "VolumeDb": 0,
+        "Muted": false
+      },
+      "Effects": {
+        "VolumeDb": 0,
+        "Muted": true
+      },
+      "Voice": {
+        "VolumeDb": 0,
+        "Muted": false
+      }
+    },
+    "Checks": [
+      "A second process restored Music 35%, muted Effects, captions and the rebound keys before any interaction."
+    ],
+    "DurationMilliseconds": 283
+  },
+  "artifactSha256": {
+    "native-settings-84ae857249924892970a07a35cf2bf15/settings.cfg": "f9802715c9493ba5982ed8b569fdcf41ba4b48199db68a61c83a5f130f3d9003",
+    "native-settings-84ae857249924892970a07a35cf2bf15/settings.json": "251c8275e67856ab8df29c4cacdc915efbf987d2b6417828d81281f5a6bcdd20",
+    "native-settings-84ae857249924892970a07a35cf2bf15/settings.reopen.json": "fc121b79591464ee1ea65706d78965168899f296c1cf155cf1ffcf4ef09e9680",
+    "native-settings-84ae857249924892970a07a35cf2bf15/world.sqlite": "722eb385afa198a2e0128d789dad0465f63b7eb0922af6733d5c7ef38473678e"
+  },
+  "finishedUtc": "2026-10-20T05:37:10.519281+00:00"
+}

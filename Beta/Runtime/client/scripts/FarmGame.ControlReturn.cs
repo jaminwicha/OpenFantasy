@@ -29,6 +29,7 @@ public partial class FarmGame
         if (_input.CareOpen) CloseCare();
         if (_input.HistoryOpen) CloseHistory();
         if (_input.SettingsOpen) CloseSettings();
+        if (_input.JournalOpen) CloseJournal();
         ChangeReadiness(false);
     }
 

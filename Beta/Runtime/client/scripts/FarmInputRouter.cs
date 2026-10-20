@@ -26,12 +26,13 @@ internal static class FarmInputActions
     internal const string QuickWheel = "quick_wheel";
     internal const string History = "history";
     internal const string Settings = "settings";
+    internal const string Journal = "journal";
 
     /// <summary>
     /// Routing priority. One device event may match several names (controller B is both Cancel and
     /// Craft); the owning layer takes the first name it binds.
     /// </summary>
-    internal static readonly IReadOnlyList<string> Routed = [Pause, Cancel, QuickWheel, Inventory, History, Settings, Interact, Give, Gather, Craft, NextTarget, ClearTarget];
+    internal static readonly IReadOnlyList<string> Routed = [Pause, Cancel, QuickWheel, Inventory, History, Settings, Journal, Interact, Give, Gather, Craft, NextTarget, ClearTarget];
 }
 
 /// <summary>Client intentions. The host still validates the actor, target, resources and revisions.</summary>
@@ -94,6 +95,8 @@ internal enum FarmSemanticAction
     OpenHistory,
     OpenSettings,
     CloseSettings,
+    OpenJournal,
+    CloseJournal,
     CloseHistory,
     RefreshHistory,
     NextHistory,
@@ -131,6 +134,8 @@ internal enum FarmInputLayer
     History,
     /// <summary>Client settings own input. Opening them changes no world timing, readiness or pause.</summary>
     Settings,
+    /// <summary>The read-only journal owns input without changing world timing, readiness or pause.</summary>
+    Journal,
 }
 
 /// <summary>World facts the router does not own, read from the current projection at each decision.</summary>
@@ -254,6 +259,7 @@ internal sealed class FarmInputRouter
     internal bool CareOpen { get; private set; }
     internal bool HistoryOpen { get; private set; }
     internal bool SettingsOpen { get; private set; }
+    internal bool JournalOpen { get; private set; }
     internal bool ControlPending { get; private set; }
 
     /// <summary>
@@ -268,6 +274,7 @@ internal sealed class FarmInputRouter
         if (!Focused) return FarmInputLayer.Unfocused;
         if (ControlPending) return FarmInputLayer.ControlReturn;
         if (SettingsOpen) return FarmInputLayer.Settings;
+        if (JournalOpen) return FarmInputLayer.Journal;
         if (HistoryOpen) return FarmInputLayer.History;
         if (CareOpen) return FarmInputLayer.Care;
         if (RecipesOpen) return FarmInputLayer.Recipes;
@@ -321,6 +328,8 @@ internal sealed class FarmInputRouter
 
     internal void SetSettingsOpen(bool open) => SettingsOpen = open;
 
+    internal void SetJournalOpen(bool open) => JournalOpen = open;
+
     /// <summary>Whether the owning layer accepts this semantic action right now, from any source.</summary>
     internal bool Permits(FarmInputSituation situation, FarmSemanticAction action)
     {
@@ -329,11 +338,15 @@ internal sealed class FarmInputRouter
         {
             FarmSemanticAction.None => false,
             FarmSemanticAction.TogglePause => layer is not (FarmInputLayer.Unavailable or FarmInputLayer.Unfocused
-                or FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Recipes or FarmInputLayer.Care or FarmInputLayer.History or FarmInputLayer.Settings or FarmInputLayer.ControlReturn),
+                or FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Recipes or FarmInputLayer.Care or FarmInputLayer.History or FarmInputLayer.Settings or FarmInputLayer.Journal or FarmInputLayer.ControlReturn),
             // Essential settings stay reachable in play, encounters, pause, conversation and while opening.
             FarmSemanticAction.OpenSettings => layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused
-                or FarmInputLayer.Dialogue or FarmInputLayer.Opening,
+                or FarmInputLayer.Dialogue or FarmInputLayer.Opening or FarmInputLayer.Journal,
             FarmSemanticAction.CloseSettings => layer == FarmInputLayer.Settings,
+            // The journal reads the permitted view, including an offer shown during a conversation.
+            FarmSemanticAction.OpenJournal => situation.SessionOpen && layer is FarmInputLayer.World or FarmInputLayer.Encounter
+                or FarmInputLayer.Paused or FarmInputLayer.Dialogue,
+            FarmSemanticAction.CloseJournal => layer == FarmInputLayer.Journal,
             FarmSemanticAction.OpenHistory => situation.SessionOpen
                 && layer is FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused or FarmInputLayer.Wheel,
             FarmSemanticAction.CloseHistory or FarmSemanticAction.RefreshHistory
@@ -486,7 +499,7 @@ internal sealed class FarmInputRouter
     /// controller A, which is Talk in ordinary play. A layer command always keeps its press.
     /// </summary>
     private static bool LeavesAcceptToControl(FarmInputLayer layer, IReadOnlyList<string> actions) =>
-        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Market or FarmInputLayer.Recipes or FarmInputLayer.Care or FarmInputLayer.History or FarmInputLayer.Settings)
+        (layer is FarmInputLayer.Inventory or FarmInputLayer.Wheel or FarmInputLayer.Market or FarmInputLayer.Recipes or FarmInputLayer.Care or FarmInputLayer.History or FarmInputLayer.Settings or FarmInputLayer.Journal)
         && Resolve(layer, actions) == FarmSemanticAction.None;
 
     private static FarmSemanticAction Resolve(FarmInputLayer layer, IReadOnlyList<string> actions)
@@ -509,6 +522,10 @@ internal sealed class FarmInputRouter
         (FarmInputLayer.Settings, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.Settings) => FarmSemanticAction.CloseSettings,
         (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused or FarmInputLayer.Dialogue or FarmInputLayer.Opening,
             FarmInputActions.Settings) => FarmSemanticAction.OpenSettings,
+        (FarmInputLayer.Journal, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.Journal) => FarmSemanticAction.CloseJournal,
+        (FarmInputLayer.Journal, FarmInputActions.Settings) => FarmSemanticAction.OpenSettings,
+        (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused or FarmInputLayer.Dialogue,
+            FarmInputActions.Journal) => FarmSemanticAction.OpenJournal,
         (FarmInputLayer.History, FarmInputActions.Pause or FarmInputActions.Cancel or FarmInputActions.History
             or FarmInputActions.Inventory or FarmInputActions.QuickWheel) => FarmSemanticAction.CloseHistory,
         (FarmInputLayer.World or FarmInputLayer.Encounter or FarmInputLayer.Paused or FarmInputLayer.Wheel,
