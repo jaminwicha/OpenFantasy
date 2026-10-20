@@ -770,3 +770,11 @@ Verified milestone: `codex/milestone-client-settings-20261020`, created at `b8b2
 farm, encounter, action-offer, wheel and four-player control evidence. Remapping, device and scaling settings,
 listening and human readability review remain open. Predecessor staging and unrelated files excluded.
 
+## Keyboard remapping — 2026-10-20
+
+Before-change checkpoint: `codex/checkpoint-before-keyboard-remapping-20261020` (`f2ff106151b12557c148870648853dc46fa33240`).
+Verified milestone: `codex/milestone-keyboard-remapping-20261020`, created at `2542a822112d643792db7f7d2d4c7316dfc7f850` without switching.
+[Result](p02/keyboard-remapping/RESULT.md) retains managed results and native settings, farm, encounter,
+action-offer, wheel, gathering, care and four-player control evidence. Controller remapping, device and
+scaling settings and human review remain open. Predecessor staging and unrelated files excluded.
+
