@@ -33,6 +33,7 @@
     <Compile Include="../../client/scripts/WorksiteActionOffers.cs" Link="Client/WorksiteActionOffers.cs" />
     <Compile Include="../../client/scripts/EncounterActionOffers.cs" Link="Client/EncounterActionOffers.cs" />
     <Compile Include="../../client/scripts/EncounterOutcome/EncounterOutcomeText.cs" Link="Client/EncounterOutcome/EncounterOutcomeText.cs" />
+    <Compile Include="../../client/scripts/FarmKeyHints.cs" Link="Client/FarmKeyHints.cs" />
     <Compile Include="../../client/scripts/FarmSubmission.cs" Link="Client/FarmSubmission.cs" />
     <Compile Include="../../client/scripts/RestorativeActionOffers.cs" Link="Client/RestorativeActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmCarePresentation.cs" Link="Client/FarmCarePresentation.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="../../client/scripts/Presentation/Audio/SoundscapeDiagnostics.cs" Link="Client/Audio/SoundscapeDiagnostics.cs" />
     <Compile Include="../../client/scripts/Presentation/Audio/CaptionFeed.cs" Link="Client/Audio/CaptionFeed.cs" />
     <Compile Include="../../client/scripts/Settings/FarmSettings.cs" Link="Client/Settings/FarmSettings.cs" />
+    <Compile Include="../../client/scripts/Settings/KeyBindings.cs" Link="Client/Settings/KeyBindings.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoViewProjection.cs" Link="Client/Cargo/CargoViewProjection.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoStallPick.cs" Link="Client/Cargo/CargoStallPick.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoPaperdollPlan.cs" Link="Client/Cargo/CargoPaperdollPlan.cs" />

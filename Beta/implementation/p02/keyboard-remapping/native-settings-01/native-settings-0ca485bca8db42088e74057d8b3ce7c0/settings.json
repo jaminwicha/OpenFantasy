@@ -1,0 +1,62 @@
+{
+  "Kind": "native-settings-v1",
+  "Stage": "change",
+  "Status": "passed",
+  "Failure": null,
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless",
+  "ProbeStage": 3,
+  "Settings": {
+    "accessibility.captions": "true",
+    "format": "1",
+    "keys.clear_target": "82",
+    "keys.craft_rations": "67",
+    "keys.gather": "71",
+    "keys.give_wood": "70",
+    "keys.history": "72",
+    "keys.inventory": "73",
+    "keys.next_target": "81",
+    "keys.quick_wheel": "86",
+    "keys.settings": "79",
+    "keys.talk": "84",
+    "keys.walk_down": "83",
+    "keys.walk_left": "65",
+    "keys.walk_right": "68",
+    "keys.walk_up": "87",
+    "sound.Ambience": "1",
+    "sound.Effects": "0",
+    "sound.Master": "1",
+    "sound.Music": "0.35",
+    "sound.Voice": "1"
+  },
+  "SettingsFileExists": true,
+  "Buses": {
+    "Master": {
+      "VolumeDb": 0,
+      "Muted": false
+    },
+    "Music": {
+      "VolumeDb": -9.118638,
+      "Muted": false
+    },
+    "Ambience": {
+      "VolumeDb": 0,
+      "Muted": false
+    },
+    "Effects": {
+      "VolumeDb": 0,
+      "Muted": true
+    },
+    "Voice": {
+      "VolumeDb": 0,
+      "Muted": false
+    }
+  },
+  "Checks": [
+    "Settings opened by key, focused their first control, suppressed walking and left the world unpaused.",
+    "The actual controls set Music to 35%, muted Effects and enabled captions immediately.",
+    "Capture mode rebound Talk to T and moved Gather onto Give\u0027s G, swapping Give to F, without leaking either press.",
+    "Cancel closed settings and wrote exactly the applied preferences to the fixture file."
+  ],
+  "DurationMilliseconds": 700
+}

@@ -1,3 +1,4 @@
+using OpenFantasy.Client;
 using OpenFantasy.Client.Presentation.Audio;
 using OpenFantasy.Client.Settings;
 
@@ -36,6 +37,42 @@ public sealed class FarmSettingsTests
         Assert.Equal(new SoundLevels(1, 0.5, 1, 0, 1), parsed.Sound);
         Assert.False(parsed.Captions);
         Assert.Equal(FarmSettings.Default, FarmSettings.Parse(new Dictionary<string, string>()));
+    }
+
+    [Fact]
+    public void Key_bindings_cover_real_routed_actions_with_unique_assignable_defaults()
+    {
+        var walking = new[] { FarmInputActions.WalkUp, FarmInputActions.WalkLeft, FarmInputActions.WalkDown, FarmInputActions.WalkRight };
+        Assert.All(KeyBindings.Actions, action => Assert.Contains(action.Action, FarmInputActions.Routed.Concat(walking)));
+        Assert.DoesNotContain(KeyBindings.Actions, action => action.Action is FarmInputActions.Pause or FarmInputActions.Cancel);
+        Assert.Equal(KeyBindings.Actions.Count, KeyBindings.Actions.Select(action => action.DefaultKey).Distinct().Count());
+        Assert.All(KeyBindings.Actions, action => Assert.True(KeyBindings.IsAssignable(action.DefaultKey)));
+        Assert.True(KeyBindings.Default.IsDefault);
+    }
+
+    [Fact]
+    public void Assigning_a_used_key_swaps_and_reserved_keys_are_refused()
+    {
+        KeyBindings talkOnT = KeyBindings.Default.Assign("talk", 'T');
+        Assert.Equal(('T', 'G'), (talkOnT["talk"], talkOnT["give_wood"]));
+        KeyBindings swapped = talkOnT.Assign("gather", 'G');
+        Assert.Equal(('G', 'F'), (swapped["gather"], swapped["give_wood"]));
+        Assert.Equal(KeyBindings.Actions.Count, KeyBindings.Actions.Select(action => swapped[action.Action]).Distinct().Count());
+        Assert.False(swapped.IsDefault);
+        foreach (long reserved in new[] { KeyBindings.Escape, KeyBindings.Left, KeyBindings.Enter, KeyBindings.Space, KeyBindings.Tab, 0L })
+            Assert.Throws<ArgumentException>(() => KeyBindings.Default.Assign("talk", reserved));
+        Assert.Throws<ArgumentOutOfRangeException>(() => KeyBindings.Default.Assign("pause_world", 'P'));
+    }
+
+    [Fact]
+    public void Saved_keys_round_trip_and_damaged_bindings_fall_back_to_defaults()
+    {
+        FarmSettings settings = FarmSettings.Default with { Keys = KeyBindings.Default.Assign("talk", 'T').Assign("gather", 'G') };
+        Assert.Equal(settings, FarmSettings.Parse(settings.ToEntries()));
+        var duplicate = new Dictionary<string, string>(settings.ToEntries()) { ["keys.history"] = ((long)'T').ToString() };
+        Assert.Equal(KeyBindings.Default, FarmSettings.Parse(duplicate).Keys);
+        var reserved = new Dictionary<string, string> { ["keys.talk"] = KeyBindings.Escape.ToString(), ["keys.gather"] = "-4" };
+        Assert.Equal(KeyBindings.Default, FarmSettings.Parse(reserved).Keys);
     }
 
     [Fact]

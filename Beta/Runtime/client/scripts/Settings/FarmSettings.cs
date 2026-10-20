@@ -38,11 +38,11 @@ internal sealed record SoundLevels(double Master, double Music, double Ambience,
 /// them never alters a world, its history or another participant. Unknown, missing or malformed entries fall
 /// back to their defaults individually; a damaged file never prevents play.
 /// </summary>
-internal sealed record FarmSettings(SoundLevels Sound, bool Captions)
+internal sealed record FarmSettings(SoundLevels Sound, bool Captions, KeyBindings Keys)
 {
     internal const int FormatVersion = 1;
     internal static IReadOnlyList<string> Buses { get; } = ["Master", "Music", "Ambience", "Effects", "Voice"];
-    internal static FarmSettings Default { get; } = new(SoundLevels.Full, Captions: false);
+    internal static FarmSettings Default { get; } = new(SoundLevels.Full, Captions: false, KeyBindings.Default);
 
     internal static double Clamp(double level) => double.IsFinite(level) ? Math.Clamp(level, 0, 1) : 1;
 
@@ -58,7 +58,7 @@ internal sealed record FarmSettings(SoundLevels Sound, bool Captions)
         }
         bool captions = entries.TryGetValue("accessibility.captions", out string? flag)
             && bool.TryParse(flag, out bool enabled) ? enabled : Default.Captions;
-        return new FarmSettings(levels, captions);
+        return new FarmSettings(levels, captions, KeyBindings.Parse(entries));
     }
 
     internal IReadOnlyDictionary<string, string> ToEntries()
@@ -69,6 +69,7 @@ internal sealed record FarmSettings(SoundLevels Sound, bool Captions)
             ["accessibility.captions"] = Captions ? "true" : "false",
         };
         foreach (string bus in Buses) entries["sound." + bus] = Sound[bus].ToString("R", CultureInfo.InvariantCulture);
+        foreach ((string key, string value) in Keys.ToEntries()) entries[key] = value;
         return entries;
     }
 }

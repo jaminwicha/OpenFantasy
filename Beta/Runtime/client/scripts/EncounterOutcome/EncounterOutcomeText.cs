@@ -27,8 +27,8 @@ internal static class EncounterOutcomeText
     internal const string CompletionCondition = "once every required player has read it and no care is pending";
 
     /// <summary>How the reading beside offered care is chosen, since E / A then asks for care.</summary>
-    internal const string ReadingBesideCareRoutes = "E / A asks for care. Choose this with the pointer, keyboard focus or the "
-        + "Actions wheel (V).";
+    internal static string ReadingBesideCareRoutes => $"{FarmKeyHints.Current.Interact} / A asks for care. Choose this with the pointer, keyboard focus or the "
+        + $"Actions wheel ({FarmKeyHints.Current.Wheel}).";
 
     internal static string Title(LocalEncounterOutcomeView outcome) => outcome.Standing switch
     {
@@ -163,12 +163,12 @@ internal static class EncounterOutcomeText
     /// </summary>
     internal static string Hint(LocalEncounterOutcomeView outcome, LocalCareView? care)
     {
-        if (care?.Decision is not null) return Title(outcome) + "\nV: care choices";
+        if (care?.Decision is not null) return Title(outcome) + $"\n{FarmKeyHints.Current.Wheel}: care choices";
         bool careOffered = care is not null && (care.PendingAcknowledgmentId is not null || care.Offers.Any(offer => offer.CanAcknowledge));
         if (outcome.Acknowledgment is null) return Title(outcome) + "\n" + CompactBlocker(outcome);
         return careOffered
-            ? $"{Title(outcome)}\nE / A: care · V: choices"
-            : $"{Title(outcome)}\nE / A: {ReadLabel(outcome).ToLowerInvariant()}";
+            ? $"{Title(outcome)}\n{FarmKeyHints.Current.Interact} / A: care · {FarmKeyHints.Current.Wheel}: choices"
+            : $"{Title(outcome)}\n{FarmKeyHints.Current.Interact} / A: {ReadLabel(outcome).ToLowerInvariant()}";
     }
 
     /// <summary>The full exploration explanation after a completed defeat, shown on the outcome card.</summary>
@@ -371,8 +371,8 @@ internal static class ControllerOutcomeText
     {
         if (care?.Decision is { } decision)
             return decision.Cancellation is not null
-                ? "Your care request is pending. V opens Cancel care request; cancellation gives no treatment and leaves the outcome unread."
-                : "This care request needs your decision. V opens available treatment and decline choices; neither is selected for you.";
+                ? $"Your care request is pending. {FarmKeyHints.Current.Wheel} opens Cancel care request; cancellation gives no treatment and leaves the outcome unread."
+                : $"This care request needs your decision. {FarmKeyHints.Current.Wheel} opens available treatment and decline choices; neither is selected for you.";
         string requested = care?.HelperName is { } named ? "Care was requested from " + named : "Care was requested";
         return care?.Status switch
         {

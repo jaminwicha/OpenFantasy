@@ -288,17 +288,17 @@ public partial class FarmGame : Node2D
                 ObserveActorSelection(_session.ReadSelection());
                 ObserveControlReturn(ParticipantControl);
                 if (ChangeReadiness(_input.WorldShouldRun)) _hud.Message(WorksiteProfile
-                    ? "Speak with Wren to fund the stairs and deck. Q selects a target; V opens its actions."
+                    ? $"Speak with Wren to fund the stairs and deck. {FarmKeyHints.Current.NextTarget} selects a target; {FarmKeyHints.Current.Wheel} opens its actions."
                     : _session.IsRegional
                         ? "Speak with Wren first. Marla trades down-screen in Brasshollow, Kegga far up-screen in Gearford. "
-                            + "V opens actions; Q turns to Market; Offers → Stall chooses a stall."
-                    : RetainedGiftGenesisPath is not null ? "I opens your pack and its gift offers; V opens actions; Q changes wheel pages."
+                            + $"{FarmKeyHints.Current.Wheel} opens actions; {FarmKeyHints.Current.NextTarget} turns to Market; Offers → Stall chooses a stall."
+                    : RetainedGiftGenesisPath is not null ? $"{FarmKeyHints.Current.Inventory} opens your pack and its gift offers; {FarmKeyHints.Current.Wheel} opens actions; {FarmKeyHints.Current.NextTarget} changes wheel pages."
                     : MarketsProfile || MarketFixtureGenesisPath is not null
-                        ? "Wren trades berries in person. V opens actions; Q turns to the Market page. Her quest pays in gil."
-                    : RestorativeProfile ? "V opens actions; Q changes wheel pages. Inspect Care for your medicine and Wren's permission."
-                    : CareProfile ? "Wren is nearby to help. Q selects a wolf; V inspects actions and their costs."
-                    : EncounterProfile ? "Q selects a wolf. E engages; V inspects its actions. Encounters wait for your choice."
-                    : BreachProfile ? "Follow the north bank east. Q selects the divider; V opens its mining action."
+                        ? $"Wren trades berries in person. {FarmKeyHints.Current.Wheel} opens actions; {FarmKeyHints.Current.NextTarget} turns to the Market page. Her quest pays in gil."
+                    : RestorativeProfile ? $"{FarmKeyHints.Current.Wheel} opens actions; {FarmKeyHints.Current.NextTarget} changes wheel pages. Inspect Care for your medicine and Wren's permission."
+                    : CareProfile ? $"Wren is nearby to help. {FarmKeyHints.Current.NextTarget} selects a wolf; {FarmKeyHints.Current.Wheel} inspects actions and their costs."
+                    : EncounterProfile ? $"{FarmKeyHints.Current.NextTarget} selects a wolf. {FarmKeyHints.Current.Interact} engages; {FarmKeyHints.Current.Wheel} inspects its actions. Encounters wait for your choice."
+                    : BreachProfile ? $"Follow the north bank east. {FarmKeyHints.Current.NextTarget} selects the divider; {FarmKeyHints.Current.Wheel} opens its mining action."
                     : WatercourseProfile ? "Visit Wren by the rows. Follow the dry bank east to the watercourse."
                     : "Find Wren by the rows.");
             }

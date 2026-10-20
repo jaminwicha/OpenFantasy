@@ -267,6 +267,17 @@ walking is suppressed and world actions are refused, but opening it never pauses
 or advances time. O, Escape, Start or Cancel closes it and writes the file; a failed write keeps the applied
 preferences for the run and is reported. A control-return boundary closes it like other panels.
 
+[KeyBindings](../../client/scripts/Settings/KeyBindings.cs) is the single table of remappable actions and their
+default primary keyboard keys; [FarmInputMap](../../client/scripts/FarmInputMap.cs) installs its defaults and
+applies the player's saved choices after them. Escape, the arrow keys, Enter, Space and Tab are reserved, so pause,
+panel closing, arrow walking and interface navigation always work, and controller bindings are not remapped.
+Choosing a key that another action uses swaps the two, so no action is ever unbound; a saved set with a reserved,
+unknown or duplicated key falls back to the defaults. While the panel captures a key, the next key press belongs to
+it and never reaches gameplay routing, and Escape keeps the current key. Routing and walking read the input map, so
+a rebound key acts immediately. [FarmKeyHints](../../client/scripts/FarmKeyHints.cs) carries the current keys'
+display names for on-screen hints only; the client rebuilds it from the input map whenever bindings change, and
+fixtures keep the defaults.
+
 [CaptionFeed](../../client/scripts/Presentation/Audio/CaptionFeed.cs) shows short text for notable derived
 sounds when captions are enabled, in the scene-owned [caption layer](../../client/scenes/FarmCaptions.tscn).
 An intent is captioned only when the catalog marks it notable: tool, joinery and digging contacts are;

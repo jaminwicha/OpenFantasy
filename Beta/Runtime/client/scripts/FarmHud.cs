@@ -180,7 +180,7 @@ internal sealed partial class FarmHud : CanvasLayer
         _nextTarget.Disabled = pending || paused || !targets.CanCycle;
         _clearTarget.Disabled = pending || paused || targets.Selected is null;
         _openPack.Disabled = pending;
-        _openPack.Text = "Pack [I]";
+        _openPack.Text = $"Pack [{FarmKeyHints.Current.Inventory}]";
         _openPack.Visible = view.Inventory is not null;
         _recipes.Visible = view.Production?.Crafting is not null;
         _recipes.Disabled = pending || view.HasReadingHold;
@@ -191,7 +191,7 @@ internal sealed partial class FarmHud : CanvasLayer
         _speech.Text = view.Conversation?.Dialogue is { } dialogue ? dialogue.SpeakerName + ": continue to close the conversation." : "";
         GetNode<Label>("%EncounterStatus").Text = view.Combat?.Encounter is not null ? "Selected character's encounter" : "";
         GetNode<Label>("Root/Footer/Column/Actions/Movement").Text =
-            (view.Capabilities & OpenFantasy.Core.Worlds.WorldControlCapabilities.Traversal) != 0 ? "Move\nWASD / arrows" : "Traversal not granted";
+            (view.Capabilities & OpenFantasy.Core.Worlds.WorldControlCapabilities.Traversal) != 0 ? $"Move\n{FarmKeyHints.Current.Walking} / arrows" : "Traversal not granted";
         PresentPreview();
     }
 
@@ -220,7 +220,7 @@ internal sealed partial class FarmHud : CanvasLayer
                 ? "\nFinishing accepted work…"
                 : target?.Kind == FarmTargetKind.Excavation ? "\nSelected work face is no longer visible."
                 : worksite.ExcavationTargets.Count == 0 ? "\nNo work face is available."
-                : "\nQ: choose a work face · V: inspect work";
+                : $"\n{FarmKeyHints.Current.NextTarget}: choose a work face · {FarmKeyHints.Current.Wheel}: inspect work";
         }
         else
         {
@@ -229,7 +229,7 @@ internal sealed partial class FarmHud : CanvasLayer
                 : pending ? "Action pending" : paused ? "Paused" : site.IsComplete ? "Complete"
                 : !worksite.CanManipulate ? "Unable to work"
                 : worksite.PlayerEffort < worksite.EffortPerWork ? "Needs rest"
-                : mine?.CanExecute == true ? "V: inspect Mine" : "Unavailable · V: inspect";
+                : mine?.CanExecute == true ? $"{FarmKeyHints.Current.Wheel}: inspect Mine" : $"Unavailable · {FarmKeyHints.Current.Wheel}: inspect";
             _project.Text += $"\nExcavation {site.CompletedWork}/{site.RequiredWork} · {status}";
             if (mine is not null) detail = Explain(mine);
         }
@@ -242,7 +242,7 @@ internal sealed partial class FarmHud : CanvasLayer
         LocalConstructionWorkView? work = projects.FirstOrDefault(value => value.Project.ProjectId == target.Id);
         _offers.TryGetValue(FarmSemanticAction.Build, out FarmActionOffer? build);
         string status = pending ? "Action pending" : paused ? "Paused"
-            : build?.CanExecute == true ? "V: inspect Build" : "Unavailable · V: inspect";
+            : build?.CanExecute == true ? $"{FarmKeyHints.Current.Wheel}: inspect Build" : $"Unavailable · {FarmKeyHints.Current.Wheel}: inspect";
         string text = work is null ? "Selected project is no longer available for work."
             : $"Build {work.Project.CompletedWork}/{work.Project.RequiredWork} · {status}";
         _project.Visible = true;
@@ -254,7 +254,7 @@ internal sealed partial class FarmHud : CanvasLayer
         IReadOnlyDictionary<FarmSemanticAction, FarmActionOffer> offers, FarmTargetSelection targets)
     {
         _offers = offers;
-        _openPack.Text = "Pack [I]";
+        _openPack.Text = $"Pack [{FarmKeyHints.Current.Inventory}]";
         _openPack.Visible = true;
         _recipes.Visible = view.Crafting is not null;
         _recipes.Disabled = pending || view.HasReadingHold;
@@ -283,11 +283,11 @@ internal sealed partial class FarmHud : CanvasLayer
         _nextTarget.Disabled = pending || paused || speaking || !targets.CanCycle;
         _clearTarget.Disabled = pending || paused || speaking || targets.Selected is null;
         // Layer legality stays with the input router; these mirror it so a disabled control matches a refused key.
-        PresentOffer(FarmSemanticAction.Speak, "E", blockedByLayer: pending || paused || speaking);
-        PresentOffer(FarmSemanticAction.Give, "G", blockedByLayer: pending || paused);
-        PresentOffer(FarmSemanticAction.Gather, "F", blockedByLayer: pending || paused || speaking);
-        PresentOffer(FarmSemanticAction.Craft, "C", blockedByLayer: pending || paused || speaking);
-        PresentOffer(FarmSemanticAction.CloseDialogue, "E", blockedByLayer: pending || paused || !speaking);
+        PresentOffer(FarmSemanticAction.Speak, FarmKeyHints.Current.Interact, blockedByLayer: pending || paused || speaking);
+        PresentOffer(FarmSemanticAction.Give, FarmKeyHints.Current.Give, blockedByLayer: pending || paused);
+        PresentOffer(FarmSemanticAction.Gather, FarmKeyHints.Current.Gather, blockedByLayer: pending || paused || speaking);
+        PresentOffer(FarmSemanticAction.Craft, FarmKeyHints.Current.Craft, blockedByLayer: pending || paused || speaking);
+        PresentOffer(FarmSemanticAction.CloseDialogue, FarmKeyHints.Current.Interact, blockedByLayer: pending || paused || !speaking);
         PresentOffer(FarmSemanticAction.UseRestorative, "", blockedByLayer: pending || paused || speaking);
         foreach (FarmSemanticAction action in new[] { FarmSemanticAction.EnterEncounter, FarmSemanticAction.Strike,
             FarmSemanticAction.Wait, FarmSemanticAction.ReleaseEncounter, FarmSemanticAction.AcknowledgeCare })
@@ -296,10 +296,10 @@ internal sealed partial class FarmHud : CanvasLayer
         GetNode<Label>("Root/Footer/Column/Actions/Movement").Text = view.Encounter?.IsOutcome == true
             ? view.EncounterOutcome is { } outcome ? EncounterOutcomeText.Hint(outcome, view.Care)
                 : view.Care is { } care ? CareHint(care.Status)
-                : view.EncounterLifecycle?.ReleaseActionHash is not null ? "Encounter complete\nE / A: continue"
+                : view.EncounterLifecycle?.ReleaseActionHash is not null ? $"Encounter complete\n{FarmKeyHints.Current.Interact} / A: continue"
                 : "Incapacitated\nAid unavailable"
             : view.Progression is { Hp: 0 } ? EncounterOutcomeText.TerminalHint
-            : view.IsInEncounter ? "Choose · Inspect · Confirm\nE / A: act · G / X: wait" : "Move\nWASD / arrows";
+            : view.IsInEncounter ? $"Choose · Inspect · Confirm\n{FarmKeyHints.Current.Interact} / A: act · {FarmKeyHints.Current.Give} / X: wait" : $"Move\n{FarmKeyHints.Current.Walking} / arrows";
         _pause.Text = paused ? "Resume  [Esc]" : view.HasReadingHold ? "Pause" : "Pause  [Esc]";
         LocalConstructionView? project = view.Construction.FirstOrDefault(value => !value.IsCompleted)
             ?? view.Construction.FirstOrDefault();
@@ -316,7 +316,7 @@ internal sealed partial class FarmHud : CanvasLayer
                     ? $"Excavation {worksite.ExcavationTargets[0].CompletedWork}/{worksite.ExcavationTargets[0].RequiredWork}"
                     : "Select a work face to inspect excavation.";
             _project.Text = (view.IsResolvingConsequences ? "Finishing the work…" : activity)
-                + "\nQ: choose work face · V: " + (worksite.SupportsAssistedTraversal ? "Mine / Climb" : "Mine");
+                + $"\n{FarmKeyHints.Current.NextTarget}: choose work face · {FarmKeyHints.Current.Wheel}: " + (worksite.SupportsAssistedTraversal ? "Mine / Climb" : "Mine");
         }
         _project.TooltipText = _project.Text;
         if (targets.Selected is { Kind: FarmTargetKind.Construction } constructionTarget)
@@ -391,10 +391,10 @@ internal sealed partial class FarmHud : CanvasLayer
 
     private static string CareHint(LocalCareStatus status) => status switch
     {
-        LocalCareStatus.Available => "Help is available\nE / A: care · V: inspect",
-        LocalCareStatus.Pending => "Care pending\nV: inspect",
-        LocalCareStatus.NeedsAttention => "Care interrupted\nV: inspect",
-        _ => "Aid unavailable\nV: inspect"
+        LocalCareStatus.Available => $"Help is available\n{FarmKeyHints.Current.Interact} / A: care · {FarmKeyHints.Current.Wheel}: inspect",
+        LocalCareStatus.Pending => $"Care pending\n{FarmKeyHints.Current.Wheel}: inspect",
+        LocalCareStatus.NeedsAttention => $"Care interrupted\n{FarmKeyHints.Current.Wheel}: inspect",
+        _ => $"Aid unavailable\n{FarmKeyHints.Current.Wheel}: inspect"
     };
 
     private static string DescribeSpeech(LocalWorldView view, LocalDialogueView dialogue, LocalConstructionView? project)
@@ -447,6 +447,18 @@ internal sealed partial class FarmHud : CanvasLayer
     internal void Message(string text) => _message.Text = text;
 
     internal void SetHistoryAvailable(bool available) => _history.Disabled = !available;
+
+    /// <summary>Rewrites fixed button hints for the player's current keys; offer buttons refresh every frame.</summary>
+    internal void RefreshKeyHints()
+    {
+        FarmKeyHints keys = FarmKeyHints.Current;
+        _settings.Text = $"Settings [{keys.Settings}]";
+        _nextTarget.Text = $"Next [{keys.NextTarget}]";
+        _clearTarget.Text = $"Clear [{keys.ClearTarget}]";
+        _openWheel.Text = $"Actions [{keys.Wheel}]";
+        _openPack.Text = $"Pack [{keys.Inventory}]";
+        _openPack.TooltipText = $"Inspect your own tools and supplies. {keys.Inventory} / View. The current world clock policy stays in effect.";
+    }
 
     internal void SetCovered(bool covered) => GetNode<Control>("Root").Visible = !covered;
 }

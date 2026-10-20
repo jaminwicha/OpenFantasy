@@ -56,6 +56,21 @@ internal sealed partial class FarmSettingsProbe(FarmGame game, string settingsFi
                     game.SettingsPanel.CaptionsToggle.ButtonPressed = true;
                     RequireApplied(0.35, effectsMuted: true, captions: true);
                     _checks.Add("The actual controls set Music to 35%, muted Effects and enabled captions immediately.");
+                    game.SettingsPanel.KeyButton("talk").EmitSignal(BaseButton.SignalName.Pressed);
+                    Require(game.SettingsPanel.CapturingAction == "talk", "The talk row did not start choosing a key.");
+                    PressKey(Key.T);
+                    _stage = 4;
+                    break;
+                case 4:
+                    Require(game.SettingsPanel.CapturingAction is null, "Choosing a key did not finish on the next key press.");
+                    Require(game.IsSettingsOpen, "The chosen key leaked into gameplay routing and closed settings.");
+                    game.SettingsPanel.KeyButton("gather").EmitSignal(BaseButton.SignalName.Pressed);
+                    PressKey(Key.G);
+                    _stage = 5;
+                    break;
+                case 5:
+                    RequireKeys();
+                    _checks.Add("Capture mode rebound Talk to T and moved Gather onto Give's G, swapping Give to F, without leaking either press.");
                     Press(FarmInputActions.Cancel);
                     _stage = 3;
                     break;
@@ -81,8 +96,9 @@ internal sealed partial class FarmSettingsProbe(FarmGame game, string settingsFi
     private void Reopened()
     {
         RequireApplied(0.35, effectsMuted: true, captions: true);
+        RequireKeys();
         Require(!game.IsSettingsOpen, "Reopening opened settings by itself.");
-        _checks.Add("A second process restored Music 35%, muted Effects and enabled captions before any interaction.");
+        _checks.Add("A second process restored Music 35%, muted Effects, captions and the rebound keys before any interaction.");
         Finish();
     }
 
@@ -93,6 +109,26 @@ internal sealed partial class FarmSettingsProbe(FarmGame game, string settingsFi
         Require(Math.Abs(AudioServer.GetBusVolumeDb(musicBus) - Mathf.LinearToDb((float)music)) < 0.01f, "The Music bus volume did not follow the setting.");
         Require(AudioServer.IsBusMute(AudioServer.GetBusIndex("Effects")) == effectsMuted, "The Effects bus mute did not follow the setting.");
         Require(game.Settings.Captions == captions, "The captions preference was not applied.");
+    }
+
+    private void RequireKeys()
+    {
+        Require(Bound(Key.T, FarmInputActions.Interact) && !Bound(Key.E, FarmInputActions.Interact), "Talk is not on T alone.");
+        Require(Bound(Key.G, FarmInputActions.Gather) && !Bound(Key.F, FarmInputActions.Gather), "Gather is not on G alone.");
+        Require(Bound(Key.F, FarmInputActions.Give) && !Bound(Key.G, FarmInputActions.Give), "Give was not swapped onto F.");
+        Require(Bound(Key.Left, FarmInputActions.WalkLeft) && Bound(Key.A, FarmInputActions.WalkLeft), "Walking keys changed unexpectedly.");
+        Require(game.Settings.Keys["talk"] == (long)Key.T, "The saved bindings do not record Talk on T.");
+        Require(FarmKeyHints.Current is { Interact: "T", Gather: "G", Give: "F" },
+            "On-screen key hints do not follow the rebound keys: " + FarmKeyHints.Current);
+    }
+
+    private static bool Bound(Key key, string action) =>
+        InputMap.ActionHasEvent(action, new InputEventKey { PhysicalKeycode = key });
+
+    private static void PressKey(Key key)
+    {
+        Input.ParseInputEvent(new InputEventKey { PhysicalKeycode = key, Keycode = key, Pressed = true });
+        Input.ParseInputEvent(new InputEventKey { PhysicalKeycode = key, Keycode = key, Pressed = false });
     }
 
     private static string PlayerPosition(LocalWorldView view) =>

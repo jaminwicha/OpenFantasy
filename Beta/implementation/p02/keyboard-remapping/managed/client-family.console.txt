@@ -1,0 +1,29 @@
+Test run for /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll (.NETCoreApp,Version=v8.0)
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:01.30]     OpenFantasy.Hosting.Tests.Client.Cargo.NativeCargoResultTests.Opt_in_native_cargo_results_authenticate_the_exact_route_trades_and_reopening [SKIP]
+  Skipped OpenFantasy.Hosting.Tests.Client.Cargo.NativeCargoResultTests.Opt_in_native_cargo_results_authenticate_the_exact_route_trades_and_reopening [1 ms]
+[xUnit.net 00:00:01.34]     OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales [SKIP]
+  Skipped OpenFantasy.Hosting.Tests.Client.Trading.NativeTradingResultTests.Opt_in_native_market_results_authenticate_exact_purchases_showings_and_sales [1 ms]
+[xUnit.net 00:00:02.27]     OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery [SKIP]
+  Skipped OpenFantasy.Hosting.Tests.Client.Trading.Refinement.NativeTradingBoundaryResultTests.Opt_in_native_boundary_results_authenticate_refusals_preserved_goods_and_lawful_recovery [1 ms]
+[xUnit.net 00:00:45.61]     OpenFantasy.Hosting.Tests.Client.Retreat.NativeRetreatResultTests.Every_native_route_saved_one_disengaged_retreat_walked_as_ordinary_samples [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Client.Retreat.NativeRetreatResultTests.Every_native_route_saved_one_disengaged_retreat_walked_as_ordinary_samples [4 ms]
+  Error Message:
+   System.InvalidOperationException : OPENFANTASY_NATIVE_RETREAT_RESULTS must name the native manifest.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Client.Retreat.NativeRetreatResultTests.Every_native_route_saved_one_disengaged_retreat_walked_as_ordinary_samples() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/Retreat/NativeRetreatResultTests.cs:line 24
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:57.72]     OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatResultTests.Every_native_route_met_the_chief_on_the_road_and_escaped_by_a_saved_retreat [FAIL]
+  Failed OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatResultTests.Every_native_route_met_the_chief_on_the_road_and_escaped_by_a_saved_retreat [2 ms]
+  Error Message:
+   System.InvalidOperationException : OPENFANTASY_NATIVE_ROAD_THREAT_RESULTS must name the native manifest.
+  Stack Trace:
+     at OpenFantasy.Hosting.Tests.Client.RoadThreat.NativeRoadThreatResultTests.Every_native_route_met_the_chief_on_the_road_and_escaped_by_a_saved_retreat() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/RoadThreat/NativeRoadThreatResultTests.cs:line 34
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:01:05.40]     OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody [SKIP]
+  Skipped OpenFantasy.Hosting.Tests.Client.NativeGiftResultTests.Opt_in_native_gift_results_authenticate_all_four_actions_and_exact_produced_custody [1 ms]
+Results File: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/managed/client-family.trx
+
+Failed!  - Failed:     2, Passed:   295, Skipped:     4, Total:   301, Duration: 1 m 31 s - OpenFantasy.Hosting.Tests.dll (net8.0)

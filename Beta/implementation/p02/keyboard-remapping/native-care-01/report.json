@@ -1,0 +1,188 @@
+{
+  "status": "passed",
+  "rendered": false,
+  "controls": [
+    "wheel"
+  ],
+  "workDirectory": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez",
+  "runs": [
+    {
+      "label": "wheel-fresh",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--care-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel.json",
+        "wheel",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-fresh.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-fresh.stderr.log",
+      "exitCode": 0,
+      "seconds": 13.067347666015849
+    },
+    {
+      "label": "wheel-reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--care-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel.sqlite3",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel.json",
+        "reopen",
+        "--background-render"
+      ],
+      "timeoutSeconds": 180,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-reopen.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-reopen.stderr.log",
+      "exitCode": 0,
+      "seconds": 2.61734533298295
+    },
+    {
+      "label": "wheel-recorded-193",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel.sqlite3",
+        "193"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-recorded-193.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-recorded-193.stderr.log",
+      "exitCode": 0,
+      "seconds": 0.7048772500129417
+    },
+    {
+      "label": "wheel-recorded-194",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel.sqlite3",
+        "194"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-recorded-194.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-recorded-194.stderr.log",
+      "exitCode": 0,
+      "seconds": 0.6948263340163976
+    },
+    {
+      "label": "wheel-recorded-195",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel.sqlite3",
+        "195"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-recorded-195.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-recorded-195.stderr.log",
+      "exitCode": 0,
+      "seconds": 0.6076289169723168
+    },
+    {
+      "label": "wheel-recorded-210",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll",
+        "--inspect-recorded-world",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel.sqlite3",
+        "210"
+      ],
+      "timeoutSeconds": 30,
+      "stdoutFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-recorded-210.stdout.log",
+      "stderrFile": "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/keyboard-remapping/native-care-01/native-care-5xlnrzez/wheel-recorded-210.stderr.log",
+      "exitCode": 0,
+      "seconds": 0.7015090000350028
+    }
+  ],
+  "journeys": {
+    "wheel": {
+      "source": {
+        "sourceRecordsSha256": "9bfc3372954475402ea2fab30dab9de29b2a7c800f2fb61ab654d2efc81e973b",
+        "potionPayloadSha256": "3b7a5fdd562795e58d68a11007763b88cd25d40841c739c4fef9495161c097aa",
+        "recipePayloadSha256": "dd98e32ef5f0442f9d1c37d10d431aab74226a77f73bc6858a5075e4dad41dc2",
+        "playerSourceHp": 60,
+        "wolfSourceHp": 62
+      },
+      "playerId": "7b1fdc87ec3ab11ccc89697c36f5179e",
+      "helperId": "5d652f48a612a324027911ffd13cf5f9",
+      "wolfId": "6e639095512c3b072f23995b90271601",
+      "acknowledgmentRevision": 194,
+      "treatmentRevision": 195,
+      "resumedAttackRevision": 210,
+      "finalRevision": 210,
+      "finalHash": "6337c547ecc636d44f1284533fe61d4a4cb154ff8ffffafc3de118658528c03c",
+      "acknowledgmentCommand": "40cd43e2441876996e59f70e09f64c30",
+      "helperCommand": "12ae071e22989e56aba3c6272f6cef43",
+      "consumptionId": "bf292e8f1fd4908f6e8945a35556cf54",
+      "restoredHp": 40,
+      "helperDelay": 1000,
+      "earlierPlayerAttacks": 0,
+      "retainedCommandReceipts": 18,
+      "recordedBoundariesVerified": [
+        193,
+        194,
+        195,
+        210
+      ]
+    }
+  },
+  "originalProjectSha256": "a170d5c6b9e7fde1e8d68c23fe1c3b579096e1f37e27c2d0416d28fabcd9539a",
+  "startedUtc": "2026-10-20T05:28:21.568388+00:00",
+  "scope": "Injected native controls, actual schema7/profile25 care publication and paused second-process recovery.",
+  "limits": {
+    "nativeProcessSeconds": 180,
+    "nativeProbeSeconds": 150,
+    "recordedProcessSeconds": 30,
+    "maximumNativeProcesses": 2,
+    "maximumRecordedProcesses": 5
+  },
+  "limitations": [
+    "Historical roots and gameplay legality use real Host replay; this is not independent full-root or damage-law reconstruction.",
+    "Controlled background rendering/injected input does not establish physical-device, OS-focus, art, performance or full-phase acceptance."
+  ],
+  "sourceSha256": {
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_native_care.py": "486112afa7f1930d372620df3790e8f4d7c12aa9a1fd7e6f0542f9cd1cdb8e53",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/scripts/CarePlayProbe.cs": "9b427b4ad998678047740f9380f321b3f090b740c3d34b23469b2405ef5e5075",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_construction_physical.py": "a4678e83edf503734b061be62c497ad8b3155e3281af7e14a8d1fc2ef02a462e",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_encounter_actions.py": "717d156123e7887a299ec8289f289d715f57150bc3786d40920a58927a15eae3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tools/check_live_excavation.py": "75b426bd186c7217db108fbe0e760b195b3e575dda84d932fda9eec91c019576",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Host.dll": "7b8eac830031f699d5c4ab9772a88dd5683fd4cd3b6546436fe3d9f017b359c3",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Core.dll": "a3e17d7e271bce820b4d55dbdae4863b0f0f0618b27d10f71b1f96bc2ec4e90c",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/src/OpenFantasy.Host/bin/Debug/net10.0/OpenFantasy.Hosting.dll": "9b43a9969571d701e0dd6893f038eca11504f2bcf68c85619252beed691bd782",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Client.dll": "b288337a5095e80f7a8e4f955d3a1600a799e3647c321c7ada573d05f2758f05",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Core.dll": "87108e4bab84507781d4b5e8a1c90c2bb0e4d9533d444a89a98f259281e592b5",
+    "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client/.godot/mono/temp/bin/Debug/OpenFantasy.Hosting.dll": "8a07506f8b210b575ca0ebfe69506e9bd0556aad20912e274154caa8d319616b"
+  },
+  "originalProjectUnchanged": true,
+  "artifactSha256": {
+    "native-care-5xlnrzez/wheel-fresh.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-5xlnrzez/wheel-fresh.stdout.log": "d722d7c49f13b611a1d129fd1dc422351e1c0ff6b1976ee90eaff97d8394d908",
+    "native-care-5xlnrzez/wheel-recorded-193.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-5xlnrzez/wheel-recorded-193.stdout.log": "1c4c93e4b338bbd4d513bc64dd58dcd6154e8809f3477609b6c27e9b35f4c94a",
+    "native-care-5xlnrzez/wheel-recorded-194.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-5xlnrzez/wheel-recorded-194.stdout.log": "0722d91cc73f5b0752b554780f4c3f47e589ce3f23500687d4a1d24d6aa48a98",
+    "native-care-5xlnrzez/wheel-recorded-195.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-5xlnrzez/wheel-recorded-195.stdout.log": "6f90b6d3353c21b819e792356889cada33e3324f644f758e5806ebe0cf3e5926",
+    "native-care-5xlnrzez/wheel-recorded-210.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-5xlnrzez/wheel-recorded-210.stdout.log": "bb7a89e4ac0bb8b58b4d02c6d3ab8afba8a8270ff6763fffb5bea9e1967c6ff8",
+    "native-care-5xlnrzez/wheel-reopen.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "native-care-5xlnrzez/wheel-reopen.stdout.log": "d722d7c49f13b611a1d129fd1dc422351e1c0ff6b1976ee90eaff97d8394d908",
+    "native-care-5xlnrzez/wheel.fresh.json": "bd07a417850a8e4e31e48f4c74c655f048e905e169887e1cf1cce6aa59414fc0",
+    "native-care-5xlnrzez/wheel.reopen.json": "26b1f3f7c1ce23fd7e5873ce2f59c18cba6dcb1c65cbf1709544c1f8bd5267d1",
+    "native-care-5xlnrzez/wheel.sqlite3": "466232d24670ccdcf76b4814ce70ea5be6170f57a7b85a4fb697630759c20bae"
+  },
+  "finishedUtc": "2026-10-20T05:28:40.028740+00:00"
+}

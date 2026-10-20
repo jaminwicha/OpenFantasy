@@ -263,7 +263,7 @@ public partial class FarmGame
         LocalWorldView view = _session.World.ReadView();
         if (CargoStallPick.Pick(projection, view, new CargoCanvasPoint(local.X, local.Y)) is not { } marketId) return false;
         _marketDraft.Begin(view, marketId, null);
-        _hud.Message("Chose " + _market.StallLabel(view, marketId) + ". V opens its stall actions on the Market page.");
+        _hud.Message("Chose " + _market.StallLabel(view, marketId) + $". {FarmKeyHints.Current.Wheel} opens its stall actions on the Market page.");
         Present();
         return true;
     }

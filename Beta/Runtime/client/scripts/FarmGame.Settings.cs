@@ -34,6 +34,21 @@ public partial class FarmGame
         _settingsPanel.CloseRequested += () => Perform(FarmSemanticAction.CloseSettings);
         _settingsPanel.LevelChanged += (bus, level) => ApplySettings(Settings with { Sound = Settings.Sound.With(bus, level) });
         _settingsPanel.CaptionsChanged += enabled => ApplySettings(Settings with { Captions = enabled });
+        _settingsPanel.KeyChosen += (action, key) =>
+        {
+            if (!KeyBindings.IsAssignable(key))
+            {
+                _settingsPanel.Notice("That key is reserved for pausing, closing or navigation.");
+                return;
+            }
+            ApplySettings(Settings with { Keys = Settings.Keys.Assign(action, key) });
+            _settingsPanel.Present(Settings);
+        };
+        _settingsPanel.KeysReset += () =>
+        {
+            ApplySettings(Settings with { Keys = KeyBindings.Default });
+            _settingsPanel.Present(Settings);
+        };
         ApplySettings(Settings);
     }
 
@@ -41,6 +56,9 @@ public partial class FarmGame
     {
         Settings = settings;
         FarmSoundscape.ApplyLevels(settings.Sound);
+        FarmInputMap.ApplyBindings(settings.Keys);
+        FarmKeyHints.Apply(FarmKeyLabels.FromInputMap());
+        _hud.RefreshKeyHints();
         _soundscape.Captions.SetEnabled(settings.Captions);
     }
 

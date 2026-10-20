@@ -63,8 +63,9 @@ recruitment/cooperative work and the traveling-merchant/cargo investigation reta
 ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain required before full
 P02 acceptance. Then prove P03 before broader P04–P14 expansion. The full P02 table remains in the roadmap.
 
-**Latest increment:** [client settings](p02/client-settings/RESULT.md) add saved mixer levels and captions for notable
-sounds on an input layer that never pauses the world; keyboard remapping remains open. Before it, the
+**Latest increment:** [keyboard remapping](p02/keyboard-remapping/RESULT.md) rebinds every action except pause, with
+reserved navigation keys and hints that follow the keys; controller remapping, device and scaling settings remain.
+Before it, [client settings](p02/client-settings/RESULT.md) added saved mixer levels and captions. Before that, the
 [AUDIO-01 lead binding](p02/semantic-audio/RESULT.md) derives semantic sound
 from committed views and binds Music/Ambience/Effects/Voice buses with no accepted assets; native farm,
 encounter and four-player control journeys pass with it. **Open tooling defect:** the launcher's Godot import
