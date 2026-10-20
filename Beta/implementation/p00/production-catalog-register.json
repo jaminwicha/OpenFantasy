@@ -59,7 +59,25 @@
         "List finite supported effect operations/targets/durations/fusions and reject unsupported compositions."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "classes": 3,
+          "abilities": 12,
+          "discipline_definitions": 17
+        },
+        "recommended": {
+          "classes": 3,
+          "class_abilities": 21,
+          "discipline_definitions": 17,
+          "discipline_actions": 68,
+          "effect_operations_max": 24
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-02",
@@ -106,7 +124,25 @@
         "Every shipping body needs applicable movement, action, equipment, injury/form, pair interaction, native sprite and acoustic coverage."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "legacy_monster_identities": 35,
+          "appearance_races_mapped": 4,
+          "species_families": 15,
+          "subspecies": 15
+        },
+        "recommended": {
+          "species_families": 15,
+          "subspecies": 30,
+          "body_plans": 8,
+          "legacy_monster_identities": 35
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-03",
@@ -150,7 +186,23 @@
         "Enumerate authored cultures, institutional and design/process families, personal exceptions and migration/hybridization; no one universal technology rank."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "retained_npc_identities": 123,
+          "institution_culture_families": 9
+        },
+        "recommended": {
+          "retained_npc_identities": 123,
+          "new_authored_people": 40,
+          "cultures": 6,
+          "institutions": 12
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-04",
@@ -188,7 +240,24 @@
         "Set shipping process/ingredient/tool counts and protected/reserved ingredient rules before bulk authoring."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "items": 63,
+          "recipes": 28,
+          "node_archetypes": 3,
+          "process_families": 6
+        },
+        "recommended": {
+          "item_definitions_approx": 150,
+          "process_definitions_approx": 100,
+          "source_archetypes": 12
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-05",
@@ -229,7 +298,24 @@
         "Enumerate parts/crew/cargo/topology, load and movement capabilities, mount body/feeding/training/care and native paired animations."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "legacy_vehicle_identities": 5,
+          "required_entries": 16
+        },
+        "recommended": {
+          "vehicle_definitions": 11,
+          "vehicle_part_definitions_approx": 66,
+          "mount_species": 3,
+          "pet_species": 4,
+          "familiar_forms": 4
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-06",
@@ -281,7 +367,26 @@
         "Classify legacy respawn/habitat/drop behavior versus new resource ecology; preserve identity without free material creation."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "terrain_kinds": 29,
+          "spawners_classified": 39,
+          "resource_placements": 14,
+          "process_families": 12
+        },
+        "recommended": {
+          "material_kinds_approx": 44,
+          "liquids": 3,
+          "phase_reaction_rules_approx": 12,
+          "plant_species": 24,
+          "animal_species": 18
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-07",
@@ -333,7 +438,28 @@
         "Enumerate finite grammar/build/support/connector families and actual challenge/knowledge/time witnesses; settle target counts."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "retained_regions": 25,
+          "towns": 4,
+          "building_records": 32,
+          "farms": 4,
+          "safe_zones": 5,
+          "crystals": 4,
+          "site_recipes": 7,
+          "grammar_families": 8
+        },
+        "recommended": {
+          "authored_places": 40,
+          "site_grammars": 10,
+          "building_types": 52
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-08",
@@ -375,7 +501,25 @@
         "Preserve source routes plus truthful changed-world continuations. Test 60–80-hour path quality and optional stretch through actual play later."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "retained_quests": 45,
+          "narrative_families": 8
+        },
+        "recommended": {
+          "retained_quests": 45,
+          "adventurelets": 40,
+          "encounter_decks": 6,
+          "grand_arcs": 3,
+          "mysteries": 12,
+          "teaching_sequences": 20
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-09",
@@ -415,7 +559,23 @@
         "Readable essential play must have real alternatives; language and haunting are not universal chores."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "required_families": 8
+        },
+        "recommended": {
+          "realms": 4,
+          "portal_types": 3,
+          "languages": 6,
+          "cants": 2,
+          "deities": 6
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-10",
@@ -464,7 +624,29 @@
         "Set finite native kit/scene targets, original source/provenance and acceptance scope before bulk production."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "legacy_asset_files": 89,
+          "appearance_presets": 8,
+          "hair_styles": 12,
+          "outfits": 10,
+          "accessories": 4,
+          "kit_families": 8
+        },
+        "recommended": {
+          "body_plan_kits": 8,
+          "directions_per_kit": 4,
+          "actions_per_kit_approx": 14,
+          "animated_actions_approx": 112,
+          "biome_tilesets": 10,
+          "cultural_architecture_sets": 6
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-11",
@@ -498,7 +680,24 @@
         "Deduplicate delivery per listener/branch incarnation/presentation visit, preserving legitimate later revisits. Human long-session approval remains P12."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "required_families": 9
+        },
+        "recommended": {
+          "place_motifs": 8,
+          "contexts_per_motif": 5,
+          "stem_sets": 40,
+          "ambience_beds": 12,
+          "action_material_cues_approx": 60,
+          "creature_voice_sets_approx": 30
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     },
     {
       "id": "CAT-12",
@@ -542,7 +741,21 @@
         "Keep admin diagnostics separate from earned character knowledge; no mandatory LLM dependency."
       ],
       "implementation_status": "catalog planning only",
-      "evidence_paths": []
+      "evidence_paths": [],
+      "proposal": {
+        "status": "awaiting owner decision",
+        "date": "2026-10-19",
+        "document": "CAT_PLAN_PROPOSAL.md",
+        "floor": {
+          "required_screen_families": 11
+        },
+        "recommended": {
+          "screens_approx": 16,
+          "shipping_locales": 1,
+          "package_manifest_formats": 1
+        },
+        "note": "Typed units are not additive. Floors derive from recorded legacy counts and required families; recommended counts are lead judgment."
+      }
     }
   ],
   "coverage_rules": [

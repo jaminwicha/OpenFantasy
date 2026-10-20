@@ -56,6 +56,8 @@ remain open. Do not produce another generic rollout memo or repeat the completed
 
 The [STORY-01 content design](STORY_01_UNMARKED_ORE.md) is ready for implementation after NPC-01 and TRADE;
 its dependency table names the remaining engine gaps.
+The [CAT-PLAN proposal](p00/CAT_PLAN_PROPOSAL.md) awaits the owner's decision on floors and per-family targets;
+every register count stays null until then.
 After that exit, NPC-01 is the next new inhabited-world behavior. STORY-01, AUDIO-01/ART-01,
 recruitment/cooperative work and the traveling-merchant/cargo investigation retain their dependencies.
 ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain required before full
