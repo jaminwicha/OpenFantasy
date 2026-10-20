@@ -786,3 +786,21 @@ Verified milestone: `codex/milestone-journal-20261020`, created at `9af7c9ed8e14
 wheel, gathering, care, construction and four-player control evidence. Equipment, known skills, map, calendar and
 human review remain open. Predecessor staging and unrelated files excluded.
 
+## NPC-01 core cognition contracts — 2026-10-20
+
+Before-change checkpoint: `codex/checkpoint-before-npc-cognition-core-20261020` (`684dc873a094d872536aabaad7c0397fb8752454`).
+Verified milestone: `codex/milestone-npc-cognition-core-20261020`, created at `608de6ad5fa769a1c7e9adcb06cb2644eac35e25` without switching.
+[Result](p02/npc-cognition/core-contracts/RESULT.md) retains the focused report and hashes the full Core run of
+2,069 passes; the independent Python oracle's 2 valid and 27 invalid vectors are committed. No profile, save field,
+host policy or native behavior changes; the profile-42 world binding and every NPC-01 gate remain open.
+Predecessor staging and unrelated files excluded.
+
+## PLAN-STATE exit decision accepted after review — 2026-10-20
+
+Before-change checkpoint: `codex/checkpoint-before-plan-state-exit-acceptance-20261020` (`684dc873a094d872536aabaad7c0397fb8752454`).
+Verified milestone: `codex/milestone-plan-state-exit-decision-20261020`, created at `2b8494c95fb54d8bc08affb428e214603b6ee222` without switching.
+The [exit decision](PLAN_STATE_EXIT_DECISION.md) is accepted with every required change from one read-only critic
+applied, per the [disposition](plan-state-exit-review/DISPOSITION.md); the [dispatch record](plan-state-exit-review/DISPATCH.json)
+holds route, limits, duration and cost. Only the decision/review exit closes; residual measurements and every
+P01, P02, P03, LANG, platform, scale and human gate remain. Predecessor staging and unrelated files excluded.
+
