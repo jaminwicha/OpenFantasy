@@ -778,3 +778,11 @@ Verified milestone: `codex/milestone-keyboard-remapping-20261020`, created at `2
 action-offer, wheel, gathering, care and four-player control evidence. Controller remapping, device and
 scaling settings and human review remain open. Predecessor staging and unrelated files excluded.
 
+## Journal — 2026-10-20
+
+Before-change checkpoint: `codex/checkpoint-before-journal-20261020` (`dc5cf00a36d39b55a42ffe6e972a15168b7b0e9c`).
+Verified milestone: `codex/milestone-journal-20261020`, created at `9af7c9ed8e142d7592a56603c76e0584fc63a37f` without switching.
+[Result](p02/journal/RESULT.md) retains managed results and native quests, settings, farm, encounter, action-offer,
+wheel, gathering, care, construction and four-player control evidence. Equipment, known skills, map, calendar and
+human review remain open. Predecessor staging and unrelated files excluded.
+
