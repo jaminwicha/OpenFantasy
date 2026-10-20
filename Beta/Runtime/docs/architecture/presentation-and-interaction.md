@@ -250,6 +250,31 @@ nothing about sound is persisted or sent to the world.
 The controlled-character presentation suspends cue derivation; the next home view is a fresh baseline
 while the sustained context continues. Controlled views do not yet derive their own cues.
 
+## Runtime binding: client settings and captions
+
+[FarmSettings](../../client/scripts/Settings/FarmSettings.cs) holds the player's mixer levels for Master,
+Music, Ambience, Effects and Voice and a captions preference. They are presentation preferences stored in one
+user file by [FarmSettingsStore](../../client/scripts/Settings/FarmSettingsStore.cs), outside every world save,
+so changing them never alters a world, its history or another participant. Missing, unknown or malformed
+entries fall back to their defaults one at a time, and a damaged file never prevents play. A zero level mutes
+its bus rather than requesting infinite attenuation. Disposable fixtures use defaults in memory unless they
+name their own settings file, so a probe never reads or writes the player's settings.
+
+The scene-owned [settings panel](../../client/scenes/FarmSettingsPanel.tscn) opens with O, a controller's
+share or capture button, or the HUD's Settings control. Its input layer sits above other panels and is
+reachable during play, encounters, pause, conversation and while a world opens. It owns input while open:
+walking is suppressed and world actions are refused, but opening it never pauses the world, changes readiness
+or advances time. O, Escape, Start or Cancel closes it and writes the file; a failed write keeps the applied
+preferences for the run and is reported. A control-return boundary closes it like other panels.
+
+[CaptionFeed](../../client/scripts/Presentation/Audio/CaptionFeed.cs) shows short text for notable derived
+sounds when captions are enabled, in the scene-owned [caption layer](../../client/scenes/FarmCaptions.tscn).
+An intent is captioned only when the catalog marks it notable: tool, joinery and digging contacts are;
+routine footsteps, music and ambience are not. A caption describes the sound event and appears whether or not
+a creator asset is mapped. Sources withheld from the presented frame are never captioned, a repeated caption
+refreshes rather than stacks, at most three lines show and each fades after a short lifetime. Captions follow
+the same derivation as sound, so reopening or reconnecting never replays an earlier caption.
+
 ## Design contract: a small immediate interface
 
 The action vocabulary can be large while the immediate surface stays small. Contextual primary

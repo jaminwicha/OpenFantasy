@@ -1,4 +1,5 @@
 using Godot;
+using OpenFantasy.Client.Settings;
 using OpenFantasy.Core.Spatial;
 
 namespace OpenFantasy.Client.Presentation.Audio;
@@ -35,6 +36,8 @@ internal sealed partial class FarmSoundscape : Node2D
 
     internal AcousticIntentCatalog Catalog { get; init; } = AcousticIntentCatalog.Default;
     internal SoundscapeDiagnostics Diagnostics { get; } = new();
+    /// <summary>Captions for notable derived sounds; empty unless the player enables captions.</summary>
+    internal CaptionFeed Captions { get; } = new();
 
     public override void _Ready()
     {
@@ -69,6 +72,7 @@ internal sealed partial class FarmSoundscape : Node2D
             AcousticIntent intent = Catalog.For(cue);
             AcousticPlayback playback = admits(cue.Origin) ? Play(intent, project(cue.Origin)) : AcousticPlayback.Withheld;
             Diagnostics.Record(cue, intent, playback);
+            Captions.Offer(intent, playback);
         }
         if (_context.Observe(observation) is { } context) Apply(context);
     }
@@ -84,6 +88,7 @@ internal sealed partial class FarmSoundscape : Node2D
     {
         _cues.Reset();
         _context.Reset();
+        Captions.Clear();
         _music.Stop();
         _ambience.Stop();
         foreach (AudioStreamPlayer2D voice in _voices) voice.Stop();
@@ -93,9 +98,24 @@ internal sealed partial class FarmSoundscape : Node2D
     internal void Advance(double seconds)
     {
         _gate.Advance(seconds);
+        Captions.Advance(seconds);
         if (_context.Advance(seconds) is { } context) Apply(context);
         _music.Advance(seconds);
         _ambience.Advance(seconds);
+    }
+
+    /// <summary>Applies the player's mixer levels; zero mutes a bus rather than requesting infinite attenuation.</summary>
+    internal static void ApplyLevels(SoundLevels levels)
+    {
+        ArgumentNullException.ThrowIfNull(levels);
+        foreach (string bus in FarmSettings.Buses)
+        {
+            int index = AudioServer.GetBusIndex(bus);
+            if (index < 0) continue;
+            double level = levels[bus];
+            AudioServer.SetBusMute(index, level <= 0);
+            if (level > 0) AudioServer.SetBusVolumeDb(index, Mathf.LinearToDb((float)level));
+        }
     }
 
     private AcousticPlayback Play(AcousticIntent intent, Vector2 origin)

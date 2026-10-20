@@ -1,0 +1,45 @@
+{
+  "Kind": "native-settings-v1",
+  "Stage": "reopen",
+  "Status": "passed",
+  "Failure": null,
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless",
+  "ProbeStage": 0,
+  "Settings": {
+    "accessibility.captions": "true",
+    "format": "1",
+    "sound.Ambience": "1",
+    "sound.Effects": "0",
+    "sound.Master": "1",
+    "sound.Music": "0.35",
+    "sound.Voice": "1"
+  },
+  "SettingsFileExists": true,
+  "Buses": {
+    "Master": {
+      "VolumeDb": 0,
+      "Muted": false
+    },
+    "Music": {
+      "VolumeDb": -9.118638,
+      "Muted": false
+    },
+    "Ambience": {
+      "VolumeDb": 0,
+      "Muted": false
+    },
+    "Effects": {
+      "VolumeDb": 0,
+      "Muted": true
+    },
+    "Voice": {
+      "VolumeDb": 0,
+      "Muted": false
+    }
+  },
+  "Checks": [
+    "A second process restored Music 35%, muted Effects and enabled captions before any interaction."
+  ],
+  "DurationMilliseconds": 336
+}

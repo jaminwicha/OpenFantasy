@@ -1,0 +1,142 @@
+{
+  "startedUtc": "2026-10-20T05:11:38.937652+00:00",
+  "scope": "Native settings key, controls, suppressed walking, saved file and second-process restoration",
+  "status": "passed",
+  "runs": [
+    {
+      "stage": "change",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--settings-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/client-settings/native-settings-01/native-settings-8da6cff217314eab9f8af21a40c2db56/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/client-settings/native-settings-01/native-settings-8da6cff217314eab9f8af21a40c2db56/settings.cfg",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/client-settings/native-settings-01/native-settings-8da6cff217314eab9f8af21a40c2db56/settings.json",
+        "change"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative settings probe passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/client-settings/native-settings-01/native-settings-8da6cff217314eab9f8af21a40c2db56/settings.json\n",
+      "stderr": ""
+    },
+    {
+      "stage": "reopen",
+      "command": [
+        "/Users/alucinor/.local/share/openfantasy/toolchains/godot-4.6/Godot_mono.app/Contents/MacOS/Godot",
+        "--headless",
+        "--path",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/client",
+        "--",
+        "--settings-probe",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/client-settings/native-settings-01/native-settings-8da6cff217314eab9f8af21a40c2db56/world.sqlite",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/client-settings/native-settings-01/native-settings-8da6cff217314eab9f8af21a40c2db56/settings.cfg",
+        "/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/client-settings/native-settings-01/native-settings-8da6cff217314eab9f8af21a40c2db56/settings.json",
+        "reopen"
+      ],
+      "exitCode": 0,
+      "stdout": "Godot Engine v4.6.stable.mono.official.89cea1439 - https://godotengine.org\n\n{\"Contract\":\"foundation-v1\",\"Runtime\":\".NET 10.0.12\",\"Entity\":\"d44d5db6f7ad5bf9b706bd53beeff840\",\"Sample\":18095130603190839654,\"Day\":0,\"Millisecond\":0}\nNative settings probe passed: /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/implementation/p02/client-settings/native-settings-01/native-settings-8da6cff217314eab9f8af21a40c2db56/settings.json\n",
+      "stderr": ""
+    }
+  ],
+  "change": {
+    "Kind": "native-settings-v1",
+    "Stage": "change",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "ProbeStage": 3,
+    "Settings": {
+      "accessibility.captions": "true",
+      "format": "1",
+      "sound.Ambience": "1",
+      "sound.Effects": "0",
+      "sound.Master": "1",
+      "sound.Music": "0.35",
+      "sound.Voice": "1"
+    },
+    "SettingsFileExists": true,
+    "Buses": {
+      "Master": {
+        "VolumeDb": 0,
+        "Muted": false
+      },
+      "Music": {
+        "VolumeDb": -9.118638,
+        "Muted": false
+      },
+      "Ambience": {
+        "VolumeDb": 0,
+        "Muted": false
+      },
+      "Effects": {
+        "VolumeDb": 0,
+        "Muted": true
+      },
+      "Voice": {
+        "VolumeDb": 0,
+        "Muted": false
+      }
+    },
+    "Checks": [
+      "Settings opened by key, focused their first control, suppressed walking and left the world unpaused.",
+      "The actual controls set Music to 35%, muted Effects and enabled captions immediately.",
+      "Cancel closed settings and wrote exactly the applied preferences to the fixture file."
+    ],
+    "DurationMilliseconds": 707
+  },
+  "reopen": {
+    "Kind": "native-settings-v1",
+    "Stage": "reopen",
+    "Status": "passed",
+    "Failure": null,
+    "Runtime": ".NET 10.0.12",
+    "DisplayDriver": "headless",
+    "ProbeStage": 0,
+    "Settings": {
+      "accessibility.captions": "true",
+      "format": "1",
+      "sound.Ambience": "1",
+      "sound.Effects": "0",
+      "sound.Master": "1",
+      "sound.Music": "0.35",
+      "sound.Voice": "1"
+    },
+    "SettingsFileExists": true,
+    "Buses": {
+      "Master": {
+        "VolumeDb": 0,
+        "Muted": false
+      },
+      "Music": {
+        "VolumeDb": -9.118638,
+        "Muted": false
+      },
+      "Ambience": {
+        "VolumeDb": 0,
+        "Muted": false
+      },
+      "Effects": {
+        "VolumeDb": 0,
+        "Muted": true
+      },
+      "Voice": {
+        "VolumeDb": 0,
+        "Muted": false
+      }
+    },
+    "Checks": [
+      "A second process restored Music 35%, muted Effects and enabled captions before any interaction."
+    ],
+    "DurationMilliseconds": 336
+  },
+  "artifactSha256": {
+    "native-settings-8da6cff217314eab9f8af21a40c2db56/settings.cfg": "1ba1ce8c8c1aad9042b17d849890d4df2606794e4bd32a3f09fd6c6d2ccf1f09",
+    "native-settings-8da6cff217314eab9f8af21a40c2db56/settings.json": "28a7c949dc0ec9f57cab551b5fa32254c04d28522714bb736ead0a9310621a65",
+    "native-settings-8da6cff217314eab9f8af21a40c2db56/settings.reopen.json": "7d8ff90ac100a8623cd09ba697c765bc70a1c35dff5539cb8e0758ba38e14b41",
+    "native-settings-8da6cff217314eab9f8af21a40c2db56/world.sqlite": "0076cf628181243d733d40d28999117ae71414c2213db7b9f085728ac682bfe3"
+  },
+  "finishedUtc": "2026-10-20T05:11:42.120371+00:00"
+}

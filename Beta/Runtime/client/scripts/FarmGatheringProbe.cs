@@ -27,6 +27,7 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
     private ulong _expectedQuantity;
     private bool _waitingForYield;
     private int _swings;
+    private bool _sawOakCaption;
 
     public override void _Process(double delta)
     {
@@ -36,6 +37,7 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
             Require(!game.HasFailed, "The native farm reported failure.");
             Require(_timeout.Elapsed < TimeSpan.FromSeconds(110), "The native gathering probe timed out at " + _stage);
             if (game.CurrentView is not { } view) return;
+            _sawOakCaption |= game.ShownCaptions.Contains("Chopping wood");
             var readiness = (game.IsLocallyPaused, game.IsWindowFocused);
             if (_lastReadiness != readiness)
             {
@@ -194,6 +196,13 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
 
     private void Finish(LocalWorldView view)
     {
+        // A real swing captions its contact when enabled; regrowth after reopening is silent and never replays.
+        if (reopen) Require(!_sawOakCaption, "Reopening or regrowth replayed a gathering caption.");
+        else Require(_sawOakCaption == game.Settings.Captions, game.Settings.Captions
+            ? "Enabled captions did not show a real oak contact." : "Disabled captions showed a gathering caption.");
+        _checks.Add(game.Settings.Captions
+            ? reopen ? "Enabled captions showed no replayed contact after reopening." : "Enabled captions showed the real oak contact."
+            : "Captions stayed off for this fixture.");
         Capture(reopen ? "regrown" : "gathered");
         string output = reopen ? Path.ChangeExtension(reportPath, ".reopen.json") : reportPath;
         File.WriteAllText(output, JsonSerializer.Serialize(new
@@ -202,7 +211,7 @@ internal sealed partial class FarmGatheringProbe(FarmGame game, string reportPat
             Runtime = RuntimeInformation.FrameworkDescription, DisplayDriver = DisplayServer.GetName(),
             Initial = _initial, Final = Snapshot(view), OakId = _oakId.ToString(), BerryId = _berryId.ToString(),
             WoodDefinitionId = _woodDefinition.ToString(), Checks = _checks, Readiness = _readinessChanges,
-            FocusRequests = 0,
+            FocusRequests = 0, CaptionsEnabled = game.Settings.Captions, SawOakCaption = _sawOakCaption,
             DurationMilliseconds = _timeout.ElapsedMilliseconds
         }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
         _stage = Stage.Done;

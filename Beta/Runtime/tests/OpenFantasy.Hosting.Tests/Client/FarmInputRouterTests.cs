@@ -242,6 +242,50 @@ public sealed class FarmInputRouterTests
     }
 
     [Fact]
+    public void SettingsOpenFromPlayPauseConversationAndOpeningAndOwnInputWithoutChangingTiming()
+    {
+        foreach (FarmInputSituation situation in new[] { World, Dialogue, Opening })
+        {
+            var router = new FarmInputRouter();
+            Assert.Equal(FarmSemanticAction.OpenSettings, router.Route(situation, FarmInputSignal.Press(FarmInputActions.Settings)).Action);
+            Assert.True(router.Permits(situation, FarmSemanticAction.OpenSettings));
+        }
+        var paused = new FarmInputRouter(paused: true);
+        Assert.True(paused.Permits(World, FarmSemanticAction.OpenSettings));
+
+        var open = new FarmInputRouter();
+        Assert.True(open.WorldShouldRun);
+        open.SetSettingsOpen(true);
+        Assert.Equal(FarmInputLayer.Settings, open.Layer(World));
+        // Settings never pause or stop the world; they only own input while open.
+        Assert.True(open.WorldShouldRun);
+        Assert.True(open.Movement(World, Right).IsNeutral);
+        Assert.False(open.Permits(World, FarmSemanticAction.TogglePause));
+        Assert.False(open.Permits(World, FarmSemanticAction.Speak));
+        Assert.False(open.Permits(World, FarmSemanticAction.OpenSettings));
+        Assert.True(open.Permits(World, FarmSemanticAction.CloseSettings));
+        Assert.Equal(FarmSemanticAction.CloseSettings, open.Route(World, FarmInputSignal.Press(FarmInputActions.Cancel)).Action);
+    }
+
+    [Fact]
+    public void SettingsCloseOnTheirOwnKeyOrPauseAndOtherLayersCannotCloseThem()
+    {
+        foreach (string key in new[] { FarmInputActions.Settings, FarmInputActions.Pause, FarmInputActions.Cancel })
+        {
+            var router = new FarmInputRouter();
+            router.SetSettingsOpen(true);
+            Assert.Equal(FarmSemanticAction.CloseSettings, router.Route(World, FarmInputSignal.Press(key)).Action);
+        }
+        var history = new FarmInputRouter();
+        history.SetHistoryOpen(true);
+        Assert.False(history.Permits(World, FarmSemanticAction.CloseSettings));
+        Assert.False(history.Permits(World, FarmSemanticAction.OpenSettings));
+        history.SetSettingsOpen(true);
+        // Settings sit above other panels until closed.
+        Assert.Equal(FarmInputLayer.Settings, history.Layer(World));
+    }
+
+    [Fact]
     public void UnroutedEventsAndUntrackedReleasesPropagate()
     {
         var router = new FarmInputRouter();

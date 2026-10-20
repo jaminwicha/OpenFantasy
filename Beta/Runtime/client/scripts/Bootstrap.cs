@@ -335,7 +335,9 @@ public partial class Bootstrap : Control
                 GetTree().Quit(1);
                 return;
             }
-            var game = new FarmGame { SavePathOverride = gatherSave, StartPaused = gatherStage == "reopen", ProductionProfile = false };
+            var game = new FarmGame { SavePathOverride = gatherSave, StartPaused = gatherStage == "reopen", ProductionProfile = false,
+                // A fixture settings file beside the disposable save; absent means default settings.
+                SettingsPathOverride = gatherSave + ".settings.cfg" };
             AddChild(game);
             AddChild(new FarmGatheringProbe(game, gatherReport, gatherStage == "reopen"));
         }
@@ -362,6 +364,20 @@ public partial class Bootstrap : Control
             var game = new FarmGame { SavePathOverride = inputSave, StartPaused = true, GatheringProfile = false };
             AddChild(game);
             AddChild(new FarmInputProbe(game, inputReport));
+        }
+        else if (arguments is ["--settings-probe", var settingsSave, var settingsFile, var settingsReport, var settingsStage]
+            && settingsStage is "change" or "reopen")
+        {
+            if (settingsStage == "change" && (File.Exists(settingsSave) || File.Exists(settingsFile))
+                || settingsStage == "reopen" && !File.Exists(settingsFile))
+            {
+                GD.PushError("The settings probe requires fresh paths to change or an existing settings file to reopen.");
+                GetTree().Quit(1);
+                return;
+            }
+            var game = new FarmGame { SavePathOverride = settingsSave, SettingsPathOverride = settingsFile, GatheringProfile = false };
+            AddChild(game);
+            AddChild(new FarmSettingsProbe(game, settingsFile, settingsReport, settingsStage == "reopen"));
         }
         else if (arguments is ["--farm-walkthrough", var save, var reportPath, var stage] && stage is "create" or "reopen")
         {

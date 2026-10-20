@@ -16,8 +16,11 @@ internal enum AcousticIntentStatus { AwaitingCreatorAsset = 1, IntentionallySile
 /// A caption states only what a legitimate audible cue conveys; music and ambience beds carry none.
 /// </summary>
 internal sealed record AcousticIntent(string Key, AcousticBus Bus, AcousticIntentStatus Status, string? StreamPath,
-    string? Caption, double MinimumIntervalSeconds, int MaximumVoices)
+    string? Caption, double MinimumIntervalSeconds, int MaximumVoices, bool IsNotable = true)
 {
+    /// <summary>Whether enabled captions show this sound; routine sounds such as footsteps are not captioned.</summary>
+    internal bool IsCaptioned => IsNotable && !string.IsNullOrWhiteSpace(Caption);
+
     internal bool IsPlayable => Status == AcousticIntentStatus.Mapped;
 }
 
@@ -68,7 +71,7 @@ internal sealed class AcousticIntentCatalog
     internal static AcousticIntentCatalog Default { get; } = new(
         new Dictionary<(SoundCueKind, SoundMaterial), AcousticIntent>
         {
-            [(SoundCueKind.Footstep, SoundMaterial.Ground)] = Awaiting("cue.footstep.ground", AcousticBus.Effects, "Footsteps", 0.12, 4),
+            [(SoundCueKind.Footstep, SoundMaterial.Ground)] = Awaiting("cue.footstep.ground", AcousticBus.Effects, "Footsteps", 0.12, 4) with { IsNotable = false },
             [(SoundCueKind.GatherContact, SoundMaterial.Oak)] = Awaiting("cue.gather.oak", AcousticBus.Effects, "Chopping wood", 0.2, 2),
             [(SoundCueKind.GatherContact, SoundMaterial.Berry)] = Awaiting("cue.gather.berry", AcousticBus.Effects, "Harvesting berries", 0.2, 2),
             [(SoundCueKind.ConstructionContact, SoundMaterial.Joinery)] = Awaiting("cue.construction.joinery", AcousticBus.Effects, "Joinery work", 0.25, 2),

@@ -27,6 +27,9 @@ def main():
                   scope="Named native gather input, actual finite toolkit and yield, depletion, pause, process recovery and regrowth",
                   rendered=args.rendered, status="running", runs=[])
     try:
+        # Enable captions for this disposable fixture only; the player's own settings are never read.
+        Path(str(save) + ".settings.cfg").write_text("[settings]\n\naccessibility.captions=\"true\"\nformat=\"1\"\n")
+
         for stage in ("create", "reopen"):
             command = [str(Path(args.godot).resolve())]
             if not args.rendered:

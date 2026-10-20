@@ -57,6 +57,8 @@
     <Compile Include="../../client/scripts/Presentation/Audio/SoundscapeContextDirector.cs" Link="Client/Audio/SoundscapeContextDirector.cs" />
     <Compile Include="../../client/scripts/Presentation/Audio/AcousticIntentCatalog.cs" Link="Client/Audio/AcousticIntentCatalog.cs" />
     <Compile Include="../../client/scripts/Presentation/Audio/SoundscapeDiagnostics.cs" Link="Client/Audio/SoundscapeDiagnostics.cs" />
+    <Compile Include="../../client/scripts/Presentation/Audio/CaptionFeed.cs" Link="Client/Audio/CaptionFeed.cs" />
+    <Compile Include="../../client/scripts/Settings/FarmSettings.cs" Link="Client/Settings/FarmSettings.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoViewProjection.cs" Link="Client/Cargo/CargoViewProjection.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoStallPick.cs" Link="Client/Cargo/CargoStallPick.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoPaperdollPlan.cs" Link="Client/Cargo/CargoPaperdollPlan.cs" />
