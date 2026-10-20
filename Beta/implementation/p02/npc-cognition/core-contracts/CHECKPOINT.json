@@ -1,0 +1,13 @@
+{
+  "packet": "NPC-01 core cognition contracts",
+  "checkpointRef": "codex/checkpoint-before-npc-cognition-core-20261020",
+  "checkpointCommit": "684dc873a094d872536aabaad7c0397fb8752454",
+  "predecessorStagedFiles": 19,
+  "predecessorStagedNamesSha256": "ea5dbfd4842dea1e8469a81883d9819822358a024292245a02e4c107b1bf196b",
+  "toolchain": {
+    "sdk": "10.0.401"
+  },
+  "documentationChecks": "DOCUMENTATION_CHECKS.json",
+  "evidenceManifest": "EVIDENCE_MANIFEST.json",
+  "rawEvidenceNotCommitted": "full Core test report, hashed in EVIDENCE_MANIFEST.json"
+}

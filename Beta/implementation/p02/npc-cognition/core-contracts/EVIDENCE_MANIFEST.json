@@ -1,0 +1,30 @@
+{
+  "full": {
+    "path": "~/.local/share/openfantasy/evidence/npc-cognition-core-20261020/core-full.trx",
+    "bytes": 3173682,
+    "sha256": "b58c59b8353998a6d0cad678e6097a6c2e7beab1e69a601d89fe4baa785aa7a5",
+    "total": 2069,
+    "passed": 2069,
+    "failed": 0,
+    "committed": false
+  },
+  "focused": {
+    "path": "managed/cognition-focused.trx",
+    "bytes": 42977,
+    "sha256": "39a4a538a9b9a7cb7b51bfaabb484a2bf49b9cda4fe85e4477c891cf042e32e9",
+    "total": 28,
+    "passed": 28,
+    "failed": 0,
+    "committed": true
+  },
+  "oracleVectors": {
+    "path": "Runtime/tests/OpenFantasy.Core.Tests/Cognition/cognition-v1.json",
+    "sha256": "1e1868097522242dafadd473a361ceb24320740236a2e36619c7d0672920fafc",
+    "valid": 2,
+    "invalid": 27
+  },
+  "toolchain": {
+    "sdk": "10.0.401",
+    "testRuntime": "net8.0"
+  }
+}
