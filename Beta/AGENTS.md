@@ -98,6 +98,11 @@ through C# algorithms, data layout, allocation and scheduling while preserving a
 Do not add a C++/Rust core, custom native calculation layer or IPC worker without a new explicit owner
 decision. Existing Godot/.NET/storage dependencies are unaffected by this application-language choice.
 
+Owner decision, 2026-10-17: after the [Rust assessment](implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md),
+the project stays fully in C#. A Rust core, Rust kernel, engine replacement or migration into the sibling
+Lattice platform requires a new explicit owner decision at that record's named reassessment triggers.
+Its primitives-crate and projection-boundary follow-ups are candidates, not assigned work.
+
 Preserve unrelated staged predecessor changes. The predecessor project compiles only its `src/` tree; this directory's `.gdignore` prevents its editor from importing nested projects. Validate those boundaries after build changes. Original source archives remain immutable; record any deliberate integration-only predecessor configuration changes separately.
 
 The central task owns integration. Assign bounded file ownership to workers and independent critics. Artists own native asset production separately from engine builders. Codex and Claude may use the same contracts and evidence. Do not invoke a heavyweight game-generation workflow by default.
@@ -183,6 +188,19 @@ an earlier timeout. Keep required full gates and every per-case assertion/deadli
 A changed test assembly requires inspecting changed types/discovery dependencies before reusing that
 assembly's earlier evidence; "test-only" by itself is not a proof of independence. For visibility, inspect the captured image and actual
 post-draw sprite/control bounds against occluding UI; a projected point or draw call is insufficient.
+
+Owner steering, 2026-10-17: apply the [measured efficiency levers](implementation/efficiency-levers-20261017/RESULT.md)
+without reducing any test, deadline, evidence-retention or documentation obligation. Start each work
+packet from the compact handoff in a fresh or freshly compacted session; read the instructions, handoff,
+roadmap and milestone doctrine once per packet and keep working notes in the packet record instead of
+re-reading them; batch bounded reads and checks into one command where their outputs are small. Before
+any native, storage or journey run longer than the focused-test budget, run the cheap preflight: validate
+authored fixture geometry and routes against the current lawful-movement rules, confirm the exact filter
+discovers at least one case so a zero-case report is impossible, and confirm the build/binary pins match
+the intended source. Classify every failure as fixture, runner or production before any rerun; never
+retry automatically; retain failed runs exactly as now. Record the packet's API call count and average
+per-call context in its result when the host exposes them. Efficiency claims cite the measured record;
+an automated review whose narrative contradicts its own telemetry is not evidence.
 
 The owner's 2026-09-10 direction makes incremental commits and milestone branches project
 doctrine. Follow [GIT_MILESTONES.md](implementation/GIT_MILESTONES.md): commit verified coherent

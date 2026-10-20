@@ -75,6 +75,16 @@ The in-progress adventure continuation has a retained native post-draw timeout a
 purchase/outbound walk. It remains unqualified; this documentation review does not clear that failure
 or shrink the journey. The game work is recoverable in the pre-review WIP checkpoint.
 
+## Addendum, 2026-10-17: measured levers
+
+The [measured efficiency levers](efficiency-levers-20261017/RESULT.md) record one day of actual lead-session
+telemetry: input context per call dominates cost by more than two hundred to one over output, half of all
+file reads were repeats, and three of four long native runs failed on fixture or runner preparation. Three
+rules follow in [AGENTS.md](../AGENTS.md): fresh or compacted session per packet with instructions read
+once, cheap preflight before any long run with fixture/runner/production failure classification, and
+telemetry-derived automated reviews. They change no gate, deadline, evidence retention or documentation
+duty. The October 3 rejections of universal caps, profile freezes and bulk evidence migration stand.
+
 ## Documentation review
 
 - **Plan/spec:** current P02 and full P00–P14 exits stay intact; rejected forecasts/profile freeze do

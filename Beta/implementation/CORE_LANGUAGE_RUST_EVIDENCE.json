@@ -1,0 +1,240 @@
+{
+  "assessment": "CORE_LANGUAGE_RUST_ASSESSMENT.md",
+  "assessment_date": "2026-10-17",
+  "baseline_commit": "8c7f6f232c8e75f7a3b0a826e69855c055783b2a",
+  "includes_uncommitted_working_tree_files": true,
+  "uncommitted_runtime_files_at_measurement": [
+    "Runtime/src/OpenFantasy.Core/Spatial/GroundRouteSearch.cs",
+    "Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialRoutes.cs",
+    "Runtime/src/OpenFantasy.Core/Spatial/LocalSpatialSnapshot.cs",
+    "Runtime/src/OpenFantasy.Core/Spatial/SpatialMovementQueries.cs",
+    "Runtime/src/OpenFantasy.Core/Spatial/SpatialMovementQueries.Routes.cs",
+    "Runtime/src/OpenFantasy.Core/Spatial/SpatialRouteReadSet.cs",
+    "Runtime/src/OpenFantasy.Core/Spatial/TerrainVolumeQueries.cs",
+    "Runtime/src/OpenFantasy.Core/Spatial/WalkingRouteSearch.cs",
+    "Runtime/tests/OpenFantasy.Core.Tests/Spatial/SpatialRouteReadSetTests.cs",
+    "Runtime/tests/OpenFantasy.Hosting.Tests/WorldStorage/SpatialOccupancyPreparationTests.cs"
+  ],
+  "measurement": "physical source lines of *.cs, excluding bin/obj/.godot; not estimated semantic complexity",
+  "areas": {
+    "Core": {
+      "files": 802,
+      "lines": 63731,
+      "godot_referencing_files": 0
+    },
+    "Hosting": {
+      "files": 312,
+      "lines": 26717
+    },
+    "Host": {
+      "files": 35,
+      "lines": 1849
+    },
+    "Server": {
+      "files": 6,
+      "lines": 382
+    },
+    "GodotClient": {
+      "files": 143,
+      "lines": 27966,
+      "godot_referencing_files": 95,
+      "files_importing_core_directly": 114
+    },
+    "TotalProduction": {
+      "files": 1298,
+      "lines": 120645
+    }
+  },
+  "september_baseline_commit_8f19911": {
+    "date": "2026-09-19",
+    "Core": {
+      "files": 424,
+      "lines": 30525
+    },
+    "Hosting": {
+      "files": 73,
+      "lines": 5904
+    },
+    "Host": {
+      "files": 24,
+      "lines": 1103
+    },
+    "GodotClient": {
+      "files": 42,
+      "lines": 6698
+    },
+    "TotalProduction": {
+      "lines": 44230
+    },
+    "commits_since": 195
+  },
+  "tests": {
+    "Core.Tests": {
+      "files": 248,
+      "lines": 39710
+    },
+    "Hosting.Tests": {
+      "files": 492,
+      "lines": 85195,
+      "compiles_selected_client_files": true
+    },
+    "Server.Tests": {
+      "files": 72,
+      "lines": 11675
+    },
+    "fact_attributes": 2560,
+    "theory_attributes": 446,
+    "test_methods": 3006
+  },
+  "compatibility_surface": {
+    "core_codec_encoding_framereader_files": 233,
+    "core_codec_encoding_framereader_lines": 17742,
+    "snapshot_codec_interpretations": 39,
+    "highest_profile": 41,
+    "unassigned_profiles": [
+      29,
+      31
+    ],
+    "core_wide_integer_files": 83,
+    "core_sha256_files": 10,
+    "core_float_double_tokens": 2,
+    "core_transcendental_math_calls": 0,
+    "non_core_production_files_importing_core": {
+      "importing": 407,
+      "total": 496
+    }
+  },
+  "godot_client_engine_usage": {
+    "sdk": "Godot.NET.Sdk/4.6.0",
+    "target_framework": "net8.0",
+    "enable_dynamic_loading": true,
+    "rendering_method": "gl_compatibility",
+    "viewport": "960x540",
+    "reference_counts": {
+      "Button": 396,
+      "Label": 288,
+      "RenderingServer": 64,
+      "OptionButton": 55,
+      "InputEventKey": 50,
+      "InputEventJoypadButton": 29,
+      "Node2D": 21,
+      "ScrollContainer": 18,
+      "InputEventMouseButton": 16,
+      "VBoxContainer": 11,
+      "CanvasLayer": 11,
+      "InputEventMouseMotion": 8,
+      "Sprite2D": 7,
+      "PanelContainer": 7,
+      "ImageTexture": 7,
+      "GridContainer": 5,
+      "Camera2D": 1,
+      "RenderingServer.FramePostDraw": 20
+    },
+    "unused_subsystems": [
+      "AudioStream",
+      "NavigationServer",
+      "TileMap",
+      "PhysicsServer/Area2D/CharacterBody2D/RigidBody2D",
+      "Tween",
+      "Shader",
+      "ResourceLoader/GD.Load"
+    ],
+    "scenes_tscn": 20,
+    "resources_tres": 5,
+    "png_assets": 22
+  },
+  "lattice_platform": {
+    "path": "/Users/alucinor/Workspace/Projects/Lattice",
+    "crate": "lattice-engine",
+    "rust_files": 11,
+    "lines": 1759,
+    "dependencies": 0,
+    "modules": [
+      "rng",
+      "grid",
+      "noise",
+      "mapgen",
+      "hash",
+      "replay",
+      "host",
+      "schedule",
+      "store"
+    ],
+    "dependents_by_relative_path": [
+      "RogueFiction",
+      "RustAdventure",
+      "LifeFormzFable",
+      "RogueFiction-expansion"
+    ],
+    "primitive_compatibility_with_openfantasy_contracts": "incompatible: PCG32/modulo vs SHA-256 counter stream with rejection sampling; FNV vs SHA-256 identity; text save vs canonical binary frames and SQLite journal; Z2 grid vs 3D stacked regions"
+  },
+  "external_landscape": {
+    "bevy_latest_release": {
+      "version": "0.20",
+      "date": "2026-10-08",
+      "source": "https://bevy.org/news/bevy-0-20/"
+    },
+    "godot_rust_gdext": {
+      "version": "0.5",
+      "godot_support": ">=4.2 including 4.6",
+      "mobile_wasm_status": "experimental per earlier README",
+      "source": "https://docs.rs/godot"
+    }
+  },
+  "effort_projection": {
+    "status": "planning extrapolation from the September envelope scaled by measured growth; not a measured port",
+    "core_only_engineer_weeks": [
+      27,
+      54
+    ],
+    "scaling_factor_core": 2.09,
+    "core_plus_hosting": "no credible bounded estimate",
+    "pure_rust_application": "no credible bounded estimate",
+    "primitives_crate_engineer_days": [
+      2,
+      5
+    ]
+  },
+  "not_performed": {
+    "rust_vs_csharp_benchmark": false,
+    "lang_gates_01_to_04_run": false,
+    "native_aot_export_qualified": false,
+    "rust_toolchain_or_library_built": false,
+    "godot_export_or_device_test": false,
+    "independent_review": false
+  },
+  "owner_decision": {
+    "date": "2026-10-17",
+    "language": "C#",
+    "scope": "core, hosting and Godot C# presentation; fully C#",
+    "rust_core_authorized": false,
+    "rust_kernel_authorized": false,
+    "engine_replacement_authorized": false,
+    "lattice_migration_authorized": false,
+    "primitives_crate_authorized": false,
+    "reassessment_triggers": [
+      "measured pervasive managed cost in LANG-01..03 or the R7 probe not fixable within C#",
+      "a concrete non-.NET host requiring the authority as a library",
+      "Godot C# mobile or web export qualification failure"
+    ]
+  },
+  "documentation_checks": {
+    "check_documentation": {
+      "command": "python3 Beta/tools/check_documentation.py --work-record Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md --files Beta/AGENTS.md Beta/implementation/CURRENT_ROADMAP.md Beta/implementation/AGENT_HANDOFF.md Beta/implementation/CORE_LANGUAGE_RUST_ASSESSMENT.md",
+      "accepted": true,
+      "filesChecked": 4,
+      "errors": [],
+      "scope": "Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance"
+    },
+    "git_diff_check": {
+      "files": [
+        "Beta/AGENTS.md",
+        "Beta/implementation/CURRENT_ROADMAP.md",
+        "Beta/implementation/AGENT_HANDOFF.md"
+      ],
+      "whitespace_errors": 0
+    },
+    "predecessor_staged_files_preserved": 19,
+    "committed": false
+  }
+}

@@ -8,12 +8,15 @@ it does not replace the frozen 181 requirements or their original acceptance gat
 
 1. [Implementation instructions](../AGENTS.md), [documentation maintenance](DOCUMENTATION_MAINTENANCE.md)
    and [Git milestone discipline](GIT_MILESTONES.md). Work on `codex/runtime-foundation`; preserve the
-   unrelated 19 staged predecessor files. Integration lead owns checkpoints and commits.
+   unrelated 19 staged predecessor files. Integration lead owns checkpoints and commits. Apply the
+   [measured efficiency levers](efficiency-levers-20261017/RESULT.md): fresh or compacted session per packet,
+   instructions read once, cheap preflight before long runs, no reduction of any gate or documentation duty.
 2. [Runtime controls](../Runtime/README.md) and affected subjects in the timeless
    [architecture reference](../Runtime/docs/architecture/README.md).
 3. [Full plan](../spec-v1_1/IMPLEMENTATION_PLAN.md), [requirements](../spec-v1_1/REQUIREMENTS.json),
    [validation](../spec-v1_1/VALIDATION.md), living [UI](PLAYER_INTERFACE_AND_NAVIGATION.md),
-   [upkeep](EQUIPMENT_AND_VEHICLE_UPKEEP.md) and [composition](WORLD_COMPOSITION_DECISION.md) decisions.
+   [upkeep](EQUIPMENT_AND_VEHICLE_UPKEEP.md), [composition](WORLD_COMPOSITION_DECISION.md) and
+   [language](CORE_LANGUAGE_RUST_ASSESSMENT.md) decisions.
 4. [October17 review disposition](roadmap-review-20261017/LEAD_DISPOSITION.md) resolves R1–R13 into the
    roadmap: bounded partition/version investigation before cognition persistence; named NPC, story,
    ecology, art/audio and catalog deliverables. No format/rewrite or phase acceptance is approved.

@@ -1,0 +1,133 @@
+{
+  "record": "RESULT.md",
+  "measured": "2026-10-17",
+  "source_boundary": "commit 8c7f6f23 at measurement; 26 commits 12:56-19:46 local on codex/runtime-foundation",
+  "lead_session_openfantasy_utc_day": {
+    "log": "~/.codex/sessions/2026/09/08/rollout-2026-09-08T15-36-48-*.jsonl, entries timestamped 2026-10-17 UTC",
+    "api_calls": 1064,
+    "per_call_input_context_tokens": {
+      "average": 155317,
+      "max": 244421
+    },
+    "input_tokens": 164042380,
+    "cached_input_tokens": 161127040,
+    "output_tokens": 741637,
+    "reasoning_output_tokens": 308419,
+    "owner_messages": 32,
+    "assistant_messages": 210,
+    "tool_calls_by_category": {
+      "python checks/scripts": 333,
+      "file reads": 298,
+      "other": 136,
+      "search/list": 106,
+      "writes/patches": 101,
+      "git": 44,
+      "dotnet test": 4
+    },
+    "tool_output_into_context_mb": 5.7,
+    "distinct_files_read": 439,
+    "files_read_more_than_once": 182,
+    "repeat_reads": 462,
+    "instruction_and_plan_file_reads": {
+      "CURRENT_ROADMAP.md": 30,
+      "AGENT_HANDOFF.md": 17,
+      "Beta/AGENTS.md": 13,
+      "GIT_MILESTONES.md": 13
+    }
+  },
+  "lead_session_lifetime_since_2026-09-08": {
+    "input_tokens": 2028476722,
+    "cached_input_tokens": 1989480960,
+    "output_tokens": 7523243,
+    "reasoning_output_tokens": 3423906
+  },
+  "claude_sessions_today": {
+    "api_calls": 167,
+    "average_context_tokens": 127000,
+    "input_tokens_all_kinds": 21192061,
+    "output_tokens": 324829
+  },
+  "committed_today": {
+    "commits": 26,
+    "production_lines": 4209,
+    "test_lines": 6484,
+    "markdown_lines": 4662,
+    "evidence_lines": 126306,
+    "party_withdrawal_evidence_gb": 1.1
+  },
+  "native_runs_today": {
+    "full_expedition_runs": 4,
+    "failed": 3,
+    "failed_seconds": [
+      122.4,
+      238.7,
+      593.4
+    ],
+    "passed_seconds": 672.1,
+    "native_journey_attempt_dirs": 12,
+    "failure_classes": [
+      "authored diagonal final route segment rejected by lawful movement",
+      "runner reported fatal TestPipelineException with zero TRX cases"
+    ]
+  },
+  "project_wide_retained_failures": {
+    "attempt_dirs": 36,
+    "failed_json_files": 86,
+    "status_failed_or_stopped_files": 282,
+    "status_passed_files": 22762
+  },
+  "documentation_volume": {
+    "architecture_reference_lines": 14273,
+    "architecture_pages": 87,
+    "implementation_markdown_lines": 64663,
+    "implementation_markdown_files": 790
+  },
+  "automated_review_finding": "GameDevAIEcosystem tools/project_efficiency_auditor.py telemetry was correct (0 commits workspace-wide in the 7 days before 04:18); its narrative was hardcoded prose with stale numbers (5.8 GB, 108 commits in 7 days, 15 profile codecs) not derived from telemetry",
+  "ratios": {
+    "input_tokens_per_hand_authored_line_today": 10700,
+    "output_tokens_per_hand_authored_line_today": 48,
+    "input_to_output_ratio": 221
+  },
+  "not_claimed": [
+    "subscription or dollar cost",
+    "that any gate, deadline, evidence retention or documentation duty is reduced",
+    "that the levers save a specific percentage"
+  ],
+  "documentation_checks": {
+    "check_documentation": {
+      "accepted": true,
+      "filesChecked": 5,
+      "errors": [],
+      "scope": "Work-record fields and local file links only; no semantic, anchor, runtime or human acceptance"
+    },
+    "git_diff_check": {
+      "project_pages_whitespace_errors": 0,
+      "ecosystem_files_whitespace_errors": 0
+    },
+    "skill_sync": {
+      "manifest": "GameDevAIEcosystem/manifests/2026-10-17-session-long-run-cost.json",
+      "validation": "GameDevAIEcosystem/manifests/2026-10-17-session-long-run-cost-validation.json",
+      "source_sha256": "4050581d533fa844ea4e54c420e3b0fe94356654c5fb97395fec3c63529c2aea",
+      "installed_copies_verified": 3,
+      "backup_receipt": "GameDevAIEcosystem/backups/session-long-run-cost-20261018T023946Z/receipt.json"
+    },
+    "predecessor_staged_files_preserved": 19,
+    "committed": false
+  },
+  "automated_review_regeneration": {
+    "run": "2026-10-17 22:46:47 local, corrected generator",
+    "stale_claims_in_regenerated_report": 0,
+    "telemetry_vs_narrative_commits": {
+      "telemetry_48h": 32,
+      "telemetry_7d": 32,
+      "report_48h": 32,
+      "report_7d": 32
+    },
+    "active_repositories": {
+      "OpenFantasy": 26,
+      "Neighborhood": 3,
+      "GameDevAIEcosystem": 3
+    },
+    "note": "The rerun overwrote the 04:18 same-date report and telemetry; the original 04:18 report is preserved as reports/efficiency/2026-10-17-progress-and-efficiency-review.0418-original.md. The 04:18 telemetry's zero-commit windows were verified against git before the rerun."
+  }
+}
