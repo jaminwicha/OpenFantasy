@@ -803,3 +803,14 @@ The [exit decision](PLAN_STATE_EXIT_DECISION.md) is accepted with every required
 applied, per the [disposition](plan-state-exit-review/DISPOSITION.md); the [dispatch record](plan-state-exit-review/DISPATCH.json)
 holds route, limits, duration and cost. Only the decision/review exit closes; residual measurements and every
 P01, P02, P03, LANG, platform, scale and human gate remain. Predecessor staging and unrelated files excluded.
+
+## NPC-01 profile-42 binding and host cognition policy — 2026-10-20
+
+Before-change checkpoint: `codex/checkpoint-before-npc-world-binding-20261020` (`6964630668990c2a58618b78b246c3dbfad0456d`).
+Verified milestone: `codex/milestone-npc-world-binding-20261020`, created at `1267f81b` without switching.
+The [Core/storage binding](p02/npc-cognition/world-binding/RESULT.md) was reviewed at `c9846097` by one read-only critic
+("accept with required changes"). The [disposition](p02/npc-cognition/world-binding-review/DISPOSITION.md) applies the
+required changes, and the [host policy](p02/npc-cognition/host-policy/RESULT.md) drives Wren's episode in a real
+session across a restart. Evidence: full Core 2,072 passes; full Hosting 2,253 passes with 10 classified failures;
+17 profile-42 cases. The evidence-bound precondition, remembered deferrals, the baseline, offscreen continuation,
+dialogue, presentation and every NPC-01, P02 and P03 gate remain open. Predecessor staging and unrelated files excluded.
