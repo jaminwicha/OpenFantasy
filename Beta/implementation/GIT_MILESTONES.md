@@ -803,4 +803,3 @@ The [exit decision](PLAN_STATE_EXIT_DECISION.md) is accepted with every required
 applied, per the [disposition](plan-state-exit-review/DISPOSITION.md); the [dispatch record](plan-state-exit-review/DISPATCH.json)
 holds route, limits, duration and cost. Only the decision/review exit closes; residual measurements and every
 P01, P02, P03, LANG, platform, scale and human gate remain. Predecessor staging and unrelated files excluded.
-
