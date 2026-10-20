@@ -1,5 +1,11 @@
 # Implementation instructions
 
+Owner steering, 2026-10-20: make substantial progress toward the next milestone. Where a decision is needed,
+the lead makes the most logical decision, has it reviewed by another agent and records it. This authorizes the
+lead to decide the PLAN-STATE exit and dispatch its prepared independent review through the maintained
+delegation adapter with an approved route, Max effort and finite limits; it is not a general orchestration
+restart. Record each decision, its review and its disposition in shared documents.
+
 Owner steering, 2026-10-03: work directly for now, without agent orchestration, native subagents or
 external delegation. Continue implementation; the two external efficiency reports are now reviewed
 in the linked disposition below, without resuming orchestration.

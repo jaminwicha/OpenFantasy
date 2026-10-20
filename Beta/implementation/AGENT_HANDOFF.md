@@ -6,6 +6,12 @@ it does not replace the frozen 181 requirements or their original acceptance gat
 
 ## Start here
 
+Owner steering, 2026-10-20: make substantial progress toward the next milestone. Where a decision is needed,
+the lead makes the most logical decision, has it reviewed by another agent and records it. This authorizes the
+lead to decide the PLAN-STATE exit and dispatch its prepared independent review through the maintained
+delegation adapter with an approved route, Max effort and finite limits; it is not a general orchestration
+restart. Record each decision, its review and its disposition in shared documents.
+
 1. [Implementation instructions](../AGENTS.md), [documentation maintenance](DOCUMENTATION_MAINTENANCE.md)
    and [Git milestone discipline](GIT_MILESTONES.md). Work on `codex/runtime-foundation`; preserve the
    unrelated 19 staged predecessor files. Integration lead owns checkpoints and commits. Apply the
