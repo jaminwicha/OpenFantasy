@@ -37,7 +37,7 @@ public sealed class CognitionCommandCodecTests
     }
 
     [Fact]
-    public void Cognition_actions_encode_as_version_twenty_five_and_inside_the_delegated_envelope()
+    public void Cognition_actions_encode_canonically_as_version_twenty_five()
     {
         var decide = new RecordCognitionDecisionIntent(3, Decision(null, CognitionDeferral.None, step: 12));
         var inspect = new InspectGatherSourceIntent(Source, 4);

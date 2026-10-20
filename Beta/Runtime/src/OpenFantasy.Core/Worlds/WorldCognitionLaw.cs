@@ -106,14 +106,10 @@ internal static class WorldCognitionLaw
     }
 
     /// <summary>
-    /// The perception rule's range: four cells of unobstructed sightline. A person notices a harvestable source a
-    /// few steps away in plain view; terrain and structures block it, and nothing farther is ever observed.
-    /// </summary>
-    internal const long ObservationRangeSubunits = 4 * SubunitPosition.SubunitsPerCell;
-
-    /// <summary>
     /// The perception rule: a deliberate look at one source within the observation range, under the same anchored
     /// sightline query gathering uses for reach. It needs no tool and reads only that source's visible harvests.
+    /// Sight is tested before anything else about the source, so an absent source and one out of sight give the same
+    /// refusal, and a stale revision is revealed only for a source the actor can see.
     /// </summary>
     internal static WorldActionRejection ResolveInspection(WorldSnapshot state, LocalSpatialSnapshot space,
         GatheringSnapshot gathering, WorldActionCommand action, bool held)
@@ -124,35 +120,41 @@ internal static class WorldCognitionLaw
         ActorPresence actor = space.GetActor(action.ActorId);
         if (actor.Revision != action.ExpectedActorRevision) return WorldActionRejection.RevisionConflict;
         GatherNodeState? node = gathering.Nodes.FirstOrDefault(value => value.NodeId == inspect.NodeId);
-        if (node is null) return WorldActionRejection.Unavailable;
-        if (node.Revision != inspect.ExpectedNodeRevision) return WorldActionRejection.RevisionConflict;
-        return ResourceInteractionQueries.QueryWithin(space, actor.ActorId, node.Feet, ObservationRangeSubunits)
-            == SpatialInteraction.Reachable
-            ? WorldActionRejection.None : WorldActionRejection.OutOfReach;
+        if (node is null || ResourceInteractionQueries.QueryWithin(space, actor.ActorId, node.Feet,
+                WorldCognitionPerception.ObservationRangeSubunits) != SpatialInteraction.Reachable)
+            return WorldActionRejection.OutOfReach;
+        return node.Revision == inspect.ExpectedNodeRevision ? WorldActionRejection.None : WorldActionRejection.RevisionConflict;
     }
 
     /// <summary>
     /// Applies one recorded decision to the deciding actor's own cognition. It is admitted only under the actor's own
-    /// control, at the expected cognition revision, at a due and unsuppressed wake, with a future fallback. The
-    /// decision itself is applied exactly as recorded; nothing here reruns or second-guesses the policy.
+    /// control, outside a hold, at the expected cognition revision, at a due and unsuppressed wake, with a fallback
+    /// within the declared cadence, and only when the decision is supported by the actor's own evidence and project.
+    /// The decision is then applied exactly as recorded; nothing here reruns the policy. Deferral reasons and the
+    /// personal stock target remain the planner's claims.
     /// </summary>
     internal static (WorldActionRejection Rejection, CognitionSnapshot Cognition) ResolveDecision(WorldSnapshot state,
-        CognitionSnapshot cognition, WorldActionCommand action)
+        CognitionSnapshot cognition, ConstructionSnapshot? construction, WorldActionCommand action, bool held)
     {
         var decide = (RecordCognitionDecisionIntent)action.Intent;
         if (action.ControlWitness is not null || WorldActorCommandAuthority.AuthorizeSelection(state, action) is null)
             return (WorldActionRejection.NotAuthorized, cognition);
+        // A hold opened earlier in this batch suppresses reconsideration exactly as one at its start does.
+        if (held) return (WorldActionRejection.Unavailable, cognition);
         ActorCognition current = cognition.For(action.ActorId);
         if (current.Revision != decide.ExpectedCognitionRevision) return (WorldActionRejection.RevisionConflict, cognition);
+        CognitionDecision decision = decide.Decision;
         if (current.Wake is not { Suppression: WakeSuppression.None } wake || wake.DueStep > state.AdvancingSteps
-            || decide.Decision.NextWake.DueStep <= state.AdvancingSteps
-            || decide.Decision.Deferral == CognitionDeferral.ReadingHold)
+            || decision.NextWake.DueStep <= state.AdvancingSteps
+            || decision.NextWake.DueStep > checked(state.AdvancingSteps + CognitionPolicy.FallbackSteps)
+            || decision.Deferral == CognitionDeferral.ReadingHold
+            || !Supports(state, current, construction, action.ActorId, decision))
             return (WorldActionRejection.Unavailable, cognition);
         ActorCognition adopted;
         try
         {
             // A memory overflow is a CognitionCapacityException, not an ArgumentException: it stops the authority.
-            adopted = current.Adopt(decide.Decision, state.Calendar);
+            adopted = current.Adopt(decision, state.Calendar);
         }
         catch (ArgumentException)
         {
@@ -160,6 +162,44 @@ internal static class WorldCognitionLaw
         }
         return ReferenceEquals(adopted, current) ? (WorldActionRejection.Unavailable, cognition)
             : (WorldActionRejection.None, cognition.With(adopted));
+    }
+
+    /// <summary>
+    /// What the actor's own evidence and project must show for a decision to be remembered. A new intention is adopted
+    /// now; waiting and working name the actor's own project; working cites the delivery it received for that
+    /// project's quest; gathering cites an observation of its source. Completion is recorded only for a project that
+    /// is complete, or for gathering that yielded something since it was adopted.
+    /// </summary>
+    private static bool Supports(WorldSnapshot state, ActorCognition current, ConstructionSnapshot? construction,
+        EntityId actorId, CognitionDecision decision)
+    {
+        ConstructionProject? Own(EntityId projectId) => construction?.Projects.SingleOrDefault(project =>
+            project.ProjectId == projectId && project.BuilderActorId == actorId);
+        CognitionEvidence? Held(EntityId evidenceId) => current.Evidence.FirstOrDefault(entry => entry.EvidenceId == evidenceId);
+        if (decision.Intention is { } next && (current.Intention is null || !next.SameAs(current.Intention)))
+        {
+            if (next.AdoptedAt != state.Calendar) return false;
+            bool supported = next.Kind switch
+            {
+                IntentionKind.AwaitSupply => Own(next.SubjectId) is { IsCompleted: false },
+                IntentionKind.WorkFundedProject => Own(next.SubjectId) is { IsCompleted: false } project
+                    && next.Basis.Any(id => Held(id) is { Kind: EvidenceKind.QuestDeliveryReceived } delivered
+                        && delivered.SubjectId == project.QuestId),
+                IntentionKind.GatherPersonalStock => next.Basis.Any(id => Held(id) is { Kind: EvidenceKind.SourceObserved } seen
+                    && seen.SubjectId == next.SubjectId),
+                _ => false
+            };
+            if (!supported) return false;
+        }
+        if (!decision.CompletedCurrent) return true;
+        return current.Intention switch
+        {
+            { Kind: IntentionKind.WorkFundedProject } work => Own(work.SubjectId) is { IsCompleted: true },
+            { Kind: IntentionKind.GatherPersonalStock } gather => decision.Deferral == CognitionDeferral.StockTargetMet
+                && current.Evidence.Any(entry => entry.Kind == EvidenceKind.GatherOutcome && entry.SubjectId == gather.SubjectId
+                    && entry.Quantity != 0 && entry.AcquiredAt >= gather.AdoptedAt),
+            _ => false
+        };
     }
 
     /// <summary>

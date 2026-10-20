@@ -20,12 +20,13 @@ public sealed record CognitionDecision(string PolicyVersion, CognitionIntention?
 /// <summary>
 /// Deterministic decision policy for the delayed-supply episode. Priority is conditional: work on the funded project
 /// once its delivery is known; otherwise gather a small personal stock when a tool, a known reachable source and
-/// effort allow; otherwise wait, with the honest reason. A reading hold keeps the current intention. The policy
+/// effort allow; otherwise wait, with the honest reason. Spent effort defers an existing gathering plan's next swing
+/// without abandoning the plan. A reading hold keeps the current intention. The policy
 /// proposes; ordinary commands still decide every effect.
 /// </summary>
 public static class CognitionPolicy
 {
-    public const string Version = "cognition.delayed-supply.v1";
+    public const string Version = "cognition.delayed-supply.v2";
 
     /// <summary>The declared fallback cadence in advancing steps: five seconds at the nominal 50 ms step.</summary>
     public const ulong FallbackSteps = 100;
@@ -53,6 +54,11 @@ public static class CognitionPolicy
                 ? CognitionDeferral.Unreachable
             : !situation.HasEffort ? CognitionDeferral.InsufficientEffort
             : CognitionDeferral.None;
+        // Spent effort only delays the next swing: an intention to gather a known, reachable source is kept.
+        if (reason == CognitionDeferral.InsufficientEffort && cognition.Intention is { Kind: IntentionKind.GatherPersonalStock } gathering
+            && beliefs.Sources.Any(source => source.SourceId == gathering.SubjectId && !source.BelievedDepleted
+                && situation.ReachableSources.Contains(source.SourceId)))
+            return new CognitionDecision(Version, gathering, reason, next);
         if (reason != CognitionDeferral.None)
             return new CognitionDecision(Version, Keep(cognition, IntentionKind.AwaitSupply, situation.ProjectId, now, []),
                 reason, next, CompletedCurrent: cognition.Intention?.Kind == IntentionKind.GatherPersonalStock

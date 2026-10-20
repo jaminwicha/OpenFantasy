@@ -1,0 +1,14 @@
+{
+  "packet": "NPC-01 binding review disposition and host cognition policy",
+  "checkpointRef": "codex/checkpoint-before-npc-world-binding-20261020",
+  "checkpointCommit": "6964630668990c2a58618b78b246c3dbfad0456d",
+  "reviewedCommit": "c98460975c9cdea8f9a8bddf096284b52d3a6a45",
+  "predecessorStagedFiles": 19,
+  "toolchain": {
+    "sdk": "10.0.401"
+  },
+  "documentationChecks": "DOCUMENTATION_CHECKS.json",
+  "evidenceManifest": "EVIDENCE_MANIFEST.json",
+  "review": "../world-binding-review/DISPOSITION.md",
+  "rawEvidenceNotCommitted": "full Core and Hosting reports, hashed in EVIDENCE_MANIFEST.json; the reviewer session stays local"
+}

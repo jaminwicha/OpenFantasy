@@ -213,6 +213,11 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             {
                 throw new AuthorityDispatchException("This saved profile does not support construction work.");
             }
+            if (command.Intent is RecordCognitionDecisionIntent)
+            {
+                // Reconsideration is the host's autonomous proposal for a resident, never a player request.
+                throw new AuthorityDispatchException("Recorded decisions are host proposals, not player requests.");
+            }
             lock (_inputs)
             {
                 EnsurePlayerAvailable(player);

@@ -1,10 +1,11 @@
 # NPC-01 first world binding: profile 42
 
-**Status:** Core laws and durable storage of the internal cognition interpretation are implemented and tested on
-the adventure's original people, tools, quest and project. This is step 2 of the
+**Status:** accepted after one independent review, with every required change applied
+([disposition](../world-binding-review/DISPOSITION.md)). Core laws and durable storage of the internal cognition
+interpretation are implemented and tested on the adventure's original people, tools, quest and project. This is step 2 of the
 [NPC-01 sequence](../../../NPC_01_CAUSAL_EPISODE.md#implementation-sequence-and-acceptance), bound by the
 [PLAN-STATE exit decision](../../../PLAN_STATE_EXIT_DECISION.md). The host policy that proposes cognition actions
-in a live session is **not** bound yet; no hosted or native session drives Wren's cognition. Profile 42 stays
+in a live session is the [next increment](../host-policy/RESULT.md). Profile 42 stays
 internal and non-default. NPC-01, P02 and every gate stay open. One independent critic reviews this binding
 before acceptance (see [Review](#review)).
 
@@ -12,12 +13,14 @@ before acceptance (see [Review](#review)).
 
 - **Profile 42.** `WorldCognitionAdmission.CreateFresh` accepts only an unplayed profile-41 world. The root is the
   complete profile-41 frame plus a final cognition section with one record per resident, players included. The
-  section's full codec maximum is reserved inside the 16 MiB root budget. A fresh adventure root is 80,540 bytes.
+  section's full codec maximum is reserved inside the 16 MiB root budget. The root stores the exact `RulesPin` as a
+  field before the section, and decoding refuses any other pin. A fresh adventure root is 80,540 bytes.
   The root uses schema twelve with no migration entry. Decoders for profiles up to 41 refuse a cognition root, and
   profile 41 cannot encode one.
 - **Evidence from committed outcomes.** In `WorldStepProcessor.DecideImmediate`, after an action passes complete-
   candidate admission and beside the material-evidence capture, `WorldCognitionLaw` derives evidence. It covers:
-  - direct gifts, consented transfers and settled proposals, which give the recipient `ItemReceived`;
+  - direct gifts and settled proposals, which give the recipient `ItemReceived` (consented pairs exist only in
+    profile 28, so that branch is unreachable here, and proposal settlement is untested);
   - completed deliveries, which give the quest giver `QuestDeliveryReceived`;
   - gathers, which give the gatherer its yield and a fresh look at the source;
   - inspections, which give `SourceObserved`.
@@ -26,13 +29,21 @@ before acceptance (see [Review](#review)).
   batch's reserved identities.
 - **Perception rule.** `InspectGatherSourceIntent` looks at one source within four cells, along the same anchored
   terrain and structure sightline that gathering reach uses. It needs no tool and reveals only visible remaining
-  harvests.
+  harvests. Sight is tested first, so an absent source and one out of sight are both `OutOfReach`.
 - **Recorded decisions.** `RecordCognitionDecisionIntent` carries the complete decision. Admission requires:
-  - the actor's own control, with no delegated witness;
+  - the actor's own control, with no delegated witness, and no hold opened earlier in the batch;
   - the expected cognition revision;
   - a due, unsuppressed wake;
-  - a future fallback;
-  - a decision that changes something.
+  - a fallback within the 100-step cadence;
+  - a decision that changes something;
+  - support from the actor's own evidence and project:
+    - a new intention is adopted now;
+    - waiting and working name the actor's own unfinished project;
+    - working cites a received delivery for that project's quest;
+    - gathering cites an observation of its source;
+    - completion is recorded only for a completed project, or for gathering at its target that has yielded.
+
+  Deferral reasons and the stock target remain planner claims.
 
   Replay applies the recorded bytes and never runs a policy.
 - **Suppression.** Each committed gameplay boundary records its condition on pending wakes: a reading hold, an
@@ -57,11 +68,11 @@ Each is the lead's choice, recorded here and put to the critic.
 
 | Exit decision proof | Status here |
 |---|---|
-| 1. Evidence only from committed outcomes, same boundary; refused gift writes nothing; undisclosed change wakes nobody | **Proved** by `Evidence_comes_only_from_committed_outcomes_in_the_same_boundary` and `A_change_elsewhere_leaves_beliefs_stale_until_new_evidence_is_acquired` |
+| 1. Evidence only from committed outcomes, same boundary; refused gift writes nothing; undisclosed change wakes nobody | **Proved** for a harvest elsewhere; no remote delivery is possible because delivery is in person. Shown by `Evidence_comes_only_from_committed_outcomes_in_the_same_boundary` and `A_change_elsewhere_leaves_beliefs_stale_until_new_evidence_is_acquired` |
 | 2. References not copies; exact recapture; no duplicate acceptance on reload | **Proved for this episode**: evidence names quest, lot and counterpart by identity, and participation stays with quests. A reloaded duplicate decision is refused as stale. Existing price knowledge is not yet referenced. |
-| 3. Replay with the planner removed or changed reproduces history | **Proved**: replay from genesis uses only recorded batch bytes and reproduces the root exactly, including a variant policy version |
+| 3. Replay with the planner removed or changed reproduces history | **Proved structurally**: nothing in Core references the policy, and replay from genesis uses only recorded batch bytes and reproduces the root exactly. The "variant" test renames the version only |
 | 4. Restart with a pending wake midway through gathering matches the uninterrupted run; due age survives | **Proved in Core**: an encode/decode restart after the first gather yields identical final bytes, and durable reopen keeps the wake. A hosted-session restart awaits the host policy. |
-| 5. Holds, encounters and paid continuations suppress with a reason; overflow stops the authority; ≤41 decoders refuse | Holds and encounters **proved**. Paid continuation is implemented but **not exercised**. Overflow **proved** in Core and through `SqliteWorldAuthority`. Refusal by ≤41 decoders **proved**. |
+| 5. Holds, encounters and paid continuations suppress with a reason; overflow stops the authority; ≤41 decoders refuse | Holds, including one opened earlier in the same batch, and encounter entry **proved**. Encounter release and paid continuation are implemented but **not exercised**. Overflow **proved** in Core and through `SqliteWorldAuthority`. Refusal by ≤41 decoders **proved**. |
 | 6. Decision-3 baseline on profiles 40, 41 and 42 | **Not started**; it needs the host policy driving every resident |
 | 7. Offscreen labelled player-absent detailed continuation | **Not started** |
 
@@ -76,11 +87,17 @@ refactor and not a facet manifest. It is not done here, so the semantics of this
 
 ## Known gaps
 
+- **The evidence bound is reachable in ordinary play.** Every actor, players included, accumulates evidence and
+  nothing replaces it. A gather adds two entries, so about 32 gathers by one actor stop a profile-42 world, and the
+  same deterministic batch stops it again after reopening. Decision 7's lossless replacement, or bounds re-sized from
+  measured workloads, is a precondition for proofs 6 and 7.
+- `OwnResourceChanged` is never scheduled, so recovered effort waits for the 100-step fallback.
+- World-level refusals for memory overflow, rollback after resolution, an occupied evidence identity and a
+  delegated decision are enforced in code but untested. Proposal settlement and encounter release are untested.
+
 - The deferral reason is not remembered when the intention is unchanged. Wren's change from "missing tool" to
-  "insufficient effort" after the gift moves only her wake. Decision 4 lists "decision and deferral records with
-  typed reasons". Whether an unchanged-intention deferral needs its own record is put to the critic.
-- No host policy proposes cognition actions, so `LocalNpcController` and `LocalConstructionController` still read
-  world truth for funded work in hosted sessions.
+  "insufficient effort" after the gift moves only her wake. Per finding 5, the current deferral and remembered
+  reason changes are added before freeze.
 - The paid-continuation suppression path has no test.
 - Paid exchange receipts and market observations are not evidence yet.
 - There is no dynamic dialogue binding, native presentation or baseline measurement.
@@ -113,7 +130,10 @@ this session's API call count or per-call context, so neither is reported.
 
 ## Review
 
-Pending: one read-only critic through the maintained adapter.
+One read-only critic reviewed `c9846097` through the maintained adapter and returned "accept with required
+changes". The [disposition](../world-binding-review/DISPOSITION.md) applies findings 1–4, 6 and 7, schedules 5 for
+the freeze, and adopts the decision-8 recommendation for its own packet. The post-review changes are verified with
+the host-policy increment's checks, recorded in [its result](../host-policy/RESULT.md).
 
 ## Documentation review
 

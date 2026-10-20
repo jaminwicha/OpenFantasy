@@ -16,7 +16,7 @@ AWAIT_SUPPLY, WORK_FUNDED_PROJECT = 1, 3
 ADOPTED, SUPERSEDED = 1, 3
 NONE, MISSING_TOOL = 0, 1
 EVIDENCE_ACQUIRED, FALLBACK = 1, 4
-POLICY = b'cognition.delayed-supply.v1'
+POLICY = b'cognition.delayed-supply.v2'
 
 
 def number(value):

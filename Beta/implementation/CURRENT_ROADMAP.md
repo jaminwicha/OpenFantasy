@@ -237,8 +237,10 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    Keep timeless ownership/scheduling/persistence documentation synchronized with every changed contract.
 3. Deliver **NPC-01** as the next new inhabited-world behavior. Its storage-independent
    [Core cognition contracts](p02/npc-cognition/core-contracts/RESULT.md) and the
-   [profile-42 Core/storage binding](p02/npc-cognition/world-binding/RESULT.md) exist. The host policy that drives
-   cognition in sessions, the decision-3 baseline and the offscreen proof are next, under the exit decision's rules. Prepare **STORY-01** content and
+   [profile-42 Core/storage binding](p02/npc-cognition/world-binding/RESULT.md), accepted after independent review,
+   and the [host cognition policy](p02/npc-cognition/host-policy/RESULT.md) exist. Next come the evidence-bound
+   precondition (decision 7's lossless replacement or measured bounds) and remembered deferrals, then the
+   decision-3 baseline and the player-absent continuation, all under the exit decision's rules. Prepare **STORY-01** content and
    **AUDIO-01/ART-01** semantic production contracts alongside their dependency design, then build
    recruitment/cooperative work and the traveling merchant/cargo investigation. These are dependency
    lanes, not authorization to launch agents: the lead executes directly and sequences actual work.
@@ -631,6 +633,12 @@ profile 41. It derives evidence only from committed outcomes, adds a four-cell s
 perception rule, and admits recorded decisions only at a due, unsuppressed wake. Holds, encounters and paid
 continuations suppress reconsideration, and a capacity overflow stops the authority. Replay reproduces history
 without the policy, and a restart midway through gathering matches the uninterrupted run. The schema-twelve
-SQLite authority publishes and reopens it. No hosted session drives cognition yet. The exit decision's baseline
-and offscreen proofs, dialogue, presentation and every NPC-01, P02 and P03 gate remain open. Decision 8's
-interpreter-growth trigger fired at 45 files.
+SQLite authority publishes and reopens it. One independent critic returned "accept with required changes"; the
+[disposition](p02/npc-cognition/world-binding-review/DISPOSITION.md) applies them. Decisions must be supported by the
+actor's own evidence and project, a hold opened in the same batch refuses one, inspection refusals no longer leak
+remote state, and the root stores its law pin. The [host policy](p02/npc-cognition/host-policy/RESULT.md) then drives
+Wren through the episode in a real session, including a restart midway through gathering. Evidence only accumulates,
+so ordinary play reaches the 64-entry bound; lifting that is a precondition for the baseline and the sustained
+offscreen proof. Dialogue, presentation and every NPC-01, P02 and P03 gate remain open. Decision 8's
+interpreter-growth trigger fired at 45 files; a per-profile capability table, as its own reviewed mechanical packet,
+must precede profile 43.

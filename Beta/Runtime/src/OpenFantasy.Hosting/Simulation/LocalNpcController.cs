@@ -16,6 +16,14 @@ public sealed class LocalNpcController
     public const string PolicyVersion = "local.home-amble.v1";
     private static readonly byte[] Domain = Encoding.ASCII.GetBytes(PolicyVersion);
     private readonly LocalConstructionController _construction = new();
+    private readonly LocalCognitionController _cognition = new();
+
+    /// <summary>
+    /// The resident's funded commitment. In the cognition interpretation it comes from the builder's own intention,
+    /// learned from a delivery it received; earlier profiles keep the construction controller's quest read.
+    /// </summary>
+    private ConstructionProject? Commitment(WorldSnapshot state, EntityId actorId) => LocalCognitionController.Applies(state)
+        ? LocalCognitionController.FundedCommitment(state, actorId) : _construction.FindCommitment(state, actorId);
     public IReadOnlyList<WorldMovementInput> SelectMovement(WorldSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
@@ -30,13 +38,18 @@ public sealed class LocalNpcController
             {
                 continue;
             }
-            if (_construction.FindCommitment(state, resident.ActorId) is { } project)
+            if (Commitment(state, resident.ActorId) is { } project)
             {
                 WorldMovementInput? workApproach = _construction.SelectMovement(state, project);
                 if (workApproach is not null)
                 {
                     inputs.Add(workApproach);
                 }
+                continue;
+            }
+            if (LocalCognitionController.Applies(state) && _cognition.SelectMovement(state, resident) is { } gatherApproach)
+            {
+                inputs.Add(gatherApproach);
                 continue;
             }
             if (_construction.NeedsReturnHome(state, resident))
@@ -90,12 +103,17 @@ public sealed class LocalNpcController
         foreach (WorldResident resident in state.Residents)
         {
             if (resident.ControllerKind != ResidentControllerKind.Host || excludedActorIds?.Contains(resident.ActorId) == true
-                || !WorldActorAvailability.CanAct(state, resident.ActorId)
-                || _construction.FindCommitment(state, resident.ActorId) is not { } project)
+                || !WorldActorAvailability.CanAct(state, resident.ActorId))
             {
                 continue;
             }
-            WorldActionCommand? action = _construction.SelectWork(state, project, newIdentity);
+            // A due reconsideration, a gathering swing or a look comes before ordinary funded work.
+            WorldActionCommand? action = LocalCognitionController.Applies(state)
+                ? _cognition.SelectAction(state, resident, newIdentity) : null;
+            if (action is null && Commitment(state, resident.ActorId) is { } project)
+            {
+                action = _construction.SelectWork(state, project, newIdentity);
+            }
             if (action is not null)
             {
                 actions.Add(action);

@@ -54,8 +54,8 @@ public static class WorldSnapshotCodec
         };
     }
 
-    // The pre-screen admits the widest retained root (profile 42, 32 fields); each codec enforces its own exact bound.
-    private const int MaximumRootFields = 32;
+    // The pre-screen admits the widest retained root (profile 42, 33 fields); each codec enforces its own exact bound.
+    private const int MaximumRootFields = 33;
 
     public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes, WorldResourceArchiveAnchor? archiveAnchor = null) =>
         WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, MaximumRootFields) switch

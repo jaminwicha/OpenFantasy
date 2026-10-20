@@ -22,7 +22,8 @@ public static class WorldCognitionAdmission
     public static readonly ContentHash RulesPin = ContentHash.Compute(CanonicalEncodingV1.Frame("world.cognition-laws.v1",
         Encoding.UTF8.GetBytes("evidence:item-received,quest-delivery-to-giver,gather-outcome,source-in-sight-4-cells;own-project-completion-wakes-builder"),
         Encoding.UTF8.GetBytes("wake:evidence-at-resulting-step;suppression:reading-hold,encounter,paid-continuation"),
-        Encoding.UTF8.GetBytes("decision:recorded-actor-action,due-unsuppressed-wake,advancing-step")));
+        Encoding.UTF8.GetBytes("decision:recorded-actor-action,due-unsuppressed-wake,unheld-advancing-step,fallback-within-100-steps,"
+            + "supported-by-own-evidence-and-project;inspection:sight-before-revision")));
 
     public static WorldSnapshot CreateFresh(WorldSnapshot basis)
     {

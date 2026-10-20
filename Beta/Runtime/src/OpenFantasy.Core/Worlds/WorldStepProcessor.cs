@@ -527,7 +527,8 @@ public sealed class WorldStepProcessor
                 {
                     throw new InvalidOperationException("This saved profile does not interpret recorded decisions.");
                 }
-                (WorldActionRejection rejection, CognitionSnapshot decided) = WorldCognitionLaw.ResolveDecision(state, cognition, action);
+                (WorldActionRejection rejection, CognitionSnapshot decided) = WorldCognitionLaw.ResolveDecision(state, cognition,
+                    construction, action, dialogues.Count != 0);
                 cognition = decided;
                 resolution = new WorldActionResolution(inventory, dialogues, rejection, null);
             }

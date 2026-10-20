@@ -55,7 +55,8 @@ material or monetary effect. Reopening does not turn transient policy advice int
 from an unplayed profile-41 world. The root is profile 41's complete frame plus one final section: the
 [cognition facet](../../src/OpenFantasy.Core/Cognition/CognitionSnapshot.cs), with exactly one record per resident,
 players included. Its codec maximum is reserved inside the 16 MiB root budget, so a record growing within its own
-bound can never make the root unencodable. The interpretation is internal and non-default. Content still creates
+bound can never make the root unencodable. The root also stores the interpretation's exact `RulesPin`, and decoding
+refuses any other. The interpretation is internal and non-default. Content still creates
 profile 40, and no existing save changes profile.
 
 [WorldCognitionLaw](../../src/OpenFantasy.Core/Worlds/WorldCognitionLaw.cs) holds the laws the profile replays:
@@ -63,7 +64,8 @@ profile 40, and no existing save changes profile.
 - **Evidence comes from committed outcomes.** The step processor derives evidence after an action has passed
   complete-candidate admission, beside the material-evidence capture, and publishes it with that action's
   outcome. If the action is refused or rolled back, nobody acquires anything.
-  - A gift by direct handover, a consented transfer or a settled proposal gives the recipient `ItemReceived`.
+  - A gift by direct handover or a settled proposal gives the recipient `ItemReceived`. Consented pairs exist only in
+    profile 28, so their branch is unreachable here.
   - A completed delivery gives the quest giver `QuestDeliveryReceived`, because the giver takes it in person.
   - A gather gives the gatherer its own yield and a fresh look at the source it harvested.
   - An inspection gives the inspector a `SourceObserved` fact.
@@ -73,7 +75,10 @@ profile 40, and no existing save changes profile.
 - **Perception rule.** [InspectGatherSourceIntent](../../src/OpenFantasy.Core/Worlds/WorldCognitionIntents.cs) is a
   deliberate look at one source within four cells. It uses the same anchored terrain and structure sightline as
   gathering reach, needs no tool, and reveals only that source's visible remaining harvests. Nothing farther, and
-  nothing behind an occluder, is observed. This is the first admitted perception rule, not a general vision system.
+  nothing behind an occluder, is observed. Sight is tested before anything else about the source. An absent source
+  and one out of sight give the same refusal, and a stale revision is a conflict only for a visible source. This is
+  the first admitted perception rule, not a general vision system;
+  [WorldCognitionPerception](../../src/OpenFantasy.Core/Worlds/WorldCognitionPerception.cs) publishes its range.
 - **World truth wakes nobody.** A change elsewhere, such as another person harvesting a known source, leaves every
   other person's evidence, derived beliefs and wake untouched until they acquire new evidence.
 - **Own work is a self-owned fact.** Progress on an actor's own project is read directly, so a work step is not
@@ -86,20 +91,44 @@ profile 40, and no existing save changes profile.
   is the actor's own action at an advancing step. It carries the complete decision: policy version, intention,
   deferral, next fallback wake and completion flag. Admission requires:
   - the actor's own control, with no delegated witness;
+  - no reading hold, including one opened earlier in the same batch;
   - the expected cognition revision;
   - a due, unsuppressed wake;
-  - a future fallback;
-  - a decision that changes something.
+  - a fallback within the declared 100-step cadence;
+  - a decision that changes something;
+  - support from the actor's own evidence and project. A new intention is adopted at the current instant. Waiting
+    and working name the actor's own unfinished project. Working cites a received delivery for that project's
+    quest, and gathering cites an observation of its source. Completion is recorded only for a completed project,
+    or for gathering at its stock target that has yielded since it was adopted.
 
-  The decision is then applied exactly as recorded. Replay applies the same bytes and never runs a policy, so a
+  Deferral reasons and the stock target are the planner's claims; the law does not validate them. The decision is
+  then applied exactly as recorded. Replay applies the same bytes and never runs a policy, so a
   changed planner cannot rewrite history.
-- **Overflow stops the authority.** A capacity overflow propagates out of the processor. It is not a refused action,
-  and commit preparation does not convert it into a dispatch refusal. `SqliteWorldAuthority` marks itself as
+- **Overflow stops the authority.** A capacity overflow propagates out of the processor. It is not a refused action:
+  `CognitionCapacityException` derives from none of the exceptions admission converts into refusals, and commit
+  preparation does not convert it into a dispatch refusal. `SqliteWorldAuthority` marks itself as
   requiring reopening, and nothing is published.
 
-Profile-42 roots use storage schema twelve, like profiles 40 and 41. The host-side policy that proposes decisions,
-inspections and gathering from an actor's own facts, and that replaces the construction controller's whole-world
-commitment read, is a separate binding. Until it lands, no hosted session drives profile-42 cognition.
+Profile-42 roots use storage schema twelve, like profiles 40 and 41.
+
+**Known limit:** evidence only accumulates. Nothing yet replaces a superseded observation, so ordinary play reaches
+the 64-entry development bound; about 32 gathers by one actor stop the world. Decision 7's lossless replacement, or
+bounds re-sized from measured workloads, must land before a sustained workload runs on this profile.
+
+[LocalCognitionController](../../src/OpenFantasy.Hosting/Simulation/LocalCognitionController.cs) is the host policy for
+profile 42. It drives host-controlled residents that have an unfinished project of their own. For each such
+resident, in order, it proposes:
+
+1. a due decision, computed by `CognitionPolicy` from the resident's own tools, stock, effort and known sources;
+2. a pre-planned gathering swing and ordinary approach movement, for a gathering intention;
+3. a look at the first source in sight that the resident has never observed.
+
+[LocalNpcController](../../src/OpenFantasy.Hosting/Simulation/LocalNpcController.cs) takes a profile-42 builder's
+funded commitment from its own `WorkFundedProject` intention, not from quest participation. A builder therefore never
+starts funded work it has not learned of. Earlier profiles keep the construction controller's quest read. The player
+adapter refuses recorded decisions as player requests. Physical feasibility, such as ground routes and the gather
+planner's preflight, is host advice that avoids futile commands; it never becomes a belief. Residents without such a
+project, including players, are not driven, and their due wakes simply age.
 
 ## Design contract: one person, several forms of control
 

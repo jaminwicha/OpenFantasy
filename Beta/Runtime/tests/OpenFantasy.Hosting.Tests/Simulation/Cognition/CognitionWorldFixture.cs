@@ -20,17 +20,28 @@ namespace OpenFantasy.Hosting.Tests.Simulation.Cognition;
 internal sealed class CognitionWorldFixture
 {
     internal const ulong PersonalStockTarget = 2;
-    private static readonly Lazy<WorldSnapshot> GenesisValue = new(() => WorldCognitionAdmission.CreateFresh(
-        WorldPartyWithdrawalAdmission.CreateFresh(AdventureWorldAdmission.CreateEmbedded("cognition-world-contract", ["Rowan"]))));
+    private static readonly Lazy<WorldSnapshot> GenesisValue = new(() => Create(["Rowan"]));
     private readonly HashSet<EntityId> _occupied = [];
     private readonly List<byte[]> _batches = [];
     private ulong _identity = 1;
 
-    internal CognitionWorldFixture()
+    internal CognitionWorldFixture() : this(GenesisValue.Value, "Rowan") { }
+
+    /// <summary>The same adventure for another roster; the first player listed is <see cref="Player"/>.</summary>
+    internal CognitionWorldFixture(IReadOnlyList<string> players, string seed = DefaultSeed)
+        : this(Create(players, seed), players[0]) { }
+
+    private const string DefaultSeed = "cognition-world-contract";
+
+    private static WorldSnapshot Create(IReadOnlyList<string> players, string seed = DefaultSeed) => WorldCognitionAdmission.CreateFresh(
+        WorldPartyWithdrawalAdmission.CreateFresh(AdventureWorldAdmission.CreateEmbedded(seed, players)));
+
+    private CognitionWorldFixture(WorldSnapshot genesis, string playerName)
     {
-        Genesis = GenesisValue.Value;
+        Genesis = genesis;
         State = Genesis;
-        Player = Genesis.Residents.Single(resident => resident.ControllerKind == ResidentControllerKind.Player).ActorId;
+        Player = Genesis.Residents.Single(resident => resident.ControllerKind == ResidentControllerKind.Player
+            && resident.DisplayName == playerName).ActorId;
         ConstructionProject project = Genesis.Construction!.Projects.Single();
         Wren = project.BuilderActorId;
         ProjectId = project.ProjectId;
@@ -176,11 +187,11 @@ internal sealed class CognitionWorldFixture
         return null;
     }
 
-    internal void Walk(EntityId actor, SubunitPosition destination)
+    internal void Walk(EntityId actor, SubunitPosition destination, int maximumSteps = 256)
     {
         for (int step = 0; State.Space.GetActor(actor).Feet != destination; step++)
         {
-            Assert.True(step < 256, "The walk must use bounded ordinary movement.");
+            Assert.True(step < maximumSteps, "The walk must use bounded ordinary movement.");
             GroundRouteResult route = State.Space.QueryGroundRoute(actor, destination);
             Assert.Equal(GroundRouteStatus.Reachable, route.Status);
             SubunitPosition feet = State.Space.GetActor(actor).Feet;
@@ -189,6 +200,33 @@ internal sealed class CognitionWorldFixture
             long dy = dx != 0 ? 0 : Math.Clamp(next.Y - feet.Y, -32, 32);
             Apply(WorldBatchKind.AdvancingStep, movement: [new(Delivery(actor), actor, dx, dy)]);
             Assert.Equal(feet.Offset(dx, dy, 0), State.Space.GetActor(actor).Feet);
+        }
+    }
+
+    /// <summary>
+    /// A long ordinary walk in stages: each stage routes to the reachable cell within six cells that is nearest the
+    /// destination, so every sample still comes from the bounded route search.
+    /// </summary>
+    internal void WalkFar(EntityId actor, SubunitPosition destination, int maximumStages = 64)
+    {
+        for (int stage = 0; State.Space.GetActor(actor).Feet != destination; stage++)
+        {
+            Assert.True(stage < maximumStages, "The long walk must make bounded progress.");
+            if (State.Space.QueryGroundRoute(actor, destination).Status == GroundRouteStatus.Reachable)
+            {
+                Walk(actor, destination);
+                return;
+            }
+            SubunitPosition feet = State.Space.GetActor(actor).Feet;
+            static Int128 Distance(SubunitPosition a, SubunitPosition b) =>
+                ((Int128)a.X - b.X) * ((Int128)a.X - b.X) + ((Int128)a.Y - b.Y) * ((Int128)a.Y - b.Y);
+            SubunitPosition next = (from dx in Enumerable.Range(-6, 13) from dy in Enumerable.Range(-6, 13)
+                    let candidate = feet.Offset(dx * 256L, dy * 256L, 0)
+                    where Distance(candidate, destination) < Distance(feet, destination)
+                    orderby Distance(candidate, destination)
+                    select candidate)
+                .First(candidate => State.Space.QueryGroundRoute(actor, candidate).Status == GroundRouteStatus.Reachable);
+            Walk(actor, next);
         }
     }
 

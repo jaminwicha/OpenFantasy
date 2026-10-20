@@ -80,7 +80,12 @@ public static class WorldSnapshotCodecV35
         byte[] cognitionBytes = version == WorldCognitionAdmission.ProfileVersion
             ? CognitionCodecV1.Encode(world.Cognition ?? throw new ArgumentException("Profile 42 requires its cognition owner.", nameof(world)))
             : world.Cognition is null ? [] : throw new ArgumentException("Only profile 42 encodes cognition.", nameof(world));
-        if (version == WorldCognitionAdmission.ProfileVersion) fields.Add(cognitionBytes);
+        if (version == WorldCognitionAdmission.ProfileVersion)
+        {
+            // The exact law pin is a root field, so a law change cannot reuse this interpretation's bytes.
+            fields.Add(WorldCognitionAdmission.RulesPin.ToByteArray());
+            fields.Add(cognitionBytes);
+        }
         byte[] bytes = CanonicalEncodingV1.Frame("world.snapshot", fields.ToArray());
         if ((long)bytes.Length - liquidBytes.Length - pacingBytes.Length - actionBytes.Length - coordinationBytes.Length
             - resourceBytes.Length - retreatBytes.Length - outcomeBytes.Length
@@ -108,7 +113,7 @@ public static class WorldSnapshotCodecV35
         try
         {
             var reader = new WorldFrameReader(bytes, WorldSnapshotCodec.MaximumStateByteLength,
-                version == WorldCognitionAdmission.ProfileVersion ? 32
+                version == WorldCognitionAdmission.ProfileVersion ? 33
                 : version is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion ? 31
                 : version == WorldControlPermissionAdmission.ProfileVersion ? 30
                 : version == WorldCareDispositionAdmission.ProfileVersion ? 29
@@ -160,8 +165,13 @@ public static class WorldSnapshotCodecV35
                 ? WorldControlPermissionCodecV1.Decode(reader.Field(WorldControlPermissionCodecV1.MaximumStateByteLength)) : null;
             WorldEffectiveControlState? effective = version is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion
                 ? WorldEffectiveControlCodecV1.Decode(reader.Field(WorldEffectiveControlCodecV1.MaximumStateByteLength)) : null;
-            CognitionSnapshot? cognition = version == WorldCognitionAdmission.ProfileVersion
-                ? CognitionCodecV1.Decode(reader.Field(CognitionCodecV1.MaximumSnapshotByteLength)) : null;
+            CognitionSnapshot? cognition = null;
+            if (version == WorldCognitionAdmission.ProfileVersion)
+            {
+                if (!reader.Exact(32).SequenceEqual(WorldCognitionAdmission.RulesPin.ToByteArray()))
+                    throw new FormatException("The cognition root requires its exact admitted laws.");
+                cognition = CognitionCodecV1.Decode(reader.Field(CognitionCodecV1.MaximumSnapshotByteLength));
+            }
             reader.Complete();
 
             var joint = new WorldFrameReader(coordinationBytes, MaximumCoordinationByteLength, 8);

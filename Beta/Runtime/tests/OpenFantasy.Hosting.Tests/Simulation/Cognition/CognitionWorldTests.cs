@@ -267,12 +267,116 @@ public sealed class CognitionWorldTests
         Assert.Equal(WorldActionRejection.NotAuthorized, fixture.Step(impostor).Receipts.Single().Rejection);
         Assert.Empty(fixture.CognitionOf(fixture.Wren).Memory);
 
+        // A new intention is adopted now: the decision computed several steps ago is no longer admissible.
+        Assert.Equal(WorldActionRejection.Unavailable, fixture.Act(fixture.Wren, intent).Rejection);
+        intent = (RecordCognitionDecisionIntent)fixture.Decision(fixture.Wren)!.Intent;
         Assert.Equal(CommandReceiptStatus.Applied, fixture.Step(fixture.Command(fixture.Wren, intent)).Receipts.Single().Status);
         Assert.Single(fixture.CognitionOf(fixture.Wren).Memory);
         // Reload creates no duplicate adoption: the same recorded decision is now stale.
         fixture.Restore();
         Assert.Equal(WorldActionRejection.RevisionConflict, fixture.Act(fixture.Wren, intent).Rejection);
         Assert.Single(fixture.CognitionOf(fixture.Wren).Memory);
+    }
+
+    [Fact]
+    public void A_decision_cannot_remember_what_its_own_evidence_and_project_do_not_support()
+    {
+        var fixture = new CognitionWorldFixture();
+        Assert.Equal(CommandReceiptStatus.Applied, fixture.Act(fixture.Wren, fixture.InspectionOf(fixture.Oak)).Status);
+        fixture.AdvanceUntilDue(fixture.Wren);
+        ActorCognition wren = fixture.CognitionOf(fixture.Wren);
+        EntityId seen = wren.Evidence.Single().EvidenceId;
+        WorldInstant now = fixture.State.Calendar;
+        ulong steps = fixture.State.AdvancingSteps;
+        var fallback = new CognitionWake(steps + CognitionPolicy.FallbackSteps, WakeCause.Fallback);
+        CognitionDecision Decision(CognitionIntention? intention, CognitionDeferral deferral = CognitionDeferral.None,
+            CognitionWake? wake = null, bool completed = false) =>
+            new(CognitionPolicy.Version, intention, deferral, wake ?? fallback, completed);
+        WorldActionRejection Try(CognitionDecision decision) => fixture.Step(fixture.Command(fixture.Wren,
+            new RecordCognitionDecisionIntent(wren.Revision, decision with
+            {
+                // Each refusal is a separate boundary; keep the attempted adoption at the current instant.
+                Intention = decision.Intention is { } held && held.AdoptedAt == now
+                    ? new CognitionIntention(held.Kind, held.SubjectId, fixture.State.Calendar, held.Basis) : decision.Intention,
+                NextWake = decision.NextWake == fallback
+                    ? new CognitionWake(fixture.State.AdvancingSteps + CognitionPolicy.FallbackSteps, WakeCause.Fallback) : decision.NextWake,
+            }))).Receipts.Single().Rejection;
+
+        // Working the guard needs the received delivery for its quest, not merely a sighting.
+        Assert.Equal(WorldActionRejection.Unavailable,
+            Try(Decision(new CognitionIntention(IntentionKind.WorkFundedProject, fixture.ProjectId, now, [seen]))));
+        // Gathering must cite an observation of its own source.
+        Assert.Equal(WorldActionRejection.Unavailable,
+            Try(Decision(new CognitionIntention(IntentionKind.GatherPersonalStock, fixture.Oak, now, []), CognitionDeferral.AwaitingSupply)));
+        // Waiting names the actor's own project, never a source or someone else's work.
+        Assert.Equal(WorldActionRejection.Unavailable,
+            Try(Decision(new CognitionIntention(IntentionKind.AwaitSupply, fixture.Oak, now, []), CognitionDeferral.MissingTool)));
+        // A new intention is adopted now, not backdated.
+        Assert.Equal(WorldActionRejection.Unavailable, Try(Decision(new CognitionIntention(IntentionKind.AwaitSupply,
+            fixture.ProjectId, new WorldInstant(now.Days, 0), []), CognitionDeferral.MissingTool)));
+        // Nothing completed, so nothing is remembered as completed.
+        Assert.Equal(WorldActionRejection.Unavailable, Try(Decision(null, completed: true)));
+        // The fallback stays within the declared cadence.
+        Assert.Equal(WorldActionRejection.Unavailable, Try(Decision(
+            new CognitionIntention(IntentionKind.AwaitSupply, fixture.ProjectId, now, []), CognitionDeferral.MissingTool,
+            new CognitionWake(ulong.MaxValue, WakeCause.Fallback))));
+        Assert.Empty(fixture.CognitionOf(fixture.Wren).Memory);
+        Assert.Equal(CommandReceiptStatus.Applied, fixture.Decide(fixture.Wren).Status);
+    }
+
+    [Fact]
+    public void A_hold_opened_earlier_in_the_same_batch_refuses_a_due_decision()
+    {
+        // Actions run in actor-identity order. A second traveler whose identity sorts before Wren's speaks to her in
+        // the very batch in which her decision is due.
+        // Identities derive from the seed, so the same authored adventure under another seed supplies that ordering.
+        CognitionWorldFixture fixture = Enumerable.Range(0, 32)
+            .Select(attempt => new CognitionWorldFixture(["Rowan"], $"cognition-hold-order-{attempt}"))
+            .First(candidate => candidate.Player.CompareTo(candidate.Wren) < 0);
+        EntityId earlier = fixture.Player;
+        Assert.Equal(CommandReceiptStatus.Applied, fixture.Act(fixture.Wren, fixture.InspectionOf(fixture.Oak)).Status);
+        if (fixture.State.Space.QueryInteraction(earlier, fixture.Wren) != SpatialInteraction.Reachable)
+            fixture.WalkFar(earlier, fixture.StandingNear(earlier, fixture.Oak)!.Value);
+        fixture.AdvanceUntilDue(fixture.Wren);
+        WorldActionCommand decision = fixture.Decision(fixture.Wren)!;
+        WorldActionCommand speech = fixture.Command(earlier, new SpeakToActorIntent(fixture.Wren,
+            fixture.State.Space.GetActor(fixture.Wren).Revision));
+        WorldStepDecision result = fixture.Step(speech, decision);
+        Assert.Equal(WorldActionRejection.None, result.Receipts.Single(receipt => receipt.CommandId == speech.CommandId).Rejection);
+        Assert.Equal(WorldActionRejection.Unavailable, result.Receipts.Single(receipt => receipt.CommandId == decision.CommandId).Rejection);
+        Assert.Empty(fixture.CognitionOf(fixture.Wren).Memory);
+        Assert.Equal(WakeSuppression.ReadingHold, fixture.CognitionOf(fixture.Wren).Wake!.Suppression);
+    }
+
+    [Fact]
+    public void An_inspection_refusal_reveals_nothing_about_a_source_out_of_sight()
+    {
+        var fixture = new CognitionWorldFixture();
+        var berries = fixture.State.Gathering!.Nodes.Single(node => node.NodeId != fixture.Oak);
+        // An absent source and a stale revision of a source out of sight give the same refusal.
+        Assert.Equal(WorldActionRejection.OutOfReach,
+            fixture.Act(fixture.Wren, new InspectGatherSourceIntent(new EntityId(0x0BAD, 0x50C), 0)).Rejection);
+        Assert.Equal(WorldActionRejection.OutOfReach,
+            fixture.Act(fixture.Wren, new InspectGatherSourceIntent(berries.NodeId, berries.Revision + 1)).Rejection);
+        Assert.Equal(WorldActionRejection.OutOfReach,
+            fixture.Act(fixture.Wren, new InspectGatherSourceIntent(berries.NodeId, berries.Revision)).Rejection);
+        // Only for a source in sight is a stale revision a conflict.
+        var oak = fixture.InspectionOf(fixture.Oak);
+        Assert.Equal(WorldActionRejection.RevisionConflict,
+            fixture.Act(fixture.Wren, oak with { ExpectedNodeRevision = oak.ExpectedNodeRevision + 1 }).Rejection);
+        Assert.All(fixture.State.Cognition!.Actors, actor => Assert.Empty(actor.Evidence));
+    }
+
+    [Fact]
+    public void A_cognition_root_names_its_exact_laws()
+    {
+        byte[] bytes = WorldSnapshotCodec.Encode(CognitionWorldFixture.FreshGenesis);
+        byte[] pin = WorldCognitionAdmission.RulesPin.ToByteArray();
+        int at = bytes.AsSpan().IndexOf(pin);
+        Assert.True(at > 0);
+        byte[] altered = bytes.ToArray();
+        altered[at] ^= 0x01;
+        Assert.Throws<FormatException>(() => WorldSnapshotCodec.Decode(altered));
     }
 
     [Fact]

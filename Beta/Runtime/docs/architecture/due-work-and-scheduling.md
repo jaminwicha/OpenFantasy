@@ -57,8 +57,10 @@ has a cyclic service cursor with care-priority rules; that is not evidence of fa
 Profile 42 adds persistent due work of its own: each resident's pending reconsideration wake, in the advancing-step
 domain, with its cause and the condition that suppresses it. A wake is due once the world's advancing count reaches
 its due step. A recorded decision services it, and an unserviced wake simply ages. The wake survives restart, so due
-age survives reopening. Servicing a wake is an autonomous proposal. It is selected like other NPC actions, so the
-fallback above can omit it, and it has no starvation bound. No hosted session proposes these decisions yet.
+age survives reopening. Servicing a wake is an autonomous proposal. `LocalCognitionController` proposes it within
+`LocalNpcController`'s action selection, only for host residents with an unfinished project of their own. It is
+selected like other NPC actions, so the fallback above can omit it, and it has no starvation bound. Other residents'
+wakes, including players', are never serviced and simply age.
 
 ## Runtime binding: stored construction
 

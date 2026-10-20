@@ -2,9 +2,11 @@ namespace OpenFantasy.Core.Cognition;
 
 /// <summary>
 /// A transition that would exceed a finite cognition bound. Nothing is truncated: the world boundary that caused it
-/// rolls back and the authority stops, as owner-archive overflow does. It never becomes a rejected gameplay action.
+/// rolls back and the authority stops, as owner-archive overflow does. It never becomes a rejected gameplay action, so
+/// it deliberately derives from none of the argument, operation or overflow exceptions that admission converts into
+/// refusals.
 /// </summary>
-public sealed class CognitionCapacityException(string message) : InvalidOperationException(message);
+public sealed class CognitionCapacityException(string message) : Exception(message);
 
 /// <summary>
 /// One actor's persistent cognition: evidence actually acquired, the current intention and remembered decisions.

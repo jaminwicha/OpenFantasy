@@ -165,7 +165,7 @@ public sealed class CognitionTests
     }
 
     [Fact]
-    public void GatheringEndsAsCompletedOnlyWhenTheStockTargetIsMet()
+    public void GatheringEndsAsCompletedOnlyWhenTheStockTargetIsMetAndSurvivesSpentEffort()
     {
         ActorCognition gathering = ActorCognition.Empty(Wren).Acquire(Observation(Source, 3, 1000), 0);
         gathering = gathering.Adopt(CognitionPolicy.Decide(gathering, Situation(reachable: [Source]), At(1000)), At(1000));
@@ -175,10 +175,17 @@ public sealed class CognitionTests
         Assert.True(stocked.CompletedCurrent);
         Assert.Equal(MemoryOutcome.Completed, gathering.Adopt(stocked, At(3000)).Memory[^2].Outcome);
 
+        // Spent effort defers the next swing but keeps the plan: only the wake moves.
         CognitionDecision tired = CognitionPolicy.Decide(gathering, Situation(effort: false, reachable: [Source]), At(3000));
         Assert.False(tired.CompletedCurrent);
-        CognitionMemory interrupted = gathering.Adopt(tired, At(3000)).Memory[^2];
-        Assert.Equal((MemoryOutcome.Superseded, CognitionDeferral.InsufficientEffort), (interrupted.Outcome, interrupted.Reason));
+        Assert.Equal(CognitionDeferral.InsufficientEffort, tired.Deferral);
+        Assert.Same(gathering.Intention, tired.Intention);
+        Assert.Equal(gathering.Memory.Count, gathering.Adopt(tired, At(3000)).Memory.Count);
+
+        // A source no longer reachable does end the plan, with that reason.
+        CognitionDecision blocked = CognitionPolicy.Decide(gathering, Situation(effort: false), At(3000));
+        CognitionMemory interrupted = gathering.Adopt(blocked, At(3000)).Memory[^2];
+        Assert.Equal((MemoryOutcome.Superseded, CognitionDeferral.Unreachable), (interrupted.Outcome, interrupted.Reason));
     }
 
     [Fact]

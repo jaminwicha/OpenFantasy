@@ -457,8 +457,8 @@ and reserved component maxima under the 16 MiB root budget. A larger standalone 
 the complete reservation calculation; its own successful encoding does not prove that capacity.
 Profile41 explicitly substitutes the collective retreat codec and512KiB reservation in that shared
 complete frame; legacy versions retain their original codec and bound. Profile 42 keeps profile 41's fields and
-reservations and appends the cognition section, reserving its full codec maximum, about 3.1 MiB, in the same
-calculation. This changes no database
+reservations, then appends its exact rules pin and the cognition section (33 fields), reserving the section's full
+codec maximum, about 3.1 MiB, in the same calculation. This changes no database
 schema, host compatibility selection or existing save's rule on opening.
 
 ### Storage representation and preserved-source conversion
