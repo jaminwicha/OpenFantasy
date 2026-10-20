@@ -1,5 +1,6 @@
 using Microsoft.Data.Sqlite;
 using OpenFantasy.Core;
+using OpenFantasy.Core.Cognition;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Construction;
@@ -66,7 +67,7 @@ public sealed partial class SqliteWorldAuthority : IDisposable
             27 or 28 or 30 or 32 or 33 or 34 or 35 => WorldDatabaseSchemaEight.Version,
             36 or 37 or 38 => WorldDatabaseSchemaNine.Version,
             WorldControlPermissionAdmission.ProfileVersion => WorldDatabaseSchemaEleven.Version,
-            WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion => WorldDatabaseSchemaTwelve.Version,
+            WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion => WorldDatabaseSchemaTwelve.Version,
             25 or 26 => WorldDatabaseSchemaSeven.Version,
             24 => WorldDatabaseSchemaSix.Version,
             22 or 23 => WorldDatabaseSchemaFive.Version,
@@ -204,9 +205,18 @@ public sealed partial class SqliteWorldAuthority : IDisposable
         lock (_gate)
         {
             EnsureAvailable();
-            PreparedWorldCommit prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
-                batch, identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity),
-                encoding: _database.StateEncoding);
+            PreparedWorldCommit prepared;
+            try
+            {
+                prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
+                    batch, identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity),
+                    encoding: _database.StateEncoding);
+            }
+            catch (CognitionCapacityException)
+            {
+                _requiresRecovery = true;
+                throw;
+            }
             WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence, prepared.Stored.AdvancingSteps,
                 (ulong)prepared.Commands.Count, (ulong)prepared.Stored.AcceptedBatch.Length,
                 (ulong)prepared.Stored.Outcomes.Length,
@@ -270,21 +280,30 @@ public sealed partial class SqliteWorldAuthority : IDisposable
             using SqliteTransaction transaction = _database.BeginWrite();
             PreparedWorldCommit prepared;
             ConstructionLocalityState? continuation = null;
-            if (constructionProject is { } projectId)
+            try
             {
-                var retained = _constructionLocalityHash == _stateHash
-                    && _constructionLocality?.ProjectId == projectId && _constructionMetadataPages == maximumMetadataPages
-                    ? _constructionLocality : null;
-                (prepared, continuation) = _preparation.PrepareConstruction(_state, _genesisIdentities, _stateHash,
-                    batch, projectId, maximumMetadataPages, retained,
-                    identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity, transaction),
-                    encoding: _database.StateEncoding);
+                if (constructionProject is { } projectId)
+                {
+                    var retained = _constructionLocalityHash == _stateHash
+                        && _constructionLocality?.ProjectId == projectId && _constructionMetadataPages == maximumMetadataPages
+                        ? _constructionLocality : null;
+                    (prepared, continuation) = _preparation.PrepareConstruction(_state, _genesisIdentities, _stateHash,
+                        batch, projectId, maximumMetadataPages, retained,
+                        identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity, transaction),
+                        encoding: _database.StateEncoding);
+                }
+                else
+                {
+                    prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
+                        batch, identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity, transaction),
+                        encoding: _database.StateEncoding);
+                }
             }
-            else
+            catch (CognitionCapacityException)
             {
-                prepared = _preparation.Prepare(_state, _genesisIdentities, _stateHash,
-                    batch, identity => _detachedGenesisIdentities.Contains(identity) || _database.ContainsIdentity(identity, transaction),
-                    encoding: _database.StateEncoding);
+                // A finite cognition bound is reached: nothing is truncated or refused; the authority stops.
+                _requiresRecovery = true;
+                throw;
             }
             WorldJournalAdvance advance = WorldJournalPolicy.Advance(_usage, prepared.Stored.Sequence,
                 prepared.Stored.AdvancingSteps, (ulong)prepared.Commands.Count,

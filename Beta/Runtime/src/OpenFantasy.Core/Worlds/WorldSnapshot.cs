@@ -1,5 +1,6 @@
 using OpenFantasy.Core.Care;
 using System.Collections.ObjectModel;
+using OpenFantasy.Core.Cognition;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Encounters;
@@ -40,9 +41,10 @@ public sealed class WorldSnapshot
         ReservoirSealPolicy? reservoirSeals = null, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null,
         EncounterLifecycleSnapshot? encounterLifecycle = null, CareSnapshot? care = null, WorldResourceHistory? resourceHistory = null,
         WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null,
-        EncounterOutcomeState? encounterOutcome = null, WorldControllerState? controllers = null, WorldRecoveryPolicy? recovery = null, WorldControlPermissionState? controlPermissions = null, WorldEffectiveControlState? effectiveControl = null)
+        EncounterOutcomeState? encounterOutcome = null, WorldControllerState? controllers = null, WorldRecoveryPolicy? recovery = null, WorldControlPermissionState? controlPermissions = null, WorldEffectiveControlState? effectiveControl = null,
+        CognitionSnapshot? cognition = null)
         : this(inventory, space, residents, admissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination, retreat, encounterOutcome, controllers, recovery, controlPermissions, effectiveControl, null)
+            gathering, production, progression, quests, construction, watershed, watershedNetwork, reservoirs, transport, excavation, constructionPhysical, structuralPolicy, structuralSettlementPolicy, consequencePolicy, pendingExcavation, coupledSettlementPolicy, descentMode, reservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination, retreat, encounterOutcome, controllers, recovery, controlPermissions, effectiveControl, cognition, null)
     {
     }
 
@@ -56,7 +58,7 @@ public sealed class WorldSnapshot
         StructuralSettlementPolicy? structuralSettlementPolicy, ConsequenceExecutionPolicy? consequencePolicy,
         PendingExcavation? pendingExcavation, CoupledSettlementPolicy? coupledSettlementPolicy,
         ConstructionDescentMode descentMode, ReservoirSealPolicy? reservoirSeals, LiquidCellState? liquidCells,
-        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, EncounterLifecycleSnapshot? encounterLifecycle, CareSnapshot? care, WorldResourceHistory? resourceHistory, WorldCoordinatedContinuation? coordination, EncounterRetreatState? retreat, EncounterOutcomeState? encounterOutcome, WorldControllerState? controllers, WorldRecoveryPolicy? recovery, WorldControlPermissionState? controlPermissions, WorldEffectiveControlState? effectiveControl, WorldIdentityIndex? previous)
+        WorldPacingState? pacing, EncounterActionSnapshot? encounterActions, EncounterLifecycleSnapshot? encounterLifecycle, CareSnapshot? care, WorldResourceHistory? resourceHistory, WorldCoordinatedContinuation? coordination, EncounterRetreatState? retreat, EncounterOutcomeState? encounterOutcome, WorldControllerState? controllers, WorldRecoveryPolicy? recovery, WorldControlPermissionState? controlPermissions, WorldEffectiveControlState? effectiveControl, CognitionSnapshot? cognition, WorldIdentityIndex? previous)
     {
         ArgumentNullException.ThrowIfNull(inventory);
         ArgumentNullException.ThrowIfNull(space);
@@ -191,6 +193,7 @@ public sealed class WorldSnapshot
         Recovery = recovery;
         ControlPermissions = controlPermissions;
         EffectiveControl = effectiveControl;
+        Cognition = cognition;
         if (liquidCells is not null && reservoirSeals is null)
         {
             throw new ArgumentException("Detailed liquid placement requires the complete contained reservoir owner.");
@@ -263,6 +266,7 @@ public sealed class WorldSnapshot
         WorldCareDispositionAdmission.Validate(this);
         WorldControlPermissionAdmission.Validate(this);
         WorldDelegatedControlAdmission.Validate(this);
+        WorldCognitionAdmission.Validate(this);
         IdentityIndex = WorldAdmissionValidator.Validate(this, previous);
         if (structuralPolicy is not null)
         {
@@ -328,10 +332,12 @@ public sealed class WorldSnapshot
     public WorldRecoveryPolicy? Recovery { get; }
     public WorldControlPermissionState? ControlPermissions { get; }
     public WorldEffectiveControlState? EffectiveControl { get; }
+    /// <summary>Non-null selects the cognition interpretation (profile 42): every resident's acquired evidence and decisions.</summary>
+    public CognitionSnapshot? Cognition { get; }
     public EncounterActionSnapshot? EncounterActions => EncounterLifecycle is { } lifecycle
         ? lifecycle.HasEncounter ? lifecycle.Actions : null : _standaloneEncounterActions;
     public ulong ProcessIntervals => Pacing?.ProcessIntervals ?? AdvancingSteps;
-    public ushort ProfileVersion => Retreat?.Withdrawal is not null ? WorldPartyWithdrawalAdmission.ProfileVersion : EffectiveControl is not null ? WorldDelegatedControlAdmission.ProfileVersion : ControlPermissions is not null ? WorldControlPermissionAdmission.ProfileVersion : Care?.SupportsDispositions == true ? WorldCareDispositionAdmission.ProfileVersion : Recovery is not null ? WorldRecoveryAdmission.ProfileVersion : Controllers is not null ? WorldControllerAdmission.ProfileVersion : Coordination?.Markets is not null
+    public ushort ProfileVersion => Cognition is not null ? WorldCognitionAdmission.ProfileVersion : Retreat?.Withdrawal is not null ? WorldPartyWithdrawalAdmission.ProfileVersion : EffectiveControl is not null ? WorldDelegatedControlAdmission.ProfileVersion : ControlPermissions is not null ? WorldControlPermissionAdmission.ProfileVersion : Care?.SupportsDispositions == true ? WorldCareDispositionAdmission.ProfileVersion : Recovery is not null ? WorldRecoveryAdmission.ProfileVersion : Controllers is not null ? WorldControllerAdmission.ProfileVersion : Coordination?.Markets is not null
         ? Retreat is not null
             ? EncounterOutcome is not null ? WorldEncounterOutcomeAdmission.ProfileVersion : WorldEncounterRetreatAdmission.ProfileVersion
             : WorldMarketAdmission.ProfileVersion
@@ -371,7 +377,7 @@ public sealed class WorldSnapshot
         ConstructionPhysicalSnapshot? constructionPhysical, LiquidCellState? liquidCells = null, WorldPacingState? pacing = null, EncounterActionSnapshot? encounterActions = null,
         EncounterLifecycleSnapshot? encounterLifecycle = null, CareSnapshot? care = null, WorldResourceHistory? resourceHistory = null,
         WorldCoordinatedContinuation? coordination = null, EncounterRetreatState? retreat = null,
-        EncounterOutcomeState? encounterOutcome = null)
+        EncounterOutcomeState? encounterOutcome = null, CognitionSnapshot? cognition = null)
     {
         if (PendingExcavation is not null)
         {
@@ -438,8 +444,11 @@ public sealed class WorldSnapshot
         if ((encounterOutcome is null) != (EncounterOutcome is null)
             || encounterOutcome is not null && encounterOutcome.RulesPin != EncounterOutcome!.RulesPin)
             throw new ArgumentException("A successor must retain its exact outcome-completion interpretation.");
+        cognition ??= Cognition;
+        if ((cognition is null) != (Cognition is null))
+            throw new ArgumentException("A successor must retain its cognition owner.");
         return new(inventory, space, residents, AdmissionVersion, calendar, revision, advancingSteps, dialogues,
-            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination ?? Coordination, retreat, encounterOutcome, Controllers, Recovery, ControlPermissions, EffectiveControl, IdentityIndex);
+            gathering, production, progression, quests, construction, Watershed, reservoirs is null ? WatershedNetwork : null, transport is null ? reservoirs : null, transport, excavation, constructionPhysical, StructuralPolicy, StructuralSettlementPolicy, ConsequencePolicy, null, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells, pacing, encounterActions, encounterLifecycle, care, resourceHistory, coordination ?? Coordination, retreat, encounterOutcome, Controllers, Recovery, ControlPermissions, EffectiveControl, cognition, IdentityIndex);
     }
     internal WorldSnapshot WithControllers(WorldControllerState controllers, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
@@ -448,7 +457,7 @@ public sealed class WorldSnapshot
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
         ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells,
         Pacing, _standaloneEncounterActions, EncounterLifecycle?.RetainBoundary(), Care, ResourceHistory, Coordination, Retreat,
-        EncounterOutcome, controllers, Recovery, ControlPermissions, EffectiveControl?.Reconcile(controllers, ControlPermissions!, revision), IdentityIndex);
+        EncounterOutcome, controllers, Recovery, ControlPermissions, EffectiveControl?.Reconcile(controllers, ControlPermissions!, revision), Cognition, IdentityIndex);
 
     internal WorldSnapshot WithControlPermissions(WorldControlPermissionState permissions, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
@@ -457,7 +466,7 @@ public sealed class WorldSnapshot
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
         ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells,
         Pacing, _standaloneEncounterActions, EncounterLifecycle?.RetainBoundary(), Care, ResourceHistory, Coordination, Retreat,
-        EncounterOutcome, Controllers, Recovery, permissions, EffectiveControl?.Reconcile(Controllers!, permissions, revision), IdentityIndex);
+        EncounterOutcome, Controllers, Recovery, permissions, EffectiveControl?.Reconcile(Controllers!, permissions, revision), Cognition, IdentityIndex);
 
     internal WorldSnapshot WithEffectiveControl(WorldEffectiveControlState effectiveControl, ulong revision) => new(
         Inventory, Space, Residents, AdmissionVersion, Calendar, revision, AdvancingSteps,
@@ -466,7 +475,7 @@ public sealed class WorldSnapshot
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
         ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells,
         Pacing, _standaloneEncounterActions, EncounterLifecycle?.RetainBoundary(), Care, ResourceHistory, Coordination, Retreat,
-        EncounterOutcome, Controllers, Recovery, ControlPermissions, effectiveControl, IdentityIndex);
+        EncounterOutcome, Controllers, Recovery, ControlPermissions, effectiveControl, Cognition, IdentityIndex);
 
     internal WorldSnapshot WithPartyWithdrawal()
     {
@@ -481,7 +490,21 @@ public sealed class WorldSnapshot
             ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells,
             Pacing, _standaloneEncounterActions, EncounterLifecycle!.RetainBoundary(), Care, ResourceHistory,
             Coordination, Retreat!.WithWithdrawal(EncounterWithdrawalState.Empty), EncounterOutcome, Controllers,
-            Recovery, ControlPermissions, EffectiveControl, IdentityIndex);
+            Recovery, ControlPermissions, EffectiveControl, Cognition, IdentityIndex);
+    }
+
+    /// <summary>The same admitted root with only its cognition owner replaced, at the same revision.</summary>
+    internal WorldSnapshot WithCognition(CognitionSnapshot cognition)
+    {
+        ArgumentNullException.ThrowIfNull(cognition);
+        if (Cognition is null) throw new InvalidOperationException("Only the cognition interpretation owns cognition.");
+        return new(Inventory, Space, Residents, AdmissionVersion, Calendar, Revision, AdvancingSteps,
+            Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
+            Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
+            Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
+            ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing,
+            _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, Coordination, Retreat, EncounterOutcome,
+            Controllers, Recovery, ControlPermissions, EffectiveControl, cognition, IdentityIndex);
     }
 
     internal WorldSnapshot WithPending(PendingExcavation? pending, ulong revision) => new(
@@ -489,7 +512,7 @@ public sealed class WorldSnapshot
         Dialogues, Gathering, Production, Progression, Quests, Construction, Watershed,
         Reservoirs is null ? WatershedNetwork : null, Transport is null ? Reservoirs : null,
         Transport, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
-        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, Coordination, Retreat, EncounterOutcome, Controllers, Recovery, ControlPermissions, EffectiveControl, IdentityIndex);
+        ConsequencePolicy, pending, CoupledSettlementPolicy, DescentMode, ReservoirSeals, LiquidCells, Pacing, _standaloneEncounterActions, EncounterLifecycle, Care, ResourceHistory, Coordination, Retreat, EncounterOutcome, Controllers, Recovery, ControlPermissions, EffectiveControl, Cognition, IdentityIndex);
 
     /// <summary>
     /// Explicit coordinated closure at the same revision. Only representations change; time, work,
@@ -502,5 +525,5 @@ public sealed class WorldSnapshot
         Dialogues, Gathering, production, Progression, Quests, Construction, Watershed, null, reservoirs,
         null, Excavation, ConstructionPhysical, StructuralPolicy, StructuralSettlementPolicy,
         ConsequencePolicy, PendingExcavation, CoupledSettlementPolicy, DescentMode, ReservoirSeals, liquidCells,
-        Pacing, _standaloneEncounterActions, EncounterLifecycle, care, resourceHistory, coordination, Retreat, EncounterOutcome, Controllers, Recovery, ControlPermissions, EffectiveControl, null);
+        Pacing, _standaloneEncounterActions, EncounterLifecycle, care, resourceHistory, coordination, Retreat, EncounterOutcome, Controllers, Recovery, ControlPermissions, EffectiveControl, Cognition, null);
 }

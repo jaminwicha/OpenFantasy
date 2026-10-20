@@ -236,8 +236,9 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    checkpoint and journal work mandatory, and steps B–D are certain for the P01 exit.
    Keep timeless ownership/scheduling/persistence documentation synchronized with every changed contract.
 3. Deliver **NPC-01** as the next new inhabited-world behavior. Its storage-independent
-   [Core cognition contracts](p02/npc-cognition/core-contracts/RESULT.md) exist; the internal profile-42
-   world binding is next, under the exit decision's rules. Prepare **STORY-01** content and
+   [Core cognition contracts](p02/npc-cognition/core-contracts/RESULT.md) and the
+   [profile-42 Core/storage binding](p02/npc-cognition/world-binding/RESULT.md) exist. The host policy that drives
+   cognition in sessions, the decision-3 baseline and the offscreen proof are next, under the exit decision's rules. Prepare **STORY-01** content and
    **AUDIO-01/ART-01** semantic production contracts alongside their dependency design, then build
    recruitment/cooperative work and the traveling merchant/cargo investigation. These are dependency
    lanes, not authorization to launch agents: the lead executes directly and sequences actual work.
@@ -622,3 +623,14 @@ platform, scale or human gate closes.
 cognition with bounded evidence and memory, derived beliefs, a persistent reconsideration wake, recorded
 decisions with policy versions and Wren's deterministic delayed-supply policy, with a strict canonical codec
 checked against an independent Python oracle. No profile, save field, host policy or native behavior changes.
+
+### NPC-01 first world binding: profile 42
+
+The [Core and storage binding](p02/npc-cognition/world-binding/RESULT.md) admits internal profile 42 from an unplayed
+profile 41. It derives evidence only from committed outcomes, adds a four-cell sightline inspection as the first
+perception rule, and admits recorded decisions only at a due, unsuppressed wake. Holds, encounters and paid
+continuations suppress reconsideration, and a capacity overflow stops the authority. Replay reproduces history
+without the policy, and a restart midway through gathering matches the uninterrupted run. The schema-twelve
+SQLite authority publishes and reopens it. No hosted session drives cognition yet. The exit decision's baseline
+and offscreen proofs, dialogue, presentation and every NPC-01, P02 and P03 gate remain open. Decision 8's
+interpreter-growth trigger fired at 45 files.

@@ -54,14 +54,15 @@ storage-only conversion from semantic migration, maps canonical responsibilities
 private-copy validation/publication, joint archives, operational recovery and rollback-after-play limits.
 It is design preparation, not an implemented current-profile loader or approved format.
 
-**Next:** NPC-01's internal profile-42 world binding, in a fresh session. The [NPC-01 causal design](NPC_01_CAUSAL_EPISODE.md)
-specifies Wren's episode; the [Core contracts](p02/npc-cognition/core-contracts/RESULT.md) supply evidence,
-cognition, wakes, recorded decisions and the codec, and name the integration seams found: derive evidence in
-`WorldStepProcessor.DecideImmediate` beside the material-evidence capture, follow profile 41's admission pattern
-for a fresh-only 42, and replace the construction controller's whole-world commitment read in the NPC
-controller's per-resident loop. No perception rule exists yet; the market's in-person reachability gate is the
-closest precedent. The decision's "What NPC-01 must prove first" list is the binding's acceptance order, and one
-independent critic reviews the first world binding.
+**Next:** NPC-01's host cognition policy over the [profile-42 binding](p02/npc-cognition/world-binding/RESULT.md),
+in a fresh session. Evidence, perception, recorded decisions, suppression, overflow and schema-twelve storage are in
+place; the result records the binding's independent review and disposition. The policy proposes inspections,
+decisions and gathering from each resident's own facts. It replaces `LocalConstructionController.FindCommitment`'s
+whole-world quest read with the builder's `WorkFundedProject` intention in `LocalNpcController`'s per-resident loop,
+for profile 42 only. Then come the decision-3 baseline on profiles 40, 41 and 42 with every NPC autonomous, and the
+player-absent detailed continuation. The [causal design](NPC_01_CAUSAL_EPISODE.md) and the exit decision's
+"What NPC-01 must prove first" list remain the acceptance order. Decision 8's interpreter-growth trigger fired at 45
+files: reconsider the profile-list mechanics before admitting another interpretation.
 General partial loading, due age/fairness, retained residency/scale/platform, projection and full migration
 remain open. Do not produce another generic rollout memo or repeat the completed legacy episode.
 
@@ -74,8 +75,8 @@ recruitment/cooperative work and the traveling-merchant/cargo investigation reta
 ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain required before full
 P02 acceptance. Then prove P03 before broader P04–P14 expansion. The full P02 table remains in the roadmap.
 
-**Latest increment:** the PLAN-STATE exit decision and review, then NPC-01's Core cognition contracts, both
-linked above. Before them, the [journal](p02/journal/RESULT.md) shows character stats and known quests from the permitted view;
+**Latest increment:** NPC-01's profile-42 Core/storage binding, linked above. Before it, the PLAN-STATE exit
+decision and review, then NPC-01's Core cognition contracts. Before them, the [journal](p02/journal/RESULT.md) shows character stats and known quests from the permitted view;
 equipment, known skills, map and calendar remain. Before it, [keyboard remapping](p02/keyboard-remapping/RESULT.md) rebinds every action except pause, with
 reserved navigation keys and hints that follow the keys; controller remapping, device and scaling settings remain.
 Before it, [client settings](p02/client-settings/RESULT.md) added saved mixer levels and captions. Before that, the

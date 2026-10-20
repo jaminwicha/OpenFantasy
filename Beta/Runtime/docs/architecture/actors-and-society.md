@@ -49,6 +49,58 @@ host preferences, own holdings/balance and in-person inquiries. Its attempt book
 memory; it is not a saved belief/goal history. Ordinary world commands still authorize and commit every
 material or monetary effect. Reopening does not turn transient policy advice into a persistent person facet.
 
+## Runtime binding: cognition interpretation (profile 42)
+
+[WorldCognitionAdmission](../../src/OpenFantasy.Core/Worlds/WorldCognitionAdmission.cs) creates profile 42 only
+from an unplayed profile-41 world. The root is profile 41's complete frame plus one final section: the
+[cognition facet](../../src/OpenFantasy.Core/Cognition/CognitionSnapshot.cs), with exactly one record per resident,
+players included. Its codec maximum is reserved inside the 16 MiB root budget, so a record growing within its own
+bound can never make the root unencodable. The interpretation is internal and non-default. Content still creates
+profile 40, and no existing save changes profile.
+
+[WorldCognitionLaw](../../src/OpenFantasy.Core/Worlds/WorldCognitionLaw.cs) holds the laws the profile replays:
+
+- **Evidence comes from committed outcomes.** The step processor derives evidence after an action has passed
+  complete-candidate admission, beside the material-evidence capture, and publishes it with that action's
+  outcome. If the action is refused or rolled back, nobody acquires anything.
+  - A gift by direct handover, a consented transfer or a settled proposal gives the recipient `ItemReceived`.
+  - A completed delivery gives the quest giver `QuestDeliveryReceived`, because the giver takes it in person.
+  - A gather gives the gatherer its own yield and a fresh look at the source it harvested.
+  - An inspection gives the inspector a `SourceObserved` fact.
+
+  Evidence identities derive from the causing command and a fixed per-kind ordinal. They join the world's identity
+  index and the batch's reserved identities.
+- **Perception rule.** [InspectGatherSourceIntent](../../src/OpenFantasy.Core/Worlds/WorldCognitionIntents.cs) is a
+  deliberate look at one source within four cells. It uses the same anchored terrain and structure sightline as
+  gathering reach, needs no tool, and reveals only that source's visible remaining harvests. Nothing farther, and
+  nothing behind an occluder, is observed. This is the first admitted perception rule, not a general vision system.
+- **World truth wakes nobody.** A change elsewhere, such as another person harvesting a known source, leaves every
+  other person's evidence, derived beliefs and wake untouched until they acquire new evidence.
+- **Own work is a self-owned fact.** Progress on an actor's own project is read directly, so a work step is not
+  evidence. The step that completes the project schedules the builder's `ActionFinished` wake.
+- **Wakes and suppression.** Evidence makes reconsideration due at the advancing step the batch produces, unless an
+  earlier wake is pending. Every committed gameplay boundary records its condition on pending wakes: a reading hold,
+  an encounter, or a paid continuation such as pending care. Due step and cause are kept, and this never writes a
+  commit of its own.
+- **Recorded decisions.** [RecordCognitionDecisionIntent](../../src/OpenFantasy.Core/Worlds/WorldCognitionIntents.cs)
+  is the actor's own action at an advancing step. It carries the complete decision: policy version, intention,
+  deferral, next fallback wake and completion flag. Admission requires:
+  - the actor's own control, with no delegated witness;
+  - the expected cognition revision;
+  - a due, unsuppressed wake;
+  - a future fallback;
+  - a decision that changes something.
+
+  The decision is then applied exactly as recorded. Replay applies the same bytes and never runs a policy, so a
+  changed planner cannot rewrite history.
+- **Overflow stops the authority.** A capacity overflow propagates out of the processor. It is not a refused action,
+  and commit preparation does not convert it into a dispatch refusal. `SqliteWorldAuthority` marks itself as
+  requiring reopening, and nothing is published.
+
+Profile-42 roots use storage schema twelve, like profiles 40 and 41. The host-side policy that proposes decisions,
+inspections and gathering from an actor's own facts, and that replaces the construction controller's whole-world
+commitment read, is a separate binding. Until it lands, no hosted session drives profile-42 cognition.
+
 ## Design contract: one person, several forms of control
 
 The [world composition contract](world-composition.md) distinguishes facets, capabilities, typed

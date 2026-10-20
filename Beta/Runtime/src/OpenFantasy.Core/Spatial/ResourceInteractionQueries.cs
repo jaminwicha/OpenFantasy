@@ -36,9 +36,18 @@ public static class ResourceInteractionQueries
         return SpatialOccupancy.Clear;
     }
 
-    public static SpatialInteraction Query(LocalSpatialSnapshot space, EntityId actorId, SubunitPosition resourceFeet)
+    public static SpatialInteraction Query(LocalSpatialSnapshot space, EntityId actorId, SubunitPosition resourceFeet) =>
+        QueryWithin(space, actorId, resourceFeet, GatherRulesV1.ReachSubunits);
+
+    /// <summary>
+    /// The same anchored sightline as reach, bounded by another positive range. Terrain and structures occlude it;
+    /// a source on another floor is never in range.
+    /// </summary>
+    public static SpatialInteraction QueryWithin(LocalSpatialSnapshot space, EntityId actorId, SubunitPosition resourceFeet,
+        long rangeSubunits)
     {
         ArgumentNullException.ThrowIfNull(space);
+        ArgumentOutOfRangeException.ThrowIfLessThan(rangeSubunits, 1L);
         ActorPresence actor = space.GetActor(actorId);
         if (actor.Feet.Z != resourceFeet.Z)
         {
@@ -52,6 +61,6 @@ public static class ResourceInteractionQueries
         // The anchor shares the actor's exact center height; a ground-plane endpoint would graze the support cube.
         var target = ((Int128)resourceFeet.X * 2, (Int128)resourceFeet.Y * 2, center.Z);
         return TerrainSightline.QueryCenters(new TerrainVolumeQueries(space.Regions), center, target,
-            GatherRulesV1.ReachSubunits, space.Structures);
+            rangeSubunits, space.Structures);
     }
 }

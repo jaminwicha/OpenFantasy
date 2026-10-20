@@ -309,7 +309,8 @@ public sealed partial class LocalWorldSession : IAsyncDisposable
             throw new AuthorityDispatchException("This lifecycle boundary accepts only entry or release requests.");
         if (command.Intent is CancelEncounterWithdrawalIntent)
         {
-            if (state.ProfileVersion != WorldPartyWithdrawalAdmission.ProfileVersion || state.Pacing?.Encounter is null)
+            if (state.ProfileVersion is not WorldPartyWithdrawalAdmission.ProfileVersion and not WorldCognitionAdmission.ProfileVersion
+                || state.Pacing?.Encounter is null)
                 throw new AuthorityDispatchException("Withdrawal cancellation requires its active collective encounter.");
             // Cancellation can occur between paid samples. Core checks the exact retained command and
             // current timing revision; it never refunds debt or supplies an extra combat action.

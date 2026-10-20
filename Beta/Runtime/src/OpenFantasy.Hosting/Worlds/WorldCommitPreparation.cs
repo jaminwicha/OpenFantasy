@@ -1,6 +1,7 @@
 using OpenFantasy.Core.Construction.Ownership;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Cognition;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Construction;
 using OpenFantasy.Core.Terrain;
@@ -25,7 +26,9 @@ internal sealed class WorldCommitPreparation
                 ? _processor.DecideWithMaterialEvidence(state, batch, Occupied)
                 : _processor.Decide(state, batch, Occupied);
         }
-        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
+        // A cognition bound overflow is never a refused batch: it propagates and stops the authority.
+        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException
+            && error is not CognitionCapacityException)
         {
             throw new AuthorityDispatchException("The selected batch cannot be committed in the current world.");
         }
@@ -48,7 +51,9 @@ internal sealed class WorldCommitPreparation
             step = source.PrepareStep(batch, source.Occupancy, source.Terrain, Occupied);
             decision = step.Rehydrate(state.Space.Regions);
         }
-        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
+        // A cognition bound overflow is never a refused batch: it propagates and stops the authority.
+        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException
+            && error is not CognitionCapacityException)
         {
             throw new AuthorityDispatchException("The selected construction interval cannot be committed in the current world.");
         }

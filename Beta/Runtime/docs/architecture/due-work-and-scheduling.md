@@ -54,6 +54,12 @@ the ordinary advancing interpreter still owns mandatory passive effects. It esta
 NPC starvation bound. The [player selector](../../src/OpenFantasy.Hosting/Simulation/LocalWorldSession.Players.cs)
 has a cyclic service cursor with care-priority rules; that is not evidence of fair NPC work scheduling.
 
+Profile 42 adds persistent due work of its own: each resident's pending reconsideration wake, in the advancing-step
+domain, with its cause and the condition that suppresses it. A wake is due once the world's advancing count reaches
+its due step. A recorded decision services it, and an unserviced wake simply ages. The wake survives restart, so due
+age survives reopening. Servicing a wake is an autonomous proposal. It is selected like other NPC actions, so the
+fallback above can omit it, and it has no starvation bound. No hosted session proposes these decisions yet.
+
 ## Runtime binding: stored construction
 
 [StoredConstructionInterval](../../src/OpenFantasy.Core/Construction/Ownership/StoredConstructionInterval.cs)

@@ -19,6 +19,7 @@ public static class WorldActionCodec
         if (command.ControlWitness is not null) return WorldActionCodecV23.Encode(command);
         return command.Intent switch
         {
+            InspectGatherSourceIntent or RecordCognitionDecisionIntent => WorldActionCodecV25.Encode(command),
             CancelEncounterWithdrawalIntent => WorldActionCodecV24.Encode(command),
             ControlPermissionIntent => WorldActionCodecV22.Encode(command),
             PendingCareDispositionIntent => WorldActionCodecV21.Encode(command),
@@ -48,6 +49,7 @@ public static class WorldActionCodec
     public static WorldActionCommand Decode(ReadOnlySpan<byte> bytes) =>
         WorldCodecVersion.Read(bytes, "world.actor-action"u8, MaximumCommandByteLength, 10) switch
         {
+            25 => WorldActionCodecV25.Decode(bytes),
             24 => WorldActionCodecV24.Decode(bytes),
             23 => WorldActionCodecV23.Decode(bytes),
             22 => WorldActionCodecV22.Decode(bytes),

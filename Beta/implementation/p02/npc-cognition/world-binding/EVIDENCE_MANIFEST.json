@@ -1,0 +1,73 @@
+{
+  "sourceBasis": {
+    "head": "6964630668990c2a58618b78b246c3dbfad0456d",
+    "note": "uncommitted working tree at source freeze; the commit that records this packet contains exactly the measured source"
+  },
+  "coreFull": {
+    "path": "~/.local/share/openfantasy/evidence/npc-world-binding-20261020/core-full-01.trx",
+    "bytes": 3173682,
+    "sha256": "69e5011ef8849af401a9ad639ee0f86f2de331d0e4718b10bad07339f10846f9",
+    "committed": false,
+    "total": 2069,
+    "executed": 2069,
+    "passed": 2069,
+    "failed": 0,
+    "durationNote": "1 m 58 s; built before CognitionCommandCodecTests.cs existed, so its 3 cases are in the focused report only"
+  },
+  "hostingFull": {
+    "path": "~/.local/share/openfantasy/evidence/npc-world-binding-20261020/hosting-full-01.trx",
+    "bytes": 3767614,
+    "sha256": "d951f209e6d8ac9f248f0ad9d1e0e98719b75089930ed22632849c7cdd561c83",
+    "committed": false,
+    "total": 2283,
+    "executed": 2258,
+    "passed": 2242,
+    "failed": 16,
+    "durationNote": "20 m 56 s",
+    "classification": {
+      "manifestDependentVerifiers": 6,
+      "processTestsMissingOPENFANTASY_DOTNET": 6,
+      "fixtureExporterWithoutDestination": 1,
+      "preexistingAtHead": 3
+    }
+  },
+  "withdrawalProcessRerun": {
+    "path": "~/.local/share/openfantasy/evidence/npc-world-binding-20261020/withdrawal-process-01.trx",
+    "bytes": 11902,
+    "sha256": "a41a1308219c1ad716958e2bd05c88c201583203db9c2184dcde7d897189e72f",
+    "committed": false,
+    "total": 6,
+    "executed": 6,
+    "passed": 6,
+    "failed": 0,
+    "note": "the six process tests with OPENFANTASY_DOTNET set"
+  },
+  "coreCognitionFocused": {
+    "path": "managed/core-cognition.trx",
+    "bytes": 47558,
+    "sha256": "4fcdc670b92207bc95c45545f3acd96828c9e1b5fffd771fa73eb38a37f87857",
+    "committed": true,
+    "total": 31,
+    "executed": 31,
+    "passed": 31,
+    "failed": 0
+  },
+  "hostingCognitionFocused": {
+    "path": "managed/hosting-cognition.trx",
+    "bytes": 20587,
+    "sha256": "6af67d7e19649f81e8d7a24d065bc1e897d844a76d4624eb9fb8fa5071c2613a",
+    "committed": true,
+    "total": 12,
+    "executed": 12,
+    "passed": 12,
+    "failed": 0
+  },
+  "builds": {
+    "serverTests": "0 warnings, 0 errors",
+    "client": "0 warnings, 0 errors"
+  },
+  "toolchain": {
+    "sdk": "10.0.401",
+    "testRuntime": "net8.0"
+  }
+}

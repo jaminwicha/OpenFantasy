@@ -1,0 +1,12 @@
+{
+  "packet": "NPC-01 first world binding: profile 42 Core laws and storage",
+  "checkpointRef": "codex/checkpoint-before-npc-world-binding-20261020",
+  "checkpointCommit": "6964630668990c2a58618b78b246c3dbfad0456d",
+  "predecessorStagedFiles": 19,
+  "toolchain": {
+    "sdk": "10.0.401"
+  },
+  "documentationChecks": "DOCUMENTATION_CHECKS.json",
+  "evidenceManifest": "EVIDENCE_MANIFEST.json",
+  "rawEvidenceNotCommitted": "full Core and Hosting reports and the process rerun, hashed in EVIDENCE_MANIFEST.json"
+}

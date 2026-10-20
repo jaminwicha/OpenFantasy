@@ -123,7 +123,7 @@ public static class WorldActorCommandAuthority
         SpeakToActorIntent or CloseDialogueIntent or DeliveryQuestIntent => WorldControlCapabilities.ConversationAndQuests,
         GiveItemIntent or MaterialProposalIntent or OfferMaterialIntent or AcceptMaterialIntent => WorldControlCapabilities.Inventory,
         MarketIntent or PaidExchangeIntent => WorldControlCapabilities.Trade,
-        GatherIntent or ExcavateIntent or CraftIntent or WorkConstructionIntent => WorldControlCapabilities.Production,
+        GatherIntent or InspectGatherSourceIntent or ExcavateIntent or CraftIntent or WorkConstructionIntent => WorldControlCapabilities.Production,
         _ => 0
     };
 }

@@ -43,7 +43,7 @@ public sealed class CargoPlayerHost : IAsyncDisposable
             try
             {
                 WorldSnapshot state = authority.ReadStateForHost();
-                var threat = state.ProfileVersion is WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion
+                var threat = state.ProfileVersion is WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion
                     ? RoadThreatWorldAdmission.FindInProfile(state, NativeCargoWorld.Sources, RoadThreatSources.LoadEmbedded(), state.ProfileVersion)
                     : CargoOutcomeWorldAdmission.Find(state, NativeCargoWorld.Sources, RoadThreatSources.LoadEmbedded());
                 if (threat is null)

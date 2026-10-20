@@ -31,7 +31,7 @@ public sealed partial class LocalWorldSession
             {
                 RequireEstablishedControlPort(player);
                 RequireCurrentSelection(player, observed);
-                if (state.ProfileVersion is not (WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion))
+                if (state.ProfileVersion is not (WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion))
                     throw new AuthorityDispatchException("Actor selection requires its explicit saved interpretation.");
                 WorldControlWitness? witness = actorId == player.ActorId ? null : player.LiveControlWitness;
                 if (actorId != player.ActorId && (witness is null || witness.OwnerActorId != actorId

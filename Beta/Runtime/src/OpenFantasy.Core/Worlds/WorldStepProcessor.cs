@@ -1,5 +1,6 @@
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Care;
+using OpenFantasy.Core.Cognition;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Core.Exposure;
 using OpenFantasy.Core.Construction;
@@ -96,10 +97,22 @@ public sealed class WorldStepProcessor
         // Observations bind the prepared root that is actually interpreted. When preparation sealed
         // an archive segment that root differs from the selected input, whose hash is kept beside it.
         var materialEvidence = observeMaterial ? new WorldMaterialEvidenceCollector(state, prepared.State) : null;
-        var decision = DecidePrepared(joint.State, batch, historicallyOccupied, materialEvidence);
+        var decision = WithReconciledCognition(DecidePrepared(joint.State, batch, historicallyOccupied, materialEvidence));
         return prepared.Sealed is null && joint.Sealed is null ? decision
             : new WorldStepDecision(decision.Candidate, decision.Receipts, decision.Identities, prepared.Sealed,
                 decision.MaterialEvidence, joint.Sealed, decision.CandidateFrame);
+    }
+
+    /// <summary>
+    /// Records the committed boundary's suppression condition on pending wakes. The candidate keeps its receipts and
+    /// identities; a replaced candidate carries no captured frame, so its durable owner encodes it.
+    /// </summary>
+    private static WorldStepDecision WithReconciledCognition(WorldStepDecision decision)
+    {
+        WorldSnapshot reconciled = WorldCognitionLaw.ReconcileSuppression(decision.Candidate);
+        return ReferenceEquals(reconciled, decision.Candidate) ? decision
+            : new WorldStepDecision(reconciled, decision.Receipts, decision.Identities, decision.SealedResourceSegment,
+                decision.MaterialEvidence, decision.SealedMaterialCareSegment);
     }
 
     private WorldStepDecision DecidePrepared(WorldSnapshot state, WorldStepBatch batch, Func<EntityId, bool>? historicallyOccupied,
@@ -189,6 +202,9 @@ public sealed class WorldStepProcessor
         WorldPacingState? pacing = state.Pacing;
         var lifecycle = state.EncounterLifecycle?.RetainBoundary();
         IEnumerable<WorldResident> residents = state.Residents;
+        CognitionSnapshot? cognition = state.Cognition;
+        // Evidence makes reconsideration due at the advancing step this batch produces.
+        ulong resultingStep = batch.Kind == WorldBatchKind.AdvancingStep ? checked(state.AdvancingSteps + 1) : state.AdvancingSteps;
 
         bool FitsCompleteCandidate(CountedAuthorityState proposedInventory,
             IEnumerable<DialogueSession> proposedDialogues, ConstructionPhysicalSnapshot? proposedPhysical,
@@ -227,7 +243,8 @@ public sealed class WorldStepProcessor
                     ? proposedLiquidCells.AdvanceBoundary(state.EncounterLifecycle is null ? validationCalendar : validationPacing!.ProcessBoundary) : proposedLiquidCells;
                 var admitted = state.WithState(proposedInventory, space, validationResidents, validationCalendar, sequence, validationSteps,
                     proposedDialogues, validationGathering, production, progression, quests, construction,
-                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle, care: care, resourceHistory: resourceHistory, coordination: coordination);
+                    validationReservoirs, validationTransport, excavation, proposedPhysical, validationLiquidCells, validationPacing, encounterLifecycle: validationLifecycle, care: care, resourceHistory: resourceHistory, coordination: coordination,
+                    cognition: cognition);
                 // The envelope check stays inside this admission: a root that cannot be encoded is
                 // refused here. Its bytes belong to this admitted root alone.
                 WorldCanonicalFrame? captured = state.ConsequencePolicy is not null || state.ReservoirSeals is not null
@@ -266,6 +283,8 @@ public sealed class WorldStepProcessor
             var previousReservoirs = reservoirs;
             var previousTransport = transport;
             var previousLiquidCells = liquidCells;
+            var previousCognition = cognition;
+            IReadOnlyList<CognitionEvidence> acquired = [];
             bool performedWork = false;
             WorldActionResolution resolution;
             IReadOnlyList<EntityId> createdIds = [];
@@ -502,6 +521,25 @@ public sealed class WorldStepProcessor
                         new WorldRewardResourceEvidence(action.CommandId));
                 }
             }
+            else if (action.Intent is RecordCognitionDecisionIntent)
+            {
+                if (cognition is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret recorded decisions.");
+                }
+                (WorldActionRejection rejection, CognitionSnapshot decided) = WorldCognitionLaw.ResolveDecision(state, cognition, action);
+                cognition = decided;
+                resolution = new WorldActionResolution(inventory, dialogues, rejection, null);
+            }
+            else if (action.Intent is InspectGatherSourceIntent)
+            {
+                if (cognition is null || gathering is null)
+                {
+                    throw new InvalidOperationException("This saved profile does not interpret source inspection.");
+                }
+                resolution = new WorldActionResolution(inventory, dialogues,
+                    WorldCognitionLaw.ResolveInspection(state, space, gathering, action, dialogues.Count != 0), null);
+            }
             else if (action.Intent is GatherIntent)
             {
                 if (gathering is null)
@@ -545,7 +583,10 @@ public sealed class WorldStepProcessor
                 || !WorldTransportBinding.TryReconcile(transport, reconciled, out var reconciledTransport)
                 || !WorldLiquidCellBinding.TryReconcile(liquidCells, reconciled, out var reconciledLiquidCells, space, state.ReservoirSeals)
                 || !FitsCompleteCandidate(resolution.Inventory, resolution.Dialogues, reconciledPhysical,
-                    reconciled, reconciledTransport, reconciledLiquidCells, out _, out _))
+                    reconciled, reconciledTransport, reconciledLiquidCells, out _, out _)
+                || resolution.Rejection == WorldActionRejection.None && cognition is not null
+                    && !WorldCognitionLaw.TryDerive(state, new WorldCognitionOutcome(action, resolution.Inventory, gathering, quests,
+                        resolution.SpawnedId, materialTransfer, proposalSettlement), Occupied, out acquired))
             {
                 excavation = previousExcavation;
                 gathering = previousGathering;
@@ -561,6 +602,8 @@ public sealed class WorldStepProcessor
                 reservoirs = previousReservoirs;
                 transport = previousTransport;
                 liquidCells = previousLiquidCells;
+                cognition = previousCognition;
+                acquired = [];
                 performedWork = false;
                 recipientRejection = WorldActionRejection.Unavailable;
                 createdIds = [];
@@ -573,6 +616,19 @@ public sealed class WorldStepProcessor
                 reservoirs = reconciled;
                 transport = reconciledTransport;
                 liquidCells = reconciledLiquidCells;
+                if (cognition is not null && performedWork)
+                {
+                    cognition = WorldCognitionLaw.ScheduleCompletedWork(cognition, action, previousConstruction, construction, resultingStep);
+                }
+                if (acquired.Count != 0)
+                {
+                    // Joins this action's cohort: published only with the outcome that produced it.
+                    cognition = WorldCognitionLaw.Acquire(cognition!, acquired, resultingStep);
+                    foreach (CognitionEvidence entry in acquired)
+                    {
+                        Reserve(entry.EvidenceId, WorldCommittedIdentityKind.SpawnedEntity);
+                    }
+                }
             }
             if (materialEvidence is not null && resolution.Rejection == WorldActionRejection.None)
             {
@@ -697,7 +753,8 @@ public sealed class WorldStepProcessor
             }
         }
         WorldSnapshot candidate = admittedMovement ?? state.WithState(inventory, space, residents, calendar, sequence,
-            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: resourceHistory, coordination: coordination);
+            advancingSteps, dialogues, gathering, production, progression, quests, construction, reservoirs, transport, excavation, physical, liquidCells, pacing, encounterLifecycle: lifecycle, care: care, resourceHistory: resourceHistory, coordination: coordination,
+            cognition: cognition);
         // Only the frame captured for the exact reused movement root accompanies it. A candidate
         // that was never encoded here carries none and is encoded by its durable owner.
         WorldCanonicalFrame? candidateFrame = admittedMovement is null ? null : admittedMovementFrame;

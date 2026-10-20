@@ -62,7 +62,7 @@ public static class WorldPaidExchangeAdmission
             if (outcome.Settlement is { } settled)
             {
                 ValidateFill(world, outcome.Quote, settled);
-                if (world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
+                if (world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion)
                     RequireRecorded(world, outcome.Quote.Quote.CounterpartyActorId, settled.CounterpartyDelivery,
                         settled.ControlWitness, outcome.WorldSequence);
             }
@@ -70,7 +70,7 @@ public static class WorldPaidExchangeAdmission
             // until an explicit session or roster transition exists; that transition must replace this check.
             if (outcome.Withdrawal is { } withdrawal)
             {
-                if (world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
+                if (world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion)
                     RequireRecorded(world, outcome.Quote.Quote.IssuerActorId, withdrawal.Delivery,
                         withdrawal.ControlWitness, outcome.WorldSequence);
                 else if (withdrawal.ControlWitness is not null
@@ -199,7 +199,7 @@ public static class WorldPaidExchangeAdmission
     private static void ValidateQuote(WorldSnapshot world, WorldPaidQuote proposal)
     {
         SpotQuote quote = proposal.Quote;
-        if (world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
+        if (world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion)
             RequireRecorded(world, quote.IssuerActorId, proposal.IssuerDelivery, proposal.ControlWitness, proposal.CreatedSequence);
         else if (proposal.ControlWitness is not null)
             throw new ArgumentException("Delegated quote provenance requires its explicit world profile.");
@@ -226,7 +226,7 @@ public static class WorldPaidExchangeAdmission
     {
         SpotQuote quote = proposal.Quote;
         bool Controls(TrustedCommandDelivery delivery, EntityId actor, WorldControlWitness? witness) =>
-            world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion
+            world.ProfileVersion is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion
                 ? WorldActorCommandAuthority.ValidateRecordedEvidence(world.Inventory, actor, delivery, witness, WorldControlCapabilities.Trade)
                 : witness is null && world.Inventory.CanControl(delivery, actor);
         if (!Controls(proposal.IssuerDelivery, quote.IssuerActorId, proposal.ControlWitness)

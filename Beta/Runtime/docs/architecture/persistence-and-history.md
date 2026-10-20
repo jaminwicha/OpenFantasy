@@ -100,12 +100,20 @@ bounded interpreters. Profiles are saved compositions, not capability inferred f
 | 39 | Named co-player permission offers, exact acceptance and revocation, separate from effective control |
 | 40 | Explicit effective co-player assignment, scoped gameplay authority and immutable command attribution over the complete permission world |
 | 41 | Collective withdrawal Core: independent side commitments, paid movement, cancellation and whole-side departure over the effective-control world |
+| 42 | Cognition, internal and non-default: one evidence, intention, memory and wake record per resident, acquired only from committed outcomes, with decisions entering as recorded actor actions |
 
 Profile41 has explicit Core root/step codecs and complete-world transactions, with schema12 storage
 for fresh roots or a single replayed40→41 transition. Its fresh factory cannot migrate a lived world;
 the explicit upgrade preserves original admission and history. Ordinary client admission remains a
 separate boundary. The [party-withdrawal reference](party-withdrawal.md) describes the Core/storage
 bindings and the connected/native adapter obligations.
+
+Profile 42 is a strict successor of 41: its fresh factory accepts only an unplayed profile-41 world, and no
+transition from a lived 41 exists. Its root appends the cognition section after profile 41's fields. Decoders for
+profiles up to 41 refuse those bytes, because the extra field exceeds their exact field bound, and profile 41 cannot
+encode a cognition root. It uses schema twelve, with no migration entry. Until NPC-01 is accepted, profile-42 saves
+are development fixtures with no compatibility promise. The [actor reference](actors-and-society.md#runtime-binding-cognition-interpretation-profile-42)
+describes its laws.
 
 [Profile 25](world-resource-history.md) includes the complete progression basis, ordered resource
 changes and named attack/reward/treatment witnesses. Its structural and causal checks do not
@@ -448,7 +456,9 @@ the closed40→41 withdrawal transition, not a generic permission to change prof
 and reserved component maxima under the 16 MiB root budget. A larger standalone component must fit
 the complete reservation calculation; its own successful encoding does not prove that capacity.
 Profile41 explicitly substitutes the collective retreat codec and512KiB reservation in that shared
-complete frame; legacy versions retain their original codec and bound. This changes no database
+complete frame; legacy versions retain their original codec and bound. Profile 42 keeps profile 41's fields and
+reservations and appends the cognition section, reserving its full codec maximum, about 3.1 MiB, in the same
+calculation. This changes no database
 schema, host compatibility selection or existing save's rule on opening.
 
 ### Storage representation and preserved-source conversion

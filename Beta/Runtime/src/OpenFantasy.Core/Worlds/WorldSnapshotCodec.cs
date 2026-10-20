@@ -13,6 +13,7 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Encode(state),
             2 => WorldSnapshotCodecV2.Encode(state),
             3 => WorldSnapshotCodecV3.Encode(state),
+            42 => WorldSnapshotCodecV42.Encode(state),
             41 => WorldSnapshotCodecV41.Encode(state),
             40 => WorldSnapshotCodecV40.Encode(state),
             39 => WorldSnapshotCodecV39.Encode(state),
@@ -53,8 +54,8 @@ public static class WorldSnapshotCodec
         };
     }
 
-    // The pre-screen admits the widest retained root (profiles 40–41, 31 fields); each codec enforces its own exact bound.
-    private const int MaximumRootFields = 31;
+    // The pre-screen admits the widest retained root (profile 42, 32 fields); each codec enforces its own exact bound.
+    private const int MaximumRootFields = 32;
 
     public static WorldSnapshot Decode(ReadOnlySpan<byte> bytes, WorldResourceArchiveAnchor? archiveAnchor = null) =>
         WorldCodecVersion.Read(bytes, "world.snapshot"u8, MaximumStateByteLength, MaximumRootFields) switch
@@ -62,6 +63,8 @@ public static class WorldSnapshotCodec
             1 => WorldSnapshotCodecV1.Decode(bytes),
             2 => WorldSnapshotCodecV2.Decode(bytes),
             3 => WorldSnapshotCodecV3.Decode(bytes),
+            42 => archiveAnchor is null ? WorldSnapshotCodecV42.Decode(bytes)
+                : throw new FormatException("A cognition root requires its coordinated archive context."),
             41 => archiveAnchor is null ? WorldSnapshotCodecV41.Decode(bytes)
                 : throw new FormatException("A collective withdrawal root requires its coordinated archive context."),
             40 => archiveAnchor is null ? WorldSnapshotCodecV40.Decode(bytes)
@@ -127,6 +130,7 @@ public static class WorldSnapshotCodec
             32 => WorldSnapshotCodecV32.Decode(bytes, coordinatedAnchor),
             33 => WorldSnapshotCodecV33.Decode(bytes, coordinatedAnchor),
             34 => WorldSnapshotCodecV34.Decode(bytes, coordinatedAnchor),
+            42 => WorldSnapshotCodecV42.Decode(bytes, coordinatedAnchor),
             41 => WorldSnapshotCodecV41.Decode(bytes, coordinatedAnchor),
             40 => WorldSnapshotCodecV40.Decode(bytes, coordinatedAnchor),
             39 => WorldSnapshotCodecV39.Decode(bytes, coordinatedAnchor),

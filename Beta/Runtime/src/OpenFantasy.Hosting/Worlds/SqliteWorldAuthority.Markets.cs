@@ -21,7 +21,7 @@ public sealed partial class SqliteWorldAuthority
         {
             EnsureAvailable();
             if (_state.ProfileVersion is not (WorldMarketAdmission.ProfileVersion or WorldEncounterRetreatAdmission.ProfileVersion
-                    or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion)
+                    or WorldEncounterOutcomeAdmission.ProfileVersion or WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion)
                 || command.Intent is not MarketIntent)
             {
                 throw new AuthorityDispatchException("This boundary accepts market submissions of their own world profile.");

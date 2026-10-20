@@ -149,6 +149,11 @@ The [PLAN-STATE exit decision](../../../implementation/PLAN_STATE_EXIT_DECISION.
 - **Versioning:** the facet enters only through profile 42, a strict successor of 41, as a canonical sequence of
   per-actor records so a later storage-only conversion keeps its meaning.
 
+The profile-42 root binds these rules in the existing complete root under the single SQLite authority. Its laws are
+described in the [actor reference](actors-and-society.md#runtime-binding-cognition-interpretation-profile-42). The
+cognition section is still one root field. No typed-owner image, partial load or non-resident reconciliation of
+cognition exists yet.
+
 ## Runtime binding: legacy typed-owner storage
 
 `SqliteWorldAuthority.CreateWithTypedOwners` admits a fresh profile-five world into explicit storage

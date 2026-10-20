@@ -1,5 +1,6 @@
 using OpenFantasy.Core.Actors;
 using OpenFantasy.Core.Authority;
+using OpenFantasy.Core.Cognition;
 using OpenFantasy.Core.Content;
 using OpenFantasy.Core.Custody;
 using OpenFantasy.Core.Language;
@@ -57,6 +58,7 @@ public static class WorldAdmissionValidator
         admission.ReadEffectiveControl();
         admission.ReadRetainedControlWitnesses();
         admission.ReadWithdrawalReferences();
+        admission.ReadCognition();
         return admission.Complete();
     }
 
@@ -133,6 +135,35 @@ public static class WorldAdmissionValidator
         private readonly Dictionary<LanguageChannelKey, ContentHash> _channelPins = [];
 
         internal WorldIdentityIndex Complete() => new(_roles, terrain, watershed, world.EncounterLifecycle);
+
+        /// <summary>
+        /// Evidence identities are permanent and unique. Counterparts and subjects are admitted owners of this world,
+        /// except a received lot, which may since have moved, split or been spent.
+        /// </summary>
+        internal void ReadCognition()
+        {
+            if (world.Cognition is not { } cognition) return;
+            foreach (ActorCognition actor in cognition.Actors)
+            {
+                Require(actor.ActorId, WorldIdentityRole.Actor);
+                foreach (CognitionEvidence entry in actor.Evidence)
+                {
+                    Add(entry.EvidenceId, WorldIdentityRole.CognitionEvidence, unique: true);
+                    if (entry.CounterpartActorId is { } counterpart) Require(counterpart, WorldIdentityRole.Actor);
+                    WorldIdentityRole? subject = entry.Kind switch
+                    {
+                        EvidenceKind.QuestDeliveryReceived => WorldIdentityRole.QuestDefinition,
+                        EvidenceKind.GatherOutcome or EvidenceKind.SourceObserved => WorldIdentityRole.GatherNode,
+                        EvidenceKind.ProjectWorked => WorldIdentityRole.ConstructionProject,
+                        _ => null
+                    };
+                    if (subject is { } role) Require(entry.SubjectId, role);
+                }
+                if (actor.Intention is { } intention)
+                    Require(intention.SubjectId, intention.Kind == IntentionKind.GatherPersonalStock
+                        ? WorldIdentityRole.GatherNode : WorldIdentityRole.ConstructionProject);
+            }
+        }
 
         internal void ReadWithdrawalReferences()
         {

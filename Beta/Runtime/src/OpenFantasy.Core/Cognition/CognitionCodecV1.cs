@@ -15,6 +15,7 @@ public static class CognitionCodecV1
     public const int MaximumMemoryByteLength = 512;
     public const int MaximumActorByteLength = 48 * 1024;
     public const int MaximumSnapshotByteLength = CognitionSnapshot.MaximumActors * (MaximumActorByteLength + 4) + 1024;
+    public const int MaximumDecisionByteLength = 1024;
     private const int InstantByteLength = 128;
     private const int WakeByteLength = 128;
 
@@ -161,6 +162,49 @@ public static class CognitionCodecV1
         basisReader.Complete();
         reader.Complete();
         return new CognitionMemory(intention, subject, outcome, at, reason, policy, basis);
+    }
+
+    /// <summary>
+    /// The recorded decision a cognition command carries: its policy version, the intention it holds, the deferral, the
+    /// next fallback wake and whether the current intention completed. Replay decodes and applies it; nothing reruns the
+    /// policy that produced it.
+    /// </summary>
+    public static byte[] EncodeDecision(CognitionDecision decision)
+    {
+        ArgumentNullException.ThrowIfNull(decision);
+        ArgumentNullException.ThrowIfNull(decision.NextWake);
+        if (!Enum.IsDefined(decision.Deferral)) throw new ArgumentException("A decision names a known deferral.");
+        byte[] bytes = Frame("cognition.decision", Number(1),
+            CanonicalEncodingV1.Text(CognitionMemory.RequirePolicyVersion(decision.PolicyVersion), nameof(decision)),
+            decision.Intention is { } intention ? EncodeIntention(intention) : [], Number((ulong)decision.Deferral),
+            EncodeWake(decision.NextWake.Validated()), Number(decision.CompletedCurrent ? 1UL : 0UL));
+        return bytes.Length <= MaximumDecisionByteLength ? bytes
+            : throw new ArgumentException("A recorded decision exceeds its canonical byte bound.");
+    }
+
+    public static CognitionDecision DecodeDecision(ReadOnlySpan<byte> bytes)
+    {
+        try
+        {
+            var reader = new WorldFrameReader(bytes, MaximumDecisionByteLength, 7);
+            reader.Tag("cognition.decision"u8);
+            reader.Version();
+            string policy = reader.Text(CognitionMemory.MaximumPolicyVersionBytes);
+            ReadOnlySpan<byte> intention = reader.Field(MaximumIntentionByteLength);
+            CognitionIntention? held = intention.IsEmpty ? null : DecodeIntention(intention);
+            var deferral = (CognitionDeferral)checked((int)reader.Number());
+            CognitionWake wake = DecodeWake(reader.Field(WakeByteLength));
+            ulong completed = reader.Number();
+            reader.Complete();
+            if (!Enum.IsDefined(deferral) || completed > 1) throw new FormatException("A recorded decision names unknown values.");
+            var restored = new CognitionDecision(policy, held, deferral, wake, completed == 1);
+            RequireCanonical(bytes, EncodeDecision(restored));
+            return restored;
+        }
+        catch (Exception error) when (error is ArgumentException or InvalidOperationException or OverflowException)
+        {
+            throw new FormatException("The recorded decision violates its invariants.", error);
+        }
     }
 
     private static byte[] EncodeWake(CognitionWake wake) => Frame("cognition.wake", Number(1), Number(wake.DueStep),
