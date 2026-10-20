@@ -54,6 +54,8 @@ same-save/offscreen acceptance. It freezes no persistence layout and claims no n
 General partial loading, due age/fairness, retained residency/scale/platform, projection and full migration
 remain open. Do not produce another generic rollout memo or repeat the completed legacy episode.
 
+The [STORY-01 content design](STORY_01_UNMARKED_ORE.md) is ready for implementation after NPC-01 and TRADE;
+its dependency table names the remaining engine gaps.
 After that exit, NPC-01 is the next new inhabited-world behavior. STORY-01, AUDIO-01/ART-01,
 recruitment/cooperative work and the traveling-merchant/cargo investigation retain their dependencies.
 ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain required before full
