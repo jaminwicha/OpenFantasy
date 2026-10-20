@@ -66,7 +66,13 @@ uncommitted.
   [October 3 import](../adventure-entry/checks/native-01.json) had no error. The pinned SDK bundles runtime
   10.0.12, its direct SDK listing works, and the toolchain and global .NET install are unchanged since August.
   Effect: the ordinary launcher and `Play OpenFantasy.command` stop at preparation. Native probes that launch
-  the game directly are unaffected. Diagnosis stopped at its bound; it is a separate open item.
+  the game directly are unaffected. A second bounded check narrowed the mechanism: the Godot 4.6 editor tools
+  contain literal `/usr/local/share/dotnet/dotnet` and `/usr/local/share/dotnet/x64/dotnet` probes beside
+  `--list-sdks` and no `DOTNET_ROOT` lookup, so on macOS they query the global install, which has only SDK
+  8.0.413. The editor runs on runtime 10.0.12 because its plugin host rolls forward to the latest major, so it
+  requires a 10.x SDK. Why the October 3 run passed is still unexplained: the launcher's `DOTNET_ROOT` handling
+  is unchanged since September. Likely remedy, needing administrator rights: install a .NET 10 SDK whose runtime
+  is at least 10.0.12 into `/usr/local/share/dotnet`.
 - **Two `Client` family failures:** *pre-existing configuration-dependent verifiers.* `NativeRetreatResultTests`
   and `NativeRoadThreatResultTests` are unconditional facts that throw without their manifest variables, unlike
   their four skipping siblings; unchanged since `cdeb9190`. Not caused by this packet; semantics left unchanged.

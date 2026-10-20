@@ -63,7 +63,9 @@ P02 acceptance. Then prove P03 before broader P04–P14 expansion. The full P02 
 from committed views and binds Music/Ambience/Effects/Voice buses with no accepted assets; native farm,
 encounter and four-player control journeys pass with it. **Open tooling defect:** the launcher's Godot import
 (`tools/play.py --prepare-only`, `Play OpenFantasy.command`) now fails `.NET Sdk not found ... '10.0.12'` at
-both this and the prior checkpoint; native probes that launch the game directly are unaffected. Diagnose it
+both this and the prior checkpoint; native probes that launch the game directly are unaffected. The Godot 4.6
+editor tools probe the global `/usr/local/share/dotnet` (SDK 8 only) instead of `DOTNET_ROOT` while running on
+runtime 10.0.12; installing a .NET 10 SDK there (owner, administrator rights) is the likely remedy. Resolve it
 before the requested human playtest, which uses the launcher.
 
 ## Acceptance and preserved limits
