@@ -136,6 +136,19 @@ owning another copy. A permanent persistence model requires complete ownership/d
 original-history migration/recovery and a qualified offscreen scheduling policy. A generic dictionary
 or a coarse terrain-separated image alone does not establish those contracts.
 
+The [PLAN-STATE exit decision](../../../implementation/PLAN_STATE_EXIT_DECISION.md) binds the first such model:
+- **Owner and key:** every person-actor owns one cognition record keyed by world, branch, role `cognition` and
+  actor. Control changes never create, reset or delete it.
+- **Contents:** acquired evidence, the current unaccepted intention, decision records with reasons and policy
+  version, memory with evidence links, and a pending reconsideration wake. Beliefs are derived from evidence.
+- **References:** accepted commitments, promises and existing knowledge such as price knowledge stay with their
+  owners and are referenced, not copied.
+- **Laws and decisions:** evidence and belief derivation are interpretation laws; plan selection enters state
+  only through recorded commands, and replay never runs the planner.
+- **Bounds:** overflow rolls back the boundary and stops the authority; it never rejects a gameplay action.
+- **Versioning:** the facet enters only through profile 42, a strict successor of 41, as a canonical sequence of
+  per-actor records so a later storage-only conversion keeps its meaning.
+
 ## Runtime binding: legacy typed-owner storage
 
 `SqliteWorldAuthority.CreateWithTypedOwners` admits a fresh profile-five world into explicit storage

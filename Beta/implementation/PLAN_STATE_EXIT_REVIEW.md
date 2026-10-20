@@ -32,7 +32,7 @@ Internal legacy profile5/schema14 is not a shipping format decision or a current
 | Actual process discovery, not a diagnostic queue | [Domain consumers](p02/partition-state/domain-process-discovery/RESULT.md), [joined regrowth/delivery](p02/partition-state/joined-process-boundary/RESULT.md) | Source affinity is complete immutable-object identity. Authenticated membership/absence and partial current-profile discovery remain open. A blocked evaluated stage is not undiscovered work. |
 | Bytes, allocations, load/commit/replay and oldest due age on named hardware | [Measurements and host](p02/partition-state/owner-cost-comparison/RESULT.md) separate capture, partial publication, intervention, final admission and replay | Warm comparison plus [fresh-process first/repeated open](p02/partition-state/membership-cold-load/RESULT.md). OS-cache-cold I/O, retained detail/peak residency, boundary stalls, meaningful scale/platform work and authoritative multi-domain oldest-due age remain unqualified; age is unavailable, not zero. |
 | Legal composition, historical versions and preserved-source rollout | [Current-profile dependency map](PLAN_STATE_CURRENT_PROFILE_MAP.md), [prototype contract](PARTITION_PROTOTYPE_CONTRACT.md), [decision](PLAN_STATE_DECISION.md) | [Current-profile rollout proposal](PLAN_STATE_CURRENT_PROFILE_ROLLOUT.md) supplies ownership and source-preservation design, including operational recovery and rollback limits. Exhaustive executable nested mapping, legal combinations, migration/refusal and public compatibility still need qualification before enablement. |
-| Independent architectural decision review | Concrete bounded scope below | Unrun under the owner's pause. Lead inspection cannot close it. No external request or native subagent is authorized by this document. |
+| Independent architectural decision review | Concrete bounded scope below | Done under the owner's 2026-10-20 delegation: one read-only critic, [returned review](plan-state-exit-review/REVIEW.md), verdict "accept with required changes", all applied in [the exit decision](PLAN_STATE_EXIT_DECISION.md) per [the disposition](plan-state-exit-review/DISPOSITION.md) |
 
 These are scoped qualifications, not a new sum of test passes. Keep original pins and retained failures;
 none of these tests ran again for this reconciliation. Full P00/P01/P02 and later production gates stay
@@ -71,7 +71,10 @@ explicitly and report only the achieved condition. Do not infer cold behavior fr
 claim native memory from managed allocations, or optimize away required history to improve a score.
 Schedule it after its dependencies are concrete; no automatic rerun of the completed warm comparison.
 
-## Prepared independent review assignment — not dispatched
+## Prepared independent review assignment — dispatched 2026-10-20
+
+The assignment below was superseded by [the dispatched assignment](plan-state-exit-review/ASSIGNMENT.md), which
+reviewed the exit decision; its [dispatch record](plan-state-exit-review/DISPATCH.json) holds route, limits and cost.
 
 One read-only architectural critic, when orchestration is authorized again, reviews the comparison,
 decision, this matrix, affected ownership/scheduling/persistence reference pages and named implementation

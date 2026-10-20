@@ -229,10 +229,15 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
    Next prepare authenticated membership/absence and interpreter-specific due-service semantics;
    retain current-profile nested coverage, cold/warm/retained-detail/commit/replay/oldest-age measurement,
    projection, scheduling/scale and all remaining rollout obligations. The matrix links existing proof
-   rather than assigning duplicate legacy demonstrations. Required independent architectural review
-   remains unrun under the orchestration pause; its concrete scope is prepared, not dispatched.
+   rather than assigning duplicate legacy demonstrations. The [exit decision](PLAN_STATE_EXIT_DECISION.md)
+   is now decided and independently reviewed under the owner's 2026-10-20 delegation, accepted with the
+   review's required changes applied ([disposition](plan-state-exit-review/DISPOSITION.md)). It closes the
+   decision/review exit only: residual measurements keep named gates, measured triggers make rollout,
+   checkpoint and journal work mandatory, and steps B–D are certain for the P01 exit.
    Keep timeless ownership/scheduling/persistence documentation synchronized with every changed contract.
-3. Deliver **NPC-01** as the next new inhabited-world behavior. Prepare **STORY-01** content and
+3. Deliver **NPC-01** as the next new inhabited-world behavior. Its storage-independent
+   [Core cognition contracts](p02/npc-cognition/core-contracts/RESULT.md) exist; the internal profile-42
+   world binding is next, under the exit decision's rules. Prepare **STORY-01** content and
    **AUDIO-01/ART-01** semantic production contracts alongside their dependency design, then build
    recruitment/cooperative work and the traveling merchant/cargo investigation. These are dependency
    lanes, not authorization to launch agents: the lead executes directly and sequences actual work.
@@ -595,3 +600,25 @@ borrowing. Original quest/material/reward rules persist. Fixed opening speech an
 memory need explicit extensions for enduring evidence/belief/commitment/memory and permitted explanations.
 This is design preparation only, not a new save field, running policy, full NPC or P02 acceptance.
 Permanent persistence still follows PLAN-STATE decision/review; no orchestration exception is presumed.
+
+
+### PLAN-STATE exit decision and independent review
+
+The [exit decision](PLAN_STATE_EXIT_DECISION.md) keeps the complete root as the default saved representation for
+NPC-01's first episode, makes typed stable owners the logical model, and admits cognition only as an internal
+profile 42, a strict successor of 41 that freezes at NPC-01 acceptance. Evidence and belief derivation are
+interpretation laws; plan selection enters state only through recorded commands carrying the policy version.
+Total residency is scoped to the first episode and labelled player-absent detailed continuation; non-resident
+reconciliation stays a P01/P02 gate. Measured triggers on named workloads make rollout steps B–E, checkpoint
+authentication and journal segmentation mandatory, and steps B–D are certain for the P01 exit.
+One read-only critic reviewed it through the maintained adapter and returned "accept with required changes";
+every change is applied, as the [disposition](plan-state-exit-review/DISPOSITION.md) records. The journal
+envelope may be within hours of continuous play; NPC-01's baseline measures it. No P01, P02, P03, LANG,
+platform, scale or human gate closes.
+
+### NPC-01 core cognition contracts
+
+[Storage-independent Core contracts](p02/npc-cognition/core-contracts/RESULT.md) define acquired evidence, actor
+cognition with bounded evidence and memory, derived beliefs, a persistent reconsideration wake, recorded
+decisions with policy versions and Wren's deterministic delayed-supply policy, with a strict canonical codec
+checked against an independent Python oracle. No profile, save field, host policy or native behavior changes.

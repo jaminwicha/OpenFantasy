@@ -1,0 +1,61 @@
+{
+  "assignment": "ASSIGNMENT.md",
+  "adapter": "~/.claude/skills/cross-agent-delegation/scripts/run_claude_task.py",
+  "executable": "claude 2.1.280 (~/.local/bin/claude)",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "requestedEffort": "max",
+  "returnedModels": {
+    "claude-haiku-4-5-20251001": {
+      "outputTokens": 18,
+      "costUSD": 0.0018,
+      "contextWindow": 200000
+    },
+    "claude-opus-5-5[1m]": {
+      "outputTokens": 87742,
+      "costUSD": 3.9761,
+      "contextWindow": 1000000
+    }
+  },
+  "auxiliaryModelNote": "The client made one 18-token Haiku call; the review itself ran on the requested model.",
+  "tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "permissionDenials": 0,
+  "limits": {
+    "timeoutSeconds": 2400,
+    "maxBudgetUsd": 20
+  },
+  "startedUtc": "2026-10-20T13:49:51Z",
+  "elapsedSeconds": 887.8,
+  "turns": 53,
+  "totalCostUsd": 3.9779,
+  "providerResult": {
+    "type": "result",
+    "subtype": "success",
+    "isError": false,
+    "stopReason": "end_turn"
+  },
+  "processExitCode": 0,
+  "adapterStatus": "completed_pending_review",
+  "contextStatus": "verified",
+  "revisionBefore": "684dc873a094d872536aabaad7c0397fb8752454",
+  "revisionAfter": "684dc873a094d872536aabaad7c0397fb8752454",
+  "contextManifestSha256": "f31609c9a264b2ddf48eccc31ee950d7cbc8ccbe031c0d3264ef08ed269b4173",
+  "reviewTextSha256": "44925d5208f4f913bdd395c51bc4368c783294740f1d62b02109201d2b684fbc",
+  "automaticRetry": false,
+  "modelSubstitution": false,
+  "rawSessionCommitted": false,
+  "verdict": "accept with required changes",
+  "contextPreflight": {
+    "status": "verified",
+    "inputs": 413,
+    "syncedFiles": 0
+  },
+  "contextPostflight": {
+    "status": "verified",
+    "inputs": 413
+  },
+  "spendNote": "The reviewer estimated about $3.50; the provider reported $3.98."
+}

@@ -1,0 +1,13 @@
+{
+  "packet": "PLAN-STATE exit decision: independent review and disposition",
+  "checkpointRef": "codex/checkpoint-before-plan-state-exit-acceptance-20261020",
+  "checkpointCommit": "684dc873a094d872536aabaad7c0397fb8752454",
+  "predecessorStagedFiles": 19,
+  "predecessorStagedNamesSha256": "ea5dbfd4842dea1e8469a81883d9819822358a024292245a02e4c107b1bf196b",
+  "toolchain": {
+    "sdk": "10.0.401"
+  },
+  "documentationChecks": "DOCUMENTATION_CHECKS.json",
+  "dispatch": "DISPATCH.json",
+  "rawEvidenceNotCommitted": "reviewer session and adapter run directory, kept local"
+}

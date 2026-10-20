@@ -30,11 +30,13 @@ restart. Record each decision, its review and its disposition in shared document
 
 ## Current preparation and next work
 
-Continue CURRENT_ROADMAP's PLAN-STATE before permanent NPC cognition persistence. Use the
-[exit reconciliation](PLAN_STATE_EXIT_REVIEW.md) for the original obligations, linked executable
-proofs, remaining measurements and prepared review scope. The typed-owner/admission-cohort
-recommendation remains conditional: measured small-cohort cost favors coarse terrain separation.
-Internal profile5/schema14 does not change public/default current40/41 saves or authorize migration.
+The [PLAN-STATE exit decision](PLAN_STATE_EXIT_DECISION.md) is decided and independently reviewed, accepted with
+the review's required changes applied ([disposition](plan-state-exit-review/DISPOSITION.md)). It closes the
+decision/review exit only. Its decisions govern NPC-01's persistence: cognition enters only as internal profile 42,
+a strict successor of 41; evidence and beliefs are laws while decisions are recorded commands; overflow stops the
+authority; total residency is scoped to the first episode. Its obligation table keeps every residual measurement,
+and its triggers name the workloads NPC-01's baseline must report. Internal profile5/schema14 still does not change
+public/default current40/41 saves or authorize migration.
 
 The joined movement/gift/funded-work episode, selected atomic publication, original-history recovery,
 noninitial checkpoint, multi-actor sliced preparation and internal live host consumer have scoped
@@ -52,11 +54,14 @@ storage-only conversion from semantic migration, maps canonical responsibilities
 private-copy validation/publication, joint archives, operational recovery and rollback-after-play limits.
 It is design preparation, not an implemented current-profile loader or approved format.
 
-**Next:** take the existing bounded comparison and this concrete proposal through the required decision/
-independent-review gate before permanent NPC persistence or production promotion. Orchestration remains
-paused; do not dispatch the prepared critic or substitute lead inspection. The [NPC-01 causal design](NPC_01_CAUSAL_EPISODE.md) now specifies Wren’s delayed-supply episode,
-actual tool/resource prerequisites, evidence/knowledge boundaries, feasible replanning, dialogue and
-same-save/offscreen acceptance. It freezes no persistence layout and claims no new running NPC behavior.
+**Next:** NPC-01's internal profile-42 world binding, in a fresh session. The [NPC-01 causal design](NPC_01_CAUSAL_EPISODE.md)
+specifies Wren's episode; the [Core contracts](p02/npc-cognition/core-contracts/RESULT.md) supply evidence,
+cognition, wakes, recorded decisions and the codec, and name the integration seams found: derive evidence in
+`WorldStepProcessor.DecideImmediate` beside the material-evidence capture, follow profile 41's admission pattern
+for a fresh-only 42, and replace the construction controller's whole-world commitment read in the NPC
+controller's per-resident loop. No perception rule exists yet; the market's in-person reachability gate is the
+closest precedent. The decision's "What NPC-01 must prove first" list is the binding's acceptance order, and one
+independent critic reviews the first world binding.
 General partial loading, due age/fairness, retained residency/scale/platform, projection and full migration
 remain open. Do not produce another generic rollout memo or repeat the completed legacy episode.
 
@@ -64,12 +69,13 @@ The [STORY-01 content design](STORY_01_UNMARKED_ORE.md) is ready for implementat
 its dependency table names the remaining engine gaps.
 The [CAT-PLAN proposal](p00/CAT_PLAN_PROPOSAL.md) awaits the owner's decision on floors and per-family targets;
 every register count stays null until then.
-After that exit, NPC-01 is the next new inhabited-world behavior. STORY-01, AUDIO-01/ART-01,
+NPC-01 is the current inhabited-world behavior. STORY-01, AUDIO-01/ART-01,
 recruitment/cooperative work and the traveling-merchant/cargo investigation retain their dependencies.
 ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain required before full
 P02 acceptance. Then prove P03 before broader P04–P14 expansion. The full P02 table remains in the roadmap.
 
-**Latest increment:** the [journal](p02/journal/RESULT.md) shows character stats and known quests from the permitted view;
+**Latest increment:** the PLAN-STATE exit decision and review, then NPC-01's Core cognition contracts, both
+linked above. Before them, the [journal](p02/journal/RESULT.md) shows character stats and known quests from the permitted view;
 equipment, known skills, map and calendar remain. Before it, [keyboard remapping](p02/keyboard-remapping/RESULT.md) rebinds every action except pause, with
 reserved navigation keys and hints that follow the keys; controller remapping, device and scaling settings remain.
 Before it, [client settings](p02/client-settings/RESULT.md) added saved mixer levels and captions. Before that, the
