@@ -753,3 +753,11 @@ Verified milestone: `codex/milestone-semantic-audio-binding-20261019`, created a
 encounter and four-player control evidence, the failed first native and focused runs with their
 classification, and the pre-existing launcher import failure. No assets, listening, independent, phase or
 human acceptance. Predecessor staging and unrelated untracked evidence excluded.
+
+## STORY-01 design and CAT-PLAN proposal — 2026-10-19
+
+Documentation milestones, created without switching: `codex/milestone-story-01-design-20261019` at
+`551a8e2d8f87bdbda79d5e1021dc8698f764e77d` records the [unmarked ore design](STORY_01_UNMARKED_ORE.md);
+`codex/milestone-cat-plan-proposal-20261019` at `34bfce74dede9ef6fa2fdad6e4dd0e0301fbd06a` records the
+[CAT-PLAN proposal](p00/CAT_PLAN_PROPOSAL.md) and register proposal objects. Neither implements gameplay or
+approves a target; STORY-01 waits on NPC-01 and TRADE, CAT-PLAN on the owner's decision.
