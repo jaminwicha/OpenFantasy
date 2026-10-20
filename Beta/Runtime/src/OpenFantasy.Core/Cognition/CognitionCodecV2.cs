@@ -5,11 +5,13 @@ namespace OpenFantasy.Core.Cognition;
 
 /// <summary>
 /// Strict finite encoding of the cognition facet. Every field has a fixed or bounded length, absent optional values
-/// are empty fields, and decoding re-encodes and compares so only the canonical byte form is accepted.
+/// are empty fields, and decoding re-encodes and compares so only the canonical byte form is accepted. Version 2 adds
+/// each actor's current deferral beside its intention. Recorded decision frames are unchanged from version 1, so
+/// journal command bytes keep their meaning.
 /// </summary>
-public static class CognitionCodecV1
+public static class CognitionCodecV2
 {
-    public const string Format = "cognition.snapshot.v1";
+    public const string Format = "cognition.snapshot.v2";
     public const int MaximumEvidenceByteLength = 512;
     public const int MaximumIntentionByteLength = 512;
     public const int MaximumMemoryByteLength = 512;
@@ -18,11 +20,14 @@ public static class CognitionCodecV1
     public const int MaximumDecisionByteLength = 1024;
     private const int InstantByteLength = 128;
     private const int WakeByteLength = 128;
+    private const int DeferralByteLength = 256;
+    private const ulong SnapshotVersion = 2;
+    private const ulong ActorVersion = 2;
 
     public static byte[] Encode(CognitionSnapshot state)
     {
         ArgumentNullException.ThrowIfNull(state);
-        byte[] bytes = Frame("cognition.snapshot", Number(1), Id(state.WorldId), Id(state.BranchId), Number(state.Revision),
+        byte[] bytes = Frame("cognition.snapshot", Number(SnapshotVersion), Id(state.WorldId), Id(state.BranchId), Number(state.Revision),
             Collection("cognition.actors", state.Actors.Select(EncodeActor)));
         return bytes.Length <= MaximumSnapshotByteLength ? bytes
             : throw new ArgumentException("The cognition snapshot exceeds its canonical byte bound.");
@@ -34,7 +39,7 @@ public static class CognitionCodecV1
         {
             var reader = new WorldFrameReader(bytes, MaximumSnapshotByteLength, 6);
             reader.Tag("cognition.snapshot"u8);
-            reader.Version();
+            RequireVersion(ref reader, SnapshotVersion);
             EntityId world = reader.Identity();
             EntityId branch = reader.Identity();
             ulong revision = reader.Number();
@@ -57,9 +62,10 @@ public static class CognitionCodecV1
 
     private static byte[] EncodeActor(ActorCognition actor)
     {
-        byte[] bytes = Frame("cognition.actor", Number(1), Id(actor.ActorId), Number(actor.Revision),
+        byte[] bytes = Frame("cognition.actor", Number(ActorVersion), Id(actor.ActorId), Number(actor.Revision),
             Collection("cognition.acquired", actor.Evidence.Select(EncodeEvidence)),
             actor.Intention is { } intention ? EncodeIntention(intention) : [],
+            actor.Deferral is { } deferral ? EncodeDeferral(deferral) : [],
             Collection("cognition.memories", actor.Memory.Select(EncodeMemory)),
             actor.Wake is { } wake ? EncodeWake(wake) : []);
         return bytes.Length <= MaximumActorByteLength ? bytes
@@ -68,9 +74,9 @@ public static class CognitionCodecV1
 
     private static ActorCognition DecodeActor(ReadOnlySpan<byte> bytes)
     {
-        var reader = new WorldFrameReader(bytes, MaximumActorByteLength, 8);
+        var reader = new WorldFrameReader(bytes, MaximumActorByteLength, 9);
         reader.Tag("cognition.actor"u8);
-        reader.Version();
+        RequireVersion(ref reader, ActorVersion);
         EntityId actor = reader.Identity();
         ulong revision = reader.Number();
         var acquired = new WorldFrameReader(reader.Field(MaximumActorByteLength), MaximumActorByteLength,
@@ -81,6 +87,8 @@ public static class CognitionCodecV1
         acquired.Complete();
         ReadOnlySpan<byte> intention = reader.Field(MaximumIntentionByteLength);
         CognitionIntention? current = intention.IsEmpty ? null : DecodeIntention(intention);
+        ReadOnlySpan<byte> deferral = reader.Field(DeferralByteLength);
+        CurrentDeferral? deferring = deferral.IsEmpty ? null : DecodeDeferral(deferral);
         var memories = new WorldFrameReader(reader.Field(MaximumActorByteLength), MaximumActorByteLength,
             ActorCognition.MaximumMemory + 1);
         memories.Tag("cognition.memories"u8);
@@ -90,7 +98,7 @@ public static class CognitionCodecV1
         ReadOnlySpan<byte> wake = reader.Field(WakeByteLength);
         CognitionWake? pending = wake.IsEmpty ? null : DecodeWake(wake);
         reader.Complete();
-        return new ActorCognition(actor, revision, evidence, current, memory, pending);
+        return new ActorCognition(actor, revision, evidence, current, memory, pending, deferring);
     }
 
     // The knower is the owning actor, so an evidence frame does not repeat it.
@@ -136,6 +144,22 @@ public static class CognitionCodecV1
         basisReader.Complete();
         reader.Complete();
         return new CognitionIntention(kind, subject, adoptedAt, basis);
+    }
+
+    private static byte[] EncodeDeferral(CurrentDeferral deferral) => Frame("cognition.deferral", Number(1),
+        Number((ulong)deferral.Reason), CanonicalEncodingV1.Text(deferral.PolicyVersion, nameof(deferral)),
+        EncodeInstant(deferral.Since));
+
+    private static CurrentDeferral DecodeDeferral(ReadOnlySpan<byte> bytes)
+    {
+        var reader = new WorldFrameReader(bytes, DeferralByteLength, 5);
+        reader.Tag("cognition.deferral"u8);
+        reader.Version();
+        var reason = (CognitionDeferral)checked((int)reader.Number());
+        string policy = reader.Text(CognitionMemory.MaximumPolicyVersionBytes);
+        WorldInstant since = DecodeInstant(reader.Field(InstantByteLength));
+        reader.Complete();
+        return new CurrentDeferral(reason, policy, since);
     }
 
     private static byte[] EncodeMemory(CognitionMemory memory) => Frame("cognition.memory", Number(1),
@@ -233,6 +257,11 @@ public static class CognitionCodecV1
         var instant = new WorldInstant(reader.Signed(), checked((int)reader.Number()));
         reader.Complete();
         return instant;
+    }
+
+    private static void RequireVersion(ref WorldFrameReader reader, ulong expected)
+    {
+        if (reader.Number() != expected) throw new FormatException("The cognition frame names an unknown version.");
     }
 
     private static void RequireCanonical(ReadOnlySpan<byte> original, byte[] encoded)

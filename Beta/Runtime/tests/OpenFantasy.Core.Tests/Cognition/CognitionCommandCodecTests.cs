@@ -22,18 +22,18 @@ public sealed class CognitionCommandCodecTests
                 with { PolicyVersion = "cognition.delayed-supply.v1-variant" },
         })
         {
-            byte[] bytes = CognitionCodecV1.EncodeDecision(decision);
-            CognitionDecision restored = CognitionCodecV1.DecodeDecision(bytes);
-            Assert.Equal(bytes, CognitionCodecV1.EncodeDecision(restored));
+            byte[] bytes = CognitionCodecV2.EncodeDecision(decision);
+            CognitionDecision restored = CognitionCodecV2.DecodeDecision(bytes);
+            Assert.Equal(bytes, CognitionCodecV2.EncodeDecision(restored));
             Assert.Equal(decision.PolicyVersion, restored.PolicyVersion);
             Assert.Equal(decision.Deferral, restored.Deferral);
             Assert.Equal(decision.NextWake, restored.NextWake);
             Assert.Equal(decision.CompletedCurrent, restored.CompletedCurrent);
             Assert.Equal(decision.Intention?.Basis, restored.Intention?.Basis);
         }
-        byte[] valid = CognitionCodecV1.EncodeDecision(Decision(gather, CognitionDeferral.AwaitingSupply));
-        Assert.Throws<FormatException>(() => CognitionCodecV1.DecodeDecision([.. valid, 0]));
-        Assert.Throws<FormatException>(() => CognitionCodecV1.DecodeDecision(valid[..^1]));
+        byte[] valid = CognitionCodecV2.EncodeDecision(Decision(gather, CognitionDeferral.AwaitingSupply));
+        Assert.Throws<FormatException>(() => CognitionCodecV2.DecodeDecision([.. valid, 0]));
+        Assert.Throws<FormatException>(() => CognitionCodecV2.DecodeDecision(valid[..^1]));
     }
 
     [Fact]

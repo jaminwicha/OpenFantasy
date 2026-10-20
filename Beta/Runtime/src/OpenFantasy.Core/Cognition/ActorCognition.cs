@@ -9,11 +9,14 @@ namespace OpenFantasy.Core.Cognition;
 public sealed class CognitionCapacityException(string message) : Exception(message);
 
 /// <summary>
-/// One actor's persistent cognition: evidence actually acquired, the current intention and remembered decisions.
-/// Beliefs are derived from evidence on demand, so cognition never stores a second copy of world truth. A change past
-/// a finite development bound throws <see cref="CognitionCapacityException"/>; nothing is silently dropped, so an
-/// unresolved commitment or its provenance cannot be lost. The bounds are workload limits, not character-depth caps.
-/// Pending reconsideration is persistent state in the advancing-step domain.
+/// One actor's persistent cognition: evidence actually acquired, the current intention and the reason it defers
+/// something preferred, and remembered decisions. Beliefs are derived from evidence on demand, so cognition never
+/// stores a second copy of world truth. A newer observation of a source, or a newer outcome of the actor's own
+/// gathering there, replaces an older one of the same kind that nothing cites, as market price knowledge does; the
+/// replaced value stays in the journal and archived roots, and cited evidence is always kept. A change past a finite
+/// development bound throws <see cref="CognitionCapacityException"/>; nothing is silently dropped, so an unresolved
+/// commitment or its provenance cannot be lost. The bounds are workload limits, not character-depth caps. Pending
+/// reconsideration is persistent state in the advancing-step domain.
 /// </summary>
 public sealed class ActorCognition
 {
@@ -21,7 +24,8 @@ public sealed class ActorCognition
     public const int MaximumMemory = 64;
 
     public ActorCognition(EntityId actorId, ulong revision, IEnumerable<CognitionEvidence> evidence,
-        CognitionIntention? intention, IEnumerable<CognitionMemory> memory, CognitionWake? wake = null)
+        CognitionIntention? intention, IEnumerable<CognitionMemory> memory, CognitionWake? wake = null,
+        CurrentDeferral? deferral = null)
     {
         Wake = wake?.Validated();
         ArgumentNullException.ThrowIfNull(evidence);
@@ -31,6 +35,7 @@ public sealed class ActorCognition
         Evidence = evidence.ToList().AsReadOnly();
         Intention = intention;
         Memory = memory.ToList().AsReadOnly();
+        Deferral = deferral;
         if (Evidence.Count > MaximumEvidence || Memory.Count > MaximumMemory)
             throw new ArgumentException("Cognition exceeds its finite development bounds.");
         if (Evidence.Any(entry => entry.KnowerId != actorId))
@@ -51,6 +56,14 @@ public sealed class ActorCognition
             throw new ArgumentException("An intention rests only on evidence the actor holds.");
         if (Memory.Any(entry => entry.Basis.Any(id => !known.Contains(id))))
             throw new ArgumentException("A memory cites only evidence the actor holds.");
+        if (intention is not null && (deferral is null || deferral.Since < intention.AdoptedAt))
+            throw new ArgumentException("A held intention keeps its current deferral, given no earlier than its adoption.");
+        if (intention is null && deferral is { Reason: not CognitionDeferral.None })
+            throw new ArgumentException("Without an intention there is nothing to defer.");
+        var cited = Cited(intention, Memory);
+        if (Evidence.Where(entry => IsReplaceable(entry.Kind) && !cited.Contains(entry.EvidenceId))
+                .GroupBy(entry => (entry.Kind, entry.SubjectId)).Any(group => group.Count() > 1))
+            throw new ArgumentException("A newer observation or gathering outcome replaces an older one that nothing cites.");
     }
 
     public EntityId ActorId { get; }
@@ -60,25 +73,33 @@ public sealed class ActorCognition
     public IReadOnlyList<CognitionMemory> Memory { get; }
     public CognitionWake? Wake { get; }
 
+    /// <summary>Why the actor defers something preferred, present once a decision has been applied.</summary>
+    public CurrentDeferral? Deferral { get; }
+
     public static ActorCognition Empty(EntityId actorId) => new(actorId, 0, [], null, []);
 
     public CognitionBeliefs Beliefs => CognitionBeliefs.From(Evidence);
 
     /// <summary>
     /// Adds evidence a committed outcome gave this actor at an advancing step, in canonical order, and makes
-    /// reconsideration due at that step unless an earlier wake is already pending.
+    /// reconsideration due at that step unless an earlier wake is already pending. A newer observation or gathering
+    /// outcome replaces the held one of the same kind and subject when nothing cites it; the bound is checked after
+    /// that replacement.
     /// </summary>
     public ActorCognition Acquire(CognitionEvidence evidence, ulong step)
     {
         ArgumentNullException.ThrowIfNull(evidence);
+        if (evidence.KnowerId != ActorId)
+            throw new ArgumentException("An actor acquires only its own evidence.");
         if (Evidence.Any(entry => entry.EvidenceId == evidence.EvidenceId))
             throw new InvalidOperationException("This evidence was already acquired.");
-        if (Evidence.Count == MaximumEvidence)
+        var cited = Cited(Intention, Memory);
+        var ordered = Evidence.Where(entry => !Replaces(evidence, entry, cited)).Append(evidence).ToList();
+        if (ordered.Count > MaximumEvidence)
             throw new CognitionCapacityException("The actor's evidence bound is reached.");
-        var ordered = Evidence.Append(evidence).ToList();
         ordered.Sort(Order);
         return new ActorCognition(ActorId, checked(Revision + 1), ordered, Intention, Memory,
-            CognitionWake.Earliest(Wake, new CognitionWake(step, WakeCause.EvidenceAcquired)));
+            CognitionWake.Earliest(Wake, new CognitionWake(step, WakeCause.EvidenceAcquired)), Deferral);
     }
 
     /// <summary>Makes reconsideration due for a self-owned change or the actor's own finished action.</summary>
@@ -88,7 +109,8 @@ public sealed class ActorCognition
         if (wake.Cause == WakeCause.Fallback || wake.Suppression != WakeSuppression.None)
             throw new ArgumentException("Only a decision schedules the fallback, and suppression is set separately.");
         CognitionWake next = CognitionWake.Earliest(Wake, wake);
-        return next == Wake ? this : new ActorCognition(ActorId, checked(Revision + 1), Evidence, Intention, Memory, next);
+        return next == Wake ? this
+            : new ActorCognition(ActorId, checked(Revision + 1), Evidence, Intention, Memory, next, Deferral);
     }
 
     /// <summary>Suppresses or resumes the pending wake, keeping its due step and cause.</summary>
@@ -96,15 +118,16 @@ public sealed class ActorCognition
     {
         if (Wake is null || Wake.Suppression == suppression) return this;
         return new ActorCognition(ActorId, checked(Revision + 1), Evidence, Intention, Memory,
-            (Wake with { Suppression = suppression }).Validated());
+            (Wake with { Suppression = suppression }).Validated(), Deferral);
     }
 
     /// <summary>
-    /// Applies a recorded decision. Servicing replaces the pending wake with the decision's fallback. An unchanged
-    /// intention adds no memory, and an identical decision with an identical wake changes nothing. A reading hold
-    /// suppresses reconsideration, so a held decision services nothing and keeps the pending wake. A new intention
-    /// supersedes the previous one, or completes it when the decision reports it done, and both transitions are
-    /// remembered with their reason and policy version.
+    /// Applies a recorded decision. Servicing replaces the pending wake with the decision's fallback. A reading hold
+    /// suppresses reconsideration, so a held decision services nothing and keeps the pending wake. An unchanged
+    /// intention with an unchanged reason adds no memory, and with an identical wake changes nothing. An unchanged
+    /// intention with a new reason becomes the current deferral and one reconsidered memory. A new intention supersedes
+    /// the previous one, or completes it when the decision reports it done, and both transitions are remembered with
+    /// their reason and policy version. Without an intention nothing is deferred.
     /// </summary>
     public ActorCognition Adopt(CognitionDecision decision, WorldInstant at)
     {
@@ -118,9 +141,22 @@ public sealed class ActorCognition
         bool unchanged = (next is null && Intention is null) || (next is not null && Intention is not null && next.SameAs(Intention));
         if (decision.Deferral == CognitionDeferral.ReadingHold)
             return unchanged ? this : throw new ArgumentException("A held decision cannot change the intention.");
-        if (unchanged)
-            return wake == Wake ? this : new ActorCognition(ActorId, checked(Revision + 1), Evidence, Intention, Memory, wake);
+        if (next is null && decision.Deferral != CognitionDeferral.None)
+            throw new ArgumentException("Without an intention there is nothing to defer.");
         var memory = Memory.ToList();
+        if (unchanged)
+        {
+            if (Deferral?.Reason == decision.Deferral || (Deferral is null && next is null))
+                return wake == Wake ? this
+                    : new ActorCognition(ActorId, checked(Revision + 1), Evidence, Intention, Memory, wake, Deferral);
+            if (Intention is not null)
+                memory.Add(new CognitionMemory(Intention.Kind, Intention.SubjectId, MemoryOutcome.Reconsidered, at,
+                    decision.Deferral, policy));
+            if (memory.Count > MaximumMemory)
+                throw new CognitionCapacityException("The actor's memory bound is reached.");
+            return new ActorCognition(ActorId, checked(Revision + 1), Evidence, Intention, memory, wake,
+                new CurrentDeferral(decision.Deferral, policy, at));
+        }
         if (Intention is not null)
             memory.Add(new CognitionMemory(Intention.Kind, Intention.SubjectId,
                 decision.CompletedCurrent ? MemoryOutcome.Completed : MemoryOutcome.Superseded, at, decision.Deferral, policy));
@@ -129,8 +165,19 @@ public sealed class ActorCognition
                 next.Basis));
         if (memory.Count > MaximumMemory)
             throw new CognitionCapacityException("The actor's memory bound is reached.");
-        return new ActorCognition(ActorId, checked(Revision + 1), Evidence, next, memory, wake);
+        return new ActorCognition(ActorId, checked(Revision + 1), Evidence, next, memory, wake,
+            new CurrentDeferral(decision.Deferral, policy, at));
     }
+
+    /// <summary>Kinds whose newer entry shows the subject as it is now and so replaces an older uncited entry.</summary>
+    internal static bool IsReplaceable(EvidenceKind kind) => kind is EvidenceKind.SourceObserved or EvidenceKind.GatherOutcome;
+
+    private static bool Replaces(CognitionEvidence newer, CognitionEvidence held, IReadOnlySet<EntityId> cited) =>
+        IsReplaceable(newer.Kind) && held.Kind == newer.Kind && held.SubjectId == newer.SubjectId
+        && !cited.Contains(held.EvidenceId);
+
+    private static HashSet<EntityId> Cited(CognitionIntention? intention, IEnumerable<CognitionMemory> memory) =>
+        (intention?.Basis ?? []).Concat(memory.SelectMany(entry => entry.Basis)).ToHashSet();
 
     internal static int Order(CognitionEvidence left, CognitionEvidence right)
     {

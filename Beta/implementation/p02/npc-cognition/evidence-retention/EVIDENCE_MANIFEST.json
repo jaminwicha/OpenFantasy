@@ -1,0 +1,32 @@
+{
+  "parentCommit": "687bc6491747bb18f93b24747d7b2254c8707f99",
+  "note": "Raw full-suite reports stay local in the session scratchpad; their hashes pin them. Focused cognition reports are committed beside this manifest.",
+  "toolchain": "~/.local/share/openfantasy/toolchains/dotnet-10.0.401/dotnet; tests target net8.0",
+  "rawLocal": {
+    "core-full.trx": {
+      "sha256": "b5693d2eed617bf17c11bca3fb438319022d06615409c1586bbe3d0af82c1a7b",
+      "bytes": 3182634
+    },
+    "hosting-full.trx": {
+      "sha256": "9b9c1e0e58c22f184b1ec3cb5506cb4c2d3b51c43b30934f91421cfa584195c4",
+      "bytes": 3791678
+    },
+    "hosting-full.log": {
+      "sha256": "b99ebee474badfc6853113d6d49112dfb2a81ec649a28b79dd072dea8a912ebb",
+      "bytes": 41543
+    },
+    "hosting-retained-rerun.trx": {
+      "sha256": "33cf5c04891023a83f94722ca02d1da9d7a7f36b35544e19086bd22fec64973c",
+      "bytes": 42577
+    }
+  },
+  "committed": {
+    "managed/core-cognition.trx": "ff7144da498928d4d1567cfa67e7e0aa73cbbd6596ebeed8e79ad4a3fa7884cb",
+    "managed/hosting-cognition.trx": "4264819e95f1b02ea91065a20595128e5041a77321b8313206a8426dac0e1d2b"
+  },
+  "runs": {
+    "core-full": "2,075 of 2,075 passed in 1 m 20 s",
+    "hosting-full": "OPENFANTASY_DOTNET set, OPENFANTASY_RETAINED_PROPOSAL_SOURCE unset by runner omission: 2,239 passed, 25 opt-in skipped, 25 failed in 19 m 26 s",
+    "hosting-retained-rerun": "ProposalMigration and RetainedGifts namespaces with OPENFANTASY_RETAINED_PROPOSAL_SOURCE set: 24 passed, 1 opt-in skipped, 0 failed in 2 m 28 s"
+  }
+}

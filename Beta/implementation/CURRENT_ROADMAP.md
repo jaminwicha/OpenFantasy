@@ -238,9 +238,10 @@ is adopted, while unsupported dates, percentages and orchestration savings remai
 3. Deliver **NPC-01** as the next new inhabited-world behavior. Its storage-independent
    [Core cognition contracts](p02/npc-cognition/core-contracts/RESULT.md) and the
    [profile-42 Core/storage binding](p02/npc-cognition/world-binding/RESULT.md), accepted after independent review,
-   and the [host cognition policy](p02/npc-cognition/host-policy/RESULT.md) exist. Next come the evidence-bound
-   precondition (decision 7's lossless replacement or measured bounds) and remembered deferrals, then the
-   decision-3 baseline and the player-absent continuation, all under the exit decision's rules. Prepare **STORY-01** content and
+   the [host cognition policy](p02/npc-cognition/host-policy/RESULT.md) and
+   [evidence retention with remembered deferrals](p02/npc-cognition/evidence-retention/RESULT.md) exist. Next come the
+   decision-3 baseline and the player-absent continuation, all under the exit decision's rules; decision 7's
+   episodic-memory segments remain unbound. Prepare **STORY-01** content and
    **AUDIO-01/ART-01** semantic production contracts alongside their dependency design, then build
    recruitment/cooperative work and the traveling merchant/cargo investigation. These are dependency
    lanes, not authorization to launch agents: the lead executes directly and sequences actual work.
@@ -637,8 +638,11 @@ SQLite authority publishes and reopens it. One independent critic returned "acce
 [disposition](p02/npc-cognition/world-binding-review/DISPOSITION.md) applies them. Decisions must be supported by the
 actor's own evidence and project, a hold opened in the same batch refuses one, inspection refusals no longer leak
 remote state, and the root stores its law pin. The [host policy](p02/npc-cognition/host-policy/RESULT.md) then drives
-Wren through the episode in a real session, including a restart midway through gathering. Evidence only accumulates,
-so ordinary play reaches the 64-entry bound; lifting that is a precondition for the baseline and the sustained
-offscreen proof. Dialogue, presentation and every NPC-01, P02 and P03 gate remain open. Decision 8's
+Wren through the episode in a real session, including a restart midway through gathering.
+[Evidence retention](p02/npc-cognition/evidence-retention/RESULT.md) binds decision 7's replacement rule: a newer
+observation or gathering outcome replaces an older one nothing cites, with old values kept in history, so looks and
+gathers no longer reach the 64-entry bound. The same codec revision keeps each actor's current deferral and remembers
+reason changes (review finding 5). Memory still grows with every reason change, and closed episodic memory has no
+segments yet; the baseline measures both bounds. Dialogue, presentation and every NPC-01, P02 and P03 gate remain open. Decision 8's
 interpreter-growth trigger fired at 45 files; a per-profile capability table, as its own reviewed mechanical packet,
 must precede profile 43.

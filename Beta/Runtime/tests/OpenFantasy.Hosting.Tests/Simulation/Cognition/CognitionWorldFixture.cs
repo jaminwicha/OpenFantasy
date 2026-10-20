@@ -1,3 +1,4 @@
+using System.Buffers.Binary;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Authority;
 using OpenFantasy.Core.Cognition;
@@ -124,6 +125,43 @@ internal sealed class CognitionWorldFixture
     }
 
     internal WorldActionReceipt GiveAxeToWren() => Act(Player, GiftOf(Player, Wren, Owned(Player, Axe), 1));
+
+    /// <summary>
+    /// The current root as long play would leave it: Wren holding <paramref name="received"/> items the player gave her,
+    /// which never replace one another. In the authored adventure only eight gifts are reachable at genesis, so the
+    /// root is built by replacing the final cognition field of the real encoded head and decoding it under complete
+    /// admission, which checks every identity and counterpart. It is a state, not a recorded history.
+    /// </summary>
+    internal WorldSnapshot WithWrenHoldingReceivedItems(int received)
+    {
+        ActorCognition wren = CognitionOf(Wren);
+        for (int index = 0; index < received; index++)
+            wren = wren.Acquire(new CognitionEvidence(NextId(), Wren, EvidenceKind.ItemReceived, NextId(), Player, NextId(), 1,
+                State.Calendar), State.AdvancingSteps);
+        byte[] cognition = CognitionCodecV2.Encode(State.Cognition!.With(wren));
+        byte[] root = WorldSnapshotCodec.Encode(State);
+        // A canonical frame: magic, format version, field count, then length-prefixed fields; cognition is the last.
+        int count = (int)BinaryPrimitives.ReadUInt32BigEndian(root.AsSpan(8));
+        int offset = 12;
+        for (int field = 0; field < count - 1; field++)
+            offset += 4 + (int)BinaryPrimitives.ReadUInt32BigEndian(root.AsSpan(offset));
+        byte[] replaced = new byte[offset + 4 + cognition.Length];
+        root.AsSpan(0, offset).CopyTo(replaced);
+        BinaryPrimitives.WriteUInt32BigEndian(replaced.AsSpan(offset), (uint)cognition.Length);
+        cognition.CopyTo(replaced, offset + 4);
+        return WorldSnapshotCodec.Decode(replaced);
+    }
+
+    /// <summary>
+    /// Wren's own recorded decision keeping her intention with <paramref name="reason"/>, due again at the next step. A
+    /// planner could lawfully record this; the host policy never would.
+    /// </summary>
+    internal WorldActionCommand Reconsideration(CognitionDeferral reason)
+    {
+        ActorCognition wren = CognitionOf(Wren);
+        return Command(Wren, new RecordCognitionDecisionIntent(wren.Revision, new CognitionDecision(CognitionPolicy.Version,
+            wren.Intention, reason, new CognitionWake(State.AdvancingSteps + 1, WakeCause.Fallback))));
+    }
 
     internal InspectGatherSourceIntent InspectionOf(EntityId node) =>
         new(node, State.Gathering!.Nodes.Single(value => value.NodeId == node).Revision);

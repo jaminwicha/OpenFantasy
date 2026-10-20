@@ -62,7 +62,7 @@ public sealed class CognitionSessionTests
         Assert.Equal(CommandReceiptStatus.Applied, (await Submit(new GiveItemIntent(fixture.Wren, State().Space.GetActor(fixture.Wren).Revision,
             axe.LotId, axe.Revision, bag, State().Inventory.Custody.GetStorage(bag).Revision, 1))).Status);
         await Until("adopt gathering", () => Wren().Intention?.Kind == IntentionKind.GatherPersonalStock);
-        await Until("gather once", () => Wren().Beliefs.GatheredQuantity == 1);
+        await Until("gather once", () => Wren().Beliefs.Sources.Any(source => source.LatestYield is > 0));
 
         // Restart with the gathering wake pending: the same save continues under a new session.
         CognitionWake pending = Wren().Wake!;
@@ -73,7 +73,12 @@ public sealed class CognitionSessionTests
         session = new LocalWorldSession(authority, fixture.Player, fixture.Delivery(fixture.Player), time);
         session.SetReady(true);
         await Until("meet the stock target", () => Wren().Memory.Any(entry => entry.Reason == CognitionDeferral.StockTargetMet));
-        Assert.Equal(CognitionWorldFixture.PersonalStockTarget, Wren().Beliefs.GatheredQuantity);
+        EntityId wrenBag = State().GetResident(fixture.Wren).InventoryCustodianId;
+        Assert.Equal(CognitionWorldFixture.PersonalStockTarget, State().Inventory.Custody.Lots
+            .Where(lot => lot.CustodianId == wrenBag && lot.Definition == fixture.Quest.Item)
+            .Aggregate(0UL, (total, lot) => checked(total + lot.Quantity)));
+        // Each newer gathering outcome replaced the uncited earlier one; the journal keeps every yield.
+        Assert.Single(Wren().Evidence, entry => entry.Kind == EvidenceKind.GatherOutcome);
 
         // Without the delivery Wren never starts the funded guard: world truth is not her knowledge.
         Assert.Equal(0UL, State().Construction!.Projects.Single().Progress.CompletedUnits);

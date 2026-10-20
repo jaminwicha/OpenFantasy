@@ -51,6 +51,6 @@
     <None Update="Progression/progression-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Quests/quest-v1.json" CopyToOutputDirectory="PreserveNewest" />
     <None Update="Construction/construction-v1.json" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Cognition/cognition-v1.json" CopyToOutputDirectory="PreserveNewest" />
+    <None Update="Cognition/cognition-v2.json" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 </Project>

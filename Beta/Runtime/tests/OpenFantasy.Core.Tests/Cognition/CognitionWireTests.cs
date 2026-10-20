@@ -12,8 +12,10 @@ public sealed class CognitionWireTests
     {
         Dictionary<string, byte[]> encoded = new()
         {
-            ["empty"] = CognitionCodecV1.Encode(new CognitionSnapshot(World, Branch, 0, [])),
-            ["wren_working"] = CognitionCodecV1.Encode(WrenWorking()),
+            ["empty"] = CognitionCodecV2.Encode(new CognitionSnapshot(World, Branch, 0, [])),
+            ["wren_working"] = CognitionCodecV2.Encode(WrenWorking()),
+            ["wren_reconsidered"] = CognitionCodecV2.Encode(WrenReconsidered()),
+            ["cited_observation_kept"] = CognitionCodecV2.Encode(CitedObservationKept()),
         };
         using JsonDocument vectors = Load();
         foreach (JsonElement item in vectors.RootElement.GetProperty("valid").EnumerateArray())
@@ -21,7 +23,7 @@ public sealed class CognitionWireTests
             byte[] expected = Convert.FromHexString(item.GetProperty("hex").GetString()!);
             Assert.Equal(item.GetProperty("sha256").GetString(), ContentHash.Compute(expected).Value);
             Assert.Equal(expected, encoded[item.GetProperty("name").GetString()!]);
-            Assert.Equal(expected, CognitionCodecV1.Encode(CognitionCodecV1.Decode(expected)));
+            Assert.Equal(expected, CognitionCodecV2.Encode(CognitionCodecV2.Decode(expected)));
         }
     }
 
@@ -34,17 +36,17 @@ public sealed class CognitionWireTests
         {
             byte[] bytes = Convert.FromHexString(item.GetProperty("hex").GetString()!);
             Assert.Equal(item.GetProperty("sha256").GetString(), ContentHash.Compute(bytes).Value);
-            FormatException error = Assert.Throws<FormatException>(() => CognitionCodecV1.Decode(bytes));
+            FormatException error = Assert.Throws<FormatException>(() => CognitionCodecV2.Decode(bytes));
             Assert.NotNull(error.Message);
             count++;
         }
-        Assert.Equal(27, count);
+        Assert.Equal(44, count);
     }
 
     [Fact]
     public void DecodedCognitionPreservesProvenanceAndChronology()
     {
-        CognitionSnapshot decoded = CognitionCodecV1.Decode(CognitionCodecV1.Encode(WrenWorking()));
+        CognitionSnapshot decoded = CognitionCodecV2.Decode(CognitionCodecV2.Encode(WrenWorking()));
         ActorCognition wren = decoded.For(Wren);
         CognitionEvidence delivery = Assert.Single(wren.Evidence, entry => entry.Kind == EvidenceKind.QuestDeliveryReceived);
         Assert.Equal((Wren, Player, DeliveryCommand, Quest, 4UL), (delivery.KnowerId, delivery.CounterpartActorId!.Value,
@@ -73,14 +75,15 @@ public sealed class CognitionWireTests
             IntentionKind.WorkFundedProject, Project, MemoryOutcome.Adopted, new WorldInstant(long.MaxValue, 86_399_999),
             CognitionDeferral.AwaitingSupply, policy, actor.Evidence.Take(CognitionIntention.MaximumBasis).Select(entry => entry.EvidenceId)));
         var full = new ActorCognition(Wren, ulong.MaxValue, actor.Evidence, intention, memory,
-            new CognitionWake(ulong.MaxValue, WakeCause.OwnResourceChanged, WakeSuppression.PaidContinuation));
+            new CognitionWake(ulong.MaxValue, WakeCause.OwnResourceChanged, WakeSuppression.PaidContinuation),
+            new CurrentDeferral(CognitionDeferral.AwaitingSupply, policy, new WorldInstant(long.MaxValue, 86_399_999)));
         var actors = Enumerable.Range(0, CognitionSnapshot.MaximumActors).Select(index => index == 0 ? full
             : new ActorCognition(Id(50_000 + (ulong)index), 0, [], null, []));
-        byte[] bytes = CognitionCodecV1.Encode(new CognitionSnapshot(World, Branch, ulong.MaxValue, actors));
-        Assert.True(bytes.Length <= CognitionCodecV1.MaximumSnapshotByteLength);
-        Assert.Equal(bytes, CognitionCodecV1.Encode(CognitionCodecV1.Decode(bytes)));
+        byte[] bytes = CognitionCodecV2.Encode(new CognitionSnapshot(World, Branch, ulong.MaxValue, actors));
+        Assert.True(bytes.Length <= CognitionCodecV2.MaximumSnapshotByteLength);
+        Assert.Equal(bytes, CognitionCodecV2.Encode(CognitionCodecV2.Decode(bytes)));
     }
 
     private static JsonDocument Load() => JsonDocument.Parse(File.ReadAllBytes(Path.Combine(
-        AppContext.BaseDirectory, "Cognition", "cognition-v1.json")));
+        AppContext.BaseDirectory, "Cognition", "cognition-v2.json")));
 }

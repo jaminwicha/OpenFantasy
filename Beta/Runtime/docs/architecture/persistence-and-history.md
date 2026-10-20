@@ -458,7 +458,9 @@ the complete reservation calculation; its own successful encoding does not prove
 Profile41 explicitly substitutes the collective retreat codec and512KiB reservation in that shared
 complete frame; legacy versions retain their original codec and bound. Profile 42 keeps profile 41's fields and
 reservations, then appends its exact rules pin and the cognition section (33 fields), reserving the section's full
-codec maximum, about 3.1 MiB, in the same calculation. This changes no database
+codec maximum, about 3.1 MiB, in the same calculation. The section's format is `cognition.snapshot.v2`, whose actor
+frame carries the current deferral beside the intention; recorded decision frames inside commands keep their
+version-1 bytes. This changes no database
 schema, host compatibility selection or existing save's rule on opening.
 
 ### Storage representation and preserved-source conversion

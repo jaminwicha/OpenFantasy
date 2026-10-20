@@ -20,7 +20,7 @@ public sealed record RecordCognitionDecisionIntent : WorldActionIntent
     {
         ArgumentNullException.ThrowIfNull(decision);
         // Encoding validates the policy version, deferral and wake before the command can exist.
-        _ = CognitionCodecV1.EncodeDecision(decision);
+        _ = CognitionCodecV2.EncodeDecision(decision);
         ExpectedCognitionRevision = expectedCognitionRevision;
         Decision = decision;
     }

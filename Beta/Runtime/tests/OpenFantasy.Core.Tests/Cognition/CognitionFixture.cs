@@ -41,4 +41,30 @@ internal static class CognitionFixture
         var snapshot = new CognitionSnapshot(World, Branch, 0, []);
         return new CognitionSnapshot(World, Branch, 5, snapshot.With(wren).With(ActorCognition.Empty(Player)).Actors);
     }
+
+    /// <summary>The oracle's "wren_reconsidered" state: still waiting, but now for spent effort instead of a tool.</summary>
+    internal static CognitionSnapshot WrenReconsidered()
+    {
+        ActorCognition wren = ActorCognition.Empty(Wren);
+        wren = wren.Adopt(Decision(new CognitionIntention(IntentionKind.AwaitSupply, Project, At(0), []),
+            CognitionDeferral.MissingTool), At(0));
+        wren = wren.Acquire(Observation(Source, 3, 1000), 20);
+        wren = wren.Adopt(Decision(new CognitionIntention(IntentionKind.AwaitSupply, Project, At(3000), []),
+            CognitionDeferral.InsufficientEffort, step: 20), At(3000));
+        return new CognitionSnapshot(World, Branch, 3, [wren]);
+    }
+
+    /// <summary>
+    /// The oracle's "cited_observation_kept" state: the gathering intention's first observation is kept, while newer
+    /// uncited observations and gathering outcomes replace each other.
+    /// </summary>
+    internal static CognitionSnapshot CitedObservationKept()
+    {
+        ActorCognition wren = ActorCognition.Empty(Wren).Acquire(Observation(Source, 3, 1000), 0);
+        wren = wren.Adopt(Decision(new CognitionIntention(IntentionKind.GatherPersonalStock, Source, At(1000), [Observed]),
+            CognitionDeferral.AwaitingSupply), At(1000));
+        wren = wren.Acquire(Gathered(Source, 1, 2000, Id(810)), 10).Acquire(Observation(Source, 2, 2000, Id(811)), 10)
+            .Acquire(Observation(Source, 2, 3000, Id(812)), 20).Acquire(Gathered(Source, 1, 4000, Id(813)), 30);
+        return new CognitionSnapshot(World, Branch, 6, [wren]);
+    }
 }

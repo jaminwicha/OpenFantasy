@@ -68,14 +68,14 @@ public sealed class CognitionWorldTests
     {
         var fixture = new CognitionWorldFixture();
         var axe = fixture.Owned(fixture.Player, fixture.Axe);
-        byte[] untouched = CognitionCodecV1.Encode(fixture.State.Cognition!);
+        byte[] untouched = CognitionCodecV2.Encode(fixture.State.Cognition!);
 
         // A refused gift writes nothing for anyone.
         GiveItemIntent current = fixture.GiftOf(fixture.Player, fixture.Wren, axe, 1);
         var stale = new GiveItemIntent(current.TargetActorId, current.ExpectedTargetRevision, current.LotId,
             current.ExpectedLotRevision + 1, current.SourceCustodianId, current.ExpectedSourceRevision, 1);
         Assert.NotEqual(CommandReceiptStatus.Applied, fixture.Act(fixture.Player, stale).Status);
-        Assert.Equal(untouched, CognitionCodecV1.Encode(fixture.State.Cognition!));
+        Assert.Equal(untouched, CognitionCodecV2.Encode(fixture.State.Cognition!));
 
         // The committed gift gives the recipient one fact about its cause, counterpart, lot and time, and nobody else.
         WorldInstant at = fixture.State.Calendar;
@@ -105,7 +105,7 @@ public sealed class CognitionWorldTests
         Assert.Equal(fixture.Oak, seen.SourceId);
         int swings = fixture.State.Gathering!.Nodes.Single(node => node.NodeId == fixture.Oak).RemainingSwings;
         Assert.Equal((ulong)swings, fixture.CognitionOf(fixture.Wren).Evidence.Single().Quantity);
-        byte[] wrenBefore = CognitionCodecV1.Encode(new CognitionSnapshot(fixture.State.WorldId, fixture.State.BranchId, 0,
+        byte[] wrenBefore = CognitionCodecV2.Encode(new CognitionSnapshot(fixture.State.WorldId, fixture.State.BranchId, 0,
             [fixture.CognitionOf(fixture.Wren)]));
 
         // The player harvests the same oak. Only the player learns the yield; Wren's belief stays as observed.
@@ -115,7 +115,7 @@ public sealed class CognitionWorldTests
         Assert.Equal(swings - 1, fixture.State.Gathering!.Nodes.Single(node => node.NodeId == fixture.Oak).RemainingSwings);
         Assert.Equal([EvidenceKind.GatherOutcome, EvidenceKind.SourceObserved],
             fixture.CognitionOf(fixture.Player).Evidence.Select(entry => entry.Kind).Order());
-        Assert.Equal(wrenBefore, CognitionCodecV1.Encode(new CognitionSnapshot(fixture.State.WorldId, fixture.State.BranchId, 0,
+        Assert.Equal(wrenBefore, CognitionCodecV2.Encode(new CognitionSnapshot(fixture.State.WorldId, fixture.State.BranchId, 0,
             [fixture.CognitionOf(fixture.Wren)])));
         Assert.Equal(seen, Assert.Single(fixture.CognitionOf(fixture.Wren).Beliefs.Sources));
 
@@ -140,6 +140,7 @@ public sealed class CognitionWorldTests
         Assert.Equal(new (IntentionKind, MemoryOutcome, CognitionDeferral)[]
         {
             (IntentionKind.AwaitSupply, MemoryOutcome.Adopted, CognitionDeferral.MissingTool),
+            (IntentionKind.AwaitSupply, MemoryOutcome.Reconsidered, CognitionDeferral.InsufficientEffort),
             (IntentionKind.AwaitSupply, MemoryOutcome.Superseded, CognitionDeferral.AwaitingSupply),
             (IntentionKind.GatherPersonalStock, MemoryOutcome.Adopted, CognitionDeferral.AwaitingSupply),
             (IntentionKind.GatherPersonalStock, MemoryOutcome.Completed, CognitionDeferral.StockTargetMet),
@@ -150,7 +151,9 @@ public sealed class CognitionWorldTests
         Assert.All(wren.Memory, entry => Assert.Equal(CognitionPolicy.Version, entry.PolicyVersion));
         // Personal stock is Wren's own gathered wood, distinct from the project's reserved delivery.
         Assert.Equal(CognitionWorldFixture.PersonalStockTarget, fixture.Holding(fixture.Wren, fixture.Quest.Item));
-        Assert.Equal(CognitionWorldFixture.PersonalStockTarget, wren.Beliefs.GatheredQuantity);
+        // Only the latest uncited yield and observation of the oak remain; the journal keeps the earlier ones.
+        Assert.Single(wren.Evidence, entry => entry.Kind == EvidenceKind.GatherOutcome);
+        Assert.Equal(1UL, Assert.Single(wren.Beliefs.Sources).LatestYield);
         // References, not copies: the participation and project stay with their owners.
         ActorQuestState participation = fixture.State.Quests!.FindParticipation(fixture.Player, fixture.Quest.DefinitionId)!;
         Assert.Equal(ActorQuestStatus.Completed, participation.Status);
@@ -380,12 +383,32 @@ public sealed class CognitionWorldTests
     }
 
     [Fact]
+    public void Repeated_looks_replace_the_uncited_observation_instead_of_reaching_the_bound()
+    {
+        var fixture = new CognitionWorldFixture();
+        EntityId first = EntityId.FromBytes(new byte[16]);
+        for (int look = 0; look < 2 * ActorCognition.MaximumEvidence + 1; look++)
+        {
+            Assert.Equal(CommandReceiptStatus.Applied, fixture.Act(fixture.Wren, fixture.InspectionOf(fixture.Oak)).Status);
+            if (look == 0) first = Assert.Single(fixture.CognitionOf(fixture.Wren).Evidence).EvidenceId;
+        }
+        CognitionEvidence latest = Assert.Single(fixture.CognitionOf(fixture.Wren).Evidence);
+        Assert.NotEqual(first, latest.EvidenceId);
+        Assert.Equal(EvidenceKind.SourceObserved, latest.Kind);
+        // The replaced observation is still in the recorded history.
+        Assert.Contains(fixture.Batches, batch => WorldStepCodec.Decode(batch).Actions.Any(action =>
+            CognitionEvidence.DeriveIdentity(action.CommandId, 0) == first));
+        fixture.Restore();
+        Assert.Equal(latest.EvidenceId, Assert.Single(fixture.CognitionOf(fixture.Wren).Evidence).EvidenceId);
+    }
+
+    [Fact]
     public void An_evidence_overflow_stops_the_boundary_and_never_refuses_the_player_action()
     {
         var fixture = new CognitionWorldFixture();
-        for (int look = 0; look < ActorCognition.MaximumEvidence; look++)
-            Assert.Equal(CommandReceiptStatus.Applied, fixture.Act(fixture.Wren, fixture.InspectionOf(fixture.Oak)).Status);
-        WorldSnapshot head = fixture.State;
+        fixture.Apply(WorldBatchKind.AdvancingStep);
+        WorldSnapshot head = fixture.WithWrenHoldingReceivedItems(ActorCognition.MaximumEvidence);
+        Assert.Equal(ActorCognition.MaximumEvidence, head.Cognition!.For(fixture.Wren).Evidence.Count);
         WorldActionCommand gift = fixture.Command(fixture.Player,
             fixture.GiftOf(fixture.Player, fixture.Wren, fixture.Owned(fixture.Player, fixture.Axe), 1));
         var batch = new WorldStepBatch(fixture.NextId(), head.WorldId, head.BranchId, head.Revision, head.AdvancingSteps,
@@ -412,12 +435,15 @@ public sealed class CognitionWorldTests
         Assert.Equal(CommandReceiptStatus.Applied, Decide().Status);
         Assert.Equal(CognitionDeferral.MissingTool, fixture.CognitionOf(fixture.Wren).Memory[^1].Reason);
 
-        // The player gives the axe outright. Wren has not yet earned the effort for a swing, so she keeps waiting;
-        // only the wake moves, and nothing new is remembered.
+        // The player gives the axe outright. Wren has not yet earned the effort for a swing, so she keeps waiting, now
+        // for effort rather than a tool: the new reason becomes her current deferral and one remembered entry.
         Assert.Equal(CommandReceiptStatus.Applied, fixture.GiveAxeToWren().Status);
         Assert.Equal(CommandReceiptStatus.Applied, Decide().Status);
-        Assert.Equal(IntentionKind.AwaitSupply, fixture.CognitionOf(fixture.Wren).Intention!.Kind);
-        Assert.Single(fixture.CognitionOf(fixture.Wren).Memory);
+        ActorCognition waiting = fixture.CognitionOf(fixture.Wren);
+        Assert.Equal(IntentionKind.AwaitSupply, waiting.Intention!.Kind);
+        Assert.Equal((MemoryOutcome.Reconsidered, CognitionDeferral.InsufficientEffort),
+            (waiting.Memory[^1].Outcome, waiting.Memory[^1].Reason));
+        Assert.Equal(CognitionDeferral.InsufficientEffort, waiting.Deferral!.Reason);
         // At the fallback, with effort earned, she chooses to gather a small personal stock.
         fixture.RecoverEffort(fixture.Wren);
         Assert.Equal(CommandReceiptStatus.Applied, Decide().Status);

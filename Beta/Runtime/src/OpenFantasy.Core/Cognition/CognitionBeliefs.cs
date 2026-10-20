@@ -1,7 +1,11 @@
 namespace OpenFantasy.Core.Cognition;
 
-/// <summary>A known gathering source: where the actor last observed it and the evidence for that.</summary>
-public sealed record KnownSource(EntityId SourceId, EntityId EvidenceId, WorldInstant ObservedAt, bool BelievedDepleted);
+/// <summary>
+/// A known gathering source: the evidence of the actor's latest observation, when it was made, whether the source is
+/// believed depleted, and what the actor's own latest gathering there yielded, if it has gathered there.
+/// </summary>
+public sealed record KnownSource(EntityId SourceId, EntityId EvidenceId, WorldInstant ObservedAt, bool BelievedDepleted,
+    ulong? LatestYield = null);
 
 /// <summary>
 /// Propositions derived from one actor's evidence. They can be stale: a fact that changed elsewhere does not change
@@ -13,15 +17,11 @@ public sealed class CognitionBeliefs
     private readonly Dictionary<EntityId, EntityId> _deliveries;
     private readonly Dictionary<EntityId, KnownSource> _sources;
 
-    private CognitionBeliefs(Dictionary<EntityId, EntityId> deliveries, Dictionary<EntityId, KnownSource> sources, ulong gathered)
+    private CognitionBeliefs(Dictionary<EntityId, EntityId> deliveries, Dictionary<EntityId, KnownSource> sources)
     {
         _deliveries = deliveries;
         _sources = sources;
-        GatheredQuantity = gathered;
     }
-
-    /// <summary>Units the actor's own committed gathering attempts actually yielded.</summary>
-    public ulong GatheredQuantity { get; }
 
     /// <summary>Known sources in canonical identity order.</summary>
     public IReadOnlyList<KnownSource> Sources => _sources.Values.OrderBy(source => source.SourceId).ToList().AsReadOnly();
@@ -34,7 +34,7 @@ public sealed class CognitionBeliefs
         ArgumentNullException.ThrowIfNull(evidence);
         var deliveries = new Dictionary<EntityId, EntityId>();
         var sources = new Dictionary<EntityId, KnownSource>();
-        ulong gathered = 0;
+        var yields = new Dictionary<EntityId, ulong>();
         foreach (CognitionEvidence entry in evidence.OrderBy(entry => entry, Comparer<CognitionEvidence>.Create(ActorCognition.Order)))
         {
             switch (entry.Kind)
@@ -47,12 +47,17 @@ public sealed class CognitionBeliefs
                     sources[entry.SubjectId] = new KnownSource(entry.SubjectId, entry.EvidenceId, entry.AcquiredAt, entry.Quantity == 0);
                     break;
                 case EvidenceKind.GatherOutcome:
-                    gathered = checked(gathered + entry.Quantity);
+                    // Older outcomes are replaced, so the held one is the actor's latest gathering at that source.
+                    yields[entry.SubjectId] = entry.Quantity;
                     if (sources.TryGetValue(entry.SubjectId, out KnownSource? known) && entry.Quantity == 0)
                         sources[entry.SubjectId] = known with { BelievedDepleted = true };
                     break;
             }
         }
-        return new CognitionBeliefs(deliveries, sources, gathered);
+        foreach ((EntityId sourceId, ulong yield) in yields)
+        {
+            if (sources.TryGetValue(sourceId, out KnownSource? known)) sources[sourceId] = known with { LatestYield = yield };
+        }
+        return new CognitionBeliefs(deliveries, sources);
     }
 }

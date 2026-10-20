@@ -17,13 +17,16 @@ public static class WorldCognitionAdmission
 
     /// <summary>
     /// Pins the laws this interpretation replays: which committed outcomes give whom evidence, the admitted perception
-    /// rule, wake suppression and decision service. A law change needs a new interpretation; a planner change does not.
+    /// rule, evidence retention, wake suppression, decision service and deferral memory. A law change needs a new
+    /// interpretation once profile 42 is frozen; a planner change never does.
     /// </summary>
-    public static readonly ContentHash RulesPin = ContentHash.Compute(CanonicalEncodingV1.Frame("world.cognition-laws.v1",
+    public static readonly ContentHash RulesPin = ContentHash.Compute(CanonicalEncodingV1.Frame("world.cognition-laws.v2",
         Encoding.UTF8.GetBytes("evidence:item-received,quest-delivery-to-giver,gather-outcome,source-in-sight-4-cells;own-project-completion-wakes-builder"),
+        Encoding.UTF8.GetBytes("retention:newer-source-observation-and-gather-outcome-replace-uncited-same-subject,cited-kept"),
         Encoding.UTF8.GetBytes("wake:evidence-at-resulting-step;suppression:reading-hold,encounter,paid-continuation"),
         Encoding.UTF8.GetBytes("decision:recorded-actor-action,due-unsuppressed-wake,unheld-advancing-step,fallback-within-100-steps,"
-            + "supported-by-own-evidence-and-project;inspection:sight-before-revision")));
+            + "supported-by-own-evidence-and-project;inspection:sight-before-revision"),
+        Encoding.UTF8.GetBytes("deferral:current-reason-beside-intention,reason-change-remembered,no-intention-defers-nothing")));
 
     public static WorldSnapshot CreateFresh(WorldSnapshot basis)
     {
@@ -64,7 +67,8 @@ public static class WorldCognitionAdmission
             if (actor.Evidence.Any(entry => entry.AcquiredAt > world.Calendar
                     || entry.CounterpartActorId is { } counterpart && world.Residents.All(resident => resident.ActorId != counterpart))
                 || actor.Memory.Any(entry => entry.At > world.Calendar)
-                || actor.Intention is { } intention && intention.AdoptedAt > world.Calendar)
+                || actor.Intention is { } intention && intention.AdoptedAt > world.Calendar
+                || actor.Deferral is { } deferral && deferral.Since > world.Calendar)
                 throw new ArgumentException("Cognition records only what residents acquired and decided before this instant.");
         }
     }

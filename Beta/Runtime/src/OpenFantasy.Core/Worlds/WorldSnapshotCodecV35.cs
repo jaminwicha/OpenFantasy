@@ -78,7 +78,7 @@ public static class WorldSnapshotCodecV35
         if (version is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion) fields.Add(effectiveBytes);
         // The cognition interpretation appends its per-actor records as the final root section.
         byte[] cognitionBytes = version == WorldCognitionAdmission.ProfileVersion
-            ? CognitionCodecV1.Encode(world.Cognition ?? throw new ArgumentException("Profile 42 requires its cognition owner.", nameof(world)))
+            ? CognitionCodecV2.Encode(world.Cognition ?? throw new ArgumentException("Profile 42 requires its cognition owner.", nameof(world)))
             : world.Cognition is null ? [] : throw new ArgumentException("Only profile 42 encodes cognition.", nameof(world));
         if (version == WorldCognitionAdmission.ProfileVersion)
         {
@@ -97,7 +97,7 @@ public static class WorldSnapshotCodecV35
             + (version is WorldControllerAdmission.ProfileVersion or WorldRecoveryAdmission.ProfileVersion or WorldCareDispositionAdmission.ProfileVersion or WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion ? WorldControllerCodecV1.MaximumStateByteLength - controllerBytes.Length : 0)
             + (version is WorldControlPermissionAdmission.ProfileVersion or WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion ? WorldControlPermissionCodecV1.MaximumStateByteLength - permissionBytes.Length : 0)
             + (version is WorldDelegatedControlAdmission.ProfileVersion or WorldPartyWithdrawalAdmission.ProfileVersion or WorldCognitionAdmission.ProfileVersion ? WorldEffectiveControlCodecV1.MaximumStateByteLength - effectiveBytes.Length : 0)
-            + (version == WorldCognitionAdmission.ProfileVersion ? CognitionCodecV1.MaximumSnapshotByteLength - cognitionBytes.Length : 0)
+            + (version == WorldCognitionAdmission.ProfileVersion ? CognitionCodecV2.MaximumSnapshotByteLength - cognitionBytes.Length : 0)
             > WorldSnapshotCodec.MaximumStateByteLength)
         {
             throw new ArgumentException("The complete outcome-continuation world exceeds its retained storage bound.", nameof(world));
@@ -170,7 +170,7 @@ public static class WorldSnapshotCodecV35
             {
                 if (!reader.Exact(32).SequenceEqual(WorldCognitionAdmission.RulesPin.ToByteArray()))
                     throw new FormatException("The cognition root requires its exact admitted laws.");
-                cognition = CognitionCodecV1.Decode(reader.Field(CognitionCodecV1.MaximumSnapshotByteLength));
+                cognition = CognitionCodecV2.Decode(reader.Field(CognitionCodecV2.MaximumSnapshotByteLength));
             }
             reader.Complete();
 

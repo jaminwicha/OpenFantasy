@@ -86,12 +86,15 @@ public sealed class CognitionTests
             .Acquire(Gathered(Source, 2, 2000, Id(810)), 0).Acquire(Gathered(Source, 0, 3000, Id(811)), 0);
         KnownSource depleted = Assert.Single(wren.Beliefs.Sources);
         Assert.True(depleted.BelievedDepleted);
-        Assert.Equal(2UL, wren.Beliefs.GatheredQuantity);
+        Assert.Equal(0UL, depleted.LatestYield);
+        // The later empty-handed attempt replaced the uncited earlier yield; the journal keeps the earlier one.
+        Assert.Equal([Observed, Id(811)], wren.Evidence.Select(entry => entry.EvidenceId));
 
         ActorCognition refreshed = wren.Acquire(Observation(Source, 3, 4000, Id(812)), 0);
         KnownSource replenished = Assert.Single(refreshed.Beliefs.Sources);
         Assert.False(replenished.BelievedDepleted);
         Assert.Equal(Id(812), replenished.EvidenceId);
+        Assert.DoesNotContain(refreshed.Evidence, entry => entry.EvidenceId == Observed);
 
         ActorCognition unobserved = ActorCognition.Empty(Wren).Acquire(Gathered(OtherSource, 0, 1000, Id(813)), 0);
         Assert.Empty(unobserved.Beliefs.Sources);
@@ -117,9 +120,10 @@ public sealed class CognitionTests
     public void PolicyFollowsTheDelayedSupplyDecisionTable(string row, IntentionKind? expected, CognitionDeferral reason)
     {
         var waiting = new CognitionIntention(IntentionKind.AwaitSupply, Project, At(0), []);
-        ActorCognition observed = new(Wren, 0, [Observation(Source, 3, 1000)], waiting, []);
+        var missingTool = new CurrentDeferral(CognitionDeferral.MissingTool, CognitionPolicy.Version, At(0));
+        ActorCognition observed = new(Wren, 0, [Observation(Source, 3, 1000)], waiting, [], deferral: missingTool);
         ActorCognition depleted = observed.Acquire(Gathered(Source, 0, 2000, Id(810)), 0);
-        ActorCognition blind = new(Wren, 0, [], waiting, []);
+        ActorCognition blind = new(Wren, 0, [], waiting, [], deferral: missingTool);
         (ActorCognition cognition, CognitionSituation situation) = row switch
         {
             "hold" => (observed.Acquire(Delivery(), 0), Situation(hold: true, reachable: [Source])),
@@ -175,17 +179,108 @@ public sealed class CognitionTests
         Assert.True(stocked.CompletedCurrent);
         Assert.Equal(MemoryOutcome.Completed, gathering.Adopt(stocked, At(3000)).Memory[^2].Outcome);
 
-        // Spent effort defers the next swing but keeps the plan: only the wake moves.
+        // Spent effort defers the next swing but keeps the plan: the reason changes and is remembered once.
         CognitionDecision tired = CognitionPolicy.Decide(gathering, Situation(effort: false, reachable: [Source]), At(3000));
         Assert.False(tired.CompletedCurrent);
         Assert.Equal(CognitionDeferral.InsufficientEffort, tired.Deferral);
         Assert.Same(gathering.Intention, tired.Intention);
-        Assert.Equal(gathering.Memory.Count, gathering.Adopt(tired, At(3000)).Memory.Count);
+        ActorCognition resting = gathering.Adopt(tired, At(3000));
+        Assert.Same(gathering.Intention, resting.Intention);
+        Assert.Equal(gathering.Memory.Count + 1, resting.Memory.Count);
+        Assert.Equal((MemoryOutcome.Reconsidered, CognitionDeferral.InsufficientEffort),
+            (resting.Memory[^1].Outcome, resting.Memory[^1].Reason));
+        Assert.Equal(new CurrentDeferral(CognitionDeferral.InsufficientEffort, CognitionPolicy.Version, At(3000)), resting.Deferral);
 
         // A source no longer reachable does end the plan, with that reason.
         CognitionDecision blocked = CognitionPolicy.Decide(gathering, Situation(effort: false), At(3000));
         CognitionMemory interrupted = gathering.Adopt(blocked, At(3000)).Memory[^2];
         Assert.Equal((MemoryOutcome.Superseded, CognitionDeferral.Unreachable), (interrupted.Outcome, interrupted.Reason));
+    }
+
+    [Fact]
+    public void ANewerObservationOrYieldReplacesOnlyTheUncitedOlderOneOfItsSource()
+    {
+        ActorCognition wren = ActorCognition.Empty(Wren).Acquire(Observation(Source, 3, 1000), 0)
+            .Acquire(Observation(OtherSource, 3, 1500, Id(840)), 0);
+        wren = wren.Adopt(Decision(new CognitionIntention(IntentionKind.GatherPersonalStock, Source, At(1000), [Observed]),
+            CognitionDeferral.AwaitingSupply), At(1000));
+        // The cited observation stays; each newer uncited observation or yield of the same source replaces the last.
+        for (ulong swing = 0; swing < 3 * ActorCognition.MaximumEvidence; swing++)
+        {
+            int at = 2000 + (int)swing * 10;
+            wren = wren.Acquire(Gathered(Source, 1, at, Id(20_000 + swing)), swing)
+                .Acquire(Observation(Source, 2, at, Id(30_000 + swing)), swing);
+        }
+        ulong last = 3 * ActorCognition.MaximumEvidence - 1;
+        Assert.Equal([Observed, Id(840), Id(20_000 + last), Id(30_000 + last)],
+            wren.Evidence.Select(entry => entry.EvidenceId));
+        KnownSource source = wren.Beliefs.Sources.Single(known => known.SourceId == Source);
+        Assert.Equal((Id(30_000 + last), 1UL), (source.EvidenceId, source.LatestYield!.Value));
+        // Another source's observation is a different subject and is untouched.
+        Assert.Contains(wren.Beliefs.Sources, known => known.SourceId == OtherSource && known.EvidenceId == Id(840));
+        // Received items and deliveries are never replaced.
+        ActorCognition gifted = wren.Acquire(new CognitionEvidence(Id(50_001), Wren, EvidenceKind.ItemReceived, Id(50_002),
+            Player, Id(50_003), 1, At(9000)), 0).Acquire(new CognitionEvidence(Id(50_004), Wren, EvidenceKind.ItemReceived,
+            Id(50_005), Player, Id(50_003), 1, At(9001)), 0);
+        Assert.Equal(2, gifted.Evidence.Count(entry => entry.Kind == EvidenceKind.ItemReceived));
+        // A state that keeps two uncited observations of one source is not canonical.
+        Assert.Throws<ArgumentException>(() => new ActorCognition(Wren, 0,
+            [Observation(Source, 3, 1000), Observation(Source, 2, 2000, Id(841))], null, []));
+        Assert.Throws<ArgumentException>(() => ActorCognition.Empty(Wren).Acquire(
+            new CognitionEvidence(Id(842), Player, EvidenceKind.SourceObserved, ObserveCommand, null, Source, 3, At(0)), 0));
+    }
+
+    [Fact]
+    public void TheEvidenceBoundIsCheckedAfterReplacement()
+    {
+        ActorCognition wren = ActorCognition.Empty(Wren);
+        for (ulong index = 0; index < ActorCognition.MaximumEvidence; index++)
+            wren = wren.Acquire(Observation(Id(5_000 + index), 1, (int)index, Id(10_000 + index)), 0);
+        ActorCognition refreshed = wren.Acquire(Observation(Id(5_000), 0, 100, Id(99_998)), 0);
+        Assert.Equal(ActorCognition.MaximumEvidence, refreshed.Evidence.Count);
+        Assert.True(refreshed.Beliefs.Sources.Single(known => known.SourceId == Id(5_000)).BelievedDepleted);
+    }
+
+    [Fact]
+    public void AReasonChangeIsRememberedOnceAndARepeatedReasonChangesOnlyTheWake()
+    {
+        var waiting = new CognitionIntention(IntentionKind.AwaitSupply, Project, At(0), []);
+        ActorCognition wren = ActorCognition.Empty(Wren).Adopt(Decision(waiting, CognitionDeferral.MissingTool), At(0));
+        Assert.Equal(new CurrentDeferral(CognitionDeferral.MissingTool, CognitionPolicy.Version, At(0)), wren.Deferral);
+
+        ActorCognition tired = wren.Adopt(Decision(waiting, CognitionDeferral.InsufficientEffort, step: 20), At(3000));
+        Assert.Same(wren.Intention, tired.Intention);
+        Assert.Equal(new CurrentDeferral(CognitionDeferral.InsufficientEffort, CognitionPolicy.Version, At(3000)), tired.Deferral);
+        CognitionMemory changed = tired.Memory[^1];
+        Assert.Equal((IntentionKind.AwaitSupply, MemoryOutcome.Reconsidered, CognitionDeferral.InsufficientEffort, At(3000)),
+            (changed.Intention, changed.Outcome, changed.Reason, changed.At));
+        Assert.Empty(changed.Basis);
+
+        // The same reason again keeps its original "since" and adds no memory; an identical wake changes nothing.
+        ActorCognition again = tired.Adopt(Decision(waiting, CognitionDeferral.InsufficientEffort, step: 40) with
+            { PolicyVersion = "cognition.other-planner" }, At(4000));
+        Assert.Equal(tired.Memory.Count, again.Memory.Count);
+        Assert.Equal(tired.Deferral, again.Deferral);
+        Assert.Same(again, again.Adopt(Decision(waiting, CognitionDeferral.InsufficientEffort, step: 40), At(4500)));
+
+        // Without an intention nothing is deferred, and a held decision still services nothing.
+        Assert.Throws<ArgumentException>(() => tired.Adopt(Decision(null, CognitionDeferral.MissingTool), At(5000)));
+        Assert.Throws<ArgumentException>(() => new ActorCognition(Wren, 0, [], null, [],
+            deferral: new CurrentDeferral(CognitionDeferral.MissingTool, CognitionPolicy.Version, At(0))));
+        Assert.Throws<ArgumentException>(() => new CurrentDeferral(CognitionDeferral.ReadingHold, CognitionPolicy.Version, At(0)));
+        Assert.Throws<ArgumentException>(() => new ActorCognition(Wren, 0, [], waiting, []));
+        Assert.Throws<ArgumentException>(() => new ActorCognition(Wren, 0, [], waiting, [],
+            deferral: new CurrentDeferral(CognitionDeferral.None, CognitionPolicy.Version, new WorldInstant(-1, 0))));
+
+        // Reason changes count against the memory bound like any other remembered decision.
+        ActorCognition flapping = wren;
+        while (flapping.Memory.Count < ActorCognition.MaximumMemory)
+            flapping = flapping.Adopt(Decision(waiting, flapping.Deferral!.Reason == CognitionDeferral.MissingTool
+                ? CognitionDeferral.InsufficientEffort : CognitionDeferral.MissingTool), At(6000));
+        ActorCognition saturated = flapping;
+        CognitionDeferral other = saturated.Deferral!.Reason == CognitionDeferral.MissingTool
+            ? CognitionDeferral.InsufficientEffort : CognitionDeferral.MissingTool;
+        Assert.Throws<CognitionCapacityException>(() => saturated.Adopt(Decision(waiting, other), At(7000)));
     }
 
     [Fact]
@@ -211,7 +306,7 @@ public sealed class CognitionTests
         ActorCognition decided = wren.Adopt(CognitionPolicy.Decide(wren, Situation(step: 60, tool: false), At(3000)), At(3000));
         Assert.Equal(new CognitionWake(60 + CognitionPolicy.FallbackSteps, WakeCause.Fallback), decided.Wake);
         Assert.Equal(new CognitionWake(40, WakeCause.EvidenceAcquired),
-            CognitionCodecV1.Decode(CognitionCodecV1.Encode(new CognitionSnapshot(World, Branch, 0, [wren]))).For(Wren).Wake);
+            CognitionCodecV2.Decode(CognitionCodecV2.Encode(new CognitionSnapshot(World, Branch, 0, [wren]))).For(Wren).Wake);
     }
 
     [Fact]
@@ -267,8 +362,8 @@ public sealed class CognitionTests
         // Replay: the same committed evidence and recorded decisions, with no planner call.
         ActorCognition replayed = ActorCognition.Empty(Wren).Acquire(Observation(Source, 3, 1000), 20)
             .Adopt(recorded[0], At(1000)).Acquire(Delivery(), 100).Adopt(recorded[1], At(5000));
-        Assert.Equal(CognitionCodecV1.Encode(new CognitionSnapshot(World, Branch, 1, [live])),
-            CognitionCodecV1.Encode(new CognitionSnapshot(World, Branch, 1, [replayed])));
+        Assert.Equal(CognitionCodecV2.Encode(new CognitionSnapshot(World, Branch, 1, [live])),
+            CognitionCodecV2.Encode(new CognitionSnapshot(World, Branch, 1, [replayed])));
     }
 
     [Fact]

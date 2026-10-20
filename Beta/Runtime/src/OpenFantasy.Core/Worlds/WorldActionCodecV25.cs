@@ -8,7 +8,7 @@ namespace OpenFantasy.Core.Worlds;
 /// </summary>
 public static class WorldActionCodecV25
 {
-    private const int MaximumByteLength = CognitionCodecV1.MaximumDecisionByteLength + 512;
+    private const int MaximumByteLength = CognitionCodecV2.MaximumDecisionByteLength + 512;
 
     public static byte[] Encode(WorldActionCommand command)
     {
@@ -20,7 +20,7 @@ public static class WorldActionCodecV25
             InspectGatherSourceIntent inspect => CanonicalEncodingV1.Frame("world.action.inspect-source.v1",
                 inspect.NodeId.ToByteArray(), CanonicalEncodingV1.Unsigned64(inspect.ExpectedNodeRevision)),
             RecordCognitionDecisionIntent decide => CanonicalEncodingV1.Frame("world.action.cognition-decision.v1",
-                CanonicalEncodingV1.Unsigned64(decide.ExpectedCognitionRevision), CognitionCodecV1.EncodeDecision(decide.Decision)),
+                CanonicalEncodingV1.Unsigned64(decide.ExpectedCognitionRevision), CognitionCodecV2.EncodeDecision(decide.Decision)),
             _ => throw new ArgumentException("This version requires a cognition action.")
         };
         return CanonicalEncodingV1.Frame("world.actor-action", CanonicalEncodingV1.Unsigned64(25),
@@ -55,7 +55,7 @@ public static class WorldActionCodecV25
                 intent.Tag("world.action.cognition-decision.v1"u8);
                 ulong expected = intent.Number();
                 decoded = new RecordCognitionDecisionIntent(expected,
-                    CognitionCodecV1.DecodeDecision(intent.Field(CognitionCodecV1.MaximumDecisionByteLength)));
+                    CognitionCodecV2.DecodeDecision(intent.Field(CognitionCodecV2.MaximumDecisionByteLength)));
             }
             intent.Complete();
             var result = new WorldActionCommand(command, principal, session, actor, world, branch, revision, decoded);

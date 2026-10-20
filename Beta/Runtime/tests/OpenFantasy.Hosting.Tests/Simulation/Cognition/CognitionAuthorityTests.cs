@@ -1,3 +1,4 @@
+using OpenFantasy.Core;
 using OpenFantasy.Core.Cognition;
 using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Worlds;
@@ -42,14 +43,23 @@ public sealed class CognitionAuthorityTests
     [Fact]
     public void A_cognition_overflow_stops_the_durable_authority_without_publishing()
     {
+        // Wren waits without a tool, then lawfully records alternating reasons until her memory bound is reached.
         var fixture = new CognitionWorldFixture();
-        for (int look = 0; look < ActorCognition.MaximumEvidence; look++)
-            Assert.Equal(CommandReceiptStatus.Applied, fixture.Act(fixture.Wren, fixture.InspectionOf(fixture.Oak)).Status);
+        Assert.Equal(CommandReceiptStatus.Applied, fixture.Act(fixture.Wren, fixture.InspectionOf(fixture.Oak)).Status);
+        Assert.Equal(CommandReceiptStatus.Applied, fixture.Decide(fixture.Wren).Status);
+        static CognitionDeferral Other(CognitionDeferral reason) =>
+            reason == CognitionDeferral.MissingTool ? CognitionDeferral.InsufficientEffort : CognitionDeferral.MissingTool;
+        fixture.AdvanceUntilDue(fixture.Wren);
+        while (fixture.CognitionOf(fixture.Wren).Memory.Count < ActorCognition.MaximumMemory)
+        {
+            WorldActionCommand reconsider = fixture.Reconsideration(Other(fixture.CognitionOf(fixture.Wren).Deferral!.Reason));
+            Assert.Equal(CommandReceiptStatus.Applied,
+                fixture.Step(reconsider).Receipts.Single(receipt => receipt.CommandId == reconsider.CommandId).Status);
+        }
         WorldSnapshot head = fixture.State;
-        WorldActionCommand gift = fixture.Command(fixture.Player,
-            fixture.GiftOf(fixture.Player, fixture.Wren, fixture.Owned(fixture.Player, fixture.Axe), 1));
+        WorldActionCommand last = fixture.Reconsideration(Other(fixture.CognitionOf(fixture.Wren).Deferral!.Reason));
         var overflowing = new WorldStepBatch(fixture.NextId(), head.WorldId, head.BranchId, head.Revision, head.AdvancingSteps,
-            WorldBatchKind.AdvancingStep, [], [gift], head.ProfileVersion);
+            WorldBatchKind.AdvancingStep, [], [last], head.ProfileVersion);
 
         using var files = new StorageFiles();
         using (var authority = SqliteWorldAuthority.CreateNew(files.Path, fixture.Genesis))

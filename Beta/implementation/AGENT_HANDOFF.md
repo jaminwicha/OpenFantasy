@@ -54,13 +54,14 @@ storage-only conversion from semantic migration, maps canonical responsibilities
 private-copy validation/publication, joint archives, operational recovery and rollback-after-play limits.
 It is design preparation, not an implemented current-profile loader or approved format.
 
-**Next:** NPC-01's evidence-bound precondition, in a fresh session. Wren's episode now runs in a real local session over
-the reviewed [profile-42 binding](p02/npc-cognition/world-binding/RESULT.md) through the
-[host cognition policy](p02/npc-cognition/host-policy/RESULT.md). Evidence only accumulates, so about 32 gathers stop
-the world. Bind decision 7's lossless replacement, so that a newer observation replaces one nothing cites with its old
-value kept in history, or re-size the bounds from measured workloads. Add remembered deferrals (review finding 5)
-in the same codec revision, with the Python oracle. Then run the decision-3 baseline on profiles 40, 41 and 42 with
-every NPC autonomous, and the player-absent detailed continuation with a changed-place return. The
+**Next:** NPC-01's decision-3 baseline, in a fresh session. Wren's episode runs in a real local session over the
+reviewed [profile-42 binding](p02/npc-cognition/world-binding/RESULT.md) through the
+[host cognition policy](p02/npc-cognition/host-policy/RESULT.md). [Evidence retention](p02/npc-cognition/evidence-retention/RESULT.md)
+now replaces uncited older observations and gathering outcomes, with old values in history, and keeps each actor's
+current deferral with remembered reason changes. Run the decision-3 baseline on profiles 40, 41 and 42 with every NPC
+autonomous, reporting how fast the evidence and memory bounds fill. Memory still grows with every reason change, and
+decision 7's episodic-memory segments are unbound. Then run the player-absent detailed continuation with a
+changed-place return. The
 [review disposition](p02/npc-cognition/world-binding-review/DISPOSITION.md) lists the untested paths and the
 decision-8 capability-table packet, which must precede profile 43. The [causal design](NPC_01_CAUSAL_EPISODE.md) and
 the exit decision's proof list remain the acceptance order.
@@ -76,8 +77,8 @@ recruitment/cooperative work and the traveling-merchant/cargo investigation reta
 ECO-01, P02 SPACE/coordination/UI introductions and P00/P01 prerequisites remain required before full
 P02 acceptance. Then prove P03 before broader P04–P14 expansion. The full P02 table remains in the roadmap.
 
-**Latest increment:** NPC-01's host cognition policy over the reviewed profile-42 binding, both linked above.
-Before them, the PLAN-STATE exit decision and review, then NPC-01's Core cognition contracts. Before them, the [journal](p02/journal/RESULT.md) shows character stats and known quests from the permitted view;
+**Latest increment:** NPC-01's evidence retention and remembered deferrals, linked above. Before it, the host cognition
+policy over the reviewed profile-42 binding. Before them, the PLAN-STATE exit decision and review, then NPC-01's Core cognition contracts. Before them, the [journal](p02/journal/RESULT.md) shows character stats and known quests from the permitted view;
 equipment, known skills, map and calendar remain. Before it, [keyboard remapping](p02/keyboard-remapping/RESULT.md) rebinds every action except pause, with
 reserved navigation keys and hints that follow the keys; controller remapping, device and scaling settings remain.
 Before it, [client settings](p02/client-settings/RESULT.md) added saved mixer levels and captions. Before that, the

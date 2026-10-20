@@ -54,7 +54,9 @@ material or monetary effect. Reopening does not turn transient policy advice int
 [WorldCognitionAdmission](../../src/OpenFantasy.Core/Worlds/WorldCognitionAdmission.cs) creates profile 42 only
 from an unplayed profile-41 world. The root is profile 41's complete frame plus one final section: the
 [cognition facet](../../src/OpenFantasy.Core/Cognition/CognitionSnapshot.cs), with exactly one record per resident,
-players included. Its codec maximum is reserved inside the 16 MiB root budget, so a record growing within its own
+players included. A record holds the actor's acquired evidence, its current intention, the
+[current deferral](../../src/OpenFantasy.Core/Cognition/CognitionIntention.cs) beside that intention (reason, the
+policy version that first gave it, and since when), remembered decisions and the pending wake. Its codec maximum is reserved inside the 16 MiB root budget, so a record growing within its own
 bound can never make the root unencodable. The root also stores the interpretation's exact `RulesPin`, and decoding
 refuses any other. The interpretation is internal and non-default. Content still creates
 profile 40, and no existing save changes profile.
@@ -72,6 +74,13 @@ profile 40, and no existing save changes profile.
 
   Evidence identities derive from the causing command and a fixed per-kind ordinal. They join the world's identity
   index and the batch's reserved identities.
+- **Retention replaces what nothing cites.** A newer `SourceObserved` replaces the actor's older observation of the same
+  source, and a newer `GatherOutcome` replaces its older outcome there, when no intention or memory cites the older
+  entry. This is the market-knowledge rule: the replaced value stays in the journal and archived roots, and canonical
+  state holds the actor's latest view. Cited evidence is always kept, received items and deliveries are never
+  replaced, and the bound is checked after replacement. A root holding two uncited entries of one replaceable kind
+  and subject is not canonical and does not decode. Beliefs therefore read each known source's latest observation and
+  latest own yield; an actor's lifetime gathering total is history, not a held belief.
 - **Perception rule.** [InspectGatherSourceIntent](../../src/OpenFantasy.Core/Worlds/WorldCognitionIntents.cs) is a
   deliberate look at one source within four cells. It uses the same anchored terrain and structure sightline as
   gathering reach, needs no tool, and reveals only that source's visible remaining harvests. Nothing farther, and
@@ -102,7 +111,11 @@ profile 40, and no existing save changes profile.
     or for gathering at its stock target that has yielded since it was adopted.
 
   Deferral reasons and the stock target are the planner's claims; the law does not validate them. The decision is
-  then applied exactly as recorded. Replay applies the same bytes and never runs a policy, so a
+  then applied exactly as recorded.
+- **Deferral memory.** A decision that keeps the intention but gives a new reason replaces the current deferral and
+  adds one `Reconsidered` memory with that reason, so the actor's own state explains why it is still waiting. The same
+  reason again keeps its original policy and instant and adds nothing. Without an intention nothing is deferred, and a
+  reading hold is never a recorded reason. Replay applies the same bytes and never runs a policy, so a
   changed planner cannot rewrite history.
 - **Overflow stops the authority.** A capacity overflow propagates out of the processor. It is not a refused action:
   `CognitionCapacityException` derives from none of the exceptions admission converts into refusals, and commit
@@ -111,9 +124,12 @@ profile 40, and no existing save changes profile.
 
 Profile-42 roots use storage schema twelve, like profiles 40 and 41.
 
-**Known limit:** evidence only accumulates. Nothing yet replaces a superseded observation, so ordinary play reaches
-the 64-entry development bound; about 32 gathers by one actor stop the world. Decision 7's lossless replacement, or
-bounds re-sized from measured workloads, must land before a sustained workload runs on this profile.
+**Remaining bounds:** looks and gathers no longer approach the 64-entry evidence bound, because each source keeps at
+most one uncited observation and one uncited outcome per actor. Evidence still grows with items received, with
+sources first seen and with each citation, and memory grows with every intention change and reason change. One adoption
+followed by 63 reason changes fills the 64 memories, for example under a planner that alternates two reasons. Decision 7's
+second half, moving closed episodic memory into immutable actor-owned segments, is not bound; the decision-3
+baseline measures how fast both bounds fill in sustained play.
 
 [LocalCognitionController](../../src/OpenFantasy.Hosting/Simulation/LocalCognitionController.cs) is the host policy for
 profile 42. It drives host-controlled residents that have an unfinished project of their own. For each such
