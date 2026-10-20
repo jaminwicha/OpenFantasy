@@ -1,0 +1,87 @@
+{
+  "Kind": "native-farm-walkthrough-v1",
+  "Stage": "create",
+  "Status": "passed",
+  "Runtime": ".NET 10.0.12",
+  "DisplayDriver": "headless",
+  "Failure": null,
+  "ProbeStage": 6,
+  "IsLocallyPaused": true,
+  "IsWindowFocused": true,
+  "HasPendingAction": false,
+  "HasReadingHold": false,
+  "TalkOfferAtPress": {
+    "ExpectedActorRevision": 28,
+    "Target": 16
+  },
+  "Initial": "{\u0022World\u0022:\u0022532f47db8fb5de95dfc8560e9a0ef032\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:32400000,\u0022Wood\u0022:8,\u0022StorageRevision\u0022:0,\u0022Actors\u0022:[{\u0022Id\u0022:\u0022c7d63dbcc418014f5b87c36acea65ff6\u0022,\u0022DisplayName\u0022:\u0022Wren\u0022,\u0022X\u0022:26496,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:0},{\u0022Id\u0022:\u0022e378e9407e63d212602d16a1540acd3b\u0022,\u0022DisplayName\u0022:\u0022Traveler\u0022,\u0022X\u0022:25984,\u0022Y\u0022:83328,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:0}],\u0022Dialogue\u0022:null}",
+  "Final": "{\u0022World\u0022:\u0022532f47db8fb5de95dfc8560e9a0ef032\u0022,\u0022Day\u0022:0,\u0022Millisecond\u0022:32459400,\u0022Wood\u0022:2,\u0022StorageRevision\u0022:1,\u0022Actors\u0022:[{\u0022Id\u0022:\u0022c7d63dbcc418014f5b87c36acea65ff6\u0022,\u0022DisplayName\u0022:\u0022Wren\u0022,\u0022X\u0022:27008,\u0022Y\u0022:82560,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:16},{\u0022Id\u0022:\u0022e378e9407e63d212602d16a1540acd3b\u0022,\u0022DisplayName\u0022:\u0022Traveler\u0022,\u0022X\u0022:26560,\u0022Y\u0022:83008,\u0022Z\u0022:256,\u0022PresenceRevision\u0022:28}],\u0022Dialogue\u0022:null}",
+  "Checks": [
+    "Native host opened source-pinned farm with eight player wood.",
+    "Named movement input approached Wren through the real Godot adapter.",
+    "Reading hold kept both characters and calendar unchanged for at least 500 ms.",
+    "Native give action committed six wood, leaving two, while the conversation stayed held.",
+    "Native continue action closed the addressed dialogue.",
+    "Native walking derived 4 footstep cues over 4 strides; the conversation ducked both beds."
+  ],
+  "DurationMilliseconds": 2723,
+  "Soundscape": {
+    "Visits": 1,
+    "WalkedSubunits": 896,
+    "PlayerPathSubunits": 896,
+    "PlayerFootsteps": 4,
+    "FootstepSources": {
+      "c7d63dbcc418014f5b87c36acea65ff6": 2,
+      "e378e9407e63d212602d16a1540acd3b": 4
+    },
+    "Derived": {
+      "Footstep": 6,
+      "GatherContact": 0,
+      "ConstructionContact": 0,
+      "ExcavationContact": 0
+    },
+    "Playback": {
+      "Played": 0,
+      "AwaitingCreatorAsset": 6,
+      "IntentionallySilent": 0,
+      "Spaced": 0,
+      "VoiceLimited": 0,
+      "Withheld": 0
+    },
+    "Contexts": [
+      {
+        "Score": "Exploration",
+        "Ambience": "Outdoor",
+        "IsDucked": false,
+        "Change": "Restoration",
+        "FadeSeconds": 0,
+        "ScoreStatus": "AwaitingCreatorAsset",
+        "AmbienceStatus": "AwaitingCreatorAsset"
+      },
+      {
+        "Score": "Exploration",
+        "Ambience": "Outdoor",
+        "IsDucked": true,
+        "Change": "Ducking",
+        "FadeSeconds": 0.3,
+        "ScoreStatus": "AwaitingCreatorAsset",
+        "AmbienceStatus": "AwaitingCreatorAsset"
+      },
+      {
+        "Score": "Exploration",
+        "Ambience": "Outdoor",
+        "IsDucked": false,
+        "Change": "Ducking",
+        "FadeSeconds": 0.3,
+        "ScoreStatus": "AwaitingCreatorAsset",
+        "AmbienceStatus": "AwaitingCreatorAsset"
+      }
+    ],
+    "Buses": {
+      "Music": 1,
+      "Ambience": 2,
+      "Effects": 3,
+      "Voice": 4
+    }
+  }
+}

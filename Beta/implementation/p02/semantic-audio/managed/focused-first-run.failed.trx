@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="5a1590c5-b775-4f2b-a3ff-def98fc566c7" name="@mac 2026-10-19 23:28:35" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-19T23:28:35.3876630-05:00" queuing="2026-10-19T23:28:35.3876640-05:00" start="2026-10-19T23:28:33.4067210-05:00" finish="2026-10-19T23:28:36.0605910-05:00" />
+  <TestSettings name="default" id="55b804ba-e66e-4285-aeff-7115bc7ebd83">
+    <Deployment runDeploymentRoot="_mac_2026-10-19_23_28_35" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="5184b7d6-c7ff-43ad-8f46-96c8aca9d1f5" testId="e055b413-2151-4f64-edd0-adf1ee8fc832" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.A_new_visit_restores_the_current_context_without_a_transition(phaseValue: 2, scoreValue: 3)" computerName="mac" duration="00:00:00.0003193" startTime="2026-10-19T23:28:35.3422230-05:00" endTime="2026-10-19T23:28:35.3425990-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5184b7d6-c7ff-43ad-8f46-96c8aca9d1f5" />
+    <UnitTestResult executionId="e4d4dd6b-7719-411f-8560-c84e32a43c18" testId="33d81df1-8973-1b61-d2b8-3cfadbe52933" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests.A_real_committed_swing_sounds_once_at_its_visible_source" computerName="mac" duration="00:00:00.0125226" startTime="2026-10-19T23:28:36.0129560-05:00" endTime="2026-10-19T23:28:36.0255350-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e4d4dd6b-7719-411f-8560-c84e32a43c18" />
+    <UnitTestResult executionId="c6aae251-c630-4def-aa54-33bf0d2cb857" testId="d96fa99f-c5e6-60e8-5ff7-5022b7d23547" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.A_visit_starts_with_a_baseline_and_a_new_listener_or_reset_never_replays_earlier_changes" computerName="mac" duration="00:00:00.0004411" startTime="2026-10-19T23:28:35.3453430-05:00" endTime="2026-10-19T23:28:35.3457970-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c6aae251-c630-4def-aa54-33bf0d2cb857" />
+    <UnitTestResult executionId="ac5c35a2-0028-4b5c-abec-6cdbb067b758" testId="e9da08c3-ab24-96bf-64c1-d19cb5a3b037" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.Delivered_keys_are_bounded_and_a_repeated_key_is_delivered_once" computerName="mac" duration="00:00:00.0021357" startTime="2026-10-19T23:28:35.3572430-05:00" endTime="2026-10-19T23:28:35.3594080-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ac5c35a2-0028-4b5c-abec-6cdbb067b758" />
+    <UnitTestResult executionId="25ec788d-fd82-4c44-aca9-45fdc2cd5770" testId="1e15ad25-4457-eec0-9660-34d70fcb93e5" testName="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests.Every_derivable_cue_and_context_has_declared_intent_and_none_claims_finished_sound" computerName="mac" duration="00:00:00.0088340" startTime="2026-10-19T23:28:35.3646130-05:00" endTime="2026-10-19T23:28:35.3735010-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="25ec788d-fd82-4c44-aca9-45fdc2cd5770" />
+    <UnitTestResult executionId="7568b6ff-f03a-46df-9103-e1019272ddc7" testId="c45cddc6-5249-d1c8-0deb-7a31a8f6f8ce" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.A_new_engagement_during_aftermath_is_immediate_and_conversation_ducks_both_beds" computerName="mac" duration="00:00:00.0033275" startTime="2026-10-19T23:28:35.3668460-05:00" endTime="2026-10-19T23:28:35.3701990-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7568b6ff-f03a-46df-9103-e1019272ddc7" />
+    <UnitTestResult executionId="04039e7f-c2d0-4e2e-b678-81ed75fd2713" testId="7aaf50ac-860f-1fa8-ec7a-4330bb313ac2" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.Committed_walking_accumulates_strides_and_one_observation_yields_at_most_one_footstep" computerName="mac" duration="00:00:00.0110038" startTime="2026-10-19T23:28:35.3459910-05:00" endTime="2026-10-19T23:28:35.3570310-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04039e7f-c2d0-4e2e-b678-81ed75fd2713" />
+    <UnitTestResult executionId="b6ca0dfb-ed61-4b46-bcb5-bf7271c4b9da" testId="37bf8ac3-3757-e840-fa4d-46a0d6d90089" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.A_new_visit_restores_the_current_context_without_a_transition(phaseValue: 1, scoreValue: 2)" computerName="mac" duration="00:00:00.0000200" startTime="2026-10-19T23:28:35.3428560-05:00" endTime="2026-10-19T23:28:35.3428920-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b6ca0dfb-ed61-4b46-bcb5-bf7271c4b9da" />
+    <UnitTestResult executionId="d4a89514-a54a-46a1-b4c9-1dc3023a36d3" testId="9427da29-3c81-029e-4723-8228dbc20523" testName="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests.Diagnostics_count_every_outcome_and_retain_a_bounded_recent_window" computerName="mac" duration="00:00:00.0067943" startTime="2026-10-19T23:28:35.3573060-05:00" endTime="2026-10-19T23:28:35.3641200-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d4a89514-a54a-46a1-b4c9-1dc3023a36d3" />
+    <UnitTestResult executionId="2d704107-4cb4-4d79-83db-c55e5916d2ee" testId="f6c51402-3da3-30da-f580-c11f79b484bb" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.Encounter_starts_immediately_dwells_through_aftermath_and_returns_to_exploration" computerName="mac" duration="00:00:00.0065268" startTime="2026-10-19T23:28:35.3435420-05:00" endTime="2026-10-19T23:28:35.3663490-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d704107-4cb4-4d79-83db-c55e5916d2ee">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Null() Failure: Value is not null
+Expected: null
+Actual:   SoundscapeContext { Score = Exploration, Ambience = Outdoor, IsDucked = False, Change = AftermathElapsed, FadeSeconds = 4 }</Message>
+          <StackTrace>   at OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.Encounter_starts_immediately_dwells_through_aftermath_and_returns_to_exploration() in /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SoundscapeTests.cs:line 161
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="94e064f6-e416-4c2d-906a-69a2b191225b" testId="2421b298-fed9-e0c0-df70-7679fa529012" testName="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests.Construction_rejects_missing_contexts_wrong_buses_and_mismatched_stream_claims" computerName="mac" duration="00:00:00.0134395" startTime="2026-10-19T23:28:35.3433690-05:00" endTime="2026-10-19T23:28:35.3568340-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="94e064f6-e416-4c2d-906a-69a2b191225b" />
+    <UnitTestResult executionId="c60c1076-3a8b-4a9c-960e-225ffb51758b" testId="46cdc7b0-936b-14f0-e89e-0fe69a2c07dd" testName="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests.Playback_gate_reports_unmapped_and_silent_intents_and_bounds_spacing_and_voices" computerName="mac" duration="00:00:00.0125427" startTime="2026-10-19T23:28:35.3220890-05:00" endTime="2026-10-19T23:28:35.3391560-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c60c1076-3a8b-4a9c-960e-225ffb51758b" />
+    <UnitTestResult executionId="71e51e8d-63f4-4fe6-b887-bf0a78ef3e92" testId="b28c22bb-43bf-9041-6051-e0f3138bf3d0" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests.Real_conversation_ducks_and_a_real_encounter_entry_changes_the_score" computerName="mac" duration="00:00:00.4030905" startTime="2026-10-19T23:28:35.6090180-05:00" endTime="2026-10-19T23:28:36.0121300-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="71e51e8d-63f4-4fe6-b887-bf0a78ef3e92" />
+    <UnitTestResult executionId="4f434bcf-42d3-4576-99f3-3bbfa005ce6e" testId="6d845517-ae74-d80e-17be-4e5885a2de16" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.A_new_visit_restores_the_current_context_without_a_transition(phaseValue: 0, scoreValue: 1)" computerName="mac" duration="00:00:00.0152278" startTime="2026-10-19T23:28:35.3220900-05:00" endTime="2026-10-19T23:28:35.3406630-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4f434bcf-42d3-4576-99f3-3bbfa005ce6e" />
+    <UnitTestResult executionId="93571449-b145-40f9-a75f-1308440ab9ed" testId="2bcbbe0a-24aa-9749-0fda-240c3282fec5" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests.Real_walking_derives_footsteps_and_a_reopened_save_replays_none" computerName="mac" duration="00:00:00.2804853" startTime="2026-10-19T23:28:35.3220950-05:00" endTime="2026-10-19T23:28:35.6066540-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="93571449-b145-40f9-a75f-1308440ab9ed" />
+    <UnitTestResult executionId="f3da4fbd-e4ce-4ec3-be38-45b72a1a6615" testId="7c85e389-81d2-6736-3c62-9d7d6fbe4fe6" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.Relocation_incapacity_and_reappearance_are_not_walking" computerName="mac" duration="00:00:00.0195808" startTime="2026-10-19T23:28:35.3220920-05:00" endTime="2026-10-19T23:28:35.3450050-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f3da4fbd-e4ce-4ec3-be38-45b72a1a6615" />
+    <UnitTestResult executionId="da1073de-f409-4bb4-b9c2-161c186e3e58" testId="929d75b3-91c9-db7d-1c2e-6c32c9e65a6a" testName="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.Gathering_and_work_contacts_follow_committed_decreases_and_increases_only" computerName="mac" duration="00:00:00.0114036" startTime="2026-10-19T23:28:35.3599320-05:00" endTime="2026-10-19T23:28:35.3713510-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="da1073de-f409-4bb4-b9c2-161c186e3e58" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.Relocation_incapacity_and_reappearance_are_not_walking" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7c85e389-81d2-6736-3c62-9d7d6fbe4fe6">
+      <Execution id="f3da4fbd-e4ce-4ec3-be38-45b72a1a6615" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests" name="Relocation_incapacity_and_reappearance_are_not_walking" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.A_new_visit_restores_the_current_context_without_a_transition(phaseValue: 2, scoreValue: 3)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e055b413-2151-4f64-edd0-adf1ee8fc832">
+      <Execution id="5184b7d6-c7ff-43ad-8f46-96c8aca9d1f5" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests" name="A_new_visit_restores_the_current_context_without_a_transition" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.Delivered_keys_are_bounded_and_a_repeated_key_is_delivered_once" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="e9da08c3-ab24-96bf-64c1-d19cb5a3b037">
+      <Execution id="ac5c35a2-0028-4b5c-abec-6cdbb067b758" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests" name="Delivered_keys_are_bounded_and_a_repeated_key_is_delivered_once" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests.A_real_committed_swing_sounds_once_at_its_visible_source" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="33d81df1-8973-1b61-d2b8-3cfadbe52933">
+      <Execution id="e4d4dd6b-7719-411f-8560-c84e32a43c18" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests" name="A_real_committed_swing_sounds_once_at_its_visible_source" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.A_new_visit_restores_the_current_context_without_a_transition(phaseValue: 1, scoreValue: 2)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="37bf8ac3-3757-e840-fa4d-46a0d6d90089">
+      <Execution id="b6ca0dfb-ed61-4b46-bcb5-bf7271c4b9da" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests" name="A_new_visit_restores_the_current_context_without_a_transition" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests.Every_derivable_cue_and_context_has_declared_intent_and_none_claims_finished_sound" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="1e15ad25-4457-eec0-9660-34d70fcb93e5">
+      <Execution id="25ec788d-fd82-4c44-aca9-45fdc2cd5770" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests" name="Every_derivable_cue_and_context_has_declared_intent_and_none_claims_finished_sound" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests.Playback_gate_reports_unmapped_and_silent_intents_and_bounds_spacing_and_voices" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="46cdc7b0-936b-14f0-e89e-0fe69a2c07dd">
+      <Execution id="c60c1076-3a8b-4a9c-960e-225ffb51758b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests" name="Playback_gate_reports_unmapped_and_silent_intents_and_bounds_spacing_and_voices" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.Encounter_starts_immediately_dwells_through_aftermath_and_returns_to_exploration" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="f6c51402-3da3-30da-f580-c11f79b484bb">
+      <Execution id="2d704107-4cb4-4d79-83db-c55e5916d2ee" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests" name="Encounter_starts_immediately_dwells_through_aftermath_and_returns_to_exploration" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests.Real_conversation_ducks_and_a_real_encounter_entry_changes_the_score" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="b28c22bb-43bf-9041-6051-e0f3138bf3d0">
+      <Execution id="71e51e8d-63f4-4fe6-b887-bf0a78ef3e92" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests" name="Real_conversation_ducks_and_a_real_encounter_entry_changes_the_score" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.Committed_walking_accumulates_strides_and_one_observation_yields_at_most_one_footstep" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="7aaf50ac-860f-1fa8-ec7a-4330bb313ac2">
+      <Execution id="04039e7f-c2d0-4e2e-b678-81ed75fd2713" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests" name="Committed_walking_accumulates_strides_and_one_observation_yields_at_most_one_footstep" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests.Diagnostics_count_every_outcome_and_retain_a_bounded_recent_window" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="9427da29-3c81-029e-4723-8228dbc20523">
+      <Execution id="d4a89514-a54a-46a1-b4c9-1dc3023a36d3" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests" name="Diagnostics_count_every_outcome_and_retain_a_bounded_recent_window" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.A_visit_starts_with_a_baseline_and_a_new_listener_or_reset_never_replays_earlier_changes" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="d96fa99f-c5e6-60e8-5ff7-5022b7d23547">
+      <Execution id="c6aae251-c630-4def-aa54-33bf0d2cb857" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests" name="A_visit_starts_with_a_baseline_and_a_new_listener_or_reset_never_replays_earlier_changes" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests.Real_walking_derives_footsteps_and_a_reopened_save_replays_none" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2bcbbe0a-24aa-9749-0fda-240c3282fec5">
+      <Execution id="93571449-b145-40f9-a75f-1308440ab9ed" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeSessionTests" name="Real_walking_derives_footsteps_and_a_reopened_save_replays_none" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests.Construction_rejects_missing_contexts_wrong_buses_and_mismatched_stream_claims" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="2421b298-fed9-e0c0-df70-7679fa529012">
+      <Execution id="94e064f6-e416-4c2d-906a-69a2b191225b" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.AcousticIntentCatalogTests" name="Construction_rejects_missing_contexts_wrong_buses_and_mismatched_stream_claims" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests.Gathering_and_work_contacts_follow_committed_decreases_and_increases_only" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="929d75b3-91c9-db7d-1c2e-6c32c9e65a6a">
+      <Execution id="da1073de-f409-4bb4-b9c2-161c186e3e58" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeCueDeriverTests" name="Gathering_and_work_contacts_follow_committed_decreases_and_increases_only" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.A_new_engagement_during_aftermath_is_immediate_and_conversation_ducks_both_beds" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="c45cddc6-5249-d1c8-0deb-7a31a8f6f8ce">
+      <Execution id="7568b6ff-f03a-46df-9103-e1019272ddc7" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests" name="A_new_engagement_during_aftermath_is_immediate_and_conversation_ducks_both_beds" />
+    </UnitTest>
+    <UnitTest name="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.A_new_visit_restores_the_current_context_without_a_transition(phaseValue: 0, scoreValue: 1)" storage="/users/alucinor/workspace/projects/openfantasy/beta/runtime/tests/openfantasy.hosting.tests/bin/debug/net8.0/openfantasy.hosting.tests.dll" id="6d845517-ae74-d80e-17be-4e5885a2de16">
+      <Execution id="4f434bcf-42d3-4576-99f3-3bbfa005ce6e" />
+      <TestMethod codeBase="/Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/bin/Debug/net8.0/OpenFantasy.Hosting.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests" name="A_new_visit_restores_the_current_context_without_a_transition" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e055b413-2151-4f64-edd0-adf1ee8fc832" executionId="5184b7d6-c7ff-43ad-8f46-96c8aca9d1f5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="33d81df1-8973-1b61-d2b8-3cfadbe52933" executionId="e4d4dd6b-7719-411f-8560-c84e32a43c18" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d96fa99f-c5e6-60e8-5ff7-5022b7d23547" executionId="c6aae251-c630-4def-aa54-33bf0d2cb857" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e9da08c3-ab24-96bf-64c1-d19cb5a3b037" executionId="ac5c35a2-0028-4b5c-abec-6cdbb067b758" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1e15ad25-4457-eec0-9660-34d70fcb93e5" executionId="25ec788d-fd82-4c44-aca9-45fdc2cd5770" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c45cddc6-5249-d1c8-0deb-7a31a8f6f8ce" executionId="7568b6ff-f03a-46df-9103-e1019272ddc7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7aaf50ac-860f-1fa8-ec7a-4330bb313ac2" executionId="04039e7f-c2d0-4e2e-b678-81ed75fd2713" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="37bf8ac3-3757-e840-fa4d-46a0d6d90089" executionId="b6ca0dfb-ed61-4b46-bcb5-bf7271c4b9da" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9427da29-3c81-029e-4723-8228dbc20523" executionId="d4a89514-a54a-46a1-b4c9-1dc3023a36d3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f6c51402-3da3-30da-f580-c11f79b484bb" executionId="2d704107-4cb4-4d79-83db-c55e5916d2ee" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2421b298-fed9-e0c0-df70-7679fa529012" executionId="94e064f6-e416-4c2d-906a-69a2b191225b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="46cdc7b0-936b-14f0-e89e-0fe69a2c07dd" executionId="c60c1076-3a8b-4a9c-960e-225ffb51758b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b28c22bb-43bf-9041-6051-e0f3138bf3d0" executionId="71e51e8d-63f4-4fe6-b887-bf0a78ef3e92" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6d845517-ae74-d80e-17be-4e5885a2de16" executionId="4f434bcf-42d3-4576-99f3-3bbfa005ce6e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2bcbbe0a-24aa-9749-0fda-240c3282fec5" executionId="93571449-b145-40f9-a75f-1308440ab9ed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7c85e389-81d2-6736-3c62-9d7d6fbe4fe6" executionId="f3da4fbd-e4ce-4ec3-be38-45b72a1a6615" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="929d75b3-91c9-db7d-1c2e-6c32c9e65a6a" executionId="da1073de-f409-4bb4-b9c2-161c186e3e58" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="17" executed="17" passed="16" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.5+1b188a7b0a (64-bit .NET 8.0.31)
+[xUnit.net 00:00:00.62]   Discovering: OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.23]   Discovered:  OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.36]   Starting:    OpenFantasy.Hosting.Tests
+[xUnit.net 00:00:01.45]       Assert.Null() Failure: Value is not null
+[xUnit.net 00:00:01.45]       Expected: null
+[xUnit.net 00:00:01.45]       Actual:   SoundscapeContext { Score = Exploration, Ambience = Outdoor, IsDucked = False, Change = AftermathElapsed, FadeSeconds = 4 }
+[xUnit.net 00:00:01.45]       Stack Trace:
+[xUnit.net 00:00:01.45]         /Users/alucinor/Workspace/Projects/OpenFantasy/Beta/Runtime/tests/OpenFantasy.Hosting.Tests/Client/SoundscapeTests.cs(161,0): at OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.Encounter_starts_immediately_dwells_through_aftermath_and_returns_to_exploration()
+[xUnit.net 00:00:01.45]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.45]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:02.11]   Finished:    OpenFantasy.Hosting.Tests (ID = '568bbf2740453e2c6e3d28e6d3bd61a0b2f80e3ced7a3db0015a2db1d4ca48b1')
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="mac" outcome="Error" timestamp="2026-10-19T23:28:35.3900740-05:00">
+        <Text>[xUnit.net 00:00:01.45]     OpenFantasy.Hosting.Tests.Client.SoundscapeContextDirectorTests.Encounter_starts_immediately_dwells_through_aftermath_and_returns_to_exploration [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

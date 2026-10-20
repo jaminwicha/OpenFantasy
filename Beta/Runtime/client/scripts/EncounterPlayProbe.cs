@@ -3,6 +3,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
 using Godot;
+using OpenFantasy.Client.Presentation.Audio;
 using OpenFantasy.Core;
 using OpenFantasy.Core.Encounters;
 using OpenFantasy.Hosting.Simulation;
@@ -58,6 +59,7 @@ internal sealed partial class EncounterPlayProbe(FarmGame game, string reportPat
             Observe("final");
             await Capture(mode);
             Deadline();
+            RequireSoundscape();
             Report("passed", null);
             game.RequestClose();
         }
@@ -290,13 +292,61 @@ internal sealed partial class EncounterPlayProbe(FarmGame game, string reportPat
     private void Report(string status, string? error) => File.WriteAllText(Output(mode, status == "passed" ? "json" : "failed.json"),
         JsonSerializer.Serialize(new { Kind = "native-encounter-play-v1", Mode = mode, Status = status, Error = error,
             Stage = _stage, InitialHash = _initial, FinalHash = game.CurrentView is null ? null : PublicHash(),
-            Checks = _checks, Inputs = _inputs, Observations = _observations, Display = DisplayServer.GetName(),
+            Checks = _checks, Inputs = _inputs, Observations = _observations, Soundscape = SoundscapeSummary(), Display = DisplayServer.GetName(),
             FocusRequests = 0, Unfocusable = GetWindow().Unfocusable, NativeFocused = GetWindow().HasFocus(),
             ObservedNativeFocus = _observedNativeFocus,
             StartupNoFocus = ProjectSettings.GetSetting("display/window/size/no_focus").AsBool(),
             game.IsLocallyPaused, game.IsWindowFocused, DurationMilliseconds = _elapsed.ElapsedMilliseconds,
             Limit = "Controlled background focus and injected input; physical devices, production art, wider effects and full phase gates remain open."
         }, new JsonSerializerOptions { WriteIndented = true }) + "\n");
+    /// <summary>
+    /// Sustained sound context obligations: real entry starts the encounter context, a process reopened mid-duel
+    /// restores it without a transition, and a reopened released world restores exploration. No cue claims an asset.
+    /// </summary>
+    private void RequireSoundscape()
+    {
+        SoundscapeDiagnostics sound = game.SoundscapeDiagnostics;
+        IReadOnlyList<SoundscapeContextRecord> contexts = sound.RecentContexts;
+        Require(sound.Visits == 1 && contexts.Count > 0 && contexts[0].Context.Change == SoundscapeContextChange.Restoration,
+            "The encounter journey did not begin with one restored listener visit.");
+        long derived = Enum.GetValues<SoundCueKind>().Sum(sound.Derived);
+        Require(sound.Total(AcousticPlayback.AwaitingCreatorAsset) + sound.Total(AcousticPlayback.Withheld) == derived,
+            "A derived cue claimed playback although no creator asset is mapped.");
+        if (mode == "fresh")
+        {
+            Require(contexts[0].Context.Score == SoundscapeScore.Exploration
+                && contexts.Any(record => record.Context.Change == SoundscapeContextChange.EncounterStarted
+                    && record.Context.Score == SoundscapeScore.Encounter),
+                "Real encounter entry did not start the encounter sound context.");
+            _checks.Add("Real entry moved the sustained sound context from exploration to encounter.");
+        }
+        else if (mode == "duel")
+        {
+            Require(contexts[0].Context.Score == SoundscapeScore.Encounter,
+                "A process reopened during the duel did not restore the encounter sound context.");
+            _checks.Add("Reopening mid-duel restored the encounter sound context without a transition.");
+        }
+        else
+        {
+            Require(contexts[0].Context.Score == SoundscapeScore.Exploration,
+                "A reopened released world did not restore the exploration sound context.");
+            _checks.Add("Reopening the released world restored exploration sound without replaying the encounter.");
+        }
+    }
+
+    private object SoundscapeSummary()
+    {
+        SoundscapeDiagnostics sound = game.SoundscapeDiagnostics;
+        return new
+        {
+            sound.Visits,
+            Derived = Enum.GetValues<SoundCueKind>().ToDictionary(kind => kind.ToString(), sound.Derived),
+            Playback = Enum.GetValues<AcousticPlayback>().ToDictionary(playback => playback.ToString(), sound.Total),
+            Contexts = sound.RecentContexts.Select(record => new { Score = record.Context.Score.ToString(),
+                Change = record.Context.Change.ToString(), record.Context.IsDucked, record.Context.FadeSeconds }),
+        };
+    }
+
     private static void Require(bool condition, string message)
     { if (!condition) throw new InvalidOperationException(message); }
 }

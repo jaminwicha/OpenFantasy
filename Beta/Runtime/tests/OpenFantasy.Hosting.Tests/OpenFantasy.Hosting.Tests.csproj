@@ -51,6 +51,12 @@
     <Compile Include="../../client/scripts/MarketActionOffers.cs" Link="Client/MarketActionOffers.cs" />
     <Compile Include="../../client/scripts/FarmMarketTerms.cs" Link="Client/FarmMarketTerms.cs" />
     <Compile Include="../../client/scripts/Presentation/FarmHealthFeedback.cs" Link="Client/FarmHealthFeedback.cs" />
+    <Compile Include="../../client/scripts/Presentation/Audio/SoundscapeObservation.cs" Link="Client/Audio/SoundscapeObservation.cs" />
+    <Compile Include="../../client/scripts/Presentation/Audio/SoundCue.cs" Link="Client/Audio/SoundCue.cs" />
+    <Compile Include="../../client/scripts/Presentation/Audio/SoundscapeCueDeriver.cs" Link="Client/Audio/SoundscapeCueDeriver.cs" />
+    <Compile Include="../../client/scripts/Presentation/Audio/SoundscapeContextDirector.cs" Link="Client/Audio/SoundscapeContextDirector.cs" />
+    <Compile Include="../../client/scripts/Presentation/Audio/AcousticIntentCatalog.cs" Link="Client/Audio/AcousticIntentCatalog.cs" />
+    <Compile Include="../../client/scripts/Presentation/Audio/SoundscapeDiagnostics.cs" Link="Client/Audio/SoundscapeDiagnostics.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoViewProjection.cs" Link="Client/Cargo/CargoViewProjection.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoStallPick.cs" Link="Client/Cargo/CargoStallPick.cs" />
     <Compile Include="../../client/scripts/Cargo/CargoPaperdollPlan.cs" Link="Client/Cargo/CargoPaperdollPlan.cs" />

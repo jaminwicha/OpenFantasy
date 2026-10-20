@@ -1,6 +1,7 @@
 using Godot;
 using OpenFantasy.Core;
 using OpenFantasy.Client.Presentation;
+using OpenFantasy.Client.Presentation.Audio;
 using OpenFantasy.Core.Commands;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
@@ -23,6 +24,7 @@ public partial class FarmGame : Node2D
         new Dictionary<FarmSemanticAction, FarmActionOffer>();
     private readonly RetreatOutcomeNotice _retreatNotice = new();
     private readonly FarmHealthFeedback _healthNotice = new();
+    private readonly FarmSoundscape _soundscape = new();
     private string _actionDescription = "";
     private bool _failed;
     private FarmTargetSelection? _targets;
@@ -72,6 +74,8 @@ public partial class FarmGame : Node2D
     internal bool IsInventoryOpen => _input.InventoryOpen;
     internal bool IsWheelOpen => _input.WheelOpen;
     internal FarmDaylight Daylight => _canvas.Daylight;
+    /// <summary>Presentation-only sound diagnostics for probes; never persisted or sent to the world.</summary>
+    internal SoundscapeDiagnostics SoundscapeDiagnostics => _soundscape.Diagnostics;
     internal void RequestClose() => BeginClose();
 
     /// <summary>
@@ -104,6 +108,7 @@ public partial class FarmGame : Node2D
     {
         _input = new FarmInputRouter(StartPaused);
         AddChild(_canvas);
+        AddChild(_soundscape);
         Rect2 bounds = _canvas.LocalBounds;
         if (WatercourseProfile || BreachProfile || FramesCargoThreat || CareDispositionFixture is not null
             || PlayerInvitationPath is not null || NetworkFixtureOpening is not null)
@@ -273,6 +278,8 @@ public partial class FarmGame : Node2D
             if (opening.IsCompletedSuccessfully)
             {
                 _session = opening.Result;
+                // A newly opened or reconnected session is a new listener visit: nothing earlier is replayed.
+                _soundscape.Reset();
                 if (_submissionObserver is not null) _session.Submitted += _submissionObserver;
                 _targets = new FarmTargetSelection(_session.WrenActorId);
                 _inventoryModel = new FarmInventoryModel(_session.WoodDefinitionId, _session.BerryDefinitionId);
@@ -324,6 +331,7 @@ public partial class FarmGame : Node2D
         CompleteControlOperations();
         CompleteGiftInspection();
         CompleteHistory();
+        _soundscape.Advance(delta);
         Present();
         PresentHistoryPanel();
     }
@@ -344,7 +352,12 @@ public partial class FarmGame : Node2D
         ObserveControlReturn(control);
         RefreshRecipes(selected);
         RefreshCare(selected);
-        if (selected?.ControlledView is not null) { PresentControlled(selected); return; }
+        if (selected?.ControlledView is not null)
+        {
+            _soundscape.Suspend();
+            PresentControlled(selected);
+            return;
+        }
         _targets.Refresh(view);
         if (_session.IsRegional)
         {
@@ -365,6 +378,8 @@ public partial class FarmGame : Node2D
                 ? view.Construction.Where(project => project.IsCompleted).Select(project =>
                     new FarmStructureFrame(project.ProjectId, project.DisplayName, project.SiteFeet)) : [],
             view.Worksite, view.Liquids, view.Structures));
+        _soundscape.Present(SoundscapeObservation.From(view), _canvas.Project,
+            feet => _canvas.Regional?.Admits(feet) != false);
         Vector2 focus = FrameCargoThreats(view, _canvas.FocusPosition);
         if (view.Dialogue is { } conversation)
         {

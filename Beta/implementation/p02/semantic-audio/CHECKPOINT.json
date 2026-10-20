@@ -1,0 +1,18 @@
+{
+  "packet": "AUDIO-01 lead binding: semantic sound",
+  "checkpointRef": "codex/checkpoint-before-semantic-audio-20261019",
+  "checkpointCommit": "863d844829cb5fd7c7d286f92bcd2720595ce687",
+  "predecessorStagedFiles": 19,
+  "predecessorStagedNamesSha256": "ea5dbfd4842dea1e8469a81883d9819822358a024292245a02e4c107b1bf196b",
+  "preservedUncommitted": [
+    "OpenFantasy.sln (IDE-added Core project; predecessor file)",
+    "four .uid files Godot import generated for earlier packets' scripts",
+    "earlier untracked p02/party-withdrawal evidence directories and spec-v1_1 research notes"
+  ],
+  "toolchain": {
+    "sdk": "10.0.401",
+    "godot": "4.6.stable.mono.official.89cea1439"
+  },
+  "documentationChecks": "DOCUMENTATION_CHECKS.json",
+  "rawEvidenceNotCommitted": "native-selected-control-01/evidence (hashed in EVIDENCE_MANIFEST.json)"
+}

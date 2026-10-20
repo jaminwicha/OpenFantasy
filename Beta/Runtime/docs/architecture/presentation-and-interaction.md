@@ -208,6 +208,48 @@ page/row lifetimes and admitted-task owner prevent old replies from populating a
 Opening, browsing and closing submit no gameplay command; the screen displays the actual local/shared
 timing policy and cannot independently stop other participants.
 
+## Runtime binding: semantic sound
+
+[FarmSoundscape](../../client/scripts/Presentation/Audio/FarmSoundscape.cs) is the Godot audio adapter
+for the presented home or regional view. It reads only the participant's own `LocalWorldView` through
+[SoundscapeObservation](../../client/scripts/Presentation/Audio/SoundscapeObservation.cs), so sound can
+never reveal an actor, source or event that view withholds. It never submits, confirms or delays an
+action and never reads world time; its dwell, fade and spacing use presentation time only.
+
+[SoundscapeCueDeriver](../../client/scripts/Presentation/Audio/SoundscapeCueDeriver.cs) turns committed
+changes between consecutive observations into transient cues: footsteps from a visible actor's committed
+travel per stride, gathering contacts from a decrease in a visible source's remaining swings, and joinery
+or digging contacts from an increase in completed work. A submitted or refused action changes nothing it
+reads and therefore makes no sound. Each cue key names the kind, the source, its committed revision and an
+ordinal, and one listener visit delivers a key at most once. A visit is one world, branch and participant
+between resets. Its first observation, a newly visible source, travel beyond four cells in one observation
+and a moved incapacitated body establish baselines only, and one observation yields at most one cue per
+source. Opening, reopening, reconnecting or presenting another character's view therefore never replays
+earlier actions, and a delayed frame cannot release a burst. Regrowth makes no contact sound. Footsteps use
+generic ground: surface-specific steps need terrain material in the view and are not inferred.
+
+[SoundscapeContextDirector](../../client/scripts/Presentation/Audio/SoundscapeContextDirector.cs) owns the
+sustained score, ambience and speech ducking. A visit restores the current situation without a transition:
+an engaged encounter restores encounter music, a concluded one restores the aftermath and exploration
+otherwise. Encounter entry is immediate. Leaving an encounter waits a short minimum, then holds a quiet
+aftermath while the outcome is read and for a further dwell before exploration returns. A conversation or
+reading hold ducks music and ambience. Only the open outdoor ambience is bound; enclosure, portals and
+daylight variation are not yet represented.
+
+[AcousticIntentCatalog](../../client/scripts/Presentation/Audio/AcousticIntentCatalog.cs) declares an intent
+for every derivable cue pairing and every sustained context: bus, stream, caption, repetition spacing and
+simultaneous voices. An unknown pairing throws rather than playing nothing. The status distinguishes an
+intent awaiting a creator asset, a deliberate silence and a mapped stream; only a mapped intent plays.
+Captions state only what a legitimate audible cue conveys, and music and ambience beds carry none.
+The scene-owned [bus layout](../../client/default_bus_layout.tres) provides independent Music, Ambience,
+Effects and Voice buses. The adapter checks the shared voice pool before its playback gate, positions
+cues at the canvas projection of their source and withholds sources outside a regional frame.
+Probes read bounded [diagnostics](../../client/scripts/Presentation/Audio/SoundscapeDiagnostics.cs);
+nothing about sound is persisted or sent to the world.
+
+The controlled-character presentation suspends cue derivation; the next home view is a fresh baseline
+while the sustained context continues. Controlled views do not yet derive their own cues.
+
 ## Design contract: a small immediate interface
 
 The action vocabulary can be large while the immediate surface stays small. Contextual primary

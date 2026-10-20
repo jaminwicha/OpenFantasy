@@ -2,6 +2,8 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using System.Text.Json;
 using Godot;
+using OpenFantasy.Client.Presentation.Audio;
+using OpenFantasy.Core.Spatial;
 using OpenFantasy.Core.Worlds;
 using OpenFantasy.Hosting.Simulation;
 
@@ -23,6 +25,10 @@ internal partial class FarmWalkthroughProbe : Node
     private object? _talkOfferAtPress;
     private int _stage;
     private bool _done;
+    private SubunitPosition? _lastPlayerFeet;
+    private double _playerPathSubunits;
+    private double? _walkedSubunits;
+    private Core.EntityId? _playerId;
 
     internal FarmWalkthroughProbe(FarmGame game, string reportPath, bool reopen)
     {
@@ -40,6 +46,7 @@ internal partial class FarmWalkthroughProbe : Node
             Require(_timeout.Elapsed < TimeSpan.FromSeconds(40), "The native walkthrough timed out.");
             if (_game.CurrentView is not { } view) return;
             _initial ??= Snapshot(view);
+            TrackPlayerPath(view);
             if (_reopen)
             {
                 using JsonDocument prior = JsonDocument.Parse(File.ReadAllText(_reportPath));
@@ -142,6 +149,8 @@ internal partial class FarmWalkthroughProbe : Node
             _talkOfferAtPress = new { offer.Scope.ExpectedActorRevision,
                 Target = speak.ExpectedTargetRevision };
             _checks.Add("Named movement input approached Wren through the real Godot adapter.");
+            // The approach walks one axis then the other, so the committed path, not the straight line, sets strides.
+            _walkedSubunits = _playerPathSubunits;
             Press("talk");
             _stage = 2;
         }
@@ -187,6 +196,7 @@ internal partial class FarmWalkthroughProbe : Node
 
     private void Finish(LocalWorldView view)
     {
+        RequireSoundscape();
         WriteReport("passed", null, view);
         GD.Print("Native farm walkthrough passed: " + _reportPath);
         _done = true;
@@ -205,9 +215,75 @@ internal partial class FarmWalkthroughProbe : Node
             _game.HasPendingAction, HasReadingHold = view?.HasReadingHold,
             TalkOfferAtPress = _talkOfferAtPress,
             Initial = _initial, Final = view is null ? null : Snapshot(view), Checks = _checks,
-            DurationMilliseconds = _timeout.ElapsedMilliseconds
+            DurationMilliseconds = _timeout.ElapsedMilliseconds, Soundscape = SoundscapeReport()
         }, new JsonSerializerOptions { WriteIndented = true });
         File.WriteAllText(output, json + "\n");
+    }
+
+    /// <summary>Sums the player's committed travel between consecutive observed views, as the cue deriver does.</summary>
+    private void TrackPlayerPath(LocalWorldView view)
+    {
+        _playerId ??= view.PlayerActorId;
+        SubunitPosition feet = view.Actors.Single(actor => actor.ActorId == view.PlayerActorId).Feet;
+        if (_lastPlayerFeet is { } last)
+        {
+            double dx = feet.X - last.X, dy = feet.Y - last.Y;
+            _playerPathSubunits += Math.Sqrt(dx * dx + dy * dy);
+        }
+        _lastPlayerFeet = feet;
+    }
+
+    /// <summary>
+    /// Semantic sound obligations of this journey: committed walking derives footsteps, the conversation ducks, every
+    /// derived cue still awaits a creator asset, and the paused reopen restores context without replaying a cue.
+    /// </summary>
+    private void RequireSoundscape()
+    {
+        SoundscapeDiagnostics sound = _game.SoundscapeDiagnostics;
+        foreach (string bus in new[] { "Music", "Ambience", "Effects", "Voice" })
+            Require(AudioServer.GetBusIndex(bus) >= 0, $"The native bus layout has no {bus} bus.");
+        Require(sound.Visits == 1, $"Expected one listener visit, observed {sound.Visits}.");
+        Require(sound.RecentContexts.Count > 0 && sound.RecentContexts[0].Context.Change == SoundscapeContextChange.Restoration,
+            "The first sustained context was not a restoration.");
+        long derived = Enum.GetValues<SoundCueKind>().Sum(sound.Derived);
+        Require(sound.Total(AcousticPlayback.AwaitingCreatorAsset) == derived,
+            "A derived cue claimed playback although no creator asset is mapped.");
+        if (_reopen)
+        {
+            Require(derived == 0, $"The paused reopen replayed {derived} transient cues.");
+            _checks.Add("Native reopen restored the sustained sound context and replayed no transient cue.");
+            return;
+        }
+        long footsteps = sound.Derived(SoundCueKind.Footstep, _playerId!.Value);
+        long strides = (long)Math.Floor((_walkedSubunits ?? 0) / SoundscapeCueDeriver.StrideSubunits);
+        Require(strides >= 2, $"The fixture walk of {_walkedSubunits:0} subunits is too short to qualify footsteps.");
+        // Frames normally observe one host step each; a delayed frame may merge strides but never adds any.
+        // Visible residents who walk legitimately add their own footsteps; only the player's are compared here.
+        Require(footsteps >= 1 && footsteps <= strides, $"The player walked {strides} strides but derived {footsteps} footsteps.");
+        Require(sound.RecentContexts.Any(record => record.Context.Change == SoundscapeContextChange.Ducking && record.Context.IsDucked),
+            "The native conversation did not duck music and ambience.");
+        _checks.Add($"Native walking derived {footsteps} footstep cues over {strides} strides; the conversation ducked both beds.");
+    }
+
+    private object SoundscapeReport()
+    {
+        SoundscapeDiagnostics sound = _game.SoundscapeDiagnostics;
+        return new
+        {
+            sound.Visits, WalkedSubunits = _walkedSubunits, PlayerPathSubunits = _playerPathSubunits,
+            PlayerFootsteps = _playerId is { } player ? sound.Derived(SoundCueKind.Footstep, player) : 0,
+            FootstepSources = sound.RecentCues.Where(record => record.Key.Kind == SoundCueKind.Footstep)
+                .GroupBy(record => record.Key.SourceId.ToString()).ToDictionary(group => group.Key, group => group.Count()),
+            Derived = Enum.GetValues<SoundCueKind>().ToDictionary(kind => kind.ToString(), sound.Derived),
+            Playback = Enum.GetValues<AcousticPlayback>().ToDictionary(playback => playback.ToString(), sound.Total),
+            Contexts = sound.RecentContexts.Select(record => new
+            {
+                Score = record.Context.Score.ToString(), Ambience = record.Context.Ambience.ToString(),
+                record.Context.IsDucked, Change = record.Context.Change.ToString(), record.Context.FadeSeconds,
+                ScoreStatus = record.ScoreStatus.ToString(), AmbienceStatus = record.AmbienceStatus.ToString(),
+            }),
+            Buses = new[] { "Music", "Ambience", "Effects", "Voice" }.ToDictionary(bus => bus, bus => AudioServer.GetBusIndex(bus)),
+        };
     }
 
     private static void Require(bool condition, string message)
