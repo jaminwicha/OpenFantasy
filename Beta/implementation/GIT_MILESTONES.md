@@ -761,3 +761,12 @@ Documentation milestones, created without switching: `codex/milestone-story-01-d
 `codex/milestone-cat-plan-proposal-20261019` at `34bfce74dede9ef6fa2fdad6e4dd0e0301fbd06a` records the
 [CAT-PLAN proposal](p00/CAT_PLAN_PROPOSAL.md) and register proposal objects. Neither implements gameplay or
 approves a target; STORY-01 waits on NPC-01 and TRADE, CAT-PLAN on the owner's decision.
+
+## Client settings and captions — 2026-10-20
+
+Before-change checkpoint: `codex/checkpoint-before-client-settings-20261020` (`54539d569bb149cb1f6e5bfa1aeee4c108e73912`).
+Verified milestone: `codex/milestone-client-settings-20261020`, created at `b8b2da2e91f7d212e8309e6d559ef4bd4c9167e4` without switching.
+[Result](p02/client-settings/RESULT.md) retains focused and client-family results and native settings, gathering,
+farm, encounter, action-offer, wheel and four-player control evidence. Remapping, device and scaling settings,
+listening and human readability review remain open. Predecessor staging and unrelated files excluded.
+
