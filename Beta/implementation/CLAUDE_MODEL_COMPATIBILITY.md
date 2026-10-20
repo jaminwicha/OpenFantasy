@@ -125,3 +125,17 @@ completion: capacity/protection/late-reconciliation proofs and a race between el
 remain open. Its initial claim that the larger fixture was outside assignment scope is incorrect;
 a legitimate fresh genesis was explicitly permitted. This required lead correction, not a routing or
 permission repair. No automatic paid retry occurred; no billing or net credit-saving claim is made.
+
+## PLAN-STATE exit review (2026-10-20)
+
+One read-only [critic](plan-state-exit-review/DISPATCH.json) used `claude-opus-5-5[1m] --effort max` with Read,
+Glob and Grep only. The returned metadata verified `claude-opus-5-5[1m]` with a 1,000,000-token window, provider
+subtype success, no permission denials and verified pre/post context over 413 inputs, with no skill copies needed.
+Duration was 887.8 s and the client estimate $3.98, under the 2,400 s and $20 limits; the reviewer's own spend
+estimate of about $3.50 was low. The client also made one 18-token Haiku call costing $0.0018; the review itself
+ran on the requested model, so this is not a substitution. Before dispatch, the context hook refused stale skill
+pins and an output directory inside a Git checkout; both were fixed locally before any model call.
+
+The verdict, "accept with required changes", was specific and checkable: every cited figure and line held up on
+re-reading, and one stated assumption was flagged as unverified. The [disposition](plan-state-exit-review/DISPOSITION.md)
+applied every required change. No automatic retry occurred and no billing or net credit-saving claim is made.
