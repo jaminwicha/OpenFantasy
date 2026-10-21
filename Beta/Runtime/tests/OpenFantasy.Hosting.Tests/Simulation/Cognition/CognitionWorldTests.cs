@@ -403,6 +403,23 @@ public sealed class CognitionWorldTests
     }
 
     [Fact]
+    public void A_root_whose_current_deferral_postdates_the_world_does_not_decode()
+    {
+        var fixture = new CognitionWorldFixture();
+        fixture.Apply(WorldBatchKind.AdvancingStep);
+        WorldInstant now = fixture.State.Calendar;
+        var waiting = new CognitionIntention(IntentionKind.AwaitSupply, fixture.ProjectId, now, []);
+        var adopted = new CognitionMemory(IntentionKind.AwaitSupply, fixture.ProjectId, MemoryOutcome.Adopted, now,
+            CognitionDeferral.MissingTool, CognitionPolicy.Version);
+        ActorCognition Wren(WorldInstant since) => new(fixture.Wren, 1, [], waiting, [adopted], null,
+            new CurrentDeferral(CognitionDeferral.MissingTool, CognitionPolicy.Version, since));
+        Assert.Equal(now, fixture.WithWrenCognition(Wren(now)).Cognition!.For(fixture.Wren).Deferral!.Since);
+        var later = new WorldInstant(now.Days, now.MillisecondsWithinDay + 1);
+        FormatException refused = Assert.Throws<FormatException>(() => fixture.WithWrenCognition(Wren(later)));
+        Assert.Contains("before this instant", refused.InnerException!.Message);
+    }
+
+    [Fact]
     public void An_evidence_overflow_stops_the_boundary_and_never_refuses_the_player_action()
     {
         var fixture = new CognitionWorldFixture();

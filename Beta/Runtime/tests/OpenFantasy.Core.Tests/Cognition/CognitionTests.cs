@@ -87,7 +87,8 @@ public sealed class CognitionTests
         KnownSource depleted = Assert.Single(wren.Beliefs.Sources);
         Assert.True(depleted.BelievedDepleted);
         Assert.Equal(0UL, depleted.LatestYield);
-        // The later empty-handed attempt replaced the uncited earlier yield; the journal keeps the earlier one.
+        // The later outcome replaced the uncited earlier yield; the journal keeps the earlier one. A zero yield cannot
+        // come from a real gather, so this exercises only the belief's depletion rule.
         Assert.Equal([Observed, Id(811)], wren.Evidence.Select(entry => entry.EvidenceId));
 
         ActorCognition refreshed = wren.Acquire(Observation(Source, 3, 4000, Id(812)), 0);
@@ -179,17 +180,16 @@ public sealed class CognitionTests
         Assert.True(stocked.CompletedCurrent);
         Assert.Equal(MemoryOutcome.Completed, gathering.Adopt(stocked, At(3000)).Memory[^2].Outcome);
 
-        // Spent effort defers the next swing but keeps the plan: the reason changes and is remembered once.
-        CognitionDecision tired = CognitionPolicy.Decide(gathering, Situation(effort: false, reachable: [Source]), At(3000));
+        // Spent effort delays the next swing but keeps the plan and its reason: only the wake moves.
+        CognitionDecision tired = CognitionPolicy.Decide(gathering, Situation(step: 40, effort: false, reachable: [Source]), At(3000));
         Assert.False(tired.CompletedCurrent);
-        Assert.Equal(CognitionDeferral.InsufficientEffort, tired.Deferral);
+        Assert.Equal(CognitionDeferral.AwaitingSupply, tired.Deferral);
         Assert.Same(gathering.Intention, tired.Intention);
         ActorCognition resting = gathering.Adopt(tired, At(3000));
         Assert.Same(gathering.Intention, resting.Intention);
-        Assert.Equal(gathering.Memory.Count + 1, resting.Memory.Count);
-        Assert.Equal((MemoryOutcome.Reconsidered, CognitionDeferral.InsufficientEffort),
-            (resting.Memory[^1].Outcome, resting.Memory[^1].Reason));
-        Assert.Equal(new CurrentDeferral(CognitionDeferral.InsufficientEffort, CognitionPolicy.Version, At(3000)), resting.Deferral);
+        Assert.Equal(gathering.Memory.Count, resting.Memory.Count);
+        Assert.Equal(gathering.Deferral, resting.Deferral);
+        Assert.Equal(40 + CognitionPolicy.FallbackSteps, resting.Wake!.DueStep);
 
         // A source no longer reachable does end the plan, with that reason.
         CognitionDecision blocked = CognitionPolicy.Decide(gathering, Situation(effort: false), At(3000));
@@ -228,6 +228,20 @@ public sealed class CognitionTests
             [Observation(Source, 3, 1000), Observation(Source, 2, 2000, Id(841))], null, []));
         Assert.Throws<ArgumentException>(() => ActorCognition.Empty(Wren).Acquire(
             new CognitionEvidence(Id(842), Player, EvidenceKind.SourceObserved, ObserveCommand, null, Source, 3, At(0)), 0));
+    }
+
+    [Fact]
+    public void EvidenceCitedOnlyByAMemoryOutlivesItsIntention()
+    {
+        ActorCognition wren = ActorCognition.Empty(Wren).Acquire(Observation(Source, 3, 1000), 0);
+        wren = wren.Adopt(Decision(new CognitionIntention(IntentionKind.GatherPersonalStock, Source, At(1000), [Observed]),
+            CognitionDeferral.AwaitingSupply), At(1000));
+        wren = wren.Adopt(Decision(new CognitionIntention(IntentionKind.AwaitSupply, Project, At(2000), []),
+            CognitionDeferral.Unreachable), At(2000));
+        Assert.Empty(wren.Intention!.Basis);
+        // Only the gathering adoption's memory cites the first observation now; a newer look must not replace it.
+        ActorCognition looked = wren.Acquire(Observation(Source, 2, 3000, Id(850)), 0).Acquire(Observation(Source, 1, 4000, Id(851)), 0);
+        Assert.Equal([Observed, Id(851)], looked.Evidence.Select(entry => entry.EvidenceId));
     }
 
     [Fact]

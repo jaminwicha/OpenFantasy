@@ -73,10 +73,7 @@ public sealed class CognitionSessionTests
         session = new LocalWorldSession(authority, fixture.Player, fixture.Delivery(fixture.Player), time);
         session.SetReady(true);
         await Until("meet the stock target", () => Wren().Memory.Any(entry => entry.Reason == CognitionDeferral.StockTargetMet));
-        EntityId wrenBag = State().GetResident(fixture.Wren).InventoryCustodianId;
-        Assert.Equal(CognitionWorldFixture.PersonalStockTarget, State().Inventory.Custody.Lots
-            .Where(lot => lot.CustodianId == wrenBag && lot.Definition == fixture.Quest.Item)
-            .Aggregate(0UL, (total, lot) => checked(total + lot.Quantity)));
+        Assert.Equal(CognitionWorldFixture.PersonalStockTarget, Holding(State(), fixture.Wren, fixture.Quest.Item));
         // Each newer gathering outcome replaced the uncited earlier one; the journal keeps every yield.
         Assert.Single(Wren().Evidence, entry => entry.Kind == EvidenceKind.GatherOutcome);
 
@@ -100,6 +97,37 @@ public sealed class CognitionSessionTests
         Assert.Equal(CognitionWorldFixture.PersonalStockTarget, Holding(State(), fixture.Wren, quest.Item));
         await session.DisposeAsync();
         authority.Dispose();
+    }
+
+    [Fact]
+    public async Task A_host_decision_past_the_memory_bound_stops_the_authority_through_its_overflow_route()
+    {
+        var fixture = new CognitionWorldFixture();
+        fixture.FillWrenMemoryWithAlternatingReasons();
+        WorldSnapshot head = fixture.State;
+        using var files = new StorageFiles();
+        var time = new ManualSessionTimeProvider();
+        var authority = SqliteWorldAuthority.CreateNew(files.Path, fixture.Genesis);
+        foreach (byte[] batch in fixture.Batches) authority.Commit(WorldStepCodec.Decode(batch));
+        Assert.Equal(head.ContentHash, authority.ReadStateForHost().ContentHash);
+
+        // The host policy's honest "missing tool" would be the 65th memory. It is proposed, not swallowed, so the
+        // authority's preview stops it and the session ends with the overflow.
+        var session = new LocalWorldSession(authority, fixture.Player, fixture.Delivery(fixture.Player), time);
+        session.SetReady(true);
+        for (int step = 0; !session.Completion.IsCompleted; step++)
+        {
+            Assert.True(step < 8, "The overflowing decision is due at the first boundary.");
+            await SessionFixture.Until(() => time.HasPendingTimer || session.Completion.IsCompleted);
+            if (!session.Completion.IsCompleted) time.Advance(LocalWorldSession.StepInterval);
+        }
+        await Assert.ThrowsAsync<CognitionCapacityException>(() => session.Completion);
+        Assert.Throws<InvalidOperationException>(() => authority.Commit(WorldStepCodec.Decode(fixture.Batches[^1])));
+        await Assert.ThrowsAsync<CognitionCapacityException>(async () => await session.DisposeAsync());
+        authority.Dispose();
+
+        using var reopened = SqliteWorldAuthority.OpenExisting(files.Path, WorldSnapshotCodec.Encode(fixture.Genesis));
+        Assert.Equal(head.ContentHash, reopened.ReadStateForHost().ContentHash);
     }
 
     private static ulong Holding(WorldSnapshot state, EntityId actor, CountedItemDefinition definition) =>

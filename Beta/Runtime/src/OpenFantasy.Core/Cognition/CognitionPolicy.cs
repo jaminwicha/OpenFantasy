@@ -20,13 +20,13 @@ public sealed record CognitionDecision(string PolicyVersion, CognitionIntention?
 /// <summary>
 /// Deterministic decision policy for the delayed-supply episode. Priority is conditional: work on the funded project
 /// once its delivery is known; otherwise gather a small personal stock when a tool, a known reachable source and
-/// effort allow; otherwise wait, with the honest reason. Spent effort defers an existing gathering plan's next swing
-/// without abandoning the plan. A reading hold keeps the current intention. The policy
-/// proposes; ordinary commands still decide every effect.
+/// effort allow; otherwise wait, with the honest reason. Spent effort delays an existing gathering plan's next swing
+/// without abandoning it or changing its reason: the funded work is still deferred because supplies have not arrived.
+/// A reading hold keeps the current intention. The policy proposes; ordinary commands still decide every effect.
 /// </summary>
 public static class CognitionPolicy
 {
-    public const string Version = "cognition.delayed-supply.v2";
+    public const string Version = "cognition.delayed-supply.v3";
 
     /// <summary>The declared fallback cadence in advancing steps: five seconds at the nominal 50 ms step.</summary>
     public const ulong FallbackSteps = 100;
@@ -54,11 +54,12 @@ public static class CognitionPolicy
                 ? CognitionDeferral.Unreachable
             : !situation.HasEffort ? CognitionDeferral.InsufficientEffort
             : CognitionDeferral.None;
-        // Spent effort only delays the next swing: an intention to gather a known, reachable source is kept.
+        // Spent effort only delays the next swing: an intention to gather a known, reachable source is kept with the
+        // plan's own reason, so waiting for effort neither ends the plan nor counts as a remembered reason change.
         if (reason == CognitionDeferral.InsufficientEffort && cognition.Intention is { Kind: IntentionKind.GatherPersonalStock } gathering
             && beliefs.Sources.Any(source => source.SourceId == gathering.SubjectId && !source.BelievedDepleted
                 && situation.ReachableSources.Contains(source.SourceId)))
-            return new CognitionDecision(Version, gathering, reason, next);
+            return new CognitionDecision(Version, gathering, CognitionDeferral.AwaitingSupply, next);
         if (reason != CognitionDeferral.None)
             return new CognitionDecision(Version, Keep(cognition, IntentionKind.AwaitSupply, situation.ProjectId, now, []),
                 reason, next, CompletedCurrent: cognition.Intention?.Kind == IntentionKind.GatherPersonalStock

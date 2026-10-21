@@ -1,0 +1,57 @@
+{
+  "assignment": "ASSIGNMENT.md",
+  "adapter": "~/.claude/skills/cross-agent-delegation/scripts/run_claude_task.py",
+  "executable": "claude 2.1.280 (~/.local/bin/claude)",
+  "requestedModel": "claude-opus-5-5[1m]",
+  "requestedEffort": "max",
+  "returnedModels": {
+    "claude-haiku-4-5-20251001": {
+      "outputTokens": 16,
+      "costUSD": 0.0023,
+      "contextWindow": 200000
+    },
+    "claude-opus-5-5[1m]": {
+      "outputTokens": 99223,
+      "costUSD": 5.2694,
+      "contextWindow": 1000000
+    }
+  },
+  "auxiliaryModelNote": "The client made one 16-token Haiku call; the review itself ran on the requested model.",
+  "tools": [
+    "Read",
+    "Glob",
+    "Grep"
+  ],
+  "permissionDenials": 0,
+  "limits": {
+    "timeoutSeconds": 1800,
+    "maxBudgetUsd": 15
+  },
+  "elapsedSeconds": 969.779,
+  "turns": 79,
+  "totalCostUsd": 5.2718,
+  "providerResult": {
+    "type": "result",
+    "subtype": "success",
+    "isError": false,
+    "stopReason": "end_turn"
+  },
+  "processExitCode": 0,
+  "adapterStatus": "completed_pending_review",
+  "contextStatus": "verified",
+  "contextPreflight": {
+    "status": "verified"
+  },
+  "contextPostflight": {
+    "status": "verified"
+  },
+  "revisionBefore": "398e8eccf917c11401757ec0d837fd72d8027a89",
+  "revisionAfter": "398e8eccf917c11401757ec0d837fd72d8027a89",
+  "contextManifestSha256": "ad2d4918bf8be42b72c4a927bc3e08b3a1bd133b8ae79d08cf605537b540dccf",
+  "reviewTextSha256": "45d569ed00bd65bbbf6a11e9c98004749897bf761aa969f3163c4c07a65ae650",
+  "automaticRetry": false,
+  "modelSubstitution": false,
+  "rawSessionCommitted": false,
+  "verdict": "accept with required changes",
+  "outputDirectoryNote": "The run directory was the session scratchpad: the home directory holds a git repository, so the adapter refuses output under ~."
+}

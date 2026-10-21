@@ -127,10 +127,11 @@ internal sealed class CognitionWorldFixture
     internal WorldActionReceipt GiveAxeToWren() => Act(Player, GiftOf(Player, Wren, Owned(Player, Axe), 1));
 
     /// <summary>
-    /// The current root as long play would leave it: Wren holding <paramref name="received"/> items the player gave her,
-    /// which never replace one another. In the authored adventure only eight gifts are reachable at genesis, so the
-    /// root is built by replacing the final cognition field of the real encoded head and decoding it under complete
-    /// admission, which checks every identity and counterpart. It is a state, not a recorded history.
+    /// An admissible root, not a reachable one: Wren holding <paramref name="received"/> items the player gave her,
+    /// which never replace one another. Only eight gifts to Wren are lawful at genesis, and residents and players cannot
+    /// give to players, so a lawful bound needs long play. The root replaces the final cognition field of the real
+    /// encoded head and decodes under complete admission. That checks identities, roles and counterparts, but not that
+    /// each evidence identity derives from a real command; 64 receipts from one giver at one instant cannot happen.
     /// </summary>
     internal WorldSnapshot WithWrenHoldingReceivedItems(int received)
     {
@@ -138,6 +139,12 @@ internal sealed class CognitionWorldFixture
         for (int index = 0; index < received; index++)
             wren = wren.Acquire(new CognitionEvidence(NextId(), Wren, EvidenceKind.ItemReceived, NextId(), Player, NextId(), 1,
                 State.Calendar), State.AdvancingSteps);
+        return WithWrenCognition(wren);
+    }
+
+    /// <summary>The real encoded head with Wren's record replaced, decoded under complete admission.</summary>
+    internal WorldSnapshot WithWrenCognition(ActorCognition wren)
+    {
         byte[] cognition = CognitionCodecV2.Encode(State.Cognition!.With(wren));
         byte[] root = WorldSnapshotCodec.Encode(State);
         // A canonical frame: magic, format version, field count, then length-prefixed fields; cognition is the last.
@@ -153,9 +160,32 @@ internal sealed class CognitionWorldFixture
     }
 
     /// <summary>
-    /// Wren's own recorded decision keeping her intention with <paramref name="reason"/>, due again at the next step. A
-    /// planner could lawfully record this; the host policy never would.
+    /// Wren's own recorded decision keeping her intention with <paramref name="reason"/>, due again at the next step.
+    /// Reasons are planner claims the law admits without checking, so this is admissible though often false; the
+    /// host policy never records it.
     /// </summary>
+    /// <summary>
+    /// Fills Wren's memory to its bound with admissible alternating reasons, ending on spent effort while she still has
+    /// no tool, so the host policy's next decision, "missing tool", would be the 65th memory.
+    /// </summary>
+    internal void FillWrenMemoryWithAlternatingReasons()
+    {
+        Assert.Equal(CommandReceiptStatus.Applied, Act(Wren, InspectionOf(Oak)).Status);
+        Assert.Equal(CommandReceiptStatus.Applied, Decide(Wren).Status);
+        Assert.Equal(CognitionDeferral.MissingTool, CognitionOf(Wren).Deferral!.Reason);
+        AdvanceUntilDue(Wren);
+        while (CognitionOf(Wren).Memory.Count < ActorCognition.MaximumMemory)
+        {
+            WorldActionCommand reconsider = Reconsideration(OtherReason(CognitionOf(Wren).Deferral!.Reason));
+            Assert.Equal(CommandReceiptStatus.Applied,
+                Step(reconsider).Receipts.Single(receipt => receipt.CommandId == reconsider.CommandId).Status);
+        }
+        Assert.Equal(CognitionDeferral.InsufficientEffort, CognitionOf(Wren).Deferral!.Reason);
+    }
+
+    internal static CognitionDeferral OtherReason(CognitionDeferral reason) =>
+        reason == CognitionDeferral.MissingTool ? CognitionDeferral.InsufficientEffort : CognitionDeferral.MissingTool;
+
     internal WorldActionCommand Reconsideration(CognitionDeferral reason)
     {
         ActorCognition wren = CognitionOf(Wren);

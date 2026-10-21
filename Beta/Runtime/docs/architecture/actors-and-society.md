@@ -80,7 +80,9 @@ profile 40, and no existing save changes profile.
   state holds the actor's latest view. Cited evidence is always kept, received items and deliveries are never
   replaced, and the bound is checked after replacement. A root holding two uncited entries of one replaceable kind
   and subject is not canonical and does not decode. Beliefs therefore read each known source's latest observation and
-  latest own yield; an actor's lifetime gathering total is history, not a held belief.
+  latest own yield; an actor's lifetime gathering total is history, not a held belief. A gathering completion is
+  admitted while a yield since adoption is held, but nothing cites that yield, so after the next gather what justified
+  the completion is recoverable only from the journal. Replaced identities stay reserved in the database.
 - **Perception rule.** [InspectGatherSourceIntent](../../src/OpenFantasy.Core/Worlds/WorldCognitionIntents.cs) is a
   deliberate look at one source within four cells. It uses the same anchored terrain and structure sightline as
   gathering reach, needs no tool, and reveals only that source's visible remaining harvests. Nothing farther, and
@@ -120,13 +122,15 @@ profile 40, and no existing save changes profile.
 - **Overflow stops the authority.** A capacity overflow propagates out of the processor. It is not a refused action:
   `CognitionCapacityException` derives from none of the exceptions admission converts into refusals, and commit
   preparation does not convert it into a dispatch refusal. `SqliteWorldAuthority` marks itself as
-  requiring reopening, and nothing is published.
+  requiring reopening, and nothing is published. The host policy proposes a decision whose own preflight overflows,
+  so a live session reaches this route too and ends with the overflow.
 
 Profile-42 roots use storage schema twelve, like profiles 40 and 41.
 
 **Remaining bounds:** looks and gathers no longer approach the 64-entry evidence bound, because each source keeps at
-most one uncited observation and one uncited outcome per actor. Evidence still grows with items received, with
-sources first seen and with each citation, and memory grows with every intention change and reason change. One adoption
+most one uncited observation and one uncited outcome per actor. Evidence still grows with items received, deliveries
+(one per quest), sources first seen and each citation, and memory grows with every intention change and reason change.
+Reasons are planner claims the law does not yet check. One adoption
 followed by 63 reason changes fills the 64 memories, for example under a planner that alternates two reasons. Decision 7's
 second half, moving closed episodic memory into immutable actor-owned segments, is not bound; the decision-3
 baseline measures how fast both bounds fill in sustained play.
@@ -135,7 +139,8 @@ baseline measures how fast both bounds fill in sustained play.
 profile 42. It drives host-controlled residents that have an unfinished project of their own. For each such
 resident, in order, it proposes:
 
-1. a due decision, computed by `CognitionPolicy` from the resident's own tools, stock, effort and known sources;
+1. a due decision, computed by `CognitionPolicy` from the resident's own tools, stock, effort and known sources. While a
+   gathering plan's next swing waits for effort, the policy keeps the plan and its reason, so waiting adds no memory;
 2. a pre-planned gathering swing and ordinary approach movement, for a gathering intention;
 3. a look at the first source in sight that the resident has never observed.
 

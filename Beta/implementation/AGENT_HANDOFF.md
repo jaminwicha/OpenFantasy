@@ -59,8 +59,10 @@ reviewed [profile-42 binding](p02/npc-cognition/world-binding/RESULT.md) through
 [host cognition policy](p02/npc-cognition/host-policy/RESULT.md). [Evidence retention](p02/npc-cognition/evidence-retention/RESULT.md)
 now replaces uncited older observations and gathering outcomes, with old values in history, and keeps each actor's
 current deferral with remembered reason changes. Run the decision-3 baseline on profiles 40, 41 and 42 with every NPC
-autonomous, reporting how fast the evidence and memory bounds fill. Memory still grows with every reason change, and
-decision 7's episodic-memory segments are unbound. Then run the player-absent detailed continuation with a
+autonomous, reporting how fast the evidence and memory bounds fill per actor and per hour, including an
+effort-limited gathering workload. Memory still grows with every reason change, and decision 7's episodic-memory
+segments are unbound. The [retention review disposition](p02/npc-cognition/evidence-retention-review/DISPOSITION.md)
+schedules two decoding rules and a reason check before profile 42 freezes. Then run the player-absent detailed continuation with a
 changed-place return. The
 [review disposition](p02/npc-cognition/world-binding-review/DISPOSITION.md) lists the untested paths and the
 decision-8 capability-table packet, which must precede profile 43. The [causal design](NPC_01_CAUSAL_EPISODE.md) and

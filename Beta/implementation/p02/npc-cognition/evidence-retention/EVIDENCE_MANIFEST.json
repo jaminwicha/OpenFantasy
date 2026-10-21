@@ -18,15 +18,22 @@
     "hosting-retained-rerun.trx": {
       "sha256": "33cf5c04891023a83f94722ca02d1da9d7a7f36b35544e19086bd22fec64973c",
       "bytes": 42577
+    },
+    "core-full-review.trx": {
+      "sha256": "0ed0c1de6f037bc75f73c69ace72076494ea9178f5ad4c5b15eb52907bc2cf9f",
+      "bytes": 3184057
     }
   },
   "committed": {
-    "managed/core-cognition.trx": "ff7144da498928d4d1567cfa67e7e0aa73cbbd6596ebeed8e79ad4a3fa7884cb",
-    "managed/hosting-cognition.trx": "4264819e95f1b02ea91065a20595128e5041a77321b8313206a8426dac0e1d2b"
+    "managed/core-cognition.trx": "8046652580032699e84ad4e444d609f9e720505c881506c712dce33ec2298c67",
+    "managed/hosting-cognition.trx": "dba1530c9e8cd6b7923492074fd057b2275b38e8ef62df4e9f35e96596531d91"
   },
   "runs": {
     "core-full": "2,075 of 2,075 passed in 1 m 20 s",
     "hosting-full": "OPENFANTASY_DOTNET set, OPENFANTASY_RETAINED_PROPOSAL_SOURCE unset by runner omission: 2,239 passed, 25 opt-in skipped, 25 failed in 19 m 26 s",
-    "hosting-retained-rerun": "ProposalMigration and RetainedGifts namespaces with OPENFANTASY_RETAINED_PROPOSAL_SOURCE set: 24 passed, 1 opt-in skipped, 0 failed in 2 m 28 s"
-  }
+    "hosting-retained-rerun": "ProposalMigration and RetainedGifts namespaces with OPENFANTASY_RETAINED_PROPOSAL_SOURCE set: 24 passed, 1 opt-in skipped, 0 failed in 2 m 28 s",
+    "core-full-review": "After the review fixes: 2,076 of 2,076 passed in 1 m 19 s",
+    "focused-review": "After the review fixes: Core cognition 35 of 35, profile-42 Hosting 20 of 20"
+  },
+  "reviewFixInheritance": "The full Hosting run is from 398e8ecc. The review fixes change only profile-42 paths: CognitionPolicy (read only by profile-42 host policy and tests) and LocalCognitionController.Decide (applies only when a world has cognition). Their families were rerun; the full Hosting run is not repeated."
 }

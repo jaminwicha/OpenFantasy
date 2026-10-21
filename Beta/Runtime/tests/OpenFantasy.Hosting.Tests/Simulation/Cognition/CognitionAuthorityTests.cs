@@ -43,21 +43,12 @@ public sealed class CognitionAuthorityTests
     [Fact]
     public void A_cognition_overflow_stops_the_durable_authority_without_publishing()
     {
-        // Wren waits without a tool, then lawfully records alternating reasons until her memory bound is reached.
+        // Wren waits without a tool, then records admissible alternating reasons until her memory bound is reached.
         var fixture = new CognitionWorldFixture();
-        Assert.Equal(CommandReceiptStatus.Applied, fixture.Act(fixture.Wren, fixture.InspectionOf(fixture.Oak)).Status);
-        Assert.Equal(CommandReceiptStatus.Applied, fixture.Decide(fixture.Wren).Status);
-        static CognitionDeferral Other(CognitionDeferral reason) =>
-            reason == CognitionDeferral.MissingTool ? CognitionDeferral.InsufficientEffort : CognitionDeferral.MissingTool;
-        fixture.AdvanceUntilDue(fixture.Wren);
-        while (fixture.CognitionOf(fixture.Wren).Memory.Count < ActorCognition.MaximumMemory)
-        {
-            WorldActionCommand reconsider = fixture.Reconsideration(Other(fixture.CognitionOf(fixture.Wren).Deferral!.Reason));
-            Assert.Equal(CommandReceiptStatus.Applied,
-                fixture.Step(reconsider).Receipts.Single(receipt => receipt.CommandId == reconsider.CommandId).Status);
-        }
+        fixture.FillWrenMemoryWithAlternatingReasons();
         WorldSnapshot head = fixture.State;
-        WorldActionCommand last = fixture.Reconsideration(Other(fixture.CognitionOf(fixture.Wren).Deferral!.Reason));
+        WorldActionCommand last = fixture.Reconsideration(
+            CognitionWorldFixture.OtherReason(fixture.CognitionOf(fixture.Wren).Deferral!.Reason));
         var overflowing = new WorldStepBatch(fixture.NextId(), head.WorldId, head.BranchId, head.Revision, head.AdvancingSteps,
             WorldBatchKind.AdvancingStep, [], [last], head.ProfileVersion);
 

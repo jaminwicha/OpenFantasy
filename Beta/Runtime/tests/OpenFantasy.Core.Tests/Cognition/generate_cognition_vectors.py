@@ -19,7 +19,7 @@ ADOPTED, SUPERSEDED, RECONSIDERED = 1, 3, 4
 NONE, MISSING_TOOL, INSUFFICIENT_EFFORT, READING_HOLD, AWAITING_SUPPLY = 0, 1, 4, 6, 8
 GATHER_COMMAND = 702
 EVIDENCE_ACQUIRED, FALLBACK = 1, 4
-POLICY = b'cognition.delayed-supply.v2'
+POLICY = b'cognition.delayed-supply.v3'
 
 
 def number(value):

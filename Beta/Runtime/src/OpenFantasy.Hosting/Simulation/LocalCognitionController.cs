@@ -83,7 +83,16 @@ internal sealed class LocalCognitionController
             tool, stock, PersonalStockTarget, state.Gathering!.GetActorWork(actorId).Effort >= GatherRulesV1.EffortPerSwing,
             state.HasReadingHold, reachable);
         CognitionDecision decision = CognitionPolicy.Decide(cognition, situation, state.Calendar);
-        return ReferenceEquals(cognition.Adopt(decision, state.Calendar), cognition) ? null : decision;
+        try
+        {
+            return ReferenceEquals(cognition.Adopt(decision, state.Calendar), cognition) ? null : decision;
+        }
+        catch (CognitionCapacityException)
+        {
+            // The decision changes something but exceeds a bound. Proposing it lets the authority stop by its own
+            // overflow route; failing here would end the session without marking the authority for reopening.
+            return decision;
+        }
     }
 
     private WorldActionCommand? Gather(WorldSnapshot state, EntityId actorId, EntityId nodeId, Func<EntityId> newIdentity)
